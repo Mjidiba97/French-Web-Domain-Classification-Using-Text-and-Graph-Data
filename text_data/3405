@@ -1,0 +1,985 @@
+   #Tuto Office » Flux Tuto Office » Flux des commentaires Tuto Office »
+   Transformer un PowerPoint en Vidéo 1080p – Tuto PPT #7 Flux des
+   commentaires alternate alternate
+
+Tuto Office
+
+     * Accueil
+     * Les Tutos
+          + Excel
+          + Powerpoint
+          + Word
+     * News
+     * Contact
+     * Demander un Tuto
+
+Powerpoint
+
+   Les tutoriaux qui concernent Powerpoint de 2007 à 2013.
+
+   Publié le 6 février 20156 février 2015 par Matthieu Langlade
+
+Transformer un PowerPoint en Vidéo 1080p – Tuto PPT #7
+
+   IFRAME: http://www.youtube.com/embed/k_5Nz0eVYI8
+
+   Aujourd’hui je vous propose de découvrir comment enregistrer un
+   PowerPoint en Vidéo 1080p. Si la version 2013 a permis de simplifier la
+   création de vidéo depuis le logiciel, on est toujours limité à une
+   résolution de 1280×720 soit 720p. Ce qui dans la majorité des cas peut
+   être suffisant, mais comme nous avons parfois des besoin spécifiques,
+   nous allons voir ensemble une technique pour créer une vidéo de
+   résolution 1920×1080 sans utiliser de logiciel externe !
+
+Créer une vidéo depuis PowerPoint (Exportation)
+
+Exporter en vidéo: les options à connaître.
+
+   Pour créer une vidéo, c’est très simple, rendez-vous dans Fichier puis
+   cliquez sur Exporter et enfin Créer une vidéo.
+
+   Vous allez maintenant devoir déterminer quelles sont vos besoins.
+     * La qualité de la vidéo: Ce que vous devez savoir est plus la
+       qualité est élevé, plus le fichier sera gros. Cependant, rappelez
+       vous que si la vidéo est destinée à être visionné par plusieurs
+       personnes, la qualité devra être HD (minimum 720p). Nous sommes
+       habitués à de la HD, une basse résolution est très vite déroutante.
+
+   Choix de la qualité de la video sur Powerpoint
+     * Timing et narration de la vidéo: ici, vous allez pouvoir choisir
+       quel type de minutage vous allez utiliser. La première option vous
+       permet de choisir un minutage unique pour toute les
+       diapositives, si vous choisissez cette option, sélectionnez ensuite
+       juste en dessous combien de temps vous voulez consacrer à chaque
+       diapositive. La seconde option vous permet d’utiliser le minutage
+       que vous créer grâce à l’option Diaporama, pour avoir un rendu plus
+       personnalisée.  (c’est ce que nous verrons dans le prochain
+       point.)  Choix du type de minutage pour sa vidéo
+
+   Une fois votre choix fait, cliquez sur “Créer la vidéo“, choisissez un
+   nom et un répertoire et cliquez sur OK.
+
+   Votre vidéo est maintenant en cours de création. Vous pouvez voir
+   l’avancement en bas de PowerPoint comme ceci:
+
+   Création de la vidéo en cours.
+
+
+Réaliser un minutage et/ou une narration
+
+   Le minutage va vous permettre de déterminer précisément combien de
+   temps vous passer sur chaque slide. Vous allez donc commencer
+   l’enregistrement, comme si vous présentiez votre diaporama.
+
+   Pour cela, rendez-vous dans l’onglet “Diaporama” puis cliquez sur
+   “Enregistrer le diaporama” et “Commencer l’enregistrement au début…”
+
+   Enregistrer le timing de son diaporama
+
+   Ici, vous avez deux chois options:
+     * Diapositive et minutage de l’animation: Cette option est celle qui
+       vous permet d’enregistrer le temps passé sur chaque diapositive.
+     * Narrations et pointeur laser: Cette option vous permet de faire la
+       présentation comme si vous y étiez, et d’enregistrer votre voix et
+       les mouvements du pointeurs (clic droit lors de la présentation,
+       pointeurs).
+
+   Les options d'enregistrement du diaporama
+
+   Une fois l’enregistrement terminé, reportez-vous au premier sur la
+   création de la vidéo.
+
+Créer une vidéo en 1080p
+
+   Pour passer cette limite du 720p, il existe plusieurs solutions comme
+   la modification du registre ou l’utilisation d’un programme externe.
+   C’est personnellement deux techniques que je déteste, la première car
+   je suis un total novice dans le domaine, et la deuxième car je préfère
+   avoir le contrôle sur mes fichiers.
+
+   Pour avoir un total contrôle sur nos fichiers, on va donc utiliser une
+   macro sous PowerPoint ! Si vous n’en avez jamais utilisée, suivez ces
+   quelques étapes:
+
+Afficher l’onglet Développeur pour créer sa macro
+
+   Pour créer notre macro, il va falloir afficher l’onglet Développeur.
+   (Note: Vous pouvez vous passer de cette étape en utilisant la
+   combinaison ALT + F8 )
+
+   Rendez-vous dans Fichier -> Options puis cliquez sur “Personnaliser le
+   ruban“. Dans la colonne de droite cochez la case “Développeur” puis
+   validez en cliquant sur OK.
+
+   Afficher l'onglet Développeur sur Powerpoint 2013
+
+   Vous avez désormais accès à l’onglet Développeur sur votre interface
+   PowerPoint.
+
+Créer sa première macro sous PowerPoint
+
+   Dans l’onglet Développeur, cliquez sur “Macros“, vous êtes maintenant
+   en face d’une fenêtre, choisissez un nom pour votre macro et cliquez
+   sur Créer., nous l’appellerons Video1080.
+
+   Choix du nom de sa macro PowerPoint
+
+   Vous êtes maintenant en face d’une toute nouvelle interface,
+   rassurez-vous c’est presque fini !
+
+La macro pour Exporter une vidéo 1080p
+
+   Voici le code de la macro, que vous n’avez plus qu’à copier coller dans
+   votre éditeur:
+
+
+     Sub Video1080()
+     Dim Repertoire As Integer
+     Dim strPath As String
+     Dim nbcara As Integer
+
+     ‘Récupération du chemin et nom du fichier
+     Repertoire = Application.FileDialog(msoFileDialogSaveAs).Show ‘ Pop
+     de fileDialog
+     strPath = _
+     Application.FileDialog(msoFileDialogSaveAs).SelectedItems(1) ‘ Into
+     String
+
+     nbcara = Len(strPath) – 4
+     strPath = Mid(strPath, 1, nbcara) ‘On retire l’extension
+
+     ‘ Conversion en vidéo Merci à John SR Wilson pour l’astuce
+     If ActivePresentation.CreateVideoStatus <>
+     ppMediaTaskStatusInProgress Then
+     ActivePresentation.CreateVideo FileName:=strPath & “wmv”, _
+     UseTimingsAndNarrations:=True, _
+     VertResolution:=1080, _
+     FramesPerSecond:=25, _
+     Quality:=100
+     Else: MsgBox “Une autre conversion est en cours.”
+     End If
+     End Sub
+
+   PPT VBA macro vidéo 1080p
+
+
+   Sauvegardez, et aller dans fichier puis tout en bas “Fermer et
+   retourner à Microsoft PowerPoint“. Votre macro est créée !
+
+Exécuter sa macro et créer sa vidéo 1080p.
+
+   Vous n’avez plus qui’à exécuter la macro, pour cela retourner sur
+   “Macros” ou utiliser la combinaison Alt + F8.
+
+   Vous avez maintenant une macro “Video1080“, sélectionnez la et cliquez
+   sur “Exécuter“.
+
+   Choisissez un nom pour votre fichier et ignorez la sélection du type de
+   fichier (il est modifié par la suite dans la macro).
+
+   Vous pouvez désormais voir en bas de l’écran que la vidéo est en cours
+   de réalisation.
+
+   Exportation de la video 1080p
+
+   Vous avez désormais une vidéo en 1080p ! Vous pouvez vérifier
+   en faisant un clic droit sur le fichier, puis “propriétés” et regarder
+   dans l’onglet “détails“.
+
+   J’espère que cet article vous aura plu et aider, comme d’habitude
+   n’hésitez pas à commenter pour me faire part de vos problèmes, ou tout
+   simplement pour me remercier!
+
+   A bientôt !
+
+Partager cet article:
+
+     * Tweet
+     *
+     * Imprimer
+     *
+
+WordPress:
+
+   J'aime chargement…
+   [INS: :INS]
+
+Matthieu Langlade Article écrit par Matthieu Langlade - Google +
+
+   Passionné de la suite Office et tout particulièrement de PowerPoint,
+   ses possibilités et la "slidologie", je souhaite partager mes
+   connaissances et donner des idées pour sortir des standards que l'on
+   s'impose.
+
+   Cet article a été publié dans Powerpoint. Sauvegardez le permalink.
+
+9 thoughts on “Transformer un PowerPoint en Vidéo 1080p – Tuto PPT #7”
+
+    1.
+   Didier says:
+       25 février 2015 at 9 h 21 min
+       bonjour,
+       vos tutos sont très intéressant et bien présentés, merci à vous.
+       Répondre
+    2.
+   Totoro says:
+       17 juin 2015 at 8 h 47 min
+       Attention, on ne peut pas copier/coller le code depuis votre site :
+       la mise en page de votre site transforme les ‘, les ” et les –
+       Répondre
+          +
+        Matthieu Langlade says:
+            18 juin 2015 at 14 h 48 min
+            Merci pour le message, je ne sais pas ce qui se passe en ce
+            moment, mais il y a plein de problèmes de mise en page sur le
+            site ! Je bosse dessus 🙂
+            Répondre
+               o
+             Michel says:
+                 10 septembre 2016 at 19 h 24 min
+                 Bonjour,
+                 Donc, votre macro est inutilisable pour quiconque ne
+                 connait pas la langage de macro Powerpoint 🙁
+                 Peut-être que la solution se trouve dans vos photos
+                 jointes à l’article, mais celles-ci n’apparaissent pas
+                 sur la page web (“Failed to load”; mauvais chemin dans le
+                 code de la page possiblement).
+                 Pour ma part, je suis bloqué là 🙁
+                 Répondre
+                    #
+                  Matthieu Langlade says:
+                      11 septembre 2016 at 15 h 52 min
+                      Bonjour,
+                      En effet, je ne sais pas pourquoi tout les images
+                      sont indisponible ! En revanche le code est bien
+                      disponible sur l’article ! Voici la copie de ce qui
+                      est à écrire comme code:
+                      Sub Video1080()
+                      Dim Repertoire As Integer
+                      Dim strPath As String
+                      Dim nbcara As Integer
+                      ‘Récupération du chemin et nom du fichier
+                      Repertoire =
+                      Application.FileDialog(msoFileDialogSaveAs).Show ‘
+                      Pop de fileDialog
+                      strPath = _
+                      Application.FileDialog(msoFileDialogSaveAs).Selected
+                      Items(1) ‘ Into String
+                      nbcara = Len(strPath) – 4
+                      strPath = Mid(strPath, 1, nbcara) ‘On retire
+                      l’extension
+                      ‘ Conversion en vidéo Merci à John SR Wilson pour
+                      l’astuce
+                      If ActivePresentation.CreateVideoStatus <>
+                      ppMediaTaskStatusInProgress Then
+                      ActivePresentation.CreateVideo FileName:=strPath &
+                      “wmv”, _
+                      UseTimingsAndNarrations:=True, _
+                      VertResolution:=1080, _
+                      FramesPerSecond:=25, _
+                      Quality:=100
+                      Else: MsgBox “Une autre conversion est en cours.”
+                      End If
+                      End Sub
+                      Répondre
+                         @
+                       Roussel says:
+                           19 novembre 2017 at 18 h 43 min
+                           Bonour, sa ne marche toujours pas pour moi 🙁
+                           http://zupimages.net/up/17/46/vnp1.png
+                           help please !!!
+    3.
+   Nicolas says:
+       8 juillet 2015 at 14 h 30 min
+       Bonjour,
+       Lors de l’enregistrement de ma video, j’ai le nom de mon fichier
+       qui apparait au debut de la video pendant quelques secondes.
+       Comment faire pour ne pas voir le nom de mon fichier sur la video?
+       Merci
+       Nicolas
+       Répondre
+          +
+        Matthieu Langlade says:
+            8 juillet 2015 at 19 h 28 min
+            Bonjour,
+            Je n’ai jamais rencontré ce genre de problème, mais ça
+            ressemble plutôt à une fonctionnalité du lecteur vidéo. Il me
+            semble par exemple que VLC affiche le nom du fichier au début
+            de la lecture du fichier.
+            Si c’est bien le cas, la vidéo n’a pas de problème, essayez
+            avec un autre lecteur 🙂
+            Matthieu
+            Répondre
+    4.
+   giffard maurice says:
+       14 mars 2016 at 18 h 25 min
+       trés beau tutoriel bonne explication merci
+       Répondre
+
+Laisser un commentaire Annuler la réponse.
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   Laisser un commentaire
+
+   [ ] Prévenez-moi de tous les nouveaux commentaires par e-mail.
+
+   [ ] Prévenez-moi de tous les nouveaux articles par email.
+
+Recherchez:
+
+   Search for: ____________________ Search
+
+Pub
+
+   [INS: :INS]
+
+Commentaires
+
+     * Matthieu Langlade dans 10 Clés pour Réussir une Présentation
+       PowerPoint
+     * Sev dans 10 Clés pour Réussir une Présentation PowerPoint
+     * Gustave Degus dans Bienvenue sur le site de Tutos Office !
+     * Form dans La Formule DATEDIF() – Différence entre 2 dates (Formule
+       #5)
+     * Maryse dans Fonctions Excel: NB, NB.SI, NB.VIDE, NBVAL – Comptez
+       ses cellules vides/pleines
+
+Articles récents
+
+     * Comment Faire une Somme Arithmétique sur Excel ? (Les Formules
+       Excel #6)
+     * Transformer un PowerPoint en Vidéo 1080p – Tuto PPT #7
+     * La Formule DATEDIF() – Différence entre 2 dates (Formule #5)
+     * Word – Les styles, Gagner du temps dans la mise en forme (Tuto #6)
+     * Comprendre les dates et les heures dans Excel – Tuto #3
+
+   Copyright © 2019 Tuto Office - Tutoriels vidéos sur Powerpoint, Word &
+   Excel..
+   Revera Theme adapté et traduit par Matthieu Langlade
+
+   IFRAME: likes-master
+
+   %d blogueurs aiment cette page :
+   #Tuto Office » Flux Tuto Office » Flux des commentaires Tuto Office »
+   Word – Les styles, Gagner du temps dans la mise en forme (Tuto #6) Flux
+   des commentaires alternate alternate
+
+Tuto Office
+
+     * Accueil
+     * Les Tutos
+          + Excel
+          + Powerpoint
+          + Word
+     * News
+     * Contact
+     * Demander un Tuto
+
+Les Tutos
+
+   Touts les tutoriaux sont par ici !
+
+   Publié le 21 novembre 201421 novembre 2014 par Matthieu Langlade
+
+Word – Les styles, Gagner du temps dans la mise en forme (Tuto #6)
+
+   IFRAME: http://www.youtube.com/embed/KYmdRhxochg
+
+   Lorsque l’on veut mettre un gros document en forme, on est parfois
+   décourager par le temps que cela peut prendre. C’est là que les styles
+   interviennent pour nous faire gagner un temps considérable.
+
+   Bonjour à toutes et à tous, aujourd’hui je vous propose de découvrir un
+   outil à connaître absolument sur Word: Les styles.
+
+   Avant tout, qu’est-ce qu’un style dans Word ?
+
+   Un style, c’est une propriété que vous allez appliquez à du texte dans
+   Word, qui va contenir plusieurs propriétés de mise en forme.
+
+   Par exemple, le Style Titre 1 pourrait correspondre à:
+     * Police: Calibri,
+     * Couleur: Vert,
+     * Taille de police: 28,
+     * Espacement: 1.5,
+     * Numérotation: Oui (1.; 2.; …)
+     * etc…
+
+   Une fois que ce style existe, vous allez pouvoir l’appliquer à
+   n’importe qu’elle texte dans votre document, et il recevra les mêmes
+   propriétés de mise en forme. De plus, il sera “balisé Titre 1”, ce qui
+   nous servira notamment dans les sommaires automatiques.
+
+   Vous retrouvez les styles dans l’onglet “Accueil”, section “Styles”
+
+   la barre de styles Word 2013
+
+
+Comment bien utiliser les styles dans Word
+
+   Pour bien utiliser les styles, je procède en 3 étapes, mais il est très
+   important que vous ayez compris l’introduction qui explique comment
+   fonctionne un Style.
+
+1. Définir des niveaux de styles.
+
+   Dans cette étape, il vous faudra juste réfléchir ! Vous allez devoir
+   déterminer, combien et quels niveaux de style vous aller utiliser. En
+   général, 3, 4 suffiront selon la complexité de votre document.
+
+   Un exemple, chaque style aura une mise en forme différente, et un
+   intérêt différent dans le document.
+     * Titre: pour le titre du document
+     * Titre 1: pour les titre de 1er niveau.
+     * Titre 2: pour les titre de 2nd niveau.
+     * Normal: Pour le corps du texte, c’est celui qui sera le plus
+       utilisé.
+
+   Et selon vos besoins:
+     * Citations: pour une mise en forme différente sur les citations.
+     * Emphase,
+     * Important,
+     * “Attention”
+     * etc…
+
+   En soit, vous pourriez en utiliser une infinité, il est juste bien
+   important que vous déterminiez ce dont vous avez besoin.
+
+   Sachez, que vous pourrez ré-utiliser ces styles dans d’autres documents
+   en les sauvegardant.
+
+2. Mettre en forme ses styles.
+
+   Maintenant que vous êtes sûr de ce que vous allez utiliser, il va
+   falloir créer ces fameuses mises en forme.
+
+   Pour cela, je vous conseille cette démarche:
+    1. Sélectionnez le texte à mettre en forme,
+    2. Cliquez sur le style qui vous intéresse, ou créer un nouveau style
+       (Titre 1 pour les titre, normal pour le corps, etc…)
+    3. Créez votre mise en forme,
+    4. Mettre à jour son style. Voilà l’étape la plus importante,
+       sélectionnez le texte mis en forme, puis cliquez droit sur le style
+       correspondant, puis sur “Mettre à jour **** pour correspondre à la
+       sélection“.
+
+   mettre à jour le style pour correspondre
+
+   Désormais votre style est associé à la mise en forme que vous venez de
+   créer.
+
+3. Mettre à jour son document
+
+   Répétez l’étape précédente pour tout vos styles et vous avez donc
+   maintenant 3,4 styles qui correspondent à vos besoins.
+
+   Il ne vous reste plus maintenant qu’à mettre à jour votre document.
+
+   Pour cela, sélectionnez tout les Titre de 1er niveau, y appliquer le
+   style Titre 1, et répétez cette étape pour chaque styles.
+
+   Une astuce: Maintenez CTRL + Clic Gauche pour
+   sélectionner plusieurs éléments.
+
+L’intérêt d’utiliser les styles dans son document
+
+   Bon c’est bien beau tout ça, mais au final est-ce vraiment utile les
+   styles ?
+
+   Evidemment, ma réponse est oui (je n’aurai pas fait un article dessus
+   sinon !).
+
+   Il y a 3 GROS avantages à utiliser les styles.
+    1. Vous allez pouvoir faire des sommaires très rapidement, car Word va
+       savoir à quel niveau correspond chaque titre, pour en apprendre
+       plus sur le sujet, visitez cet article.
+    2. Vous allez pouvoir mettre en forme un gros document de manières
+       très simple, rapidement, et sans faire d’erreurs en recopiant les
+       styles à chaque fois.
+    3. Vous allez pouvoir utiliser le mode plan plus facilement.
+
+   Pour afficher le mode plan, rendez-vous dans l’onglet Affichage, puis
+   dans la section “Affichages” cliquez sur “Plan“.
+
+   onglet affichage mode plan
+
+   Pour ce dernier point, il me faudra un article entier pour vous
+   expliquer en quoi le mode plan est utile. Mais pour l’heure, ce que je
+   peux vous en dire c’est que vous allez pouvoir n’afficher que les
+   “titre 1”, “titre 2”, ou autres, et faire des modifications très
+   simplement sans avoir besoin de vous balader à travers les pages de
+   votre document.
+
+   Dans la vidéo j’en parle un peu plus, mais je ferais un article plus
+   complet sur cet outil qui va vous permettre manipuler encore plus
+   intelligemment de gros documents.
+
+   exemple mode plan
+
+   Et c’est déjà la fin de cet article consacré aux styles !
+
+   Je reconnais que  celui là était un peu long, mais je pense qu’il est
+   important de bien comprendre la logique des outils pour bien les
+   utiliser et donc, toujours dans la même idée, gagner du temps dans son
+   travail !
+
+   J’espère que ça vous aura plus et aidé, comme d’habitude n’hésitez pas
+   à laisser vos avis, vos questions, et même vos plaintes ! Je me ferai
+   une joie de répondre 🙂
+
+Partager cet article:
+
+     * Tweet
+     *
+     * Imprimer
+     *
+
+WordPress:
+
+   J'aime chargement…
+   [INS: :INS]
+
+Matthieu Langlade Article écrit par Matthieu Langlade - Google +
+
+   Passionné de la suite Office et tout particulièrement de PowerPoint,
+   ses possibilités et la "slidologie", je souhaite partager mes
+   connaissances et donner des idées pour sortir des standards que l'on
+   s'impose.
+
+   Cet article a été publié dans Les Tutos, Word. Sauvegardez le
+   permalink.
+
+4 thoughts on “Word – Les styles, Gagner du temps dans la mise en forme (Tuto
+#6)”
+
+    1.
+   BDV says:
+       15 septembre 2015 at 9 h 57 min
+       Bonjour,
+       C’est le topo le plus intéressant que j’aie trouvé sur les styles,
+       mais je ne trouve pas encore la réponse à ma recherche: comment
+       utiliser le style (avec la mise en forme) créé dans un document,
+       dans d’autres nouveaux docs?
+       Merci.
+       Répondre
+          +
+        Matthieu Langlade says:
+            15 septembre 2015 at 16 h 35 min
+            Bonjour et merci pour ce message !
+            Alors, pour enregistrer ses styles il faut utiliser les
+            modèles Word. Ce qui n’est vraiment pas très pratique très
+            franchement.
+            Le principe: 1. Effacer le document dans lequel les styles
+            sont créés (Ctrl + A; Backspace), 2. Enregistrer le document
+            comme modèle Word.
+            Ensuite, pour réutiliser les styles, il ne suffira plus qu’à
+            charger ce modèle quand vous créez un nouveau document.
+            Personnellement, je déteste cette technique, mais c’est la
+            seule actuellement. J’attends réellement une nouveauté sur ce
+            sujet dans une prochaine version !
+            Répondre
+    2.
+   MICHEAU says:
+       2 mai 2017 at 15 h 38 min
+       Bonjour.
+       J’ai vainement essayé d’utiliser les procédures décrites et je me
+       heurte à une difficulté mes titres de niveaux différents, auxquels
+       j’attribue une numérotation n’apparaissent pas dans le “bon ordre”.
+       Je m’explique
+       niveau 1 : numérotation : 1
+       niveau 2 : numérotation : 1.1
+       niveau 3 : numérotation : 1.1.1
+       OR dans le texte, je me retrouve avec :
+       2. LE CONTEXTE D’ENTREPRISE ET DE LA SITUATION (ENTRE 7 ET 10
+       PAGES)
+       1.1 Présentation de l’entreprise, du secteur d’activité (1 page)
+       1.1.1 Données sur l’entreprise
+       2.1.1 Données sur le secteur d’activité
+       2.1 Contexte de la situation (évolutions réglementaires,
+       économique, social, d’emploi, de qualification…
+       Comment puis-je faire pour que ce soit dans un ordre “logique”
+       descendant ?
+       Merci de vos éclaircissements.
+       Dans cette attente
+       Salutations
+       Répondre
+          +
+        Matthieu Langlade says:
+            2 mai 2017 at 22 h 30 min
+            Souvent, c’est dû au fait que les numérotations des styles
+            sont indépendantes.
+            Il faut bien vérifier que l’on est la numérotation 1. Titre 1
+            1.1 Titre 2 1.1.1 Titre 3 et non le 1. 1.1 classique.
+            Répondre
+
+Laisser un commentaire Annuler la réponse.
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   Laisser un commentaire
+
+   [ ] Prévenez-moi de tous les nouveaux commentaires par e-mail.
+
+   [ ] Prévenez-moi de tous les nouveaux articles par email.
+
+Recherchez:
+
+   Search for: ____________________ Search
+
+Pub
+
+   [INS: :INS]
+
+Commentaires
+
+     * Matthieu Langlade dans 10 Clés pour Réussir une Présentation
+       PowerPoint
+     * Sev dans 10 Clés pour Réussir une Présentation PowerPoint
+     * Gustave Degus dans Bienvenue sur le site de Tutos Office !
+     * Form dans La Formule DATEDIF() – Différence entre 2 dates (Formule
+       #5)
+     * Maryse dans Fonctions Excel: NB, NB.SI, NB.VIDE, NBVAL – Comptez
+       ses cellules vides/pleines
+
+Articles récents
+
+     * Comment Faire une Somme Arithmétique sur Excel ? (Les Formules
+       Excel #6)
+     * Transformer un PowerPoint en Vidéo 1080p – Tuto PPT #7
+     * La Formule DATEDIF() – Différence entre 2 dates (Formule #5)
+     * Word – Les styles, Gagner du temps dans la mise en forme (Tuto #6)
+     * Comprendre les dates et les heures dans Excel – Tuto #3
+
+   Copyright © 2019 Tuto Office - Tutoriels vidéos sur Powerpoint, Word &
+   Excel..
+   Revera Theme adapté et traduit par Matthieu Langlade
+
+   IFRAME: likes-master
+
+   %d blogueurs aiment cette page :
+   #Tuto Office » Flux Tuto Office » Flux des commentaires Tuto Office »
+   Comprendre les dates et les heures dans Excel – Tuto #3 Flux des
+   commentaires alternate alternate
+
+Tuto Office
+
+     * Accueil
+     * Les Tutos
+          + Excel
+          + Powerpoint
+          + Word
+     * News
+     * Contact
+     * Demander un Tuto
+
+Excel
+
+   Les tutoriaux qui concernent Excel de 2007 à 2013.
+
+   Publié le 14 novembre 201414 novembre 2014 par Matthieu Langlade
+
+Comprendre les dates et les heures dans Excel – Tuto #3
+
+   IFRAME: http://www.youtube.com/embed/G8iQqwjSsi4
+
+   Bonjour à toutes et à tous,
+
+   Aujourd’hui, on va commencer à s’attaquer à un gros sujet dans Excel:
+   les heures et les dates. Pour cela, il va nous falloir pas moins de 6
+   articles ! Le premier de la série est aujourd’hui et sera le plus
+   théorique.
+
+   En effet, si on a l’ambition de jouer avec les dates, il faut
+   absolument comprendre ou au moins savoir comment Excel interprète les
+   dates.
+
+   – Je mettrai un lien ici quand les autres articles auront avancés –
+
+Formats de cellule et dates sont dans un bateau.
+
+   Cette partie pourrait se résumer à ça: le format de cellule.
+
+   Ce qu’il faut comprendre sur Excel, c’est qu’une date est un nombre.
+   Seul le format de cellule changera la donne.
+
+   Ainsi, si on écrit 41955 dans une cellule et que l’on passe le format
+   de cellule en date, Excel affiche le 12/11/2014.
+
+   Pour utiliser ce raisonnement, Excel part d’un principe simple:
+
+   1 = 24H = 01/01/1900
+
+   A partir de ça, et si vous n’avez pas besoin d’utiliser de dates
+   antérieures au 01/01/1900 (ce qui m’étonnerai fortement), vous allez
+   pouvoir faire ce que vous voulez.
+
+   On va pouvoir ainsi construire des dates et des heures, je vous résume
+   dans ce tableau quelques principes:
+
+   Tableaux + explications sur les valeurs de dates Excel
+
+   Dîtes vous bien que si vous avez compris ce tableau, vous avez tout
+   compris !
+
+Quelques formules de bases sur les dates et les heures.
+
+   Voici maintenant quelques formules de bases, qui sont à connaître, pour
+   extraire des données d’une date ou reconstruire une date.
+    1. =JOUR(donnée) : Permet d’extraire le jour d’une date.
+    2. =MOIS(donnée) :  Permet d’extraire le mois.
+    3. =ANNEE(donnée) :  Permet d’extraire l’année.
+    4. =SECONDE(donnée) :  Permet d’extraire le nombre de secondes d’un
+       temps.
+    5. =MINUTE(donnée) :  Permet d’extraire les minutes.
+    6. =HEURE(donnée) :  Permet d’extraire les heures.
+
+   Très facile non ?
+
+   Maintenant, voilà les deux formules opposées. Elles vont vous permettre
+   de construire une date ou une heure.
+    1. =DATE( année; mois; jour).
+    2. =TEMPS(heure; minute; secondes).
+
+   Tableaux des formules DATE et TEMPS Excel
+
+Insérer la date et l’heure d’aujourd’hui.
+
+   Voilà maintenant une formule bien pratique, comment insérer la date du
+   jour:
+
+   =AUJOURDHUI()
+
+   Avec aucun argument entre parenthèse, cela vous donnera la date tout
+   simplement. Vous voulez peut-être une méthode encore plus simple ?
+
+   Le raccourci: “CTRL” +” ;” insère la date du jour dans la cellule
+   sélectionnée. (je n’ai rien trouvé de plus simple)
+
+   Pour l’heure, il faut utiliser la formule =MAINTENANT().
+
+Incrémenter une série de date
+
+   Maintenant que vous savez comment fonctionne une date, vous vous doutez
+   qu’il va être très facile d’incrémenter une série.
+
+   Ainsi, si vous faites = 01/11/2014 + 1 Excel va vous donner 02/11/2014.
+
+   Eh bien sachez qu’il va être encore plus facile d’incrémenter une série
+   de date. (C’est l’article de la facilité aujourd’hui).
+
+   Excel propose un outil très pratique dans les options de recopie
+   incrémentée.
+
+   Ecrivez une date dans une formule, puis “étendez là” vers le bas en
+   sélectionnant le coin du bas-droit. Vous disposez maintenant des
+   options d’incrémentation.
+
+   Vous allez pouvoir ainsi incrémenter une série selon: les jours, les
+   jours ouvrés (5 jours sur 7), les mois et les années.
+
+   options d'incrémentation de série des dates Excel
+
+   Et voilà vous connaissez maintenant toute la théorie sur les dates et
+   les heures dans Excel !
+
+
+   N’hésitez pas à commenter l’article pour me donner vos retours et à
+   suivre le blog pour les prochains articles sur le sujet.
+
+
+   A bientôt !
+
+Partager cet article:
+
+     * Tweet
+     *
+     * Imprimer
+     *
+
+WordPress:
+
+   J'aime chargement…
+   [INS: :INS]
+
+Matthieu Langlade Article écrit par Matthieu Langlade - Google +
+
+   Passionné de la suite Office et tout particulièrement de PowerPoint,
+   ses possibilités et la "slidologie", je souhaite partager mes
+   connaissances et donner des idées pour sortir des standards que l'on
+   s'impose.
+
+   Cet article a été publié dans Excel, Les Tutos. Sauvegardez le
+   permalink.
+
+3 thoughts on “Comprendre les dates et les heures dans Excel – Tuto #3”
+
+    1.
+   Alex says:
+       21 mai 2015 at 11 h 08 min
+       Bonjour Matthieu,
+       Avant tout, bravo et merci pour vos tutoriels !
+       J’ai néanmoins une colle qui se pose à moi…
+       J’ai un fichier de suivi d’appel d’offres, que j’ouvre
+       régulièrement pour consultation, sans modification, mais que je ne
+       modifie qu’à réception des offres des entreprises.
+       J’ai une cellule où figure la date, mais j’aimerais savoir s’il
+       existe une formule pour que cette cellule change automatiquement
+       pour indiquer la date qu’à la condition qu’il y ait eu une
+       modification dans le document.
+       Cela est-il seulement possible ?
+       Merci,
+       Alexandre
+       Répondre
+    2.
+   POURAPRENDRE says:
+       22 novembre 2016 at 19 h 57 min
+       Tuto très bien fait . Bravo et merci. J’espère être aussi satisfait
+       pour arriver à travailler avec des jours et heure sur Excel via
+       Outlook.
+       Bon courage et merci.
+       Répondre
+    3.
+   cobra says:
+       5 décembre 2017 at 17 h 04 min
+       super les tutos … grand merci de faire partager le savoir de façon
+       simple
+       Répondre
+
+Laisser un commentaire Annuler la réponse.
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   Laisser un commentaire
+
+   [ ] Prévenez-moi de tous les nouveaux commentaires par e-mail.
+
+   [ ] Prévenez-moi de tous les nouveaux articles par email.
+
+Recherchez:
+
+   Search for: ____________________ Search
+
+Pub
+
+   [INS: :INS]
+
+Commentaires
+
+     * Matthieu Langlade dans 10 Clés pour Réussir une Présentation
+       PowerPoint
+     * Sev dans 10 Clés pour Réussir une Présentation PowerPoint
+     * Gustave Degus dans Bienvenue sur le site de Tutos Office !
+     * Form dans La Formule DATEDIF() – Différence entre 2 dates (Formule
+       #5)
+     * Maryse dans Fonctions Excel: NB, NB.SI, NB.VIDE, NBVAL – Comptez
+       ses cellules vides/pleines
+
+Articles récents
+
+     * Comment Faire une Somme Arithmétique sur Excel ? (Les Formules
+       Excel #6)
+     * Transformer un PowerPoint en Vidéo 1080p – Tuto PPT #7
+     * La Formule DATEDIF() – Différence entre 2 dates (Formule #5)
+     * Word – Les styles, Gagner du temps dans la mise en forme (Tuto #6)
+     * Comprendre les dates et les heures dans Excel – Tuto #3
+
+   Copyright © 2019 Tuto Office - Tutoriels vidéos sur Powerpoint, Word &
+   Excel..
+   Revera Theme adapté et traduit par Matthieu Langlade
+
+   IFRAME: likes-master
+
+   %d blogueurs aiment cette page :
+   Options de sommaire sous Word 2007
+
+   Word – Réaliser un sommaire en 2 étapes
+
+   Comment réaliser un sommaire sous Word en 2 étapes, sans devoir tout
+   réécrire à la main. [Article transféré]
+   Tuto Office
+   55 Commentaires
+   (BUTTON)
+
+     * (BUTTON) Intégration WordPress
+     * (BUTTON) Inclusion HTML
+
+   http://tuto-office.F
+
+   Copiez-collez cette URL dans votre site WordPress pour l’inclure
+
+   <blockquote class="wp-embedded-content"><a href="http://tuto
+   <script type='text/javascript'>_____________________________
+   <!--//--><![CDATA[//><!--___________________________________
+   		!function(a,b){"use strict";function c(){if(!e){e=!0;var a
+   //--><!]]>__________________________________________________
+   </script><iframe sandbox="allow-scripts" security="restricte
+
+   Copiez-collez ce code sur votre site pour l’y intégrer
+   (BUTTON)
+
+Tuto Office
+
+   Veuillez saisir votre identifiant ou votre adresse de messagerie. Un
+   lien permettant de créer un nouveau mot de passe vous sera envoyé par
+   e-mail.
+
+   Nom d’utilisateur ou adresse e-mail
+   ____________________
+
+   Générer un mot de passe
+
+   Connexion
+
+   ← Retour vers Tuto Office

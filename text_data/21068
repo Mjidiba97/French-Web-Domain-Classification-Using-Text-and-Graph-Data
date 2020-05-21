@@ -1,0 +1,943 @@
+   #WordPress tuto » global feed next
+
+WordPress tuto
+
+Conseils, tutoriels, astuces et thèmes pour utiliser WordPress
+
+   Connexion
+   Flux RSS principal.
+
+   ____________________ Chercher
+
+   22 Avr 2019
+
+Retrouver l’anien éditeur de WordPress
+
+   Par libretto - 1 commentaire.
+
+   Je ne sais pas quelle mouche a piqué les éditeurs de WordPress mais ils
+   nous ont claqué un nouvel éditeur d’articles. C’est une horreur, je n’y
+   comprends rien. Après avoir été l’éditeur de ce vieux site de tu to
+   pour WordPress, me voilà désemparé.
+
+   Bon, venons en au fait, il existe un plugin qui nous rend ce bon vieil
+   éditeur TinyMce. Il s’appelle Classic Editor.
+
+   A vous de jouer
+
+
+   Categories: Actualités, Plugins
+   22 Mai 2012
+
+Une astuce pour avoir un Rich Snippet sur la homepage avec WP Customer
+Reviews
+
+   Par libretto - 61 commentaires.
+
+   Si vous utilisez le plugin WP Customer Review, je vous ai expliqué que
+   l’on ne pouvait pas facilement obtenir une page d’accueil qui soit
+   valide du point de vue Rich Snippet avec l’outil de validation de
+   Google.
+
+   Je viens de trouver une astuce pour contourner ce bug de WP Customer
+   Review.
+
+(suite…)
+
+   Categories: Astuces WordPress
+   tags: référencement SEO
+   20 Avr 2012
+
+Le widget GD Star Rating
+
+   Par libretto - 42 commentaires.
+
+   Widget Gd Star Rating
+
+   Ce widget n’est pas des plus intuitifs, voici un tout petit tuto avec
+   ce que j’en ai compris. Cela étoffe encore un peu ma petite collection
+   d’articles sur Gd Star Rating.
+
+   Gd Star Rating est livré avec 3 widgets par défaut
+     * Gd Blog Rating : permet d’afficher la note générale des évaluations
+       exprimées sur le site. Ne permet malheureusement pas de passer la
+       validation pour avoir un rich snippet pour l’accueil du site.
+     * GD comment rating : permet d’afficher les commentaires qui ont été
+       les plus appréciés.
+     * GD Star Rating : affiche les articles les mieux notés.
+
+   C’est de ce dernier widget qu’il va être question ici. Vous pouvez voir
+   le résultat sur le site des cartes d’anniversaire.
+
+   (suite…)
+   Categories: Plugins
+   tags: GD Star Rating, widget
+   05 Avr 2012
+
+[Test et tuto] GD Star Rating
+
+   Par libretto - 48 commentaires.
+
+   GD Star Rating est un plugin pour WordPress qui permet énormément de
+   choses mais en particulier d’afficher une note sous la forme d’étoiles
+   dans un article WordPress, d’améliorer son Snippet dans Google (voir
+   Google Rich Snippet) et de faire « participer » vos visiteurs en
+   sollicitant leur avis.
+
+   J’ai déjà commencé à écrire une petite série d’articles sur GD Star
+   Rating, celui-ci devrait être consacré à une appréciation générale de
+   cette extension.
+
+Principales fonctionnalités de cette extension :
+
+     * Gestion des notes et des avis pour les articles, pages et
+       commentaires.
+     * De nombreuses options pour l’affichage de ces notes et avis
+     * Plusieurs widget paramétrables pour exploiter ces informations.
+     * Possibilité de n’afficher que l’avis de l’auteur.
+     * Possibilité de gérer une review / avis avec notations sur plusieurs
+       points.
+     * Possibilité d’utiliser des étoiles et / ou des pouces vers le haut
+       ou vers le bas.
+
+Voici un peu en vrac ce que j’ai à en dire. (suite…)
+
+   Categories: Plugins
+   tags: GD Star Rating, référencement SEO
+   30 Mar 2012
+
+Problème résolu : Empty page dans Google Rich Snippets Testing Tool
+
+   Par libretto - 24 commentaires.
+
+   Alors que je me bat avec l’outil de test des Rich Snippet et GD Star
+   Rating pour essayer d’obtenir la confirmation que le balisage en
+   microformat de mes pages est valides pour un site sur les chasses au
+   trésor, voilà un un exemple de ce que j’obtiens systématiquement (pour
+   toutes les pages testées) :
+
+   The following errors were found during preview generation:
+     * Empty page.
+     * This page does not contain authorship or rich snippet markup.
+
+   Voici le code généré par Gd Star Rating pour la notation d’une de ces
+   pages :
+<span class="hreview-aggregate"><span class="item"><span class="fn">Enigmes faci
+les pour jeu de piste</span></span>, <span class="rating"><span class="average">
+10.0</span> out of <span class="best">10</span> based on <span class="votes">1</
+span> rating <span class="summary"></span></span></span>
+
+Ce que j’ai fait pour essayer de résoudre ce problème
+
+   (suite…)
+   Categories: Actualités
+   tags: GD Star Rating, référencement SEO
+   22 Mar 2012
+
+Quelques considérations sur les Rich Snippet
+
+   Par libretto - 45 commentaires.
+
+   exemples de rich snippet
+
+   Les Rich Snippet sont des snippet améliorés qui apparaissent dans les
+   résultats de Google, la traduction proposée par Google est « extrait
+   enrichi ». Ils étaient auparavant réservés à une série de sites en
+   « whitelist » mais Google est en train de généraliser la possibilité
+   d’afficher ces Rich Snippet pour les « petits » sites.
+
+   Il existe différents types de Rich Snippet (produits, review, avis,
+   recette, événement, personne, musique, organisation…). Pour le snippet
+   auteur, il semble que cela ne fonctionne qu’aux US pour le moment et
+   qu’il faille obtenir une sorte d’accréditation particulière.
+
+Intérêt SEO :
+
+   Il est assez évident, les étoiles jaunes dans les résultats de Google
+   permettent de se distinguer de la concurrence et d’augmenter sont taux
+   de clic ce qui entraîne généralement aussi une amélioration de la
+   position dans les résultats de Google.
+
+Limites au niveau SEO.
+
+   Il me semble qu’il ne faut pas essayer de fourrer des Rich Snippet à
+   tort et à travers. Il y a deux risques principaux :
+    1. Si votre contenu n’est pas à la hauteur de ce qu’attendent les
+       visiteurs sur la requête, vous risquer d’augmenter votre taux de
+       rebond et le nombre de fois ou vos visiteurs retournent dans Google
+       pour aller visiter un autre lien. Cela n’est pas bon du tout pour
+       un positionnement durable dans les SERP.
+    2. Comme il est déjà écrit que ce système va attirer les référenceur
+       comme le miel attire les mouches, Google a mis en place un
+       formulaire spécifique de Spam Report pour avoir des données
+       permettant d’améliorer son algorithme mais sans doute aussi pour
+       blacklister (au moins au niveau « Rich Snippet ») certains sites.
+       Qui sait si ce blacklistage ne pourrait pas s’étendre au delà du
+       simple affichage du snippet ?
+
+Mon idée sur l’avenir des Rich Snippet.
+
+   (suite…)
+   Categories: Actualités
+   tags: GD Star Rating, référencement SEO
+   20 Mar 2012
+
+GD Star Rating et Wpmu
+
+   Par libretto - 33 commentaires.
+   avis gd star rating
+
+   avis GD Star Rating
+
+   Ceci est le deuxième article de ma série sur GD Star Rating.
+
+   Il peut y avoir quelques problèmes si vous utilisez GD Star Rating sur
+   un wordpress multi utilisateur.
+
+   Si vous avez activé le plugin sur tous les sites (Activation sur le
+   réseau depuis le panneau d’administration du réseau de blogs WordPress
+   WPMU), vous risquez d’obtenir 3 lignes de messages d’erreur sur chacun
+   des sites où vous n’avez pas configuré GD Star Rating.
+
+   Voici le type de message que vous pourriez observer :
+
+   Warning: Invalid argument supplied for foreach() in
+   …/wp-content/plugins/gd-star-rating/code/blg/helpers.php on line 75
+   Warning: Invalid argument supplied for foreach() in
+   …/wp-content/plugins/gd-star-rating/code/class.php on line 1747
+   Warning: Invalid argument supplied for foreach() in
+   …/wp-content/plugins/gd-star-rating/code/class.php on line 1753
+
+La solution est toute simple :
+
+   (suite…)
+   Categories: Plugins
+   tags: GD Star Rating, WPMU
+   18 Mar 2012
+
+Traduire les affichages de GD Star Rating
+
+   Par libretto - 53 commentaires.
+
+   Avis chasse au trésor
+
+   Alors que je suis en train d’installer l’extension GD Star Rating sur
+   mon site de conseils pour organiser des chasses au trésor pour enfants,
+   je voudrais changer les textes qui sont affichés par défaut. Quand on
+   change directement les éléments dans l’onglet « Template T2 » du plugin
+   ces traductions ne sont pas enregistrées et l’affichage reste en
+   anglais.
+
+Voici ce qu’il faut faire pour que la traduction fonctionne :
+
+   (suite…)
+   Categories: Plugins
+   tags: GD Star Rating, plugin
+   10 Oct 2011
+
+Lister les auteurs sur une page pour un site collaboratif
+
+   Par libretto - 29 commentaires.
+
+   Ma femme vient de lancer un nouveau site avec des cartes d’invitation
+   pour anniversaire à télécharger et ce site permet à des graphistes
+   indépendant de présenter leurs travaux en se créant un compte et en
+   mettant en lignes leurs créations de cartes d’invitations.
+
+   Pour mettre en avant les auteurs sur son site, il y a d’abord un petit
+   cartouche en dessous de chaque article avec le nom de l’auteur, son
+   gravatar, l’URL de son site et ses informations biographiques. Ce
+   cartouche est « fourni » par défaut avec le thème (Arras) choisi.
+
+   Un autre élément à étudier si vous voulez mettre en avant les auteurs
+   de votre site collaboratif est la page archive obtenue quand on
+   sélectionne un auteur en particulier. Là encore cette fonction est très
+   bien prise en compte par le thème Arras avec l’affichage des
+   informations de l’auteur et aussi de toutes ses contributions.
+
+   Par contre, pour faire apparaitre une liste « sympa » des auteurs sur
+   une page particulière, l’affaire s’est révélée un peu plus compliquée
+   que prévu et j’ai du tester de nombreux plugins pour arriver à mes
+   fins. Cet article va donc présenter les différents plugins que j’ai
+   testé avec quelques commentaires.
+
+(suite…)
+
+   Categories: Plugins
+   tags: CMS
+   22 Sep 2011
+
+Faille de sécurité dans le thème Arras.
+
+   Par libretto - 31 commentaires.
+
+   Attention : ceux qui utilisent le thème Arras feraient bien de faire
+   attention ces jours ci. Il y a des problèmes avec le fichier
+   timthumb.php.
+
+   J’ai eu le tour (comme on dit dans le Nord) et j’ai déjà raconté ça
+   ici. Heureusement d’ailleurs qu’OVH a mis en place des sécurités qui
+   sont assez embarrassantes (site mis hors ligne instantanément) mais qui
+   obligent au moins à réagir.
+
+Quelques conseils : (suite…)
+
+   Categories: Actualités
+   tags: probleme, securite
+   1 2 3 … 36 »
+   Pages
+     * A propos
+     * Tags
+     * Contact
+     * Annuaire
+
+   Catégories
+     * Actualités
+     * Astuces WordPress
+     * Autres astuces
+     * Mes plugins
+     * Plugins
+     * Thèmes WordPress
+     * WPMU
+
+   Archives
+     * avril 2019
+     * mai 2012
+     * avril 2012
+     * mars 2012
+     * octobre 2011
+     * septembre 2011
+     * mai 2011
+     * mai 2010
+     * mars 2010
+     * février 2010
+     * janvier 2010
+     * décembre 2009
+
+     * Copains
+          + Anniversaire
+          + Aspirateur
+          + Chasse au trésor
+          + Comment se maquiller
+          + Fran6
+          + Partenaires
+          + Test ADSL
+          + Tondeuse
+          + WordPress fr
+
+   Propulsé par WordPress | Thème Grassland de Spectacu.la WP Themes
+   Club | Traduction Wordpress tuto
+   #WordPress tuto » global feed prev next
+
+WordPress tuto
+
+Conseils, tutoriels, astuces et thèmes pour utiliser WordPress
+
+   Connexion
+   Flux RSS principal.
+
+   ____________________ Chercher
+
+   20 Sep 2011
+
+« You don’t have permission to access / on this server. » – hébergement
+mutualisé OVH
+
+   Par libretto - 30 commentaires.
+
+   Bon, hier tout allait bien, sur mes sites hébergés sur un serveur
+   mutualisé chez OVH (service Premium) et je n’ai pas bricolé dans les
+   plugins ni fait de mise à jour de wordpress (cela dit, j’ai fait
+   quelques mises à jour il y a 3 jours).
+
+   Voici donc mon beau message d’erreur :
+
+   403 Forbidden  – You don’t have permission to access / on this server.
+
+Log de mes actions et réflexions
+
+   (suite…)
+   Categories: Actualités
+   tags: hébergement, probleme
+   16 Sep 2011
+
+Taille maximale des fichiers : 1MB – Comment modifier ce paramètre ?
+
+   Par libretto - 42 commentaires.
+
+   Bon voilà le problème. J’ai un ensemble de sites qui fonctionnent sous
+   WPMU (WordPress Multi Utilisateurs) et la taille de l’upload des
+   fichiers est limitées à 1MB.
+   Je viens de faire une petite recherche sur Google sur ce sujet et je
+   n’ai rien trouvé comme réponse évidente en langue française. C’est donc
+   l’occasion de compléter mon petit site WordPress-tuto qui commence un
+   peu à prendre la poussière ces derniers temps .
+
+   (suite…)
+   Categories: WPMU
+   tags: erreur, probleme, WPMU
+   30 Mai 2011
+
+La page n’est pas redirigée correctement
+
+   Par libretto - 28 commentaires.
+
+   Alors que je cafouille dans une installation de WordPress, voici le
+   message que je viens de découvrir ce soir :
+
+   (suite…)
+   Categories: Actualités
+   tags: probleme
+   27 Mai 2010
+
+Plugin e-commerce pour WordPress
+
+   Par libretto - 114 commentaires.
+
+   Jusqu’à aujourd’hui, j’utilisais le plugin are_paypal pour la petite
+   boutique de chasse au trésor de ma femme mais comme elle n’en est pas
+   très satisfaite, j’ai décidé de faire un petit tour dans ce que
+   WordPress proposait comme plugin pour gérer son e-commerce.
+
+Notre cahier des charges :
+
+     * Vendre des téléchargements.
+     * Permettre de vendre des CD (donc avec collecte des adresses pour
+       expédition par la poste)
+     * Paiement via Paypal.
+     * Un système simple et compréhensible pour les utilisateurs.
+
+Critique du plugin Are_Paypal.
+
+   Le flux de vente n’est pas intuitif pour les utilisateurs (même
+   expérimentés ) : se créer un compte dans WordPress – se loguer à ce
+   compte (après avoir reçu l’email de confirmation) – retrouver l’article
+   que l’on voulait acheter – payer via Paypal – accéder à la suite de
+   l’article pour pouvoir faire les téléchargements.
+
+   Ce système est trop complexe pour des acheteurs qui sont maintenant
+   habitués à acheter sur internet en 2 ou 3 clics.
+
+Les plugins e-commerce de WordPress
+
+   Je compte tester autant de plugins qu’il faut, mais avant cela, voici
+   d’abord une petite liste des plugins e-commerce publiés sur WordPress
+   et mes premières impression à la lecture de leur description.
+
+   (suite…)
+   Categories: Plugins
+   tags: e-commerce, monetiser
+   26 Mar 2010
+
+Un widget pour afficher les articles importants
+
+   Par libretto - 49 commentaires.
+
+   Comment faire pour mettre en avant des articles que vous jugez plus
+   importants que les autres sur votre site ou blog ?
+
+   Le problème se pose par exemple pour mon site sur les piscines
+   écologiques avec beaucoup d’articles sur les plantes et les animaux
+   aquatiques mais aussi des articles plus intéressants pour mes visiteurs
+   qui voudraient en savoir plus sur le prix des piscines naturelles, la
+   déclaration préalable de travaux ou le fonctionnement des piscines
+   naturelles alors que ce sont des articles plus ou moins anciens et donc
+   peu accessible quand on utilise le système traditionnel de publication
+   de WordPress : les derniers articles publiés sont les plus visibles.
+     * Une première solution est de mettre en ligne une page d’accueil qui
+       référence les articles les plus important, c’est par exemple ce que
+       j’ai fait avec mon site sur les piscines naturelles.
+     * Une solution complémentaire est d’afficher ces articles dans la
+       barre latérale. L’avantage de la barre latérale est qu’elle rend
+       disponible ces articles depuis toutes les pages du site et vous
+       pouvez ainsi améliorer un peu leur référencement en augmentant le
+       nombre de liens internes qui pointent vers eux.
+
+   J’ai essayé de trouver le widget pour WordPress qui va bien et voici le
+   résultat de ces recherches :
+   (suite…)
+   Categories: Plugins
+   tags: CMS, référencement SEO, widget
+   08 Mar 2010
+
+Check List post installation WordPress
+
+   Par libretto - 69 commentaires.
+
+   wordpress
+
+   Après avoir installé WordPress sur votre serveur vous aurez un minimum
+   de personnalisation et de paramétrages à effectuer avant de pouvoir
+   commencer à bloguer.
+
+   Sur ce sujet BraveNewWorld a déjà écrit un article intéressant mais
+   comme je ne partage pas tout à fait le même point de vue, et que ce
+   type de tutoriel manquait vraiment à WordPress tuto,  voici ma
+   Checklist personnelle.
+
+   (suite…)
+   Categories: Astuces WordPress
+   tags: administration, bases, blog, commentaires, permaliens,
+   personnalisation, référencement SEO, rewriting, sauvegarde,
+   statistiques
+   02 Mar 2010
+
+Thème WordPress pour les amateurs de poissons
+
+   Par libretto - 42 commentaires.
+   poissons
+
+   poissons
+
+   J’ai l’impression que les créateurs du thème Fishlower avaient plus en
+   tête les pécheurs de poissons que les poissons d’avril mais voilà en
+   tout cas un thème qui pourrait aussi convenir aux amateurs des poissons
+   en aquarium.
+   Les poissons se retrouvent dans ce thème au niveau du titre de chaque
+   article et dans l’entête.
+
+   Page du thème : chez WordPress extend.
+
+   Démonstration : la VO et la VF.
+
+   Téléchargement : Fishlover-fr.zip [ téléchargements]
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   26 Fév 2010
+
+Un thème WordPress inspiré du notepad de l’iPhone
+
+   Par libretto - 39 commentaires.
+
+   notepad-screenshot Un thème qui a eu la bonne idée de s’inspirer de
+   l’application de prise de notes des iPhones. Il a été créé par le
+   studio N.design a qui nous devons déjà quelques très beaux thèmes comme
+   l’assez fameux iThème autrefois utilisé ici même.
+
+   Page du thème : chez n.design.
+   Démonstration : le VO et la VF.
+
+   Téléchargement : Notepad-fr.zip [ téléchargements] Version 1.3
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   23 Fév 2010
+
+Thème WordPress magazine Gunungkidul
+
+   Par libretto - 48 commentaires.
+
+   Gunungkidul-WordPress-Theme-620x1561
+
+   Voici un thème du genre magazine signé par l’excellent Jauhari a qui
+   nous devons déjà quelques thèmes traduits ici comme Ngatini et Sumenep.
+
+   Et en quoi ce thème peut-être classé dans la famille des thèmes
+   magazine :
+     * Ambiance graphique en noir et blanc.
+     * Basé sur une grille bien respectée
+     * Beaucoup d’informations grâce au 3 zone « widgétisées » dans le
+       pied.
+     * Polices soignées (sans sérif : Helvetica et Arial)
+     * Menu basé sur les pages très soigné avec un menu déroulant
+       dévoilant les sous pages.
+     * Thème conçu dans une optique CMS avec un fil d’ariane intégré.
+
+   Page du thème : chez GPL WordPress themes and plugins.
+   Démonstration : le VO et la VF.
+
+   Téléchargement : Gunungkidul-fr.zip [ téléchargements] Version 1.1.2
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes, magazine
+   22 Fév 2010
+
+Envoi de mail depuis WordPress sur mutualisé OVH
+
+   Par libretto - 54 commentaires.
+
+   mail art
+
+   mail art
+
+   Parfois, sans explication, vous n’arrivez pas à envoyer de mail depuis
+   votre site sous WordPress :
+     * Votre formulaire de contact ne fonctionne pas
+     * Vous n’arrivez pas à vous envoyer un nouveau mot de passe.
+     * Vos utilisateurs ne reçoivent pas leur courriel de confirmation
+     * Vos sauvegardes automatisées n’arrivent pas dans vos boites mails.
+     * La fonction PHP Mail() a l’air ne ne plus marcher
+
+   Si vous êtes hébergé chez OVH il y a un truc à vérifier :
+
+   (suite…)
+   Categories: Astuces WordPress
+   tags: administration, erreur, hébergement, newsletter, sauvegarde
+   « 1 2 3 4 … 36 »
+   Pages
+     * A propos
+     * Tags
+     * Contact
+     * Annuaire
+
+   Catégories
+     * Actualités
+     * Astuces WordPress
+     * Autres astuces
+     * Mes plugins
+     * Plugins
+     * Thèmes WordPress
+     * WPMU
+
+   Archives
+     * avril 2019
+     * mai 2012
+     * avril 2012
+     * mars 2012
+     * octobre 2011
+     * septembre 2011
+     * mai 2011
+     * mai 2010
+     * mars 2010
+     * février 2010
+     * janvier 2010
+     * décembre 2009
+
+     * Copains
+          + Anniversaire
+          + Aspirateur
+          + Chasse au trésor
+          + Comment se maquiller
+          + Fran6
+          + Partenaires
+          + Test ADSL
+          + Tondeuse
+          + WordPress fr
+
+   Propulsé par WordPress | Thème Grassland de Spectacu.la WP Themes
+   Club | Traduction Wordpress tuto
+   #WordPress tuto » global feed prev next
+
+WordPress tuto
+
+Conseils, tutoriels, astuces et thèmes pour utiliser WordPress
+
+   Connexion
+   Flux RSS principal.
+
+   ____________________ Chercher
+
+   19 Fév 2010
+
+Comment migrer un blog wordpress.com vers votre propre domaine
+
+   Par libretto - 102 commentaires.
+
+   Voici un résumé d’un « how to » très détaillé, publié chez Digital
+   Inspiration par Amit Agarwal, qui permet de quitter WordPress.com.
+
+   Ce guide s’adresse à tout ceux qui entreprennent de déplacer leur site
+   créé chez WordPress.com vers un domaine personnel qui utilise le
+   logiciels open source que l’on trouve sur wordpress.org.
+
+   Après la migration, tous les liens de votre ancien blog vont continuer
+   de fonctionner et vos visiteurs seront redirigés vers le nouveau site.
+
+   Pourquoi migrer vers WordPress.org?
+
+   Comme bien d’autres, vous avez démarré votre premier blog sur
+   WordPress.com parce que le service est gratuit, que vous n’avez pas
+   besoin de compétences techniques et qu’il y a plein de widgets, et de
+   thèmes pour personnaliser votre blog.
+
+   Ensuite, alors que votre blog prenait une certaine ampleur, vous vous
+   êtes confrontés à certaines limites. Par exemple, vous ne pouvez pas
+   faire de l’argent avec votre  audience en utilisant Google Adsense qui
+   est interdit sur WordPress.com. Il y a aussi des milliers de beaux
+   thèmes que vous ne pouvez pas adopter (pour les français, vous n’avez
+   pas non plus accès aux thèmes wordpress traduits en français). De plus
+   WordPress.com n’autorise pas le Javascript et vous ne pouvez donc pas
+   profiter des statistiques de Google Analytics.
+
+   Une autre bonne raison de migrer est liée à la gestion de votre image
+   de marque.
+
+   Étape 1 : Se procurer un nom de domaine et un hébergement (suite…)
+   Categories: Actualités
+   tags: hébergement, monetiser, upgrader, wordpress.com
+   19 Fév 2010
+
+Thème WordPress wpTune
+
+   Par libretto - 23 commentaires.
+
+   wptune300x225
+   Un thème signé wpBurn, auteur que d’un thème pour WordPress que vous
+   avec déjà pu découvrir ici.
+
+   Ce qui m’a plus dans ce thème :
+     * Très lisible
+     * Effet d’ombres grises dans les articles très élégants.
+     * Petite fantaisie dans le rollover des liens (je vous laisse
+       découvrir).
+     * 2 menus basés sur les catégories et sur les pages.
+
+   Page du thème : chez wpBurn.
+   Démonstration : le VO et la VF.
+
+   Téléchargement : wpTune-fr.zip [ téléchargements] Version 1.1.2
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   18 Fév 2010
+
+Uploader un gros fichier dans un site WordPress
+
+   Par libretto - 32 commentaires.
+
+   Alors que je tente de mettre en ligne un important fichier en PDF avec
+   plein d’images, j’ai essayé d’utiliser le gestionnaire de média de
+   WordPress et je suis tombé sur le message d’erreur suivant :
+
+     This file is too big. The maximum upload size for your server is
+     32M.
+
+   Ce qui donne en version imagée :
+   This file is too big
+
+   This file is too big
+
+   Le paramètre de taille maximale est fixée du coté serveur (OVH dans mon
+   cas) est n’est pas modifiable quand on est sur un hébergement
+   mutualisé.
+
+   Cela dit, la solution est toute simple mais appelle un bémol :
+
+(suite…)
+
+   Categories: Astuces WordPress
+   tags: erreur, probleme
+   17 Fév 2010
+
+Thème WordPress ChocoTheme
+
+   Par libretto - 28 commentaires.
+
+   chocotheme
+
+   Ce thème tire manifestement son nom de la couleur de son fond couleur
+   chocolat et aux aspects de cuir cousu. Il a déjà été repéré par le blog
+   débutant wordpress.
+
+   Quelques éléments remarquables :
+     * Image du fond très soignée avec des petits détails comme le fil à
+       coudre décousu.
+     * Texte très lisible écrit sur un fond crème.
+     * Affichage des dates bien intégré dans le style.
+     * Subtil rollover sur le menu paramétrable de l’entête.
+
+   Page du thème : chez cssMayo.
+   Démonstration : la VO et la VF.
+
+   Téléchargement : ChocoThème-fr.zip [ téléchargements] Version 0.03
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   12 Fév 2010
+
+Thème WordPress coeur rouge
+
+   Par libretto - 19 commentaires.
+
+   Coeur rouge
+
+   Voici donc donc un thème plein de cœurs rouges, très bien pour la
+   prochaine Saint Valentin et avec vraiment plein de cœurs partout.
+
+   Page du thème : chez Extend. Rien chez l’auteur Intuitive design.
+
+   Démonstration : Pas de VO pour ce thème et voici la VF.
+
+   Téléchargement : Heartland-fr.zip [ téléchargements] Version 1.1
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   10 Fév 2010
+
+Thème WordPress tout en gazon
+
+   Par libretto - 26 commentaires.
+
+   gazon
+
+   Voici donc un bien joli thème avec en particulier un pied « toujours
+   visible » sur le thème du gazon.  Ce thème serait d’ailleurs pas mal
+   pour rafraichir cet horrible site sur les tondeuses et la pelouse.
+
+   Remarquez aussi les gentils petits papillons qui ornent les titres des
+   articles…
+
+   Page du thème : chez Extend. Rien chez l’auteur Adazing.
+
+   Démonstration : Pas de VO pour ce thème et voici la VF.
+
+   Téléchargement : GreenerSide-fr.zip [ téléchargements] Version .4
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   05 Fév 2010
+
+Cette vidéo a été supprimée pour infraction aux conditions d’utilisation
+
+   Par libretto - 26 commentaires.
+
+   youtube
+
+   Cette question ne concerne pas directement WordPress mais comme je ne
+   sais pas où poster cette histoire et où prendre mes notes sur cette
+   affaire, je me suis dit que cela pouvait quand même intéresser pas mal
+   de lecteurs de WordPress tuto.
+   Voilà l’histoire : j’avais publié une superbe vidéo sur Youtube dans un
+   article de mon site sur la piscine naturelle et je viens de me rendre
+   compte qu’elle n’était plus en ligne avec le message suivant :
+
+     Cette vidéo a été supprimée pour infraction aux conditions
+     d’utilisation
+
+   Je me suis tout de suite précipité dans Youtube pour essayer de voir
+   quelles conditions d’utilisation j’avais bien pu enfreindre et pour
+   leur demander de réintégrer au plus vite ma vidéo. Le pricipal problème
+   dans ce cas est de trouver le lien qui permet de faire sa demande de
+   récupération / réinclusion / explication à Youtube.
+
+   Ce lien le voici :
+
+   (suite…)
+   Categories: Actualités
+   tags: vidéo
+   04 Fév 2010
+
+Utiliser la description des tags pour la méta description.
+
+   Par libretto - 50 commentaires.
+   chasse au trésor
+
+   chasse au trésor
+
+   Depuis assez longtemps je m’intéresse au snippet des tags et à la
+   balise meta description qui permet d’optimiser son taux de clics dans
+   les pages de résultats de Google.
+
+   Cela fait, par contre assez peu de temps que WordPress propose, en
+   standard, de renseigner dans l’admin une description des tags (menu
+   article / mots clefs d’article)
+
+   Pour utiliser cette description dans la balise méta description des
+   pages d’archives des tags, Justin Tadlock nous propose la solution
+   suivante avec la fonction tag_description() qui n’est disponible que
+   depuis la version 2.8 de WordPress :
+
+   (suite…)
+   Categories: Astuces WordPress
+   tags: référencement SEO, tags
+   02 Fév 2010
+
+Thème WordPress Lysa
+
+   Par libretto - 33 commentaires.
+
+   lysa-theme-screen-thumb-dannci
+
+   Un thème très intéressant car très configurable (8 thèmes de couleur)
+   et muni de 6 zones widgétisées dans le pied et dans la barre latérale.
+
+   Page du thème : chez Dannci.
+
+   Démonstration : la VO et la VF.
+
+   Téléchargement : Lysa-fr.zip [ téléchargements] V1.2
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes, magazine
+   02 Fév 2010
+
+Thème WordPress pro : WP-Creativix
+
+   Par libretto - 57 commentaires.
+
+   wp-creativix
+
+   Un thème plus adapté à des projets professionnels qu’à un blog
+   traditionnel.
+
+   Ce qui permet de classer ce thème dans les « thèmes pro » :
+     * Grande sobriété des couleurs dominées par un gris clair et relevé
+       d’une couleur paramétrable dans les options du thème.
+     * Pas de longue liste d’articles en page d’accueil : juste 2 articles
+       en colonne + la catégorie en une.
+     * Colonne latérale peu développée sur l’accueil (attention, c’est
+       important pour l’équilibre du thème).
+     * Fil d’ariane qui permet de ne pas se perdre.
+     * Possibilité de présenter ses créations / produits / services dans
+       une barre défilante sur l’accueil (appelée portfollio).
+
+   Page du thème : chez iwebix.de.
+   Démonstration : le VO et la VF.
+
+   Téléchargement : WP-Creativix-fr.zip [ téléchargements] Version 1.2.3
+
+   (suite…)
+   Categories: Thèmes WordPress
+   tags: 2-colonnes
+   « 1 2 3 4 5 … 36 »
+   Pages
+     * A propos
+     * Tags
+     * Contact
+     * Annuaire
+
+   Catégories
+     * Actualités
+     * Astuces WordPress
+     * Autres astuces
+     * Mes plugins
+     * Plugins
+     * Thèmes WordPress
+     * WPMU
+
+   Archives
+     * avril 2019
+     * mai 2012
+     * avril 2012
+     * mars 2012
+     * octobre 2011
+     * septembre 2011
+     * mai 2011
+     * mai 2010
+     * mars 2010
+     * février 2010
+     * janvier 2010
+     * décembre 2009
+
+     * Copains
+          + Anniversaire
+          + Aspirateur
+          + Chasse au trésor
+          + Comment se maquiller
+          + Fran6
+          + Partenaires
+          + Test ADSL
+          + Tondeuse
+          + WordPress fr
+
+   Propulsé par WordPress | Thème Grassland de Spectacu.la WP Themes
+   Club | Traduction Wordpress tuto

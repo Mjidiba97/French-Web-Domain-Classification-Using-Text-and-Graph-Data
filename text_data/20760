@@ -1,0 +1,442 @@
+   This app works best with JavaScript enabled.
+
+   Skip to content
+   IntroducingMeridian- a global Stellar conference coming this November
+   (BUTTON)
+   (BUTTON)
+   Get Started
+
+   What is Stellar?Learn how Stellar unites the world’s financial
+   infrastructure.
+
+   Get StartedRoll up your sleeves and start building on a uniquely
+   powerful payment network.
+
+How Stellar works
+
+   Understand the building blocks of Stellar.
+   Asset Issuance
+   Decentralized Trading
+   Open Participation
+
+Case Studies
+
+   See how businesses are creating world-changing financial tools.
+   IBM World Wire
+   SatoshiPay
+
+Assets
+
+   Explore the network’s 500+ assets.
+   StellarExpert
+   Stellarport
+   StellarTerm
+   (BUTTON)
+   Tools
+
+   Account ViewerCheck your account and send basic payments.
+
+   LaboratoryCompose complex transactions.
+
+   StellarXTrade on the Stellar decentralized exchange.
+
+   Ledger ExplorerExplore the ledger on StellarExpert.
+
+   Network ExplorerView network nodes on Stellarbeat.
+
+   KelpMake markets with our open-source trading bot.
+   Lumens
+   Community
+   (BUTTON)
+   Foundation
+
+   AboutUnlocking the world’s economic potential.
+
+   TeamWe are dedicated to creating a more inclusive global marketplace.
+
+Explore
+
+   Follow our progress, join our team, and change the world of payments
+   forever.
+   Roadmap
+   Jobs
+   Programs
+   Blog
+   (BUTTON)
+   Developers
+
+   DocumentationStart building on Stellar today.
+
+Downloads
+
+   Software for building on the Stellar network.
+   Quickstart Docker
+   Stellar Core
+   Horizon API Server
+
+Documentation
+
+   Everything developers need to know about Stellar.
+   Network Overview
+   Create an Account
+   Send a Payment
+   Issue an Asset
+   Stellar Operations
+   Smart Contracts
+   Horizon API
+   Javascript SDK
+   Developers Blog
+
+Borderless.
+
+Limitless.
+
+Powerful.
+
+   Stellar is an open network for storing and moving money.
+   Get Started
+     * Last Ledger
+       Ledger number:
+       0
+       Closing time:
+       Operations:
+     * Last 24 hours
+       Operations:
+       Active accounts:
+       Volume (XLM):
+       NaN
+
+   With Stellar as your payment rails, you can:
+   Use real currencies.
+
+   There are dozens of currency-backed tokens already on the network; if
+   you’re a financial institution, issuing your own is simple and safe.
+   That’s why IBM’s World Wire, which supports 47 currencies in 72
+   countries, is powered by Stellar.
+   payment rails
+   Send money globally.
+
+   Stellar users can send money across borders faster and for lower costs.
+   Transactions take about 5 seconds and cost only a fraction of a penny.
+   Convert any asset.
+
+   Stellar makes assets liquid and flexible. You can swap between any pair
+   of tokens issued on the network using simple functions built into the
+   protocol.
+   Designed for Developers.
+
+   Stellar has the documentation, tooling, and community support to help
+   you get your project up quickly. Get access to our SDKs, walkthroughs,
+   and connect with our developer community.
+   Explore the docs
+   (BUTTON) Create account (BUTTON) Send payment (BUTTON) Issue asset
+   (BUTTON) Make a buy offer
+const StellarSdk = require("stellar-sdk");
+const fetch = require("node-fetch");
+
+// Create a new keypair.
+const pair = StellarSdk.Keypair.random();
+
+async function createTestAccount() {
+  try {
+    console.log(
+      "Funding a new account on the test network (this takes a few seconds)…"
+    );
+    const response = await fetch(
+      `https://friendbot.stellar.org?addr=${pair.publicKey()}`
+    );
+    const data = await response.json();
+
+    console.log(`Public Key: ${pair.publicKey()}`);
+    console.log(`Secret Key: ${pair.secret()}`);
+    return "Success! You have a funded Testnet account :)";
+  } catch (e) {
+    console.error("Oh no! Something went wrong:", e);
+  }
+}
+
+createTestAccount();
+
+const StellarSdk = require("stellar-sdk");
+const fetch = require("node-fetch");
+
+const server = new StellarSdk.Server("https://horizon-testnet.stellar.org");
+
+async function sendPayment() {
+  const senderKeypair = StellarSdk.Keypair.random()
+  const destination = "GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR"
+;
+  const amount = "100";
+
+  console.log(`Making a new test account and sending ${amount} lumens to ${
+    trim(destination)
+  }`);
+
+  try {
+    // Create a new random account
+    await fetch(
+      `https://friendbot.stellar.org?addr=${senderKeypair.publicKey()}`
+    )
+  } catch (e) {
+    console.error('Failed to fund demo account! Please try again later.')
+    return;
+  }
+  const [{ p90_accepted_fee: fee }, sender] = await Promise.all([
+    server.feeStats(),
+    server.loadAccount(senderKeypair.publicKey()),
+  ]);
+
+  const transaction = new StellarSdk.TransactionBuilder(sender, {
+    fee,
+    networkPassphrase: StellarSdk.Networks.TESTNET
+  })
+    .addOperation(
+      // This operation sends the destination account XLM
+      StellarSdk.Operation.payment({
+        destination,
+        asset: StellarSdk.Asset.native(),
+        amount
+      })
+    )
+    .setTimeout(30)
+    .build();
+  transaction.sign(senderKeypair);
+
+  try {
+    // Submit the transaction to the Stellar network.
+    const transactionResult = await server.submitTransaction(transaction);
+    console.log(transactionResult);
+
+    recoupLumens(senderKeypair.secret());
+    return `Success! ${
+      trim(senderKeypair.publicKey())
+    } paid ${trim(destination)} ${amount} XLM`;
+  } catch (e) {
+    console.error("Oh no! Something went wrong.");
+    console.error(e.response.data.detail);
+    console.error(e.response.data.extras.result_codes);
+    console.error(e.response.data.type);
+    return e.response.data;
+  }
+}
+
+sendPayment();
+
+
+const StellarSdk = require("stellar-sdk");
+const fetch = require("node-fetch");
+
+const server = new StellarSdk.Server("https://horizon-testnet.stellar.org");
+
+// Keys for accounts to issue and receive the new asset.
+const issuingKeypair = StellarSdk.Keypair.random();
+const distributionKeypair = StellarSdk.Keypair.fromSecret(
+  "SC47H3PZHKTJQA7OYML3RJKDWATKEC6JSPQZFFYPHEWKNRVUGQJPENML",
+);
+const availableCurrency = "1000";
+const distributedCurrency = "100";
+
+// Create an Asset object that represents the asset to be created.
+const astroDollar = new StellarSdk.Asset(
+  "AstroDollar",
+  issuingKeypair.publicKey(),
+);
+
+async function issueAsset() {
+  try {
+    console.log(
+      `Creating issuing account (${trim(issuingKeypair.publicKey())})`,
+    );
+    await fetch(
+      `https://friendbot.stellar.org?addr=${issuingKeypair.publicKey()}`,
+    );
+  } catch (e) {
+    console.error('Failed to fund demo account! Please try again later.')
+    return;
+  }
+  try {
+
+    // Fetch the base fee and the account that will create our transaction
+    const [{ p90_accepted_fee: fee }, distributionAccount] = await Promise.all([
+      server.feeStats(),
+      server.loadAccount(distributionKeypair.publicKey()),
+    ]);
+
+    const changeTrustTx = new StellarSdk.TransactionBuilder(
+      distributionAccount,
+      {
+        fee,
+        networkPassphrase: StellarSdk.Networks.TESTNET
+      },
+    )
+      .addOperation(
+        // The `changeTrust` operation creates (or alters) a trustline.
+        StellarSdk.Operation.changeTrust({
+          asset: astroDollar,
+          limit: availableCurrency,
+        }),
+      )
+      .addOperation(
+        // One transaction can have operations from different accounts,
+        // they just need to be signed by each account.
+        StellarSdk.Operation.payment({
+          destination: distributionKeypair.publicKey(),
+          asset: astroDollar,
+          amount: "1000",
+          source: issuingKeypair.publicKey(),
+        }),
+      )
+      .setTimeout(100)
+      .build();
+    changeTrustTx.sign(distributionKeypair);
+    changeTrustTx.sign(issuingKeypair);
+
+    console.log(
+      `Creating trustline and issuing ${distributedCurrency} AstroDollars…`,
+    );
+    const txResult = await server.submitTransaction(changeTrustTx);
+
+    recoupLumens(issuingKeypair.secret());
+    console.log(
+      `Success! ${
+        trim(issuingKeypair.publicKey())
+      } issued ${distributedCurrency} AstroDollars to ${
+        distributionKeypair.publicKey()
+      }`,
+    );
+    console.log(txResult);
+  } catch (e) {
+    console.error("Oh no! Something went wrong.");
+    console.error(e.response.data.detail);
+    console.error(e.response.data.extras.result_codes);
+    console.error(e.response.data.type);
+    recoupLumens(issuingKeypair.secret());
+    return e.response.data;
+  }
+}
+
+issueAsset();
+
+const StellarSdk = require("stellar-sdk");
+const fetch = require("node-fetch");
+
+const server = new StellarSdk.Server("https://horizon-testnet.stellar.org");
+
+const accountKeypair = StellarSdk.Keypair.random();
+
+const astroDollar = new StellarSdk.Asset(
+  "AstroDollar",
+  "GDA2EHKPDEWZTAL6B66FO77HMOZL3RHZTIJO7KJJK5RQYSDUXEYMPJYY"
+)
+
+async function makeBuyOffer() {
+  try {
+    await fetch(
+      `https://friendbot.stellar.org?addr=${accountKeypair.publicKey()}`,
+    );
+
+    // Fetch the base fee and the account that will create our transaction
+    const [{ p90_accepted_fee: fee },, account] = await Promise.all([
+      server.feeStats(),
+      server.loadAccount(accountKeypair.publicKey()),
+    ]);
+
+    const transaction = new StellarSdk.TransactionBuilder(account, {
+      fee,
+      networkPassphrase: StellarSdk.Networks.TESTNET
+    })
+      .addOperation(
+        // Our account needs to explicitly trust the asset before we can make
+        // an offer
+        StellarSdk.Operation.changeTrust({
+          asset: astroDollar,
+          limit: "1000",
+        }),
+      )
+      // The `manageBuyOffer` operation creates (or alters) a buy offer.
+      .addOperation(
+        StellarSdk.Operation.manageBuyOffer({
+          selling: StellarSdk.Asset.native(),
+          buying: astroDollar,
+          buyAmount: "1000",
+          price: ".1"
+        })
+      )
+      .setTimeout(100)
+      .build();
+    transaction.sign(accountKeypair);
+
+    const txResult = await server.submitTransaction(transaction);
+
+    recoupLumens(accountKeypair.secret());
+    console.log(txResult);
+    return `Success! ${
+      trim(accountKeypair.publicKey())
+    } offered to buy 1000 XLM for 0.1 AstroDollars each`;
+  } catch (e) {
+    console.error("Oh no! Something went wrong.");
+    console.error(e.response.data.detail);
+    console.error(e.response.data.extras.result_codes);
+    console.error(e.response.data.type);
+    return e.response.data;
+  }
+}
+
+makeBuyOffer();
+
+   Economic stability for
+   everyone.
+
+   Stellar and the Stellar Development Foundation seek to unlock
+   the world’s economic potential by making money more fluid, markets more
+   open, and people more empowered.
+   Our mission
+   economic stability
+   Global.
+
+   Stellar provides access to reliable money, particularly in places where
+   the local currency is uncertain.
+   Active.
+
+   Dozens of financial institutions and tens of thousands of individuals
+   issue assets and settle payments on Stellar.
+   Open.
+
+   The Stellar public network and open-source code have been live and in
+   use for over three years.
+   Stellar
+   Subscribe to our newsletter!
+
+   Subscribe
+   ____________________
+   ____________________
+   (BUTTON)
+
+   Resources
+   What is Stellar?Get StartedExplainersCase Studies
+
+   Tools
+   Account ViewerLaboratoryDashboardLedger ExplorerNetwork Explorer
+
+   Lumens
+   Stellar LumensExchangesWallets
+
+   Foundation
+   AboutTeamRoadmapProgramsJobsBlog
+
+   Community
+   CommunityStellar MeridianBusinessesEventsFAQCommunity Blog
+
+   Developers
+   DocumentationReference and SDKsDownloadsDevelopers BlogWhite Paper
+
+   Connect
+   ContactNewslettersCode of ConductBug Bounty Program
+
+   Tokens & Markets
+   StellarExpertStellarTermStellarportStellarXKelp
+   © 2014—2019 StellarDevelopment Foundation
+   Brand Policy
+   Privacy Policy
+   Terms of Service
+   Stellar

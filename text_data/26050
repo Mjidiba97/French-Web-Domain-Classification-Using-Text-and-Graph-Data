@@ -1,0 +1,618 @@
+    #Holini » Feed Holini » Comments Feed Holini » How to Hide Google
+   Analytics UTM Parameters Using Google Tag Manager Comments Feed
+   alternate alternate
+
+   Holini logo Holini logo
+
+     * Services
+          + Google Ads Management
+          + Facebook Ads Management
+          + Google Analytics & GTM Consulting
+     * Client Reviews
+     * Case Studies
+     * Team
+     * Blog
+     *
+
+     * Services
+          + Google Ads Management
+          + Facebook Ads Management
+          + Google Analytics & GTM Consulting
+     * Client Reviews
+     * Case Studies
+     * Team
+     * Blog
+     *
+
+   Contact UsContact Us
+   Contact Us
+
+     * Services
+          + Google Ads Management
+          + Facebook Ads Management
+          + Google Analytics & GTM Consulting
+     * Case Studies
+     * Client Reviews
+     * Team
+     * Blog
+     * Contact Us
+     *
+
+How to Hide Google Analytics UTM Parameters Using Google Tag Manager
+
+   Google Tag ManagerMost Popular
+   Last updated: October 1, 2019
+   Taavi Kalvi
+
+   Google Analytics UTM parameters are a very handy way to track your
+   online marketing efforts. They’re used to capture important reporting
+   data and they help you figure out which posts, banners or emails bring
+   the most traffic and customers to your website.
+
+   Although pretty much all digital marketers should be using Google
+   Analytics UTM parameters, we’ve seen that many of them are still not
+   doing it. There are probably a couple of reasons for this.
+    1. Marketers are not aware of the benefits of using Google Analytics
+       UTM parameters.
+    2. There are so many different marketing channels and adding those
+       parameters is sometimes forgotten.
+    3. Marketers believe that the long URLs scare the users away and they
+       won’t click on the links when they see the strange website URLs
+       with parameters. (Pretty much make an URL less trustworthy.)
+
+   Hide long UTM parameters
+
+   Who would want to click on this long link? 🤔
+
+   In the following tutorial, we will focus on the third reason and show
+   you how to hide the UTM parameters with Google Tag Manager, so that you
+   could still keep using them.
+
+Why should you hide any Google Analytics UTM parameters?
+
+   In some cases, you’d really like to track the performance of different
+   links, but don’t want to attach the “ugly” UTM parameters to the end of
+   the URLs. Let’s go through some of the following examples to get a
+   better picture.
+
+1. LinkedIn Profile Page
+
+   It’s useful to know how many people click on the link on your company
+   page on LinkedIn so that you can separate this traffic from the rest.
+   At the same time, you probably don’t wish to see those ugly Google
+   Analytics UTM parameters at the end of your company’s website address.
+
+   Short URL, no UTM parameters
+
+2. E-mail Sales Letter
+
+   Would you like to be a hardcore data-driven sales person who knows
+   exactly how much your specific lead knows about your business and your
+   services before you make a call?
+
+   Email UTM parameters
+
+   If you attach the Google Analytics UTM parameters to the end of this
+   website URL, you can analyze the user journey later with tools like
+   Google Analytics and HotJar. After that you can know exactly what a
+   specific person knows about your business and your services before you
+   call her or send another email.
+   But I guess that in a lot of cases, you wouldn’t want to drive your
+   potential customer to an URL like this:
+   https://holini.com/?utm_source=signature&utm_medium=email&utm_campaign=
+   Taavi
+
+3. Facebook Profile Page
+
+   How would you know the number of people who click on the link on your
+   Facebook profile page?
+
+   And how could you separate this traffic from the rest?
+
+   Facebook UTM parameters
+
+   These are just some of the quick examples from a variety of places
+   where you normally wouldn’t use any UTM parameters.
+
+How to hide the UTM parameters?
+
+   You can use simple URL fragments and some Google Tag Manager tricks to
+   hide the UTM parameters and still keep tracking different traffic
+   sources with Google Analytics. For this, you can use a feature in
+   Google Tag Manager, called the Lookup Table.
+
+   This is probably the easiest way to do it.
+
+   So how can you turn your long URLs with Google Analytics UTM parameters
+   like this…
+
+   https://holini.com/?utm_source=linkedin&utm_medium=social&utm_campaign=
+   profile+page
+
+   … into short and sweet web links that can look something like this (and
+   still track your traffic source)?
+
+   https://holini.com/#agency
+
+Step 1
+
+   First of all, you need to have Google Tag Manager installed on your
+   website to make this happen. If you’d like to learn more about Google
+   Tag Manager, you should take a look at this amazing Google Tag Manager
+   tutorial for beginners.
+   While this tool allows users with even minimal technical experience to
+   start creating tags, triggers and variables in a matter of minutes, the
+   installation itself may require an upfront effort and close
+   collaboration with your web development or IT team.
+
+     Simo Ahava’s post called Tag Management Does Not Make IT Redundant
+     pointed out 10 suggestions for making the deployment and the use of
+     tag management systems more manageable for both the marketers and
+     the IT department. Highly recommended reading if you’re either a
+     developer or a marketer who’s taking the first steps towards
+     becoming a tag management ninja.
+
+   Bear with me. It’s not THAT difficult. We’ve got you covered!
+
+Step 2
+
+    1. In Google Tag Manager, go to the Variables section in the left hand
+       menu.
+    2. Create a new ‘User-Defined Variable’ in Google Tag Manager and for
+       the ‘Variable Type’ choose: ‘URL’.  (Variables > User-Defined
+       Variables > New > URL)
+    3. In the configuration settings, choose the ‘Component Type’ to be
+       ‘Fragment’.
+    4. Give a name to your new variable that you will remember, like ‘URL
+       – Fragment’.
+
+     I recommend reading the Google Tag Manager Naming Strategies to
+     Organize Your Container article written by Zee Drakhshandeh to learn
+     more about the naming strategies.
+    5. Here’s how it looks like in Google Tag Manager:
+
+   URL Fragment in Tag Manager
+
+Step 3
+
+   Now, you’ll need to create three Lookup Table Variables in Google Tag
+   Manager – one for utm_source, one for utm_medium, and one
+   for utm_campaign. Then you’ll need to choose the URL fragment as the
+   input variable for each of the Lookup Tables and match it with the
+   values for the source, medium, and campaign that you would like to send
+   to your Google Analytics property.
+
+   A step-by-step guide
+
+   Let’s go through an example and create a custom link for your Sales
+   Letter, LinkedIn and Facebook profile pages.
+   Set up a Lookup Table for different Sources
+    1. Create a new ‘User-Defined Variable’ in the Google Tag Manager and
+       for the ‘Variable Type’ choose: ‘Lookup Table’. (Variables >
+       User-Defined Variables > New > Lookup Table)
+    2. Choose the {{URL – Fragment}} as the ‘Input Value’ in the
+       configuration settings.
+    3. Give a name to your new variable that you will remember, like
+       ‘Lookup – URL – Fragment – Source’.
+    4. Now, you’ll need to choose the input variable that the Lookup Table
+       will reference to match the appropriate value
+          + If the fragment of the page URL is agency, then return the
+            respective ‘Output’ – linkedin
+          + If the fragment of the page URL is 1, then return the
+            respective ‘Output’ – signature
+          + If the fragment of the page URL is services, then return the
+            respective ‘Output’ – facebook
+
+   Lookup Table - Source
+
+   Set up a Lookup Table for different Mediums
+    1. Create a new ‘User-Defined Variable’ in the Google Tag Manager and
+       for the ‘Variable Type’ choose: ‘Lookup Table’. (Variables >
+       User-Defined Variables > New > Lookup Table)
+    2. Choose the {{URL – Fragment}} as the ‘Input Value’ in the
+       configuration settings.
+    3. Give a name to your new variable that you will remember, like
+       ‘Lookup – URL – Fragment – Medium’.
+    4. Now, you’ll need to choose the input variable that the Lookup Table
+       will reference to match the appropriate value:
+          + If the fragment of the page URL is agency, then return the
+            respective ‘Output’ – social
+          + If the fragment of the page URL is 1, then return the
+            respective ‘Output’ – email
+          + If the fragment of the page URL is services, then return the
+            respective ‘Output’ – social
+
+   Lookup Table - Medium
+
+   Set up a Lookup Table for different Campaign Names
+    1. Create a new ‘User-Defined Variable’ in the Google Tag Manager and
+       for the ‘Variable Type’ choose: ‘Lookup Table’. (Variables >
+       User-Defined Variables > New > Lookup Table)
+    2. Choose the {{URL – Fragment}} as the ‘Input Value’ in the
+       configuration settings.
+    3. Give a name to your new variable that you will remember, like
+       ‘Lookup – URL – Fragment – Campaign Name’.
+    4. Now, you’ll need to choose the input variable that the Lookup Table
+       will reference to match the appropriate value:
+          + If the fragment of the page URL is agency, then return the
+            respective ‘Output’ – profile page
+          + If the fragment of the page URL is 1, then return the
+            respective ‘Output’– Taavi
+          + If the fragment of the page URL is services, then return the
+            respective ‘Output’ – profile page
+
+   Lookup Table - Campaign
+
+Step 4
+
+   The final setup piece is to send the output of your Lookup Tables into
+   Google Analytics. You can use your generic Universal Analytics Page
+   View tag that is already set up in Google Tag Manager.
+    1. Open your Google Analytics ‘Page View’ tag.
+    2. Expand the ‘More settings’ menu, then the ‘Fields to Set’ menu, and
+       click ‘+Add Field’.
+    3. Enter the following three ‘Field Names’ with the values of the
+       three corresponding Lookup Tables:
+          + campaignSource – {{Lookup – URL – Fragment – Source}}
+          + campaignMedium – {{Lookup – URL – Fragment – Medium}}
+          + campaignName – {{Lookup – URL – Fragment – Campaign Name}}
+
+   The values will now be sent to Google Analytics just as if you were
+   using the UTM parameters: utm_source, utm_medium and utm_campaign.
+   Here’s how it looks like in the Google Tag Manager:
+
+   Google Tag Manager Pageview Tag
+
+Step 5
+
+   Now it’s time to test if everything you’ve done works properly:
+     * Enable the ‘Preview Mode’. Click on the arrow next to the ‘Publish’
+       button and select ‘Preview’.
+     * Load your web page with ‘#agency’ appended to the end of your URL,
+       like this: https://yourdomain.com/#agency
+     * Then, using Google Tag Manager’s Preview Mode, open the ‘Page View’
+       tag and look through the ‘Variables’ menu.
+     * You should see the ‘Lookup – URL – Fragment – Campaign Name’,
+       ‘Lookup – URL – Fragment – Medium’ and ‘Lookup – URL – Fragment –
+       Source’ variables fire with ‘profile page’, ‘social’ and ‘linkedin’
+       as values (‘agency’ comes after the hashtag in your URL).
+
+   Take a look at the screenshot:
+
+   GTM Preview Mode
+
+   You should also check your Real-Time Traffic Sources report to see
+   which mediums and sources referred the users who are on your site right
+   now. You should see yourself in this report as well.
+
+Here are a couple of examples
+
+LinkedIn profile page
+
+   LinkedIn UTM parameters
+
+E-mail Sales Letter
+
+   E-Mail UTM parameters
+
+Facebook profile page
+
+   Facebook UTM parameters
+
+Things to keep in mind
+
+     * You can have hundreds of rows in your Lookup Table and it’s still
+       very fast.
+     * The Lookup Table is an exact match only in Google Tag Manager. To
+       use partial matches you’d need to either modify the strings before
+       the Lookup Table accesses them, i.e. create a Custom JavaScript
+       Variable which strips the elements down.
+     * Always test your changes before you publish.
+
+Why are URL shorteners not always a good solution?
+
+   Even though using shorteners (e.g bit.ly) is a good way to hide
+   tracking information and make URLs shorter, they still do not seem be
+   100% trustworthy and there are a lot of reasons why I prefer not to use
+   them.
+
+   Things to keep in mind when using URL shorteners
+     * URL shorteners record click data, Google Analytics records hits,
+       sessions, and users. Technically, those tools are not going to show
+       the same data because they are tracking different things.
+     * Always attach your Google Analytics UTM parameters to the end of
+       the URL before you drop it in your URL shortener. If you’re not
+       doing this, all of your short links are feeding zero useful data,
+       especially if people are coming to your site from mobile apps,
+       desktop email clients or non-HTML documents.
+
+   In some cases, you also might want to put UTM tags on 301 redirects.
+
+Final Thoughts
+
+   URL fragments are much more acceptable and trustworthy than UTM
+   parameters and shortened URLs.
+   I believe that it’s not too much hassle to go to Google Tag Manager
+   before publishing a new link and adding some values to your Lookup
+   Tables. Especially, if those are the links that you want to track
+   without showing Google Analytics UTM parameters.
+   The inspiration for this post came from the articles written by
+   well-known GTM practitioners:
+     * GTM Match Table Variable Generator (Lookup Tables & Beyond) by
+       Stephen Harris
+     * Google Tag Manager: The Lookup Table Macro by Simo Ahava
+     * Simple RegEx Table For Google Tag Manager by Simo Ahava
+     * Cool stuff with lookup tables in Google Tag Manager by Eoghan Henn
+     * The Death of UTM Campaign Parameters by Jim Gianoglio
+
+   Hopefully you learned something new. Feel free to share any other
+   feedback on Twitter @holini or in the comments section below.
+   Share
+   Share
+   Pocket
+   Buffer
+   Tweet
+   111 Shares
+   Taavi Kalvi
+   Taavi is the Analytics Developer at Holini. He can be seen and heard at
+   marketing conferences, Google product forums, support communities, and
+   developer meet-ups alike. He is also an active Google Analytics
+   community member. When he’s not working, he’s probably hiking or bungee
+   jumping somewhere.
+
+   Holini logo
+   Email
+   Facebook
+   Twitter
+   LinkedIn
+   Instagram
+
+Europe Office
+
+   Pärnu mnt 148, 11317
+   Tallinn, Estonia
+   Business ID: 12983019
+   [email protected]
+   +372 56 565 504
+
+Quick Links
+
+   Homepage
+   Meet the Team
+   Read our Blog
+   Join our Team
+   Contact Us
+   google-premier-partner
+   © 2019 - Holini.com
+   All rights reserved.
+   Privacy Policy | Terms
+
+   Menu
+
+   111 Shares
+   Share
+   Share
+   Pocket
+   Buffer
+   Tweet
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KCR686
+    #Holini » Feed Holini » Comments Feed alternate alternate
+
+   Holini logo Holini logo
+
+     * Services
+          + Google Ads Management
+          + Facebook Ads Management
+          + Google Analytics & GTM Consulting
+     * Client Reviews
+     * Case Studies
+     * Team
+     * Blog
+     *
+
+     * Services
+          + Google Ads Management
+          + Facebook Ads Management
+          + Google Analytics & GTM Consulting
+     * Client Reviews
+     * Case Studies
+     * Team
+     * Blog
+     *
+
+   Contact UsContact Us
+   Contact Us
+
+     * Services
+          + Google Ads Management
+          + Facebook Ads Management
+          + Google Analytics & GTM Consulting
+     * Case Studies
+     * Client Reviews
+     * Team
+     * Blog
+     * Contact Us
+     *
+
+PPC Agency - No Interns, No Juniors, Only Senior Specialists
+
+Work with a team of experienced PPC and analytics specialists who follow
+systematic growth and testing processes, not one-off hacks.
+
+   Read Client Reviews
+
+   holini-clutch-badge
+
+   google-premier-partner
+
+   reviewed-on-google-badge-home
+
+   Karola Karlson - Bolt
+
+   “This agency’s a keeper. If you’re looking for an agency to trust with
+   your advertising budget and delicate marketing data, get Holini if
+   they’re still available.“
+
+   Karola Karlson
+
+   Head of Marketing at Bolt
+
+   Oliver Vesi - KatanaMRP
+
+   ”I would recommend Holini not only as a PPC agency, but as a digital
+   success partner. Working with Holini is like having a best friend
+   everybody needs to succeed in the world of business.”
+
+   Oliver Vesi
+
+   Head of Marketing at Katana MRP
+
+   matthew kinneman - bully max
+
+   “In just four short weeks, they exceeded our initial goal by 400%. The
+   result was a 500% monthly ROI. The best part — Holini still making
+   weekly progress. If you’re not hiring Holini to manage your PPC
+   account, you’re leaving money on the table.”
+
+   Matthew Kinneman
+
+   Owner and President at Bully Max
+
+   Elena Benito Ruiz - Beebole
+
+   “Working with Holini has been one of my greatest experiences about
+   data-driven analytics. I have worked with several agencies and
+   analytics professionals in the past and I have never seen such a level
+   of implication, accuracy and relevant advice.”
+
+   Elena Benito Ruiz
+
+   Chief Marketing Officer at BeeBole
+
+   Helena Feofanov - Denimdream
+
+   ”I’m always excited to hear their ideas for growth and I really
+   appreciate the effort they put in teaching and educating us on new
+   trends. Definitely a keeper!”
+
+   Helena Feofanov
+
+   Marketing Specialist at Denim Dream
+
+   Martin Lember - Nordica
+
+   ”Our approach is not to be the biggest airline company, but we aspire
+   to be the smartest one. Holini helps us to get there.”
+
+   Martin Lember
+
+   Head of E-Commerce at Nordica
+
+   Read More Reviews
+
+Experience matters. No interns, no juniors, no learning on your dime.
+
+Trusted by Brands Around The World
+
+   Denim Dream logo - Holini PPC Agency client
+
+   Nordica-logo
+
+   Loverte logo, case study, Holini PPC agency
+
+   veriff-logo
+
+   xolo-logo
+
+   ON24 logo - Holini PPC Agency client
+
+   DPD logo - Holini PPC Agency client
+
+   beebole
+
+Why Holini?
+
+   First Class Quality - Holini PPC Agency
+
+Senior Specialists Only
+
+   No interns, no juniors. You’ll work with a team of senior-level
+   specialists who are highly experienced in their field.
+   Holini PPC Agency core values: Believe in people
+
+Proactive Team
+
+   We’ll get to know your business inside-out and constantly come up with
+   new hypothesis and strategies to increase your ROI.
+   Global Experience - Holini PPC Agency
+
+Global Experience
+
+   You’ll work with senior specialists who manage PPC accounts globally
+   with monthly budgets from $10,000 to $150,000.
+   Holini PPC Agency core values: Integrity
+
+Tech-Savvy Team
+
+   All your tracking issues will be monitored and fixed by our dedicated
+   developer. We’ll also write custom scripts for your Google Ads and GTM
+   accounts.
+   Selected Clients Only - Holini PPC Agency
+
+Selected Clients Only
+
+   We aren’t running a factory. To provide maximum value for you, we only
+   work with carefully selected businesses.
+   Transparent Pricing - Holini PPC Agency
+
+Fair Pricing
+
+   You won’t be charged for every move, we’ll agree on a monthly fee
+   up-front. The fee is determined by your goals and the scope of work.
+
+   “We have worked together to take Holini to new heights, and now I’m
+   excited to see them help businesses all over the world grow their
+   customer bases using their cutting edge techniques. If you are looking
+   for a PPC agency to help you grow your business, you should definitely
+   look up Holini.“
+   Jeff Sauer
+
+   Jeff Sauer
+
+   Digital Marketing Speaker, Professor & Consultant
+
+Find out what others think of Holini.
+
+   Read Client Reviews
+
+   Holini logo
+   Email
+   Facebook
+   Twitter
+   LinkedIn
+   Instagram
+
+Europe Office
+
+   Pärnu mnt 148, 11317
+   Tallinn, Estonia
+   Business ID: 12983019
+   [email protected]
+   +372 56 565 504
+
+Quick Links
+
+   Homepage
+   Meet the Team
+   Read our Blog
+   Join our Team
+   Contact Us
+   google-premier-partner
+   © 2019 - Holini.com
+   All rights reserved.
+   Privacy Policy | Terms
+
+   Menu
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KCR686

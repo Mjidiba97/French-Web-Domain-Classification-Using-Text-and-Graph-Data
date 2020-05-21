@@ -1,0 +1,762 @@
+   #OpenDaylight » Feed OpenDaylight » iCal Feed OpenDaylight » Posts by
+   craig Feed
+
+   [logo_lf_projects_horizontal_2018.png]
+
+   OpenDaylight
+
+     *
+     *
+
+     * About
+          + Join
+          + Governance
+               o TSC
+          + Charter
+          + News
+               o Foundation News
+               o Blogs
+               o In the News
+          + LF Online Store
+          + Contacts
+     * What We Do
+          + What is SDN?
+          + Platform Overview
+          + Current Release – Sodium
+          + Neon
+          + Fluorine
+          + Oxygen
+          + Nitrogen
+          + Carbon
+          + Boron
+          + Beryllium
+          + Lithium
+          + Helium
+          + Hydrogen
+     * Use Cases and Users
+          + By Function
+               o Automated Service Delivery
+               o Cloud and NFV
+               o Network Resource Optimization
+               o Visibility and Control
+          + User Stories
+          + Getting Started
+               o Advisory Group
+               o ODLUGs
+     * Ecosystem & Solutions
+          + Find a Solution
+          + Training
+          + For Solution Partners
+               o Powered by Reg Form
+               o Powered by FAQ Page
+     * Technical Community
+          + Getting Started for Developers
+               o Roadmap
+               o Downloads
+          + Lifecycle & Releases
+          + Security
+          + IP Policy
+               o Inbound Code Review Policy
+               o DCO Policy
+               o Licensing
+     * Support OpenDaylight
+          + Ambassadors
+     *
+
+   ____________________
+   Press enter to begin your search
+
+   All Posts By
+
+craig
+
+   Feb 14
+   0
+
+RCR Wireless News: Telecom organizations boosting support for open source
+
+   By craig | In The News
+
+Organizational support for open source initiatives is easing the integration
+of platforms into the telecom world.
+
+   One key challenge for growing the support of open source into the
+   telecommunications space is through various organizations that are
+   looking to either bolster the use of open source or build platforms
+   based on open source specifications. These efforts are seen as
+   beneficial to operators and vendors looking to take advantage of open
+   source platforms.
+
+   Read Article »
+
+   Dec 12
+   0
+
+Three Chinese Carriers in OpenDaylight City Tour
+
+   By craig | Blog
+
+   Blog by George Zhao, originally posted here.
+
+   On Dec. 12-16, the ODL city tour workshop was sponsored by
+   OpenDaylight,  China Open SDN Committee (COS), ZTE, Huawei, H3C, Cisco,
+   VCMY and Raysystem, and hosted by Baidu, Tencent, Tethrnet and SDNLAB.
+   It was held in four cities of China: Nanjing, Beijing, Shenzhen and
+   Shanghai, all are within a week.
+
+   People from many technology companies joined and shared their
+   experience in using ODL, the following slide is from Neela’s keynote,
+   Neela listed top three companies for Internet, Telco and ICT vendors in
+   China.  Internet companies, a.k.a BAT in China, are all members of COS
+   and members of OpenDaylight, Tencent and Baidu are two of the four city
+   hosts. All three Telco companies participated in ODL city tour and gave
+   presentations. All the three ICT vendors were sponsors for this event.
+   This shows a big enthusiasm for OpenDaylight in China.
+
+   Let’s take a closer look at the three Telco’s  approaches of SDN
+   controller.
+
+   China Mobile
+
+   According to China Mobile, after deploy SDN, the network is expected to
+   be more open, more flexible and more efficient , it is true for the
+   latter two, however, compare to traditional network, to many people’s
+   surprise,  today’s SDN deployment makes network less open.
+
+   In traditional networking, following IP standards, gateway, switch,
+   firewall can come from different vendors, but for today’s SDN to work
+   properly,  equipment needs to be from the same vendor as SDN
+   controller. China Mobile’s solution to prevent vendor lock in is to
+   develop SDN controller by themselves.  The best way to build a SDN
+   controller is based on open source,  China Mobile selected OpenDaylight
+   platform to develop their own SDN controller – AERO.
+
+   It is hard to ignore the gap between open source community release and
+   commercial product release, China Mobile summarized three key areas for
+   open source SDN controller:
+    1. Clustering: high performance, high available and flexible
+       clustering is the key.
+    2. Model: common abstract model for apps and network equipment
+    3. Exception handling: how to make sure data consistence during
+       exception handling.
+
+   China Telecom
+
+   China Telecom gave a couple of use cases of how they leveraged
+   OpenDaylight in their SDN controller; IP SDN & NFV on WAN and unified
+   control/management for cloud/WAN.
+
+   While China Mobile is emphasized on southbound, China Telecom
+   concentrates on northbound service plugin and Yang model, they would
+   like northbound to be more abstracted, and they would like to have Yang
+   model to be standardized and more mature in ODL. Their expectations of
+   OpenDaylight are not very different than most of others, enhance core,
+   cluster and performance.
+
+   China Unicom
+
+   Fast and automatic deployment is the main motivation for China Unicom
+   to adapt SDN/NFV. At Shanghai, China Unicom gave an presentation of
+   SDN requirements from China Unicom and Practice of ODL through
+   A-Network.
+
+   China unicom divided the controller into two layers, one is very like
+   domain controller, it is vendor specific, the other is like super
+   controller, it is ODL based and controls domain controllers.
+
+   The controller in red box is Huawei controller and in blue box is Cisco
+   controller, both controllers connects to their own equipment as well as
+   other vendors equipment through Netconf/PCE/BGP-LS protocols. On top of
+   vendor specific controllers, there is one control system, which
+   controls controllers.
+
+   Summary
+
+   Clustering, YANG modeling, performance and stability are the common
+   interests of almost everyone who participated the ODL city tour, we
+   should combine the strength of community and members, to build a robust
+   HA open source SDN platform that can be leveraged by many many
+   companies and people.
+
+   At last, thanks again for organizers and sponsors for this ODL city
+   tour event, it has been a huge success and we keep the momentum for
+   fast SDN deployment.
+
+   Dec 08
+   0
+
+OpenDaylight Project Expands in China with Baidu
+
+   By craig | Announcement
+
+   Chinese tech giant to adopt OpenDaylight’s open SDN platform and
+   rapidly deliver new AI services as mobile adoption continues to grow in
+   China
+
+   SAN FRANCISCO, December 8, 2016–The OpenDaylight Project, the leading
+   open source platform for programmable, software-defined networks (SDN),
+   today announced that Baidu, the leading Chinese language Internet
+   search provider, has joined the project at the Silver level. This
+   follows a recent announcement by Baidu to open source one of its key
+   machine learning tools, PaddlePaddle, and demonstrates the company’s
+   continued commitment to open source.
+
+   Growing mobile markets in China over the past several years have
+   connected more people to the Internet and opened up tremendous
+   opportunities and venues for new business platforms and channel
+   strategies in the region. Baidu is advancing Artificial Intelligence
+   (AI) as the next stage of the Internet and is using deep learning to
+   enable new technologies for autonomous driving and e-health services.
+   The OpenDaylight platform will enable Baidu to optimize and automate
+   their network.
+
+   “Leveraging an open SDN platform enables us to be a more nimble
+   organization and rapidly deliver new services that meet the changing
+   needs and diverse interests of our users and customers,” said Liu Ning,
+   System Department Deputy Director at Baidu. “We are pleased to join the
+   OpenDaylight community and support OpenDaylight as the de facto
+   standard for SDN.”
+
+   Additionally, Baidu’s Liu Ning joins the OpenDaylight Advisory Group to
+   provide technical and strategic guidance to the OpenDaylight Technical
+   Steering Committee and OpenDaylight developer community based on the
+   challenges of running a real-world network.
+
+   China’s three biggest internet companies – Baidu, Alibaba and Tencent –
+   have all joined the OpenDaylight project. By leveraging the
+   OpenDaylight platform to manage network agility and interoperability
+   via SDN, these organizations will be better equipped to capture new
+   revenue opportunities and handle the increasing demands their networks
+   are facing.
+
+   “Baidu’s contributions will be very beneficial for the OpenDaylight
+   community as well as the industry as a whole,” said Neela Jacques,
+   Executive Director of the OpenDaylight Project. “China is quickly
+   becoming a hub for open source leadership and innovation. Baidu’s
+   adoption of OpenDaylight will build on that momentum and inspire other
+   Chinese companies to leverage open source technologies to drive rapid
+   development, increased agility and cost savings.”
+
+   Baidu will be hosting an OpenDaylight Workshop in Beijing on Tuesday,
+   Dec. 13. The event is part of OpenDaylight Days, a series of workshops
+   that will be taking place in various cities across China from Dec.
+   12-16, 2016. Additional information including registration is available
+   here.
+
+   Baidu, Inc. is more than just a leading Chinese-language Internet
+   search provider; its Baidu.com domain is the largest website in China
+   and the fourth largest website globally while the “Baidu” brand is one
+   of the highest-ranking and most valuable brands in China. The company
+   is taking AI to the next stage through its deep learning technology and
+   research in image recognition, speech recognition, natural language
+   processing, robotics and big data. The company also serves as a media
+   platform for online marketing customers.
+
+   About the OpenDaylight Project
+
+   The OpenDaylight Project is a collaborative open source project that
+   aims to accelerate the adoption of Software-Defined Networking (SDN)
+   and Network Functions Virtualization (NFV). Founded by industry leaders
+   and open to all, the OpenDaylight community is developing a common,
+   open SDN platform that fosters new innovation and reduces risk. Get
+   involved: www.opendaylight.org.
+
+   OpenDaylight is a project at The Linux Foundation. Linux Foundation
+   projects harness the power of collaborative development to fuel
+   innovation across industries and ecosystems. www.linuxfoundation.org
+
+   Additional Resources
+     * Getting Started with OpenDaylight
+     * Learn About OpenDaylight Membership
+     * OpenDaylight Blog
+     * OpenDaylight Events
+
+   ###
+
+   Media Inquiries
+   Emily Olin
+   OpenDaylight Project
+   pr@opendaylight.org
+   ____________________ (BUTTON) Search
+
+Recent Posts
+
+     * OpenDaylight, Most Pervasive Open Source SDN Controller, Celebrates
+       Sixth Anniversary with Neon Release
+     * Enterprise Networking Planet: OpenDaylight Advances Open Source
+       Software Defined Networking in Fluorine Release
+     * Linux Foundation’s OpenDaylight Fluorine Release Brings Streamlined
+       Support for Cloud, Edge and WAN Solutions
+     * Light Reading: Orange Plans ‘5G Plus Automation’ RFP This Year
+     * Forbes: The Linux Foundation Is Changing The Fabric Of Networking
+
+Archives
+
+     * March 2019
+     * September 2018
+     * August 2018
+     * April 2018
+     * March 2018
+     * February 2018
+     * October 2017
+     * September 2017
+     * July 2017
+     * June 2017
+     * March 2017
+     * February 2017
+     * January 2017
+     * December 2016
+     * November 2016
+     * October 2016
+     * September 2016
+     * August 2016
+     * July 2016
+
+Categories
+
+     * Announcement
+     * Blog
+     * Foundation News
+     * In The News
+     * Uncategorized
+
+Meta
+
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.org
+
+   Copyright © 2018 OpenDaylight Project a Series of LF Projects, LLC
+   For web site terms of use, trademark policy and other project policies
+   please see https://lfprojects.org.
+     * About
+          + Join
+          + Governance
+               o TSC
+          + Charter
+          + News
+               o Foundation News
+               o Blogs
+               o In the News
+          + LF Online Store
+          + Contacts
+     * What We Do
+          + What is SDN?
+          + Platform Overview
+          + Current Release – Sodium
+          + Neon
+          + Fluorine
+          + Oxygen
+          + Nitrogen
+          + Carbon
+          + Boron
+          + Beryllium
+          + Lithium
+          + Helium
+          + Hydrogen
+     * Use Cases and Users
+          + By Function
+               o Automated Service Delivery
+               o Cloud and NFV
+               o Network Resource Optimization
+               o Visibility and Control
+          + User Stories
+          + Getting Started
+               o Advisory Group
+               o ODLUGs
+     * Ecosystem & Solutions
+          + Find a Solution
+          + Training
+          + For Solution Partners
+               o Powered by Reg Form
+               o Powered by FAQ Page
+     * Technical Community
+          + Getting Started for Developers
+               o Roadmap
+               o Downloads
+          + Lifecycle & Releases
+          + Security
+          + IP Policy
+               o Inbound Code Review Policy
+               o DCO Policy
+               o Licensing
+     * Support OpenDaylight
+          + Ambassadors
+
+     *
+     *
+     *
+     *
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-TPQ368
+   #OpenDaylight » Feed OpenDaylight » iCal Feed alternate alternate
+
+   [logo_lf_projects_horizontal_2018.png]
+
+   OpenDaylight
+
+     *
+     *
+
+     * About
+          + Join
+          + Governance
+               o TSC
+          + Charter
+          + News
+               o Foundation News
+               o Blogs
+               o In the News
+          + LF Online Store
+          + Contacts
+     * What We Do
+          + What is SDN?
+          + Platform Overview
+          + Current Release – Sodium
+          + Neon
+          + Fluorine
+          + Oxygen
+          + Nitrogen
+          + Carbon
+          + Boron
+          + Beryllium
+          + Lithium
+          + Helium
+          + Hydrogen
+     * Use Cases and Users
+          + By Function
+               o Automated Service Delivery
+               o Cloud and NFV
+               o Network Resource Optimization
+               o Visibility and Control
+          + User Stories
+          + Getting Started
+               o Advisory Group
+               o ODLUGs
+     * Ecosystem & Solutions
+          + Find a Solution
+          + Training
+          + For Solution Partners
+               o Powered by Reg Form
+               o Powered by FAQ Page
+     * Technical Community
+          + Getting Started for Developers
+               o Roadmap
+               o Downloads
+          + Lifecycle & Releases
+          + Security
+          + IP Policy
+               o Inbound Code Review Policy
+               o DCO Policy
+               o Licensing
+     * Support OpenDaylight
+          + Ambassadors
+     *
+
+   ____________________
+   Press enter to begin your search
+
+
+Sodium is Here!
+
+   The 11th Release of OpenDaylight.
+   Download Sodium
+   Learn More
+
+End Users
+
+   Use Cases
+   User Stories
+   Find a Solution
+
+Developers
+
+   Download
+   Wiki
+   OSN User Groups
+
+Members
+
+   Join
+   Solution Providers
+
+Our Mission
+
+   Communications providers and enterprises alike are eager to build or
+   adapt their networks to be more flexible and responsive to their
+   organizations’ and customers’ needs. At the same time, they are driving
+   network automation to improve operational efficiency. OpenDaylight, the
+   largest open source SDN controller, is helping lead this transition.
+
+   OpenDaylight (ODL) is a modular open platform for customizing and
+   automating networks of any size and scale. The OpenDaylight Project
+   arose out of the SDN movement, with a clear focus on network
+   programmability. It was designed from the outset as a foundation for
+   commercial solutions that address a variety of use cases in existing
+   network environments.
+
+   Learn more about the OpenDaylight Platform and Use Cases.
+
+Use Cases
+
+   The OpenDaylight platform (ODL) provides a flexible common platform
+   underpinning a wide variety of applications and Use Cases. Read about
+   some of the most common use cases here – and then let your imagination
+   run free.
+
+   Automated Service Delivery
+
+   Cloud and NFV
+
+   Network Resource Optimization
+
+   Network Visibility and Control
+
+OpenDaylight + Open Networking
+
+   The OpenDaylight Foundation promotes and advances the global
+   development, distribution and adoption of the ODL platform. The work we
+   do is sustained by our members, who are committed to collaborating
+   within an open governance framework to solve our industry’s shared
+   challenges. Learn more about how the Project is governed, about our
+   advisors and board of directors, and how your company can support and
+   advance OpenDaylight and the open networking ecosystem.
+
+Latest OpenDaylight News
+
+   March 26, 2019 in Announcement
+
+OpenDaylight, Most Pervasive Open Source SDN Controller, Celebrates Sixth
+Anniversary with Neon Release
+
+   In just 6 years, OpenDaylight boasts 10 Releases, 1000+
+   authors/submitters, 100K+ commits, and powers networks of 1B+ global
+   subscribers Neon release hardens SDN controller features and advances
+   support for edge,…
+   Read More
+   September 13, 2018 in In The News
+
+Enterprise Networking Planet: OpenDaylight Advances Open Source Software
+Defined Networking in Fluorine Release
+
+   Read more at Enterprise Networking Planet.
+   Read More
+   September 13, 2018 in Announcement
+
+Linux Foundation’s OpenDaylight Fluorine Release Brings Streamlined Support
+for Cloud, Edge and WAN Solutions
+
+   Most pervasive open source SDN controller issues ninth platform release
+   as more users and open source platforms leverage OpenDaylight Project
+   to achieve promise of SDN/NFV SAN FRANCISCO, September 13, 2018–The…
+   Read More
+
+Follow OpenDaylight News in the Networking Newsletter
+
+   IFRAME: https://www2.thelinuxfoundation.org/l/6342/2018-01-04/3yk2y1
+
+OpenDaylight would like to thank the following projects for supporting the
+community
+
+   Copyright © 2018 OpenDaylight Project a Series of LF Projects, LLC
+   For web site terms of use, trademark policy and other project policies
+   please see https://lfprojects.org.
+     * About
+          + Join
+          + Governance
+               o TSC
+          + Charter
+          + News
+               o Foundation News
+               o Blogs
+               o In the News
+          + LF Online Store
+          + Contacts
+     * What We Do
+          + What is SDN?
+          + Platform Overview
+          + Current Release – Sodium
+          + Neon
+          + Fluorine
+          + Oxygen
+          + Nitrogen
+          + Carbon
+          + Boron
+          + Beryllium
+          + Lithium
+          + Helium
+          + Hydrogen
+     * Use Cases and Users
+          + By Function
+               o Automated Service Delivery
+               o Cloud and NFV
+               o Network Resource Optimization
+               o Visibility and Control
+          + User Stories
+          + Getting Started
+               o Advisory Group
+               o ODLUGs
+     * Ecosystem & Solutions
+          + Find a Solution
+          + Training
+          + For Solution Partners
+               o Powered by Reg Form
+               o Powered by FAQ Page
+     * Technical Community
+          + Getting Started for Developers
+               o Roadmap
+               o Downloads
+          + Lifecycle & Releases
+          + Security
+          + IP Policy
+               o Inbound Code Review Policy
+               o DCO Policy
+               o Licensing
+     * Support OpenDaylight
+          + Ambassadors
+
+     *
+     *
+     *
+     *
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-TPQ368
+   #OpenDaylight » Feed OpenDaylight » iCal Feed OpenDaylight » Search
+   Results for “{search_term_string}” Feed
+
+   [logo_lf_projects_horizontal_2018.png]
+
+   OpenDaylight
+
+     *
+     *
+
+     * About
+          + Join
+          + Governance
+               o TSC
+          + Charter
+          + News
+               o Foundation News
+               o Blogs
+               o In the News
+          + LF Online Store
+          + Contacts
+     * What We Do
+          + What is SDN?
+          + Platform Overview
+          + Current Release – Sodium
+          + Neon
+          + Fluorine
+          + Oxygen
+          + Nitrogen
+          + Carbon
+          + Boron
+          + Beryllium
+          + Lithium
+          + Helium
+          + Hydrogen
+     * Use Cases and Users
+          + By Function
+               o Automated Service Delivery
+               o Cloud and NFV
+               o Network Resource Optimization
+               o Visibility and Control
+          + User Stories
+          + Getting Started
+               o Advisory Group
+               o ODLUGs
+     * Ecosystem & Solutions
+          + Find a Solution
+          + Training
+          + For Solution Partners
+               o Powered by Reg Form
+               o Powered by FAQ Page
+     * Technical Community
+          + Getting Started for Developers
+               o Roadmap
+               o Downloads
+          + Lifecycle & Releases
+          + Security
+          + IP Policy
+               o Inbound Code Review Policy
+               o DCO Policy
+               o Licensing
+     * Support OpenDaylight
+          + Ambassadors
+     *
+
+   ____________________
+   Press enter to begin your search
+
+Results For "{search_term_string}"
+
+Sorry, no results were found.
+
+   Please try again with different keywords.
+   ____________________ (BUTTON) Search
+
+   Copyright © 2018 OpenDaylight Project a Series of LF Projects, LLC
+   For web site terms of use, trademark policy and other project policies
+   please see https://lfprojects.org.
+     * About
+          + Join
+          + Governance
+               o TSC
+          + Charter
+          + News
+               o Foundation News
+               o Blogs
+               o In the News
+          + LF Online Store
+          + Contacts
+     * What We Do
+          + What is SDN?
+          + Platform Overview
+          + Current Release – Sodium
+          + Neon
+          + Fluorine
+          + Oxygen
+          + Nitrogen
+          + Carbon
+          + Boron
+          + Beryllium
+          + Lithium
+          + Helium
+          + Hydrogen
+     * Use Cases and Users
+          + By Function
+               o Automated Service Delivery
+               o Cloud and NFV
+               o Network Resource Optimization
+               o Visibility and Control
+          + User Stories
+          + Getting Started
+               o Advisory Group
+               o ODLUGs
+     * Ecosystem & Solutions
+          + Find a Solution
+          + Training
+          + For Solution Partners
+               o Powered by Reg Form
+               o Powered by FAQ Page
+     * Technical Community
+          + Getting Started for Developers
+               o Roadmap
+               o Downloads
+          + Lifecycle & Releases
+          + Security
+          + IP Policy
+               o Inbound Code Review Policy
+               o DCO Policy
+               o Licensing
+     * Support OpenDaylight
+          + Ambassadors
+
+     *
+     *
+     *
+     *
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-TPQ368

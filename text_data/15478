@@ -1,0 +1,230 @@
+   #DroboPorts - Cross-compiling and ready-to-use applications for the
+   DroboFS and Drobo5N
+
+   (BUTTON) Toggle navigation DroboPorts
+     * Home
+     * About
+     * App Repository
+          + Show all apps
+          +
+          + a
+               o Apache 2.4
+               o Aria2
+          + b
+               o Bash
+          + c
+               o Coreutils
+               o CouchPotato
+               o CrashPlan
+               o Crond
+          + e
+               o E2fsprogs
+          + f
+               o FSX
+               o FUSE
+          + g
+               o Git
+               o Golang
+          + h
+               o Headphones
+               o htop
+          + i
+               o ifstatus
+               o iftop
+               o ImageMagick
+               o IOzone
+          + j
+               o Java 7
+               o Java 8
+          + l
+               o Locale
+          + m
+               o Modoboa mailserver
+               o MC
+               o MiniDLNA
+               o Mongoose
+               o Mono
+               o MySQL
+          + n
+               o nano
+               o NFSv3
+               o Node.js
+               o NZBGet
+          + o
+               o OpenSSH
+          + p
+               o P7zip
+               o Par2cmdline
+               o Perl 5
+               o ProFTPd
+               o Pydio
+               o Python 2
+               o Python 3
+          + r
+               o Ruby 2
+          + s
+               o SABnzbd
+               o GNU Screen
+               o SickBeard
+               o Sudo
+               o Subversion
+          + t
+               o Transmission
+          + u
+               o UniFi
+               o Unrar
+          + w
+               o Wget
+     * Cross-tool Repository
+     * Kernel modules
+     * Python eggs
+          + Show all eggs
+          +
+          + Cheetah
+          + pyOpenSSL
+          + yEnc
+     * Wiki
+          + For Developers
+          + Setting up a VM
+          + Toolchains
+          +
+          + For End-users
+          + Using command-line apps
+
+   [droboports.png]
+
+DroboPorts
+
+   Cross-compiling and ready-to-use applications for the DroboFS and
+   Drobo5N
+
+Latest updates
+
+CrashPlan
+
+   [crashplan.png]
+
+   Computer backup made simple.
+
+   See app »
+
+Golang
+
+   [terminal.png]
+
+   Go is an open source programming language that makes it easy to build
+   simple, reliable, and efficient software.
+
+   See app »
+
+MiniDLNA
+
+   [minidlna.gif]
+
+   MiniDLNA is a simple media server software, with the aim of being fully
+   compliant with DLNA/UPnP-AV clients.
+
+   See app »
+
+Pydio
+
+   [terminal.png]
+
+   Pydio (formerly AjaXplorer) is a mature open source software solution
+   for file sharing and synchronization.
+
+   See app »
+
+   To receive notifications about the latest DroboApp releases and news,
+   circle DroboPorts on Google Plus.
+
+   See more »
+
+Where are the old apps and pages?
+
+   The old apps and pages are still available here. They will be migrated
+   from the old site as updated versions are published.
+
+How to use this site
+
+   This site is a repository of apps for owners of Drobo NAS devices, such
+   as the DroboFS and the Drobo5N. Its primary audience is the heavy-duty
+   Linux users, the kind that thinks package management is for newbies,
+   but we also try to accomodate end-users as much as possible.
+
+   In other words, what is offered here is the lowest level possible of
+   instructions to get from the source code (of both application and
+   libraries) all the way to packaging the binaries as DroboApps. This
+   means also instructions on how to setup the cross-compiling
+   environment.
+
+   With that being said, not everyone has the time to start the procedure
+   from scratch. Therefore, each DroboApp will have a "releases" page with
+   links to ready-to-deploy packages and some additional instructions to
+   install and configure each app.
+
+   Most of the time, it is just a matter of downloading the TGZ file,
+   copying it in the DroboApps share of your Drobo, and rebooting it.
+
+   All the DroboApps are packaged in a way that makes them as ready-to-go
+   as possible, and many will just work out-of-the-box without any further
+   configuration. Additional configuration, if necessary, will be
+   indicated in the releases' description.
+
+What should I install on my Drobo5N/DroboFS?
+
+   It depends on what you want to do with it. If you are a command-line
+   fellow, then start with OpenSSH, bash, and wget with SSL support. After
+   that have a look at the other command-line utilities. If you need to
+   remote admin the Drobo, you might want to install OpenVPN and Puppet.
+   Developers will be interested in git.
+
+   Both the Drobo5N and the DroboFS make for pretty decent
+   torrent/newsgroup downloader boxes. Have a look at rtorrent,
+   transmission and nzbget. If you are thinking about automating your
+   downloads, you'll probably also need Lighttpd, PHP, and Python (and
+   some of the Python packages too). These are fairly large DroboApps and
+   might be a little complicated to setup, so head on to the DroboSpace
+   forums to get some help.
+
+   While the DroboFS is a pretty capable file/media server, the Drobo5N is
+   an excellent choice. You can host your own content or blog using Apache
+   and MySQL (use a Drobo5N for an optimal performance). If you want to
+   access it over the internet, ProFTPd seems to be the best FTP server
+   available. If you are in an Unix environment (*BSD, Linux, Mac OS X),
+   you might want to get the kernel version of the NFS server. If you are
+   looking to stream media to TVs/DVD players/set-top boxes/Android
+   devices, then minidlna is the app for you. Unfortunately, due to
+   Apple's restrictive policies and DRM schemes, there isn't a good
+   solution to serve Apple media (movies in particular) available so far.
+
+   Finally, both the Drobo5N and the DroboFS are the perfect backup
+   destinations. If you are a Linux user, then you might wanna pickup the
+   latest rsync. The CrashPlan client can backup your Drobo5N/FS to the
+   cloud.
+
+Supporting the site
+
+   If you like the tutorials, or are using any of the apps from this site,
+   please consider becoming a patreon or making a donation to support our
+   efforts and help keeping the site online.
+
+   Published with GitHub Pages. Bootstrap theme: Sandstone.
+
+   Drobo forums
+     __________________________________________________________________
+
+   Drobo, DroboShare, Drobo FS, Drobo 5N, DRI and all related trademarks
+   are the property of Data Robotics, Inc. This site is not affiliated,
+   endorsed or supported by DRI in any way. The use of information and
+   software provided on this website may be used at your own risk. The
+   information and software available on this website are provided as-is
+   without any warranty or guarantee. By visiting this website you agree
+   that: (1) We take no liability under any circumstance or legal theory
+   for any DroboApp, software, error, omissions, loss of data or damage of
+   any kind related to your use or exposure to any information provided on
+   this site; (2) All software are made “AS AVAILABLE” and “AS IS” without
+   any warranty or guarantee. All express and implied warranties are
+   disclaimed. Some states do not allow limitations of incidental or
+   consequential damages or on how long an implied warranty lasts, so the
+   above may not apply to you.

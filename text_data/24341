@@ -1,0 +1,776 @@
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+
+$(function () {
+
+        var colors = Highcharts.getOptions().colors,
+            categories = ['MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera'],
+            name = 'Browser brands',
+            data = [{
+                    y: 55.11,
+                    color: colors[0],
+                    drilldown: {
+                        name: 'MSIE versions',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9
+.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                    }
+                }, {
+                    y: 21.63,
+                    color: colors[1],
+                    drilldown: {
+                        name: 'Firefox versions',
+                        categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5'
+, 'Firefox 3.6', 'Firefox 4.0'],
+                        data: [0.20, 0.83, 1.58, 13.12, 5.43],
+                        color: colors[1]
+                    }
+                }, {
+                    y: 11.94,
+                    color: colors[2],
+                    drilldown: {
+                        name: 'Chrome versions',
+                        categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', '
+Chrome 8.0', 'Chrome 9.0',
+                            'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
+                        data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+                        color: colors[2]
+                    }
+                }, {
+                    y: 7.15,
+                    color: colors[3],
+                    drilldown: {
+                        name: 'Safari versions',
+                        categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0
+', 'Safari 4.1', 'Safari/Maxthon',
+                            'Safari 3.1', 'Safari 4.1'],
+                        data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+                        color: colors[3]
+                    }
+                }, {
+                    y: 2.14,
+                    color: colors[4],
+                    drilldown: {
+                        name: 'Opera versions',
+                        categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
+                        data: [ 0.12, 0.37, 1.65],
+                        color: colors[4]
+                    }
+                }];
+
+
+        // Build the data arrays
+        var browserData = [];
+        var versionsData = [];
+        for (var i = 0; i < data.length; i++) {
+
+            // add browser data
+            browserData.push({
+                name: categories[i],
+                y: data[i].y,
+                color: data[i].color
+            });
+
+            // add version data
+            for (var j = 0; j < data[i].drilldown.data.length; j++) {
+                var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+                versionsData.push({
+                    name: data[i].drilldown.categories[j],
+                    y: data[i].drilldown.data[j],
+                    color: Highcharts.Color(data[i].color).brighten(brightness).
+get()
+                });
+            }
+        }
+
+        // Create the chart
+        $('#container').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Browser market share, April, 2011'
+            },
+            yAxis: {
+                title: {
+                    text: 'Total percent market share'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    shadow: false,
+                    center: ['50%', '50%']
+                }
+            },
+            tooltip: {
+                    valueSuffix: '%'
+            },
+            series: [{
+                name: 'Browsers',
+                data: browserData,
+                size: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        return this.y > 5 ? this.point.name : null;
+                    },
+                    color: 'white',
+                    distance: -30
+                }
+            }, {
+                name: 'Versions',
+                data: versionsData,
+                size: '80%',
+                innerSize: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        // display only if larger than 1
+                        return this.y > 1 ? '<b>'+ this.point.name +':</b> '+ th
+is.y +'%'  : null;
+                    }
+                }
+            }]
+        });
+    });
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+Edit in JSFiddle
+
+     * Result
+     * HTML
+     * CSS
+
+<div>bla bla</div>
+div{
+    background: red;
+}
+Edit in JSFiddle
+
+     * Result
+     * HTML
+     * CSS
+
+<div>bla bla</div>
+<br>
+<div class="inline-block">display: inline-block</div>
+<br>
+<div class="inline">display: inline</div>
+<br>
+<div class="float">float: left</div>
+
+
+div{
+    margin-bottom: 5px;
+    background: red;
+}
+.float{
+    float: left;
+}
+.inline-block{
+    display: inline-block;
+}
+.inline{
+    display: inline;
+}
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.3630104, 2.9846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+
+$(function () {
+
+        var colors = Highcharts.getOptions().colors,
+            categories = ['MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera'],
+            name = 'Browser brands',
+            data = [{
+                    y: 55.11,
+                    color: colors[0],
+                    drilldown: {
+                        name: 'MSIE versions',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9
+.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                    }
+                }, {
+                    y: 21.63,
+                    color: colors[1],
+                    drilldown: {
+                        name: 'Firefox versions',
+                        categories: ['Firefox 2.0', 'Firefox 3.0', 'Firefox 3.5'
+, 'Firefox 3.6', 'Firefox 4.0'],
+                        data: [0.20, 0.83, 1.58, 13.12, 5.43],
+                        color: colors[1]
+                    }
+                }, {
+                    y: 11.94,
+                    color: colors[2],
+                    drilldown: {
+                        name: 'Chrome versions',
+                        categories: ['Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', '
+Chrome 8.0', 'Chrome 9.0',
+                            'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'],
+                        data: [0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22],
+                        color: colors[2]
+                    }
+                }, {
+                    y: 7.15,
+                    color: colors[3],
+                    drilldown: {
+                        name: 'Safari versions',
+                        categories: ['Safari 5.0', 'Safari 4.0', 'Safari Win 5.0
+', 'Safari 4.1', 'Safari/Maxthon',
+                            'Safari 3.1', 'Safari 4.1'],
+                        data: [4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14],
+                        color: colors[3]
+                    }
+                }, {
+                    y: 2.14,
+                    color: colors[4],
+                    drilldown: {
+                        name: 'Opera versions',
+                        categories: ['Opera 9.x', 'Opera 10.x', 'Opera 11.x'],
+                        data: [ 0.12, 0.37, 1.65],
+                        color: colors[4]
+                    }
+                }];
+
+
+        // Build the data arrays
+        var browserData = [];
+        var versionsData = [];
+        for (var i = 0; i < data.length; i++) {
+
+            // add browser data
+            browserData.push({
+                name: categories[i],
+                y: data[i].y,
+                color: data[i].color
+            });
+
+            // add version data
+            for (var j = 0; j < data[i].drilldown.data.length; j++) {
+                var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+                versionsData.push({
+                    name: data[i].drilldown.categories[j],
+                    y: data[i].drilldown.data[j],
+                    color: Highcharts.Color(data[i].color).brighten(brightness).
+get()
+                });
+            }
+        }
+
+        // Create the chart
+        $('#container').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text: 'Browser market share, April, 2011'
+            },
+            yAxis: {
+                title: {
+                    text: 'Total percent market share'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    shadow: false,
+                    center: ['50%', '50%']
+                }
+            },
+            tooltip: {
+                    valueSuffix: '%'
+            },
+            series: [{
+                name: 'Browsers',
+                data: browserData,
+                size: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        return this.y > 5 ? this.point.name : null;
+                    },
+                    color: 'white',
+                    distance: -30
+                }
+            }, {
+                name: 'Versions',
+                data: versionsData,
+                size: '80%',
+                innerSize: '60%',
+                dataLabels: {
+                    formatter: function() {
+                        // display only if larger than 1
+                        return this.y > 1 ? '<b>'+ this.point.name +':</b> '+ th
+is.y +'%'  : null;
+                    }
+                }
+            }]
+        });
+    });
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+Edit in JSFiddle
+
+     * Result
+     * HTML
+     * CSS
+
+<div>bla bla</div>
+div{
+    background: red;
+}
+Edit in JSFiddle
+
+     * Result
+     * HTML
+     * CSS
+
+<div>bla bla</div>
+<br>
+<div class="inline-block">display: inline-block</div>
+<br>
+<div class="inline">display: inline</div>
+<br>
+<div class="float">float: left</div>
+
+
+div{
+    margin-bottom: 5px;
+    background: red;
+}
+.float{
+    float: left;
+}
+.inline-block{
+    display: inline-block;
+}
+.inline{
+    display: inline;
+}
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.3630104, 2.9846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+      var eskimon = L.polyline([
+        [47.077766, -0.219043],
+        [47.077766, -0.643656],
+        [46.912911, -0.643656],
+        [46.912911, -0.219043],
+        [46.912911, -0.643656],
+        [46.778871, -0.643656],
+        [46.778871, -0.219043]
+                        ], {color: 'red'}).addTo(carte);
+      carte.setView([46.6835956, -0.4137665], 9);
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+      var influence = L.circle([46.6835956, -0.4137665], 210000).addTo(carte);
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+      var hexa = L.polygon([
+        [47.318398, -0.886464],
+        [47.318398, 0.069346],
+        [46.722971, 0.5862335],
+        [46.000000, 0.069346],
+        [46.000000, -0.886464],
+        [46.722971, -1.4137665]
+                        ], {color: 'red'}).addTo(carte);
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+      carte.on('click', placerMarqueur);
+
+      function placerMarqueur(e) {
+                                marker.setLatLng(e.latlng);
+      };
+    </script>
+  </body>
+
+</html>
+Edit in JSFiddle
+
+     * Result
+     * JavaScript
+     * HTML
+     * CSS
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait a la fin du <body>
+        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/
+0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js
+"></script>
+
+    <!-- Une feuille de style éventuel -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tutoriel Leaflet OSM</title>
+  </head>
+
+  <body>
+    <!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille -->
+    <div id="macarte" style="width:545px; height:490px"></div>
+
+    <script>
+      var carte = L.map('macarte').setView([46.5630104, 1.4846608], 6);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a
+> contributors'
+      }).addTo(carte);
+                        var marker = L.marker([46.6835956, -0.4137665]).addTo(ca
+rte);
+
+      marker.bindPopup(''); // Je ne met pas de texte par défaut
+      var mapopup = marker.getPopup();
+      mapopup.setContent('Salut, ça zeste ?');
+      marker.openPopup();
+    </script>
+  </body>
+
+</html>

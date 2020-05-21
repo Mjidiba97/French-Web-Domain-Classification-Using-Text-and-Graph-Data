@@ -1,0 +1,250 @@
+Cryptology ePrint Archive: Report 2016/1178
+
+   Implementing and Proving the TLS 1.3 Record Layer
+
+   Karthikeyan Bhargavan and Antoine Delignat-Lavaud and Cédric Fournet
+   and Markulf Kohlweiss and Jianyang Pan and Jonathan Protzenko and Aseem
+   Rastogi and Nikhil Swamy and Santiago Zanella-Béguelin and Jean Karim
+   Zinzindohoué
+
+   Abstract: The record layer is the main bridge between TLS applications
+   and internal sub-protocols. Its core functionality is an elaborate
+   authenticated encryption: streams of messages for each sub-protocol
+   (hand- shake, alert, and application data) are fragmented, multiplexed,
+   and encrypted with optional padding to hide their lengths. Conversely,
+   the sub-protocols may provide fresh keys or signal stream termination
+   to the record layer.
+
+   Compared to prior versions, TLS 1.3 discards obsolete schemes in favor
+   of a common construction for Authenticated Encryption with Associated
+   Data (AEAD), instantiated with algorithms such as AES- GCM and
+   ChaCha20-Poly1305. It differs from TLS 1.2 in its use of padding,
+   associated data and nonces. It encrypts the content-type used to
+   multiplex between sub-protocols. New protocol features such as early
+   application data (0-RTT and 0.5-RTT) and late handshake messages
+   require additional keys and a more general model of stateful
+   encryption.
+
+   We build and verify a reference implementation of the TLS record layer
+   and its cryptographic algorithms in F*, a dependently typed language
+   where security and functional guarantees can be specified as pre- and
+   post-conditions. We reduce the high-level security of the record layer
+   to cryptographic assumptions on its ciphers. Each step in the reduction
+   is verified by typing an F* module; when the step incurs a security
+   loss, this module precisely captures the corresponding game-based
+   security assumption.
+
+   We first verify the functional correctness and injectivity properties
+   of our implementations of one- time MAC algorithms (Poly1305 and GHASH)
+   and provide a generic proof of their security given these properties.
+   We show the security of AEAD given any secure one-time MAC and PRF. We
+   extend AEAD, first to stream encryption, then to length-hiding,
+   multiplexed encryption. Finally, we build a security model of the
+   record layer against an adversary that controls the TLS sub-protocols.
+   We compute concrete security bounds for the AES-GCM and
+   ChaCha20-Poly1305 ciphersuites, and derive recommended limits on sent
+   data before re-keying. Combining our functional correctness and
+   security results, we obtain the first verified implementations of the
+   main TLS 1.3 record ciphers.
+
+   We plug our implementation of the record layer into an existing TLS
+   library and confirm that the combination interoperates with Chrome and
+   Firefox, and thus that experimentally the new TLS record layer (as
+   described in RFCs and cryptographic standards) is provably secure.
+
+   Category / Keywords: cryptographic protocols / implementation, provable
+   security, transport layer security
+
+   Date: received 23 Dec 2016, last revised 30 Dec 2016
+
+   Contact author: karthikeyan bhargavan at inria fr
+
+   Available format(s): PDF | BibTeX Citation
+
+   Version: 20161230:194418 (All versions of this report)
+
+   Short URL: ia.cr/2016/1178
+     __________________________________________________________________
+
+   [ Cryptology ePrint archive ]
+Cryptology ePrint Archive: Report 2015/394
+
+   Augmented Secure Channels and the Goal of the TLS 1.3 Record Layer
+
+   Christian Badertscher and Christian Matt and Ueli Maurer and Phillip
+   Rogaway and Bjrn Tackmann
+
+   Abstract: Motivated by the wide adoption of authenticated encryption
+   and TLS, we suggest a basic channel abstraction, an augmented secure
+   channel (ASC), that allows a sender to send a receiver messages
+   consisting of two parts, where one is privacy-protected and both are
+   authenticity-protected. Working in the tradition of constructive
+   cryptography, we formalize this idea and provide a construction of this
+   kind of channel using the lower-level tool authenticated-encryption.
+
+   We look at recent proposals on TLS 1.3 and suggest that the criterion
+   by which their security can be judged is quite simple: do they
+   construct an ASC? Due to this precisely defined goal, we are able to
+   give a natural construction that comes with a rigorous security proof
+   and directly leads to a proposal on TLS 1.3 that is provably secure.
+
+   Category / Keywords: secret-key cryptography / Authenticated
+   Encryption, TLS 1.3 Record Layer, Composable Security
+
+   Original Publication (in the same form): ProvSec 2015
+
+   Date: received 27 Apr 2015, last revised 28 Sep 2018
+
+   Contact author: christian badertscher at inf ethz ch
+
+   Available format(s): PDF | BibTeX Citation
+
+   Version: 20180928:151827 (All versions of this report)
+
+   Short URL: ia.cr/2015/394
+     __________________________________________________________________
+
+   [ Cryptology ePrint archive ]
+Cryptology ePrint Archive: Report 2016/564
+
+   The Multi-User Security of Authenticated Encryption: AES-GCM in TLS 1.3
+
+   Mihir Bellare and Bjoern Tackmann
+
+   Abstract: We initiate the study of multi-user (mu) security of
+   authenticated encryption (AE) schemes as a way to rigorously formulate,
+   and answer, questions about the "randomized nonce" mechanism proposed
+   for the use of the AE scheme GCM in TLS 1.3. We (1) Give definitions of
+   mu ind (indistinguishability) and mu kr (key recovery) security for AE
+   (2) Characterize the intent of nonce randomization as being improved mu
+   security as a defense against mass surveillance (3) Cast the method as
+   a (new) AE scheme RGCM (4) Analyze and compare the mu security of both
+   GCM and RGCM in the model where the underlying block cipher is ideal,
+   showing that the mu security of the latter is indeed superior in many
+   practical contexts to that of the former, and (5) Propose an
+   alternative AE scheme XGCM having the same efficiency as RGCM but
+   better mu security and a more simple and modular design.
+
+   Category / Keywords: secret-key cryptography / authenticated
+   encryption, TLS 1.3, multi-user security, mass surveillance
+
+   Original Publication (with minor differences): IACR-CRYPTO-2016
+
+   Date: received 3 Jun 2016, last revised 27 Nov 2017
+
+   Contact author: bjoern tackmann at ieee org
+
+   Available format(s): PDF | BibTeX Citation
+
+   Note: Added numerical comparison between the schemes. Expanded and
+   corrected the proof of RGCM security.
+
+   Version: 20171127:221050 (All versions of this report)
+
+   Short URL: ia.cr/2016/564
+     __________________________________________________________________
+
+   [ Cryptology ePrint archive ]
+Cryptology ePrint Archive: Report 2015/914
+
+   A Cryptographic Analysis of the TLS 1.3 Handshake Protocol Candidates
+
+   Benjamin Dowling and Marc Fischlin and Felix Gnther and Douglas Stebila
+
+   Abstract: The Internet Engineering Task Force (IETF) is currently
+   developing the next version of the Transport Layer Security (TLS)
+   protocol, version 1.3. The transparency of this standardization process
+   allows comprehensive cryptographic analysis of the protocols prior to
+   adoption, whereas previous TLS versions have been scrutinized in the
+   cryptographic literature only after standardization. Here we look at
+   two related, yet slightly different candidates which were in discussion
+   for TLS 1.3 at the point of writing of the main part of the paper in
+   May 2015, called draft-ietf-tls-tls13-05 and
+   draft-ietf-tls-tls13-dh-based.
+
+   We give a cryptographic analysis of the primary ephemeral
+   Diffie-Hellman-based handshake protocol, which authenticates parties
+   and establishes encryption keys, of both TLS 1.3 candidates. We show
+   that both candidate handshakes achieve the main goal of providing
+   secure authenticated key exchange according to an augmented multi-stage
+   version of the Bellare-Rogaway model. Such a multi-stage approach is
+   convenient for analyzing the design of the candidates, as they
+   establish multiple session keys during the exchange.
+
+   An important step in our analysis is to consider compositional security
+   guarantees. We show that, since our multi-stage key exchange security
+   notion is composable with arbitrary symmetric-key protocols, the use of
+   session keys in the record layer protocol is safe. Moreover, since we
+   can view the abbreviated TLS resumption procedure also as a
+   symmetric-key protocol, our compositional analysis allows us to
+   directly conclude security of the combined handshake with session
+   resumption.
+
+   We include a discussion on several design characteristics of the TLS
+   1.3 drafts based on the observations in our analysis.
+
+   Category / Keywords: cryptographic protocols / Transport Layer Security
+   (TLS), key exchange, protocol analysis, composition
+
+   Original Publication (with major differences): 22nd ACM Conference on
+   Computer and Communications Security (CCS 2015)
+   DOI: 10.1145/2810103.2813653
+
+   Date: received 20 Sep 2015, last revised 31 Jan 2017
+
+   Contact author: guenther at cs tu-darmstadt de
+
+   Available format(s): PDF | BibTeX Citation
+
+   Note: Corrected proofs using PRF-ODH assumption
+
+   Version: 20170131:130513 (All versions of this report)
+
+   Short URL: ia.cr/2015/914
+     __________________________________________________________________
+
+   [ Cryptology ePrint archive ]
+Cryptology ePrint Archive: Report 2016/081
+
+   A Cryptographic Analysis of the TLS 1.3 draft-10 Full and Pre-shared
+   Key Handshake Protocol
+
+   Benjamin Dowling and Marc Fischlin and Felix Gnther and Douglas Stebila
+
+   Abstract: We analyze the handshake protocol of TLS 1.3
+   draft-ietf-tls-tls13-10 (published October 2015). This continues and
+   extends our previous analysis (CCS 2015, Cryptology ePrint Archive
+   2015) of former TLS 1.3 drafts (draft-ietf-tls-tls13-05 and
+   draft-ietf-tls-tls13-dh-based). Here we show that the full (EC)DHE
+   Diffie-Hellman-based handshake of draft-10 is also secure in the
+   multi-stage key exchange framework of Fischlin and Gnther which
+   captures classical Bellare-Rogaway key secrecy for key exchange
+   protocols that derive multiple keys.
+
+   We also note that a recent protocol change---the introduction of a
+   NewSessionTicket message for resumption, encrypted under the
+   application traffic key---impairs the protocol modularity and hence our
+   compositional guarantees that ideally would allow an independent
+   analysis of the record protocol. We additionally analyze the pre-shared
+   key modes (with and without ephemeral Diffie-Hellman key), and fit them
+   into the composability framework, addressing composability with the
+   input resumption secret from a previous handshake and of the output
+   session keys.
+
+   Category / Keywords: cryptographic protocols / Transport Layer Security
+   (TLS), key exchange, protocol analysis, composition
+
+   Date: received 29 Jan 2016, last revised 31 Jan 2017
+
+   Contact author: guenther at cs tu-darmstadt de
+
+   Available format(s): PDF | BibTeX Citation
+
+   Note: Corrected proofs using PRF-ODH assumption
+
+   Version: 20170131:130636 (All versions of this report)
+
+   Short URL: ia.cr/2016/081
+     __________________________________________________________________
+
+   [ Cryptology ePrint archive ]

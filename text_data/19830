@@ -1,0 +1,201 @@
+   IdRef menu
+     * Accueil
+     * Exploration
+     * Yasgui
+     * Sparql endpoint
+     * Documentation
+
+     * Accueil
+     * Exploration
+     * Yasgui
+     * Sparql endpoint
+     * Documentation
+
+Bienvenue sur data.idref.fr, triple store d’IdRef
+
+Les données
+
+   Dans le triple store d'IdRef, vous trouverez les notices d’autorité
+   IdRef et les références bibliographiques liées en provenance du Sudoc,
+   converties sous la forme de triplets RDF. Tous les types de notices
+   d'autorité sont présents : Personnes, Collectivités, Noms Communs
+   (Rameau et FMeSH), Noms géographiques, Familles et Titres. Toutes les
+   références du Sudoc dans lesquelles existe un lien à une autorité IdRef
+   sont également présentes, sous la forme d’une URI Sudoc, d’un rôle et
+   d’une citation bibliographique.
+
+Le temps réel
+
+   La conception de data.idref.fr repose sur un parti pris pour le temps
+   réel. Chaque modification apportée aux liens bibliographiques ou aux
+   notices d’autorité via les interfaces de production (WinIBW ou IdRef)
+   est répercutée sans délai dans data.idref.fr. Afin d’optimiser la
+   gestion de la synchronisation des données, chaque notice d'autorité et
+   chaque référence bibliographique ont un graphe bien à elles, appelé «
+   graphe nommé » et identifié par leur PPN.
+
+La modélisation
+
+   Pour naviguer et interroger les données, il faut avoir une idée de leur
+   modélisation. Dans data.idref.fr, les références bibliographiques se
+   présentent sous la forme d’uri http://www.sudoc.fr/PPN/id (où PPN est
+   l’identifiant à 9 caractères de la ressource).
+   Une autorité est décomposée d’une part avec l’uri
+   <http://www.idref.fr/PPN > qui correspond à la notice et d’autre part à
+   l’uri http://www.idref.fr/PPN/id qui correspond à l’entité décrite. Ces
+   deux éléments sont reliés par un lien de type foaf:primaryTopic allant
+   de la notice vers l’entité décrite : <http://www.idref.fr/PPN>
+   foaf:primaryTopic <http://www.idref.fr/PPN/id>.
+   Enfin, les références pointent vers les autorités. Cela signifie que
+   les triplets des liens bibliographiques ont pour « sujet » les uri des
+   références Sudoc et pour « objet » les uri des autorités IdRef
+   (http://www.idref.fr/PPN). Soit le roman « La plaisanterie » de Milan
+   Kundera, le triplet correspondant est <http://www.sudoc .fr/
+   203172744/id> marcrel:aut <http://www.idref.fr/026955059/id>.
+   Il faut ensuite connaître finement le nom des propriétés : pour cela,
+   consultez la documentation complète dans le manuel « data.idref.fr ».
+
+Les interfaces
+
+   A partir de la barre d’action en haut à droite, 3 modalités
+   d’exploration des données sont proposées, d’une technicité progressive
+   :
+
+   1. L’encart de recherche en langage naturel et de navigation par rebond
+       de lien en lien
+
+   2. Yasgui, l’éditeur de requêtes sparql qui facilite leur rédaction,
+       les mémorise, etc.
+
+   3. L’éditeur sparql brut du triple store
+
+   Maintenant à vous de jouer !
+     * Documentation
+          + data.idref.fr
+          + voir aussi IdRef en RDF
+          + voir aussi Sudoc en RDF
+     * Triple Store amis
+          + Démonstrateur ABES
+          + Structures de l’ESR
+          + BnF
+          + Persée
+          + Wikidata
+          + Larhra
+          + Hal
+          + Isidore
+
+Le triplestore data.idref.fr
+
+   Un triplestore est une base de données qui ne contient que des triplets
+   RDF (Resource Description Framework). RDF est le langage de base du Web
+   sémantique.
+   Un document structuré en RDF est un ensemble de triplets. Un triplet
+   RDF est formellement l'association d'un sujet, d'un prédicat et d'un
+   objet. Un document RDF ainsi formé correspond à un multigraphe orienté
+   étiqueté.
+   Enfin, SPARQL est le langage d'interrogation standard le plus répandu
+   pour interroger les graphes RDF.
+
+Assistance
+
+     * Guichet Abesstp
+
+Accéder à
+
+     * idref.fr
+
+   ABES
+   logo Mesri
+
+   © 2018 ABES
+   Mentions légales
+   Conditions Générales d'Utilisation
+   Données personnelles
+   IdRef menu
+     * Accueil
+     * Exploration
+     * Yasgui
+     * Sparql endpoint
+     * Documentation
+
+     * Accueil
+     * Exploration
+     * Yasgui
+     * Sparql endpoint
+     * Documentation
+
+   Erreur
+   Documentation : Les notices d'autorités en RDF (SPARQL)
+   Retour à la page d'accueil
+
+Le triplestore data.idref.fr
+
+   Un triplestore est une base de données qui ne contient que des triplets
+   RDF (Resource Description Framework). RDF est le langage de base du Web
+   sémantique.
+   Un document structuré en RDF est un ensemble de triplets. Un triplet
+   RDF est formellement l'association d'un sujet, d'un prédicat et d'un
+   objet. Un document RDF ainsi formé correspond à un multigraphe orienté
+   étiqueté.
+   Enfin, SPARQL est le langage d'interrogation standard le plus répandu
+   pour interroger les graphes RDF.
+
+Assistance
+
+     * Guichet Abesstp
+
+Accéder à
+
+     * idref.fr
+
+   ABES
+   logo Mesri
+
+   © 2018 ABES
+   Mentions légales
+   Conditions Générales d'Utilisation
+   Données personnelles
+   IdRef menu
+     * Accueil
+     * Exploration
+     * Yasgui
+     * Sparql endpoint
+     * Documentation
+
+     * Accueil
+     * Exploration
+     * Yasgui
+     * Sparql endpoint
+     * Documentation
+
+   Erreur
+   Documentation : Les notices d'autorités en RDF (SPARQL)
+   Retour à la page d'accueil
+
+Le triplestore data.idref.fr
+
+   Un triplestore est une base de données qui ne contient que des triplets
+   RDF (Resource Description Framework). RDF est le langage de base du Web
+   sémantique.
+   Un document structuré en RDF est un ensemble de triplets. Un triplet
+   RDF est formellement l'association d'un sujet, d'un prédicat et d'un
+   objet. Un document RDF ainsi formé correspond à un multigraphe orienté
+   étiqueté.
+   Enfin, SPARQL est le langage d'interrogation standard le plus répandu
+   pour interroger les graphes RDF.
+
+Assistance
+
+     * Guichet Abesstp
+
+Accéder à
+
+     * idref.fr
+
+   ABES
+   logo Mesri
+
+   © 2018 ABES
+   Mentions légales
+   Conditions Générales d'Utilisation
+   Données personnelles

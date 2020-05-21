@@ -1,0 +1,502 @@
+   #Curved Cat Games » Feed Curved Cat Games » Comments Feed Curved Cat
+   Games WordPress.com
+
+   ( small ) Indie Game Dev Studio
+
+Curved Cat Games
+
+     * Home
+     * The Count Lucanor
+     * Catequesis
+     * Tales of Pocoro
+     * Pocoro
+     * About
+
+Working on The Count Lucanor
+
+   Posted by monsieurmax in Uncategorized on November 6, 2015
+
+   Since February 2015, I’m working on an adventure game called “The Count
+   Lucanor“.
+
+   [cabras.gif]
+
+   The project is a kind of fork of Catequesis. We decided to create a
+   smaller game, in order to be able to polish the engine, improve the
+   tools and actually release a game in less than a year. Catequesis is a
+   big project with a long and complex story and we need to have a
+   perfectly polished release to hit big.
+
+   Back to “The Count Lucanor”, the game is currently in Greenlight
+   process and needs your vote to be able to be published on Steam. If you
+   have a steam account, please visit and give us your vote ( whether it’s
+   yes or no of course, i’m not forcing anyone here 😉 )
+   Advertisements
+
+   Leave a comment
+
+Working on Catequesis
+
+   Posted by monsieurmax in wip on March 5, 2013
+
+   Hi everyone.
+
+   Just a quick post to tell you that since September 2012, I’ve teamed
+   with a bunch of spanish people to work on a new game using my
+   world-famous RPG engine.
+
+   The game is called Catequesis and it’s a 8bit retro survival horror.
+   I won’t duplicate every news we make about this one here, so I’ll
+   suggest you to follow the dedicated links:
+     * Catequesis.eu
+     * IndieDB dedicated page
+
+
+   1 Comment
+
+When you see it, you’ll swap bricks
+
+   Posted by monsieurmax in Tech on September 9, 2011
+
+   Hi !
+
+   A friend of mine recently asked me to explain him how come i could
+   “port easily” ( my words ) an android game to desktop or even to
+   browser. After having answered him, i thought it might be interesting
+   for other people.
+
+   Port is quite easy because the base language stays the same, it’s Java
+   all the way, designed to use OpenGL :
+     * Android : Java running Dalvik VM and using embedded OpenGl wrappers
+       and native UI.
+     * Desktop : Java running under a JVM, using JOGL and Swing UI.
+     * Browser : Java compiled in Javascript with GWT and running WebGL
+       using gwt-g3d and Html UI.
+
+   When i built my game framework i kept in mind that i might have to port
+   the game to another system, so i made a nice separation between what i
+   call “technical components” ( middle orange bricks ) and “game
+   components” ( grouped as The Game ).
+
+   Those technical components make the links between the OS/System and the
+   game components. It means that when porting a game, i just need to
+   change / adapt the technical components to port the game.
+
+   In my case the technical components are :
+     * Action Manager : receives input from the system and convert them
+       into actions and broadcat them to the game components. For example,
+       on Android, touching the Virtual D-Pad Left on the screen, moving
+       the trackball to the left, or striking  the left arrow on the
+       keyboard, lead to the broadcast of the same action : “move left”.
+       Depending on the system, the way inputs are sent to this manager
+       are totally different.
+     * Persistence Manager : manages all the save system basically. On
+       Android, it uses the Preferences mechanism. On desktop, it’ll be on
+       the file system. On browser, i’ll probably use Google App Engine
+       database system.
+     * GL Renderer : On each system you have to understand how to
+       initialize GL Context and manage the textures in memory. It’s
+       OpenGl on each system, yet wrappers are quite different.
+     * UI Manager : UI are a real pain to code. It’s not fun at all and
+       can lead to many bugs. I choosed not to code a UI system in my
+       games and rather to rely on existing system. On Android, i used
+       some custom and themed alert dialogs. On desktop, JOGL allows to
+       blend Swing components with the OpenGl surface. On browser, Html
+       and WebGl are blended by the CPU ( at the moment ).
+     * Sound Manager : Playing music and sound is quite different from one
+       system to another. On Android and desktop it’s rather
+       straightforward. On a browser it’s another story. Fortunately, i
+       found gwt-voices and it works quite well and looks a lot like what
+       can be found on Android.
+
+   In the end, porting the game is just swapping the system-specific
+   middle bricks. This allow to keep the game exactly the same. The code
+   can evolve at the same time on each platform. This saves a lot of time.
+   Thanks for reading.
+   -Maxime
+
+   Leave a comment
+
+Html5 Canvas vs WebGL
+
+   Posted by monsieurmax in Tech on August 27, 2011
+
+   I started exploring the possibility to develop a game for G+ ( let’s
+   imagine that I can start by porting a random game where you jump around
+   on columns ).
+
+   One remaining question was to decide between WebGL and Canvas2D.
+   I found a blog entry on Jeff  Muizelaar site that allows anyone with a
+   modern browser to benchmark the performance of Canvas and WebGL.
+   The results I got were the expected ones. They’re almost the same as
+   what i obtained on Android between Canvas and OpenGL.
+
+   Here are the pros and cons :
+   WebGL :
+   + Super fast and powerful rendering
+   + Lots of possibilities for a 2D game, such as shading, lighting and
+   zooming.
+   + GWT API with gwt-g3d
+   – A bit complicated
+   – Low compatibility : Chrome & Firefox only
+   – Uncertain future due to security issues in the current specs
+
+   Canvas2D :
+   + Easy to code
+   + High compatibility : any HTML5 browser
+   + GWT API with gwt-g2d
+   – Low performances : laggy with more than 50 sprites ( on
+   non-accelerated browsers )
+
+   On my G+ post about this it has been suggested ( and on the Google Game
+   Developer Central ) that the use of Chrome frame can solve the problem
+   of the low compatibility of the WebGL.
+
+   In the end, the choice for WebGL was easily made.
+   Tales of Pocoro draws more than 200 sprites on the screen, so Canvas
+   would never allow a descent framerate.
+   Those security issues and early stage specs are still a real problem,
+   but let’s be optimistic and hope for the best.
+
+   I’ve started working with the GWT-G3D library, I’ll talk about it in my
+   next post.
+
+   3 Comments
+
+About piracy …
+
+   Posted by monsieurmax in Thoughts on July 20, 2011
+
+   As you probably already know it , i developed a game named Tales of
+   Pocoro on Android.
+
+   This game is quite good, and most people liked it. I made it from
+   scratch using Java, the Android framework and Open GL. It has been a
+   lot of work to design everything, to create my own game framework, to
+   code the game, to test, to debug etc… It took months of my spare time
+   and, even if i never intended to make a living out of it, i expected at
+   least a bit of money.
+
+   When the game is launched, a little anonymous stat is sent to my server
+   to record things like how many people play, who finished the game,
+   where are people blocked…
+   The sent stat line is almost unique per player. and my file has now
+   more than 12.000 lines. Minus the demo player and irrevelant lines it’s
+   around 10.000 people playing the full version.
+
+android_version|android_locale|device_manufacturer|device_model|device_display|g
+ame_unique_id|game_firstlaunch|game_version|game_progress_easy|game_progress_nor
+mal|game_progress_hard|game_random_easy|game_random_normal|game_randomprogress_h
+ard|game_cheater_level|game_cheater_solution|game_lowperf|game_fullscreen|game_c
+haracter|game_sound|game_music|current_date|
+7|English|HTC|HTC Hero|ERE27|0-1894685651|Fri May 13 20:13:52 UTC 2011|1.0.3|70|
+0|0|1|0|0|false|false|true|false|people_hero_man_3|true|true|Fri May 20 12:27:44
+ UTC 2011|
+
+   Now, the terrifying truth. I really sold ONLY 300 copies of this game.
+   I earned around 1.5€/$ for each. So for now i earned 450€. It is less
+   than what i spent in Android devices to test this game.
+   I should have earned around 15.000€ if piracy did not exist. ( yeah
+   it’s a BIG shortcut, i know )
+
+   I’m not a money guy. I earn enough to make my little family live and
+   that is enough for me. Game development is a hobby, something i do
+   because i love that really much ( it’s almost a curse )
+   But this huge difference between what i earned and what i should have
+   earned is still a real pain for me, and i’m really thinking about
+   stopping development on Android and try something different.
+
+   At the very least i must think of a different way to sell my games.
+   It’s already too late for Tales of Pocoro as it is available on many
+   pirate sites.
+   Daniel Cook has been someone who inspires me a lot since I stumble
+   upon lostgarden.com. And maybe I’ll follow the decision he made some
+   time ago to create games for browsers.
+
+   What do you think of it ? We are talking about it right here
+   : https://plus.google.com/u/0/103548521283875874904/posts/K7aJjjUjKwq
+
+   11 Comments
+
+RPG Engine : Controls, IA and Fights
+
+   Posted by monsieurmax in wip on June 4, 2011
+
+   Hi folks,
+
+   In the last post, i was mentionning getting back to my rpg engine and
+   update/finish a lot of things.
+   And guess what, that’s what i did.
+
+Updating the controls
+
+   The controls in the game were a total major failure.
+   At the time i was satisfied by the ‘single touch’ experience of it. You
+   put your finger on the screen and the hero goes there, like Zelda on
+   the DS. You clicked on a enemy to attack him… but that didn’t work.
+   Putting fingers around the screen right in the middle of what’s
+   happening was NOT a bright idea. Making an usable fight system was way
+   too complicated and hard to make it playable. Added to the fact that
+   range weapons would have been even more complicated, i finally gave up
+   on that type of control.
+
+   Now welcome the new controls: a totally fresh and new idea , the
+   virtual D-Pad !
+
+   For now, it’s the first try and it works well. You might have some
+   questions :
+     * why so big ? -On your phone, it won’t seem so big, and it have to
+       be big enough to be precise. Plus, it won’t be so opaque.
+     * why are the buttons on top right, and not down right ? -That’s a
+       more interesting question. You’ll be able to change this. But
+       there’s a good reason for this : Nexus One. The multitouch
+       capabilities of the N1 are rather poor. Touching two point in the
+       same ‘line’ leads to bugs ( example ) Putting the buttons there was
+       the only way for them to work correctly while moving the character.
+     * You lame ! We see tiling everywhere ! Yeah, i have eyes too1 It’ll
+       be fixed soon enough.
+
+Updating the Fight System
+
+   Fight fight fight. Life is all about fighting. I like fighting, you
+   like fighting, everybody fight every day. Didn’t you just put a
+   metallic stuff through a random being to make the red come out of it
+   just minutes ago before reading this post?
+
+   To be honest, i wanted to make a RPG without violence. But hey, it’s a
+   RPG engine, so there should be fights if one want it.
+
+   So the fight engine is being updated:
+     * A more realistic way to be punched away if taking a hit. This could
+       be used  to simulate wind too or anything that’ll move a being in a
+       direction.
+     * More frames for the sword.
+
+Updating the ennmy IA
+
+   I’m updating too the way that enemies see and think. Each enemy have is
+   own field of vision ( blue here for demo purpose) and will react if
+   some beings are in it.
+
+   There are still a lot to be done before having a real fight system, but
+   things are starting to take shape 🙂
+
+   See you.
+
+   Leave a comment
+
+Work in Progress : updating the RPG engine
+
+   Posted by monsieurmax in wip on May 7, 2011
+
+   Hi,
+
+   as you may know it, Tales of Pocoro has been built using parts of a RPG
+   game engine i started developing last year.
+   It was a hard work and i came to pause this project for a game design /
+   gameplay issue. Tales of Pocoro was a way for me to release a simple
+   game with nice graphics and it was a good way to improve the engine
+   too.
+
+   So, now that Tales of Pocoro is definitely over, I’m thinking about
+   getting back to my RPG project.
+   That means updating the engine with all the Tales of Pocoro features
+   and tweaks and adding some missing features.
+
+   This project was called Crystalia ( with random i and y in the name ).
+   At the time i created a page on indieDB, you can see many screenshots
+   and videos here.
+
+The Cristalia engine
+
+   The engine offers a lot of features :
+     * a tile engine with a tile editor to create maps.
+     * a game framework easily modified and extended.
+     * a rpg engine with a lot of possibilities such as dialogs, quests,
+       items, and a really nice technical design.
+
+   What is really nice about this game engine is that all the RPG content
+   ( basically, what make the game ) is written in XML. Maps, dialogs,
+   people behaviors quests are written in XML. You do not have to code
+   anything to write an adventure, or add a quest, or some new maps.
+
+        <map>
+                <layer id="cliff">
+                        <grid type="MASK" />
+                        <grid type="BASE" />
+                        <grid type="OVERBASE">
+                                <tile asset="town_house1_roof_1" atlas="atlas_to
+wn_1" x="1" y="28" />
+                                <tile asset="town_house1_roof_2" atlas="atlas_to
+wn_1" x="5" y="28" />
+                                <tile asset="town_house1_roof_3" atlas="atlas_to
+wn_1" x="7" y="28" />
+                                <tile asset="town_house1_roof_1" atlas="atlas_to
+wn_1" x="14" y="26" />
+                                <tile asset="town_house1_roof_2" atlas="atlas_to
+wn_1" x="18" y="26" />
+                                <tile asset="town_house1_roof_2" atlas="atlas_to
+wn_1" x="20" y="26" />
+                                <tile asset="town_house1_roof_3" atlas="atlas_to
+wn_1" x="22" y="26" />
+
+<friend layer="ground" asset="4x3_people_boy_03" atlas="atlas_charac_2" id="chef
+2" x="21" y="4">
+                        <behaviour type="still" />
+                        <dynamic_condition test="isQuestStarted" value="quest_ri
+ng_1">
+                                <interaction type="dialog" text="here is the the
+ magic ring!" />
+                                <interaction type="questitem_add" name="magic_ri
+ng_1" />
+                        </dynamic_condition>
+                        <dynamic_condition test="hasQuestItem" value="magic_ring
+_1">
+                                <interaction type="dialog" text="Please bring th
+e magic ring to the old fart near me" />
+                        </dynamic_condition>
+                </friend>
+
+   This allows one of the coolest feature of the game : world changing.
+
+   Let’s imagine a basic quest : free the villagers from the thieves in
+   the forest.
+
+   As long as the quest is not complete, the forest will be a dark place
+   with monster and thieves lurking around. People in the village will
+   look depressed and to increase the drama effect, you can even imagine
+   putting dead trees, wandering rats or anything you can imagine. All
+   this details are written in XML under the condition “thieves quest not
+   complete“.
+
+   Once the thieves quest is complete, the forest will no longer be a dark
+   and threatening place, the village will be a nice place to live again,
+   and this is written in the same XML but under the condition “thieves
+   quest complete“.
+
+   A bit of interaction here :
+   http://www.indiedb.com/media/embed/294201
+   [WIP] Implementing Interaction #1 – Indie DB
+
+   This dynamic xml handling allows a lot of changes in the world. It’s
+   not a static universe anymore. Possibilities are really humongous.
+   Dialogs can be modified, A whole map can became different or just a
+   small part of it. This is a really important feature for me. I played a
+   lot to real western RPG games, and nothing please me more than being
+   able to modify the universe with my actions. I’ll always remember when
+   in Gothic 3, you defeat all the Orcs enslavering a human village, the
+   orcs flee and the humans started to live again in their village. I just
+   tried “for fun” to kill all the orcs around and the universe reacted to
+   these actions.
+
+Updating the graphic engine
+
+   When i coded the graphic engine of the RPG engine, i was quite
+   unexperimented with openGl and made some choices that led to some
+   limitations.
+   To draw sprites on the screen ( basically everything drawn is a sprite
+   from trees to people to ground to buttons ), i used a kind of openGl
+   hack to draw raw images on the screen.
+   The main problem is that you cannot do anything once things are drawn.
+   no light effect, no rotation, no zooming.
+
+   Zooming was much of a concern indeed, and i started modifying the whole
+   game engine just for this feature. The good news is that it is now
+   done. The camera is now able to pan around and zoom gently back and
+   forth.
+
+   Next step on the graphic engine will be to add a bit of lighting. I’m
+   not quite sure of how it’ll look like but it’s worth the try.
+
+Updating the controls
+
+   Controls where the tricky part. It was even the main reason of the
+   project being paused.
+   Once again, it was my fault, i made poor choices :
+   I decided that the game could be played by every one, including people
+   with old phones. That means sometimes only a single touch screen,  no
+   trackball, no keyboard. All the game should have been single-touch.
+   That means a lot. No virtual joysticks, no virtual buttons ( ie ,
+   single touch = you can’t move and click in the same time ).
+   This choice led to a even greater problem : the battles.
+
+   People like to fight. They want to be able to draw a piece of metal and
+   put it through another being to make some red stuff come out of him.
+   That’s how RPG are.
+   Fight gameplay must be perfect  otherwise it’ll be frustrating and the
+   game will be just bad.
+   With the single touch choice, fights would have been a real nightmare,
+   clicking around on the screen, hiding it with your hand. Using bow
+   would just have been impossible too.
+
+   See the horror below :
+   http://www.indiedb.com/media/embed/294203
+   [WIP] Implementing Weapons #1 – Indie DB
+
+   So, i decided to change all the controls, no more single touch crap.
+   Most of the phones are multi-touch now. Bring back the virtual controls
+   !
+
+   I’ll keep you updated about the progress 🙂
+
+   4 Comments
+   « Older Entries
+     * ________________________________________ Search
+     *
+
+Recent Posts
+          + Working on The Count Lucanor
+          + Working on Catequesis
+          + When you see it, you’ll swap bricks
+          + Html5 Canvas vs WebGL
+          + About piracy …
+     *
+
+Archives
+          + November 2015
+          + March 2013
+          + September 2011
+          + August 2011
+          + July 2011
+          + June 2011
+          + May 2011
+          + March 2011
+          + February 2011
+          + January 2011
+     *
+
+Categories
+          + Release
+          + Tech
+          + Thoughts
+          + Uncategorized
+          + wip
+     *
+
+Meta
+          + Register
+          + Log in
+          + Entries RSS
+          + Comments RSS
+          + WordPress.com
+       Advertisements
+
+   Create a free website or blog at WordPress.com.
+
+   Curved Cat Games
+   Blog at WordPress.com.
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Post to
+   Cancel Reblog Post
+
+   Close and accept Privacy & Cookies: This site uses cookies. By
+   continuing to use this website, you agree to their use.
+   To find out more, including how to control cookies, see here: Cookie
+   Policy
+   This is an OpenID server
+

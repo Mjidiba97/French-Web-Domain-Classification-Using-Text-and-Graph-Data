@@ -1,0 +1,193 @@
+2009/05/20 - Apache Shale has been retired.
+
+For more information, please explore the Attic.
+     __________________________________________________________________
+
+   Last Published: Tue Apr 15 15:48:27 EDT 2008
+   Apache | Shale
+     __________________________________________________________________
+
+Shale
+
+     * Background
+     * Features
+     * Download
+     * Documentation
+     * Issue Tracking
+     * Mailing Lists
+     * Using Shale
+     * Building Shale
+     * API Stability
+     * Wiki
+
+Release Documentation
+
+     * Shale 1.0.4
+
+Sub-Project Documentation
+
+     * Application Controller
+     * Clay
+     * Core Library
+     * Dialog Manager
+     * Dialog Manager (Basic Implementation)
+     * Dialog Manager (SCXML Implementation)
+     * Remoting
+     * Spring Integration
+     * Test Framework
+     * Tiger Extensions
+     * Validator Support
+     * View Controller
+
+Sample Apps Documentation
+
+     * Blank Starter
+     * Clay Use Cases
+     * Mail Reader
+     * SQL Browser
+     * Use Cases
+
+Quick Links
+
+     * JavaServer Faces
+     * MyFaces
+     * JSF RI Sources
+     * Shale
+     * Shale Sandbox
+     * Struts
+     * Struts-Faces Integration Library
+
+Project Documentation
+
+     * About Apache Shale Framework Parent POM
+     * Project Info
+          + About
+          + Continuous Integration
+          + Dependencies
+          + Issue Tracking
+          + Mailing Lists
+          + Project License
+          + Project Summary
+          + Project Team
+          + Source Repository
+     * Project Reports
+
+   Built by Maven
+
+   IFRAME: http://www.apache.org/ads/halfbanner.html
+
+Shale Framework
+
+   Shale is a modern web application framework, fundamentally based on
+   JavaServer Faces. Architecturally, Shale is a set of loosely coupled
+   services that can be combined as needed to meet particular application
+   requirements. Shale provides additional functionality such as
+   application event callbacks, dialogs with conversation-scoped state, a
+   view technology called Clay, annotation-based functionality to reduce
+   configuration requirements and support for remoting. Shale also
+   provides integration links for other frameworks, to ease development
+   when combinations of technologies are required.
+
+Shale Features
+
+   The major features of the Shale Framework are described in the
+   following detail sections:
+     * View Controller - Convenient mechanism to associate a "backing"
+       Java class with each JavaServer Faces view in an application, with
+       predefined event handlers for events significant to an application
+       developer.
+     * Dialog Manager - Mechanism to define a "conversation" with a user
+       that requires multiple HTTP requests to implement, modeled as a
+       state diagram.
+     * Application Manager - Traditional application wide front controller
+       features that should be applied to every request.
+     * Validation - Integration with the Apache Commons Validator
+       Framework, supporting both client side and server side validations
+       based on a single set of configured validation rules.
+     * Remoting - Server side support for applications that employ AJAX
+       (Asynchronous JavaScript and XML) style interactions.
+     * Spring Integration - Integration with the Spring Framework,
+       allowing the use of Spring's dependency injection framework to
+       create JavaServer Faces managed beans.
+     * Clay - An alternative to JSP where you define views in pure HTML,
+       in a fashion similar to Tapestry and Facelets. An innovative
+       sub-framework for supporting the configuration of reusable subtrees
+       of JavaServer Faces components for customizable reuse.
+     * Test Framework - Set of mock objects and JUnit test case base
+       classes suitable for testing both the framework classes themselves,
+       as well as application components built on top of the framework.
+     * Tiger Extensions - Optional add-on library that adds additional
+       ease-of-use features for Shale applications that run on Java
+       Standard Edition 5 (popularly known by its code name during
+       development, "tiger").
+
+Shale Foundations
+
+   Shale is based on (and requires a runtime environment that supports)
+   the following foundation technologies:
+     * Java Runtime Environment (JRE) 1.4 or later.
+     * Servlet API 2.4 or later.
+     * JavaServer Pages 2.0 or later.
+     * JavaServer Faces 1.1 or later.
+     * JSP Standard Tag Library (JSTL) 1.1 or later.
+     * Apache Commons BeanUtils 1.7 or later.
+     * Apache Commons Chain 1.1 or later.
+     * Apache Commons Digester 1.8 or later.
+     * Apache Commons Logging 1.1 or later.
+
+   Various optional Shale components have dependencies on the following
+   additional runtime technologies:
+     * Apache Commons Validator 1.3.1 or later.
+     * Apache Commons SCXML 0.6 or later.
+     * Spring Framework 1.2.8 or later.
+     * Cargo
+     * jMock
+
+   If you wish to work on Shale itself, you will require the following
+   additional resources:
+     * Java Development Kit (JDK) 1.4 or later. (JDK 1.5 is required for
+       Shale Tiger.)
+     * Apache Maven 2.0.4 or later.
+
+Shale Download
+
+   Shale 1.0.4 is available at
+   http://www.apache.org/dyn/closer.cgi/shale/. The release notes describe
+   the most recent changes. The code signing key can be verified using the
+   KEYS file at http://www.apache.org/dist/shale/KEYS
+
+   The previous build (version 1.0.3) is available here with release notes
+   here.
+
+   Nightly builds of Shale are available from
+   http://people.apache.org/builds/shale/nightly/. For convenience, the
+   nightly builds include the following packages:
+     * shale-framework-YYYYMMDD.{tar.gz,zip} - The binary and source
+       download of the framework itself, including its dependencies.
+     * shale-XXXXXXXX-YYYYMMDD.{tar.gz,zip} - A distribution containing
+       source code and a web application archive for each example
+       application that is available. Currently, the available examples
+       are: shale-blank, shale-clay-usecases, shale-mailreader,
+       shale-sql-browser, and shale-usecases.
+
+   Snapshots of Shale are also available in Maven repositories. The group
+   identifier for all Shale artifacts is org.apache.shale, while the
+   artifact identifier varies:
+     * shale-application - Shale Application Controller (jar)
+     * shale-clay - Shale Clay Plugin (jar)
+     * shale-core - Shale Core Library (jar)
+     * shale-dialog - Shale Dialog Manager (jar)
+     * shale-dialog-basic - Shale Dialog Manager (Basic Implementation)
+       (jar)
+     * shale-dialog-scxml - Shale Dialog Manager (SCXML Implementation)
+       (jar)
+     * shale-remoting - Shale Remoting (jar)
+     * shale-spring - Shale-Spring Integration (jar)
+     * shale-test - Shale Test Framework (jar)
+     * shale-tiger - Shale Tiger Extensions (jar)
+     * shale-validator - Shale Validator Integration (jar)
+     * shale-view - Shale View Controller (jar)
+     __________________________________________________________________
+
+   © 2004-2008 The Apache Software Foundation
+     __________________________________________________________________

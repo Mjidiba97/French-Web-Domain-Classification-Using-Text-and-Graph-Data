@@ -1,0 +1,1234 @@
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Apache Module mod_dbd
+
+   Available Languages:  en  |  fr
+      Description:    Manages SQL database connections
+        Status:       Extension
+   Module Identifier: dbd_module
+      Source File:    mod_dbd.c
+     Compatibility:   Version 2.1 and later
+
+Summary
+
+   mod_dbd manages SQL database connections using APR. It provides
+   database connections on request to modules requiring SQL database
+   functions, and takes care of managing databases with optimal efficiency
+   and scalability for both threaded and non-threaded MPMs. For details,
+   see the APR website and this overview of the Apache DBD Framework by
+   its original developer.
+
+Topics
+
+     * Connection Pooling
+     * Connecting
+     * Apache DBD API
+     * SQL Prepared Statements
+     * SECURITY WARNING
+
+Directives
+
+     * DBDExptime
+     * DBDInitSQL
+     * DBDKeep
+     * DBDMax
+     * DBDMin
+     * DBDParams
+     * DBDPersist
+     * DBDPrepareSQL
+     * DBDriver
+
+Bugfix checklist
+
+     * httpd changelog
+     * Known issues
+     * Report a bug
+
+See also
+
+     * Password Formats
+     * Comments
+
+   top
+
+Connection Pooling
+
+   This module manages database connections, in a manner optimised for the
+   platform. On non-threaded platforms, it provides a persistent
+   connection in the manner of classic LAMP (Linux, Apache, Mysql,
+   Perl/PHP/Python). On threaded platform, it provides an altogether more
+   scalable and efficient connection pool, as described in this article at
+   ApacheTutor. Note that mod_dbd supersedes the modules presented in that
+   article.
+   top
+
+Connecting
+
+   To connect to your database, you'll need to specify a driver, and
+   connection parameters. These vary from one database engine to another.
+   For example, to connect to mysql, do the following:
+DBDriver mysql
+DBDParams host=localhost,dbname=pony,user=shetland,pass=appaloosa
+
+   You can then use this connection in a variety of other modules,
+   including mod_rewrite, mod_authn_dbd, and mod_lua. Further usage
+   examples appear in each of those modules' documentation.
+
+   See DBDParams for connection string information for each of the
+   supported database drivers.
+   top
+
+Apache DBD API
+
+   mod_dbd exports five functions for other modules to use. The API is as
+   follows:
+typedef struct {
+    apr_dbd_t *handle;
+    apr_dbd_driver_t *driver;
+    apr_hash_t *prepared;
+} ap_dbd_t;
+
+/* Export functions to access the database */
+
+/* acquire a connection that MUST be explicitly closed.
+ * Returns NULL on error
+ */
+AP_DECLARE(ap_dbd_t*) ap_dbd_open(apr_pool_t*, server_rec*);
+
+/* release a connection acquired with ap_dbd_open */
+AP_DECLARE(void) ap_dbd_close(server_rec*, ap_dbd_t*);
+
+/* acquire a connection that will have the lifetime of a request
+ * and MUST NOT be explicitly closed.  Return NULL on error.
+ * This is the preferred function for most applications.
+ */
+AP_DECLARE(ap_dbd_t*) ap_dbd_acquire(request_rec*);
+
+/* acquire a connection that will have the lifetime of a connection
+ * and MUST NOT be explicitly closed.  Return NULL on error.
+ */
+AP_DECLARE(ap_dbd_t*) ap_dbd_cacquire(conn_rec*);
+
+/* Prepare a statement for use by a client module */
+AP_DECLARE(void) ap_dbd_prepare(server_rec*, const char*, const char*);
+
+/* Also export them as optional functions for modules that prefer it */
+APR_DECLARE_OPTIONAL_FN(ap_dbd_t*, ap_dbd_open, (apr_pool_t*, server_rec*));
+APR_DECLARE_OPTIONAL_FN(void, ap_dbd_close, (server_rec*, ap_dbd_t*));
+APR_DECLARE_OPTIONAL_FN(ap_dbd_t*, ap_dbd_acquire, (request_rec*));
+APR_DECLARE_OPTIONAL_FN(ap_dbd_t*, ap_dbd_cacquire, (conn_rec*));
+APR_DECLARE_OPTIONAL_FN(void, ap_dbd_prepare, (server_rec*, const char*, const c
+har*));
+
+   top
+
+SQL Prepared Statements
+
+   mod_dbd supports SQL prepared statements on behalf of modules that may
+   wish to use them. Each prepared statement must be assigned a name
+   (label), and they are stored in a hash: the prepared field of an
+   ap_dbd_t. Hash entries are of type apr_dbd_prepared_t and can be used
+   in any of the apr_dbd prepared statement SQL query or select commands.
+
+   It is up to dbd user modules to use the prepared statements and
+   document what statements can be specified in apache2.conf, or to
+   provide their own directives and use ap_dbd_prepare.
+
+Caveat
+
+   When using prepared statements with a MySQL database, it is preferred
+   to set reconnect to 0 in the connection string as to avoid errors that
+   arise from the MySQL client reconnecting without properly resetting the
+   prepared statements. If set to 1, any broken connections will be
+   attempted fixed, but as mod_dbd is not informed, the prepared
+   statements will be invalidated.
+   top
+
+SECURITY WARNING
+
+   Any web/database application needs to secure itself against SQL
+   injection attacks. In most cases, Apache DBD is safe, because
+   applications use prepared statements, and untrusted inputs are only
+   ever used as data. Of course, if you use it via third-party modules,
+   you should ascertain what precautions they may require.
+
+   However, the FreeTDS driver is inherently unsafe. The underlying
+   library doesn't support prepared statements, so the driver emulates
+   them, and the untrusted input is merged into the SQL statement.
+
+   It can be made safe by untainting all inputs: a process inspired by
+   Perl's taint checking. Each input is matched against a regexp, and only
+   the match is used, according to the Perl idiom:
+  $untrusted =~ /([a-z]+)/;
+  $trusted = $1;
+
+   To use this, the untainting regexps must be included in the prepared
+   statements configured. The regexp follows immediately after the % in
+   the prepared statement, and is enclosed in curly brackets {}. For
+   example, if your application expects alphanumeric input, you can use:
+
+   "SELECT foo FROM bar WHERE input = %s"
+
+   with other drivers, and suffer nothing worse than a failed query. But
+   with FreeTDS you'd need:
+
+   "SELECT foo FROM bar WHERE input = %{([A-Za-z0-9]+)}s"
+
+   Now anything that doesn't match the regexp's $1 match is discarded, so
+   the statement is safe.
+
+   An alternative to this may be the third-party ODBC driver, which offers
+   the security of genuine prepared statements.
+   top
+
+DBDExptime Directive
+
+   Description: Keepalive time for idle connections
+     Syntax:    DBDExptime time-in-seconds
+     Default:   DBDExptime 300
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   Set the time to keep idle connections alive when the number of
+   connections specified in DBDKeep has been exceeded (threaded platforms
+   only).
+   top
+
+DBDInitSQL Directive
+
+   Description: Execute an SQL statement after connecting to a database
+     Syntax:    DBDInitSQL "SQL statement"
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   Modules, that wish it, can have one or more SQL statements executed
+   when a connection to a database is created. Example usage could be
+   initializing certain values or adding a log entry when a new connection
+   is made to the database.
+   top
+
+DBDKeep Directive
+
+   Description: Maximum sustained number of connections
+     Syntax:    DBDKeep number
+     Default:   DBDKeep 2
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   Set the maximum number of connections per process to be sustained,
+   other than for handling peak demand (threaded platforms only).
+   top
+
+DBDMax Directive
+
+   Description: Maximum number of connections
+     Syntax:    DBDMax number
+     Default:   DBDMax 10
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   Set the hard maximum number of connections per process (threaded
+   platforms only).
+   top
+
+DBDMin Directive
+
+   Description: Minimum number of connections
+     Syntax:    DBDMin number
+     Default:   DBDMin 1
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   Set the minimum number of connections per process (threaded platforms
+   only).
+   top
+
+DBDParams Directive
+
+   Description: Parameters for database connection
+     Syntax:    DBDParams param1=value1[,param2=value2]
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   As required by the underlying driver. Typically this will be used to
+   pass whatever cannot be defaulted amongst username, password, database
+   name, hostname and port number for connection.
+
+   Connection string parameters for current drivers include:
+
+   FreeTDS (for MSSQL and SyBase)
+          username, password, appname, dbname, host, charset, lang, server
+
+   MySQL
+          host, port, user, pass, dbname, sock, flags, fldsz, group,
+          reconnect
+
+   Oracle
+          user, pass, dbname, server
+
+   PostgreSQL
+          The connection string is passed straight through to PQconnectdb
+
+   SQLite2
+          The connection string is split on a colon, and part1:part2 is
+          used as sqlite_open(part1, atoi(part2), NULL)
+
+   SQLite3
+          The connection string is passed straight through to sqlite3_open
+
+   ODBC
+          datasource, user, password, connect, ctimeout, stimeout, access,
+          txmode, bufsize
+
+   top
+
+DBDPersist Directive
+
+   Description: Whether to use persistent connections
+     Syntax:    DBDPersist On|Off
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   If set to Off, persistent and pooled connections are disabled. A new
+   database connection is opened when requested by a client, and closed
+   immediately on release. This option is for debugging and low-usage
+   servers.
+
+   The default is to enable a pool of persistent connections (or a single
+   LAMP-style persistent connection in the case of a non-threaded server),
+   and should almost always be used in operation.
+
+   Prior to version 2.2.2, this directive accepted only the values 0 and 1
+   instead of Off and On, respectively.
+   top
+
+DBDPrepareSQL Directive
+
+   Description: Define an SQL prepared statement
+     Syntax:    DBDPrepareSQL "SQL statement" label
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   For modules such as authentication that repeatedly use a single SQL
+   statement, optimum performance is achieved by preparing the statement
+   at startup rather than every time it is used. This directive prepares
+   an SQL statement and assigns it a label.
+   top
+
+DBDriver Directive
+
+   Description: Specify an SQL driver
+     Syntax:    DBDriver name
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_dbd
+
+   Selects an apr_dbd driver by name. The driver must be installed on your
+   system (on most systems, it will be a shared object or dll). For
+   example, DBDriver mysql will select the MySQL driver in
+   apr_dbd_mysql.so.
+
+   Available Languages:  en  |  fr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2016 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Apache Module mod_deflate
+
+   Available Languages:  en  |  fr  |  ja  |  ko
+      Description:    Compress content before it is delivered to the client
+        Status:       Extension
+   Module Identifier: deflate_module
+      Source File:    mod_deflate.c
+
+Summary
+
+   The mod_deflate module provides the DEFLATE output filter that allows
+   output from your server to be compressed before being sent to the
+   client over the network.
+
+Topics
+
+     * Supported Encodings
+     * Sample Configurations
+     * Enabling Compression
+     * Dealing with proxy servers
+     * Serving pre-compressed content
+
+Directives
+
+     * DeflateBufferSize
+     * DeflateCompressionLevel
+     * DeflateFilterNote
+     * DeflateInflateLimitRequestBody
+     * DeflateInflateRatioBurst
+     * DeflateInflateRatioLimit
+     * DeflateMemLevel
+     * DeflateWindowSize
+
+Bugfix checklist
+
+     * httpd changelog
+     * Known issues
+     * Report a bug
+
+See also
+
+     * Filters
+     * Comments
+
+   top
+
+Supported Encodings
+
+   The gzip encoding is the only one supported to ensure complete
+   compatibility with old browser implementations. The deflate encoding is
+   not supported, please check the zlib's documentation for a complete
+   explanation.
+   top
+
+Sample Configurations
+
+Compression and TLS
+
+   Some web applications are vulnerable to an information disclosure
+   attack when a TLS connection carries deflate compressed data. For more
+   information, review the details of the "BREACH" family of attacks.
+
+   This is a simple configuration that compresses common text-based
+   content types.
+
+Compress only a few types
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javasc
+ript application/javascript
+
+   top
+
+Enabling Compression
+
+Compression and TLS
+
+   Some web applications are vulnerable to an information disclosure
+   attack when a TLS connection carries deflate compressed data. For more
+   information, review the details of the "BREACH" family of attacks.
+
+Output Compression
+
+   Compression is implemented by the DEFLATE filter. The following
+   directive will enable compression for documents in the container where
+   it is placed:
+SetOutputFilter DEFLATE
+SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png)$" no-gzip
+
+   If you want to restrict the compression to particular MIME types in
+   general, you may use the AddOutputFilterByType directive. Here is an
+   example of enabling compression only for the html files of the Apache
+   documentation:
+<Directory "/your-server-root/manual">
+    AddOutputFilterByType DEFLATE text/html
+</Directory>
+
+Note
+
+   The DEFLATE filter is always inserted after RESOURCE filters like PHP
+   or SSI. It never touches internal subrequests.
+
+Note
+
+   There is an environment variable force-gzip, set via SetEnv, which will
+   ignore the accept-encoding setting of your browser and will send
+   compressed output.
+
+Output Decompression
+
+   The mod_deflate module also provides a filter for
+   inflating/uncompressing a gzip compressed response body. In order to
+   activate this feature you have to insert the INFLATE filter into the
+   output filter chain using SetOutputFilter or AddOutputFilter, for
+   example:
+<Location "/dav-area">
+    ProxyPass "http://example.com/"
+    SetOutputFilter INFLATE
+</Location>
+
+   This Example will uncompress gzip'ed output from example.com, so other
+   filters can do further processing with it.
+
+Input Decompression
+
+   The mod_deflate module also provides a filter for decompressing a gzip
+   compressed request body . In order to activate this feature you have to
+   insert the DEFLATE filter into the input filter chain using
+   SetInputFilter or AddInputFilter, for example:
+<Location "/dav-area">
+    SetInputFilter DEFLATE
+</Location>
+
+   Now if a request contains a Content-Encoding: gzip header, the body
+   will be automatically decompressed. Few browsers have the ability to
+   gzip request bodies. However, some special applications actually do
+   support request compression, for instance some WebDAV clients.
+
+Note on Content-Length
+
+   If you evaluate the request body yourself, don't trust the
+   Content-Length header! The Content-Length header reflects the length of
+   the incoming data from the client and not the byte count of the
+   decompressed data stream.
+   top
+
+Dealing with proxy servers
+
+   The mod_deflate module sends a Vary: Accept-Encoding HTTP response
+   header to alert proxies that a cached response should be sent only to
+   clients that send the appropriate Accept-Encoding request header. This
+   prevents compressed content from being sent to a client that will not
+   understand it.
+
+   If you use some special exclusions dependent on, for example, the
+   User-Agent header, you must manually configure an addition to the Vary
+   header to alert proxies of the additional restrictions. For example, in
+   a typical configuration where the addition of the DEFLATE filter
+   depends on the User-Agent, you should add:
+Header append Vary User-Agent
+
+   If your decision about compression depends on other information than
+   request headers (e.g. HTTP version), you have to set the Vary header to
+   the value *. This prevents compliant proxies from caching entirely.
+
+Example
+
+Header set Vary *
+
+   top
+
+Serving pre-compressed content
+
+   Since mod_deflate re-compresses content each time a request is made,
+   some performance benefit can be derived by pre-compressing the content
+   and telling mod_deflate to serve them without re-compressing them. This
+   may be accomplished using a configuration like the following:
+<IfModule mod_headers.c>
+    # Serve gzip compressed CSS files if they exist
+    # and the client accepts gzip.
+    RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+    RewriteCond "%{REQUEST_FILENAME}\.gz" -s
+    RewriteRule "^(.*)\.css" "$1\.css\.gz" [QSA]
+
+    # Serve gzip compressed JS files if they exist
+    # and the client accepts gzip.
+    RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+    RewriteCond "%{REQUEST_FILENAME}\.gz" -s
+    RewriteRule "^(.*)\.js" "$1\.js\.gz" [QSA]
+
+
+    # Serve correct content types, and prevent mod_deflate double gzip.
+    RewriteRule "\.css\.gz$" "-" [T=text/css,E=no-gzip:1]
+    RewriteRule "\.js\.gz$" "-" [T=text/javascript,E=no-gzip:1]
+
+
+    <FilesMatch "(\.js\.gz|\.css\.gz)$">
+      # Serve correct encoding type.
+      Header append Content-Encoding gzip
+
+      # Force proxies to cache gzipped &
+      # non-gzipped css/js files separately.
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+</IfModule>
+
+   top
+
+DeflateBufferSize Directive
+
+   Description: Fragment size to be compressed at one time by zlib
+     Syntax:    DeflateBufferSize value
+     Default:   DeflateBufferSize 8096
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_deflate
+
+   The DeflateBufferSize directive specifies the size in bytes of the
+   fragments that zlib should compress at one time. If the compressed
+   response size is bigger than the one specified by this directive then
+   httpd will switch to chunked encoding (HTTP header Transfer-Encoding
+   set to Chunked), with the side effect of not setting any Content-Length
+   HTTP header. This is particularly important when httpd works behind
+   reverse caching proxies or when httpd is configured with mod_cache and
+   mod_cache_disk because HTTP responses without any Content-Length header
+   might not be cached.
+   top
+
+DeflateCompressionLevel Directive
+
+   Description: How much compression do we apply to the output
+     Syntax:    DeflateCompressionLevel value
+     Default:   Zlib's default
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_deflate
+
+   The DeflateCompressionLevel directive specifies what level of
+   compression should be used, the higher the value, the better the
+   compression, but the more CPU time is required to achieve this.
+
+   The value must between 1 (less compression) and 9 (more compression).
+   top
+
+DeflateFilterNote Directive
+
+   Description: Places the compression ratio in a note for logging
+     Syntax:    DeflateFilterNote [type] notename
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_deflate
+
+   The DeflateFilterNote directive specifies that a note about compression
+   ratios should be attached to the request. The name of the note is the
+   value specified for the directive. You can use that note for
+   statistical purposes by adding the value to your access log.
+
+Example
+
+      DeflateFilterNote ratio
+
+      LogFormat '"%r" %b (%{ratio}n) "%{User-agent}i"' deflate
+      CustomLog "logs/deflate_log" deflate
+
+   If you want to extract more accurate values from your logs, you can use
+   the type argument to specify the type of data left as a note for
+   logging. type can be one of:
+
+   Input
+          Store the byte count of the filter's input stream in the note.
+
+   Output
+          Store the byte count of the filter's output stream in the note.
+
+   Ratio
+          Store the compression ratio (output/input * 100) in the note.
+          This is the default, if the type argument is omitted.
+
+   Thus you may log it this way:
+
+Accurate Logging
+
+DeflateFilterNote Input instream
+DeflateFilterNote Output outstream
+DeflateFilterNote Ratio ratio
+
+LogFormat '"%r" %{outstream}n/%{instream}n (%{ratio}n%%)' deflate
+CustomLog "logs/deflate_log" deflate
+
+See also
+
+     * mod_log_config
+
+   top
+
+DeflateInflateLimitRequestBody Directive
+
+    Description:  Maximum size of inflated request bodies
+      Syntax:     DeflateInflateLimitRequestBodyvalue
+      Default:    None, but LimitRequestBody applies after deflation
+      Context:    server config, virtual host, directory, .htaccess
+      Status:     Extension
+      Module:     mod_deflate
+   Compatibility: 2.4.10 and later
+
+   The DeflateInflateLimitRequestBody directive specifies the maximum size
+   of an inflated request body. If it is unset, LimitRequestBody is
+   applied to the inflated body.
+   top
+
+DeflateInflateRatioBurst Directive
+
+   Description: Maximum number of times the inflation ratio for request
+   bodies can be crossed
+   Syntax: DeflateInflateRatioBurst value
+   Default: 3
+   Context: server config, virtual host, directory, .htaccess
+   Status: Extension
+   Module: mod_deflate
+   Compatibility: 2.4.10 and later
+
+   The DeflateInflateRatioBurst directive specifies the maximum number of
+   times the DeflateInflateRatioLimit can be crossed before terminating
+   the request.
+   top
+
+DeflateInflateRatioLimit Directive
+
+    Description:  Maximum inflation ratio for request bodies
+      Syntax:     DeflateInflateRatioLimit value
+      Default:    200
+      Context:    server config, virtual host, directory, .htaccess
+      Status:     Extension
+      Module:     mod_deflate
+   Compatibility: 2.4.10 and later
+
+   The DeflateInflateRatioLimit directive specifies the maximum ratio of
+   deflated to inflated size of an inflated request body. This ratio is
+   checked as the body is streamed in, and if crossed more than
+   DeflateInflateRatioBurst times, the request will be terminated.
+   top
+
+DeflateMemLevel Directive
+
+   Description: How much memory should be used by zlib for compression
+     Syntax:    DeflateMemLevel value
+     Default:   DeflateMemLevel 9
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_deflate
+
+   The DeflateMemLevel directive specifies how much memory should be used
+   by zlib for compression (a value between 1 and 9).
+   top
+
+DeflateWindowSize Directive
+
+   Description: Zlib compression window size
+     Syntax:    DeflateWindowSize value
+     Default:   DeflateWindowSize 15
+     Context:   server config, virtual host
+     Status:    Extension
+     Module:    mod_deflate
+
+   The DeflateWindowSize directive specifies the zlib compression window
+   size (a value between 1 and 15). Generally, the higher the window size,
+   the higher can the compression ratio be expected.
+
+   Available Languages:  en  |  fr  |  ja  |  ko
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2016 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Apache Module mod_dialup
+
+   Available Languages:  en  |  fr
+   Description: Send static content at a bandwidth rate limit, defined by
+   the various old modem standards
+   Status: Experimental
+   Module Identifier: dialup_module
+   Source File: mod_dialup.c
+
+Summary
+
+   It is a module that sends static content at a bandwidth rate limit,
+   defined by the various old modem standards. So, you can browse your
+   site with a 56k V.92 modem, by adding something like this:
+<Location "/mysite">
+    ModemStandard "V.92"
+</Location>
+
+   Previously to do bandwidth rate limiting modules would have to block an
+   entire thread, for each client, and insert sleeps to slow the bandwidth
+   down. Using the new suspend feature, a handler can get callback N
+   milliseconds in the future, and it will be invoked by the Event MPM on
+   a different thread, once the timer hits. From there the handler can
+   continue to send data to the client.
+
+Directives
+
+     * ModemStandard
+
+Bugfix checklist
+
+     * httpd changelog
+     * Known issues
+     * Report a bug
+
+See also
+
+     * Comments
+
+   top
+
+ModemStandard Directive
+
+   Description: Modem standard to simulate
+     Syntax:    ModemStandard V.21|V.26bis|V.32|V.34|V.92
+     Context:   directory
+     Status:    Experimental
+     Module:    mod_dialup
+
+   Specify what modem standard you wish to simulate.
+<Location "/mysite">
+    ModemStandard "V.26bis"
+</Location>
+
+   Available Languages:  en  |  fr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2016 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Apache Module mod_dir
+
+   Available Languages:  en  |  fr  |  ja  |  ko  |  tr
+   Description: Provides for "trailing slash" redirects and serving
+   directory index files
+   Status: Base
+   Module Identifier: dir_module
+   Source File: mod_dir.c
+
+Summary
+
+   The index of a directory can come from one of two sources:
+     * A file written by the user, typically called index.html. The
+       DirectoryIndex directive sets the name of this file. This is
+       controlled by mod_dir.
+     * Otherwise, a listing generated by the server. This is provided by
+       mod_autoindex.
+
+   The two functions are separated so that you can completely remove (or
+   replace) automatic index generation should you want to.
+
+   A "trailing slash" redirect is issued when the server receives a
+   request for a URL http://servername/foo/dirname where dirname is a
+   directory. Directories require a trailing slash, so mod_dir issues a
+   redirect to http://servername/foo/dirname/.
+
+Directives
+
+     * DirectoryCheckHandler
+     * DirectoryIndex
+     * DirectoryIndexRedirect
+     * DirectorySlash
+     * FallbackResource
+
+Bugfix checklist
+
+     * httpd changelog
+     * Known issues
+     * Report a bug
+
+See also
+
+     * Comments
+
+   top
+
+DirectoryCheckHandler Directive
+
+   Description: Toggle how this module responds when another handler is
+   configured
+   Syntax: DirectoryCheckHandler On|Off
+   Default: DirectoryCheckHandler Off
+   Context: server config, virtual host, directory, .htaccess
+   Override: Indexes
+   Status: Base
+   Module: mod_dir
+   Compatibility: Available in 2.4.8 and later. Releases prior to 2.4
+   implicitly act as if "DirectoryCheckHandler ON" was specified.
+
+   The DirectoryCheckHandler directive determines whether mod_dir should
+   check for directory indexes or add trailing slashes when some other
+   handler has been configured for the current URL. Handlers can be set by
+   directives such as SetHandler or by other modules, such as mod_rewrite
+   during per-directory substitutions.
+
+   In releases prior to 2.4, this module did not take any action if any
+   other handler was configured for a URL. This allows directory indexes
+   to be served even when a SetHandler directive is specified for an
+   entire directory, but it can also result in some conflicts with modules
+   such as mod_rewrite.
+   top
+
+DirectoryIndex Directive
+
+   Description: List of resources to look for when the client requests a
+   directory
+   Syntax: DirectoryIndex disabled | local-url [local-url] ...
+   Default: DirectoryIndex index.html
+   Context: server config, virtual host, directory, .htaccess
+   Override: Indexes
+   Status: Base
+   Module: mod_dir
+
+   The DirectoryIndex directive sets the list of resources to look for,
+   when the client requests an index of the directory by specifying a / at
+   the end of the directory name. Local-url is the (%-encoded) URL of a
+   document on the server relative to the requested directory; it is
+   usually the name of a file in the directory. Several URLs may be given,
+   in which case the server will return the first one that it finds. If
+   none of the resources exist and the Indexes option is set, the server
+   will generate its own listing of the directory.
+
+Example
+
+DirectoryIndex index.html
+
+   then a request for http://example.com/docs/ would return
+   http://example.com/docs/index.html if it exists, or would list the
+   directory if it did not.
+
+   Note that the documents do not need to be relative to the directory;
+DirectoryIndex index.html index.txt  /cgi-bin/index.pl
+
+   would cause the CGI script /cgi-bin/index.pl to be executed if neither
+   index.html or index.txt existed in a directory.
+
+   A single argument of "disabled" prevents mod_dir from searching for an
+   index. An argument of "disabled" will be interpreted literally if it
+   has any arguments before or after it, even if they are "disabled" as
+   well.
+
+   Note: Multiple DirectoryIndex directives within the same context will
+   add to the list of resources to look for rather than replace:
+# Example A: Set index.html as an index page, then add index.php to that list as
+ well.
+<Directory "/foo">
+    DirectoryIndex index.html
+    DirectoryIndex index.php
+</Directory>
+
+# Example B: This is identical to example A, except it's done with a single dire
+ctive.
+<Directory "/foo">
+    DirectoryIndex index.html index.php
+</Directory>
+
+# Example C: To replace the list, you must explicitly reset it first:
+# In this example, only index.php will remain as an index resource.
+<Directory "/foo">
+    DirectoryIndex index.html
+    DirectoryIndex disabled
+    DirectoryIndex index.php
+</Directory>
+
+   top
+
+DirectoryIndexRedirect Directive
+
+   Description: Configures an external redirect for directory indexes.
+   Syntax: DirectoryIndexRedirect on | off | permanent | temp | seeother |
+   3xx-code
+   Default: DirectoryIndexRedirect off
+   Context: server config, virtual host, directory, .htaccess
+   Override: Indexes
+   Status: Base
+   Module: mod_dir
+   Compatibility: Available in version 2.3.14 and later
+
+   By default, the DirectoryIndex is selected and returned transparently
+   to the client. DirectoryIndexRedirect causes an external redirect to
+   instead be issued.
+
+   The argument can be:
+     * on: issues a 302 redirection to the index resource.
+     * off: does not issue a redirection. This is the legacy behaviour of
+       mod_dir.
+     * permanent: issues a 301 (permanent) redirection to the index
+       resource.
+     * temp: this has the same effect as on
+     * seeother: issues a 303 redirection (also known as "See Other") to
+       the index resource.
+     * 3xx-code: issues a redirection marked by the chosen 3xx code.
+
+Example
+
+DirectoryIndexRedirect on
+
+   A request for http://example.com/docs/ would return a temporary
+   redirect to http://example.com/docs/index.html if it exists.
+   top
+
+DirectorySlash Directive
+
+   Description: Toggle trailing slash redirects on or off
+     Syntax:    DirectorySlash On|Off
+     Default:   DirectorySlash On
+     Context:   server config, virtual host, directory, .htaccess
+    Override:   Indexes
+     Status:    Base
+     Module:    mod_dir
+
+   The DirectorySlash directive determines whether mod_dir should fixup
+   URLs pointing to a directory or not.
+
+   Typically if a user requests a resource without a trailing slash, which
+   points to a directory, mod_dir redirects him to the same resource, but
+   with trailing slash for some good reasons:
+     * The user is finally requesting the canonical URL of the resource
+     * mod_autoindex works correctly. Since it doesn't emit the path in
+       the link, it would point to the wrong path.
+     * DirectoryIndex will be evaluated only for directories requested
+       with trailing slash.
+     * Relative URL references inside html pages will work correctly.
+
+   If you don't want this effect and the reasons above don't apply to you,
+   you can turn off the redirect as shown below. However, be aware that
+   there are possible security implications to doing this.
+# see security warning below!
+<Location "/some/path">
+    DirectorySlash Off
+    SetHandler some-handler
+</Location>
+
+Security Warning
+
+   Turning off the trailing slash redirect may result in an information
+   disclosure. Consider a situation where mod_autoindex is active (Options
+   +Indexes) and DirectoryIndex is set to a valid resource (say,
+   index.html) and there's no other special handler defined for that URL.
+   In this case a request with a trailing slash would show the index.html
+   file. But a request without trailing slash would list the directory
+   contents.
+
+   Also note that some browsers may erroneously change POST requests into
+   GET (thus discarding POST data) when a redirect is issued.
+   top
+
+FallbackResource Directive
+
+   Description: Define a default URL for requests that don't map to a file
+   Syntax: FallbackResource disabled | local-url
+   Default: disabled - httpd will return 404 (Not Found)
+   Context: server config, virtual host, directory, .htaccess
+   Override: Indexes
+   Status: Base
+   Module: mod_dir
+   Compatibility: The disabled argument is available in version 2.4.4 and
+   later
+
+   Use this to set a handler for any URL that doesn't map to anything in
+   your filesystem, and would otherwise return HTTP 404 (Not Found). For
+   example
+FallbackResource /not-404.php
+
+   will cause requests for non-existent files to be handled by
+   not-404.php, while requests for files that exist are unaffected.
+
+   It is frequently desirable to have a single file or resource handle all
+   requests to a particular directory, except those requests that
+   correspond to an existing file or script. This is often referred to as
+   a 'front controller.'
+
+   In earlier versions of httpd, this effect typically required
+   mod_rewrite, and the use of the -f and -d tests for file and directory
+   existence. This now requires only one line of configuration.
+FallbackResource /index.php
+
+   Existing files, such as images, css files, and so on, will be served
+   normally.
+
+   Use the disabled argument to disable that feature if inheritance from a
+   parent directory is not desired.
+
+   In a sub-URI, such as http://example.com/blog/ this sub-URI has to be
+   supplied as local-url:
+<Directory "/web/example.com/htdocs/blog">
+    FallbackResource /blog/index.php
+</Directory>
+<Directory "/web/example.com/htdocs/blog/images">
+    FallbackResource disabled
+</Directory>
+
+   Available Languages:  en  |  fr  |  ja  |  ko  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2016 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Apache Module mod_dumpio
+
+   Available Languages:  en  |  fr  |  ja
+      Description:    Dumps all I/O to error log as desired.
+        Status:       Extension
+   Module Identifier: dumpio_module
+      Source File:    mod_dumpio.c
+
+Summary
+
+   mod_dumpio allows for the logging of all input received by Apache
+   and/or all output sent by Apache to be logged (dumped) to the error.log
+   file.
+
+   The data logging is done right after SSL decoding (for input) and right
+   before SSL encoding (for output). As can be expected, this can produce
+   extreme volumes of data, and should only be used when debugging
+   problems.
+
+Topics
+
+     * Enabling dumpio Support
+
+Directives
+
+     * DumpIOInput
+     * DumpIOOutput
+
+Bugfix checklist
+
+     * httpd changelog
+     * Known issues
+     * Report a bug
+
+See also
+
+     * Comments
+
+   top
+
+Enabling dumpio Support
+
+   To enable the module, it should be compiled and loaded in to your
+   running Apache configuration. Logging can then be enabled or disabled
+   separately for input and output via the below directives. Additionally,
+   mod_dumpio needs to be configured to LogLevel trace7:
+LogLevel dumpio:trace7
+
+   top
+
+DumpIOInput Directive
+
+    Description:  Dump all input data to the error log
+      Syntax:     DumpIOInput On|Off
+      Default:    DumpIOInput Off
+      Context:    server config
+      Status:     Extension
+      Module:     mod_dumpio
+   Compatibility: DumpIOInput is only available in Apache 2.1.3 and later.
+
+   Enable dumping of all input.
+
+Example
+
+DumpIOInput On
+
+   top
+
+DumpIOOutput Directive
+
+   Description: Dump all output data to the error log
+   Syntax: DumpIOOutput On|Off
+   Default: DumpIOOutput Off
+   Context: server config
+   Status: Extension
+   Module: mod_dumpio
+   Compatibility: DumpIOOutput is only available in Apache 2.1.3 and
+   later.
+
+   Enable dumping of all output.
+
+Example
+
+DumpIOOutput On
+
+   Available Languages:  en  |  fr  |  ja
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2016 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap

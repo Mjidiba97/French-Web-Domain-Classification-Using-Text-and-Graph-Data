@@ -1,0 +1,195 @@
+Edulog
+
+Centre d'aide Edulog : IalNoteAPBConfig
+
+   Accueil :: Aide IAL :: Aide Vie Scolaire :: Aide CDTEL :: Aide 123Web
+             Historique :: Connexion :: Vous êtes
+   nat-clients.lix.polytechnique.fr
+   Vous n'avez pas accès en écriture à cette page !
+     __________________________________________________________________
+
+   2013-03-22 17:30:35 :: Propriétaire : edulog :: Rétro-liens ::
+   Cartographie :: Recherche : _______________
+   Fonctionne avec WikiNi 0.5.0 (interwiki)
+Edulog
+
+Centre d'aide Edulog : IalNoteAPBSconet
+
+   Accueil :: Aide IAL :: Aide Vie Scolaire :: Aide CDTEL :: Aide 123Web
+             Historique :: Connexion :: Vous êtes
+   nat-clients.lix.polytechnique.fr
+
+APB - Importer les données SIECLE / SCONET
+
+   Pour que la remontée automatique des notes et des appréciations d'IAL
+   vers APB et le LSL fonctionne, il est nécessaire de procéder au
+   préalable à l'import des données éducation nationale disponible dans
+   SIECLE / SCONET.
+
+Fichiers requis
+
+   Les fichiers requis sont :
+     * STRUCTURES.XML
+     * elevesSansAdresses.xml
+     * nomenclature.xml
+
+   Il faut un exemplaire de chaque fichier pour chaque unité pédagogique.
+   Si, par exemple, votre établissement propose des sections générales et
+   technologiques (avec des RNE différents), il est nécessaire d'importer
+   2x3 = 6 fichiers XML.
+   Vous devez réaliser cette opération tous les ans. Pour la première
+   année, vous avez la possibilité de charger les données de l'année
+   précédente (notamment pour la génération des résultats de l'année de
+   1ère).
+   Capture d'écran SIECLE
+
+Charger les données
+
+   Les données issues de SIECLE / SCONET sont importées dans l'interface
+   d'administration d'IAL
+   Accès assistant d'import
+   L'assistant vous propose 5 étapes :
+     * La première étape est une vérification du système de votre
+       configuration. Vous pouvez apporter des corrections en suivant les
+       informations disponibles sur cette page
+
+     * L'assistant vous demande ensuite de procéder au chargement des
+       données du fichier structures.xml. Ce fichier contient notamment
+       les informations relatives aux classes de votre établissement.
+
+     * Les données relatives aux élèves (INE, section d'inscription) sont
+       enregistrées dans le fichier elevesSansAdresses.xml qu'il vous sera
+       demandé de charger à l'étape 3. IAL analysera le fichier et
+       essaiera (dans la mesure du possible) de faire des correspondances
+       avec les élèves enregistrés dans la base de données. Contrôlez
+       attentivement les associations proposées et complétez les éléments
+       manquants.
+
+     * La 4ème étape nécessite le chargement du fichier nomenclature.xml
+       qui récapitule les matières demandées à chaque élève pour le
+       baccalauréat. Cette étape ne nécessite pas d'autre intervention de
+       votre part.
+
+     * La dernière étape fait la correspondance entre la nomenclature de
+       votre établissement et celle du LSL pour les compétences. Il vous
+       suffit juste de valider le bouton mis à votre disposition.
+
+   Veuillez noter :
+     * Les fichiers issus de SIECLE / SCONET sont compressés. Veillez à
+       les décompresser avant de les déposer dans IAL.
+     * A chaque étape vous pouvez charger autant de fichiers que
+       nécessaire (pour les différentes unités pédagogiques)
+     * Utilisez les boutons "Précédent" et "Suivant" en bas de page pour
+       naviguer d'une étape à une autre. Vous pouvez réaliser les étapes
+       dans l'ordre que vous souhaitez.
+     __________________________________________________________________
+
+     IalNoteAPBExportXml Associer les groupes classes IAL avec le
+   formatage attendu par APB >>
+     __________________________________________________________________
+
+   Il n'y a pas de commentaire sur cette page. [Afficher
+   commentaires/formulaire]
+   2016-05-02 18:35:39 :: Propriétaire : edulog :: Rétro-liens ::
+   Cartographie :: Recherche : _______________
+   Fonctionne avec WikiNi 0.5.0 (interwiki)
+Edulog
+
+Centre d'aide Edulog : IalNoteAPBSconet
+
+   Accueil :: Aide IAL :: Aide Vie Scolaire :: Aide CDTEL :: Aide 123Web
+             Historique :: Connexion :: Vous êtes
+   nat-clients.lix.polytechnique.fr
+   Vous n'avez pas accès en écriture à cette page !
+     __________________________________________________________________
+
+   2016-05-02 18:35:39 :: Propriétaire : edulog :: Rétro-liens ::
+   Cartographie :: Recherche : _______________
+   Fonctionne avec WikiNi 0.5.0 (interwiki)
+Edulog
+
+Centre d'aide Edulog : IalNoteAPBRegroupements
+
+   Accueil :: Aide IAL :: Aide Vie Scolaire :: Aide CDTEL :: Aide 123Web
+             Historique :: Connexion :: Vous êtes
+   nat-clients.lix.polytechnique.fr
+
+Associer les groupes classes IAL avec le formatage attendu par APB et LSL
+
+   Cette étape permet d'associer les groupes de note d'IAL (de l'année en
+   cours et de l'année précédente) avec les matières attendues par APB.
+   Pour réaliser cette étape vous devez avoir chargé les éléments
+   "Education Nationale" depuis SIECLE / SCONET (en savoir plus...).
+
+Accès à l'écran de paramétrage
+
+   Pour accéder à l'écran de paramétrage permettant d'associer les groupes
+   classes IAL avec les matières attendues par APB, vous devez vous
+   connecter à IAL avec le droit d'accès :
+   Droit d'accès
+   Accédez au module APB - PostBac et choisissez le sous-menu
+   "Configuration..."
+   Configuration
+
+Paramétrer pour l'export
+
+   Choisissez, dans le menu déroulant en haut de page, la classe que vous
+   souhaitez paramétrer. Il vous faut paramétrer l'ensemble des Terminales
+   de l'année en cours et les première de l'année précédente. Sachez aussi
+   que le paramétrage est conservé d'une année sur l'autre, vous pouvez
+   donc, d'ores et déjà paramétrer les première de cette année en vue de
+   la remontée de l'année prochaine.
+   Détails de l'écran
+   Une fois la classe choisie, la liste des matières attendues pour cette
+   classe sont présentées dans la partie inférieure de l'écran.
+   Par chacune de ces matières : choisissez le groupe classe (carnet de
+   notes) qui doit entrer dans son évaluation et pressez le bouton "+" à
+   droite de la liste.
+   Associer
+   Le paramétrage est automatiquement enregistré. Vous pouvez cliquer sur
+   l'icône "supprimer" représenté par un sens interdit pour annuler une
+   association et recommencer.
+
+Remarques importantes et conseils
+
+   Toutes les lignes ne doivent pas être renseignées. APB propose des
+   matières qui sont soit dans le tronc commun, soit optionnelles. Il est
+   rare que vous proposiez à certains élèves des modalités différentes
+   pour une même discipline. De même il y a probablement des options que
+   l'établissement ne propose pas.
+   Si deux carnets de notes interviennent dans l'évaluation d'une même
+   matière (plusieurs enseignants pour des options, Cours et TD, ou pour
+   l'EPS, notamment), vous avez la possibilité d'associer ces deux groupes
+   à la même matière.
+   Vous pouvez utiliser la colonne "Pondération" pour calculer la moyenne
+   des élèves dans cette "matière composée"
+   Multi-groupes
+   La colonne pondération permet de calculer la moyenne quand une matière
+   est composée de plusieurs groupes. Elle ne permet pas de calculer la
+   moyenne générale, qui est calculée par APB.
+   Enfin, si le paramétrage ne vous convient pas, vous pouvez le
+   réinitialiser à l'aide du bouton présenté en bas de page.
+     __________________________________________________________________
+
+   << Importer les données SIECLE/SCONET IalNoteAPBExportXml Exporter les
+   données vers APB >>
+     __________________________________________________________________
+
+   Il n'y a pas de commentaire sur cette page. [Afficher
+   commentaires/formulaire]
+   2016-05-02 18:39:44 :: Propriétaire : edulog :: Rétro-liens ::
+   Cartographie :: Recherche : _______________
+   Fonctionne avec WikiNi 0.5.0 (interwiki)
+Edulog
+
+Centre d'aide Edulog : IalNoteAPBRegroupements
+
+   Accueil :: Aide IAL :: Aide Vie Scolaire :: Aide CDTEL :: Aide 123Web
+             Historique :: Connexion :: Vous êtes
+   nat-clients.lix.polytechnique.fr
+   Vous n'avez pas accès en écriture à cette page !
+     __________________________________________________________________
+
+   2016-05-02 18:39:44 :: Propriétaire : edulog :: Rétro-liens ::
+   Cartographie :: Recherche : _______________
+   Fonctionne avec WikiNi 0.5.0 (interwiki)

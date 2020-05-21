@@ -1,0 +1,604 @@
+   #Archives Domotique Station Météo Raspbian Raspberry Pi Générique
+   connexion réseau Sécurité HTML/PHP GPIO Arduino billets précédents
+   Échanges de données entre RPi et Atmega communication i2c RPi > Arduino
+   Tout faire depuis un terminal Raspberry & Arduino sous surveillance IDE
+   Arduino - Quelques bases Atom 1.0 Blogroll
+
+Domotique, station météo & autres projets autour du PI
+
+   Aller au contenu | Aller au menu | Aller à la recherche
+
+   Accueil
+
+   7 nov. 2018
+
+Échanges de données entre RPi et Atmega
+
+   Par Serge le 7 nov. 2018, 21:21 - Domotique
+     * Arduino
+     * avancé
+     * chauffage
+     * Raspberry Pi
+
+   Un billet pour mémoriser les techniques utilisées pour les échanges
+   entre RPi et Atmega de ma carte de chauffage.
+
+   Lire la suite...
+
+   10 oct. 2018
+
+communication i2c RPi > Arduino
+
+   Par Serge le 10 oct. 2018, 23:13 - Raspberry Pi
+
+   I2C.png
+
+   Lire la suite...
+
+   8 oct. 2018
+
+Tout faire depuis un terminal
+
+   Par serge le 8 oct. 2018, 19:07 - Arduino
+
+   terminal.png Maintenant que je maîtrise le couple RPi / Arduino, je
+   suis un peu frustré de ne pouvoir tout faire depuis un terminal ouvert
+   sur le RPi.
+
+   Lire la suite...
+
+   25 avr. 2018
+
+Raspberry & Arduino sous surveillance
+
+   Par serge le 25 avr. 2018, 18:23 - Domotique
+     * Arduino
+     * avancé
+     * chauffage
+     * Raspberry Pi
+     * raspbian
+     * sécurité
+
+   À l'occasion de la refonte de la carte de chauffage, je me suis donné
+   comme contrainte que celle-ci devait pouvoir fonctionner en toutes
+   circonstances.
+   - 1/ elle devait se relancer après crash
+   - 2/ elle devait se passer du Rasperry Pi, si celui-ci disparaissait.
+   - 3/ les programmes sous Rasperry devaient pouvoir être relancer
+   automatiquement.#
+
+   Lire la suite...
+
+   8 avr. 2018
+
+IDE Arduino - Quelques bases
+
+   Par Serge le 8 avr. 2018, 22:47 - Arduino
+     * Arduino
+     * débutant
+
+   Un billet qui a la prétention de donner quelques solides idées sur les
+   méthodes de programmation des Arduinos et autres Atmega dans le domaine
+   de la robotique et de la domotique.
+
+   Lire la suite...
+
+   « billets précédents - page 1 de 7
+
+Mes projets
+
+   Domotique Station météo
+   Panneaux Photovoltaïques
+
+Préambule
+
+   Ce blog à l'ambition d'échanger quelques idées ou expériences sur
+   l'utilisation du Rasperry pi dans le domaine de la domotique et des
+   automatismes.
+   Mon expérience est plutôt axée sur l'utilisation de shell Bash et de
+   scripts idoines sur Raspbian, et HTML/PHP mâtiné de javascript pour la
+   présentation des données.
+   Ma démarche consiste à écrire des billets sur les différentes solutions
+   mises en oeuvre pour réaliser ces projets.
+   Je me suis largement inspiré des tutos trouvés par ailleurs sur
+   Internet (je site mes sources). Parfois j'arrive à améliorer ou à
+   simplifier certaines réalisations.
+
+Sommaire
+
+     * Liste des billets
+
+Recherche
+
+   __________ ok
+
+Catégories
+
+     * Domotique (7)
+     * Station Météo (1)
+     * Raspbian (3)
+     * Raspberry Pi (2)
+     * Générique (4)
+          + connexion réseau (4)
+          + Sécurité (2)
+     * HTML/PHP (1)
+     * GPIO (3)
+     * Arduino (5)
+
+Mots-clés
+
+     * anémomètre
+     * Arduino
+     * avancé
+     * chauffage
+     * débutant
+     * edf
+     * ethernet
+     * girouette
+     * GPIO
+     * lan
+     * météo
+     * pluviomètre
+     * Raspberry Pi
+     * raspbian
+     * réseau
+     * sécurité
+     * shell Bash
+     * ssh
+     * téléinfo
+     * température
+
+   Tous les mots-clés
+
+Liens
+
+     * Framasoft
+     * DotClear
+     * Framboise 3.14
+     * MagdiBlog
+     * Raspian France
+     * Idle Blog
+     * JpGraph
+     * Administration
+     * webstat
+
+   Propulsé par Dotclear
+   >accueil
+   >chauffage
+   >téléinfo
+   >panneaux
+   >météo
+   >blog
+
+  ACCUEIL DOMOTIQUE
+
+   jeudi 26 sept. 2019 - 01H30
+
+   [system-run.png] [grovepi.png] 4days
+   PIERIX
+
+   [system-run.png] [www.png] 4days
+   PICENT
+
+   [system-run.png] [battery.png] 23days
+   PIEDF
+
+   [system-run.png] [cpts.png] 23days
+   PIGITE
+
+   [system-run.png] [cpts.png] 23days
+   PIMETEO
+
+   [system-run.png] [cpts.png] 0
+   PIPAX
+
+   [tempo.png]
+     [btbleu.png]  aujourd'hui
+     [btbleu.png]  demain
+     [btnc.png]  (Internet)
+    heures creuses  5kWh, 4kWh
+    heures pleines  0kWh, 0kWh
+   I ins.: 17A, 15A, 0A
+    T° ext.  :   17.1°
+    T° int.  : 22.3°
+    T° max. : 0°
+    Humid. : 65%
+    T° csg.  : 18°
+    T° min. : 0°
+   [raspberry-pi-lcd.png]
+   [sp.png] [x03.png] [x05.png] [x04.png] [2.png] [2.png] [,.png] [3.png]
+   [x02.png] [sp.png] [1.png] [7.png] [A.png] [sp.png] [x07.png] [sp.png]
+   [b.png]
+   [sp.png] [x03.png] [x06.png] [x04.png] [1.png] [7.png] [,.png] [1.png]
+   [x02.png] [sp.png] [N.png] [o.png] [E.png] [r.png] [r.png] [sp.png]
+   [b.png]
+   (BUTTON) < (BUTTON) > [26] [septembre] [9_] [2019] (BUTTON) jour
+
+   IFRAME: courbes_global.php
+   #Accueil novembre 2018 octobre 2018 avril 2018 janvier 2018 décembre
+   2017 octobre 2017 septembre 2017 décembre 2015 novembre 2015 Atom 1.0
+
+Domotique, station météo & autres projets autour du PI
+
+   Aller au contenu | Aller au menu | Aller à la recherche
+
+   Accueil › Archives
+
+Archives
+
+2018
+
+     * novembre (1)
+     * octobre (2)
+     * avril (2)
+     * janvier (1)
+
+2017
+
+     * décembre (1)
+     * octobre (1)
+     * septembre (1)
+
+2015
+
+     * décembre (21)
+     * novembre (2)
+
+Mes projets
+
+   Domotique Station météo
+   Panneaux Photovoltaïques
+
+Préambule
+
+   Ce blog à l'ambition d'échanger quelques idées ou expériences sur
+   l'utilisation du Rasperry pi dans le domaine de la domotique et des
+   automatismes.
+   Mon expérience est plutôt axée sur l'utilisation de shell Bash et de
+   scripts idoines sur Raspbian, et HTML/PHP mâtiné de javascript pour la
+   présentation des données.
+   Ma démarche consiste à écrire des billets sur les différentes solutions
+   mises en oeuvre pour réaliser ces projets.
+   Je me suis largement inspiré des tutos trouvés par ailleurs sur
+   Internet (je site mes sources). Parfois j'arrive à améliorer ou à
+   simplifier certaines réalisations.
+
+Sommaire
+
+     * Liste des billets
+
+Catégories
+
+     * Domotique (7)
+     * Station Météo (1)
+     * Raspbian (3)
+     * Raspberry Pi (2)
+     * Générique (4)
+          + connexion réseau (4)
+          + Sécurité (2)
+     * HTML/PHP (1)
+     * GPIO (3)
+     * Arduino (5)
+
+Mots-clés
+
+     * anémomètre
+     * Arduino
+     * avancé
+     * chauffage
+     * débutant
+     * edf
+     * ethernet
+     * girouette
+     * GPIO
+     * lan
+     * météo
+     * pluviomètre
+     * Raspberry Pi
+     * raspbian
+     * réseau
+     * sécurité
+     * shell Bash
+     * ssh
+     * téléinfo
+     * température
+
+   Tous les mots-clés
+
+Liens
+
+     * Framasoft
+     * DotClear
+     * Framboise 3.14
+     * MagdiBlog
+     * Raspian France
+     * Idle Blog
+     * JpGraph
+     * Administration
+     * webstat
+
+   Propulsé par Dotclear
+   #Accueil Archives billets précédents Échanges de données entre RPi et
+   Atmega Raspberry & Arduino sous surveillance PIERIX les détails de son
+   fonctionnement Compteur EDF et la "téléinfo" Une cartographie pour mon
+   chauffage Atom 1.0
+
+Domotique, station météo & autres projets autour du PI
+
+   Aller au contenu | Aller au menu | Aller à la recherche
+
+   Accueil › Domotique
+
+Domotique
+
+   articles sur la domotique
+
+   Fil des billets
+
+   7 nov. 2018
+
+Échanges de données entre RPi et Atmega
+
+   Par Serge le 7 nov. 2018, 21:21
+     * Arduino
+     * avancé
+     * chauffage
+     * Raspberry Pi
+
+   Un billet pour mémoriser les techniques utilisées pour les échanges
+   entre RPi et Atmega de ma carte de chauffage.
+
+   Lire la suite...
+
+   25 avr. 2018
+
+Raspberry & Arduino sous surveillance
+
+   Par serge le 25 avr. 2018, 18:23
+     * Arduino
+     * avancé
+     * chauffage
+     * Raspberry Pi
+     * raspbian
+     * sécurité
+
+   À l'occasion de la refonte de la carte de chauffage, je me suis donné
+   comme contrainte que celle-ci devait pouvoir fonctionner en toutes
+   circonstances.
+   - 1/ elle devait se relancer après crash
+   - 2/ elle devait se passer du Rasperry Pi, si celui-ci disparaissait.
+   - 3/ les programmes sous Rasperry devaient pouvoir être relancer
+   automatiquement.#
+
+   Lire la suite...
+
+   18 sept. 2017
+
+PIERIX les détails de son fonctionnement
+
+   Par Serge le 18 sept. 2017, 19:34
+
+   PIERIX est le système qui remplace l'électronique du chauffage. À
+   l'origine un chauffage géothermique eau/eau ERIX 101 de la société
+   bretonne SOLTERM aujourd'hui disparue.
+
+   Lire la suite...
+
+   8 déc. 2015
+
+Compteur EDF et la "téléinfo"
+
+   Par Serge le 8 déc. 2015, 18:35
+     * edf
+     * Raspberry Pi
+     * shell Bash
+     * tempo
+     * téléinfo
+
+   Il est possible de récupérer en temps réel les valeurs de consommation
+   électrique de la maison et différentes autres informations concernant
+   votre abonnement EDF. images.jpg
+
+   Lire la suite...
+
+   5 déc. 2015
+
+Une cartographie pour mon chauffage
+
+   Par Serge le 5 déc. 2015, 23:17
+     * chauffage
+     * shell Bash
+     * tempo
+     * température
+
+   Quand je me suis attaqué au problème de la gestion du chauffage en
+   fonction des conditions de couleur du jour Tempo, je me suis vu partir
+   dans une série de "if, then, else" sans fin et ingérables.
+     carto.png
+
+
+   Lire la suite...
+
+   « billets précédents - page 1 de 2
+
+Mes projets
+
+   Domotique Station météo
+   Panneaux Photovoltaïques
+
+Préambule
+
+   Ce blog à l'ambition d'échanger quelques idées ou expériences sur
+   l'utilisation du Rasperry pi dans le domaine de la domotique et des
+   automatismes.
+   Mon expérience est plutôt axée sur l'utilisation de shell Bash et de
+   scripts idoines sur Raspbian, et HTML/PHP mâtiné de javascript pour la
+   présentation des données.
+   Ma démarche consiste à écrire des billets sur les différentes solutions
+   mises en oeuvre pour réaliser ces projets.
+   Je me suis largement inspiré des tutos trouvés par ailleurs sur
+   Internet (je site mes sources). Parfois j'arrive à améliorer ou à
+   simplifier certaines réalisations.
+
+Sommaire
+
+     * Liste des billets
+
+Catégories
+
+     * Domotique (7)
+     * Station Météo (1)
+     * Raspbian (3)
+     * Raspberry Pi (2)
+     * Générique (4)
+          + connexion réseau (4)
+          + Sécurité (2)
+     * HTML/PHP (1)
+     * GPIO (3)
+     * Arduino (5)
+
+Mots-clés
+
+     * anémomètre
+     * Arduino
+     * avancé
+     * chauffage
+     * débutant
+     * edf
+     * ethernet
+     * girouette
+     * GPIO
+     * lan
+     * météo
+     * pluviomètre
+     * Raspberry Pi
+     * raspbian
+     * réseau
+     * sécurité
+     * shell Bash
+     * ssh
+     * téléinfo
+     * température
+
+   Tous les mots-clés
+
+Liens
+
+     * Framasoft
+     * DotClear
+     * Framboise 3.14
+     * MagdiBlog
+     * Raspian France
+     * Idle Blog
+     * JpGraph
+     * Administration
+     * webstat
+
+   Propulsé par Dotclear
+   #Accueil Archives Introduction projet station météo Atom 1.0
+
+Domotique, station météo & autres projets autour du PI
+
+   Aller au contenu | Aller au menu | Aller à la recherche
+
+   Accueil › Station Météo
+
+Station Météo
+
+   Tout sur la météo
+
+   Fil des billets
+
+   30 nov. 2015
+
+Introduction projet station météo
+
+   Par Serge le 30 nov. 2015, 23:26
+     * anémomètre
+     * girouette
+     * météo
+     * pluviomètre
+     * pression
+     * Raspberry Pi
+     * raspbian
+     * température
+
+   la page web du projet de station météo La station météo fonctionne
+   grâce à un Pi (évidemment !), une carte Velleman K8055 k8055.jpg
+
+   Lire la suite...
+
+Mes projets
+
+   Domotique Station météo
+   Panneaux Photovoltaïques
+
+Préambule
+
+   Ce blog à l'ambition d'échanger quelques idées ou expériences sur
+   l'utilisation du Rasperry pi dans le domaine de la domotique et des
+   automatismes.
+   Mon expérience est plutôt axée sur l'utilisation de shell Bash et de
+   scripts idoines sur Raspbian, et HTML/PHP mâtiné de javascript pour la
+   présentation des données.
+   Ma démarche consiste à écrire des billets sur les différentes solutions
+   mises en oeuvre pour réaliser ces projets.
+   Je me suis largement inspiré des tutos trouvés par ailleurs sur
+   Internet (je site mes sources). Parfois j'arrive à améliorer ou à
+   simplifier certaines réalisations.
+
+Sommaire
+
+     * Liste des billets
+
+Catégories
+
+     * Domotique (7)
+     * Station Météo (1)
+     * Raspbian (3)
+     * Raspberry Pi (2)
+     * Générique (4)
+          + connexion réseau (4)
+          + Sécurité (2)
+     * HTML/PHP (1)
+     * GPIO (3)
+     * Arduino (5)
+
+Mots-clés
+
+     * anémomètre
+     * Arduino
+     * avancé
+     * chauffage
+     * débutant
+     * edf
+     * ethernet
+     * girouette
+     * GPIO
+     * lan
+     * météo
+     * pluviomètre
+     * Raspberry Pi
+     * raspbian
+     * réseau
+     * sécurité
+     * shell Bash
+     * ssh
+     * téléinfo
+     * température
+
+   Tous les mots-clés
+
+Liens
+
+     * Framasoft
+     * DotClear
+     * Framboise 3.14
+     * MagdiBlog
+     * Raspian France
+     * Idle Blog
+     * JpGraph
+     * Administration
+     * webstat
+
+   Propulsé par Dotclear

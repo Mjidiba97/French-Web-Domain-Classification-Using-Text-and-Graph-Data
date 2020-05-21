@@ -1,0 +1,497 @@
+   #Flux - neonet Flux - Tous les forums Flux - Nouveaux sujets Flux -
+   Forums - habiTv Flux - Sujet - Youtube
+
+   neonet
+
+   Replay - Vidéo - Multimédia
+
+   Vers le contenu
+   ________________________________________ Rechercher
+     * Index du forum ‹ Logiciels ‹ habiTv
+     * Modifier la taille de la police
+     * Imprimer le sujet
+
+     * FAQ
+     * M’enregistrer
+     * Connexion
+
+                                 [INS: :INS]
+
+Youtube
+
+   Téléchargement automatique de Replay TV
+   Répondre
+
+   Dans ce sujet…______ Rechercher
+
+   2 messages • Page 1 sur 1
+
+Youtube
+
+   Message de Kanashii » Lun 28 Sep 2015 09:52
+   Bonjour,
+   Tout d'abord merci pour le travail et pour ce logiciel très prometteur.
+   Depuis la nouvelle API de youtube et l'abandon des feeds RSS je cherche
+   un logiciel permettant de télécharger automatiquement une chaîne
+   youtube et même mieux une playlist en particulier.
+   J'ai pu faire fonctionner le logiciel avec les chaîne en replay, les
+   flux RSS, dailymotion, mais pas avec Youtube.
+   Est-ce une mauvais manipulation (configuration) de ma part?
+   Je ne sais quoi mettre dans la boîte de dialogue, le nom de la chaîne
+   Youtube, l'identifiant, l'adresse de la chaîne...?
+   Je pense avoir tout essayé mais rien ne marche.
+   Je ne serais pas contre un petit Tuto et la confirmation que ce module
+   marche.
+   Merci :)
+   PS : 3 petites améliorations serait sympa concernant le nom des
+   fichiers téléchargés :
+   - ne pas remplacer les espaces par un "_"
+   - ne pas tronquer le titre de l'émission
+   - prendre en compte les accents voir les enlever et non supprimer le
+   caractère accentué
+   Windows 7 / France / Google Chrome 45.0.245
+
+   Kanashii
+
+          Messages: 1
+          Inscription: Lun 28 Sep 2015 09:40
+
+   Haut
+     __________________________________________________________________
+
+Re: Youtube
+
+   Message de dabiboo » Lun 28 Sep 2015 13:52
+   Bonjour,
+   Merci du message.
+   Pour youtube, ça marche toujours et les flux rss ne sont pas encore
+   complètement morts, ex : https://www.youtube.com/feeds/videos.xm ...
+   Axolotblog
+   je crois que ça ne fonctionne qu'avec les noms d'utilisateur :
+   ex de config habitv :
+
+   Code: Tout sélectionner
+
+                                  <category>
+
+          <id>https://www.youtube.com/feeds/videos.xml?user=Axolotblog</id
+          >
+                                      <name>Axolot</name>
+                                      <download>true</download>
+                                      <subcategories/>
+                                      <extension>flv</extension>
+                                      <status>USER</status>
+                                  </category>
+
+   Ici, il faut donc entrer "Axolotblog" via l'ihm.
+   Et tu peux voir dans le fichier grabconfig.xml l'url rss générée.
+   Pour télécharger des playlists tu peux utiliser youtube-dl (qui est
+   packagé dans habitv dans le répertoire bin). En tapant simplement la
+   commande "youtube-dl #url_playlist#".
+   Pour qu'il n'y ait aucune modification sur le nom de l'épisode, tu peux
+   définir "#EPISODE_UNTOUCHED#.#EXTENSION#" comme destination. Je préfère
+   supprimer les caractères non ascii car ça finit toujours par me faire
+   planter mes scripts d'exports.
+   cf https://www.assembla.com/spaces/habitv/ ... amePattern
+   Windows 7 64 bits / France / Firefox 40.0
+
+   dabiboo
+
+          Messages: 189
+          Inscription: Mer 15 Aoû 2012 11:06
+
+   Haut
+     __________________________________________________________________
+
+   Afficher les messages postés depuis: [Tous______] Trier par [Date__]
+   [Croissant___] Aller
+     __________________________________________________________________
+
+   Répondre
+   2 messages • Page 1 sur 1
+
+   Retourner vers habiTv
+
+   Aller à: [   habiTv_____________________] Aller
+
+Qui est en ligne
+
+   Utilisateurs parcourant ce forum: Aucun utilisateur enregistré et 2
+   invités
+     * Index du forum
+     * L’équipe du forum • Supprimer les cookies du forum • Heures au
+       format UTC + 1 heure
+
+                                 [INS: :INS]
+
+   neo-net.fr astuto.fr phpbb-fr
+   #Flux - neonet Flux - Tous les forums Flux - Nouveaux sujets
+
+   neonet
+
+   Replay - Vidéo - Multimédia
+
+   Vers le contenu
+   ________________________________________ Rechercher
+     * Index du forum
+     * Modifier la taille de la police
+
+     * FAQ
+     * M’enregistrer
+     * Connexion
+
+                                 [INS: :INS]
+
+L’administrateur exige que vous soyez enregistré et connecté pour voir les
+profils.
+
+   Nom d’utilisateur:
+          _________________________
+
+   Mot de passe:
+          _________________________
+          J’ai oublié mon mot de passe
+          Renvoyer l’e-mail de confirmation
+
+          [ ] Me connecter automatiquement à chaque visite
+          [ ] Cacher mon statut en ligne pour cette session
+
+
+          Connexion
+
+M’enregistrer
+
+   Vous devez être enregistré pour vous connecter. L’enregistrement ne
+   prend que quelques secondes et augmente vos possibilités.
+   L’administrateur du forum peut également accorder des permissions
+   additionnelles aux utilisateurs enregistrés. Avant de vous enregistrer,
+   assurez-vous d’avoir pris connaissance de nos conditions d’utilisation
+   et de notre politique de vie privée. Assurez-vous de bien lire tout le
+   règlement du forum.
+
+   Conditions d’utilisation | Politique de vie privée
+     __________________________________________________________________
+
+   M’enregistrer
+     * Index du forum
+     * L’équipe du forum • Supprimer les cookies du forum • Heures au
+       format UTC + 1 heure
+
+                                 [INS: :INS]
+
+   neo-net.fr astuto.fr phpbb-fr
+   #Flux - neonet Flux - Tous les forums Flux - Nouveaux sujets Flux -
+   Forums - habiTv Flux - Sujet - Youtube
+
+   neonet
+
+   Replay - Vidéo - Multimédia
+
+   Vers le contenu
+   ________________________________________ Rechercher
+     * Index du forum ‹ Logiciels ‹ habiTv
+     * Modifier la taille de la police
+     * Imprimer le sujet
+
+     * FAQ
+     * M’enregistrer
+     * Connexion
+
+                                 [INS: :INS]
+
+Youtube
+
+   Téléchargement automatique de Replay TV
+   Répondre
+
+   Dans ce sujet…______ Rechercher
+
+   2 messages • Page 1 sur 1
+
+Youtube
+
+   Message de Kanashii » Lun 28 Sep 2015 09:52
+   Bonjour,
+   Tout d'abord merci pour le travail et pour ce logiciel très prometteur.
+   Depuis la nouvelle API de youtube et l'abandon des feeds RSS je cherche
+   un logiciel permettant de télécharger automatiquement une chaîne
+   youtube et même mieux une playlist en particulier.
+   J'ai pu faire fonctionner le logiciel avec les chaîne en replay, les
+   flux RSS, dailymotion, mais pas avec Youtube.
+   Est-ce une mauvais manipulation (configuration) de ma part?
+   Je ne sais quoi mettre dans la boîte de dialogue, le nom de la chaîne
+   Youtube, l'identifiant, l'adresse de la chaîne...?
+   Je pense avoir tout essayé mais rien ne marche.
+   Je ne serais pas contre un petit Tuto et la confirmation que ce module
+   marche.
+   Merci :)
+   PS : 3 petites améliorations serait sympa concernant le nom des
+   fichiers téléchargés :
+   - ne pas remplacer les espaces par un "_"
+   - ne pas tronquer le titre de l'émission
+   - prendre en compte les accents voir les enlever et non supprimer le
+   caractère accentué
+   Windows 7 / France / Google Chrome 45.0.245
+
+   Kanashii
+
+          Messages: 1
+          Inscription: Lun 28 Sep 2015 09:40
+
+   Haut
+     __________________________________________________________________
+
+Re: Youtube
+
+   Message de dabiboo » Lun 28 Sep 2015 13:52
+   Bonjour,
+   Merci du message.
+   Pour youtube, ça marche toujours et les flux rss ne sont pas encore
+   complètement morts, ex : https://www.youtube.com/feeds/videos.xm ...
+   Axolotblog
+   je crois que ça ne fonctionne qu'avec les noms d'utilisateur :
+   ex de config habitv :
+
+   Code: Tout sélectionner
+
+                                  <category>
+
+          <id>https://www.youtube.com/feeds/videos.xml?user=Axolotblog</id
+          >
+                                      <name>Axolot</name>
+                                      <download>true</download>
+                                      <subcategories/>
+                                      <extension>flv</extension>
+                                      <status>USER</status>
+                                  </category>
+
+   Ici, il faut donc entrer "Axolotblog" via l'ihm.
+   Et tu peux voir dans le fichier grabconfig.xml l'url rss générée.
+   Pour télécharger des playlists tu peux utiliser youtube-dl (qui est
+   packagé dans habitv dans le répertoire bin). En tapant simplement la
+   commande "youtube-dl #url_playlist#".
+   Pour qu'il n'y ait aucune modification sur le nom de l'épisode, tu peux
+   définir "#EPISODE_UNTOUCHED#.#EXTENSION#" comme destination. Je préfère
+   supprimer les caractères non ascii car ça finit toujours par me faire
+   planter mes scripts d'exports.
+   cf https://www.assembla.com/spaces/habitv/ ... amePattern
+   Windows 7 64 bits / France / Firefox 40.0
+
+   dabiboo
+
+          Messages: 189
+          Inscription: Mer 15 Aoû 2012 11:06
+
+   Haut
+     __________________________________________________________________
+
+   Afficher les messages postés depuis: [Tous______] Trier par [Date__]
+   [Croissant___] Aller
+     __________________________________________________________________
+
+   Répondre
+   2 messages • Page 1 sur 1
+
+   Retourner vers habiTv
+
+   Aller à: [   habiTv_____________________] Aller
+
+Qui est en ligne
+
+   Utilisateurs parcourant ce forum: Aucun utilisateur enregistré et 2
+   invités
+     * Index du forum
+     * L’équipe du forum • Supprimer les cookies du forum • Heures au
+       format UTC + 1 heure
+
+                                 [INS: :INS]
+
+   neo-net.fr astuto.fr phpbb-fr
+   #Flux - neonet Flux - Tous les forums Flux - Nouveaux sujets Flux -
+   Forums - habiTv Flux - Sujet - habiTv 4.0.6
+
+   neonet
+
+   Replay - Vidéo - Multimédia
+
+   Vers le contenu
+   ________________________________________ Rechercher
+     * Index du forum ‹ Logiciels ‹ habiTv
+     * Modifier la taille de la police
+     * Imprimer le sujet
+
+     * FAQ
+     * M’enregistrer
+     * Connexion
+
+                                 [INS: :INS]
+
+habiTv 4.0.6
+
+   Téléchargement automatique de Replay TV
+   Répondre
+
+   Dans ce sujet…______ Rechercher
+
+   2 messages • Page 1 sur 1
+
+habiTv 4.0.6
+
+   Message de dabiboo » Dim 16 Aoû 2015 23:16
+   Bonjour,
+   ça faisait longtemps que je n'avais pas fait un packaging officiel, je
+   me contentais de faire évoluer les plugins qui se mettent donc à jour
+   automatiquement.
+   Suite à une mise à jour de youtube-dl, il est maintenant nécessaire de
+   mettre à jour le cœur d'habiTv en version 4.0.6 :
+   https://www.assembla.com/spaces/habitv/ ... hargements
+   Avec ça quelques changements :
+   - suppression du plugin tf1
+   - ajout du plugin wat.tv (sur lequel on peut trouver la plupart des
+   vidéos de tf1)
+   - correction du plugin arte
+   bon dl
+   Windows 7 64 bits / France / Firefox 39.0
+
+   dabiboo
+
+          Messages: 189
+          Inscription: Mer 15 Aoû 2012 11:06
+
+   Haut
+     __________________________________________________________________
+
+Re: habiTv 4.0.6
+
+   Message de czmaster » Lun 17 Aoû 2015 19:35
+   Salut,
+   Merci pour cette nouvelle version ! :pouce:
+   Windows 7 64 bits / France / Firefox 36.0
+   Administrateur du forum
+
+   czmaster
+          Administrateur du site
+
+          Messages: 1406
+          Inscription: Sam 2 Juil 2011 10:41
+          Localisation: France
+
+   Haut
+     __________________________________________________________________
+
+   Afficher les messages postés depuis: [Tous______] Trier par [Date__]
+   [Croissant___] Aller
+     __________________________________________________________________
+
+   Répondre
+   2 messages • Page 1 sur 1
+
+   Retourner vers habiTv
+
+   Aller à: [   habiTv_____________________] Aller
+
+Qui est en ligne
+
+   Utilisateurs parcourant ce forum: Aucun utilisateur enregistré et 2
+   invités
+     * Index du forum
+     * L’équipe du forum • Supprimer les cookies du forum • Heures au
+       format UTC + 1 heure
+
+                                 [INS: :INS]
+
+   neo-net.fr astuto.fr phpbb-fr
+   #Flux - neonet Flux - Tous les forums Flux - Nouveaux sujets Flux -
+   Forums - habiTv Flux - Sujet - habiTv 4.0.6
+
+   neonet
+
+   Replay - Vidéo - Multimédia
+
+   Vers le contenu
+   ________________________________________ Rechercher
+     * Index du forum ‹ Logiciels ‹ habiTv
+     * Modifier la taille de la police
+     * Imprimer le sujet
+
+     * FAQ
+     * M’enregistrer
+     * Connexion
+
+                                 [INS: :INS]
+
+habiTv 4.0.6
+
+   Téléchargement automatique de Replay TV
+   Répondre
+
+   Dans ce sujet…______ Rechercher
+
+   2 messages • Page 1 sur 1
+
+habiTv 4.0.6
+
+   Message de dabiboo » Dim 16 Aoû 2015 23:16
+   Bonjour,
+   ça faisait longtemps que je n'avais pas fait un packaging officiel, je
+   me contentais de faire évoluer les plugins qui se mettent donc à jour
+   automatiquement.
+   Suite à une mise à jour de youtube-dl, il est maintenant nécessaire de
+   mettre à jour le cœur d'habiTv en version 4.0.6 :
+   https://www.assembla.com/spaces/habitv/ ... hargements
+   Avec ça quelques changements :
+   - suppression du plugin tf1
+   - ajout du plugin wat.tv (sur lequel on peut trouver la plupart des
+   vidéos de tf1)
+   - correction du plugin arte
+   bon dl
+   Windows 7 64 bits / France / Firefox 39.0
+
+   dabiboo
+
+          Messages: 189
+          Inscription: Mer 15 Aoû 2012 11:06
+
+   Haut
+     __________________________________________________________________
+
+Re: habiTv 4.0.6
+
+   Message de czmaster » Lun 17 Aoû 2015 19:35
+   Salut,
+   Merci pour cette nouvelle version ! :pouce:
+   Windows 7 64 bits / France / Firefox 36.0
+   Administrateur du forum
+
+   czmaster
+          Administrateur du site
+
+          Messages: 1406
+          Inscription: Sam 2 Juil 2011 10:41
+          Localisation: France
+
+   Haut
+     __________________________________________________________________
+
+   Afficher les messages postés depuis: [Tous______] Trier par [Date__]
+   [Croissant___] Aller
+     __________________________________________________________________
+
+   Répondre
+   2 messages • Page 1 sur 1
+
+   Retourner vers habiTv
+
+   Aller à: [   habiTv_____________________] Aller
+
+Qui est en ligne
+
+   Utilisateurs parcourant ce forum: Aucun utilisateur enregistré et 2
+   invités
+     * Index du forum
+     * L’équipe du forum • Supprimer les cookies du forum • Heures au
+       format UTC + 1 heure
+
+                                 [INS: :INS]
+
+   neo-net.fr astuto.fr phpbb-fr

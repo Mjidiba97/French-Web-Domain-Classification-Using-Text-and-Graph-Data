@@ -1,0 +1,156 @@
+   [fond-general.gif]
+
+   [logo.png]
+     * Accueil
+     * Emmanuelle Vo-Dinh
+          + Biographie
+          + Démarche
+          + Collaborateurs
+          + En création
+          + En tournée
+          + Archives
+     * Le Phare
+          + Historique
+          + Le projet
+          + Équipe
+          + Emploi
+          + Partenaires
+          + Les CCN
+          + Les Femmes sont là
+          + Réseau Labaye
+          + Normandie Impression…
+          + Résidences croisées
+     * Pour les artistes
+          + Artiste-s Associé-e-s
+               o shifts – art in movement
+               o Mylène Benoit
+          + Accueils studio
+               o 2021
+               o 2020
+               o 2019
+               o 2018
+               o 2017
+               o 2016
+               o 2015
+               o 2014
+               o 2013
+               o 2012
+          + Aides à l’écriture
+               o 2019
+               o 2018
+               o 2017
+               o 2016
+               o 2015
+               o 2014
+               o 2013
+          + Aide à la recherche
+          + Prêt de studio
+     * Évènements
+          + Phare en familles
+          + Pharenheit
+          + RIM#2
+          + RDV Sans phare
+          + Appels de Phare
+          + TBD
+          + PiedNu
+     * Pratiques dansées
+          + Masterphares
+          + Wavetimes & Wavebreaks
+     * Pour et avec les publics
+          + Autour des pièces
+          + Écoles primaires
+          + Collèges et lycées
+          + Enseignement supérieur
+          + Conservatoires
+          + Formations
+          + Milieu hospitalier
+     * Calendriers
+          + Activités à venir
+          + Activités passées
+          + Tournées à venir
+          + Tournées passées
+     * Communication imprimée
+     * Espace Pro
+     * Informations pratiques
+          + Contact
+          + Newsletter
+          + Facebook
+          + Crédits
+
+   fr | en
+
+Bienvenue
+
+   Découvrez notre nouvelle brochure de saison!
+
+   PROCHAINEMENT AU PHARE
+   13.10, 10h30-17h — Stage Danser les Doors (à La Lice) — Nicolas
+   Chaigneau
+   19.10 au 22.10 — Phare en familles
+   13.11, 18h30 — Masterphare — Jazz Barbé - Cie Pierre Pontvianne
+   20.11, 18h30 — Masterphare — Ashley Chen
+   02.12 au 13.12 — Rendez-vous Sans phare #2 — Autour de Pharenheit
+   04.12, 18h30 — Masterphare (en partenariat avec Le Volcan) — Ulises
+   Alvarez - Cie Maguy Marin
+   12.12, 19h — Appel de phare #19 — Julie Nioche
+   22.01, 18h30 — Masterphare — Sarah Crépin
+   28.01 au 08.01 — Festival Pharenheit (au Havre et en Normandie)
+   29.01, 18h — Masterphare (au Théâtre Le Passage à Fécamp) — Hélène
+   Iratchet
+   voir toutes les activités publiques...
+
+   PROCHAINS SPECTACLES D'EMMANUELLE VO-DINH EN TOURNÉE
+   23.11 — Waveparty — Le Théâtre, scène nationale de Saint-Nazaire
+   26.11 — Cocagne — Le Théâtre, scène nationale de Saint-Nazaire
+   09.01 — Sprint — Lycée Albert Sorel, Honfleur
+   30.01 — Belles et bois — Espace Culturel de la Pointe de Caux,
+   Gonfreville l'Orcher
+   31.01 — Belles et bois — Espace Culturel de la Pointe de Caux,
+   Gonfreville l'Orcher
+   02.02 — Belles et bois — Espace Culturel de la Pointe de Caux,
+   Gonfreville l'Orcher
+   05.02 — Sprint — Le Phare, CCN du Havre Normandie / Festival Pharenheit
+   07.02 — Leitmotiv — Hôpital Pierre Janet / Festival Pharenheit
+   08.02 — Waveparty — Le Phare, CCN du Havre Normandie / Festival
+   Pharenheit
+   17.03 — Belles et bois — Chapiteau Théâtre - Domaine de Bayssan,
+   Béziers
+   voir toutes les tournées à venir...
+   (function($){ $.fn.dcAccordion = function(options) { //set default
+   options var defaults = { classParent : 'dcjq-parent', classActive :
+   'active', classArrow : 'dcjq-icon', classCount : 'dcjq-count',
+   classExpand : 'dcjq-current-parent', classDisable : '', eventType :
+   'click', hoverDelay : 300, menuClose : true, autoClose : true,
+   autoExpand : false, speed : 'slow', saveState : true, disableLink :
+   true, showCount : false, cookie : 'dcjq-accordion' }; //call in the
+   default otions var options = $.extend(defaults, options);
+   this.each(function(options){ var obj = this; var objLinks = $('li >
+   a',obj); var objSub = $('li > ul',obj); if(defaults.classDisable){
+   objLinks = $('li:not(.'+defaults.classDisable+') > a',obj); objSub =
+   $('li:not(.'+defaults.classDisable+') > ul',obj); } classActive =
+   defaults.classActive; setUpAccordion(); $('li.'+defaults.classExpand+'
+   > a').addClass(classActive); resetAccordion();
+   objLinks.click(function(e){ var activeLi = $(this).parent('li'); var
+   parentsLi = activeLi.parents('li'); var parentsUl =
+   activeLi.parents('ul'); if($(this).siblings('ul').length >0){
+   e.preventDefault(); } autoCloseAccordion(parentsLi, parentsUl); if
+   ($('> ul',activeLi).is(':visible')){
+   $('ul',activeLi).slideUp(defaults.speed);
+   $('a',activeLi).removeClass(classActive); } else {
+   $(this).siblings('ul').slideToggle(defaults.speed); $('>
+   a',activeLi).addClass(classActive); } }); function setUpAccordion(){
+   var arrow = ''; var classParentLi = defaults.classParent+'-li';
+   objSub.show(); $('li',obj).each(function(){ if($('> ul',this).length >
+   0){ $(this).addClass(classParentLi); $('>
+   a',this).addClass(defaults.classParent).append(arrow); } });
+   objSub.hide(); if(defaults.classDisable){
+   $('li.'+defaults.classDisable+' > ul').show(); } } function
+   autoCloseAccordion(parentsLi, parentsUl){
+   $('ul',obj).not(parentsUl).slideUp(defaults.speed); // Reset active
+   links $('a',obj).removeClass(classActive); $('>
+   a',parentsLi).addClass(classActive); } // Reset accordion using active
+   links function resetAccordion(){ objSub.hide(); var parentsLi =
+   $('a.'+classActive,obj).parents('li'); $('>
+   a',parentsLi).addClass(classActive); var allActiveLi =
+   $('a.'+classActive,obj); $(allActiveLi).siblings('ul').show(); } }); };
+   })(jQuery);

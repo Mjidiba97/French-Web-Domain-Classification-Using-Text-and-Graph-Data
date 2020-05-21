@@ -1,0 +1,680 @@
+   #News Feed Blog Feed
+
+   New on the blog: Scala Contributors Summit(s)
+
+     * Documentation
+     * Download
+     * Community
+     * Libraries
+     * Contribute
+     * Blog
+
+The Scala Programming Language
+
+   Scala combines object-oriented and functional programming in one
+   concise, high-level language. Scala's static types help avoid bugs in
+   complex applications, and its JVM and JavaScript runtimes let you build
+   high-performance systems with easy access to huge ecosystems of
+   libraries.
+   LEARN MORE
+   pushpin Scala began life in 2003, created by Martin Odersky and his
+   research group at EPFL, next to Lake Geneva and the Alps, in Lausanne,
+   Switzerland. Scala has since grown into a mature open source
+   programming language, used by hundreds of thousands of developers, and
+   is developed and maintained by scores of people all over the world.
+
+   DOWNLOAD
+     * Getting Started
+     * Milestones, nightlies, etc.
+     * All Previous Releases
+
+   API DOCS
+     * Current API Docs
+     * API Docs (other versions)
+     * Scala Documentation
+     * Language Specification
+
+   Scala 2.13.1
+
+Scala runs on...
+
+     * JVM
+     *
+     * JavaScript in your browser
+     *
+     * Natively with LLVM beta
+
+Scala in a Nutshell
+
+   click the boxes below to see Scala in action!
+
+Seamless Java Interop
+
+   Scala runs on the JVM, so Java and Scala stacks can be freely mixed for
+   totally seamless integration.
+
+Type Inference
+
+   So the type system doesn’t feel so static. Don’t work for the type
+   system. Let the type system work for you!
+
+Concurrency & Distribution
+
+   Use data-parallel operations on collections, use actors for concurrency
+   and distribution, or futures for asynchronous programming.
+   Author.scala
+class Author(val firstName: String,
+    val lastName: String) extends Comparable[Author] {
+
+  override def compareTo(that: Author) = {
+    val lastNameComp = this.lastName compareTo that.lastName
+    if (lastNameComp != 0) lastNameComp
+    else this.firstName compareTo that.firstName
+  }
+}
+
+object Author {
+  def loadAuthorsFromFile(file: java.io.File): List[Author] = ???
+}
+
+   App.java
+import static scala.collection.JavaConversions.asJavaCollection;
+
+public class App {
+    public List<Author> loadAuthorsFromFile(File file) {
+        return new ArrayList<Author>(asJavaCollection(
+            Author.loadAuthorsFromFile(file)));
+    }
+
+    public void sortAuthors(List<Author> authors) {
+        Collections.sort(authors);
+    }
+
+    public void displaySortedAuthors(File file) {
+        List<Author> authors = loadAuthorsFromFile(file);
+        sortAuthors(authors);
+        for (Author author : authors) {
+            System.out.println(
+                author.lastName() + ", " + author.firstName());
+        }
+    }
+}
+
+Combine Scala and Java seamlessly
+
+   Scala classes are ultimately JVM classes. You can create Java objects,
+   call their methods and inherit from Java classes transparently from
+   Scala. Similarly, Java code can reference Scala classes and objects.
+
+   In this example, the Scala class Author implements the Java interface
+   Comparable<T> and works with Java Files. The Java code uses a method
+   from the companion object Author, and accesses fields of the Author
+   class. It also uses JavaConversions to convert between Scala
+   collections and Java collections.
+   Type inference
+scala> class Person(val name: String, val age: Int) {
+     |   override def toString = s"$name ($age)"
+     | }
+defined class Person
+
+scala> def underagePeopleNames(persons: List[Person]) = {
+     |   for (person <- persons; if person.age < 18)
+     |     yield person.name
+     | }
+underagePeopleNames: (persons: List[Person])List[String]
+
+scala> def createRandomPeople() = {
+     |   val names = List("Alice", "Bob", "Carol",
+     |       "Dave", "Eve", "Frank")
+     |   for (name <- names) yield {
+     |     val age = (Random.nextGaussian()*8 + 20).toInt
+     |     new Person(name, age)
+     |   }
+     | }
+createRandomPeople: ()List[Person]
+
+scala> val people = createRandomPeople()
+people: List[Person] = List(Alice (16), Bob (16), Carol (19), Dave (18), Eve (26
+), Frank (11))
+
+scala> underagePeopleNames(people)
+res1: List[String] = List(Alice, Bob, Frank)
+
+Let the compiler figure out the types for you
+
+   The Scala compiler is smart about static types. Most of the time, you
+   need not tell it the types of your variables. Instead, its powerful
+   type inference will figure them out for you.
+
+   In this interactive REPL session (Read-Eval-Print-Loop), we define a
+   class and two functions. You can observe that the compiler infers the
+   result types of the functions automatically, as well as all the
+   intermediate values.
+   Concurrent/Distributed
+val x = Future { someExpensiveComputation() }
+val y = Future { someOtherExpensiveComputation() }
+val z = for (a <- x; b <- y) yield a*b
+for (c <- z) println("Result: " + c)
+println("Meanwhile, the main thread goes on!")
+
+Go Concurrent or Distributed with Futures & Promises
+
+   In Scala, futures and promises can be used to process data
+   asynchronously, making it easier to parallelize or even distribute your
+   application.
+
+   In this example, the Future{} construct evaluates its argument
+   asynchronously, and returns a handle to the asynchronous result as a
+   Future[Int]. For-comprehensions can be used to register new callbacks
+   (to post new things to do) when the future is completed, i.e., when the
+   computation is finished. And since all this is executed asynchronously,
+   without blocking, the main program thread can continue doing other work
+   in the meantime.
+
+Traits
+
+   Combine the flexibility of Java-style interfaces with the power of
+   classes. Think principled multiple-inheritance.
+
+Pattern Matching
+
+   Think “switch” on steroids. Match against class hierarchies, sequences,
+   and more.
+
+Higher-order functions
+
+   Functions are first-class objects. Compose them with guaranteed type
+   safety. Use them anywhere, pass them to anything.
+   Traits
+abstract class Spacecraft {
+  def engage(): Unit
+}
+trait CommandoBridge extends Spacecraft {
+  def engage(): Unit = {
+    for (_ <- 1 to 3)
+      speedUp()
+  }
+  def speedUp(): Unit
+}
+trait PulseEngine extends Spacecraft {
+  val maxPulse: Int
+  var currentPulse: Int = 0
+  def speedUp(): Unit = {
+    if (currentPulse < maxPulse)
+      currentPulse += 1
+  }
+}
+class StarCruiser extends Spacecraft
+                     with CommandoBridge
+                     with PulseEngine {
+  val maxPulse = 200
+}
+
+Flexibly Combine Interface & Behavior
+
+   In Scala, multiple traits can be mixed into a class to combine their
+   interface and their behavior.
+
+   Here, a StarCruiser is a Spacecraft with a CommandoBridge that knows
+   how to engage the ship (provided a means to speed up) and a PulseEngine
+   that specifies how to speed up.
+
+Switch on the structure of your data
+
+   In Scala, case classes are used to represent structural data types.
+   They implicitly equip the class with meaningful toString, equals and
+   hashCode methods, as well as the ability to be deconstructed with
+   pattern matching.
+
+   In this example, we define a small set of case classes that represent
+   binary trees of integers (the generic version is omitted for simplicity
+   here). In inOrder, the match construct chooses the right branch,
+   depending on the type of t, and at the same time deconstructs the
+   arguments of a Node.
+   Pattern matching
+// Define a set of case classes for representing binary trees.
+sealed abstract class Tree
+case class Node(elem: Int, left: Tree, right: Tree) extends Tree
+case object Leaf extends Tree
+
+// Return the in-order traversal sequence of a given tree.
+def inOrder(t: Tree): List[Int] = t match {
+  case Node(e, l, r) => inOrder(l) ::: List(e) ::: inOrder(r)
+  case Leaf          => List()
+}
+
+Go Functional with Higher-Order Functions
+
+   In Scala, functions are values, and can be defined as anonymous
+   functions with a concise syntax.
+   Scala
+val people: Array[Person]
+
+// Partition `people` into two arrays `minors` and `adults`.
+// Use the anonymous function `(_.age < 18)` as a predicate for partitioning.
+val (minors, adults) = people partition (_.age < 18)
+
+   Java
+List<Person> people;
+
+List<Person> minors = new ArrayList<Person>(people.size());
+List<Person> adults = new ArrayList<Person>(people.size());
+for (Person person : people) {
+    if (person.getAge() < 18)
+        minors.add(person);
+    else
+        adults.add(person);
+}
+
+   Learn More
+
+   or visit the Scala Documentation
+
+IDEs for Scala
+
+     * IntelliJ IDEA IntelliJ IDEA
+     *
+     * VS Code VS Code
+     *
+     * GNU Emacs GNU Emacs
+     *
+     * Vim Vim
+     *
+     * Sublime Text Sublime Text
+     *
+     * Atom Atom
+     *
+     * Scala IDE For Eclipse Scala IDE For Eclipse
+
+Run Scala in your browser
+
+   Scastie is Scala + sbt in your browser! You can use any version of
+   Scala, or even alternate backends such as Dotty, Scala.js, Scala
+   Native, and Typelevel Scala. You can use any published library. You can
+   save and share Scala programs/builds with anybody.
+
+   Learn More
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Run Scala code interactively
+
+Online Courses
+
+Functional Programming Principles in Scala
+
+     * Free (optional paid certificate)
+     * •
+     * New sessions starting every 2 weeks!
+
+Functional Program Design in Scala
+
+     * Free (optional paid certificate)
+     * •
+     * New sessions starting every 2 weeks!
+
+Parallel Programming
+
+     * Free (optional paid certificate)
+     * •
+     * New sessions starting every 2 weeks!
+
+Big Data Analysis with Scala and Spark
+
+     * Free (optional paid certificate)
+     * •
+     * New sessions starting every 2 weeks!
+
+Functional Programming in Scala Capstone
+
+     * Free (optional paid certificate)
+     * •
+     * New sessions starting every 2 weeks!
+
+Programming Reactive Systems
+
+     * Free (optional paid certificate)
+     * •
+     * 18 Feb 2019
+
+Upcoming Training
+
+   See more training or add one to our feed
+
+Upcoming Events
+
+   Sphere.it
+
+Sphere.it
+
+     * Kraków, Poland
+
+     * 06 Oct 2019 - 09 Oct 2019
+
+   Lambda World
+
+Lambda World
+
+     * Cádiz, Spain
+
+     * 17 Oct 2019 - 18 Oct 2019
+
+   Scala.IO
+
+Scala.IO
+
+     * Lyon, France
+
+     * 29 Oct 2019 - 31 Oct 2019
+
+   Functional Conf
+
+Functional Conf
+
+     * Bangalore, India
+
+     * 13 Nov 2019 - 17 Nov 2019
+
+   Scale by the Bay
+
+Scale by the Bay
+
+     * Oakland, CA, USA
+
+     * 13 Nov 2019 - 15 Nov 2019
+
+   BeeScala
+
+BeeScala
+
+     * Ljubljana, Slovenia
+
+     * 21 Nov 2019 - 23 Nov 2019
+
+   See more events or add one to our feed
+
+Scala ecosystem
+
+   The Scala Library Index (or Scaladex) is a representation of a map of
+   all published Scala libraries. With Scaladex, a developer can now query
+   more than 175,000 releases of Scala libraries. Scaladex is officially
+   supported by Scala Center.
+
+The Scala Library Index
+
+   ____________________
+
+What’s New
+
+   BLOG
+
+Scala Contributors Summit(s)
+
+   Wednesday, September 25, 2019
+
+   As the 3rd Contributors Summit approaches at ScalaSphere.it in Kraków,
+   Poland on the 8th of October, thanks to Scala Center and VirtusLab
+   collaboration, we figured it is high time to gather our notes and write
+   a proper blog on this topic.
+
+What is the Scala Contributors Summit?
+
+   Scala Contributors Summit is an event that brings together active
+   contributors, library authors, maintainers, and Scala User
+   Group/Conference organisers for a day-long in-person event to discuss
+   and exchange their experiences about all things Scala.
+
+   The goal of the event is to identify the pain points that prevent the
+   Scala ecosystem from growing in a sustainable way, and to propose
+   solutions to them. What is expected from participants?
+
+   Participants are not expected to prepare anything before the event.
+   They are only expected to contribute their thoughts and opinions in the
+   discussions. The facilitators will be responsible for writing notes and
+   summarizing the discussions, ideally, after the end of the day.
+
+Concept
+
+   The idea is simple: let’s bring people together to discuss common
+   issues in person. Not only that in-person discussions are more
+   efficient, less time consuming, and more impactful but they allow the
+   opportunity of developing personal relationships, building empathy and
+   trust, that online communication cannot provide. And let’s face it -
+   it’s fun to spend time with peers, speaking about things we love doing
+   (o:
+
+   Ideal time & place: colocating the Summit with a big conference that
+   attracts many contributors is a natural fit, and so the first
+   Contributors Summit took place a day after ScalaDays 2018 closed at
+   Zalando offices in Berlin, initiated by Heather Miller, the Scala
+   Center director at the time.
+
+     Scala folks! 📣
+     We're organizing a ✨Scala Contributors Summit✨ on May 18th in Berlin
+     right after Scala Days. The @lightbend Scala, Scala Center, Dotty,
+     @scala_sbt, @intellijidea teams & more will be there
+     Goal: sync on compiler/tool/lib roadmaps for the best of the
+     ecosystem!
+     — Heather Miller (@heathercmiller) May 7, 2018
+
+   We recognise: most of Scala contributors are investing their free time
+   and resources to develop a better OS ecosystem, therefore, as a small
+   token, we find sponsors to support this event to be opened & free for
+   the participants on the day.
+
+   If you are interested more about broader context: check out most recent
+   podcast on this topic “Open Source Health and Diversity with Heather C
+   Miller”
+
+Brief history
+
+Scala Days Berlin, 18th May 2018, all day, hosted and sponsored by Zalando
+
+     Scala contributors summit was great! Big kudos for @heathercmiller
+     and #scalacenter
+     I am wating for next edition and results of many amazing
+     discussions.
+     One great exmple: build tools components boudaries proposed by
+     @ebenwert pic.twitter.com/kKrsctwnnq
+     — Krzysztof Romanowski (@RomanowskiKr) May 19, 2018
+
+   Around 50 Scala library contributors, authors, and maintainers gathered
+   and discussed various topics, such as the upcoming changes in Scala 3,
+   improvements to the documentation and the website, the future of Scala
+   tooling for both OSS developers and big companies, proposals to better
+   collaborate online and welcome more contributors, etc. Participants
+   shared with us that they learned a lot from each other, how helpful it
+   was to be present in person and meet many of their colleagues, and
+   exchange experience.
+
+   No specific program was proposed. Instead, topics and groups were
+   formed on the spot: anyone could propose a topic and interested
+   participants would join for discussion.
+
+   Significant result: Scala Improvement Process took place during the
+   Contributors Summit, and public was for the first time present during
+   the meeting in person. In this particular meeting the SIP committee
+   agreed on approaching Scala 3 changes, dividing worklad in batches as
+   well as giving a month per batch to collect community’s input. For more
+   on this, please read the SIP minutes.
+
+   Otherwise in this edition, even though some were taking notes, not all
+   were collected, therefore will not be published here. (If you have
+   notes, please share them with us scala.center@epfl.ch)
+
+Scala Days EPFL Lausanne, 10th June 2019, all day, sponsored by VirtusLab
+
+   Great feedback from the Berlin edition, we decided to keep the
+   tradition and organised it a day before, kick-starting the 10th
+   Anniversary of the Scala Days conference in Lausanne, June 2019. This
+   time, there were over 60 participants that were discussing, amongst
+   other:
+
+     It's the Scala Contributors Summit at @scaladays today, starting
+     with the contributors assembling at the place where it all started
+     pic.twitter.com/GZcXozC3Ut
+     — Stefan Zeiger 🦋 (@StefanZeiger) June 10, 2019
+
+   Topic Questions
+   Growing community What are the pain points for people learning Scala?
+   Data science How do we improve Scala for data scientists and data
+   processing applications?
+   Scala 3 What are the blockers to migrate to Scala 3?
+   Open source How do we build an even richer ecosystem of open source
+   Scala libraries and tools?
+   Enterprise What lessons can we learn from large organizations that have
+   adopted Scala?
+   Ecosystem metrics What measurements can we use to evaluate if Scala is
+   evolving in the right direction?
+
+     Scala Contributors Summit, #scala 3 track #scaladays @scala_lang,
+     Martin Odersky leading the discussion on contextual abstractions
+     @EPFLevents @odersky @scaladays pic.twitter.com/OVB3neMeyq
+     — Aggelos Biboudis (@biboudis) June 10, 2019
+
+   For more details, we invite you to read some notes taken during the
+   discussions, here
+
+     Contributor Summit was opened with a warm welcome by @darjutak from
+     @scala_lang
+     So many bright people in one room 😃 #scaladays
+     pic.twitter.com/RWYzQJCFiQ
+     — Scala Days (@scaladays) June 10, 2019
+
+Next Summits
+
+ScalaSphere Kraków, 8th October 2019
+
+   Thanks to a big push and the tireless enthusiasm of the VirtusLab crew,
+   we are happy to invite you to participate in the 3rd edition of this
+   great event, register here. Conditions: a) you are in Kraków (or in the
+   area) on the 8th of October 2019 b) have a day to spare c) you are
+   contributing/maintaining/an author of a Scala library, Scala User
+   Group/Conference organiser, or simply would like to contribute to these
+   discussions, be present, take notes…
+
+ScalaDays 2020 and beyond
+
+   We are committed to keeping the discussions going! ScalaDays was a
+   great match, but other conferences can organise it too (as ScalaSphere
+   has) - we’d be happy to help you set it up, contact us:
+   darja.jovanovic@epfl.ch.
+
+Recently
+
+Scala 2.13.1 is now available!
+
+     * Wednesday, September 18, 2019
+     * •
+     *
+     *
+
+   Scala 2.13.1 is now available! This is primarily a bug fix release that
+   fixes several regressions in 2.13.0. For all the details, refer ...
+
+Kelley Robinson receives community award
+
+     * Friday, September 13, 2019
+     * •
+     *
+     *
+
+   We are pleased to announce that the Phil Bagwell Memorial Scala
+   Community Award for 2019 has been awarded to Kelley Robinson. The award
+   w...
+
+Kenji Yoshida receives community award
+
+     * Friday, September 13, 2019
+     * •
+     *
+     *
+
+   We are pleased to announce that the Phil Bagwell Memorial Scala
+   Community Award for 2018 has been awarded to Kenji Yoshida. The award
+   was...
+
+   View our blog
+
+Talk to us!
+
+Mailing Lists/Forums
+
+   Scala Users
+
+Scala Users
+
+   for general Scala questions, discussion and library announcements.
+   Scala Contributors
+
+Scala Contributors
+
+   for Scala contributions, language evolution discussions, standard
+   library, Scala platform evolution discussions and more.
+
+Real-Time Chat
+
+     * scala/scala
+     * scala/center
+     * scala/contributors
+     * scala/job-board
+
+     * spark-scala/Lobby
+     * scala-native/scala-native
+     * scala-js/scala-js
+     * lampepfl/dotty
+
+More chat rooms are listed on the Community page
+
+     *
+     *
+
+Twitter Feed
+
+   See more tweets, or
+   Follow Scala on twitter
+
+The Scala language is maintained by
+
+     * Scala Center
+     * Lightbend
+
+Scala Center is supported by
+
+   EPFL IBM Verizon Goldman Sachs 47 Degrees SAP Twitter Your company
+
+     * Documentation
+     * Getting Started
+     * API
+     * Overviews/Guides
+     * Language Specification
+
+     * Download
+     * Current Version
+     * All versions
+
+     * Community
+     * Community
+     * Forums / Mailing Lists
+     * Chat Rooms & More
+     * Libraries and Tools
+     * The Scala Center
+
+     * Contribute
+     * How to help
+     * Report an Issue
+
+     * Scala
+     * Blog
+     * Code of Conduct
+     * License
+
+     * Social
+     * GitHub
+     * Twitter
+
+   Copyright © 2002-2019 École Polytechnique Fédérale
+   Lausanne (EPFL) Lausanne, Switzerland

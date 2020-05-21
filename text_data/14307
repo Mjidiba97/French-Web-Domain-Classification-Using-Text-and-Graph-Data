@@ -1,0 +1,346 @@
+    struct [empty] http://www.laviedechoupette.canalblog.com/robots.txt
+
+   struct
+   LSbundle
+
+   function LSbundle
+
+   Arguments:
+   Name Required Type Default
+   basename true string
+   bundleid true string
+   localecode no string #getLocaleCode()#
+
+   Return Type: boolean
+   Roles:
+   Access:
+   Output: false
+   LSmessage
+
+   function LSmessage
+
+   Arguments:
+   Name Required Type Default
+   key true string
+   bundleid true string
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   _ApplicationStart
+
+   function _ApplicationStart
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:      public
+   Output:      false
+
+   blogDomainName [empty string]
+   blogUrl [empty string]
+   controlBO
+
+   function controlBO
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:
+   Output:      false
+
+   controlBU
+
+   function controlBU
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:
+   Output:      false
+
+   controlCFMY
+
+   function controlCFMY
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:      private
+   Output:      false
+
+   dateConvert2
+
+   function dateConvert2
+
+   Arguments:
+   Name Required Type Default
+   datetime no string #now()#
+   timezonefrom no string Europe/Paris
+   timezoneto no string UTC
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getLocalTime
+
+   function getLocalTime
+
+   Arguments:
+   Name Required Type Default
+   datetime no date #DateConvert("local2utc", now())#
+   timezonename no string Europe/Paris
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getLocaleCode
+
+   function getLocaleCode
+
+   Arguments:
+   Name Required Type Default
+   currentlocale no string #getLocale()#
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getLocaleFromLanguageCode
+
+   function getLocaleFromLanguageCode
+
+   Arguments:
+   Name Required Type Default
+   languagecode no string
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getRemoteAddress
+
+   function getRemoteAddress
+
+   Arguments:   none
+   Return Type: string
+   Roles:
+   Access:      public
+   Output:      false
+
+   getSupportedLocaleCode
+
+   function getSupportedLocaleCode
+
+   Arguments:
+   Name Required Type Default
+   currentlocale no string #getLocale()#
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getUTCTime
+
+   function getUTCTime
+
+   Arguments:
+   Name Required Type Default
+   datetime no date #DateConvert("local2utc", now())#
+   timezonename no string Europe/Paris
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   isLocaleCode
+
+   function isLocaleCode
+
+   Arguments:
+   Name Required Type Default
+   localecode true string
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   locale French (France)
+   origURI /robots.txt
+   serverName www.laviedechoupette.canalblog.com
+    struct [empty] http://www.laviedechoupette.canalblog.com/
+
+   struct
+   LSbundle
+
+   function LSbundle
+
+   Arguments:
+   Name Required Type Default
+   basename true string
+   bundleid true string
+   localecode no string #getLocaleCode()#
+
+   Return Type: boolean
+   Roles:
+   Access:
+   Output: false
+   LSmessage
+
+   function LSmessage
+
+   Arguments:
+   Name Required Type Default
+   key true string
+   bundleid true string
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   _ApplicationStart
+
+   function _ApplicationStart
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:      public
+   Output:      false
+
+   blogDomainName [empty string]
+   blogUrl [empty string]
+   controlBO
+
+   function controlBO
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:
+   Output:      false
+
+   controlBU
+
+   function controlBU
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:
+   Output:      false
+
+   controlCFMY
+
+   function controlCFMY
+
+   Arguments:   none
+   Return Type: boolean
+   Roles:
+   Access:      private
+   Output:      false
+
+   dateConvert2
+
+   function dateConvert2
+
+   Arguments:
+   Name Required Type Default
+   datetime no string #now()#
+   timezonefrom no string Europe/Paris
+   timezoneto no string UTC
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getLocalTime
+
+   function getLocalTime
+
+   Arguments:
+   Name Required Type Default
+   datetime no date #DateConvert("local2utc", now())#
+   timezonename no string Europe/Paris
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getLocaleCode
+
+   function getLocaleCode
+
+   Arguments:
+   Name Required Type Default
+   currentlocale no string #getLocale()#
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getLocaleFromLanguageCode
+
+   function getLocaleFromLanguageCode
+
+   Arguments:
+   Name Required Type Default
+   languagecode no string
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getRemoteAddress
+
+   function getRemoteAddress
+
+   Arguments:   none
+   Return Type: string
+   Roles:
+   Access:      public
+   Output:      false
+
+   getSupportedLocaleCode
+
+   function getSupportedLocaleCode
+
+   Arguments:
+   Name Required Type Default
+   currentlocale no string #getLocale()#
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   getUTCTime
+
+   function getUTCTime
+
+   Arguments:
+   Name Required Type Default
+   datetime no date #DateConvert("local2utc", now())#
+   timezonename no string Europe/Paris
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   isLocaleCode
+
+   function isLocaleCode
+
+   Arguments:
+   Name Required Type Default
+   localecode true string
+
+   Return Type: string
+   Roles:
+   Access:
+   Output: false
+   locale French (France)
+   origURI /
+   serverName www.laviedechoupette.canalblog.com

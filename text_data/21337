@@ -1,0 +1,200 @@
+   ﻿ #start
+
+qooxdoo
+
+     * blog
+     * demos
+     * downloads
+     * docs
+     * api
+     * support
+     * chat room
+
+Home
+
+a universal JavaScript framework
+
+with a coherent set of individual components
+
+   [website.png] [mobile.png] [desktop.png] [server.png]
+
+Website
+
+   DOM, Events, Templating
+
+   A cross-browser DOM manipulation library to enhance websites with a
+   rich user experience.
+
+Features
+
+     * Browser abstraction
+     * DOM manipulation
+     * Events
+     * Templating
+     * Animation
+
+            q.create("
+
+")
+              .setHtml("Hello")
+              .setStyle("color", "blue")
+              .on("click", function() { alert("click") })
+              .appendTo("#container");
+
+   Demos Getting Started Documentation Download Options qx.Website
+
+Mobile
+
+   Android, iOS, WP8, HTML5
+
+   Create mobile apps that run on all major mobile platforms and modern
+   desktop browsers, without writing any HTML.
+
+Features
+
+     * Pages
+     * Navigation
+     * Forms
+     * Layouting
+     * Theming
+
+              var manager = new qx.ui.mobile.page.Manager();
+              var page = new qx.ui.mobile.page.NavigationPage();
+              page.setTitle("Hello World");
+              page.addListener("initialize", function() {
+                var button = new qx.ui.mobile.form.Button();
+                page.getContent().add(button);
+                button.addListener("tap", function() {
+                  alert("Hello World");
+                }, this);
+              },this);
+              manager.addDetail(page);
+              page.show();
+
+   Run
+
+   Demos Getting Started Documentation Download qooxdoo-5.0.1-sdk.zip
+
+Desktop
+
+   Single-page applications
+
+   Create desktop-style applications. Features a rich and extendable set
+   of widgets. No HTML/CSS knowledge required.
+
+Features
+
+     * Windows, Tabs, …
+     * Forms, Lists, Trees, …
+     * Toolbars, Menus, …
+     * Layouting, Theming
+     * Data binding
+
+              var button = new qx.ui.form.Button("Button");
+              var doc = this.getRoot();
+
+              this.getRoot().add(button, {
+                left: 100,
+                top: 50
+              });
+
+              button.addListener("execute", function(evt) {
+                alert("Hello World!");
+              });
+
+   Run
+
+   Demos Getting Started Documentation Download qooxdoo-5.0.1-sdk.zip
+
+Server
+
+   Node.js & Rhino
+
+   Use the same OOP pattern known from the client side, reuse code and
+   generate files you can deploy in your server environment.
+
+Features
+
+     * Classes, mixins, interfaces
+     * Properties
+     * Events
+     * Single Value Binding
+
+              var qx = require("qx");
+              qx.Class.define("Monkey", {
+                extend: Animal,
+                properties : {
+                  legs : { init: 2 }
+                },
+                members: {}
+              });
+
+              var monkey = new Monkey();
+              monkey.getLegs();
+
+   Getting Started Documentation Download qx.Server Download uncompressed
+
+about
+
+   qooxdoo is a universal JavaScript framework with a coherent set of
+   individual components and a powerful toolchain. It is open source under
+   liberal licenses and supported by the qooxdoo community around the
+   world.
+
+Universal
+
+   With qooxdoo you build rich, interactive applications, native-like apps
+   for mobile devices, light-weight single-page oriented web applications
+   or even applications to run outside the browser.
+
+Coherent
+
+   No matter what target platform you choose – at its core, all variants
+   of qooxdoo use the same object-oriented programming model, found in the
+   Core component. This ensures consistency across projects and
+   facilitates code reusage.
+
+Powerful
+
+   qooxdoo comes with a set of powerful tools that help you develop
+   advanced JavaScript applications.
+
+   More
+
+Shared components
+
+Core
+
+   Enhances JavaScript with classes, interfaces and mixins.
+   Getting Started Documentation
+
+Tooling
+
+   Command line and browser-based tools to create and maintain qooxdoo
+   apps. Part of the SDK.
+   Getting Started Documentation
+
+Home
+
+     * Blog
+     * Demos
+     * Downloads
+     * Bugs
+     * License
+
+Docs
+
+     * About
+     * Getting Started
+     * Website
+     * Mobile
+     * Desktop
+     * Server
+     * Api
+
+Community
+
+     * chat room
+     * Stackoverflow
+
+   [twitter.png] [facebook.png] [feed.png]

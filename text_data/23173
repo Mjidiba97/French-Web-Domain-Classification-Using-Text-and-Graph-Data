@@ -1,0 +1,1110 @@
+   #RSS 2.0
+
+microformats
+
+     * Blog
+     * Wiki
+     * Discuss
+     * About
+     * Code & Tools
+     * Get Started
+     __________________________________________________________________
+
+Latest microformats news Feed
+
+microformats.org Year 14 — Welcome New Admins
+
+   In microformats.org year 14, we welcome new admins: Aaron Parecki,
+   Gregor Morrill, Martijn van der Ven, and Sven Knebel! All have been
+   active for years, helping welcome new members and doing essential wiki
+   gardening & microformats2 parser updates!
+
+   Originally posted at: tantek.com
+
+Tags for this entry
+
+     * microformats2
+
+     * June 22nd, 2018
+         * Tantek
+     * Comments Off
+     *
+
+Happy 13th to microformats.org!
+
+   With more use of microformats2, especially among the growing indieweb
+   network of websites, we’ve iterated key specs for real-world needs and
+   are seeing more active community members. More updates & posts coming
+   up!
+
+   Originally posted on tantek.com.
+
+Tags for this entry
+
+     * indieweb,
+     * microformats2
+
+     * June 21st, 2018
+         * Tantek
+     * Comments Off
+     *
+
+Improving the php-mf2 parser
+
+   During the past year, the popular php-mf2 microformats parser has
+   received quite a few improvements. My site runs ProcessWire and one of
+   the plugins for it uses php-mf2, so I have been spending some time on
+   it.
+
+   My own experience with microformats started when I discovered the hCard
+   microformat. I was impressed with the novelty of adding some simple
+   HTML classes around contact information and having a browser extension
+   parse it into an address book. Years later, when I started to get
+   involved in the IndieWeb community, I learned a lot more about
+   microformats2 and they became a key building block of my personal site.
+
+   php-mf2 is now much better at backwards-compatible parsing of
+   microformats1. This is important because software should be able to
+   consistently consume content whether it’s marked up with microformats1,
+   microformats2, or a combination. An experimental feature for parsing
+   language attributes has also been added. Finally, it’s now using the
+   microformats test suite. Several other parsers use this test suite as
+   well. This will make it easier to catch bugs and improve all of the
+   different parsers.
+
+   php-mf2 is a stable library that’s ready to be installed in your
+   software to start consuming microformats. It is currently used in
+   Known, WordPress plugins, and ProcessWire plugins for richer social
+   interactions. It’s also used in tools like XRay and microformats.io.
+   I’m looking forward to more improvements to php-mf2 in the coming year
+   as well as more software using it!
+
+   Original published at:
+   https://gregorlove.com/2017/06/improving-the-php-mf2-parser/
+     * June 22nd, 2017
+         * gRegor Morrill
+     * Comments Off
+     *
+
+Evolving for 12 Years
+
+   For the 12th birthday of microformats.org (congratulations!) Tantek
+   asked the community if any of us would like to highlight whatever we
+   liked in a guest post. I am taking this opportunity to talk about my
+   favourite feature of microformats: its constant evolvement.
+
+   Sometimes it feels like a standard is done. Sometimes it feels like a
+   standard is abandoned before its time. In a few special cases a
+   standard keeps evolving. I think we can agree that microformats goes in
+   the latter category. This is hugely thanks to the fact that anyone can
+   help it grow.
+
+   As you read this, work is being done to upgrade h-event from a Draft to
+   a full Specification. This prompted a few of us to have a look at what
+   people are doing with the format. As it turns out: it has departed from
+   the Draft!
+
+   The IndieWeb community is putting events in their feeds, interleaving
+   them with other items (like blog posts) that use h-entry. To make the
+   events fit within this context properties are being copied over from
+   h-entry, properties completely new to h-event. Somehow these separate
+   implementations introduced the same properties, showing how h-event is
+   evolving quicker than its Draft Specification without splintering it in
+   lots of different versions. Naturally evolving the format forwards!
+
+   Then there are the small, fringe changes. Work on pronouns in h-cards
+   has been mostly dormant since 2015. I spent time with it during
+   IndieWebCamp Nuremberg and came to a completely different conclusion on
+   how to mark-up my pronouns. The beauty there is that anyone can do the
+   same! All it takes is to put something on your site, like the IndieWeb
+   community did with h-event, and tell the world about this piece of
+   extra information they now have access to.
+
+   Here is to one more year of constantly tinkering with our HTML and
+   giving more meaning to the information we publish 🥂
+     * June 20th, 2017
+         * Martijn
+     * Comments Off
+     *
+
+microformats.org at 11
+
+   ERMERGERD!!! (excited girl holding a large microformats logo) HERPER
+   BERTHDER!!!
+   Thanks to Julie Anne Noying for the meme birthday card.
+
+   In this day and age of web frameworks that rise and fall like seasonal
+   fashion displays, bait-and-break APIs, and sudden site-deaths, it’s
+   nothing short of incredible that we’ve been able to continue evolving,
+   improving, and growing microformats use for 11 years. All that
+   incremental work has produced quite a lot since a year ago. Most
+   recently, we’ve made great progress with iterating, publishing, and
+   deploying microformats2 support.
+
+   I believe microformats.org has surived as a community, and microformats
+   as a technology, by continuing to focus on solving smaller, simpler
+   problems first, and then iterating only as needed with real world
+   use-cases. It’s an approach I think works as a good starting point for
+   nearly any project. -Tantek
+
+10,000s of microformats2 sites and now 10 microformats2 parsers
+
+   The past year saw a huge leap in the number of sites publishing
+   microformats2, from 1000s to now 10s of thousands of sites, primarily
+   by adoption in the IndieWebCamp community, and especially the excellent
+   Known publishing system and continually improving WordPress plugins &
+   themes.
+
+   New modern microformats2 parsers continue to be developed in various
+   languages, and this past year, four new parsing libraries (in three
+   different languages) were added, almost doubling our previous set of
+   six (in five different languages) that brought our year 11 total to 10
+   microformats2 parsing libraries available in 8 different programming
+   languages.
+
+microformats2 parsing spec updates
+
+   The microformats2 parsing specification has made significant progress
+   in the past year, all of it incremental iteration based on real world
+   publishing and parsing experience, each improvement discussed openly,
+   and tested with real world implementations. The microformats2 parsing
+   spec is the core of what has enabled even simpler publishing and
+   processing of microformats.
+
+   The specification has reached a level of stability and interoperability
+   where fewer issues are being filed, and those that are being filed are
+   in general more and more minor, although once in a while we find some
+   more interesting opportunities for improvement.
+
+   We reached a milestone two weeks ago of resolving all outstanding
+   microformats2 parsing issues thanks to Will Norris leading the charge
+   with a developer spec hacking session at the recent IndieWeb Summit
+   where he gathered parser implementers and myself (as editor) and walked
+   us through issue by issue discussions and consensus resolutions. Some
+   of those still require minor edits to the specification, which we
+   expect to complete in the next few days.
+
+   One of the meta-lessons we learned in that process is that the wiki
+   really is less suitable for collaborative issue filing and resolving,
+   and as of today are switching to using a GitHub repo for filing any new
+   microformats2 parsing issues.
+
+more microformats2 parsers
+
+   The number of microformats2 parsers in different languages continues to
+   grow, most of them with deployed live-input textareas so you can try
+   them on the web without touching a line of parsing code or a command
+   line! All of these are open source (repos linked from their sections),
+   unless otherwise noted. These are the new ones:
+     * Elixir – created by ckruse.
+     * Haskell – created by myfreeweb
+     * Java (2)
+
+   The Java parsers are a particularly interesting development as one is
+   part of the upgrade to Apache Any23 to support microformats2 (thanks to
+   Lewis John McGibbney). Any23 is a library used for analysis of various
+   web crawl samples to measure representative use of various forms of
+   semantic markup.
+
+   The other Java parser is mf2j, an early-stage Java microformats2
+   parser, created by Kyle Mahan.
+
+   The Elixir, Haskell, and Java parsers add to our existing
+   in-development parser libraries in Go and Ruby. The Go parser in
+   particular has recently seen a resurgence in interest and improvement
+   thanks to Will Norris.
+
+   These in-development parsers add to existing production parsers, that
+   is, those being used live on websites to parse and consume microformats
+   for various purposes:
+     * Javascript (cross-browser client-side, and Node)
+     * PHP
+     * Python
+
+   As with any open source projects, tests, feedback, and contributions
+   are very much welcome! Try building the production parsers into your
+   projects and sites and see how they work for you.
+
+Still simpler, easier, and smaller after all these years
+
+   Usually technologies (especially standards) get increasingly complex
+   and more difficult to use over time. With microformats we have been
+   able to maintain (and in some cases improve) their simplicity and ease
+   of use, and continue to this day to get testimonials saying as much,
+   especially in comparison to other efforts:
+
+     …hmm, looks like I should use a separate meta element:
+     https://schema.org/startDate .
+     Man, Schema is verbose. @microformats FTW!
+
+   On the broader problem of schema.org verbosity (no matter the syntax),
+   Kevin Marks wrote a very thorough blog post early in the past year:
+     * Microformats 2 and Schema 2015-06-30
+
+   More testimonials:
+
+     I still prefer @microformats over microdata
+
+   * * *
+
+     @microformats are easier to write, easier to maintain and the code
+     is so much smaller than microdata.
+
+   * * *
+
+     I am not a big fan of RDF, semanticweb, or predefined ontologies. We
+     need something lightweight and emergent like the microformats
+
+   This last testimonial really gets at the heart of one of the deliberate
+   improvements we have made to iterating on microformats vocabularies in
+   particular.
+
+evolving h-entry
+
+   We have had an implementation-driven and implementation-tested practice
+   for the microformats2 parsing specification for quite some time.
+
+   More and more we are adopting a similar approach to growing and
+   evolving microformats vocabularies like h-entry.
+
+   We have learned to start vocabularies as minimal as possible, rather
+   than start with everything you might want to do. That “start with
+   everything you might want” is a common theory-first approach taken by
+   a-priori vocabularies or entire “predefined ontologies” like
+   schema.org’s 150+ objects at launch, very few of which (single digits?)
+   Google or anyone bothers to do anything with, a classic example of
+   premature overdesign, of YAGNI).
+
+   With h-entry in particular, we started with an implementation filtered
+   subset of hAtom, and since then have started documenting new properties
+   through a few deliberate phases (which helps communicate to
+   implementers which are more experimental or more stable)
+    1. Proposed Additions – when someone proposes a property, gets some
+       sort of consensus among their community peers, and perhaps one more
+       person to implementing it in the wild beyond themselves (e.g. as
+       the IndieWebCamp community does), it’s worth capturing it as a
+       proposed property to communicate that this work is happening
+       between multiple people, and that feedback, experimentation, and
+       iteration is desired.
+    2. Draft Properties – when implementations begin to consume proposed
+       properties and doing something explicit with them, then a postive
+       reinforcement feedback loop has started and it makes sense to
+       indicate that such a phase change has occured by moving those
+       properties to “draft”. There is growing activity around those
+       properties, and thus this should be considered a last call of sorts
+       for any non-trivial changes, which get harder to make with each new
+       implementation.
+    3. Core Properties – these properties have gained so much publishing
+       and consuming support that they are for all intents and purposes
+       stable. Another phase change has occured: it would be much harder
+       to change them (too many implementations to coordinate) than keep
+       them the same, and thus their stability has been determined by real
+       world market adoption.
+
+   The three levels here, proposed, draft, and core, are merely “working”
+   names, that is, if you have a better idea what to call these three
+   phases by all means propose it.
+
+   In h-entry in particular, it’s likely that some of the draft properties
+   are now mature (implemented) enough to move them to core, and some of
+   the proposed properties have gained enough support to move to draft.
+   The key to making this happen is finding and citing documentation of
+   such implementation and support. Anyone can speak up in the IRC channel
+   etc. and point out such properties that they think are ready for
+   advancement.
+
+How we improve moving forward
+
+   We have made a lot of progress and have much better processes than we
+   did even a year ago, however I think there’s still room for improvement
+   in how we evolve both microformats technical specifications like the
+   microformats2 parsing spec, and in how we create and improve
+   vocabularies.
+
+   It’s pretty clear that to enable innovation we have to ways of
+   encouraging constructive experimentation, and yet we also need a way of
+   indicating what is stable vs in-progress. For both of those we have
+   found that real world implementations provide both a good focusing
+   mechanism and a good way to test experiments.
+
+   In the coming year I expect we will find even better ways to explain
+   these methods, in the hopes that others can use them in their efforts,
+   whether related to microformats or in completely different standards
+   efforts. For now, let’s appreciate the progress we’ve made in the past
+   year from publishing sites, to parsing implementations, from process
+   improvements, to continuously improving living specifications. Here’s
+   to year 12.
+
+   Originally published at: tantek.com/2016/173/b1/microformats-org-at-11.
+     * June 22nd, 2016
+         * Tantek
+     * Comments Off
+     *
+
+Browse all entries by month in the blog archive
+     __________________________________________________________________
+
+What are microformats?
+
+   Designed for humans first and machines second, microformats are a set
+   of simple, open data formats built upon existing and widely adopted
+   standards. Learn more about microformats
+
+Microformat specifications
+
+   People and Organizations
+          h-card, XFN
+
+   Calendars and Events
+          h-calendar
+
+   Opinions, Ratings and Reviews
+          h-review
+
+   Licenses:
+          rel-license
+
+   Tags, Keywords, Categories
+          rel-tag
+
+   Lists and Outlines
+          XOXO
+
+   More…
+          See the list of all microformats
+
+Upcoming Events
+
+     * See microformats events on the wiki
+     * See also IndieWebCamp Events!
+
+Post Categories
+
+     * Events
+     * News
+     * This Week in Microformats
+
+   search blog_________ Search
+     __________________________________________________________________
+
+   Powered by WordPress | (mt) media temple | No WWW.
+   #Copyright
+
+                          hCalendar 1.0.1 XMDP profile
+
+Author
+
+     * Tantek Çelik
+
+   As described in HTML4 Meta data profiles and XHTML Meta Data Profile
+   (XMDP) description:
+
+   rel
+          HTML4 definition of the 'rel' attribute. Here is an additional
+          value as defined in the rel-tag specification .
+
+        tag
+                Indicates that the referred resource serves as a "tag", or
+                keyword/subject, for the referring page, or some portion
+                of the referring page (such as an hCalendar event).
+
+   class
+          HTML4 definition of the 'class' attribute. This meta data
+          profile defines some 'class' attribute values (class names) and
+          their meanings as suggested by a draft of "Hypertext Links in
+          HTML". All values are defined according to the semantics defined
+          in the hCalendar specification and thus in RFC 2445.
+
+        vcalendar
+                A container for one or more events (vevent). This property
+                is optional; if there is only one event then omit it. See
+                section 1. of RFC 2445.
+
+        vevent
+                A container for one event. See section 4.6.1 of RFC 2445.
+
+        dtstart
+                Date/time of the start of the event. See section 4.8.2.4
+                of RFC 2445.
+
+        dtend
+                Date/time of the end of the event. See section 4.8.2.2 of
+                RFC 2445.
+
+        duration
+                Length of the event. See section 4.8.2.5 of RFC 2445.
+
+        summary
+                Short synopsis, title, or name of the event. See section
+                4.8.1.12 of RFC 2445.
+
+        uid
+                A globally unique identifier for the event; typically a
+                URL is used. See section 4.8.4.7 of RFC 2445.
+
+        dtstamp
+                Date/time of when the document containing information
+                about the event was created. See section 4.8.7.2 of RFC
+                2445.
+
+        method
+                Function of the event object. Values for this property
+                are: PUBLISH, REQUEST, REPLY, ADD, CANCEL, REFRESH,
+                COUNTER, or DECLINECOUNTER. For example, a value of
+                REQUEST indicates that a request is being made for the
+                event to occur. See section 4.7.2 of RFC 2445.
+
+        category
+                Category of the event object. Note: this property may be
+                repeated (an event may belong in several categories).
+                Common values are: MEETING, APPOINTMENT, CONFERENCE, EXPO.
+                See section 4.8.1.2 of RFC 2445.
+
+        location
+                Tells where the event is to be held. May be represented by
+                nested hCard record, adr record, geo record, or
+                combination thereof. See sections 4.8.1.7 and 4.8.1.6 of
+                RFC 2445.
+
+        url
+                A URL to a page that contains the definitive/preferred
+                information about an event; UID and URL are typically the
+                same. See section 4.8.4.6 of RFC 2445, except "url" may
+                occur more than once in an hCalendar event.
+
+        description
+                A more detailed synopsis of the event than that provided
+                by summary. See section 4.8.1.5 of RFC 2445.
+
+        last-modified
+                Date/time the information about the event was updated. See
+                section 4.8.7.3 of RFC 2445.
+
+        status
+                Status of the calendar event. Values are: TENTATIVE,
+                CONFIRMED, CANCELLED. See section 4.8.1.11 of RFC 2445.
+
+        class
+                Access classification of the event information; Values
+                are: PUBLIC, PRIVATE, CONFIDENTIAL. See section 4.8.1.3 of
+                RFC 2445.
+
+        attendee
+                An individual invited to attend the event; An event
+                container may contain more than one attendee record; May
+                be represented by nested hCard record. See section 4.8.4.1
+                of RFC 2445.
+
+        partstat
+                The participation-status of an individual invited to
+                attend the event; Subproperty of "attendee"; See section
+                4.2.12 of RFC 2445.
+
+        role
+                The role of an individual invited to attend the event;
+                Subproperty of "attendee"; See section 4.2.16 of RFC 2445.
+
+        contact
+                Contact information associated with the event; May be
+                represented by nested hCard record. See section 4.8.4.2 of
+                RFC 2445.
+
+        organizer
+                The organizer associated with the event. May be
+                represented by nested hCard record. See section 4.8.4.3 of
+                RFC 2445.
+
+        attach
+                A attached resource associated with the event, such as a
+                photo. See section 4.8.1.1 of RFC 2445.
+
+        value
+                This class name is used to distinguish the actual value of
+                a property from any other cruft that may be in the
+                containing element representing the property. See the
+                value-class-pattern for details.
+
+        value-title
+                This class name is used to distinguish the actual value of
+                a property, specifically in the 'title' attribute of the
+                element, from the element contents and the element
+                representing the containing property. See the
+                value-class-pattern value-title description for details.
+
+Changes from hCalendar 1.0
+
+   The 'value-title' class name has been incorporated from the
+   value-class-pattern for improved accessibility, internationalization,
+   and localization.
+
+Copyright
+
+   Contributed to the public domain (PD) 2009 microformats.org, per the
+   Creative Commons Public Domain License or any later version published
+   by Creative Commons; with a waiver of rights, and an assertion that no
+   rights attach to this particular work.
+   #Copyright
+
+                            hCard 1.0.1 XMDP profile
+
+Author
+
+     * Tantek Çelik
+
+   As described in HTML4 Meta data profiles and XHTML Meta Data Profile
+   (XMDP) description:
+
+   rel
+          HTML4 definition of the 'rel' attribute. Here is an additional
+          value as defined in the rel-tag specification .
+
+        tag
+                Indicates that the referred resource serves as a "tag", or
+                keyword/subject, for the referring page, or some portion
+                of the referring page (such as an hCard).
+
+   class
+          HTML4 definition of the 'class' attribute. This meta data
+          profile defines some 'class' attribute values (class names) and
+          their meanings as suggested by a draft of "Hypertext Links in
+          HTML". All values are defined according to the semantics defined
+          in the hCard specification and thus in RFC 2426.
+
+        vcard
+                A container for the rest of the class names defined in
+                this XMDP profile. See section 1. of RFC 2426.
+
+        fn
+                See section 3.1.1 of RFC 2426.
+
+        n
+                See section 3.1.2 of RFC 2426. May be inferred per Implied
+                "N" Optimization.
+
+        family-name
+                See "Family Name" in section 3.1.2 of RFC 2426.
+
+        given-name
+                See "Given Name" in section 3.1.2 of RFC 2426.
+
+        additional-name
+                See "Additional Names" in section 3.1.2 of RFC 2426.
+
+        honorific-prefix
+                See "Honorific Prefixes" in section 3.1.2 of RFC 2426.
+
+        honorific-suffix
+                See "Honorific Suffixes" in section 3.1.2 of RFC 2426.
+
+        nickname
+                See section 3.1.3 of RFC 2426.
+
+        photo
+                See section 3.1.4 of RFC 2426. Typically used with an
+                <img> tag. Use the 'src' attribute for URI values. Use the
+                'data:' URI scheme for binary values.
+
+        bday
+                See section 3.1.5 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the date value,
+                and a human readable date inside the element.
+
+        adr
+                See section 3.2.1 of RFC 2426.
+
+        post-office-box
+                See "post office box" in section 3.2.1 of RFC 2426.
+
+        extended-address
+                See "extended address" in section 3.2.1 of RFC 2426.
+
+        street-address
+                See "street address" in section 3.2.1 of RFC 2426.
+
+        locality
+                See "locality" in section 3.2.1 of RFC 2426.
+
+        region
+                See "region" in section 3.2.1 of RFC 2426.
+
+        postal-code
+                See "postal code" in section 3.2.1 of RFC 2426.
+
+        country-name
+                See "country name" in section 3.2.1 of RFC 2426.
+
+        type
+                See "type" in the various sections of RFC 2426.
+
+        label
+                See section 3.2.2 of RFC 2426.
+
+        tel
+                See section 3.3.1 of RFC 2426.
+
+        email
+                See section 3.3.2 of RFC 2426.
+
+        mailer
+                See section 3.3.3 of RFC 2426.
+
+        tz
+                See section 3.4.1 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the tz value,
+                and a human readable time zone inside the element.
+
+        geo
+                See section 3.4.2 of RFC 2426.
+
+        latitude
+                See "latitude" in section 3.4.2 of RFC 2426.
+
+        longitude
+                See "longitude" in section 3.4.2 of RFC 2426.
+
+        title
+                See section 3.5.1 of RFC 2426.
+
+        role
+                See section 3.5.2 of RFC 2426.
+
+        logo
+                See section 3.5.3 of RFC 2426. Typically used with an
+                <img> tag. Use the 'src' attribute for URI values. Use the
+                'data:' URI scheme for binary values.
+
+        agent
+                See section 3.5.4 of RFC 2426. If the value is a vCard,
+                then use a nest hCard. For simplicity in that case, the
+                same element that has the class name of "agent" should use
+                the class name of "vcard".
+
+        org
+                See section 3.5.5 of RFC 2426.
+
+        organization-name
+                See "Organization Name" in section 3.5.5 of RFC 2426. May
+                be inferred per Implied "organization-name" Optimization.
+
+        organization-unit
+                See "Organization Unit" in section 3.5.5 of RFC 2426.
+
+        category
+                See section 3.6.1 of RFC 2426.
+
+        note
+                See section 3.6.2 of RFC 2426.
+
+        rev
+                See section 3.6.4 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the date value,
+                and a human readable date inside the element.
+
+        sort-string
+                See section 3.6.5 of RFC 2426.
+
+        sound
+                See section 3.6.6 of RFC 2426. Typically used with either
+                an <a> or <object> tag. Use the 'data:' URI scheme for
+                binary values.
+
+        uid
+                See section 3.6.7 of RFC 2426.
+
+        url
+                See section 3.6.8 of RFC 2426. Typically used with an <a>
+                tag.
+
+        class
+                See section 3.7.1 of RFC 2426.
+
+        key
+                See section 3.7.2 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the key value,
+                and a human readable key equivalent inside the element.
+
+        value
+                This class name is used to distinguish the actual value of
+                a property from any other cruft that may be in the
+                containing element representing the property. See the
+                value-class-pattern for details.
+
+        value-title
+                This class name is used to distinguish the actual value of
+                a property, specifically in the 'title' attribute of the
+                element, from the element contents and the element
+                representing the containing property. See the
+                value-class-pattern value-title description for details.
+
+Changes from hCard 1.0
+
+   The 'value-title' class name has been incorporated from the
+   value-class-pattern for improved accessibility, internationalization,
+   and localization.
+
+Copyright
+
+   Contributed to the public domain (PD) 2009 microformats.org, per the
+   Creative Commons Public Domain License or any later version published
+   by Creative Commons; with a waiver of rights, and an assertion that no
+   rights attach to this particular work.
+   #Copyright
+
+                          hCalendar 1.0.1 XMDP profile
+
+Author
+
+     * Tantek Çelik
+
+   As described in HTML4 Meta data profiles and XHTML Meta Data Profile
+   (XMDP) description:
+
+   rel
+          HTML4 definition of the 'rel' attribute. Here is an additional
+          value as defined in the rel-tag specification .
+
+        tag
+                Indicates that the referred resource serves as a "tag", or
+                keyword/subject, for the referring page, or some portion
+                of the referring page (such as an hCalendar event).
+
+   class
+          HTML4 definition of the 'class' attribute. This meta data
+          profile defines some 'class' attribute values (class names) and
+          their meanings as suggested by a draft of "Hypertext Links in
+          HTML". All values are defined according to the semantics defined
+          in the hCalendar specification and thus in RFC 2445.
+
+        vcalendar
+                A container for one or more events (vevent). This property
+                is optional; if there is only one event then omit it. See
+                section 1. of RFC 2445.
+
+        vevent
+                A container for one event. See section 4.6.1 of RFC 2445.
+
+        dtstart
+                Date/time of the start of the event. See section 4.8.2.4
+                of RFC 2445.
+
+        dtend
+                Date/time of the end of the event. See section 4.8.2.2 of
+                RFC 2445.
+
+        duration
+                Length of the event. See section 4.8.2.5 of RFC 2445.
+
+        summary
+                Short synopsis, title, or name of the event. See section
+                4.8.1.12 of RFC 2445.
+
+        uid
+                A globally unique identifier for the event; typically a
+                URL is used. See section 4.8.4.7 of RFC 2445.
+
+        dtstamp
+                Date/time of when the document containing information
+                about the event was created. See section 4.8.7.2 of RFC
+                2445.
+
+        method
+                Function of the event object. Values for this property
+                are: PUBLISH, REQUEST, REPLY, ADD, CANCEL, REFRESH,
+                COUNTER, or DECLINECOUNTER. For example, a value of
+                REQUEST indicates that a request is being made for the
+                event to occur. See section 4.7.2 of RFC 2445.
+
+        category
+                Category of the event object. Note: this property may be
+                repeated (an event may belong in several categories).
+                Common values are: MEETING, APPOINTMENT, CONFERENCE, EXPO.
+                See section 4.8.1.2 of RFC 2445.
+
+        location
+                Tells where the event is to be held. May be represented by
+                nested hCard record, adr record, geo record, or
+                combination thereof. See sections 4.8.1.7 and 4.8.1.6 of
+                RFC 2445.
+
+        url
+                A URL to a page that contains the definitive/preferred
+                information about an event; UID and URL are typically the
+                same. See section 4.8.4.6 of RFC 2445, except "url" may
+                occur more than once in an hCalendar event.
+
+        description
+                A more detailed synopsis of the event than that provided
+                by summary. See section 4.8.1.5 of RFC 2445.
+
+        last-modified
+                Date/time the information about the event was updated. See
+                section 4.8.7.3 of RFC 2445.
+
+        status
+                Status of the calendar event. Values are: TENTATIVE,
+                CONFIRMED, CANCELLED. See section 4.8.1.11 of RFC 2445.
+
+        class
+                Access classification of the event information; Values
+                are: PUBLIC, PRIVATE, CONFIDENTIAL. See section 4.8.1.3 of
+                RFC 2445.
+
+        attendee
+                An individual invited to attend the event; An event
+                container may contain more than one attendee record; May
+                be represented by nested hCard record. See section 4.8.4.1
+                of RFC 2445.
+
+        partstat
+                The participation-status of an individual invited to
+                attend the event; Subproperty of "attendee"; See section
+                4.2.12 of RFC 2445.
+
+        role
+                The role of an individual invited to attend the event;
+                Subproperty of "attendee"; See section 4.2.16 of RFC 2445.
+
+        contact
+                Contact information associated with the event; May be
+                represented by nested hCard record. See section 4.8.4.2 of
+                RFC 2445.
+
+        organizer
+                The organizer associated with the event. May be
+                represented by nested hCard record. See section 4.8.4.3 of
+                RFC 2445.
+
+        attach
+                A attached resource associated with the event, such as a
+                photo. See section 4.8.1.1 of RFC 2445.
+
+        value
+                This class name is used to distinguish the actual value of
+                a property from any other cruft that may be in the
+                containing element representing the property. See the
+                value-class-pattern for details.
+
+        value-title
+                This class name is used to distinguish the actual value of
+                a property, specifically in the 'title' attribute of the
+                element, from the element contents and the element
+                representing the containing property. See the
+                value-class-pattern value-title description for details.
+
+Changes from hCalendar 1.0
+
+   The 'value-title' class name has been incorporated from the
+   value-class-pattern for improved accessibility, internationalization,
+   and localization.
+
+Copyright
+
+   Contributed to the public domain (PD) 2009 microformats.org, per the
+   Creative Commons Public Domain License or any later version published
+   by Creative Commons; with a waiver of rights, and an assertion that no
+   rights attach to this particular work.
+   #Copyright
+
+                            hCard 1.0.1 XMDP profile
+
+Author
+
+     * Tantek Çelik
+
+   As described in HTML4 Meta data profiles and XHTML Meta Data Profile
+   (XMDP) description:
+
+   rel
+          HTML4 definition of the 'rel' attribute. Here is an additional
+          value as defined in the rel-tag specification .
+
+        tag
+                Indicates that the referred resource serves as a "tag", or
+                keyword/subject, for the referring page, or some portion
+                of the referring page (such as an hCard).
+
+   class
+          HTML4 definition of the 'class' attribute. This meta data
+          profile defines some 'class' attribute values (class names) and
+          their meanings as suggested by a draft of "Hypertext Links in
+          HTML". All values are defined according to the semantics defined
+          in the hCard specification and thus in RFC 2426.
+
+        vcard
+                A container for the rest of the class names defined in
+                this XMDP profile. See section 1. of RFC 2426.
+
+        fn
+                See section 3.1.1 of RFC 2426.
+
+        n
+                See section 3.1.2 of RFC 2426. May be inferred per Implied
+                "N" Optimization.
+
+        family-name
+                See "Family Name" in section 3.1.2 of RFC 2426.
+
+        given-name
+                See "Given Name" in section 3.1.2 of RFC 2426.
+
+        additional-name
+                See "Additional Names" in section 3.1.2 of RFC 2426.
+
+        honorific-prefix
+                See "Honorific Prefixes" in section 3.1.2 of RFC 2426.
+
+        honorific-suffix
+                See "Honorific Suffixes" in section 3.1.2 of RFC 2426.
+
+        nickname
+                See section 3.1.3 of RFC 2426.
+
+        photo
+                See section 3.1.4 of RFC 2426. Typically used with an
+                <img> tag. Use the 'src' attribute for URI values. Use the
+                'data:' URI scheme for binary values.
+
+        bday
+                See section 3.1.5 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the date value,
+                and a human readable date inside the element.
+
+        adr
+                See section 3.2.1 of RFC 2426.
+
+        post-office-box
+                See "post office box" in section 3.2.1 of RFC 2426.
+
+        extended-address
+                See "extended address" in section 3.2.1 of RFC 2426.
+
+        street-address
+                See "street address" in section 3.2.1 of RFC 2426.
+
+        locality
+                See "locality" in section 3.2.1 of RFC 2426.
+
+        region
+                See "region" in section 3.2.1 of RFC 2426.
+
+        postal-code
+                See "postal code" in section 3.2.1 of RFC 2426.
+
+        country-name
+                See "country name" in section 3.2.1 of RFC 2426.
+
+        type
+                See "type" in the various sections of RFC 2426.
+
+        label
+                See section 3.2.2 of RFC 2426.
+
+        tel
+                See section 3.3.1 of RFC 2426.
+
+        email
+                See section 3.3.2 of RFC 2426.
+
+        mailer
+                See section 3.3.3 of RFC 2426.
+
+        tz
+                See section 3.4.1 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the tz value,
+                and a human readable time zone inside the element.
+
+        geo
+                See section 3.4.2 of RFC 2426.
+
+        latitude
+                See "latitude" in section 3.4.2 of RFC 2426.
+
+        longitude
+                See "longitude" in section 3.4.2 of RFC 2426.
+
+        title
+                See section 3.5.1 of RFC 2426.
+
+        role
+                See section 3.5.2 of RFC 2426.
+
+        logo
+                See section 3.5.3 of RFC 2426. Typically used with an
+                <img> tag. Use the 'src' attribute for URI values. Use the
+                'data:' URI scheme for binary values.
+
+        agent
+                See section 3.5.4 of RFC 2426. If the value is a vCard,
+                then use a nest hCard. For simplicity in that case, the
+                same element that has the class name of "agent" should use
+                the class name of "vcard".
+
+        org
+                See section 3.5.5 of RFC 2426.
+
+        organization-name
+                See "Organization Name" in section 3.5.5 of RFC 2426. May
+                be inferred per Implied "organization-name" Optimization.
+
+        organization-unit
+                See "Organization Unit" in section 3.5.5 of RFC 2426.
+
+        category
+                See section 3.6.1 of RFC 2426.
+
+        note
+                See section 3.6.2 of RFC 2426.
+
+        rev
+                See section 3.6.4 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the date value,
+                and a human readable date inside the element.
+
+        sort-string
+                See section 3.6.5 of RFC 2426.
+
+        sound
+                See section 3.6.6 of RFC 2426. Typically used with either
+                an <a> or <object> tag. Use the 'data:' URI scheme for
+                binary values.
+
+        uid
+                See section 3.6.7 of RFC 2426.
+
+        url
+                See section 3.6.8 of RFC 2426. Typically used with an <a>
+                tag.
+
+        class
+                See section 3.7.1 of RFC 2426.
+
+        key
+                See section 3.7.2 of RFC 2426. Typically used with an
+                <abbr> tag with the 'title' attribute for the key value,
+                and a human readable key equivalent inside the element.
+
+        value
+                This class name is used to distinguish the actual value of
+                a property from any other cruft that may be in the
+                containing element representing the property. See the
+                value-class-pattern for details.
+
+        value-title
+                This class name is used to distinguish the actual value of
+                a property, specifically in the 'title' attribute of the
+                element, from the element contents and the element
+                representing the containing property. See the
+                value-class-pattern value-title description for details.
+
+Changes from hCard 1.0
+
+   The 'value-title' class name has been incorporated from the
+   value-class-pattern for improved accessibility, internationalization,
+   and localization.
+
+Copyright
+
+   Contributed to the public domain (PD) 2009 microformats.org, per the
+   Creative Commons Public Domain License or any later version published
+   by Creative Commons; with a waiver of rights, and an assertion that no
+   rights attach to this particular work.

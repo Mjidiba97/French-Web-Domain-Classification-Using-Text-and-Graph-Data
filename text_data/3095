@@ -1,0 +1,262 @@
+   Show Menu Hide Menu
+     * Features
+     * How To Use
+     * Screenshots
+     * Changelog
+
+     * [github.png]
+     * [forum.png]
+
+Use your PS4 Controller on your PC to its full potential
+
+   DS4Windows is a portable program that allows you to get the best
+   experience while using a DualShock 4 on your PC. By emulating a Xbox
+   360 controller, many more games are accessible.
+   Download now
+   How to Use Languages
+   Learn More
+
+Simple & Clean UI
+
+   Since the idea is to get to get your controller ready for games, The UI
+   was made to make to be quick to pick up. Once first launched, the tool
+   takes your through the setup, gives you a default profile and you're
+   ready to go, or if you choose you can change things to your heart's
+   content.
+   Initial Screen
+
+Profile System
+
+   With profiles, it makes it easier to quickly swap through various
+   settings for your controller. You can set up controls for certain
+   games, or set the lightbar to your favorite color. You can even swipe
+   two fingers along the touchpad to swap profiles without the need to
+   even open back the program.
+   Profile Settings
+
+Automatic Profiles
+
+   Along with switching profiles manually, you can also switch your
+   controllers to different profiles automatically when certain programs
+   are launched.
+   Auto Profiles Screen
+
+Tons of options
+
+   From control mapping, to touchpad sensitivity, to marcos, to rainbow
+   lightbar, to motion controls, to special actions triggerd by pressing
+   multiple actions, to launching a program with profiles, there are
+   plenty of settings to play around with.
+   Your browser does not support the video tag.
+
+   IFRAME: https://www.youtube.com/embed/_uuVu93xfzM
+
+Special thanks to Galatis
+
+    1. Download zip
+    2. Extract the 2 programs (DS4Windows and DS4Updater) in the zip
+       wherever you please (My Docs, Program Files, etc.)
+    3. Launch DS4Windows
+    4. If not in Program Files, choose where you want to save profiles
+    5. A windows will pop up showing how to install the driver, if not, go
+       to settings and click "Controller/Driver Setup"
+         1. If you have used SCP's tool in the past,  you may need to
+            uninstall the drivers to use the DS4 with bluetooth
+    6. Connect the DS4 via a micro usb or through bluetooth (DS4 Device
+       name: "Wireless Controller") may need to enter pair code: 0000)
+    7. All should be good to go once you connect the controller, if not
+       restart DS4Windows, or even your computer.
+          + Note: same games work with the DS4 without DS4Windows (however
+            it does use rumble etc.) Games like these can cause double
+            input in menus (ie pressing down on the dpad moves 2 spaces)
+            or the wrong button to do incorrect functions. To solve this,
+            check Hide DS4 in the settings, if you see a warning in the
+            log/text on the bottom, that means you must close said game or
+            client that causes the conflict and reconnect the controller.
+     __________________________________________________________________
+
+Full list of Features
+
+     * Use X360-like input to use the DS4 in more games and have rumble
+     * Use the touchpad as a mouse or for more actions
+     * Use sixaxis movement for just as many actions
+     * Control the Lightbar: turn it off, dynamicly change by battery
+       level, and more
+     * Map the buttons and sticks to other 360 controls or keyboard
+       actions or macros
+     * Use profiles to quickly switch between configurations for your
+       controllers
+     * Automatically switch profiles by when a certain program(s) is
+       launched
+     * Hold an action to access a new whole set of controls
+     * Get a reading of how the sticks and sixaxis is working
+     * Assign a deadzone to both analog sticks, the triggers, and the
+       sixaxis
+     * Automatically get new updates
+
+Requirements
+
+     * Microsoft .NET 4.5 or higher (needed to unzip the driver and for
+       macros to work properly)
+     * DS4 Driver (Downloaded & Installed with DS4Windows)
+     * Microsoft 360 Driver (link inside DS4Windows, already installed on
+       Windows 7 SP1 and higher or if you've used a 360 controller before)
+     * Sony DualShock 4 (This should be obvious)
+     * Micro USB cable
+     * (Optional)Bluetooth 2.1+, via adapter or built in pc
+       (Recommended) (Toshiba's bluetooth & Bluetooth adapaters using CSR
+       currently does not work)
+     __________________________________________________________________
+
+FAQ
+
+     * Is bluetooth audio support coming?
+          + So long as I work by myself, never. I don't have the know-how
+            to understand reverse engineering the DualShock 4 to enable
+            its audio jack.
+     * What about CSR and Toshiba bluetooth adapters?
+          + I can't say for certain about either, I've picked up a CSR
+            adapater, and will attempt to make it work, but no guarantees.
+     * I'm getting double input/ Weird input in some games, how do I fix
+       it?
+          + That's because the game tries too (though usually badly)
+            support the DS4 on it's own. You can solve this by enabling
+            Hide DS4 Controller in DS4Windows' settings, then connect the
+            controller BEFORE you launch the game.
+     * Keyboard emulation isn't working in game, what do?
+          + When setting a key for a button, check the scan code box. This
+            isn't a guarantee to work with all games, but it will add
+            support for more games. If scan code doesn't work with the
+            game, then DS4Windows simply can't emulate for that game.
+     * Why is Dinput only mode acting weird when using the controller with
+       bluetooth
+          + Currently BT doesn't work with Dinput mode.
+
+Screenshots
+
+     * Main Screen
+       [FS.png]
+       Main screen
+     * Profile Settings
+       [FS.png]
+       Profile Settings
+     * Shift Modifier
+       [FS.png]
+       Shift Modifier
+     * Controller Readings
+       [FS.png]
+       Controller Readings
+     * Auto Profiles
+       [FS.png]
+       Auto Profiles
+     * General Settings
+       [FS.png]
+       General Settings
+     * Log
+       [FS.png]
+       Log
+
+Version 1.4.52
+
+   Added support for New DS4 Controller (thanks andersfischernielsen)
+   Fixed sensitivity for sticks, causing crashes when trying to edit a
+   profile
+   Typo fixes (thanks josevill)
+   Updates to German, Polish, Nederlands and more translations
+
+Version 1.4.5
+
+   Added support for the New DS4 USB Adapter (Thanks to boganhobo and
+   Chamilsaan)
+   Implemented teokp's amazing fix for hide ds4 not working on the
+   anniversary update of Windows 10: when a controller fails to enter
+   exclusive mode, DS4Windows will ask for admin privilages to fix the
+   issue.
+   Now (near)unlimited Special Actions can be made from the previous limit
+   of 50
+   Special Action Xbox Game DVR is now no longer limited to Windows 10,
+   renamed multi action button: Assign a macro to single tap, double tap,
+   and holding down a button
+   Added option for White DS4Windows Icon in the notification tray (While
+   not merged from, thanks to tehmantra)
+   Added option to temporarily turn off DS4Windows when using a certain
+   program (togglable in the Auto Profiles Tab) (Same case as above but
+   thanks to dedChar to bring to light)
+   Fixed Options crashes in certain locales where decimal points are
+   represented with commas, such as German (Thanks to kiliansch)
+   Added/Updated translations for many languages, now including Japanese,
+   Slovenian, Hungarian, Greek, Finnish, Czech, Indonesian, and Ukrainian
+
+Version 1.4.401
+
+   Fixes for inverting the sticks
+   Updated French, German, Russian, and Vietnamese translations, and added
+   more credits
+
+DS4Updater 1.1.401
+
+   Added backup method of updating should anything happen with github
+
+Version 1.4.4
+
+   Revised shift modifier: each button/control has their own independent
+   shift trigger instead of one universal one
+   Select an action window: this window now highlights what said control
+   is currently set to.
+   Removed unused images, making the exe a meg smaller
+   Completely revised how the code for custom mapping works
+   Updated all translations, added partial Dutch/Nederlands Support
+
+Version 1.4.321
+
+   Changed the Rainbow button to an actual button
+   For using the sixaxis as a mouse, changed none to Always on, also
+   better movement for the gyro when the sensitivity is lowered
+   Updated Hebrew, Chinese (Traditional), Itilian, Chinese (Simplified)
+
+Version 1.4.32
+
+   Added Sensitivity settings for both sticks, triggers, and the gyro
+   Fixed the select an action window popping up after closing the profile
+   settings or in another tab
+   Fixed the lightbar button on the main tab being so long, along with
+   some other random ui fixes
+   Fixed many issues with making a new profile
+   When using a custom color the light now fades out based on the current
+   profile settings (ie. when the battery is low)
+   Added Hebrew and Vietnamese translations
+   Updated Chinese (T), Russian, German, Polish
+
+DS4Updater 1.1.32
+
+   Fixes for when users want to skip downloading their native langauge
+   See full changelog here
+
+   DS4Windows was a project originally started by InhexSTER by the name of
+   DS4 Tool. The tool was later branched off by electrobrains. I later
+   decided to branch off my own and add things such as profiles.
+
+[github.png]
+Source Code
+
+     * DS4Windows
+     * DS4Updater
+
+[forum.png]
+Forums
+
+     * PCSX2
+
+[email.png]
+Contact Me
+
+     * [email protected]
+
+
+
+[pp.png]
+Donate
+
+     * Paypal
+
+   © 2014 Woo | Design by Styleshout

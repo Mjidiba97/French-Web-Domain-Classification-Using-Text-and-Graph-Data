@@ -1,0 +1,198 @@
+   Fork me on GitHub
+
+   (BUTTON) Toggle navigation Vidjil
+     * Algorithm
+     * Web application
+     * Patient database
+     * Credits and publications
+     * VidjilNet Consortium
+     * 2019 Workshop
+     * Vidjil recrute !
+
+     *   Contact
+
+Vidjil
+
+High-Throughput Analysis
+of V(D)J Immune Repertoire
+
+Upload
+
+     * .fasta
+     * .fastq
+     * .gz
+     * Patient database
+
+Process
+
+     * Ultra-fast algorithm
+     * 1 Gbp in < 5 minutes
+       for one locus
+     * On app.vidjil.org or self-hosted
+
+Analyze
+
+     * Explore lymphocyte populations
+     * Tag, annotate and merge clones
+     * Send to IMGT/V-QUEST and to IgBlast
+     * Generate a report
+
+   Vidjil is an open-source platform for the analysis of high-throughput
+   sequencing data from lymphocytes, developed by the Bonsai
+   bioinformatics lab and the VidjilNet consortium.
+
+   V(D)J recombinations in lymphocytes are essential for immunological
+   diversity. They are also useful markers of pathologies, and in
+   leukemia, are used to quantify the minimal residual disease during
+   patient follow-up. High-throughput sequencing (NGS/HTS) now enables the
+   deep sequencing of a lymphoid population with dedicated Rep-Seq methods
+   and software.
+
+   Vidjil is used in routine clinical practice in hospitals around the
+   world, in particular for the diagnosis of patients suffering Acute
+   Lymphoblastic Leukemia (ALL). More than 2,500 samples of ALL patients
+   were analyzed with Vidjil since 2015. Vidjil is also used in several
+   studies on other hemopathies (ALL, CLL, WM, lymphomas) as well as on
+   immunology topics involving T-cell or B-cell repertoires.
+   Try the web application »
+   Download the source code »
+     __________________________________________________________________
+
+   The Vidjil algorithm processes sequences recombined on the TRA/D, TRB,
+   TRG, IGH, IGK and IGL locus, possibly with some incomplete/unusal
+   recombinations such as Dh-Jh, Intron-KDE or Dd2-Dd3.
+
+High-throughput algorithm
+
+   At the heart of the Vidjil platform, Vidjil-algo processes
+   high-througput sequencing data to extract V(D)J junctions and gather
+   them into clones. Vidjil-algo starts from a set of reads and detects
+   “windows” overlapping the actual CDR3. It detects gene rearrangements
+   from both immunoglobulins and T-cell receptors, as well as some
+   incomplete or uncommon rearrangements. The analysis is based on a
+   reliable seed-based algorithm. It is extremely fast because, in the
+   first phase, no alignment is performed with database germline
+   sequences. The algorithm works on reads coming from either
+   amplicon-based or capture-based deep sequencing strategy, as soon as
+   they include CDR3 sequences. Both human and mouse immune systems can be
+   analyzed.
+     __________________________________________________________________
+
+   Several views of the Vidjil web application displaying TRG clones of a
+   patient with ALL: grid, time graph and clone sequences
+
+Multi-sample web application
+
+   The Vijdil web application is made for the visualization, inspection
+   and analysis of clones and their tracking along the time in a MRD setup
+   or in a immunological study. The application can visualize data
+   processed by the Vidjil algorithm or by other V(D)J analysis pipelines.
+   It enables to explore further clusterings proposed by the software
+   and/or done manually done by the user.
+     __________________________________________________________________
+
+   The patient view of the Vidjil web application. The database enables to
+   store information on both the patient and individual samples.
+
+Patient/experiment and sample database
+
+   The web application can be linked to a patient/experiment and sample
+   database. After authentication, the clinicians or researchers upload
+   .fasta/.fastq/.gz files, manage and process their runs directly from
+   the web application. They can save their analysis and generate reports
+   for the patient record. The server with the sample database can be
+   installed in any hospital or computer center. A public web server is
+   also available since October 2014. More than 20 labs in Europe and in
+   the world regularly use Vidjil through the web application. In 18
+   months, the public server analyzed more than 5,000,000 sequences from
+   5,000 RepSeq samples.
+
+Robust. Fast. Open-source.
+
+   [build.svg] [license-GPLv3+-green.svg]
+
+   Strong attention to users and stability. High-quality development
+   process, with systemating testing and continous integration.
+
+VidjilNet membership and donations
+
+   We welcome new members in the VidjilNet consortium. We also welcome
+   Bitcoin donations to 13u12m6LxVhesKEpS6T5wpYN19LHpwk8xt. Thank you for
+   your support !
+
+Extended collaborations
+
+   All the code of Vidjil is available under open-source licenses (GPLv3,
+   as well as some other free licences for some third-parties librairies).
+   We also offer extended support as well as custom development for
+   various types of projects. Please contact us if you are interested.
+
+Credits
+
+   Vidjil is developed by a passionate team with fast response, from the
+   VidjilNet consortium and the Bonsai bioinformatics team of the CRIStAL
+   (CNRS, U. Lille) and Inria Lille research centers, in Lille, France.
+   This work is in collaboration with the department of Hematology of CHRU
+   Lille, the Functional and Structural Genomic Platform (U. Lille 2,
+   IFR-114, IRCL), and the EuroClonality-NGS working group, and is
+   supported by SIRIC ONCOLille (Grant INCa-DGOS-Inserm 6041), Région
+   Nord-Pas-de-Calais (ABILES), Université Lille 1 (PPF Bioinformatique),
+   and Inria Lille. The methods were presented at the JOBIM 2013 and ASH
+   2014 conferences, and are described in the following papers:
+     * (algorithm) Mathieu Giraud, Mikaël Salson, Marc Duez, Céline
+       Villenet, Sabine Quief, Aurélie Caillault, Nathalie Grardel,
+       Christophe Roumier, Claude Preudhomme, Martin Figeac, Fast
+       multiclonal clusterization of V(D)J recombinations from
+       high-throughput sequencing, BMC Genomics, 15:409 (2014),
+       doi:10.1186/1471-2164-15-409
+     * (web application, updated algorithm, patient/experiment/sample
+       database) Marc Duez, Mathieu Giraud, Ryan Herbert, Tatiana Rocher,
+       Mikaël Salson, Florian Thonier, Vidjil: A web platform for analysis
+       of high-throughput repertoire sequencing, PLOS ONE, 11(11):e0166126
+       (2016), doi:10.1371/journal.pone.0166126
+
+Some publications using Vidjil
+
+   Jean-Sebastien Allain et al., IGHV segment utilization in
+   immunoglobulin gene rearrangement differentiates patients with
+   anti-myelin-associated glycoprotein neuropathy from others
+   immunoglobulin M-gammopathies, Haematologica, 2018, 103:e207-e210
+   http://dx.doi.org/10.3324/haematol.2017.177444
+
+   Yann Ferret et al., Multi-loci diagnosis of acute lymphoblastic
+   leukaemia with high-throughput sequencing and bioinformatics analysis,
+   British Journal of Haematology, 2016, 173, 413–420
+   http://dx.doi.org/10.1111/bjh.13981
+
+   Henrike J. Fischer et al., Modulation of CNS autoimmune responses by
+   CD8+ T cells coincides with their oligoclonal expansion Journal of
+   Neuroimmunology, 2015, S0165-5728(15)30065-5
+   http://dx.doi.org/10.1016/j.jneuroim.2015.10.020
+
+   Michaela Kotrova et al., The predictive strength of next-generation
+   sequencing MRD detection for relapse compared with current methods in
+   childhood ALL, Blood, 2015, 126:1045-1047
+   http://dx.doi.org/10.1182/blood-2015-07-655159
+
+   Michaela Kotrova et al., Next‐generation amplicon TRB locus sequencing
+   can overcome limitations of flow‐cytometric Vβ expression analysis and
+   confirms clonality in all T‐cell prolymphocytic leukemia cases,
+   Cytometry Part A, 2018 http://dx.doi.org/10.1002/cyto.a.23604
+
+   Ralf A. Linker et al., Thymocyte-derived BDNF influences T-cell
+   maturation at the DN3/DN4 transition stage European Journal of
+   Immunology, 2015, 45, 1326-1338 http://dx.doi.org/10.1002/eji.201444985
+
+   Mikaël Salson et al., High-throughput sequencing in acute lymphoblastic
+   leukemia: Follow-up of minimal residual disease and emergence of new
+   clones, Leukemia Research, 2017, 53, 1–7
+   http://dx.doi.org/10.1016/j.leukres.2016.11.009
+
+   Florian Scherer et al., Distinct biological subtypes and patterns of
+   genome evolution in lymphoma revealed by circulating tumor DNA, Science
+   Translational Medicine, 2016, 8, 364ra155
+   http://dx.doi.org/10.1126/scitranslmed.aai8545
+
+   Edit Porpaczy et al., Aggressive B-cell lymphomas in patients with
+   myelofibrosis receiving JAK1/2 inhibitor therapy, Blood, 2018,
+   https://dx.doi.org/10.1182/blood-2017-10-810739

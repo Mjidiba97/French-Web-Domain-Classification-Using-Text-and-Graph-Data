@@ -1,0 +1,3392 @@
+   #Virtual Nomad - Atom Virtual Nomad - RSS
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Tuesday, 17 April 2018
+
+Why Starwind Cloud VTL or getting backup data to cloud object storage in 30
+minutes
+
+   So many cloud storage providers offer object-based storage nowadays.
+   Unfortunately, backup software vendors are not fast enough with
+   updating their products to allow companies to consume new storage tiers
+   to existing backup infrastructure.
+   With few Whys I am going to explain how StarWind VTL brings value to
+   the companies by providing access to a new cost-effective cloud
+   storage.
+   Why backup?
+   Alright, alright, I am kidding here. No doubts you know the purpose of
+   data backup. Just wanted to remind you that people make mistakes,
+   computer hardware fails, and natural disasters occur. So, it is better
+   be safe than sorry.
+   Why tapes?
+   Historically tapes have been very attractive backup media due to tape
+   drive's reliability and low cost. 10-20 years ago, the performance of
+   tape libraries and the amount of backup data still allowed to meet the
+   backup window. Even today tape backup may still be a viable choice for
+   SMB companies.
+   Also, tapes are perfect for long-term data archiving. On the contrary,
+   archiving data on disks is not practical. Who would want to store data,
+   let's say for 7 years, on disks paying for power, cooling and space?
+   Scalability was another benefit you get with backup tapes. It is much
+   easier to buy additional tapes to get extra disk space compared to
+   disks where you would have to buy new disk enclosures, reconfigure
+   storage arrays.
+   Finally, tapes are mobile. Moving tapes offsite is a common practice to
+   allow data restore in case of disaster recovery.
+   It ought to be mentioned that very often tapes do compete with disk,
+   but rather complement each other. For instance, the
+   Disk-to-Disk-to-Tape approach is still a quite common backup
+   technique.
+   Why Virtual Tape Library?
+   According to Wikipedia, 'VTL is a data storage virtualization
+   technology', or in other words is an abstraction layer which lets you
+   quickly change the underlying backup media. It still logically presents
+   the familiar tape libraries and tapes thus minimising the knowledge
+   curve that usually comes with new technologies. This allows
+   administrators to keep using familiar backup software and policies.
+   The important improvements VTL brings are performance and
+   mobility. Even with explosive data growth, VTL manages to fit the
+   backup job into a reasonable time-frame by accelerating it, so the
+   process does not overlap with the production time window.While it is
+   relatively easy to scale out physical tape drives to improve the backup
+   time, they are not very efficient when you need to recover data very
+   quickly. This is where VTL performance shines the most as its data
+   access time is very low compared to physical tapes.
+   VTL brings backup data mobility and security to a new level. Moving
+   data offsite over network minimizes the risk of sensitive data theft
+   because the access to data can be easily controlled and audited.
+   The geographical location of the offsite storage becomes less
+   important. Virtual Tapes can be copied to offsite datacenter or even to
+   the cloud as long as there is sufficient bandwidth.
+   Why Object based storage?
+   While VTL is a great concept for storing 'warm' backup data there is a
+   fundamental issue with its scalability. This is mostly due to the VTL
+   power and space footprints and high cost.
+   The object storage on the contrary allows higher consolidation ratio,
+   better deduplication ratio due to a single deduplication domain, very
+   efficient scalability. Also, if you look at the object storage specs
+   you may notice that in a way they resemble physical tapes - no random
+   writes, very large I/Os.
+   Yes, object storage is not great for latency-sensitive applications,
+   but that is not required for backup data.
+   All this make object storage a perfect storage tier for long-retention
+   archival. Even in terms of TCO object storage is getting very close to
+   physical tapes.
+   Why Starwind VTL?
+   The answer is very obvious. The StartWind VTL is a universal gateway to
+   the cloud and on-prem object-based storage.
+   The StarWind VTL solution could use AWS S3 Storage since 2017. In the
+   latest release StarWind has added few other cloud storage providers.
+   So, the full list looks the following:
+   ·      AWS S3 and Glacier
+   ·      Backblaze S2 Cloud Storage
+   ·      Microsoft Azure Cloud Storage
+   So, essentially it is a software that provides that abstraction layer
+   between your backup product and cloud storage providers, thus,
+   achieving an effortless integration with the object storage without the
+   need for installing several third-party software components.
+   StarWind VTL improves the classic 3-2-1 approach with a new 4-3-2-1-0
+   concept
+   Traditional approach dictates to have 3 copies of data on 2 different
+   media while storing 1 copy off-site
+   The screenshot from the StarWind Cloud VTL presentations depicts the
+   new concept. It suggests using 4 copies on 3 different media with 2
+   copies stored offsite, achieved in 1click operation and with 0 issues.
+
+                                 [fig1.png]
+                    The diagram is a courtesy of StarWind
+
+   Proactive support introduced in the latest build of the StarWind VTL is
+   an icing on the cake. Here is the Proactive Support high level
+   workflow:
+   ·      telemetry collected & analysed with AI
+   ·      failure pattern detected and logged
+   ·      support prevents an issue from happening
+   According to StarWind presentation at Storage Field Day 15 "90% of
+   issues are resolved with ProActive support before they actually happen"
+   Hardware and System requirements for StarWind VTL are pretty
+   low.  Intel Xeon E5620, 4 GB of RAM and 1 GbE NIC is the minimum that
+   lets you use the product. If you plan to install Veeam B&R on the same
+   server, you will need to beef up the server specifications. The largest
+   question would be the amount of disk space that will meet the
+   requirements of the retention policy - how long the virtual tapes will
+   be stored locally before offloading them to the cloud storage.
+   Let’s have a quick look at the components of the StarWind Cloud VTL
+   solution:
+   VTL Server:  the software responsible for emulating physical tape
+   library
+   Veeam Backup and Recovery: one of the best backup product I know
+   Tape Library drivers: allow communication between backup server and VTL
+   Backblaze storage bucket*: cloud object-based storage
+   * bucket is an object storage term, it is used to logically group
+   objects.
+   Now let's have look at Clout VTL topologies.
+   There are few ways to deploy this solution. The first diagram depicts
+   the setup you would probably use in a Proof of Concept project. This
+   solution does not consume a lot of resources and at the same time
+   allows to test all the features of powerful combination of Veeam B&R
+   and StarWind VTL.
+   It is not recommended to use this setup for production environment
+
+                                 [fig2.png]
+                      Figure 1 - Single Server Topology
+
+   The second topology is not a reference architecture, but rather my
+   attempt to show that components of the solution can be spread across
+   multiple servers. This flexibility enables administrator to scale
+   out/scale up the solution to meet the backup performance requirements.
+
+                                 [fig3.png]
+                       Figure 2 - Distributed Topology
+
+   On the diagram above the Tape Library server is where all the 'magic'
+   happens. The StarWind software emulates HP MSL tape library and drives.
+   This virtual tape library is then presented to Veeam B&R Server as an
+   iSCSI target.
+   The virtual tapes can then be stored on any local or shared storage.
+   Once the backup job is complete the virtual tapes can be replicated to
+   Backblaze cloud storage (or another cloud storage provider). After
+   successful replication the tape can either be deleted or stored locally
+   to provide a faster recovery if needed.
+   The installation document thoroughly covers all the steps and it took
+   me less than 30 minutes to install all components and get first virtual
+   tape replicated to Backblaze.
+   To summarise, StartWind VTL provides the following benefits:
+     * Disk to Disk to Cloud backup technique while ensuring the
+       compliance with 3-2-1 backup rule
+     * Access to multiple cloud object-based storage providers
+     * Allows to get rid of the physical tapes
+
+   I personally believe StarWind VTL will be in a high demand until backup
+   software vendors enhance their applications to integrate with all cloud
+   and on-prem object-based storage. This process could be accelerated by
+   the development of a single unified API standard for object-based
+   storage, but I am not sure if it is happening soon.
+   Posted by vmnomad at 21:12 6 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: Object Based Storage, StarWind, Veeam, VTL
+
+Monday, 6 November 2017
+
+Validating NSX VTEP connectivity
+
+   This post was inspired by recent incident at the customer environment
+   where VMs were experiencing networking issues due to MTU size
+   misconfiguration on the TOR switches.
+   If you ever worked with NSX-V and Logical Switches you are aware that
+   NSX configures VTEP vmnics with MTU equal to 1600 bytes. This allows to
+   support VxLAN encapsulation.
+   However, between every two VTEP interfaces is an L2 or L3 networking
+   device that is potentially not configured to support baby Jumbo frames
+   (that's another name for 1600 bytes packets).
+   There are many posts explaining how to check MTU size and network
+   connectivity between VTEP interfaces. It is a simple ping using esxcli:
+   esxcli network diag ping --netstack=vxlan --host vmknic_IP --df
+   --size=1572
+   Now, imagine you have a small transport zones with 10 hosts and each
+   host has 2 VTEP interfaces.
+   You will need to run the esxcli command 360 times to validate all
+   combinations of VTEP pairs.
+   With 64 hosts the number of required ping tests reaches 16,128.  Well,
+   that's obviously something that requires automation.
+   Hopefully, the future versions of NSX will have this validation step as
+   part of NSX Health Check.
+   Meanwhile, we can take advantage of Powershell to make our VTEP
+   validation test a bit easier.
+   I didn't spend much time writing the script and had only my home lab
+   for a test, so it definitely may have some bugs.
+   Here is the logic of the script:
+     * Connects to NSX/vCenter and validates that connection was
+       established successfully
+     * Builds array of Transport Zones and Hosts
+     * Builds array of Hosts and their VTEPs
+     * Iterate through each TZ-Host-VTEP and ping all other VTEPs in the
+       transport zone. This is a full-mesh test.
+     * The script uses pings with 2 different sizes – 64 and 1572 bytes.
+       The first allows to check for connectivity issues and the larger
+       packet validates that MTU size is configured correctly along the
+       path between two VTEPs.
+     * The results are displayed on the screen in real-time
+     * Two reports are produced for each transport zone:
+
+     * Summary - a table with Source Host, Destination Host and the test
+       result
+     * Detailed - a table that contains Hosts, VTEP names and IP
+       Addresses, test result for different packet sizes and the error
+       message, if any.
+
+   Script has been tested with vSphere 6.5 U1 and NSX 6.3.x
+   Update (9/11/2017) - the script was updated to work with ESXi 6.0 and
+   6.5 versions.
+   The following screenshot provides and example of successful tests:
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.12.23%2Bam.png]
+   This is an example of error messages when using packet size 1573
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.28.48%2Bam.png]
+   As you can see the script can detect different types of issues.
+   here is a couple of reports' screenshots
+   Summary Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.36.15%2Bpm.png]
+   Detailed Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.35.48%2Bpm.png]
+   Here is the script code
+   Feel free to provide feedback on any bugs you may encounter using this
+   script.
+   Posted by vmnomad at 21:06 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: MTU, NSX, PowerCLI, Powershell, VTEP
+
+Sunday, 27 August 2017
+
+Updating configuration of NSX Controllers and Edge appliances
+
+   If you have been playing with NSX you may have noticed that you cannot
+   edit settings of virtual appliances deployed by NSX, e.g. controllers
+   or Edge appliances. That's how VMware want to ensure the best
+   performance of NSX in your environment.  However, there might be cases
+   when you still need to adjust some NSX appliances' settings.
+   In my case I needed to be able to change Memory Reservation settings.
+   The thing is that all NSX appliances are deployed with 100% of memory
+   reservation. My home lab grew up to almost 200Gb of RAM, but I still
+   struggle with lack of memory especially when I run few nested
+   deployments, each with its own NSX.
+   I am a big fan on PowerCLI so I tried to use
+   Set-VMResourceConfiguration command let, but that attempt wasn't
+   successful.
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.47.12%2Bam.png]
+   as you can see in the screenshot this method is disabled.
+   You can check all the methods disabled for VMs using this command
+   (get-vm VMname).ExtensionData.disabledmethod
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.49.15%2Bam.png]
+   As you can see the ReconfigVM_Task is in the list of disabled methods,
+   which prevents any changes to the VM config.
+   There is a way to enable this method, but it can only be done through
+   vSphere MOB, but I personally find it really confusing and not user
+   friendly. And I had no clue how to automate this process. So, I gave up
+   on this.
+   Then I thought there should be a way to change NSX appliances config
+   through NSX RestAPI. And actually there is.
+   Here is how you can change the memory reservation of NSX edges using
+   curl.  Update the values in bold before using.
+   1. Grab the NSX edge config and save it in XML file
+   curl -k -u 'username:password' -H "Content-Type: application/xml" -X
+   GET https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex  > XXX.xml
+   2. Update the memory reservation in xml file.
+   <memoryReservation>
+   <limit>-1</limit>
+   <reservation>YYY</reservation>
+   </memoryReservation>
+   3. Update the edge config
+   curl -k -u 'username:password' -H "Content-Type:application/xml"
+   PUT https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex -d "@XXX.xml"
+   As you can see you can change some settings of the Edge, but you cannot
+   do the same with controllers. At least I couldn't find anything similar
+   for controllers in NSX RestAPI guide.
+   Also, it is not easy to automate.
+   Here is an example of how you can use PowerCLI to automate RestAPI
+   calls
+   And here what you can get from the output
+   [Screen%2BShot%2B2017-08-27%2Bat%2B2.24.21%2Bpm.png]
+   From here you can update anything you need and change the config using
+   similar PowerCLI function.
+   As you can see it is more time consuming way of doing things. and
+   again, this is not applicable for NSX controllers.
+   So I thought I should go back to the original idea of enabling
+   ReconfigVM_task method and started searching for instructions when I
+   found out (once again) that William Lam has already done this. In this
+   post he explains how you can disable vMotion for some of the VMs by
+   disabling MigrateVM_task method. But the most amazing part of that post
+   was that he created PowerCLI functions to enable/disable any methods
+   without using vSphere MOB.
+   From here it was really easy to create the following script which
+   changes the memory reservation on any VMs - whether they are deployed
+   by NSX or not.
+   The script grabs all VMs with 100% of memory reservations and changes
+   this value to 99%.  You can change this value to whatever you prefer.
+   If ReconfigureVM method is disabled the script will re-enable it first.
+   After the memory reservation is updated the script will change the
+   ReconfigVM method back to disabled.
+   All you need to do is to update the vCenter name and credentials before
+   you run the script.
+   Here is the example of the script output
+   [Screen%2BShot%2B2017-08-26%2Bat%2B10.57.56%2Bpm.png]
+   A word of caution - this is not officially supported way of changing
+   the settings of NSX appliances.  It works but it's at your own risk.
+   Posted by vmnomad at 17:26 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: NSX, PowerCLI
+
+Monday, 8 May 2017
+
+Testing new vSphere 6.5 feature - DRS CPU overcommitment
+
+   I am currently working on a project where one of the customer's
+   requirements is to use strict pCPU to vCPU ratio. Luckily, VMware
+   introduced new feature called CPU over-commitment ratio in vSphere 6.5
+   which helps to meet the requirement. I spent an evening playing with
+   this new feature and would like to share my experience.
+   The VMware documentation is quite laconic when it discusses new DRS
+   features. So, after reading the documentation I still had few questions
+   on how CPU over-commitments works:
+    1. Does it count vCPUs against Physical or Logical Processors?
+    2. What is DRS behaviour when the ratio is violated?
+    3. Is over-commitment ratio applied per host or per cluster?
+    4. Will HA respect this ratio when restarting VMs after the host
+       failure?
+    5. Is ratio changed when host is placed into maintenance mode?
+
+   So, let's try to answer all these questions using my lab.
+   1. Does it count vCPUs against Physical or Logical Processors?
+   Usually I run most of my tests in the nested labs using nested ESXi
+   servers, but to answer this question I had to use one of my physical
+   clusters which supports hyperthreading and thus provides physical and
+   logical processors.
+   The cluster consists of 2 x SuperMicro Servers and each of the servers
+   runs on Xeon D-1528 CPU with 6 physical cores. So, in total I have 12
+   physical / 24 logical processors in the cluster.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.03.51%2BPM.png]
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.04.03%2BPM.png]
+   Currently I am running 4 VMs with 11 vCPUs assigned in total. DRS is
+   enabled and CPU overcommitment is configured to 100%. I am planning to
+   power on a another VM with 2 vCPUs.
+   If DRS counts over-commitment ratio using physical CPUs it should give
+   me some kind of warning.
+   Here is the result of my attempt to power-on another VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.06.55%2BPM.png]
+   As you can see it actually answers the second question too.
+   We can tell now that DRS definitely counts only physical CPUs.
+   Interestingly, in this case DRS behaves as HA Admission Control
+   prohibiting VM power-on operation as it will violate CPU
+   over-commitment ratio.
+   3. Is over-commitment ratio applied per host or per cluster?
+   To answer this question I used my nested lab. Here are quick specs of
+   the test cluster:
+     * 3 x ESXi servers
+     * 2 x CPU per server
+     * 3 x virtual machines configured with 2 vCPUs each
+     * CPU over-commitment is set to 100%
+
+   So, I am running 6 vCPU in total on 6 CPUs in DRS cluster. Attempt to
+   power on one more VM in this cluster will definitely fail as it will
+   violate cluster level ratio.
+   Now, I vMotioned VM-2 to ESXi-1 which brought the pCPU to vCPU
+   over-commitment ratio on that host to 200%. As you can see this vMotion
+   didn't fail and no warning were generated.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.40.52%2BPM.png]
+   DRS generate recommendations every 15 minutes and soon this cluster was
+   balanced again, but that's part of DRS functionality that existed in
+   previous versions of vSphere 6.5.
+   So, we can tell that this over-commitment ratio is applied per cluster.
+   4. Will HA respect this ratio when restarting VMs after the host
+   failure?
+   It was the most tickling question for me. Taking into the consideration
+   similarity of CPU over-commitment and HA Admission Control features I
+   was wondering whether over-commitment ratio should be adjusted to take
+   into the consideration host failure.
+   I used the same lab setup you saw above in question 3. I verified that
+   each host has been running one dummy VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.50.08%2BPM.png]
+   Then I restarted vesxi65-3 host and 2 minutes later the VM-3 was
+   successfully restarted on vesxi65-1 server even though the CPU
+   over-commitment ratio was equal to 150%.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.55.29%2BPM.png]
+   This proves that HA restart has higher priority over CPU
+   over-commitment ratio. This totally makes sense to me as VM's
+   availability is more important that potential performance impact.
+   5. Is ratio changed when host is placed into maintenance mode?
+   I reverted my lab back to default settings and tried to place the host
+   into maintenance mode which would result in 4 pCPU to 6 vCPU ratio
+   which would violate configured CPU over-commitment ratio.
+   The tasks didn't fail so I at first I assumed that there would be no
+   problem.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.16.24%2BPM.png]
+   5 minutes later that task was still running so I checked the DRS Faults
+   and immediately found the following.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.15.53%2BPM.png]
+   Clearly, DRS would always respect its own over-commitment rule when
+   trying to generate vMotion recommendations.
+   So, the main takeaways for today are:
+     * Only physical CPUs are used in calculations - no hyper threading
+     * CPU over-commitment works very similar to Admission Control by
+       preventing VMs to power on if it will violate the configured ratio.
+     * During HA failover the CPU overcommitment setting is ignored -
+       makes sense as recovering VMs is more critical than respecting
+       overcommitment ratio
+     * The over-commitment ratio is applied at cluster level
+     * DRS will prevent placing the host into maintenance mode if it
+       breaks its rules.
+
+   Posted by vmnomad at 08:07 4 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+   Older Posts Home
+
+   Subscribe to: Posts (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ▼  2018 (1)
+          + ▼  April (1)
+               o Why Starwind Cloud VTL or getting backup data to c...
+
+     * ►  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Tuesday, 17 April 2018
+
+Why Starwind Cloud VTL or getting backup data to cloud object storage in 30
+minutes
+
+   So many cloud storage providers offer object-based storage nowadays.
+   Unfortunately, backup software vendors are not fast enough with
+   updating their products to allow companies to consume new storage tiers
+   to existing backup infrastructure.
+   With few Whys I am going to explain how StarWind VTL brings value to
+   the companies by providing access to a new cost-effective cloud
+   storage.
+   Why backup?
+   Alright, alright, I am kidding here. No doubts you know the purpose of
+   data backup. Just wanted to remind you that people make mistakes,
+   computer hardware fails, and natural disasters occur. So, it is better
+   be safe than sorry.
+   Why tapes?
+   Historically tapes have been very attractive backup media due to tape
+   drive's reliability and low cost. 10-20 years ago, the performance of
+   tape libraries and the amount of backup data still allowed to meet the
+   backup window. Even today tape backup may still be a viable choice for
+   SMB companies.
+   Also, tapes are perfect for long-term data archiving. On the contrary,
+   archiving data on disks is not practical. Who would want to store data,
+   let's say for 7 years, on disks paying for power, cooling and space?
+   Scalability was another benefit you get with backup tapes. It is much
+   easier to buy additional tapes to get extra disk space compared to
+   disks where you would have to buy new disk enclosures, reconfigure
+   storage arrays.
+   Finally, tapes are mobile. Moving tapes offsite is a common practice to
+   allow data restore in case of disaster recovery.
+   It ought to be mentioned that very often tapes do compete with disk,
+   but rather complement each other. For instance, the
+   Disk-to-Disk-to-Tape approach is still a quite common backup
+   technique.
+   Why Virtual Tape Library?
+   According to Wikipedia, 'VTL is a data storage virtualization
+   technology', or in other words is an abstraction layer which lets you
+   quickly change the underlying backup media. It still logically presents
+   the familiar tape libraries and tapes thus minimising the knowledge
+   curve that usually comes with new technologies. This allows
+   administrators to keep using familiar backup software and policies.
+   The important improvements VTL brings are performance and
+   mobility. Even with explosive data growth, VTL manages to fit the
+   backup job into a reasonable time-frame by accelerating it, so the
+   process does not overlap with the production time window.While it is
+   relatively easy to scale out physical tape drives to improve the backup
+   time, they are not very efficient when you need to recover data very
+   quickly. This is where VTL performance shines the most as its data
+   access time is very low compared to physical tapes.
+   VTL brings backup data mobility and security to a new level. Moving
+   data offsite over network minimizes the risk of sensitive data theft
+   because the access to data can be easily controlled and audited.
+   The geographical location of the offsite storage becomes less
+   important. Virtual Tapes can be copied to offsite datacenter or even to
+   the cloud as long as there is sufficient bandwidth.
+   Why Object based storage?
+   While VTL is a great concept for storing 'warm' backup data there is a
+   fundamental issue with its scalability. This is mostly due to the VTL
+   power and space footprints and high cost.
+   The object storage on the contrary allows higher consolidation ratio,
+   better deduplication ratio due to a single deduplication domain, very
+   efficient scalability. Also, if you look at the object storage specs
+   you may notice that in a way they resemble physical tapes - no random
+   writes, very large I/Os.
+   Yes, object storage is not great for latency-sensitive applications,
+   but that is not required for backup data.
+   All this make object storage a perfect storage tier for long-retention
+   archival. Even in terms of TCO object storage is getting very close to
+   physical tapes.
+   Why Starwind VTL?
+   The answer is very obvious. The StartWind VTL is a universal gateway to
+   the cloud and on-prem object-based storage.
+   The StarWind VTL solution could use AWS S3 Storage since 2017. In the
+   latest release StarWind has added few other cloud storage providers.
+   So, the full list looks the following:
+   ·      AWS S3 and Glacier
+   ·      Backblaze S2 Cloud Storage
+   ·      Microsoft Azure Cloud Storage
+   So, essentially it is a software that provides that abstraction layer
+   between your backup product and cloud storage providers, thus,
+   achieving an effortless integration with the object storage without the
+   need for installing several third-party software components.
+   StarWind VTL improves the classic 3-2-1 approach with a new 4-3-2-1-0
+   concept
+   Traditional approach dictates to have 3 copies of data on 2 different
+   media while storing 1 copy off-site
+   The screenshot from the StarWind Cloud VTL presentations depicts the
+   new concept. It suggests using 4 copies on 3 different media with 2
+   copies stored offsite, achieved in 1click operation and with 0 issues.
+
+                                 [fig1.png]
+                    The diagram is a courtesy of StarWind
+
+   Proactive support introduced in the latest build of the StarWind VTL is
+   an icing on the cake. Here is the Proactive Support high level
+   workflow:
+   ·      telemetry collected & analysed with AI
+   ·      failure pattern detected and logged
+   ·      support prevents an issue from happening
+   According to StarWind presentation at Storage Field Day 15 "90% of
+   issues are resolved with ProActive support before they actually happen"
+   Hardware and System requirements for StarWind VTL are pretty
+   low.  Intel Xeon E5620, 4 GB of RAM and 1 GbE NIC is the minimum that
+   lets you use the product. If you plan to install Veeam B&R on the same
+   server, you will need to beef up the server specifications. The largest
+   question would be the amount of disk space that will meet the
+   requirements of the retention policy - how long the virtual tapes will
+   be stored locally before offloading them to the cloud storage.
+   Let’s have a quick look at the components of the StarWind Cloud VTL
+   solution:
+   VTL Server:  the software responsible for emulating physical tape
+   library
+   Veeam Backup and Recovery: one of the best backup product I know
+   Tape Library drivers: allow communication between backup server and VTL
+   Backblaze storage bucket*: cloud object-based storage
+   * bucket is an object storage term, it is used to logically group
+   objects.
+   Now let's have look at Clout VTL topologies.
+   There are few ways to deploy this solution. The first diagram depicts
+   the setup you would probably use in a Proof of Concept project. This
+   solution does not consume a lot of resources and at the same time
+   allows to test all the features of powerful combination of Veeam B&R
+   and StarWind VTL.
+   It is not recommended to use this setup for production environment
+
+                                 [fig2.png]
+                      Figure 1 - Single Server Topology
+
+   The second topology is not a reference architecture, but rather my
+   attempt to show that components of the solution can be spread across
+   multiple servers. This flexibility enables administrator to scale
+   out/scale up the solution to meet the backup performance requirements.
+
+                                 [fig3.png]
+                       Figure 2 - Distributed Topology
+
+   On the diagram above the Tape Library server is where all the 'magic'
+   happens. The StarWind software emulates HP MSL tape library and drives.
+   This virtual tape library is then presented to Veeam B&R Server as an
+   iSCSI target.
+   The virtual tapes can then be stored on any local or shared storage.
+   Once the backup job is complete the virtual tapes can be replicated to
+   Backblaze cloud storage (or another cloud storage provider). After
+   successful replication the tape can either be deleted or stored locally
+   to provide a faster recovery if needed.
+   The installation document thoroughly covers all the steps and it took
+   me less than 30 minutes to install all components and get first virtual
+   tape replicated to Backblaze.
+   To summarise, StartWind VTL provides the following benefits:
+     * Disk to Disk to Cloud backup technique while ensuring the
+       compliance with 3-2-1 backup rule
+     * Access to multiple cloud object-based storage providers
+     * Allows to get rid of the physical tapes
+
+   I personally believe StarWind VTL will be in a high demand until backup
+   software vendors enhance their applications to integrate with all cloud
+   and on-prem object-based storage. This process could be accelerated by
+   the development of a single unified API standard for object-based
+   storage, but I am not sure if it is happening soon.
+   Posted by vmnomad at 21:12 6 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: Object Based Storage, StarWind, Veeam, VTL
+
+Monday, 6 November 2017
+
+Validating NSX VTEP connectivity
+
+   This post was inspired by recent incident at the customer environment
+   where VMs were experiencing networking issues due to MTU size
+   misconfiguration on the TOR switches.
+   If you ever worked with NSX-V and Logical Switches you are aware that
+   NSX configures VTEP vmnics with MTU equal to 1600 bytes. This allows to
+   support VxLAN encapsulation.
+   However, between every two VTEP interfaces is an L2 or L3 networking
+   device that is potentially not configured to support baby Jumbo frames
+   (that's another name for 1600 bytes packets).
+   There are many posts explaining how to check MTU size and network
+   connectivity between VTEP interfaces. It is a simple ping using esxcli:
+   esxcli network diag ping --netstack=vxlan --host vmknic_IP --df
+   --size=1572
+   Now, imagine you have a small transport zones with 10 hosts and each
+   host has 2 VTEP interfaces.
+   You will need to run the esxcli command 360 times to validate all
+   combinations of VTEP pairs.
+   With 64 hosts the number of required ping tests reaches 16,128.  Well,
+   that's obviously something that requires automation.
+   Hopefully, the future versions of NSX will have this validation step as
+   part of NSX Health Check.
+   Meanwhile, we can take advantage of Powershell to make our VTEP
+   validation test a bit easier.
+   I didn't spend much time writing the script and had only my home lab
+   for a test, so it definitely may have some bugs.
+   Here is the logic of the script:
+     * Connects to NSX/vCenter and validates that connection was
+       established successfully
+     * Builds array of Transport Zones and Hosts
+     * Builds array of Hosts and their VTEPs
+     * Iterate through each TZ-Host-VTEP and ping all other VTEPs in the
+       transport zone. This is a full-mesh test.
+     * The script uses pings with 2 different sizes – 64 and 1572 bytes.
+       The first allows to check for connectivity issues and the larger
+       packet validates that MTU size is configured correctly along the
+       path between two VTEPs.
+     * The results are displayed on the screen in real-time
+     * Two reports are produced for each transport zone:
+
+     * Summary - a table with Source Host, Destination Host and the test
+       result
+     * Detailed - a table that contains Hosts, VTEP names and IP
+       Addresses, test result for different packet sizes and the error
+       message, if any.
+
+   Script has been tested with vSphere 6.5 U1 and NSX 6.3.x
+   Update (9/11/2017) - the script was updated to work with ESXi 6.0 and
+   6.5 versions.
+   The following screenshot provides and example of successful tests:
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.12.23%2Bam.png]
+   This is an example of error messages when using packet size 1573
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.28.48%2Bam.png]
+   As you can see the script can detect different types of issues.
+   here is a couple of reports' screenshots
+   Summary Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.36.15%2Bpm.png]
+   Detailed Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.35.48%2Bpm.png]
+   Here is the script code
+   Feel free to provide feedback on any bugs you may encounter using this
+   script.
+   Posted by vmnomad at 21:06 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: MTU, NSX, PowerCLI, Powershell, VTEP
+
+Sunday, 27 August 2017
+
+Updating configuration of NSX Controllers and Edge appliances
+
+   If you have been playing with NSX you may have noticed that you cannot
+   edit settings of virtual appliances deployed by NSX, e.g. controllers
+   or Edge appliances. That's how VMware want to ensure the best
+   performance of NSX in your environment.  However, there might be cases
+   when you still need to adjust some NSX appliances' settings.
+   In my case I needed to be able to change Memory Reservation settings.
+   The thing is that all NSX appliances are deployed with 100% of memory
+   reservation. My home lab grew up to almost 200Gb of RAM, but I still
+   struggle with lack of memory especially when I run few nested
+   deployments, each with its own NSX.
+   I am a big fan on PowerCLI so I tried to use
+   Set-VMResourceConfiguration command let, but that attempt wasn't
+   successful.
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.47.12%2Bam.png]
+   as you can see in the screenshot this method is disabled.
+   You can check all the methods disabled for VMs using this command
+   (get-vm VMname).ExtensionData.disabledmethod
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.49.15%2Bam.png]
+   As you can see the ReconfigVM_Task is in the list of disabled methods,
+   which prevents any changes to the VM config.
+   There is a way to enable this method, but it can only be done through
+   vSphere MOB, but I personally find it really confusing and not user
+   friendly. And I had no clue how to automate this process. So, I gave up
+   on this.
+   Then I thought there should be a way to change NSX appliances config
+   through NSX RestAPI. And actually there is.
+   Here is how you can change the memory reservation of NSX edges using
+   curl.  Update the values in bold before using.
+   1. Grab the NSX edge config and save it in XML file
+   curl -k -u 'username:password' -H "Content-Type: application/xml" -X
+   GET https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex  > XXX.xml
+   2. Update the memory reservation in xml file.
+   <memoryReservation>
+   <limit>-1</limit>
+   <reservation>YYY</reservation>
+   </memoryReservation>
+   3. Update the edge config
+   curl -k -u 'username:password' -H "Content-Type:application/xml"
+   PUT https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex -d "@XXX.xml"
+   As you can see you can change some settings of the Edge, but you cannot
+   do the same with controllers. At least I couldn't find anything similar
+   for controllers in NSX RestAPI guide.
+   Also, it is not easy to automate.
+   Here is an example of how you can use PowerCLI to automate RestAPI
+   calls
+   And here what you can get from the output
+   [Screen%2BShot%2B2017-08-27%2Bat%2B2.24.21%2Bpm.png]
+   From here you can update anything you need and change the config using
+   similar PowerCLI function.
+   As you can see it is more time consuming way of doing things. and
+   again, this is not applicable for NSX controllers.
+   So I thought I should go back to the original idea of enabling
+   ReconfigVM_task method and started searching for instructions when I
+   found out (once again) that William Lam has already done this. In this
+   post he explains how you can disable vMotion for some of the VMs by
+   disabling MigrateVM_task method. But the most amazing part of that post
+   was that he created PowerCLI functions to enable/disable any methods
+   without using vSphere MOB.
+   From here it was really easy to create the following script which
+   changes the memory reservation on any VMs - whether they are deployed
+   by NSX or not.
+   The script grabs all VMs with 100% of memory reservations and changes
+   this value to 99%.  You can change this value to whatever you prefer.
+   If ReconfigureVM method is disabled the script will re-enable it first.
+   After the memory reservation is updated the script will change the
+   ReconfigVM method back to disabled.
+   All you need to do is to update the vCenter name and credentials before
+   you run the script.
+   Here is the example of the script output
+   [Screen%2BShot%2B2017-08-26%2Bat%2B10.57.56%2Bpm.png]
+   A word of caution - this is not officially supported way of changing
+   the settings of NSX appliances.  It works but it's at your own risk.
+   Posted by vmnomad at 17:26 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: NSX, PowerCLI
+
+Monday, 8 May 2017
+
+Testing new vSphere 6.5 feature - DRS CPU overcommitment
+
+   I am currently working on a project where one of the customer's
+   requirements is to use strict pCPU to vCPU ratio. Luckily, VMware
+   introduced new feature called CPU over-commitment ratio in vSphere 6.5
+   which helps to meet the requirement. I spent an evening playing with
+   this new feature and would like to share my experience.
+   The VMware documentation is quite laconic when it discusses new DRS
+   features. So, after reading the documentation I still had few questions
+   on how CPU over-commitments works:
+    1. Does it count vCPUs against Physical or Logical Processors?
+    2. What is DRS behaviour when the ratio is violated?
+    3. Is over-commitment ratio applied per host or per cluster?
+    4. Will HA respect this ratio when restarting VMs after the host
+       failure?
+    5. Is ratio changed when host is placed into maintenance mode?
+
+   So, let's try to answer all these questions using my lab.
+   1. Does it count vCPUs against Physical or Logical Processors?
+   Usually I run most of my tests in the nested labs using nested ESXi
+   servers, but to answer this question I had to use one of my physical
+   clusters which supports hyperthreading and thus provides physical and
+   logical processors.
+   The cluster consists of 2 x SuperMicro Servers and each of the servers
+   runs on Xeon D-1528 CPU with 6 physical cores. So, in total I have 12
+   physical / 24 logical processors in the cluster.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.03.51%2BPM.png]
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.04.03%2BPM.png]
+   Currently I am running 4 VMs with 11 vCPUs assigned in total. DRS is
+   enabled and CPU overcommitment is configured to 100%. I am planning to
+   power on a another VM with 2 vCPUs.
+   If DRS counts over-commitment ratio using physical CPUs it should give
+   me some kind of warning.
+   Here is the result of my attempt to power-on another VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.06.55%2BPM.png]
+   As you can see it actually answers the second question too.
+   We can tell now that DRS definitely counts only physical CPUs.
+   Interestingly, in this case DRS behaves as HA Admission Control
+   prohibiting VM power-on operation as it will violate CPU
+   over-commitment ratio.
+   3. Is over-commitment ratio applied per host or per cluster?
+   To answer this question I used my nested lab. Here are quick specs of
+   the test cluster:
+     * 3 x ESXi servers
+     * 2 x CPU per server
+     * 3 x virtual machines configured with 2 vCPUs each
+     * CPU over-commitment is set to 100%
+
+   So, I am running 6 vCPU in total on 6 CPUs in DRS cluster. Attempt to
+   power on one more VM in this cluster will definitely fail as it will
+   violate cluster level ratio.
+   Now, I vMotioned VM-2 to ESXi-1 which brought the pCPU to vCPU
+   over-commitment ratio on that host to 200%. As you can see this vMotion
+   didn't fail and no warning were generated.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.40.52%2BPM.png]
+   DRS generate recommendations every 15 minutes and soon this cluster was
+   balanced again, but that's part of DRS functionality that existed in
+   previous versions of vSphere 6.5.
+   So, we can tell that this over-commitment ratio is applied per cluster.
+   4. Will HA respect this ratio when restarting VMs after the host
+   failure?
+   It was the most tickling question for me. Taking into the consideration
+   similarity of CPU over-commitment and HA Admission Control features I
+   was wondering whether over-commitment ratio should be adjusted to take
+   into the consideration host failure.
+   I used the same lab setup you saw above in question 3. I verified that
+   each host has been running one dummy VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.50.08%2BPM.png]
+   Then I restarted vesxi65-3 host and 2 minutes later the VM-3 was
+   successfully restarted on vesxi65-1 server even though the CPU
+   over-commitment ratio was equal to 150%.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.55.29%2BPM.png]
+   This proves that HA restart has higher priority over CPU
+   over-commitment ratio. This totally makes sense to me as VM's
+   availability is more important that potential performance impact.
+   5. Is ratio changed when host is placed into maintenance mode?
+   I reverted my lab back to default settings and tried to place the host
+   into maintenance mode which would result in 4 pCPU to 6 vCPU ratio
+   which would violate configured CPU over-commitment ratio.
+   The tasks didn't fail so I at first I assumed that there would be no
+   problem.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.16.24%2BPM.png]
+   5 minutes later that task was still running so I checked the DRS Faults
+   and immediately found the following.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.15.53%2BPM.png]
+   Clearly, DRS would always respect its own over-commitment rule when
+   trying to generate vMotion recommendations.
+   So, the main takeaways for today are:
+     * Only physical CPUs are used in calculations - no hyper threading
+     * CPU over-commitment works very similar to Admission Control by
+       preventing VMs to power on if it will violate the configured ratio.
+     * During HA failover the CPU overcommitment setting is ignored -
+       makes sense as recovering VMs is more critical than respecting
+       overcommitment ratio
+     * The over-commitment ratio is applied at cluster level
+     * DRS will prevent placing the host into maintenance mode if it
+       breaks its rules.
+
+   Posted by vmnomad at 08:07 4 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+   Older Posts Home
+
+   Subscribe to: Posts (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ▼  2018 (1)
+          + ▼  April (1)
+               o Why Starwind Cloud VTL or getting backup data to c...
+
+     * ►  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Tuesday, 17 April 2018
+
+Why Starwind Cloud VTL or getting backup data to cloud object storage in 30
+minutes
+
+   So many cloud storage providers offer object-based storage nowadays.
+   Unfortunately, backup software vendors are not fast enough with
+   updating their products to allow companies to consume new storage tiers
+   to existing backup infrastructure.
+   With few Whys I am going to explain how StarWind VTL brings value to
+   the companies by providing access to a new cost-effective cloud
+   storage.
+   Why backup?
+   Alright, alright, I am kidding here. No doubts you know the purpose of
+   data backup. Just wanted to remind you that people make mistakes,
+   computer hardware fails, and natural disasters occur. So, it is better
+   be safe than sorry.
+   Why tapes?
+   Historically tapes have been very attractive backup media due to tape
+   drive's reliability and low cost. 10-20 years ago, the performance of
+   tape libraries and the amount of backup data still allowed to meet the
+   backup window. Even today tape backup may still be a viable choice for
+   SMB companies.
+   Also, tapes are perfect for long-term data archiving. On the contrary,
+   archiving data on disks is not practical. Who would want to store data,
+   let's say for 7 years, on disks paying for power, cooling and space?
+   Scalability was another benefit you get with backup tapes. It is much
+   easier to buy additional tapes to get extra disk space compared to
+   disks where you would have to buy new disk enclosures, reconfigure
+   storage arrays.
+   Finally, tapes are mobile. Moving tapes offsite is a common practice to
+   allow data restore in case of disaster recovery.
+   It ought to be mentioned that very often tapes do compete with disk,
+   but rather complement each other. For instance, the
+   Disk-to-Disk-to-Tape approach is still a quite common backup
+   technique.
+   Why Virtual Tape Library?
+   According to Wikipedia, 'VTL is a data storage virtualization
+   technology', or in other words is an abstraction layer which lets you
+   quickly change the underlying backup media. It still logically presents
+   the familiar tape libraries and tapes thus minimising the knowledge
+   curve that usually comes with new technologies. This allows
+   administrators to keep using familiar backup software and policies.
+   The important improvements VTL brings are performance and
+   mobility. Even with explosive data growth, VTL manages to fit the
+   backup job into a reasonable time-frame by accelerating it, so the
+   process does not overlap with the production time window.While it is
+   relatively easy to scale out physical tape drives to improve the backup
+   time, they are not very efficient when you need to recover data very
+   quickly. This is where VTL performance shines the most as its data
+   access time is very low compared to physical tapes.
+   VTL brings backup data mobility and security to a new level. Moving
+   data offsite over network minimizes the risk of sensitive data theft
+   because the access to data can be easily controlled and audited.
+   The geographical location of the offsite storage becomes less
+   important. Virtual Tapes can be copied to offsite datacenter or even to
+   the cloud as long as there is sufficient bandwidth.
+   Why Object based storage?
+   While VTL is a great concept for storing 'warm' backup data there is a
+   fundamental issue with its scalability. This is mostly due to the VTL
+   power and space footprints and high cost.
+   The object storage on the contrary allows higher consolidation ratio,
+   better deduplication ratio due to a single deduplication domain, very
+   efficient scalability. Also, if you look at the object storage specs
+   you may notice that in a way they resemble physical tapes - no random
+   writes, very large I/Os.
+   Yes, object storage is not great for latency-sensitive applications,
+   but that is not required for backup data.
+   All this make object storage a perfect storage tier for long-retention
+   archival. Even in terms of TCO object storage is getting very close to
+   physical tapes.
+   Why Starwind VTL?
+   The answer is very obvious. The StartWind VTL is a universal gateway to
+   the cloud and on-prem object-based storage.
+   The StarWind VTL solution could use AWS S3 Storage since 2017. In the
+   latest release StarWind has added few other cloud storage providers.
+   So, the full list looks the following:
+   ·      AWS S3 and Glacier
+   ·      Backblaze S2 Cloud Storage
+   ·      Microsoft Azure Cloud Storage
+   So, essentially it is a software that provides that abstraction layer
+   between your backup product and cloud storage providers, thus,
+   achieving an effortless integration with the object storage without the
+   need for installing several third-party software components.
+   StarWind VTL improves the classic 3-2-1 approach with a new 4-3-2-1-0
+   concept
+   Traditional approach dictates to have 3 copies of data on 2 different
+   media while storing 1 copy off-site
+   The screenshot from the StarWind Cloud VTL presentations depicts the
+   new concept. It suggests using 4 copies on 3 different media with 2
+   copies stored offsite, achieved in 1click operation and with 0 issues.
+
+                                 [fig1.png]
+                    The diagram is a courtesy of StarWind
+
+   Proactive support introduced in the latest build of the StarWind VTL is
+   an icing on the cake. Here is the Proactive Support high level
+   workflow:
+   ·      telemetry collected & analysed with AI
+   ·      failure pattern detected and logged
+   ·      support prevents an issue from happening
+   According to StarWind presentation at Storage Field Day 15 "90% of
+   issues are resolved with ProActive support before they actually happen"
+   Hardware and System requirements for StarWind VTL are pretty
+   low.  Intel Xeon E5620, 4 GB of RAM and 1 GbE NIC is the minimum that
+   lets you use the product. If you plan to install Veeam B&R on the same
+   server, you will need to beef up the server specifications. The largest
+   question would be the amount of disk space that will meet the
+   requirements of the retention policy - how long the virtual tapes will
+   be stored locally before offloading them to the cloud storage.
+   Let’s have a quick look at the components of the StarWind Cloud VTL
+   solution:
+   VTL Server:  the software responsible for emulating physical tape
+   library
+   Veeam Backup and Recovery: one of the best backup product I know
+   Tape Library drivers: allow communication between backup server and VTL
+   Backblaze storage bucket*: cloud object-based storage
+   * bucket is an object storage term, it is used to logically group
+   objects.
+   Now let's have look at Clout VTL topologies.
+   There are few ways to deploy this solution. The first diagram depicts
+   the setup you would probably use in a Proof of Concept project. This
+   solution does not consume a lot of resources and at the same time
+   allows to test all the features of powerful combination of Veeam B&R
+   and StarWind VTL.
+   It is not recommended to use this setup for production environment
+
+                                 [fig2.png]
+                      Figure 1 - Single Server Topology
+
+   The second topology is not a reference architecture, but rather my
+   attempt to show that components of the solution can be spread across
+   multiple servers. This flexibility enables administrator to scale
+   out/scale up the solution to meet the backup performance requirements.
+
+                                 [fig3.png]
+                       Figure 2 - Distributed Topology
+
+   On the diagram above the Tape Library server is where all the 'magic'
+   happens. The StarWind software emulates HP MSL tape library and drives.
+   This virtual tape library is then presented to Veeam B&R Server as an
+   iSCSI target.
+   The virtual tapes can then be stored on any local or shared storage.
+   Once the backup job is complete the virtual tapes can be replicated to
+   Backblaze cloud storage (or another cloud storage provider). After
+   successful replication the tape can either be deleted or stored locally
+   to provide a faster recovery if needed.
+   The installation document thoroughly covers all the steps and it took
+   me less than 30 minutes to install all components and get first virtual
+   tape replicated to Backblaze.
+   To summarise, StartWind VTL provides the following benefits:
+     * Disk to Disk to Cloud backup technique while ensuring the
+       compliance with 3-2-1 backup rule
+     * Access to multiple cloud object-based storage providers
+     * Allows to get rid of the physical tapes
+
+   I personally believe StarWind VTL will be in a high demand until backup
+   software vendors enhance their applications to integrate with all cloud
+   and on-prem object-based storage. This process could be accelerated by
+   the development of a single unified API standard for object-based
+   storage, but I am not sure if it is happening soon.
+   Posted by vmnomad at 21:12
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: Object Based Storage, StarWind, Veeam, VTL
+
+6 comments:
+
+    1. Cloud Disaster Recovery Services28 September 2018 at 01:39
+       It was a nice comparison between public and private cloud. In cloud
+       computing it is important to have good cloud disaster recovery
+       services. Thanks
+       ReplyDelete
+       Replies
+            Reply
+    2. resma k4 December 2018 at 23:26
+       Thanks for sharing this post. Your post is really very helpful its
+       students. google cloud online training
+       ReplyDelete
+       Replies
+            Reply
+    3. resma k4 December 2018 at 23:26
+       Thanks for sharing this post. Your post is really very helpful its
+       students. google cloud online training
+       ReplyDelete
+       Replies
+            Reply
+    4. Diziling seo24 March 2019 at 04:55
+       Positive site, where did u come up with the information on this
+       posting? I'm pleased I discovered it though, ill be checking back
+       soon to find out what additional posts you include. odzyskiwanie
+       danych Warszawa
+       ReplyDelete
+       Replies
+            Reply
+    5. Helish Lawera6 May 2019 at 14:34
+       Most of the blogs pretend themselves as most usable and updated
+       blogs with new information but sometime truth might different. I
+       want to share some facts related to this subject which will help
+       people to enhance their skills.
+       เช่าห้องเก็บของ
+       ReplyDelete
+       Replies
+            Reply
+    6. Susan Little12 June 2019 at 21:58
+       Great job here on. I read a lot of blog posts, but I never heard a
+       topic like this. I Love this topic you made about the blogger's
+       bucket list. Very resourceful. Cloud backup
+       ReplyDelete
+       Replies
+            Reply
+
+   Add comment
+   Load more...
+
+   Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ▼  2018 (1)
+          + ▼  April (1)
+               o Why Starwind Cloud VTL or getting backup data to c...
+
+     * ►  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Monday, 6 November 2017
+
+Validating NSX VTEP connectivity
+
+   This post was inspired by recent incident at the customer environment
+   where VMs were experiencing networking issues due to MTU size
+   misconfiguration on the TOR switches.
+   If you ever worked with NSX-V and Logical Switches you are aware that
+   NSX configures VTEP vmnics with MTU equal to 1600 bytes. This allows to
+   support VxLAN encapsulation.
+   However, between every two VTEP interfaces is an L2 or L3 networking
+   device that is potentially not configured to support baby Jumbo frames
+   (that's another name for 1600 bytes packets).
+   There are many posts explaining how to check MTU size and network
+   connectivity between VTEP interfaces. It is a simple ping using esxcli:
+   esxcli network diag ping --netstack=vxlan --host vmknic_IP --df
+   --size=1572
+   Now, imagine you have a small transport zones with 10 hosts and each
+   host has 2 VTEP interfaces.
+   You will need to run the esxcli command 360 times to validate all
+   combinations of VTEP pairs.
+   With 64 hosts the number of required ping tests reaches 16,128.  Well,
+   that's obviously something that requires automation.
+   Hopefully, the future versions of NSX will have this validation step as
+   part of NSX Health Check.
+   Meanwhile, we can take advantage of Powershell to make our VTEP
+   validation test a bit easier.
+   I didn't spend much time writing the script and had only my home lab
+   for a test, so it definitely may have some bugs.
+   Here is the logic of the script:
+     * Connects to NSX/vCenter and validates that connection was
+       established successfully
+     * Builds array of Transport Zones and Hosts
+     * Builds array of Hosts and their VTEPs
+     * Iterate through each TZ-Host-VTEP and ping all other VTEPs in the
+       transport zone. This is a full-mesh test.
+     * The script uses pings with 2 different sizes – 64 and 1572 bytes.
+       The first allows to check for connectivity issues and the larger
+       packet validates that MTU size is configured correctly along the
+       path between two VTEPs.
+     * The results are displayed on the screen in real-time
+     * Two reports are produced for each transport zone:
+
+     * Summary - a table with Source Host, Destination Host and the test
+       result
+     * Detailed - a table that contains Hosts, VTEP names and IP
+       Addresses, test result for different packet sizes and the error
+       message, if any.
+
+   Script has been tested with vSphere 6.5 U1 and NSX 6.3.x
+   Update (9/11/2017) - the script was updated to work with ESXi 6.0 and
+   6.5 versions.
+   The following screenshot provides and example of successful tests:
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.12.23%2Bam.png]
+   This is an example of error messages when using packet size 1573
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.28.48%2Bam.png]
+   As you can see the script can detect different types of issues.
+   here is a couple of reports' screenshots
+   Summary Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.36.15%2Bpm.png]
+   Detailed Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.35.48%2Bpm.png]
+   Here is the script code
+   Feel free to provide feedback on any bugs you may encounter using this
+   script.
+   Posted by vmnomad at 21:06
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: MTU, NSX, PowerCLI, Powershell, VTEP
+
+No comments:
+
+Post a Comment
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ►  2018 (1)
+          + ►  April (1)
+
+     * ▼  2017 (6)
+          + ▼  November (1)
+               o Validating NSX VTEP connectivity
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Sunday, 27 August 2017
+
+Updating configuration of NSX Controllers and Edge appliances
+
+   If you have been playing with NSX you may have noticed that you cannot
+   edit settings of virtual appliances deployed by NSX, e.g. controllers
+   or Edge appliances. That's how VMware want to ensure the best
+   performance of NSX in your environment.  However, there might be cases
+   when you still need to adjust some NSX appliances' settings.
+   In my case I needed to be able to change Memory Reservation settings.
+   The thing is that all NSX appliances are deployed with 100% of memory
+   reservation. My home lab grew up to almost 200Gb of RAM, but I still
+   struggle with lack of memory especially when I run few nested
+   deployments, each with its own NSX.
+   I am a big fan on PowerCLI so I tried to use
+   Set-VMResourceConfiguration command let, but that attempt wasn't
+   successful.
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.47.12%2Bam.png]
+   as you can see in the screenshot this method is disabled.
+   You can check all the methods disabled for VMs using this command
+   (get-vm VMname).ExtensionData.disabledmethod
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.49.15%2Bam.png]
+   As you can see the ReconfigVM_Task is in the list of disabled methods,
+   which prevents any changes to the VM config.
+   There is a way to enable this method, but it can only be done through
+   vSphere MOB, but I personally find it really confusing and not user
+   friendly. And I had no clue how to automate this process. So, I gave up
+   on this.
+   Then I thought there should be a way to change NSX appliances config
+   through NSX RestAPI. And actually there is.
+   Here is how you can change the memory reservation of NSX edges using
+   curl.  Update the values in bold before using.
+   1. Grab the NSX edge config and save it in XML file
+   curl -k -u 'username:password' -H "Content-Type: application/xml" -X
+   GET https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex  > XXX.xml
+   2. Update the memory reservation in xml file.
+   <memoryReservation>
+   <limit>-1</limit>
+   <reservation>YYY</reservation>
+   </memoryReservation>
+   3. Update the edge config
+   curl -k -u 'username:password' -H "Content-Type:application/xml"
+   PUT https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex -d "@XXX.xml"
+   As you can see you can change some settings of the Edge, but you cannot
+   do the same with controllers. At least I couldn't find anything similar
+   for controllers in NSX RestAPI guide.
+   Also, it is not easy to automate.
+   Here is an example of how you can use PowerCLI to automate RestAPI
+   calls
+   And here what you can get from the output
+   [Screen%2BShot%2B2017-08-27%2Bat%2B2.24.21%2Bpm.png]
+   From here you can update anything you need and change the config using
+   similar PowerCLI function.
+   As you can see it is more time consuming way of doing things. and
+   again, this is not applicable for NSX controllers.
+   So I thought I should go back to the original idea of enabling
+   ReconfigVM_task method and started searching for instructions when I
+   found out (once again) that William Lam has already done this. In this
+   post he explains how you can disable vMotion for some of the VMs by
+   disabling MigrateVM_task method. But the most amazing part of that post
+   was that he created PowerCLI functions to enable/disable any methods
+   without using vSphere MOB.
+   From here it was really easy to create the following script which
+   changes the memory reservation on any VMs - whether they are deployed
+   by NSX or not.
+   The script grabs all VMs with 100% of memory reservations and changes
+   this value to 99%.  You can change this value to whatever you prefer.
+   If ReconfigureVM method is disabled the script will re-enable it first.
+   After the memory reservation is updated the script will change the
+   ReconfigVM method back to disabled.
+   All you need to do is to update the vCenter name and credentials before
+   you run the script.
+   Here is the example of the script output
+   [Screen%2BShot%2B2017-08-26%2Bat%2B10.57.56%2Bpm.png]
+   A word of caution - this is not officially supported way of changing
+   the settings of NSX appliances.  It works but it's at your own risk.
+   Posted by vmnomad at 17:26
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: NSX, PowerCLI
+
+No comments:
+
+Post a Comment
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ►  2018 (1)
+          + ►  April (1)
+
+     * ▼  2017 (6)
+          + ►  November (1)
+          + ▼  August (1)
+               o Updating configuration of NSX Controllers and Edge...
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Tuesday, 17 April 2018
+
+Why Starwind Cloud VTL or getting backup data to cloud object storage in 30
+minutes
+
+   So many cloud storage providers offer object-based storage nowadays.
+   Unfortunately, backup software vendors are not fast enough with
+   updating their products to allow companies to consume new storage tiers
+   to existing backup infrastructure.
+   With few Whys I am going to explain how StarWind VTL brings value to
+   the companies by providing access to a new cost-effective cloud
+   storage.
+   Why backup?
+   Alright, alright, I am kidding here. No doubts you know the purpose of
+   data backup. Just wanted to remind you that people make mistakes,
+   computer hardware fails, and natural disasters occur. So, it is better
+   be safe than sorry.
+   Why tapes?
+   Historically tapes have been very attractive backup media due to tape
+   drive's reliability and low cost. 10-20 years ago, the performance of
+   tape libraries and the amount of backup data still allowed to meet the
+   backup window. Even today tape backup may still be a viable choice for
+   SMB companies.
+   Also, tapes are perfect for long-term data archiving. On the contrary,
+   archiving data on disks is not practical. Who would want to store data,
+   let's say for 7 years, on disks paying for power, cooling and space?
+   Scalability was another benefit you get with backup tapes. It is much
+   easier to buy additional tapes to get extra disk space compared to
+   disks where you would have to buy new disk enclosures, reconfigure
+   storage arrays.
+   Finally, tapes are mobile. Moving tapes offsite is a common practice to
+   allow data restore in case of disaster recovery.
+   It ought to be mentioned that very often tapes do compete with disk,
+   but rather complement each other. For instance, the
+   Disk-to-Disk-to-Tape approach is still a quite common backup
+   technique.
+   Why Virtual Tape Library?
+   According to Wikipedia, 'VTL is a data storage virtualization
+   technology', or in other words is an abstraction layer which lets you
+   quickly change the underlying backup media. It still logically presents
+   the familiar tape libraries and tapes thus minimising the knowledge
+   curve that usually comes with new technologies. This allows
+   administrators to keep using familiar backup software and policies.
+   The important improvements VTL brings are performance and
+   mobility. Even with explosive data growth, VTL manages to fit the
+   backup job into a reasonable time-frame by accelerating it, so the
+   process does not overlap with the production time window.While it is
+   relatively easy to scale out physical tape drives to improve the backup
+   time, they are not very efficient when you need to recover data very
+   quickly. This is where VTL performance shines the most as its data
+   access time is very low compared to physical tapes.
+   VTL brings backup data mobility and security to a new level. Moving
+   data offsite over network minimizes the risk of sensitive data theft
+   because the access to data can be easily controlled and audited.
+   The geographical location of the offsite storage becomes less
+   important. Virtual Tapes can be copied to offsite datacenter or even to
+   the cloud as long as there is sufficient bandwidth.
+   Why Object based storage?
+   While VTL is a great concept for storing 'warm' backup data there is a
+   fundamental issue with its scalability. This is mostly due to the VTL
+   power and space footprints and high cost.
+   The object storage on the contrary allows higher consolidation ratio,
+   better deduplication ratio due to a single deduplication domain, very
+   efficient scalability. Also, if you look at the object storage specs
+   you may notice that in a way they resemble physical tapes - no random
+   writes, very large I/Os.
+   Yes, object storage is not great for latency-sensitive applications,
+   but that is not required for backup data.
+   All this make object storage a perfect storage tier for long-retention
+   archival. Even in terms of TCO object storage is getting very close to
+   physical tapes.
+   Why Starwind VTL?
+   The answer is very obvious. The StartWind VTL is a universal gateway to
+   the cloud and on-prem object-based storage.
+   The StarWind VTL solution could use AWS S3 Storage since 2017. In the
+   latest release StarWind has added few other cloud storage providers.
+   So, the full list looks the following:
+   ·      AWS S3 and Glacier
+   ·      Backblaze S2 Cloud Storage
+   ·      Microsoft Azure Cloud Storage
+   So, essentially it is a software that provides that abstraction layer
+   between your backup product and cloud storage providers, thus,
+   achieving an effortless integration with the object storage without the
+   need for installing several third-party software components.
+   StarWind VTL improves the classic 3-2-1 approach with a new 4-3-2-1-0
+   concept
+   Traditional approach dictates to have 3 copies of data on 2 different
+   media while storing 1 copy off-site
+   The screenshot from the StarWind Cloud VTL presentations depicts the
+   new concept. It suggests using 4 copies on 3 different media with 2
+   copies stored offsite, achieved in 1click operation and with 0 issues.
+
+                                 [fig1.png]
+                    The diagram is a courtesy of StarWind
+
+   Proactive support introduced in the latest build of the StarWind VTL is
+   an icing on the cake. Here is the Proactive Support high level
+   workflow:
+   ·      telemetry collected & analysed with AI
+   ·      failure pattern detected and logged
+   ·      support prevents an issue from happening
+   According to StarWind presentation at Storage Field Day 15 "90% of
+   issues are resolved with ProActive support before they actually happen"
+   Hardware and System requirements for StarWind VTL are pretty
+   low.  Intel Xeon E5620, 4 GB of RAM and 1 GbE NIC is the minimum that
+   lets you use the product. If you plan to install Veeam B&R on the same
+   server, you will need to beef up the server specifications. The largest
+   question would be the amount of disk space that will meet the
+   requirements of the retention policy - how long the virtual tapes will
+   be stored locally before offloading them to the cloud storage.
+   Let’s have a quick look at the components of the StarWind Cloud VTL
+   solution:
+   VTL Server:  the software responsible for emulating physical tape
+   library
+   Veeam Backup and Recovery: one of the best backup product I know
+   Tape Library drivers: allow communication between backup server and VTL
+   Backblaze storage bucket*: cloud object-based storage
+   * bucket is an object storage term, it is used to logically group
+   objects.
+   Now let's have look at Clout VTL topologies.
+   There are few ways to deploy this solution. The first diagram depicts
+   the setup you would probably use in a Proof of Concept project. This
+   solution does not consume a lot of resources and at the same time
+   allows to test all the features of powerful combination of Veeam B&R
+   and StarWind VTL.
+   It is not recommended to use this setup for production environment
+
+                                 [fig2.png]
+                      Figure 1 - Single Server Topology
+
+   The second topology is not a reference architecture, but rather my
+   attempt to show that components of the solution can be spread across
+   multiple servers. This flexibility enables administrator to scale
+   out/scale up the solution to meet the backup performance requirements.
+
+                                 [fig3.png]
+                       Figure 2 - Distributed Topology
+
+   On the diagram above the Tape Library server is where all the 'magic'
+   happens. The StarWind software emulates HP MSL tape library and drives.
+   This virtual tape library is then presented to Veeam B&R Server as an
+   iSCSI target.
+   The virtual tapes can then be stored on any local or shared storage.
+   Once the backup job is complete the virtual tapes can be replicated to
+   Backblaze cloud storage (or another cloud storage provider). After
+   successful replication the tape can either be deleted or stored locally
+   to provide a faster recovery if needed.
+   The installation document thoroughly covers all the steps and it took
+   me less than 30 minutes to install all components and get first virtual
+   tape replicated to Backblaze.
+   To summarise, StartWind VTL provides the following benefits:
+     * Disk to Disk to Cloud backup technique while ensuring the
+       compliance with 3-2-1 backup rule
+     * Access to multiple cloud object-based storage providers
+     * Allows to get rid of the physical tapes
+
+   I personally believe StarWind VTL will be in a high demand until backup
+   software vendors enhance their applications to integrate with all cloud
+   and on-prem object-based storage. This process could be accelerated by
+   the development of a single unified API standard for object-based
+   storage, but I am not sure if it is happening soon.
+   Posted by vmnomad at 21:12 6 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: Object Based Storage, StarWind, Veeam, VTL
+
+Monday, 6 November 2017
+
+Validating NSX VTEP connectivity
+
+   This post was inspired by recent incident at the customer environment
+   where VMs were experiencing networking issues due to MTU size
+   misconfiguration on the TOR switches.
+   If you ever worked with NSX-V and Logical Switches you are aware that
+   NSX configures VTEP vmnics with MTU equal to 1600 bytes. This allows to
+   support VxLAN encapsulation.
+   However, between every two VTEP interfaces is an L2 or L3 networking
+   device that is potentially not configured to support baby Jumbo frames
+   (that's another name for 1600 bytes packets).
+   There are many posts explaining how to check MTU size and network
+   connectivity between VTEP interfaces. It is a simple ping using esxcli:
+   esxcli network diag ping --netstack=vxlan --host vmknic_IP --df
+   --size=1572
+   Now, imagine you have a small transport zones with 10 hosts and each
+   host has 2 VTEP interfaces.
+   You will need to run the esxcli command 360 times to validate all
+   combinations of VTEP pairs.
+   With 64 hosts the number of required ping tests reaches 16,128.  Well,
+   that's obviously something that requires automation.
+   Hopefully, the future versions of NSX will have this validation step as
+   part of NSX Health Check.
+   Meanwhile, we can take advantage of Powershell to make our VTEP
+   validation test a bit easier.
+   I didn't spend much time writing the script and had only my home lab
+   for a test, so it definitely may have some bugs.
+   Here is the logic of the script:
+     * Connects to NSX/vCenter and validates that connection was
+       established successfully
+     * Builds array of Transport Zones and Hosts
+     * Builds array of Hosts and their VTEPs
+     * Iterate through each TZ-Host-VTEP and ping all other VTEPs in the
+       transport zone. This is a full-mesh test.
+     * The script uses pings with 2 different sizes – 64 and 1572 bytes.
+       The first allows to check for connectivity issues and the larger
+       packet validates that MTU size is configured correctly along the
+       path between two VTEPs.
+     * The results are displayed on the screen in real-time
+     * Two reports are produced for each transport zone:
+
+     * Summary - a table with Source Host, Destination Host and the test
+       result
+     * Detailed - a table that contains Hosts, VTEP names and IP
+       Addresses, test result for different packet sizes and the error
+       message, if any.
+
+   Script has been tested with vSphere 6.5 U1 and NSX 6.3.x
+   Update (9/11/2017) - the script was updated to work with ESXi 6.0 and
+   6.5 versions.
+   The following screenshot provides and example of successful tests:
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.12.23%2Bam.png]
+   This is an example of error messages when using packet size 1573
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.28.48%2Bam.png]
+   As you can see the script can detect different types of issues.
+   here is a couple of reports' screenshots
+   Summary Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.36.15%2Bpm.png]
+   Detailed Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.35.48%2Bpm.png]
+   Here is the script code
+   Feel free to provide feedback on any bugs you may encounter using this
+   script.
+   Posted by vmnomad at 21:06 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: MTU, NSX, PowerCLI, Powershell, VTEP
+
+Sunday, 27 August 2017
+
+Updating configuration of NSX Controllers and Edge appliances
+
+   If you have been playing with NSX you may have noticed that you cannot
+   edit settings of virtual appliances deployed by NSX, e.g. controllers
+   or Edge appliances. That's how VMware want to ensure the best
+   performance of NSX in your environment.  However, there might be cases
+   when you still need to adjust some NSX appliances' settings.
+   In my case I needed to be able to change Memory Reservation settings.
+   The thing is that all NSX appliances are deployed with 100% of memory
+   reservation. My home lab grew up to almost 200Gb of RAM, but I still
+   struggle with lack of memory especially when I run few nested
+   deployments, each with its own NSX.
+   I am a big fan on PowerCLI so I tried to use
+   Set-VMResourceConfiguration command let, but that attempt wasn't
+   successful.
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.47.12%2Bam.png]
+   as you can see in the screenshot this method is disabled.
+   You can check all the methods disabled for VMs using this command
+   (get-vm VMname).ExtensionData.disabledmethod
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.49.15%2Bam.png]
+   As you can see the ReconfigVM_Task is in the list of disabled methods,
+   which prevents any changes to the VM config.
+   There is a way to enable this method, but it can only be done through
+   vSphere MOB, but I personally find it really confusing and not user
+   friendly. And I had no clue how to automate this process. So, I gave up
+   on this.
+   Then I thought there should be a way to change NSX appliances config
+   through NSX RestAPI. And actually there is.
+   Here is how you can change the memory reservation of NSX edges using
+   curl.  Update the values in bold before using.
+   1. Grab the NSX edge config and save it in XML file
+   curl -k -u 'username:password' -H "Content-Type: application/xml" -X
+   GET https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex  > XXX.xml
+   2. Update the memory reservation in xml file.
+   <memoryReservation>
+   <limit>-1</limit>
+   <reservation>YYY</reservation>
+   </memoryReservation>
+   3. Update the edge config
+   curl -k -u 'username:password' -H "Content-Type:application/xml"
+   PUT https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex -d "@XXX.xml"
+   As you can see you can change some settings of the Edge, but you cannot
+   do the same with controllers. At least I couldn't find anything similar
+   for controllers in NSX RestAPI guide.
+   Also, it is not easy to automate.
+   Here is an example of how you can use PowerCLI to automate RestAPI
+   calls
+   And here what you can get from the output
+   [Screen%2BShot%2B2017-08-27%2Bat%2B2.24.21%2Bpm.png]
+   From here you can update anything you need and change the config using
+   similar PowerCLI function.
+   As you can see it is more time consuming way of doing things. and
+   again, this is not applicable for NSX controllers.
+   So I thought I should go back to the original idea of enabling
+   ReconfigVM_task method and started searching for instructions when I
+   found out (once again) that William Lam has already done this. In this
+   post he explains how you can disable vMotion for some of the VMs by
+   disabling MigrateVM_task method. But the most amazing part of that post
+   was that he created PowerCLI functions to enable/disable any methods
+   without using vSphere MOB.
+   From here it was really easy to create the following script which
+   changes the memory reservation on any VMs - whether they are deployed
+   by NSX or not.
+   The script grabs all VMs with 100% of memory reservations and changes
+   this value to 99%.  You can change this value to whatever you prefer.
+   If ReconfigureVM method is disabled the script will re-enable it first.
+   After the memory reservation is updated the script will change the
+   ReconfigVM method back to disabled.
+   All you need to do is to update the vCenter name and credentials before
+   you run the script.
+   Here is the example of the script output
+   [Screen%2BShot%2B2017-08-26%2Bat%2B10.57.56%2Bpm.png]
+   A word of caution - this is not officially supported way of changing
+   the settings of NSX appliances.  It works but it's at your own risk.
+   Posted by vmnomad at 17:26 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: NSX, PowerCLI
+
+Monday, 8 May 2017
+
+Testing new vSphere 6.5 feature - DRS CPU overcommitment
+
+   I am currently working on a project where one of the customer's
+   requirements is to use strict pCPU to vCPU ratio. Luckily, VMware
+   introduced new feature called CPU over-commitment ratio in vSphere 6.5
+   which helps to meet the requirement. I spent an evening playing with
+   this new feature and would like to share my experience.
+   The VMware documentation is quite laconic when it discusses new DRS
+   features. So, after reading the documentation I still had few questions
+   on how CPU over-commitments works:
+    1. Does it count vCPUs against Physical or Logical Processors?
+    2. What is DRS behaviour when the ratio is violated?
+    3. Is over-commitment ratio applied per host or per cluster?
+    4. Will HA respect this ratio when restarting VMs after the host
+       failure?
+    5. Is ratio changed when host is placed into maintenance mode?
+
+   So, let's try to answer all these questions using my lab.
+   1. Does it count vCPUs against Physical or Logical Processors?
+   Usually I run most of my tests in the nested labs using nested ESXi
+   servers, but to answer this question I had to use one of my physical
+   clusters which supports hyperthreading and thus provides physical and
+   logical processors.
+   The cluster consists of 2 x SuperMicro Servers and each of the servers
+   runs on Xeon D-1528 CPU with 6 physical cores. So, in total I have 12
+   physical / 24 logical processors in the cluster.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.03.51%2BPM.png]
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.04.03%2BPM.png]
+   Currently I am running 4 VMs with 11 vCPUs assigned in total. DRS is
+   enabled and CPU overcommitment is configured to 100%. I am planning to
+   power on a another VM with 2 vCPUs.
+   If DRS counts over-commitment ratio using physical CPUs it should give
+   me some kind of warning.
+   Here is the result of my attempt to power-on another VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.06.55%2BPM.png]
+   As you can see it actually answers the second question too.
+   We can tell now that DRS definitely counts only physical CPUs.
+   Interestingly, in this case DRS behaves as HA Admission Control
+   prohibiting VM power-on operation as it will violate CPU
+   over-commitment ratio.
+   3. Is over-commitment ratio applied per host or per cluster?
+   To answer this question I used my nested lab. Here are quick specs of
+   the test cluster:
+     * 3 x ESXi servers
+     * 2 x CPU per server
+     * 3 x virtual machines configured with 2 vCPUs each
+     * CPU over-commitment is set to 100%
+
+   So, I am running 6 vCPU in total on 6 CPUs in DRS cluster. Attempt to
+   power on one more VM in this cluster will definitely fail as it will
+   violate cluster level ratio.
+   Now, I vMotioned VM-2 to ESXi-1 which brought the pCPU to vCPU
+   over-commitment ratio on that host to 200%. As you can see this vMotion
+   didn't fail and no warning were generated.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.40.52%2BPM.png]
+   DRS generate recommendations every 15 minutes and soon this cluster was
+   balanced again, but that's part of DRS functionality that existed in
+   previous versions of vSphere 6.5.
+   So, we can tell that this over-commitment ratio is applied per cluster.
+   4. Will HA respect this ratio when restarting VMs after the host
+   failure?
+   It was the most tickling question for me. Taking into the consideration
+   similarity of CPU over-commitment and HA Admission Control features I
+   was wondering whether over-commitment ratio should be adjusted to take
+   into the consideration host failure.
+   I used the same lab setup you saw above in question 3. I verified that
+   each host has been running one dummy VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.50.08%2BPM.png]
+   Then I restarted vesxi65-3 host and 2 minutes later the VM-3 was
+   successfully restarted on vesxi65-1 server even though the CPU
+   over-commitment ratio was equal to 150%.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.55.29%2BPM.png]
+   This proves that HA restart has higher priority over CPU
+   over-commitment ratio. This totally makes sense to me as VM's
+   availability is more important that potential performance impact.
+   5. Is ratio changed when host is placed into maintenance mode?
+   I reverted my lab back to default settings and tried to place the host
+   into maintenance mode which would result in 4 pCPU to 6 vCPU ratio
+   which would violate configured CPU over-commitment ratio.
+   The tasks didn't fail so I at first I assumed that there would be no
+   problem.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.16.24%2BPM.png]
+   5 minutes later that task was still running so I checked the DRS Faults
+   and immediately found the following.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.15.53%2BPM.png]
+   Clearly, DRS would always respect its own over-commitment rule when
+   trying to generate vMotion recommendations.
+   So, the main takeaways for today are:
+     * Only physical CPUs are used in calculations - no hyper threading
+     * CPU over-commitment works very similar to Admission Control by
+       preventing VMs to power on if it will violate the configured ratio.
+     * During HA failover the CPU overcommitment setting is ignored -
+       makes sense as recovering VMs is more critical than respecting
+       overcommitment ratio
+     * The over-commitment ratio is applied at cluster level
+     * DRS will prevent placing the host into maintenance mode if it
+       breaks its rules.
+
+   Posted by vmnomad at 08:07 4 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+   Older Posts Home
+
+   Subscribe to: Posts (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ▼  2018 (1)
+          + ▼  April (1)
+               o Why Starwind Cloud VTL or getting backup data to c...
+
+     * ►  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Tuesday, 17 April 2018
+
+Why Starwind Cloud VTL or getting backup data to cloud object storage in 30
+minutes
+
+   So many cloud storage providers offer object-based storage nowadays.
+   Unfortunately, backup software vendors are not fast enough with
+   updating their products to allow companies to consume new storage tiers
+   to existing backup infrastructure.
+   With few Whys I am going to explain how StarWind VTL brings value to
+   the companies by providing access to a new cost-effective cloud
+   storage.
+   Why backup?
+   Alright, alright, I am kidding here. No doubts you know the purpose of
+   data backup. Just wanted to remind you that people make mistakes,
+   computer hardware fails, and natural disasters occur. So, it is better
+   be safe than sorry.
+   Why tapes?
+   Historically tapes have been very attractive backup media due to tape
+   drive's reliability and low cost. 10-20 years ago, the performance of
+   tape libraries and the amount of backup data still allowed to meet the
+   backup window. Even today tape backup may still be a viable choice for
+   SMB companies.
+   Also, tapes are perfect for long-term data archiving. On the contrary,
+   archiving data on disks is not practical. Who would want to store data,
+   let's say for 7 years, on disks paying for power, cooling and space?
+   Scalability was another benefit you get with backup tapes. It is much
+   easier to buy additional tapes to get extra disk space compared to
+   disks where you would have to buy new disk enclosures, reconfigure
+   storage arrays.
+   Finally, tapes are mobile. Moving tapes offsite is a common practice to
+   allow data restore in case of disaster recovery.
+   It ought to be mentioned that very often tapes do compete with disk,
+   but rather complement each other. For instance, the
+   Disk-to-Disk-to-Tape approach is still a quite common backup
+   technique.
+   Why Virtual Tape Library?
+   According to Wikipedia, 'VTL is a data storage virtualization
+   technology', or in other words is an abstraction layer which lets you
+   quickly change the underlying backup media. It still logically presents
+   the familiar tape libraries and tapes thus minimising the knowledge
+   curve that usually comes with new technologies. This allows
+   administrators to keep using familiar backup software and policies.
+   The important improvements VTL brings are performance and
+   mobility. Even with explosive data growth, VTL manages to fit the
+   backup job into a reasonable time-frame by accelerating it, so the
+   process does not overlap with the production time window.While it is
+   relatively easy to scale out physical tape drives to improve the backup
+   time, they are not very efficient when you need to recover data very
+   quickly. This is where VTL performance shines the most as its data
+   access time is very low compared to physical tapes.
+   VTL brings backup data mobility and security to a new level. Moving
+   data offsite over network minimizes the risk of sensitive data theft
+   because the access to data can be easily controlled and audited.
+   The geographical location of the offsite storage becomes less
+   important. Virtual Tapes can be copied to offsite datacenter or even to
+   the cloud as long as there is sufficient bandwidth.
+   Why Object based storage?
+   While VTL is a great concept for storing 'warm' backup data there is a
+   fundamental issue with its scalability. This is mostly due to the VTL
+   power and space footprints and high cost.
+   The object storage on the contrary allows higher consolidation ratio,
+   better deduplication ratio due to a single deduplication domain, very
+   efficient scalability. Also, if you look at the object storage specs
+   you may notice that in a way they resemble physical tapes - no random
+   writes, very large I/Os.
+   Yes, object storage is not great for latency-sensitive applications,
+   but that is not required for backup data.
+   All this make object storage a perfect storage tier for long-retention
+   archival. Even in terms of TCO object storage is getting very close to
+   physical tapes.
+   Why Starwind VTL?
+   The answer is very obvious. The StartWind VTL is a universal gateway to
+   the cloud and on-prem object-based storage.
+   The StarWind VTL solution could use AWS S3 Storage since 2017. In the
+   latest release StarWind has added few other cloud storage providers.
+   So, the full list looks the following:
+   ·      AWS S3 and Glacier
+   ·      Backblaze S2 Cloud Storage
+   ·      Microsoft Azure Cloud Storage
+   So, essentially it is a software that provides that abstraction layer
+   between your backup product and cloud storage providers, thus,
+   achieving an effortless integration with the object storage without the
+   need for installing several third-party software components.
+   StarWind VTL improves the classic 3-2-1 approach with a new 4-3-2-1-0
+   concept
+   Traditional approach dictates to have 3 copies of data on 2 different
+   media while storing 1 copy off-site
+   The screenshot from the StarWind Cloud VTL presentations depicts the
+   new concept. It suggests using 4 copies on 3 different media with 2
+   copies stored offsite, achieved in 1click operation and with 0 issues.
+
+                                 [fig1.png]
+                    The diagram is a courtesy of StarWind
+
+   Proactive support introduced in the latest build of the StarWind VTL is
+   an icing on the cake. Here is the Proactive Support high level
+   workflow:
+   ·      telemetry collected & analysed with AI
+   ·      failure pattern detected and logged
+   ·      support prevents an issue from happening
+   According to StarWind presentation at Storage Field Day 15 "90% of
+   issues are resolved with ProActive support before they actually happen"
+   Hardware and System requirements for StarWind VTL are pretty
+   low.  Intel Xeon E5620, 4 GB of RAM and 1 GbE NIC is the minimum that
+   lets you use the product. If you plan to install Veeam B&R on the same
+   server, you will need to beef up the server specifications. The largest
+   question would be the amount of disk space that will meet the
+   requirements of the retention policy - how long the virtual tapes will
+   be stored locally before offloading them to the cloud storage.
+   Let’s have a quick look at the components of the StarWind Cloud VTL
+   solution:
+   VTL Server:  the software responsible for emulating physical tape
+   library
+   Veeam Backup and Recovery: one of the best backup product I know
+   Tape Library drivers: allow communication between backup server and VTL
+   Backblaze storage bucket*: cloud object-based storage
+   * bucket is an object storage term, it is used to logically group
+   objects.
+   Now let's have look at Clout VTL topologies.
+   There are few ways to deploy this solution. The first diagram depicts
+   the setup you would probably use in a Proof of Concept project. This
+   solution does not consume a lot of resources and at the same time
+   allows to test all the features of powerful combination of Veeam B&R
+   and StarWind VTL.
+   It is not recommended to use this setup for production environment
+
+                                 [fig2.png]
+                      Figure 1 - Single Server Topology
+
+   The second topology is not a reference architecture, but rather my
+   attempt to show that components of the solution can be spread across
+   multiple servers. This flexibility enables administrator to scale
+   out/scale up the solution to meet the backup performance requirements.
+
+                                 [fig3.png]
+                       Figure 2 - Distributed Topology
+
+   On the diagram above the Tape Library server is where all the 'magic'
+   happens. The StarWind software emulates HP MSL tape library and drives.
+   This virtual tape library is then presented to Veeam B&R Server as an
+   iSCSI target.
+   The virtual tapes can then be stored on any local or shared storage.
+   Once the backup job is complete the virtual tapes can be replicated to
+   Backblaze cloud storage (or another cloud storage provider). After
+   successful replication the tape can either be deleted or stored locally
+   to provide a faster recovery if needed.
+   The installation document thoroughly covers all the steps and it took
+   me less than 30 minutes to install all components and get first virtual
+   tape replicated to Backblaze.
+   To summarise, StartWind VTL provides the following benefits:
+     * Disk to Disk to Cloud backup technique while ensuring the
+       compliance with 3-2-1 backup rule
+     * Access to multiple cloud object-based storage providers
+     * Allows to get rid of the physical tapes
+
+   I personally believe StarWind VTL will be in a high demand until backup
+   software vendors enhance their applications to integrate with all cloud
+   and on-prem object-based storage. This process could be accelerated by
+   the development of a single unified API standard for object-based
+   storage, but I am not sure if it is happening soon.
+   Posted by vmnomad at 21:12 6 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: Object Based Storage, StarWind, Veeam, VTL
+
+Monday, 6 November 2017
+
+Validating NSX VTEP connectivity
+
+   This post was inspired by recent incident at the customer environment
+   where VMs were experiencing networking issues due to MTU size
+   misconfiguration on the TOR switches.
+   If you ever worked with NSX-V and Logical Switches you are aware that
+   NSX configures VTEP vmnics with MTU equal to 1600 bytes. This allows to
+   support VxLAN encapsulation.
+   However, between every two VTEP interfaces is an L2 or L3 networking
+   device that is potentially not configured to support baby Jumbo frames
+   (that's another name for 1600 bytes packets).
+   There are many posts explaining how to check MTU size and network
+   connectivity between VTEP interfaces. It is a simple ping using esxcli:
+   esxcli network diag ping --netstack=vxlan --host vmknic_IP --df
+   --size=1572
+   Now, imagine you have a small transport zones with 10 hosts and each
+   host has 2 VTEP interfaces.
+   You will need to run the esxcli command 360 times to validate all
+   combinations of VTEP pairs.
+   With 64 hosts the number of required ping tests reaches 16,128.  Well,
+   that's obviously something that requires automation.
+   Hopefully, the future versions of NSX will have this validation step as
+   part of NSX Health Check.
+   Meanwhile, we can take advantage of Powershell to make our VTEP
+   validation test a bit easier.
+   I didn't spend much time writing the script and had only my home lab
+   for a test, so it definitely may have some bugs.
+   Here is the logic of the script:
+     * Connects to NSX/vCenter and validates that connection was
+       established successfully
+     * Builds array of Transport Zones and Hosts
+     * Builds array of Hosts and their VTEPs
+     * Iterate through each TZ-Host-VTEP and ping all other VTEPs in the
+       transport zone. This is a full-mesh test.
+     * The script uses pings with 2 different sizes – 64 and 1572 bytes.
+       The first allows to check for connectivity issues and the larger
+       packet validates that MTU size is configured correctly along the
+       path between two VTEPs.
+     * The results are displayed on the screen in real-time
+     * Two reports are produced for each transport zone:
+
+     * Summary - a table with Source Host, Destination Host and the test
+       result
+     * Detailed - a table that contains Hosts, VTEP names and IP
+       Addresses, test result for different packet sizes and the error
+       message, if any.
+
+   Script has been tested with vSphere 6.5 U1 and NSX 6.3.x
+   Update (9/11/2017) - the script was updated to work with ESXi 6.0 and
+   6.5 versions.
+   The following screenshot provides and example of successful tests:
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.12.23%2Bam.png]
+   This is an example of error messages when using packet size 1573
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.28.48%2Bam.png]
+   As you can see the script can detect different types of issues.
+   here is a couple of reports' screenshots
+   Summary Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.36.15%2Bpm.png]
+   Detailed Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.35.48%2Bpm.png]
+   Here is the script code
+   Feel free to provide feedback on any bugs you may encounter using this
+   script.
+   Posted by vmnomad at 21:06 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: MTU, NSX, PowerCLI, Powershell, VTEP
+
+Sunday, 27 August 2017
+
+Updating configuration of NSX Controllers and Edge appliances
+
+   If you have been playing with NSX you may have noticed that you cannot
+   edit settings of virtual appliances deployed by NSX, e.g. controllers
+   or Edge appliances. That's how VMware want to ensure the best
+   performance of NSX in your environment.  However, there might be cases
+   when you still need to adjust some NSX appliances' settings.
+   In my case I needed to be able to change Memory Reservation settings.
+   The thing is that all NSX appliances are deployed with 100% of memory
+   reservation. My home lab grew up to almost 200Gb of RAM, but I still
+   struggle with lack of memory especially when I run few nested
+   deployments, each with its own NSX.
+   I am a big fan on PowerCLI so I tried to use
+   Set-VMResourceConfiguration command let, but that attempt wasn't
+   successful.
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.47.12%2Bam.png]
+   as you can see in the screenshot this method is disabled.
+   You can check all the methods disabled for VMs using this command
+   (get-vm VMname).ExtensionData.disabledmethod
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.49.15%2Bam.png]
+   As you can see the ReconfigVM_Task is in the list of disabled methods,
+   which prevents any changes to the VM config.
+   There is a way to enable this method, but it can only be done through
+   vSphere MOB, but I personally find it really confusing and not user
+   friendly. And I had no clue how to automate this process. So, I gave up
+   on this.
+   Then I thought there should be a way to change NSX appliances config
+   through NSX RestAPI. And actually there is.
+   Here is how you can change the memory reservation of NSX edges using
+   curl.  Update the values in bold before using.
+   1. Grab the NSX edge config and save it in XML file
+   curl -k -u 'username:password' -H "Content-Type: application/xml" -X
+   GET https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex  > XXX.xml
+   2. Update the memory reservation in xml file.
+   <memoryReservation>
+   <limit>-1</limit>
+   <reservation>YYY</reservation>
+   </memoryReservation>
+   3. Update the edge config
+   curl -k -u 'username:password' -H "Content-Type:application/xml"
+   PUT https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex -d "@XXX.xml"
+   As you can see you can change some settings of the Edge, but you cannot
+   do the same with controllers. At least I couldn't find anything similar
+   for controllers in NSX RestAPI guide.
+   Also, it is not easy to automate.
+   Here is an example of how you can use PowerCLI to automate RestAPI
+   calls
+   And here what you can get from the output
+   [Screen%2BShot%2B2017-08-27%2Bat%2B2.24.21%2Bpm.png]
+   From here you can update anything you need and change the config using
+   similar PowerCLI function.
+   As you can see it is more time consuming way of doing things. and
+   again, this is not applicable for NSX controllers.
+   So I thought I should go back to the original idea of enabling
+   ReconfigVM_task method and started searching for instructions when I
+   found out (once again) that William Lam has already done this. In this
+   post he explains how you can disable vMotion for some of the VMs by
+   disabling MigrateVM_task method. But the most amazing part of that post
+   was that he created PowerCLI functions to enable/disable any methods
+   without using vSphere MOB.
+   From here it was really easy to create the following script which
+   changes the memory reservation on any VMs - whether they are deployed
+   by NSX or not.
+   The script grabs all VMs with 100% of memory reservations and changes
+   this value to 99%.  You can change this value to whatever you prefer.
+   If ReconfigureVM method is disabled the script will re-enable it first.
+   After the memory reservation is updated the script will change the
+   ReconfigVM method back to disabled.
+   All you need to do is to update the vCenter name and credentials before
+   you run the script.
+   Here is the example of the script output
+   [Screen%2BShot%2B2017-08-26%2Bat%2B10.57.56%2Bpm.png]
+   A word of caution - this is not officially supported way of changing
+   the settings of NSX appliances.  It works but it's at your own risk.
+   Posted by vmnomad at 17:26 No comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: NSX, PowerCLI
+
+Monday, 8 May 2017
+
+Testing new vSphere 6.5 feature - DRS CPU overcommitment
+
+   I am currently working on a project where one of the customer's
+   requirements is to use strict pCPU to vCPU ratio. Luckily, VMware
+   introduced new feature called CPU over-commitment ratio in vSphere 6.5
+   which helps to meet the requirement. I spent an evening playing with
+   this new feature and would like to share my experience.
+   The VMware documentation is quite laconic when it discusses new DRS
+   features. So, after reading the documentation I still had few questions
+   on how CPU over-commitments works:
+    1. Does it count vCPUs against Physical or Logical Processors?
+    2. What is DRS behaviour when the ratio is violated?
+    3. Is over-commitment ratio applied per host or per cluster?
+    4. Will HA respect this ratio when restarting VMs after the host
+       failure?
+    5. Is ratio changed when host is placed into maintenance mode?
+
+   So, let's try to answer all these questions using my lab.
+   1. Does it count vCPUs against Physical or Logical Processors?
+   Usually I run most of my tests in the nested labs using nested ESXi
+   servers, but to answer this question I had to use one of my physical
+   clusters which supports hyperthreading and thus provides physical and
+   logical processors.
+   The cluster consists of 2 x SuperMicro Servers and each of the servers
+   runs on Xeon D-1528 CPU with 6 physical cores. So, in total I have 12
+   physical / 24 logical processors in the cluster.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.03.51%2BPM.png]
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.04.03%2BPM.png]
+   Currently I am running 4 VMs with 11 vCPUs assigned in total. DRS is
+   enabled and CPU overcommitment is configured to 100%. I am planning to
+   power on a another VM with 2 vCPUs.
+   If DRS counts over-commitment ratio using physical CPUs it should give
+   me some kind of warning.
+   Here is the result of my attempt to power-on another VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.06.55%2BPM.png]
+   As you can see it actually answers the second question too.
+   We can tell now that DRS definitely counts only physical CPUs.
+   Interestingly, in this case DRS behaves as HA Admission Control
+   prohibiting VM power-on operation as it will violate CPU
+   over-commitment ratio.
+   3. Is over-commitment ratio applied per host or per cluster?
+   To answer this question I used my nested lab. Here are quick specs of
+   the test cluster:
+     * 3 x ESXi servers
+     * 2 x CPU per server
+     * 3 x virtual machines configured with 2 vCPUs each
+     * CPU over-commitment is set to 100%
+
+   So, I am running 6 vCPU in total on 6 CPUs in DRS cluster. Attempt to
+   power on one more VM in this cluster will definitely fail as it will
+   violate cluster level ratio.
+   Now, I vMotioned VM-2 to ESXi-1 which brought the pCPU to vCPU
+   over-commitment ratio on that host to 200%. As you can see this vMotion
+   didn't fail and no warning were generated.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.40.52%2BPM.png]
+   DRS generate recommendations every 15 minutes and soon this cluster was
+   balanced again, but that's part of DRS functionality that existed in
+   previous versions of vSphere 6.5.
+   So, we can tell that this over-commitment ratio is applied per cluster.
+   4. Will HA respect this ratio when restarting VMs after the host
+   failure?
+   It was the most tickling question for me. Taking into the consideration
+   similarity of CPU over-commitment and HA Admission Control features I
+   was wondering whether over-commitment ratio should be adjusted to take
+   into the consideration host failure.
+   I used the same lab setup you saw above in question 3. I verified that
+   each host has been running one dummy VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.50.08%2BPM.png]
+   Then I restarted vesxi65-3 host and 2 minutes later the VM-3 was
+   successfully restarted on vesxi65-1 server even though the CPU
+   over-commitment ratio was equal to 150%.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.55.29%2BPM.png]
+   This proves that HA restart has higher priority over CPU
+   over-commitment ratio. This totally makes sense to me as VM's
+   availability is more important that potential performance impact.
+   5. Is ratio changed when host is placed into maintenance mode?
+   I reverted my lab back to default settings and tried to place the host
+   into maintenance mode which would result in 4 pCPU to 6 vCPU ratio
+   which would violate configured CPU over-commitment ratio.
+   The tasks didn't fail so I at first I assumed that there would be no
+   problem.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.16.24%2BPM.png]
+   5 minutes later that task was still running so I checked the DRS Faults
+   and immediately found the following.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.15.53%2BPM.png]
+   Clearly, DRS would always respect its own over-commitment rule when
+   trying to generate vMotion recommendations.
+   So, the main takeaways for today are:
+     * Only physical CPUs are used in calculations - no hyper threading
+     * CPU over-commitment works very similar to Admission Control by
+       preventing VMs to power on if it will violate the configured ratio.
+     * During HA failover the CPU overcommitment setting is ignored -
+       makes sense as recovering VMs is more critical than respecting
+       overcommitment ratio
+     * The over-commitment ratio is applied at cluster level
+     * DRS will prevent placing the host into maintenance mode if it
+       breaks its rules.
+
+   Posted by vmnomad at 08:07 4 comments: Links to this post
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+   Older Posts Home
+
+   Subscribe to: Posts (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ▼  2018 (1)
+          + ▼  April (1)
+               o Why Starwind Cloud VTL or getting backup data to c...
+
+     * ►  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Tuesday, 17 April 2018
+
+Why Starwind Cloud VTL or getting backup data to cloud object storage in 30
+minutes
+
+   So many cloud storage providers offer object-based storage nowadays.
+   Unfortunately, backup software vendors are not fast enough with
+   updating their products to allow companies to consume new storage tiers
+   to existing backup infrastructure.
+   With few Whys I am going to explain how StarWind VTL brings value to
+   the companies by providing access to a new cost-effective cloud
+   storage.
+   Why backup?
+   Alright, alright, I am kidding here. No doubts you know the purpose of
+   data backup. Just wanted to remind you that people make mistakes,
+   computer hardware fails, and natural disasters occur. So, it is better
+   be safe than sorry.
+   Why tapes?
+   Historically tapes have been very attractive backup media due to tape
+   drive's reliability and low cost. 10-20 years ago, the performance of
+   tape libraries and the amount of backup data still allowed to meet the
+   backup window. Even today tape backup may still be a viable choice for
+   SMB companies.
+   Also, tapes are perfect for long-term data archiving. On the contrary,
+   archiving data on disks is not practical. Who would want to store data,
+   let's say for 7 years, on disks paying for power, cooling and space?
+   Scalability was another benefit you get with backup tapes. It is much
+   easier to buy additional tapes to get extra disk space compared to
+   disks where you would have to buy new disk enclosures, reconfigure
+   storage arrays.
+   Finally, tapes are mobile. Moving tapes offsite is a common practice to
+   allow data restore in case of disaster recovery.
+   It ought to be mentioned that very often tapes do compete with disk,
+   but rather complement each other. For instance, the
+   Disk-to-Disk-to-Tape approach is still a quite common backup
+   technique.
+   Why Virtual Tape Library?
+   According to Wikipedia, 'VTL is a data storage virtualization
+   technology', or in other words is an abstraction layer which lets you
+   quickly change the underlying backup media. It still logically presents
+   the familiar tape libraries and tapes thus minimising the knowledge
+   curve that usually comes with new technologies. This allows
+   administrators to keep using familiar backup software and policies.
+   The important improvements VTL brings are performance and
+   mobility. Even with explosive data growth, VTL manages to fit the
+   backup job into a reasonable time-frame by accelerating it, so the
+   process does not overlap with the production time window.While it is
+   relatively easy to scale out physical tape drives to improve the backup
+   time, they are not very efficient when you need to recover data very
+   quickly. This is where VTL performance shines the most as its data
+   access time is very low compared to physical tapes.
+   VTL brings backup data mobility and security to a new level. Moving
+   data offsite over network minimizes the risk of sensitive data theft
+   because the access to data can be easily controlled and audited.
+   The geographical location of the offsite storage becomes less
+   important. Virtual Tapes can be copied to offsite datacenter or even to
+   the cloud as long as there is sufficient bandwidth.
+   Why Object based storage?
+   While VTL is a great concept for storing 'warm' backup data there is a
+   fundamental issue with its scalability. This is mostly due to the VTL
+   power and space footprints and high cost.
+   The object storage on the contrary allows higher consolidation ratio,
+   better deduplication ratio due to a single deduplication domain, very
+   efficient scalability. Also, if you look at the object storage specs
+   you may notice that in a way they resemble physical tapes - no random
+   writes, very large I/Os.
+   Yes, object storage is not great for latency-sensitive applications,
+   but that is not required for backup data.
+   All this make object storage a perfect storage tier for long-retention
+   archival. Even in terms of TCO object storage is getting very close to
+   physical tapes.
+   Why Starwind VTL?
+   The answer is very obvious. The StartWind VTL is a universal gateway to
+   the cloud and on-prem object-based storage.
+   The StarWind VTL solution could use AWS S3 Storage since 2017. In the
+   latest release StarWind has added few other cloud storage providers.
+   So, the full list looks the following:
+   ·      AWS S3 and Glacier
+   ·      Backblaze S2 Cloud Storage
+   ·      Microsoft Azure Cloud Storage
+   So, essentially it is a software that provides that abstraction layer
+   between your backup product and cloud storage providers, thus,
+   achieving an effortless integration with the object storage without the
+   need for installing several third-party software components.
+   StarWind VTL improves the classic 3-2-1 approach with a new 4-3-2-1-0
+   concept
+   Traditional approach dictates to have 3 copies of data on 2 different
+   media while storing 1 copy off-site
+   The screenshot from the StarWind Cloud VTL presentations depicts the
+   new concept. It suggests using 4 copies on 3 different media with 2
+   copies stored offsite, achieved in 1click operation and with 0 issues.
+
+                                 [fig1.png]
+                    The diagram is a courtesy of StarWind
+
+   Proactive support introduced in the latest build of the StarWind VTL is
+   an icing on the cake. Here is the Proactive Support high level
+   workflow:
+   ·      telemetry collected & analysed with AI
+   ·      failure pattern detected and logged
+   ·      support prevents an issue from happening
+   According to StarWind presentation at Storage Field Day 15 "90% of
+   issues are resolved with ProActive support before they actually happen"
+   Hardware and System requirements for StarWind VTL are pretty
+   low.  Intel Xeon E5620, 4 GB of RAM and 1 GbE NIC is the minimum that
+   lets you use the product. If you plan to install Veeam B&R on the same
+   server, you will need to beef up the server specifications. The largest
+   question would be the amount of disk space that will meet the
+   requirements of the retention policy - how long the virtual tapes will
+   be stored locally before offloading them to the cloud storage.
+   Let’s have a quick look at the components of the StarWind Cloud VTL
+   solution:
+   VTL Server:  the software responsible for emulating physical tape
+   library
+   Veeam Backup and Recovery: one of the best backup product I know
+   Tape Library drivers: allow communication between backup server and VTL
+   Backblaze storage bucket*: cloud object-based storage
+   * bucket is an object storage term, it is used to logically group
+   objects.
+   Now let's have look at Clout VTL topologies.
+   There are few ways to deploy this solution. The first diagram depicts
+   the setup you would probably use in a Proof of Concept project. This
+   solution does not consume a lot of resources and at the same time
+   allows to test all the features of powerful combination of Veeam B&R
+   and StarWind VTL.
+   It is not recommended to use this setup for production environment
+
+                                 [fig2.png]
+                      Figure 1 - Single Server Topology
+
+   The second topology is not a reference architecture, but rather my
+   attempt to show that components of the solution can be spread across
+   multiple servers. This flexibility enables administrator to scale
+   out/scale up the solution to meet the backup performance requirements.
+
+                                 [fig3.png]
+                       Figure 2 - Distributed Topology
+
+   On the diagram above the Tape Library server is where all the 'magic'
+   happens. The StarWind software emulates HP MSL tape library and drives.
+   This virtual tape library is then presented to Veeam B&R Server as an
+   iSCSI target.
+   The virtual tapes can then be stored on any local or shared storage.
+   Once the backup job is complete the virtual tapes can be replicated to
+   Backblaze cloud storage (or another cloud storage provider). After
+   successful replication the tape can either be deleted or stored locally
+   to provide a faster recovery if needed.
+   The installation document thoroughly covers all the steps and it took
+   me less than 30 minutes to install all components and get first virtual
+   tape replicated to Backblaze.
+   To summarise, StartWind VTL provides the following benefits:
+     * Disk to Disk to Cloud backup technique while ensuring the
+       compliance with 3-2-1 backup rule
+     * Access to multiple cloud object-based storage providers
+     * Allows to get rid of the physical tapes
+
+   I personally believe StarWind VTL will be in a high demand until backup
+   software vendors enhance their applications to integrate with all cloud
+   and on-prem object-based storage. This process could be accelerated by
+   the development of a single unified API standard for object-based
+   storage, but I am not sure if it is happening soon.
+   Posted by vmnomad at 21:12
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: Object Based Storage, StarWind, Veeam, VTL
+
+6 comments:
+
+    1. Cloud Disaster Recovery Services28 September 2018 at 01:39
+       It was a nice comparison between public and private cloud. In cloud
+       computing it is important to have good cloud disaster recovery
+       services. Thanks
+       ReplyDelete
+       Replies
+            Reply
+    2. resma k4 December 2018 at 23:26
+       Thanks for sharing this post. Your post is really very helpful its
+       students. google cloud online training
+       ReplyDelete
+       Replies
+            Reply
+    3. resma k4 December 2018 at 23:26
+       Thanks for sharing this post. Your post is really very helpful its
+       students. google cloud online training
+       ReplyDelete
+       Replies
+            Reply
+    4. Diziling seo24 March 2019 at 04:55
+       Positive site, where did u come up with the information on this
+       posting? I'm pleased I discovered it though, ill be checking back
+       soon to find out what additional posts you include. odzyskiwanie
+       danych Warszawa
+       ReplyDelete
+       Replies
+            Reply
+    5. Helish Lawera6 May 2019 at 14:34
+       Most of the blogs pretend themselves as most usable and updated
+       blogs with new information but sometime truth might different. I
+       want to share some facts related to this subject which will help
+       people to enhance their skills.
+       เช่าห้องเก็บของ
+       ReplyDelete
+       Replies
+            Reply
+    6. Susan Little12 June 2019 at 21:58
+       Great job here on. I read a lot of blog posts, but I never heard a
+       topic like this. I Love this topic you made about the blogger's
+       bucket list. Very resourceful. Cloud backup
+       ReplyDelete
+       Replies
+            Reply
+
+   Add comment
+   Load more...
+
+   Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ▼  2018 (1)
+          + ▼  April (1)
+               o Why Starwind Cloud VTL or getting backup data to c...
+
+     * ►  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Monday, 6 November 2017
+
+Validating NSX VTEP connectivity
+
+   This post was inspired by recent incident at the customer environment
+   where VMs were experiencing networking issues due to MTU size
+   misconfiguration on the TOR switches.
+   If you ever worked with NSX-V and Logical Switches you are aware that
+   NSX configures VTEP vmnics with MTU equal to 1600 bytes. This allows to
+   support VxLAN encapsulation.
+   However, between every two VTEP interfaces is an L2 or L3 networking
+   device that is potentially not configured to support baby Jumbo frames
+   (that's another name for 1600 bytes packets).
+   There are many posts explaining how to check MTU size and network
+   connectivity between VTEP interfaces. It is a simple ping using esxcli:
+   esxcli network diag ping --netstack=vxlan --host vmknic_IP --df
+   --size=1572
+   Now, imagine you have a small transport zones with 10 hosts and each
+   host has 2 VTEP interfaces.
+   You will need to run the esxcli command 360 times to validate all
+   combinations of VTEP pairs.
+   With 64 hosts the number of required ping tests reaches 16,128.  Well,
+   that's obviously something that requires automation.
+   Hopefully, the future versions of NSX will have this validation step as
+   part of NSX Health Check.
+   Meanwhile, we can take advantage of Powershell to make our VTEP
+   validation test a bit easier.
+   I didn't spend much time writing the script and had only my home lab
+   for a test, so it definitely may have some bugs.
+   Here is the logic of the script:
+     * Connects to NSX/vCenter and validates that connection was
+       established successfully
+     * Builds array of Transport Zones and Hosts
+     * Builds array of Hosts and their VTEPs
+     * Iterate through each TZ-Host-VTEP and ping all other VTEPs in the
+       transport zone. This is a full-mesh test.
+     * The script uses pings with 2 different sizes – 64 and 1572 bytes.
+       The first allows to check for connectivity issues and the larger
+       packet validates that MTU size is configured correctly along the
+       path between two VTEPs.
+     * The results are displayed on the screen in real-time
+     * Two reports are produced for each transport zone:
+
+     * Summary - a table with Source Host, Destination Host and the test
+       result
+     * Detailed - a table that contains Hosts, VTEP names and IP
+       Addresses, test result for different packet sizes and the error
+       message, if any.
+
+   Script has been tested with vSphere 6.5 U1 and NSX 6.3.x
+   Update (9/11/2017) - the script was updated to work with ESXi 6.0 and
+   6.5 versions.
+   The following screenshot provides and example of successful tests:
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.12.23%2Bam.png]
+   This is an example of error messages when using packet size 1573
+   [Screen%2BShot%2B2017-11-04%2Bat%2B12.28.48%2Bam.png]
+   As you can see the script can detect different types of issues.
+   here is a couple of reports' screenshots
+   Summary Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.36.15%2Bpm.png]
+   Detailed Report
+   [Screen%2BShot%2B2017-11-06%2Bat%2B8.35.48%2Bpm.png]
+   Here is the script code
+   Feel free to provide feedback on any bugs you may encounter using this
+   script.
+   Posted by vmnomad at 21:06
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: MTU, NSX, PowerCLI, Powershell, VTEP
+
+No comments:
+
+Post a Comment
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ►  2018 (1)
+          + ►  April (1)
+
+     * ▼  2017 (6)
+          + ▼  November (1)
+               o Validating NSX VTEP connectivity
+          + ►  August (1)
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Sunday, 27 August 2017
+
+Updating configuration of NSX Controllers and Edge appliances
+
+   If you have been playing with NSX you may have noticed that you cannot
+   edit settings of virtual appliances deployed by NSX, e.g. controllers
+   or Edge appliances. That's how VMware want to ensure the best
+   performance of NSX in your environment.  However, there might be cases
+   when you still need to adjust some NSX appliances' settings.
+   In my case I needed to be able to change Memory Reservation settings.
+   The thing is that all NSX appliances are deployed with 100% of memory
+   reservation. My home lab grew up to almost 200Gb of RAM, but I still
+   struggle with lack of memory especially when I run few nested
+   deployments, each with its own NSX.
+   I am a big fan on PowerCLI so I tried to use
+   Set-VMResourceConfiguration command let, but that attempt wasn't
+   successful.
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.47.12%2Bam.png]
+   as you can see in the screenshot this method is disabled.
+   You can check all the methods disabled for VMs using this command
+   (get-vm VMname).ExtensionData.disabledmethod
+   [Screen%2BShot%2B2017-08-27%2Bat%2B11.49.15%2Bam.png]
+   As you can see the ReconfigVM_Task is in the list of disabled methods,
+   which prevents any changes to the VM config.
+   There is a way to enable this method, but it can only be done through
+   vSphere MOB, but I personally find it really confusing and not user
+   friendly. And I had no clue how to automate this process. So, I gave up
+   on this.
+   Then I thought there should be a way to change NSX appliances config
+   through NSX RestAPI. And actually there is.
+   Here is how you can change the memory reservation of NSX edges using
+   curl.  Update the values in bold before using.
+   1. Grab the NSX edge config and save it in XML file
+   curl -k -u 'username:password' -H "Content-Type: application/xml" -X
+   GET https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex  > XXX.xml
+   2. Update the memory reservation in xml file.
+   <memoryReservation>
+   <limit>-1</limit>
+   <reservation>YYY</reservation>
+   </memoryReservation>
+   3. Update the edge config
+   curl -k -u 'username:password' -H "Content-Type:application/xml"
+   PUT https://nsxFQDN:443/api/4.0/edges/Edge-ID/appliances/highAvailabili
+   tyIndex -d "@XXX.xml"
+   As you can see you can change some settings of the Edge, but you cannot
+   do the same with controllers. At least I couldn't find anything similar
+   for controllers in NSX RestAPI guide.
+   Also, it is not easy to automate.
+   Here is an example of how you can use PowerCLI to automate RestAPI
+   calls
+   And here what you can get from the output
+   [Screen%2BShot%2B2017-08-27%2Bat%2B2.24.21%2Bpm.png]
+   From here you can update anything you need and change the config using
+   similar PowerCLI function.
+   As you can see it is more time consuming way of doing things. and
+   again, this is not applicable for NSX controllers.
+   So I thought I should go back to the original idea of enabling
+   ReconfigVM_task method and started searching for instructions when I
+   found out (once again) that William Lam has already done this. In this
+   post he explains how you can disable vMotion for some of the VMs by
+   disabling MigrateVM_task method. But the most amazing part of that post
+   was that he created PowerCLI functions to enable/disable any methods
+   without using vSphere MOB.
+   From here it was really easy to create the following script which
+   changes the memory reservation on any VMs - whether they are deployed
+   by NSX or not.
+   The script grabs all VMs with 100% of memory reservations and changes
+   this value to 99%.  You can change this value to whatever you prefer.
+   If ReconfigureVM method is disabled the script will re-enable it first.
+   After the memory reservation is updated the script will change the
+   ReconfigVM method back to disabled.
+   All you need to do is to update the vCenter name and credentials before
+   you run the script.
+   Here is the example of the script output
+   [Screen%2BShot%2B2017-08-26%2Bat%2B10.57.56%2Bpm.png]
+   A word of caution - this is not officially supported way of changing
+   the settings of NSX appliances.  It works but it's at your own risk.
+   Posted by vmnomad at 17:26
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Labels: NSX, PowerCLI
+
+No comments:
+
+Post a Comment
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ►  2018 (1)
+          + ►  April (1)
+
+     * ▼  2017 (6)
+          + ►  November (1)
+          + ▼  August (1)
+               o Updating configuration of NSX Controllers and Edge...
+          + ►  May (2)
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.
+   #Virtual Nomad - Atom Virtual Nomad - RSS Virtual Nomad - Atom
+
+   Virtual Nomad
+
+   Heading to VCAP-DCD
+
+Monday, 8 May 2017
+
+Testing new vSphere 6.5 feature - DRS CPU overcommitment
+
+   I am currently working on a project where one of the customer's
+   requirements is to use strict pCPU to vCPU ratio. Luckily, VMware
+   introduced new feature called CPU over-commitment ratio in vSphere 6.5
+   which helps to meet the requirement. I spent an evening playing with
+   this new feature and would like to share my experience.
+   The VMware documentation is quite laconic when it discusses new DRS
+   features. So, after reading the documentation I still had few questions
+   on how CPU over-commitments works:
+    1. Does it count vCPUs against Physical or Logical Processors?
+    2. What is DRS behaviour when the ratio is violated?
+    3. Is over-commitment ratio applied per host or per cluster?
+    4. Will HA respect this ratio when restarting VMs after the host
+       failure?
+    5. Is ratio changed when host is placed into maintenance mode?
+
+   So, let's try to answer all these questions using my lab.
+   1. Does it count vCPUs against Physical or Logical Processors?
+   Usually I run most of my tests in the nested labs using nested ESXi
+   servers, but to answer this question I had to use one of my physical
+   clusters which supports hyperthreading and thus provides physical and
+   logical processors.
+   The cluster consists of 2 x SuperMicro Servers and each of the servers
+   runs on Xeon D-1528 CPU with 6 physical cores. So, in total I have 12
+   physical / 24 logical processors in the cluster.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.03.51%2BPM.png]
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.04.03%2BPM.png]
+   Currently I am running 4 VMs with 11 vCPUs assigned in total. DRS is
+   enabled and CPU overcommitment is configured to 100%. I am planning to
+   power on a another VM with 2 vCPUs.
+   If DRS counts over-commitment ratio using physical CPUs it should give
+   me some kind of warning.
+   Here is the result of my attempt to power-on another VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B11.06.55%2BPM.png]
+   As you can see it actually answers the second question too.
+   We can tell now that DRS definitely counts only physical CPUs.
+   Interestingly, in this case DRS behaves as HA Admission Control
+   prohibiting VM power-on operation as it will violate CPU
+   over-commitment ratio.
+   3. Is over-commitment ratio applied per host or per cluster?
+   To answer this question I used my nested lab. Here are quick specs of
+   the test cluster:
+     * 3 x ESXi servers
+     * 2 x CPU per server
+     * 3 x virtual machines configured with 2 vCPUs each
+     * CPU over-commitment is set to 100%
+
+   So, I am running 6 vCPU in total on 6 CPUs in DRS cluster. Attempt to
+   power on one more VM in this cluster will definitely fail as it will
+   violate cluster level ratio.
+   Now, I vMotioned VM-2 to ESXi-1 which brought the pCPU to vCPU
+   over-commitment ratio on that host to 200%. As you can see this vMotion
+   didn't fail and no warning were generated.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.40.52%2BPM.png]
+   DRS generate recommendations every 15 minutes and soon this cluster was
+   balanced again, but that's part of DRS functionality that existed in
+   previous versions of vSphere 6.5.
+   So, we can tell that this over-commitment ratio is applied per cluster.
+   4. Will HA respect this ratio when restarting VMs after the host
+   failure?
+   It was the most tickling question for me. Taking into the consideration
+   similarity of CPU over-commitment and HA Admission Control features I
+   was wondering whether over-commitment ratio should be adjusted to take
+   into the consideration host failure.
+   I used the same lab setup you saw above in question 3. I verified that
+   each host has been running one dummy VM.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.50.08%2BPM.png]
+   Then I restarted vesxi65-3 host and 2 minutes later the VM-3 was
+   successfully restarted on vesxi65-1 server even though the CPU
+   over-commitment ratio was equal to 150%.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.55.29%2BPM.png]
+   This proves that HA restart has higher priority over CPU
+   over-commitment ratio. This totally makes sense to me as VM's
+   availability is more important that potential performance impact.
+   5. Is ratio changed when host is placed into maintenance mode?
+   I reverted my lab back to default settings and tried to place the host
+   into maintenance mode which would result in 4 pCPU to 6 vCPU ratio
+   which would violate configured CPU over-commitment ratio.
+   The tasks didn't fail so I at first I assumed that there would be no
+   problem.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.16.24%2BPM.png]
+   5 minutes later that task was still running so I checked the DRS Faults
+   and immediately found the following.
+   [Screen%2BShot%2B2017-05-06%2Bat%2B10.15.53%2BPM.png]
+   Clearly, DRS would always respect its own over-commitment rule when
+   trying to generate vMotion recommendations.
+   So, the main takeaways for today are:
+     * Only physical CPUs are used in calculations - no hyper threading
+     * CPU over-commitment works very similar to Admission Control by
+       preventing VMs to power on if it will violate the configured ratio.
+     * During HA failover the CPU overcommitment setting is ignored -
+       makes sense as recovering VMs is more critical than respecting
+       overcommitment ratio
+     * The over-commitment ratio is applied at cluster level
+     * DRS will prevent placing the host into maintenance mode if it
+       breaks its rules.
+
+   Posted by vmnomad at 08:07
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+4 comments:
+
+    1. Unknown21 March 2018 at 02:30
+       Really useful to know thanks
+       ReplyDelete
+       Replies
+            Reply
+    2. Anonymous6 June 2018 at 11:09
+       Thanks for the awesome write up ! Very useful..
+       ReplyDelete
+       Replies
+            Reply
+    3. Pankaj Singh22 August 2018 at 16:05
+       I think this is one of the important blog for me. I need this
+       information must, thank you so much for sharing this. Visit for
+       Best Offshore VPS
+       ReplyDelete
+       Replies
+            Reply
+    4. Anonymous30 January 2019 at 07:25
+       Thanks a lot for sharing your findings.
+       A couple of things however:
+       1) 100% over-commitment supposedly means exceeding the cluster
+       capacity by 100%. In other words, trying to commit twice as much
+       resources as actually available.
+       2) It doesn't look like you tested the hyper-threading aspect as
+       the screenshot of your physical cluster shows 12 Logical
+       Processors, i.e. the same as physical CPU cores in the cluster.
+       Can you please shed more light on the points above ? Am I missing
+       anything here ?
+       ReplyDelete
+       Replies
+            Reply
+
+   Add comment
+   Load more...
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Follow by Email
+
+   ____________________ Submit
+
+Blog Archive
+
+     * ►  2018 (1)
+          + ►  April (1)
+
+     * ▼  2017 (6)
+          + ►  November (1)
+          + ►  August (1)
+          + ▼  May (2)
+               o Testing new vSphere 6.5 feature - DRS CPU overcomm...
+               o Creating replica seeds for vSphere Replication
+          + ►  March (1)
+          + ►  January (1)
+
+     * ►  2016 (25)
+          + ►  October (1)
+          + ►  September (2)
+          + ►  July (3)
+          + ►  June (1)
+          + ►  May (2)
+          + ►  April (15)
+          + ►  February (1)
+
+     * ►  2015 (9)
+          + ►  October (1)
+          + ►  September (4)
+          + ►  August (3)
+          + ►  January (1)
+
+     * ►  2014 (3)
+          + ►  September (1)
+          + ►  August (2)
+
+     * ►  2013 (1)
+          + ►  April (1)
+
+     * ►  2012 (18)
+          + ►  November (1)
+          + ►  September (6)
+          + ►  August (5)
+          + ►  June (1)
+          + ►  April (1)
+          + ►  February (4)
+
+     * ►  2011 (24)
+          + ►  November (2)
+          + ►  October (2)
+          + ►  September (3)
+          + ►  August (2)
+          + ►  July (8)
+          + ►  June (3)
+          + ►  May (4)
+
+If you want to read my blog in Russian
+
+     * Хабрацентр им. vmnomad
+
+Contributors
+
+     * Virtual Nomad
+     * vmnomad
+
+   Simple theme. Powered by Blogger.

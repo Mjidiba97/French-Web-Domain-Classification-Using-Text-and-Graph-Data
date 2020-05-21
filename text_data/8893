@@ -1,0 +1,525 @@
+
+
+    #alternate alternate
+
+   [tr?id=134751643920094&ev=PageView&noscript=1]
+
+   Skip to main content
+
+   (BUTTON) Toggle navigation
+
+   Xpenology
+     * Guide To Xpenology
+     * Synology
+     * Resources
+          + Recommended Hardware
+          + Video Tutorials
+          + XPEnoboot
+          + Downloads
+     * Blog
+     * Contact
+
+   Have Questions? We have a community ready to help!
+   Join Facebook Group!
+
+Xpenology: The Definitive Guide (2019 Update)
+
+
+   Xpenology Overview
+
+   More than likely you’ve been digging around on the internet looking for
+   ways to build your own network-attached storage server and are looking
+   for a solid and flexible OS to use on it. Which then lead you to the
+   big question:
+
+What is Xpenology?
+
+   Xpenology is a bootloader for Synology’s operating system which is
+   called DSM (Disk Station Manager) and is what they use on their NAS
+   devices. DSM is running on a custom Linux version developed by
+   Synology. Its optimized for running on a NAS server with all of the
+   features you often need in a NAS device.
+
+   Xpenology creates the possibility to run the Synology DSM on any x86
+   device like any pc or self-built NAS. So you can benefit from the
+   powerful multimedia- and cloud-features of DSM without buying the
+   hardware NAS from Synology. A lot of people prefer this because they
+   can pick out there own (more powerful) processor and RAM to handle
+   things like transcoding video.
+
+   This will also save money and make you more flexible in the long term.
+
+   It’s also possible to natively install and run apps on DSM using their
+   package manager. Think of the package manager like its own app store
+   where you can download (and manage the update process) of each
+   application. This includes some useful tools and packages like git,
+   other version-control systems, cms like WordPress, LDAP-servers, your
+   own mail server, the popular “Docker” and even a surveillance
+   application where you can control and manage IP cameras in your home or
+   business.
+
+   I think this is an important thing because Synology offers really great
+   support. They’re smart using Linux and would fix strange bugs remote
+   over ssh. You should decide if its worth from you to buy a stock-NAS to
+   benefit from them.
+
+   Especially for end-users which less or none experience in IT/Linux, it
+   would be a better deal for them to buy a Synology NAS, switch it on and
+   have fun without caring about the backend technology.
+
+package manager
+
+Where Can I download Xpenology?
+
+   Downloading Xpenology is pretty easy and once downloaded, you can
+   install in about 15-20 minutes. If you are doing a fresh install of DSM
+   6.1 then carry on with the tutorial and omit references to DSM 5.2. i
+   fyou are upgrading then these are the same instructions to use to get
+   started.
+
+How Do I Install Xpenology?
+
+   There are a few things you need to get this up and running the first
+   thing is, of course, a computer, the next thing you need is a USB
+   stick. I just use an old one I had laying around here and it will do
+   the trick! So if you have that and a little bit of spare time you can
+   get this up and running pretty quickly.
+
+   If you’re doing an upgrade make sure you have a backup of your data
+   before moving forward, you will be glad you did if anything turns
+   south!
+
+   Complete instructions here
+
+   Hardware for Xpenology
+
+What Are The Hardware Requirements?
+
+   First is the hardware I used for my build (check prices below):
+     * Fractal Design Node 304
+     * ASUS H87I-PLUS Motherboard
+     * 2 x WD Red 2TB NAS Hard Drive  & (1) 4TB WD Red NAS Hard Drive
+     * Seasonic 360W 80PLUS Gold
+     * Crucial Ballistix Sport 8GB Kit (2 x 4GB)
+     * Intel I5-4440 Processor
+
+   Now the above hardware is only what I ended up using because it fit my
+   specific needs. When it comes down to it you can install xpenology on
+   almost any PC you might have laying around. A lot of people are also
+   using the HP Microservers like the HP n40l and the newer HP ProLiant
+   N54L, they are a great fit for a basic install with plenty of people in
+   the community sharing the same setup. So if you run into a snag or have
+   questions about your options, chances are there are some people that
+   can help.
+
+   Here is a short list of some hardware which has been confirmed to work
+   with Xpenology and some that we know will not.
+
+   Known Xpenology Compatible Motherboards:
+     * ASRock Q1900DC-ITX (Wake on LAN doesn’t work -> driver problem in
+       Nanoboot, the rest works perfectly)
+     * Gigabyte GA-C1037UN-EUCELERON1007U
+     * IO SI-PEX40064(Marvell 88SE9215) – 4-Port Internal SATA3
+     * ASUS H61M-A
+
+   Motherboards Known to NOT work:
+     * Generic (Jmb363) – 4-Port Internal SATA2 Raid Controller Works with
+       hacked NON-RAID, AHCI or IDE BIOS, Original RAID Mode BIOS don’t
+       work
+
+Xpenology Status
+
+
+Is Xpenology Stable?
+
+   As a person interested using Xpenology you should keep in mind, that
+   this is not an official Synology release. Although it’s based on the
+   official Synology DSM which is the same as whats found on the actual
+   Synology devices, it’s not officially supported by Synology. You could
+   get support from the community for this software, but not from the
+   company itself. Typically once you’re up and running things are very
+   stable without any issues but just know that calling support is not an
+   option when you’re not running on an official Synology device.
+
+How Easy is it to Update Xpenology?
+
+   Updating Xpenology is pretty easy, especially the minor versions.
+   Usually, you’re not missing much between the minor releases but if you
+   want to stay up to date just keep an eye on the Xpenology forums and
+   someone will post the instructions once they have the new version up
+   and running. I typically wait a few months to see if anyone has any
+   bugs they ran into. It’s advised to turn off auto-updates to prevent
+   your machine from trying to update on its own.
+
+   The major Xpenolgy updates usually take a little longer to get up and
+   running but again, if you just wait for the community to post feedback
+   and get all of the bugs worked out, you can update whenever you’re
+   ready. There is no rush and I typically stay on the older working
+   versions until a major release is out.
+
+   IFRAME: https://www.youtube.com/embed/wUQEeA4RPyc?feature=oembed
+
+Conclusion
+
+   If you’re a do-it-yourselfer, then Xpenology would is a great and cheap
+   solution for a home project. If you’re looking for a reliable OS for a
+   business level NAS, I would advise you to purchase a real Synology
+   device. You will not be disappointed and the cost is well worth it.
+   Synology has continued to innovate a lot faster than most companies in
+   this space and they even have several mobile apps that play along
+   nicely with their devices.
+
+Recent Post’s
+
+     * Get Wi-Fi Everywhere in Your Home with Synology’s MR2200ac Mesh
+       Router
+     * 7 Ways You Can Use a NAS
+     * Synology DiskStation – DS1618+ Review
+     * What’s The Best Hard Drive for a Synology NAS?
+     * Synology 2 bay NAS DiskStation DS718+ Review
+
+Categories
+
+     * Synology
+     * How To
+     * Hardware
+     * Review
+
+Popular Posts
+
+   Hardware for Xpenology
+   Installing Xpenology on Your Own Hardware April 14, 2015
+   Xpenology Overview
+   XPEnology Explained May 19, 2015
+   7 Ways You Can Use a NAS August 8, 2018
+   XPEnoboot 5.2-5592 Update 4 Released September 8, 2015
+   Synology DiskStation DS918+ Review July 3, 2018
+
+   sparkling Theme by Colorlib Powered by WordPress
+    #next
+
+   [tr?id=134751643920094&ev=PageView&noscript=1]
+
+   Skip to main content
+
+   (BUTTON) Toggle navigation
+
+   Xpenology
+     * Guide To Xpenology
+     * Synology
+     * Resources
+          + Recommended Hardware
+          + Video Tutorials
+          + XPEnoboot
+          + Downloads
+     * Blog
+     * Contact
+
+Search Results for: {search_term_string}
+
+FB Community
+
+   Read More
+
+Get Wi-Fi Everywhere in Your Home with Synology’s MR2200ac Mesh Router
+
+   October 26, 2018October 26, 2018 admin Leave a comment
+
+   When you think of routers, Synology isn’t the first brand that comes to
+   mind. But that might soon change as the company rolls out their
+   consumer network solutions such as the RT1900ac and RT2600ac. Most
+   recently, Synology has released its first mesh router, the MR2200ac. As
+   connected devices continue to enter our homes, a reliable […]
+
+   Read More
+
+7 Ways You Can Use a NAS
+
+   August 8, 2018August 8, 2018 admin 4 Comments
+
+   Network-attached storage devices, or NAS for short, have been growing
+   in popularity. While they’re primarily designed for storing files on
+   your local network, they can also do so much more. From keeping your
+   files and even your home safe to act as an entertainment hub for your
+   local network, a NAS can be used in […]
+
+   Read More
+
+Synology DiskStation – DS1618+ Review
+
+   July 18, 2018July 18, 2018 admin Leave a comment
+
+   Even with the popularity of cloud storage, there will always be a place
+   for keeping your data local. For creative professionals and growing
+   businesses, these on-site storage solutions need to be able to keep up
+   with their demands. Engineered with performance even in multi-tasking
+   environments in mind, Synology’s answer is the highly-anticipated
+   Synology DiskStation DS1618+ […]
+
+   Read More
+
+What’s The Best Hard Drive for a Synology NAS?
+
+   July 11, 2018July 11, 2018 admin Leave a comment
+
+   Manufacturers didn’t always make hard drives just for NAS devices. A
+   few years ago, regular desktop drives were used for most NAS boxes. In
+   fact, you can probably get away with doing this yourself without any
+   major issue. Still, NAS-optimized drives do serve a purpose. Unlike a
+   desktop computer, a NAS will likely be turned […]
+
+   Read More
+
+Recommended Hardware
+
+   If you’re thinking about building your own Xpenology below is our list
+   of recommended hardware. Recommended Cases I am obsessed with the
+   Fractal Design Node 304 and the 804 If you’re looking for a low-cost
+   case you can try something like the ThermalTake Core V21 Micro ATX Cube
+   Recommended Hard Drives The Western Digital Red NAS hard drives […]
+
+   Read More
+
+   Synology DS718+ side
+
+Synology 2 bay NAS DiskStation DS718+ Review
+
+   July 7, 2018July 7, 2018 admin 1 Comment
+
+   When it comes to Network Attached Storage (NAS), Synology is one of the
+   biggest names around. They offer everything from consumer-friendly
+   hardware to enterprise level solutions. The Synology DS718+ leans
+   toward the former. But make no mistake, the DS718+ may not be made for
+   the server room but it’s not just for basic file storage […]
+
+   Read More
+
+Synology DiskStation DS918+ Review
+
+   July 3, 2018July 3, 2018 admin 2 Comments
+
+   In the NAS (network-attached storage) industry, there are few companies
+   as prominent as Synology. Founded in 2000 with the intended purpose of
+   specializing in this type of technology, the company launched the
+   DS-101 in 2004, its very first complete solution with full software and
+   hardware integration. Since then, this entire field has developed
+   immeasurably and […]
+
+   Read More
+
+Best Synology for Running Plex Media Server
+
+   June 27, 2018July 3, 2018 admin Leave a comment
+
+   It would be very safe to say that a large portion of our lives takes
+   place online these days. The advent of smart devices has made this all
+   the more pronounced. Smartphones, smart TVs, tablets, video game
+   consoles, etc. – all these devices look to the Internet as their
+   lifeblood. Naturally, businesses have caught wind […]
+
+   Read More
+
+Xpenology: The Definitive Guide (2019 Update)
+
+     More than likely you’ve been digging around on the internet looking
+   for ways to build your own network-attached storage server and are
+   looking for a solid and flexible OS to use on it. Which then lead you
+   to the big question: What is Xpenology? Xpenology is a bootloader for
+   Synology’s operating system which is called […]
+
+   Read More
+
+Posts navigation
+
+   1 2 3 Older posts
+
+Recent Post’s
+
+     * Get Wi-Fi Everywhere in Your Home with Synology’s MR2200ac Mesh
+       Router
+     * 7 Ways You Can Use a NAS
+     * Synology DiskStation – DS1618+ Review
+     * What’s The Best Hard Drive for a Synology NAS?
+     * Synology 2 bay NAS DiskStation DS718+ Review
+
+Categories
+
+     * Synology
+     * How To
+     * Hardware
+     * Review
+
+Popular Posts
+
+   Hardware for Xpenology
+   Installing Xpenology on Your Own Hardware April 14, 2015
+   Xpenology Overview
+   XPEnology Explained May 19, 2015
+   7 Ways You Can Use a NAS August 8, 2018
+   XPEnoboot 5.2-5592 Update 4 Released September 8, 2015
+   Synology DiskStation DS918+ Review July 3, 2018
+
+   sparkling Theme by Colorlib Powered by WordPress
+    #prev next
+
+   [tr?id=134751643920094&ev=PageView&noscript=1]
+
+   Skip to main content
+
+   (BUTTON) Toggle navigation
+
+   Xpenology
+     * Guide To Xpenology
+     * Synology
+     * Resources
+          + Recommended Hardware
+          + Video Tutorials
+          + XPEnoboot
+          + Downloads
+     * Blog
+     * Contact
+
+Search Results for: {search_term_string}
+
+XPEnoboot 5.2-5592 Update 4 Released
+
+   September 8, 2015September 8, 2015 admin 3 Comments
+
+   Version : 5.2-5592 Update 4 has been released. You can update right
+   through the auto installer in DSM (09/07/15) Fixed Issues Restored the
+   mandatory file (/usr/syno/bin/zip) that has been removed due to
+   Antivirus Essential’s false-positive detection. Upgraded Apache HTTP
+   Server to 2.2.31 to address one security vulnerability (CVE-2015-3183).
+   Upgraded PHP to 5.5.28 to address two […]
+
+   Read More
+
+XPEnoboot 5.2-5592 Update 2 Released
+
+   August 7, 2015September 8, 2015 admin Leave a comment
+
+   XPEnoboot 5.2-5592 Update 2 has been released, if you want to upgrade
+   you can follow these instructions.   1) detach the XPEnoboot flash
+   drive from bare metal NAS 2) downloaded
+   “XPEnoboot_DS3615xs_5.2-5592.2.img” then write to the img to the flash
+   drive using “Win32 disk imager” change the serial number to match my
+   previous serial number (I […]
+
+   Read More
+
+   Xpenology Overview
+
+XPEnology Explained
+
+   May 19, 2015July 3, 2018 admin 9 Comments
+
+   Video transcript overview of Xpenology and how to setup your own
+   Xpenology NAS with your own hardware. So you’ve decided you needed to
+   get yourself a NAS and you think you want a Synology NAS. I don’t blame
+   you. It’s got a lot of good features, works pretty well, pretty highly
+   reviewed. But if you’re […]
+
+   Read More
+
+Download
+
+   Please refer to this guide for up to date instructions. Here is a list
+   of all of the downloads: (use at your own risk, we are not responsible
+   for any of these files and make no guarantee in regards to the content)
+
+   Read More
+
+   Hardware for Xpenology
+
+Installing Xpenology on Your Own Hardware
+
+   April 14, 2015February 8, 2018 admin 15 Comments
+
+   This question certainly comes up often, many of posts on various forums
+   asking: “What hardware can I install Xpenology on?” or “What hardware
+   is Xpenology compatible with?” Hopefully, this post will answer all of
+   those questions for you! Things to think about when building a NAS with
+   Xpenology First, you will want to think about […]
+
+   Read More
+
+Contact
+
+   Read More
+
+   package manager
+
+Adding New Package Sources to your Xpenology NAS
+
+   March 24, 2015October 3, 2015 admin 1 Comment
+
+     As you have probably already discovered, you can install packages on
+   your DSM through the Package Manager. Packages are like apps and using
+   the package manager, you can download, install, update your packages.
+   So whether you plan on using your NAS for hosting your own mail
+   server, backing up all of the computers within your […]
+
+   Read More
+
+XPEnoboot
+
+   Nanoboot has been upgraded to XPEnoboot XPEnoboot has been published by
+   a fantastic team of publishers (@Vortex, @Sancome, @Kali, @Jman,
+   @Poechi), who worked very hard for over two weeks to get everything
+   working correctly. What is XPEnoboot? XPEnoboot is very similar to
+   Nanoboot but has some new drivers and a few problems that were present
+   in nanobot, have […]
+
+   Read More
+
+Updating Minor Versions
+
+   Requirements: Nanoboot or Gnoboot (Be on latest major DSM version)
+   Xpenology Minor Update – Video Guide   Xpenology Minor Update – Text
+   Guide Login to Synology DSM Go to “Control Panel” Go to “Update &
+   Restore” Press “Download” Once the download is complete DO NOT “UPDATE”
+   Using PuTTY connect to the IP of your DSM, […]
+
+   Read More
+
+Video Tutorials
+
+   XPEnology – DSM 6.1 (Bare Metal) tutorial Introduction – Synology DSM
+   on Non Synology Hardware – Interactive Guide   Installing ESXi –
+   Synology DSM on Non Synology Hardware – Interactive Guide   ESXI
+   Configuration – Synology DSM on Non Synology Hardware – Interactive
+   Guide   **video tutorials provided by Cyan Labs
+
+   Read More
+
+Posts navigation
+
+   Newer posts 1 2 3 Older posts
+
+Recent Post’s
+
+     * Get Wi-Fi Everywhere in Your Home with Synology’s MR2200ac Mesh
+       Router
+     * 7 Ways You Can Use a NAS
+     * Synology DiskStation – DS1618+ Review
+     * What’s The Best Hard Drive for a Synology NAS?
+     * Synology 2 bay NAS DiskStation DS718+ Review
+
+Categories
+
+     * Synology
+     * How To
+     * Hardware
+     * Review
+
+Popular Posts
+
+   Hardware for Xpenology
+   Installing Xpenology on Your Own Hardware April 14, 2015
+   Xpenology Overview
+   XPEnology Explained May 19, 2015
+   7 Ways You Can Use a NAS August 8, 2018
+   XPEnoboot 5.2-5592 Update 4 Released September 8, 2015
+   Synology DiskStation DS918+ Review July 3, 2018
+
+   sparkling Theme by Colorlib Powered by WordPress

@@ -1,0 +1,1578 @@
+   Centre Informatique National de l'Enseignement Supérieur
+
+FACILE - Service de validation de formats
+
+   Vérifier l'éligibilité de vos documents à un archivage sur la
+   plateforme PAC du CINES.
+     * Validation
+     * Correction PDF
+     * Tutoriels
+     * Web Service
+     * Archivage de la TEI
+
+   Choisissez des fichiers - Taille max 2,5 Go                     
+   (BUTTON) Valider (BUTTON) Annuler
+   Cliquez ici pour demander l'aide d'un expert du CINES
+
+Liste des formats validables
+
+   Attention : le validateur de formats permet de valider certains formats
+   qui ne sont pas pris en charge par la plateforme d'archivage du CINES.
+   Format Nom PRONOM PIUD Type MIME Commentaire Archivable dans PAC
+   AAC AAC Advanced Audio Codings [fmt/199] Format Mpeg-4 contenant
+   uniquement un flux audio au format AAC.
+   AIFF PCM Audio Interchange File Format [fmt/414] [audio/x-aif,
+   audio/x-aiff] Format audio contenant uniquement un flux PCM.
+   APNG Animated Portable Network Graphics [fmt/935]
+   [image/vnd.mozilla.apng, image/apng] L'APNG est une extension du format
+   PNG permettant de réaliser des animations graphiques.
+   DAE UTF-8 1.4.1 Collada [application/xml] Format permettant de stocker
+   des données géométriques sous forme de scènes (plusieurs objets
+   combinés dans le même référentiel), et d'y ajouter des informations
+   supplémentaires pour décrire la scène et les objets (matériaux,
+   environement lumineux, animations, ...) ou pour ajouter des notions
+   sémantiques (relations entre les objets, découpage d'un objet en
+   plusieurs éléments fonctionnels, etc...).
+   FLAC FLAC 1.2.1 Free Lossless Audio Codec [fmt/279] [audio/ogg,
+   audio/x-flac] Format audio compressé sans perte.
+   GIF 87a Graphics Interchange Format [fmt/3] [image/gif] Format image
+   pouvant contenir également des animations.
+   GIF 89a Graphics Interchange Format [fmt/4] [image/gif] Format image
+   pouvant contenir également des animations.
+   GeoTIFF Geographic Tagged Image File Format [fmt/155] [image/tiff]
+   Format dérivé du TIFF contenant des informations de géoréférencement et
+   de géolocalisation.
+   HDF5 1.0 Hierarchical Data Format [fmt/286] Format de données à
+   caractère scientifique.
+   HDF5 2.0 Hierarchical Data Format [fmt/287] Format de données à
+   caractère scientifique.
+   JPEG Joint Photographic Experts Group [fmt/41] [image/jpeg] Format de
+   représentation compressée d'une image fixe.
+   JPEG2000 JPEG 2000 [fmt/151, x-fmt/392] Extension du format JPEG.
+   JPEG 1.00 Joint Photographic Experts Group [fmt/42] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   JPEG 1.01 Joint Photographic Experts Group [fmt/43] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   JPEG 1.02 Joint Photographic Experts Group [fmt/44] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   MKV AVC/FLAC Matroska [fmt/569] [video/x-matroska, audio/x-matroska]
+   Conteneur Matroska contenant un flux video h.264 (appelé également avc)
+   et un flux audio au format flac uniquement.
+   MPEG-4 AAC Moving Picture Experts Group [fmt/199] [audio/mp4] Conteneur
+   au format MPEG-4 contenant un flux audio au format AAC.
+   MPEG-4 AVC Moving Picture Experts Group [fmt/199] [video/mp4] Conteneur
+   au format MPEG-4 contenant un flux video h.264 (appelé également AVC)
+   sans aucun autre flux.
+   MPEG-4 AVC/AAC Moving Picture Experts Group [fmt/199] [video/mp4]
+   Conteneur au format MPEG-4 contenant un flux video h.264 (appelé
+   également AVC) et un flux audio au format AAC uniquement.
+   MPEG-4 AVC/AAC LC Moving Picture Experts Group [fmt/199] [video/mp4]
+   Conteneur au format MPEG-4 contenant un flux video h.264 (appelé
+   également AVC) et un flux audio au format AAC Low Complexity.
+   ODS 1.0 OpenDocument Spreadsheet [fmt/137]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODS 1.1 OpenDocument Spreadsheet [fmt/294]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODS 1.2 OpenDocument Spreadsheet [fmt/295]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODT 1.0 Open Document Texte [fmt/136] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   ODT 1.1 Open Document Texte [fmt/290] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   ODT 1.2 Open Document Texte [fmt/291] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   OGG Theora/Vorbis Format OGG [fmt/203] [video/ogg, audio/ogg,
+   application/ogg] Format conteneur ogg contenant un flux video au format
+   Theora et un flux audio au format Vorbis.
+   OGG Vorbis Format OGG [fmt/203] [audio/ogg, application/ogg] Format
+   conteneur ogg contenant un flux audio au format Vorbis.
+   PDFA 1a Portable Document Format [fmt/95] [application/pdf] Basé sur
+   PDF 1.4 mais plus restrictive : pas de dépendances externes, polices
+   embarquées, pas de transparence, métadonnées XMP obligatoires. C'est le
+   format d'archivage à privilégier bien que difficile à générer.
+   PDF 1.4 Portable Document Format [fmt/354] [application/pdf] Basé sur
+   PDF 1.4 - moins exigeant que 1a, structure logique du document non
+   obligatoire. Bon format d'archivage si PDFA-1a trop compliqué à
+   générer.
+   PDFA 2a Portable Document Format [fmt/476] [application/pdf] Basé sur
+   PDF 1.7 - fichier PDF/A embarquable, structure logique obligatoire.
+   PDFA 2u Portable Document Format [fmt/478] [application/pdf] PDF adapté
+   à l'accessibilité.
+   PDFA 2b Portable Document Format [fmt/477] [application/pdf] Basé sur
+   PDF 1.7, identique à PDF/A-2b sans structure logique obligatoire.
+   PDF 1.4 Portable Document Format [fmt/479] [application/pdf] Basé sur
+   PDF 1.7 - fichier de n'importe quel format embarquable, structure
+   logique obligatoire. Format axé sur l'accessibilité
+   PDF 1.0 Portable Document Format [fmt/14] [application/pdf] Format de
+   document portable.
+   PDF 1.1 Portable Document Format [fmt/15] [application/pdf] Format de
+   document portable 1.1.
+   PDF 1.2 Portable Document Format [fmt/16] [application/pdf] Format de
+   document portable 1.2.
+   PDF 1.3 Portable Document Format [fmt/17] [application/pdf] Format de
+   document portable 1.3.
+   PDF 1.4 Portable Document Format [fmt/18] [application/pdf] Gestion de
+   la transparence, importation de fichier PDF, possibilité de stocker les
+   métadonnées dans un flux XML.
+   PDF 1.5 Portable Document Format [fmt/19] [application/pdf] Images
+   codables sur 16 bits, transitions possible dans les présentations,
+   contenu facultatif, compression JPEG2000, possibilité d'inclure des
+   fichiers multimédia.
+   PDF 1.6 Portable Document Format [fmt/20] [application/pdf] Cryptage
+   AES, illustration 3D au format U3D, possibilité d'indiquer les vrais
+   mesures des objets.
+   PDF 1.7 Portable Document Format [fmt/276] [application/pdf] Normalisé
+   ISO 32000-1, nouveaux algorithmes pour les signatures numériques,
+   mécanisme d'extension.
+   PLY ASCII 1.0 Polygone File Format [fmt/831] [text/plain] PLY est un
+   format de fichier informatique connu sous le nom de Polygon File Format
+   (« Format de Fichier de Polygones ») ou le Stanford Triangle Format..
+   PNG 1.0 Portable Network Graphics [fmt/11] [image/png] Format ouvert
+   d’images numériques.
+   PNG 1.1 Portable Network Graphics [fmt/12] [image/png] Format ouvert
+   d’images numériques.
+   PNG 1.2 Portable Network Graphics [fmt/13] [image/png] Format ouvert
+   d’images numériques.
+   SIARD Software Independent Archival of Relational Databases [fmt/161]
+   Format d'archivage de bases de données relationnelles basé sur XML.
+   SVG UTF-8 1.0 Scalable Vector Graphics [fmt/91] [image/svg+xml] Format
+   de données de graphiques vectoriels basé sur XML.
+   SVG UTF-8 1.1 Scalable Vector Graphics [fmt/92] [image/svg+xml] Format
+   de données de graphiques vectoriels basé sur XML.
+   SVG UTF-8 1.2 Scalable Vector Graphics Tiny [fmt/413] [image/svg+xml]
+   Format de données de graphiques vectoriels basé sur XML.
+   TEI UTF-8 3.0.0 Text Encoding Initiative [] [application/tei+xml] Le
+   format TEI permet la représentation de textes sous forme numérique. Il
+   s'agit d'un ensemble de règles pour encoder des textes dans le but de
+   les traiter informatiquement. Ses domaines d'application principaux
+   sont les sciences sociales et la linguistique. C'est un format dérivé
+   d'XML.
+   TEI UTF-8 3.1.0 Text Encoding Initiative [] [application/tei+xml] Le
+   format TEI permet la représentation de textes sous forme numérique. Il
+   s'agit d'un ensemble de règles pour encoder des textes dans le but de
+   les traiter informatiquement. Ses domaines d'application principaux
+   sont les sciences sociales et la linguistique. C'est un format dérivé
+   d'XML.
+   TIFF Tagged Interchange File Format [fmt/353, fmt/154, fmt/153,
+   fmt/156, x-fmt/388] [image/tiff] Format de fichier image.
+   TIFF 4.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TIFF 5.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TIFF 6.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TXT UTF-8 UCS transformation format 8 bits [x-fmt/111, x-fmt/18,
+   fmt/367] [text/plain] Format texte avec encodage UTF-8. Le format CSV
+   (Comma Separated Values) est assimilé à ce format.
+   WAV WAVEform audio file format [fmt/141, fmt/6] [audio/x-wav] Format
+   audio contenant uniquement un flux PCM.
+   XDMF eXtensible Data Model and Format [] Format d'échange de données
+   scientifiques issues des calculs à haute performance (HPC).
+   XML UTF-8 1.0 eXtented Mark-up Language [fmt/101, x-fmt/227] [text/xml]
+   Langage de balisage extensible. Il est possible de valider le format
+   HTML s'il est conforme aux normes XML (ex XHTML).
+   XSD XML Schema definition [x-fmt/280] [text/xml] XML Schema est un
+   langage de description de format de document XML permettant de définir
+   la structure et le type de contenu d'un document XML.
+
+Correction avec PDFtk
+
+   Vous pouvez essayer de corriger votre fichier PDF à l'aide de l'outil
+   PDFtk. Cliquez sur le bouton ci-dessous, choisissez votre fichier et
+   cliquez sur « Corriger ».
+   Choisissez un fichier - Taille max 2,5 Go                      (BUTTON)
+   Corriger (BUTTON) Annuler
+
+   PDFtk version 2.02
+
+Conversion en PDF/A à l'aide de Ghostscript
+
+   Ghostscript
+
+   Vous pouvez essayer une conversion vers le format PDF/A 1-b avec
+   Ghostscript. Cette conversion effectuera notamment les opérations
+   suivantes :
+     * suppression des zones transparentes
+     * remplacement des polices de caractère non universellement
+       utilisables.
+
+   Il est très important que vous vérifiiez votre document dans son
+   intégralité après la conversion.
+   Choisissez un fichier - Taille max 2,5 Go                      (BUTTON)
+   Convertir (BUTTON) Annuler
+
+   Ghostscript version 9.07
+
+Accès à PDFSTAR de Mines-Paritech
+
+   Mines-Paristech propose également une correction basée sur PDFtk et
+   Ghostscript. Accéder à l'outil.
+
+Aide à la validation de documents PDF
+
+   Votre document PDF n'est pas valide ? Vous pouvez essayer les quelques
+   solutions suivantes pour le rendre valide.
+
+   Vous disposez du logiciel Adobe Acrobat
+
+   Vous avez utilisé Word et Acrobat
+
+   Vous avez utilisé Latex
+
+Tutoriels de l'ABES
+
+   L'ABES propose de nombreux tutoriels pour produire des fichiers
+   conformes dans différents formats. Accéder aux tutoriels
+
+Correction d'un PDF à l'aide d'Acrobat Pro XI
+
+   Adobe Acrobat permet de créer des fichiers PDF mais également de
+   vérifier leur conformité et éventuellement de corriger des documents
+   PDF non conformes.
+   Pour l'archivage au CINES, nous recommandons d'utiliser la norme
+   PDF/A-1 en version a ou b. L'adoption d'un de ces formats garantit la
+   validité du fichier sur la plateforme du CINES.
+    1. Après avoir ouvert le fichier, cliquer sur « Outils »
+       [acrobatOutils.png.jsf;jsessionid=ADF869B896248CED6785856CA006C19F?
+       ln=img] Interface d'Adobe Acrobat
+    2. Sélectionner « contrôle en amont »
+       [acrobatPreflight.png.jsf;jsessionid=ADF869B896248CED6785856CA006C1
+       9F?ln=img] Contrôle en amont
+    3. Sélectionner la version de la norme que vous souhaitez vérifier, le
+       CINES recommande PDF/A-1 (a ou b). Puis cliquer sur « Analyser »
+       [acrobatCompliance.png.jsf;jsessionid=ADF869B896248CED6785856CA006C
+       19F?ln=img] Vérification de la conformité Si l'analyse indique que
+       le document est conforme, vous pouvez tenter à nouveau de le
+       valider sur FACILE.
+    4. Si le document n'est pas valide, sélectionner l'onglet « Normes »,
+       puis choisir « Enregistrer au format PDF/A »
+       [acrobatStandards.png.jsf;jsessionid=ADF869B896248CED6785856CA006C1
+       9F?ln=img] Normes PDF
+    5. Choisir la version du PDF/A souhaitée
+       [acrobatVersionChoice.png.jsf;jsessionid=ADF869B896248CED6785856CA0
+       06C19F?ln=img] Choix de la version
+    6. Terminer en enregistrant le document
+       [acrobatSave.png.jsf;jsessionid=ADF869B896248CED6785856CA006C19F?ln
+       =img] Terminer en enregistrant le document
+
+Création d'un fichier PDF valide avec L^aT[e]X
+
+   La production d'un document PDF valide avec L^aT[e]X nécessite une
+   compilation classique, c'est à dire reprenant les différentes étapes de
+   la transformation d'un fichier tex vers un fichier PDF.
+   Ces étapes sont les suivantes :
+              latex                dvips               ps2pdf
+document.tex ------> document.dvi ------> document.ps ------> document.pdf
+
+   Il est possible d'utiliser pdflatex pour simplifier la création d'un
+   fichier PDF. Afin d'éviter des erreurs de validation, il est conseillé
+   d'ajouter la directive
+   \pdfobjcompresslevel 0
+   en introduction du fichier L^aT[e]X, avant la déclaration
+   \documentclass.
+
+Création d'un fichier PDF/A valide
+
+   Si vous disposez de Microsoft Word et d'Adobe Acrobat Pro, il est
+   possible de configurer ce dernier pour qu'il produise des fichiers
+   conformes à la norme PDF/A-1.
+
+   Pour l'archivage au CINES, nous recommandons d'utiliser la norme
+   PDF/A-1 en version a ou b. L'adoption d'un de ces formats garantit la
+   validité du fichier sur la plateforme du CINES.
+   Les étapes sont décrites ci-dessous :
+    1. Sélectionner l'onglet Acrobat
+       [wordOngletAcrobat.png.jsf;jsessionid=ADF869B896248CED6785856CA006C
+       19F?ln=img] Sélectionner l'onglet « Acrobat »
+    2. Puis cliquer sur le bouton « préférences » pour définir les
+       paramètres du PDF à générer.
+       [wordAcrobatPreferences.png.jsf;jsessionid=ADF869B896248CED6785856C
+       A006C19F?ln=img]
+
+Utilisation du Web Service de Facile
+
+   Facile expose un Web Service REST qui peut être interrogé
+   programmatiquement. Cette section propose deux façons d'accéder au
+   service de validation de formats du CINES.
+
+Réponse de Facile
+
+   Facile renvoie une réponse au format XML qui se présente de la forme
+   suivante:
+‹?xml version="1.0" encoding="UTF-8"?›
+‹validator xmlns="http://facile.cines.fr" xmlns:xsi="http://www.w3.org/2001/XMLS
+chema-instance" xsi:schemaLocation="http://facile.cines.fr http://facile.cines.f
+r/facile.xsd"›
+‹fileName›M601415401_MS2GB12_0008.tif‹/fileName›
+‹valid›true‹/valid›
+‹wellformed›true‹/wellformed›
+‹archivable›true‹/archivable›
+‹md5sum›true‹/md5sum›
+‹sha256sum›true‹/sha256sum›
+‹size›66954566‹/size›
+‹format›TIFF‹/format›
+‹version›6.0‹/version›
+‹encoding›NA‹/encoding›
+‹message›null‹/message›
+‹/validator›
+
+   Le résultat le plus important pour l'archivage sur la plateforme PAC se
+   situe dans la balise <valid>. Elle doît être positionnée à « true »
+   pour que le document soit archivable.
+
+   Les checksum servent à vérifier que l'intégrité du fichier a été
+   conservé durant le transfert. Le client du Web Service doît s'assurer
+   que les checksum avant le transfert sont les mêmes que ceux calculés
+   par FACILE.
+
+Appel du Web Service avec curl
+
+   curl est un programme permettant de réaliser une requête HTTP. Son
+   utilisation est simple:
+   curl --form file=@mon_fichier.fff https://facile.cines.fr/xml
+
+   Il faut remplacer mon_fichier.fff par le chemin vers le fichier à
+   valider. Cette commande devrait renvoyer une chaîne XML telle que
+   présentée ci-dessus.
+
+Appel du Web Service en Java
+
+   L'exemple ci-dessous s'appuie sur la librairie Apache HttpClient
+package fr.cines.client;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+/**
+ * Client Facile
+ */
+public class ClientFacile {
+    public static void main( String[] args ) throws ClientProtocolException, IOE
+xception {
+
+      HttpClient httpClient = new DefaultHttpClient();
+
+      // La requête vers le Web Service est obligatoirement POST
+      HttpPost httpPost = new HttpPost("http://facile.cines.fr/xml"); // L'adres
+se du Web Service Facile
+      File file = new File("/chemin_vers_fichier/fichier.fff");
+
+      // L'envoie d'un fichier par une requête POST nécessite un type d'encodage
+ Multipart/Form-data
+      MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+      builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+
+      FileBody fileBody = new FileBody(file);
+      builder.addPart("file", fileBody);
+
+
+      httpPost.setEntity(builder.build());
+
+      HttpResponse response = httpClient.execute(httpPost);
+      HttpEntity resEntity = response.getEntity();
+
+      // La chaîne suivante est disponible au format ci-dessus
+      String xml = EntityUtils.toString(resEntity);
+    }
+}
+
+Archivage de la TEI au CINES
+
+Composition d’une archive
+
+   Une archive de documents TEI se compose de :
+     * Un fichier ODD (One Document Does it All), qui est un fichier XML
+       de schéma tei_all.xsd. Ce fichier contient la documentation et
+       permet de générer le schéma suivi par les fichiers livrés dans
+       l’archive. Il est important de le conserver du point de vue de la
+       pérennité.
+     * De fichiers XML conformes également au schéma tei_all.xsd mais plus
+       spécifiquement au schéma spécialisé contenu dans le fichier ODD
+     * d'autres fichiers
+
+Structure du paquet
+
+   On placera le fichier ODD dans le répertoire DESC
+NOM_PAQUET/
+      DEPOT/
+           DESC/
+                   odd.xml
+                   …        // possible de mettre d'autres fichiers ODD ou de m
+étadonnées
+           Corpus_1.xml
+           Corpus_2.xml
+     sip.xml
+
+Le fichier sip.xml
+
+   Les fichiers du corpus TEI doivent être déclarés au format TEI dans le
+   sip.xml ; le fichier ODD qui permet de générer le schéma doit aussi
+   être déclaré dans l'élément structureFichier. Dans ce cas, il faut
+   veiller à ne pas préciser de structureFichier d'une autre nature.
+
+‹FichMeta›
+  ‹formatFichier›TEI‹/formatFichier›
+  ‹nomFichier›corpus.xml‹/nomFichier›
+  ‹encodage›UTF-8‹/encodage›
+  ‹structureFichier›DEPOT/DESC/odd.xml‹/structureFichier›
+‹/FichMeta›
+
+   Le fichier ODD doit être placé dans le répertoire DESC et déclaré en
+   tant fichier XML.
+   Le fichier ODD lui-même doit être déclaré dans le sip.xml. Il faut
+   veiller à ne pas préciser dans ce cas de structure fichier.
+‹FichMeta›
+  ‹formatFichier›XML‹/formatFichier›
+  ‹nomFichier›DESC/odd.xml‹/nomFichier›
+  ‹encodage›UTF-8‹/encodage›
+‹/FichMeta›
+
+Les en-têtes
+
+   La version de la TEI utilisée doit être déclarée, pour chaque en-tête
+   de fichier, dans l'attribut version; l'espace de nom quant à lui doit
+   être déclaré dans l'attribut xmlns.
+   Exemple :
+‹TEI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1.0"
+   xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/Vault/P5
+/3.1.0/xml/tei/custom/schema/xsd/tei_all.xsd"
+   xmlns="http://www.tei-c.org/ns/1.0"›
+
+   Il est indispensable de préciser le schéma dans l'entête du fichier ODD
+‹TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSc
+hema-instance"
+  xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/x
+ml/tei/custom/schema/xsd/tei_all.xsd"›
+
+Versement en tant que XML
+
+   Pour les cas où un fichier ODD n'est pas présent, il reste possible de
+   déclarer dans le SIP les fichiers du corpus au format XML. Dans ce cas
+   ils seront validés contre le schéma précisé dans l'entête
+   schemaLocation
+
+Déclaration des références externes dans les fichiers du corpus
+
+   Il est possible de référencer des fichiers présents dans le paquet à
+   l'intérieur des fichiers du corpus. Ces derniers devront avoir une url
+   relative au paquet et leur présence sera vérifiée.
+   Exemple :
+‹surface xml:id="alfred-1-140803-1-ph" type="recto" n="1r"›
+     ‹graphic url="../../Images/alfred-1-140803-1-ph.jpg"/›
+‹/surface›
+‹surface xml:id="alfred-1-140803-1" type="verso" n="1v"›
+     ‹graphic url="../../Images/alfred-1-140803-1.jpg"/›
+‹/surface›
+
+   L'attribut url de la balise graphic référence un paquet présent dans
+   l'archive.
+
+   Les url peuvent être écrite en chemin relatif comme dans l'exemple ou
+   avec le protocole file précédent le chemin.
+   Exemple :
+‹graphic url="file://../../Images/alfred-1-140803-1.jpg"/›
+
+Processus de validation
+
+   La validation d’une archive TEI consiste en :
+    1. valider le fichier ODD selon le schéma tei_all.xsd
+    2. générer le schéma relax ng spécifique par une transformation XSLT
+       (via Saxon)
+    3. valider les fichiers XML de l’archive selon ce schéma
+    4. Vérifie que les fichiers référencés existent bien
+    5. valider les autres fichiers selon leur format (PDF, JPEG …)
+
+   Le schéma généré ne sera pas archivé puisqu’il pourra être re-généré.
+
+Limitations
+
+   En l’état, il n'est pas possible de valider une archive par
+   l’intermédiaire de Facile, ni même fichier par fichier puisque Facile
+   exige une déclaration de schéma dans l’en-tête.
+
+Versions acceptées
+
+     * 3.1.0
+
+Vérification des références contenues dans les fichiers
+
+   Les fichiers TEI peuvent contenir des références à des objets externes
+   à l’image du HTML. Dans le cadre d’un archivage pérenne au CINES, cette
+   pratique n’est pas recommandée. Cependant le format permet de
+   différencier une ressource externe « sur le Web » et donc non pérenne
+   (et surtout non indispensable à la compréhension de ce qui est
+   archivé), d’une ressource locale sous-entendu livrée dans l’archive.
+   Pour toute question ou problème, envoyez un courriel à l'adresse
+   suivante : svp [at] cines.fr
+   Version du validateur de formats : 3.5.3
+   Jhove 1.1 ImageMagick DROID
+   Centre Informatique National de l'Enseignement Supérieur
+
+FACILE - Service de validation de formats
+
+   Vérifier l'éligibilité de vos documents à un archivage sur la
+   plateforme PAC du CINES.
+     * Validation
+     * Correction PDF
+     * Tutoriels
+     * Web Service
+     * Archivage de la TEI
+
+   Choisissez des fichiers - Taille max 2,5 Go                     
+   (BUTTON) Valider (BUTTON) Annuler
+   Cliquez ici pour demander l'aide d'un expert du CINES
+
+Liste des formats validables
+
+   Attention : le validateur de formats permet de valider certains formats
+   qui ne sont pas pris en charge par la plateforme d'archivage du CINES.
+   Format Nom PRONOM PIUD Type MIME Commentaire Archivable dans PAC
+   AAC AAC Advanced Audio Codings [fmt/199] Format Mpeg-4 contenant
+   uniquement un flux audio au format AAC.
+   AIFF PCM Audio Interchange File Format [fmt/414] [audio/x-aif,
+   audio/x-aiff] Format audio contenant uniquement un flux PCM.
+   APNG Animated Portable Network Graphics [fmt/935]
+   [image/vnd.mozilla.apng, image/apng] L'APNG est une extension du format
+   PNG permettant de réaliser des animations graphiques.
+   DAE UTF-8 1.4.1 Collada [application/xml] Format permettant de stocker
+   des données géométriques sous forme de scènes (plusieurs objets
+   combinés dans le même référentiel), et d'y ajouter des informations
+   supplémentaires pour décrire la scène et les objets (matériaux,
+   environement lumineux, animations, ...) ou pour ajouter des notions
+   sémantiques (relations entre les objets, découpage d'un objet en
+   plusieurs éléments fonctionnels, etc...).
+   FLAC FLAC 1.2.1 Free Lossless Audio Codec [fmt/279] [audio/ogg,
+   audio/x-flac] Format audio compressé sans perte.
+   GIF 87a Graphics Interchange Format [fmt/3] [image/gif] Format image
+   pouvant contenir également des animations.
+   GIF 89a Graphics Interchange Format [fmt/4] [image/gif] Format image
+   pouvant contenir également des animations.
+   GeoTIFF Geographic Tagged Image File Format [fmt/155] [image/tiff]
+   Format dérivé du TIFF contenant des informations de géoréférencement et
+   de géolocalisation.
+   HDF5 1.0 Hierarchical Data Format [fmt/286] Format de données à
+   caractère scientifique.
+   HDF5 2.0 Hierarchical Data Format [fmt/287] Format de données à
+   caractère scientifique.
+   JPEG Joint Photographic Experts Group [fmt/41] [image/jpeg] Format de
+   représentation compressée d'une image fixe.
+   JPEG2000 JPEG 2000 [fmt/151, x-fmt/392] Extension du format JPEG.
+   JPEG 1.00 Joint Photographic Experts Group [fmt/42] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   JPEG 1.01 Joint Photographic Experts Group [fmt/43] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   JPEG 1.02 Joint Photographic Experts Group [fmt/44] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   MKV AVC/FLAC Matroska [fmt/569] [video/x-matroska, audio/x-matroska]
+   Conteneur Matroska contenant un flux video h.264 (appelé également avc)
+   et un flux audio au format flac uniquement.
+   MPEG-4 AAC Moving Picture Experts Group [fmt/199] [audio/mp4] Conteneur
+   au format MPEG-4 contenant un flux audio au format AAC.
+   MPEG-4 AVC Moving Picture Experts Group [fmt/199] [video/mp4] Conteneur
+   au format MPEG-4 contenant un flux video h.264 (appelé également AVC)
+   sans aucun autre flux.
+   MPEG-4 AVC/AAC Moving Picture Experts Group [fmt/199] [video/mp4]
+   Conteneur au format MPEG-4 contenant un flux video h.264 (appelé
+   également AVC) et un flux audio au format AAC uniquement.
+   MPEG-4 AVC/AAC LC Moving Picture Experts Group [fmt/199] [video/mp4]
+   Conteneur au format MPEG-4 contenant un flux video h.264 (appelé
+   également AVC) et un flux audio au format AAC Low Complexity.
+   ODS 1.0 OpenDocument Spreadsheet [fmt/137]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODS 1.1 OpenDocument Spreadsheet [fmt/294]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODS 1.2 OpenDocument Spreadsheet [fmt/295]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODT 1.0 Open Document Texte [fmt/136] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   ODT 1.1 Open Document Texte [fmt/290] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   ODT 1.2 Open Document Texte [fmt/291] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   OGG Theora/Vorbis Format OGG [fmt/203] [video/ogg, audio/ogg,
+   application/ogg] Format conteneur ogg contenant un flux video au format
+   Theora et un flux audio au format Vorbis.
+   OGG Vorbis Format OGG [fmt/203] [audio/ogg, application/ogg] Format
+   conteneur ogg contenant un flux audio au format Vorbis.
+   PDFA 1a Portable Document Format [fmt/95] [application/pdf] Basé sur
+   PDF 1.4 mais plus restrictive : pas de dépendances externes, polices
+   embarquées, pas de transparence, métadonnées XMP obligatoires. C'est le
+   format d'archivage à privilégier bien que difficile à générer.
+   PDF 1.4 Portable Document Format [fmt/354] [application/pdf] Basé sur
+   PDF 1.4 - moins exigeant que 1a, structure logique du document non
+   obligatoire. Bon format d'archivage si PDFA-1a trop compliqué à
+   générer.
+   PDFA 2a Portable Document Format [fmt/476] [application/pdf] Basé sur
+   PDF 1.7 - fichier PDF/A embarquable, structure logique obligatoire.
+   PDFA 2u Portable Document Format [fmt/478] [application/pdf] PDF adapté
+   à l'accessibilité.
+   PDFA 2b Portable Document Format [fmt/477] [application/pdf] Basé sur
+   PDF 1.7, identique à PDF/A-2b sans structure logique obligatoire.
+   PDF 1.4 Portable Document Format [fmt/479] [application/pdf] Basé sur
+   PDF 1.7 - fichier de n'importe quel format embarquable, structure
+   logique obligatoire. Format axé sur l'accessibilité
+   PDF 1.0 Portable Document Format [fmt/14] [application/pdf] Format de
+   document portable.
+   PDF 1.1 Portable Document Format [fmt/15] [application/pdf] Format de
+   document portable 1.1.
+   PDF 1.2 Portable Document Format [fmt/16] [application/pdf] Format de
+   document portable 1.2.
+   PDF 1.3 Portable Document Format [fmt/17] [application/pdf] Format de
+   document portable 1.3.
+   PDF 1.4 Portable Document Format [fmt/18] [application/pdf] Gestion de
+   la transparence, importation de fichier PDF, possibilité de stocker les
+   métadonnées dans un flux XML.
+   PDF 1.5 Portable Document Format [fmt/19] [application/pdf] Images
+   codables sur 16 bits, transitions possible dans les présentations,
+   contenu facultatif, compression JPEG2000, possibilité d'inclure des
+   fichiers multimédia.
+   PDF 1.6 Portable Document Format [fmt/20] [application/pdf] Cryptage
+   AES, illustration 3D au format U3D, possibilité d'indiquer les vrais
+   mesures des objets.
+   PDF 1.7 Portable Document Format [fmt/276] [application/pdf] Normalisé
+   ISO 32000-1, nouveaux algorithmes pour les signatures numériques,
+   mécanisme d'extension.
+   PLY ASCII 1.0 Polygone File Format [fmt/831] [text/plain] PLY est un
+   format de fichier informatique connu sous le nom de Polygon File Format
+   (« Format de Fichier de Polygones ») ou le Stanford Triangle Format..
+   PNG 1.0 Portable Network Graphics [fmt/11] [image/png] Format ouvert
+   d’images numériques.
+   PNG 1.1 Portable Network Graphics [fmt/12] [image/png] Format ouvert
+   d’images numériques.
+   PNG 1.2 Portable Network Graphics [fmt/13] [image/png] Format ouvert
+   d’images numériques.
+   SIARD Software Independent Archival of Relational Databases [fmt/161]
+   Format d'archivage de bases de données relationnelles basé sur XML.
+   SVG UTF-8 1.0 Scalable Vector Graphics [fmt/91] [image/svg+xml] Format
+   de données de graphiques vectoriels basé sur XML.
+   SVG UTF-8 1.1 Scalable Vector Graphics [fmt/92] [image/svg+xml] Format
+   de données de graphiques vectoriels basé sur XML.
+   SVG UTF-8 1.2 Scalable Vector Graphics Tiny [fmt/413] [image/svg+xml]
+   Format de données de graphiques vectoriels basé sur XML.
+   TEI UTF-8 3.0.0 Text Encoding Initiative [] [application/tei+xml] Le
+   format TEI permet la représentation de textes sous forme numérique. Il
+   s'agit d'un ensemble de règles pour encoder des textes dans le but de
+   les traiter informatiquement. Ses domaines d'application principaux
+   sont les sciences sociales et la linguistique. C'est un format dérivé
+   d'XML.
+   TEI UTF-8 3.1.0 Text Encoding Initiative [] [application/tei+xml] Le
+   format TEI permet la représentation de textes sous forme numérique. Il
+   s'agit d'un ensemble de règles pour encoder des textes dans le but de
+   les traiter informatiquement. Ses domaines d'application principaux
+   sont les sciences sociales et la linguistique. C'est un format dérivé
+   d'XML.
+   TIFF Tagged Interchange File Format [fmt/353, fmt/154, fmt/153,
+   fmt/156, x-fmt/388] [image/tiff] Format de fichier image.
+   TIFF 4.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TIFF 5.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TIFF 6.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TXT UTF-8 UCS transformation format 8 bits [x-fmt/111, x-fmt/18,
+   fmt/367] [text/plain] Format texte avec encodage UTF-8. Le format CSV
+   (Comma Separated Values) est assimilé à ce format.
+   WAV WAVEform audio file format [fmt/141, fmt/6] [audio/x-wav] Format
+   audio contenant uniquement un flux PCM.
+   XDMF eXtensible Data Model and Format [] Format d'échange de données
+   scientifiques issues des calculs à haute performance (HPC).
+   XML UTF-8 1.0 eXtented Mark-up Language [fmt/101, x-fmt/227] [text/xml]
+   Langage de balisage extensible. Il est possible de valider le format
+   HTML s'il est conforme aux normes XML (ex XHTML).
+   XSD XML Schema definition [x-fmt/280] [text/xml] XML Schema est un
+   langage de description de format de document XML permettant de définir
+   la structure et le type de contenu d'un document XML.
+
+Correction avec PDFtk
+
+   Vous pouvez essayer de corriger votre fichier PDF à l'aide de l'outil
+   PDFtk. Cliquez sur le bouton ci-dessous, choisissez votre fichier et
+   cliquez sur « Corriger ».
+   Choisissez un fichier - Taille max 2,5 Go                      (BUTTON)
+   Corriger (BUTTON) Annuler
+
+   PDFtk version 2.02
+
+Conversion en PDF/A à l'aide de Ghostscript
+
+   Ghostscript
+
+   Vous pouvez essayer une conversion vers le format PDF/A 1-b avec
+   Ghostscript. Cette conversion effectuera notamment les opérations
+   suivantes :
+     * suppression des zones transparentes
+     * remplacement des polices de caractère non universellement
+       utilisables.
+
+   Il est très important que vous vérifiiez votre document dans son
+   intégralité après la conversion.
+   Choisissez un fichier - Taille max 2,5 Go                      (BUTTON)
+   Convertir (BUTTON) Annuler
+
+   Ghostscript version 9.07
+
+Accès à PDFSTAR de Mines-Paritech
+
+   Mines-Paristech propose également une correction basée sur PDFtk et
+   Ghostscript. Accéder à l'outil.
+
+Aide à la validation de documents PDF
+
+   Votre document PDF n'est pas valide ? Vous pouvez essayer les quelques
+   solutions suivantes pour le rendre valide.
+
+   Vous disposez du logiciel Adobe Acrobat
+
+   Vous avez utilisé Word et Acrobat
+
+   Vous avez utilisé Latex
+
+Tutoriels de l'ABES
+
+   L'ABES propose de nombreux tutoriels pour produire des fichiers
+   conformes dans différents formats. Accéder aux tutoriels
+
+Correction d'un PDF à l'aide d'Acrobat Pro XI
+
+   Adobe Acrobat permet de créer des fichiers PDF mais également de
+   vérifier leur conformité et éventuellement de corriger des documents
+   PDF non conformes.
+   Pour l'archivage au CINES, nous recommandons d'utiliser la norme
+   PDF/A-1 en version a ou b. L'adoption d'un de ces formats garantit la
+   validité du fichier sur la plateforme du CINES.
+    1. Après avoir ouvert le fichier, cliquer sur « Outils »
+       [acrobatOutils.png.jsf;jsessionid=ADF869B896248CED6785856CA006C19F?
+       ln=img] Interface d'Adobe Acrobat
+    2. Sélectionner « contrôle en amont »
+       [acrobatPreflight.png.jsf;jsessionid=ADF869B896248CED6785856CA006C1
+       9F?ln=img] Contrôle en amont
+    3. Sélectionner la version de la norme que vous souhaitez vérifier, le
+       CINES recommande PDF/A-1 (a ou b). Puis cliquer sur « Analyser »
+       [acrobatCompliance.png.jsf;jsessionid=ADF869B896248CED6785856CA006C
+       19F?ln=img] Vérification de la conformité Si l'analyse indique que
+       le document est conforme, vous pouvez tenter à nouveau de le
+       valider sur FACILE.
+    4. Si le document n'est pas valide, sélectionner l'onglet « Normes »,
+       puis choisir « Enregistrer au format PDF/A »
+       [acrobatStandards.png.jsf;jsessionid=ADF869B896248CED6785856CA006C1
+       9F?ln=img] Normes PDF
+    5. Choisir la version du PDF/A souhaitée
+       [acrobatVersionChoice.png.jsf;jsessionid=ADF869B896248CED6785856CA0
+       06C19F?ln=img] Choix de la version
+    6. Terminer en enregistrant le document
+       [acrobatSave.png.jsf;jsessionid=ADF869B896248CED6785856CA006C19F?ln
+       =img] Terminer en enregistrant le document
+
+Création d'un fichier PDF valide avec L^aT[e]X
+
+   La production d'un document PDF valide avec L^aT[e]X nécessite une
+   compilation classique, c'est à dire reprenant les différentes étapes de
+   la transformation d'un fichier tex vers un fichier PDF.
+   Ces étapes sont les suivantes :
+              latex                dvips               ps2pdf
+document.tex ------> document.dvi ------> document.ps ------> document.pdf
+
+   Il est possible d'utiliser pdflatex pour simplifier la création d'un
+   fichier PDF. Afin d'éviter des erreurs de validation, il est conseillé
+   d'ajouter la directive
+   \pdfobjcompresslevel 0
+   en introduction du fichier L^aT[e]X, avant la déclaration
+   \documentclass.
+
+Création d'un fichier PDF/A valide
+
+   Si vous disposez de Microsoft Word et d'Adobe Acrobat Pro, il est
+   possible de configurer ce dernier pour qu'il produise des fichiers
+   conformes à la norme PDF/A-1.
+
+   Pour l'archivage au CINES, nous recommandons d'utiliser la norme
+   PDF/A-1 en version a ou b. L'adoption d'un de ces formats garantit la
+   validité du fichier sur la plateforme du CINES.
+   Les étapes sont décrites ci-dessous :
+    1. Sélectionner l'onglet Acrobat
+       [wordOngletAcrobat.png.jsf;jsessionid=ADF869B896248CED6785856CA006C
+       19F?ln=img] Sélectionner l'onglet « Acrobat »
+    2. Puis cliquer sur le bouton « préférences » pour définir les
+       paramètres du PDF à générer.
+       [wordAcrobatPreferences.png.jsf;jsessionid=ADF869B896248CED6785856C
+       A006C19F?ln=img]
+
+Utilisation du Web Service de Facile
+
+   Facile expose un Web Service REST qui peut être interrogé
+   programmatiquement. Cette section propose deux façons d'accéder au
+   service de validation de formats du CINES.
+
+Réponse de Facile
+
+   Facile renvoie une réponse au format XML qui se présente de la forme
+   suivante:
+‹?xml version="1.0" encoding="UTF-8"?›
+‹validator xmlns="http://facile.cines.fr" xmlns:xsi="http://www.w3.org/2001/XMLS
+chema-instance" xsi:schemaLocation="http://facile.cines.fr http://facile.cines.f
+r/facile.xsd"›
+‹fileName›M601415401_MS2GB12_0008.tif‹/fileName›
+‹valid›true‹/valid›
+‹wellformed›true‹/wellformed›
+‹archivable›true‹/archivable›
+‹md5sum›true‹/md5sum›
+‹sha256sum›true‹/sha256sum›
+‹size›66954566‹/size›
+‹format›TIFF‹/format›
+‹version›6.0‹/version›
+‹encoding›NA‹/encoding›
+‹message›null‹/message›
+‹/validator›
+
+   Le résultat le plus important pour l'archivage sur la plateforme PAC se
+   situe dans la balise <valid>. Elle doît être positionnée à « true »
+   pour que le document soit archivable.
+
+   Les checksum servent à vérifier que l'intégrité du fichier a été
+   conservé durant le transfert. Le client du Web Service doît s'assurer
+   que les checksum avant le transfert sont les mêmes que ceux calculés
+   par FACILE.
+
+Appel du Web Service avec curl
+
+   curl est un programme permettant de réaliser une requête HTTP. Son
+   utilisation est simple:
+   curl --form file=@mon_fichier.fff https://facile.cines.fr/xml
+
+   Il faut remplacer mon_fichier.fff par le chemin vers le fichier à
+   valider. Cette commande devrait renvoyer une chaîne XML telle que
+   présentée ci-dessus.
+
+Appel du Web Service en Java
+
+   L'exemple ci-dessous s'appuie sur la librairie Apache HttpClient
+package fr.cines.client;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+/**
+ * Client Facile
+ */
+public class ClientFacile {
+    public static void main( String[] args ) throws ClientProtocolException, IOE
+xception {
+
+      HttpClient httpClient = new DefaultHttpClient();
+
+      // La requête vers le Web Service est obligatoirement POST
+      HttpPost httpPost = new HttpPost("http://facile.cines.fr/xml"); // L'adres
+se du Web Service Facile
+      File file = new File("/chemin_vers_fichier/fichier.fff");
+
+      // L'envoie d'un fichier par une requête POST nécessite un type d'encodage
+ Multipart/Form-data
+      MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+      builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+
+      FileBody fileBody = new FileBody(file);
+      builder.addPart("file", fileBody);
+
+
+      httpPost.setEntity(builder.build());
+
+      HttpResponse response = httpClient.execute(httpPost);
+      HttpEntity resEntity = response.getEntity();
+
+      // La chaîne suivante est disponible au format ci-dessus
+      String xml = EntityUtils.toString(resEntity);
+    }
+}
+
+Archivage de la TEI au CINES
+
+Composition d’une archive
+
+   Une archive de documents TEI se compose de :
+     * Un fichier ODD (One Document Does it All), qui est un fichier XML
+       de schéma tei_all.xsd. Ce fichier contient la documentation et
+       permet de générer le schéma suivi par les fichiers livrés dans
+       l’archive. Il est important de le conserver du point de vue de la
+       pérennité.
+     * De fichiers XML conformes également au schéma tei_all.xsd mais plus
+       spécifiquement au schéma spécialisé contenu dans le fichier ODD
+     * d'autres fichiers
+
+Structure du paquet
+
+   On placera le fichier ODD dans le répertoire DESC
+NOM_PAQUET/
+      DEPOT/
+           DESC/
+                   odd.xml
+                   …        // possible de mettre d'autres fichiers ODD ou de m
+étadonnées
+           Corpus_1.xml
+           Corpus_2.xml
+     sip.xml
+
+Le fichier sip.xml
+
+   Les fichiers du corpus TEI doivent être déclarés au format TEI dans le
+   sip.xml ; le fichier ODD qui permet de générer le schéma doit aussi
+   être déclaré dans l'élément structureFichier. Dans ce cas, il faut
+   veiller à ne pas préciser de structureFichier d'une autre nature.
+
+‹FichMeta›
+  ‹formatFichier›TEI‹/formatFichier›
+  ‹nomFichier›corpus.xml‹/nomFichier›
+  ‹encodage›UTF-8‹/encodage›
+  ‹structureFichier›DEPOT/DESC/odd.xml‹/structureFichier›
+‹/FichMeta›
+
+   Le fichier ODD doit être placé dans le répertoire DESC et déclaré en
+   tant fichier XML.
+   Le fichier ODD lui-même doit être déclaré dans le sip.xml. Il faut
+   veiller à ne pas préciser dans ce cas de structure fichier.
+‹FichMeta›
+  ‹formatFichier›XML‹/formatFichier›
+  ‹nomFichier›DESC/odd.xml‹/nomFichier›
+  ‹encodage›UTF-8‹/encodage›
+‹/FichMeta›
+
+Les en-têtes
+
+   La version de la TEI utilisée doit être déclarée, pour chaque en-tête
+   de fichier, dans l'attribut version; l'espace de nom quant à lui doit
+   être déclaré dans l'attribut xmlns.
+   Exemple :
+‹TEI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1.0"
+   xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/Vault/P5
+/3.1.0/xml/tei/custom/schema/xsd/tei_all.xsd"
+   xmlns="http://www.tei-c.org/ns/1.0"›
+
+   Il est indispensable de préciser le schéma dans l'entête du fichier ODD
+‹TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSc
+hema-instance"
+  xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/x
+ml/tei/custom/schema/xsd/tei_all.xsd"›
+
+Versement en tant que XML
+
+   Pour les cas où un fichier ODD n'est pas présent, il reste possible de
+   déclarer dans le SIP les fichiers du corpus au format XML. Dans ce cas
+   ils seront validés contre le schéma précisé dans l'entête
+   schemaLocation
+
+Déclaration des références externes dans les fichiers du corpus
+
+   Il est possible de référencer des fichiers présents dans le paquet à
+   l'intérieur des fichiers du corpus. Ces derniers devront avoir une url
+   relative au paquet et leur présence sera vérifiée.
+   Exemple :
+‹surface xml:id="alfred-1-140803-1-ph" type="recto" n="1r"›
+     ‹graphic url="../../Images/alfred-1-140803-1-ph.jpg"/›
+‹/surface›
+‹surface xml:id="alfred-1-140803-1" type="verso" n="1v"›
+     ‹graphic url="../../Images/alfred-1-140803-1.jpg"/›
+‹/surface›
+
+   L'attribut url de la balise graphic référence un paquet présent dans
+   l'archive.
+
+   Les url peuvent être écrite en chemin relatif comme dans l'exemple ou
+   avec le protocole file précédent le chemin.
+   Exemple :
+‹graphic url="file://../../Images/alfred-1-140803-1.jpg"/›
+
+Processus de validation
+
+   La validation d’une archive TEI consiste en :
+    1. valider le fichier ODD selon le schéma tei_all.xsd
+    2. générer le schéma relax ng spécifique par une transformation XSLT
+       (via Saxon)
+    3. valider les fichiers XML de l’archive selon ce schéma
+    4. Vérifie que les fichiers référencés existent bien
+    5. valider les autres fichiers selon leur format (PDF, JPEG …)
+
+   Le schéma généré ne sera pas archivé puisqu’il pourra être re-généré.
+
+Limitations
+
+   En l’état, il n'est pas possible de valider une archive par
+   l’intermédiaire de Facile, ni même fichier par fichier puisque Facile
+   exige une déclaration de schéma dans l’en-tête.
+
+Versions acceptées
+
+     * 3.1.0
+
+Vérification des références contenues dans les fichiers
+
+   Les fichiers TEI peuvent contenir des références à des objets externes
+   à l’image du HTML. Dans le cadre d’un archivage pérenne au CINES, cette
+   pratique n’est pas recommandée. Cependant le format permet de
+   différencier une ressource externe « sur le Web » et donc non pérenne
+   (et surtout non indispensable à la compréhension de ce qui est
+   archivé), d’une ressource locale sous-entendu livrée dans l’archive.
+   Pour toute question ou problème, envoyez un courriel à l'adresse
+   suivante : svp [at] cines.fr
+   Version du validateur de formats : 3.5.3
+   Jhove 1.1 ImageMagick DROID
+   Centre Informatique National de l'Enseignement Supérieur
+
+FACILE - Service de validation de formats
+
+   Vérifier l'éligibilité de vos documents à un archivage sur la
+   plateforme PAC du CINES.
+     * Validation
+     * Correction PDF
+     * Tutoriels
+     * Web Service
+     * Archivage de la TEI
+
+   Choisissez des fichiers - Taille max 2,5 Go                     
+   (BUTTON) Valider (BUTTON) Annuler
+   Cliquez ici pour demander l'aide d'un expert du CINES
+
+Liste des formats validables
+
+   Attention : le validateur de formats permet de valider certains formats
+   qui ne sont pas pris en charge par la plateforme d'archivage du CINES.
+   Format Nom PRONOM PIUD Type MIME Commentaire Archivable dans PAC
+   AAC AAC Advanced Audio Codings [fmt/199] Format Mpeg-4 contenant
+   uniquement un flux audio au format AAC.
+   AIFF PCM Audio Interchange File Format [fmt/414] [audio/x-aif,
+   audio/x-aiff] Format audio contenant uniquement un flux PCM.
+   APNG Animated Portable Network Graphics [fmt/935]
+   [image/vnd.mozilla.apng, image/apng] L'APNG est une extension du format
+   PNG permettant de réaliser des animations graphiques.
+   DAE UTF-8 1.4.1 Collada [application/xml] Format permettant de stocker
+   des données géométriques sous forme de scènes (plusieurs objets
+   combinés dans le même référentiel), et d'y ajouter des informations
+   supplémentaires pour décrire la scène et les objets (matériaux,
+   environement lumineux, animations, ...) ou pour ajouter des notions
+   sémantiques (relations entre les objets, découpage d'un objet en
+   plusieurs éléments fonctionnels, etc...).
+   FLAC FLAC 1.2.1 Free Lossless Audio Codec [fmt/279] [audio/ogg,
+   audio/x-flac] Format audio compressé sans perte.
+   GIF 87a Graphics Interchange Format [fmt/3] [image/gif] Format image
+   pouvant contenir également des animations.
+   GIF 89a Graphics Interchange Format [fmt/4] [image/gif] Format image
+   pouvant contenir également des animations.
+   GeoTIFF Geographic Tagged Image File Format [fmt/155] [image/tiff]
+   Format dérivé du TIFF contenant des informations de géoréférencement et
+   de géolocalisation.
+   HDF5 1.0 Hierarchical Data Format [fmt/286] Format de données à
+   caractère scientifique.
+   HDF5 2.0 Hierarchical Data Format [fmt/287] Format de données à
+   caractère scientifique.
+   JPEG Joint Photographic Experts Group [fmt/41] [image/jpeg] Format de
+   représentation compressée d'une image fixe.
+   JPEG2000 JPEG 2000 [fmt/151, x-fmt/392] Extension du format JPEG.
+   JPEG 1.00 Joint Photographic Experts Group [fmt/42] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   JPEG 1.01 Joint Photographic Experts Group [fmt/43] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   JPEG 1.02 Joint Photographic Experts Group [fmt/44] [image/jpeg] Format
+   de représentation compressée d'une image fixe.
+   MKV AVC/FLAC Matroska [fmt/569] [video/x-matroska, audio/x-matroska]
+   Conteneur Matroska contenant un flux video h.264 (appelé également avc)
+   et un flux audio au format flac uniquement.
+   MPEG-4 AAC Moving Picture Experts Group [fmt/199] [audio/mp4] Conteneur
+   au format MPEG-4 contenant un flux audio au format AAC.
+   MPEG-4 AVC Moving Picture Experts Group [fmt/199] [video/mp4] Conteneur
+   au format MPEG-4 contenant un flux video h.264 (appelé également AVC)
+   sans aucun autre flux.
+   MPEG-4 AVC/AAC Moving Picture Experts Group [fmt/199] [video/mp4]
+   Conteneur au format MPEG-4 contenant un flux video h.264 (appelé
+   également AVC) et un flux audio au format AAC uniquement.
+   MPEG-4 AVC/AAC LC Moving Picture Experts Group [fmt/199] [video/mp4]
+   Conteneur au format MPEG-4 contenant un flux video h.264 (appelé
+   également AVC) et un flux audio au format AAC Low Complexity.
+   ODS 1.0 OpenDocument Spreadsheet [fmt/137]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODS 1.1 OpenDocument Spreadsheet [fmt/294]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODS 1.2 OpenDocument Spreadsheet [fmt/295]
+   [application/vnd.oasis.opendocument.spreadsheet] Format ouvert de
+   données tableur.
+   ODT 1.0 Open Document Texte [fmt/136] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   ODT 1.1 Open Document Texte [fmt/290] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   ODT 1.2 Open Document Texte [fmt/291] [application/
+   vnd.oasis.opendocument.text] Format ouvert de données de document
+   textuel.
+   OGG Theora/Vorbis Format OGG [fmt/203] [video/ogg, audio/ogg,
+   application/ogg] Format conteneur ogg contenant un flux video au format
+   Theora et un flux audio au format Vorbis.
+   OGG Vorbis Format OGG [fmt/203] [audio/ogg, application/ogg] Format
+   conteneur ogg contenant un flux audio au format Vorbis.
+   PDF 1.4 Portable Document Format [fmt/95] [application/pdf] Basé sur
+   PDF 1.4 mais plus restrictive : pas de dépendances externes, polices
+   embarquées, pas de transparence, métadonnées XMP obligatoires. C'est le
+   format d'archivage à privilégier bien que difficile à générer.
+   PDF 1.4 Portable Document Format [fmt/354] [application/pdf] Basé sur
+   PDF 1.4 - moins exigeant que 1a, structure logique du document non
+   obligatoire. Bon format d'archivage si PDFA-1a trop compliqué à
+   générer.
+   PDFA 2a Portable Document Format [fmt/476] [application/pdf] Basé sur
+   PDF 1.7 - fichier PDF/A embarquable, structure logique obligatoire.
+   PDFA 2u Portable Document Format [fmt/478] [application/pdf] PDF adapté
+   à l'accessibilité.
+   PDF 1.4 Portable Document Format [fmt/477] [application/pdf] Basé sur
+   PDF 1.7, identique à PDF/A-2b sans structure logique obligatoire.
+   PDF 1.4 Portable Document Format [fmt/479] [application/pdf] Basé sur
+   PDF 1.7 - fichier de n'importe quel format embarquable, structure
+   logique obligatoire. Format axé sur l'accessibilité
+   PDF 1.0 Portable Document Format [fmt/14] [application/pdf] Format de
+   document portable.
+   PDF 1.1 Portable Document Format [fmt/15] [application/pdf] Format de
+   document portable 1.1.
+   PDF 1.2 Portable Document Format [fmt/16] [application/pdf] Format de
+   document portable 1.2.
+   PDF 1.3 Portable Document Format [fmt/17] [application/pdf] Format de
+   document portable 1.3.
+   PDF 1.4 Portable Document Format [fmt/18] [application/pdf] Gestion de
+   la transparence, importation de fichier PDF, possibilité de stocker les
+   métadonnées dans un flux XML.
+   PDF 1.5 Portable Document Format [fmt/19] [application/pdf] Images
+   codables sur 16 bits, transitions possible dans les présentations,
+   contenu facultatif, compression JPEG2000, possibilité d'inclure des
+   fichiers multimédia.
+   PDF 1.6 Portable Document Format [fmt/20] [application/pdf] Cryptage
+   AES, illustration 3D au format U3D, possibilité d'indiquer les vrais
+   mesures des objets.
+   PDF 1.7 Portable Document Format [fmt/276] [application/pdf] Normalisé
+   ISO 32000-1, nouveaux algorithmes pour les signatures numériques,
+   mécanisme d'extension.
+   PLY ASCII 1.0 Polygone File Format [fmt/831] [text/plain] PLY est un
+   format de fichier informatique connu sous le nom de Polygon File Format
+   (« Format de Fichier de Polygones ») ou le Stanford Triangle Format..
+   PNG 1.0 Portable Network Graphics [fmt/11] [image/png] Format ouvert
+   d’images numériques.
+   PNG 1.1 Portable Network Graphics [fmt/12] [image/png] Format ouvert
+   d’images numériques.
+   PNG 1.2 Portable Network Graphics [fmt/13] [image/png] Format ouvert
+   d’images numériques.
+   SIARD Software Independent Archival of Relational Databases [fmt/161]
+   Format d'archivage de bases de données relationnelles basé sur XML.
+   SVG UTF-8 1.0 Scalable Vector Graphics [fmt/91] [image/svg+xml] Format
+   de données de graphiques vectoriels basé sur XML.
+   SVG UTF-8 1.1 Scalable Vector Graphics [fmt/92] [image/svg+xml] Format
+   de données de graphiques vectoriels basé sur XML.
+   SVG UTF-8 1.2 Scalable Vector Graphics Tiny [fmt/413] [image/svg+xml]
+   Format de données de graphiques vectoriels basé sur XML.
+   TEI UTF-8 3.0.0 Text Encoding Initiative [] [application/tei+xml] Le
+   format TEI permet la représentation de textes sous forme numérique. Il
+   s'agit d'un ensemble de règles pour encoder des textes dans le but de
+   les traiter informatiquement. Ses domaines d'application principaux
+   sont les sciences sociales et la linguistique. C'est un format dérivé
+   d'XML.
+   TEI UTF-8 3.1.0 Text Encoding Initiative [] [application/tei+xml] Le
+   format TEI permet la représentation de textes sous forme numérique. Il
+   s'agit d'un ensemble de règles pour encoder des textes dans le but de
+   les traiter informatiquement. Ses domaines d'application principaux
+   sont les sciences sociales et la linguistique. C'est un format dérivé
+   d'XML.
+   TIFF Tagged Interchange File Format [fmt/353, fmt/154, fmt/153,
+   fmt/156, x-fmt/388] [image/tiff] Format de fichier image.
+   TIFF 4.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TIFF 5.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TIFF 6.0 Tagged Interchange File Format [fmt/353] [image/tiff] Format
+   de fichier image.
+   TXT UTF-8 UCS transformation format 8 bits [x-fmt/111, x-fmt/18,
+   fmt/367] [text/plain] Format texte avec encodage UTF-8. Le format CSV
+   (Comma Separated Values) est assimilé à ce format.
+   WAV WAVEform audio file format [fmt/141, fmt/6] [audio/x-wav] Format
+   audio contenant uniquement un flux PCM.
+   XDMF eXtensible Data Model and Format [] Format d'échange de données
+   scientifiques issues des calculs à haute performance (HPC).
+   XML UTF-8 1.0 eXtented Mark-up Language [fmt/101, x-fmt/227] [text/xml]
+   Langage de balisage extensible. Il est possible de valider le format
+   HTML s'il est conforme aux normes XML (ex XHTML).
+   XSD XML Schema definition [x-fmt/280] [text/xml] XML Schema est un
+   langage de description de format de document XML permettant de définir
+   la structure et le type de contenu d'un document XML.
+
+Correction avec PDFtk
+
+   Vous pouvez essayer de corriger votre fichier PDF à l'aide de l'outil
+   PDFtk. Cliquez sur le bouton ci-dessous, choisissez votre fichier et
+   cliquez sur « Corriger ».
+   Choisissez un fichier - Taille max 2,5 Go                      (BUTTON)
+   Corriger (BUTTON) Annuler
+
+   PDFtk version 2.02
+
+Conversion en PDF/A à l'aide de Ghostscript
+
+   Ghostscript
+
+   Vous pouvez essayer une conversion vers le format PDF/A 1-b avec
+   Ghostscript. Cette conversion effectuera notamment les opérations
+   suivantes :
+     * suppression des zones transparentes
+     * remplacement des polices de caractère non universellement
+       utilisables.
+
+   Il est très important que vous vérifiiez votre document dans son
+   intégralité après la conversion.
+   Choisissez un fichier - Taille max 2,5 Go                      (BUTTON)
+   Convertir (BUTTON) Annuler
+
+   Ghostscript version 9.25
+
+Accès à PDFSTAR de Mines-Paritech
+
+   Mines-Paristech propose également une correction basée sur PDFtk et
+   Ghostscript. Accéder à l'outil.
+
+Aide à la validation de documents PDF
+
+   Votre document PDF n'est pas valide ? Vous pouvez essayer les quelques
+   solutions suivantes pour le rendre valide.
+
+   Vous disposez du logiciel Adobe Acrobat
+
+   Vous avez utilisé Word et Acrobat
+
+   Vous avez utilisé Latex
+
+Tutoriels de l'ABES
+
+   L'ABES propose de nombreux tutoriels pour produire des fichiers
+   conformes dans différents formats. Accéder aux tutoriels
+
+Correction d'un PDF à l'aide d'Acrobat Pro XI
+
+   Adobe Acrobat permet de créer des fichiers PDF mais également de
+   vérifier leur conformité et éventuellement de corriger des documents
+   PDF non conformes.
+   Pour l'archivage au CINES, nous recommandons d'utiliser la norme
+   PDF/A-1 en version a ou b. L'adoption d'un de ces formats garantit la
+   validité du fichier sur la plateforme du CINES.
+    1. Après avoir ouvert le fichier, cliquer sur « Outils »
+       [acrobatOutils.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2ED0C904?
+       ln=img] Interface d'Adobe Acrobat
+    2. Sélectionner « contrôle en amont »
+       [acrobatPreflight.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2ED0C9
+       04?ln=img] Contrôle en amont
+    3. Sélectionner la version de la norme que vous souhaitez vérifier, le
+       CINES recommande PDF/A-1 (a ou b). Puis cliquer sur « Analyser »
+       [acrobatCompliance.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2ED0C
+       904?ln=img] Vérification de la conformité Si l'analyse indique que
+       le document est conforme, vous pouvez tenter à nouveau de le
+       valider sur FACILE.
+    4. Si le document n'est pas valide, sélectionner l'onglet « Normes »,
+       puis choisir « Enregistrer au format PDF/A »
+       [acrobatStandards.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2ED0C9
+       04?ln=img] Normes PDF
+    5. Choisir la version du PDF/A souhaitée
+       [acrobatVersionChoice.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2E
+       D0C904?ln=img] Choix de la version
+    6. Terminer en enregistrant le document
+       [acrobatSave.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2ED0C904?ln
+       =img] Terminer en enregistrant le document
+
+Création d'un fichier PDF valide avec L^aT[e]X
+
+   La production d'un document PDF valide avec L^aT[e]X nécessite une
+   compilation classique, c'est à dire reprenant les différentes étapes de
+   la transformation d'un fichier tex vers un fichier PDF.
+   Ces étapes sont les suivantes :
+              latex                dvips               ps2pdf
+document.tex ------> document.dvi ------> document.ps ------> document.pdf
+
+   Il est possible d'utiliser pdflatex pour simplifier la création d'un
+   fichier PDF. Afin d'éviter des erreurs de validation, il est conseillé
+   d'ajouter la directive
+   \pdfobjcompresslevel 0
+   en introduction du fichier L^aT[e]X, avant la déclaration
+   \documentclass.
+
+Création d'un fichier PDF/A valide
+
+   Si vous disposez de Microsoft Word et d'Adobe Acrobat Pro, il est
+   possible de configurer ce dernier pour qu'il produise des fichiers
+   conformes à la norme PDF/A-1.
+
+   Pour l'archivage au CINES, nous recommandons d'utiliser la norme
+   PDF/A-1 en version a ou b. L'adoption d'un de ces formats garantit la
+   validité du fichier sur la plateforme du CINES.
+   Les étapes sont décrites ci-dessous :
+    1. Sélectionner l'onglet Acrobat
+       [wordOngletAcrobat.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F2ED0C
+       904?ln=img] Sélectionner l'onglet « Acrobat »
+    2. Puis cliquer sur le bouton « préférences » pour définir les
+       paramètres du PDF à générer.
+       [wordAcrobatPreferences.png.jsf;jsessionid=F3E25ADDB30020404BACCD3F
+       2ED0C904?ln=img]
+
+Utilisation du Web Service de Facile
+
+   Facile expose un Web Service REST qui peut être interrogé
+   programmatiquement. Cette section propose deux façons d'accéder au
+   service de validation de formats du CINES.
+
+Réponse de Facile
+
+   Facile renvoie une réponse au format XML qui se présente de la forme
+   suivante:
+‹?xml version="1.0" encoding="UTF-8"?›
+‹validator xmlns="http://facile.cines.fr" xmlns:xsi="http://www.w3.org/2001/XMLS
+chema-instance" xsi:schemaLocation="http://facile.cines.fr http://facile.cines.f
+r/facile.xsd"›
+‹fileName›M601415401_MS2GB12_0008.tif‹/fileName›
+‹valid›true‹/valid›
+‹wellformed›true‹/wellformed›
+‹archivable›true‹/archivable›
+‹md5sum›true‹/md5sum›
+‹sha256sum›true‹/sha256sum›
+‹size›66954566‹/size›
+‹format›TIFF‹/format›
+‹version›6.0‹/version›
+‹encoding›NA‹/encoding›
+‹message›null‹/message›
+‹/validator›
+
+   Le résultat le plus important pour l'archivage sur la plateforme PAC se
+   situe dans la balise <valid>. Elle doît être positionnée à « true »
+   pour que le document soit archivable.
+
+   Les checksum servent à vérifier que l'intégrité du fichier a été
+   conservé durant le transfert. Le client du Web Service doît s'assurer
+   que les checksum avant le transfert sont les mêmes que ceux calculés
+   par FACILE.
+
+Appel du Web Service avec curl
+
+   curl est un programme permettant de réaliser une requête HTTP. Son
+   utilisation est simple:
+   curl --form file=@mon_fichier.fff https://facile.cines.fr/xml
+
+   Il faut remplacer mon_fichier.fff par le chemin vers le fichier à
+   valider. Cette commande devrait renvoyer une chaîne XML telle que
+   présentée ci-dessus.
+
+Appel du Web Service en Java
+
+   L'exemple ci-dessous s'appuie sur la librairie Apache HttpClient
+package fr.cines.client;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+/**
+ * Client Facile
+ */
+public class ClientFacile {
+    public static void main( String[] args ) throws ClientProtocolException, IOE
+xception {
+
+      HttpClient httpClient = new DefaultHttpClient();
+
+      // La requête vers le Web Service est obligatoirement POST
+      HttpPost httpPost = new HttpPost("http://facile.cines.fr/xml"); // L'adres
+se du Web Service Facile
+      File file = new File("/chemin_vers_fichier/fichier.fff");
+
+      // L'envoie d'un fichier par une requête POST nécessite un type d'encodage
+ Multipart/Form-data
+      MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+      builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+
+      FileBody fileBody = new FileBody(file);
+      builder.addPart("file", fileBody);
+
+
+      httpPost.setEntity(builder.build());
+
+      HttpResponse response = httpClient.execute(httpPost);
+      HttpEntity resEntity = response.getEntity();
+
+      // La chaîne suivante est disponible au format ci-dessus
+      String xml = EntityUtils.toString(resEntity);
+    }
+}
+
+Archivage de la TEI au CINES
+
+Composition d’une archive
+
+   Une archive de documents TEI se compose de :
+     * Un fichier ODD (One Document Does it All), qui est un fichier XML
+       de schéma tei_all.xsd. Ce fichier contient la documentation et
+       permet de générer le schéma suivi par les fichiers livrés dans
+       l’archive. Il est important de le conserver du point de vue de la
+       pérennité.
+     * De fichiers XML conformes également au schéma tei_all.xsd mais plus
+       spécifiquement au schéma spécialisé contenu dans le fichier ODD
+     * d'autres fichiers
+
+Structure du paquet
+
+   On placera le fichier ODD dans le répertoire DESC
+NOM_PAQUET/
+      DEPOT/
+           DESC/
+                   odd.xml
+                   …        // possible de mettre d'autres fichiers ODD ou de m
+étadonnées
+           Corpus_1.xml
+           Corpus_2.xml
+     sip.xml
+
+Le fichier sip.xml
+
+   Les fichiers du corpus TEI doivent être déclarés au format TEI dans le
+   sip.xml ; le fichier ODD qui permet de générer le schéma doit aussi
+   être déclaré dans l'élément structureFichier. Dans ce cas, il faut
+   veiller à ne pas préciser de structureFichier d'une autre nature.
+
+‹FichMeta›
+  ‹formatFichier›TEI‹/formatFichier›
+  ‹nomFichier›corpus.xml‹/nomFichier›
+  ‹encodage›UTF-8‹/encodage›
+  ‹structureFichier›DEPOT/DESC/odd.xml‹/structureFichier›
+‹/FichMeta›
+
+   Le fichier ODD doit être placé dans le répertoire DESC et déclaré en
+   tant fichier XML.
+   Le fichier ODD lui-même doit être déclaré dans le sip.xml. Il faut
+   veiller à ne pas préciser dans ce cas de structure fichier.
+‹FichMeta›
+  ‹formatFichier›XML‹/formatFichier›
+  ‹nomFichier›DESC/odd.xml‹/nomFichier›
+  ‹encodage›UTF-8‹/encodage›
+‹/FichMeta›
+
+Les en-têtes
+
+   La version de la TEI utilisée doit être déclarée, pour chaque en-tête
+   de fichier, dans l'attribut version; l'espace de nom quant à lui doit
+   être déclaré dans l'attribut xmlns.
+   Exemple :
+‹TEI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1.0"
+   xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/Vault/P5
+/3.1.0/xml/tei/custom/schema/xsd/tei_all.xsd"
+   xmlns="http://www.tei-c.org/ns/1.0"›
+
+   Il est indispensable de préciser le schéma dans l'entête du fichier ODD
+‹TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSc
+hema-instance"
+  xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/x
+ml/tei/custom/schema/xsd/tei_all.xsd"›
+
+Versement en tant que XML
+
+   Pour les cas où un fichier ODD n'est pas présent, il reste possible de
+   déclarer dans le SIP les fichiers du corpus au format XML. Dans ce cas
+   ils seront validés contre le schéma précisé dans l'entête
+   schemaLocation
+
+Déclaration des références externes dans les fichiers du corpus
+
+   Il est possible de référencer des fichiers présents dans le paquet à
+   l'intérieur des fichiers du corpus. Ces derniers devront avoir une url
+   relative au paquet et leur présence sera vérifiée.
+   Exemple :
+‹surface xml:id="alfred-1-140803-1-ph" type="recto" n="1r"›
+     ‹graphic url="../../Images/alfred-1-140803-1-ph.jpg"/›
+‹/surface›
+‹surface xml:id="alfred-1-140803-1" type="verso" n="1v"›
+     ‹graphic url="../../Images/alfred-1-140803-1.jpg"/›
+‹/surface›
+
+   L'attribut url de la balise graphic référence un paquet présent dans
+   l'archive.
+
+   Les url peuvent être écrite en chemin relatif comme dans l'exemple ou
+   avec le protocole file précédent le chemin.
+   Exemple :
+‹graphic url="file://../../Images/alfred-1-140803-1.jpg"/›
+
+Processus de validation
+
+   La validation d’une archive TEI consiste en :
+    1. valider le fichier ODD selon le schéma tei_all.xsd
+    2. générer le schéma relax ng spécifique par une transformation XSLT
+       (via Saxon)
+    3. valider les fichiers XML de l’archive selon ce schéma
+    4. Vérifie que les fichiers référencés existent bien
+    5. valider les autres fichiers selon leur format (PDF, JPEG …)
+
+   Le schéma généré ne sera pas archivé puisqu’il pourra être re-généré.
+
+Limitations
+
+   En l’état, il n'est pas possible de valider une archive par
+   l’intermédiaire de Facile, ni même fichier par fichier puisque Facile
+   exige une déclaration de schéma dans l’en-tête.
+
+Versions acceptées
+
+     * 3.1.0
+
+Vérification des références contenues dans les fichiers
+
+   Les fichiers TEI peuvent contenir des références à des objets externes
+   à l’image du HTML. Dans le cadre d’un archivage pérenne au CINES, cette
+   pratique n’est pas recommandée. Cependant le format permet de
+   différencier une ressource externe « sur le Web » et donc non pérenne
+   (et surtout non indispensable à la compréhension de ce qui est
+   archivé), d’une ressource locale sous-entendu livrée dans l’archive.
+   Pour toute question ou problème, envoyez un courriel à l'adresse
+   suivante : svp [at] cines.fr
+   Version du validateur de formats : 3.5.3
+   Jhove 1.1 ImageMagick DROID

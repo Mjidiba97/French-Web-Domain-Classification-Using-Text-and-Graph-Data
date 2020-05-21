@@ -1,0 +1,743 @@
+Comparateur de prix
+
+     * Asus GeForce RTX 2070 SUPER DUAL-RTX2070S-O8G-EVO
+       Asus GeForce RTX 2070 SUP...
+       » 554.99 €
+       Cartes graphiques
+     * MSI GeForce GTX 1050 Ti GAMING 4G
+       MSI GeForce GTX 1050 Ti G...
+       » 169.90 €
+       Cartes graphiques
+     * Asus GeForce GTX 1050 Ti CERBERUS-GTX1050TI-O4G
+       Asus GeForce GTX 1050 Ti ...
+       » 194.52 €
+       Cartes graphiques
+     * MSI GeForce RTX 2080 GAMING TRIO
+       MSI GeForce RTX 2080 GAMI...
+       » 699.95 €
+       Cartes graphiques
+Shop HardWare.fr
+
+     * Achat carte graphique pas chère
+     * Achat carte graphique MSI pas chère
+     * Achat carte graphique ASUS pas chère
+   #HardWare.fr - NEWS (RSS) HardWare.fr - ARTICLES (RSS)
+
+   Hardware.fr
+     * ACTUALITES
+     * ARTICLES
+     * PRIX
+     * FORUM
+     * BASE OVERCLOCKING
+     * PC HARDWARE.FR
+
+   Shop [shop.png]
+   Rechercher
+   Rechercher VOTRE RECHERCHE_____
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ComposantsStockageRefroidissementPériphériquesRéseauxOrdinateursVidéoTo
+   ut
+   HardwarePériphériquesPC PortablesAchats &
+   VentesLogicielsRéseauxProgrammationJeuxDiscussions
+   AMD FX AM3+AMD APU FM2/FM2+Intel Core LGA 1151Intel Core LGA
+   2011-v3Tout
+   Découvrez notre gamme de PC de bureau :OfficeFamilyGamingPower
+   GamingPower User
+
+Les solutions de streaming : Streaming local Steam et Nvidia GameStream en
+test
+
+   Tags : AMD; H.264; Intel; NVENC; Nvidia; QuickSync; Steam; Valve;
+   Publié le 26/07/2016 par Guillaume Louel
+   Imprimer
+   Twitter Facebook Google Plus
+
+   Profiter des jeux de son PC dans son salon, sans disposer d'un PC dédié
+   ou d'avoir à tout déplacer : voilà la promesse que font les diverses
+   solutions que nous avons testées aujourd'hui. Nous nous sommes en effet
+   intéressés aux solutions de streaming local spécifiques aux jeux PC,
+   afin de voir ce qu'elles proposent en pratique !
+
+                              [IMG0051341.jpg]
+
+Le jeu, un problème spécifique
+
+   Le concept de la prise de contrôle à distance d'une machine n'est pas
+   particulièrement nouveau. Passé les terminaux telnet et ssh, des
+   solutions graphiques existent déjà depuis de longues années, comme par
+   exemple le logiciel open source VNC qui permet de manipuler son bureau
+   Windows à distance. Microsoft propose aussi sa propre solution, avec
+   Remote Desktop Connection (RDC).
+
+   Particularité de ces solutions, elles exploitent le fait qu'en général,
+   un bureau dispose de grandes zones fixes qui changent très peu d'un
+   instant à l'autre. Au mieux, les modifications sont en général
+   prévisibles (déplacer une fenêtre par exemple) et les solutions
+   exploitent cela au niveau de la manière dont ils transmettent les
+   informations, permettant de limiter massivement la bande passante
+   nécessaire pour réaliser un affichage distant.
+
+   Le protocole de VNC est le plus ancien, et n'est pas lié à Windows. Il
+   se contente simplement de transférer les zones de pixels qui ont été
+   modifiées par rapport à l'écran précédent. Microsoft va un petit peu
+   plus loin avec le protocole RDP utilisé par RDC, en envoyant des
+   instructions plus génériques (par exemple, « créer une fenêtre de telle
+   hauteur et telle largeur ») qui dessineront directement le résultat à
+   destination, en plus de la possibilité de transférer des zones de
+   pixels lorsque nécessaire, bien entendu.
+
+                              [IMG0051329.png]
+
+   Résultat, on peut prendre très facilement contrôle de machines non
+   seulement dans son réseau local, mais même au travers d'Internet avec
+   un confort élevé lorsqu'il s'agit de tâches peu graphiques.
+
+Le H.264 à la rescousse
+
+   Etant donné les performances au travers d'Internet de VNC et RDC, on
+   pourrait penser que sur un réseau local, transférer les images d'un jeu
+   serait trivial ! En pratique, la déception est immédiate puisque l'on
+   se retrouve en général avec un écran noir, DirectX n'étant pas géré.
+
+   Selon les versions de Windows de chaque côté, dans certains cas, RDP
+   peut gérer des jeux DirectX (via l'extension RemoteFX ) mais en
+   pratique on a droit en général à un slide show dans le meilleur des
+   cas, une latence effroyable, et un support des contrôleurs de jeu
+   distant discutable.
+
+   Pas vraiment de miracle : ces protocoles n'ont pas été conçus pour
+   cela. Le point commun des solutions auxquelles nous nous sommes
+   intéressées aujourd'hui est qu'elles prennent le problème à l'envers :
+   plutôt que de considérer les zones qui changent d'une image à l'autre,
+   pourquoi ne pas directement encoder la sortie vidéo de l'écran, en
+   H.264, et envoyer directement ce résultat sur le réseau ? C'est après
+   tout une technique utilisée par certains logiciels de vidéo conférence,
+   comme Skype.
+
+                              [IMG0051330.jpg]
+   Les dernières versions de Skype gèrent l'encodage H.264 matériel pour
+  la vidéo conférence, et détournent cette fonctionnalité pour faire du
+                              partage d'écran
+
+   Conjugué à la multiplication des encodeurs H.264 intégrés dans le
+   matériel (et plus particulièrement, des encodeurs basse latence), c'est
+   - avec beaucoup de nuances comme nous allons le voir - le point de
+   départ utilisé par les solutions locales de streaming de jeux.
+     Les solutions évaluées Page suivante
+   Sommaire
+   1 - Un accès distant dédié aux jeux
+   2 - Les solutions évaluées
+   3 - Préalable : Écrans et moteurs des jeux
+   4 - Préalable : DXGI, Swap Chain, V-Sync, Tearing...
+   5 - Mesures de latence
+   6 - Encodage H.264, bande passante et WiFi
+   7 - Qualité d'image - Project Cars
+   8 - Qualité d'image - Act of Agression
+   9 - Qualité d'image - The Witcher 3
+   10 - Impact sur les performances, consommation
+   11 - Conclusion
+   Vos réactions
+
+Contenus relatifs
+
+     * [+] 09/05: AMD Ryzen 7 2700, Ryzen 5 2600 et I...
+     * [+] 04/05: Un Coffee Lake 8 coeurs en préparat...
+     * [+] 04/05: Nvidia abandonne son GeForce Partne...
+     * [+] 27/04: Le 10nm d'Intel (encore) retardé, l...
+     * [+] 27/04: AMD Vega 7nm en labo, Zen 2 échanti...
+     * [+] 26/04: Jim Keller rejoint... Intel !
+     * [+] 23/04: MAJ de notre test des Ryzen 7 2700X...
+     * [+] 19/04: AMD Ryzen 2700X et 2600X : Les même...
+     * [+] 19/04: 2008-2018 : tests de 62 processeurs...
+     * [+] 18/04: ASUS AREZ, l'effet GeForce Partner ...
+
+Top articles
+
+   Serveur express
+   Copyright © 1997-2019 Hardware.fr SARL.
+   Tous droits réservés.
+   Partenaires
+   Les numériques - LDLC.COM
+   - A propos  - Mentions légales -
+Comparateur de prix
+
+     * Asus GeForce RTX 2070 SUPER DUAL-RTX2070S-O8G-EVO
+       Asus GeForce RTX 2070 SUP...
+       » 554.99 €
+       Cartes graphiques
+     * MSI GeForce GTX 1050 Ti GAMING 4G
+       MSI GeForce GTX 1050 Ti G...
+       » 169.90 €
+       Cartes graphiques
+     * Asus GeForce GTX 1050 Ti CERBERUS-GTX1050TI-O4G
+       Asus GeForce GTX 1050 Ti ...
+       » 194.52 €
+       Cartes graphiques
+     * MSI GeForce RTX 2080 GAMING TRIO
+       MSI GeForce RTX 2080 GAMI...
+       » 699.95 €
+       Cartes graphiques
+Shop HardWare.fr
+
+     * Achat carte graphique pas chère
+     * Achat carte graphique MSI pas chère
+     * Achat carte graphique ASUS pas chère
+Comparateur de prix
+
+     * Asus GeForce RTX 2070 SUPER DUAL-RTX2070S-O8G-EVO
+       Asus GeForce RTX 2070 SUP...
+       » 554.99 €
+       Cartes graphiques
+     * MSI GeForce GTX 1050 Ti GAMING 4G
+       MSI GeForce GTX 1050 Ti G...
+       » 169.90 €
+       Cartes graphiques
+     * Asus GeForce GTX 1050 Ti CERBERUS-GTX1050TI-O4G
+       Asus GeForce GTX 1050 Ti ...
+       » 194.52 €
+       Cartes graphiques
+     * MSI GeForce RTX 2080 GAMING TRIO
+       MSI GeForce RTX 2080 GAMI...
+       » 699.95 €
+       Cartes graphiques
+Shop HardWare.fr
+
+     * Achat carte graphique pas chère
+     * Achat carte graphique MSI pas chère
+     * Achat carte graphique ASUS pas chère
+   #HardWare.fr - NEWS (RSS) HardWare.fr - ARTICLES (RSS)
+
+   Hardware.fr
+     * ACTUALITES
+     * ARTICLES
+     * PRIX
+     * FORUM
+     * BASE OVERCLOCKING
+     * PC HARDWARE.FR
+
+   Shop [shop.png]
+   Rechercher
+   Rechercher VOTRE RECHERCHE_____
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ComposantsStockageRefroidissementPériphériquesRéseauxOrdinateursVidéoTo
+   ut
+   HardwarePériphériquesPC PortablesAchats &
+   VentesLogicielsRéseauxProgrammationJeuxDiscussions
+   AMD FX AM3+AMD APU FM2/FM2+Intel Core LGA 1151Intel Core LGA
+   2011-v3Tout
+   Découvrez notre gamme de PC de bureau :OfficeFamilyGamingPower
+   GamingPower User
+
+Les solutions de streaming : Streaming local Steam et Nvidia GameStream en
+test
+
+   Tags : AMD; H.264; Intel; NVENC; Nvidia; QuickSync; Steam; Valve;
+   Publié le 26/07/2016 par Guillaume Louel
+   Imprimer
+   Twitter Facebook Google Plus
+
+   Profiter des jeux de son PC dans son salon, sans disposer d'un PC dédié
+   ou d'avoir à tout déplacer : voilà la promesse que font les diverses
+   solutions que nous avons testées aujourd'hui. Nous nous sommes en effet
+   intéressés aux solutions de streaming local spécifiques aux jeux PC,
+   afin de voir ce qu'elles proposent en pratique !
+
+                              [IMG0051341.jpg]
+
+Le jeu, un problème spécifique
+
+   Le concept de la prise de contrôle à distance d'une machine n'est pas
+   particulièrement nouveau. Passé les terminaux telnet et ssh, des
+   solutions graphiques existent déjà depuis de longues années, comme par
+   exemple le logiciel open source VNC qui permet de manipuler son bureau
+   Windows à distance. Microsoft propose aussi sa propre solution, avec
+   Remote Desktop Connection (RDC).
+
+   Particularité de ces solutions, elles exploitent le fait qu'en général,
+   un bureau dispose de grandes zones fixes qui changent très peu d'un
+   instant à l'autre. Au mieux, les modifications sont en général
+   prévisibles (déplacer une fenêtre par exemple) et les solutions
+   exploitent cela au niveau de la manière dont ils transmettent les
+   informations, permettant de limiter massivement la bande passante
+   nécessaire pour réaliser un affichage distant.
+
+   Le protocole de VNC est le plus ancien, et n'est pas lié à Windows. Il
+   se contente simplement de transférer les zones de pixels qui ont été
+   modifiées par rapport à l'écran précédent. Microsoft va un petit peu
+   plus loin avec le protocole RDP utilisé par RDC, en envoyant des
+   instructions plus génériques (par exemple, « créer une fenêtre de telle
+   hauteur et telle largeur ») qui dessineront directement le résultat à
+   destination, en plus de la possibilité de transférer des zones de
+   pixels lorsque nécessaire, bien entendu.
+
+                              [IMG0051329.png]
+
+   Résultat, on peut prendre très facilement contrôle de machines non
+   seulement dans son réseau local, mais même au travers d'Internet avec
+   un confort élevé lorsqu'il s'agit de tâches peu graphiques.
+
+Le H.264 à la rescousse
+
+   Etant donné les performances au travers d'Internet de VNC et RDC, on
+   pourrait penser que sur un réseau local, transférer les images d'un jeu
+   serait trivial ! En pratique, la déception est immédiate puisque l'on
+   se retrouve en général avec un écran noir, DirectX n'étant pas géré.
+
+   Selon les versions de Windows de chaque côté, dans certains cas, RDP
+   peut gérer des jeux DirectX (via l'extension RemoteFX ) mais en
+   pratique on a droit en général à un slide show dans le meilleur des
+   cas, une latence effroyable, et un support des contrôleurs de jeu
+   distant discutable.
+
+   Pas vraiment de miracle : ces protocoles n'ont pas été conçus pour
+   cela. Le point commun des solutions auxquelles nous nous sommes
+   intéressées aujourd'hui est qu'elles prennent le problème à l'envers :
+   plutôt que de considérer les zones qui changent d'une image à l'autre,
+   pourquoi ne pas directement encoder la sortie vidéo de l'écran, en
+   H.264, et envoyer directement ce résultat sur le réseau ? C'est après
+   tout une technique utilisée par certains logiciels de vidéo conférence,
+   comme Skype.
+
+                              [IMG0051330.jpg]
+   Les dernières versions de Skype gèrent l'encodage H.264 matériel pour
+  la vidéo conférence, et détournent cette fonctionnalité pour faire du
+                              partage d'écran
+
+   Conjugué à la multiplication des encodeurs H.264 intégrés dans le
+   matériel (et plus particulièrement, des encodeurs basse latence), c'est
+   - avec beaucoup de nuances comme nous allons le voir - le point de
+   départ utilisé par les solutions locales de streaming de jeux.
+     Les solutions évaluées Page suivante
+   Sommaire
+   1 - Un accès distant dédié aux jeux
+   2 - Les solutions évaluées
+   3 - Préalable : Écrans et moteurs des jeux
+   4 - Préalable : DXGI, Swap Chain, V-Sync, Tearing...
+   5 - Mesures de latence
+   6 - Encodage H.264, bande passante et WiFi
+   7 - Qualité d'image - Project Cars
+   8 - Qualité d'image - Act of Agression
+   9 - Qualité d'image - The Witcher 3
+   10 - Impact sur les performances, consommation
+   11 - Conclusion
+   Vos réactions
+
+Contenus relatifs
+
+     * [+] 09/05: AMD Ryzen 7 2700, Ryzen 5 2600 et I...
+     * [+] 04/05: Un Coffee Lake 8 coeurs en préparat...
+     * [+] 04/05: Nvidia abandonne son GeForce Partne...
+     * [+] 27/04: Le 10nm d'Intel (encore) retardé, l...
+     * [+] 27/04: AMD Vega 7nm en labo, Zen 2 échanti...
+     * [+] 26/04: Jim Keller rejoint... Intel !
+     * [+] 23/04: MAJ de notre test des Ryzen 7 2700X...
+     * [+] 19/04: AMD Ryzen 2700X et 2600X : Les même...
+     * [+] 19/04: 2008-2018 : tests de 62 processeurs...
+     * [+] 18/04: ASUS AREZ, l'effet GeForce Partner ...
+
+Top articles
+
+   Serveur express
+   Copyright © 1997-2019 Hardware.fr SARL.
+   Tous droits réservés.
+   Partenaires
+   Les numériques - LDLC.COM
+   - A propos  - Mentions légales -
+Comparateur de prix
+
+     * Asus GeForce RTX 2070 SUPER DUAL-RTX2070S-O8G-EVO
+       Asus GeForce RTX 2070 SUP...
+       » 554.99 €
+       Cartes graphiques
+     * MSI GeForce GTX 1050 Ti GAMING 4G
+       MSI GeForce GTX 1050 Ti G...
+       » 169.90 €
+       Cartes graphiques
+     * Asus GeForce GTX 1050 Ti CERBERUS-GTX1050TI-O4G
+       Asus GeForce GTX 1050 Ti ...
+       » 194.52 €
+       Cartes graphiques
+     * MSI GeForce RTX 2080 GAMING TRIO
+       MSI GeForce RTX 2080 GAMI...
+       » 699.95 €
+       Cartes graphiques
+Shop HardWare.fr
+
+     * Achat carte graphique pas chère
+     * Achat carte graphique MSI pas chère
+     * Achat carte graphique ASUS pas chère
+   #HardWare.fr - NEWS (RSS) HardWare.fr - ARTICLES (RSS)
+
+   Hardware.fr
+     * ACTUALITES
+     * ARTICLES
+     * PRIX
+     * FORUM
+     * BASE OVERCLOCKING
+     * PC HARDWARE.FR
+
+   Shop [shop.png]
+   Rechercher
+   Rechercher VOTRE RECHERCHE_____
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ComposantsStockageRefroidissementPériphériquesRéseauxOrdinateursVidéoTo
+   ut
+   HardwarePériphériquesPC PortablesAchats &
+   VentesLogicielsRéseauxProgrammationJeuxDiscussions
+   AMD FX AM3+AMD APU FM2/FM2+Intel Core LGA 1151Intel Core LGA
+   2011-v3Tout
+   Découvrez notre gamme de PC de bureau :OfficeFamilyGamingPower
+   GamingPower User
+
+Dossiers et focus cartes graphiques
+
+   Flux XML des articles Flux XML avec la liste des 20 derniers articles.
+   [Cartes Graphiques__________________] [Focus_________]
+   [Année de publicationn] Voir
+   Dossiers plus anciens   Dossiers plus anciens
+   Dossiers plus récents    Dossiers plus récents
+   Mai 2016
+   Nvidia GeForce GTX 1080, le premier GPU 16nm en test !
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 1080, le premier GPU 16nm en test !
+
+   24 Mai 2016 - par Damien Triolet Nvidia ouvre le bal du 16/14 nm avec
+   une GeForce GTX 1080 destinée à conserver sa domination sur le haut de
+   gamme. Quels gains attendre de cette première puce de nouvelle
+   génération ?
+   Novembre 2015
+   AMD Radeon R9 380X : les cartes Asus Strix et Sapphire Nitro en test
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 380X : les cartes Asus Strix et Sapphire Nitro en test
+
+   30 Novembre 2015 - par Damien Triolet Pour renforcer son offre face aux
+   GTX 900, AMD introduit la Radeon R9 380X avec un GPU Tonga qui monte
+   enfin en puissance. Est-ce suffisant pour faire la différence ? La
+   réponse dans notre dossier complet.
+   Septembre 2015
+   AMD Radeon R9 Nano, la carte Fiji compacte en test
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 Nano, la carte Fiji compacte en test
+
+   10 Septembre 2015 - par Damien Triolet AMD compte bien se démarquer de
+   la concurrence en proposant pour la première fois une carte graphique
+   haut de gamme ultra compacte destinée aux mini-PC. Cette Radeon R9 Nano
+   trouvera-t-elle sa niche ?
+   Août 2015
+   Nvidia GeForce GTX 950, MSI Gaming et Inno3D iChill Ultra en test :
+   Maxwell 2 passe sous 200
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 950, MSI Gaming et Inno3D iChill Ultra en test :
+Maxwell 2 passe sous 200
+
+   22 Août 2015 - par Damien Triolet Près d'un an après leur introduction,
+   les GeForce GTX 900 passent enfin sous la barre des 200 avec la GTX
+   950. Une solution intéressante pour les joueurs au budget serré ?
+   Juillet 2015
+   AMD Radeon R9 Fury : Sapphire Tri-X et Asus Strix en test
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 Fury : Sapphire Tri-X et Asus Strix en test
+
+   14 Juillet 2015 - par Damien Triolet Après la Radeon R9 Fury X avec
+   refroidissement liquide, AMD lance les Radeon R9 Fury équipées de
+   ventirads plus classiques. De quoi proposer des variantes plus
+   intéressantes du GPU Fiji ?
+   AMD Radeon R9 Fury X : le GPU Fiji et sa mémoire HBM en test
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 Fury X : le GPU Fiji et sa mémoire HBM en test
+
+   2 Juillet 2015 - par Damien Triolet Avec la Radeon R9 Fury X AMD ne
+   fait pas dans la demi-mesure : GPU de 8.9 milliards de transistors,
+   mémoire HBM et refroidissement à base de watercooling sont au
+   programme. De quoi inquiéter les GTX 980 Ti ?
+   Juin 2015
+   Nvidia GeForce GTX 980 Ti 6 Go : la petite soeur de la Titan X en test
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 980 Ti 6 Go : la petite soeur de la Titan X en
+test
+
+   1er Juin 2015 - par Damien Triolet C'était prévu, la très exclusive GTX
+   Titan X 12 Go serait rapidement suivie d'une petite soeur, très proche,
+   bâtie autour du même GPU mais qui se contente de 6 Go. Que vaut cette
+   GTX 980 Ti ?
+   Avril 2015
+   Nvidia GeForce GTX Titan X 12 Go et GM200 en test: big Maxwell débarque
+   !
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX Titan X 12 Go et GM200 en test: big Maxwell
+débarque !
+
+   2 Avril 2015 - par Damien Triolet Avec 8 milliards de transistors, 6.6
+   Tflops et 12 Go de mémoire, Nvidia entendu bien profiter de la GTX
+   Titan X pour renforcer sa place de leader. Faut-il craquer pour cette
+   carte graphique à plus de 1000 ?
+   Février 2015
+   Nvidia GeForce GTX 960 et GM206 : l
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 960 et GM206 : l'Asus Strix, l'Inno3D iChill
+Ultra et la MSI Gaming en test
+
+   5 Février 2015 - par Damien Triolet Après les GeForce GTX 980 et 970,
+   Nvidia entame la démocratisation de son architecture Maxwell dans le
+   milieu de gamme à travers l'introduction de la GeForce GTX 960...
+   Janvier 2015
+   Nvidia GeForce GTX 980 et GTX 970 : le GM204 Maxwell et les Gigabyte G1
+   Gaming en test
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 980 et GTX 970 : le GM204 Maxwell et les Gigabyte
+G1 Gaming en test
+
+   30 Janvier 2015 - par Damien Triolet Avec les GTX 900, Nvidia compte
+   bien pousser les performances d'un cran vers le haut, tout en mettant
+   tout le monde d'accord sur le plan de l'efficacité énergétique. C'est
+   ce que nous allons vérifier à travers un test complet...
+   Septembre 2014
+   AMD Radeon R9 285 : Tonga, la Sapphire Dual-X OC et la XFX Black
+   Edition en test
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 285 : Tonga, la Sapphire Dual-X OC et la XFX Black
+Edition en test
+
+   4 Septembre 2014 - par Damien Triolet Avec la Radeon R9 285, AMD
+   introduit un nouveau GPU, Tonga, qui est voué à remplacer la Radeon R9
+   280. Avantageusement ? C'est ce que nous allons vérifier
+   Août 2014
+   Nvidia GeForce GTX Titan Z : la carte graphique à 3000 en test
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX Titan Z : la carte graphique à 3000 en test
+
+   1er Août 2014 - par Damien Triolet Nous avons enfin pu mettre la main
+   sur la GeForce GTX Titan Z, la dernière carte bi-GPU de Nvidia,
+   proposée à 3000. Comment se comporte-t-elle face à la Radeon R9 295 X2
+   ? Sur le plan des performances ? Des nuisances sonores ?
+   Dossiers plus anciens   Dossiers plus anciens
+   Dossiers plus récents    Dossiers plus récents
+   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+   [1] [10] [20]
+
+Top articles
+
+   Serveur express
+   Copyright © 1997-2019 Hardware.fr SARL.
+   Tous droits réservés.
+   Partenaires
+   Les numériques - LDLC.COM
+   - A propos  - Mentions légales -
+Top comparateur de prix
+
+     * Asus GeForce RTX 2070 SUPER DUAL-RTX2070S-O8G-EVO
+       Asus GeForce RTX 2070 SUP...
+       » 562.24 €
+       Cartes graphiques
+     * MSI GeForce GTX 1050 Ti GAMING 4G
+       MSI GeForce GTX 1050 Ti G...
+       » 169.90 €
+       Cartes graphiques
+     * Asus GeForce GTX 1050 Ti CERBERUS-GTX1050TI-O4G
+       Asus GeForce GTX 1050 Ti ...
+       » 194.52 €
+       Cartes graphiques
+     * Sapphire NITRO+ Radeon RX 570 4GD5
+       Sapphire NITRO+ Radeon RX...
+       » 145.99 €
+       Cartes graphiques
+   0
+
+   #HardWare.fr - NEWS (RSS) HardWare.fr - ARTICLES (RSS)
+
+   Hardware.fr
+     * ACTUALITES
+     * ARTICLES
+     * PRIX
+     * FORUM
+     * BASE OVERCLOCKING
+     * PC HARDWARE.FR
+
+   Shop [shop.png]
+   Rechercher
+   Rechercher VOTRE RECHERCHE_____
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ProcesseursCartes mèresCartes graphiquesDisques dursSSDDiversTout
+   ComposantsStockageRefroidissementPériphériquesRéseauxOrdinateursVidéoTo
+   ut
+   HardwarePériphériquesPC PortablesAchats &
+   VentesLogicielsRéseauxProgrammationJeuxDiscussions
+   AMD FX AM3+AMD APU FM2/FM2+Intel Core LGA 1151Intel Core LGA
+   2011-v3Tout
+   Découvrez notre gamme de PC de bureau :OfficeFamilyGamingPower
+   GamingPower User
+
+Dossiers et focus cartes graphiques
+
+   Flux XML des articles Flux XML avec la liste des 20 derniers articles.
+   [Cartes Graphiques__________________] [Focus_________]
+   [Année de publicationn] Voir
+   Dossiers plus anciens   Dossiers plus anciens
+   Dossiers plus récents    Dossiers plus récents
+   Juillet 2014
+   Comparatif : les Radeon R9 290 et 290X d
+   Cartes Graphiques:
+
+Dossier: Comparatif : les Radeon R9 290 et 290X d'AMD, Asus, Gigabyte, HIS,
+MSI et Sapphire
+
+   17 Juillet 2014 - par Damien Triolet Que valent les Radeon R9 290 et
+   290X personnalisées d'Asus, Gigabyte, HIS, MSI et Sapphire ?
+   Températures, nuisances sonores, overclocking, quelle est la meilleure
+   Radeon R9 290 ?
+   Avril 2014
+   AMD Radeon R9 295X2 : 550W et watercooling
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 295X2 : 550W et watercooling
+
+   25 Avril 2014 - par Damien Triolet Pour le dérivé bi-GPU de la Radeon
+   R9 290X, AMD a opté pour un changement radical en passant au
+   refroidissement liquide. De quoi éviter tout compromis sur les
+   performances tout en maîtrisant enfin les nuisances ?
+   Février 2014
+   Nvidia GeForce GTX 750 Ti & GTX 750 : Maxwell fait ses débuts
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 750 Ti & GTX 750 : Maxwell fait ses débuts
+
+   26 Février 2014 - par Damien Triolet Avec les GeForce GTX 750, c'est
+   par l'entrée de gamme que Nvidia introduit sa nouvelle architecture
+   Maxwell. Au menu, un rendement énergétique en nette hausse et des
+   cartes compactes. De quoi changer la donner à 100-150 ?
+   Décembre 2013
+   Nvidia G-SYNC en test : les jeux fluides dès 40 fps ?
+   Cartes Graphiques:
+
+Dossier: Nvidia G-SYNC en test : les jeux fluides dès 40 fps ?
+
+   30 Décembre 2013 - par Damien Triolet Avec G-SYNC, Nvidia s'introduit
+   dans les écrans pour leur permettre de mieux s'adapter au rythme des
+   GPU. De quoi améliorer le confort de jeu sur PC en termes de fluidité,
+   de latence et de qualité.
+   Novembre 2013
+   Nvidia GeForce GTX 780 Ti en test : le GK110 enfin au complet !
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 780 Ti en test : le GK110 enfin au complet !
+
+   7 Novembre 2013 - par Damien Triolet Nvidia n'aura pas tardé !
+   Inconcevable de laisser la première place à AMD, la GeForce GTX 780 Ti
+   a dès lors pour mission de mettre tout le monde d'accord en reprenant
+   le titre...
+   AMD Radeon R9 290X et R9 290 en test : Hawaii sort ses watts
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 290X et R9 290 en test : Hawaii sort ses watts
+
+   6 Novembre 2013 - par Damien Triolet Ça s'active sur le haut de gamme !
+   Avec un nouveau GPU et les Radeon R9 290X / R9 290, AMD compte bien
+   convaincre les joueurs à la recherche des meilleures performances pari
+   réussi ?
+   Octobre 2013
+   AMD Radeon R9 280X, 270X et R7 260X en test : de nouveaux noms pour les
+   HD 7000
+   Cartes Graphiques:
+
+Dossier: AMD Radeon R9 280X, 270X et R7 260X en test : de nouveaux noms pour
+les HD 7000
+
+   8 Octobre 2013 - par Damien Triolet En attendant les Radeon R9 290, AMD
+   transfère ses GPU actuels de la gamme Radeon HD 7000 vers la gamme
+   Radeon R9/R7 200. Nous faisons ici le point sur les trois premiers
+   modèles destinés aux joueurs !
+   Juin 2013
+   Nvidia GeForce GTX 760 et MSI Gaming OC en test
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 760 et MSI Gaming OC en test
+
+   25 Juin 2013 - par Damien Triolet Nvidia poursuit le passage du GPU
+   GK104 vers la série GTX 700 avec une GeForce GTX 760 destinée à
+   remplacer les GTX 660 Ti et 670. Nous avons passé en revue la carte de
+   référence ainsi que le modèle Gaming OC de MSI.
+   Mai 2013
+   Nvidia GeForce GTX 770 et MSI Lightning en test : GTX 680 1.1
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 770 et MSI Lightning en test : GTX 680 1.1
+
+   30 Mai 2013 - par Damien Triolet Après la GTX 780, c'est au tour de la
+   GTX 770 d'être présentée par Nvidia. Au menu, une GTX 680 légèrement
+   revue. Nous nous sommes penchés sur la carte de référence ainsi que sur
+   le modèle Lightning de MSI.
+   Nvidia GeForce GTX 780 en test : GK110 pour tous (ou presque)
+   Cartes Graphiques:
+
+Dossier: Nvidia GeForce GTX 780 en test : GK110 pour tous (ou presque)
+
+   23 Mai 2013 - par Damien Triolet Nvidia inaugure les GeForce 700 avec
+   la GTX 780 qui n'est autre qu'une GeForce GTX Titan aux spécifications
+   revues à la baisse. De quoi démocratiser quelque peu le plus gros GPU
+   Kepler ?
+   Avril 2013
+   AMD Radeon HD 7990 en test : performances et fluidité au rendez-vous ?
+   Cartes Graphiques:
+
+Dossier: AMD Radeon HD 7990 en test : performances et fluidité au rendez-vous
+?
+
+   24 Avril 2013 - par Damien Triolet La Radeon HD 7990 de référence
+   débarque enfin avec la promesse de détrôner la GeForce GTX 690. C'est
+   ce que nous allons vérifier dans ce test complet, en n'oubliant pas
+   d'observer de près si la fluidité est au rendez-vous.
+   AMD Radeon HD 7790 et GeForce GTX 650 Ti Boost en test
+   Cartes Graphiques:
+
+Dossier: AMD Radeon HD 7790 et GeForce GTX 650 Ti Boost en test
+
+   8 Avril 2013 - par Damien Triolet La famille Radeon HD 7000 s'agrandit
+   avec l'arrivée du nouveau GPU Bonaire et de la Radeon HD 7790, qui pour
+   moins de 150 fait réagir la concurrence avec une baisse de prix et
+   l'arrivée de la GeForce GTX 650 Ti Boost...
+   Dossiers plus anciens   Dossiers plus anciens
+   Dossiers plus récents    Dossiers plus récents
+   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+   [1] [10] [20]
+
+Top articles
+
+   Serveur express
+   Copyright © 1997-2019 Hardware.fr SARL.
+   Tous droits réservés.
+   Partenaires
+   Les numériques - LDLC.COM
+   - A propos  - Mentions légales -
+Top comparateur de prix
+
+     * Asus GeForce RTX 2070 SUPER DUAL-RTX2070S-O8G-EVO
+       Asus GeForce RTX 2070 SUP...
+       » 562.24 €
+       Cartes graphiques
+     * MSI GeForce GTX 1050 Ti GAMING 4G
+       MSI GeForce GTX 1050 Ti G...
+       » 169.90 €
+       Cartes graphiques
+     * Asus GeForce GTX 1050 Ti CERBERUS-GTX1050TI-O4G
+       Asus GeForce GTX 1050 Ti ...
+       » 194.52 €
+       Cartes graphiques
+     * Sapphire NITRO+ Radeon RX 570 4GD5
+       Sapphire NITRO+ Radeon RX...
+       » 145.99 €
+       Cartes graphiques

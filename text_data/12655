@@ -1,0 +1,343 @@
+   Thierry Viéville @ Inria
+
+   icons/mnemosyne-logo.png
+
+                   Here are my main personal on-going research activities.
+
+                   Cortical map variational specification
+
+   results/vieville-kornprobst:06.gif
+
+                      Neuronal computational properties
+
+   results/cessac-vieville:07.gif
+
+                        multi-model robust Estimation
+
+   results/vieville-lingrand-etal:01.gif
+
+                           fast-brain Recognition
+
+   results/vieville-crahay:04.png
+
+                          trajectory Planification
+
+   results/vieville-vadot:02.png
+
+   Other recent research topics include virtual retina, biological motion
+   recognition, optical imaging and computation with spikes.
+
+   Older research topics are summarized in publications.
+
+   icons/rainbowline.gif
+
+     * Are biological neurons and networks that vicious ? Or only their
+       model ?.
+       A link is built between a biologically plausible generalized
+       integrate and fire (GIF) neuron model with conductance-based
+       dynamics and a discrete time neural network model with spiking
+       neurons, for which rigorous results on the spontaneous dynamics has
+       been obtained. More precisely the following has been shown.
+       i) Occurrence of periodic orbits is the generic regime of activity,
+       with a bounded period in the presence of spike-time dependence
+       plasticity, and arbitrary large periods at the edge of chaos (such
+       regime is indistinguishable from chaos in numerical experiments,
+       explaining what is obtained in),
+       ii) the dynamics of membrane potential has a one to one
+       correspondence with sequences of spikes patterns ("raster plots")
+       This allows a better insight into the possible neural coding in
+       such a network and provides a deep understanding, at the network
+       level, of the system behavior. Moreover, though the dynamics is
+       generically periodic, it has a weak form of initial conditions
+       sensitivity due to the presence of the sharp spiking threshold.
+       A step further, constructive conditions are derived, allowing to
+       properly implement visual functions on such networks. The time
+       discretization has been carefully conducted avoiding usual bias
+       induced by e.g. Euler methods and taking into account a rather
+       complex GIF model for which the usual arbitrary discontinuities are
+       discussed in details. The effects of the discretization
+       approximation has been analytically and experimentally analyzed.
+       With this new point of view, we also reconsider some ``biological''
+       results obtained on ``models'' with biologically implausible
+       discontinuities. It allows us to reduce the bio-physical membrane
+       equation to a very simple but powerful gIF numerical model. This
+       also dramatically reduces the algorithmic complexity of event-based
+       network simulations.
+       key-words. Cortical maps; Spiking neural networks; Edge of chaos.
+       Co-authors. Bruno Cessac.
+       Links.
+          + On Dynamics of Integrate-and-Fire Neural Networks with
+            Conductance Based Synapses (paper)
+          + Revisiting time discretisation of spiking network models
+            (poster)
+          + To which extend is the ``neural code'' a metric ? (paper)
+          + To which extend is the ``neural code'' a metric ? (poster)
+          + Introducing numerical bounds to improve event-based neural
+            network simulation (report)
+          + Overview of facts and issues about neural coding by spikes
+            (paper)
+          + How Gibbs Distributions May Naturally Arise from Synaptic
+            Adaptation Mechanisms. A Model-Based Argumentation (paper)
+     * Specifying biological networks computations with variational
+       approaches.
+       We revisit here the links between (i) high-level specification of
+       how the brain represents and categorizes the causes of its sensory
+       input and (ii) related analog or spiking neural networks.
+       Focusing on visual processing, we show -for a rather general class
+       of cortical map computations- how it is possible to directly rely
+       ``what is to be done'' (perceptual task) with ``how to do it''
+       (neural network calculation).
+       More precisely, in computer vision, efficient computations using
+       implementations of regularization processes allows to obtain
+       well-defined and powerful estimations. Having a biologically
+       plausible representation of such mechanisms is thus a challenging
+       issue.
+       Reviewing recent ideas about brain activity representation, we show
+       how the key idea is to (i) represent what is to be done as an
+       optimization problem, (ii) considering regularization mechanisms
+       (implemented using so-called partial-differential-equations) and
+       (iii) ``compiling'' the related analog or spiking neural network
+       parameters.
+       The basement of the present contribution is the development of an
+       unbiased approximation of a diffusion operator used in
+       regularization mechanisms (introducing a summation property). A
+       direct link between continuous formulation and the related sampled
+       implementation is obtained. It also provides convergence properties
+       for the related network.
+       Not only analog networks but also deterministic spiking neural
+       network can implement the present specifications, using here
+       piece-wise approximations in the so called Spike Response Model,
+       also leading to a fast event-based simulation of such networks.
+       key-words. Cortical maps; Diffusion operator; Visual function;
+       Cortical columns.
+       Co-authors. Bruno Cessac, Horacio Rostro, Sandrine Chemla, Pierre
+       Kornprobst.
+       Links.
+          + Variational methods as a computational model for cortical
+            visual maps (slides)
+          + Variational approaches for biological neural networks:
+            Implementation and feedbacks (paper)
+          + Modeling Cortical Maps With Feed-Backs (slides)
+          + Reverse-engineering of the visual brain cortical maps
+            computation using optical-imaging (poster)
+          + Unbiased implementation of regularization mechanisms (paper)
+          + Reverse-engineering in spiking neural networks parameters:
+            exact deterministic parameters estimation (report)
+          + On asynchronous dynamic neural field computation (short paper)
+     * One step towards an abstract view of computation in spiking
+       neural-networks.
+       Neural network information is mainly conveyed through (i)
+       event-based quanta, spikes, whereas high-level representation of
+       the related processing is almost always modeled in (ii) some
+       continuous framework. Here, we propose a link between (i) and (ii)
+       which allows to derive the spiking network parameters given a
+       continuous processing and also obtain an abstract interpretation of
+       the related processing.
+       In event based neural network models, the output of a neuron is
+       entirely characterized by the sequence of spike firing times and
+       the Gerstner and Kistler Spike Response Model of a biological
+       neuron defines the state of a neuron via a single variable. At the
+       computational level, using piece-wise linear profiles yields a
+       closed-form calculation of the spiking events, thus allows to
+       obtain an efficient and exact implementation of (1) in event-based
+       massive neuronal simulators such as MVASPIKE.
+       Using this model and following Maas and Natchslager, we represent
+       the signal as the last spike delay with respect to a given temporal
+       reference, consider piece-wise linear response profiles (as
+       approximations of Hodhkins-Huxley related profiles), introduce a
+       temporal discretization of the input current, and obtain a direct
+       link with continuous representation of neural map computation:
+       - the resistive coefficient being proportional to the spiking
+       threshold
+       - the variational approach diffusion being in direct relation with
+       the synaptic weights
+       - the corrective term being controlled by the axonal delay
+       - the input gain being controlled by the input resistance
+       with closed-form correspondence allowing to explicitly calculate
+       the neural network parameters given an abstract continuous
+       representation.
+       This relationship is valid only in a given temporal window, with
+       saturation outside, as for analog networks. Here it appears that
+       fast adaptive delays (as observed in recent intra-cellular
+       experiments of e.g. Fregnac et al.) is a crucial element in this
+       model. In the derivation a constraint coherent with S.T.D.P.
+       adaptation rules (yielding the same constraint) as derived by,
+       e.g., Guyonneau. It also corresponds to what is obtained from a
+       variational framework relating the neuronal weights to a continuous
+       diffusion operator, as introduced by Cottet. This last formulation
+       is in direct relation with a sub-class of Cohen-Grossgerg dynamical
+       systems.
+       We illustrate the previous derivation with an event-based
+       implementation of an early-vision processing layer, for a 1D
+       spiking neural network, correspond to an edge-preserving smoothing
+       of the input, using a non-linear diffusion operator.
+       key-words. Cortical maps; Diffusion operator; Visual function;
+       Spiking neural networks.
+       Co-authors. Léonard Gérard, Pierre Kornprobst, Olivier Rochel, et
+       al.
+       Links.
+          + From variational to spiking network image segmentation
+            techniques (poster)
+          + A first step towards in silico neuronal implementation of
+            early-vision map (paper)
+          + A first step towards in silico neuronal implementation of
+            early-vision map (slides)
+          + Action Recognition Using a Bio-Inspired Feedforward Spiking
+            Network
+     * Neural fields and self-organizing receptive fields using a
+       variational approach.
+       Self organizing-maps, as e.g. introduced by Kohonen, are artificial
+       neural networks characterized by competitive learning of the
+       processing elements. They thus can be used for the pattern analysis
+       of input signal. Here we consider, as a working example, the
+       self-organization of visual receptive fields, as it occurs in V1
+       and study to which extend using a variational approach may help
+       specifying such a mechanism.
+       The goal of the present contribution is thus humble in the sense
+       that we simply would like to explore at a technical level, the
+       advantages and limits of the variational specification in this
+       case, in order to better adjust the parameters.
+       This formulation includes non-linear formulation of self-organizing
+       maps as proposed by Fort and Pages, while unusual non-linear
+       profiles allowing edge preserving smoothing, via non-linear
+       diffusion are introduced. This criterion also acts as a convergence
+       function (à la Lyapounov) of the underlying dynamical system.
+       The assumption is that they contribute to regularize the learning
+       process. As such, they likely speed-up the convergence. They
+       however constraint the solution to be taken in a more restrictive
+       space of smoother functions. Experimental results are going to
+       confront these assumptions to the ground truth.
+       A step ahead, the ``arg max'' rule itself is implemented by a
+       winner-take-all mechanism, given an initial condition, the
+       formulation leading to a local distributed implementation and
+       guaranties the convergence towards a local minimum of the
+       criterion.
+       A theoretical result predicts a stable interaction though
+       feed-backs between these two layers and an experimental
+       verification is proposed here.
+       key-words. Cortical maps; Diffusion operator; Spiking neural
+       networks.
+       Co-authors. Frédéric Alexandre, Jérémie Fix, Axel Hutt, Nicolas
+       Rougier.
+       Links.
+          + Self-Organizing Receptive Fields Using a Variational Approach
+            (poster)
+          + On practical neural field parameters adjustment (paper)
+          + On practical neural field parameters adjustment (poster)
+          + Algorithmic adjustment of neural field parameters (report)
+     * A deterministic biologically plausible classifier.
+       Regarding biological visual classification, recent series of
+       experiments have enlighten that data classification can be realized
+       in the human visual cortex with latencies of about 100 ms, which,
+       considering the visual pathways latencies, is only compatible with
+       a very specific processing architecture, described by the so-called
+       Thorpe model. Surprisingly enough, this experimental evidence is in
+       coherence with algorithms derived from the statistical learning
+       theory, following the work of Vapnik. More precisely, there is a
+       double link: on one hand, the Vapnik theory offers tools to
+       evaluate and analyze the Thorpe model performances and on the other
+       hand, this model is an interesting front-end for algorithms derived
+       from the Vapnik theory. The present contribution develops this idea
+       and experiments its performances using a tiny sign language
+       recognition experiment.
+       Biological motion recognition refers to our ability to recognize a
+       scene (motion or movement) based on the evolution of a limited
+       number of points acquired for instance with a motion capture tool.
+       Much work has been done in this direction showing how it is
+       possible to recognize actions based on these points. Following the
+       reference work of Giese and Poggio, we propose an approach to
+       extract such points from a video based on spiking neural networks
+       with rank order coding. Using this estimated set of points, we
+       verify that correct biological motion classification can be
+       perfomed. We use some recent results of Thorpe et al. who claim
+       that the neural information is coded by the relative order in which
+       these neurons fire. This allows to select a limited set of relevant
+       points to be used in the motion classification. Several experiments
+       and comparisons with previous neurological work and models are
+       proposed.
+       The result of these simulations show that information from early
+       visual processes appears to be sufficient to classify biological
+       motion.
+       key-words. Neuronal classifier; Supervised learning; Vapnik
+       dimension.
+       Co-authors. Sylvie Crahay, Yvan Dimov, Pierre Kornprobst, Simon
+       Thorpe.
+       Links.
+          + Using an Hebbian Learning Rule for Multi-Class SVM Classifiers
+            (paper)
+          + A deterministic biologically plausible classifier (slides)
+          + Could early visual processes be sufficient to label motion?
+            (slides)
+          + Could early visual processes be sufficient to label motions?
+            (demo)
+          + Reconnaître un animal : notre cerveau est plus rapide que nous
+            ! (large-public presentation + demo)
+     * Biologically plausible trajectory generators.
+       Considering the biological or artificial control of a trajectory
+       generation, we propose a biologically plausible model based on
+       harmonic potentials.
+       Such methods assume that obstacles to avoid (or constraints not to
+       violate) correspond to maxima of the potential, while the goal
+       corresponds to a unique minimum. The corresponding algorithm thus
+       behaves as if one throws a sheet onto this state space, this
+       hyper-surface relief being elevated on obstacles, with a hole at
+       the goal location, so that finding a trajectory reduces to ``roll
+       down'' along this relief towards the minimal height location.
+       The originality of the present work is to build an harmonic
+       potential (thus without local minimum) as a finite linear
+       combination of elementary harmonic functions. The set of these
+       components samples the border of the admissible domain bounded by
+       obstacles or constraints.
+       This leads to an internal representation of the problem as a
+       non-topographical map incrementally built during the system
+       exploration and non-linearly linked to the real problem geometry.
+       As such, it provides a biologically plausible quantitative model of
+       some hippocampus mechanisms and of the related cognitive maps, in
+       coherence with usual biological assumptions about such behavior.
+       key-words. Trajectory generation; Harmonic potential; Biological
+       model.
+       Co-authors. Cécile Vadot.
+       Links.
+          + An improved biologically plausible trajectory generator
+            (report)
+          + Biologically Plausible Trajectory Generator (slides)
+          + Une solution au problème de la génération de trajectoires
+            (large-public presentation + demo)
+     * Multi-Model Parametric Estimation.
+       This work is realized within the scope of a general attempt to
+       understand parametric adaptation, regarding visual perception. The
+       key idea is to analyze how we may use multi-model parametric
+       estimation as a 1st step towards categorization. More generally,
+       the goal is to formalize how the notion of ``objects'' or
+       ``events'' in an application may be reduced to a choice in a
+       hierarchy of parametric models used to estimate the underlying data
+       categorization. These mechanisms are to be linked with what occurs
+       in the cerebral cortex where object recognition corresponds to a
+       parametric neuronal estimation.
+       We hope to bring here an algorithmic element in relation with the
+       ``grand-ma'' neuron modelization. We thus revisit the problem of
+       parameter estimation in computer vision, presented here as a simple
+       optimization problem, considering (i) non-linear implicit
+       measurement equations and parameter constraints, plus (ii) robust
+       estimation in the presence of outliers and (iii) multi-model
+       comparisons.
+       Here, (1) a projection algorithm based on generalizations of
+       square-root decompositions allows an efficient and numerically
+       stable local resolution of a set of non-linear equations. On the
+       other hand, (2) a robust estimation module of a hierarchy of
+       non-linear models has been designed and validated. A step ahead,
+       the software architecture of the estimation module is discussed
+       with the goal of being integrated in reactive software environments
+       or within applications with time constraints.
+       key-words. Non-linear estimation; Robust estimation; Multi-model
+       estimation.
+       Co-authors. François Gaspard, Diane Lingrand.
+       Links.
+          + Implementing a multi-model estimation method (report)
+          + Implementing a multi-model estimation method (slides)
+          + Estimation paramétrique multi-modèle robuste: une introduction
+            (course notes)
+          + Pourquoi ne pas confier au hasard ce qui est trop compliqué à
+            estimer ? (large-public presentation + demo)
+          + La grenouille et le robot ? (large-public presentation + demo)
+     __________________________________________________________________

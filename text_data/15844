@@ -1,0 +1,185 @@
+                                     Found
+
+   The document has moved here.
+     __________________________________________________________________
+
+
+    Apache/2.4.10 (Debian) Server at www.lcpc.fr Port 80
+                                     Found
+
+   The document has moved here.
+     __________________________________________________________________
+
+
+    Apache/2.4.10 (Debian) Server at www.lcpc.fr Port 80
+
+   Uncaught TYPO3 Exception
+   #1396795884: The current host header value does not match the
+   configured trusted hosts pattern! Check the pattern defined in
+   $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] and adapt it,
+   if you want to allow the current host header 'www.lcpc.fr' for your
+   installation. (More information)
+   UnexpectedValueException thrown in file
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Utility/Gene
+   ralUtility.php in line 3548.
+7 TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv("HTTP_HOST")
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Utility/Gene
+   ralUtility.php:
+03602:                 break;
+03603:             case 'TYPO3_REQUEST_HOST':
+
+03604:                 $retVal = (self::getIndpEnv('TYPO3_SSL') ? 'https://' : '
+http://') . self::getIndpEnv('HTTP_HOST');
+
+03605:                 break;
+03606:             case 'TYPO3_REQUEST_URL':
+
+6 TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv("TYPO3_REQUEST_HOST")
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Utility/Gene
+   ralUtility.php:
+03605:                 break;
+03606:             case 'TYPO3_REQUEST_URL':
+
+03607:                 $retVal = self::getIndpEnv('TYPO3_REQUEST_HOST') . self::
+getIndpEnv('REQUEST_URI');
+
+03608:                 break;
+03609:             case 'TYPO3_REQUEST_SCRIPT':
+
+5 TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv("TYPO3_REQUEST_URL")
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Http/ServerR
+   equestFactory.php:
+00040:
+00041:         $method = isset($serverParameters['REQUEST_METHOD']) ? $serverPar
+ameters['REQUEST_METHOD'] : 'GET';
+
+00042:         $uri = new Uri(GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL'));
+
+00043:
+00044:         $request = new ServerRequest(
+
+4 TYPO3\CMS\Core\Http\ServerRequestFactory::fromGlobals()
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/frontend/Classes/Http/App
+   lication.php:
+00076:     public function run(callable $execute = null)
+00077:     {
+
+00078:         $this->bootstrap->handleRequest(\TYPO3\CMS\Core\Http\ServerReques
+tFactory::fromGlobals());
+
+00079:
+00080:         if ($execute !== null) {
+
+3 TYPO3\CMS\Frontend\Http\Application::run()
+
+   /sites/www/typo3_src-elts-7.6.39/index.php:
+00031: call_user_func(function () {
+00032:     $classLoader = require rtrim(realpath(__DIR__ . '/typo3'), '\\/') . '
+/../vendor/autoload.php';
+
+00033:     (new \TYPO3\CMS\Frontend\Http\Application($classLoader))->run();
+
+00034: });
+
+2 {closure}()
+1 call_user_func(Closure)
+
+   /sites/www/typo3_src-elts-7.6.39/index.php:
+00032:     $classLoader = require rtrim(realpath(__DIR__ . '/typo3'), '\\/') . '
+/../vendor/autoload.php';
+00033:     (new \TYPO3\CMS\Frontend\Http\Application($classLoader))->run();
+
+00034: });
+                                     Found
+
+   The document has moved here.
+     __________________________________________________________________
+
+
+    Apache/2.4.10 (Debian) Server at www.lcpc.fr Port 80
+
+   Uncaught TYPO3 Exception
+   #1396795884: The current host header value does not match the
+   configured trusted hosts pattern! Check the pattern defined in
+   $GLOBALS['TYPO3_CONF_VARS']['SYS']['trustedHostsPattern'] and adapt it,
+   if you want to allow the current host header 'www.lcpc.fr' for your
+   installation. (More information)
+   UnexpectedValueException thrown in file
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Utility/Gene
+   ralUtility.php in line 3548.
+7 TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv("HTTP_HOST")
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Utility/Gene
+   ralUtility.php:
+03602:                 break;
+03603:             case 'TYPO3_REQUEST_HOST':
+
+03604:                 $retVal = (self::getIndpEnv('TYPO3_SSL') ? 'https://' : '
+http://') . self::getIndpEnv('HTTP_HOST');
+
+03605:                 break;
+03606:             case 'TYPO3_REQUEST_URL':
+
+6 TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv("TYPO3_REQUEST_HOST")
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Utility/Gene
+   ralUtility.php:
+03605:                 break;
+03606:             case 'TYPO3_REQUEST_URL':
+
+03607:                 $retVal = self::getIndpEnv('TYPO3_REQUEST_HOST') . self::
+getIndpEnv('REQUEST_URI');
+
+03608:                 break;
+03609:             case 'TYPO3_REQUEST_SCRIPT':
+
+5 TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv("TYPO3_REQUEST_URL")
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/core/Classes/Http/ServerR
+   equestFactory.php:
+00040:
+00041:         $method = isset($serverParameters['REQUEST_METHOD']) ? $serverPar
+ameters['REQUEST_METHOD'] : 'GET';
+
+00042:         $uri = new Uri(GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL'));
+
+00043:
+00044:         $request = new ServerRequest(
+
+4 TYPO3\CMS\Core\Http\ServerRequestFactory::fromGlobals()
+
+   /sites/www/typo3_src-elts-7.6.39/typo3/sysext/frontend/Classes/Http/App
+   lication.php:
+00076:     public function run(callable $execute = null)
+00077:     {
+
+00078:         $this->bootstrap->handleRequest(\TYPO3\CMS\Core\Http\ServerReques
+tFactory::fromGlobals());
+
+00079:
+00080:         if ($execute !== null) {
+
+3 TYPO3\CMS\Frontend\Http\Application::run()
+
+   /sites/www/typo3_src-elts-7.6.39/index.php:
+00031: call_user_func(function () {
+00032:     $classLoader = require rtrim(realpath(__DIR__ . '/typo3'), '\\/') . '
+/../vendor/autoload.php';
+
+00033:     (new \TYPO3\CMS\Frontend\Http\Application($classLoader))->run();
+
+00034: });
+
+2 {closure}()
+1 call_user_func(Closure)
+
+   /sites/www/typo3_src-elts-7.6.39/index.php:
+00032:     $classLoader = require rtrim(realpath(__DIR__ . '/typo3'), '\\/') . '
+/../vendor/autoload.php';
+00033:     (new \TYPO3\CMS\Frontend\Http\Application($classLoader))->run();
+
+00034: });

@@ -1,0 +1,1043 @@
+   ﻿ #SeeYaR RSS Feed alternate alternate
+
+   News Et Tutos!
+   PayPal, le réflexe sécurité pour payer en ligne
+     * home
+     * News
+          + Boite à outils
+          + Logiciels
+          + Divertissements
+          + Astuces
+          + Divers
+     * Tutoriels
+          + Windows
+          + Linux
+          + Android
+          + Site web
+          + Hardware
+          + CAO
+          + Jeux
+     * Videos
+     * Au hasard
+
+       [gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==]-S
+       ubmit ____________________
+
+Rendre une balise iframe responsive
+
+   20/03/2014 seeyar
+   # Site web, # Tutoriels
+
+   responsive
+
+   Si vous possédez un site au design responsive et que vous vous demandez
+   comment rendre responsive une balise iframe, et bien vous êtes tombé
+   sur le bon article! Suivez le guide
+
+                                 [INS: :INS]
+
+   Une balise iframe permet d'afficher une vidéo ou tout autres type de
+   documents.
+
+   Mais comment le rendre responsive?
+
+   Pour ce tuto on prendra l'exemple d'une iframe vidéo. Si vous hébergez
+   des documents sur google drive vous obtiendrez une balise iframe comme
+   celle-ci par exemple:
+
+   googledrive-video4
+
+1.HTML
+
+   L'idée est de placer la balise iframe dans un conteneur qui sera
+   responsive: on mettra l'iframe dans une balise <div
+   class=videoWrapper></div>.Il suffira ensuite de définir la class
+   videoWrapper dans votre feuille de style css. Si vous êtes sous
+   WordPress il s'agit du fichier style.css
+
+   Notez la syntaxe, nous avons notre balise iframe dans notre conteneur,
+   une balise <div>
+
+   <div class="videoWrapper"><iframe width="640" height="380" s
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   <div class="videoWrapper"><iframe width="640" height="380"
+   src="https://docs.google.com/file/d/0B7LgDW77JcNGdTZOMlFLcHlQYnM/previe
+   w"></iframe></div>
+
+
+   [INS: :INS]
+
+2.CSS
+
+   Éditez votre feuille de style css et rajoutez ces bouts de code:
+
+   .videoWrapper {_____________________________________________
+   	position: relative;________________________________________
+   	padding-bottom: 56.25%; /* 16:9 */_________________________
+   	padding-top: 25px;_________________________________________
+   	height: 0;_________________________________________________
+   }___________________________________________________________
+   .videoWrapper iframe {______________________________________
+   	position: absolute;________________________________________
+   	top: 0;____________________________________________________
+   	left: 0;___________________________________________________
+   	width: 100%;_______________________________________________
+   	height: 100%;______________________________________________
+   }___________________________________________________________
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+   10
+   11
+   12
+   13
+   .videoWrapper {
+   position: relative;
+   padding-bottom: 56.25%; /* 16:9 */
+   padding-top: 25px;
+   height: 0;
+   }
+   .videoWrapper iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   }
+
+
+   Enregistrez et enjoy :)
+
+Vous aimerez aussi:
+
+     * Passez en HTTPS: WordPress + Clouflare + Let’s encrypt Passez en
+       HTTPS: WordPress + Clouflare + Let’s encrypt
+     * Mettre une Like Box Facebook responsive sur un site ou un blog
+       Mettre une Like Box Facebook responsive sur un site ou un blog
+       Mettre une Like Box Facebook responsive sur un site ou un blog
+     * Trouver le nom d’un thème wordpress utilisé par un site Trouver le
+       nom d’un thème wordpress utilisé par un site Trouver le nom d’un
+       thème wordpress utilisé par un site
+     * Redirection des mails plesk vers gmail Redirection des mails plesk
+       vers gmail Redirection des mails plesk vers gmail
+     * Referencement: connaitre le classement d’un site par mot clé
+       Referencement: connaitre le classement d’un site par mot clé
+       Referencement: connaitre le classement d’un site par mot clé
+
+     * Newsletter
+       Veuillez laisser ce champ vide ____________________
+       E-mail * ____________________
+       Je m'abonne !
+       Vérifiez votre boîte de réception ou vos indésirables afin de
+       confirmer votre abonnement.
+     * [INS: :INS]
+
+     * Les derniers tutoriels
+       Désactiver l’éditeur visuel Gutenberg sans extension Désactiver
+       l’éditeur visuel Gutenberg sans extension
+
+Désactiver l’éditeur visuel Gutenberg sans extension
+       OCR de Google: extraire le texte d'une image ou d'un pdf OCR de
+       Google: extraire le texte d'une image ou d'un pdf
+
+OCR de Google: extraire le texte d'une image ou d'un pdf
+       Avoir des fonds d'écran différents sous Windows 10 Avoir des fonds
+       d'écran différents sous Windows 10
+
+Avoir des fonds d'écran différents sous Windows 10
+       Tablette Samsung qui s’éteint toute seule, la solution Tablette
+       Samsung qui s’éteint toute seule, la solution
+
+Tablette Samsung qui s’éteint toute seule, la solution
+       Rechercher un mot dans le contenu de plusieurs fichiers
+       Word,Excel,texte ou PDF Rechercher un mot dans le contenu de
+       plusieurs fichiers Word,Excel,texte ou PDF
+
+Rechercher un mot dans le contenu de plusieurs fichiers Word,Excel,texte ou
+PDF
+     * Voir tous les Tutos »
+     * Top articles
+          + Trouver le nom d’une police d’écriture…
+          + Facebook: retrouver quelqu’un grâce à son…
+          + Reconnaitre la musique d’une vidéo en ligne
+          + Autoriser le telechargement bloqué par google chrome
+          + Liste de proxy gratuit pour rester anonyme
+     * Vidéothèque
+       videotheque
+     * Nous suivre
+          + 210Fans
+          + 137Followers
+          + 100abonnée
+
+     * Citation geek
+     *
+          + 3 pommes ont permis de changer le monde: celle d’Adam & Eve,
+            celle que Newton a reçu sur la tête et celle qu’Apple a créée.
+
+     * Pages
+       Article au hasard
+       Toutes les news
+       Tous les tutos
+       Toutes les vidéos
+     * A propos
+       Mentions légales
+       Plan du site
+       Contact
+
+     * Sujets
+       Logiciels
+       Astuces
+       Divers
+       Android
+       Linux
+       Windows
+       Site Web
+       Hardware
+       Jeux
+       CAO
+       Boite à outils
+       Divertissements
+
+     * Derniers commentaires
+
+   Copyright © 2013-2019 seeyar.fr
+     * Facebook
+     * Twitter
+     * Google+
+
+   En continuant à utiliser le site, vous acceptez l’utilisation des
+   cookies. Plus d’information (BUTTON) Accepter
+   ﻿ #SeeYaR RSS Feed alternate alternate
+
+   News Et Tutos!
+   PayPal, le réflexe sécurité pour payer en ligne
+     * home
+     * News
+          + Boite à outils
+          + Logiciels
+          + Divertissements
+          + Astuces
+          + Divers
+     * Tutoriels
+          + Windows
+          + Linux
+          + Android
+          + Site web
+          + Hardware
+          + CAO
+          + Jeux
+     * Videos
+     * Au hasard
+
+       [gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==]-S
+       ubmit ____________________
+
+Tester la validité de votre site internet
+
+   11/02/2014 seeyar
+   # Site web, # Tutoriels
+
+   w3c
+
+   W3C ou World Wide Web Consortium, est un service en ligne qui analysera
+   le contenu html ou css de votre site internet dans le but de vérifier
+   si ce dernier respecte les standards du web. Il vérifiera "sa
+   grammaire" et syntaxes et vous restituera un rapport sur l'ensemble des
+   points à modifier. Avoir une validation W3C, c'est aussi faire la
+   preuve d'une qualité de site indéniable. Nous verrons ensemble d'autres
+   outils d'analyse en ligne: vérification du flux rss, vitesse et
+   rapidité de votre site, etc...
+
+                                 [INS: :INS]
+
+1.W3C
+
+   Nous commençons le début de nos tests avec les outils W3C. Pour la
+   vérification de type html / xhtml, rendez vous ici:
+     * http://validator.w3.org/
+
+   w3c-1
+
+Résumé du rapport avec nombre d'erreurs et de warnings
+
+
+   w3c-2
+
+Extrait du rapport d'erreurs/warnings
+
+   Il ne vous restera plus qu'à modifier votre html en fonction des
+   indications données.
+
+   Passons à la validation css, haut les cœurs:
+   [INS: :INS]
+     * http://jigsaw.w3.org/css-validator/
+
+   Le principe reste le même que vu précédemment.
+
+   Enfin, vérifiez la validation de votre flux RSS:
+     * http://validator.w3.org/feed/
+
+   w3c-3 w3c-3
+
+2.Divers outils
+
+   Il est important de posséder un site qui soit rapide, pour ce faire et
+   pour identifier les éléments qui le ralentisse, il existe d'excellents
+   outils d'analyses online:
+     * Gtmetrix.com
+     * L'outil de Google page speed insight
+     * Webpagetest
+
+   Vous obtiendrez une note ainsi que des recommandations pour améliorer
+   votre score. Pour une meilleur compréhension graphique du processus de
+   lancement du site concerné, referez vous à la timeline:
+
+   w3c-4 w3c-4
+
+Extrait timeline Gtmetrix pour seeyar.fr
+
+
+     * Si vous fonctionnez sous WordPress, je vous conseille l'utilisation
+       de l'excellent plugin P3 (Plugin Performance Profiler) qui vous
+       montrera les extensions WordPress qui ralentissent votre blog.
+
+Vous aimerez aussi:
+
+     * Enorme! Retrouver l’historique navigateur d’un utilisateur malgré
+       son effacement Enorme! Retrouver l’historique navigateur d’un
+       utilisateur malgré son effacement Enorme! Retrouver l’historique
+       navigateur d’un utilisateur malgré son effacement
+     * Jouer à des milliers de jeux Sega et Atari sur votre navigateur
+       Jouer à des milliers de jeux Sega et Atari sur votre navigateur
+       Jouer à des milliers de jeux Sega et Atari sur votre navigateur
+     * Referencement: connaitre le classement d’un site par mot clé
+       Referencement: connaitre le classement d’un site par mot clé
+       Referencement: connaitre le classement d’un site par mot clé
+     * Désactiver ou activer le narrateur dans Windows 10 Désactiver ou
+       activer le narrateur dans Windows 10 Désactiver ou activer le
+       narrateur dans Windows 10
+     * Bloquer l’affichage de certains liens dans la recherche Google
+       Bloquer l’affichage de certains liens dans la recherche Google
+       Bloquer l’affichage de certains liens dans la recherche Google
+
+     * Newsletter
+       Veuillez laisser ce champ vide ____________________
+       E-mail * ____________________
+       Je m'abonne !
+       Vérifiez votre boîte de réception ou vos indésirables afin de
+       confirmer votre abonnement.
+     * [INS: :INS]
+
+     * Les derniers tutoriels
+       Désactiver l’éditeur visuel Gutenberg sans extension Désactiver
+       l’éditeur visuel Gutenberg sans extension
+
+Désactiver l’éditeur visuel Gutenberg sans extension
+       OCR de Google: extraire le texte d'une image ou d'un pdf OCR de
+       Google: extraire le texte d'une image ou d'un pdf
+
+OCR de Google: extraire le texte d'une image ou d'un pdf
+       Avoir des fonds d'écran différents sous Windows 10 Avoir des fonds
+       d'écran différents sous Windows 10
+
+Avoir des fonds d'écran différents sous Windows 10
+       Tablette Samsung qui s’éteint toute seule, la solution Tablette
+       Samsung qui s’éteint toute seule, la solution
+
+Tablette Samsung qui s’éteint toute seule, la solution
+       Rechercher un mot dans le contenu de plusieurs fichiers
+       Word,Excel,texte ou PDF Rechercher un mot dans le contenu de
+       plusieurs fichiers Word,Excel,texte ou PDF
+
+Rechercher un mot dans le contenu de plusieurs fichiers Word,Excel,texte ou
+PDF
+     * Voir tous les Tutos »
+     * Top articles
+          + Trouver le nom d’une police d’écriture…
+          + Facebook: retrouver quelqu’un grâce à son…
+          + Reconnaitre la musique d’une vidéo en ligne
+          + Autoriser le telechargement bloqué par google chrome
+          + Liste de proxy gratuit pour rester anonyme
+     * Vidéothèque
+       videotheque
+     * Nous suivre
+          + 210Fans
+          + 137Followers
+          + 100abonnée
+
+     * Citation geek
+     *
+          + OSEF : acronyme de « On S’en Fout ».
+
+     * Pages
+       Article au hasard
+       Toutes les news
+       Tous les tutos
+       Toutes les vidéos
+     * A propos
+       Mentions légales
+       Plan du site
+       Contact
+
+     * Sujets
+       Logiciels
+       Astuces
+       Divers
+       Android
+       Linux
+       Windows
+       Site Web
+       Hardware
+       Jeux
+       CAO
+       Boite à outils
+       Divertissements
+
+     * Derniers commentaires
+
+   Copyright © 2013-2019 seeyar.fr
+     * Facebook
+     * Twitter
+     * Google+
+
+   En continuant à utiliser le site, vous acceptez l’utilisation des
+   cookies. Plus d’information (BUTTON) Accepter
+   ﻿ #SeeYaR RSS Feed alternate alternate
+
+   News Et Tutos!
+   PayPal, le réflexe sécurité pour payer en ligne
+     * home
+     * News
+          + Boite à outils
+          + Logiciels
+          + Divertissements
+          + Astuces
+          + Divers
+     * Tutoriels
+          + Windows
+          + Linux
+          + Android
+          + Site web
+          + Hardware
+          + CAO
+          + Jeux
+     * Videos
+     * Au hasard
+
+       [gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==]-S
+       ubmit ____________________
+
+Category Grid View: fixer les thumbnails manquants
+
+   16/01/2014 seeyar
+   # Site web, # Tutoriels
+
+   category-grid-view Category grid view est un plugin WordPress qui
+   affiche vos articles sous forme de thumbnails (vignettes) disposés en
+   grille. Malheureusement il peut arriver que les liens vers les
+   thumbnails soient cassés. Je vous propose une solution efficace pour
+   corriger ce problème.
+
+                                 [INS: :INS]
+
+   Si vous êtes intéressé par ce plugin, vous pourrez le trouver ICI.
+
+   Category Grid View utilise timthumb.php, une bibliothèque utilisée pour
+   le redimensionnement automatiquement des images en thumbnails. Ainsi,
+   Category grid view trouvera les premières images de chacun de vos
+   posts, les redimensionnera au travers de thimthumb et mettra ces
+   dernières dans un dossier nommé cache.
+
+   Si vous ne voyez plus vos thumbnails apparaître sur votre grille c'est
+   parce que la mise en cache ne se fait plus, le processus de
+   miniaturisation orchestré par timthumb ne fonctionne plus.
+
+La solution:
+
+   Prenez votre client FTP et rendez vous sur votre site, je ne saurai que
+   trop vous recommander Filezilla.
+
+   Rendez vous ensuite à cette adresse, celle du plugin:
+
+   /httpdocs/wp-content/plugins/category-grid-view-gallery_____
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   /httpdocs/wp-content/plugins/category-grid-view-gallery
+
+   Vous devez retrouver cette arborescence:
+
+   category grid view1
+
+   Supprimez le dossier "cache" et créez-en un autre dans le dossier
+   "plugins" à l'adresse:
+   [INS: :INS]
+
+
+   /httpdocs/wp-content/plugins________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   /httpdocs/wp-content/plugins
+
+   category grid view5
+
+   Faites un clic droit dessus et donnez lui les droits 777:
+
+   category grid view6 category grid view6
+
+   category grid view4 category grid view4
+
+   Une fois chose faite, nous allons spécifier le nouveau chemin du
+   dossier "cache".
+   Pour cela ouvrez votre fichier timthumb.php qui se trouve ici:
+
+
+   /httpdocs/wp-content/plugins/category-grid-view-gallery/incl
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   /httpdocs/wp-content/plugins/category-grid-view-gallery/includes
+
+   A la ligne 40, mettez le chemin suivant:
+
+
+   '../../../cache'____________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   '../../../cache'
+
+   Ce qui donne ceci:
+
+   category grid view8 category grid view8
+
+   Et voila! Enjoy!
+
+   Si à la première utilisation, la mise en cache ne fonctionne pas
+   supprimez ces 2 fichiers situés dans votre dossier cache:
+   -index.html
+   -timthumb_cacheLastCleanTime.touch
+
+   Et rechargez votre page à nouveau (Ctrl + F5) ;)
+
+Vous aimerez aussi:
+
+     * Trouver le nom d’un thème wordpress utilisé par un site Trouver le
+       nom d’un thème wordpress utilisé par un site Trouver le nom d’un
+       thème wordpress utilisé par un site
+     * Plugin kodi Vstream: comment mettre à jour tous les liens streaming
+       Plugin kodi Vstream: comment mettre à jour tous les liens streaming
+       Plugin kodi Vstream: comment mettre à jour tous les liens streaming
+     * Passez en HTTPS: WordPress + Clouflare + Let’s encrypt Passez en
+       HTTPS: WordPress + Clouflare + Let’s encrypt Passez en HTTPS:
+       WordPress + Clouflare + Let’s encrypt
+     * Gator cache: plugin ultime de mise en cache WordPress Gator cache:
+       plugin ultime de mise en cache WordPress Gator cache: plugin ultime
+       de mise en cache WordPress
+     * Désactiver la mise à jour d’un plugin ou d’un thème WordPress
+       Désactiver la mise à jour d’un plugin ou d’un thème WordPress
+       Désactiver la mise à jour d’un plugin ou d’un thème WordPress
+
+     * Newsletter
+       Veuillez laisser ce champ vide ____________________
+       E-mail * ____________________
+       Je m'abonne !
+       Vérifiez votre boîte de réception ou vos indésirables afin de
+       confirmer votre abonnement.
+     * [INS: :INS]
+
+     * Les derniers tutoriels
+       Désactiver l’éditeur visuel Gutenberg sans extension Désactiver
+       l’éditeur visuel Gutenberg sans extension
+
+Désactiver l’éditeur visuel Gutenberg sans extension
+       OCR de Google: extraire le texte d'une image ou d'un pdf OCR de
+       Google: extraire le texte d'une image ou d'un pdf
+
+OCR de Google: extraire le texte d'une image ou d'un pdf
+       Avoir des fonds d'écran différents sous Windows 10 Avoir des fonds
+       d'écran différents sous Windows 10
+
+Avoir des fonds d'écran différents sous Windows 10
+       Tablette Samsung qui s’éteint toute seule, la solution Tablette
+       Samsung qui s’éteint toute seule, la solution
+
+Tablette Samsung qui s’éteint toute seule, la solution
+       Rechercher un mot dans le contenu de plusieurs fichiers
+       Word,Excel,texte ou PDF Rechercher un mot dans le contenu de
+       plusieurs fichiers Word,Excel,texte ou PDF
+
+Rechercher un mot dans le contenu de plusieurs fichiers Word,Excel,texte ou
+PDF
+     * Voir tous les Tutos »
+     * Top articles
+          + Trouver le nom d’une police d’écriture…
+          + Facebook: retrouver quelqu’un grâce à son…
+          + Reconnaitre la musique d’une vidéo en ligne
+          + Autoriser le telechargement bloqué par google chrome
+          + Liste de proxy gratuit pour rester anonyme
+     * Vidéothèque
+       videotheque
+     * Nous suivre
+          + 210Fans
+          + 137Followers
+          + 100abonnée
+
+     * Citation geek
+     *
+          + J’ai décidé d’être heureux parce que c’est bon pour la santé.
+            Voltaire
+
+     * Pages
+       Article au hasard
+       Toutes les news
+       Tous les tutos
+       Toutes les vidéos
+     * A propos
+       Mentions légales
+       Plan du site
+       Contact
+
+     * Sujets
+       Logiciels
+       Astuces
+       Divers
+       Android
+       Linux
+       Windows
+       Site Web
+       Hardware
+       Jeux
+       CAO
+       Boite à outils
+       Divertissements
+
+     * Derniers commentaires
+
+   Copyright © 2013-2019 seeyar.fr
+     * Facebook
+     * Twitter
+     * Google+
+
+   En continuant à utiliser le site, vous acceptez l’utilisation des
+   cookies. Plus d’information (BUTTON) Accepter
+   ﻿ #SeeYaR RSS Feed alternate alternate
+
+   News Et Tutos!
+   PayPal, le réflexe sécurité pour payer en ligne
+     * home
+     * News
+          + Boite à outils
+          + Logiciels
+          + Divertissements
+          + Astuces
+          + Divers
+     * Tutoriels
+          + Windows
+          + Linux
+          + Android
+          + Site web
+          + Hardware
+          + CAO
+          + Jeux
+     * Videos
+     * Au hasard
+
+       [gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==]-S
+       ubmit ____________________
+
+WordPress et PSS: fixer Proxy Publisher Failure – 520 error
+
+   24/12/2013 seeyar
+   # Site web, # Tutoriels
+
+   PSS Si vous utilisez le CDN de google avec comme CMS WordPress, voici
+   un tuto qui vous fera plaisir. Je vous propose une solution simple et
+   efficace pour en finir avec l'erreur "ModPagespeed – Proxy Publisher
+   Failure TIMEOUT_ERROR". Suivez le guide.
+
+                                 [INS: :INS]
+
+1/Explication
+
+   En utilisant le CDN de google, l'ensemble des requêtes qui sont faites
+   vers votre site internet passent par les serveurs google comme
+   l'explique cette image:
+
+   connection
+
+   Lorsque votre site est visité par un lecteur, il n'enregistre non pas
+   l'IP du lecteur mais le/les IP correspondant à ceux des serveurs
+   google. Lorsqu'un grand nombre de connections sont faites sur un nombre
+   restreint d'IP (ceux de google en l’occurrence) , cela engendre des
+   erreurs dont le bien connu 520 error ou des difficultés à se connecter
+   à son panel d'administration WordPress.
+
+   error  Exemple
+
+   Il faut donc donner la possibilité à votre serveur (origin server) de
+   lire la véritable IP du lecteur. Pour ce faire, nous allons implémenter
+   la variable " X-Forwarded-For header" pour que WordPress soit capable
+   de lire la véritable IP des visiteurs.
+
+2/La solution par le code:
+
+   Pour corriger le tir, il vous faudra éditer le fichier wp-config.php
+   situé à la racine de votre site. Tout en haut du fichier ( et après la
+   balise <?php ), rajoutez ce bout de code:
+
+   // ** Wordpress x-forwarded-for ip fix ** //________________
+    if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {______________
+    $xffaddrs = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);_
+    $_SERVER['REMOTE_ADDR'] = $xffaddrs[0];____________________
+    }__________________________________________________________
+   1
+   2
+   3
+   4
+   5
+   // ** Wordpress x-forwarded-for ip fix ** //
+   if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+   $xffaddrs = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
+   $_SERVER['REMOTE_ADDR'] = $xffaddrs[0];
+   }
+
+   Si vous possédez un fichier « wp-config-sample.php » , faites de même.
+
+   Enregistrez.
+   [INS: :INS]
+
+   Pour que cela prenne effet, désactivez les rewriters:
+
+   rewriters rewriters
+
+   puis flush:
+
+   flush flush
+
+   puis réactivez les rewriters :)
+
+   Normalement tout devrait rentrer dans l'ordre maintenant. D'ici 24 à
+   48h vous ne devriez plus trouver d'erreur 520 dans le "caching and
+   error" du pannel PSS.
+
+3.La solution par le plugin
+
+   Cette surement la meilleure solution. En effet, la mise à jour de
+   WordPress engendrera  la réinitialisation et l’écrasement automatique
+   des fichiers config.php et wp-config-sample.php, ce qui vous obligera à
+   les rééditer à nouveau.
+
+Proxy Real IP
+
+   Enjoy!
+
+Vous aimerez aussi:
+
+     * Passez en HTTPS: WordPress + Clouflare + Let’s encrypt Passez en
+       HTTPS: WordPress + Clouflare + Let’s encrypt Passez en HTTPS:
+       WordPress + Clouflare + Let’s encrypt
+     * Trouver le nom d’un thème wordpress utilisé par un site Trouver le
+       nom d’un thème wordpress utilisé par un site Trouver le nom d’un
+       thème wordpress utilisé par un site
+     * APN Bouygues: nom des points d’accès mobile APN Bouygues: nom des
+       points d’accès mobile APN Bouygues: nom des points d’accès mobile
+     * APN Orange: nom des points d’accès mobile APN Orange: nom des
+       points d’accès mobile APN Orange: nom des points d’accès mobile
+     * Désactiver l’éditeur visuel Gutenberg sans extension Désactiver
+       l’éditeur visuel Gutenberg sans extension Désactiver l’éditeur
+       visuel Gutenberg sans extension
+
+     * Newsletter
+       Veuillez laisser ce champ vide ____________________
+       E-mail * ____________________
+       Je m'abonne !
+       Vérifiez votre boîte de réception ou vos indésirables afin de
+       confirmer votre abonnement.
+     * [INS: :INS]
+
+     * Les derniers tutoriels
+       Désactiver l’éditeur visuel Gutenberg sans extension Désactiver
+       l’éditeur visuel Gutenberg sans extension
+
+Désactiver l’éditeur visuel Gutenberg sans extension
+       OCR de Google: extraire le texte d'une image ou d'un pdf OCR de
+       Google: extraire le texte d'une image ou d'un pdf
+
+OCR de Google: extraire le texte d'une image ou d'un pdf
+       Avoir des fonds d'écran différents sous Windows 10 Avoir des fonds
+       d'écran différents sous Windows 10
+
+Avoir des fonds d'écran différents sous Windows 10
+       Tablette Samsung qui s’éteint toute seule, la solution Tablette
+       Samsung qui s’éteint toute seule, la solution
+
+Tablette Samsung qui s’éteint toute seule, la solution
+       Rechercher un mot dans le contenu de plusieurs fichiers
+       Word,Excel,texte ou PDF Rechercher un mot dans le contenu de
+       plusieurs fichiers Word,Excel,texte ou PDF
+
+Rechercher un mot dans le contenu de plusieurs fichiers Word,Excel,texte ou
+PDF
+     * Voir tous les Tutos »
+     * Top articles
+          + Trouver le nom d’une police d’écriture…
+          + Facebook: retrouver quelqu’un grâce à son…
+          + Reconnaitre la musique d’une vidéo en ligne
+          + Autoriser le telechargement bloqué par google chrome
+          + Liste de proxy gratuit pour rester anonyme
+     * Vidéothèque
+       videotheque
+     * Nous suivre
+          + 210Fans
+          + 137Followers
+          + 100abonnée
+
+     * Citation geek
+     *
+          + L’animal de Firefox n’est pas un renard ! Firefox est le
+            surnom du panda rouge originaire de l’Himalaya et de l’ouest
+            de la Chine.
+
+     * Pages
+       Article au hasard
+       Toutes les news
+       Tous les tutos
+       Toutes les vidéos
+     * A propos
+       Mentions légales
+       Plan du site
+       Contact
+
+     * Sujets
+       Logiciels
+       Astuces
+       Divers
+       Android
+       Linux
+       Windows
+       Site Web
+       Hardware
+       Jeux
+       CAO
+       Boite à outils
+       Divertissements
+
+     * Derniers commentaires
+
+   Copyright © 2013-2019 seeyar.fr
+     * Facebook
+     * Twitter
+     * Google+
+
+   En continuant à utiliser le site, vous acceptez l’utilisation des
+   cookies. Plus d’information (BUTTON) Accepter
+   ﻿ #SeeYaR RSS Feed alternate alternate
+
+   News Et Tutos!
+   PayPal, le réflexe sécurité pour payer en ligne
+     * home
+     * News
+          + Boite à outils
+          + Logiciels
+          + Divertissements
+          + Astuces
+          + Divers
+     * Tutoriels
+          + Windows
+          + Linux
+          + Android
+          + Site web
+          + Hardware
+          + CAO
+          + Jeux
+     * Videos
+     * Au hasard
+
+       [gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==]-S
+       ubmit ____________________
+
+Le formatage automatique et double tirets sous WordPress 3.5.
+
+   11/02/2013 seeyar
+   # Site web, # Tutoriels
+
+   wordpress_formatage-tiret
+
+   WordPress inclut un formatage automatique de certaines combinaisons de
+   touches.
+   Par exemple le double tiret (du 6 ) est formaté en un tiret plus long
+   ce qui peut être gênant lorsqu'on veut afficher certaines expressions
+   en shell.
+   Je vous propose au travers de ce tutoriel un moyen simple
+   d'y remédier...
+
+                                 [INS: :INS]
+
+   Ouvrir le fichier  ../wp-includes/formatting.php
+
+   Il faut repérer la ligne 73:
+
+   $static_characters = array_merge( array( '---', ' -- ', <str
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   $static_characters = array_merge( array( '---', ' -- ',
+   <strong>'--'</strong>, <strong>' - '</strong>, 'xn&#8211;', '...',
+   '<code></code>', '\'\'', ' (tm)' ), $cockney );
+
+   qui fonctionne avec la ligne 74:
+
+   $static_replacements = array_merge( array( $em_dash, ' ' . $
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   $static_replacements = array_merge( array( $em_dash, ' ' . $em_dash . '
+   ',<strong> $en_dash, ' ' . $en_dash . ' ',</strong> 'xn--', '&#8230;',
+   $opening_quote, $closing_quote, ' &#8482;' ), $cockneyreplace );
+
+   A chaque "characters" WordPress procède à un "remplacements"
+
+   Supprimez les caractères mis en gras ci-haut, si bien que vos 2
+   nouvelles lignes devraient ressembler à ceci:
+
+   ligne 73:
+
+   $static_characters = array_merge( array( '---', ' -- ', 'xn&
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   $static_characters = array_merge( array( '---', ' -- ', 'xn&#8211;',
+   '...', '<code></code>', '\'\'', ' (tm)' ), $cockney );
+
+   ligne 74:
+
+   $static_replacements = array_merge( array( $em_dash, ' ' . $
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   $static_replacements = array_merge( array( $em_dash, ' ' . $em_dash . '
+   ', 'xn--', '&#8230;', $opening_quote, $closing_quote, ' &#8482;' ),
+   $cockneyreplace );
+
+   Enregistrez, souriez :)
+   Si vous utilisez le plugin Shortcodes Ultimate, il vous faudra décocher
+   l’option « Mise en forme personnalisée » dans les réglages de
+   l’extension
+
+Vous aimerez aussi:
+
+     * Trouver le nom d’un thème wordpress utilisé par un site Trouver le
+       nom d’un thème wordpress utilisé par un site
+     * Passez en HTTPS: WordPress + Clouflare + Let’s encrypt Passez en
+       HTTPS: WordPress + Clouflare + Let’s encrypt
+     * Redirection des mails plesk vers gmail Redirection des mails plesk
+       vers gmail Redirection des mails plesk vers gmail
+     * Modifier la fonction « more » sous WordPress. Modifier la fonction
+       « more » sous WordPress. Modifier la fonction « more » sous
+       WordPress.
+     * Enorme! Retrouver l’historique navigateur d’un utilisateur malgré
+       son effacement Enorme! Retrouver l’historique navigateur d’un
+       utilisateur malgré son effacement Enorme! Retrouver l’historique
+       navigateur d’un utilisateur malgré son effacement
+
+     * Newsletter
+       Veuillez laisser ce champ vide ____________________
+       E-mail * ____________________
+       Je m'abonne !
+       Vérifiez votre boîte de réception ou vos indésirables afin de
+       confirmer votre abonnement.
+     * [INS: :INS]
+
+     * Les derniers tutoriels
+       Désactiver l’éditeur visuel Gutenberg sans extension Désactiver
+       l’éditeur visuel Gutenberg sans extension
+
+Désactiver l’éditeur visuel Gutenberg sans extension
+       OCR de Google: extraire le texte d'une image ou d'un pdf OCR de
+       Google: extraire le texte d'une image ou d'un pdf
+
+OCR de Google: extraire le texte d'une image ou d'un pdf
+       Avoir des fonds d'écran différents sous Windows 10 Avoir des fonds
+       d'écran différents sous Windows 10
+
+Avoir des fonds d'écran différents sous Windows 10
+       Tablette Samsung qui s’éteint toute seule, la solution Tablette
+       Samsung qui s’éteint toute seule, la solution
+
+Tablette Samsung qui s’éteint toute seule, la solution
+       Rechercher un mot dans le contenu de plusieurs fichiers
+       Word,Excel,texte ou PDF Rechercher un mot dans le contenu de
+       plusieurs fichiers Word,Excel,texte ou PDF
+
+Rechercher un mot dans le contenu de plusieurs fichiers Word,Excel,texte ou
+PDF
+     * Voir tous les Tutos »
+     * Top articles
+          + Trouver le nom d’une police d’écriture…
+          + Facebook: retrouver quelqu’un grâce à son…
+          + Reconnaitre la musique d’une vidéo en ligne
+          + Autoriser le telechargement bloqué par google chrome
+          + Liste de proxy gratuit pour rester anonyme
+     * Vidéothèque
+       videotheque
+     * Nous suivre
+          + 210Fans
+          + 137Followers
+          + 100abonnée
+
+     * Citation geek
+     *
+          + In tux we trust.
+
+     * Pages
+       Article au hasard
+       Toutes les news
+       Tous les tutos
+       Toutes les vidéos
+     * A propos
+       Mentions légales
+       Plan du site
+       Contact
+
+     * Sujets
+       Logiciels
+       Astuces
+       Divers
+       Android
+       Linux
+       Windows
+       Site Web
+       Hardware
+       Jeux
+       CAO
+       Boite à outils
+       Divertissements
+
+     * Derniers commentaires
+
+   Copyright © 2013-2019 seeyar.fr
+     * Facebook
+     * Twitter
+     * Google+
+
+   En continuant à utiliser le site, vous acceptez l’utilisation des
+   cookies. Plus d’information (BUTTON) Accepter

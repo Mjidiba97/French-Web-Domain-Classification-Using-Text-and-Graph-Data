@@ -1,0 +1,974 @@
+
+   REW : Un Tutoriel pour Analyser l’Acoustique de Votre Studio
+
+   REW, ou Room EQ Wizard, est un logiciel gratuit permettant de mesurer
+   et d’analyser l’acoustique d’une pièce (typiquement, un studio). Bien
+   que le logiciel soit relativement simple d’utilisation, encore faut-il
+   … Lire la suite de REW : Un Tutoriel pour Analyser l’Acoustique de
+   Votre Studio
+   Projet Home Studio
+   18 Commentaires
+   (BUTTON)
+
+     * (BUTTON) Contenu embarqué WordPress
+     * (BUTTON) Contenu embarqué HTML
+
+   https://www.projetho
+
+   Copiez-collez cette URL dans votre site WordPress pour l’inclure
+
+   <blockquote class="wp-embedded-content"><a href="https://www
+   <script type='text/javascript'>_____________________________
+   <!--//--><![CDATA[//><!--___________________________________
+   		!function(a,b){"use strict";function c(){if(!e){e=!0;var a
+   //--><!]]>__________________________________________________
+   </script><iframe sandbox="allow-scripts" security="restricte
+
+   Copiez-collez ce code sur votre site pour l’y intégrer
+   (BUTTON)
+    #Projet Home Studio » Flux Projet Home Studio » Flux des commentaires
+   Projet Home Studio » REW : Un Tutoriel pour Analyser l’Acoustique de
+   Votre Studio Flux des commentaires alternate alternate
+
+   Skip to content
+
+   Primary Menu
+   Projet Home Studio
+
+     * Accueil
+     * Blog
+          + News
+          + Enregistrement / Matériel
+          + Mixage / Mastering
+          + Plugins / Logiciels
+          + Tests
+     * Les Guides
+          + Le Guide Complet du Matériel de Home Studio
+          + Le Guide Complet des Microphones de Studio
+          + Le Guide Complet du Traitement Acoustique
+          + Les Meilleurs Plugins Audio Gratuits (VST…)
+     * Formation
+     * Contact
+
+REW : Un Tutoriel pour Analyser l’Acoustique de Votre Studio
+
+   Dernière mise à jour le 15/11/18 par Adrien
+
+   REW, ou Room EQ Wizard, est un logiciel gratuit permettant de mesurer
+   et d’analyser l’acoustique d’une pièce (typiquement, un studio).
+
+   Bien que le logiciel soit relativement simple d’utilisation, encore
+   faut-il comprendre et savoir comment utiliser les différents graphiques
+   d’analyse qu’il propose. Surtout si vous avez pour objectif de
+   l’utiliser pour définir les solutions de traitement acoustique que vous
+   allez retenir.
+
+   C’est pourquoi je vous propose ce tutoriel sur l’utilisation de REW.
+   Lorsque vous l’aurez lu, vous saurez :
+     * de quel matériel vous avez besoin ;
+     * effectuer une mesure via le logiciel ;
+     * analyser cette mesure en vous appuyant sur les graphes les plus
+       utiles.
+
+   L’objectif n’est pas de réécrire le manuel en détaillant chaque
+   fonctionnalité, mais plutôt de vous donner les outils vous permettant
+   d’analyser avec pertinence l’acoustique de votre (home) studio.
+
+Le matériel de mesure acoustique
+
+   Rien de très compliqué en termes de matériel.
+
+   Vous allez bien sûr avoir besoin d’un microphone, mais pas n’importe
+   lequel : il faut un micro qui offre une réponse en fréquences la plus
+   plate possible, pour ne pas biaiser les résultats.
+
+   On parle de « microphone de mesure ».
+
+   Heureusement, pas besoin de dépenser des mille et des cents : Behringer
+   en fait un très bon pour une soixantaine d’euros. Il s’agit de
+   l’ECM8000, que je vous recommande fortement car sa qualité est
+   largement suffisante pour ce type d’application.
+
+   Le microphone de mesure acoustique ECM8000 de Behringer Le microphone
+   de mesure acoustique ECM8000 de Behringer
+
+   Comparez le prix de l’ECM 8000 sur : Thomann – Woodbrass – Amazon
+
+   Vous devrez ensuite brancher ce microphone sur une interface audio,
+   dont vous disposez probablement dans votre studio. Si ce n’est pas le
+   cas, n’hésitez pas à jeter un œil à mon article sur les interfaces USB.
+
+   N’oubliez pas d’activer l’alimentation fantôme, car l’ECM8000 en a
+   besoin pour fonctionner.
+
+   Enfin, il vous faudra bien sûr installer le logiciel REW — Room EQ
+   Wizard. Vous trouverez la dernière version sur le site officiel,
+   rubrique Downloads :
+
+   https://www.roomeqwizard.com
+
+   Il ne vous reste alors plus qu’à le lancer, et vous serez prêt à
+   mesurer l’acoustique de votre pièce ! 🙂
+
+Installez le microphone
+
+   Prendre le temps de positionner le microphone est très important pour
+   s’assurer que les mesures qu’il produira seront les meilleures
+   possibles.
+
+   Installez-le de façon à ce qu’il soit au niveau de votre tête, et
+   exactement à la même distance de chacune de vos enceintes de monitoring
+   (idéalement, au millimètre près). Si vos enceintes sont bien
+   positionnées, ça ne devrait pas poser trop de problèmes.
+
+   Pour ce qui est de l’angle du microphone par rapport au sol, le
+   fabriquant recommande parfois une configuration spécifique mais ce
+   sujet génère énormément de discussion, et il semble que personne n’ait
+   une réponse absolue.
+
+   D’une façon générale, si vous orientez le microphone vers les enceintes
+   (donc en position horizontale), cela veut dire que vous allez mesurer
+   le son des enceintes. Si vous l’orientez vers le plafond, vous allez au
+   contraire mesurer la réponse de la pièce entière, ce qui correspond
+   beaucoup mieux à ce que nous voulons faire.
+
+   Je vous conseille donc de positionner votre microphone verticalement.
+
+   Notez au passage que ce choix n’est pas nécessairement très important,
+   dans le sens où vous allez avant tout comparer vos mesures avant et
+   après traitement. Ce qui est important, plutôt, c’est qu’entre deux
+   mesures le microphone soit exactement dans la même position et orienté
+   de la même façon.
+
+Calibrez votre matériel
+
+   Avant d’effectuer vos mesures, il peut être utile de calibrer votre
+   matériel — ou plus exactement de calibrer le logiciel REW par rapport à
+   l’interface et au microphone que vous utilisez.
+
+   L’étape n’est pas indispensable, puisque encore une fois votre travail
+   de mesure va se faire de façon comparative, avant et après avoir
+   installé votre traitement acoustique. Donc si votre matériel génère de
+   petites erreurs, elles se retrouveront sur toutes les mesures et ne
+   poseront aucun soucis pour l’analyse.
+
+   Mais bon, si vous avez quelques minutes, cette étape de calibration
+   permettra d’avoir des résultats plus précis, donc autant la faire comme
+   il faut.
+
+Calibrez votre interface
+
+   Cliquez sur le menu « Préférences », puis sélectionnez l’option
+   « Préférences » (eh oui).
+
+   Une fenêtre ressemblant à celle-ci va apparaître :
+
+   Calibration de l'interface audio Calibration de l'interface audio
+
+   Suivez alors les étapes suivantes :
+    1. Connectez une sortie (Line Out) de votre interface audio à une
+       entrée (Line In) pour créer une boucle. En effet, pour calibrer
+       l’interface audio, nous allons mesurer sa réaction « en circuit
+       fermé ».
+    2. Sélectionnez les entrées/sorties correspondantes au niveau des
+       champs « Output » et « Input »
+    3. Équilibrez les indications de niveau Équilibrez les indications de
+       niveau Cliquez sur le bouton « Calibrate »
+    4. Cliquez deux fois sur le bouton « Next » en bas de la fenêtre
+    5. Une onde sinusoïdale est alors générée, mais vous ne l’entendrez
+       pas car elle est envoyée depuis la sortie vers l’entrée que vous
+       avez sélectionnée.
+       Ajustez le niveau de sortie pour que les indicateurs de niveau des
+       colonnes « Out » et « In » soient à peu près équilibrés, comme sur
+       l’image ci-contre.
+    6. Lorsque les niveaux sont identiques ou presque, cliquez sur
+       « Next ».
+    7. Votre carte son est alors prête à être calibrée. Cliquez sur
+       « Next ».
+    8. Une nouvelle fenêtre s’affiche et la mesure s’effectue
+       automatiquement.
+    9. Cliquez sur le bouton « Make Cal… » et sauvegardez le fichier de
+       calibration que vous avez généré.
+
+   Et voilà 🙂
+
+   Calibrez votre microphone
+
+   De la même façon, REW vous permet de calibrer votre microphone via
+   l’onglet « Mic/Meter » du panneau « Preferences ».
+
+   Pour ce faire, il suffit de charger le fichier de calibration dont vous
+   disposez.
+
+   A noter que certains microphones, dont les Behringer ECM8000, ne sont
+   pas livrés avec des fichiers de calibration. Dans ce cas là, ne chargez
+   pas de fichier venant d’ailleurs : un fichier de calibration est propre
+   à un microphone en particulier, pas à un modèle.
+
+Effectuez la mesure
+
+   Une fois que l’interface et/ou votre microphone sont calibrés, vous
+   pouvez enfin faire une mesure en cliquant sur le bouton « Measure »
+   dans l’interface de REW.
+
+   Une fenêtre s’affiche vous permettant de paramétrer un certain nombre
+   de choses :
+     * Strat Freq & End Freq (Fréquences de début et de fin) :
+       globalement, commencez à 20 Hz et terminez à 20 kHz, pour parcourir
+       l’ensemble de la plage des fréquences audibles. Resserrer cette
+       fourchette de valeurs ne sera pas utile car, ultérieurement, lors
+       de l’affichage des données, il sera possible de filtrer les données
+       que vous ne voulez pas voir.
+     * Level (Niveau) : -12 dBFS sera très bien
+     * Length (Longueur en samples) : la valeur par défaut de 256k
+       conviendra parfaitement
+     * Sweeps (Nombre de balayages de la plage de fréquences) : 1 seul
+       suffira dans un premier temps. En faire plusieurs permettrait de
+       maximiser le rapport signal/bruit en les additionnant.
+
+   La fenêtre de mesure de REW La fenêtre de mesure de REW
+
+   Reste le choix de la sortie (« output »). Sur ce point, je vous
+   conseille très fortement de faire une mesure pour chaque enceinte de
+   monitoring, et donc de choisir alternativement les options « Left » et
+   « Right » selon que vous souhaitez utiliser l’enceinte de gauche ou de
+   droite.
+
+   Pourquoi ? Tout simplement pour éviter d’éventuels problèmes de phase
+   si votre microphone est légèrement plus proche d’une enceinte que d’une
+   autre. De plus, la réponse de la pièce à une enceinte sera toujours
+   légèrement différente à celle d’une autre enceinte, aussi est-il mieux
+   de ne pas mélanger les mesures…
+
+     Avant de faire toute mesure, assurez-vous de porter par sécurité des
+     bouchons d’oreilles : suivant vos réglages, le volume peut être très
+     fort.
+
+     Notez que vous pouvez utiliser le réglage de Delay pour retarder le
+     début de la mesure de quelques secondes et ainsi avoir le temps de
+     sortir de la pièce, par exemple.
+
+   Utilisez maintenant le bouton « Check Levels » pour générer un signal
+   de test et ajustez en conséquence le volume de vos enceintes jusqu’à ce
+   que le logiciel vous indique « Level OK ».
+
+   Vous pouvez ensuite cliquer sur « Start Measuring » pour effectuer la
+   mesure ! 🙂
+
+La courbe de fréquences
+
+   Il est temps d’analyser vos résultats, en commençant par l’onglet « SPL
+   & Phase » qui affiche tout simplement la courbe de réponse en
+   fréquences.
+
+De quoi s’agit-il ?
+
+   Vous pouvez visualiser, pour l’ensemble de la plage de fréquences
+   parcourue durant la mesure, le niveau sonore qui a été mesuré.
+
+   Par défaut, le graphique va ressembler à quelque chose comme ça :
+
+   Réponse en Fréquences de la pièce Réponse en Fréquences de la pièce
+
+   Comme vous pouvez le constater, c’est un peu difficile à lire, surtout
+   lorsqu’on va sur les hautes fréquences. Pour solutionner ce problème,
+   n’hésitez pas à appliquer un « smoothing », c’est-à-dire un lissage,
+   grâce aux options du menu « Graph » de la barre de menu située en haut
+   du logiciel.
+
+   Dans REW, un certain nombre de lissages sont disponibles, de l’octave
+   au 1/48 d’octave. Pour que les données restent suffisamment précises,
+   contentez-vous du lissage le plus léger, à savoir 1/48 d’octave.
+   Autrement, certaines informations utiles risqueraient de disparaître :
+
+   Lissage d'une courbe de fréquences dans REW Lissage d'une courbe de
+   fréquences dans REW
+
+   C’est mieux non ?
+
+Quelle échelle choisir ?
+
+   Pour faciliter l’analyse, n’hésitez pas à cliquer sur le bouton
+   « Limits » en haut à droite du graphique et choisir votre propre
+   échelle :
+     * Left et Right contrôlent l’affichage en fréquences. Vous pouvez
+       ainsi n’afficher que les basses fréquences, si vous voulez vous
+       concentrer sur les résonances modales.
+     * Top et Bottom contrôlent la plage de niveau sonore. Pour faciliter
+       la lecture, je vous conseille de choisir une plage de niveau allant
+       du niveau de votre mesure la plus forte jusqu’à un point situé
+       environ -50 dB plus bas.
+       Par exemple, si votre mesure la plus forte est environ à 80 dB,
+       choisissez un Top à 80 dB et un Bottom à 30 dB.
+
+Que voit-on sur ce graphique ?
+
+   Même si c’est le graphe qui vous parlera sans doute le plus si vous
+   avez l’habitude d’utiliser des égaliseurs ou des graphiques de
+   fréquences, c’est malheureusement le moins utile pour le traitement
+   acoustique.
+
+   Toutefois, il est possible d’identifier assez facilement les modes de
+   la pièce dans les basses fréquences, qui vont ressortir sous la forme
+   de crêtes ou de creux anormaux, comme par exemple sur le schéma suivant
+   :
+
+   Résonances modales visibles dans REW Résonances modales visibles dans
+   REW
+
+   Aucune pièce ou aucun studio n’étant parfait, vous n’obtiendrez jamais
+   une courbe parfaitement plate. Toutefois, vous pouvez vous dire qu’une
+   différence de 10 dB entre la valeur maximale et la valeur minimale de
+   votre graphique indiquera une pièce plutôt bien équilibrée en
+   fréquences. Du moins, pour un home studio.
+
+La courbe ETC
+
+   Cliquez sur l’onglet « Filtered IR » (IR = Impulse Response) et
+   utilisez les cases à cocher de la légende pour n’afficher que la courbe
+   appelée « Enveloppe (ETC) ».
+
+De quoi s’agit-il ?
+
+   ETC, cela signifie « Energy Time Curve » — autrement dit, la courbe
+   représente les variations d’énergie (de volume) en fonction du temps.
+
+   A nouveau, le graphique n’est pas très beau, mais ce n’est pas
+   nécessairement très grave. Si vous souhaitez vraiment lisser la courbe,
+   vous pouvez toutefois cliquer sur le bouton « Controls » en haut à
+   droite du graphique et ajuster le paramètre « ETC Smoothing (ms) ». Des
+   valeurs de l’ordre de 0,1 ms fonctionnent très bien.
+
+   On obtient alors quelque chose comme ça :
+
+   La courbe ETC dans REW La courbe ETC dans REW
+
+Quelle échelle choisir ?
+
+   Je sais, pour l’instant cette courbe n’est pas très parlante. Mais il
+   est utile de la regarder sur une échelle adaptée.
+
+   Tout d’abord, il faut se poser la question de ce qu’on regarde. Le
+   premier grand pic, situé à 0 ms, c’est la réponse des enceintes. C’est
+   le son direct — donc normalement le premier et le plus fort — que vous
+   entendez.
+
+   Les autres pics, ce sont les réflexions autour de vous.
+
+   Tout d’abord, on sait que notre cerveau a du mal à faire la différence
+   entre un son et sa réflexion s’ils sont espacés de moins de 100 ms
+   (environ). L’échelle horizontale, temporelle, que l’on va choisir sera
+   donc entre 0 et 100 ms.
+
+   Verticalement, on peut choisir par exemple une plage de valeurs entre 0
+   et -50 ou -60 dB. L’idée étant que les réflexions situées à -50 dBFS
+   par rapport au son initial sont négligeables.
+
+   Rappel : pour entrer ces valeurs, utilisez le bouton « Limits » en haut
+   à droite du graphe et cliquez sur « Apply Settings ». Attention, les
+   réglages sont en secondes, pour 100 ms il convient d’inscrire 0,1 s.
+
+Analyser la courbe
+
+   Une fois ces réglages faits, il est possible d’analyser ce qui ne va
+   pas dans la courbe.
+
+   Tout d’abord, il est bien sûr préférable qu’aucune réflexion ne soit
+   aussi forte que le signal de base. Assurez-vous donc que toutes les
+   réflexions soient à au moins -20 dBFS du signal d’origine. Surtout dans
+   les 40-50 premières millisecondes.
+
+   Ensuite, il faut que la diminution du signal soit douce, en évitant
+   d’avoir un pic plus haut que le pic précédent. Dans la pratique, ça ne
+   sera pas facile, mais essayez d’optimiser votre traitement acoustique
+   en pensant à cela et installez des panneaux absorbants aux points de
+   première réflexion.
+
+   Pour aller plus loin, Room EQ Wizard permet de filtrer les données par
+   bande de fréquences, via un tout petit menu déroulant en bas à gauche
+   du graphique. Je vous conseille fortement de le faire, car il est
+   possible que certains problèmes ressortent plus clairement de cette
+   façon !
+
+Un peu de mathématiques
+
+   Voici maintenant une astuce.
+
+   Lorsque vous voyez une crête anormale, il est possible de deviner le
+   mur ou l’objet (votre bureau…) qui l’a générée en faisant un petit
+   calcul.
+
+   Imaginons que vous voyez une réflexion qui ressort vraiment à 20 ms. Le
+   signal d’origine, lui, est situé à 0 ms.
+
+   Entre les deux il y a donc 20 millisecondes soit 0.02 secondes.
+
+   La formule est la suivante :
+
+   Distance = Vitesse x Temps
+
+   La Vitesse étant la vitesse du son (en moyenne 340 m/s), on peut donc
+   effectuer le calcul :
+
+   D = 340 * 0.02 = 6.8 m
+
+   Le signal réfléchi a donc parcouru 6.8 mètres de plus que la distance
+   entre les enceintes et le microphone de mesure.
+
+   Cela vous donne donc une indication sur la position de l’objet ou du
+   mur ayant généré la réflexion.
+
+La courbe RT60 / Topt
+
+   Cliquez maintenant sur l’onglet RT60 et décochez toutes les cases de la
+   légende sauf celle correspondant à la courbe « Topt ».
+
+De quoi s’agit-il ?
+
+   Quatre courbes affichant un temps de réverbération (decay time en
+   anglais) peuvent être affichées, avec un lissage à l’octave ou au tiers
+   d’octave (via le bouton Controls) :
+     * RT60 — le temps mis par le son pour descendre à -60 dB par rapport
+       à la mesure initiale ;
+     * RT30 — idem, à -30 dB ;
+     * EDT — idem, à-10 dB ;
+     * Topt — un algorithme propriétaire de REW qui s’adapte très bien aux
+       petites pièces et fonctionne de façon similaire aux autres.
+
+   Si vous essayez de traiter acoustiquement un home studio, c’est
+   probablement vers ce dernier choix que vous allez vous tourner.
+
+   Et voici le résultat :
+
+   La courbe Topt dans l'affichage RT60 de REW La courbe Topt dans
+   l'affichage RT60 de REW
+
+Quelle échelle choisir ?
+
+   L’échelle est moins importante ici, mais je vous conseille de ne pas
+   prendre une échelle verticale trop grande qui écraserait la courbe.
+   Autrement dit, si toutes vos valeurs sont inférieures à 1 seconde, ça
+   ne sert à rien d’afficher les valeurs au-dessus.
+
+   En termes d’échelle horizontale, à savoir les fréquences, vous
+   pourrez la plupart du temps garder l’ensemble du spectre car la courbe
+   est très simple et donc très lisible.
+
+Analyser la courbe
+
+   J’aime bien ce graphique, car il permet de voir de façon « macro »
+   l’effet du traitement acoustique ajouté. Si vous installez quelques
+   panneaux absorbants, vous allez tout de suite voir l’effet sur les
+   hautes fréquences.
+
+   C’est très parlant.
+
+   Bref, si vous utilisez cette courbe pour analyser l’efficacité de vos
+   panneaux ou de vos bass traps, il y a deux choses que vous devriez
+   idéalement retrouver :
+     * un decay time ou temps de réverbération inférieur à 0,3 seconde sur
+       l’ensemble du spectre de fréquences ;
+     * une variation de moins de 10% entre deux bandes de fréquences
+       adjacentes. En effet, la courbe ne sera jamais complètement plate
+       mais il est important qu’elle soit suffisamment équilibrée.
+
+   Si ces conditions ne sont pas remplies, vous devrez sans doute ajuster
+   votre traitement acoustique en conséquence.
+
+Le waterfall
+
+   Cliquez maintenant sur l’onglet « Waterfall ».
+
+   Il n’y a rien, c’est normal : il faut générer le graphique en cliquant
+   sur le bouton « Generate » en bas à gauche de la fenêtre.
+
+De quoi s’agit-il ?
+
+   Tout simplement, cette visualisation 3D montre l’évolution de l’énergie
+   (du niveau sonore) dans le temps pour la totalité du spectre de
+   fréquences.
+
+   Un peu comme si vous affichiez côte à côte, toutes les « X »
+   millisecondes, la courbe de fréquences mesurée.
+
+   Vous pouvez donc constater, par exemple, si vos basses autour de 100 Hz
+   résonnent plus longtemps que toutes les autres fréquences – ou bien au
+   contraire si elles sont absentes (à cause de résonances modales).
+
+Quelle échelle choisir ?
+
+   Bref, par défaut le graphique est peu lisible et assez insipide :
+
+   Une courbe de fréquences Waterfall dans REW Une courbe de fréquences
+   Waterfall dans REW
+
+   Il va donc à nouveau falloir ajuster l’échelle et paramétrer le graphe
+   pour avoir quelque chose d’exploitable.
+
+   Pour faciliter la lecture, je vous recommande couper le graphique
+   waterfall 50 décibels en-dessous de la valeur maximum mesurée.
+
+   Pour cela, cliquez sur le bouton « Limits » en haut à droite et
+   indiquez :
+     * en Top, la valeur maximale mesurée (visible sur le graphique, pas
+       besoin d’être très précis, arrondissez à la dizaine)
+     * en Bottom, la même valeur à laquelle vous ôterez 50 dB
+
+   Comme ceci :
+
+   Ajustez l'échelle Ajustez l'échelle
+
+   Ensuite, pour l’échelle horizontale (Left et Right), cela dépend de ce
+   que vous souhaitez afficher :
+     * soit vous souhaitez vous concentrer sur les résonances modales de
+       votre pièce, donc sur les basses, et dans ce cas là vous allez
+       afficher un waterfall entre 20 et 300 Hz environ
+     * soit vous voulez avoir un aperçu global de la façon dont résonne
+       votre pièce/studio, et dans ce cas là vous allez sélectionner
+       l’ensemble de la bande de fréquences enregistrée
+
+   Enfin, il faut que l’échelle de temps (en profondeur sur le graphique)
+   soit adaptée. Cliquez sur le bouton « Controls » et ajustez le « Time
+   Range (ms) ».
+
+   Si l’on reprend les valeurs mentionnées pour la courbe Topt/RT60, on se
+   dit qu’il faut idéalement que les réflexions soient en-dessous de 0,3
+   secondes, soit 300 millisecondes. Vous pouvez donc choisir cette valeur
+   là, ou une juste au-dessus (400-500 ms). Ce n’est pas grave si le
+   graphique est un peu tronqué : au contraire, vous identifierez mieux
+   les problèmes.
+
+Analyser la courbe
+
+   En lisant mon texte à propos de l’échelle, et comme nous arrivons à la
+   fin de cet article, je pense que vous commencez à avoir une idée de ce
+   que l’on peut faire.
+
+   Grâce au graphique waterfall, il est possible d’identifier assez
+   facilement les résonances modales. En effet, dans les basses, certaines
+   fréquences vont résonner beaucoup trop longtemps, tandis que d’autres
+   vont visiblement disparaître.
+
+   Résonances modales sur un graphe Waterfall Résonances modales sur un
+   graphe Waterfall
+
+   Sur l’image ci-dessus, c’est justement le cas : la fréquence 113 Hz est
+   complètement absente dès le début de la mesure ! 🙂
+
+   De la même façon, si vous avez mis trop de panneaux absorbants et que
+   vos aigus sont trop assourdis, vous pourrez voir sur ce waterfall que
+   les fréquences aiguës sont plus en retrait par rapport aux fréquences
+   moyennes ou basses.
+
+   Ce graphique s’avère donc plutôt utile, car il permet d’avoir une
+   vision globale de l’acoustique de la pièce mais aussi d’analyser les
+   mesures dans le détail.
+
+En conclusion
+
+   Voilà, avec tout ça vous devriez être capable de commencer à mesurer
+   efficacement l’acoustique de votre (home) studio, ou de votre pièce
+   d’écoute hi-fi.
+
+   Ce qu’il est important de réaliser, c’est que c’est uniquement en
+   analysant l’ensemble de ces courbes que vous aurez une vraie
+   compréhension de votre pièce. Impossible, donc, de n’en regarder qu’une
+   seule pour aller plus vite : chacune a son utilité…
+
+   …l’objectif étant bien sûr d’installer un traitement adapté ! 🙂
+
+   Justement, pour aller plus loin et si ce n’est déjà fait : n’hésitez
+   pas à jeter un œil à mon guide sur le traitement acoustique pour éviter
+   les erreurs les plus courantes.
+
+   Bonnes mesures !
+
+   Posted in Enregistrement / MatérielTagged REW, traitement acoustique
+
+18 commentaires sur “REW : Un Tutoriel pour Analyser l’Acoustique de Votre
+Studio”
+
+    1.
+   Lucas BAEZ 15 février 2018Répondre
+       Top cet article, super instructif, comme toujours !
+          +
+        Adrien Post author15 février 2018Répondre
+            Merci bien Lucas 🙂 !
+            Adrien
+    2.
+   Will 15 février 2018Répondre
+       Super! Exactement ce dont j’avais besoin. Encore un grand merci
+       pour ce travail de vulgarisation qui va beaucoup m’aider dans le
+       traitement acoustique de mon home studio. ☺️
+    3.
+   Lucas BAEZ 15 février 2018Répondre
+       J’ai une question par rapport à ton article : sur la partie signal
+       réfléchi, si une réflexion ressort vraiment à 20 ms et que la
+       distance enceinte/micro est de 1,5m , l’objet ou le mur qui génère
+       la réflexion se trouve à 8,30m (6,8 + 1,5) de l’enceinte ?
+       Mais si on a que 5m de longueur et 2,55m de largeur, où se trouve
+       la réflexion ? 🙂
+          +
+        Adrien Post author24 février 2018Répondre
+            Bonjour,
+            En mettant le calcul, j’avais peur de ne pas être suffisamment
+            précis et je pense que c’est le cas – désolé 🙂
+            En fait, si par exemple le signal a rebondi deux fois, alors
+            on va retrouver une valeur métrique supérieure à la taille de
+            la pièce. Du coup, le calcul n’est que partiellement utile,
+            mais du moins il permet notamment d’identifier les réflexions
+            liées au bureau ou très proche.
+            Adrien
+    4.
+   Dambrin 25 mars 2019Répondre
+       Merci Beaucoup Adrien pour l’existence de ce site très didactique
+       pour les néophytes comme moi!!
+          +
+        Adrien Post author27 mars 2019Répondre
+            Avec plaisir 🙂 !
+    5.
+   prise2son 3 avril 2019Répondre
+       Bonjour,
+       Comment faut-il procéder pour mesurer l’acoustique d’un studio
+       d’enregistrement (uniquement)?
+       Ce n’est pas un home studio; il ne sert pas de lieu d’écoute et de
+       mixage…
+       Je suppose qu’il faudra positionner des enceintes et un micro!
+       Faut-il faire le test avec le micro au milieu et déplacer les
+       enceintes autour?
+       Les musiciens ont des instruments acoustiques…(donc sans prise
+       directe!)
+       et le choeur chante en même temps…
+       Il y a 4 à 5 micros qui se trouvent dans différents endroits de la
+       pièce.
+       Merci d’avance pour votre aide…
+       Prise2son
+    6.
+   Jeannot 1 mai 2019Répondre
+       Super article, j’avais téléchargé et utilisé REW il y a une paires
+       d’années déjà, dans une pièce trop petite pour être aménagée
+       efficacement, mais là tu donnes les clés pour bien l’utiliser.
+       Cela me redonnes l’envie de bien faire les choses : MERCI !
+          +
+        Adrien Post author20 mai 2019Répondre
+            Je t’en prie 🙂 !
+    7.
+   Kyrian 21 août 2019Répondre
+       Salut ! Tes articles sont super intéressants, j’ai puisé beaucoup
+       d’informations très utiles sur ton site ! Merci beaucoup ! En
+       revanche, pour ce qui est de la calibration de ma carte son pour
+       REW, j’ai quelques soucis. J’ai branché un cable de ma ligne IN 2
+       vers une ligne OUT (R) puis j’ai bien ajusté les niveaux (gain out
+       des moniteurs et gain in pour équilibrer les niveaux à -12). Mais
+       quand je lance la calibration, j’obtient un graphe avec beaucoup
+       d’artefacts : de nombreux trous dans tout le spectre allant jusqu’à
+       -30db de réduction !! Et d’ailleurs quand je refais des mesures,
+       ces « trous » ne sont pas toujours situés aux mêmes fréquences.
+       Pourquoi je n’ai pas une courbe plate à 0db ? Comment expliquer
+       cela ? Qu’est ce que j’ai fait comme erreur ? Ou bien est-ce
+       réellement ma carte son qui est extrêmement mauvaise ? J’ai une
+       M-TRACK AUDIO 2×2, un Macbook Pro, des moniteurs KRK Rokit 6. Merci
+       d’avance pour ton aide.
+          +
+        Adrien Post author4 septembre 2019Répondre
+            Merci pour ton commentaire 🙂 !!
+            Le problème que tu rencontres est bizarre, pour le coup je
+            n’ai pas de solution comme ça 🙁 Éventuellement tu peux essayer
+            une autre entrée / une autre sortie ?
+            Quoiqu’il en soit, si le problème continue, je te conseille de
+            sauter l’étape : ce n’est pas la plus importante car les
+            cartes sons restent relativement plates, quand même, dans la
+            bande de fréquences audibles. C’est mieux si on calibre, mais
+            on peut arriver à de bons résultats sans.
+            Adrien
+    8.
+   prise2son 29 août 2019Répondre
+       Bonjour Adrien,
+       Voici un très bon tuto pour utiliser REW…ce qui me décide à me
+       lancer pour faire quelques mesures.
+       Mais comment faut-il procéder pour mesurer l’acoustique d’un studio
+       d’enregistrement (uniquement)?
+       Ce n’est pas un home studio; il ne sert pas de lieu d’écoute et de
+       mixage…
+       Je suppose qu’il faudra positionner des enceintes et un micro…mais
+       comment?
+       Merci d’avance
+          +
+        Adrien Post author4 septembre 2019Répondre
+            Bonjour,
+            Merci !
+            Pour ce cas un peu particulier, je pense qu’il faudrait placer
+            une enceinte au niveau de l’endroit où vous penser
+            enregistrer, et faire une série de mesures autour au niveau de
+            là où vous pensez enregistrer. De façon un peu méthodique,
+            vous pourrez ensuite décaler l’enceinte petit à petit pour
+            identifier la meilleure position d’enregistrement, et traiter
+            la pièce en fonction.
+            Adrien
+    9.
+   prise2son 5 septembre 2019Répondre
+       Bonjour Adrien,
+       Merci pour cette réponse…
+       L’enceinte ferait donc office de musicien?
+       Cependant, il y aura plusieurs musicien dans la même pièce!
+       (faut-il plusieurs enceintes?)
+       Je pense donc déplacer l’enceinte et le micro sur toute la zone (4
+       * 3 mètres) ou se trouveront les musicien en espérant que les
+       différences de mesures ne seront pas trop différentes, afin d’avoir
+       une correction globale…
+       La pièce fait 7*5 mètres.
+       L’autre solution serait de placer le micro au milieu de la pièce,
+       en position verticale ou horizontale et de déplacer l’enceinte sur
+       un cercle autour de celui-ci (=position des musiciens).
+       Merci de m’éclairer encore un peu…afin de faire le moins de mesures
+       possibles!
+          +
+        Adrien Post author5 septembre 2019Répondre
+            Oui, en quelque sorte. Une seule enceinte suffira, il va
+            falloir trouver la position en moyenne la meilleure.
+            Dans tous les cas, il faut éviter le centre et les coins de la
+            pièce (en raison des résonances modales). Après, je pense que
+            faire quelques mesures va aider mais s’il y a plusieurs
+            musicien ça sera dans tous les cas une vision globale qu’il
+            faudra avoir.
+   10.
+   prise2son 10 septembre 2019Répondre
+       Merci pour cette réponse.
+       Je vais tenter quelques tests en espérant que la correction globale
+       facilitera quand même la prise de son…
+       Merci encore
+          +
+        Adrien Post author11 septembre 2019Répondre
+            Avec plaisir 🙂
+
+Laisser un commentaire Annuler la réponse
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   Laisser un commentaire
+
+   [ebook-astuces-mixage-home-studio.png]
+   Inscrivez-vous pour recevoir votre guide gratuit — et des conseils de
+   mixage réguliers par email :)
+   Email ____________________ Je veux des conseils de mixage !
+
+   Vous ne recevrez pas de spam (moi aussi, je déteste ça) et votre email
+   sera gardé en sécurité.
+
+A Propos d’Adrien
+
+   Adrien de Projet Home Studio
+   Adrien de Projet Home Studio
+
+   Je suis Adrien Perinot, le fondateur de ProjetHomeStudio (plus de 20000
+   visiteurs par mois !), sur lequel je partage avec vous mes meilleures
+   techniques d'enregistrement et de mixage :)
+
+Restez informé(e)
+
+   ____________________ (BUTTON)
+
+Articles récents
+
+     * TritonAudio FetHead Germanium : un Préampli au Germanium à moins de
+       100€
+     * KVLT Drums II : des Samples de Batterie pour le Metal Underground
+     * iZotope Ozone Elements est Gratuit !
+     * Mu, le Compresseur de Buss Ultime ?
+     * 6 des Meilleurs Microphones pour Voix Off
+
+Articles populaires
+
+     * Le Guide Complet des Micros de Studio
+     * Comment Régler un Compresseur Audio
+     * Les Meilleurs Plugins Gratuits (VST, AU, AAX…)
+     * Le Guide Complet du Traitement Acoustique
+
+Affiliation
+
+   Certains articles de ce site contiennent des liens affiliés.
+   C'est-à-dire que si vous achetez un produit à partir de ces liens, je
+   reçois une petite commission (sans aucun impact sur le prix final pour
+   vous).
+
+   Bien sûr, aucun impact non plus sur la qualité du contenu : lien
+   affilié ou pas, je vous recommenderai toujours des produits de qualité
+   — ça m'aide juste à faire vivre le site :)
+
+   Copyright © 2016-2019 Projet Home Studio - Tous Droits Réservés
+    #Projet Home Studio » Flux Projet Home Studio » Flux des commentaires
+   alternate alternate
+
+   Skip to content
+
+   Primary Menu
+   Projet Home Studio
+
+     * Accueil
+     * Blog
+          + News
+          + Enregistrement / Matériel
+          + Mixage / Mastering
+          + Plugins / Logiciels
+          + Tests
+     * Les Guides
+          + Le Guide Complet du Matériel de Home Studio
+          + Le Guide Complet des Microphones de Studio
+          + Le Guide Complet du Traitement Acoustique
+          + Les Meilleurs Plugins Audio Gratuits (VST…)
+     * Formation
+     * Contact
+
+Vos mix ne sonnent
+pas assez "pro" ?
+
+   Entrez votre email ci-dessous pour accéder
+   à 25 astuces de mixage éprouvées :)
+   ____________________ Je m'inscris
+
+BLOG
+
+DERNIERS ARTICLES
+
+   Tests
+
+Auburn Sounds Panagement 2 : le Test Complet
+
+   Ayant testé en 2018 Couture, un transient shaper novateur que j’avais
+   fortement apprécié, j’ai été immédiatement pris par la curiosité en
+   recevant la newsletter m’indiquant la sortie de Panagement 2. …
+
+   News
+
+TritonAudio FetHead Germanium : un Préampli au Germanium à moins de 100€
+
+   Le FetHead, vous connaissez ? Il s’agit de ce petit préampli dédié aux
+   microphones dynamiques (SM57, SM7B…) et à ruban que j’avais testé ici
+   même il y a quelques mois. …
+
+   News
+
+KVLT Drums II : des Samples de Batterie pour le Metal Underground
+
+   Bonne nouvelle pour les fans de metal underground (black/death/thrash)
+   typé années 80/90 : Ugritone (anciennement It Might Get Loud) vient
+   d’annoncer la sortie de KVLT Drums II, une librairie de …
+   PLUS D'ARTICLES...
+
+   Copyright © 2016-2019 Projet Home Studio - Tous Droits Réservés
+                 Index of /wp-content/plugins/mailin/img/flags
+
+ Icon   Name                    Last modified      Size  Description
+  ___________________________________________________________________________
+ [PARENTDIR]  Parent Directory                             -
+ [IMG]  ad.png                  2019-09-01 19:56  473
+ [IMG]  ae.png                  2019-09-01 19:56  379
+ [IMG]  ar.png                  2019-09-01 19:56  337
+ [IMG]  at.png                  2019-09-01 19:56  281
+ [IMG]  au.png                  2019-09-01 19:56  499
+ [IMG]  ba.png                  2019-09-01 19:56  541
+ [IMG]  bd.png                  2019-09-01 19:56  511
+ [IMG]  be.png                  2019-09-01 19:56  386
+ [IMG]  bg.png                  2019-09-01 19:56  271
+ [IMG]  bh.png                  2019-09-01 19:56  462
+ [IMG]  bl.png                  2019-09-01 19:56  629
+ [IMG]  br.png                  2019-09-01 19:56  606
+ [IMG]  ca.png                  2019-09-01 19:56  485
+ [IMG]  ch.png                  2019-09-01 19:56  325
+ [IMG]  cl.png                  2019-09-01 19:56  357
+ [IMG]  cn.png                  2019-09-01 19:56  415
+ [IMG]  co.png                  2019-09-01 19:56  319
+ [IMG]  cz.png                  2019-09-01 19:56  426
+ [IMG]  de.png                  2019-09-01 19:56  309
+ [IMG]  dk.png                  2019-09-01 19:56  318
+ [IMG]  dz.png                  2019-09-01 19:56  453
+ [IMG]  ec.png                  2019-09-01 19:56  474
+ [IMG]  ee.png                  2019-09-01 19:56  287
+ [IMG]  eg.png                  2019-09-01 19:56  325
+ [IMG]  es.png                  2019-09-01 19:56  421
+ [IMG]  fi.png                  2019-09-01 19:56  310
+ [IMG]  fr.png                  2019-09-01 19:56  380
+ [IMG]  gb.png                  2019-09-01 19:56  605
+ [IMG]  ge.png                  2019-09-01 19:56  407
+ [IMG]  gr.png                  2019-09-01 19:56  324
+ [IMG]  hk.png                  2019-09-01 19:56  543
+ [IMG]  hr.png                  2019-09-01 19:56  446
+ [IMG]  ht.png                  2019-09-01 19:56  315
+ [IMG]  hu.png                  2019-09-01 19:56  281
+ [IMG]  id.png                  2019-09-01 19:56  275
+ [IMG]  ie.png                  2019-09-01 19:56  366
+ [IMG]  il.png                  2019-09-01 19:56  347
+ [IMG]  in.png                  2019-09-01 19:56  327
+ [IMG]  ir.png                  2019-09-01 19:56  349
+ [IMG]  it.png                  2019-09-01 19:56  374
+ [IMG]  jm.png                  2019-09-01 19:56  604
+ [IMG]  jo.png                  2019-09-01 19:56  445
+ [IMG]  jp.png                  2019-09-01 19:56  385
+ [IMG]  km.png                  2019-09-01 19:56  486
+ [IMG]  lb.png                  2019-09-01 19:56  398
+ [IMG]  lk.png                  2019-09-01 19:56  520
+ [IMG]  lt.png                  2019-09-01 19:56  316
+ [IMG]  lu.png                  2019-09-01 19:56  285
+ [IMG]  lv.png                  2019-09-01 19:56  276
+ [IMG]  ma.png                  2019-09-01 19:56  420
+ [IMG]  mg.png                  2019-09-01 19:56  313
+ [IMG]  mt.png                  2019-09-01 19:56  343
+ [IMG]  mu.png                  2019-09-01 19:56  314
+ [IMG]  mx.png                  2019-09-01 19:56  460
+ [IMG]  my.png                  2019-09-01 19:56  416
+ [IMG]  nc.png                  2019-09-01 19:56  526
+ [IMG]  ng.png                  2019-09-01 19:56  356
+ [IMG]  ni.png                  2019-09-01 19:56  347
+ [IMG]  nl.png                  2019-09-01 19:56  279
+ [IMG]  no.png                  2019-09-01 19:56  374
+ [IMG]  np.png                  2019-09-01 19:56  469
+ [IMG]  nz.png                  2019-09-01 19:56  545
+ [IMG]  pa.png                  2019-09-01 19:56  432
+ [IMG]  pe.png                  2019-09-01 19:56  469
+ [IMG]  pf.png                  2019-09-01 19:56  374
+ [IMG]  pg.png                  2019-09-01 19:56  563
+ [IMG]  ph.png                  2019-09-01 19:56  454
+ [IMG]  pk.png                  2019-09-01 19:56  534
+ [IMG]  pl.png                  2019-09-01 19:56  237
+ [IMG]  pm.png                  2019-09-01 19:56  658
+ [IMG]  pr.png                  2019-09-01 19:56  412
+ [IMG]  pt.png                  2019-09-01 19:56  524
+ [IMG]  py.png                  2019-09-01 19:56  336
+ [IMG]  qa.png                  2019-09-01 19:56  392
+ [IMG]  ro.png                  2019-09-01 19:56  394
+ [IMG]  ru.png                  2019-09-01 19:56  265
+ [IMG]  se.png                  2019-09-01 19:56  364
+ [IMG]  sg.png                  2019-09-01 19:56  343
+ [IMG]  si.png                  2019-09-01 19:56  358
+ [IMG]  sk.png                  2019-09-01 19:56  420
+ [IMG]  th.png                  2019-09-01 19:56  270
+ [IMG]  tn.png                  2019-09-01 19:56  505
+ [IMG]  tr.png                  2019-09-01 19:56  493
+ [IMG]  tw.png                  2019-09-01 19:56  395
+ [IMG]  ua.png                  2019-09-01 19:56  323
+ [IMG]  ug.png                  2019-09-01 19:56  427
+ [IMG]  us.png                  2019-09-01 19:56  357
+ [IMG]  uy.png                  2019-09-01 19:56  410
+ [IMG]  ve.png                  2019-09-01 19:56  390
+ [IMG]  vn.png                  2019-09-01 19:56  449
+ [IMG]  wf.png                  2019-09-01 19:56  424
+ [IMG]  yt.png                  2019-09-01 19:56  506
+ [IMG]  za.png                  2019-09-01 19:56  515
+  ___________________________________________________________________________

@@ -1,0 +1,1885 @@
+   #next CL-RPI » Flux CL-RPI » Flux des commentaires
+
+   Aller au contenu principal
+
+CL-RPI
+
+   Quelques ressources pour exploiter son Raspberry Pi
+   Descendre au contenu
+
+Articles
+
+   Publié le 6 novembre 2018
+
+Copier des listes et des objets en python
+
+   Copier des listes et des objets en python
+
+   La copie de liste est une erreur courante pour le développeur Python.
+   En effet, le débutant en python qui n’a pas appris un langage comme C
+   ou C++ et qui n’a pas de notions de pointeur, référence et valeur de la
+   mémoire risque de commettre l’erreur suivante lors qu’il a besoin de
+   copier 2 listes.
+In [6]: l1 = [1, 2, 3, 4]
+
+In [7]: l2 = l1
+
+In [8]: l1
+Out[8]: [1, 2, 3, 4]
+
+In [9]: l2
+Out[9]: [1, 2, 3, 4]
+
+   Ce qui ne provoque aucune erreur puisque c’est autorisé par le langage
+   et que ça peut avoir un sens.
+   Cependant, si vous faites des modifications à l1 après l’affectation,
+   la liste l2 sur également modifier :
+In [10]: l1 = [1, 2, 3, 4]
+
+In [11]: l2 = l1
+
+In [12]: l2
+Out[12]: [1, 2, 3, 4]
+
+In [13]: l1[0] = 1000
+
+In [14]: l2
+Out[14]: [1000, 2, 3, 4]
+
+In [15]: l1
+Out[15]: [1000, 2, 3, 4]
+
+   Ici j’ai « copié » les listes et j’ai modifié la première valeur de la
+   liste L2 a été également modifiée et vaut 1000 :
+In [14]: l2
+Out[14]: [1000, 2, 3, 4]
+
+   Mais qu’est ce que c’est que ce merdier!?!
+
+   C’est là qu’il faut faire intervenir la notion de pointeur et la notion
+   de valeur.
+   NB : attention ici je vais simplifié au maximum
+
+   La mémoire de votre ordinateur est un ensemble de cases dans lequel
+   vous allez mettre vos données. C’est un peu un ensemble de boites à
+   chaussure où vous auriez rangé vos chaussures.
+   Pour accéder à une paire de chaussures particulière, il faut préciser
+   dans quelle boite se trouve cette paire. Imaginons que vous soyez un
+   peu psychopathe sur les bords et que vous auriez numéroté vos boites à
+   chaussures.
+   Le plus simple pour retrouver vos chaussures, est de chercher le numéro
+   de la boite.
+   En informatique c’est exactement pareil. Pour accéder à une donnée en
+   mémoire on précise le numéro de la boite à chaussure qu.on nomme
+   « adresse » afin d’accéder à la donnée.
+
+   Dans le cas d’un exemple de données placées linéairement en mémoire,
+   c’est-à-dire que les données, d’un tableau par exemple, sont les unes à
+   la suite des autres pour faciliter leur manipulation, il est plus
+   simple de manipuler à partir de la première case mémoire que de
+   manipuler toutes les données concernées.
+
+   À ce stade, il faut également comprendre qu’un objet qui possède un
+   certain nombre d’attributs et de placer en mémoire et accessible grâce
+   à un numéro de boite, une adresse.
+
+   C’est exactement le cas de notre liste qui est un objet et quand je
+   fais :
+l2 = l1
+
+   En fait, je ne fais pas une copie de la liste, je crée un deuxième
+   objet qui pointe sur le premier objet.
+   Par conséquent, toutes les modifications de l’un entrainent une
+   modification de l’autre, car les deux objets pointent sur les mêmes
+   données : « la même boîte à chaussure »
+
+Bon, comment on fait une copie de liste ?!
+
+   Pour une liste simple, c’est simple (jolie répétition… Je la garde…),
+   il suffit de dire qu’on veut explicitement une copie de la liste :
+l2 = l1[:]
+
+   Et là plus de problèmes d’objet qui pointe sur les mêmes données puisse
+   que les données ont été dupliquées. L’exemple ci-dessous illustre le
+   procédé :
+In [16]: l1 = [1, 2, 3, 4]
+
+In [17]: l2 = l1[:]
+
+In [18]: l1[0] = 1000
+
+In [19]: l2
+Out[19]: [1, 2, 3, 4]
+
+In [20]: l1
+Out[20]: [1000, 2, 3, 4]i
+
+   Ici seul l1 a été modifié, les données de l2 étant complètement
+   indépendantes…
+
+   OK donc c’est simple, vous me direz, il y a que les culs à pieds qui se
+   font prendre…
+
+   Euh…, non!!!
+
+Les références aux données et les copies dans les objets
+
+   Le même genre de problème peut survenir dans la recopie d’objets
+   possédant des listes, par exemple.
+
+   Imaginons que je définisse la classe suivante :
+class DataConso(object):
+    def __init__(self):
+        self.l_conso = []
+
+   qui possède donc comme attribut une liste. Le problème de copie de
+   donnée se posera de la même manière si on utilise l’opérateur « = »,
+   par exemple :
+if __name__ == '__main__':
+    maconso = DataConso()
+    maconso.l_conso.append(10)
+    maconso.l_conso.append(20)
+    maconso.l_conso.append(30)
+    maconso.l_conso.append(40)
+
+    maconso_copie = maconso
+    maconso_copie.l_conso[2] = 100
+
+    print('affichage liste originale : ', maconso.l_conso)
+    print('affichage liste modifiée : ', maconso_copie.l_conso)
+
+   Dans cet exemple, je mets des valeurs dans la liste définit comme
+   attribut de la classe, puis créer un nouvel objet que je pense copier
+   avec l’opérateur « = ».
+   Puis, je modifie un élément de liste de l’objet original et enfin
+   j’affiche la valeur de la liste des deux objets.
+   Et là c’est le drame… Les deux listes ont été modifiées
+In [5]: %run exemple.py
+affichage liste originale :  [10, 20, 100, 40]
+affichage liste modifiée :  [10, 20, 100, 40]
+
+
+   Pourquoi ?
+
+   C’est simple, on a copié l’adresse des objets et non le contenu de
+   l’objet, donc quand on modifie les données de l’un, on modifie
+   également l’autre…
+
+   Mais, contrairement à la liste, on ne peut pas un truc dans ce genre-là
+   obj2 = obj1(:)…
+   Non, on ne peut pas, c’est de l’informatique pas de la magie…
+
+   Je vous mets donc une solution dans la section qui suit.
+
+Deepcopy
+
+   Deepcopy est une fonction qui permet de copier explicitement un objet
+   et son contenu dans un autre objet.
+
+   L’exemple précédent se modifie donc de la manière suivante :
+from copy import deepcopy
+
+
+class DataConso(object):
+    def __init__(self):
+        self.l_conso = []
+
+
+if __name__ == '__main__':
+    maconso = DataConso()
+    maconso.l_conso.append(10)
+    maconso.l_conso.append(20)
+    maconso.l_conso.append(30)
+    maconso.l_conso.append(40)
+
+    maconso_copie = deepcopy(maconso)
+    maconso_copie.l_conso[2] = 100
+
+    print('affichage liste originale : ', maconso.l_conso)
+    print('affichage liste modifiée : ', maconso_copie.l_conso)
+
+   Il y a seulement 2 modifications dans ce code :
+     * l’import de la fonction deepcopy
+     * l’usage de la fonction deepcopy() pour explicitement copier dans
+       l’objet
+
+   Ce qui donne donc le résultat souhaité :
+In [21]: %run exemple_deepcopy.py
+affichage liste originale :  [10, 20, 30, 40]
+affichage liste modifiée :  [10, 20, 100, 40]
+
+   Bon, voilà, vous n’aurez plus d’excuses pour mélanger les données
+   d’objets ou de listes!
+
+Pour aller plus loin
+
+     * D’autres petits trucs et astuces
+
+Les sources des exemples
+
+     * Voir le repo dédié
+
+   Publié le 30 octobre 201830 octobre 2018
+
+PiRDF #2 : Préparation du matériel
+
+   PiRDF #2 : Préparation du matériel
+
+   Cet article permet de lister tous les éléments nécessaires à la
+   préparation du Raspberry Pi pour l’application PiRDF que sous avons
+   préciser l’article de présentation générale.
+   Nous allons voir point par point comment réaliser l’installation de
+   toutes les dépendances nécessaires.
+
+Préparation du système d’exploitation
+
+   Dans il est nécessaire d’installer un système Raspbian sur une carte
+   SD. On ne le répétera jamais assez, il est très important que votre
+   carte SD soit de qualité et ait des propriétés de vitesses importantes.
+   J’utilise personnellement ce modèle des SanDisk classe 10 comme
+   celle-ci :
+     * SanDisk Carte Mémoire microSDHC SanDisk Ultra 16GB
+
+   On notera que 16GB est suffisant dans ce cas particulier.
+
+   Pour installer le système d’exploitation, vous devez télécharger la
+   dernière image de Raspbian, ici celle du 09-10-2018 ce qui m’a permis
+   de tester la dernière version.
+
+   Pour la copier, sur la carte, il suffit d’effectuer une copie sur la
+   carte de l’img iso après l’avoir formatée. La copie s’effectue à l’aide
+   de l’instruction dd selon le formalisme suivant :
+dd bs=4M if=2018-10-09-raspbian-stretch.img of=/dev/sdb conv=fsync
+
+   l’argument if est utilisé pour les données d’entrée (ici l’image) et of
+   pour la destination ici, /dev/sdb.
+
+   NB : l’installation les instructions ici sont celle d’un système Linux.
+   Si vous effectuez l’installation depuis un système Windows (pratique
+   que je déconseille), reportez-vous à rubrique d’aide spécifique du site
+   officiel de Rapberry Pi’ c’est à dire : là
+
+   Après avoir réaliser ces opérations de copie de l’image, il ne vous
+   reste plus qu’à placer la carte SD dans le Raspberry Pi et de le
+   démarrer.
+
+   Enfin, pour finir votre installation, il faut faudra configurer :
+     * la langage du système
+     * la timezone
+     * le tytpe de clavier
+     * le WIFI
+
+   Toutes ces informations vous seront demandées par le biais d’un
+   assistant au premier démarrage. C’est une des nouveautés de la nouvelle
+   version de Raspbian.
+
+   Après cela, il est temps de passer à l’installation des éléments liés à
+   python.
+
+La stack python
+
+Outils de développement
+
+   Raspbian arrive avec des versions de python installer : la version de
+   python 2.7.XX (je sais plus trop et j’en moque, je l’explique dans
+   quelques lignes) et la version 3.5.3.
+   Je ne reviendrais par sur les raisons qui ont poussé la communauté de
+   développeurs de maintenir pendant de trop nombreuses années 2 versions
+   de python, mais le fait est que Python ne sera plus maintenu à partir
+   de 2020 (voir le python countdown) et les librairies feront de même
+   rapidement. Certaines librairies comme sci-kit-learn (que nous allons
+   utiliser) l’ont déjà annoncé.
+   Pour ces raisons évidentes, je ne développe que du code compatible
+   Python 3 et je n’assure aucune compatibilité pour Python!
+
+   A Python 3, j’ajoute deux outils de développements dont je considère
+   qu’ils améliorent ma productivité :
+     * ipython
+     * ipdb
+
+ipython
+
+   Ipython est environnement permettant d’exécuter du code de manière
+   interactif, ce qui permet en d’autres choses d’accéder aux valeurs des
+   différentes variables après exécutions, d’exécuter des commandes(dont
+   certaines commandes consoles) directement et d’avoir accès à la
+   coloration syntaxique et l’autocomplétion.
+
+   Pour l’installer, il suffit d’exécuter la ligne suivant :
+pip3 install ipython
+
+ipdb
+
+   Ipdb est un débugger un peu plus évolué que pdb (le débugger officiel).
+   Il est surtout plus ergonomique que celui-ci. Pour installer, il faut
+   également passer par pip :
+pip3 install ipdb
+
+Librairie scientifique
+
+   Pour réaliser les tâches de caractérisations des images et de prises de
+   décisions automatiques, nous aurons besoin d’utiliser un certain nombre
+   de librairies qu’on qualifie souvent de scientifique.
+
+scipy et numpy
+
+   scipy et numpy sont inséparables, ce sont les deux librairies qui
+   permet de réaliser tout ce qui est lié au calcul scientifique dont le
+   calcul matriciel et l’algèbre linéaire.
+   Il ne faut pas envisager de les installer via pip car le risque de swap
+   est très important et l’installation risquerait de ne pas aboutir.
+   Il faut mieux passer par le gestionnaire de paquet apt. Pour cela il
+   faut saisir les commandes suivantes :
+sudo apt-get install python3-scipy
+
+sudo apt-get install python3-numpy
+
+sci-kit-image
+
+   Sci-kit-image est la librairie qui permet d’accéder à un grand nombre
+   de méthodes de traitement d’images disponible dans la littérature
+   scientifique. Cette librairie possède également une couche IO
+   (entrée/sortie) qui permet d’ouvrir de nombreux format d’images et de
+   stocker les données dans des matrices de type numpy. De la même manière
+   sci-kit-image permet un enregistrement de données brut en de nombreux
+   formats d’images (png, jpeg, bmp…).
+   Pour l’installation, ça se passe pas apt :
+sudo apt-get install python3-skimage
+
+sci-kit-learn
+
+   Sci-kit-learn est une librairie spécifique d’outils d’intelligence
+   artificielle. Nous utiliserons pour les phases d’apprentissage et de
+   décision automatique. Pour l’installation, on passe encore une fois par
+   apt :
+sudo apt-get install python3-sklearn
+
+Interfaçage de la caméra et éléments graphiques
+
+   Il ne nous reste plus qu’à installer les deux librairies permettant
+   d’une part l’accès à la camera et à ses données grâce à picamera et la
+   librairie pygame qui nous permettra de sans trop développement
+   d’afficher le flux vidéo dans une interface graphique.
+
+   Pour l’installation, on passe cette fois par pip:
+pip3 install picamera
+
+   et
+pip3 install pygame
+
+   NB : On notera que dans la dernière version de Raspbian, ces deux
+   librairies sont déjà installées
+
+Et le hardware là-dedans
+
+   Après, le software, il nous est nécessaire de préparer le hardware. Il
+   n’est pas nécessaire de préparer le hardware final pour ce qui est des
+   switches. J’ai préféré passer par une phase de prototypage avec des
+   microswitches, une « plaque lab » et quelques fils.
+
+Pour aller un peu plus loin
+
+   Les autres articles du projet PiRDF :
+     * PiRDF #1 : Présentation du projet
+
+   Le matériel utilisé (liens affiliés — si vous commandez via ce lien,
+   j’ai quelques % en commission pour payer l’hébergement de ce site l!):
+     * kit Raspberry 3B+ officiel
+     * Kit de prototypage
+     * La caméra officielle pour le Raspberry Pi
+     * Un jeu de bouton poussoir de type « borne arcade »
+
+   Publié le 10 octobre 201810 octobre 2018
+
+PiRDF #1 : Présentation du projet
+
+   PiRDF #1 : Présentation du projet
+
+   Ce billet marque le début d’une série d’articles concernant la
+   documentation d’un projet que je présenterai à la Maker Faire Paris sur
+   le stand des éditions ENI qui est l’éditeur de mon livre intitulé
+   « Python. Libérez le potentiel de votre Rapsberry Pi ».
+
+   Ce projet, je l’ai intitulé PiRDF. Pi en référence au Raspberry Pi et
+   RDF pour le Reconnaissance De Formes. Le but de ce projet sera donc de
+   construire une petite application qui permet d’apprendre et de
+   reconnaitre des objets simples.
+   Tous les éléments logiciels seront développés en langage Python et
+   publiés sur le « repository » Github : Projet PiRdf sur github. De
+   cette manière quiconque pourra utiliser le code et/ou proposer des
+   évolutions.
+
+   Le but de cette démo est montré au public qu’il est possible en très
+   peu de lignes de construire des applications dont les fonctionnalités
+   peuvent être complexes.
+
+   Enfin, on notera que l’ensemble de ces articles est une consignation
+   des notes au cours de la réalisation. En effet, à l’heure où j’écris
+   ces lignes le développement du code est loin d’être abouti, vous verrez
+   sans doute des erreurs de conception qui vont nécessiter des
+   refactoring d’un article à l’autre, j’essayerai donc de documenter
+   toutes ces évolutions.
+
+   Dans la suite des cet article, je vais détailler le cahier des charges
+   après une courte introduction de ce qu’est la reconnaissance de formes.
+
+C’est quoi la reconnaissance de formes
+
+   La reconnaissance de forme est un des sous-domaines de la vision par
+   ordinateur qui est elle-même une discipline à la croisée de nombreuses
+   disciplines que sont :
+     * l’informatique
+     * les mathématiques appliquées
+     * le traitement du signal et des images.
+
+   La reconnaissance de formes a pour but de reconnaitre au sein des
+   images un ou des motifs appris au préalable. Ce motif peut être, par
+   exemple, un objet, un visage…
+   La reconnaissance de formes fait donc appelle à des techniques comme
+   l’apprentissage automatique et à la modélisation statistique. Pour le
+   profane, on pourrait résumer le tout en disant que la reconnaissance de
+   formes est une branche de l’intelligence artificielle même si le terme
+   a en partie perdu de sa teneur à cause de la médiocrité de la
+   vulgarisation de certains médias ces dernières années… Bref, ça, c’est
+   un autre sujet…
+
+   Historiquement en sépare la reconnaissance d’objet en 2 familles :
+     * l’approche globale
+     * l’approche locale
+
+l’approche locale
+
+   L’approche locale regroupe les différents techniques qui permettent de
+   détecter et reconnaître un objet au sein d’une scène composée d’un
+   ensemble d’objets.
+   Pour illustrer, on peut citer la détection de piéton (voir l’image
+   ci-dessous) dans une scène urbaine qui trouve des applications dans le
+   développement des véhicules autonomes.
+
+   Crédits : By
+   Milwaukee_(WIS)N_5th_St« Tree,_Rain,_Wind« Pedestrian_1.jpg: vincent
+   desjardinsderivative work: Indif (talk) –
+   Milwaukee(WIS)N_5th_St« Tree,_Rain,_Wind« _Pedestrian_1.jpg, CC BY 2.0,
+   https://commons.wikimedia.org/w/index.php?curid=11912052
+
+   Cette approche qui a beaucoup évolué en matière de performances depuis
+   le début des années 2010, n’est toujours pas parfaite et le taux
+   d’erreur reste toujours trop élevé pour certains types d’applications.
+   De plus, les dernières méthodes nécessitent, le plus souvent, des
+   puissances de calcul très élevées. À titre d’illustrations, la voiture
+   Tesla autonome possède la puissance de calcul de plusieurs MacBook Pro…
+   Il est par conséquent quasiment impossible d’espérer faire tourner ce
+   genre de manip sur un Raspberry Pi qui possède des ressources
+   matérielles limitées tant au niveau du processeur que de la mémoire de
+   type RAM.
+
+l’approche globale
+
+   À l’inverse, l’approche globale est plus simple et historiquement
+   antérieure à l’approche globale.
+   Le but, ici, est de reconnaitre un unique objet au sein d’une image ou
+   d’une région d’intérêt au sein d’une image.
+   Dans ce cas, le nombre de méthodes disponibles dans la littérature est
+   plus nombreux et les performances atteintes par les meilleurs sur les
+   bases de test sont de plus en plus proches de 100% de réussites.
+   Enfin, ils existent une multitude de méthodes qui présentent une
+   complexité calculatoire diverse et variée. Dans tous les cas, de
+   nombreuses méthodes peuvent être envisagées pour une implémentation en
+   python sur le Raspberry Pi.
+
+Cahier des charges — c’est quoi donc le projet PiRDF
+
+   L’application sera réduite au maximum en termes de fonctionnalités et
+   d’interface graphique.
+   Dans tous les cas, elle sera découpée en 2 phases : 1- l’apprentissage
+   2- la décision. Les sections qui suivent vont permettre de définir plus
+   précisément les éléments fonctionnels de chaque tâche.
+
+Phase d’apprentissage
+
+   La phase d’apprentissage correspond à l’ajout d’un nouvel élément à une
+   base de connaissance.
+   En pratique cela correspond à calculer un ensemble de caractéristiques
+   à partir de l’image qui contient l’objet de calculer un modèle
+   d’apprentissage à partir de la base de connaissance.
+
+   D’un point de vue pratique, on aura à disposition un bouton branché sur
+   le GPIO qui permet de démarrer l’apprentissage.
+   L’appui sur ce bouton permet de commencer à calculer les
+   caractéristiques pour les images arrivant de la caméra.
+   Toutes images ne serviront pas à l’apprentissage.
+   Nous réaliserons un suréchantillonnage du signal vidéo de l’ordre d’une
+   image par seconde voir moins si le temps de traitement est trop long.
+
+   Pour mettre fin, à la phase d’apprentissage un second bouton sera
+   installé sur le port GPIO.
+   Un appui sur ce bouton permet d’arrêter la phase de création et
+   d’enrichissement de la base de connaissances et de réaliser la phase
+   d’apprentissage à proprement dites et permet de créer un modèle de
+   décision.
+
+   À partir de cette étape, nous possédons l’information nécessaire pour
+   réaliser une décision vis-à-vis de l’objet présent devant la caméra.
+
+Phase de décision
+
+   La phase de décision consiste à déterminer la classe d’appartenance
+   d’un objet devant la caméra aux classes existantes dans le modèle.
+   Pour réaliser cela, on va calculer un ensemble de caractéristiques à
+   partir de l’image et utiliser un modèle décisionnel pour déterminer la
+   classe d’appartenance.
+
+   Enfin, le nom de la classe d’appartenance sera transmis un module de
+   synthèse vocale qui permettra de restituer le nom de la classe d’un
+   point de vue audio.
+
+   Par ailleurs, 2 boutons permettront de démarrer et d’arrêter la phase
+   de décision.
+
+À venir prochainement
+
+   Si vous jetez un oeil sur le repo Github vous verrez que le coeur du
+   projet est bien avancé.
+   Vous pouvez donc fouiller pour voir l’évolution du projet en termes de
+   code.
+   L’article qui suivra détaillera la configuration nécessaire du
+   raspberry à partir d’une configuration vierge.
+
+   Le matériel utilisé (liens affiliés — si vous commandez via ce lien,
+   j’ai quelques % en commission pour payer l’hébergement de ce site l!):
+     * kit Raspberry 3B+ officiel
+     * La camera officielle pour le Raspberry Pi
+     * Un jeux de bouton poussoir de type « borne arcade »
+
+   Publié le 3 octobre 2018
+
+[Python] Interruption sur le port GPIO
+
+   [Python] Interruption sur le port GPIO
+
+   Avant d’aller plus loin, il est nécessaire de définir ce qu’est une
+   interruption.
+   En informatique, informatique embarquée, ou électronique, une
+   interruption est un processus qui est déclenché de manière asynchrone
+   afin de permettre un éventuel traitement temps-réel des données.
+
+   Afin d’illustrer concrètement le phénomène, voici un exemple d’usage.
+   Imaginez que vous vouliez allumer une LED lorsque vous appuyez sur un
+   bouton qui est relié à une des bornes de votre GPIO.
+   Il existe pour cela plusieurs possibilités la manière brutale :
+
+   1- mettre une boucle de test dans le programme principale qui va tester
+   l’état du bouton à chaque itération du programme principale
+   2- si l’état du bouton passe à l’état attendu qui peut être True(Vrai)
+   ou False(Faux) alors on appelle une fonction de traitement
+
+   Le problème de ce genre de méthode est que si les tâches de votre
+   programme principal sont alors le traitement de l’état du bouton sera
+   alors effectué une fois par tâche.
+   Par conséquent, si le traitement de la tâche associée au bouton, il est
+   impossible d’avoir une réaction immédiate (« temps-réel »).
+   Dans le pire des cas, on pourra même rater des phénomènes se produisant
+   sur le bouton.
+   En effet, imaginons que le bouton sur le GPIO soit un bouton poussoir.
+   L’appui sur le bouton produit un signal d’état positif (+5V. NB : Cela
+   pour être 0V suivant le câblage de votre bouton) pendant quelques
+   millisecondes, or si le traitement dans votre programme principal est
+   de quelques secondes, la probabilité de rater le phénomène d’appui est
+   plus importante que la probabilité de l’attraper au vol!!!!
+
+   Pour limiter tous ces problèmes, il est préférable d’utiliser le
+   mécanisme d’interruption.
+   En pratique, cela va permettre d’exécuter une portion de code dès que
+   le bouton sera pressé en quittant temporairement le programme principal
+   puis en y retournant dès que cette portion de code sera exécutée.
+
+   Pour mettre en œuvre cela en python, on va utiliser l’instruction
+   « add_event_detect » de la librairie RPi.GPIO qui permet de configurer
+   une interruption.
+   Plus particulièrement, on va associer une broche à une fonction qui
+   sera appelée que l’évènement va se produire sur la broche en question
+   pour exemple :
+ GPIO.add_event_detect(7, GPIO.RISING, callback=my_callback, bouncetime=300)
+
+   Dans ce sa on va déclencher l’appel à la fonction my_callback lors d’un
+   passage à l’état haut (GPIO.RISING) sar la broche 7.
+   On notera que la paramètre bouncetime=300 correspond au temps pendant
+   lequel l’interruption ne sera pas sensible [aux rebonds du
+   bouton](TODO: mettre un lien vers un article de définition du rebond
+   d’un bouton).
+
+   Par conséquent, on obtient à minima le code suivant :
+import RPi.GPIO as GPIO
+
+
+def init():
+    # configuration de la broche 7 en entree
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(7, GPIO.IN)
+    # definition de l'interruption
+    GPIO.add_event_detect(7, GPIO.RISING, callback=my_callback, bouncetime=300)
+
+
+def my_callback():
+    # callback = function which call when a signal rising edge on pin 7
+    print("Vous avez appuyez sur le bouton de la patte 7")
+
+
+if __name__ == '__main__':
+
+    # 1- initiation de la l'interruption
+    init()
+    # 2- boucle infini = tache principale
+    while True:
+pass
+
+   La fonction init initialise le GPIO et «accroche» la fonction my
+   callback() à la broche 7.
+
+   Attention cependant, dans l’exemple qui précède, tous les traitements
+   sont réalisés dans la fonction de callback.
+   Cette façon de faire est intéressante pour gagner un maximum de temps.
+   Cependant il est nécessaire d’avoir un minimum de chose à réaliser dans
+   cette boucle.
+   En effet, le risque de freezer le programme dans son ensemble est
+   important.
+
+   D’une manière générale, une bonne pratique est (lorsque l’exécution de
+   la fonction n’est pas cruciale et que le temps-reél tient) de mettre un
+   flag à True(Vrai) dans le callback et de lancer l’exécution de la
+   fonction de traitement à partir du programme principal.
+
+   Le programme ci-dessous illustre le fonctionnement :
+import RPi.GPIO as GPIO
+
+
+# variable globale qui sera vue dans toutes les fonctions
+flag_callback = False
+
+def init():
+    # configuration de la broche 7 en entree
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(7, GPIO.IN)
+    # definition de l'interruption
+    GPIO.add_event_detect(7, GPIO.RISING, callback=my_callback, bouncetime=300)
+    # initialisation du flag
+    flag_callback = False
+
+
+def my_callback():
+    # function qui sera appelé lorsque le programme sur interrompu
+    flag_callback = True
+
+
+def process_ny_callback():
+    print("Interruption détectée sur la broche 7")
+
+if __name__ == '__main__':
+
+    # 1- initiation de la l'interruption
+    init()
+    # 2- boucle infini = tache principale
+    while True:
+        # 3- si une interruption c'est produite alors on lance le traitement c
+        # adéquat
+        if flag_callback == True:
+            process_ny_callback()
+    pass
+
+   Vous pourrez retrouver les sources sur le repo github suivant :
+   https://github.com/clemaitre58/20181002_interruption.
+
+   Alors prêt à attaquer les interruptions avec Python?
+
+   Publié le 17 septembre 2018
+
+[Python] — Google met à jour son « Style Guide Python »
+
+   Google met (enfin…) à jour son style guide Python!
+
+   Pour celles et ceux qui lisent un peu ce site ou le livre que j’ai
+   écrit sur Raspberry et Python, ils ont conscience que de l’importante
+   d’avoir un code python cohérent et respectant quelques règles.
+   La recommandation PEP 8 qui regroupe un ensemble de consignes de formes
+   permet d’avoir un code lisible par la plus grande partie des
+   développeurs Python, qu’ils soient débutants ou experts.
+   Une autre de mes sources favorites quant aux bonnes pratiques à adopter
+   est le google « Guide Style » qu’on trouvait anciennement ici : liens.
+
+   Les « guide style » de Google sont un regroupement d’instruction sur
+   les bonnes pratiques à adopter selon le point de vue du géant de
+   Mountain View pour la rédaction de code informatique. Il est à noter
+   que les « guide style » ne sont pas seulement dédiés au langage Python,
+   mais il en existe pour de nombreux langages, on peut par exemple citer
+   C++, javascript…
+
+   Comme indiqué, quelques lignes plus hautes, les instructions et les
+   exemples contenus dans les fiches permettent d’avoir une certaine
+   cohérence lors de la création de code qu’on travaille en équipe ou
+   seul. Pour vous illustrer ce qu’on y trouve, voici un exemple pour le
+   nommage des différents éléments :
+     __________________________________________________________________
+
+   module_name,
+   package_name,
+   ClassName,
+   method_name,
+   ExceptionName,
+   function_name,
+   GLOBAL_CONSTANT_NAME,
+   global_var_name,
+   instance_var_name,
+   function_parameter_name,
+   local_var_name.
+
+   Function names, variable names, and filenames should be descriptive;
+   eschew
+   abbreviation. In particular, do not use abbreviations that are
+   ambiguous or
+   unfamiliar to readers outside your project, and do not abbreviate by
+   deleting
+   letters within a word.
+
+   Always use a .py filename extension. Never use dashes.
+     __________________________________________________________________
+
+   C’est exactement le genre de convention que j’utilise lorsque je
+   développe et lors d’une hésitation, je n’hésite pas à utiliser le Style
+   Guide.
+
+   Bon bref… Ce billet n’est pas là pour vous convaincre du bienfait de ce
+   genre de recommandations, mais plutôt pour vous informer que Google
+   après de nombreuses années sans activité a mis à jour ces dépôts et que
+   l’URL du « Style Guide Python » a changé. Vous pourrez donc le
+   retrouver ici : liens vers le repo.
+
+   En ce qui concerne le contenu et l’organisation, la structure a l’air
+   d’avoir changé un peu et l’on trouve de nouvelles recommandations liées
+   aux évolutions des versions de Python 3. Vous pouvez donc
+   avantageusement mettre à jour vos bookmark!!!
+
+   Publié le 28 avril 2018
+
+C++ / un squelette type pour compiler vos projets
+
+   C++ / un squelette type pour compiler vos projets
+
+Programmer en C++ pour votre Raspberry Pi
+
+   Le développement d’application en langage python n’est pas la seule
+   solution pour la création d’application pour votre Raspberry Pi.
+   C++ est également un très bon choix même si la rapidité de
+   développement est plus faible que pour le langage Python.
+   Il existe plusieurs façons de développer.
+   La première est d’utiliser un environnement de développement complet
+   qui permet la prise en charge de l’intégrité du projet.
+   C’est à dire d’édition des sources à la compilation en passant par la
+   gestion de la configuration de la compilation et l’outil de débogage.
+   La seconde est l’édition d’un éditeur performant (vim, emacs…) et un
+   outil de compilation par ailleurs.
+
+   La première méthodologie décrite ci-dessus nécessite un IDE de bonne
+   qualité. Pour les utilisateurs d’un système basé sur Linux, le choix le
+   plus populaire actuellement (2018) est sans doute QT Creator. Cependant
+   sur le Raspberry Pi, cette solution est un peu couteuse en ressources.
+   La seconde option est, à mon sens, plus légère et permet d’avoir un
+   environnement de développement performant et sur multiplateforme.
+   En effet, la manière conventionnelle de compiler sous Linux est
+   d’utiliser un makefile, un fichier reprend en charge la compilation de
+   votre projet en seulement une instruction.
+   Cependant un makefile ne vous garantit pas une compilation
+   multiplateforme.
+   Il permet juste de réaliser une succession d’instruction de
+   compilation.
+   Néanmoins, un outil permet de générer des makefile en fonction de la
+   configuration des outils disponibles sur votre machine de
+   développement.
+   Cet outil, c’est CMake!
+
+CMake
+
+   Cmake vous permettra de générer des makefile pour votre projet mais
+   également pour la copilation sur votre machine mais permettra le
+   déployement de votre projet sur d’autres machines.
+
+   Afin de pouvoir réaliser la compilation, j’ai créé une base de projet
+   qui me permet de démarrer rapidement un projet en langage C++ et ceci,
+   quelle que soit la plateforme sur laquelle je développe.
+
+   Cette base de projet est disponible ici :
+   https://github.com/clemaitre58/ProjSkeletonCpp
+
+   L’architecture du projet est la suivante :
++-- data               --> pour contenir d'éventuelles données
++-- src                --> pour vos sources
+|   +-- CMakeModules
+|   +-- apps           --> sources de votre application (main.cc par exemple)
+|   +-- cmake
+|   +-- common         --> sources d'api, librairie, etc
+|   +-- tests          --> vos tests GoogleTests ici
+
+   Pour l’utiliser, il suffit de mettre vos sources dans les dossiers
+   commons ou apps et ensuite de réaliser l’ensemble des instructions
+   disponible dans le README :
+
+Compilation
+
+   Create a build folder:
+
+   mkdir build
+     * Move to the created folder:
+
+   cd build
+     * Create the MakeFile via cmake:
+
+   cmake ../src
+
+   To configure to be in debug mode :
+
+   cmake -DCMAKE_BUILD_TYPE=Debug ../src
+     * Compile the code to generate the executable:
+
+   make or make -j n where n is the number of cores to use for the
+   compilation
+     * A folder bin will be created at the same level as the build
+       directory.
+
+Remarks
+
+     * If you add new file or remove some other, you have to create the
+       makefile again:
+
+   cmake ../src
+
+   Un exemple d’utilisation est disponible ici :
+   https://github.com/clemaitre58/BSCVDemoCpp1718
+
+   Alors c’est quoi votre prochain projet en C++ pour votre Raspberry Pi?
+
+   Publié le 24 février 201824 février 2018
+
+Utiliser Dropbox sur son Raspeberry Pi
+
+   Dropbox sur son Raspeberry Pi
+
+   Dropbox est un service très pratique qui permet de sauvegarder des
+   données et de les synchroniser via le cloud.
+   C’est un service gratuit jusqu’à une limite de 2Go de données.
+   C’est également sans doute le service de cloud, le plus populaire
+   actuellement avec le Drive de google.
+   Comme tout bon service de cloud, la synchronisation est automatisée à
+   l’aide d’un client qui tourne en tâche de fond et dont la seule
+   visibilité est la présence d’information dans la barre de tâche.
+
+   Des versions de ce client existe pour :
+   – windows
+   – Mac
+   – Linux
+
+   Malheureusement, la version Linux gère seulement les processeurs de
+   type Intel et non le processeur ARM que possède notre Raspberry Pi.
+
+   Cependant, il existe une solution même si elle est moins user Friendly
+   que le client de chez Dropbox. En effet, Andrea Fabrizi
+   a développé une série de scripts qui permettent de téléverser (ça,
+   c’est la version validée pas l’Académie française d’uploader) et de
+   télécharger des données de son espace cloud.
+
+   Sans rentrer dans le détail, sachez que l’auteur des scripts manipule
+   en fait l’api proposé par Dropbox aux développeurs. Cela vous parait
+   peut être un détail, mais cela a son importance, car, il vous faudra
+   une clé de développement pour faire fonctionner le bousin!
+
+Prérequis
+
+   Avant toute manipulation, faites les sauvegardes nécessaires.
+   Mettez également à jour votre système :
+
+   sudo apt-get update
+   sudo apt-get upgrade
+
+   Vous devez également installer git (git est un outil de versionning) si
+   ce n’est pas déjà fait :
+
+   sudo apt-get install git
+
+Installation
+
+   Rendez-vous sur cette page :
+   https://github.com/andreafabrizi/Dropbox-Uploader
+
+   puis dans une console, placez-vous dans un dossier spécifique (on va
+   dire ~/Documents/Code)
+
+   cd ~/Documents/Code
+
+   puis clonons le repo de github
+
+   git clone https://github.com/andreafabrizi/Dropbox-Uploader
+
+   placez-vous dans le dossier qui vient d’être créé :
+
+   cd Dropbox-Uploader
+
+   Changer les droits :
+
+   chmod +x dropbox_uploader.sh
+
+   puis lancer le script :
+
+   ./dropbox_uploader.sh
+
+   Ce premier lancement se fait sans paramètres puisque vous aurez besoin
+   de saisir une clé d’API dropbox. Cette étape de configuration est faite
+   pas à pas et très bien documentée.
+
+votre premier upload
+
+   Vous pouvez maintenant uploader un dossier, imaginons ~/Document/Cours
+
+   Pour cela, il suffit de saisir la commande :
+
+   ./dropbox_uploader.sh upload ~/Documents/Cours /
+
+   Ce qui va permettre de téléverser le dossier Cours en racine de
+   Dropbox.
+
+   La stratégie pour le download est équivalente.
+
+Pour aller plus loin
+
+   Je joins ici quelques exemples de l’auteur :
+> ./dropbox_uploader.sh upload /etc/passwd /myfiles/passwd.old
+> ./dropbox_uploader.sh upload *.zip /
+> ./dropbox_uploader.sh -x .git upload ./project /
+> ./dropbox_uploader.sh download /backup.zip
+> ./dropbox_uploader.sh delete /backup.zip
+> ./dropbox_uploader.sh mkdir /myDir/
+> ./dropbox_uploader.sh upload "My File.txt" "My File 2.txt"
+> ./dropbox_uploader.sh share "My File.txt"
+> ./dropbox_uploader.sh list
+
+   ainsi que la documentation : ici
+
+ma config
+
+     * RPi 3
+     * Raspbian Jessie
+
+   Publié le 2 décembre 2017
+
+Kernel panic-not syncing ->| votre RPI n’a surement pas assez de jus
+
+   Kernel panic-not syncing
+
+   Kernel panic-not syncing, tous les utilisateurs de système Linux ont eu
+   un jour ou l’autre cette erreur et en général ça sent la galère. Quand
+   ça tombe sur le premier boot de votre Framboise, c’est un peu les
+   boules!
+
+L’erreur!
+
+   Kernel panic-not syncing: VFS: unable to mount root fs on unknown-
+   block(179,2)
+
+   C’est la vieille erreur que m’affichait mon tout nouveau raspberry lors
+   de son premier démarrage…
+   Première réaction : « Eh merde! fait chier… »
+
+   Bon on tente de rebooter. Et là même sanction : Kernel panic-not
+   syncing… « Argh… »
+
+   Bon direction l’amis Google qui renvoie vers des posts de stackoverflow
+   ou stackexchange ainsi que vers le forum de la fondation raspberry.
+   Voilà ce qui m’a débloqué :
+     * Kernel Panic : VFS :Unable to mount root fs on unknown-block
+     * NOOBS RaspBMC and a kernel panic
+     * Raspbian won’t boot
+     * Raspbian Wheezy: Kernel Panic in Raspberry Pi
+
+La solution
+
+   Bon si vous prenez le temps de parcourir les liens ci-dessus, vous
+   verrez que’ comme moi en première lecture, il n’y a pas grand-chose qui
+   semble apporter de solution…
+
+   Mais lors d’une deuxième lecture, après quelques séries de jurons qui
+   feraient rougir le capitaine Haddock, trouve comme piste commune de ma
+   bibliographie que la seule chose qui peut expliquer le problème est
+   sans doute un problème électrique.
+
+   Je lis explicitement que la carte SD ne peut démarrer avec une
+   alimentation de bonne qualité!
+
+   Alimentation? Bonne qualité? Euh, j’utilise quoi au juste???
+
+   Euh un vieux bloc d’alimentation de téléphone portable et le câble USB
+   qui va avec… « Oh le con, à tous les coups, je ne peux pas tirer assez
+   de jus dessus ou le signal est mal mis en forme! »
+
+   –> changement pour un un bloc d’alimentation qui délivrer jusqu’à 5A et
+   la ça boot… « grrr… Les boules… »
+   Bon je ne sais pas si ce sera utile à quelqu’un, mais en cas de
+   « Kernel panic-not syncing » sans réelle raison et bien jetez un oeil
+   du côté de votre alimentation de Raspberry Pi.
+
+   Publié le 8 novembre 20178 novembre 2017
+
+[Astuce vim] : vim copier coller sans problème d’indentation
+
+   vim copier coller illustration
+
+   [Astuce vim] : vim copier coller sans problème d’indentation
+
+   Pour l’utilisateur vim et pour le développeur le copier coller sous Vim
+   est au départ un peu pénible. En effet, si vous venez de n’importe quel
+   autre système d’édition, il est très courant de copier-coller des bouts
+   de code source pour pouvoir les tester rapidement.
+
+   Malheureusement si vous faites un ctrl-C à l’endroit de la copie et un
+   CTRL-SHT-V dans vim en mode insertion, vous obtiendrez bien un
+   copier-coller mais l’indentation du code initiale sera complète
+   détruite.
+   Pour le développeur python, c’est une catastrophe puisque l’indentation
+   permet de délimiter des blocs de code comme les fonctions, les classes,
+   les boucles ou encore les tests conditionnels.
+
+   Il existe cependant une astuces pour permettre ce genre de
+   manipulation.
+
+   En effet, il suffit d’activer le mode paste avant de réaliser l’action
+   de collage. Pour activer ce mode il faut saisir l’instruction suivante
+   :
+:set paste
+
+   Attention à cependant désactiver ce mode après avoir fini votre ou vos
+   séries de copier-coller. Pour cela, rien de plus simple, il faut saisir
+   l’instruction complémentaire :
+:set nopaste
+
+   Utilisation un peu plus automatiser
+
+   Enfin, on peut rendre l’usage un peu plus ergonomique en ajout un
+   ajoutant un bouton qui permettant de basculer et de revenir de ce mode.
+   Pour cela, il faut ajouter à votre fichier .vimrc, la ligne suivante :
+set pastetoggle=<F2>
+
+   Dans ce cas, la pression de la touche F2 me permet de basculer ou
+   revenir de ce mode Paste.
+
+   Démo en vidéo
+
+   Le vidéo ci-dessous, vous montre un screencast la manipulation a
+   effectué pour avoir un copier-coller propre après vous avoir montrer
+   les limites d’un système de base.
+
+   IFRAME: https://www.youtube.com/embed/lLAoLMtf4G4
+
+   ?
+   Alors est ce que ça palie à vos problèmes de vim copier coller?
+
+   Pour aller plus loin
+
+   Mes fichiers de configuration dont le vimrc sont disponibles sur github
+
+   Source
+
+   Les informations proviennent de cette questions visible sur
+   stackoverflow : visible ici
+
+   Publié le 26 octobre 201726 octobre 2017
+
+UART USB : un port série supplémentaire pour mon Raspberry Pi
+
+   UART USB RPi
+
+   UART USB : un port série supplémentaire pour mon Raspberry Pi
+
+   Votre Raspberry Pi possède quelques soit sa version un port série.
+   Ce port permet de prendre le contrôle de votre Raspberry Pi mais, ça
+   reste une utilisation marginale.
+   En effet, ce port est à coup sûre plus utile dans les communications
+   entre processeurs et d’autres microcontroleurs que ce soit des arduino
+   ou des micro plus classiques comme les ARM.
+
+   Cependant si vous utilisez le port série de votre GPIO, cela vous prive
+   de 2 broches IO de votre Framboise.
+   De plus, co porte peut ne pas être disponible. En effet, si vous
+   utiliser un Hat, votre port GPIO n’est plus aisement accessible.
+
+   Pourtant, il existe des solution simple.
+
+Le port RS232 n’est plus accessible! Une solution simple
+
+   En effet, des modules complémentaires à brancher existent. Il suffit
+   les brancher sur le port USB pour transformer votre pour USB en un port
+   RS232 virtuel.
+   On nomme ces modiles UART – USB.
+   Dans mon cas, j’utilise un modèle à moins 10€ qu’on peut trouver sur
+   amazon.
+   Ce module m’est utile pour debugger la sortie RS232 d’un ARM
+   (STN32L432KC), plus particulièrement ça me permet de voir si les
+   données envoyées sur le port RS232 sont bien celles attendues.
+
+   UART USB RPi
+
+   Je vais vous montrer comment réaliser cette tâche.
+
+Mise en pratique
+
+   Vous allez voir, c’est très très simple :
+     * On branche le module sur le port USB du RPI. Il est détecté
+       automatiquement. Nul besoin d’installer qqch. Pour ceux qui on
+       pratiquer le port USB à ses débuts, je peux vous dire que c’est le
+       bonheur.
+     * On va utiliser un utilitaire pour lire le pors RS232 émuler sur
+       USB.
+
+   Pour cela :
+grabserial -v -d "/dev/ttyUSB0" -b 115200 -w 8 -p N -s 1 -e 30
+
+   Cette commande signifie que vous allez exécuter un grab, une lecture,
+   du port /dev/ttyUSB0 (le port série émulé) avec le formalisme RS232
+   suivant :
+     * 115200 bauds de vitesse
+     * 8 bits de données
+     * Parité pair
+     * 1 bit de stop
+
+   le tout pour une durée de 30sec.
+
+   Le résultat de cette lecture est affiché dans la fenêtre de votre
+   console. Si vous voulez logger les données dans un fichier il suffit de
+   rediriger le flux vers un fichier.
+   De cette façon :
+grabserial -v -d "/dev/ttyUSB0" -b 115200 -w 8 -p N -s 1 -e 30 >> mon_fichier.lo
+g
+
+   #Et pour écrire sur ce port?
+
+   L’application grabserial permet de rapidement faire un log. Pour des
+   applications de lecture et d’écriture spécifique vous serez obliger
+   d’écrire votre propre code.
+   A mon sens le plus simple étant d’utiliser Python et la libraire
+   pyserial.
+
+   Alors prêt à manipuler une UART USB.
+
+Navigation des articles
+
+   Page 1 Page 2 Page suivante
+
+Partenaires
+
+   [INS: :INS]
+
+Libérer le potentiel de votre Raspebbery Pi avec le langage Python
+
+   Recherche pour : ____________________ (BUTTON) Recherche
+
+Articles récents
+
+     * Copier des listes et des objets en python
+     * PiRDF #2 : Préparation du matériel
+     * PiRDF #1 : Présentation du projet
+     * [Python] Interruption sur le port GPIO
+     * [Python] — Google met à jour son « Style Guide Python »
+
+Commentaires récents
+
+     * PiRDF #2 : Préparation du matériel - CL-RPI dans PiRDF #1 :
+       Présentation du projet
+     * Cédric Lemaitre dans Alimentation solaire pour Raspberry Pi
+     * Christophe vincent dans Alimentation solaire pour Raspberry Pi
+     * Cédric Lemaitre dans Alimentation solaire pour Raspberry Pi
+     * Fabrice dans Alimentation solaire pour Raspberry Pi
+
+Archives
+
+     * novembre 2018
+     * octobre 2018
+     * septembre 2018
+     * avril 2018
+     * février 2018
+     * décembre 2017
+     * novembre 2017
+     * octobre 2017
+     * septembre 2017
+
+Catégories
+
+     * C++
+     * Développement
+     * Électroniique, domotique et traitement du signal
+     * Non classé
+     * Notes, solutions, liens…
+     * Python
+     * Tuto
+     * Vim
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+   Fièrement propulsé par WordPress
+   #prev CL-RPI » Flux CL-RPI » Flux des commentaires
+
+   Aller au contenu principal
+
+CL-RPI
+
+   Quelques ressources pour exploiter son Raspberry Pi
+   Descendre au contenu
+
+Articles
+
+   Publié le 23 octobre 201723 octobre 2017
+
+Alimentation solaire pour Raspberry Pi
+
+   Lipo Alimentation solaire RPi
+
+   Alimentation solaire pour Raspberry Pi
+
+   Votre Raspberry Pi est peu être le compagnon idéal pour des
+   applications outdoor pour le data logging de données en tout genre :
+   – station météo
+   – mesure de la quantité de Co2 dans l’air
+   – mesure de la présence de poussière
+
+   Ou tout ce que vous voudrez…
+
+   Cependant, dès le début de la conception de ce genre d’application,
+   vous vous poserez sans doute la question de l’alimentation du Raspberry
+   Pi.
+
+   Naturellement, la première solution est de penser à une batterie par
+   exemple une Lipo qui ont l’avantage d’être légère pour une autonomie
+   importante.
+   On va trouver des solutions pour pour 5000mAh pour une centaine de
+   gramme et quelques dizaines d’euro (je ne donne pas de prix exact car
+   le prix varie énorméément selon le sourcing).
+   Avec une 5000mhA vous pourrez sans problème alimenter votre Raspberry
+   Pi une quinzaine d’heures un Pi Zero une vingtaine d’heure. On peut
+   même envisager encore plus avec des optimisation de consommation.
+
+   Vient ensuite la problématique de la recharge de la batterie Lipo.
+   Alors attention, on recharge pas une batterie Lipo n’importe comment.
+
+Un peu de sécurité sur les batteries Lipo
+
+   Il faut respecter une tension de charge et avoir un courant de charge
+   en adéquation avec votre modèle de batterie.
+   Il faut également que la batterie ne soit pas trop chaude pour être
+   rechargée.
+
+   Pour le courant ou la tension c’est votre chargeur qui devra remplir ce
+   rôle.
+   Pour la température, vous devez vous assurez que la batterie est équipé
+   d’un composant qui coupe la possibilité de charge si la température est
+   trop importante (Les batteries Lipo 3.7V sont généralement équipées de
+   ce genre de composants)
+
+   Pour résumé, il vous faudra donc un module de charge de batterie.
+
+   Il vous faudra également une source d’alimentation pour votre chargeur.
+   Étant à l’extérieur les panneau solaires constitue une bonne source
+   d’alimentation.
+   Il faudra seulement veiller à avoir une puissance crête en adéquation
+   avec votre application et une régulateur de tension en amont de votre
+   chargeur de batterie.
+
+Quel montage?
+
+   La vidéo youtube disponible ci-dessous montre le montage que j’utilise
+   :
+     * 2 panneaux solaires 12V-1.5W
+     * 1 régulateur DC-DC 5V
+     * Une carte de charge Lipo et alimentation Rpi
+     * un consomètre USB
+     * Batterie Lipo 5000mAh en 3.7V
+
+   IFRAME: https://www.youtube.com/embed/DbFeoUWaZ-c
+
+Charge et alimentation simultanée?
+
+   Oui et non. On ne peut pas charger et «tirer du jus» sur une batterie
+   simultanément.
+   Cependant le panneau solaire peut charger la batterie et en cas de
+   puissance suffisante, alimenter le RPi avec le courant disponible.
+
+   Un peu de lecture sur le sujet : ICI
+
+Oui mais …
+
+   Et oui, il y a un mais! La carte que j’utilise n’a pas la capacité de
+   couper le circuit du panneau solaire en cas de puissance trop peu
+   suffisante pour alimenter le Rpi.
+   Du coup, la batterie étant en charge elle ne peut alimenter le RPi ce
+   qui a pour effet de passer le RPi hors tension…
+
+   Dans ma quête d’autonomie, il me sera dons nécessaire de commander le
+   circuit d’alimentation en fonction du la charge disponible sur la ligne
+   des panneaux solaires.
+   Comment ? Mesure de courant ? Commande de relais ?
+   À voir, je suis encore en cours de réflexion.
+
+   Et vous? avez vous déjà réalisé l’alimentation solaire pour Raspberry
+   Pi?
+   Lipo Alimentation solaire RPi
+
+   Publié le 12 octobre 201711 octobre 2017
+
+[Vim] Trouver remplacer à partir de la position courante
+
+   [Vim] Trouver remplacer
+
+   [Vim] Trouver remplacer à partir de la position courante
+
+   [Vim] Trouver remplacer
+
+   Une fonctionnalité très connue de vim pour trouver et remplacer
+   (substituer donc) une chaine de caractère est
+:%s/\vBEFORE/AFTER/gc
+
+   Je vous donne une variante qui permet de faire la substitution qu’à
+   partir de la position en court et de parcourir en direction de la fin
+   du fichier. De plus une confirmation est demandée afin de ne remplacer
+   que si nécessaire
+:,$s/BEFORE/AFTER/gc|1,''-&&
+
+   Source :
+
+   Récupérer sur sur ce fil stackoverflow
+
+   Publié le 11 octobre 2017
+
+Bouton reset raspberry
+
+   reset, start raspberry
+
+   Bouton reset raspberry
+
+   Quelques lignes pour pour montrer comment solutionner le problème de
+   reset du Rpi afin d’éviter le «vieux unplug à chaud et bien
+   dégueulasse» qu’on est tenter de faire si on conserve la configuration
+   du raspberry.
+
+   En effet, débrancher et rebrancher votre raspberry pi à chaud risque
+   d’endommager de façon définitive le système d’extension. De plus d’un
+   point électriques, vous mettez à mal l’intégrité de votre
+   nano-ordinatteur.
+
+   Mais, il existe des solution. Voyons en délais.
+   Cas du raspberry Zero 1.3 et Zero W
+
+   Le raspberry Zéro (1.2, 1.3 et w) possède juste coté du port GPIO, 2
+   broches intitulés «run» (voir photo). En fermant le circuit au niveau
+   de ces broches, vous faites un reset de votre Rpi. Pour réaliser cette
+   fermeture de circuit, c’est très simple : il suffit d’ajouter un bouton
+   poussoir qui est à l’état ouvert par défaut ^1.
+   reset, start raspberry Près du GPIO les bornes «run» permettant de
+   réaliser un reset
+
+   Attention cependant, un reset de type hard n’est pas vraiment meilleur.
+   Je vous conseille donc de réaliser :
+
+   sudo reboot
+
+   autant que faire se peut avant d’employer l’arme nucléaire!
+
+   De la même façon, ce bouton permet de démarrer le Rpi après l’avoir
+   éteint à l’aide de la commande système :
+
+   sudo halt
+
+   Pour finir une petite démo en vidéo :
+
+   IFRAME: https://www.youtube.com/embed/1hERIWIQNsQ
+
+   Cas du raspberry pi 3
+
+   Pour le raspberry Pi 3 (et pour le 2 également), vous pouvez réaliser
+   cette manip/modification en connectant le bouton poussoir sur le RPi a
+   l’aide des broches nommées P16 que vous pouvez trouver au dos de la
+   carte de votre mini-ordinateur.
+
+   Vous trouverez ICI un article détaillé et publié sur le site
+   framboise314.fr
+   Et si on le commandait électronique ce bouton?
+
+   Il faudra être patient c’est dans les tiroirs car je dois solutionner
+   ce problème pour redémarrer de façon périodique mon RPi qui est en
+   charge des acquisitions de données météo de la maison!
+
+   Patience ça viendra dans quelques semaines.
+
+   Bon alors prêt à ajouter ce bouton sur votre raspberry?
+     __________________________________________________________________
+
+    1. Ce serait bête de devoir maintenir le bouton enfoncer pour que
+       votre Rpi reste allumé… ↩
+
+   Publié le 30 septembre 2017
+
+Module RTC ds1307 : installer et configurer une horloge externe pour votre
+Raspberry Pi
+
+   Module RTC ds1307 :
+
+   Un problème récurrent des utilisateurs de Raspberry Pi est que celui ci
+   ne possède pas d’horloge interne.
+   Ceci a pour effet de ne pas pouvoir réaliser d’application utilisant
+   des informations sur l’heure absolue (par exemple faire une actions
+   tous les jours à 20h) sans être connecté à un internet. En effet, votre
+   connection internet, vous permet de récupérer leur sur un serveur
+   donné.
+
+   Pour pouvoir réaliser ce genre d’opération, il faut avoir recours à un
+   module RTC (Real-Time Clock) qu’on peut traduire « horloge temps
+   réel ».
+   Ce genre de module n’est ni plus ni moins une horloge externe alimentée
+   par une pile bouton, qui après une première initialisation, peut être
+   interrogée par le raspberry pi pour obtenir l’heure.
+
+   Dans mon cas, j’ai choisi le Module RTC ds1307. Ce choix est expliqué
+   pour plusieurs raisons :
+     * le module est très courant
+     * le module ce trouve pour moins 5€ (par exemple sur aliexpress)
+     * ce module a un support natif par la version Jessie du système
+       raspbian
+     * il est i2c ce qui réduit le nombre de boches mobilisées sur le port
+       GPIO
+
+Connection du module
+
+   Le module est très simple à brancher. Vous devez uniquement connecter :
+     * VCC
+     * GND
+     * SCL
+     * SDA
+
+   du module sur les broches du même nom du Raspberry Pi.
+
+Vérification de la détection du nodule sur le Bus i2c
+
+   Si votre port i2c n’est pas activé, rien de plus simple. Il suffit
+   d’exécuter :
+ sudo raspi-config
+
+   Dans le menu Advenced, il faut rendre actif le port i2c.
+   Nous allons vérifier que le module est bien détecté mais , au
+   péralable, il faut installer les outils nécessaire à cette tâche.
+sudo apt-get install python-smbus i2c-tools
+
+   Puis nous pouvons utiliser l’utilitaire i2cdetect :
+sudo i2cdetect -y 1
+
+   L’instruction est différente suivant les versions du Raspberry Pi^1
+
+   Cette instruction devrait vous retourner l’équivalent de l’écran
+   suivant :
+
+   On voit que le RPi a détecté un composant à l’adresse 0x68 qui d’après
+   la doc constructeur l’adresse par défaut.
+
+Installation du Module RTC ds1307
+
+   On va ajouter la gestion du module en éditant le fichier de
+   configuration de boot.
+sudo nano /boot/config.txt
+
+   Auquel on va ajouter un la ligne suivante à la fin du fichier :
+dtoverlay=i2c-rtc,ds1307
+
+   A ce stade, vous devez redémarrez votre système :
+sudo reboot
+
+   Une fois le système de nouveau actif, il vous pouvez éxécuter de
+   nouveau:
+sudo i2cdetect -y 1
+
+   Vous devriez observer si le prise en charge de l’horloge est effective
+   en obtenant les caractères UU à l’adresse 0X68
+
+   Il vous est maintenant nécessaire de désactiver l’horloge qui émule
+   l’horloge hardware «fake hwclock> avec les instructions suivantes :
+sudo apt-get -y remove fake-hwclock
+sudo update-rc.d -f fake-hwclock remove
+
+   Puis décommenter les lignes suivantes du fichier (en début de fichier)
+   /lib/udev/hwclock-set :
+#if [ -e /run/systemd/system ] ; then
+# exit 0
+#fi
+
+Configuration de l’horloge du Module RTC ds1307
+
+   Pour configuer votre horloge RTC, à partir de l’heure système
+   (nécessite donc une connexion à Internet):
+sudo hwclock -w
+
+   NB : W pour Write
+
+   Pour vérifier que votre horloge est bien à l’heure, il suffit cette
+   fois-ci de lire
+sudo hwclock -r
+
+   NB : R pour Read
+
+Vérification du fonctionnement
+
+   Pour vérifier, le bonctionnement du système, couper la connexion
+   internet (faite éventuellement un reboot) et exécuté :
+date
+
+   Si tous c’est bien passé vous devriez obtenir l’heure exact!
+
+   Alors prêt à utiliser le Module RTC ds1307?
+     __________________________________________________________________
+
+    1. Si votre raspberry est une version antérieur au Pi 3 et Pi Zero,
+       l’instruction est sudo i2cdetect -y 0 ↩
+
+   Publié le 30 septembre 2017
+
+Connaître sa version de Rapbian
+
+   Connaitre sa version de Raspbian
+
+   Pour trouver la version de raspbian, il suffit de saisir la commande
+   suivante.
+cat /etc/os-release
+
+   Cette commande retourne :
+PRETTY_NAME="Raspbian GNU/Linux 8 (jessie)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="8"
+VERSION="8 (jessie)"
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+
+
+   Publié le 26 septembre 2017
+
+pdftk : Extraire des pages d’un documents PDF
+
+   pdftk : un utilitaire simple et puissance
+
+   On se trouve souvent en face d’un documents pdf dont on voudrait
+   extraire une page pour en faire un documents autonome à proprement
+   parler.
+   Sous windows, il existe de nombreuses solutions soit payantes (comme
+   souvent) soit demandant de nombreuses manipulation d’interfaçage
+   graphique alors que sous un système Unix ou linux, il existe un
+   utilitaire qui ne requière qu’une seule ligne de commande!
+   Le binaire pdftk (la page principale de pdftk), pour pdf toolkit,
+   permet de faire ce genre de manipulation aisément et gratuitement.
+
+Installation de pdftk
+
+   Très simple à l’aide d’apt
+sudo apt-get install pdftk
+
+Et comment on s’en sert?
+
+   Pour extraire les pages de 12 à 15 d’un document c’est très siimple :
+pdftk full-pdf.pdf cat 12-15 output outfile_p12-15.pdf
+
+   Voilà une ligne et c’est plié!
+
+   Vous ne regretterez pas de ne pas avoir à investir plusieurs centaines
+   d’euros dans une licence d’Adobe!
+
+   NB : Ce genre de manipulation est également possible sous windows
+   Nom(obligatoire) ____________________
+   E-mail(obligatoire) ____________________
+   Site web ____________________
+   Message
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Envoyer »
+
+Pour aller plus loin :
+
+   D’autres trucs et astuces : liens vers la catégorie
+
+   Publié le 25 septembre 201725 septembre 2017
+
+Augmenter la swap de votre Raspberry Pi
+
+   Augmenter la swap de votre Raspberry Pi
+
+   Pour des applications, le plus souvent serveur, la taille de votre swap
+   peut limiter les performances de votre application. C’est le cas pour
+   gitlab par exemple.
+   Pour augmenter cette valeur, il faut éditer le fichier
+   /etc/dphys-swapfile avec la commande suivante :
+sudo nano /etc/dphys-swapfile
+
+   Il vous faut modifier la ligne
+CONF_SWAPFILE=100
+
+   en remplaçant la valeur 100 par la valeur en Mo dont vous avez besoin.
+   Si vous avez besoin d’une valeur supérieur à 2.048 GO, il faut modifier
+   la limite en modifiant la dernière ligne du fichier du fichier.
+
+   Pour aller plus loin :
+
+   La mémoire swap
+
+   NB : testé et validé sur Raspbian Jessy
+
+   Publié le 15 septembre 201715 septembre 2017
+
+Modifier l’url par défaut de Gitlab
+
+   Si vous avez installé votre forge Gitlab en local sur un Raspberry P,
+   il y a fort a parier que vous  vouliez garder le RPi dans votre réseau
+   privée.
+
+   Cependant, vous voudrez sans doute le rendre accessible depuis
+   extérieure. Pour cela, vous devrez donc faire pointez une URL vers un
+   votre Box internet qui routera le port 80 vers votre RPi.
+
+   Jusque là rien que du bien classique. Malheureusement, à l’usage vous
+   remarquerez que l’adresse par défaut de vos projets ne sont pas
+   utilisable depuis l’extérieur. En effet,  quand vous récupérer
+   l’adresse pour faire un clone d’un projet vous aurez l’adresse suivante
+   :
+
+   http://localhost/monuser/mon-projet.git ou
+   http://nomdelamachine/monuser/mon-projet.git
+
+   Pour corriger cela, il est nécessaire d’éditer le fichier de config :
+
+   nano /etc/gitlab/gitlab.rb
+
+   et de modifier la ligne suivante :
+
+   external_url 'http://gitlab.example.com'
+
+   par
+
+   external_url 'http://monurl.com'
+
+
+   Plus d’informations ici
+
+Navigation des articles
+
+   Page précédente Page 1 Page 2
+
+Partenaires
+
+   [INS: :INS]
+
+Libérer le potentiel de votre Raspebbery Pi avec le langage Python
+
+   Recherche pour : ____________________ (BUTTON) Recherche
+
+Articles récents
+
+     * Copier des listes et des objets en python
+     * PiRDF #2 : Préparation du matériel
+     * PiRDF #1 : Présentation du projet
+     * [Python] Interruption sur le port GPIO
+     * [Python] — Google met à jour son « Style Guide Python »
+
+Commentaires récents
+
+     * PiRDF #2 : Préparation du matériel - CL-RPI dans PiRDF #1 :
+       Présentation du projet
+     * Cédric Lemaitre dans Alimentation solaire pour Raspberry Pi
+     * Christophe vincent dans Alimentation solaire pour Raspberry Pi
+     * Cédric Lemaitre dans Alimentation solaire pour Raspberry Pi
+     * Fabrice dans Alimentation solaire pour Raspberry Pi
+
+Archives
+
+     * novembre 2018
+     * octobre 2018
+     * septembre 2018
+     * avril 2018
+     * février 2018
+     * décembre 2017
+     * novembre 2017
+     * octobre 2017
+     * septembre 2017
+
+Catégories
+
+     * C++
+     * Développement
+     * Électroniique, domotique et traitement du signal
+     * Non classé
+     * Notes, solutions, liens…
+     * Python
+     * Tuto
+     * Vim
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+   Fièrement propulsé par WordPress
+   #CL-RPI » Flux CL-RPI » Flux des commentaires CL-RPI » Flux de
+   résultats de la recherche pour "{search_term_string}"
+
+   Aller au contenu principal
+
+   CL-RPI
+
+   Quelques ressources pour exploiter son Raspberry Pi
+
+Aucun résultat
+
+   Désolé, mais rien ne correspond à votre recherche. Veuillez réessayer
+   avec des mots différents.
+   Recherche pour : {search_term_string} (BUTTON) Recherche
+
+Partenaires
+
+   [INS: :INS]
+
+Libérer le potentiel de votre Raspebbery Pi avec le langage Python
+
+   Recherche pour : {search_term_string} (BUTTON) Recherche
+
+Articles récents
+
+     * Copier des listes et des objets en python
+     * PiRDF #2 : Préparation du matériel
+     * PiRDF #1 : Présentation du projet
+     * [Python] Interruption sur le port GPIO
+     * [Python] — Google met à jour son « Style Guide Python »
+
+Commentaires récents
+
+     * PiRDF #2 : Préparation du matériel - CL-RPI dans PiRDF #1 :
+       Présentation du projet
+     * Cédric Lemaitre dans Alimentation solaire pour Raspberry Pi
+     * Christophe vincent dans Alimentation solaire pour Raspberry Pi
+     * Cédric Lemaitre dans Alimentation solaire pour Raspberry Pi
+     * Fabrice dans Alimentation solaire pour Raspberry Pi
+
+Archives
+
+     * novembre 2018
+     * octobre 2018
+     * septembre 2018
+     * avril 2018
+     * février 2018
+     * décembre 2017
+     * novembre 2017
+     * octobre 2017
+     * septembre 2017
+
+Catégories
+
+     * C++
+     * Développement
+     * Électroniique, domotique et traitement du signal
+     * Non classé
+     * Notes, solutions, liens…
+     * Python
+     * Tuto
+     * Vim
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+   Fièrement propulsé par WordPress
+
+Propulsé par WordPress
+
+   Identifiant ou adresse e-mail
+   ____________________
+
+   Mot de passe
+   ____________________
+   Se connecter avec WordPress.com
+
+   Vous pouvez maintenant gagner du temps à chaque fois que vous vous
+   connectez, en liant votre compte WordPress.com à CL-RPI.
+   Ou
+   Se connecter avec un identifiant et un mot de passe Se connecter avec
+   WordPress.com
+
+   [ ] Se souvenir de moi
+
+   Se connecter
+
+   Mot de passe oublié ?
+
+   ← Retour vers CL-RPI
+
+Propulsé par WordPress
+
+   Identifiant ou adresse e-mail
+   ____________________
+
+   Mot de passe
+   ____________________
+   Se connecter avec WordPress.com
+
+   Vous pouvez maintenant gagner du temps à chaque fois que vous vous
+   connectez, en liant votre compte WordPress.com à CL-RPI.
+   Ou
+   Se connecter avec un identifiant et un mot de passe Se connecter avec
+   WordPress.com
+
+   [ ] Se souvenir de moi
+
+   Se connecter
+
+   Mot de passe oublié ?
+
+   ← Retour vers CL-RPI

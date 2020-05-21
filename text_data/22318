@@ -1,0 +1,296 @@
+   #alternate alternate Atom feed
+
+   (BUTTON) OCaml OCaml
+     * Learn
+     * Documentation
+     * Packages
+     * Community
+     * News
+
+   Edit this page ____________________
+
+OCaml is an industrial strength programming language supporting functional,
+imperative and object-oriented styles
+
+   Install OCaml
+
+     * en
+     * fr
+
+   Learn Learn
+
+Learn
+
+   Find out about OCaml, read about users, see code examples, go through
+   tutorials and more.
+
+   Documentation Documentation
+
+Documentation
+
+   Install OCaml, look up package docs, access the Manual, get the cheat
+   sheets and more.
+
+   Platform Platform
+
+Packages
+
+   The OCaml Package Manager, gives you access to multiple versions of
+   hundreds of packages.
+
+   Community Community
+
+Community
+
+   Read the news feed, join the mailing lists, get support, attend
+   meetings, and find OCaml around the web.
+   chat chat Got a question? Ask OCaml experts!
+   Learn OCaml in your browser with TryOCaml
+
+News RSS RSS
+
+     *
+
+OCaml 2019
+       August 23, 2019
+     *
+
+Release of OCaml 4.09.0
+       June 14, 2019
+     *
+
+OCaml Weekly News
+       October 1, 2019
+
+     *
+
+OCaml expert and beginner training by OCamlPro (in French): Nov. 5-6 & 7-8
+       September 25, 2019
+     *
+
+Mr. MIME - Parse and generate emails
+       September 25, 2019
+     *
+
+A look back on OCaml since 2011
+       September 20, 2019
+     *
+
+Frama-C 19.1 (Potassium) is out. Download ithere.
+       September 17, 2019
+
+   More...
+
+A taste of OCaml
+
+
+   #
+(* Binary tree with leaves carrying an integer. *)
+type tree = Leaf of int | Node of tree * tree
+
+let rec exists_leaf test tree =
+  match tree with
+  | Leaf v -> test v
+  | Node (left, right) ->
+      exists_leaf test left
+      || exists_leaf test right
+
+let has_even_leaf tree =
+  exists_leaf (fun n -> n mod 2 = 0) tree
+
+   OCaml is a lot more powerful than this simple example shows. See more
+   examples!
+
+Packages
+
+     * New packages
+
+       Package      Version    Date
+   lz4_chans        3.0.0   Oct 3, 2019
+   ounit2-lwt       2.2.1   Oct 3, 2019
+   ounit2           2.2.1   Oct 3, 2019
+   ounit-lwt        2.2.1   Oct 3, 2019
+   ounit            2.2.1   Oct 3, 2019
+   mirage-types-lwt 3.6.0   Oct 3, 2019
+
+Learn
+
+     * Code Examples
+     * Tutorials
+     * Books
+     * Success Stories
+     *
+
+Documentation
+
+     * Install
+     * Manual
+     * Packages
+     * Compiler Releases
+     * Logos
+
+Community
+
+     * Mailing Lists
+     * Meetings
+     * News
+     * Support
+     * Bug Tracker
+
+Website
+
+     * Edit this page
+     * Website Issues
+     * About This Site
+     * Find Us on GitHub
+     * Credits
+   #alternate alternate Atom feed
+
+   (BUTTON) OCaml OCaml
+     * Apprendre
+     * Documentation
+     * Contributions
+     * Communauté
+     * Nouvelles
+
+   Éditer cette page ____________________
+
+OCaml est un langage de programmation de niveau industriel supportant les
+styles fonctionnel, impératif et orienté-objet
+
+   Installer OCaml
+
+     * en
+     * fr
+
+   Apprendre Apprendre
+
+Apprendre
+
+   Une description d'OCaml, ses utilisateurs, des exemples de code, des
+   tutoriaux à lire et bien plus.
+
+   Documentation Documentation
+
+Documentation
+
+   Installer OCaml, trouver des docs de paquets, accéder au Manuel,
+   obtenir des mémentos et bien plus.
+
+   Contributions Contributions
+
+Contributions
+
+   Le gestionnaire de paquets OPAM vous donne accès aux multiples versions
+   de centaines de paquets.
+
+   Communauté Communauté
+
+Communauté
+
+   Lire les fils de news, discuter et échanger, obtenir du support,
+   rencontrer d'autres utilisateurs et trouver OCaml sur le web.
+   chat chat Une question ? Discutez avec des experts OCaml !
+   Apprendre OCaml dans son navigateur avec TryOCaml
+
+Nouvelles RSS RSS
+
+     *
+
+OCaml 2019
+       23 août, 2019
+     *
+
+Parution d'OCaml 4.09.0
+       14 juin 2019
+     *
+
+OCaml Weekly News
+       October 1, 2019
+
+     *
+
+OCaml expert and beginner training by OCamlPro (in French): Nov. 5-6 & 7-8
+       September 25, 2019
+     *
+
+Mr. MIME - Parse and generate emails
+       September 25, 2019
+     *
+
+A look back on OCaml since 2011
+       September 20, 2019
+     *
+
+Frama-C 19.1 (Potassium) is out. Download ithere.
+       September 17, 2019
+     *
+
+Coq 8.10+beta3 is out
+       September 16, 2019
+
+   Plus...
+
+Un peu d'OCaml
+
+
+   #
+(* Binary tree with leaves carrying an integer. *)
+type tree = Leaf of int | Node of tree * tree
+
+let rec exists_leaf test tree =
+  match tree with
+  | Leaf v -> test v
+  | Node (left, right) ->
+      exists_leaf test left
+      || exists_leaf test right
+
+let has_even_leaf tree =
+  exists_leaf (fun n -> n mod 2 = 0) tree
+
+   OCaml est bien plus puissant que ce petit exemple le montre. Découvrez
+   d'autres exemples!
+
+Nouveautés dans OPAM
+
+     * Nouvelles versions
+
+       Logiciel     Version    Date
+   lz4_chans        3.0.0   Oct 3, 2019
+   ounit2-lwt       2.2.1   Oct 3, 2019
+   ounit2           2.2.1   Oct 3, 2019
+   ounit-lwt        2.2.1   Oct 3, 2019
+   ounit            2.2.1   Oct 3, 2019
+   mirage-types-lwt 3.6.0   Oct 3, 2019
+
+Apprendre
+
+     * Exemples de code
+     * Tutoriels
+     * Livres
+     * Cas d'usage
+     *
+
+Documentation
+
+     * Installer OCaml
+     * Manuel
+     * Contributions
+     * Compiler Releases
+     * Logos
+
+Communauté
+
+     * Lieux de discussion
+     * Rencontres
+     * Nouvelles
+     * Support
+     * Signaler un bug d'OCaml
+
+Site Web
+
+     * Éditer cette page
+     * Problèmes du site Web
+     * À propos de ce site
+     * Dépôt GitHub
+     * Crédits

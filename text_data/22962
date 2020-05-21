@@ -1,0 +1,3153 @@
+   #RSS Feed for Modernizr.com
+
+   Modernizr
+
+   MENU [ ]
+
+   Download Documentation News Resources
+
+                   Respond to your user’s browser features.
+
+  Modernizr tells you what HTML, CSS and JavaScript features the user’s browser
+  has to offer.
+
+   Add your detects Development build
+
+What is Modernizr?
+
+   It’s a collection of superfast tests – or “detects” as we like to call
+   them – which run as your web page loads, then you can use the results
+   to tailor the experience to the user.
+
+Why do I need it?
+
+   All web developers come up against differences between browsers and
+   devices. That’s largely due to different feature sets: the latest
+   versions of the popular browsers can do some awesome things which older
+   browsers can’t – but we still have to support the older ones.
+
+   Modernizr makes it easy to deliver tiered experiences: make use of the
+   latest and greatest features in browsers which support them, without
+   leaving less fortunate users high and dry.
+
+Getting Started
+
+     * Modernizr explained
+     * What is feature detection?
+     * Using Modernizr with JavaScript
+     * Using Modernizr with CSS
+
+Latest News
+
+     * Modernizr 3.5.0
+     * Modernizr 3.4.0
+     * Modernizr 3.3.1
+     * Modernizr 3.3.0
+
+Talk to us
+
+     * Twitter
+     * StackOverflow
+     * GitHub
+     * Contact
+
+   Made with love by Faruk, Paul, Alex, Ryan, Patrick, Stu, and Richard.
+
+   Subscribe to the feed, follow on twitter, or contact us. Donations are
+   cool, too.
+
+   Check out the code on github
+   #RSS Feed for Modernizr.com
+
+   Modernizr
+
+   MENU [ ]
+
+   Download Documentation News Resources
+
+   Type a browser feature ____________________ (BUTTON) Build
+
+   0 checked
+   Options
+   [ ] Modernizr._domPrefixes
+   [ ] Modernizr._prefixes
+   [ ] Modernizr.addTest()
+   [ ] Modernizr.atRule()
+   [ ] Modernizr.hasEvent()
+   [ ] Modernizr.mq()
+   [ ] Modernizr.prefixed()
+   [ ] Modernizr.prefixedCSS()
+   [ ] Modernizr.prefixedCSSValue()
+   [ ] Modernizr.testAllProps()
+   [ ] Modernizr.testProp()
+   [ ] Modernizr.testStyles()
+   [ ] html5printshiv
+   [ ] html5shiv
+   [X] minify
+   [X] Add CSS classes
+   … with prefix ____________________
+
+     * [ ] Ambient Light Events
+       Ambient Light Events
+       Description
+       Detects support for the API that provides information about the
+       ambient light levels, as detected by the device's light detector,
+       in terms of lux units.
+       Usage
+       ambientlight
+       View examples
+       More Details
+       W3C Ambient Light Events
+     * [ ] Application Cache
+       Application Cache
+       Description
+       Detects support for the Application Cache, for storing data to
+       enable web-based applications run offline.
+       The API has been heavily criticized and discussions are underway to
+       address this.
+       Usage
+       applicationcache
+       View examples
+       Polyfills
+          + html5-gears
+            By: Brad Neuberg
+       More Details
+       MDN documentation
+     * [ ] HTML5 Audio Element
+       HTML5 Audio Element
+       Description
+       Detects the audio element
+       Usage
+       audio
+       View examples
+     * [ ] Battery API
+       Battery API
+       By: Paul Sayre
+       Description
+       Detect support for the Battery API, for accessing information about
+       the system's battery charge level.
+       Usage
+       batteryapi
+       View examples
+       More Details
+       MDN documentation
+     * [ ] Blob constructor
+       Blob constructor
+       Description
+       Detects support for the Blob constructor, for creating file-like
+       objects of immutable, raw data.
+       Usage
+       blobconstructor
+       View examples
+       Polyfills
+          + Blob.js
+            By: Eli Grey
+       More Details
+       W3C spec
+     * [ ] Canvas
+       Canvas
+       Description
+       Detects support for the <canvas> element for 2D drawing.
+       Usage
+       canvas
+       View examples
+       Polyfills
+          + FlashCanvas
+            By: Shinya Muramatsu
+          + Explorer Canvas
+            By: Erik Arvidsson
+          + Silverlight HTML 5 Canvas
+            By: undefined
+          + fxCanvas
+            By: Evgeny Burzak
+     * [ ] Canvas text
+       Canvas text
+       Description
+       Detects support for the text APIs for <canvas> elements.
+       Usage
+       canvastext
+       View examples
+       Polyfills
+          + canvas-text
+            By: Fabien Ménager
+     * [ ] Content Editable
+       Content Editable
+       Description
+       Detects support for the contenteditable attribute of elements,
+       allowing their DOM text contents to be edited directly by the user.
+       Usage
+       contenteditable
+       View examples
+       More Details
+       WHATWG spec
+     * [ ] Context menus
+       Context menus
+       Description
+       Detects support for custom context menus.
+       Usage
+       contextmenu
+       View examples
+       Polyfills
+          + jQuery-contextMenu
+            By: Rodney Rehm and Björn Brala
+       More Details
+       W3C specthewebrocks.com Demo
+     * [ ] Cookies
+       Cookies
+       By: tauren
+       Description
+       Detects whether cookie support is enabled.
+       Usage
+       cookies
+       View examples
+     * [ ] Cross-Origin Resource Sharing
+       Cross-Origin Resource Sharing
+       By: Theodoor van Donge
+       Description
+       Detects support for Cross-Origin Resource Sharing: method of
+       performing XMLHttpRequests across domains.
+       Usage
+       cors
+       View examples
+       Polyfills
+          + pmxdr
+            By: Eli Grey
+          + postmessage-proxied-xhr
+            By: Atul Varma
+          + flXHR
+            By: Kyle Simpson
+       More Details
+       MDN documentation
+     * [ ] Web Cryptography
+       Web Cryptography
+       By: roblarsen
+       Description
+       Detects support for the cryptographic functionality available under
+       window.crypto.subtle
+       Usage
+       cryptography
+       View examples
+       Polyfills
+          + PolyCrypt
+            By: BBN Technologies
+       More Details
+       W3C Editor's Draft
+     * [ ] Custom Elements API
+       Custom Elements API
+       Description
+       Detects support for the Custom Elements API, to create custom html
+       elements via js
+       Usage
+       customelements
+       View examples
+       Polyfills
+          + Custom Elements
+            By: Webcomponents
+       More Details
+       Specs for Custom Elements
+     * [ ] Custom protocol handler
+       Custom protocol handler
+       By: Ben Schwarz
+       Description
+       Detects support for the window.registerProtocolHandler() API to
+       allow websites to register themselves as possible handlers for
+       particular protocols.
+       Usage
+       customprotocolhandler
+       View examples
+       More Details
+       WHATWG overviewMDN documentation
+     * [ ] CustomEvent
+       CustomEvent
+       By: Alberto Elias
+       Description
+       Detects support for CustomEvent.
+       Usage
+       customevent
+       View examples
+       Polyfills
+          + EventListener
+            By: Jonathan Neal
+       More Details
+       W3C DOM referenceMDN documentation
+     * [ ] Dart
+       Dart
+       By: Theodoor van Donge
+       Description
+       Detects native support for the Dart programming language.
+       Usage
+       dart
+       View examples
+       More Details
+       Language website
+     * [ ] DataView
+       DataView
+       By: Addy Osmani
+       Description
+       Detects support for the DataView interface for reading data from an
+       ArrayBuffer as part of the Typed Array spec.
+       Usage
+       dataview
+       View examples
+       Polyfills
+          + jDataView
+            By: Christopher Chedeau and Ingvar Stepanyan
+       More Details
+       MDN documentation
+     * [ ] Emoji
+       Emoji
+       Description
+       Detects support for emoji character sets.
+       Usage
+       emoji
+       View examples
+     * [ ] Event Listener
+       Event Listener
+       By: Andrew Betts (@triblondon)
+       Description
+       Detects native support for addEventListener
+       Usage
+       eventlistener
+       View examples
+       Polyfills
+          + EventListener
+            By: Jonathan Neal
+       More Details
+       W3C Spec
+     * [ ] EXIF Orientation
+       EXIF Orientation
+       By: Paul Sayre
+       This is an async detect
+       Description
+       Detects support for EXIF Orientation in JPEG images.
+       iOS looks at the EXIF Orientation flag in JPEGs and rotates the
+       image accordingly. Most desktop browsers just ignore this data.
+       Usage
+       exiforientation
+       View examples
+       More Details
+       Article by Dave PerrettArticle by Calvin Hass
+     * [ ] Flash
+       Flash
+       Description
+       Detects Flash support as well as Flash-blocking plugins
+       Usage
+       flash
+       View examples
+       Polyfills
+          + JavaScript Flash VM
+            By: Mozilla Foundation
+     * [ ] Force Touch Events
+       Force Touch Events
+       By: Kraig Walker
+       Description
+       Tests whether the browser supports the detection of Force Touch
+       Events. Force Touch Events allow custom behaviours and interactions
+       to take place based on the given pressure or change in pressure
+       from a compatible trackpad.
+       Force Touch events are available in OS X 10.11 and later on devices
+       equipped with Force Touch trackpads.
+       Usage
+       forcetouch
+       View examples
+       More Details
+       Responding to Force Touch Events from JavaScript
+     * [ ] Fullscreen API
+       Fullscreen API
+       Description
+       Detects support for the ability to make the current website take
+       over the user's entire screen
+       Usage
+       fullscreen
+       View examples
+       Polyfills
+          + screenfull.js
+            By: Sindre Sorhus
+       More Details
+       MDN documentation
+     * [ ] GamePad API
+       GamePad API
+       By: Eric Bidelman
+       Description
+       Detects support for the Gamepad API, for access to gamepads and
+       controllers.
+       Usage
+       gamepads
+       View examples
+       More Details
+       W3C specHTML5 Rocks tutorial
+     * [ ] Geolocation API
+       Geolocation API
+       Description
+       Detects support for the Geolocation API for users to provide their
+       location to web applications.
+       Usage
+       geolocation
+       View examples
+       Polyfills
+          + polyfill
+            By: Joshua Bell
+          + Webshims
+            By: Alexander Farkas
+          + geo-location-javascript
+            By: whoisstan
+          + Geolocation-API-Polyfill
+            By: Manuel Bieh
+       More Details
+       MDN documentation
+     * [ ] Hashchange event
+       Hashchange event
+       Description
+       Detects support for the hashchange event, fired when the current
+       location fragment changes.
+       Usage
+       hashchange
+       View examples
+       Polyfills
+          + jQuery hashchange event
+            By: Ben Alman
+          + HistoryManager Mootools Plugin
+            By: Arieh Glazer
+          + jQuery Ajaxy
+            By: Benjamin Lupton
+          + Hasher
+            By: Miller Medeiros
+          + sHistory
+            By: Andrew Udvare
+       More Details
+       MDN documentation
+     * [ ] Hidden Scrollbar
+       Hidden Scrollbar
+       By: Oleg Korsunsky
+       Description
+       Detects overlay scrollbars (when scrollbars on overflowed blocks
+       are visible). This is found most commonly on mobile and OS X.
+       Usage
+       hiddenscroll
+       View examples
+       More Details
+       Overlay Scrollbar descriptionVideo example of overlay scrollbars
+     * [ ] History API
+       History API
+       By: Hay Kranen and Alexander Farkas
+       Description
+       Detects support for the History API for manipulating the browser
+       session history.
+       Usage
+       history
+       View examples
+       Polyfills
+          + History.js
+            By: Benjamin Lupton
+          + HTML5 History API
+            By: Dmitrii Pakhtinov
+       More Details
+       W3C SpecMDN documentation
+     * [ ] HTML Imports
+       HTML Imports
+       Description
+       Detects support for HTML import, a feature that is used for loading
+       in Web Components.
+       Usage
+       htmlimports
+       View examples
+       Polyfills
+          + Polymer HTMLImports polyfill
+            By: Google Inc.
+       More Details
+       W3C HTML Imports SpecificationHTML Imports - #include for the web
+     * [ ] IE8 compat mode
+       IE8 compat mode
+       By: Erich Ocean
+       Description
+       Detects whether or not the current browser is IE8 in compatibility
+       mode (i.e. acting as IE7).
+       Usage
+       ie8compat
+       View examples
+     * [ ] IndexedDB
+       IndexedDB
+       This is an async detect
+       Description
+       Detects support for the IndexedDB client-side storage API (final
+       spec).
+       Usage
+       indexeddb
+       View examples
+       Polyfills
+          + IndexedDB
+            By: Parashuram
+     * [ ] IndexedDB Blob
+       IndexedDB Blob
+       Description
+       Detects if the browser can save File/Blob objects to IndexedDB
+       Usage
+       indexeddbblob
+       View examples
+     * [ ] Input attributes
+       Input attributes
+       By: Mike Taylor
+       Description
+       Detects support for HTML5 <input> element attributes and exposes
+       Boolean subproperties with the results:
+Modernizr.input.autocomplete
+Modernizr.input.autofocus
+Modernizr.input.list
+Modernizr.input.max
+Modernizr.input.min
+Modernizr.input.multiple
+Modernizr.input.pattern
+Modernizr.input.placeholder
+Modernizr.input.required
+Modernizr.input.step
+
+       Usage
+       input
+       View examples
+       known bug
+          + Some blackberry devices report false positive for
+            input.multiple
+       More Details
+       WHATWG spec
+     * [ ] input[search] search event
+       input[search] search event
+       By: Calvin Webster
+       Description
+       There is a custom search event implemented in webkit browsers when
+       using an input[search] element.
+       Usage
+       search
+       View examples
+       More Details
+       Wufoo demoCSS Tricks
+     * [ ] Form input types
+       Form input types
+       By: Mike Taylor
+       Description
+       Detects support for HTML5 form input types and exposes Boolean
+       subproperties with the results:
+Modernizr.inputtypes.color
+Modernizr.inputtypes.date
+Modernizr.inputtypes.datetime
+Modernizr.inputtypes['datetime-local']
+Modernizr.inputtypes.email
+Modernizr.inputtypes.month
+Modernizr.inputtypes.number
+Modernizr.inputtypes.range
+Modernizr.inputtypes.search
+Modernizr.inputtypes.tel
+Modernizr.inputtypes.time
+Modernizr.inputtypes.url
+Modernizr.inputtypes.week
+
+       Usage
+       inputtypes
+       View examples
+       Polyfills
+          + jQuery Tools
+            By: undefined
+          + Webshims
+            By: Alexander Farkas
+          + H5F
+            By: Ryan Seddon
+          + Web Forms 2.0
+            By: Weston Ruter
+          + NWX Forms
+            By: Diego Perini
+          + fd-slider
+            By: Brian McAllister
+          + html5slider
+            By: Frank Yan
+          + YUI Gallery HTML5 Forms
+            By: Matt Snider
+          + JSColor
+            By: Johannes Jörg Schmidt
+          + HTML5 Form Shim
+            By: Dmitry Sheiko
+          + selectedOptions.js
+            By: Brett Zamir
+          + formvalidation.js
+            By: Maksim Chemerisuk
+     * [ ] Internationalization API
+       Internationalization API
+       Description
+       Detects support for the Internationalization API which allow easy
+       formatting of number and dates and sorting string based on a locale
+       Usage
+       intl
+       View examples
+       More Details
+       MDN documentationECMAScript spec
+     * [ ] JSON
+       JSON
+       Description
+       Detects native support for JSON handling functions.
+       Usage
+       json
+       View examples
+       Polyfills
+          + JSON2
+            By: Douglas Crockford
+       More Details
+       MDN documentation
+     * [ ] Font Ligatures
+       Font Ligatures
+       Description
+       Detects support for OpenType ligatures
+       Usage
+       ligatures
+       View examples
+       More Details
+       Cross-browser Web Fonts
+     * [ ] Reverse Ordered Lists
+       Reverse Ordered Lists
+       Description
+       Detects support for the reversed attribute on the <ol> element.
+       Usage
+       olreversed
+       View examples
+       More Details
+       Impressive Webs article
+     * [ ] MathML
+       MathML
+       By: Addy Osmani, Davide P. Cervone and David Carlisle
+       Description
+       Detects support for MathML, for mathematic equations in web pages.
+       Usage
+       mathml
+       View examples
+       Polyfills
+          + MathJax
+            By: Davide P. Cervone
+       known bug
+          + Firefox < 4 will likely return a false, however it does
+            support MathML inside XHTML documents
+       More Details
+       W3C spec
+     * [ ] Message Channel
+       Message Channel
+       By: Raju Konga [kongaraju]
+       Description
+       Detects support for Message Channels, a way to communicate between
+       different browsing contexts like iframes, workers, etc..
+       Usage
+       MessageChannel
+       View examples
+       More Details
+       W3C ReferenceMDN documentation
+     * [ ] Notification
+       Notification
+       By: Theodoor van Donge and Hendrik Beskow
+       Description
+       Detects support for the Notifications API
+       Usage
+       notification
+       View examples
+       Polyfills
+          + HTML5-Desktop-Notifications
+            By: Tsvetan Tsvetkov
+          + HTML5 Notifications
+            By: Hendrik Beskow
+       known bug
+          + Possibility of false-positive on Chrome for Android if
+            permissions we're granted for a website prior to Chrome 44.
+       More Details
+       HTML5 Rocks tutorialW3C specChanges in Chrome to Notifications API
+       due to Service Worker Push Notifications
+     * [ ] Page Visibility API
+       Page Visibility API
+       Description
+       Detects support for the Page Visibility API, which can be used to
+       disable unnecessary actions and otherwise improve user experience.
+       Usage
+       pagevisibility
+       View examples
+       Polyfills
+          + Visibility.js
+            By: Andrey Sitnik
+          + visibly.js
+            By: Addy Osmani
+          + Page Visibility shim for jQuery
+            By: Mathias Bynens
+       More Details
+       MDN documentationW3C specHTML5 Rocks tutorial
+     * [ ] Navigation Timing API
+       Navigation Timing API
+       By: Scott Murphy (@uxder)
+       Description
+       Detects support for the Navigation Timing API, for measuring
+       browser and connection performance.
+       Usage
+       performance
+       View examples
+       Polyfills
+          + perf.now() polyfill
+            By: Paul Irish
+       More Details
+       W3C SpecHTML5 Rocks article
+     * [ ] DOM Pointer Events API
+       DOM Pointer Events API
+       By: Stu Cox
+       Description
+       Detects support for the DOM Pointer Events API, which provides a
+       unified event interface for pointing input devices, as implemented
+       in IE10+, Edge and Blink.
+       Usage
+       pointerevents
+       View examples
+       Polyfills
+          + pep.js
+            By: jQuery Foundation and other contributors
+       warning
+          + This property name now refers to W3C DOM PointerEvents:
+            https://github.com/Modernizr/Modernizr/issues/548#issuecomment
+            -12812099
+       More Details
+       W3C Pointer EventsW3C Pointer Events Level 2MDN documentation
+     * [ ] Pointer Lock API
+       Pointer Lock API
+       Description
+       Detects support the pointer lock API which allows you to lock the
+       mouse cursor to the browser window.
+       Usage
+       pointerlock
+       View examples
+       More Details
+       MDN documentation
+     * [ ] postMessage
+       postMessage
+       Description
+       Detects support for the window.postMessage protocol for
+       cross-document messaging.
+       Usage
+       postmessage
+       View examples
+       Polyfills
+          + easyXDM
+            By: Sean Kinsey
+          + postMessage jquery plugin
+            By: Ben Alman
+       More Details
+       W3C Spec
+     * [ ] Proximity API
+       Proximity API
+       By: Cătălin Mariș
+       Description
+       Detects support for an API that allows users to get proximity
+       related information from the device's proximity sensor.
+       Usage
+       proximity
+       View examples
+       More Details
+       MDN documentationW3C specification
+     * [ ] QuerySelector
+       QuerySelector
+       By: Andrew Betts (@triblondon)
+       Description
+       Detects support for querySelector.
+       Usage
+       queryselector
+       View examples
+       Polyfills
+          + CSS Selector Engine
+            By: Егор Халимоненко
+       More Details
+       W3C Selectors reference
+     * [ ] Quota Storage Management API
+       Quota Storage Management API
+       Description
+       Detects the ability to request a specific amount of space for
+       filesystem access
+       Usage
+       quotamanagement
+       View examples
+       More Details
+       W3C Spec
+     * [ ] requestAnimationFrame
+       requestAnimationFrame
+       By: Addy Osmani
+       Description
+       Detects support for the window.requestAnimationFrame API, for
+       offloading animation repainting to the browser for optimized
+       performance.
+       Usage
+       requestanimationframe
+       View examples
+       Polyfills
+          + requestAnimationFrame polyfill
+            By: Erik Möller
+       More Details
+       W3C spec
+     * [ ] ServiceWorker API
+       ServiceWorker API
+       Description
+       ServiceWorkers (formerly Navigation Controllers) are a way to
+       persistently cache resources to built apps that work better
+       offline.
+       Usage
+       serviceworker
+       View examples
+       More Details
+       ServiceWorkers Explained
+     * [ ] SVG
+       SVG
+       By: Erik Dahlstrom
+       Description
+       Detects support for SVG in <embed> or <object> elements.
+       Usage
+       svg
+       View examples
+       Polyfills
+          + SVG Web
+            By: Rick Masters, Brad Neuberg and James Hight
+          + Raphaël
+            By: Dmitry Baranovsky
+          + Ample SDK
+            By: Sergey Ilinsky
+          + canvg
+            By: Gabe Lerner
+          + SVG Boilerplate
+            By: Robin Berjon
+          + SIE SVG library
+            By: Hiroki Dehara
+          + Dojo GFX
+            By: Eugene Lazutkin, Kun Xi and Chris Mitchell
+          + fabric.js
+            By: Juriy Zaytsev (@kangax)
+     * [ ] Template strings
+       Template strings
+       Description
+       Template strings are string literals allowing embedded expressions.
+       Usage
+       templatestrings
+       View examples
+       More Details
+       MDN Reference
+     * [ ] Touch Events
+       Touch Events
+       Description
+       Indicates if the browser supports the W3C Touch Events API.
+       This does not necessarily reflect a touchscreen device:
+          + Older touchscreen devices only emulate mouse events
+          + Modern IE touch devices implement the Pointer Events API
+            instead: use Modernizr.pointerevents to detect support for
+            that
+          + Some browsers & OS setups may enable touch APIs when no
+            touchscreen is connected
+          + Future browsers may implement other event models for touch
+            interactions
+       See this article: You Can't Detect A Touchscreen.
+       It's recommended to bind both mouse and touch/pointer events
+       simultaneously – see this HTML5 Rocks tutorial.
+       This test will also return true for Firefox 4 Multitouch support.
+       Usage
+       touchevents
+       View examples
+       warning
+          + Indicates if the browser supports the Touch Events spec, and
+            does not necessarily reflect a touchscreen device
+       known bug
+          + False-positive on some configurations of Nokia N900
+          + False-positive on some BlackBerry 6.0 builds –
+            https://github.com/Modernizr/Modernizr/issues/372#issuecomment
+            -3112695
+       More Details
+       Touch Events spec
+     * [ ] Typed arrays
+       Typed arrays
+       By: Stanley Stuart (@fivetanley)
+       Description
+       Detects support for native binary data manipulation via Typed
+       Arrays in JavaScript.
+       Does not check for DataView support; use Modernizr.dataview for
+       that.
+       Usage
+       typedarrays
+       View examples
+       Polyfills
+          + polyfill
+            By: Joshua Bell
+       More Details
+       MDN documentationKronos spec
+     * [ ] Unicode Range
+       Unicode Range
+       Usage
+       unicoderange
+       View examples
+       More Details
+       W3C reference24 Way article
+     * [ ] Unicode characters
+       Unicode characters
+       Description
+       Detects if unicode characters are supported in the current
+       document.
+       Usage
+       unicode
+       View examples
+       warning
+          + positive Unicode support doesn't mean you can use it inside
+            <title>, this seems more related to OS & Language packs
+     * [ ] IE User Data API
+       IE User Data API
+       By: @stereobooster
+       Description
+       Detects support for IE userData for persisting data, an API similar
+       to localStorage but supported since IE5.
+       Usage
+       userdata
+       View examples
+       More Details
+       MSDN Documentation
+     * [ ] Vibration API
+       Vibration API
+       Description
+       Detects support for the API that provides access to the vibration
+       mechanism of the hosting device, to provide tactile feedback.
+       Usage
+       vibrate
+       View examples
+       More Details
+       MDN documentationW3C spec
+     * [ ] HTML5 Video
+       HTML5 Video
+       Description
+       Detects support for the video element, as well as testing what
+       types of content it supports.
+       Subproperties are provided to describe support for ogg, h264 and
+       webm formats, e.g.:
+Modernizr.video         // true
+Modernizr.video.ogg     // 'probably'
+
+       Usage
+       video
+       View examples
+       Polyfills
+          + html5media
+            By: Dave Hall
+          + MediaElement.js
+            By: John Dyer
+          + SublimeVideo
+            By: Jilion SA
+          + video.js
+            By: Steve Heffernan
+          + LeanBack Player
+            By: Kapelan Medien GmbH
+          + Video For Everybody
+            By: Kroc Camen
+       known bug
+          + Without QuickTime, `Modernizr.video.h264` will be `undefined`;
+            https://github.com/Modernizr/Modernizr/issues/546
+     * [ ] VML
+       VML
+       By: Craig Andrews (@candrews)
+       Description
+       Detects support for VML.
+       Usage
+       vml
+       View examples
+       More Details
+       W3C VML referenceMicrosoft VML reference
+     * [ ] Web Intents
+       Web Intents
+       By: Eric Bidelman
+       Description
+       Detects native support for the Web Intents APIs for service
+       discovery and inter-application communication.
+       Chrome added support for this in v19, but removed it again in v24
+       because of "a number of areas for development in both the API and
+       specific user experience in Chrome". No other browsers currently
+       support it, however a JavaScript shim is available.
+       Usage
+       webintents
+       View examples
+       Polyfills
+          + Web Intents JavaScript Shim
+            By: Paul Kinlan
+       More Details
+       Web Intents project site
+     * [ ] Web Animation API
+       Web Animation API
+       Description
+       Detects support for the Web Animation API, a way to create css
+       animations in js
+       Usage
+       animation
+       View examples
+       Polyfills
+          + web-animations-js
+            By: web-animations
+       More Details
+       Introducing Web Animations
+     * [ ] WebGL
+       WebGL
+       Usage
+       webgl
+       View examples
+       Polyfills
+          + jebgl
+            By: Martin Qvist
+          + cwebgl
+            By: Cimaron Shanahan
+          + IEWebGL
+            By: undefined
+     * [ ] WebSockets Support
+       WebSockets Support
+       By: Phread [fearphage], Mike Sherov [mikesherov] and Burak Yigit
+       Kaya [BYK]
+       Usage
+       websockets
+       View examples
+       Polyfills
+          + SockJS
+            By: Bryce Kahle
+          + socket.io
+            By: Guillermo Rauch
+          + Kaazing WebSocket Gateway
+            By: undefined
+          + web-socket-js
+            By: Hiroshi Ichikawa
+          + atmosphere jQuery plugin
+            By: Jeanfrancois Arcand
+          + Graceful WebSocket jQuery plugin
+            By: David Lindkvist
+          + Portal
+            By: Donghwan Kim
+          + DataChannel
+            By: Jesús Leganés Combarro
+       warning
+          + This test will reject any old version of WebSockets even if it
+            is not prefixed such as in Safari 5.1
+       More Details
+       CLOSING State and Spec
+     * [ ] XDomainRequest
+       XDomainRequest
+       By: Ivan Pan (@hypotenuse)
+       Description
+       Detects support for XDomainRequest in IE9 & IE8
+       Usage
+       xdomainrequest
+       View examples
+       More Details
+       MDN documentationMSDN documentation
+     * [ ] a[download] Attribute
+       a[download] Attribute
+       Description
+       When used on an <a>, this attribute signifies that the resource it
+       points to should be downloaded by the browser rather than
+       navigating to it.
+       Usage
+       adownload
+       View examples
+       More Details
+       WhatWG Reference
+     * [ ] Audio Loop Attribute
+       Audio Loop Attribute
+       Description
+       Detects if an audio element can automatically restart, once it has
+       finished
+       Usage
+       audioloop
+       View examples
+     * [ ] Audio Preload
+       Audio Preload
+       This is an async detect
+       Description
+       Detects if audio can be downloaded in the background before it
+       starts playing in the <audio> element
+       Usage
+       audiopreload
+       View examples
+       warning
+          + This test is very large – only include it if you absolutely
+            need it
+     * [ ] Web Audio API
+       Web Audio API
+       By: Addy Osmani
+       Description
+       Detects the older non standard webaudio API, (as opposed to the
+       standards based AudioContext API)
+       Usage
+       webaudio
+       View examples
+       Polyfills
+          + XAudioJS
+            By: Grant Galitz
+          + dynamicaudio.js
+            By: Ben Firshman
+          + audiolib.js
+            By: Jussi Kalliokoski
+       More Details
+       W3 Specification
+     * [ ] Low Battery Level
+       Low Battery Level
+       By: Paul Sayre
+       Description
+       Enable a developer to remove CPU intensive CSS/JS when battery is
+       low
+       Usage
+       lowbattery
+       View examples
+       More Details
+       MDN Docs
+     * [ ] canvas blending support
+       canvas blending support
+       Description
+       Detects if Photoshop style blending modes are available in canvas.
+       Usage
+       canvasblending
+       View examples
+       More Details
+       HTML5 SpecArticle
+     * [ ] canvas.toDataURL type support
+       canvas.toDataURL type support
+       Usage
+       todataurljpegtodataurlpngtodataurlwebp
+       View examples
+       More Details
+       MDN article
+     * [ ] canvas winding support
+       canvas winding support
+       Description
+       Determines if winding rules, which controls if a path can go
+       clockwise or counterclockwise
+       Usage
+       canvaswinding
+       View examples
+       More Details
+       Article
+     * [ ] getRandomValues
+       getRandomValues
+       By: komachi
+       Description
+       Detects support for the window.crypto.getRandomValues method for
+       generating cryptographically secure random numbers
+       Usage
+       getrandomvalues
+       View examples
+       Polyfills
+          + PolyCrypt
+            By: BBN Technologies
+       More Details
+       W3C Editor’s Draft
+     * [ ] cssall
+       cssall
+       Description
+       Detects support for the all css property, which is a shorthand to
+       reset all css properties (except direction and unicode-bidi) to
+       their original value
+       Usage
+       cssall
+       View examples
+       More Details
+       Spec
+     * [ ] CSS Animations
+       CSS Animations
+       Description
+       Detects whether or not elements can be animated using CSS
+       Usage
+       cssanimations
+       View examples
+       Polyfills
+          + transformie
+            By: Paul Bakaus
+          + CSS Sandpaper
+            By: Zoltan Hawryluk
+       warning
+          + Android < 4 will pass this test, but can only animate a single
+            property at a time
+       More Details
+       Article: 'Dispelling the Android CSS animation myths'
+     * [ ] Appearance
+       Appearance
+       Description
+       Detects support for the appearance css property, which is used to
+       make an element inherit the style of a standard user interface
+       element. It can also be used to remove the default styles of an
+       element, such as input and buttons.
+       Usage
+       appearance
+       View examples
+       More Details
+       MDN documentationCSS-Tricks CSS Almanac: appearance
+     * [ ] Backdrop Filter
+       Backdrop Filter
+       By: Brian Seward
+       Description
+       Detects support for CSS Backdrop Filters, allowing for background
+       blur effects like those introduced in iOS 7. Support for this was
+       added to iOS Safari/WebKit in iOS 9.
+       Usage
+       backdropfilter
+       View examples
+       More Details
+       W3C Editor’s Draft specificationCaniuse for CSS Backdrop
+       FilterWebKit Blog introduction + Demo
+     * [ ] CSS Background Blend Mode
+       CSS Background Blend Mode
+       Description
+       Detects the ability for the browser to composite backgrounds using
+       blending modes similar to ones found in Photoshop or Illustrator.
+       Usage
+       backgroundblendmode
+       View examples
+       More Details
+       CSS Blend Modes could be the next big thing in Web DesignDemo
+     * [ ] CSS Background Clip Text
+       CSS Background Clip Text
+       By: ausi
+       Description
+       Detects the ability to control specifies whether or not an
+       element's background extends beyond its border in CSS
+       Usage
+       backgroundcliptext
+       View examples
+       More Details
+       CSS Tricks ArticleMDN DocsRelated Github Issue
+     * [ ] Background Position Shorthand
+       Background Position Shorthand
+       Description
+       Detects if you can use the shorthand method to define multiple
+       parts of an element's background-position simultaniously.
+       eg background-position: right 10px bottom 10px
+       Usage
+       bgpositionshorthand
+       View examples
+       More Details
+       MDN DocsW3 SpecDemo
+     * [ ] Background Position XY
+       Background Position XY
+       By: Allan Lei and Brandom Aaron
+       Description
+       Detects the ability to control an element's background position
+       using css
+       Usage
+       bgpositionxy
+       View examples
+       More Details
+       DemoAdapted From
+     * [ ] Background Repeat
+       Background Repeat
+       By: Ryan Seddon
+       Description
+       Detects the ability to use round and space as properties for
+       background-repeat
+       Usage
+       bgrepeatspacebgrepeatround
+       View examples
+       More Details
+       MDN DocsTest PageDemo
+     * [ ] Background Size
+       Background Size
+       Usage
+       backgroundsize
+       View examples
+       known bug
+          + This will false positive in Opera Mini -
+            https://github.com/Modernizr/Modernizr/issues/396
+       More Details
+       Related Issue
+     * [ ] Background Size Cover
+       Background Size Cover
+       Usage
+       bgsizecover
+       View examples
+       More Details
+       MDN Docs
+     * [ ] Border Image
+       Border Image
+       Usage
+       borderimage
+       View examples
+       Polyfills
+          + CSS3 PIE
+            By: Jason Johnston
+       known bug
+          + Android < 2.0 is true, but has a broken implementation
+     * [ ] Border Radius
+       Border Radius
+       Usage
+       borderradius
+       View examples
+       Polyfills
+          + CSS3 PIE
+            By: Jason Johnston
+       More Details
+       Comprehensive Compat Chart
+     * [ ] Box Shadow
+       Box Shadow
+       Usage
+       boxshadow
+       View examples
+       known bug
+          + WebOS false positives on this test.
+          + The Kindle Silk browser false positives
+     * [ ] Box Sizing
+       Box Sizing
+       Usage
+       boxsizing
+       View examples
+       Polyfills
+          + borderBoxModel
+            By: Alberto Gasparin
+          + box-sizing-polyfill
+            By: Christian "Schepp" Schaefer
+          + Borderbox for Compass
+            By: Richard Herrera
+       More Details
+       MDN DocsRelated Github Issue
+     * [ ] CSS Calc
+       CSS Calc
+       By: @calvein
+       Description
+       Method of allowing calculated values for length units. For example:
+//lem {
+  width: calc(100% - 3em);
+}
+
+       Usage
+       csscalc
+       View examples
+     * [ ] CSS :checked pseudo-selector
+       CSS :checked pseudo-selector
+       Usage
+       checked
+       View examples
+       More Details
+       Related Github Issue
+     * [ ] CSS Font ch Units
+       CSS Font ch Units
+       By: Ron Waldon (@jokeyrhyme)
+       Usage
+       csschunit
+       View examples
+       More Details
+       W3C Spec
+     * [ ] CSS Columns
+       CSS Columns
+       Usage
+       csscolumns
+       View examples
+       Polyfills
+          + css3-multi-column.js
+            By: Betley Whitehorne Image and Cdric Savarese
+     * [ ] CSS Grid (old & new)
+       CSS Grid (old & new)
+       By: Faruk Ates
+       Usage
+       cssgridcssgridlegacy
+       View examples
+       More Details
+       The new, standardized CSS GridThe _old_ CSS Grid (legacy)
+     * [ ] CSS Cubic Bezier Range
+       CSS Cubic Bezier Range
+       By: @calvein
+       Usage
+       cubicbezierrange
+       View examples
+       warning
+          + cubic-bezier values can't be > 1 for Webkit until [bug
+            #45761](https://bugs.webkit.org/show_bug.cgi?id=45761) is
+            fixed
+       More Details
+       Comprehensive Compat Chart
+     * [ ] CSS Display run-in
+       CSS Display run-in
+       By: alanhogan
+       Usage
+       display-runin
+       View examples
+       More Details
+       CSS Tricks ArticleRelated Github Issue
+     * [ ] CSS Display table
+       CSS Display table
+       By: scottjehl
+       Description
+       display: table and table-cell test. (both are tested under one name
+       table-cell )
+       Usage
+       displaytable
+       View examples
+       More Details
+       Detects for all additional table display values
+     * [ ] CSS text-overflow ellipsis
+       CSS text-overflow ellipsis
+       Usage
+       ellipsis
+       View examples
+       Polyfills
+          + jQuery text-overflow
+            By: Devon Govett
+     * [ ] CSS.escape()
+       CSS.escape()
+       Description
+       Tests for CSS.escape() support.
+       Usage
+       cssescape
+       View examples
+       Polyfills
+          + CSS.escape()
+            By: Mathias Bynens
+     * [ ] CSS Font ex Units
+       CSS Font ex Units
+       By: Ron Waldon (@jokeyrhyme)
+       Usage
+       cssexunit
+       View examples
+       More Details
+       W3C Spec
+     * [ ] CSS Filters
+       CSS Filters
+       Usage
+       cssfilters
+       View examples
+       Polyfills
+          + Polyfilter
+            By: Christian "Schepp" Schaefer
+       More Details
+       MDN article on CSS filters
+     * [ ] Flexbox
+       Flexbox
+       Description
+       Detects support for the Flexible Box Layout model, a.k.a. Flexbox,
+       which allows easy manipulation of layout order and sizing within a
+       container.
+       Usage
+       flexbox
+       View examples
+       warning
+          + A `true` result for this detect does not imply that the
+            `flex-wrap` property is supported; see the `flexwrap` detect.
+       More Details
+       The _new_ flexbox
+     * [ ] Flexbox (legacy)
+       Flexbox (legacy)
+       Usage
+       flexboxlegacy
+       View examples
+       Polyfills
+          + Flexie
+            By: Richard Herrera
+       More Details
+       The _old_ flexbox
+     * [ ] Flexbox (tweener)
+       Flexbox (tweener)
+       Usage
+       flexboxtweener
+       View examples
+       Polyfills
+          + Flexie
+            By: Richard Herrera
+       warning
+          + This represents an old syntax, not the latest standard syntax.
+       More Details
+       The _inbetween_ flexbox
+     * [ ] Flex Line Wrapping
+       Flex Line Wrapping
+       Description
+       Detects support for the flex-wrap CSS property, part of Flexbox,
+       which isn’t present in all Flexbox implementations (notably
+       Firefox).
+       This featured in both the 'tweener' syntax (implemented by IE10)
+       and the 'modern' syntax (implemented by others). This detect will
+       return true for either of these implementations, as long as the
+       flex-wrap property is supported. So to ensure the modern syntax is
+       supported, use together with Modernizr.flexbox:
+if (Modernizr.flexbox && Modernizr.flexwrap) {
+  // Modern Flexbox with `flex-wrap` supported
+}
+else {
+  // Either old Flexbox syntax, or `flex-wrap` not supported
+}
+
+       Usage
+       flexwrap
+       View examples
+       warning
+          + Does not imply a modern implementation – see documentation.
+       More Details
+       W3C Flexible Box Layout spec
+     * [ ] CSS :focus-within pseudo-selector
+       CSS :focus-within pseudo-selector
+       Usage
+       focuswithin
+       View examples
+     * [ ] @font-face
+       @font-face
+       By: Diego Perini and Mat Marquis
+       Usage
+       fontface
+       View examples
+       known bug
+          + False Positive: WebOS
+            https://github.com/Modernizr/Modernizr/issues/342
+          + False Postive: WP7
+            https://github.com/Modernizr/Modernizr/issues/538
+       More Details
+       @font-face detection routine by Diego PeriniFilament Group
+       @font-face compatibility researchFilament Grunticon/@font-face
+       device testing resultsCSS fonts on Android@font-face and Android
+     * [ ] CSS Generated Content
+       CSS Generated Content
+       Usage
+       generatedcontent
+       View examples
+       warning
+          + Android won't return correct height for anything below 7px
+            #738
+       More Details
+       W3C CSS Selectors Level 3 specMDN article on :beforeMDN article on
+       :after
+     * [ ] CSS Gradients
+       CSS Gradients
+       Usage
+       cssgradients
+       View examples
+       known bug
+          + False-positives on webOS
+            (https://github.com/Modernizr/Modernizr/issues/202)
+       More Details
+       Webkit Gradient SyntaxLinear Gradient SyntaxW3C Gradient Spec
+     * [ ] CSS Hairline
+       CSS Hairline
+       By: strarsis
+       Description
+       Detects support for hidpi/retina hairlines, which are CSS borders
+       with less than 1px in width, for being physically 1px on hidpi
+       screens.
+       Usage
+       hairline
+       View examples
+       More Details
+       Blog post about CSS retina hairlinesDerived from
+     * [ ] CSS HSLA Colors
+       CSS HSLA Colors
+       Usage
+       hsla
+       View examples
+     * [ ] CSS Hyphens
+       CSS Hyphens
+       By: David Newton
+       This is an async detect
+       Usage
+       csshyphenssofthyphenssofthyphensfind
+       View examples
+       warning
+          + These tests currently require document.body to be present
+          + If loading Hyphenator.js via yepnope, be cautious of issue
+            158: http://code.google.com/p/hyphenator/issues/detail?id=158
+          + This is very large – only include it if you absolutely need it
+       More Details
+       The Current State of Hyphenation on the Web.Hyphenation Test
+       PageHyphenation is Language SpecificRelated Modernizr Issue
+     * [ ] CSS :invalid pseudo-class
+       CSS :invalid pseudo-class
+       Description
+       Detects support for the ':invalid' CSS pseudo-class.
+       Usage
+       cssinvalid
+       View examples
+       More Details
+       MDN documentation
+     * [ ] CSS :last-child pseudo-selector
+       CSS :last-child pseudo-selector
+       Usage
+       lastchild
+       View examples
+       More Details
+       Related Github Issue
+     * [ ] CSS Mask
+       CSS Mask
+       Usage
+       cssmask
+       View examples
+       More Details
+       Webkit blog on CSS MasksSafari DocsCSS SVG maskCombine with
+       clippaths for awesomeness
+     * [ ] CSS Media Queries
+       CSS Media Queries
+       Usage
+       mediaqueries
+       View examples
+     * [ ] CSS Multiple Backgrounds
+       CSS Multiple Backgrounds
+       Usage
+       multiplebgs
+       View examples
+     * [ ] CSS :nth-child pseudo-selector
+       CSS :nth-child pseudo-selector
+       By: @emilchristensen
+       Description
+       Detects support for the ':nth-child()' CSS pseudo-selector.
+       Usage
+       nthchild
+       View examples
+       warning
+          + Known false negative in Safari 3.1 and Safari 3.2.2
+       More Details
+       Related Github IssueSitepoint :nth-child documentation
+     * [ ] CSS Object Fit
+       CSS Object Fit
+       Usage
+       objectfit
+       View examples
+       More Details
+       Opera Article on Object Fit
+     * [ ] CSS Opacity
+       CSS Opacity
+       Usage
+       opacity
+       View examples
+     * [ ] CSS Overflow Scrolling
+       CSS Overflow Scrolling
+       Usage
+       overflowscrolling
+       View examples
+       warning
+          + Introduced in iOS5b2. API is subject to change.
+       More Details
+       Article on iOS overflow scrolling
+     * [ ] CSS Pointer Events
+       CSS Pointer Events
+       By: ausi
+       Usage
+       csspointerevents
+       View examples
+       More Details
+       MDN DocsTest Project PageTest Project WikiRelated Github Issue
+     * [ ] CSS position: sticky
+       CSS position: sticky
+       Usage
+       csspositionsticky
+       View examples
+       warning
+          + using position:sticky on anything but top aligned elements is
+            buggy in Chrome < 37 and iOS <=7+
+       More Details
+       Chrome bug report
+     * [ ] CSS Generated Content Animations
+       CSS Generated Content Animations
+       Usage
+       csspseudoanimations
+       View examples
+     * [ ] CSS Generated Content Transitions
+       CSS Generated Content Transitions
+       Usage
+       csspseudotransitions
+       View examples
+     * [ ] CSS Reflections
+       CSS Reflections
+       Usage
+       cssreflections
+       View examples
+     * [ ] CSS Regions
+       CSS Regions
+       By: Mihai Balan
+       Usage
+       regions
+       View examples
+       More Details
+       W3C Specification
+     * [ ] CSS Font rem Units
+       CSS Font rem Units
+       By: nsfmc
+       Usage
+       cssremunit
+       View examples
+       More Details
+       W3C SpecFont Size with rem by Jonathan Snook
+     * [ ] CSS UI Resize
+       CSS UI Resize
+       Description
+       Test for CSS 3 UI "resize" property
+       Usage
+       cssresize
+       View examples
+       More Details
+       W3C SpecificationMDN Docs
+     * [ ] CSS rgba
+       CSS rgba
+       Usage
+       rgba
+       View examples
+       More Details
+       CSSTricks Tutorial
+     * [ ] CSS Stylable Scrollbars
+       CSS Stylable Scrollbars
+       Usage
+       cssscrollbar
+       View examples
+     * [ ] Scroll Snap Points
+       Scroll Snap Points
+       Description
+       Detects support for CSS Snap Points
+       Usage
+       scrollsnappoints
+       View examples
+       Polyfills
+          + scrollsnap-polyfill.js
+            By: Clemens Krack
+       More Details
+       Setting native-like scrolling offsets in CSS with Scrolling Snap
+       PointsMDN Article
+     * [ ] CSS Shapes
+       CSS Shapes
+       Usage
+       shapes
+       View examples
+       More Details
+       CSS Shapes W3C specificationExamples from AdobeSamples showcasing
+       uses of Shapes
+     * [ ] CSS general sibling selector
+       CSS general sibling selector
+       Usage
+       siblinggeneral
+       View examples
+       More Details
+       Related Github Issue
+     * [ ] CSS Subpixel Fonts
+       CSS Subpixel Fonts
+       By: @derSchepp, @gerritvanaaken, @rodneyrehm, @yatil and
+       @ryanseddon
+       Usage
+       subpixelfont
+       View examples
+       More Details
+       Origin Test
+     * [ ] CSS Supports
+       CSS Supports
+       Usage
+       supports
+       View examples
+       More Details
+       W3 SpecRelated Github IssueW3 Info
+     * [ ] CSS :target pseudo-class
+       CSS :target pseudo-class
+       By: @zachleat
+       Description
+       Detects support for the ':target' CSS pseudo-class.
+       Usage
+       target
+       View examples
+       warning
+          + Opera Mini supports :target but doesn't update the hash for
+            anchor links.
+       More Details
+       MDN documentation
+     * [ ] CSS text-align-last
+       CSS text-align-last
+       Usage
+       textalignlast
+       View examples
+       known bug
+          + IE does not support the 'start' or 'end' values.
+       More Details
+       QuicksmodeMDN
+     * [ ] CSS textshadow
+       CSS textshadow
+       Usage
+       textshadow
+       View examples
+       known bug
+          + FF3.0 will false positive on this test
+     * [ ] CSS Transforms
+       CSS Transforms
+       Usage
+       csstransforms
+       View examples
+     * [ ] CSS Transforms 3D
+       CSS Transforms 3D
+       Usage
+       csstransforms3d
+       View examples
+       warning
+          + Chrome may occassionally fail this test on some systems; more
+            info:
+            https://code.google.com/p/chromium/issues/detail?id=129004
+     * [ ] CSS Transforms Level 2
+       CSS Transforms Level 2
+       By: rupl
+       Usage
+       csstransformslevel2
+       View examples
+       More Details
+       CSSWG Draft Spec
+     * [ ] CSS Transform Style preserve-3d
+       CSS Transform Style preserve-3d
+       By: denyskoch and aFarkas
+       Description
+       Detects support for transform-style: preserve-3d, for getting a
+       proper 3D perspective on elements.
+       Usage
+       preserve3d
+       View examples
+       More Details
+       MDN DocsRelated Github Issue
+     * [ ] CSS Transitions
+       CSS Transitions
+       Usage
+       csstransitions
+       View examples
+     * [ ] CSS user-select
+       CSS user-select
+       By: ryan seddon
+       Usage
+       userselect
+       View examples
+       More Details
+       Related Modernizr Issue
+     * [ ] CSS :valid pseudo-class
+       CSS :valid pseudo-class
+       Description
+       Detects support for the ':valid' CSS pseudo-class.
+       Usage
+       cssvalid
+       View examples
+       More Details
+       MDN documentation
+     * [ ] Variable Open Type Fonts
+       Variable Open Type Fonts
+       By: Patrick Kettner
+       Usage
+       variablefonts
+       View examples
+       More Details
+       Variable fonts on the webVariable fonts for responsive design
+     * [ ] CSS vh unit
+       CSS vh unit
+       Usage
+       cssvhunit
+       View examples
+       More Details
+       Related Modernizr IssueSimilar JSFiddle
+     * [ ] CSS vmax unit
+       CSS vmax unit
+       Usage
+       cssvmaxunit
+       View examples
+       More Details
+       Related Modernizr IssueJSFiddle Example
+     * [ ] CSS vmin unit
+       CSS vmin unit
+       Usage
+       cssvminunit
+       View examples
+       More Details
+       Related Modernizr IssueJSFiddle Example
+     * [ ] CSS vw unit
+       CSS vw unit
+       Usage
+       cssvwunit
+       View examples
+       More Details
+       Related Modernizr IssueJSFiddle Example
+     * [ ] will-change
+       will-change
+       Description
+       Detects support for the will-change css property, which formally
+       signals to the browser that an element will be animating.
+       Usage
+       willchange
+       View examples
+       More Details
+       Spec
+     * [ ] CSS wrap-flow
+       CSS wrap-flow
+       Usage
+       wrapflow
+       View examples
+       More Details
+       W3C Exclusions specExample by Adobe
+     * [ ] classList
+       classList
+       Usage
+       classlist
+       View examples
+       More Details
+       MDN Docs
+     * [ ] createElement with Attributes
+       createElement with Attributes
+       By: James A. Rosen
+       Usage
+       createelementattrscreateelement-attrs
+       View examples
+       More Details
+       Related Github Issue
+     * [ ] dataset API
+       dataset API
+       By: @phiggins42
+       Usage
+       dataset
+       View examples
+     * [ ] Document Fragment
+       Document Fragment
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Append multiple elements to the DOM within a single insertion.
+       Usage
+       documentfragment
+       View examples
+       known bug
+          + false-positive on Blackberry 9500, see QuirksMode note
+       More Details
+       W3C DOM Level 1 ReferenceSitePoint ReferenceQuirksMode
+       Compatibility Tables
+     * [ ] [hidden] Attribute
+       [hidden] Attribute
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Does the browser support the HTML5 [hidden] attribute?
+       Usage
+       hidden
+       View examples
+       Polyfills
+          + HTML5 Shiv
+            By: Alexander Farkas (@aFarkas), Jonathan Neal
+            (@jonathantneal) and Paul Irish (@paulirish)
+       More Details
+       WHATWG: The hidden attributeoriginal implementation of detect code
+     * [ ] microdata
+       microdata
+       Usage
+       microdata
+       View examples
+       More Details
+       W3 Spec
+     * [ ] DOM4 MutationObserver
+       DOM4 MutationObserver
+       By: Karel Sedláček (@ksdlck)
+       Description
+       Determines if DOM4 MutationObserver support is available.
+       Usage
+       mutationobserver
+       View examples
+       Polyfills
+          + Mutation Observers polyfill
+            By: Google Inc.
+       More Details
+       MDN documentation
+     * [ ] Passive event listeners
+       Passive event listeners
+       By: Rick Byers
+       Description
+       Detects support for the passive option to addEventListener.
+       Usage
+       passiveeventlisteners
+       View examples
+       More Details
+       WHATWG specificationWICG explainer
+     * [ ] bdi Element
+       bdi Element
+       Description
+       Detect support for the bdi element, a way to have text that is
+       isolated from its possibly bidirectional surroundings
+       Usage
+       bdi
+       View examples
+       More Details
+       MDN Overview
+     * [ ] datalist Element
+       datalist Element
+       Usage
+       datalistelem
+       View examples
+       warning
+          + This test is a dupe of Modernizr.input.list. Only around for
+            legacy reasons.
+       More Details
+       CSS Tricks ArticleMike Taylor Code
+     * [ ] details Element
+       details Element
+       By: @mathias
+       Usage
+       details
+       View examples
+       More Details
+       Mathias' Original
+     * [ ] output Element
+       output Element
+       Usage
+       outputelem
+       View examples
+       More Details
+       WhatWG Spec
+     * [ ] picture Element
+       picture Element
+       By: Scott Jehl and Mat Marquis
+       Usage
+       picture
+       View examples
+       More Details
+       SpecificationRelevant spec issue
+     * [ ] progress Element
+       progress Element
+       By: Stefan Wallin
+       Usage
+       progressbarmeter
+       View examples
+     * [ ] ruby, rp, rt Elements
+       ruby, rp, rt Elements
+       By: Cătălin Mariș
+       Usage
+       ruby
+       View examples
+       More Details
+       WHATWG Specification
+     * [ ] Template Tag
+       Template Tag
+       Usage
+       template
+       View examples
+       More Details
+       HTML5Rocks ArticleW3 Spec
+     * [ ] time Element
+       time Element
+       Usage
+       time
+       View examples
+       More Details
+       WhatWG Spec
+     * [ ] Track element and Timed Text Track
+       Track element and Timed Text Track
+       By: Addy Osmani
+       Usage
+       texttrackapitrack
+       View examples
+       warning
+          + While IE10 has implemented the track element, IE10 does not
+            expose the underlying APIs to create timed text tracks by JS
+            (really sad)
+       More Details
+       W3 track Element SpecW3 track API Spec
+     * [ ] Unknown Elements
+       Unknown Elements
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Does the browser support HTML with non-standard / new elements?
+       Usage
+       unknownelements
+       View examples
+       Polyfills
+          + HTML5 Shiv
+            By: Alexander Farkas (@aFarkas), Jonathan Neal
+            (@jonathantneal) and Paul Irish (@paulirish)
+       More Details
+       The Story of the HTML5 Shivoriginal implementation of detect code
+     * [ ] ES5 Array
+       ES5 Array
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 5 Array per specification.
+       Usage
+       es5array
+       View examples
+       Polyfills
+          + ES5 Shim
+            By: undefined
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5 Date
+       ES5 Date
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 5 Date per specification.
+       Usage
+       es5date
+       View examples
+       Polyfills
+          + ES5 Shim
+            By: undefined
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5 Function
+       ES5 Function
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 5 Function per
+       specification.
+       Usage
+       es5function
+       View examples
+       Polyfills
+          + ES5 Shim
+            By: undefined
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5 Object
+       ES5 Object
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 5 Object per specification.
+       Usage
+       es5object
+       View examples
+       Polyfills
+          + ES5 Shim
+            By: undefined
+          + ES5 Sham
+            By: undefined
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5
+       ES5
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements everything as specified in ECMAScript
+       5.
+       Usage
+       es5
+       View examples
+       Polyfills
+          + ES5 Shim
+            By: undefined
+          + ES5 Sham
+            By: undefined
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5 Strict Mode
+       ES5 Strict Mode
+       By: @kangax
+       Description
+       Check if browser implements ECMAScript 5 Object strict mode.
+       Usage
+       strictmode
+       View examples
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5 String
+       ES5 String
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 5 String per specification.
+       Usage
+       es5string
+       View examples
+       Polyfills
+          + ES5 Shim
+            By: undefined
+       More Details
+       ECMAScript 5.1 Language Specification
+     * [ ] ES5 Syntax
+       ES5 Syntax
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser accepts ECMAScript 5 syntax.
+       Usage
+       es5syntax
+       View examples
+       warning
+          + This detect uses `eval()`, so CSP may be a problem.
+       More Details
+       ECMAScript 5.1 Language Specificationoriginal implementation of
+       detect code
+     * [ ] ES5 Immutable Undefined
+       ES5 Immutable Undefined
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser prevents assignment to global undefined per
+       ECMAScript 5.
+       Usage
+       es5undefined
+       View examples
+       More Details
+       ECMAScript 5.1 Language Specificationoriginal implementation of
+       detect code
+     * [ ] ES6 Array
+       ES6 Array
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 6 Array per specification.
+       Usage
+       es6array
+       View examples
+       Polyfills
+          + ES6 Shim
+            By: undefined
+       warning
+          + ECMAScript 6 is still a only a draft, so this detect may not
+            match the final specification or implementations.
+       More Details
+       unofficial ECMAScript 6 draft specification
+     * [ ] ES6 Arrow Functions
+       ES6 Arrow Functions
+       By: Vincent Riemer
+       Description
+       Check if browser implements ECMAScript 6 Arrow Functions per
+       specification.
+       Usage
+       arrow
+       View examples
+     * [ ] ES6 Collections
+       ES6 Collections
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 6 Map, Set, WeakMap and
+       WeakSet
+       Usage
+       es6collections
+       View examples
+       Polyfills
+          + ES6 Shim
+            By: undefined
+          + ES6 WeakMap
+            By: Google Inc.
+       warning
+          + ECMAScript 6 is still a only a draft, so this detect may not
+            match the final specification or implementations.
+       More Details
+       unofficial ECMAScript 6 draft specification
+     * [ ] ES5 String.prototype.contains
+       ES5 String.prototype.contains
+       By: Robert Kowalski
+       Description
+       Check if browser implements ECMAScript 6 String.prototype.contains
+       per specification.
+       Usage
+       contains
+       View examples
+     * [ ] ES6 Generators
+       ES6 Generators
+       By: Michael Kachanovskyi
+       Description
+       Check if browser implements ECMAScript 6 Generators per
+       specification.
+       Usage
+       generators
+       View examples
+     * [ ] ES6 Math
+       ES6 Math
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 6 Math per specification.
+       Usage
+       es6math
+       View examples
+       Polyfills
+          + ES6 Shim
+            By: undefined
+       warning
+          + ECMAScript 6 is still a only a draft, so this detect may not
+            match the final specification or implementations.
+       More Details
+       unofficial ECMAScript 6 draft specification
+     * [ ] ES6 Number
+       ES6 Number
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 6 Number per specification.
+       Usage
+       es6number
+       View examples
+       Polyfills
+          + ES6 Shim
+            By: undefined
+       warning
+          + ECMAScript 6 is still a only a draft, so this detect may not
+            match the final specification or implementations.
+       More Details
+       unofficial ECMAScript 6 draft specification
+     * [ ] ES6 Object
+       ES6 Object
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 6 Object per specification.
+       Usage
+       es6object
+       View examples
+       Polyfills
+          + ES6 Shim
+            By: undefined
+       warning
+          + ECMAScript 6 is still a only a draft, so this detect may not
+            match the final specification or implementations.
+       More Details
+       unofficial ECMAScript 6 draft specification
+     * [ ] ES6 Promises
+       ES6 Promises
+       By: Krister Kari and Jake Archibald
+       Description
+       Check if browser implements ECMAScript 6 Promises per
+       specification.
+       Usage
+       promises
+       View examples
+       Polyfills
+          + ES6-Promises
+            By: Jake Archibald
+       More Details
+       The ES6 promises specChromium dashboard - ES6 PromisesJavaScript
+       Promises: There and back again - HTML5 Rocks
+     * [ ] ES6 String
+       ES6 String
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements ECMAScript 6 String per specification.
+       Usage
+       es6string
+       View examples
+       Polyfills
+          + ES6 Shim
+            By: undefined
+       warning
+          + ECMAScript 6 is still a only a draft, so this detect may not
+            match the final specification or implementations.
+       More Details
+       unofficial ECMAScript 6 draft specification
+     * [ ] Orientation and Motion Events
+       Orientation and Motion Events
+       By: Shi Chuan
+       Description
+       Part of Device Access aspect of HTML5, same category as
+       geolocation.
+       devicemotion tests for Device Motion Event support, returns boolean
+       value true/false.
+       deviceorientation tests for Device Orientation Event support,
+       returns boolean value true/false
+       Usage
+       devicemotiondeviceorientation
+       View examples
+       More Details
+       W3C Editor's DraftImplementation by iOS Safari
+       (Orientation)Implementation by iOS Safari (Motion)
+     * [ ] onInput Event
+       onInput Event
+       By: Patrick Kettner
+       Description
+       oninput tests if the browser is able to detect the input event
+       Usage
+       oninput
+       View examples
+       More Details
+       MDN articleWHATWG specDetecting onInput support
+     * [ ] File API
+       File API
+       Description
+       filereader tests for the File API specification
+       Tests for objects specific to the File API W3C specification
+       without being redundant (don't bother testing for Blob since it is
+       assumed to be the File object's prototype.)
+       Usage
+       filereader
+       View examples
+       known bug
+          + Will fail in Safari 5 due to its lack of support for the
+            standards defined FileReader object
+       More Details
+       W3C Working Draft
+     * [ ] Filesystem API
+       Filesystem API
+       By: Eric Bidelman (@ebidel)
+       Usage
+       filesystem
+       View examples
+       known bug
+          + The API will be present in Chrome incognito, but will throw an
+            exception. See crbug.com/93417
+       More Details
+       W3 Draft
+     * [ ] input[capture] Attribute
+       input[capture] Attribute
+       Description
+       When used on an <input>, this attribute signifies that the resource
+       it takes should be generated via device's camera, camcorder, sound
+       recorder.
+       Usage
+       capture
+       View examples
+       More Details
+       W3C draft: HTML Media Capture
+     * [ ] input[file] Attribute
+       input[file] Attribute
+       Description
+       Detects whether input type="file" is available on the platform
+       E.g. iOS < 6 and some android version don't support this
+       Usage
+       fileinput
+       View examples
+     * [ ] input[directory] Attribute
+       input[directory] Attribute
+       By: silverwind
+       Description
+       When used on an <input type="file">, the directory attribute
+       instructs the user agent to present a directory selection dialog
+       instead of the usual file selection dialog.
+       Usage
+       directory
+       View examples
+     * [ ] input[form] Attribute
+       input[form] Attribute
+       Description
+       Detects whether input form="form_id" is available on the platform
+       E.g. IE 10 (and below), don't support this
+       Usage
+       formattribute
+       View examples
+     * [ ] input[type="number"] Localization
+       input[type="number"] Localization
+       By: Peter Janes
+       Description
+       Detects whether input type="number" is capable of receiving and
+       displaying localized numbers, e.g. with comma separator.
+       Usage
+       localizednumber
+       View examples
+       known bug
+          + Only ever returns true if the browser/OS is configured to use
+            comma as a decimal separator. This is probably fine for most
+            use cases.
+       More Details
+       Webkit Bug Tracker ListingBased on This
+     * [ ] placeholder attribute
+       placeholder attribute
+       Description
+       Tests for placeholder attribute in inputs and textareas
+       Usage
+       placeholder
+       View examples
+     * [ ] form#requestAutocomplete()
+       form#requestAutocomplete()
+       Description
+       When used with input[autocomplete] to annotate a form,
+       form.requestAutocomplete() shows a dialog in Chrome that speeds up
+       checkout flows (payments specific for now).
+       Usage
+       requestautocomplete
+       View examples
+       More Details
+       WHATWG proposed spec
+     * [ ] Form Validation
+       Form Validation
+       Description
+       This implementation only tests support for interactive form
+       validation. To check validation for a specific type or a specific
+       other constraint, the test can be combined:
+          + Modernizr.inputtypes.number && Modernizr.formvalidation
+            (browser supports rangeOverflow, typeMismatch etc. for
+            type=number)
+          + Modernizr.input.required && Modernizr.formvalidation (browser
+            supports valueMissing)
+       Usage
+       formvalidation
+       View examples
+     * [ ] iframe[sandbox] Attribute
+       iframe[sandbox] Attribute
+       Description
+       Test for sandbox attribute in iframes.
+       Usage
+       sandbox
+       View examples
+       known bug
+          + False-positive on Firefox < 29
+       More Details
+       WhatWG Spec
+     * [ ] iframe[seamless] Attribute
+       iframe[seamless] Attribute
+       Description
+       Test for seamless attribute in iframes.
+       Usage
+       seamless
+       View examples
+       More Details
+       WhatWG Spec
+     * [ ] iframe[srcdoc] Attribute
+       iframe[srcdoc] Attribute
+       Description
+       Test for srcdoc attribute in iframes.
+       Usage
+       srcdoc
+       View examples
+       More Details
+       WhatWG Spec
+     * [ ] Animated PNG
+       Animated PNG
+       This is an async detect
+       Description
+       Test for animated png support.
+       Usage
+       apng
+       View examples
+       More Details
+       Wikipedia Article
+     * [ ] Image crossOrigin
+       Image crossOrigin
+       Description
+       Detects support for the crossOrigin attribute on images, which
+       allow for cross domain images inside of a canvas without tainting
+       it
+       Usage
+       imgcrossorigin
+       View examples
+       More Details
+       Cross Domain Images and the Tainted Canvas
+     * [ ] JPEG 2000
+       JPEG 2000
+       By: @eric_wvgg
+       This is an async detect
+       Description
+       Test for JPEG 2000 support
+       Usage
+       jpeg2000
+       View examples
+       More Details
+       Wikipedia Article
+     * [ ] JPEG XR (extended range)
+       JPEG XR (extended range)
+       This is an async detect
+       Description
+       Test for JPEG XR support
+       Usage
+       jpegxr
+       View examples
+       More Details
+       Wikipedia Article
+     * [ ] sizes attribute
+       sizes attribute
+       By: Mat Marquis
+       This is an async detect
+       Description
+       Test for the sizes attribute on images
+       Usage
+       sizes
+       View examples
+       More Details
+       SpecUsage Details
+     * [ ] srcset attribute
+       srcset attribute
+       Description
+       Test for the srcset attribute of images
+       Usage
+       srcset
+       View examples
+       More Details
+       Smashing Magazine ArticleGenerate multi-resolution images for
+       srcset with Grunt
+     * [ ] Webp Alpha
+       Webp Alpha
+       By: Krister Kari, Rich Bradshaw, Ryan Seddon and Paul Irish
+       This is an async detect
+       Description
+       Tests for transparent webp support.
+       Usage
+       webpalpha
+       View examples
+       More Details
+       WebP InfoArticle about WebP support on Android browsersChromium
+       WebP announcement
+     * [ ] Webp Animation
+       Webp Animation
+       By: Krister Kari, Rich Bradshaw, Ryan Seddon and Paul Irish
+       This is an async detect
+       Description
+       Tests for animated webp support.
+       Usage
+       webpanimation
+       View examples
+       More Details
+       WebP InfoChromium blog - Chrome 32 Beta: Animated WebP images and
+       faster Chrome for Android touch input
+     * [ ] Webp Lossless
+       Webp Lossless
+       By: @amandeep, Rich Bradshaw, Ryan Seddon and Paul Irish
+       This is an async detect
+       Description
+       Tests for non-alpha lossless webp support.
+       Usage
+       webplosslesswebp-lossless
+       View examples
+       More Details
+       Webp InfoWebp Lossless Spec
+     * [ ] Webp
+       Webp
+       By: Krister Kari, @amandeep, Rich Bradshaw, Ryan Seddon and Paul
+       Irish
+       This is an async detect
+       Description
+       Tests for lossy, non-alpha webp support.
+       Tests for all forms of webp support (lossless, lossy, alpha, and
+       animated)..
+       Modernizr.webp // Basic support (lossy) Modernizr.webp.lossless //
+       Lossless Modernizr.webp.alpha // Alpha (both lossy and lossless)
+       Modernizr.webp.animation // Animated WebP
+       Usage
+       webp
+       View examples
+       More Details
+       Webp InfoChormium blog - Chrome 32 Beta: Animated WebP images and
+       faster Chrome for Android touch inputWebp Lossless SpecArticle
+       about WebP support on Android browsersChormium WebP announcement
+     * [ ] input formaction
+       input formaction
+       Description
+       Detect support for the formaction attribute on form inputs
+       Usage
+       inputformaction
+       View examples
+       Polyfills
+          + Webshims
+            By: Alexander Farkas
+       More Details
+       WHATWG SpecWufoo demo
+     * [ ] input formenctype
+       input formenctype
+       Description
+       Detect support for the formenctype attribute on form inputs, which
+       overrides the form enctype attribute
+       Usage
+       inputformenctype
+       View examples
+       Polyfills
+          + HTML5 Form Shim
+            By: Dmitry Sheiko
+       More Details
+       WHATWG SpecWufoo demo
+     * [ ] input formmethod
+       input formmethod
+       Description
+       Detect support for the formmethod attribute on form inputs
+       Usage
+       inputformmethod
+       View examples
+       Polyfills
+          + Webshims
+            By: Alexander Farkas
+       More Details
+       WHATWG SpecWufoo demo
+     * [ ] input formtarget
+       input formtarget
+       Description
+       Detect support for the formtarget attribute on form inputs, which
+       overrides the form target attribute
+       Usage
+       inputformtarget
+       View examples
+       Polyfills
+          + HTML5 Form Shim
+            By: Dmitry Sheiko
+       More Details
+       WHATWG SpecWufoo demo
+     * [ ] Hover Media Query
+       Hover Media Query
+       Description
+       Detect support for Hover based media queries
+       Usage
+       hovermq
+       View examples
+       More Details
+       //Name of reference document
+     * [ ] Pointer Media Query
+       Pointer Media Query
+       Description
+       Detect support for Pointer based media queries
+       Usage
+       pointermq
+       View examples
+       More Details
+       //Name of reference document
+     * [ ] Beacon API
+       Beacon API
+       By: Cătălin Mariș
+       Description
+       Detects support for an API that allows for asynchronous transfer of
+       small HTTP data from the client to a server.
+       Usage
+       beacon
+       View examples
+       More Details
+       MDN documentationW3C specification
+     * [ ] Low Bandwidth Connection
+       Low Bandwidth Connection
+       Description
+       Tests for determining low-bandwidth via navigator.connection
+       There are two iterations of the navigator.connection interface.
+       The first is present in Android 2.2+ and only in the Browser (not
+       WebView)
+          + http://docs.phonegap.com/en/1.2.0/phonegap_connection_connecti
+            on.md.html#connection.type
+          + http://davidbcalhoun.com/2010/using-navigator-connection-andro
+            id
+       The second is specced at http://dev.w3.org/2009/dap/netinfo/ and
+       perhaps landing in WebKit
+          + https://bugs.webkit.org/show_bug.cgi?id=73528
+       Unknown devices are assumed as fast
+       For more rigorous network testing, consider boomerang.js:
+       https://github.com/bluesmoon/boomerang/
+       Usage
+       lowbandwidth
+       View examples
+     * [ ] Server Sent Events
+       Server Sent Events
+       Description
+       Tests for server sent events aka eventsource.
+       Usage
+       eventsource
+       View examples
+       More Details
+       WHATWG Spec
+     * [ ] Fetch API
+       Fetch API
+       Description
+       Detects support for the fetch API, a modern replacement for
+       XMLHttpRequest.
+       Usage
+       fetch
+       View examples
+       Polyfills
+          + window.fetch polyfill
+            By: Github
+       More Details
+       Fetch Living Standard
+     * [ ] XHR responseType='arraybuffer'
+       XHR responseType='arraybuffer'
+       Description
+       Tests for XMLHttpRequest xhr.responseType='arraybuffer'.
+       Usage
+       xhrresponsetypearraybuffer
+       View examples
+       More Details
+       XMLHttpRequest Living Standard
+     * [ ] XHR responseType='blob'
+       XHR responseType='blob'
+       Description
+       Tests for XMLHttpRequest xhr.responseType='blob'.
+       Usage
+       xhrresponsetypeblob
+       View examples
+       More Details
+       XMLHttpRequest Living Standard
+     * [ ] XHR responseType='document'
+       XHR responseType='document'
+       Description
+       Tests for XMLHttpRequest xhr.responseType='document'.
+       Usage
+       xhrresponsetypedocument
+       View examples
+       More Details
+       XMLHttpRequest Living Standard
+     * [ ] XHR responseType='json'
+       XHR responseType='json'
+       Description
+       Tests for XMLHttpRequest xhr.responseType='json'.
+       Usage
+       xhrresponsetypejson
+       View examples
+       More Details
+       XMLHttpRequest Living StandardExplanation of
+       xhr.responseType='json'
+     * [ ] XHR responseType='text'
+       XHR responseType='text'
+       Description
+       Tests for XMLHttpRequest xhr.responseType='text'.
+       Usage
+       xhrresponsetypetext
+       View examples
+       More Details
+       XMLHttpRequest Living Standard
+     * [ ] XHR responseType
+       XHR responseType
+       Description
+       Tests for XMLHttpRequest xhr.responseType.
+       Usage
+       xhrresponsetype
+       View examples
+       More Details
+       XMLHttpRequest Living Standard
+     * [ ] XML HTTP Request Level 2 XHR2
+       XML HTTP Request Level 2 XHR2
+       Description
+       Tests for XHR2.
+       Usage
+       xhr2
+       View examples
+       More Details
+       W3 SpecDetails on Related Github Issue
+     * [ ] script[async]
+       script[async]
+       By: Theodoor van Donge
+       Description
+       Detects support for the async attribute on the <script> element.
+       Usage
+       scriptasync
+       View examples
+     * [ ] script[defer]
+       script[defer]
+       By: Theodoor van Donge
+       Description
+       Detects support for the defer attribute on the <script> element.
+       Usage
+       scriptdefer
+       View examples
+       warning
+          + Browser implementation of the `defer` attribute vary:
+            https://stackoverflow.com/questions/3952009/defer-attribute-ch
+            rome#answer-3982619
+       known bug
+          + False positive in Opera 12
+     * [ ] Speech Recognition API
+       Speech Recognition API
+       By: Cătălin Mariș
+       Usage
+       speechrecognition
+       View examples
+       More Details
+       W3C Web Speech API Specification - The SpeechRecognition
+       InterfaceIntroduction to the Web Speech API
+     * [ ] Speech Synthesis API
+       Speech Synthesis API
+       By: Cătălin Mariș
+       Usage
+       speechsynthesis
+       View examples
+       More Details
+       W3C Web Speech API Specification - The SpeechSynthesis Interface
+     * [ ] Local Storage
+       Local Storage
+       Usage
+       localstorage
+       View examples
+       Polyfills
+          + polyfill
+            By: Joshua Bell
+          + CupCake.js
+            By: Rivindu Perera
+          + Storage Polyfill
+            By: Remy Sharp
+          + Amplify.js
+            By: appendTo
+          + YUI3 CacheOffline
+            By: YUI Team
+     * [ ] Session Storage
+       Session Storage
+       Usage
+       sessionstorage
+       View examples
+       Polyfills
+          + polyfill
+            By: Joshua Bell
+          + CupCake.js
+            By: Rivindu Perera
+          + sessionstorage
+            By: Andrea Giammarchi
+     * [ ] Web SQL Database
+       Web SQL Database
+       Usage
+       websqldatabase
+       View examples
+     * [ ] style[scoped]
+       style[scoped]
+       By: Cătălin Mariș
+       Description
+       Support for the scoped attribute of the <style> element.
+       Usage
+       stylescoped
+       View examples
+       Polyfills
+          + Scoped Styles
+            By: Simon Madine
+       More Details
+       WHATWG Specification
+     * [ ] SVG as an <img> tag source
+       SVG as an <img> tag source
+       By: Chris Coyier
+       Usage
+       svgasimg
+       View examples
+       More Details
+       HTML5 Spec
+     * [ ] SVG clip paths
+       SVG clip paths
+       Description
+       Detects support for clip paths in SVG (only, not on HTML content).
+       See this discussion regarding applying SVG clip paths to HTML
+       content.
+       Usage
+       svgclippaths
+       View examples
+       More Details
+       Demo
+     * [ ] SVG filters
+       SVG filters
+       By: Erik Dahlstrom
+       Usage
+       svgfilters
+       View examples
+       More Details
+       W3C Spec
+     * [ ] SVG foreignObject
+       SVG foreignObject
+       Description
+       Detects support for foreignObject tag in SVG.
+       Usage
+       svgforeignobject
+       View examples
+       More Details
+       W3C Spec
+     * [ ] Inline SVG
+       Inline SVG
+       Description
+       Detects support for inline SVG in HTML (not within XHTML).
+       Usage
+       inlinesvg
+       View examples
+       Polyfills
+          + inline SVG polyfill
+            By: Marc Stalfoort (@mstalfoort)
+       known bug
+          + False negative on some Chromia browsers.
+       More Details
+       Test pageTest page and results
+     * [ ] SVG SMIL animation
+       SVG SMIL animation
+       Usage
+       smil
+       View examples
+       More Details
+       W3C Synchronised Multimedia spec
+     * [ ] textarea maxlength
+       textarea maxlength
+       Description
+       Detect support for the maxlength attribute of a textarea element
+       Usage
+       textareamaxlength
+       View examples
+       Polyfills
+          + maxlength plugin
+            By: Remy Sharp
+       More Details
+       MDN documentation
+     * [ ] Blob URLs
+       Blob URLs
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Detects support for creating Blob URLs
+       Usage
+       bloburls
+       View examples
+       More Details
+       W3C Working Draft
+     * [ ] Data URI
+       Data URI
+       This is an async detect
+       Description
+       Detects support for data URIs. Provides a subproperty to report
+       support for data URIs over 32kb in size:
+Modernizr.datauri           // true
+Modernizr.datauri.over32kb  // false in IE8
+
+       Usage
+       datauri
+       View examples
+       warning
+          + Support in Internet Explorer 8 is limited to images and linked
+            resources like CSS files, not HTML files
+       More Details
+       Wikipedia article
+     * [ ] URL parser
+       URL parser
+       By: Ron Waldon (@jokeyrhyme)
+       Description
+       Check if browser implements the URL constructor for parsing URLs.
+       Usage
+       urlparser
+       View examples
+       Polyfills
+          + Polymer URL parser polyfill
+            By: Google Inc.
+       More Details
+       URL
+     * [ ] URLSearchParams API
+       URLSearchParams API
+       By: Cătălin Mariș
+       Description
+       Detects support for an API that provides utility methods for
+       working with the query string of a URL.
+       Usage
+       urlsearchparams
+       View examples
+       More Details
+       WHATWG specificationMDN documentation
+     * [ ] Video Autoplay
+       Video Autoplay
+       This is an async detect
+       Description
+       Checks for support of the autoplay attribute of the video element.
+       Usage
+       videoautoplay
+       View examples
+       warning
+          + This test is very large – only include it if you absolutely
+            need it
+       known bug
+          + crashes with an alert on iOS7 when added to homescreen
+     * [ ] Video crossOrigin
+       Video crossOrigin
+       By: Florian Mailliet
+       Description
+       Detects support for the crossOrigin attribute on video tag
+       Usage
+       videocrossorigin
+       View examples
+       More Details
+       MDN documentation
+     * [ ] Video Loop Attribute
+       Video Loop Attribute
+       Usage
+       videoloop
+       View examples
+     * [ ] Video Preload Attribute
+       Video Preload Attribute
+       Usage
+       videopreload
+       View examples
+     * [ ] WebGL Extensions
+       WebGL Extensions
+       By: Ilmari Heikkinen
+       This is an async detect
+       Description
+       Detects support for OpenGL extensions in WebGL. It's true if the
+       WebGL extensions API is supported, then exposes the supported
+       extensions as subproperties, e.g.:
+if (Modernizr.webglextensions) {
+  // WebGL extensions API supported
+}
+if ('OES_vertex_array_object' in Modernizr.webglextensions) {
+  // Vertex Array Objects extension supported
+}
+
+       Usage
+       webglextensions
+       View examples
+       More Details
+       Kronos extensions registry
+     * [ ] RTC Data Channel
+       RTC Data Channel
+       Description
+       Detect for the RTCDataChannel API that allows for transfer data
+       directly from one peer to another
+       Usage
+       datachannel
+       View examples
+       More Details
+       HTML5 Rocks! Article
+     * [ ] getUserMedia
+       getUserMedia
+       By: Eric Bidelman and Masataka Yakura
+       Description
+       Detects support for the new Promise-based getUserMedia API.
+       Usage
+       getusermedia
+       View examples
+       More Details
+       W3C Media Capture and Streams spec
+     * [ ] RTC Peer Connection
+       RTC Peer Connection
+       By: Ankur Oberoi
+       Usage
+       peerconnection
+       View examples
+       More Details
+       W3C Web RTC spec
+     * [ ] Binary WebSockets
+       Binary WebSockets
+       Usage
+       websocketsbinary
+       View examples
+     * [ ] Base 64 encoding/decoding
+       Base 64 encoding/decoding
+       By: Christian Ulbrich
+       Description
+       Detects support for WindowBase64 API (window.atob && window.btoa).
+       Usage
+       atobbtoa
+       View examples
+       Polyfills
+          + window.atob and window.btoa polyfill
+            By: David Chambers
+       More Details
+       WindowBase64MDN documentation
+     * [ ] Framed window
+       Framed window
+       Description
+       Tests if page is iframed.
+       Usage
+       framed
+       View examples
+     * [ ] matchMedia
+       matchMedia
+       By: Alberto Elias
+       Description
+       Detects support for matchMedia.
+       Usage
+       matchmedia
+       View examples
+       Polyfills
+          + matchMedia.js
+            By: Scott Jehl, Paul Irish and Nicholas Zakas
+       More Details
+       W3C CSSOM View ModuleMDN documentation
+     * [ ] Workers from Blob URIs
+       Workers from Blob URIs
+       By: Jussi Kalliokoski
+       This is an async detect
+       Description
+       Detects support for creating Web Workers from Blob URIs.
+       Usage
+       blobworkers
+       View examples
+       known bug
+          + This test may output garbage to console.
+       More Details
+       W3C Reference
+     * [ ] Workers from Data URIs
+       Workers from Data URIs
+       By: Jussi Kalliokoski
+       This is an async detect
+       Description
+       Detects support for creating Web Workers from Data URIs.
+       Usage
+       dataworkers
+       View examples
+       known bug
+          + This test may output garbage to console.
+       More Details
+       W3C Reference
+     * [ ] Shared Workers
+       Shared Workers
+       Description
+       Detects support for the SharedWorker API from the Web Workers spec.
+       Usage
+       sharedworkers
+       View examples
+       More Details
+       W3C Reference
+     * [ ] Transferables Objects
+       Transferables Objects
+       This is an async detect
+       Description
+       Detects whether web workers can use transferables objects.
+       Usage
+       transferables
+       View examples
+       More Details
+       HTML5 Rocks article
+     * [ ] Web Workers
+       Web Workers
+       Description
+       Detects support for the basic Worker API from the Web Workers spec.
+       Web Workers provide a simple means for web content to run scripts
+       in background threads.
+       Usage
+       webworkers
+       View examples
+       Polyfills
+          + fakeworker.js
+            By: Shumpei Shiraishi
+          + web worker api shim
+            By: Jonathan 'J5' Cook
+       More Details
+       W3C ReferenceHTML5 Rocks articleMDN documentation
+
+   Made with love by Faruk, Paul, Alex, Ryan, Patrick, Stu, and Richard.
+
+   Subscribe to the feed, follow on twitter, or contact us. Donations are
+   cool, too.
+
+   Check out the code on github

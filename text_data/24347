@@ -1,0 +1,1629 @@
+   #next Silence, on veille ! » Flux Silence, on veille ! » Flux des
+   commentaires
+
+     * Design web
+     * Tech
+     * WordPress
+     * Google
+     * Analyses
+     * Apple
+     * Mobile
+     * Actualité
+
+Silence, on veille !
+
+   7 avril 2016
+   de Sid
+   Commentaires fermés sur La plateformisation des media en une image
+
+La plateformisation des media en une image
+
+   plateformisation media
+
+   Catégories : Analyses | Mots-clés : analyse, buzzfeed, media |
+   Permaliens
+
+   9 décembre 2013
+   de Sid
+   Commentaires fermés sur Andy Rubin, ex Mr Android, à la tête de la
+   nouvelle division robotique de Google
+
+Andy Rubin, ex Mr Android, à la tête de la nouvelle division robotique de
+Google
+
+   iris bot & dolly
+
+   Au cours de l’année dernière, Google a acheté discrètement 7 jeunes
+   startups toutes spécialisées dans la robotique et l’intelligence
+   artificielle :
+     * Schaft : une petite équipe japonaise de roboticiens qui viennent de
+       quitter l’université de Tokyo pour développeur un robot humanoïde,
+     * Industrial Perception : une startup spécialisée dans les systèmes
+       de visions et de bras de robots pour charger et décharger des
+       camions,
+     * Meka : qui créé des systèmes pour robots, notamment pour faire les
+       faire marcher en imitant les postures humaines, mais également les
+       expressions humaines avec le S2 Humanoid Head.
+     * Redwood Robotics : spécialisée dans les bras de robots simple à
+       programmer, pas cher et peu dangereux pour les humains, et qui est
+       une joint-venture avec Meka ci-dessus,
+     * Bot & Dolly : créateur du nouveau système IRIS de caméras
+       robotisées récemment utilisés pour créer les effets spéciaux du
+       film « Gravity »
+     * Autoffus : un studio de production spécialisé dans le design et le
+       motion video, et qui a accompagné Google dans le lancement
+       publicitaire du Nexus 5,
+     * et Holomni :  une petite société de design spécialisé dans le
+       design de roues multidimensionnelles high-tech.
+
+   andy_rubin
+
+   Andy Rubin, passionné de robotique et d’intelligence articifielle avait
+   déjà fait connaitre son intérêt pour ce secteur et avait quitté le
+   département Android chez Google dont il était l’ingénieur superviseur
+   pour ces raisons.
+
+   Il semblerait donc que Rubin ait réussi à convaincre les fondateurs de
+   Google de l’intérêt d’investir dans la robotique puisque, en plus de
+   ces rachats que Rubin a opéré directement, une série de recrutement
+   d’ingénieurs spécialisé dans la robotique ont déjà été commencé en plus
+   des développeurs nécessaires aux différents programmes créés par cette
+   nouvelle division de Google. La division robotique de Google sera basé
+   à Palo Alto mais disposera également d’une antenne au Japon.
+
+   Pour l’instant, Rubin déclare qu’il s’agit surtout de travailler sur de
+   l’automatisation de tâches et de fonctions, rien pour l’instant n’est
+   prévu pouvant concernant directement les utilisateurs de Google.
+
+   Pour avoir votre Hubot à la maison, il faudra encore un peu patienter !
+
+   UPDATE (14/12/13) : Google rachète Boston Dynamics
+
+   IFRAME: //www.youtube.com/embed/wE3fmFTtP9g
+
+   Source : New York Times
+
+
+   Catégories : Google | Mots-clés : andy rubin, bots, robotic, robots |
+   Permaliens
+
+   9 décembre 2013
+   de Sid
+   Commentaires fermés sur Un module natif sur Nginx pour réaliser de
+   l’A/B Testing
+
+Un module natif sur Nginx pour réaliser de l’A/B Testing
+
+   Le serveur web russe Nginx vient de publier un module natif qui permet
+   de réaliser des split testing de manière native. Plus communément
+   appelé A/B Test, ces tests permettent de tester deux variantes de pages
+   sur une partie du trafic pour voir quelles sont les réactions en
+   fonction des critères testés.
+
+   logo nginx
+
+   Et on retrouve dans ce module la simplicité de configuration qui fait
+   une partie de la popularité de ce serveur  :
+
+
+http {
+    split_clients "${remote_addr}AAA" $variant {
+                   0.5%               .one;
+                   2.0%               .two;
+                   *                  "";
+    }
+
+    server {
+        location / {
+            index index${variant}.html;
+
+   Catégories : Tech | Mots-clés : abtesting, nginx, split | Permaliens
+
+   9 décembre 2013
+   de Sid
+   Commentaires fermés sur « A deux doigts de la dictature numérique »
+   dixit Gilles Babinet
+
+« A deux doigts de la dictature numérique » dixit Gilles Babinet
+
+   Edward Snowden
+
+   Décidément, nos élites n’apprennent rien. Malgré un scandale sans
+   précédent dans l’histoire des services secrets mondiaux avec les
+   révélations de Snowden et de la surveillance généralisée pratiquée par
+   la NSA aidée par tout un tas de pays amis, dont la France, cette
+   dernière vient de voter Vendredi dernier à 17H un projet de loi visant
+   à l’élargissement de l’accès aux données détenues par les fournisseurs
+   d’accès à Internet et les hébergeurs via la loi de programmation
+   militaire 2014.
+
+   La levée de bouclier chez les acteurs de l’industrie du numérique en
+   France est totale avec des prises de positions claires contre ce projet
+   de loi :
+     * La Quadrature du Net,
+     * le think-tank Renaissance Numérique,
+     * l’ASIC (Association des Services Internets Communautaires),
+     * l’IAB France (Internet Advertising Bureau),
+     * Le SYNTEC ,
+     * le CNN (Conseil National Numérique),
+     * la CNIL.
+
+   A lire sur les Echos ici,
+   Et également de Zdnet : Pourquoi la Loi de Programmation Militaire est
+   dangereuse ?
+
+
+   N’hésitez pas à soutenir l’action de La Quadrature du Net  qui fait un
+   boulot formidable pour promouvoir la neutralité du Net, une réforme
+   positive du droit d’auteur, ou la protection de notre vie privée. C’est
+   une action permanente contre la censure, la surveillance et
+   la discrimination de nos communications.
+
+
+   Soutenons La Quadrature du Net !
+
+   Catégories : Actualité | Mots-clés : surveillance | Permaliens
+
+   7 octobre 2013
+   de Sid
+   Commentaires fermés sur Chromebook déjà utilisé dans 22% des
+   universités US
+
+Chromebook déjà utilisé dans 22% des universités US
+
+   D’après le vice-président du projet Google Chromebook, Caesar
+   Sengupta, 22% des universités américaines utilise désormais un
+   Chromebook. Ce qui réprésente environ 5 000 universités US qui ont fait
+   le choix de l’ordinateur portable cloud-based sous Chrome OS, le
+   système d’exploitation de Google.
+   Chromebook K-12 US
+
+   Chromebook K-12 US
+
+   La part de marché de Chrome reste cependant encore confidentielle avec
+   seulement 3% du marché des PCs portables. En seulement 1 an.
+
+   Vous avez dit Google Chrome ?
+
+   Source: Business Insider, Slashgear
+
+
+   Catégories : Google | Mots-clés : chrome, Google | Permaliens
+
+   11 avril 2013
+   de Sid
+   Commentaires fermés sur Code-sharing site Github turns five and hits
+   3.5 million users, 6 million repositories
+
+Code-sharing site Github turns five and hits 3.5 million users, 6 million
+repositories
+
+   [134142596-645x250.jpg]
+
+   Github, where programmers come to share code and collaborate on
+   open-source software, is celebrating the fifth birthday of its launch
+   to the public with a blog post announcing some new numbers (hat tip to
+   Hacker News).
+
+   Via
+   http://thenextweb.com/insider/2013/04/11/code-sharing-site-github-turns
+   -five-and-hits-3-5-million-users-6-million-repositories/
+
+   Catégories : Favs | Mots-clés : github, repositories, stats |
+   Permaliens
+
+   10 avril 2013
+   de Sid
+   Commentaires fermés sur Review: Panic’s Status Board — the ultimate
+   information dashboard for your iPad
+
+Review: Panic’s Status Board — the ultimate information dashboard for your
+iPad
+
+   [2013-04-09-21-37-211.png]
+
+   The guys over at Panic Inc. have been teasing their new iPad app on
+   their blog and Twitter all week, and today the app known as Status
+   Board hits the App Store. Panic was kind enough to allow us a preview
+   of its app, and needless to say, we liked what we found.
+
+   Via
+   http://9to5mac.com/2013/04/09/review-panics-status-board-the-ultimate-i
+   nformation-dashboard-for-your-ipad/
+
+   Catégories : Favs | Mots-clés : app store, dashboard, fav, panic |
+   Permaliens
+
+   9 avril 2013
+   de Sid
+   Commentaires fermés sur Google Closing Social Login Gap With Facebook
+
+Google Closing Social Login Gap With Facebook
+
+   [Q1-2013-Social-Login-Trend.png]
+
+   Facebook has been the dominant source of social logins, but Google is
+   closing the gap and now accounts for more than one-third of all social
+   logins. That’s according to the latest quarterly report from Janrain.
+
+   Via
+   http://marketingland.com/google-closing-social-login-gap-with-facebook-
+   39424
+
+   Catégories : Favs | Mots-clés : Google, login, social | Permaliens
+
+   8 avril 2013
+   de Sid
+   Commentaires fermés sur It’s here: Google replaces WebKit with Blink in
+   latest Chrome build
+
+It’s here: Google replaces WebKit with Blink in latest Chrome build
+
+   [542090_44990440-645x250.jpg]
+
+   The latest build of Google Chrome has finally received Google’s new
+   rendering engine called Blink, which is meant to replace WebKit. Google
+   is planning to have Blink power Chrome on desktop and Android with the
+   release of Chrome 28 in about nine weeks.
+
+   Via
+   http://thenextweb.com/google/2013/04/08/its-here-google-replaces-webkit
+   -with-blink-in-latest-build-of-chrome/
+
+   Catégories : Favs | Mots-clés : blink, fav, Google | Permaliens
+
+   8 avril 2013
+   de Sid
+   Commentaires fermés sur A l’heure de la crise chypriote, la monnaie
+   virtuelle bitcoin atteint des sommets
+
+A l’heure de la crise chypriote, la monnaie virtuelle bitcoin atteint des
+sommets
+
+   Une monnaie virtuelle peut-elle inspirer davantage confiance qu’une
+   devise réelle ? La monnaie électronique expérimentale Bitcoin,
+   jusqu’ici assez obscure et sulfureuse, a été propulsée sur le devant de
+   la scène cette semaine, après avoir connu un essor phénoménal qui s’est
+   accentué avec
+
+   Via
+   http://www.latribune.fr/technos-medias/internet/20130407trib000757947/a
+   -l-heure-de-la-crise-chypriote-la-monnaie-virtuelle-bitcoin-atteint-des
+   -sommets-.html
+
+   Catégories : Favs | Mots-clés : bitcoin, fav | Permaliens
+
+   8 avril 2013
+   de Sid
+   Commentaires fermés sur Google sells Frommer’s guides back to Arthur
+   Frommer
+
+Google sells Frommer’s guides back to Arthur Frommer
+
+   [xxx-dd-frommer-cheapeurope-059-4_3_r536_c534.jpg?1b79b3da202957124496e
+   3768cfb7b67cdb10c81]
+
+   Arthur Frommer, the avuncular, erudite travel icon who 57 years ago
+   inspired a generation of cost-conscious Americans to pack their bags
+   withEurope on 5 Dollars a Day, is taking back control of his travel
+   guidebook brand from Google and intends to resume publishing Frommer
+   guidebooks. Skift.
+
+   Via
+   http://www.usatoday.com/story/dispatches/2013/04/04/google-sells-fromme
+   rs-travel-guides-arthur-frommer/2052579/
+
+   Catégories : Favs | Mots-clés : fav, frommers, Google, travel |
+   Permaliens
+
+   8 avril 2013
+   de Sid
+   Commentaires fermés sur How To Sell The Value Of Mobile To Clients
+
+How To Sell The Value Of Mobile To Clients
+
+   [mobileonline_pie1.png]
+
+   As Web designers and developers, we see the value in supporting mobile
+   devices every day. We’re well-versed in tactics and techniques for
+   adapting our work to mobile.
+
+   Via
+   http://www.smashingmagazine.com/2013/04/05/how-to-sell-the-value-of-mob
+   ile-to-clients/
+
+   Catégories : Favs | Mots-clés : developpement, fav, Mobile | Permaliens
+
+   8 avril 2013
+   de Sid
+   Commentaires fermés sur Apple boute AppGratis hors de l’App Store
+
+Apple boute AppGratis hors de l’App Store
+
+   Business : Cette application développée par un éditeur français permet
+   de découvrir et de télécharger des applications payantes rendues
+   gratuites temporairement à titre promotionnel.
+
+   Via
+   http://www.zdnet.fr/actualites/apple-boute-appgratis-hors-de-l-app-stor
+   e-39789099.htm
+
+   Catégories : Favs | Mots-clés : app store, appgratis, Apple, fav |
+   Permaliens
+
+   14 janvier 2013
+   de Sid
+   Commentaires fermés sur Design Trends 2013: Flat and Minimal
+
+Design Trends 2013: Flat and Minimal
+
+   Le retour à la simplicité, l’élégance et aux jeux de typographie qui
+   rythment le design 2013 et la lisibilité des pages web de 2013. Les
+   interfaces utilisateurs (UI) sont à l’honneur et sur mobile, chaque
+   interaction avec l’application doit être une nouvelle expérience
+   impactante (oui, du coup, faudra qu’on y pense pour ce blog…)
+
+   Design Trends 2013 – Flat and Minimal | Abduzeedo Design Inspiration &
+   Tutorials.
+
+   Fabio
+
+   simplicity
+
+   Chris Masterson
+
+   Catégories : Design web | Mots-clés : 2013, design, flat, minimalist,
+   typography | Permaliens
+
+   9 janvier 2013
+   de Sid
+   Commentaires fermés sur Techniques for Creating Motion in Web Design
+
+Techniques for Creating Motion in Web Design
+
+   De l’inspiration et de la technique pour animer vos pages web et encore
+   plus impacter vos internautes : scrolling parallax, slider horizontal,
+   auto-moving background, etc. : Techniques for Creating Motion in Web
+   Design | Codrops.
+
+   slider fade in out
+
+   scrolling parallax
+
+   auto moving background
+
+   Catégories : Design web | Mots-clés : animation, css, motion, parallax,
+   scrolling, slider | Permaliens
+
+   19 juillet 2012
+   de Sid
+   Commentaires fermés sur Kit UI web : du frais pour vos wireframes !
+
+Kit UI web : du frais pour vos wireframes !
+
+   Enfin du frais dans les kits d’interfaces web avec ce post sur
+   Speckyboy présentant une vingtaine de kits UI pour vos wireframes. Tous
+   les kits sont éditables au format PSD et contiennent tous les élèments
+   nécessaires : boutons, champs de recherche et de formulaire, bouton
+   radio, cases à cocher sliders, barre de menu et encore tout un tas
+   d’élèments web.
+
+   transparent ui kit
+
+   minimize ui kit
+
+   mega ui pack
+
+   Crisp UI kit design
+
+   Source : A Collection Of Fresh Web UI Kits – Speckyboy Design Magazine.
+
+   Catégories : Design web | Mots-clés : design, kit, mockup, ui,
+   wireframe | Permaliens
+
+   instagram filters latte coffe
+
+   12 juillet 2012
+   de Sid
+   Commentaires fermés sur Créer des filtres Instagram avec PHP
+
+Créer des filtres Instagram avec PHP
+
+   Grâce aux smartphones, la photo est devenu aujourd’hui un des leviers
+   essentiels d’une application et est le type de contenu qui se partage
+   le plus sur les réseaux sociaux. Quoi de plus naturel alors de vouloir
+   intégrer des fonctionnalités de ce type, et tant qu’à faire autant
+   disposer des filtres qui vont avec : effet Lomo, noir & blanc,
+   atténuation des contrastes et des lumières type Kelvin, Nashville, tilt
+   shift, saturation et encore pleins d’autres.
+
+   Create Instagram Filters With PHP | Nettuts+.
+
+   instagram filters latte coffe
+
+   filtre instagram gotham
+
+
+   Catégories : Tech | Mots-clés : filtres, instagram, instagraph, php |
+   Permaliens
+
+   iOs Weather Concept
+
+   10 juillet 2012
+   de Sid
+   Commentaires fermés sur 15 interfaces utilisateur sur mobile
+   exceptionnelles
+
+15 interfaces utilisateur sur mobile exceptionnelles
+
+   L’un des éditeurs de TNW, Harrison Weber, s’est fendu d’un billet très
+   remarqué pour la qualité de sa sélection des meilleurs interfaces
+   mobiles du moment. De l’élégance à la simplicité, ou simplement
+   colorée, ces interfaces utilisateurs sont remplies d’enseignement et
+   d’inspiration pour vos actuelles ou futures applications mobiles, ou
+   simplement pour le plaisir du travail soigné. A voir d’urgence ! (Via
+   FredCozic)
+
+   iOs Weather Concept
+
+   bloodnote
+
+   Synthetizer
+
+   camera genius
+
+   Catégories : Mobile | Mots-clés : design, interface, Mobile, ui |
+   Permaliens
+
+   6 juillet 2012
+   de Sid
+   Commentaires fermés sur Top 10 contributeurs CA Google 2011 par secteur
+
+Top 10 contributeurs CA Google 2011 par secteur
+
+   Infographie présentant la part contributive au chiffre d’affaires de
+   Google en 2011 sur Adwords de chaque secteur d’activité et de leur top
+   5 annonceur. Les 37,9 milliards de dollars de revenus de Google étudié
+   à la loupe secteur par secteur, les 10 premiers secteurs représentent à
+   eux seuls 22 milliards sur les 37,9 milliards. Des chiffres
+   vertigineux.
+
+   turnover google 2011 adwords
+
+   Catégories : Analyses | Mots-clés : 2011, adwords, billions, ca,
+   Google, milliards, turnover | Permaliens
+
+   Try Git
+
+   5 juillet 2012
+   de Sid
+   Commentaires fermés sur Essayer et apprendre Git en 15 minutes
+
+Essayer et apprendre Git en 15 minutes
+
+   Si vous avez 15 minutes à perdre, c’est le moment d’apprendre les
+   rudiments de Git avec le nouvel outil Try Git, fruit d’une
+   collaboration entre Github et Code School. Le but est de fournir une
+   interface visuelle directement dans le navigateur permettant de tester
+   les commandes étape par étape avec explications détaillées sur chacune,
+   mais tout ca sans passer par la case installation. Un excellent moyen
+   de débuter avec cet outil !
+
+   Try Git
+
+   Catégories : Tech | Mots-clés : git, github, trygit, versioning |
+   Permaliens
+
+   ← Articles plus anciens
+
+Friends
+
+     * Annuaire Eneide
+     * Bellami
+     * Code de la route gratuit
+     * Fbparis
+     * Littoral Immobilier
+     * Malaiac
+     * Pink Seo
+     * Seo Rockstar
+     * Seoblackout
+     * Serphacker
+     * Toucouleur
+     * Vendre mon billet
+
+   ____________________ Recherche
+
+Annonces Google
+
+   [INS: :INS]
+
+Derniers articles
+
+     * La plateformisation des media en une image
+     * Andy Rubin, ex Mr Android, à la tête de la nouvelle division
+       robotique de Google
+     * Un module natif sur Nginx pour réaliser de l’A/B Testing
+     * « A deux doigts de la dictature numérique » dixit Gilles Babinet
+     * Chromebook déjà utilisé dans 22% des universités US
+
+   IFRAME:
+   //www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.
+   com%2Fpages%2FTaggle%2F160296308342&width&height=258&colorscheme=light&
+   show_faces=true&header=false&stream=false&show_border=false&appId=12616
+   1096962
+
+   Proudly powered by WordPress | Thème : Yoko par Elmastudio | Traduction
+   : Wp Trads.
+   Haut
+   #prev next Silence, on veille ! » Flux Silence, on veille ! » Flux des
+   commentaires
+
+     * Design web
+     * Tech
+     * WordPress
+     * Google
+     * Analyses
+     * Apple
+     * Mobile
+     * Actualité
+
+Silence, on veille !
+
+   gooseberry developers boards
+
+   5 juillet 2012
+   de Sid
+   Commentaires fermés sur Le Gooseberry plus puissant que le Raspberry Pi
+   ?
+
+Le Gooseberry plus puissant que le Raspberry Pi ?
+
+   Le Gooseberry est un mini-ordinateur avec un processeur  Allwinner A10
+   ARM Cortex-A8, une carte graphique Mali 400, 512MB de RAM, 4GB de
+   stockage, WiFi 802.11b/g/n, un slot carte microSD, un port mini HDMI,
+   des ports mini USB, et une prise jack. Fatigué des délais de livraisons
+   interminables du Raspberry Pi dû a son succès mondial, le concepteur du
+   Gooseberry a directement contacté un fabricant chinois de composants
+   Allwinner A10 et a finalement négocié avec lui des prix très bas pour
+   tous les autres composants. Prix final : 63$. Un concurrent sérieux du
+   Raspberry Pi, à n’en pas douter le premier d’une longue liste !
+
+Gooseberry developer boards: £40 alternative to the Raspberry Pi
+
+   gooseberry developers boards
+
+   Livré avec Android 2.3 pré-installé, le Gooseberry supporte facilement
+   de nombreux autres systèmes d’exploitation comme Android 4.0, Ubuntu,
+   Puppy Linux. Et surprise : il a même un bouton d’alimentation !
+
+   IFRAME: https://www.youtube.com/embed/fDX3ihWR7CU
+
+   Catégories : Tech | Mots-clés : diy, gooseberry, raspberry pi |
+   Permaliens
+
+   daisho
+
+   4 juillet 2012
+   de Sid
+   Commentaires fermés sur Meilleurs thèmes WordPress Juin 2012
+
+Meilleurs thèmes WordPress Juin 2012
+
+   Une sélection d’une trentaine de thèmes WordPress pour le mois de Juin
+   2012 trouvé sur Ourtuts. Après la période des thèmes purement
+   responsive mais plus centré sur le côté technique ‘responsive’ que sur
+   l’ergonomie générale ou le design, on monte en gamme ce mois ci avec
+   des thèmes responsives qui ont soigné leur design. On retrouve aussi
+   beaucoup de thèmes ‘mur d’image’  sur le mode Pinterest qui produit de
+   très jolies thèmes graphiques du coup. Voici quelques exemples de cet
+   excellent cru :
+
+   daisho
+
+   nemesis theme
+
+   flexible wordpress thme
+
+   theme wordpress coraline
+
+   photik
+
+   Catégories : Wordpress | Mots-clés : minimalist, pinterest, responsive,
+   theme, wall, Wordpress | Permaliens
+
+   responsive layout sketches
+
+   2 juillet 2012
+   de Sid
+   Commentaires fermés sur Créer un thème responsive avec WordPress
+
+Créer un thème responsive avec WordPress
+
+   Vous avez du remarquer qu’on naviguait de plus en plus avec tout et
+   n’importe quoi aujourd’hui : tablettes de différents formats,
+   smartphones, eeepc, desktops et j’en passe (psp & co). Donc la grande
+   question, c’est comment avoir le format idéal pour chaque appareil ?
+   Vous connaissez d’avance la réponse : le responsive design et ses media
+   queries sont LA réponse et aujourd’hui, avec nos talentueux amis de
+   Smashing Mag’, on va apprendre à créer notre premier thème WordPress
+   responsive. Et comme  à chaque fois avec eux, c’est très bon !
+
+   How to create a Responsive, Mobile-First WordPress Theme (Smashing Mag)
+
+   responsive layout sketches
+
+   Et j’ai découvert aussi l’outil qui me manquait sur l’Ipad pour gagner
+   en précision lors de mes séances de sketching avec le Bamboo Stylus
+   (Wacom) :
+
+   digital pen for ipad
+
+   Catégories : Design web, Mobile | Mots-clés : Mobile, responsive,
+   theme, Wordpress | Permaliens
+
+   data visualisation
+
+   17 juin 2012
+   de Sid
+   Commentaires fermés sur Dataviz, la boite à outils
+
+Dataviz, la boite à outils
+
+   Une collection impressionnante d’applications, d’outils et de services
+   permettant de créer des visualisations de données :  cartes, timelines,
+   géolocalisation en temps réel de tweet, diagrammes et courbes en tous
+   genres au service de la datavisualisation, l’art de mixer les
+   informations, les données brutes et le graphisme.
+
+   La boite à outils d’Expoviz
+
+   data visualisation
+
+
+   Catégories : Analyses | Mots-clés : data, dataviz, visualisation |
+   Permaliens
+
+   30 avril 2012
+   de Sid
+   Commentaires fermés sur 35 Useful Responsive Web Design Tools
+
+35 Useful Responsive Web Design Tools
+
+   Avec la popularité grandissante des tablettes et smartphones, la
+   demande et la nécessité de coder des thèmes ‘responsives’ se fait de
+   plus en plus grande. De nombreux développeurs de thèmes essaient de
+   répondre à ce besoin en codant des thèmes wordpress responsive qui
+   s’adapte donc à la taille de plusieurs écrans et je vous garantis que
+   la tâche n’est pas simple, comme si le développement cross-browser ne
+   suffisait pas aux intégrateurs pour s’arracher les cheveux ! 🙂
+
+   35 Useful Responsive Web Design Tools. (via @FredCozic)
+
+   responsive layout wireframed
+
+   less framework responsive css grid
+
+   rapid prototyping adaptive responsive design
+
+   jquery plugin flexible layout
+
+
+   Catégories : Design web | Mots-clés : adaptative, design, layout,
+   responsive, tools, wireframe | Permaliens
+
+   10 avril 2012
+   de Sid
+   Commentaires fermés sur 20 Stunning Websites Using Bright Colors
+
+20 Stunning Websites Using Bright Colors
+
+   20 Stunning Websites Using Bright Colors | Inspired Magazine.
+
+   colorz
+
+   designer coder
+
+   filosofille
+
+   rojo
+
+   Catégories : Design web | Mots-clés : bright, color, design, fresh,
+   inspiration | Permaliens
+
+   7 mars 2012
+   de Sid
+   Commentaires fermés sur Free Printable Sketching, Wireframing and
+   Note-Taking PDF Templates
+
+Free Printable Sketching, Wireframing and Note-Taking PDF Templates
+
+
+   wireframe printable
+
+   ipad printable sketching
+
+   wireframing note
+
+   mobile printable wireframing
+
+   Free Printable Sketching, Wireframing and Note-Taking PDF Templates |
+   Smashing Magazine.
+
+   Catégories : Design web, Mobile | Mots-clés : notes, print, printable,
+   sketching, template, wireframing | Permaliens
+
+   2 février 2012
+   de Sid
+   Commentaires fermés sur 15 useful plugins for multi-author blogs
+
+15 useful plugins for multi-author blogs
+
+   15 useful plugins for multi-author blogs | Webdesigner Depot.
+
+   calendar calendrier editorial multi-author blogs
+
+   Catégories : Wordpress | Mots-clés : access, author, calendar, manager,
+   multi, plugin, Wordpress | Permaliens
+
+   31 janvier 2012
+   de Sid
+   Commentaires fermés sur Technologies émergentes et technologies du
+   futur. Que nous réserve l’avenir ?
+
+Technologies émergentes et technologies du futur. Que nous réserve l’avenir ?
+
+   Technologies émergentes et technologies du futur. Que nous réserve
+   l’avenir ? – Demain la veille.
+
+   marchés émergents technologie futur
+
+   Catégories : Actualité | Mots-clés : 2012, emergence, envisioning tech,
+   marche, technologie | Permaliens
+
+   19 décembre 2011
+   de Sid
+   Commentaires fermés sur 50 Free And Useful Web UI Elements Psd Files
+   For Download
+
+50 Free And Useful Web UI Elements Psd Files For Download
+
+   50 Free And Useful Web UI Elements Psd Files For Download | Web Design
+   Blog, Web Designer Resources.
+
+   letters
+
+   Catégories : Design web | Mots-clés : buttons, free, icons, psd, ui |
+   Permaliens
+
+   15 novembre 2011
+   de Sid
+   Un commentaire
+
+15 Free WordPress Themes with a Responsive Layout
+
+   15 Free WordPress Themes with a Responsive Layout.
+
+
+   responsive layout
+
+
+   responsive design wordpress themes
+
+
+   responsive design
+
+
+
+   Catégories : Wordpress | Mots-clés : design, responsive, themes,
+   Wordpress | Permaliens
+
+   29 octobre 2011
+   de Sid
+   Commentaires fermés sur Rechercher et remplacer une chaîne avec MySQL
+
+Rechercher et remplacer une chaîne avec MySQL
+
+   Pour rechercher et remplacer une chaîne de caractères directement dans
+   le champ d’une base de données MySQL, il suffit d’utiliser la fonction
+   REPLACE de la manière suivante :
+
+     UPDATE [nom_de_la_table] SET [nom_du_champ] =REPLACE([nom_du_champ],
+     '[chaine_a_remplacer]’,'[chaine_de_remplacement]’);
+
+   Exemple :
+
+     UPDATE articles SET content =
+     REPLACE(content,’http://www.mondns.com’,’/’);
+
+   Catégories : How-to's, Tech | Mots-clés : mysql, replace | Permaliens
+
+   27 octobre 2011
+   de Sid
+   Commentaires fermés sur 8 Popular online apps to test the mobile
+   version of your site | Webdesigner Depot
+
+8 Popular online apps to test the mobile version of your site | Webdesigner
+Depot
+
+   8 Popular online apps to test the mobile version of your site |
+   Webdesigner Depot.
+
+
+   w3c mobile checker
+
+
+   google mobile testing
+
+
+
+   Catégories : Mobile | Mots-clés : check, Mobile, test, w3c | Permaliens
+
+   21 octobre 2011
+   de Malaiac
+   Commentaires fermés sur Google
+
+Google
+
+   Accessibility, Security and why Google Platform could be better
+   en francais ici
+
+   Episode 2 : Comment présenter une idée à l’homme qui a déjà tout
+   entendu (Amazon, Jeff Bezos et [DEL: Powerpoint :DEL] inside
+
+   Google+ est il le dernier endroit à la mode pour trash talker IT ? iOS
+   versus Android
+
+   Catégories : Google | Permaliens
+
+   29 septembre 2011
+   de Sid
+   Commentaires fermés sur 25+ free unique business card PSDs
+
+25+ free unique business card PSDs
+
+   25+ free unique business card PSDs | Webdesigner Depot.
+
+
+   free business cards
+
+
+   minimal free business cards
+
+
+   Catégories : Design web, Productivité | Mots-clés : business, cards,
+   carte, free, gratuit, visite | Permaliens
+
+   26 septembre 2011
+   de Sid
+   Commentaires fermés sur Top 10 Mobile Web Development JavaScript
+   Frameworks
+
+Top 10 Mobile Web Development JavaScript Frameworks
+
+   Top 10 Mobile Web Development JavaScript Frameworks.
+
+
+   jquery mobile
+
+
+   jo html5
+
+
+   Catégories : Tech | Mots-clés : developpement, javascript, js, Mobile |
+   Permaliens
+
+   21 septembre 2011
+   de Sid
+   Commentaires fermés sur Créer une API REST – Bonnes pratiques
+
+Créer une API REST – Bonnes pratiques
+
+   .::PullRequest.org::. Créer une API REST.
+
+
+   api rest
+
+
+   Catégories : Tech | Mots-clés : api, rest | Permaliens
+
+   11 septembre 2011
+   de Sid
+   Commentaires fermés sur Bootstrapping UX: A Case Study :: Voyages Sncf
+
+Bootstrapping UX: A Case Study :: Voyages Sncf
+
+   Bootstrapping UX: A Case Study :: UXmatters.
+
+
+   homepage
+
+
+   form ux
+
+
+
+   Catégories : Analyses | Mots-clés : ergonomie, sketching, testing, ux |
+   Permaliens
+
+   7 septembre 2011
+   de Sid
+   Commentaires fermés sur Responsive Web Design Toolbox: 50 Handy Tools
+   and Services
+
+Responsive Web Design Toolbox: 50 Handy Tools and Services
+
+   Responsive Web Design Toolbox: 50 Handy Tools and Services |
+   Splashnology.
+
+
+   js css jquery plugin
+
+
+   css grid
+
+
+
+   Catégories : Tech | Mots-clés : css, framework, js | Permaliens
+
+   7 septembre 2011
+   de Sid
+   Commentaires fermés sur Tracking the KPIs of Social Media | SEOmoz
+
+Tracking the KPIs of Social Media | SEOmoz
+
+   Tracking the KPIs of Social Media | SEOmoz.
+
+
+   conversion funnel
+
+   Catégories : E-marketing | Mots-clés : roi, smo, tracking | Permaliens
+
+   ← Articles plus anciens
+   Articles plus récents →
+
+Friends
+
+     * Annuaire Eneide
+     * Bellami
+     * Code de la route gratuit
+     * Fbparis
+     * Littoral Immobilier
+     * Malaiac
+     * Pink Seo
+     * Seo Rockstar
+     * Seoblackout
+     * Serphacker
+     * Toucouleur
+     * Vendre mon billet
+
+   ____________________ Recherche
+
+Annonces Google
+
+   [INS: :INS]
+
+Derniers articles
+
+     * La plateformisation des media en une image
+     * Andy Rubin, ex Mr Android, à la tête de la nouvelle division
+       robotique de Google
+     * Un module natif sur Nginx pour réaliser de l’A/B Testing
+     * « A deux doigts de la dictature numérique » dixit Gilles Babinet
+     * Chromebook déjà utilisé dans 22% des universités US
+
+   IFRAME:
+   //www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.
+   com%2Fpages%2FTaggle%2F160296308342&width&height=258&colorscheme=light&
+   show_faces=true&header=false&stream=false&show_border=false&appId=12616
+   1096962
+
+   Proudly powered by WordPress | Thème : Yoko par Elmastudio | Traduction
+   : Wp Trads.
+   Haut
+   #Silence, on veille ! » Flux Silence, on veille ! » Flux des
+   commentaires Silence, on veille ! » Flux de résultats de la recherche
+   pour "{search_term_string}"
+
+     * Design web
+     * Tech
+     * WordPress
+     * Google
+     * Analyses
+     * Apple
+     * Mobile
+     * Actualité
+
+Silence, on veille !
+
+Rien de trouvé
+
+   Désolé, mais rien ne correspond à votre critère de recherche. Veuillez
+   réessayer avec d’autres mots-clés.
+   {search_term_string} Recherche
+
+Friends
+
+     * Annuaire Eneide
+     * Bellami
+     * Code de la route gratuit
+     * Fbparis
+     * Littoral Immobilier
+     * Malaiac
+     * Pink Seo
+     * Seo Rockstar
+     * Seoblackout
+     * Serphacker
+     * Toucouleur
+     * Vendre mon billet
+
+   {search_term_string} Recherche
+
+Annonces Google
+
+   [INS: :INS]
+
+Derniers articles
+
+     * La plateformisation des media en une image
+     * Andy Rubin, ex Mr Android, à la tête de la nouvelle division
+       robotique de Google
+     * Un module natif sur Nginx pour réaliser de l’A/B Testing
+     * « A deux doigts de la dictature numérique » dixit Gilles Babinet
+     * Chromebook déjà utilisé dans 22% des universités US
+
+   IFRAME:
+   //www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.
+   com%2Fpages%2FTaggle%2F160296308342&width&height=258&colorscheme=light&
+   show_faces=true&header=false&stream=false&show_border=false&appId=12616
+   1096962
+
+   Proudly powered by WordPress | Thème : Yoko par Elmastudio | Traduction
+   : Wp Trads.
+   Haut
+   #prev next Silence, on veille ! » Flux Silence, on veille ! » Flux des
+   commentaires
+
+     * Design web
+     * Tech
+     * WordPress
+     * Google
+     * Analyses
+     * Apple
+     * Mobile
+     * Actualité
+
+Silence, on veille !
+
+   18 août 2011
+   de Sid
+   Commentaires fermés sur Showcase of Gorgeous Black and White Websites
+
+Showcase of Gorgeous Black and White Websites
+
+   Showcase of Gorgeous Black and White Websites.
+
+
+
+   about
+
+
+   moms
+
+
+
+   Catégories : Design web | Mots-clés : black, design, silence on veille,
+   white | Permaliens
+
+   16 août 2011
+   de Sid
+   Commentaires fermés sur 80+ Free PSD Web UI Elements For Download
+
+80+ Free PSD Web UI Elements For Download
+
+   80+ Free PSD Web UI Elements For Download – chethstudios Design
+   Magazine.
+
+
+   calendar
+
+
+   sliders
+
+
+   ratings
+
+
+
+   Catégories : Design web | Mots-clés : button, calendar, fichiers
+   temporaires google chrome, form, google task, icons, player, rating,
+   sliders, video | Permaliens
+
+   7 août 2011
+   de Sid
+   Commentaires fermés sur Creating Personal Branding for Your WordPress
+   Backend
+
+Creating Personal Branding for Your WordPress Backend
+
+   Creating Personal Branding for Your WordPress Backend | Onextrapixel –
+   Showcasing Web Treats Without A Hitch.
+
+
+   personal brand wordpress admin
+
+
+   Catégories : How-to's | Mots-clés : admin, backend, brand, fichiers
+   temporaires google chrome, google task, howto, montage photoshop, psd
+   to css, taggle, Wordpress | Permaliens
+
+   29 juillet 2011
+   de Sid
+   Commentaires fermés sur Unique and Creative Business Cards
+
+Unique and Creative Business Cards
+
+   Unique and Creative Business Cards.
+
+
+   creative cards
+
+
+   unique cards
+
+
+   business cards
+
+
+
+   Catégories : Design web | Mots-clés : business, card, cards, creative,
+   silence on veille, unique | Permaliens
+
+   7 juillet 2011
+   de Sid
+   Commentaires fermés sur Portfolio Showcase : 40 Best Designed Sites For
+   Showcasing Portfolio
+
+Portfolio Showcase : 40 Best Designed Sites For Showcasing Portfolio
+
+   Portfolio Showcase : 40 Best Designed Sites For Showcasing Portfolio.
+
+
+
+
+
+
+
+
+
+   Catégories : Design web | Mots-clés : design, list, portfolio, silence
+   on veille | Permaliens
+
+   26 juin 2011
+   de Sid
+   Commentaires fermés sur 15 Examples Of Fresh One Page Website Design
+
+15 Examples Of Fresh One Page Website Design
+
+   15 Examples Of Fresh One Page Website Design.
+
+
+   attack of the web
+
+
+
+   manufacture
+
+
+
+   Web and graphic
+
+
+   Catégories : Design web | Mots-clés : design, onepage, portfolio,
+   silence on veille, single | Permaliens
+
+   18 juin 2011
+   de Sid
+   Commentaires fermés sur 15 Beautiful High-Quality Free Fonts
+
+15 Beautiful High-Quality Free Fonts
+
+   15 Beautiful High-Quality Free Fonts – Smashing Magazine.
+
+
+   mayberry
+
+
+
+   paperclip
+
+
+
+   sketch rockwell
+
+
+   Catégories : Design web | Mots-clés : font, free, police, silence on
+   veille | Permaliens
+
+   31 mai 2011
+   de Sid
+   Commentaires fermés sur 12 HTML5 Frameworks for Developers
+
+12 HTML5 Frameworks for Developers
+
+   12 HTML5 Frameworks for Developers.
+
+
+   modernizr
+
+
+
+   LimeJS
+
+
+
+   less framework
+
+
+
+   html5 boilerplate
+
+
+   Catégories : Tech | Mots-clés : framework, html5, silence on veille |
+   Permaliens
+
+   30 mai 2011
+   de Sid
+   Commentaires fermés sur Elements UI simples mais indispensables pour
+   réaliser tous vos wireframes
+
+Elements UI simples mais indispensables pour réaliser tous vos wireframes
+
+   Elements UI simples mais indispensables pour réaliser tous vos
+   wireframes | Ergognome.
+
+
+   sketching
+
+
+
+   wireframing
+
+
+   Catégories : Design web | Mots-clés : prototypage, silence on veille,
+   ui, wireframes | Permaliens
+
+   27 mai 2011
+   de Sid
+   Commentaires fermés sur Majority of Paid Apps on Android Downloaded
+   Less than 100 Times
+
+Majority of Paid Apps on Android Downloaded Less than 100 Times
+
+   Majority of Paid Apps on Android Downloaded Less than 100 Times.
+
+
+   paid application android
+
+
+   Catégories : Mobile | Mots-clés : android, app, Mobile, silence on
+   veille | Permaliens
+
+   27 mai 2011
+   de Sid
+   Commentaires fermés sur 15 Best & Free WordPress Portfolio Themes
+
+15 Best & Free WordPress Portfolio Themes
+
+   15 Best & Free WordPress Portfolio Themes | gonzoblog.nl_V.02.
+
+
+   viewport
+
+
+
+   bluebubble
+
+
+
+   style design
+
+
+   Catégories : Wordpress | Mots-clés : portfolio, silence on veille,
+   themes, Wordpress | Permaliens
+
+   27 mai 2011
+   de Sid
+   Commentaires fermés sur Soft UI Kit: Free PSD for Mocking Up Web
+   Designs
+
+Soft UI Kit: Free PSD for Mocking Up Web Designs
+
+   Soft UI Kit: Free PSD for Mocking Up Web Designs.
+
+
+   Catégories : Design web | Mots-clés : kit, mocking psd free download,
+   mockup, silence on veille, ui, web design ui kit, wireframe |
+   Permaliens
+
+   26 mai 2011
+   de Sid
+   Commentaires fermés sur Découvrez Kickoff – Collaboration tool for
+   small groups
+
+Découvrez Kickoff – Collaboration tool for small groups
+
+   Collaboration tool for small groups – Kickoff.
+
+
+   kickoff app
+
+
+
+   kickoff dashboard
+
+
+
+   kick off coworkers
+
+
+
+   kickoff todo lists
+
+
+   Catégories : Productivité | Mots-clés : dashboard, file, mac, notes,
+   productivite, project, todo, tools | Permaliens
+
+   22 mai 2011
+   de Sid
+   Commentaires fermés sur 35 Must See Logo Design Process
+
+35 Must See Logo Design Process
+
+
+
+
+
+   apple eve
+
+
+   vividways
+
+
+   35 Must See Logo Design Process | AcrisDesign
+   .
+
+
+   Fixel
+
+
+   Catégories : Design web | Mots-clés : logo, makingof, process |
+   Permaliens
+
+   22 mai 2011
+   de Sid
+   Commentaires fermés sur 30 webdesign tendances pour Mai 2011
+
+30 webdesign tendances pour Mai 2011
+
+   co:founders
+
+   marioscafe
+
+   logartis
+
+   30 webdesign tendances pour Mai 2011 – webdesign-inspiration.
+
+   Catégories : Design web | Mots-clés : inspiration | Permaliens
+
+   22 mai 2011
+   de Sid
+   Commentaires fermés sur 10 Free UI Kits for user interface designers
+
+10 Free UI Kits for user interface designers
+
+   10 Free UI Kits for user interface designers | Graphic design |
+   ilovecolors.
+
+   facebook ui kit
+
+   web ui wireframe
+
+   Catégories : Design web | Mots-clés : designer, interface, kit, ui,
+   user, wireframe | Permaliens
+
+   22 mai 2011
+   de Sid
+   Commentaires fermés sur Cool Navigation Menus For Inspiration
+
+Cool Navigation Menus For Inspiration
+
+   Cool Navigation Menus For Inspiration | Splashnology.
+
+   menu navigation
+
+   navigation menu
+
+   cool menu navigation
+
+   Catégories : Design web | Mots-clés : menu, navigation, ui, web
+   navigation inspiration | Permaliens
+
+   6 mai 2011
+   de Sid
+   Commentaires fermés sur Top 10 New High-Quality Free Fonts For
+   Designers
+
+Top 10 New High-Quality Free Fonts For Designers
+
+   Top 10 New High-Quality Free Fonts For Designers | WebTabLab.com.
+
+   belmondo
+
+   five minutes font
+
+   Catégories : Design web | Mots-clés : fonts, polices | Permaliens
+
+   6 mai 2011
+   de Sid
+   Commentaires fermés sur Useful Tools for Making Your Life Online Easier
+
+Useful Tools for Making Your Life Online Easier
+
+   css3 playground
+
+   dns benchmark
+
+   Useful Tools for Making Your Life Online Easier – Noupe Design Blog.
+
+   Catégories : Design web, Tech | Mots-clés : optimize, tools |
+   Permaliens
+
+   16 avril 2011
+   de Sid
+   Commentaires fermés sur The Best WordPress Themes of the Week #4
+
+The Best WordPress Themes of the Week #4
+
+   The Best WordPress Themes of the Week #4 | Inspired Magazine.
+
+   my cuisine wordpress theme
+
+   mazine theme wordpress
+
+   picture this powerful wordpress themes 2011
+
+   Catégories : Design web | Mots-clés : 2011, themes, Wordpress |
+   Permaliens
+
+   ← Articles plus anciens
+   Articles plus récents →
+
+Friends
+
+     * Annuaire Eneide
+     * Bellami
+     * Code de la route gratuit
+     * Fbparis
+     * Littoral Immobilier
+     * Malaiac
+     * Pink Seo
+     * Seo Rockstar
+     * Seoblackout
+     * Serphacker
+     * Toucouleur
+     * Vendre mon billet
+
+   ____________________ Recherche
+
+Annonces Google
+
+   [INS: :INS]
+
+Derniers articles
+
+     * La plateformisation des media en une image
+     * Andy Rubin, ex Mr Android, à la tête de la nouvelle division
+       robotique de Google
+     * Un module natif sur Nginx pour réaliser de l’A/B Testing
+     * « A deux doigts de la dictature numérique » dixit Gilles Babinet
+     * Chromebook déjà utilisé dans 22% des universités US
+
+   IFRAME:
+   //www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.
+   com%2Fpages%2FTaggle%2F160296308342&width&height=258&colorscheme=light&
+   show_faces=true&header=false&stream=false&show_border=false&appId=12616
+   1096962
+
+   Proudly powered by WordPress | Thème : Yoko par Elmastudio | Traduction
+   : Wp Trads.
+   Haut
+   #Silence, on veille ! » Flux Silence, on veille ! » Flux des
+   commentaires Silence, on veille ! » A découvrir ! Tour d’horizon de 85
+   applications Mac OS X pour web développeurs et web designers Flux des
+   commentaires Nouvelle fonctionnalité Webmaster Tools sur la performance
+   web Highcharts, nouvelle librairie javascript pour vos graphiques
+   alternate alternate
+
+     * Design web
+     * Tech
+     * WordPress
+     * Google
+     * Analyses
+     * Apple
+     * Mobile
+     * Actualité
+
+Silence, on veille !
+
+A découvrir ! Tour d’horizon de 85 applications Mac OS X pour web
+développeurs et web designers
+
+   3 décembre 2009 de Sid
+
+   A découvrir ! Tour d’horizon de 85 applications sur Mac OS X pour
+   developpeurs et web designers
+   4a7b5049
+
+   Catégories : Apple | Mots-clés : application, developpement, mac os x,
+   web design | Permaliens
+
+Un Commentaire
+
+   Répondre →
+    1. Ping : 50 applications à découvrir pour Mac
+
+   ← Article précédent
+   Article suivant →
+
+Sur le même sujet
+
+    1. 50 applications à découvrir pour Mac
+    2. 45+ applications iPhone pour développeurs et designers
+    3. Sélection de 50 excellents articles pour designers et developpeurs
+    4. 22 applications AIR pour designers
+    5. 17 extensions Google Chrome pour développeurs et web designers
+    6. Designers et développeurs : les 90 articles à retenir du mois !
+    7. 55 générateurs pour designers
+    8. Quelle rémunération pour les web designers ?
+    9. Hack avancée de WordPress pour développeurs
+   10. 27 start-kits pour designers
+
+Friends
+
+     * Annuaire Eneide
+     * Bellami
+     * Code de la route gratuit
+     * Fbparis
+     * Littoral Immobilier
+     * Malaiac
+     * Pink Seo
+     * Seo Rockstar
+     * Seoblackout
+     * Serphacker
+     * Toucouleur
+     * Vendre mon billet
+
+   ____________________ Recherche
+
+Annonces Google
+
+   [INS: :INS]
+
+Derniers articles
+
+     * La plateformisation des media en une image
+     * Andy Rubin, ex Mr Android, à la tête de la nouvelle division
+       robotique de Google
+     * Un module natif sur Nginx pour réaliser de l’A/B Testing
+     * « A deux doigts de la dictature numérique » dixit Gilles Babinet
+     * Chromebook déjà utilisé dans 22% des universités US
+
+   IFRAME:
+   //www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.
+   com%2Fpages%2FTaggle%2F160296308342&width&height=258&colorscheme=light&
+   show_faces=true&header=false&stream=false&show_border=false&appId=12616
+   1096962
+
+   Proudly powered by WordPress | Thème : Yoko par Elmastudio | Traduction
+   : Wp Trads.
+   Haut

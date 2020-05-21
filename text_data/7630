@@ -1,0 +1,553 @@
+   #Framboise Pi » Flux Framboise Pi » Flux des commentaires
+
+   Aller au contenu
+
+   Framboise Pi
+
+Framboise Pi
+
+Recettes à la framboise pour le Raspberry Pi
+
+     * Accueil
+     * Articles
+     * Contact
+
+   Recherche pour : ____________________
+
+   [placeholder.png]
+
+RaspberryPi + OpenCV + Webcam : VIDEOIO ERROR: V4L2: Pixel format of incoming
+image is unsupported by OpenCV
+
+Installation de RaspZDoom
+
+TechDay RS Component – Stade St Symphorien – Metz – 25/04/19
+
+Slade Doom Editor for RasPi
+
+Boitier “Cray-1” + Raspberry Zero
+
+   [placeholder.png]
+
+Installation de base d’un serveur sous Raspberry Zero
+
+RaspberryPi + OpenCV + Webcam : VIDEOIO ERROR: V4L2: Pixel format of incoming
+image is unsupported by OpenCV
+
+   25 août 2019 Framboisier
+
+   RaspberryPi + OpenCV + Webcam : VIDEOIO ERROR: V4L2: Pixel format of
+   incoming image is unsupported by OpenCV Ajouter :
+
+   import cv2__________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   def show_webcam():__________________________________________
+       cam = cv2.VideoCapture(0)_______________________________
+       while True:_____________________________________________
+           ret_val, img = cam.read()___________________________
+           cv2.imshow('my webcam', img)________________________
+           if cv2.waitKey(1) == 27: ___________________________
+               break  # esc to quit____________________________
+       cv2.destroyAllWindows()_________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   def main():_________________________________________________
+       show_webcam()___________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   if __name__ == '__main__':__________________________________
+       main()__________________________________________________
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17
+   18
+   19
+   import cv2
+
+
+   def show_webcam():
+       cam = cv2.VideoCapture(0)
+       while True:
+           ret_val, img = cam.read()
+           cv2.imshow('my webcam', img)
+           if cv2.waitKey(1) == 27:
+               break  # esc to quit
+       cv2.destroyAllWindows()
+
+
+   def main():
+       show_webcam()
+
+
+   if __name__ == '__main__':
+       main()
+
+   Erreur :
+
+   VIDEOIO ERROR: V4L2: Pixel format of incoming image is unsup
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   VIDEOIO ERROR: V4L2: Pixel format of incoming image is unsupported by
+   OpenCV
+
+   Solution :
+
+   LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libv4l/v4l2convert.s
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libv4l/v4l2convert.so python3
+   ./webcam01.py
+
+    Framboise Pi
+
+Installation de RaspZDoom
+
+   12 août 201912 août 2019 Framboisier
+
+   Installation de RaspZDoom.
+
+   Distribution : Raspbian GNU/Linux 10 (buster)_______________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   Distribution : Raspbian GNU/Linux 10 (buster)
+
+   1/ Installation des dépendances.
+
+   pi@raspberrypi:~ $ sudo apt-get update______________________
+   pi@raspberrypi:~ $ sudo apt-get install g++ make cmake libsd
+   libbz2-dev libjpeg-dev libfluidsynth-dev libgme-dev libopena
+   libmpg123-dev libsndfile1-dev libgtk-3-dev timidity nasm \__
+   libgl1-mesa-dev tar libsdl1.2-dev libglew-dev_______________
+   1
+   2
+   3
+   4
+   5
+   pi@raspberrypi:~ $ sudo apt-get update
+   pi@raspberrypi:~ $ sudo apt-get install g++ make cmake libsdl2-dev git
+   zlib1g-dev \
+   libbz2-dev libjpeg-dev libfluidsynth-dev libgme-dev libopenal-dev \
+   libmpg123-dev libsndfile1-dev libgtk-3-dev timidity nasm \
+   libgl1-mesa-dev tar libsdl1.2-dev libglew-dev
+
+   2/ Création du répertoire de travail.
+
+   pi@raspberrypi:~ $ mkdir -p JEUX/DOOM/Moteur/_______________
+   pi@raspberrypi:~ $ cd JEUX/DOOM/Moteur/_____________________
+   pi@raspberrypi:~/JEUX/DOOM/Moteur $ ________________________
+   ____________________________________________________________
+   1
+   2
+   3
+   pi@raspberrypi:~ $ mkdir -p JEUX/DOOM/Moteur/
+   pi@raspberrypi:~ $ cd JEUX/DOOM/Moteur/
+   pi@raspberrypi:~/JEUX/DOOM/Moteur $
+
+   3/ Téléchargement du pre source.
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur $ git clone https://github
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   pi@raspberrypi:~/JEUX/DOOM/Moteur $ git clone
+   https://github.com/madame-rachelle/RaspZDoom.git
+
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur $ cd RaspZDoom/___________
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom $ ______________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   2
+   pi@raspberrypi:~/JEUX/DOOM/Moteur $ cd RaspZDoom/
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom $
+
+   4/ Création du répertoire de compilation.
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom $ mkdir build___
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom $ cd build/_____
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ ________
+   ____________________________________________________________
+   1
+   2
+   3
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom $ mkdir build
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom $ cd build/
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $
+
+   5/ Configuration de la compilation.
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ cmake ..
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ cmake ..
+   -DNO_FMOD=ON
+
+   6/ Compilation.
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ make -j2
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ make -j2
+
+   7/ Installation.
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ sudo mak
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ sudo make install
+
+   8/ Lancement de RaspZDoom.
+
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ cd ~/JEU
+   pi@raspberrypi:~/JEUX/DOOM/Wad $ raspzdoom _________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   2
+   pi@raspberrypi:~/JEUX/DOOM/Moteur/RaspZDoom/build $ cd ~/JEUX/DOOM/Wad/
+   pi@raspberrypi:~/JEUX/DOOM/Wad $ raspzdoom
+
+   9/ Capture d’écran. 10/ Liens.
+   https://github.com/madame-rachelle/RaspZDoom
+   https://zdoom.org/wiki/Compile_GZDoom_on_Linux
+
+    Framboise Pi
+
+TechDay RS Component – Stade St Symphorien – Metz – 25/04/19
+
+   25 avril 201925 avril 2019 Framboisier
+
+   TechDay RS Component – Stade St Symphorien – Metz – 25/04/19 Conférence
+   de François Mocq sur le Rasbperry Pi. Framboise 314, le Raspberry Pi à
+   la sauce française…. : https://www.framboise314.fr/
+
+    Framboise Pi
+
+Slade Doom Editor for RasPi
+
+   6 avril 201916 août 2019 Framboisier
+
+   Slade Doom Editor for RasPi 1/ Code source :
+   https://github.com/Nekrofage/Slade4Raspi Basé sur le commit
+   d23d61c5bb1a6ad6a 2/ Compilation : Erreur Installation de
+   wxWidgets-3.0.4.tar.bz2 Erreur :
+
+   pi@raspberrypi:~/JEUX/DOOM/Editeur/Slade4Raspi/dist $ make  
+   [ 34%] Built target external________________________________
+   [ 34%] Linking CXX executable ../slade______________________
+   /usr/bin/ld: /usr/local/lib/libwx_gtk2u_media-3.0.a(medialib
+   /usr/bin/ld: //usr/lib/arm-linux-gnueabihf/libgstvideo-1.0.s
+   collect2: error: ld returned 1 exit status__________________
+   make[2]: *** [src/CMakeFiles/slade.dir/build.make:4147: slad
+   make[1]: *** [CMakeFiles/Makefile2:195: src/CMakeFiles/slade
+   make: *** [Makefile:130: all] Error 2_______________________
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+   pi@raspberrypi:~/JEUX/DOOM/Editeur/Slade4Raspi/dist $
+   make
+   [ 34%] Built target external
+   [ 34%] Linking CXX executable ../slade
+   /usr/bin/ld:
+   /usr/local/lib/libwx_gtk2u_media-3.0.a(medialib_unix_mediactrl.o):
+   undefined reference to symbol 'gst_video_overlay_get_type'
+   /usr/bin/ld: //usr/lib/arm-linux-gnueabihf/libgstvideo-1.0.so.0: error
+   adding symbols: DSO manquant dans la ligne de commande
+   collect2: error: ld returned 1 exit status
+   make[2]: *** [src/CMakeFiles/slade.dir/build.make:4147: slade] Error 1
+   make[1]: *** [CMakeFiles/Makefile2:195: src/CMakeFiles/slade.dir/all]
+   Error 2
+   make: *** [Makefile:130: all] Error 2
+
+   Solution : Ouvrir :
+
+   ~/JEUX/DOOM/Editeur/Slade4Raspi/dist/src/CMakeFiles/slade.di
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   ~/JEUX/DOOM/Editeur/Slade4Raspi/dist/src/CMakeFiles/slade.dir/link.txt
+
+   Chercher :
+
+   /usr/local/lib/libwx_baseu-3.0.a ___________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   /usr/local/lib/libwx_baseu-3.0.a
+
+   Ajouter après :
+
+   /usr/lib/arm-linux-gnueabihf/libgstvideo-1.0.so.0.1404.0 /us
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   /usr/lib/arm-linux-gnueabihf/libgstvideo-1.0.so.0.1404.0
+   /usr/lib/arm-linux-gnueabihf/libgstreamer-1.0.so.0
+
+   3/ Capture d’écran :
+
+    Framboise Pi
+
+Boitier “Cray-1” + Raspberry Zero
+
+   6 janvier 201910 janvier 2019 Framboisier
+
+    Framboise Pi
+
+Installation de base d’un serveur sous Raspberry Zero
+
+   1 janvier 2019 Framboisier
+
+   Installation de base d’un serveur sous Raspberry Zero. Nom du serveur :
+   cray1r0-1.local 1/ Téléchargement de Raspbian Lite.
+   https://www.raspberrypi.org/downloads/raspbian/ 2/ Gravage de l’image
+   sur une carte micro-sd.
+
+   ➜  Téléchargements sudo dd bs=4M if=2018-11-13-raspbian-____
+   [sudo] Mot de passe de util01 : ____________________________
+   445+0 enregistrements lus___________________________________
+   445+0 enregistrements écrits________________________________
+   1866465280 bytes (1,9 GB, 1,7 GiB) copied, 92,9027 s, 20,1 M
+   ➜  Téléchargements__________________________________________
+   1
+   2
+   3
+   4
+   5
+   6
+   ➜  Téléchargements sudo dd bs=4M
+   if=2018-11-13-raspbian-stretch-lite.img of=/dev/mmcblk0
+   [sudo] Mot de passe de util01 :
+   445+0 enregistrements lus
+   445+0 enregistrements écrits
+   1866465280 bytes (1,9 GB, 1,7 GiB) copied, 92,9027 s, 20,1 MB/s
+   ➜  Téléchargements
+
+   Didacticiel :
+   http://framboisepi.fr/configuration-de-raspbian-sous-raspberry-zero-san
+   s-ecran/ 3/ Connexion sur le Raspberry Zero.
+
+   ➜  ~ ssh pi@cray1r0-1.local_________________________________
+   The authenticity of host 'cray1r0-1.local (192.168.1.40)' ca
+   ECDSA key fingerprint is SHA256:GZ3/B8idDjD1WSi85MJ6B9dH56bD
+   Are you sure you want to continue connecting (yes/no)? yes__
+   Warning: Permanently added 'cray1r0-1.local,192.168.1.40' (E
+   pi@cray1r0-1.local's password: _____________________________
+   Linux cray1r0-1.local 4.14.79+ #1159 Sun Nov 4 17:28:08 GMT 
+   ____________________________________________________________
+   The programs included with the Debian GNU/Linux system are f
+   the exact distribution terms for each program are described 
+   individual files in /usr/share/doc/*/copyright._____________
+   ____________________________________________________________
+   Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the e
+   permitted by applicable law.________________________________
+   ____________________________________________________________
+   SSH is enabled and the default password for the 'pi' user ha
+   This is a security risk - please login as the 'pi' user and 
+   ____________________________________________________________
+   pi@cray1r0-1:~ $ ___________________________________________
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17
+   18
+   19
+   ➜  ~ ssh pi@cray1r0-1.local
+   The authenticity of host 'cray1r0-1.local (192.168.1.40)' can't be
+   established.
+   ECDSA key fingerprint is
+   SHA256:GZ3/B8idDjD1WSi85MJ6B9dH56bD96uFG8q1p9oOtvA.
+   Are you sure you want to continue connecting (yes/no)? yes
+   Warning: Permanently added 'cray1r0-1.local,192.168.1.40' (ECDSA) to
+   the list of known hosts.
+   pi@cray1r0-1.local's password:
+   Linux cray1r0-1.local 4.14.79+ #1159 Sun Nov 4 17:28:08 GMT 2018 armv6l
+
+   The programs included with the Debian GNU/Linux system are free
+   software;
+   the exact distribution terms for each program are described in the
+   individual files in /usr/share/doc/*/copyright.
+
+   Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+   permitted by applicable law.
+
+   SSH is enabled and the default password for the 'pi' user has not been
+   changed.
+   This is a security risk - please login as the 'pi' user and type
+   'passwd' to set a new password.
+
+   pi@cray1r0-1:~ $
+
+   4/ Vérification de la taille de la carte micro-sd.
+
+   pi@cray1r0-1:~ $ df -h______________________________________
+   Filesystem      Size  Used Avail Use% Mounted on____________
+   /dev/root        30G  1.1G   27G   4% /_____________________
+   devtmpfs        213M     0  213M   0% /dev__________________
+   tmpfs           217M     0  217M   0% /dev/shm______________
+   tmpfs           217M   12M  206M   6% /run__________________
+   tmpfs           5.0M  4.0K  5.0M   1% /run/lock_____________
+   tmpfs           217M     0  217M   0% /sys/fs/cgroup________
+   /dev/mmcblk0p1   44M   23M   22M  51% /boot_________________
+   tmpfs            44M     0   44M   0% /run/user/1000________
+   pi@cray1r0-1:~ $ ___________________________________________
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+   10
+   11
+   pi@cray1r0-1:~ $ df -h
+   Filesystem      Size  Used Avail Use% Mounted on
+   /dev/root        30G  1.1G   27G   4% /
+   devtmpfs        213M     0  213M   0% /dev
+   tmpfs           217M     0  217M   0% /dev/shm
+   tmpfs           217M   12M  206M   6% /run
+   tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+   tmpfs           217M     0  217M   0% /sys/fs/cgroup
+   /dev/mmcblk0p1   44M   23M   22M  51% /boot
+   tmpfs            44M     0   44M   0% /run/user/1000
+   pi@cray1r0-1:~ $
+
+   5/ Passage en ‘root‘.
+
+   pi@cray1r0-1:~ $ sudo su____________________________________
+   root@cray1r0-1:/home/pi# ___________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   1
+   2
+   pi@cray1r0-1:~ $ sudo su
+   root@cray1r0-1:/home/pi#
+
+   6/ Mise-à-jour […]
+
+    Framboise Pi
+
+Boitier “Cray-1” avec coussinet
+
+   30 décembre 20181 janvier 2019 Framboisier
+
+   Boitier “Cray-1” avec coussinet
+
+    Framboise Pi
+
+Boitier ‘Cray-1’
+
+   13 décembre 201813 décembre 2018 Framboisier
+
+   Boitier ‘Cray-1’ Thingiverse :
+   https://www.thingiverse.com/thing:3273943 Github :
+   https://github.com/Nekrofage/Cray-1 Photos :
+
+    Framboise Pi
+
+Boitier ‘Cray-1’
+
+   10 décembre 201813 décembre 2018 Framboisier
+
+   Boitier ‘Cray-1’ Thingiverse :
+   https://www.thingiverse.com/thing:3273943 Github :
+   https://github.com/Nekrofage/Cray-1 Captures d’écran :
+
+    Framboise Pi
+
+Boitier NeXT en impression 3d – Partie 2/2
+
+   5 novembre 20185 novembre 2018 Framboisier
+
+    Framboise Pi
+
+Navigation des articles
+
+   ← Articles plus anciens
+
+   Recherche pour : ____________________
+
+Catégories
+
+     * Administration (70)
+     * Audio (8)
+     * Développement (11)
+     * Framboise Pi (282)
+     * Geek (22)
+     * Graphisme 3D (4)
+     * Jeu (99)
+     * Matériel (35)
+     * Médiathèque (16)
+     * Multimédia (3)
+     * Serveur (2)
+     * Vidéo (8)
+
+Liens
+
+     * Association ILArd
+     * Forum RaspFr
+     * Framboise314
+     * Hacklab / ILArd
+     * MagdiBlog
+     * Planet RaspFr
+     * Raspberry Pi Fr
+     * Raspbian France
+     * Robot/Drone
+     * Rock Star Ninja
+     * SteamCyberPunk
+     * Woinux
+
+   Fièrement propulsé par WordPress | Thème FlyMag par Themeisle

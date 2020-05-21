@@ -1,0 +1,206 @@
+   The QUAERO French Medical Corpus
+   [Flagfr.gif] Contact Us
+   News
+   October 2016
+   QUAERO French Medical corpus openly available
+   Download
+   December 2015
+   First Release of the QUAERO French Medical Corpus
+   Read More
+   Table of contents
+   Introduction
+   License
+   File Format
+   Corpus Download
+   People Involved
+   Publications
+   Acknowledgements
+   The QUAERO French Medical Corpus
+
+Introduction
+
+   The QUAERO French Medical Corpus has been initially developed as a
+   resource for named entity recognition and normalization [1]. It was
+   then improved with the purpose of creating a gold standard set of
+   normalized entities for French biomedical text, that was used in the
+   CLEF eHealth evaluation lab [2][3].
+   A selection of MEDLINE titles and EMEA documents were manually
+   annotated. The annotation process was guided by concepts in the Unified
+   Medical Language System (UMLS):
+   1. Ten types of clinical entities, as defined by the following UMLS
+   Semantic Groups (Bodenreider and McCray 2003) were annotated: Anatomy,
+   Chemical and Drugs, Devices, Disorders, Geographic Areas, Living
+   Beings, Objects, Phenomena, Physiology, Procedures.
+   2. The annotations were made in a comprehensive fashion, so that nested
+   entities were marked, and entities could be mapped to more than one
+   UMLS concept. In particular: (a) If a mention can refer to more than
+   one Semantic Group, all the relevant Semantic Groups should be
+   annotated. For instance, the mention “récidive” (recurrence) in the
+   phrase “prévention des récidives” (recurrence prevention) should be
+   annotated with the category “DISORDER” (CUI C2825055) and the category
+   “PHENOMENON” (CUI C0034897); (b) If a mention can refer to more than
+   one UMLS concept within the same Semantic Group, all the relevant
+   concepts should be annotated. For instance, the mention “maniaques”
+   (obsessive) in the phrase “patients maniaques” (obsessive patients)
+   should be annotated with CUIs C0564408 and C0338831 (category
+   “DISORDER”); (c) Entities which span overlaps with that of another
+   entity should still be annotated. For instance, in the phrase
+   “infarctus du myocarde” (myocardial infarction), the mention “myocarde”
+   (myocardium) should be annotated with category “ANATOMY” (CUI C0027061)
+   and the mention “infarctus du myocarde” should be annotated with
+   category “DISORDER” (CUI C0027051)
+
+   We provide below examples of the annotations that can be found in the
+   QUAERO French Medical corpus.
+   [quaeroFRmed_MEDLINE.jpg]
+   [quaeroFRmed_EMEA.jpg]
+
+License
+
+   The QUAERO French Medical corpus is released under the GNU Free
+   Documentation License (GFDL)
+
+   The scientific article titles used in this corpus were obtained from
+   the US National Library of Medicine (NLM)'s MEDLINE™ database in 2013.
+   Subsequently, titles were annotated. There were no updates of the
+   titles since 2013 so that the titles in the corpus may differ from
+   those found in more recent versions of MEDLINE.
+
+   Any research using this corpus for running experiments should include
+   the following citation:
+
+   Névéol A, Grouin C, Leixa J, Rosset S, Zweigenbaum P. The QUAERO French
+   Medical Corpus: A Ressource for Medical Entity Recognition and
+   Normalization. Fourth Workshop on Building and Evaluating Ressources
+   for Health and Biomedical Text Processing - BioTxtM2014. 2014:24-30
+
+   Here is the Bibtex entry:
+@InProceedings{neveol14quaero,
+  author = {Névéol, Aurélie and Grouin, Cyril and Leixa, Jeremy
+            and Rosset, Sophie and Zweigenbaum, Pierre},
+  title = {The {QUAERO} {French} Medical Corpus: A Ressource for
+           Medical Entity Recognition and Normalization},
+  OPTbooktitle = {Proceedings of the Fourth Workshop on Building
+                 and Evaluating Ressources for Health and Biomedical
+                 Text Processing},
+  booktitle = {Proc of BioTextMining Work},
+  OPTseries = {BioTxtM 2014},
+  year = {2014},
+  pages = {24--30},
+}
+
+File Format
+
+   Annotations are available in the BRAT Rapid Annotation Tool (BRAT)
+   standoff format, described here: http://brat.nlplab.org/standoff.html,
+   which can be loaded into BRAT for vizualization.
+
+   Annotations have also been automatically converted to the BioC format
+   using the Brat2BioC conversion software.
+
+   Sample annotations (in BRAT format) are shown below.
+   Sample MEDLINE title 1
+   La contraception par les dispositifs intra utérins
+   Sample MEDLINE title 1 annotations
+   T1 PROC 3 16 contraception
+   #1 AnnotatorNotes T1 C0700589
+   T2 DEVI 25 50 dispositifs intra utérins
+   #2 AnnotatorNotes T2 C0021900
+   T3 ANAT 43 50 utérins
+   #3 AnnotatorNotes T3 C0042149
+   Sample MEDLINE title 2
+   Méningites bactériennes de l' adulte en réanimation médicale .
+   Sample MEDLINE title 2 annotations
+   T1 DISO 0 23 Méningites bactériennes
+   #1 AnnotatorNotes T1 C0085437
+   T2 LIVB 29 36 adulte
+   #2 AnnotatorNotes T2 C0001765
+   T3 PROC 40 60 réanimation médicale
+   #3 AnnotatorNotes T3 C0085559
+   Sample EMEA document (excerpt)
+   (...)
+   Dans quel cas Tysabri est-il utilisé ?
+   Tysabri est utilisé dans le traitement des adultes atteints de sclérose
+   en plaques ( SEP ).
+   (...)
+   Sample EMEA document annotations (excerpt)
+   (...)
+   T9 CHEM 206 213 Tysabri
+   #9 AnnotatorNotes T9 C1529600
+   T10 CHEM 233 240 Tysabri
+   #10 AnnotatorNotes T10 C1529600
+   T11 PROC 261 271 traitement
+   #11 AnnotatorNotes T11 C0087111
+   T12 LIVB 276 283 adultes
+   #12 AnnotatorNotes T12 C0001675
+   T13 DISO 296 315 sclérose en plaques
+   #13 AnnotatorNotes T13 C0026769
+   T14 DISO 318 321 SEP
+   #14 AnnotatorNotes T14 C0026769
+   (...)
+
+Corpus Download
+
+   Version available in October 2016, as an archive of the datasets used
+   in CLEF eHealth 2015 (Task 1b) et CLEF eHealth 2016 (Task 2): Download
+   in BRAT Format.
+
+   Version available in October 2016, automatically converted and
+   distributed without a companion evaluation tool.: Download in BioC
+   Format.
+   Training Folder
+   MEDLINE Corpus Description Number of Files
+   .txt Corpus text files: article titles (in French) 833 files
+   .ann annotation files in BRAT stand-off format 833 files
+   .conf BRAT configuration files 3 files
+   EMEA Corpus Description Number of Files
+   .txt Corpus text files: EMEA drug inserts (in French) 3 documents,
+   segmented into 11 files
+   .ann annotation files in BRAT stand-off format 11 files
+   .conf BRAT configuration files 3 files
+   Test Folder
+   MEDLINE Corpus Description Number of Files
+   .txt Corpus text files: article titles (in French) 832 files
+   .ann annotation files in BRAT stand-off format 832 files
+   .conf BRAT configuration files 3 files
+   EMEA Corpus Description Number of Files
+   .txt Corpus text files: EMEA drug inserts (in French) 3 documents,
+   segmented into 12 files
+   .ann annotation files in BRAT stand-off format 12 files
+   .conf BRAT configuration files 3 files
+   Evaluation Folder
+   Software Description Number of Files
+   .jar brateval tool with specific functionalities developped for CLEF
+   e-Health 2015 Task 1b 1 package
+
+People Involved
+
+     * Cyril Grouin
+     * Jeremy Leixa
+     * Aurélie Névéol
+     * Sophie Rosset
+     * Xavier Tannier
+     * Pierre Zweigenbaum
+
+Publications
+
+     * [1] Névéol A, Grouin C, Leixa J, Rosset S, Zweigenbaum P. The
+       QUAERO French Medical Corpus: A Ressource for Medical Entity
+       Recognition and Normalization. Fourth Workshop on Building and
+       Evaluating Ressources for Health and Biomedical Text Processing -
+       BioTxtM2014. 2014:24-30 [pdf]
+     * [2] Névéol A, Grouin C, Tannier X, Hamon T, Kelly L, Goeuriot L,
+       Zweigenbaum P. (2015) Task 1b of the CLEF eHealth Evaluation Lab
+       2015: Clinical Named Entity Recognition. CLEF 2015 Evaluation Labs
+       and Workshop: Online Working Notes, CEUR-WS, September, 2015.[pdf]
+     * [3] Névéol A, Cohen, KB, Grouin C, Hamon T, Lavergne T, Kelly L,
+       Goeuriot L, Rey G, Robert A, Tannier X, Zweigenbaum P. Clinical
+       Information Extraction at the CLEF eHealth Evaluation lab 2016.
+       CLEF 2016, Online Working Notes, CEUR-WS 1609.2016:28-42.[pdf]
+
+Acknowledgements
+
+   This work was funded by OSEO under the Quaero program and by the ANR
+   CABeRNeT project (ANR-13-JS02-009).
+
+   Designed by Wink Hosting.

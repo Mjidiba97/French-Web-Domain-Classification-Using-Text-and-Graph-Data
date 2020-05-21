@@ -1,0 +1,739 @@
+   Monday, 23 September 2019
+
+     * Jodit Editor
+     * jQuery Plugins by XDSoft.net
+          + DateTimePicker
+          + flipCountDown
+          + Range2DSlider
+          + Autocomplete Like Google
+          + SelectSpinner Combine
+          + Dialog jQuery plugin
+          + Period Picker
+               o License
+               o Buy
+          + TimePicker
+          + Calendar popup plugin
+               o License
+               o Buy
+     * Joomla
+          + Yandex Map Construction
+          + Nice Gallery Joomla Module
+               o Documentation
+     * Services
+          + Joomla Module Generator
+          + Joomla Template Generator
+     * Contacts
+     * Mini analogue phpMyAdmin
+
+   [home.png] Best Period Picker (BUTTON) search ____________________
+   [sort by_______]
+     * [Facebook.png]
+     * [Twitter.png]
+     * [Google+.png]
+
+DateTimePicker jQuery plugin select date and time
+
+   [INS: :INS]
+
+   Use this plugin to unobtrusively add a datetimepicker, datepicker or
+   timepicker dropdown to your forms. It's easy to customize options.
+   Source code on GitHub or download (zip).
+   Don't use file datetimepicker.js from this server. It's not CDN
+
+DateTimepicker
+
+   2014/03/15 05:06____
+
+Use mask DateTimepicker
+
+   ____________________
+
+TimePicker
+
+   ____________________
+
+DatePicker
+
+   ____________________
+
+Inline DateTimePicker
+
+   ____________________
+
+Dark theme
+
+   ____________________
+
+PeriodPicker or TimePicker or PeriodDateTimePicker
+
+   Try another perfect period picker
+   ____________________ ____________________
+
+   or cool datetimepicker. Used TimePicker
+   ____________________
+
+   or perioddatetimepicker
+   23:00 2010/12/12____ 13:00 2011/01/01____
+
+   Compact mode
+   23:00 2010/12/12____
+
+   like this datetimepicker mode
+   2016/03/01__________
+
+   or cute timepicker (touchable,draggable,use keyboard and mousewheel,
+   support mobile devices). Read more
+   22:37:11____________
+
+   Buy and Download   Read more ...
+   ____________________
+
+Another Calendar Popup plugin
+
+   Try another perfect datetime picker
+
+   Simple Date Time Picker
+   ____________________
+
+   Only Date Picker
+   ____________________
+
+   Hide buttons
+   ____________________
+
+   Only timepicker
+   ____________________
+
+   Buy   Read more ...
+
+How do I use it?
+
+   First include to page css and js files
+<!-- this should go after your </body> -->
+<link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css"/ >
+<script src="/jquery.js"></script>
+<script src="/build/jquery.datetimepicker.full.min.js"></script>
+
+Examples
+     __________________________________________________________________
+
+Simple init DateTimePicker Example #
+
+   HTML
+<input id="datetimepicker" type="text" >
+
+   javaScript
+jQuery('#datetimepicker').datetimepicker();
+
+   Result
+
+   2014/03/15 05:06____
+     __________________________________________________________________
+
+i18n DatePicker Example #
+
+   All supported languages here
+
+   javaScript
+jQuery.datetimepicker.setLocale('de');
+
+jQuery('#datetimepicker1').datetimepicker({
+ i18n:{
+  de:{
+   months:[
+    'Januar','Februar','März','April',
+    'Mai','Juni','Juli','August',
+    'September','Oktober','November','Dezember',
+   ],
+   dayOfWeek:[
+    "So.", "Mo", "Di", "Mi",
+    "Do", "Fr", "Sa.",
+   ]
+  }
+ },
+ timepicker:false,
+ format:'d.m.Y'
+});
+
+   Result
+
+   15.08.2013__________
+     __________________________________________________________________
+
+Only TimePicker Example #
+
+   javaScript
+jQuery('#datetimepicker2').datetimepicker({
+  datepicker:false,
+  format:'H:i'
+});
+
+   Result
+
+   23:16_______________
+
+Date Time Picker start date #
+
+   javaScript
+jQuery('#datetimepicker_start_time').datetimepicker({
+  startDate:'+1971/05/01'//or 1986/12/08
+});
+
+   Result
+
+   ____________________
+
+Date Time Picker from unixtime #
+
+   javaScript
+jQuery('#datetimepicker_unixtime').datetimepicker({
+  format:'unixtime'
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+Inline DateTimePicker Example #
+
+   javaScript
+jQuery('#datetimepicker3').datetimepicker({
+  format:'d.m.Y H:i',
+  inline:true,
+  lang:'ru'
+});
+
+   Result
+
+   10.12.2013 23:45____
+     __________________________________________________________________
+
+Icon trigger #
+
+   Click the icon next to the input field to show the datetimepicker
+
+   javaScript
+jQuery('#datetimepicker4').datetimepicker({
+  format:'d.m.Y H:i',
+  lang:'ru'
+});
+
+   and handler onclick event
+jQuery('#image_button').click(function(){
+  jQuery('#datetimepicker4').datetimepicker('show'); //support hide,show and des
+troy command
+});
+
+   Result
+   10.12.2013 23:45____
+     __________________________________________________________________
+
+allowTimes options TimePicker Example #
+
+   javaScript
+jQuery('#datetimepicker5').datetimepicker({
+ datepicker:false,
+ allowTimes:[
+  '12:00', '13:00', '15:00',
+  '17:00', '17:05', '17:20', '19:00', '20:00'
+ ]
+});
+
+   Result
+
+   23:45_______________
+     __________________________________________________________________
+
+handler onChangeDateTime Example #
+
+   javaScript
+jQuery('#datetimepicker6').datetimepicker({
+  timepicker:false,
+  onChangeDateTime:function(dp,$input){
+    alert($input.val())
+  }
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+minDate and maxDate Example #
+
+   javaScript
+jQuery('#datetimepicker7').datetimepicker({
+ timepicker:false,
+ formatDate:'Y/m/d',
+ minDate:'-1970/01/02',//yesterday is minimum date(for today use 0 or -1970/01/0
+1)
+ maxDate:'+1970/01/02'//tomorrow is maximum date calendar
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+Use mask input Example #
+
+   javaScript
+jQuery('#datetimepicker_mask').datetimepicker({
+ timepicker:false,
+ mask:true, // '9999/19/39 29:59' - digit is the maximum possible for a cell
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+Set options runtime DateTimePicker #
+
+   If select day is Saturday, the minimum set 11:00, otherwise 8:00
+
+   javaScript
+var logic = function( currentDateTime ){
+  // 'this' is jquery object datetimepicker
+  if( currentDateTime.getDay()==6 ){
+    this.setOptions({
+      minTime:'11:00'
+    });
+  }else
+    this.setOptions({
+      minTime:'8:00'
+    });
+};
+jQuery('#datetimepicker_rantime').datetimepicker({
+  onChangeDateTime:logic,
+  onShow:logic
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+After generating a calendar called the event onGenerate #
+
+   Invert settings minDate and maxDate
+
+   javaScript
+jQuery('#datetimepicker8').datetimepicker({
+  onGenerate:function( ct ){
+    jQuery(this).find('.xdsoft_date')
+      .toggleClass('xdsoft_disabled');
+  },
+  minDate:'-1970/01/2',
+  maxDate:'+1970/01/2',
+  timepicker:false
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+disable all weekend #
+
+   javaScript
+jQuery('#datetimepicker9').datetimepicker({
+  onGenerate:function( ct ){
+    jQuery(this).find('.xdsoft_date.xdsoft_weekend')
+      .addClass('xdsoft_disabled');
+  },
+  weekends:['01.01.2014','02.01.2014','03.01.2014','04.01.2014','05.01.2014','06
+.01.2014'],
+  timepicker:false
+});
+
+   Result
+
+   ____________________
+     __________________________________________________________________
+
+Use another date parser/formatter#
+
+   By default, datetimepicker uses php-date-formatter for parsing and
+   formatting the date and time displayed. You can replace the library by
+   setting a custom DateFormatter. Simply supply an object that implements
+   the parseDate and formatDate methods. This example uses the popular
+   MomentJS library:
+$.datetimepicker.setDateFormatter({
+    parseDate: function (date, format) {
+        var d = moment(date, format);
+        return d.isValid() ? d.toDate() : false;
+    },
+
+    formatDate: function (date, format) {
+        return moment(date).format(format);
+    },
+
+    //Optional if using mask input
+    formatMask: function(format){
+        return format
+            .replace(/Y{4}/g, '9999')
+            .replace(/Y{2}/g, '99')
+            .replace(/M{2}/g, '19')
+            .replace(/D{2}/g, '39')
+            .replace(/H{2}/g, '29')
+            .replace(/m{2}/g, '59')
+            .replace(/s{2}/g, '59');
+    }
+});
+
+   After this, you can init datetimepicker with moment.js format
+jQuery('#datetimepicker').datetimepicker({
+  format:'DD.MM.YYYY h:mm a',
+  formatTime:'h:mm a',
+  formatDate:'DD.MM.YYYY'
+});
+
+   Because of its popularity, moment.js has a pre-defined configuration
+   that can be enabled with:
+$.datetimepicker.setDateFormatter('moment');
+     __________________________________________________________________
+
+Range between date#
+
+   javaScript
+jQuery(function(){
+ jQuery('#date_timepicker_start').datetimepicker({
+  format:'Y/m/d',
+  onShow:function( ct ){
+   this.setOptions({
+    maxDate:jQuery('#date_timepicker_end').val()?jQuery('#date_timepicker_end').
+val():false
+   })
+  },
+  timepicker:false
+ });
+ jQuery('#date_timepicker_end').datetimepicker({
+  format:'Y/m/d',
+  onShow:function( ct ){
+   this.setOptions({
+    minDate:jQuery('#date_timepicker_start').val()?jQuery('#date_timepicker_star
+t').val():false
+   })
+  },
+  timepicker:false
+ });
+});
+
+   Result
+
+   Start ____________________ End ____________________
+
+   Try another perfect period picker for CMS or CRM
+   ____________________ ____________________    buy and download   Read
+   more ...
+   [INS: :INS]
+
+Full options list
+
+   Name default Descr Ex.
+   lazyInit false Initializing plugin occurs only when the user interacts.
+   Greatly accelerates plugin work with a large number of fields
+   parentID 'body' Attach datetimepicker to this element, which can be
+   either a selector or a DOM/JQuery element
+{parentID:'#parent'}
+
+   value null Current value datetimepicker. If it is set, ignored
+   input.value
+{value:'12.03.2013',
+ format:'d.m.Y'}
+
+   lang en Language i18n
+   ar - Arabic
+   az - Azerbaijanian (Azeri)
+   bg - Bulgarian
+   bs - Bosanski
+   ca - Català
+   ch - Simplified Chinese
+   cs - Čeština
+   da - Dansk
+   de - German
+   el - Ελληνικά
+   en - English
+   en-GB - English (British)
+   es - Spanish
+   et - "Eesti"
+   eu - Euskara
+   fa - Persian
+   fi - Finnish (Suomi)
+   fr - French
+   gl - Galego
+   he - Hebrew (עברית)
+   hr - Hrvatski
+   hu - Hungarian
+   id - Indonesian
+   it - Italian
+   ja - Japanese
+   ko - Korean (한국어)
+   kr - Korean
+   lt - Lithuanian (lietuvių)
+   lv - Latvian (Latviešu)
+   mk - Macedonian (Македонски)
+   mn - Mongolian (Монгол)
+   nl - Dutch
+   no - Norwegian
+   pl - Polish
+   pt - Portuguese
+   pt-BR - Português(Brasil)
+   ro - Romanian
+   ru - Russian
+   se - Swedish
+   sk - Slovenčina
+   sl - Slovenščina
+   sq - Albanian (Shqip)
+   sr - Serbian Cyrillic (Српски)
+   sr-YU - Serbian (Srpski)
+   sv - Svenska
+   th - Thai
+   tr - Turkish
+   uk - Ukrainian
+   vi - Vietnamese
+   zh - Simplified Chinese (简体中文)
+   zh-TW - Traditional Chinese (繁體中文)
+$.datetimepicker.setLocale('ru');
+
+   format Y/m/d H:i Format datetime. More Also there is a special type of
+   «unixtime»
+{format:'H'}
+{format:'Y'}{format:'unixtime'}
+
+   formatDate Y/m/d Format date for minDate and maxDate
+{formatDate:'d.m.Y'}
+
+   formatTime H:i Similarly, formatDate . But for minTime and maxTime
+{formatTime:'H'}
+
+   step 60 Step time
+{step:5}
+
+   closeOnDateSelect 0
+{closeOnDateSelect:true}
+
+   closeOnWithoutClick true
+{ closeOnWithoutClick :false}
+
+   validateOnBlur true Verify datetime value from input, when losing
+   focus. If value is not valid datetime, then to value inserts the
+   current datetime
+{ validateOnBlur:false}
+
+   timepicker true
+{timepicker:false}
+
+   datepicker true
+{datepicker:false}
+
+   weeks false Show week number
+{weeks:true}
+
+   theme 'default' Setting a color scheme. Now only supported default and
+   dark theme
+{theme:'dark'}
+
+   minDate false
+{minDate:0} // today
+{minDate:'2013/12/03'}
+{minDate:'-1970/01/02'} // yesterday
+{minDate:'05.12.2013',formatDate:'d.m.Y'}
+
+   maxDate false
+{maxDate:0}
+{maxDate:'2013/12/03'}
+{maxDate:'+1970/01/02'} // tomorrow
+{maxDate:'05.12.2013',formatDate:'d.m.Y'}
+
+   startDate false calendar set date use starDate
+{startDate:'1987/12/03'}
+{startDate:new Date()}
+{startDate:'+1970/01/02'} // tomorrow
+{startDate:'08.12.1986',formatDate:'d.m.Y'}
+
+   defaultDate false if input value is empty, calendar set date use
+   defaultDate
+{defaultDate:'1987/12/03'}
+{defaultDate:new Date()}
+{defaultDate:'+1970/01/02'} // tomorrow
+{defaultDate:'08.12.1986',formatDate:'d.m.Y'}
+
+   defaultTime false if input value is empty, timepicker set time use
+   defaultTime
+{defaultTime:'05:00'}
+{defaultTime:'33-12',formatTime:'i-H'}
+
+   minTime false
+{minTime:0,}// now
+{minTime:new Date()}
+{minTime:'12:00'}
+{minTime:'13:45:34',formatTime:'H:i:s'}
+
+   maxTime false
+{maxTime:0,}
+{maxTime:'12:00'}
+{maxTime:'13:45:34',formatTime:'H:i:s'}
+
+   allowTimes []
+{allowTimes:[
+  '09:00',
+  '11:00',
+  '12:00',
+  '21:00'
+]}
+
+   mask false Use mask for input. true - automatically generates a mask on
+   the field 'format', Digit from 0 to 9, set the highest possible digit
+   for the value. For example: the first digit of hours can not be greater
+   than 2, and the first digit of the minutes can not be greater than 5
+{mask:'9999/19/39',format:'Y/m/d'}
+{mask:true,format:'Y/m/d'} // automatically generate a mask 9999/99/99
+{mask:'29:59',format:'H:i'} //
+{mask:true,format:'H:i'} //automatically generate a mask 99:99
+
+   opened false
+   yearOffset 0 Year offset for Buddhist era
+   inline false
+   todayButton true Show button "Go To Today"
+   defaultSelect true Highlight the current date even if the input is
+   empty
+   allowBlank false Allow field to be empty even with the option
+   validateOnBlur in true
+   timepickerScrollbar true
+   onSelectDate function(){}
+onSelectDate:function(ct,$i){
+  alert(ct.dateFormat('d/m/Y'))
+}
+
+   onSelectTime function(current_time,$input){}
+   onChangeMonth function(current_time,$input){}
+   onChangeYear function(current_time,$input){}
+   onChangeDateTime function(current_time,$input){}
+   onShow function(current_time,$input){}
+   onClose function(current_time,$input){}
+onSelectDate:function(ct,$i){
+  $i.datetimepicker('destroy');
+}
+
+   onGenerate function(current_time,$input){} trigger after construct
+   calendar and timepicker
+   withoutCopyright true
+   inverseButton false
+   scrollMonth true
+   scrollTime true
+   scrollInput true
+   hours12 false
+   yearStart 1950 Start value for fast Year selector
+   yearEnd 2050 End value for fast Year selector
+   roundTime round Round time in timepicker, possible values: round, ceil,
+   floor
+{roundTime:'floor'}
+
+   dayOfWeekStart 0
+
+   Star week DatePicker. Default Sunday - 0.
+
+   Monday - 1 ...
+   className
+   weekends []
+['01.01.2014','02.01.2014','03.01.2014','04.01.2014','05.01.2014','06.01.2014']
+
+   disabledDates []
+
+   Disbale all dates in list
+{disabledDates: ['01.01.2014','02.01.2014','03.01.2014','04.01.2014','05.01.2014
+','06.01.2014'], formatDate:'d.m.Y'}
+
+   allowDates []
+
+   Allow all dates in list
+{allowDates: ['01.01.2014','02.01.2014','03.01.2014','04.01.2014','05.01.2014','
+06.01.2014'], formatDate:'d.m.Y'}
+
+   allowDateRe []
+
+   Use Regex to check dates
+{format:'Y-m-d',allowDateRe:'\d{4}-(03-31|06-30|09-30|12-31)' }
+
+   disabledWeekDays []
+
+   Disable days listed by index
+[0, 3, 4]
+
+   id
+   style
+   ownerDocument document The ownerDocument object for the datetimepicker
+   to properly attach events and calc position (iframe support).
+   contentWindow window The contentWindow object that contains the
+   datetimepicker to properly attach events (iframe support).
+     __________________________________________________________________
+
+Methods
+
+show
+
+   Show Datetimepicker
+$('#input').datetimepicker();
+$('button.somebutton').on('click', function () {
+    $('#input').datetimepicker('show');
+});
+
+hide
+
+   Hide Datetimepicker
+$('#input').datetimepicker();
+$(window).on('resize', function () {
+    $('#input').datetimepicker('hide');
+});
+
+toggle
+
+   Sgow/Hide Datetimepicker
+$('#input').datetimepicker();
+$('button.trigger').on('click', function () {
+    $('#input').datetimepicker('toggle');
+});
+
+destroy
+
+   Destroy datetimepicker
+$('#input').datetimepicker();
+$('#input').datetimepicker('destroy');
+
+reset
+
+   Reset datetimepicker's value
+$('#input').datetimepicker();
+$('#input').val('12/01/2006');
+$('#input')
+    .datetimepicker('show')
+    .datetimepicker('reset')
+
+validate
+
+   Validate datetimepicker's value
+$('#input').datetimepicker();
+$('#input').datetimepicker(validate)
+
+setOptions
+
+   Set datetimepicker's options
+$('#input').datetimepicker({format: 'd.m.Y'});
+$('#input').datetimepicker('setOptions', {format: 'd/m/Y'});
+//or
+$('#input').datetimepicker({format: 'd/m/Y'});
+
+getValue
+
+   Get current datetimepicker's value (Date object)
+$('#input').datetimepicker();
+$('button.somebutton').on('click', function () {
+    var d = $('#input').datetimepicker('getValue');
+    console.log(d.getFullYear());
+});
+
+   Please enable JavaScript to view the comments powered by Disqus.
+   comments powered by Disqus

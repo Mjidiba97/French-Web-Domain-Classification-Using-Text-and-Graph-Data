@@ -1,0 +1,629 @@
+   #Grid5000 (en) Grid5000 Atom feed
+
+Grid5000:Home
+
+   From Grid5000
+   Jump to: navigation, search
+   Grid'5000
+
+   Grid'5000 is a large-scale and versatile testbed for experiment-driven
+   research in all areas of computer science, with a focus on parallel and
+   distributed computing including Cloud, HPC and Big Data and IA.
+
+   Key features:
+     * provides access to a large amount of resources: 12000 cores, 800
+       compute-nodes grouped in homogeneous clusters, and featuring
+       various technologies: GPU, SSD, NVMe, 10G and 25G Ethernet,
+       Infiniband, Omni-Path
+     * highly reconfigurable and controllable: researchers can experiment
+       with a fully customized software stack thanks to bare-metal
+       deployment features, and can isolate their experiment at the
+       networking layer
+     * advanced monitoring and measurement features for traces collection
+       of networking and power consumption, providing a deep understanding
+       of experiments
+     * designed to support Open Science and reproducible research, with
+       full traceability of infrastructure and software changes on the
+       testbed
+     * a vibrant community of 500+ users supported by a solid technical
+       team
+
+   Read more about our teams, our publications, and the usage policy of
+   the testbed. Then get an account, and learn how to use the testbed with
+   our Getting Started tutorial and the rest of our Users portal.
+
+   Grid'5000 is merging with FIT to build the SILECS Infrastructure for
+   Large-scale Experimental Computer Science. Read an Introduction to
+   SILECS (April 2018)
+
+   Recently published documents and presentations:
+     * Presentation of Grid'5000 (April 2019)
+     * Report from the Grid'5000 Science Advisory Board (2018)
+
+   Older documents:
+     * Slides from Frederic Desprez's keynote at IEEE CLUSTER 2014
+     * Report from the Grid'5000 Science Advisory Board (2014)
+
+   Grid'5000 is supported by a scientific interest group (GIS) hosted by
+   Inria and including CNRS, RENATER and several Universities as well as
+   other organizations. Inria has been supporting Grid'5000 through ADT
+   ALADDIN-G5K (2007-2013), ADT LAPLACE (2014-2016), and IPL HEMERA
+   (2010-2014).
+
+   Current status (at 2019-09-26 02:11): No current events, 1 planned
+   (details)
+
+Random pick of publications
+
+   Five random publications that benefited from Grid'5000 (at least 2034
+   overall):
+     * Michael Mercier, David Glesser, Yiannis Georgiou, Olivier Richard.
+       Big Data and HPC collocation: Using HPC idle resources for Big Data
+       Analytics. IEEE BigData 2017, Dec 2017, Boston, United States.
+       hal-01633507 view on HAL pdf
+     * Mohammed Yacine Taleb. Optimizing Distributed In-memory Storage
+       Systems˸ Fault-tolerance, Performance, Energy Efficiency.
+       Performance cs.PF. École normale supérieure de Rennes, 2018.
+       English. NNT : 2018ENSR0015. tel-01891897v2 view on HAL pdf
+     * Loic Guegan, Betsegaw Amersho, Anne-Cécile Orgerie, Martin Quinson.
+       A Large-Scale Wired Network Energy Model for Flow-Level
+       Simulations. AINA 2019 - 33rd International Conference on Advanced
+       Information Networking and Applications, Mar 2019, Matsue, Japan.
+       pp.1047-1058, 10.1007/978-3-030-15032-7_88. hal-02020045v2 view on
+       HAL pdf
+     * Abdulqawi Saif, Alexandre Merlin, Lucas Nussbaum, Ye-Qiong Song.
+       Monitoring Testbed Experiments with MonEx. Grid5000-FIT Spring
+       School, SILECS project, INRIA, Apr 2018, Sophia Antipolis, France.
+       hal-01793507 view on HAL pdf
+     * Simon Delamare, Pascal Morillon, Lucas Nussbaum. Réalisation
+       d'expériences avec Grid'5000. JRES2017 - Journées Réseaux de
+       l'enseignement et de la recherche, Nov 2017, Nantes, France.
+       hal-01639524 view on HAL pdf
+
+Latest news
+
+   Rss.svg Default environments and frontends to be updated to Debian 10
+   "Buster"
+
+   Dear users,
+
+   We are planning to upgrade nodes default environement (the "-std"
+   variant, provided when deployment is not used) to Debian 10 "Buster".
+   Switchover is scheduled on September, 26th.
+
+   In addition, frontends will also be upgraded on October 3rd (It has
+   already been upgraded on Luxembourg site).
+
+   Remind that this update may need you to modify your scripts (of course
+   you will still be able to deploy Debian 9 environments).
+
+   Regards,
+
+   -- Grid'5000 Team 12:00, 20 September 2019 (CET)
+
+   Rss.svg Debian 10 "buster" environments are now available for
+   deployments
+
+   Kadeploy images (from min to big) are now available for Debian 10.
+
+   New features and changes in Debian 10 are described in:
+   https://www.debian.org/releases/buster/amd64/release-notes/ch-whats-new
+   .en.html
+
+   In particular, it includes many software updates:
+     * openjdk 11.0.4
+     * Python 3.7.3
+          + python-numpy 1.16.2
+          + python-scipy 1.2.2
+          + python-pandas 0.23.3
+     * OpenMPI 3.1.3
+     * GCC 7.4 and 8.3
+     * G++ 8.3.0
+     * Libboost 1.67.0.2
+     * Ruby 2.5.1
+     * Cuda 10.1.168 (418.67)
+     * CMake 3.13.4
+     * GFortran 8.3.0
+     * Liblapack 3.8.0
+     * libatlas 0.6.4
+     * RDMA 24.0
+
+   Known regressions and problems are :
+     * The std environment is not available yet
+     * Predicitible network interfaces names changed on chifflot and
+       graffiti (see
+       https://intranet.grid5000.fr/bugzilla/show_bug.cgi?id=9877)
+     * Infiniband network support is not operational at the moment
+
+   Let us know if you want us to support some tools, software,... that are
+   not available on big and std.
+
+   As a reminder, this is the way you can use an alternate environment
+   (https://www.grid5000.fr/w/Getting_Started#Deploying_nodes_with_Kadeplo
+   y) :
+ $ oarsub -t deploy -I
+ $ kadeploy -e debian10-x64-big -f $OAR_NODE_FILE -k
+
+   Please report any problem you encounter with the above environments to
+   support-staff@lists.grid5000.fr.
+
+   -- Grid'5000...
+
+   Rss.svg New cluster available in Nancy: graffiti (52 GPUs)
+
+   We have the pleasure to announce that the Graffiti cluster in Nancy
+   (production queue) is now fully operational:
+
+   It features 13 Dell T640 servers nodes with 2 Intel Silver 4110 (8
+   cores / 16 threads), 128 GB DDR4, 1x480 GB SSD, 10Gbps Ethernet, and 4
+   GPU NVidia RTX2080 Ti per node.
+
+   As this cluster features 4 GPU per node, we remind you that you can
+   monitor GPU (and node) usage using the Ganglia tool (std environment
+   only):
+     * follow
+       https://intranet.grid5000.fr/ganglia/?r=2hr&cs=&ce=&m=load_one&s=by
+       +name&c=Nancy&tab=m&vn=&hide-hf=false
+     * then choose a node (eg. graffiti-3)
+
+   You can also use the nvidia-smi and htop commands on your reserved
+   nodes to get more information about your GPU/CPU usage.
+
+   If your experiments do not require all the GPU of a single node, it is
+   possible to reserve GPU at the resource level (see
+   https://grid5000.fr/w/News#Enabling_GPU_level_resource_reservation_in_O
+   AR for some examples).
+
+   Finally, if you know how to use GPUs at their max with widely used
+   software (Tensorflow, NAMD, ...) and would like to share your knowledge
+   about this, we will be happy to transform your knowledge into Grid5000
+   tutorials.
+
+   This cluster has been funded by Ihe CPER LCHN project (Langues,
+   Connaissances & Humanités Numériques, Contrat de plan État / Région
+   Lorraine 2015-2020), and the LARSEN and MULTISPEECH teams at LORIA /
+   Inria Nancy Grand Est.
+
+   Special thanks go to:
+     * Marc Vesin (Inria Sophia) and Marianne Lombard (Inria Saclay) for
+       their contributions and sharing of experiences on the café cluster
+       mailing list which have...
+
+   Rss.svg A new version of tgz-g5k has been released
+
+   We have released a new version of tgz-g5k. Tgz-g5k is a a tool that
+   allow you to extract a Grid'5000 environment tarball from a running
+   node. The tarball can therefore be used by kadeploy to re-deploy the
+   image on different nodes/reservations (see Advanced Kadeploy for more
+   details)
+
+   The new version has two major improvements:
+    1. tgz-g5k is now compatible with Ubuntu and Centos
+    2. tgz-g5k is directly usable on frontends (you do not need to use it
+       through ssh anymore).
+
+   To use tgz-g5k from a frontend, you can execute the following command:
+  frontend$ tgz-g5k -m MY_NODE -f ~/MY_TARBALL.tgz
+
+   In case of specific or non-deployed environments: - tgz-g5k can use a
+   specific user id to access nodes, by using the parameter -u (by default
+   tgz-g5k accesses nodes as root) - tgz-g5k can access node with
+   oarsh/oarcp instead of ssh/scp, by using the parameter -o (by default
+   tgz-g5k uses ssh/scp)
+
+   Note that tg5-g5k is still compatible with the previous command line.
+   For the record, you had to use previously the following command:
+  frontend$ ssh root@MY_NODE tgz-g5k > ~/MY_TARBALL.tgz
+
+   -- Grid'5000 Team 15:00, 07 August 2019 (CET)
+     __________________________________________________________________
+
+   Read more news
+
+Grid'5000 sites
+
+     * Grenoble
+     * Lille
+     * Luxembourg
+
+     * Lyon
+     * Nancy
+     * Nantes
+
+     * Rennes
+     * Sophia-Antipolis
+     * Toulouse
+
+Current funding
+
+   As from June 2008, Inria is the main contributor to Grid'5000 funding.
+
+INRIA
+
+   Logo INRIA.gif
+
+CNRS
+
+   CNRS-filaire-Quadri.png
+
+Universities
+
+   Université Grenoble Alpes, Grenoble INP
+   Université Rennes 1, Rennes
+   Institut National Polytechnique de Toulouse / INSA / FERIA / Université
+   Paul Sabatier, Toulouse
+   Université Bordeaux 1, Bordeaux
+   Université Lille 1, Lille
+   École Normale Supérieure, Lyon
+
+Regional councils
+
+   Aquitaine
+   Auvergne-Rhône-Alpes
+   Bretagne
+   Champagne-Ardenne
+   Provence Alpes Côte d'Azur
+   Hauts de France
+   Lorraine
+   Retrieved from
+   "https://www.grid5000.fr/mediawiki/index.php?title=Grid5000:Home&oldid=
+   81364"
+   Category:
+     * Pages with RSS feeds
+
+Navigation menu
+
+Personal tools
+
+     * Log in
+
+Namespaces
+
+     * Main page
+     * Discussion
+
+Variants
+
+Views
+
+     * Read
+     * View source
+     * View history
+
+More
+
+Search
+
+   ____________________ Search Go
+
+Public portal
+
+     * Public home
+     * Get an account
+     * Usage policy
+     * Software
+     * Publications
+     * News
+     * Team
+
+Users portal
+
+     * Users home
+     * Hardware
+     * Network
+     * Platform status
+     * Manage account
+     * Reset password
+     * FAQ
+     * Support
+
+TechTeam
+
+     * Home
+
+Wiki special pages
+
+     * Recent changes
+     * All pages
+     * Wiki help
+
+Tools
+
+     * What links here
+     * Related changes
+     * Special pages
+     * Printable version
+     * Permanent link
+     * Page information
+
+     * This page was last modified on 19 September 2019, at 14:46.
+
+     * Privacy policy
+     * About Grid5000
+     * Disclaimers
+
+     * Powered by MediaWiki
+   #Grid5000 (en) Grid5000 Atom feed
+
+Login required
+
+   Jump to: navigation, search
+   Please log in to view other pages.
+
+   Return to Grid5000:Home.
+   Retrieved from "https://www.grid5000.fr/w/Special:Badtitle"
+
+Navigation menu
+
+Personal tools
+
+     * Log in
+
+Namespaces
+
+     * Special page
+
+Variants
+
+Views
+
+More
+
+Search
+
+   ____________________ Search Go
+
+Public portal
+
+     * Public home
+     * Get an account
+     * Usage policy
+     * Software
+     * Publications
+     * News
+     * Team
+
+Users portal
+
+     * Users home
+     * Hardware
+     * Network
+     * Platform status
+     * Manage account
+     * Reset password
+     * FAQ
+     * Support
+
+TechTeam
+
+     * Home
+
+Wiki special pages
+
+     * Recent changes
+     * All pages
+     * Wiki help
+
+Tools
+
+     * Special pages
+     * Printable version
+
+     * Privacy policy
+     * About Grid5000
+     * Disclaimers
+
+     * Powered by MediaWiki
+   #Grid5000 (en) Grid5000 Atom feed
+
+Login required
+
+   Jump to: navigation, search
+   Please log in to view other pages.
+
+   Return to Grid5000:Home.
+   Retrieved from "https://www.grid5000.fr/w/Special:Badtitle"
+
+Navigation menu
+
+Personal tools
+
+     * Log in
+
+Namespaces
+
+     * Special page
+
+Variants
+
+Views
+
+More
+
+Search
+
+   ____________________ Search Go
+
+Public portal
+
+     * Public home
+     * Get an account
+     * Usage policy
+     * Software
+     * Publications
+     * News
+     * Team
+
+Users portal
+
+     * Users home
+     * Hardware
+     * Network
+     * Platform status
+     * Manage account
+     * Reset password
+     * FAQ
+     * Support
+
+TechTeam
+
+     * Home
+
+Wiki special pages
+
+     * Recent changes
+     * All pages
+     * Wiki help
+
+Tools
+
+     * Special pages
+     * Printable version
+
+     * Privacy policy
+     * About Grid5000
+     * Disclaimers
+
+     * Powered by MediaWiki
+   #Grid5000 (en) Grid5000 Atom feed
+
+Login required
+
+   Jump to: navigation, search
+   Please log in to view other pages.
+
+   Return to Grid5000:Home.
+   Retrieved from "https://www.grid5000.fr/w/Special:Badtitle"
+
+Navigation menu
+
+Personal tools
+
+     * Log in
+
+Namespaces
+
+     * Special page
+
+Variants
+
+Views
+
+More
+
+Search
+
+   ____________________ Search Go
+
+Public portal
+
+     * Public home
+     * Get an account
+     * Usage policy
+     * Software
+     * Publications
+     * News
+     * Team
+
+Users portal
+
+     * Users home
+     * Hardware
+     * Network
+     * Platform status
+     * Manage account
+     * Reset password
+     * FAQ
+     * Support
+
+TechTeam
+
+     * Home
+
+Wiki special pages
+
+     * Recent changes
+     * All pages
+     * Wiki help
+
+Tools
+
+     * Special pages
+     * Printable version
+
+     * Privacy policy
+     * About Grid5000
+     * Disclaimers
+
+     * Powered by MediaWiki
+   #Grid5000 (en) Grid5000 Atom feed
+
+Login required
+
+   Jump to: navigation, search
+   Please log in to view other pages.
+
+   Return to Grid5000:Home.
+   Retrieved from "https://www.grid5000.fr/w/Special:Badtitle"
+
+Navigation menu
+
+Personal tools
+
+     * Log in
+
+Namespaces
+
+     * Special page
+
+Variants
+
+Views
+
+More
+
+Search
+
+   ____________________ Search Go
+
+Public portal
+
+     * Public home
+     * Get an account
+     * Usage policy
+     * Software
+     * Publications
+     * News
+     * Team
+
+Users portal
+
+     * Users home
+     * Hardware
+     * Network
+     * Platform status
+     * Manage account
+     * Reset password
+     * FAQ
+     * Support
+
+TechTeam
+
+     * Home
+
+Wiki special pages
+
+     * Recent changes
+     * All pages
+     * Wiki help
+
+Tools
+
+     * Special pages
+     * Printable version
+
+     * Privacy policy
+     * About Grid5000
+     * Disclaimers
+
+     * Powered by MediaWiki

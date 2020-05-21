@@ -1,0 +1,2116 @@
+   #eTh0maz Electronics » Feed eTh0maz Electronics » Comments Feed eTh0maz
+   Electronics WordPress.com
+
+eTh0maz Electronics
+
+Thomas's blog
+
+Main menu
+
+   Skip to content
+     * Arduino
+     * LoRaWAN
+     * Electronics
+     * GIP
+     * RC Boat
+     * Photo gallery
+     * Contact
+
+Post navigation
+
+   ← Older posts
+
+   Sep 8 2017
+
+The BeeMonitor with permanent scale
+
+   The BeeMonitor prototype has been up and running sinds march 2017
+   without any big issue’s, in the mean time some hardware/software
+   upgrades were made. A complete new Arduino compatible Arduino
+   bootloader allows faster startup even at very low voltages.
+
+   Because the battery life was very promising I decided to add a load
+   cell for a permanent scale and keep track of the beehive weight. The
+   result is a wireless BeeMonitor + scale without external power or
+   wires. The beehives can be placed everywhere within range of the
+   gateway. Reference measurements indicate the two AAA batteries will
+   keep the BeeMonitor powered for at least one year, collecting data
+   every 15 minutes! Awesome!
+
+   Setup: BeeMonitor prototype with internal beehive temperature sensor
+   and permanent half-scale
+
+   The scale is based on the half-scale principal. It’s designed to weigh
+   only half the hive, making the design simpler because only 1 (high
+   quality) load-cell is required. This design finally makes monitoring
+   beehives affordable!
+
+   There’s a on-the-go calibration procedure. The scale can be calibrated
+   in the field by following a couple of steps, without the need of
+   re-programming.
+
+   Temperature graphs
+
+   The graph below shows the ambient temperature (outside beehive, shade)
+   vs. beehive cluster temperature (inside beehive). Past days have been
+   mostly wet with almost no sunshine. The cluster temperature dropped a
+   few degrees what probably indicates the queen is laying much less eggs
+   and the bees are preparing for a long cold period.
+
+   Ambient temperature (outside beehive, shade) vs. cluster temperature
+   (inside beehive)
+
+   Weight graph
+
+   A couple of days before the beginning of this graph, the bees were
+   given extra sugar water (the two steep drops in the graph are the
+   removal of the empty sugar water reservoirs).
+
+   Due to the bad weather the bees don’t fly much and certainly don’t
+   bring much food in. The weight drops because of the erratic weather,
+   the number of bees is also reducing because they prepare for winter.
+   The weight rises and decreases slightly within one day but the overall
+   weight is decreasing.
+
+   The weight is displayed in grams, because of the half-scale design this
+   is only the weight of half the hive. To know the total weight, it has
+   to be multiplied by two. A future software upgrade will display the
+   real weight.
+
+   Beehive weight in grams
+
+   Future plans
+
+   A revision/upgrade of the BeeMonitor is in development. Below the key
+   features of the first version with the most important upgrades in the
+   new version.
+
+   Key features
+     * Atmega328p microcontroller (Arduino compatible)
+     * 2 internal AAA batteries (3V)
+     * Powerdown: 35 nA
+     * Wakeup every 15′, 30′, 1h or 2h selected with internal dipswitch
+     * Beehive ID selected with internal dipswitch (up to 15 hives without
+       re-programming)
+     * Low power 868 MHz radio with internal antenna (up to ± 250m),
+       external antenna possible
+     * Manual “wakeup” button
+     * RGB led
+     * Buzzer
+     * Internal ambient temperature/humidity sensor
+     * 2 RJ12 ports for external temperature/humidity beehive sensors
+
+   Upgrades
+     * New, slightly larger housing
+     * 3 RJ12 ports for temperature/humidity beehive sensors
+     * Internal (removable) HX711 ADC module
+     * Separate (pluggable) connector for beehive load-cell scale
+     * Extra “calibrate button” for easy scale calibration
+     * Even lower power consumption
+     * Integrated boost converter to operate down to 1,8V
+
+   The current gateway is based on a Raspberry Pi, running open-source
+   “Domoticz” software. This is actually home-automation software, because
+   I had this running for other projects I chose to implement the
+   BeeMonitor in Domoticz for the prototype.
+
+   Because this is not really a plug & play option for beehives, a new
+   cheaper Wi-Fi, IoT (LoRaWAN) gateway needs to be developed to forward
+   all data to an online platform. Analyzing all available
+   options, Hiveeyes.org seems the best option.
+
+   Questions? Don’t hesitate to contact me!
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Hobby Electronics, IoT
+   0
+
+   May 24 2017
+
+Upgraded LoRaWAN Node
+
+   The upgrade of my LoRaWAN Node is finally here!
+
+   The LoRaWAN Node is a compact, universal and affordable LoRaWAN Node
+   with a powerful Arduino compatible Atmel Atmega1284P microcontroller.
+   The dimensions are only 41 x 26 mm!
+
+   The new “TvB LoRaWAN Node Rev.2b” with RN2483A
+
+   The node supports the most popular LoRa transceivers like the
+   RN2483/RN2903 and RFM95W variants.
+
+   It has the same features as the previous version but is’t more user
+   friendly. Some other small changes were made to make for easier
+   manufacturing.
+
+   Features:
+   Microcontroller
+     * Atmel Atmega1284P-AU (Arduino compatible)
+
+   Size
+     * 41 x 26 mm
+
+   Operating voltage
+     * 3.3V (fixed LDO regulator)
+
+   I/O pins
+     * 24 available pins (Digital I/O, Analog input, PWM, UART, SPI & I2C)
+
+   Flash memory
+     * 128 KB (4x more than Arduino Uno)
+
+   SRAM
+     * 16 KB (8x more than Arduino Uno)
+
+   EEPROM
+     * 4 KB (4x more than Arduino Uno)
+
+   Clock
+     * 8 MHz
+
+   Power
+     * Max 6V DC input
+     * Single cell 3.7V LiPo battery
+
+   Charging
+     * (Solar) Charge controller for single cell Li-Ion & LiPo batteries
+       with orange charging LED (up to 500mA charge current with max. 6V
+       input)
+
+   LED
+     * Dimmable RGB LED + blue LED
+
+   Supported LoRaWAN transceivers
+     * HopeRF RFM9X
+     * Microchip RN2483 / RN2903 (High-band only)
+
+   Antenna
+     * U.FL and/or SMA connector, or a simple copper wire as antenna
+
+   Programming
+     * 5 pin programming header for USB to Serial converter (individual
+       jumper cables required!)
+
+   Extra
+     * Default JST 2.0 battery connector
+     * Build-in voltage divider for measuring battery state
+     * Onboard reset switch
+     * Breadboard compatible headers
+     * Arduino library with starters examples
+     * Low power sleep functions available (35uA in deep sleep)
+
+   Details about the previous version can be found here in this earlier
+   post.
+
+   LoRa transceiver
+
+   As described above the hardware supports 2 different wireless LoRa
+   modules. Yes! That means you can pick the one you like most!
+
+   U.FL or SMA antenna
+
+   Breadboard compatible
+
+   Pinout
+
+
+   Interested in the hardware?
+
+   I’m now on Tindie!
+
+   I sell on Tindie
+
+   Check out the Tindie page of the TvB LoRaWAN Node
+
+   Tindie is ideal for small orders, please note that using Tindie is not
+   “free” for me. If you’re interested in more than a couple of boards
+   don’t hesitate to contact me for more info, better pricing & direct
+   orders!
+
+   What’s included?
+
+   The hardware includes extra headers, SMA antenna connector, Arduino
+   library, starters examples & support. Please note: You will need some
+   soldering experience & a soldering iron with a round tip <= 1 mm.
+
+   Only shipping within Europe!
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Hobby Electronics, IoT,
+   LoRaWAN
+   0
+
+   May 18 2017
+
+The “BeeMonitor” project
+
+   Beekeeping is a time consuming hobby, it’s not so easy as it sounds.
+   Making sure the bees are healthy takes a lot of knowledge and
+   experience.
+
+   Adding sensors to a beehive helps the beekeeper to monitor the hive and
+   take action when things are not as expected.
+
+   Therefor I decided to make my own “BeeMonitor”. Starting with the
+   electronics, connecting our hives to the internet!
+
+     The BeeMonitor with sensors
+
+   The technical side:
+
+   The BeeMonitor is a “battery powered wireless datalogger”. It’s a
+   compact controller with user-changeable dipswitches, RGB led, buzzer,
+   “plug & play” RJ12 connectors designed for different sensors
+   combinations and is capable to carry 2 different wireless modules, a
+   RFM69W for use in a private network or the RFM95W to connect to an
+   LPWAN IoT network (LoRaWAN) on sub-gigahertz radio bands. Powered by 2
+   AAA battery’s, operating on 3V the”BeeMonitor” only consumes 35nA in
+   sleep the making the battery’s last for years! Great, isn’t it?
+
+   Transmitted messages are received by a gateway, processed and stored in
+   a database. Data can be shown on a website and even in online “live”
+   graphs depending on the needs.
+
+   BeeMonitor with custom front
+
+   For example, some temperature & humidity data from one of our beehives:
+
+   Battery life:
+
+   The prototype has been up & running, collecting data for about 2 months
+   now. So far the battery voltage has dropped from 3.17V to 3.12V without
+   any (low power) software optimisation. Even without the battery will
+   keep the BeeMonitor up & running for a very long time, all the way down
+   to 1.9V. That’s when the voltage reaches the minimum operation voltage
+   for some of the hardware.
+
+   Power consumption:
+
+   Measuring one wake-up cycle (about 2 seconds) gives a clear overview of
+   the power consumption of the hardware. A short description of how
+   things work here (reference: 1 mV = 1 mA):
+     * 0 s: External input, interrupt or timer waking up a part of the
+       hardware (50 nA)
+     * 250 ms: Power enabled to other hardware (1.8 mA)
+     * 320 ms: Microcontroller startup, bootloader (3.5 mA)
+     * 1.7 s: Microcontroller running program, reading sensors, processing
+     * 1.82 s: Sending message (50 mA)
+     * 1.83 s: Waiting for ACK from gateway (18 mA)
+     * 1.85 s: Blink green led (4 mA)
+     * 2 s: Powerdown (35 nA)
+
+   This graph makes clear I need to optimize the bootloader, because it
+   takes 1.38 s! Thats way to long for battery powered hardware.
+
+   Future plans:
+
+   There are some improvements needed such as an optimized bootloader,
+   optimized software for better battery life, ..
+
+   September 2017: The prototype has been upgraded, read more about the
+   plans & upgrades here.
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Electronics, IoT, LoRaWAN  Tagged
+   Electronics, Hardware, InternetofThings, IoT, LoRaWAN, Wireless
+   3
+
+   Dec 5 2016
+
+LoRaWAN Node with onboard antenna
+
+   After the great succes with the default LoRaWAN Node I really wanted to
+   design an inexpensive Node with an build-in antenna for small LoRaWAN
+   use cases.
+
+   side_picture_export
+
+   Good antenna’s are expensive!
+
+   When it comes to antenna’s, one thing is certain: Good antenna’s aren’t
+   cheap.
+   I guess we all bought those crappy cheap antennas in the past to find
+   out they are not designed for that frequency or don’t work at all..
+
+   Choosing for an onboard antenna makes you node compact an even more low
+   cost. You don’t need those antenna connectors, cables and antennas. Any
+   PCB based antenna won’t have the same range as an “real” antenna but
+   the goal is to get about half the distance.
+
+   The new antenna: Ceramic chip or custom antenna design?
+
+   For an onboard antenna you can easily chose an ceramic chip antenna for
+   the desired frequency. There are a lot of these antenna chips available
+   and it doesn’t take a lot of experience to use them. They can save you
+   most space on your PCB.
+
+   Ceramic chip antennas
+
+   Most of these chips are affordable but I decided to not use any chip
+   antenna and design my own antenna!
+   Making the ideal antenna takes some time and a certain knowledge in
+   electronics, HF and antenna’s. This includes everything from
+   calculations, simulations, designing, prototyping, measuring, and
+   modifying before the results are really satisfying.
+
+   The design
+
+   For the new Node I didn’t want to change anything from my existing
+   proven “TvB LoRaWAN Node”. This limits the available space to a width
+   of 26mm for the antenna.
+
+   Here’s the initial design I came up with:
+
+   pcb-design
+
+   Verifying, measuring, optimizing and testing the antenna design took a
+   while but the result was worth it.
+   The final measurements concluded that the center frequency of the
+   antenna design is about 20 MHz’s off the 868 MHz goal. So we’re not
+   there yet.
+
+   That’s great, but what does that mean?
+
+   An design update, mostly based on measurements.
+   The most important thing of any antenna is the range. To get the
+   maximum out of your antenna the center frequency has to match the
+   desired frequency as best possible. This point will transmit the most
+   RF energy resulting in a better range.
+
+   You can’t compare a lab measurement with an real world test so you
+   always have to verify the range. After assembling the first prototype
+   it’s time to put it to the test!
+
+   top_view_battery_export
+
+   For range testing I simply hooked up an GPS module to the battery
+   powered Node.
+   The Node receives a GPS location form the GPS module and transmits it’s
+   location every 15 seconds over LoRaWAN.
+
+   When a message is received on the gateway(‘s) you can simply plot the
+   distance between transmitter and receiver.
+   For testing purposes I used an RFM95W LoRa module from HopeRF, with the
+   default LoRaWAN settings (SF12). That’s it!
+
+   The range, what can you expect from internal, microstrip antenna’s?
+
+   I didn’t expect much from a small antenna but I guess I’m wrong.
+   LoRaWAN is a very impressive technology that’s able to send messages
+   over many and many km’s.
+
+   Practical measurements with a regular node (default λ/4 antenna for 868
+   MHz) results in maximum ranges up to 20km and more in the ideal
+   situation.
+   I guessed the range of the internal antenna would be around a couple of
+   km’s with a maximum range of 5 km’s. Everything beyond that would be
+   great.
+
+   Range test, the first test-drive
+
+   I didn’t expect much from the first range test-drive. In the message
+   log I was hoping to find a couple of messages but there much more
+   received messages than “just a couple”. Meaning only one thing: The
+   Node works!
+
+   Analyzing all location data showed distances up to a whopping 9 km from
+   inside the car!
+   All other range measurements confirmed this first impression.
+
+   Conclusion
+
+   I may decide that this node has a guaranteed range of about 5 km for
+   LoRaWAN use cases in real world. Almost all messages within that radius
+   are well received on the gateways.
+
+   The test data also showed that the antenna acts as a directional
+   antenna, performing a little bit better in the one direction than the
+   other. Unlike an default λ/4 antenna that radiates the same amount of
+   energy in all directions.
+   The node has to be used with the antenna pointing upwards for the best
+   results.
+
+   Hardware details
+
+   top_bottom_combined
+
+   Work in progress
+
+   There’s still some space for improvement. Because the used frequency in
+   Europe is 868MHz I’ve optimized the design for that exact frequency.
+   Based on the measurements on the first design I made a couple of
+   different modified versions. The good news: some of them perform better
+   than the first version because they have more gain on 868MHz.
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Hobby Electronics, IoT,
+   LoRaWAN
+   0
+
+   Sep 26 2016
+
+TvB LoRaWAN Node
+
+   I’m getting a lot of response and technical questions about the new
+   LoRaWAN Node.
+   With this post I hope to give a better overview of the Node hardware
+   and features for those interested in building there own.
+
+   overview-node-shield
+
+   TvB LoRaWAN Node with RFM95W or RN2483 & Proto Shield
+
+   The LoRaWAN Node is a compact, universal and affordable LoRaWAN Node
+   with a powerful Arduino compatible Atmel microcontroller.
+
+   Features:
+   Microcontroller
+     * Atmel Atmega1284P (Arduino compatible)
+
+   Size
+     * 40 x 25 mm
+
+   Operating voltage
+     * 3.3V (onboard regulator)
+
+   I/O pins
+     * 24 available pins (Digital I/O, Analog input, PWM, UART, SPI & I2C)
+
+   Flash memory
+     * 128 KB (4x more than Arduino Uno)
+
+   SRAM
+     * 16 KB (8x more than Arduino Uno)
+
+   EEPROM
+     * 4 KB (4x more than Arduino Uno)
+
+   Clock
+     * 8 MHz
+
+   Power
+     * 5V USB power
+     * Single cell 3.7V LiPo battery
+
+   Charging
+     * (Solar) Charge controller IC with status LED, up to 500mA charge
+       current (max. 6V input)
+
+   LED
+     * RGB LED + extra blue LED
+
+   Supported LoRaWAN modules
+     * HopeRF RFM9X
+     * Microchip RN2483 / RN2903 (High-band only)
+
+   Antenna
+     * U.FL and/or SMA connector
+
+   Programming
+     * FTDI programming header for USB to Serial converter
+
+   Extra
+     * Default JST 2.0 battery connector
+     * Buid-in battery voltage divider for measuring battery state
+     * Onboard reset switch
+     * Breadboard compatible headers
+
+   The LoRaWAN Node is only 7.5 mm thick when used with an RN2483 LoRaWAN
+   module.
+
+   The LoRaWAN Node is only 7.5 mm thick when used with an RN2483 LoRaWAN
+   module (without JST battery connector).
+
+   Pinout:
+
+   tvb-lorawan-node-rev-2-pinout
+   Because I like to use different LoRaWAN modules depending on the
+   project I’ve added support for the 2 most popular LoRaWAN modules:
+     * TvB LoRaWAN Node – RFM95W
+     * TvB LoRaWAN Node – RN2483 (LoRaWAN Certified)
+
+   Without any hardware modifications I can use one of these 2 modules.
+   The practical range of both modules is the same, the only big
+   difference is the missing LoRAWAN certification for the RFM95W.
+
+
+   Here a more detailed picture of the Node with headers, SMA antenna
+   connector and the JST battery connector to power the board (the power
+   cable is not included).
+
+   tvb-lorawan-node-rev2
+
+   TvB LoRaWAN Node with accessories
+
+   To make my applications more “Plug & Play” I made myself a great
+   gadget: The “Proto Shield”.
+   It’s designed to fit on the node to create prototyping space.
+   It even has an extra mosfet load-switch circuit with LED indication to
+   power ON/OFF external circuits! Great, isn’t it?
+
+   tvb-proto-shield-rev2
+
+   TvB Proto Shield with female headers
+
+   Want to know more? Get in touch here
+
+   Please note: This hardware is not for sale, neither is the schematic or
+   design files.
+   The developed hardware / software is not open source.
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Hobby Electronics, IoT,
+   LoRaWAN
+   1
+
+   Aug 28 2016
+
+LoRaWAN Node Shields
+
+   My new LoRaWAN node also comes with additional shields to realize the
+   most crazy projects. They are available for order with the any version
+   of the node.
+
+   All shields are the same size as the node and are connected with two
+   regular 14 pin headers.
+   At the moment I developed 3 shields:
+     * Proto shield
+          + Proto area
+          + Load switching mosfet circuit controlled by digital pin to
+            power on/off external electronics. With power-on LED.
+
+   TvB LoRaWAN Proto Shield Rev.2 - Preview
+     * RTC shield
+          + DS3231 with 3V backup battery.
+            The DS3231 also has a programmable interrupt output to wake up
+            the LoRaWAN node every X seconds, minutes, hours, …
+          + Small proto area
+          + Load switching mosfet circuit controlled by digital pin to
+            power on/off external electronics. With power-on LED.
+
+   TvB LoRaWAN Node RTC Shield Rev.1 - Preview
+     * RTC & GPS shield
+          + DS3231 with battery backup
+          + Ultra small GPS module (OriginGPS Nano/Micro Hornet) with
+            onboard, buildin GPS/GLONASS antenna
+          + Small proto area
+          + Load switching mosfet circuit controlled by digital pin to
+            power on/off external electronics
+
+   TvB LoRaWAN Node RTC + GPS Shield Rev.1 - Preview
+
+   The RTC/GPS node is only available without GPS module
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Electronics, Hobby Electronics, IoT, LoRaWAN,
+   Uncategorized
+   0
+
+   Aug 21 2016
+
+The new LoRaWAN Node is alive!
+
+
+   Last week I found some time to assemble and test my new LoRaWAN Node
+   and here’s the result.
+
+   TvB LoRaWAN Node - Front view Features of the new board:
+     * Only 25 mm x 40 mm!
+     * Low power Atmega1284p microcontroller (Arduino compatible, incl.
+       bootloader & library)
+     * Standard JST battery connector
+     * Onboard single cell li-ion / polymer battery charger with charge
+       status LED (charging from USB programmer or solar panel)
+     * Onboard 3.3V LDO regulator with protection circuit
+     * Battery voltage measurement
+     * Breadboard compatible headers
+     * Reset button
+     * RGB led
+     * Extra blue led for RX/TX activity (default color, can be changed on
+       request)
+     * Full FTDI programming header
+     * U.FL & SMA antenna connectors
+     * LoRaWAN:
+          + Support for Microchip RN2483 & RN2903 LoRaWAN modules
+          + Support for HopeRF RFM9X LoRa modules
+
+   The best part of this module is that the LoRaWAN module can be chosen.
+   I’ve added support for both modules on the same board!
+   TvB LoRaWAN Node - Back view
+
+   This Node is a perfect starting base for most of my LoRaWAN projects.
+   It’s the same size as the recent Sodaq LoRaONE and a whole lot cheaper!
+   (But there’s no fancy GPS or accelerometer).
+
+   More details, info, .. can be found in this new
+   post: eth0maz.wordpress.com/2016/09/26/tvb-lorawan-node/
+
+
+
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, IoT, LoRaWAN
+   0
+
+   Aug 3 2016
+
+New “TvB LoRaWAN Node” in development
+
+   After the succes with the first versions of the “TvB Wireless Node’s” I
+   decided to develop a new, upgraded LoRaWAN node.
+
+   This new node will support 2 different LoRaWAN modules:
+     * Microchip RN2483 LoRaWAN module
+     * HopeRF RFM9X LoRaWAN module
+
+   This means the node can be fitted with an RFM95 or an RN2483, whatever
+   fits you best.
+
+   Here’s a sneak peek of the new node!
+
+   TvB LoRaWAN Node
+
+   The node is about te same size as the SODAQ LoRaONE and doesn’t have a
+   build in GPS or accelerometer.
+   When comparing the price tag there’s a huge difference!. Most project’s
+   don’t need fancy extra’s. They only need a compact, powerful and multi
+   purpose LoRaWAN node. So here’s my solution that fits all my use cases.
+
+   Changes from the previous version:
+     * Combined RFM9X and RN2483 design on back-side
+     * Added voltage protection circuit
+     * Added battery charger circuit with charging LED for lithium ion
+       battery’s
+     * Added a small RGB-led
+     * Changed the programming header to a fully compatible 6-pin FTDI
+       connector.
+
+   Interested?
+   Check out the most recent blogposts
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Uncategorized
+   0
+
+   May 27 2016
+
+LoRaWAN IoT Node
+
+
+   Past few month’s I’ve been researching and testing with LoRaWAN
+   networks.
+   After some good test results I decided to developed my own compact,
+   fully Arduino compatible LoRaWAN Node and also develop use cases with
+   them. When developing this hardware it was almost impossible to buy the
+   RN2483 LoRaWAN modules from Microchip. That’s why I chose for RFM95W
+   LoRa modules from HopeRF. Not a bad choice after all, the hardware is
+   very impressive!
+
+   The “TvB Wireless Node”, not just another LoRaWAN node:
+
+   LoRaWAN Node
+
+
+   Bottom side
+
+   Features:
+     * Atmega1284p with 128kb program memory, running on 8 MHz
+       with Arduino bootloader
+     * Supports all RFM95-98 LoRa tranceivers
+     * Supports regular tranceivers of the RFM69 series. The RFM69-W, -HW
+       and -HCW versions are compatible.
+     * SMA + U.FL antenna connectors
+     * Breadboard compatible header pins for easy prototyping
+     * 3.3V onboard regulator
+     * Red & blue onboard led
+     * JST battery connector
+     * Battery voltage measurement
+     * Reset button
+     * Programming header for (CP2102 or FTDI) USB to serial programmers
+
+   The microcontroller has more than enough program memory for the LMIC
+   stack for LoRaWAN and other functions. Beside that this module can also
+   be used as point-to-point communication with LoRa (without using an
+   LoRaWAN network) or with regular 433/868/915 MHz transceivers (RFM69).
+
+   You get all these options on a tiny 41 x 23 mm board with both U.FL and
+   SMA antenna connector options!
+
+   Bare PCB with Atmel1284p and resonantor
+
+   Oh wait, when I said “tiny”, just compare the node with the SODAQ Mbili
+   development board for LoRaWAN. It’s just a little bigger than
+   Microchip’s RN2483 LoRaWAN module.
+
+   SODAQ Mbili vs. TvB Wireless Node Rev. 3
+
+   Easy prototyping
+
+   A LoRaWAN node is nothing without easy prototyping options. This one is
+   breadboard and prototype PCB compatible! All main data lines are
+   available with enough digital I/O’s and ADC pins. All you need!
+
+   TvB Wireless Node - Proto PCB
+
+   Or just directly connect a battery for your mobile application. All
+   types of battery’s can be used with a maximum input of 6V DC. The LDO
+   voltage regulator guarantees a stable 3,3V power supply, even for
+   voltages as low as 3,45V! This makes the use of single cell li-ion
+   battery’s ideal without damaging the transceiver.
+
+   TvB Wireless Node - Battery
+
+   Use cases
+
+   Developing a small or portable LoRaWAN application? No problem for this
+   hardware. Here are some examples where I used my LoRaWAN node for.
+
+   TvB Wireless Node - Window
+
+   Open door detector
+
+   TvB Wireless Node - Collecting sensor data
+
+   Battery powered outdoor data logger
+
+   TvB Wireless Node - Industrial IoT
+
+   Industrial LoRaWAN application with 230V power supply
+
+   TvB Wireless Node - Thermocouple and LCD Measuring high temperatures
+   with a thermocouple, displaying temperature on a LCD screen and
+   transmitting over LoRaWAN
+
+   TvB Wireless Node - LoRaWAN GPS tracker
+
+   A portable GPS tracker, can also be used for measuring LoRaWAN coverage
+   & range
+
+   Next project?
+
+   Connecting and digitalizing our beehives with LoRaWAN, and in the far
+   future maybe tracking the flight path of our bees? 🙂
+
+   TvB Wireless Node - Beehive
+
+   Pinout
+
+   Back to the technical side, this pinout diagram shows all features of
+   the module.
+   TvB Wireless Node Rev.3 - Pinout
+
+   TvB Wireless Node Rev.3 - Legende
+
+   Programming
+
+   The Atmel microcontroller provides awesome support for Arduino. The
+   Arduino bootloader on the microcontroller together with the custom
+   board in Arduino IDE make it very easy to direct upload sketches into
+   the node with just one click. This makes prototyping and developing a
+   whole lot easier.
+
+   Chose board small
+
+   The custom board
+
+   Chose example small
+
+   Included example programs
+
+   Results
+
+   Testing with my LoRaWAN GPS tracker revealed the range goes up to 18.6
+   km (default 1/2 wavelength antenne on the node). That’s a very
+   impressive range!
+
+
+
+   Future upgrades?
+     * Adding charging circuit for li-ion batteries
+     * Adding voltage polarisation & overcurrent protection
+     * Low power features
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Uncategorized  Tagged
+   LoRaWAN
+   2
+
+   Jun 7 2015
+
+Affordable PoE? DIY
+
+   PoE (Power Over Ethernet) enabled switches costs a lot of money, so I
+   decided to make my own. After some research i found out how PoE works,
+   and it’s fairly easy to modify an existing Fast Ethernet 10/100 Mbit/s
+   switch.
+
+   Here is how Ethernet cable / UTP cable is wired:
+
+   PoE 802.3 af
+
+   PoE is based on the 2 wire pairs who are not used in 10/100 Mbit/s
+   networks, 1 pair + 48V DC and 1 pair Ground. ( 1 pair = 2 wires)
+
+   My modification to the switch is similar to “Passive PoE” injectors.
+   it’s based on “PoE 802.3 af” and it injects 48V DC but without the auto
+   sense protocol to check if the connected device is PoE capable. This
+   can cause permanent damage if you plug in other devices in the modified
+   switch who are not PoE capable. In other words, it’s a dumb PoE switch.
+
+   Note: Do not try this with Gigabit switches because these use all 4
+   data pairs instead of only 2 pairs for 10/100 networks!
+   Note: Use only straight cables, no cross over cables. These can damage
+   the connected device.
+
+   All components i needed for this mod:
+
+   – 10/100 Mbit/s switch (5 port switch i had laying around)
+   – electronics wire 0,2 mm²
+   – External 48V DC power supply
+   – Fuse holder with fuse (20 mm glas fuse, 0.75 A)
+   – 5.5mm/2.1mm DC plug
+   – LED with resistor (power ON indicator)
+   – Diode 1N4007 (polarity safety)
+   – Glue gun & glue sticks
+
+   Here is the result of  the switch:
+
+   PoE Switch
+
+   On the back the 48V DC input with green power ON led:
+
+   PoE Switch
+
+   The connections to the Ethernet cables:
+
+   PoE Switch
+
+   The + 48 VDC is connected to pins 4 & 5 and ground (-) to pins 7 & 8 of
+   the 4 outgoing PoE ports, the incoming LAN port is unmodified. The 20
+   mm glass fuse is a regular blow 0.75 A. Just in case something goes
+   wrong.
+
+   All switches have resistors connected to ground on unused wires to
+   avoid interference, in my case each unused wire was connected with a
+   75Ω resistor to ground. If these resistors are not removed, the 48V
+   input would flow through the resistor to ground. And there are 8
+   resistors in total for 4 ethernet ports.
+
+   Not a good idea to leave those resistors there, 1 resistor will have a
+   current of 48V/75Ω = 0,64 A !
+
+   This is how to prevent this: just break the PCB traces!
+
+   Original:
+
+   Before
+
+   After:
+
+   After
+
+   I use this switch to power PoE capable IP camera’s (CCTV) with solid
+   100% bare copper UTP cable.
+
+   Note: Do not use CCA (Copper Clad Aluminum) UTP cables, these are not
+   suitable for conducting currents (too high resistance) and can cause
+   high power loss in the cables. Remember why they removed all aluminium
+   conductors from residents?? Because the cables were overheating and
+   causing fire.
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Electronics, Hobby Electronics
+   0
+
+   Apr 22 2015
+
+Upgraded version of the Arduino Roller Shutters / Roller Blinds Controller
+
+   It took a while to get all the components for the final version, found
+   a little free time to etch the PCB, solder everything together, test
+   the final version and shoot some pictures but it’s worth the result!
+
+   (Note: the on screen display language is Dutch)
+
+   2015-04-16 11.50.25
+
+   Final result of the controller
+
+   The controller is a mobile battery powered device, it can be placed
+   everywhere! No longer dependent from power-consuming power
+   adapters!!!!!
+
+   Battery value is measured automatic and gives an indication when to
+   recharge the controller. The operating periode is about 2 to 3 weeks
+   with two re-used 6 years old lithium ion 18650 batteries from an old
+   laptop battery pack. The remaining capacity is not much but good enough
+   for this application.
+
+   The OLED display consumes the most power. OLED stands for organic LED,
+   this means the display continuously emits light and is easy to read in
+   the dark. The “most” power is a couple of mA’s but this is a lot
+   against some other LCD displays (some µA’s).
+
+   The Arduino runs on a 8Mhz clock, with the necessary power saving
+   functions it runs on a couple of hundreds µA (Note: the red power led
+   on the Arduino Pro Mini is removed!), with the OLED display (and all
+   the remaining electronics are negligible) it’s only mA’s of power
+   consumption in total.
+   That’s battery friendly i guess 🙂
+
+   The overall operating voltage has to be between 2,7V and 5,5V for
+   correct functionality. (battery protection auto. shutdown voltage at
+   2,5V)
+
+   Some features of the controller:
+
+   2015-04-16 11.48.07
+
+   Time schedule of 5 shutters (open/close)
+
+   2015-04-16 11.47.38
+
+   Option to choose between stored time or light sensor based (with adjust
+   value: lighter/darker) closing of the rolling shutters
+
+   2015-04-16 11.47.22
+
+   Example: setting and storing time open/close for Rolling Shutter 1
+
+   2015-04-16 11.46.34
+
+   Setting and storing the day, month and year
+
+   The controller has a menu to adjust, change and store:
+
+   – time (hours: 0 to 23, minutes: 0 to 59)
+   – day (1 to 31)
+   – month (1 to 12)
+   – year (2015 to 2099)
+   – day of the week (Monday, Tuesday, Wednesday, and so on)
+   – random range in minutes (when time is set to 8:00 and random range is
+   10 minutes: the shutters will open between 7:55 and 8:05)
+   – light measurement adjustment (threshold “dark” value for light
+   sensor)
+   – all roller shutters have there own open/close hour (accuracy is 1
+   minute, for instance 8:16)
+   – enable/disable channels (for instance if you have a door, you can
+   disable that channel so you can still re-enter. That would not be
+   possible if the shutter was closed!!!)
+   – automatic/timed shutter closing (the option can be “Time” of “Light”,
+   Time means stored time and Light means sensor based)
+
+   Note: the time, day, year, .. are kept by the DS3231 Real Time Clock IC
+   and when powerless, powered by the 3V coin cell (= memory function)
+   Note: other parameters are stored permanently in the Arduino’s EEPROM
+
+   The printed circuit board in detail:
+
+   The PCB is made in 2 stackable boards, the bottom module is the Arduino
+   Pro Mini 3,3V controller with a LiPo Fuel Gauge from Sparkfun, Lithium
+   ion battery charger module with battery protection for charging
+   and discharging (with shutdown when the voltage drops below 2,5V for no
+   battery damage), a ON/OFF master slide switch, reset button and battery
+   connector terminal.
+
+   To recharge the module, simply plug in a micro USB cable. The charger
+   board has 2 on board indication leds: RED: charging and BLUE: charged.
+
+   2015-04-16 11.44.12
+
+   Bottom module
+
+   The top module has al the features for time keeping (DS3231 IC in the
+   middle of the board), light measurement, switching capabilities, 5
+   input tactile push buttons for navigation in menu & settings and the
+   OLED connector for the 1,3″ OLED display. At the top of the module is
+   the connector for the Niko Easywave remote control.
+
+   2015-04-16 11.40.41
+
+   Top module (picture without OLED display)
+
+   Side view
+   The side view of the controller, the headers are default 2,54mm
+   headers. The male headers are 17mm long in stead of the 10mm
+   usual. (because the 3V coin cell backup battery for the RTC on the
+   bottom of the top module)
+
+   2015-04-16 11.41.30  Side view of the controller
+
+   2015-04-16 11.43.46
+
+    Bottom side of top & bottom module (with 3V coin cell on the left
+   board)
+
+   PCB’s
+   Following pictures are the bare PCB’s
+
+   2015-03-18 13.39.19 2015-03-18 13.39.41
+
+   That’s a short overview of the controller, more detailed information
+   about the working and components can be found in the previous post of
+   the “prototype” of the controller.
+
+   Thomas
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Hobby Electronics 
+   Tagged Arduino
+   0
+
+   Feb 25 2015
+
+Arduino Roller Shutters / Roller Blinds Controller
+
+   The Arduino Roller Shutters Controller is an Arduino Pro Mini 3.3V
+   based device to automate the roller shutters / roller blinds.
+
+   My current setup for the control of the roller shutters / roller
+   blinds is a Niko Easywave system with multi channel 868,3 MHz remote
+   control and built-in wall receivers. This remote controller has only
+   buttons and no possibility to set a time for automated functions.
+   Unfortunate in the Niko Easywave series there is no affordable
+   alternative for automatisation so I decided to make my own custom
+   Arduino home automation system. Here is an overview of my controller:
+
+   Niko Easywave Prototype Final
+
+   The home made controller
+
+   Pro Mini
+
+   Arduino Pro Mini used for the controller
+
+   Rolling shutters Rolling shutters (picture only for demo)
+
+   Niko materials:
+   Niko Easywave build-in receiver for shutter control: product 05-333
+   Niko Easywave remote controller with 4 channels and 13 buttons: product
+   05-312
+
+   Niko 05-333 Receiver       Niko 05-312 Remote      2015-02-26 13.32.43
+   aangepast
+
+   For more information about the Niko products: http://www.niko.eu
+
+   The research, 868.3 MHz is a no-go:
+   The radio frequency is 868.3 MHz, not a very often-used  radio
+   frequency.
+   The best solution would be to generate codes on this frequency in
+   combination with a transmitter for the Arduino. But I was unable to
+   successfully copy the transmitted codes or generate compatible codes.
+   The receivers are self-learning so I also tried to learn them my codes
+   but this didn’t work ether. So the used protocol stays a mystery.
+
+   Arduino “push a button”:
+   After that I decided to design a circuit so the Arduino can “push a
+   button” on the remote.
+
+   With a direct digital output/input from the Arduino you can bypass a
+   real switch, witch in reality equals a “push” on a button. In my case
+   iI wanted to keep the 2 systems completely separate. In this way I
+   can’t damage the original remote with any external voltages.
+
+   After some measurements and research on the PCB of the remote I
+   connected wires directly to the buttons and brought them out with a pin
+   female header connector so I can easily disconnect the remote when
+   necessary.
+
+   The “push” circuit is very simple and based on optocouplers I had
+   laying around, the circuits are separated with an optical coupling. An
+   optocoupler is a LED and photodiode in the same package. When current
+   flows through the LED, the resistance of the photodiode decreases. This
+   means no VCC of GND signal is connected. This also means the original
+   battery has to remain in the remote to power itself.
+
+   Optocoupler diagram
+
+   Outputs required for controlling the remote:
+   On the remote there are in total 12 buttons who need to be “pushed”, so
+   12 optocouplers and 12 digital outputs are required. On a regular
+   Arduino Pro Mini 3.3V there are not a lot pins. Well, this may be a
+   problem considering what’s used in this project:
+   The Atmel ATmega328P has only 32 pins with 22 I/O pins configurable.
+   In reality these are not all digital outputs, some are analog input
+   only like pin A6 & A7 and cannot be used as output.
+   Pin D0 & D1 are the TXO en TXI programming lines and should be left
+   alone if possible.
+   Finally there are the data lines: I2C (A4 & A5) [Needed for RTC]
+   and SPI (D9, D10, D11 and D12 mostly) [Needed for OLED display]
+
+   This means I have 12 outputs and 2 analog inputs left for general
+   purpose.
+   Good luck I only needed 12 outputs! These were all used for controlling
+   the remote.
+
+   This also means I have 2 analog inputs left at the moment.
+
+   Time keeping made easy:
+   A feature of the controller is the function to keep track of the
+   current time without loosing it when powered down. To solve this I used
+   a RTC (Real Time Clock) DS3231 module. This module does al the time
+   keeping including date and year. All I need to do is process and manage
+   the time. When the module starts up it reads the current time stored in
+   the module, from that moment the Arduino works interrupt based by
+   counting the hour, minutes and seconds passed. To keep the time correct
+   the Arduino synchronizes once a day with the RTC to get the exact time
+   because the time shifts a couple of seconds a day.
+   The module is connected on the I2C data line (SDA/SCL) and has a 3V
+   cell as backup voltage to remember the real time.
+
+   DS3231 RTC
+
+   The DS3231 Module
+
+   A small OLED display:
+   A standalone device without any way to display information is not very
+   handy. That’s the reason i chose to add a small 1.3″ SPI OLED graphics
+   display. The display has 128×64 pixels and can be used for graphics,
+   not only text. It uses SPI to communicate with the Arduino on 4
+   general-purpose  I/O pins. I chose the default software SPI pins: 9
+   (MOSI), 10 (CLK), 11 (DC), 12 (CS).
+
+   Niko Easywave Prototype Screen
+
+   What about controls for the display?
+   Because I only have 2 analog inputs left and I need more than 2 buttons
+   to use the controller I was forced to use a resistor network in
+   combination with tactile switches to detect any inputs. I chose for
+   5 tactile switches, this is the most users friendly for this
+   application.
+   The buttons are read by ADC (Analog to Digital conversion) and
+   processed in the Arduino to decide which button was pushed.
+
+   Tact Switch
+
+   Extra feature: Photodiode for light measurement!
+   After a while I came up with the idea of using a photodiode to measure
+   the light intensity. This “sensor” looks like a ordinary 5mm LED
+   (located next to the OLED display), is also read by ADC and is
+   connected to the very last available pin on my Arduino Pro Mini 3.3V.
+   The Arduino processes the value and now can be used for an automatic
+   light intensity closing.
+
+   A short specs overview:
+   – Arduino Pro Mini 3.3V (8MHz)
+   – 1.3″ SPI OLED display (128×64 pixels)
+   – RTC DS3231 Module
+   – 5 inputs switches
+   – 12 outputs
+   – 12 optocouplers
+   – Photodiode
+
+   Total expenses:
+   Less than 15 euro everything together. This is really cheap compared to
+   those expensive home automation controllers. Off course there are a lot
+   of hours researching, developing and testing witch you don’t have when
+   you buy a system.
+
+   The big advantage of building your own controller is that I can do
+   anything I want, that’s not possible with bought stuff.
+
+   And this is the result:
+   The device is still a prototype and made on pieces of stacked
+   breadboard. In the future the device is getting it’s own PCB with
+   Lithium-ion battery power supply. That’s off course the main reason the
+   3.3V Arduino Pro Mini was used.
+
+   Niko Easywave Prototype Final  Arduino Pro Mini 3.3V (8Mhz), RTC module
+   DS 3231 and OLED display with 5 buttons.
+
+   Niko Easywave Prototype Final
+
+   Remote connected to the controller
+
+    And this is how the remote is modified inside:
+
+   Niko Easywave Remote inside
+
+   Power consumption:
+
+   At the moment the controller can operate between maximum 5.5V and will
+   still work to a minimum of 2.8V to 2.7V. This is ideal to use with a
+   Lithium-ion battery.
+   On 5V the measured current is 15-20 mA
+   On 3V the measured current is 10-12 mA
+
+   For example, on a single 18650 3,7V Lithium-ion 2600 mAh cell the
+   controller should work between 5 and 10 days in theory.
+
+   Note: with a optimized Arduino code you can get even better battery
+   life. (I did nothing in the Arduino code to save any power)
+
+   Software:
+   I’m not planning to post the code. But questions are welcome.
+
+   Prototype in action!
+   Video coming later!
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Arduino, Electronics, Hobby Electronics 
+   Tagged Arduino, Arduino Shutter Controller
+   0
+
+   Sep 20 2012
+
+Filmpje varen Smit Nederland
+
+   Ik heb onlangs een filmpje gemaakt van de Smit Nederland tijdens het
+   varen.
+   Het filmpje is gemaakt bij Zwembad Aardenburg.
+
+   IFRAME:
+   https://www.youtube.com/embed/tkaiQ4jDzXk?version=3&rel=1&fs=1&autohide
+   =2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent
+
+   In het filmpje is te zien hoe het vaargedrag van deze sleepboot is.
+   Heel wendbaar dus!
+
+   Op de achtergrond zijn nog een aantal andere boten te zien, onder
+   andere een groot oorlogsschip.
+
+   Mvg, Thomas… nog meer updates binnenkort!
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in RC Boat
+   0
+
+   Jul 8 2012
+
+DIY 4 Channel Stereo Mixer (Mengpaneel)
+
+   De schema’s zijn eindelijk rond,
+   Ik heb een schema getekend voor een mengpaneel met 4 Stereo kanalen.
+   (A, B, C en D).
+   Eindelijk lijkt het project goed haalbaar, vandaar dat er extra
+   functies voorzien zijn.
+
+   Samenvatting:
+
+   – 4 kanalen Stereo line-in (A, B, C en D)
+   – Elk kanaal heeft zijn eigen Hi, Mid en Low Tone regeling.
+   – Balance regeling per kanaal.
+   – CUE functie voor A en B (met hoofdtelefoon aansluiting voor pre-mix
+   luisteren)
+   – Crossfader voor A en B om te mixen
+   – Kanaal C en D zijn extra, ze kunnen aan en uit gezet worden met een
+   knop.
+   – Stereo VU meter op de uitgang (2x 10 leds BAR)
+   – “Main level” (met 2 faders aan de uitgang)
+   – CUE volume instelbaar
+   – …
+
+Dit is een voorbeeld van het eindresltaat:
+
+   Mixer layout
+
+   Mixer layout
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Zelfbouw Mengpaneel
+   3
+
+   Jun 20 2012
+
+Nieuwe foto’s i.v.m. GIP
+
+   Ik heb nog een aantal foto’s toegevoegd aan het album “Foto gallery”
+   Het zijn foto’s van de nieuwe  prototype module en detail foto’s van de
+   GIP robot.
+
+   Klik hier om naar de Foto gallery te gaan
+
+PIC bordje V1.1:
+
+   PIC bordje v1.1 foto 1
+
+   PIC bordje v1.1 foto 1 (bovenaanzicht)
+   PIC bordje v1.1 foto 2
+
+   PIC bordje v1.1 foto 2 (vooraanzicht)
+   PIC bordje v1.1 foto 3
+
+   PIC bordje v1.1 foto 3 (zijaanzicht)
+   PIC bordje v1.1 foto 4
+
+   PIC bordje v1.1 foto 4 (aanzicht zonder LCD scherm)
+   PIC bordje v1.1 foto 5
+
+   PIC bordje v1.1 foto 5 (aanzicht zonder LCD scherm)
+   PIC bordje v1.1 foto 6
+
+   PIC bordje v1.1 foto 6
+
+Detail foto’s van de GIP robot:
+
+   Robot hardware foto 1
+
+   Robot hardware foto 1 (Dwengo PIC KIT 2 Programmer)
+   Robot hardware foto 2
+
+   Robot hardware foto 2 (achterkant)
+   Robot hardware foto 3
+
+   Robot hardware foto 3 (zijaanzicht)
+   Robot hardware foto 4
+
+   Robot hardware foto 4 (hardware close up)
+   Robot hardware foto 5
+
+   Robot hardware foto 5 (achterkant hardware)
+   Robot hardware foto 6
+
+   Robot hardware foto 6 (LCD scherm met achtergrondverlichting)
+   Robot hardware foto 7
+
+   Robot hardware foto 7 (montage voorbumper)
+   Robot hardware foto 8
+
+   Robot hardware foto 8 (achteraanzicht voorbumper)
+   Robot hardware foto 9
+
+   Robot hardware foto 9 (voorbumper met sensoren)
+   Robot hardware foto 10
+
+   Robot hardware foto 10 (zijaanzicht, USB Bootloader aangesloten)
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 12 2012
+
+DIY Mengpaneel
+
+   Like on Facebook
+
+   Op mijn planning stond dat ik een klein mengpaneeltje wil maken voor
+   audio, na enige verdieping is dit ‘kleine’ mengpaneel veranderd in
+   een professionele zelfgemaakte DJ mixer met uitgebreide functies van
+   hoge kwaliteit.
+
+   Hier zijn een aantal voorlopige specificaties:
+
+   – Minimaal 3 Stereo mix kanalen (+ andere functies, staan nog niet
+   allemaal in een schema)
+   – Tone control (Hi, Mid, Low) per mixkanaal
+   – Volume per mixkanaal regelbaar
+   – Balance per mixkanaal regelbaar
+   – Crossfader tussen A en B
+   – Stereo out master volume met VU meters
+   – Headphone out (cue functie)
+
+   Andere voorziene aansluitingen zijn:
+
+   – 3x Line in Stereo
+   – Mic input (optioneel)
+   – Mini-jack Stereo input (handig voor kleine toestellen zoals MP3 enz.)
+
+
+   Dus dit is niet zomaar een kleine mixer, er komt veel passive en active
+   elektronica bij kijken. De kostprijs zal onderdrukt blijven omdat alles
+   zelfbouw is. Het resultaat zal een gepersonaliseerd mengpaneel zijn van
+   hoge kwaliteit.
+
+   Preview van hoe het zou moeten zijn (toch zo is het in het echt)
+   Zo’n resultaat zou perfect zijn, we gaan proberen!
+   Preview Mixer
+
+   Preview Mixer
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in Zelfbouw Mengpaneel
+   0
+
+   Jun 11 2012
+
+Smit Nederland
+
+   Mijn deeltijdse hobby is ook modelbouw, ik ben graag bezig met
+   elektronica. Daarom heb ik in mijn RC Boot zelf mijn elektronica
+   ontworpen en gemaakt.
+
+   Een aantal modules die ingebouwd zijn in de Smit Nederland zijn:
+   – Digitale snelheidsregelaars (met PIC
+   microcontroller, zelflerende nulpunt en maximum snelheid en achteruit)
+   – 2 kanaals schakeldecoder met vermogenrelais (met PIC microcontroller,
+   met- en zonder geheugen functie)
+   – 12 kanaals Encoder en Decoder (met PIC
+   microcontroller, multiplexer voor 1 kanaal 12 functies,  met- en zonder
+   geheugen functie)
+   – Dieselgeluidgenerator (met instelbaar geluid en snelheid gestuurd)
+   – 12V naar 5V voeding, geen batterijen nodig voor de ontvanger
+
+   Voor de rest heeft de boot ook nog verlichting, boegschroef, sleeplier,
+   ankers,..
+
+   De motoren zijn 2x 12V Decaperms. De batterij is een 12V loodaccu van
+   7Ah.
+
+
+   Hieronder enkele foto’s van de boot, Smit Nederland:
+   Smit Nederland 1
+
+   Smit Nederland 1
+   Smit Nederland 2
+
+   Smit Nederland 2
+   Smit Nederland 3
+
+   Smit Nederland achterdek
+   Smit Nederland 4
+
+   Smit Nederland sleeplier , verlichting, achterdek
+
+
+   Hier zijn enkele printplaten te zien, de zelfgemaakte elektronica van
+   de boot:
+   PIC Snelheidsregelaar
+
+   RC PIC Snelheidsregelaar
+   RC 2 kanaals decoder
+
+   RC 2 kanaals decoder
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in RC Boat
+   0
+
+   Jun 10 2012
+
+PS3 Controller Mods
+
+   PS3 Controller led mod:
+   PS3 Led mod
+
+   PS3 Led mod
+
+   Rapid Fire Mod:
+   Rapid Fire Mod
+
+   Rapid Fire Mod, binnenkant controller
+   Rapid Fire Mod 1
+
+   Rapid Fire Mod 1
+   PS3 RF mod 2
+
+   PS3 RF mod 2
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in PS3
+   0
+
+   Jun 10 2012
+
+Afronding van de GIP
+
+   Vanaf nu is het GIP Dossier ook hier online in digitale vorm te openen
+   en te downloaden. Het Dossier is een volledige beschrijving van het
+   eindwerk (GIP).
+
+   Het GIP Dossier is hier te openen in een PDF bestand. Het Dossier is
+   ook te downloaden hier voor als de link niet meer werkt.
+
+   Het besturingsprogramma voor de Robot is hier te
+   downloaden (4shared.com, .zip)
+
+   Hier volgt nog een extra filmpje van het resultaat van de Bluetooth
+   Robot:
+
+   IFRAME:
+   https://www.youtube.com/embed/cuwvdBrOqbg?version=3&rel=1&fs=1&autohide
+   =2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent
+
+   Als er vragen of opmerkingen zijn kan er altijd gereageerd worden op
+   elke blogpost.
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 10 2012
+
+BlueBot Robot Besturingsprogramma voor Windows
+
+   Alvast een voorproefje van het geheel, hier is het besturingsprogramma
+   van de Robot te downloaden. Het is een volledig vrijstaand
+   computerprogramma om de Robot met te besturen.
+
+   Het heeft enkel een Bluetooth verbinding nodig met de Robot.
+
+   Downloadlinks:
+
+BlueBot Robot Besturingsprogramma (windows installer)
+
+Het GIP Dossier met gebruikershandleiding
+
+   Besturingsprogramma
+
+   Besturingsprogramma
+   Splashscreen
+
+   Opstartscherm van het programma
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 10 2012
+
+Foto update van de Robot
+
+   De robot is momenteel in een ver gevorderde status, hier volgen een
+   aantal foto’s van de robot.
+
+   Linkervooraanzicht van de Robot
+
+   Rechtervooraanzicht van de Robot
+
+   Vooraanzicht van de Robot
+
+   Achteraanzicht van de Robot
+
+   En nu de Robot in het donker:
+
+   Robot in het donker achteraanzicht
+
+   Robot in het donker vooraanzicht
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 10 2012
+
+Filmpje van de robot in werking
+
+   In de loop van deze week heb ik de beide printplaten voor de bumper
+   modules gemaakt en gemonteerd op de robot. Ik heb er een filmpje van
+   gemaakt met de robot in werking met de bumpers erop gemonteerd. In het
+   filmpje bestuur ik de robot met de computer en schakel ik de
+   verlichting ook aan en uit op afstand met de computer via de Bluetooth
+   verbinding met de robot.
+
+   Het eerste filmpje van de robot:
+
+   IFRAME:
+   https://www.youtube.com/embed/TJ96BR2NnTw?version=3&rel=1&fs=1&autohide
+   =2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent
+
+   Het tweede filmpje van de robot in het donker:
+
+   IFRAME:
+   https://www.youtube.com/embed/ep31Nv-ZKL8?version=3&rel=0&fs=1&autohide
+   =2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 10 2012
+
+Microcontroller module PIC18F4550 met LCD scherm
+
+   Ik heb de module die ik eerder gebruikt heb op het prototype van de
+   Robot aangepast zodat er een LCD scherm op past. Op vraag van de
+   leerkracht en naar de toekomstige jaren toe zullen we dit bordje gaan
+   gebruiken in de lessen. Het is volledig universeel en daarom ideaal
+   voor de leerlingen. De functies zijn volledig dezelfde als het bordje
+   van begin dit schooljaar, enkel is het LCD scherm toegevoegd om het
+   gemakkelijker te maken om te gebruiken. De modules vervangen de
+   ‘Dwengo’ bordjes op school en zijn goedkoop te maken en daarom ideaal
+   voor de leerlingen.
+
+   Verder ligt dit bordje ideaal in de hand en is het zeer compact,
+   volledig van functionaliteit en zeer gebruiksvriendelijk.
+
+   Microcontroller module met LCD scherm
+
+   Microcontroller module met LCD scherm 2
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 10 2012
+
+Bumper modules voor de Robot
+
+   Ik heb deze week de Bumper modules afgewerkt. De bumpers zijn de
+   voorbumper en de achterbumper van de robot.
+
+   Hierop zitten de schakelaars voor de noodstop en een aantal Leds. De
+   Leds hebben functies zoals de dimlichten; voorlichten en achterlichten,
+   grootlichten en pinkers van een echte auto. Onderaan de voorbumper is
+   een extra sensormodule voordien met 4 optische sensoren die kleuren
+   kunnen detecteren. Hiermee kan onderscheid gemaakt worden tussen wit,
+   zwart en alle andere kleuren. Ook is deze module capabel om de rand van
+   een tafel te detecteren zodat de robot niet van een tafel kan rijden.
+
+   Gefreesde bumpers:
+
+   Gefreesde printplaat voor-en achterbumper
+
+   De voorbumper:
+
+   Afgewerkte printplaat voorbumper
+
+   Achterbumper:
+
+   Afgewerkte printplaat achterbumper
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+   Jun 10 2012
+
+Hoofdmodule Bleutooth Robot
+
+   In deze post ga ik het kort hebben over de Hoofdmodule van de volledige
+   robot.
+
+   Op deze module zitten alle functies in 1 module, dit wil zeggen dat
+   deze module alle onderdelen bevat die nodig zijn voor de volledige
+   robot. Op deze module zit een LCD scherm, motor sturing, LED sturing,
+   5V regelaar, USB, programmer en nog andere functies die de robot slim
+   maken zoals een lichtmeting en spanningsmetingen voor de interne
+   batterijen. Op deze module kan een een batterij aangesloten worden, als
+   de externe adapter verwijderd is zal de robot direct overschakelen op
+   de batterijen. Zonder onderbreking en spanningsverlies. Er zijn 2
+   schakelaars voorzien; één schakelaar voor de robot aan en uit te zetten
+   en één voor de keuze van de spanning voor de motoren.
+
+   De module is voorzien met de nodige aansluitingen voor bumpers, waarop
+   led’s, schakelaars voor mechanische beveiliging en optische sensoren
+   komen om kleurverschillen op de grond te kunnen volgen.
+
+   Hoofdmodule met programmer, USB en voeding aangesloten
+
+    Deze module is getest en werkt. Later komen de beide bumpers en de
+   sensormodule (module waarop de optische sensoren gemonteerd zijn die
+   vlak boven de grond aan de onderkant van de voorste module geplaatst
+   worden)
+
+Like or share this on:
+
+     *
+     * Tweet
+     * Email
+     * More
+     *
+
+     * Print
+     *
+
+Like this:
+
+   Like Loading...
+
+   By Thomas vB  Posted in GIP
+   0
+
+Post navigation
+
+   ← Older posts
+
+Like / Contact the Facebook page!
+
+     Like / Contact the Facebook page!
+
+Blog Stats
+
+     * 45,089 Visitors (1 visitor online)
+
+Categories
+
+     * Arduino
+     * Electronics
+     * GIP
+     * Hobby Electronics
+     * IoT
+     * LoRaWAN
+     * PS3
+     * RC Boat
+     * Uncategorized
+     * Zelfbouw Mengpaneel
+
+Archives
+
+     * September 2017
+     * May 2017
+     * December 2016
+     * September 2016
+     * August 2016
+     * May 2016
+     * June 2015
+     * April 2015
+     * February 2015
+     * September 2012
+     * July 2012
+     * June 2012
+
+   Search ____________________ Search
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Post to
+   Cancel Reblog Post
+
+   Send to Email Address ____________________ Your Name
+   ____________________ Your Email Address ____________________
+   _________________________
+   loading Send Email Cancel
+   Post was not sent - check your email addresses!
+   Email check failed, please try again
+   Sorry, your blog cannot share posts by email.
+
+   Close and accept Privacy & Cookies: This site uses cookies. By
+   continuing to use this website, you agree to their use.
+   To find out more, including how to control cookies, see here: Cookie
+   Policy
+
+   IFRAME: likes-master
+
+   %d bloggers like this:

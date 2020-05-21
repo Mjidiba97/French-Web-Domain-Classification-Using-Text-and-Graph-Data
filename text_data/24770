@@ -1,0 +1,303 @@
+                              The GNU MPFR Library
+
+   [MPFR links] [introduction] [extensions] [interfaces] [software using
+   MPFR] [related free software] [links]
+
+MPFR Links
+
+   Internal links:
+     * Latest release: download – documentation – bugs – changes.
+     * Gforge: information to use the anonymous access to the Subversion
+       repository.
+     * Sample: to start with the MPFR library.
+     * FAQ: frequently asked questions.
+     * Credit: involved projects and developers.
+     * History: links to all MPFR releases and past events.
+     * Algorithms: documents describing algorithms used in MPFR.
+     * MPFR in the world: publications citing MPFR and various links about
+       MPFR.
+     * How to contribute to MPFR.
+
+   External links on MPFR:
+     * Try MPFR online, thanks to Tomonori Kouya.
+     * Mailing-list for announces (moderated).
+     * Mailing-list for users and developers (Gmane mirror). Note: to post
+       to the list, you cannot use the web interface, just send a mail to
+       mpfr at inria.fr (and please, for a new thread, do not reply to an
+       existing message; changing the subject is not sufficient).
+     * MPFR releases on the GNU FTP server.
+     * ABI Tracker for MPFR.
+
+Introduction
+
+   The MPFR library is a C library for multiple-precision floating-point
+   computations with correct rounding. MPFR has continuously been
+   supported by the INRIA and the current main authors come from the
+   Caramba and AriC project-teams at Loria (Nancy, France) and LIP (Lyon,
+   France) respectively; see more on the credit page. MPFR is based on the
+   GMP multiple-precision library.
+
+   The main goal of MPFR is to provide a library for multiple-precision
+   floating-point computation which is both efficient and has a
+   well-defined semantics. It copies the good ideas from the ANSI/IEEE-754
+   standard for double-precision floating-point arithmetic (53-bit
+   significand).
+
+   MPFR is free. It is distributed under the GNU Lesser General Public
+   License (GNU Lesser GPL), version 3 or later (2.1 or later for MPFR
+   versions until 2.4.x). The library has been registered in France by the
+   Agence de Protection des Programmes under the number
+   IDDN FR 001 120020 00 R P 2000 000 10800, on 15 March 2000. This
+   license guarantees your freedom to share and change MPFR, to make sure
+   MPFR is free for all its users. Unlike the ordinary General Public
+   License, the Lesser GPL enables developers of non-free programs to use
+   MPFR in their programs. If you have written a new function for MPFR or
+   improved an existing one, please share your work!
+
+Extensions
+
+     * The multiple-precision arithmetic is very useful for interval
+       arithmetic. Get a multiple-precision interval arithmetic library
+       MPFI, based on MPFR. This library MPFI is developed by Nathalie
+       Revol from the AriC project and Fabrice Rouillier. MPFI implements
+       a subset of the mathematical functions provided by MPFR. Read more
+       explanations on Nathalie Revol's software page.
+     * The GNU MPC library, a library for multiple-precision complex
+       arithmetic with correct rounding, based on the MPFR and GMP
+       libraries.
+     * Arpra, an arbitrary-precision range analysis C library.
+
+Interfaces for MPFR
+
+     * The following C++ interfaces for MPFR, very different in their
+       design (and in particular, in the strategies for intermediate
+       precisions, so that they can yield different results), are
+       available:
+          + MPFRCPP, written by Alexey V. Beshenov. This interface uses a
+            modern C++ design with using of classes, templates and
+            function objects.
+          + Another MPFR C++ wrapper, written by Pavel Holoborodko. The
+            precision of the temporary results in an expression is chosen
+            as the maximum precision of its arguments, and the final
+            result is rounded to the precision of the target variable.
+          + The mpfr::real class, written by Christian Schneider. "It
+            consists of a template class with precision and rounding mode
+            passed as template arguments. Hence, effectively a new type
+            will be created for each precision and rounding that is used.
+            All the operators available for fundamental floating point
+            types as well as type conversions from and to other types, and
+            the set of mathematical functions known from math.h/cmath are
+            implemented. This should allow for an easy substitution of,
+            e.g., a double with the wrapper class in most cases."
+          + MPFR++, developed in the AriC project. Warning! The version
+            currently available (2004-02-27) is not up-to-date, is not
+            compatible with the latest releases of MPFR and has several
+            bugs. News from 2007-05-02: Changes have been done on this
+            interface since, but they are not published yet.
+          + The gmpfrxx C++ interface for both GMP and MPFR, written by
+            Jon Wilkening.
+          + Boost also includes an interface for MPFR, as part of its
+            Multiprecision library.
+     * Ada:
+          + GMP, MPFR and MPC interface library for gcc-Ada (GNAT).
+          + Ada bindings to GMP and MPFR, written by Vincent Diemunsch
+            (announce in the MPFR mailing-list).
+     * Haskell interfaces: hmpfr written by Aleš Bizjak and haskell-mpfr.
+     * Java bindings to MPFR.
+     * A LISP interface, written by Richard Fateman. This package also
+       contains a FFT implementation.
+     * .NET interface Math.Mpfr.Native.
+     * OCaml:
+          + The mlgmp interface to GMP and MPFR, written by David
+            Monniaux.
+          + The mlgmpidl interface to GMP and MPFR, written by Bertrand
+            Jeannet.
+          + The mlmpfr interface to MPFR, written by Laurent Thévenoux.
+          + The gmp-ocaml interface to GMP, MPFR and MPC.
+     * The Perl interface Math::MPFR.
+     * Python:
+          + The bigfloat package (documentation), written by Mark
+            Dickinson.
+          + The Python bindings for GMP, MPFR and MPC (gmpy2).
+     * R interface to MPFR.
+     * The Racket language includes an MPFR interface.
+     * The RandomLib MPFR interface (C++ classes).
+     * Ruby bindings for GMP and MPFR.
+     * Rust interface to GMP, MPFR and MPC.
+
+Software Using MPFR
+
+     * The KDE calculator Abakus by Michael Pyne (supporting arbitrary
+       precision thanks to MPFR as of version 0.90).
+     * AERN2, a set of Haskell packages for exact real number computation:
+       aern2-mp (multi-precision floats via MPFR) and aern2-real (exact
+       real numbers via Cauchy sequences and MPFR).
+     * The ALGLIB.NET project implements multiple-precision linear algebra
+       using MPFR.
+     * The APRON library, dedicated to the static analysis of the
+       numerical variables of a program by Abstract Interpretation.
+     * The ARAnyM virtual machine as of version 0.9.12, for the FPU
+       emulation.
+     * Arb, a C library for arbitrary-precision floating-point ball
+       arithmetic, developed by Fredrik Johansson.
+     * Ariadne, a C++ library for formal verification of cyber-physical
+       systems, using reachability analysis for nonlinear hybrid automata.
+     * The numerical analysis library BNCpack can be compiled with MPFR.
+     * CGAL (Computational Geometry Algorithms Library).
+     * DateTime-Astro (functions for astronomical calendars).
+     * Eigen, a C++ template library for linear algebra, via Pavel
+       Holoborodko's MPFR C++ wrapper.
+     * FLINT (Fast Library for Number Theory).
+     * MPFR is also used by the Fluctuat tool developed and used
+       internally at the CEA (France).
+     * FractalNow, a fractal generator.
+     * Gappa, a tool intended to help verifying and formally proving
+       properties on numerical programs, by Guillaume Melquiond.
+     * GCC: first in GFortran, then in the middle-end phase as of GCC 4.3,
+       to resolve math functions with constant arguments. More
+       information.
+     * Genius Math Tool and the GEL language, by Jiri Lebl.
+     * Giac/Xcas, a free computer algebra system, by Bernard Parisse.
+     * GNOME Calculator, as of version 3.15.4.
+     * GNU Awk, as of version 4.1.0 (for optional arbitrary-precision
+       arithmetic).
+     * Herbie, a tool for improving the accuracy of floating-point
+       expressions.
+     * The iRRAM - Exact Arithmetic in C++ implementation from Norbert
+       Müller (University of Trier, Germany).
+     * The Julia language implementation (source).
+     * The ledger accounting system.
+     * The C++ continued fractions toolkit libcff (no longer maintained),
+       by Johan Vervloet.
+     * The libieeep1788 library, a C++ implementation of the preliminary
+       IEEE P1788 standard for interval arithmetic.
+     * Macaulay 2, a software system devoted to supporting research in
+       algebraic geometry and commutative algebra (as of version 1.1).
+     * The Magma computational algebra system.
+     * The Maple computer algebra system via the RS library, since version
+       11 (reference).
+     * Mathemagix, a free computer algebra system, in the numerix package.
+     * MCAS/libivl (computational algebra and plot system / interval
+       computations library), by Mateusz Paprocki.
+     * MetaLibm (code generators for the math library and beyond).
+     * MPACK (multiple precision arithmetic BLAS and LAPACK), by Nakata
+       Maho, supports MPFR as of version 0.6.5 (2010-05-21).
+     * The MPFRCX library for the arithmetic of univariate polynomials
+       over arbitrary precision real (MPFR) or complex (MPC) numbers,
+       without control on the rounding.
+     * The mpfs library, an experiment in stochastic lazy floating-point
+       arithmetic, from Keith Briggs. Note: mpfs-0.9 (last updated in
+       2006, and the latest version at the time of writing [2018-09-25])
+       will not work unmodified with recent MPFR versions.
+     * MPFUN2015, an arbitrary precision package by David H. Bailey; the
+       MPFUN-MPFR version is based on MPFR.
+     * Multiprecision Computing Toolbox for MATLAB.
+     * NARS2000, an experimental APL interpreter, has datatypes for
+       multiple-precision floating-point numbers via MPFR.
+     * The GNU Octave interval package.
+     * Protea, a software devoted to protein-coding sequences
+       identification, by Arnaud Fontaine and Hélène Touzet.
+     * The Rasqal RDF Query Library optionally uses MPFR for accurate
+       xsd:decimal implementation.
+     * ReactOS Calc uses MPFR when multiple-precision support is enabled.
+     * MPFR is one of the components of SAGE.
+     * Sirocco, a library for computing homotopy continuation of a given
+       root of one-dimensional sections of bivariate complex polynomials.
+     * Soft84, a calculator for Android devices.
+     * Sollya, a tool environment for safe floating-point code
+       development, written by Christoph Lauter and Sylvain Chevillard (in
+       the old Arénaire project).
+     * SXEmacs can be compiled with MPFR support (as of version 22.1.3).
+     * SweeD, a tool that implements a composite likelihood ratio test for
+       detecting selective sweeps.
+     * TIDES: a Taylor Integrator for Differential Equations, to integrate
+       numerically Ordinary Differential Equations in arbitrary precision.
+     * TRIP, a general computer algebra system dedicated to celestial
+       mechanics.
+     * Verificarlo, a tool for automatic Monte-Carlo arithmetic analysis.
+     * The Wcalc calculator by Kyle Wheeler (supporting arbitrary
+       precision thanks to MPFR as of version 2.0).
+     * ZKCM, a C++ library for multi-precision complex-number matrix
+       calculations.
+
+Other Related Free Software
+
+     * MAPM, a portable arbitrary precision math library in C, by Michael
+       C. Ring (and a fork on GitHub).
+     * CoStLy, a Complex interval Standard functions Library developed by
+       Markus Neher (Karlsruhe).
+     * The XSC-Languages, FI_LIB, FILIB++ and intpak software developed at
+       University of Wuppertal (Germany).
+     * The CORE library: a library for robust numerical and geometric
+       computation.
+     * The CLN C++ library (GPL).
+     * The Quad-Double package by David Bailey, Yozo Hida and Sherry Li.
+     * The numerical difference utility from Nelson Beebe, similar to diff
+       but for numerical files.
+     * The mpmath Python library for arbitrary-precision floating-point
+       arithmetic.
+     * The Constructive Reals Calculator from Hans Boehm.
+     * The xrc - exact reals in C from Keith Briggs.
+     * The precise computation software from Oliver Aberth.
+     * The RR class from NTL, which implements a "smooth extension" of
+       IEEE floating point to arbitrary precision and guarantees a
+       platform-independent behaviour.
+     * A continued-fraction package based on GMP, by François Balsalobre.
+     * Software developed in the old Arénaire project and no longer
+       maintained:
+          + SCSLib, a fast and lightweight multiple-precision library
+            supporting the four arithmetic operations; the precision (210
+            bits by default) is fixed at compile time;
+          + CRlibm, a correctly rounded elementary function library (which
+            has been superseded by MetaLibm, developed in other teams).
+     * Sun's libmcr, a correctly rounded library of basic double-precision
+       transcendental elementary functions.
+     * The PreciseFloating (floating-point arithmetic library) project in
+       Java, by Daniel Aioanei: directed rounding, rational arithmetic and
+       arbitrary precision arithmetic based on regular continued fraction
+       expansions.
+     * The decNumber package by Mike Cowlishaw (IBM): arbitrary-precision
+       decimal arithmetic.
+     * The Intel® Decimal Floating-Point Math Library for the IEEE
+       754-2008 Standard (download).
+     * The calc calculator by Landon Curt Noll. This calculator implements
+       a rational arithmetic, with a fallback to some kind of
+       multiple-precision fixed-point arithmetic (integer multiplied by a
+       configurable epsilon).
+     * The Qalculate calculator by Niklas Knutsson, based on CLN.
+     * The MathCW mathematical function library (supporting binary and
+       decimal floating-point arithmetic) by Nelson H. F. Beebe.
+     * Libraries for extended precision on GPU: gnuprec.
+     * The mpdecimal package for correctly rounded arbitrary-precision
+       decimal floating-point arithmetic, by Stefan Krah.
+     * CAMPARY: multiple precision arithmetic routines for GPUs (based on
+       floating-point expansions), written in CUDA C.
+     * Anant - Algorithmic 'n Analytic Number Theory by Linas Vepstas.
+     * MikeMcl/bignumber.js, a JavaScript library for arbitrary-precision
+       decimal and non-decimal arithmetic.
+     * The LibBF library by Fabrice Bellard.
+
+Related References and Links
+
+     * The C standard: the N1256 draft (C99 with TC3) and the C99
+       rationale (especially Section 7.12 and Annex F). New in C99. The
+       N1570 draft (last draft of C11) and the N2176 draft (last draft of
+       C17/C18).
+     * LIA stuff. These standards are freely available.
+     * The General Decimal Arithmetic pages from Mike Cowlishaw.
+     * The Digital Library of Mathematical Functions project, whose aim is
+       to develop an electronic version of the Handbook of Mathematical
+       Functions from Abramowitz and Stegun.
+     * The Computer Arithmetic & Numerical Techniques (CANT) research
+       group at University of Antwerp, Belgium.
+     * The Table Maker's Dilemma page from the AriC (formerly Arénaire)
+       project at ENS-Lyon, France.
+     * Mathematical constants and computation by Xavier Gourdon and Pascal
+       Sebah.
+     * The 754R standard revision group.
+     * The CerPAN ANR project.
+     * The EVA-Flo ANR project.
+     * LOCOMAT (the Loria Collection of Mathematical Tables).
+     __________________________________________________________________
+
+   Valid XHTML 1.0!

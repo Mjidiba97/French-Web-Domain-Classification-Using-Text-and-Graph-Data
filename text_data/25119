@@ -1,0 +1,533 @@
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-PT7PXK
+
+     * Mentions légales
+     * Plan du site
+     * Tarifs
+     * FAQ
+     * CGU
+     * Contactez-nous
+     * www.caisse-epargne.fr
+
+   [pix2.asp?268660;22489;123456;0;[transactionid];[reference]]
+   [comptage_wreport.fcgi?WRP_ID=484942] Livrets À Connecter
+
+Bonjour,
+la tirelire a été fermée par son créateur.
+
+   Vous n'avez plus la possibilité de participer, rapprochez-vous de lui
+   pour en savoir plus.
+
+   Découvrez la première tirelire électronique à connecter aux livrets
+   d'épargne
+   de votre enfant qui permet à vos proches de participer à son avenir,
+   tout simplement avec une carte bancaire !
+
+   IFRAME:
+   //www.youtube.com/embed/ADbV3AKW1K0?rel=0&showinfo=0&vq=hd720&enablejsa
+   pi=1&wmode=transparent
+
+   Parce que l'avenir de votre enfant se construit dès aujourd'hui, la
+   Caisse d'Epargne vous propose, en
+   partenariat avec S-money^(1), les LIVRETS À CONNECTER pour toutes
+   occasions :
+   naissance, anniversaire, rêves d'avenir...
+
+
+
+     * Créez une tirelire
+     * Partagez-la avec vos proches
+     * Ouvrez^(2) un livret A Caisse d'Epargne
+       et connectez-le
+
+   C'est parti !
+
+   20euros
+
+   offerts^(3)
+
+   pour l'ouverture d'un livret A Caisse d'Epargne
+   à connecter
+
+Comment ça marche ?
+
+   Faites connaître le
+
+livret à connecter
+
+     *
+     *
+     *
+
+     * S-MONEY, Etablissement de monnaie électronique agréé en France et
+       contrôlé par l’ACPR (Autorité de Contrôle Prudentiel et de
+       Résolution, 61 rue Taitbout 75436 Paris Cedex 09), société par
+       actions simplifiée au capital de 16 237 000 euros, inscrite au
+       Registre du Commerce de Paris sous le numéro 501586341, établie et
+       ayant son siège social à Paris XIVème, 168bis-170 rue Raymond
+       Losserand. RCS Paris n° 501 586 431
+     * Demande d’ouverture de Livret A auprès de la Caisse d’Epargne et
+       sous réserve de son acceptation, il ne peut être détenu qu’un
+       Livret A par personne physique.
+     * {{ $config.promotion_mentions }}
+   Livrets À Connecter
+
+Demande d'ouverture
+de Livret A Caisse d'Epargne ^(1)
+
+   Vous souhaitez transférer les fonds recueillis dans la tirelire de
+   votre enfant ?
+   Demandez l'ouverture d'un Livret A Caisse d'Epargne pour le mineur
+   dont vous êtes le représentant légal.
+     * Votre demande
+     * Récapitulatif
+     * Confirmation
+
+   Les champs obligatoires sont signalés par *.
+
+   Erreur
+
+Je demande l'ouverture d'un Livret A au nom de mon enfant mineur dont je suis
+le représentant légal.
+
+Vos informations
+
+   Civilité * (*) Madame ( ) Monsieur
+   Prénom * ____________________
+   Nom de famille * ____________________
+   Nom d'usage ____________________
+   Date de naissance *
+   ____________________
+   Je suis déjà client(e) de la Caisse d'Epargne (*) Oui ( ) Non
+   Identifiant client ____________________
+   Ma caisse * [Sélectionnez une caissee]
+   Pays de naissance * ____________________
+   Département de naissance * ____________________
+   Commune de naissance * ____________________
+   Nationalité * [{{ nationality.nationality_name }}]
+   Capacité juridique * Majeur capable______
+   Situation de famille * [Sélectionnez une situation de famillee]
+
+Vos coordonnées
+
+   Adresse * ____________________
+   Adresse (complément) ____________________
+   Code postal * ____________________
+   Ville * ____________________
+   Téléphone * ____________________
+   E-mail * ____________________
+   [ ] Je souhaite recevoir des offres commerciales de la Caisse d'Epargne
+   par e-mail
+
+Mineur titulaire du Livret A
+
+   Civilité * (*) Mademoiselle ( ) Monsieur
+   Prénom * ____________________
+   Nom * ____________________
+   Date de naissance *
+   ____________________
+   Pays de naissance * ____________________
+   Département de naissance * ____________________
+   Commune de naissance * ____________________
+   Nationalité * [{{ nationality.nationality_name }}]
+
+Coordonnées du mineur
+
+   Le mineur habite-t-il avec vous ? * (*) Oui ( ) Non
+   Adresse * ____________________
+   Adresse (complément) ____________________
+   Code postal * ____________________
+   Ville * ____________________
+
+Versement initial
+
+   Je souhaite effectuer le versement initial à partir de mon compte {{
+   form.user_client_bank > 0 ? (form.user_client_bank | int | findIn:
+   $config.banks:'bank_id':'bank_name') : '' }} * Indiquer un numéro de
+   compte de dépôt, Livret A, Livret Développement Durable, Compte Epargne
+   Logement, Livret Epargne Populaire ou Livret Jeune
+   ____________________
+
+Versement initial
+
+   D'un montant de * Je souhaite effectuer le versement initial par chèque
+   bancaire d'un montant de * (min {{ $config.payment_limit.min |
+   amount:'€' }}, maximum {{ $config.payment_limit.max | amount:'€' }})
+   ____________________
+
+Retraits réalisés par le mineur seul
+
+   J'autorise le mineur à effectuer seul des retraits sur le Livret A
+   Avant 16 ans * ( ) Oui (*) Non
+   Après 16 ans * (*) Oui ( ) Non
+
+   Valider
+
+   Annuler
+     * Vos informations
+     *
+          + Civilité
+          + {{ form.user_civility }}
+     *
+          + Prénom
+          + {{ form.user_firstname }}
+     *
+          + Nom de famille
+          + {{ form.user_lastname }}
+     *
+          + Nom d'usage
+          + {{ form.user_common_name }}
+     *
+          + Date de naissance
+          + {{ form.user_birthdate }}
+     *
+     *
+          + Identifiant client
+          + {{ form.user_client_id }}
+     *
+          + Caisse
+          + {{ form.user_client_bank | int | findIn:
+            $config.banks:'bank_id':'bank_name' }}
+     *
+          + Pays de naissance
+          + {{ form.user_birth_country }}
+     *
+          + Département de naissance
+          + {{ form.user_birth_dept }}
+     *
+          + Commune de naissance
+          + {{ form.user_birth_city }}
+     *
+          + Nationalité
+          + {{ form.user_nationality | int | findIn:
+            $config.nationalities:'nationality_id':'nationality_name' }}
+     *
+          + Capacité juridique
+          + {{ form.user_capacity }}
+     *
+          + Situation de famille
+          + {{ form.user_situation }}
+
+     * Vos coordonnées
+     *
+          + Adresse
+          + {{ form.user_address }}
+          + {{ form.user_address }}
+            {{ form.user_address2 }}
+     *
+          + Code Postal
+          + {{ form.user_zipcode }}
+     *
+          + Ville
+          + {{ form.user_city }}
+     *
+          + Téléphone
+          + {{ form.user_phone }}
+     *
+          + E-mail
+          + {{ form.user_email }}
+     * Je souhaitene souhaite pas recevoir des offres commerciales de la
+       Caisse d'Epargne par e-mail.
+
+     * Mineur titulaire du Livret A
+     * Je demande l'ouverture d'un Livret A au taux de {{ $config.rate }}
+       (taux en vigueur à la date d'ouverture) pour le mineur désigné
+       ci-dessous dont je suis le représentant légal.
+     *
+          + Civilité
+          + {{ form.child_civility }}
+     *
+          + Prénom
+          + {{ form.child_firstname }}
+     *
+          + Nom
+          + {{ form.child_lastname }}
+     *
+     *
+          + Date de naissance
+          + {{ form.child_birthdate }}
+     *
+          + Pays de naissance
+          + {{ form.child_birth_country }}
+     *
+          + Département de naissance
+          + {{ form.child_birth_dept }}
+     *
+          + Commune de naissance
+          + {{ form.child_birth_city }}
+     *
+          + Nationalité
+          + {{ form.child_nationality | int |
+            findIn:$config.nationalities:'nationality_id':'nationality_nam
+            e' }}
+     *
+     *
+          + Adresse
+          + {{ form.child_own_address == 1 ? form.child_address :
+            form.user_address }}
+            {{ form.child_own_address == 1 ? form.child_address2 :
+            form.user_address2 }}
+     *
+          + Code Postal
+          + {{ form.child_own_address == 1 ? form.child_zipcode :
+            form.user_zipcode }}
+     *
+          + Ville
+          + {{ form.child_own_address == 1 ? form.child_city :
+            form.user_city }}
+
+     * Versement initial
+     * Je souhaite effectuer un versement initial de {{ form.payment }} €
+       par chèque bancaire.
+     * Le versement initial sera effectué à partir de mon compte {{
+       form.user_client_bank | int | findIn:
+       $config.banks:'bank_id':'bank_name' }} N° {{ form.payment_account
+       }}.
+     * Pour un montant de {{ form.payment | amount:'€' }}.
+
+     * Retraits réalisés par le mineur seul
+     * J'autorise les Je m'oppose aux retraits avant 16 ans.
+     * J'autorise les Je m'oppose aux retraits après 16 ans.
+
+     * Vos engagements
+     * [ ] Je reconnais être informé que :
+       - une même personne ne peut être titulaire que d’un seul Livret A,
+       ou d’un seul compte sur livret du Crédit mutuel ouvert avant le 1er
+       janvier 2009 et des sanctions telles que précisées dans le contrat
+       d’ouverture notamment fiscales auxquelles elle s’expose en cas de
+       non-respect de la monodétention ;
+       - l’établissement de crédit saisi d’une demande d’ouverture d’un
+       Livret A est tenu de vérifier préalablement à cette ouverture,
+       auprès de l’administration fiscale, si la personne détient déjà un
+       Livret A ou un compte spécial sur livret du Crédit mutuel («Livret
+       Bleu»), aucun Livret A ne pouvant être ouvert avant la réponse de
+       l’administration fiscale à l’établissement de crédit. En cas de
+       détention multiple de Livrets A ou de Livrets Bleus, je n’autorise
+       pas l’administration fiscale à communiquer à la Caisse d’Epargne
+       les informations permettant d’identifier le(s) Livret(s) A ou/et
+       Livret(s) Bleu préexistant(s) ;
+       - si je souhaite autoriser l’administration fiscale à communiquer à
+       la Caisse d’Epargne les informations permettant d’identifier le(s)
+       Livret(s) A ou/et Livret(s) Bleu préexistant(s), la demande
+       d’ouverture du Livret A par internet ne peut pas être poursuivie.
+       La demande d’ouverture du Livret A peut être effectuée auprès de la
+       Caisse d’Epargne par téléphone (numéro figurant dans la rubrique
+       contactez-nous de cette page).
+
+     * Veuillez prendre connaissance des conditions générales
+       d'utilisation.
+     * Faites défiler pour lire l'ensemble des conditions.
+     *
+     * [ ] Je déclare avoir pris connaissance des présentes conditions
+       générales et des conditions particulières du Livret A et en accepte
+       les clauses. Je m'engage à imprimer ou sauvegarder les éléments
+       contractuels remis en PDF par la Caisse d'Epargne.
+       Je demande à ce que l'ouverture du Livret A au nom de mon enfant
+       mineur soit effectuée immédiatement, sous réserve d'acceptation de
+       ma demande par la Caisse d'Epargne.
+       Je suis informé que je dispose d'un délai de 14 jours à compter de
+       la date d'ouverture de mon Livret A pour annuler cette demande
+       auquel cas je serai remboursé des sommes versées ; la date
+       d'ouverture correspond à la date d'acceptation de ma demande par la
+       Caisse d'Epargne. Ma demande ne pourra pas être acceptée aux
+       conditions présentes s'il y a modification de la réglementation du
+       Livret A entre la date d'envoi du contrat et la date d'acceptation
+       de ma demande. Le livret ne sera pas ouvert si le compte à débiter
+       pour effectuer le versement initial et le premier versement mensuel
+       éventuel est insuffisamment alimenté.
+
+     * Je certifie l'exactitude des informations ci-dessus sous peine
+       d'annulation de l'ouverture du Livret A.
+
+   Valider
+
+   Modifier
+
+   Annuler
+
+Contactez nous
+
+   {{ $config.contact_phone }} ({{ $config.contact_label }}) {{
+   $config.contact_phone }} ({{ $config.contact_label }})
+
+Nous vous confirmons votre demande d'ouverture du Livret A Caisse d'Epargne
+pour votre enfant mineur
+
+   Merci pour votre confiance et de l'intérêt que vous portez à nos
+   produits.
+
+Action importante pour finaliser votre demande
+
+   Des pièces justificatives sont nécessaires pour traiter votre demande.
+
+   Consultez la liste détaillée des pièces justificatives admissibles
+
+Récupérer ma demande d'ouverture
+
+   Télécharger votre demande
+
+   Imprimer votre demande
+
+Vous pouvez nous transmettre ces documents
+
+   Via notre espace sécurisé de dépôt de documents
+
+   Transmettre les pièces
+
+Par messagerie sécurisée
+
+   Avec la raison de message {{ receipt.message }}
+
+Par courrier postal
+
+   Renvoyez les documents sans affranchir à l'adresse suivante :
+
+   Après réception des documents et validation de votre demande, vous
+   recevrez dans les meilleurs délais un e-mail vous informant de
+   l'ouverture du produit.
+
+Pour finaliser votre demande
+d'ouverture du Livret A pour votre
+enfant mineur :
+
+Nous vous invitons à :
+
+   Télécharger et imprimer votre demande
+
+Important
+
+   Le bouton ci-dessus vous permet d'accéder au bordereau de demande
+   d'ouverture du Livret A Caisse d'Epargne à signer et à nous renvoyer.
+   Il contient aussi un document indiquant les pièces à joindre avec votre
+   demande et l'adresse postale libre-réponse pour le retour des
+   documents.
+
+   Accéder à votre tirelire
+
+   Vos données personnelles recueillies sont obligatoires et ont pour
+   finalités la gestion du produit et du risque, ainsi que la prospection
+   commerciale. Elles sont destinées, de même que celles recueillies
+   ultérieurement, à la Caisse d'Epargne, responsable du traitement. Ces
+   données peuvent faire l'objet d'un transfert dans un autre pays. Dans
+   le cadre d'un transfert hors Union européenne, des règles assurent la
+   protection et la sécurité de ces informations. Vous autorisez la Caisse
+   d'Epargne à communiquer ces données à BPCE, à ses filiales directes et
+   indirectes à des fins de gestion du risque et à ses partenaires à des
+   fins commerciales. Vous disposez d'un droit d'accès, de rectification
+   et de suppression de vos données auprès de BPCE, Direction de la
+   Distribution Caisse d'Epargne 50, avenue Pierre Mendes-France - 75013
+   Paris.
+
+Comment ça marche ?
+
+     * Demande d’ouverture de Livret A auprès de la Caisse d’Epargne et
+       sous réserve de son acceptation, il ne peut être détenu qu’un
+       Livret A par personne physique.
+   Livrets À Connecter
+
+Transmission des pièces justificatives
+
+   Ouverture d'un Livret A pour votre enfant mineur ^(1)
+
+   Erreur
+
+Nous vous remercions d'avoir effectué une demande d'ouverture d'un Livret A
+pour votre enfant mineur.
+
+Cette page vous permet de transmettre la ou les pièces justificatives
+nécessaires pour finaliser votre demande.
+
+   Vos pièces justificatives doivent être photographiées ou scannées. Les
+   formats acceptés sont pdf, jpg, jpeg, gif, png avec une taille maximale
+   de 5Mo par fichier.
+
+   Sélectionnez pour chaque ligne ci-dessous le type de document à
+   envoyer, puis cliquez sur joindre un fichier.
+   Vous pouvez revenir plus tard sur cette page si vous n'avez pas
+   transmis toutes les pièces. Celles déjà envoyées ont été conservées.
+
+   Consultez la liste détaillée des pièces justificatives admissibles
+
+   Cette pièce justificative est obligatoire.
+
+   Cette pièce justificative est obligatoire.
+
+   Valider
+
+   Finaliser plus tard
+
+   Annuler
+
+Contactez-nous
+
+   {{ $config.contact_phone }} ({{ $config.contact_label }}) {{
+   $config.contact_phone }} ({{ $config.contact_label }})
+
+   vous faire rappeler par un conseiller
+
+     * Demande d’ouverture de Livret A auprès de la Caisse d’Epargne et
+       sous réserve de son acceptation, il ne peut être détenu qu’un
+       Livret A par personne physique.
+   Livrets À Connecter
+
+Augmenter votre plafond annuel
+
+   Erreur
+
+Afin de profiter pleinement
+de votre tirelire électronique
+LIVRETS À CONNECTER, il est nécessaire d'augmenter les plafonds du compte de
+monnaie électronique associé, que vous avez ouvert
+auprès de S-money^(1).
+
+   Plus d'informations
+   Récapitulatifs des plafonds Vous n'avez pas demandé la levée de vos
+   plafonds Vous avez demandé la levée de vos plafonds en fournissant une
+   pièce d'identité en cours de validité et un justificatif de domicile de
+   moins de 3 mois
+   Plafonds unitaires
+   Opération entrante (participation, par Carte Bancaire, d'un invité à la
+   tirelire) 250€ 500€
+   Opération sortante (récupération des fonds de la tirelire) 1 000€ 15
+   000€
+   Plafonds annuels
+   Cumul des opérations entrantes (participations, par Carte Bancaire, des
+   invités à la tirelire) 2 500€ 15 000€
+   Cumul des opérations sortantes (récupérations des fonds de la tirelire)
+   1 000€ 15 000€
+
+Afin d'augmenter vos plafonds,
+merci de vérifier vos informations personnelles et d'envoyer
+un justificatif d'identité et un justificatif de domicile
+
+   Civilité * (*) Madame ( ) Monsieur
+   Prénom * ____________________
+   Nom * ____________________
+   Date de naissance *
+   ____________________
+   Adresse * ____________________
+   Adresse (complément) ____________________
+   Code postal * ____________________
+   Ville * ____________________
+   Téléphone * ____________________
+   E-mail * ____________________
+
+   Consultez la liste détaillée des pièces justificatives admissibles
+
+   Valider
+
+   Annuler
+
+Contactez-nous
+
+   {{ $config.contact_phone }} ({{ $config.contact_label }}) {{
+   $config.contact_phone }} ({{ $config.contact_label }})
+
+   vous faire rappeler par un conseiller
+
+     * S-MONEY, Etablissement de monnaie électronique agréé en France et
+       contrôlé par l’ACPR (Autorité de Contrôle Prudentiel et de
+       Résolution, 61 rue Taitbout 75436 Paris Cedex 09), société par
+       actions simplifiée au capital de 16 237 000 euros, inscrite au
+       Registre du Commerce de Paris sous le numéro 501586341, établie et
+       ayant son siège social à Paris XIVème, 168bis-170 rue Raymond
+       Losserand. RCS Paris n° 501 586 431

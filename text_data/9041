@@ -1,0 +1,1248 @@
+   #alternate alternate
+
+   Wamp Server
+   English, Русский
+     * Démarrer
+     * Télécharger
+     * Formation
+
+Forum
+
+Hébergement CLOUD
+
+WampServer,
+plate-forme de développement Web sous Windows
+
+   WampServer est une plate-forme de développement Web sous Windows pour
+   des applications Web dynamiques à l’aide du serveur Apache2, du langage
+   de scripts PHP et d’une base de données MySQL. Il possède également
+   PHPMyAdmin pour gérer plus facilement vos bases de données.
+   Expérimenter WampServer
+
+Démarrer avec WampServer
+
+   Comme vous allez le voir, WampServer s’installe facilement et son
+   utilisation très intuitive permet de le configurer très rapidement
+   (sans toucher aux fichiers de configuration).
+
+Installation
+
+     * Double-cliquez sur le fichier téléchargé et laissez vous guider.
+       Tout est géré par l’installeur de WampServer. Par défaut,
+       WampServer est livré avec les toutes dernières versions de Apache,
+       MySQL et PHP.
+     * Une fois installé, vous  pourrez  ajouter  manuellement  des
+       versions supplémentaires  d’Apache,  PHP ou MySQL (Uniquement
+       compilées VC9, VC10 ou  VC11).  Les  explications  pour  le faire
+       vous seront données sur le forum.
+     * Chaque version de Apache, MySQL et PHP dispose de sa propre
+       configuration et de ses propres fichiers (données pour MySQL).
+
+   Utilisez WampServer :
+     * Création automatique d’un répertoire « www » lors de l’installation
+       (typiquement c:\wamp\www).
+     * Créez un sous répertoire pour votre projet et déposez-y vos
+       fichiers PHP
+     * Cliquez sur le lien « Localhost » du menu de WampServer ou ouvrez
+       votre navigateur préféré, et allez à l’adresse http://localhost
+
+Fonctionnalités
+
+   WampServer dispose également d’un « TrayIcon » vous permettant de gérer
+   et configurer simplement vos serveurs, sans toucher aux fichiers de
+   configuration.
+
+   Clic gauche sur l’icône de WampServer, vous pouvez notamment :
+     * Gérer les services de Apache et MySQL
+     * passer en mode online/offline (accessible à tous ou limité à
+       localhost)
+     * Installer et changer de version de Apache, MySQL et PHP
+     * Gérer les paramètres de configuration de vos serveurs
+     * Accéder à vos logs
+     * Accéder aux fichiers de configuration
+     * Créer des alias..et bien plus encore
+
+   Clic droit :
+     * Changer la langue du menu de WampServer et accéder directement à
+       cette page
+
+Téléchargements
+
+   WampServer est disponible gratuitement (sous licence GPL) en deux
+   versions : 32 et 64 bits. Wampserver 2.5 n’est pas compatible avec
+   Windows XP, même SP3, ni avec Windows Server 2003. Les anciennes
+   versions de Wampserver sont chez Sourceforge.
+
+Wampserver
+
+   WampServer 64 bits (x64) 3.17
+
+   – Wampserver 3.1.9 64 bit x64 – Apache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Télécharger WampServer 64 bits (x64) 3.17
+
+   WampServer est disponible gratuitement (sous licence GPL). Vous pouvez
+   remplir ce formulaire qui nous permettra de vous faire parvenir les
+   actualités formation d’Alter Way, société éditrice, ainsi que toutes
+   les informations liées aux évolutions de WampServer. Si vous ne le
+   souhaitez pas, vous pouvez passer au téléchargement direct.
+
+   Prénom :
+   ________________________________________
+
+   Nom :
+   ________________________________________
+
+   Société :
+   ________________________________________
+
+   Email (*) :
+   ________________________________________
+
+   Téléphone :
+   ________________________________________
+
+   Pays :
+   [---_______________________________]
+
+   Fonction (*) :
+   [---____________________________________]
+
+   Vous avez des questions, des remarques, des commentaires ?
+
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+
+   Votre utilisation de Wampserver :
+   [ ]  Utilisation pour une application interne [ ]  Utilisation pour
+   développer en préproduction [ ]  Ne prévoit pas d'utiliser WAMPSERVER
+
+   [ ]  Je souhaite recevoir des informations de WampServer
+
+   Envoyer
+
+   * champs obligatoires
+   ATTENTION : N'utilisez pas d'extensions / addons Wampserver précédents.
+   Ils ne sont plus compatibles avec la nouvelle version de wampserver
+   (VC11)
+   ATTENTION : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ATTENTION : N'installez pas WampServer 2 par dessus WAMP5.
+
+   Si vous avez une version de WAMP5 installée, sauvegardez vos données,
+   désinstallez-la, et supprimez le répertoire de WAMP5 avant d'installer
+   WampServer 2.
+   ATTENTION : Tous les éléments de la stack 2.2 de WampServer ont été
+   compilés avec le compilateur VC9 de Microsoft.
+
+   Les versions antérieures étaient compilées avec la version VC6 du
+   compilateur.
+
+   Il n'est donc pas possible de mélanger des composants de la version 2.2
+   de WampServer avec des éléments des versions antérieures. Ces éléments
+   sont PHP, XDebug, les extensions, et le module php-apache.
+
+   Ce mélange provoque des instabilités du système.
+   WampServer 32 bits (x86) 3.0.6
+
+   – Wampserver 3.1.9 64 bit x64 – AApache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Télécharger WampServer 32 bits (x86) 3.0.6
+
+   WampServer est disponible gratuitement (sous licence GPL). Vous pouvez
+   remplir ce formulaire qui nous permettra de vous faire parvenir les
+   actualités formation d’Alter Way, société éditrice, ainsi que toutes
+   les informations liées aux évolutions de WampServer. Si vous ne le
+   souhaitez pas, vous pouvez passer au téléchargement direct.
+
+   Prénom :
+   ________________________________________
+
+   Nom :
+   ________________________________________
+
+   Société :
+   ________________________________________
+
+   Email (*) :
+   ________________________________________
+
+   Téléphone :
+   ________________________________________
+
+   Pays :
+   [---_______________________________]
+
+   Fonction (*) :
+   [---____________________________________]
+
+   Vous avez des questions, des remarques, des commentaires ?
+
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+
+   Votre utilisation de Wampserver :
+   [ ]  Utilisation pour une application interne [ ]  Utilisation pour
+   développer en préproduction [ ]  Ne prévoit pas d'utiliser WAMPSERVER
+
+   [ ]  Je souhaite recevoir des informations de WampServer
+
+   Envoyer
+
+   * champs obligatoires
+   ATTENTION : N'utilisez pas d'extensions / addons Wampserver précédents.
+   Ils ne sont plus compatibles avec la nouvelle version de wampserver
+   (VC11)
+   ATTENTION : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ATTENTION : N'installez pas WampServer 2 par dessus WAMP5.
+
+   Si vous avez une version de WAMP5 installée, sauvegardez vos données,
+   désinstallez-la, et supprimez le répertoire de WAMP5 avant d'installer
+   WampServer 2.
+   ATTENTION : Tous les éléments de la stack 2.2 de WampServer ont été
+   compilés avec le compilateur VC9 de Microsoft.
+
+   Les versions antérieures étaient compilées avec la version VC6 du
+   compilateur.
+
+   Il n'est donc pas possible de mélanger des composants de la version 2.2
+   de WampServer avec des éléments des versions antérieures. Ces éléments
+   sont PHP, XDebug, les extensions, et le module php-apache.
+
+   Ce mélange provoque des instabilités du système.
+
+Formations PHP
+
+   Les développements, la maintenance et la mise à jour de l’application
+   WampServer sont réalisés par la société Alter Way. Que vous soyez
+   débutant ou expert, l’entité Formation d’Alter Way vous propose un
+   large éventail de formations, aussi bien PHP que MySQL.
+     * PHP : des bases à la maîtrise
+     * PHP Avancé
+     * PHP Expert certifié
+     * Industrialisation PHP
+     * Zend Framework Développeur
+     * Conceptions orientées objet en PHP POO
+
+   Les formations opensource
+
+Crédits
+
+   Auteur :
+          Romain Bourdon
+
+   Mainteneur / Roadmap :
+          Hervé Leclerc
+
+   Modérateurs du forum :
+          Thomas alias BISTORY
+          Stéphane alias VIPER
+
+   Equipe de production du site :
+          Dominique Brunel, Christophe Sadowski, Mickaël Martin, Xavier
+          Tellier, Quentin Nichini
+
+   Equipe de traduction du site :
+          Quentin Nichini (English)
+          Anabela Ventura (Portugués)
+          Amine Picazo (Español)
+          Svetlana Tonkonog (РУССКИЙ)
+
+     * Installation développée
+       avec Inno Setup
+     * Manager développé
+       avec Aestan Tray Menu
+     * Sources disponibles sur Source Forge
+
+     * WampServer
+       contient les applications:
+     * Apache
+     * MySQL
+     * PHP / phpMyAdmin
+
+   powered by Alter Way - Hébergement Cloud H2o, une solution de
+   virtualisation basée sur oVirt
+
+   Close
+   #WampServer » Flux de résultats de la recherche pour "{search_term}"
+   alternate alternate
+
+   Wamp Server
+   English, Русский
+     * Démarrer
+     * Télécharger
+     * Formation
+
+Forum
+
+Hébergement CLOUD
+
+WampServer,
+plate-forme de développement Web sous Windows
+
+   WampServer est une plate-forme de développement Web sous Windows pour
+   des applications Web dynamiques à l’aide du serveur Apache2, du langage
+   de scripts PHP et d’une base de données MySQL. Il possède également
+   PHPMyAdmin pour gérer plus facilement vos bases de données.
+   Expérimenter WampServer
+
+Démarrer avec WampServer
+
+   Comme vous allez le voir, WampServer s’installe facilement et son
+   utilisation très intuitive permet de le configurer très rapidement
+   (sans toucher aux fichiers de configuration).
+
+Installation
+
+     * Double-cliquez sur le fichier téléchargé et laissez vous guider.
+       Tout est géré par l’installeur de WampServer. Par défaut,
+       WampServer est livré avec les toutes dernières versions de Apache,
+       MySQL et PHP.
+     * Une fois installé, vous  pourrez  ajouter  manuellement  des
+       versions supplémentaires  d’Apache,  PHP ou MySQL (Uniquement
+       compilées VC9, VC10 ou  VC11).  Les  explications  pour  le faire
+       vous seront données sur le forum.
+     * Chaque version de Apache, MySQL et PHP dispose de sa propre
+       configuration et de ses propres fichiers (données pour MySQL).
+
+   Utilisez WampServer :
+     * Création automatique d’un répertoire « www » lors de l’installation
+       (typiquement c:\wamp\www).
+     * Créez un sous répertoire pour votre projet et déposez-y vos
+       fichiers PHP
+     * Cliquez sur le lien « Localhost » du menu de WampServer ou ouvrez
+       votre navigateur préféré, et allez à l’adresse http://localhost
+
+Fonctionnalités
+
+   WampServer dispose également d’un « TrayIcon » vous permettant de gérer
+   et configurer simplement vos serveurs, sans toucher aux fichiers de
+   configuration.
+
+   Clic gauche sur l’icône de WampServer, vous pouvez notamment :
+     * Gérer les services de Apache et MySQL
+     * passer en mode online/offline (accessible à tous ou limité à
+       localhost)
+     * Installer et changer de version de Apache, MySQL et PHP
+     * Gérer les paramètres de configuration de vos serveurs
+     * Accéder à vos logs
+     * Accéder aux fichiers de configuration
+     * Créer des alias..et bien plus encore
+
+   Clic droit :
+     * Changer la langue du menu de WampServer et accéder directement à
+       cette page
+
+Téléchargements
+
+   WampServer est disponible gratuitement (sous licence GPL) en deux
+   versions : 32 et 64 bits. Wampserver 2.5 n’est pas compatible avec
+   Windows XP, même SP3, ni avec Windows Server 2003. Les anciennes
+   versions de Wampserver sont chez Sourceforge.
+
+Wampserver
+
+   WampServer 64 bits (x64) 3.17
+
+   – Wampserver 3.1.9 64 bit x64 – Apache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Télécharger WampServer 64 bits (x64) 3.17
+
+   WampServer est disponible gratuitement (sous licence GPL). Vous pouvez
+   remplir ce formulaire qui nous permettra de vous faire parvenir les
+   actualités formation d’Alter Way, société éditrice, ainsi que toutes
+   les informations liées aux évolutions de WampServer. Si vous ne le
+   souhaitez pas, vous pouvez passer au téléchargement direct.
+
+   Prénom :
+   ________________________________________
+
+   Nom :
+   ________________________________________
+
+   Société :
+   ________________________________________
+
+   Email (*) :
+   ________________________________________
+
+   Téléphone :
+   ________________________________________
+
+   Pays :
+   [---_______________________________]
+
+   Fonction (*) :
+   [---____________________________________]
+
+   Vous avez des questions, des remarques, des commentaires ?
+
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+
+   Votre utilisation de Wampserver :
+   [ ]  Utilisation pour une application interne [ ]  Utilisation pour
+   développer en préproduction [ ]  Ne prévoit pas d'utiliser WAMPSERVER
+
+   [ ]  Je souhaite recevoir des informations de WampServer
+
+   Envoyer
+
+   * champs obligatoires
+   ATTENTION : N'utilisez pas d'extensions / addons Wampserver précédents.
+   Ils ne sont plus compatibles avec la nouvelle version de wampserver
+   (VC11)
+   ATTENTION : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ATTENTION : N'installez pas WampServer 2 par dessus WAMP5.
+
+   Si vous avez une version de WAMP5 installée, sauvegardez vos données,
+   désinstallez-la, et supprimez le répertoire de WAMP5 avant d'installer
+   WampServer 2.
+   ATTENTION : Tous les éléments de la stack 2.2 de WampServer ont été
+   compilés avec le compilateur VC9 de Microsoft.
+
+   Les versions antérieures étaient compilées avec la version VC6 du
+   compilateur.
+
+   Il n'est donc pas possible de mélanger des composants de la version 2.2
+   de WampServer avec des éléments des versions antérieures. Ces éléments
+   sont PHP, XDebug, les extensions, et le module php-apache.
+
+   Ce mélange provoque des instabilités du système.
+   WampServer 32 bits (x86) 3.0.6
+
+   – Wampserver 3.1.9 64 bit x64 – AApache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Télécharger WampServer 32 bits (x86) 3.0.6
+
+   WampServer est disponible gratuitement (sous licence GPL). Vous pouvez
+   remplir ce formulaire qui nous permettra de vous faire parvenir les
+   actualités formation d’Alter Way, société éditrice, ainsi que toutes
+   les informations liées aux évolutions de WampServer. Si vous ne le
+   souhaitez pas, vous pouvez passer au téléchargement direct.
+
+   Prénom :
+   ________________________________________
+
+   Nom :
+   ________________________________________
+
+   Société :
+   ________________________________________
+
+   Email (*) :
+   ________________________________________
+
+   Téléphone :
+   ________________________________________
+
+   Pays :
+   [---_______________________________]
+
+   Fonction (*) :
+   [---____________________________________]
+
+   Vous avez des questions, des remarques, des commentaires ?
+
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+
+   Votre utilisation de Wampserver :
+   [ ]  Utilisation pour une application interne [ ]  Utilisation pour
+   développer en préproduction [ ]  Ne prévoit pas d'utiliser WAMPSERVER
+
+   [ ]  Je souhaite recevoir des informations de WampServer
+
+   Envoyer
+
+   * champs obligatoires
+   ATTENTION : N'utilisez pas d'extensions / addons Wampserver précédents.
+   Ils ne sont plus compatibles avec la nouvelle version de wampserver
+   (VC11)
+   ATTENTION : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ATTENTION : N'installez pas WampServer 2 par dessus WAMP5.
+
+   Si vous avez une version de WAMP5 installée, sauvegardez vos données,
+   désinstallez-la, et supprimez le répertoire de WAMP5 avant d'installer
+   WampServer 2.
+   ATTENTION : Tous les éléments de la stack 2.2 de WampServer ont été
+   compilés avec le compilateur VC9 de Microsoft.
+
+   Les versions antérieures étaient compilées avec la version VC6 du
+   compilateur.
+
+   Il n'est donc pas possible de mélanger des composants de la version 2.2
+   de WampServer avec des éléments des versions antérieures. Ces éléments
+   sont PHP, XDebug, les extensions, et le module php-apache.
+
+   Ce mélange provoque des instabilités du système.
+
+Formations PHP
+
+   Les développements, la maintenance et la mise à jour de l’application
+   WampServer sont réalisés par la société Alter Way. Que vous soyez
+   débutant ou expert, l’entité Formation d’Alter Way vous propose un
+   large éventail de formations, aussi bien PHP que MySQL.
+     * PHP : des bases à la maîtrise
+     * PHP Avancé
+     * PHP Expert certifié
+     * Industrialisation PHP
+     * Zend Framework Développeur
+     * Conceptions orientées objet en PHP POO
+
+   Les formations opensource
+
+Crédits
+
+   Auteur :
+          Romain Bourdon
+
+   Mainteneur / Roadmap :
+          Hervé Leclerc
+
+   Modérateurs du forum :
+          Thomas alias BISTORY
+          Stéphane alias VIPER
+
+   Equipe de production du site :
+          Dominique Brunel, Christophe Sadowski, Mickaël Martin, Xavier
+          Tellier, Quentin Nichini
+
+   Equipe de traduction du site :
+          Quentin Nichini (English)
+          Anabela Ventura (Portugués)
+          Amine Picazo (Español)
+          Svetlana Tonkonog (РУССКИЙ)
+
+     * Installation développée
+       avec Inno Setup
+     * Manager développé
+       avec Aestan Tray Menu
+     * Sources disponibles sur Source Forge
+
+     * WampServer
+       contient les applications:
+     * Apache
+     * MySQL
+     * PHP / phpMyAdmin
+
+   powered by Alter Way - Hébergement Cloud H2o, une solution de
+   virtualisation basée sur oVirt
+
+   Close
+   #alternate alternate
+
+   Wamp Server
+   Français, Русский
+     * Start
+     * Download
+
+Forum
+
+WampServer,
+a Windows web development environment.
+
+   WampServer is a Windows web development environment. It allows you to
+   create web applications with Apache2, PHP and a MySQL database.
+   Alongside, PhpMyAdmin allows you to manage easily your databases.
+   Start using WampServer
+
+Start with WampServer
+
+   WampServer installs automatically all you need to start developing web
+   applications and is very intuitive to use. You will be able to tune
+   your server without even touching the setting files.
+
+Installing
+
+     * Double click on the downloaded file and just follow the
+       instructions. Everything is automatic. The WampServer package is
+       delivered whith the latest releases of Apache, MySQL and PHP.
+     * Once WampServer is installed, you can manually add aditionals
+       Apache, Php or MySql (only VC9, VC10 and VC11 compiled)
+       versions. Explanations will be provided on the forum.
+     * Each release of Apache, MySQL and PHP has its own settings and its
+       own files (datas for MySQL).
+
+   Using wampserver
+     * The “www” directory will be automatically created (usually
+       c:\wamp\www)
+     * Create a subdirectory in “www” and put your PHP files inside.
+     * Click on the “localhost” link in the WampSever menu or open your
+       internet browser and go to the URL : http://localhost
+
+Functionalities
+
+   WampServer’s functionalities are very complete and easy to use so we
+   won’t explain here how to use them.
+
+   With a left click on WampServer’s icon, you will be able to:
+     * manage your Apache and MySQL services
+     * switch online/offline (give access to everyone or only localhost)
+     * install and switch Apache, MySQL and PHP releases
+     * manage your servers settings
+     * access your logs
+     * access your settings files
+     * create alias
+
+   With a right click :
+     * change WampServer’s menu language
+     * access this page
+
+Downloads
+
+   WampServer is available for free (under GPML license) in two distinct
+   versions : 32 and 64 bits. Wampserver 2.5 is not compatible with
+   Windows XP, neither with SP3, nor Windows Server 2003. Older WampServer
+   versions are available on SourceForge.
+
+Wampserver
+
+   WampServer 64 bits (x64) 3.17
+
+   – Wampserver 3.1.9 64 bit x64 – Apache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Close
+
+Download WampServer 64 bits (x64) 3.17
+
+   Wampserver is available for free (under the GPL license). You can fill
+   up this form that will enable us to send you the Alter Way Training
+   news, publishing society, as well as all the informations linked to
+   Wapserver evolutions. If you don't wish it, you can download directly.
+   WARNING : Don't Use previous WampServer Extensions/Addons. There are no
+   more compatible with the new wampserver version's (VC11)
+   WARNING : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   WARNING : Do not try to install WampServer 2 over WAMP5.
+
+   If WAMP5 is installed on your computer, save your data, uninstall it
+   and delete the WAMP5 directory before installing WampServer 2.
+   WARNING : All the components of the v2.2 WampServer stack have been
+   compiled with VC9 version of Microsoft compiler.
+
+   Earlier versions of Wampserver have been made with VC6 version of
+   Microsoft compiler.
+
+   So, You can't mix components of 2.2 stack with previous version of
+   Wampserver Stack components.
+
+   If you do it you will get an instable Wampserver.
+   WampServer 32 bits (x86) 3.0.6
+
+   – Wampserver 3.1.9 64 bit x64 – AApache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Close
+
+Download WampServer 32 bits (x86) 3.0.6
+
+   Wampserver is available for free (under the GPL license). You can fill
+   up this form that will enable us to send you the Alter Way Training
+   news, publishing society, as well as all the informations linked to
+   Wapserver evolutions. If you don't wish it, you can download directly.
+   WARNING : Don't Use previous WampServer Extensions/Addons. There are no
+   more compatible with the new wampserver version's (VC11)
+   WARNING : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   WARNING : Do not try to install WampServer 2 over WAMP5.
+
+   If WAMP5 is installed on your computer, save your data, uninstall it
+   and delete the WAMP5 directory before installing WampServer 2.
+   WARNING : All the components of the v2.2 WampServer stack have been
+   compiled with VC9 version of Microsoft compiler.
+
+   Earlier versions of Wampserver have been made with VC6 version of
+   Microsoft compiler.
+
+   So, You can't mix components of 2.2 stack with previous version of
+   Wampserver Stack components.
+
+   If you do it you will get an instable Wampserver.
+
+Credits
+
+   Author :
+          Romain Bourdon
+
+   Maintenance / Roadmap :
+          Hervé Leclerc
+
+   Forum moderators :
+          Thomas alias BISTORY
+          Stéphane alias VIPER
+
+   Website production team :
+          Dominique Brunel, Christophe Sadowski, Mickaël Martin, Xavier
+          Tellier, Quentin Nichini
+
+   Website translation team :
+          Quentin Nichini (English)
+          Anabela Ventura (Portugués)
+          Amine Picazo (Español)
+          Svetlana Tonkonog (РУССКИЙ)
+
+     * Installation developped
+       with Inno Setup
+     * Manager developed
+       with Aestan Tray Menu
+     * Sources available on Source Forge
+
+     * WampServer
+       is shipped with these applications :
+     * Apache
+     * MySQL
+     * PHP / phpMyAdmin
+
+   powered by Alter Way
+
+   Close
+   #alternate alternate
+
+   Wamp Server
+   English, Français
+     * Пуск
+     * Загрузка
+
+Форум
+
+WampServer,
+Веб-разработка платформы под Windows
+
+   WampServer это платформа для веб-разработки под Windows для
+   динамических веб-приложений с помощью сервера Apache2, интерпретатора
+   скриптов PHP и базы данных MySQL. В него также входит веб-приложение
+   PHPMyAdmin для наиболее простой обработки баз данных.
+   Испытываете WampServer
+
+Пуск C WampServer
+
+   Как вы сами сможете, Wampserver легко устанавливается и очень прост в
+   использовании, что позволяет быстро производить конфигурации (не
+   прибегая к конфигурационным файлам)
+
+УСТАНОВКА
+
+     * Щёлкните дважды на загруженный файл и следуйте инструкциям. Всё
+       регулируется инсталлятором WampServer. Пакет WampServer
+       предоставляется с самымы последними версиями Apache, MySQL и PHP.
+     * После установки вы можете вручную добавить aditionals Apache, PHP
+       или MySQL (только VC9, VC10 и VC11 составлен) версии. Пояснения
+       будут предоставляться на форуме.
+     * Каждая версия Apache, MySQL и PHP имеет свои собственные
+       конфигурации и файлы (предоставленные для MySQL)
+
+   Установите WampServer
+     * Автоматическое создание папки ” www » (обычно c:\wamp\www).
+     * Создайте подпапку под ваш проект и разместите туда ваши файлы PHP
+     * Пройдите по ссылке “Localhost” (“Локальный хост”) (меню WampServer
+       или откройте поисковую систему, которой вы отдаёте предпочтение, и
+       вбейте адрес http://localhost
+
+Возможности
+
+   WampServer обладает также “Иконой в трее” (“TrayIcon”), которая
+   позволяет легко управлять и конфигурировать сервера, не прибегая к
+   файлам конфигурации
+   Щелчок левой клавишей мышки на икону WampServer позволит:
+     * Управлять настройками Apache и MySQL
+     * Менять статус в сети/не в сети (доступно каждому пользвователю или
+       же лимитировано на локальном хосте)
+     * Установливаать или менять версию  Apache, MySQL и PHP
+     * Управлять параметрами конфигураций серверов
+     * Получать доступ к логам
+     * Получать доступ к файлам конфигураций
+     * Создавать псевдонимы и др.
+
+   Клик правой клавишей мышки позволит:
+     * Поменять язык меню WampServer и перейти сразу на эту страницу
+
+Загрузки
+
+   WampServer доступен бесплатно (под GPML лицензии) в двух различных
+   вариантах: 32 и 64 бит. WampServer 2.5 не совместим с Windows XP, ни с
+   SP3, ни Windows Server 2003. Старые WampServer версии доступны на
+   SourceForge.
+
+Wampserver
+
+   WampServer 64 bits (x64) 3.17
+
+   – Wampserver 3.1.9 64 bit x64 – Apache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Загрузка WampServer 64 bits (x64) 3.17
+
+   Wampserver is available for free (under the GPL license). You can fill
+   up this form that will enable us to send you the Alter Way Training
+   news, publishing society, as well as all the informations linked to
+   Wapserver evolutions. If you don't wish it, you can download directly.
+   ВНИМАНИЕ : Don't Use previous WampServer Extensions/Addons. There are
+   no more compatible with the new wampserver version's (VC11)
+   ВНИМАНИЕ : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ВНИМАНИЕ : Не следует устанавливать WampServer 2 поверх WAMP5.
+
+   Если у вас уже установлена версия WAMP5 сохраните ваши данные, удалите
+   её и папку с WAMP5, а затем установите WampServer 2.
+   ВНИМАНИЕ : Все элементы стека 2.2 WampServer были собраны компилятором
+   VC9 компании Microsoft.
+
+   Предыдущие версии былы собраны согласно версии компилятора VC6.
+
+   Следовательно, представляется невозвожным смешивать составляющие версии
+   2.2, принадлежащей WampServer с элементами предыдущих версий. Таковыми
+   элементами являются элементы PHP, XDebug, пакеты расширения и модуль
+   php-apache.
+
+   Такая смесь вызывает неустойчивость системы.
+   WampServer 32 bits (x86) 3.0.6
+
+   – Wampserver 3.1.9 64 bit x64 – AApache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Загрузка WampServer 32 bits (x86) 3.0.6
+
+   Wampserver is available for free (under the GPL license). You can fill
+   up this form that will enable us to send you the Alter Way Training
+   news, publishing society, as well as all the informations linked to
+   Wapserver evolutions. If you don't wish it, you can download directly.
+   ВНИМАНИЕ : Don't Use previous WampServer Extensions/Addons. There are
+   no more compatible with the new wampserver version's (VC11)
+   ВНИМАНИЕ : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ВНИМАНИЕ : Не следует устанавливать WampServer 2 поверх WAMP5.
+
+   Если у вас уже установлена версия WAMP5 сохраните ваши данные, удалите
+   её и папку с WAMP5, а затем установите WampServer 2.
+   ВНИМАНИЕ : Все элементы стека 2.2 WampServer были собраны компилятором
+   VC9 компании Microsoft.
+
+   Предыдущие версии былы собраны согласно версии компилятора VC6.
+
+   Следовательно, представляется невозвожным смешивать составляющие версии
+   2.2, принадлежащей WampServer с элементами предыдущих версий. Таковыми
+   элементами являются элементы PHP, XDebug, пакеты расширения и модуль
+   php-apache.
+
+   Такая смесь вызывает неустойчивость системы.
+
+кредиты
+
+   Автор :
+          Romain Bourdon
+
+   Технический обслуживатель / Дорожная карта :
+          Hervé Leclerc
+
+   Модераторы форума :
+          Thomas alias BISTORY
+          Stéphane alias VIPER
+
+   Команда сайта производства :
+          Dominique Brunel, Christophe Sadowski, Mickaël Martin, Xavier
+          Tellier, Quentin Nichini
+
+   команда переводчиков :
+          Quentin Nichini (English)
+          Anabela Ventura (Portugués)
+          Amine Picazo (Español)
+          Svetlana Tonkonog (РУССКИЙ)
+
+     * Сайт рабработали
+       с Inno Setup
+     * ПО запрограммирован
+       с Aestan Tray Menu
+     * Источники доступны по адресу Source Forge
+
+     * WampServer
+       содержит приложения:
+     * Apache
+     * MySQL
+     * PHP / phpMyAdmin
+
+   powered by Alter Way
+
+   Close
+   #WampServer » Flux de résultats de la recherche pour "{search_term}"
+   alternate alternate
+
+   Wamp Server
+   English, Русский
+     * Démarrer
+     * Télécharger
+     * Formation
+
+Forum
+
+Hébergement CLOUD
+
+WampServer,
+plate-forme de développement Web sous Windows
+
+   WampServer est une plate-forme de développement Web sous Windows pour
+   des applications Web dynamiques à l’aide du serveur Apache2, du langage
+   de scripts PHP et d’une base de données MySQL. Il possède également
+   PHPMyAdmin pour gérer plus facilement vos bases de données.
+   Expérimenter WampServer
+
+Démarrer avec WampServer
+
+   Comme vous allez le voir, WampServer s’installe facilement et son
+   utilisation très intuitive permet de le configurer très rapidement
+   (sans toucher aux fichiers de configuration).
+
+Installation
+
+     * Double-cliquez sur le fichier téléchargé et laissez vous guider.
+       Tout est géré par l’installeur de WampServer. Par défaut,
+       WampServer est livré avec les toutes dernières versions de Apache,
+       MySQL et PHP.
+     * Une fois installé, vous  pourrez  ajouter  manuellement  des
+       versions supplémentaires  d’Apache,  PHP ou MySQL (Uniquement
+       compilées VC9, VC10 ou  VC11).  Les  explications  pour  le faire
+       vous seront données sur le forum.
+     * Chaque version de Apache, MySQL et PHP dispose de sa propre
+       configuration et de ses propres fichiers (données pour MySQL).
+
+   Utilisez WampServer :
+     * Création automatique d’un répertoire « www » lors de l’installation
+       (typiquement c:\wamp\www).
+     * Créez un sous répertoire pour votre projet et déposez-y vos
+       fichiers PHP
+     * Cliquez sur le lien « Localhost » du menu de WampServer ou ouvrez
+       votre navigateur préféré, et allez à l’adresse http://localhost
+
+Fonctionnalités
+
+   WampServer dispose également d’un « TrayIcon » vous permettant de gérer
+   et configurer simplement vos serveurs, sans toucher aux fichiers de
+   configuration.
+
+   Clic gauche sur l’icône de WampServer, vous pouvez notamment :
+     * Gérer les services de Apache et MySQL
+     * passer en mode online/offline (accessible à tous ou limité à
+       localhost)
+     * Installer et changer de version de Apache, MySQL et PHP
+     * Gérer les paramètres de configuration de vos serveurs
+     * Accéder à vos logs
+     * Accéder aux fichiers de configuration
+     * Créer des alias..et bien plus encore
+
+   Clic droit :
+     * Changer la langue du menu de WampServer et accéder directement à
+       cette page
+
+Téléchargements
+
+   WampServer est disponible gratuitement (sous licence GPL) en deux
+   versions : 32 et 64 bits. Wampserver 2.5 n’est pas compatible avec
+   Windows XP, même SP3, ni avec Windows Server 2003. Les anciennes
+   versions de Wampserver sont chez Sourceforge.
+
+Wampserver
+
+   WampServer 64 bits (x64) 3.17
+
+   – Wampserver 3.1.9 64 bit x64 – Apache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Télécharger WampServer 64 bits (x64) 3.17
+
+   WampServer est disponible gratuitement (sous licence GPL). Vous pouvez
+   remplir ce formulaire qui nous permettra de vous faire parvenir les
+   actualités formation d’Alter Way, société éditrice, ainsi que toutes
+   les informations liées aux évolutions de WampServer. Si vous ne le
+   souhaitez pas, vous pouvez passer au téléchargement direct.
+
+   Prénom :
+   ________________________________________
+
+   Nom :
+   ________________________________________
+
+   Société :
+   ________________________________________
+
+   Email (*) :
+   ________________________________________
+
+   Téléphone :
+   ________________________________________
+
+   Pays :
+   [---_______________________________]
+
+   Fonction (*) :
+   [---____________________________________]
+
+   Vous avez des questions, des remarques, des commentaires ?
+
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+
+   Votre utilisation de Wampserver :
+   [ ]  Utilisation pour une application interne [ ]  Utilisation pour
+   développer en préproduction [ ]  Ne prévoit pas d'utiliser WAMPSERVER
+
+   [ ]  Je souhaite recevoir des informations de WampServer
+
+   Envoyer
+
+   * champs obligatoires
+   ATTENTION : N'utilisez pas d'extensions / addons Wampserver précédents.
+   Ils ne sont plus compatibles avec la nouvelle version de wampserver
+   (VC11)
+   ATTENTION : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ATTENTION : N'installez pas WampServer 2 par dessus WAMP5.
+
+   Si vous avez une version de WAMP5 installée, sauvegardez vos données,
+   désinstallez-la, et supprimez le répertoire de WAMP5 avant d'installer
+   WampServer 2.
+   ATTENTION : Tous les éléments de la stack 2.2 de WampServer ont été
+   compilés avec le compilateur VC9 de Microsoft.
+
+   Les versions antérieures étaient compilées avec la version VC6 du
+   compilateur.
+
+   Il n'est donc pas possible de mélanger des composants de la version 2.2
+   de WampServer avec des éléments des versions antérieures. Ces éléments
+   sont PHP, XDebug, les extensions, et le module php-apache.
+
+   Ce mélange provoque des instabilités du système.
+   WampServer 32 bits (x86) 3.0.6
+
+   – Wampserver 3.1.9 64 bit x64 – AApache 2.4.37 – PHP 5.6.40, 7.0.33,
+   7.1.26, 7,1.30, 7.2.19, 7.2.14, 7.3.1, 7.3.6 – MySQL 5.7.24 – MariaDB
+   10.3.12 – PhpMyAdmin 4.8.4 – Adminer 4.7.0 – PhpSysInfo 3.2.10
+   changelog
+   Fermer
+
+Télécharger WampServer 32 bits (x86) 3.0.6
+
+   WampServer est disponible gratuitement (sous licence GPL). Vous pouvez
+   remplir ce formulaire qui nous permettra de vous faire parvenir les
+   actualités formation d’Alter Way, société éditrice, ainsi que toutes
+   les informations liées aux évolutions de WampServer. Si vous ne le
+   souhaitez pas, vous pouvez passer au téléchargement direct.
+
+   Prénom :
+   ________________________________________
+
+   Nom :
+   ________________________________________
+
+   Société :
+   ________________________________________
+
+   Email (*) :
+   ________________________________________
+
+   Téléphone :
+   ________________________________________
+
+   Pays :
+   [---_______________________________]
+
+   Fonction (*) :
+   [---____________________________________]
+
+   Vous avez des questions, des remarques, des commentaires ?
+
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+   ________________________________________
+
+   Votre utilisation de Wampserver :
+   [ ]  Utilisation pour une application interne [ ]  Utilisation pour
+   développer en préproduction [ ]  Ne prévoit pas d'utiliser WAMPSERVER
+
+   [ ]  Je souhaite recevoir des informations de WampServer
+
+   Envoyer
+
+   * champs obligatoires
+   ATTENTION : N'utilisez pas d'extensions / addons Wampserver précédents.
+   Ils ne sont plus compatibles avec la nouvelle version de wampserver
+   (VC11)
+   ATTENTION : Vous devez avoir installé Visual Studio 2012 : VC 11
+   vcredist_x64/86.exe
+
+   Visual Studio 2012 VC 11 vcredist_x64/86.exe :
+   http://www.microsoft.com/en-us/download/details.aspx?id=30679
+   ATTENTION : N'installez pas WampServer 2 par dessus WAMP5.
+
+   Si vous avez une version de WAMP5 installée, sauvegardez vos données,
+   désinstallez-la, et supprimez le répertoire de WAMP5 avant d'installer
+   WampServer 2.
+   ATTENTION : Tous les éléments de la stack 2.2 de WampServer ont été
+   compilés avec le compilateur VC9 de Microsoft.
+
+   Les versions antérieures étaient compilées avec la version VC6 du
+   compilateur.
+
+   Il n'est donc pas possible de mélanger des composants de la version 2.2
+   de WampServer avec des éléments des versions antérieures. Ces éléments
+   sont PHP, XDebug, les extensions, et le module php-apache.
+
+   Ce mélange provoque des instabilités du système.
+
+Formations PHP
+
+   Les développements, la maintenance et la mise à jour de l’application
+   WampServer sont réalisés par la société Alter Way. Que vous soyez
+   débutant ou expert, l’entité Formation d’Alter Way vous propose un
+   large éventail de formations, aussi bien PHP que MySQL.
+     * PHP : des bases à la maîtrise
+     * PHP Avancé
+     * PHP Expert certifié
+     * Industrialisation PHP
+     * Zend Framework Développeur
+     * Conceptions orientées objet en PHP POO
+
+   Les formations opensource
+
+Crédits
+
+   Auteur :
+          Romain Bourdon
+
+   Mainteneur / Roadmap :
+          Hervé Leclerc
+
+   Modérateurs du forum :
+          Thomas alias BISTORY
+          Stéphane alias VIPER
+
+   Equipe de production du site :
+          Dominique Brunel, Christophe Sadowski, Mickaël Martin, Xavier
+          Tellier, Quentin Nichini
+
+   Equipe de traduction du site :
+          Quentin Nichini (English)
+          Anabela Ventura (Portugués)
+          Amine Picazo (Español)
+          Svetlana Tonkonog (РУССКИЙ)
+
+     * Installation développée
+       avec Inno Setup
+     * Manager développé
+       avec Aestan Tray Menu
+     * Sources disponibles sur Source Forge
+
+     * WampServer
+       contient les applications:
+     * Apache
+     * MySQL
+     * PHP / phpMyAdmin
+
+   powered by Alter Way - Hébergement Cloud H2o, une solution de
+   virtualisation basée sur oVirt
+
+   Close

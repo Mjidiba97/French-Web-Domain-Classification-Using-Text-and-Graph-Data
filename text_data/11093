@@ -1,0 +1,321 @@
+   [awstats_logo6.png]
+   AWStats official web site
+
+Free real-time logfile analyzer to get advanced statistics (GNU GPL).
+
+
+   Social networks
+
+       Follow us on Google Follow us on Facebook Follow us on Twitter
+
+   Receive AWStats news by emails...
+   Your EMail:
+   __________________
+   Subscribe
+
+                                 [INS: :INS]
+
+                            Support This Project
+
+                                 Contacts to
+                              [email protected]
+
+                                   IFRAME:
+   //www.appstr.io/a_server/a/?publisher_id=521fa97100ecd70200000bdb&kind=
+                            skyscraper_wide&url=
+
+                                 [INS: :INS]
+
+                                 SourceForge
+
+   [What is AWStats]   [Demo]   [Features]   [Downloads]   [Documentation
+            / FAQ]   [Comparison]   [AWStats Project/Development]
+
+What is AWStats
+     __________________________________________________________________
+
+   AWStats is a free powerful and featureful tool that generates advanced
+   web, streaming, ftp or mail server statistics, graphically. This log
+   analyzer works as a CGI or from command line and shows you all possible
+   information your log contains, in few graphical web pages. It uses a
+   partial information file to be able to process large log files, often
+   and quickly. It can analyze log files from all major server tools like
+   Apache log files (NCSA combined/XLF/ELF log format or common/CLF log
+   format), WebStar, IIS (W3C log format) and a lot of other web, proxy,
+   wap, streaming servers, mail servers and some ftp servers.
+   Take a look at this comparison table for an idea on features and
+   differences between most famous statistics tools (AWStats, Analog,
+   Webalizer,...).
+   AWStats is a free software distributed under the GNU General Public
+   License. You can have a look at this license chart to know what you
+   can/can't do.
+   As AWStats works from the command line but also as a CGI, it can work
+   with all web hosting providers which allow Perl, CGI and log access.
+
+                          [awstats_ban_460x270.png]
+
+Demo / Screenshots
+     __________________________________________________________________
+
+   You can browse AWStats demo (real-time update feature has been
+   disabled) to see a sample of most important information AWStats shows
+   you...
+   Demo for web server log files
+   Static demo for ftp log files
+   Static demo for mail log files
+   AWStats web demo AWStats web demo AWStats ftp demo AWStats mail demo
+
+Features
+     __________________________________________________________________
+
+   A full log analysis enables AWStats to show you the following
+   information:
+   * Number of visits, and number of unique visitors,
+   * Visits duration and last visits,
+   * Authenticated users, and last authenticated visits,
+   * Days of week and rush hours (pages, hits, KB for each hour and day of
+   week),
+   * Domains/countries of hosts visitors (pages, hits, KB, 269
+   domains/countries detected, GeoIp detection),
+   * Hosts list, last visits and unresolved IP addresses list,
+   * Most viewed, entry and exit pages,
+   * Files type,
+   * Web compression statistics (for mod_gzip or mod_deflate),
+   * OS used (pages, hits, KB for each OS, 35 OS detected),
+   * Browsers used (pages, hits, KB for each browser, each version (Web,
+   Wap, Media browsers: 97 browsers, more than 450 if using
+   browsers_phone.pm library file),
+   * Visits of robots (319 robots detected),
+   * Worms attacks (5 worm's families),
+   * Search engines, keyphrases and keywords used to find your site (The
+   115 most famous search engines are detected like yahoo, google,
+   altavista, etc...),
+   * HTTP errors (Page Not Found with last referrer, ...),
+   * Other personalized reports based on url, url parameters, referer
+   field for miscellanous/marketing purpose,
+   * Number of times your site is "added to favourites bookmarks".
+   * Screen size (need to add some HTML tags in index page).
+   * Ratio of Browsers with support of: Java, Flash, RealG2 reader,
+   Quicktime reader, WMA reader, PDF reader (need to add some HTML tags in
+   index page).
+   * Cluster report for load balanced servers ratio.
+   AWStats also supports the following features:
+   * Can analyze a lot of log formats: Apache NCSA combined log files
+   (XLF/ELF) or common (CLF), IIS log files (W3C), WebStar native log
+   files and other web, proxy, wap or streaming servers log files (but
+   also ftp or mail log files). See AWStats F.A.Q. for examples.
+   * Works from command line and from a browser as a CGI (with dynamic
+   filters capabilities for some charts),
+   * Update of statistics can be made from a web browser and not only from
+   your scheduler,
+   * Unlimited log file size, support split log files (load balancing
+   system),
+   * Support 'not correctly sorted' log files even for entry and exit
+   pages,
+   * Reverse DNS lookup before or during analysis, support DNS cache
+   files,
+   * Plugin for country detection from IP location (use geoip country
+   database or client domain name),
+   * Plugin for city detection from IP location (use geoip city database),
+   * Plugins for US/Canadian Region , ISP and/or Organizations reports
+   (require non free third product geoipregion, geoipisp and/or geoiporg
+   database)
+   * WhoIS links,
+   * A lot of options/filters and plugins can be used,
+   * Multi-named web sites supported (virtual servers, great for
+   web-hosting providers),
+   * Cross Site Scripting Attacks protection,
+   * Several languages. See AWStats F.A.Q. for full list.
+   * No need of rare perl libraries. All basic perl interpreters can make
+   AWStats working,
+   * Dynamic reports as CGI output.
+   * Static reports in one or framed HTML/XHTML pages, experimental PDF
+   export,
+   * Look and colors can match your site design, can use CSS,
+   * Help and tooltips on HTML reported pages,
+   * Easy to use (Just one configuration file to edit),
+   * Analysis database can be stored in XML format for XSLT processing,
+   * A Webmin module,
+   * Absolutely free (even for web hosting providers), with sources (GNU
+   General Public License),
+   * Available on all platforms,
+   * AWStats has a XML Portable Application Description.
+   Requirements:
+   To use AWStats, you need the following requirements:
+   * Your server must log web access in a log file you can read.
+   * You must be able to run perl scripts (.pl files) from command line
+   and/or as CGI (Perl 5.007003 or higher required to run AWStats 6.9 or
+   higher).
+   If not, you can solve this by downloading last Perl version at
+   ActivePerl (Win32) or Perl.com (Unix/Linux/Other).
+   See AWStats F.A.Q. to have examples of supported OS and Web servers.
+
+Download
+     __________________________________________________________________
+
+
+   AWStats
+   Last stable Last stable version is 7.7 - 2018-01-07 14:37
+   Your Perl version must be at least 5.00503 (or higher) to use AWStats
+   6.x or higher. See ChangeLog to know what's new and for information on
+   compatibility with previous versions.
+   See Features for current features.
+   awstats-7.7.zip
+   awstats-7.7.tar.gz
+   awstats-7.7-1.noarch.rpm
+   Older release versions are 7.6 - 2017-03-12
+   7.5 - 2016-03-12
+   7.4 - 2015-07-15
+   7.3 - 2014-07-23
+   7.2 - 2013-07-09
+   7.1.1 - 2013-03-08
+   7.1 - 2012-12-01
+   7.0 - 2010-12-01
+   6.95 - 2009-10-28
+   6.9 - 2008-12-28
+   6.8 - 2008-07-20
+   6.7 - 2007-07-07
+   6.6 - 2006-12-23
+   6.5 - 2005-12-24
+   6.4 - 2005-03-16
+   6.3 - 2005-01-28
+   6.2 - 2004-11-06
+   6.1 - 2004-05-15
+   6.0 - 2004-04-18
+   ...
+   1.0 - 2000-05-02 (first version)
+   Download
+   Some spec/build files used to build packages are here awstats.spec
+   awstats.nsi
+   AWStats Webmin module
+   Last stable Last stable version is 2.0 - 2014-01-02 01:24
+   awstats-2.0.wbm
+   Older release versions are 1.9 - 2010-06-30
+   1.8 - 2009-10-28
+   1.7 - 2006-12-23
+   1.6 - 2005-12-24
+   1.5 - 2005-01-28
+   1.4 - 2004-11-06
+   1.3 - 2004-03-22
+   1.21 - 2004-03-22
+   1.0 - 2003-09-14 (first version)
+   Download
+   Other downloads (plugins/contrib/tools...)
+   You will find here several kinds of files :
+   - AWStats plugins
+   - Other AWStats contribs/tools/packages
+   - Other Non AWStats contribs/tools (not related to AWStats but related
+   to statistics or log analysis)
+   - Documents on AWStats or related to log analysis
+   - Some non official AWStats patches (hosted by sourceforge)
+
+Documentation / FAQ
+     __________________________________________________________________
+
+   If you need to know something about AWStats (features, setup, ...):
+   - Read seriously AWStats official documentation : HTML On line or PDF
+   file (326KB)
+   For last security annoucements:
+   - See security report page.
+   If you need help:
+   - The first thing you have to do to solve a technical problem is to
+   upgrade AWStats to last release version.
+   - Then you should read all the AWStats F.A.Q..
+   - If you still have problem, check on AWStats General FORUM (hosted by
+   sourceforge).
+
+Comparison
+     __________________________________________________________________
+
+   Features/Softwares AWStats  Webalizer
+   Version - Date       7.2     2.01-10
+   See the feature comparison page here...
+
+Support AWStats / Donate
+     __________________________________________________________________
+
+   If you want to support AWStats development and encourage my work, you
+   can:
+   - Purchase something from My Wish List at Amazon.com where I selected
+   some stuff that I would like to have. I'll appreciate a lot any gift
+   from this list.
+   - Make a donation via Paypal.
+   Support This Project
+   This is the best way if you want to send me something cool. Thank you!
+   This is a list of all donors that allows me to made them public.
+   A big thanks goes to...
+   * Norges Casino - Norway's biggest online casino guide
+   * NLTechno company
+   * Bonus Finder Canada is the number one online casino bonus comparison
+   website in Canada
+   * Casinon.nu are Swedens biggest guide for casino
+   * Swedish players can now play casino without registration, if you want
+   to find out more check out svensknätcasino.com
+   * If you want to find new casinos in Finland, check for uudet
+   nettikasinot and everything will be in Finnish.
+   * Casivo - Your guide to find the best casino in Sweden
+   * If you're looking for the best games site, you should check largest
+   casino online, best online guide for casino-loving Norwegians.
+   * Norwegians love to play casino and slot machine, if you also like
+   casino play on the best norwegian casino.
+   * If you need consumer loans in Norway you should check forbrukslan,
+   Norways biggest site for comparing consumer loans.!
+   * Since the new Swedish gambling legislation came into effect from 1
+   January 2019, "casino utan svensk licens" continue to draw increased
+   attention from Swedish casino players. AWstats reporting tool allows
+   for Casinoutansvensklicens.com to efficiently monitor this niche and to
+   present the most relevant guides to its visitors.
+   * Neue Online Casinos is the leading casino comparison site in the
+   German, Austrian and Swiss markets.
+   * CasinoSlam is the #1 guide in Spain and Latin America to find and
+   compare the best online casinos. Come and check it out! * Are you a
+   Swedish speaking casino enthusiast? At Jämförcasino.se you’ll find a
+   complete guide to the latest payment invention - “
+   casino med Swish”.
+   * The Norwegian online casino guide Nye Casino
+   * All the best new casino sites for the United Kingdom can be found at
+   best casino sites 2019. Weekly updates and exclusive welcome bonuses
+   for new players.
+   * Find the best new casino sites for the UK at new casino sites 2019.
+   Weekly updates with the latest welcome offers.
+   * A website that thrives on finding the best new casinos is new online
+   casino 2019. Weekly updates for and exclusive bonuses for new UK
+   players.
+   * The best Norwegian live casino experience is waiting for you with
+   professional live dealers and luxurious tables that will make you feel
+   like royalty.
+   * CasinoFeber.se - The ultimate Swedish Casino bonus comparison site
+   * TheCasinoDB Online Casinos - A comprehensive database of online
+   casinos providing real player reviews and opinions with the latest
+   casino bonuses
+   ...for their long-term support of the AWStats development.
+   You can follow project news on social networks:
+   Follow @awstats_project
+
+AWStats Project and Development
+     __________________________________________________________________
+
+   If you want to read and submit feedbacks
+   Visit the AWStats Developer FORUM (for developers, hosted by
+   sourceforge).
+   Visit the AWStats General FORUM (for other, hosted by sourceforge).
+   If you found a bug or want to read known bugs.
+   You should use the AWStats BUG TRACKER (hosted by GitHub).
+   If you want to be informed about new AWStats versions
+   You can register to the AWStats-public mailing list (new version
+   announcements only).
+   EMail: __________________   Subscribe
+   For developer who wants to work on AWStats project
+   You can find current version of development and submit your
+   contributions on official source repository hosted by GitHub:
+   https://github.com/eldy/awstats
+   About my other Open-Source projects:
+   AWBot, an easy to use Perl tool to test a web site.
+   AWStats, this one.
+   CVSChangelogBuilder, a friendly CVS ChangeLog Builder with various
+   outputs.
+     __________________________________________________________________
+
+                                 [INS: :INS]
+
+   AWStats [osi-certified-72x60.png]

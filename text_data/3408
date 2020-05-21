@@ -1,0 +1,520 @@
+    jQuery(document).ready(function($) { //CountDown var labels = ['days',
+   'hours', 'minutes', 'seconds'], template =
+   _.template($('#main-coutndown-template').html()); // Parse countdown
+   string to an object function strfobj(str) { var parsed =
+   str.match(/([0-9]{2})/gi), obj = {}; labels.forEach(function(label, i)
+   { obj[label] = parsed[i] }); return obj; } // Return the time
+   components that diffs function diff(obj1, obj2) { var diff = [];
+   labels.forEach(function(key) { if (obj1[key] !== obj2[key]) {
+   diff.push(key); } }); return diff; } var currDate4 = '00:00:00:00',
+   nextDate4 = '00:00:00:00'; var initData = strfobj(currDate4); var
+   $mainCountdown4 = $('#mea-countdown-4'); labels.forEach(function(label,
+   i) { $mainCountdown4.append(template({ curr: initData[label], label:
+   label })); }); $mainCountdown4.countdown('2019/09/30 23:59:59',
+   function(event) { var newDate = event.strftime('%D:%H:%M:%S'), data; if
+   (newDate !== nextDate4) { currDate4 = nextDate4; nextDate4 = newDate;
+   // Setup the data data = { 'curr': strfobj(currDate4), 'next':
+   strfobj(nextDate4) }; // Apply the new values to each node that changed
+   diff(data.curr, data.next).forEach(function(label) { var selector =
+   '.%s'.replace(/%s/, label), $node = $mainCountdown4.find(selector); //
+   Update the node $node.find('.curr').text(data.next[label]); }); } });
+   });
+   [tr?id=1065890633454496&ev=PageView&noscript=1]
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-55SS5BP
+
+   BFMTV
+   Menu
+   ____________________
+   Recherche
+   Le direct
+   Connexion
+   Se connecter Mot de passe oublié Pas encore de compte ? Inscrivez-vous
+   !
+     * BFMTV BFMTV
+     * BFM Business BFM Business
+     * RMC RMC
+     * RMC Sport RMC Sport
+     * RMC Décourverte RMC Découverte
+     * BFM Paris BFM Paris
+     * bourse BFM Bourse
+
+   Actualité
+     * Politique
+     * Police-justice
+     * International
+     * Société
+     * Économie
+     * Tech
+     * Auto
+     * Santé
+     * Planète
+     * Animaux
+     * Sport
+     * People
+     * Chez vous
+     * Infographies
+     * Nos dossiers
+     * Diaporamas
+     * Météo
+     * Info trafic
+     * Témoins BFMTV
+     * Services
+     *
+
+     * Le direct
+     * Vidéos
+     * Replay
+     * Émissions
+     * Making-of
+
+   Newsletters Actualité Inscrivez-vous gratuitement !
+   Suivez-nous sur
+     * Vidéos
+     * Politique
+     * Police-justice
+     * International
+     * Société
+     * Économie
+     * Tech
+     * Auto
+     * Santé
+     * Sport
+     * People
+     * Chez vous
+     * Météo
+
+   En collaboration avec Meilleurmobile.com
+    1. BFMTV
+    2. >
+    3. Comparateur de forfaits
+
+   (BUTTON)
+   Rechercher un forfait précis : ____________________ (BUTTON)
+     * Forfaits (current)
+     * Box
+     * Forfaits en promo
+
+Comparateur Forfait BFMTV, je compare tous les forfaits mobile adaptés à mes
+besoins
+
+   Avec le Comparateur Forfait BFMTV en partenariat avec Meilleurmobile,
+   le site spécialiste des forfaits mobiles et internet, découvrez un
+   outil intuitif et particulièrement efficace pour cibler l’abonnement
+   qui correspond au mieux à vos attentes. Le Comparateur Forfait BFMTV
+   vous propose de retrouver et de comparer les meilleures offres mobiles
+   du moment ainsi que les abonnements téléphoniques des grands opérateurs
+   du marché. Vous avez ainsi la possibilité de trouver en un clin d’œil
+   l’offre mobile qui correspond à votre mode de consommation.
+
+Comparatif de forfait mobile avec ou sans engagement
+
+   Opérateur [tous les opérateurss]
+   Engagement [indifférent___.]
+   Appels
+   Internet
+   Prix
+
+Réseau
+
+   [ ] Orange
+
+   [ ] Bouygues Télécom
+
+   [ ] SFR
+
+Mobile
+
+   [ ] Sans mobile
+
+   [ ] Avec mobile
+
+   [ ] Mobile + Box
+
+International
+
+   [ ] Vers l'étranger
+
+   [ ] Depuis l'étranger
+
+    Afficher plusmoins de critères
+   Chercher
+   forfait(s) trouvé(s)
+   à partir de 10.99€
+   0 forfait(s) trouvé(s)
+
+   Avec le très grand nombre de forfaits mobiles proposés aujourd’hui, il
+   est parfois difficile de savoir vers quelle offre se tourner, tant les
+   types d’abonnements, les services et les prix sont différents. Nous
+   vous proposons de découvrir les différentes sortes de forfaits mobiles
+   proposés par les opérateurs afin d’y voir plus clair et de vous aider
+   dans votre choix.
+
+   La plupart des utilisateurs ont tendance à souscrire des forfaits
+   téléphoniques tout illimités, sans se poser de réelles questions
+   concernant leur consommation. Pourtant les forfaits mobiles illimités
+   sont les plus chers et la majorité des utilisateurs ne consomment
+   qu’une petite partie des services inclus dans leur abonnement mobile.
+   Il est donc important de connaître votre type de consommation afin de
+   sélectionner l’abonnement mobile le plus adapté à votre profil de
+   consommation et ainsi payer uniquement pour les services dont vous avez
+   besoin.
+
+   Au-delà de l’aspect financier, les opérateurs télécom proposent à peu
+   de chose près les mêmes types de forfaits mobiles. Il est donc
+   important de vous renseigner sur les différents opérateurs du marché,
+   afin d’être sûr de faire le bon choix. Vous pouvez prendre en compte
+   l’étendue de la couverture réseau de l’opérateur, la qualité de ses
+   services, les forfaits mobiles en promotion, ou encore les avantages
+   liés à la fidélité des clients.
+
+Les différents types de forfaits mobile
+
+   Forfaits
+   mobiles + Internet Forfaits
+   sans engagement Forfaits
+   Illimités Forfaits
+   4G et 4G+ Forfaits
+   Internationaux Forfaits
+   Bloqués
+
+Les différents opérateurs de forfaits mobile
+
+   logo Orange
+   logo SFR
+   logo Bouygues Telecom
+   logo Sosh
+   logo RED
+   logo B-And-You
+   logo Prixtel
+   logo NRJ Mobile
+   logo Coriolis
+   logo Auchan Telecom
+   logo Free Mobile
+   logo La Poste Mobile
+   logo Cdiscount Mobile
+   logo Lebara
+   logo Syma Mobile
+
+Les meilleurs forfaits 4G
+
+   logo B-And-You B-And-You Série Spéciale 50Go 11€99 Voir l'offre
+   logo Free Mobile Free Mobile Illimité 60Go 9€99 Voir l'offre
+   logo SFR SFR Power 60Go 30€00 Voir l'offre
+   logo Prixtel Prixtel Le complet 4€99 Voir l'offre
+
+Les meilleurs mobiles avec forfait
+
+   Apple iPhone 11 Apple iPhone 11 Noir logo à partir de789€ Voir l'offre
+   Samsung Galaxy S10 Samsung Galaxy S10 Noir Prisme logo à partir
+   de269.9€ Voir l'offre
+   Huawei P30 Huawei P30 Bleu Aurore logo à partir de799.99€ Voir l'offre
+   Samsung Galaxy Note 10 Samsung Galaxy Note 10 Noir logo à partir de299€
+   Voir l'offre
+
+Quel forfait mobile choisir ?
+
+   Afin de trouver le forfait téléphonique le plus adapté à vos besoins et
+   vos exigences, nous vous proposons de comparer les abonnements mobiles
+   des opérateurs historiques et des MVNO. Le comparateur de forfaits
+   mobiles vous propose de retrouver un large choix de paramètres, afin de
+   cibler précisément vos besoins en communication, qu’il s’agisse de
+   services inclus (temps d’appels, nombre de SMS/MMS, crédit d’accès à
+   internet etc.) ou bien du type de forfaits mobiles (ajustables, bloqués
+   avec ou sans engagement…). Afin de vous aider dans votre recherche du
+   meilleur forfait mobile, nous vous proposons de retrouver les
+   principaux points sur lesquels vous devrez vous pencher pour être sûr
+   de faire le bon choix.
+
+Quel opérateur téléphonique choisir ?
+
+   Même si les offres mobiles se ressemblent, il est tout de même
+   important de vérifier qui gère les services pour lesquels vous avez
+   souscrit. Il existe deux types de fournisseurs de forfaits mobiles, les
+   opérateurs historiques : Orange, SFR et Bouygues Telecom, leurs marques
+   low cost, Red, Sosh, B&You, ainsi que les opérateurs virtuels tels que
+   La Poste Mobile, NRJ Mobile ou encore Prixtel. Ces opérateurs
+   particuliers utilisent le réseau d’au moins un opérateur historique. La
+   première différence entre un opérateur historique et un MVNO, repose
+   sur le prix des abonnements mobiles. En effet les opérateurs virtuels
+   proposent des offres mobiles beaucoup moins chères que les opérateurs
+   historiques, c’est d’ailleurs ce qui fait leur popularité. La seconde
+   différence, réside dans le fait que les MVNO proposent un suivi
+   clientèle exclusivement par internet et/ou téléphone, contrairement aux
+   opérateurs historiques accessibles depuis leurs boutiques. Pour faire
+   votre choix, nous vous conseillons de vérifier la couverture réseau des
+   différents opérateurs historiques, aussi bien dans la zone de votre
+   domicile, que de votre lieu de travail. Vous saurez ainsi vers quels
+   fournisseurs de services vous tourner. Afin de vous aider dans votre
+   choix, nous vous proposons un rapide tour d’horizon des différents
+   opérateurs historiques, de leurs marques, ainsi que des MVNO les plus
+   populaires.
+
+SFR et RED by SFR
+
+   SFR est un opérateur historique proposant des forfaits mobiles adaptés
+   à tous les types d’utilisateurs. La plupart des offres mobiles de SFR
+   sont proposées avec un large ensemble de services gratuits. Vous pouvez
+   ainsi profiter par exemple, d’une application gratuite, d’un accès
+   illimité à plus de 80 titres de la presse quotidienne et magazines, de
+   la VOD (vidéo à la demande), de chaînes de TV orientées sport etc.
+
+   RED by SFR est la marque low cost de SFR et met à votre disposition un
+   large choix de forfaits mobiles pas chers, complets et sans engagement.
+   Les abonnements mobiles présentés par RED By SFR, vous permettent de
+   profiter également des services de SFR, notamment en ce qui concerne
+   l’accès à SFR Presse. La marque RED vous propose également de profiter
+   d’un accès internet gratuit et illimité depuis les hotspots (bornes
+   Wi-Fi de SFR).
+
+Orange et Sosh
+
+   Orange est un opérateur historique reconnu sur le marché des télécoms.
+   Les forfaits mobiles Orange touchent un large public tant ils sont
+   variés et la qualité du réseau indéniable. Cet opérateur historique
+   séduit beaucoup de consommateurs grâce à un large ensemble de services
+   gratuits, proposés en plus du forfait mobile. La possibilité qu’offre
+   l’opérateur Orange d’acheter un smartphone dernier cri lors de la
+   souscription, ou du renouvellement de votre abonnement mobile est
+   également une des raisons pour lequel cet opérateur est l’un des plus
+   populaires. En ce qui concerne Sosh, il s’agit en fait de la version
+   low cost des forfaits de l’opérateur historique Orange. Les offres
+   mobiles de Sosh sont toutes proposées sans période d’engagement, mais
+   il est toutefois possible d’acheter un nouveau smartphone lors de la
+   souscription d’un forfait mobile Sosh.
+
+Bouygues Telecom et B&YOU
+
+   L’opérateur Bouygues Télécom est également un opérateur historique.
+   Bouygues est notamment connu pour avoir été le premier opérateur à
+   proposer un forfait mobile illimité (le forfait millénium en 1999),
+   ainsi que pour avoir présenté le premier forfait quadruple play (idéo
+   en 2009), offre associant un forfait mobile à un forfait box internet
+   domestique. Tout comme Orange et SFR, Bouygues Telecom propose un bel
+   ensemble de services gratuits, afin d’offrir l’expérience utilisateur
+   la plus intéressante possible. Vous pouvez ainsi profiter d’un accès
+   internet illimité tous les weekends, sans que le crédit d’accès
+   internet contenu dans votre forfait ne soit utilisé. B&You est la
+   branche low cost de Bouygues Telecom. Cette marque vous propose des
+   offres mobiles sans période d’engagement, adaptées à tous les profils
+   de consommateurs. La marque B&You sert également de vitrine pour
+   présenter les offres box internet de Bouygues Telecom.
+
+Free Mobile
+
+   Free est l’opérateur télécom qui a révolutionné le marché du forfait
+   mobile. Avec son offre à 19.99€ pour des communications illimitées,
+   Free a poussé les autres opérateurs du marché à baisser leurs prix et à
+   proposer des forfaits mobile sans engagement. C’est cette situation qui
+   est à l’origine de la création des marques Sosh, Red, B&You et du
+   développement des opérateurs virtuels.
+
+   L’opérateur Free a permis l’arrivée des offres mobiles sans engagement
+   en France et se contente toujours de proposer ce type d’abonnements,
+   avec une gamme très épurée, composée de deux forfaits mobiles à petits
+   prix.
+
+Les MVNO La Poste Mobile, NRJ Mobile et Prixtel
+
+L’opérateur virtuel La Poste mobile :
+
+   Le MVNO La Poste Mobile propose des abonnements téléphoniques et
+   internet pas chers, sous la couverture réseau de l’opérateur historique
+   SFR. Avec ses 4 types d’abonnements La Poste Mobile touche un très
+   large public. En effet les offres de cet opérateur virtuel se divisent
+   en 4 catégories distinctes : les forfaits mobiles sans engagements, les
+   abonnements mobiles avec smartphone (et engagement de 12 ou bien 24
+   mois), les forfaits prépayés ainsi que les offres avec box internet.
+
+Le MVNO NRJ Mobile
+
+   NRJ Mobile est un opérateur virtuel proposant des offres plutôt
+   orientées pour les jeunes utilisateurs. Ce MVNO dépend des couvertures
+   réseaux des opérateurs historiques SFR, Orange et Bouygues Telecom. Les
+   offres mobiles proposées par NRJ, touchent la plupart des profils
+   d’utilisateurs, quel que soit leur mode de consommation (que les
+   besoins soient faibles ou élevés en communication et navigation sur le
+   net) il est facile de trouver l’offre qui répond à toutes les attentes.
+
+L’opérateur virtuel Prixtel
+
+   Prixtel est un MVNO proposant uniquement deux offres mobiles, sous les
+   réseaux télécom des opérateurs historiques SFR et Orange. Prixtel
+   propose certes peu d’abonnements par rapport aux autres opérateurs du
+   marché, mais ces forfaits sont ajustables. Un forfait mobile ajustable
+   est une offre mobile s’adressant aux utilisateurs dont la consommation
+   en communication et en navigation sur internet, ne sont pas les mêmes
+   d’un mois à l’autre. Ce type d’abonnement est constitué de plusieurs
+   paliers, chacun proposant une quantité de services définie. Une fois
+   que l’utilisateur à consommer les crédits de communication ou d’accès à
+   internet, le forfait bascule automatiquement sur le palier suivant,
+   proposant une quantité de services plus importante. Vous avez ainsi la
+   possibilité de faire des économies lorsque vos besoins sont peu
+   élevés et vous ne payez pas de surtaxe lorsque vos besoins sont élevés.
+
+Quels sont les différents types de forfaits mobiles sur le marché ?
+
+   Il existe un grand nombre d’offres mobiles, toutes adaptées à un type
+   particulier d’utilisateurs. Selon votre consommation en communication
+   ainsi que vos besoins en connexion à internet, vous serez amenés à vous
+   orienter vers un certain type de forfaits mobiles. Nous vous proposons
+   de retrouver les différentes sortes d’abonnements téléphoniques
+   disponibles auprès des opérateurs et des MVNO.
+
+Les forfaits mobiles sans engagement
+
+   Rendus populaires avec le lancement de Free Mobile, les abonnements
+   mobiles sans engagement restent les plus souscrits aujourd’hui. Ces
+   offres mobiles vendues sans smartphone, sont en effet les moins chères
+   du marché. La particularité de ces abonnements repose sur la
+   possibilité qu’à l’utilisateur de faire couper sa ligne téléphonique,
+   ou bien de demander la portabilité de son numéro de téléphone mobile
+   vers un autre opérateur télécom, sans avoir à se justifier auprès de
+   son opérateur et surtout sans avoir à payer de frais liés à la
+   résiliation de son abonnement mobile. Les forfaits sans engagement
+   rendent le marché du forfait mobile particulièrement dynamique, puisque
+   les utilisateurs peuvent facilement migrer d’un fournisseur à un autre,
+   au gré des promotions, leurs envies etc.
+
+Les offres mobiles avec engagement
+
+   Les abonnements mobiles avec une période d’engagement sont souvent
+   souscrits par les utilisateurs souhaitant acheter un nouveau smartphone
+   (souvent haut de gamme). En France, la durée d’engagement pour un
+   forfait mobile est de 12 ou de 24 mois. Plus l’engagement s’étend dans
+   la durée, plus le prix du smartphone est bas lors de la souscription de
+   l’offre. Une période d’engagement, qu’elle soit de 12 ou 24 mois,
+   engendrera nécessairement des frais, si vous résiliez votre abonnement
+   avant votre date de fin d’engagement. Pour un forfait avec une période
+   de 12 mois d’engagement, vous devrez payer à votre opérateur le montant
+   des mois restant, entre la date de résiliation et la date de fin
+   d’engagement. Concernant les forfaits mobiles avec engagement de 24
+   mois, l’article L121-84-6 du code de la consommation (loi Chatel), vous
+   permet de demander la résiliation de votre forfait mobile et de ne
+   payer que le quart du montant restant dû (soit 25%). Attention
+   toutefois, si la résiliation est demandée avant le 13ème mois
+   d’engagement, cela aura la même conséquence que la résiliation d’un
+   forfait avec un engagement de 12 mois : Vous devrez payer à votre
+   opérateur la somme de tous les mois restants.
+
+Quelles sont les différences entre un forfait mobile bloqué et un forfait
+mobile classique ?
+
+   Les offres mobiles bloquées permettent aux utilisateurs de ne pas
+   générer de frais liés aux dépassements du crédit de communication et/ou
+   navigation web, inclus dans le forfait. Ce type d’abonnement permet de
+   ne pas avoir de mauvaises surprises à la fin du mois, dans la mesure où
+   il n’est pas possible de communiquer au-delà d’une certaine quantité de
+   services. Il existe une grande variété de forfaits mobiles bloqués,
+   ainsi le blocage peut aussi bien porter sur le temps d’appel que sur la
+   quantité de crédit d’accès à internet ou encore sur le nombre de
+   SMS/MMS inclus. Une fois que le quota de services est atteint le
+   forfait se bloque, il faudra donc patienter jusqu’à la date de
+   rechargement de l’abonnement lors de la facturation de l’opérateur,
+   pour bénéficier de nouveau de tous les services proposés. Certains
+   opérateurs proposent toutefois d’acheter des recharges afin de
+   continuer à surfer sur le net, ou à communiquer par appels et/ou par
+   SMS/MMS.
+
+Les forfaits mobiles ajustables
+
+   Un forfait mobile ajustable est un abonnement téléphonique particulier,
+   spécialement conçu pour les utilisateurs dont la consommation en
+   communication et/ou en navigation sur le net, n’est pas la même au fil
+   des mois. Ce type d’offres mobile vous permet de ne payer que pour les
+   services que vous utilisez, sans jamais vous retrouver à cours de
+   crédit de communication ou de navigation web et surtout, sans être
+   surfacturé si vos besoins sont plus élevés que votre consommation
+   habituelle.
+
+   L’offre mobile ajustable fonctionne par paliers, c’est-à-dire que
+   chaque fois que vous avez utilisé la quantité de services incluse dans
+   un palier, vous passez automatiquement au supérieur. Il est toutefois
+   possible de passer manuellement à un palier proposant plus de service
+   lorsque vous savez que vos besoins en communication vont être élevés.
+   Pour les utilisateurs à la recherche d’un forfait pour un enfant ou un
+   adolescent, une offre mobile ajustable peut être un bon choix, dans la
+   mesure où il est possible de bloquer un palier maximum, qu’il ne sera
+   pas possible de dépasser.
+
+Les forfaits mobiles internationaux
+
+   Les offres mobile internationales sont des abonnements téléphoniques
+   permettant aux utilisateurs de communiquer vers le monde aussi bien par
+   appels que par SMS et MMS et de surfer sur le net depuis l’étranger,
+   tout cela pour un prix très intéressants et sans avoir à souscrire
+   d’options dédiées (souvent chères et peu adaptées aux besoins des
+   différents utilisateurs). Ce type de forfaits mobiles propose en effet
+   des communications internationales et sont particulièrement adaptées
+   aux utilisateurs amenés à voyager, comme les professionnels ou encore
+   pour ceux qui souhaitent rester en contacts avec tous leur proches,
+   sans se ruiner en communication internationales à la fin du mois.
+
+Les forfaits Quadruple Play
+
+   Les abonnements téléphoniques Quadruple Play, appelés également «
+   Mobile et Box », sont des forfaits mobiles associés à un forfait
+   internet domestique. Ces abonnements mobiles vous permettent de gérer
+   tous vos services de communication mobiles, fixes, de navigation sur
+   internet ainsi que les services liés à votre télévision ! C’est le type
+   de forfaits téléphoniques idéal pour les utilisateurs à la recherche de
+   simplicité. Dans la mesure où tous vos services sont centralisés chez
+   un même opérateur, la gestion est vraiment simplifiée.
+
+Comment choisir mon forfait mobile ?
+
+   Avec Comparateur Forfait BFMTV, vous avez la possibilité de retrouver
+   les meilleures offres mobiles du marché, grâce au comparateur de
+   forfaits mobiles. Cet outil efficace et simple d’utilisation vous
+   permet de sélectionner une multitude de paramètres, afin de cibler le
+   plus précisément possible vos attentes, tant en termes de services
+   (qu’il s’agisse d’appel, de SMS/MMS, de navigation sur le net) que de
+   prix. Une fois que vous avez trouvé les forfaits mobiles répondant à
+   vos besoins, vous pouvez en comparer jusqu’à 5 en même temps, pour être
+   sûr de faire le bon choix.
+   publicité
+   Contacter Meilleurmobile | Conditions générales d'utilisation | Gestion
+   de la confidentialité
+   BFMTV
+     * Flux RSS
+     * Évènements
+     * Jeux concours
+     * Partenaires
+     * Services
+
+     * Fréquences
+     * Emissions
+     * Grille TV
+     * Charte de déontologie BFMTV
+     * Archives BFMTV
+
+     * Mentions légales & CGU BFMTV.com
+     * Données Personnelles
+     * Publicité
+     * Recrutement
+
+     * Contact
+     * Plan du site
+     * Applications
+     * Newsletters
+
+     * 01net.com -
+     * RMC -
+     * RMC Sport -
+     * RMC Découverte -
+     * BFMTV -
+     * BFM Business -
+     * Association RMC/BFM -
+     * MyCuisine
+
+     * Loi Pinel -
+     * Immobilier neuf -
+     * Prêt à taux zéro -
+     * Comparateur d'assurance
+
+   Verif | Les plus grosses entreprises de France | Construction de
+   bâtiments : classement des entreprises | Nord Pas de Calais :
+   classement des entreprises | Rhône Alpes : classement des entreprises |
+   Aquitaine : classement des entreprises | Seine Maritime : entreprises
+   défaillantes | Vendée : entreprises défaillantes | Finistère :
+   entreprises défaillantes | Nord : entreprises défaillantes

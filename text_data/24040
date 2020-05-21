@@ -1,0 +1,799 @@
+   #Archives Tutoriels Technique Les niouzes Matériel billets précédents
+   Les hurlements d'Léo - Album LUNA DE PAPEL Mise à jour dotclear Fibre
+   chez SOSH Raspberry PI 3 en POE Migration de serveur Septembre 2012 -
+   Septembre 2015 : Un Pigeon de moins pour Free !!! Clients légers AXEL
+   (COCORICO !) Je suis Charlie 1er mise à jour dotclear Meilleurs voeux
+   Joyeux noël ! Faille GNU Bash Synology : Désactiver la vérification en
+   2 étapes en SSH Mise à jour Synology DSM 5.0 Retour sur SynoLocker ou
+   votre nas piégé Livre Imprimer en 3D avec La makerbot Mise à jour
+   dotclear Mise à jour Dotclear Installation d'un patch ESXi Casque
+   nomade KOSS iPorta Pro Atom 1.0 Blogroll
+
+
+ServeurPerso.fr / MonServeurPerso.com
+
+   Aller au contenu | Aller au menu | Aller à la recherche
+
+     * Accueil
+     * Archives
+
+   mardi 13 mars 2018
+
+Les hurlements d'Léo - Album LUNA DE PAPEL
+
+   Par Sébastien le mardi 13 mars 2018, 23:30 - Les niouzes
+     * cd
+     * groupe
+     * les hurlements d léo
+     * luna de papel
+     * musique
+     * ulule
+
+   Pour changer un peu les habitudes de publication sur ce blog, voici un
+   petit article sur un groupe de musique que j'aime bien.
+
+   Il s'agit groupe les Hurlements d'Leo.
+
+   En fin d'année dernière, ils ont lancer une campagne de financement
+   participatif sur le site Ulule pour pouvoir produire leur prochain
+   album. Le groupe fait partie du label Irfan.
+
+   La campagne a été un succès puisqu'elle a était financé à hauteur de
+   210%, ce qui est pas mal du tout :-)
+
+   Ceci étant, je suis un fan depuis de nombreuses années de ce groupe,
+   donc, j'ai apporté ma contribution à ce projet, à savoir un nouvel
+   album dans un premier temps puis un vidéo clip (clip diffusé le
+   16/02/18) en fin de campagne :)
+
+   Avant hier, j'ai reçu un lien pour télécharger l'album en version
+   numérique et hier, j'ai reçu un petit colis :
+
+   IMG_20180312_175314.jpg
+
+   Ci dessus le CD ainsi que quelques goodies et ci-dessous le CD :-)
+
+   IMG_20180312_205308.jpg
+
+   La sortie officielle de l'album aura lieu le 16 mars 2018 et est
+   disponible sur le site officiel :
+
+   https://www.hurlements.com/
+
+   aucun commentaire aucun rétrolien
+
+   mercredi 7 mars 2018
+
+Mise à jour dotclear
+
+   Par Sébastien le mercredi 7 mars 2018, 23:47 - Les niouzes
+     * dotclear
+     * mise à jour
+     * multiblog
+     * site
+     * update
+
+   Bonjour,
+
+   Voilà quelques mois que je n'ai pas écris de billet sur ce blog, manque
+   de temps principalement, entre le boulot, la pépéte de 15 mois :) Il y
+   a de quoi s'occuper...
+
+   J'ai procédé à la mise à jour de dotclear en 2.13.1 qui est sortie à la
+   fin du mois de janvier 2018, le 27 pour être précis :)
+
+   Pour ce qui concernait la version 2.13, il est indiqué les nouveautés
+   suivantes sur le site officiel :
+     * PHP 5.5+ devient obligatoire comme un nouveau système plus sécurisé
+       a été implémenté pour le stockage des mots de passe dans la base de
+       données, système qui nécessite a minima cette version de PHP
+
+     * Les informations affichées sur le tableau de bord, comme les mises
+       à jour de Dotclear ou les nouvelles, le sont dorénavant de manière
+       asynchrone, donc plus de blocage inhérent à un serveur parfois
+       fantôme !
+
+     * Un nouveau driver pour les bases de données MySQL encodées avec
+       UTF8-mb4
+
+     * Quelques bugs corrigés
+
+     * Quelques améliorations de l'expérience utilisateur côté
+       administration des blogs
+
+   Pour la version 2.13.1 que j'ai installé, voici les modifications
+   faites :
+     * Une petite mise à jour qui corrige deux bugs agaçants dans
+       l'éditeur de thème (lorsque la coloration syntaxique est activée)
+       et avec l'éditeur traditionnel de Dotclear, en mode XHTML.
+
+   aucun commentaire aucun rétrolien
+
+   mardi 24 octobre 2017
+
+Fibre chez SOSH
+
+   Par Sébastien le mardi 24 octobre 2017, 23:41 - Les niouzes
+     * auto-hébergement
+     * connexion
+     * fai
+     * fibre
+     * internet
+     * odroid
+     * raspberry
+     * sosh
+
+   Depuis le 26 septembre 2017 à 13h01, je dispose d'une connexion fibre
+   (optique) à la maison :-) Voici un petit test réalisé sur le site test
+   débit :
+
+   test-debit-fibre-24102017.png
+
+   Le bonheur, de nouvelles idées pour refaire de l'auto-hébergement.
+
+   Dernièrement, j'ai ressorti un RPI 1er génération du placard... pour
+   jouer un peu.
+
+   Et j'ai fait l'acquisition d'un Odroid-XU4 en cours de configuration.
+   :-)
+
+   aucun commentaire aucun rétrolien
+
+Raspberry PI 3 en POE
+
+   Par Sébastien le mardi 24 octobre 2017, 22:54 - Technique
+     * consommation
+     * POE
+     * power over ethernet
+     * raspberry pi
+     * RPI
+     * RPI 3
+     * switch
+     * test
+
+   Cela fait un moment que je n'ai pas écrit un petit billet :)
+
+   Test d'un Raspberry PI 3 avec le Pi-POE qui permet l'alimentation
+   électrique du RPI 3 (pour les intimes) via un câble ethernet (en POE).
+
+   Un RPI 3 :
+
+   Raspberry-Pi-3-Ports-1-1833x1080.jpg
+
+   Un module POE pour RPI :
+
+   PiPoE-Switch_HAT.png
+
+   Voici la consommation électrique sur un switch HP modèle E2620-24-PoEP,
+   le RPI 3 étant complètement opérationnel (en session RDS) :
+
+   rpi-au-swt18_avec_poe_sans_bouton_statistics.png
+
+   * Photos du matériel provenant des sites officiels.
+
+   aucun commentaire aucun rétrolien
+
+   mardi 19 janvier 2016
+
+Migration de serveur
+
+   Par Sébastien le mardi 19 janvier 2016, 23:39 - Les niouzes
+
+   Le site a changé de serveur, il reste hébergé chez dedibox mais pour
+   une machine plus récente :)
+
+   Le serveur utilisé avait été pris chez dédibox en 2011 :)
+
+   Au passage découverte du logiciel Ansible.
+
+   aucun commentaire aucun rétrolien
+
+   lundi 12 octobre 2015
+
+Septembre 2012 - Septembre 2015 : Un Pigeon de moins pour Free !!!
+
+   Par Sébastien le lundi 12 octobre 2015, 00:53 - Les niouzes
+     * 4K
+     * bbox
+     * bbox miami
+     * bouygues
+     * free
+     * freebox
+     * niel
+     * pigeon
+     * résiliation
+     * révolution
+     * vaseline
+     * xavier75
+
+FREE : le pigeon qui paye... sans rien dire !!!
+
+   Durant ces 3 dernières années, j'étais abonné chez Free, avant cela,
+   j'étais abonné de longue date chez Free quand j’habitai encore chez mes
+   parents.
+
+   J'étais un abonné Freebox Revolution ("haut de gamme"), il est bien
+   dommage que Mr NIEL @Xavier75 n'est rien mis en place pour remercier
+   les clients de longue date.
+
+   La seule chose que savent faire les FAI, c'est s'engraisser sur le dos
+   des petits abonnés qui ne disent rien... Ils se laissent faire. (les
+   litres de vaselines sont gratuits).
+
+   L'accès internet et le matériel fonctionné très bien, les différents
+   bugs ici et là étaient corrigés au fil des années. Les évolutions
+   également au fil des versions de Firmware (micrologiciel en français
+   dans le texte).
+
+   Mais au niveau du client, RIEN.... jamais RIEN.
+
+   Pas une petite réduction d'abonnement, ni même un petit cadeau de temps
+   en temps pour récompenser le client que j'étais. Quelques chaines TV de
+   temps en temps gratuit pendant quelques jours mais mise à part ça...
+   RIEN !
+
+   Marre d'être le pigeon qui paye tout au long de sa vie... LA révolution
+   était en marche !!!
+
+   Freebox Mini 4K
+
+   Un fidèle de Free comme moi n'a pas hésité à demander la Freebox Mini
+   4K quand elle fût lancer en début d'année... Encore un travail à moitié
+   fini, dès le premier démarrage, elle eu pas mal de bug, heureusement,
+   celle-ci n'était qu'un deuxième boitier, car en plus d'être un client
+   fidèle, je payais aussi pour un deuxième boitier TV. Qui dans le cas
+   présent, n'était pas encore au point lors de la sortie de la 4K...
+   comme bien d'autres produits de Mr Niel avant eux.
+
+   Chez Free, le client, il paye pour tester le matériel qui vient d'être
+   mis au point donc en cours de débogage :P
+
+   Après 3 ans, à payer, en moyenne, une facture approchant les 50 euros
+   par mois... j'en ai eu marre que ma fidélité ne soit jamais
+   récompensée.
+
+   Bye Bye Free !!!
+
+   Bonjour Mr Bouygues Telecom !
+
+   Qui lui m'offre dès l'inscription 2 mois gratuits... :-)
+
+   Certes, la Bbox Miami demande encore du travail... L'intégration du
+   CanalSat sur un vrai flux IPTV également mais au moins il respecte le
+   client que je suis.
+
+   [INS: PS :INS] : ''Avant chez free, les frais de résiliation étaient
+   gratuits au bout d'un certain temps, de nos jours... Vu que tu es un
+   bon PIGEON, tu payes encore et toujours !!!! Grrrr...''
+
+   byebye-free-bonjour-bouygues-telecom.jpg
+
+   aucun commentaire aucun rétrolien
+
+   vendredi 13 mars 2015
+
+Clients légers AXEL (COCORICO !)
+
+   Par Sébastien le vendredi 13 mars 2015, 12:09 - Matériel
+     * ax3000
+     * axel
+     * citrix
+     * client léger
+     * ica
+     * parc informatique
+     * rdp
+     * vmware
+     * vnc
+
+   Un petit billet pour vous parler d'une société française qui propose
+   une gamme de clients légers.
+
+   Cette société se nomme AXEL, elle développe et commercialise des
+   clients légers à destination des sociétés ainsi que des
+   administrations.
+
+   J'ai l'habitude de travailler depuis plus d'un avec leur matériel et le
+   résultat est plus que convaincant, le support utilisateur est très
+   réactive, la collaboration avec leur équipe est toujours très
+   intéressante (ex : ajout de pilote).
+
+   J'ai eu l'occasion de rencontré des gens de chez AXEL au TechDays de
+   Microsoft qui ont eu lieu début Février à Paris.
+
+   Un nouveau modèle est en préparation et devrait être commercialisé à
+   l'été 2015.
+
+   Dans mon cas, j'utilise quotidiennement des modèles AX3000 Modèle 80
+   qui offre les caractéristiques suivants :
+     * Hautes résolutions (jusqu'à 1920x1200) et mode "true color" (24
+       bits)
+     * Protocoles graphiques RDP et ICA pour Windows
+     * Bureau virtuel pour VMware View et Citrix XEN Desktop
+     * Protocole graphique VNC pour Linux
+     * Connexions telnet sur Unix/Linux, AS/400, S/390...
+
+   L'administration des clients légers AXEL est centralisé via leur
+   application Windows qui est librement téléchargeable sur le site
+   officiel.
+
+   axel_client_leger.jpg
+
+   Grâce à la fixation VESA, il suffit de venir placer le client léger sur
+   l'arrière d'un écran TFT, résultat ça ne prend pas de place sur un
+   bureau.
+
+   Si vous souhaitez valider un projet de client léger, vous pouvez faire
+   une demande de prêt ICI
+
+   [INS: Au niveaux tarif :INS] : 233 Euros Prix Public H.T
+
+   Pour plus d'informations, visiter le site officiel Axel :
+   http://www.axel.com
+
+   aucun commentaire aucun rétrolien
+
+   jeudi 8 janvier 2015
+
+Je suis Charlie
+
+   Par Sébastien le jeudi 8 janvier 2015, 22:54 - Les niouzes
+     * je suis charlie
+
+   Suite aux évènements récents qui se sont produit en France, j'apporte
+   mon soutien dans l'union qui se fait force de montrer son indignation
+   face à l'horreur.
+
+   charlie.jpg
+
+   aucun commentaire aucun rétrolien
+
+   samedi 3 janvier 2015
+
+1er mise à jour dotclear
+
+   Par Sébastien le samedi 3 janvier 2015, 23:11 - Les niouzes
+     * dotclear
+     * mise à jour
+     * multiblog
+     * site
+     * update
+
+   Suite à une mise à jour sortie le 25 décembre 2014, nous passons en
+   version 2.7.2, cette mise à jour permet de corriger un bug de la
+   version 2.7.1 sortie le même jour.
+
+   Pour quelques informations supplémentaires voir sur le site officiel :
+
+   http://fr.dotclear.org/blog/post/2014/12/25/Dotclear-2.7.2
+
+   aucun commentaire aucun rétrolien
+
+Meilleurs voeux
+
+   Par Sébastien le samedi 3 janvier 2015, 23:04 - Les niouzes
+     * 2015
+     * fêtes
+     * nouvel an
+     * voeux
+
+   En ce début d'année, je vous souhaite mes meilleurs voeux pour l'année
+   2015.
+
+   aucun commentaire aucun rétrolien
+
+   jeudi 25 décembre 2014
+
+Joyeux noël !
+
+   Par Sébastien le jeudi 25 décembre 2014, 00:01 - Les niouzes
+     * fêtes
+     * joyeux
+     * noël
+
+   Je vous souhaite un bon et joyeux noël !!!
+
+   aucun commentaire aucun rétrolien
+
+   jeudi 25 septembre 2014
+
+Faille GNU Bash
+
+   Par Sébastien le jeudi 25 septembre 2014, 23:22 - Technique
+     * faille
+     * gnu bash
+     * linux
+     * sécurité
+
+   Aujourd'hui, une faille au niveau du GNU Bash a été découverte ! Mettez
+   à jour vos serveurs.
+
+   Pour tester la chose, voici un exemple fourni par blogmotion :
+
+   env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
+
+   Si vous voyez ceci s'afficher, c'est pas bon :-(
+
+   vulnerable
+
+   this is a test
+
+   Si vous voyez ceci, c'est bon !
+
+   bash: avertissement :x: ignoring function definition attempt
+
+   bash: erreur lors de l'import de la définition de fonction pour « x »
+
+   this is a test
+
+   Voir le site du CERT France pour plus de détails sur la faille en
+   question.
+
+   aucun commentaire aucun rétrolien
+
+   lundi 15 septembre 2014
+
+Synology : Désactiver la vérification en 2 étapes en SSH
+
+   Par Sébastien le lundi 15 septembre 2014, 17:41 - Technique
+     * authenticator
+     * authentification
+     * google authenticator
+     * nas
+     * ssh
+     * synology
+     * sécurité
+
+   Si vous avez activer la fonction de vérification en 2 étapes sur votre
+   NAS Synology et que vous avez atteint la limite des 5 codes d'urgence,
+   voici une solution pour désactiver la dite vérification.
+
+   ssh_synology_desactiver_2_etapes_2.jpg
+
+   Le pré-requis : SSH doit être activer sur le NAS.
+
+   On se connecte sur le NAS via un client SSH (si vous êtes sous Windows)
+   sinon on lance un Shell (sous Linux), dans le cas présent, j'utilise
+   KiTTY sous Windows.
+
+   ssh_synology_desactiver_2_etapes.jpg
+
+   On se diriger vers le répertoire suivant :
+
+   cd /usr/syno/etc/preference/admin/ folder
+
+   Puis on supprime google_authenticator avec la commande :
+
+   rm google_authenticator
+
+   On confirme par la suppression par Y
+
+   Ceci fait, on se dirige vers l'interface web du nas et on
+   s'authentifie.
+
+   Comme vous pouvez le voir, le code de la vérification en 2 étapes n'est
+   plus requis.
+
+   aucun commentaire aucun rétrolien
+
+   jeudi 11 septembre 2014
+
+Mise à jour Synology DSM 5.0
+
+   Par Sébastien le jeudi 11 septembre 2014, 23:03 - Technique
+     * dsm
+     * mise à jour
+     * nas
+     * synology
+     * update
+
+   Si vous utilisez un NAS Synology équipé de la version 5.0 du DSM, une
+   mise à jour vous attends.
+
+   Voici les correctifs apportés :
+
+   Improvement
+   # Improve the stability of file copy to encrypted shared folders.
+
+   Fixed Issues
+   # Fixed a vulnerability that could allow servers to accept unauthorized acces
+s.
+
+   mise_jour_synology.png
+
+   Mise à jour estampillée 4493 Update 5
+
+   aucun commentaire aucun rétrolien
+
+   lundi 18 août 2014
+
+Retour sur SynoLocker ou votre nas piégé
+
+   Par Sébastien le lundi 18 août 2014, 19:35 - Les niouzes
+     * cryptolocker
+     * nas
+     * ransomware
+     * synolocker
+     * synology
+     * sécurité
+
+   Suite à la faille découverte au début du mois d'août, certains NAS de
+   la marque SYNOLOGY se sont retrouver bloquer par un ransomware. Ce
+   ransomware du même type que le fameux Cryptolocker qui bloque et crypte
+   les données de votre PC.
+
+   Certains utilisateurs propriétaire de NAS Synology ont vu l'accès à ce
+   dernier bloquer (voir capture ci-dessous) et une rançon demandée....
+
+   synolocker.jpg
+
+   Dans le cas présent, le ransomware n'aurait pas ou peu eu d'impacte si
+   les gens concernaient avait mis à jour au fil du temps le firmware de
+   leur NAS. Surtout que Synology est l'une des marques qui suit ses
+   produits au niveau mise à jour de manière intensive.
+
+   Synology a identifié la faille dont à profiter le (ou les) vilain(s)
+   sur des anciennes versions du firmware qui avait été patcher en
+   novembre/décembre 2013.
+
+   Comme on peut le lire sur la page du site officiel de Synology :
+
+   http://www.synology.com/fr-fr/support/security_SynoLocker
+
+   Par ailleurs, Synology a mis en ligne un document pour sécuriser son
+   NAS quand il est rendu disponible sur internet.
+
+   http://www.synology.com/fr-fr/support/tutorials/615
+
+   Dans le cas où votre NAS a été malheureusement infecter, la seule chose
+   à faire pour le moment est de le réinitialiser.
+
+   Suite à une nouvelle parue sur Next INPACT, le (ou les) individu(s)
+   derrière(s) SynoLocker proposerait un prix de gros ainsi qu'un délai
+   supplémentaire pour les gens souhaitant payer la rançon via Bitcoin.
+
+   Le paiement de la rançon étant fortement déconseiller car rien ne
+   garantie que les données seront rendu disponible.
+
+   Peut-être qu'un site sera mis en ligne pour décrypter les données
+   cryptées par Synolocker comme cela est le cas pour Cryptolocker.
+
+   https://www.decryptcryptolocker.com/
+
+   Nous voyons dans le cas de Synolocker que si les utilisateurs mettent à
+   jour les produits qu'ils utilisent, ils peuvent éviter ce genre de
+   désagrément.
+
+   Que ce soit un NAS, un serveur, une application, quand une mise à jour
+   est disponible faite là... n'attendez surtout pas qu'un vilain est
+   trouver la faille pour l'exploiter.
+
+   aucun commentaire aucun rétrolien
+
+Livre Imprimer en 3D avec La makerbot
+
+   Par Sébastien le lundi 18 août 2014, 18:41 - Les niouzes
+     * 3D
+     * blogmotion
+     * impression
+     * livre
+     * makerbot
+     * makerbot industries
+
+   Voici un livre que j'ai reçu ce matin suite à un tirage au sort
+   effectué sur le site Blogmotion.
+
+   Ce livre a pour thème l'impression en 3D grâce à la célèbre imprimante
+   La markerbot.
+
+   Cette imprimante a été mise au point par la société MakerBot Industries
+   en 2012.
+
+   Cette société a été fondé en 2009 par Bre Pettis, Adam Mayer, et Zach
+   "Hoeken" Smith.
+
+   L'un des chefs de file (Bre Pettis) de cette société participe à la
+   rédaction de ce livre.
+
+   A travers les différents chapitres, on apprendra à utiliser la
+   Makerbot.
+
+   De nombreux exemples d'impression 3D parsème le livre.
+
+   imprimer_en_3d_avec_la_makerbot.jpg
+
+   2 commentaires aucun rétrolien
+
+Mise à jour dotclear
+
+   Par Sébastien le lundi 18 août 2014, 18:30 - Les niouzes
+     * dotclear
+     * mise à jour
+     * multiblog
+     * site
+     * update
+
+   Suite à une mise à jour sortie aujourd'hui même, nous passons en
+   version 2.6.4, cette mise à jour permet de corriger une potentielle
+   faille de sécurité d'une même niveau que celle qui visée dernièrement
+   Wordpress et Drupal (XML-RPC).
+
+   Pour quelques informations supplémentaires voir sur le site officiel :
+
+   http://fr.dotclear.org/blog/post/2014/08/18/Dotclear-2.6.4
+
+   aucun commentaire aucun rétrolien
+
+   lundi 9 juin 2014
+
+Mise à jour Dotclear
+
+   Par Sébastien le lundi 9 juin 2014, 23:40 - Les niouzes
+     * dotclear
+     * mise à jour
+     * multiblog
+     * site
+     * update
+
+   Une mise à jour ayant été publiée le 16 mai 2014, je l'applique avec
+   pas mal de retard. Elle corrige des bugs ainsi que deux potentielles
+   failles de sécurité.
+
+   Pour plus d'infos voir l'article à ce sujet sur le site officiel :
+   http://fr.dotclear.org/blog/post/2014/05/16/Dotclear-2.6.3
+
+   aucun commentaire aucun rétrolien
+
+Installation d'un patch ESXi
+
+   Par Sébastien le lundi 9 juin 2014, 22:04 - Technique
+     * administration
+     * esxi
+     * patch
+     * update
+     * virtualisation
+     * vmware
+
+   Voici la procédure à appliquer quand on souhaite installer un patch sur
+   un serveur esxi.
+
+   [INS: Pré-requis :INS]  : avoir un accès ssh sur le serveur ou un accès
+   direct au serveur esxi.
+
+   On passe la machine en mode maintenance :
+
+   ~ # vim-cmd hostsvc/maintenance_mode_enter
+
+   En retour, on obtient quelques choses comme ça :
+
+   'vim.Task:haTask-ha-host-vim.HostSystem.enterMaintenanceMode-480860420'
+
+   On se déplace dans le répertoire contenant le patch qu'on aura au
+   préalable télécharger.
+
+   Dans le cas présent, un répertoire patch a été télécharger sur le
+   datastore1 contenant le fichier zip de la mise à jour.
+
+   ~ # cd /vmfs/volumes/datastore1/Patch/
+
+   Un listage du répertoire permeet de voir le fichier zip :
+
+   /vmfs/volumes/509028a7-8b9f5f08-e7e0-001b21ce9319/Patch # ls
+   ESXi550-201404001.zip
+
+   On lance la commande suivante pour appliquer le patch.
+
+   # esxcli software vib update -d
+   "/vmfs/volumes/datastore1/Patch/ESXi550-201404001.zip"
+
+   En retour, on obtient le message suivant :
+
+     Installation Result
+     Message: The update completed successfully, but the system needs to
+     be rebooted for the changes to be effective.
+     Reboot Required: true
+     VIBs Installed:
+
+   Si on passe la commande suivante :
+
+   esxcli software vib list
+
+   On obtient la liste des logiciels installés ainsi que la date
+   d'installation.
+
+   Ceci fait, on redémarre le serveur ESXi :
+
+   reboot
+
+   Une fois, le serveur redémarré, on repasse ce dernier en mode normal :
+
+   ~ # vim-cmd hostsvc/maintenance_mode_exit
+
+   En retour, on obtient quelques choses comme ça :
+
+   'vim.Task:haTask-ha-host-vim.HostSystem.exitMaintenanceMode-230145299'
+
+   un commentaire aucun rétrolien
+
+   samedi 10 mai 2014
+
+Casque nomade KOSS iPorta Pro
+
+   Par Sébastien le samedi 10 mai 2014, 23:34 - Matériel
+     * casque
+     * iporta
+     * koss
+     * matériel
+     * musique
+     * nomade
+
+   Voici quelques photos du casque nomade de la marque Koss modèle iPorta
+   Pro, le i étant le fait qu'il soit compatible avec l'iphone. Les
+   différents tests et critiques lus çà et là donne un avis plus que
+   positif pour ce dernier.
+
+   koss_iporta_pro_013.jpg
+
+   koss_iporta_pro_011.jpg
+
+   koss_iporta_pro_010.jpg
+
+   koss_iporta_pro_009.jpg
+
+   koss_iporta_pro_008.jpg
+
+   koss_iporta_pro_007.jpg
+
+   koss_iporta_pro_006.jpg
+
+   koss_iporta_pro_005.jpg
+
+   koss_iporta_pro_003.jpg
+
+   un commentaire aucun rétrolien
+
+   « billets précédents - page 1 de 4
+
+Recherche
+
+   __________ ok
+
+Catégories
+
+     * Tutoriels
+     * Technique
+     * Les niouzes
+     * Matériel
+
+Mots-clés
+
+     * administration
+     * configuration
+     * dotclear
+     * fêtes
+     * forum
+     * informatique
+     * installation
+     * linux
+     * migration
+     * mise à jour
+     * multiblog
+     * nas
+     * nom de domaine
+     * sécurité
+     * serveur
+     * site
+     * synology
+     * update
+     * virtualisation
+     * vmware
+
+   Tous les mots-clés
+
+Liens
+
+     * Téléchargement
+     * Wiki
+     * Tutoriels
+     * Forum
+
+   Propulsé par Dotclear - Alto by Alto studio - DC2 theme by pyeb

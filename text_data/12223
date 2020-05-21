@@ -1,0 +1,784 @@
+   #PowerDNS Blog » Feed PowerDNS Blog » Comments Feed PowerDNS Blog
+   WordPress.com
+
+   PowerDNS Blog
+
+PowerDNS Blog
+
+   All about PowerDNS & The PowerDNS Open Source Community
+
+   September 30, 2019
+
+Third release candidate for dnsdist 1.4.0
+
+   We are very happy to announce the third, and hopefully last, release
+   candidate of the 1.4.0 version of dnsdist.
+
+   This version adds the ability to accept DNS over HTTPS queries over
+   HTTP, in order to be able to use dnsdist behind a TLS-offloading
+   device, and improves the management of TLS session ticket keys for DNS
+   over HTTPS.
+
+   It also fixes several minor issues, and improves the DoH-related
+   metrics in our prometheus export.
+
+   We want to thank everyone that contributed to the testing of the beta
+   release, and invite you to contribute to the testing of this release
+   candidate!
+
+   Please see the dnsdist website for the more complete changelog and
+   the current documentation.
+
+   Release tarballs are available on the downloads website.
+
+   Several packages are also available on our repository.
+
+   Written by rgacogne Leave a comment Posted in dnsdist Tagged with
+   dnsdist, release
+
+   September 25, 2019
+
+Centralised DoH is bad for privacy, in 2019 and beyond
+
+   Recently, Mozilla announced it would be moving Firefox DNS lookups to
+   Cloudflare by default, for its American audience. There will be a
+   notification about this for existing users, at which point they could
+   choose to go back to provider DNS. But crucially, there will be no
+   opt-in: it is Cloudflare by default, using a technology called DoH.
+
+   This reignited some controversy, mostly in Europe, where meetings and
+   panels in Amsterdam, The Hague, Paris and Belfast went over the pros
+   and cons of this move, because it might well come to our shores as
+   well.
+
+   During these discussions, I noticed that we haven’t been very
+   analytical about what moving and encrypting DNS does for privacy. Many
+   people appear to conflate the concepts of privacy and encryption, which
+   are in fact very different things.
+
+   In this post I argue that in September 2019, centralised DoH “by
+   default” is a net-negative for privacy for everyone and that even in
+   later years it will not improve privacy outside of the most privacy
+   hostile environments – where no one should rely on partial measures
+   like DoH to stay secure.
+
+Recapping what DoH does
+
+   DNS is currently typically provided by the operator of a network, which
+   could be your Internet Service Provider, your phone company, your
+   employer or your proverbially evil coffeeshop WiFi.
+
+   DNS provided this way is never encrypted. Anyone observing your network
+   traffic can see which DNS lookups are made. A more capable person could
+   also inject fake answers, potentially rerouting your traffic.
+
+   DNS over HTTPS meanwhile encrypts DNS queries going over the network,
+   which means that no one between you and the DoH server can see your DNS
+   queries or modify the DNS responses.
+
+   Crucially, in both plain DNS and DoH, the operator of the DNS server
+   can see, sell, block and modify your DNS data. It is only the people in
+   between that get locked out.
+
+DNS & Metadata Privacy
+
+   DNS privacy matters. Or more in general, knowing what sites you visit
+   matters: your traffic metadata. A complete listing of sites (and
+   servers) contacted will reveal where you work, live, study, what your
+   hobbies are, what equipment/devices you own, what sports teams you
+   follow, which health care providers you frequent, what brand of car you
+   (want to) own & likely your sexual preferences.
+
+   Many governments will also be very interested in who communicates with
+   political parties or organizations they don’t like.
+
+   Restricting and choosing who can see the meta-data of what sites you
+   visit is therefore very worthwhile.
+
+Metadata leaks
+
+   DNS is one of four ways in which such meta-data gets transmitted in
+   plaintext. For starters, browsers do not exclusively perform HTTPS
+   requests. Many visits still start with a plaintext HTTP request that
+   then redirects to HTTPS.
+
+   Secondly, TLS (which underlies HTTPS) very often has to transmit, in
+   plaintext, the name of the site (or server) the user intends to connect
+   to. This is true even in TLS 1.3. There is an IETF draft standard for
+   encrypting this plaintext Server Name Indication, but it is not widely
+   adopted, and needs serious work before it can be standardised.
+
+     It is frequently and mistakenly thought that TLS 1.3 has plugged
+     this leak, it hasn’t. To verify, try: sudo tshark -i eth0 -T fields
+     -e ssl.handshake.extensions_server_name -Y
+     ssl.handshake.extensions_server_name -n
+
+   Thirdly, to ensure that the certificate used for a TLS connection is
+   valid, many browsers and TLS stacks will perform an OCSP lookup to the
+   Certificate Authority provider. This lookup itself is also plaintext.
+   Note that with some care, OCSP lookups can be prevented.
+
+   Finally, research has uncovered that over 95% of websites can uniquely
+   be identified purely by the set of IP addresses they are hosted on, and
+   these IP addresses also can’t be encrypted.
+
+   I should also note that unless special measures are taken, a whole
+   horde of dedicated web tracking companies (like Facebook and Google)
+   will record and monetize most of your moves online anyhow, no matter
+   how well encrypted your connection.
+
+Privacy before and after DoH
+
+   From the above, we see that DNS over HTTPS plugs only one of four (or
+   five) avenues leaking sites visited.
+
+   But if we sum it up, pre-DoH, the following parties have access to the
+   names of most of the sites you visit:
+    1. Your own network provider
+    2. Your own government, police, intelligence services (through court
+       orders)
+    3. Anyone capable of snooping your local network
+    4. Certificate authority providers (through OCSP)
+    5. Large scale tracking & advertising companies (Google, Facebook)
+
+   DNS over HTTPS in browsers is currently exclusively offered by/through
+   American companies. So after switching to DoH, we have to add the
+   following to our list:
+    1. Cloudflare / your DoH provider
+    2. The US Government, NSA, FBI etc
+
+   Because DoH does not encrypt anything that is not also present in plain
+   text, there is nothing to remove from the list.
+
+   Based on this, we can conclude that as it stands, using DoH to a
+   browser-provisioned cloud provider effectively worsens your privacy
+   position.
+
+   Note: DNS over HTTPS is the protocol, and it could be used to enhance
+   privacy. Using DoH to move DNS to the cloud is a specific way of using
+   DoH that is damaging to privacy in 2019.
+
+DNS over HTTPS offers additional tracking capabilities
+
+   DNS over HTTPS opens up DNS to all the tracking possibilities present
+   in HTTPS and TLS. As it stands, DNS over UDP almost always gets some
+   free privacy by mixing all devices on a network together – an outside
+   snooper sees a stream of queries coming from a household, a coffeeshop
+   or even an entire office building, with no way to tie a query to any
+   specific device or user. Such mixing of queries provides an imperfect
+   but useful modicum of privacy.
+
+   DNS over HTTPS however neatly separates out each device (and even each
+   individual application on that device) to a separate query stream. This
+   alone is worrying, as we now have individual users’ queries, but the
+   TLS that underlies HTTPS also typically uses TLS Resumption which
+   offers even further tracking capabilities.
+
+   In short, setting up an encrypted connection eats up precious CPU
+   cycles both on client and server. It is therefore possible to reuse a
+   previously established encrypted state for subsequent connections,
+   which saves a lot of time and processor energy.
+
+   It does however make it possible to track an application from IP
+   address to IP address because this TLS Resumption session ID is
+   effectively a cookie that uniquely tracks users across network and IP
+   address changes.
+
+But what about the privacy agreement?
+
+   DoH providers typically publish privacy policies in which they pledge
+   to provide you excellent DNS service without them benefiting in any way
+   from your data, except possibly through very abstract research, or
+   nebulous performance benefits that might attract customers for other
+   products.
+
+   History has shown that the overwhelming majority of providers of free
+   services that carry interesting user data have eventually failed at
+   keeping this promise – either by being compromised or by accidentally
+   using the data anyhow. Apologies ensue, but trust never returns.
+
+   In addition to this hypothetical future misbehaviour, no privacy
+   agreement stands up to a court order to hand over data in bulk. It so
+   happens that the US legal & intelligence climate frequently does in
+   fact use subpoenas and national security letters to hoover up user
+   data. It should also be noted that specifically US law affords far less
+   privacy protection to “non-US persons“ than the already meager
+   protection provided to American citizens.
+
+   Also, US law extends to all servers and services operated by US
+   companies, so “hosting data in Switzerland” does not provide protection
+   if the operator is American.
+
+   So relying on a privacy agreement as some kind of axiomatic guarantee
+   of privacy is not grounded in history nor in legal fact.
+
+DNS for Security
+
+   DNS itself is, oddly enough, not much of a security function in a
+   browser. We derive secrecy and integrity from TLS, which in itself does
+   not care about DNS. As an extreme example, a DNS provider could simply
+   hand out 198.51.100.1 as answer to any browser query, receive TLS
+   connections on that address & connect to the right server from there
+   based on the Server Name Indication, and things would just work.
+
+   This would not allow any snooping (because TLS is end-to-end, and will
+   check the certificate provided by the server hosting that name), but it
+   does show that DNS integrity is irrelevant for browser security, as
+   long as TLS is used faithfully (and we have no alternative to it
+   anyhow).
+
+DNS for adblocking, censorship, CDN distribution
+
+   Although DNS can not change TLS protected data, it can surely prevent
+   access to such data. Countries frequently use DNS as a censorship choke
+   point because it is easy and cheap. Russia, Turkey and Indonesia use
+   DNS extensively to block access to sites their governments do not like.
+
+   Phones and increasingly browsers do not make it easy to block
+   advertisements. One simple way of doing so anyhow is through DNS.
+   Sabotaging the lookups for popular ad-servers is a very effective way
+   of blocking advertising content.
+
+   Similarly, using lists of known malware associated domain names, it is
+   very possible to cheaply block devices from accessing botnet
+   infrastructure.
+
+   Finally, DNS can be used to optimize connectivity to streaming video
+   caches, based on the IP address of the client computer. Several very
+   large scale CDNs and service providers rely on this technique to route
+   users to the right server.
+
+   One significant change with DoH is that the choice what to censor (or
+   block) moves from the network operator to the browser vendor (who picks
+   the DoH provider). If you are a privacy activist this is great, as long
+   as you trust your browser vendor (and its government) more than your
+   own country.
+
+   If you want to block ads, malware or if you need to route users to the
+   best server, this will only be possible if the selected DoH vendor
+   provides this service. This may not always be the case, especially if
+   your browser or DoH vendor is also in the advertising business, or in
+   fact competes with other CDNs.
+
+Service provider originated DoH
+
+   I (and many others) argue that encrypted DNS is good and that we should
+   be doing more of it. This often gets rejected out of hand because there
+   is no encrypted way to provision a nameserver.
+
+   When we connect to a network, in almost all cases our devices get
+   configured automatically with the right network settings & nameservers
+   to use. Crucially, this autoconfiguration (be it DHCP or PPP) is not
+   itself super-encrypted. So although our WiFi or 4G may be encrypted,
+   the nameserver address is provided in plaintext over that connection.
+
+   This would allow a clever attacker to provision a snooping DoH server,
+   defeating the point of DoH.
+
+   Because of this reason, browser vendors argue that they must ignore
+   this autoconfiguration and hardcode a DoH server to use, over at a
+   vendor they have selected on behalf of the user.
+
+   However – we should realize that the worst thing a network provider can
+   do is inject a nameserver to learn what they could already learn from 3
+   other ways in which a browser leaks what it connects to!
+
+DoH for oppressive regimes
+
+   It is frequently brought up that DoH is not built for privileged
+   westeners living in countries with (perhaps deteriorating) rule of law.
+   DoH is instead offered as a way for people living in oppressive regimes
+   to evade censorship and scrutiny, which surely is a laudable goal.
+
+   It is often said that a little knowledge is a dangerous thing. I have
+   no experience as a political freedom fighter, but I do have family
+   members who have had to flee their profoundly undemocratic country
+   because they are members of persecuted minority.
+
+   Some years ago I contacted them because a flaw had been found in TLS
+   encryption that might be dangerous for them, and to my surprise no one
+   there cared. They had been assuming their Internet traffic was being
+   spied upon anyhow, and it turns they were right.
+
+   Later they told me “we all use VPNs” and was impressed how privacy
+   conscious they were. But no they told me, everyone does that, because
+   without a VPN the internet here is too slow, they suspected the spying
+   machinery was generally overloaded. The VPN was for speed. It was not
+   assumed to deliver privacy, on which point they were also proven right
+   (most VPN providers are pretty shady).
+
+   I mention these two stories to show that our assumptions on oppressive
+   regimes may be wildly off, and not represent the reality on the ground
+   in China, Russia, Iran, Indonesia and Turkey. It is a lot of fun being
+   an armchair imaginary political activist, but things are remarkably
+   different if you actually live there.
+
+   security
+
+   https://xkcd.com/538/
+
+   Of course, more encryption is good if it makes the life of oppressive
+   regimes harder. It is definitely a case of “we must do something, and
+   this is something”. It is slightly (but only slightly) harder to
+   extract the TLS Server Name Indication than it is to parse plain DNS.
+
+   But the dynamics of what will happen when people in those countries
+   start relying on DoH for their safety are very hard to fathom. We hear
+   that some governments have already moved beyond DNS based blocking,
+   something we also saw in Russia during “the Telegram wars”.
+
+   In this context, it is instrumental to see DoH as a “very partial VPN”
+   that only encrypts DNS packets, but leaves all other packets
+   unmodified. And in fact, the various DoH apps for phones are
+   implemented as VPN providers. If judged as a VPN, it does look like a
+   terrible one full of weaknesses.
+
+   Given this, recommending DoH because it will help dissidents in
+   dangerous countries may be a very “techbro” thing to do – assuming your
+   invention must be helpful without fully understanding the situation.
+   Because for all we know the false sense of security is actually more
+   harmful.
+
+   We may wonder why proponents aren’t instead recommending a full VPN as
+   a solution instead of pushing an incomplete solution. Perhaps the creep
+   factor of routing all your traffic through a cloud provider is too
+   much?
+
+DoH as an incremental step
+
+   DoH proponents often agree that DoH itself does not fix all metadata
+   privacy leaks, but insist it is a good step. The stated goal is to be
+   able to eventually use any network, no mater how untrusted, and browse
+   the web in complete privacy.
+
+   Oddly enough, it DoH proponents say it is fine to already move
+   everyone’s DNS to a central place in another country, even though it
+   currently does not provide any benefit, except sending your DNS to an
+   additional party under control of a foreign snooping happy government.
+
+   To achieve the goal of perfect privacy on untrusted networks (without
+   running a VPN) will require us to:
+    1. Completely shut down plaintext HTTP
+    2. Use encrypted DNS
+    3. Deploy functional and downgrade-proof encrypted SNI.
+    4. Disable OCSP/make OCSP stapling mandatory, or replacing it by an
+       alternate mechanism.
+    5. Host everything (every last widget) on large content distribution
+       networks that are able to provide generic IP addresses, that have
+       no discoverable link to the sites they are hosting.
+
+   If and only if all these steps are completed, shutting down entire
+   internet industries in step 5, does DoH stand a chance to deliver
+   actual privacy benefits.
+
+Summarising
+
+   Centralised DoH is currently a privacy net negative since anyone that
+   could see your metadata can still see your metadata when DNS is moved
+   to a third party. Additionally, that third party then gets a complete
+   log per device of all DNS queries, in a way that can even be tracked
+   across IP addresses.
+
+   Even if further privacy leaks are plugged, DoH to a third party remains
+   at best a partial solution, one that should not be relied upon as a
+   serious security layer, since it will be hard to plug everything,
+   especially if non-CDN content providers survive.
+
+   Encrypting DNS is good, but if this could be done without involving
+   additional parties, that would be better.
+
+   And for actual privacy on untrusted networks, nothing beats a VPN,
+   except possibly not using hostile networks.
+
+   Written by berthubert 5 Comments Posted in Uncategorized
+
+   September 4, 2019
+
+First alpha release of PowerDNS Recursor 4.3.0
+
+   We’re proud to announce the first alpha release for the PowerDNS
+   Recursor 4.3 release train. Two major features are introduced:
+     * A relaxed form of QName Minimization as described in rfc7816bis-01
+       has been implemented. To test this feature, do not forget to enable
+       qname-minimization in the settings file.
+     * When the recursor is started by systemd, the recursor will no
+       longer run as the root user. Instead, it will start as the
+       pdns-recursor user. Make sure directories and files needed by your
+       specific recursor setup are readable by this user. For non-systemd
+       and non-chroot cases, the default location of the control socket
+       and pid file has changed to /var/run/pdns-recursor.
+
+   Please see the changelog for details about other improvements and bug
+   fixes and the documentation for more details about setting up the
+   recursor.
+
+   We want to thank everyone that contributed to this and earlier
+   releases, and invite you to contribute to the testing of this alpha
+   release!
+
+   The tarball (signature) is available at downloads.powerdns.com and
+   packages for CentOS 6 and 7, Debian Stretch and Buster and Ubuntu
+   Xenial and Bionic are available from repo.powerdns.com.
+
+   Please send us all feedback and issues you might have via the mailing
+   list, or in case of a bug, via GitHub.
+
+   Written by Otto Moerbeek Leave a comment Posted in Uncategorized Tagged
+   with alpha, recursor, release
+
+   September 2, 2019
+
+Second release candidate for dnsdist 1.4.0
+
+   We are very happy to announce the second release candidate of the 1.4.0
+   version of dnsdist.
+
+   This version adds one experimental feature, the ability to look into a
+   Key-Value store like CDB or LMDB and to route a query based on the
+   result of this lookup.
+
+   It also makes it possible to require a minimum TLS version for DNS over
+   TLS and DNS over HTTPS, and to send custom HTTP responses even for
+   queries received on the DoH port that are valid HTTP queries but not
+   necessarily valid DoH queries.
+
+   Note that starting with 1.4.0-rc2, our packages are now built against
+   the latest 2.2.6 version of libh2o, fixing several remote denial of
+   service issues (CVE-2019-9512, CVE-2019-9514 and CVE-2019-9515).
+
+   We want to thank everyone that contributed to the testing of the beta
+   release, and invite you to contribute to the testing of this release
+   candidate!
+
+   Please see the dnsdist website for the more complete changelog and
+   the current documentation.
+
+   Release tarballs are available on the downloads website.
+
+   Several packages are also available on our repository.
+
+   Written by rgacogne 1 Comment Posted in Uncategorized Tagged with
+   dnsdist, release
+
+   August 30, 2019
+
+PowerDNS Authoritative Server 4.2.0
+
+   Hello everybody!
+
+   We are very happy to announce the release of Authoritative Server
+   4.2.0. Besides a ton of bug fixes (please see the Changelog), this
+   release also offers a nice collection of new features.
+
+   This release was made possible by the contributions of a huge number of
+   people. Please refer to alpha/beta/RC release announcements,  and, of
+   course, the Changelog, to find them all. Thank you all!
+
+Lua records
+
+   An important new feature is the support for Lua Records, which make the
+   following possible, from any backend (even BIND, and LMDB!):
+
+
+   @ IN LUA A "ifportup(443, {'52.48.64.3', '45.55.10.200'})"
+
+
+   This will poll the named IP addresses (in the background) and only
+   serve up hosts that are available. Far more powerful constructs are
+   possible, for example to pick servers from regional pools close to the
+   user, except if all servers in that pool are down. It is also possible
+   to do traffic engineering based on subnets or AS numbers. A simple
+   example:
+
+
+   @ IN LUA A ( "ifportup(443, {'52.48.64.3', '45.55.10.200'},
+   {selector='closest'})
+
+
+   For more about this feature, please head to the documentation.
+
+ixfrdist
+
+   A new tool ixfrdist transfers zones from an authoritative server and
+   re-serves these zones over AXFR and IXFR. It checks the SOA serial for
+   all configured domains and downloads new versions to disk. This makes
+   it possible for hundreds of PowerDNS Recursors (or authoritative
+   servers) to slave an (RPZ) zone from a single server, without
+   overwhelming providers like our friends over at Spamhaus/Deteque and
+   Farsight.
+
+UDP fragmentation
+
+   In accordance with the preliminary plans for DNS Flag Day 2020, this
+   release lowers the default for udp-truncation-threshold from 1680 to
+   1232. This avoids most cases of UDP fragmentation, leading to better
+   performance and security.
+
+LMDB backend
+
+   Another new feature in 4.2.0 is the LMDB backend. As an in-process,
+   memory mapped database, it should provide performance superior to most
+   other backends. It supports master and slave operation and is fully
+   DNSSEC capable. Sadly, just before 4.2.0, a fix for other backends
+   somewhat broke the LMDB backend. Slaving zones works, and loading zones
+   with pdnsutil works, but finer-grained tools like ‘pdnsutil edit-zone’
+   do not. We hope to fix this in an upcoming 4.2.x release soon!
+
+   If you want to try the LMDB backend, please review the two known bugs
+   to avoid any surprises.
+
+Deprecations
+
+   4.2 will see the removal of the poorly documented ‘autoserial’ feature.
+   This removal decision was not taken lightly but as noted, its removal
+   allows us to fix other bugs. Autoserial was holding us back. We realise
+   it is no fun when a feature disappears, but since Authoritative Server
+   4.1 is still around, you can still use that if you require
+   ‘autoserial’.
+   In compliance with the new Algorithm Implementation Requirements and
+   Usage Guidance for DNSSEC RFC, support for ECC-GOST signing,
+   validation, and support for GOST DS digests have all been removed.
+
+Other developments
+
+   We always strive to deliver secure and performant software. As part of
+   that policy, we joined OSS-Fuzz late last year. Please see that blog
+   post for a nice overview of everything we do to deliver secure software
+   to you, every release.
+
+Release cycles
+
+   Starting with this release, we intend to move to 6 month release
+   cycles. This means the next release of PowerDNS Authoritative (4.3) is
+   scheduled for February 2020. We will support a release for two cycles
+   (one year). After that, a release will only get security fixes for one
+   more cycle and then move to end of life status. Recursor and dnsdist
+   are adopting the same cycle.
+
+   Specific information can be found in the end of life statement.
+
+Getting the new software
+
+   The tarball (signature) is available at downloads.powerdns.com and
+   packages for CentOS 6 and 7, Debian Stretch and Buster, Ubuntu Xenial
+   and Bionic are available from repo.powerdns.com.
+
+   Please send us all feedback and issues you might have via the mailing
+   list, or in case of a bug, via GitHub.
+
+   Written by habbie 1 Comment Posted in Uncategorized
+
+   August 12, 2019
+
+First release candidate for dnsdist 1.4.0
+
+   We are proud to announce the first release candidate of the 1.4.0
+   version of dnsdist. 1.4.0 brings a much more scalable way of handling
+   DNS over TCP and DNS over TLS connections since the first alpha
+   release. A major new feature since alpha2, and marquee feature of 1.4.0
+   compared to 1.3.x, is the new DNS-over-HTTPS functionality.
+
+   Following a round of testing from several large scale users, this
+   version fixes several issues, most of them related to DNS over HTTPS
+   (7894, 7917, 7927, 8112), DNS over TCP (7974, 7979, 8003, 8030, 8067,
+   8078, 8079, 8113), or both (7915).
+
+   In addition to minor improvements, it also introduces several new
+   features:
+     * a new ContinueAction allowing to keep processing rules even after
+       calling a normally terminal action, like PoolAction (8117) ;
+     * OCSP stapling for DNS over TLS and DNS over HTTPS (8141) ;
+     * custom HTTP headers for DNS over HTTPS responses (contributed by
+       Melissa Voegeli, 8148) ;
+     * actions, rules and Lua binding to interact with DNS over HTTPS
+       queries and generate responses from dnsdist (8153).
+
+   We want to thank everyone that contributed to the testing of the beta
+   release, and invite you to contribute to the testing of this release
+   candidate!
+
+   Please see the dnsdist website for the more complete changelog and the
+   current documentation.
+
+   Release tarballs are available on the downloads website.
+
+   Several packages are also available on our repository.
+
+   Written by rgacogne Leave a comment Posted in dnsdist Tagged with
+   dnsdist, release
+
+   August 9, 2019
+
+PowerDNS Authoritative Server 4.2.0 Release Candidate 3
+
+   Thanks to an overwhelming amount of testing by our fabulous user
+   community, this release candidate contains a ton of bug fixes (and a
+   few improvements) compared to the previous one. We hope this has shaken
+   out all of the important bugs, so that we can release 4.2.0 soon!
+
+   This release, sadly, cripples the LMDB backend somewhat, due to
+   “transaction-related fixes for the SQL backends“. We hope to fix this
+   issue before 4.2.0, or otherwise, early in 4.2.x.
+
+   The changelog summary:
+     * lots of bug fixes!
+
+   The tarball (signature) is available at downloads.powerdns.com and
+   packages for CentOS 6 and 7, Debian Stretch and Buster, Ubuntu Xenial
+   and Bionic are available from repo.powerdns.com.
+
+   Please send us all feedback and issues you might have via the mailing
+   list, or in case of a bug, via GitHub.
+
+   Written by aerique Leave a comment Posted in Uncategorized
+
+   Older Posts
+
+   Search for: ____________________ Search
+
+Links
+
+     * Documentation
+     * GitHub
+     * Our main website
+
+Recent Posts
+
+     * Third release candidate for dnsdist 1.4.0
+     * Centralised DoH is bad for privacy, in 2019 and beyond
+     * First alpha release of PowerDNS Recursor 4.3.0
+     * Second release candidate for dnsdist 1.4.0
+     * PowerDNS Authoritative Server 4.2.0
+
+Tweets
+
+   My Tweets
+
+Recent Comments
+
+   Mongo on Centralised DoH is bad for pri…
+   Joe Bill Schirtzinge… on Centralised DoH is bad for pri…
+   Furrybear on Centralised DoH is bad for pri…
+   Guy on Centralised DoH is bad for pri…
+   Nameless on Centralised DoH is bad for pri…
+
+Archives
+
+     * September 2019
+     * August 2019
+     * July 2019
+     * June 2019
+     * May 2019
+     * April 2019
+     * March 2019
+     * February 2019
+     * January 2019
+     * December 2018
+     * November 2018
+     * October 2018
+     * September 2018
+     * August 2018
+     * July 2018
+     * May 2018
+     * March 2018
+     * February 2018
+     * January 2018
+     * December 2017
+     * November 2017
+     * October 2017
+     * August 2017
+     * July 2017
+     * June 2017
+     * May 2017
+     * February 2017
+     * January 2017
+     * December 2016
+     * October 2016
+     * September 2016
+     * August 2016
+     * July 2016
+     * June 2016
+     * May 2016
+     * April 2016
+     * March 2016
+     * February 2016
+     * January 2016
+     * December 2015
+     * November 2015
+     * September 2015
+     * August 2015
+     * July 2015
+     * June 2015
+     * May 2015
+     * April 2015
+     * March 2015
+     * February 2015
+     * January 2015
+     * December 2014
+     * October 2014
+     * September 2014
+     * August 2014
+     * June 2014
+     * May 2014
+     * April 2014
+     * February 2014
+     * December 2013
+     * October 2013
+     * September 2013
+     * July 2013
+     * June 2013
+     * May 2013
+     * January 2013
+     * December 2012
+     * November 2012
+     * October 2012
+     * August 2012
+     * May 2012
+     * March 2012
+     * February 2012
+     * January 2012
+     * July 2011
+     * April 2011
+     * January 2011
+     * November 2010
+     * September 2010
+     * August 2010
+     * June 2010
+     * April 2010
+     * February 2010
+     * January 2010
+     * November 2009
+     * September 2009
+     * August 2009
+     * July 2009
+
+Categories
+
+     * dnsdist
+     * DNSSEC
+     * powerdns
+     * security
+     * Uncategorized
+
+Meta
+
+     * Register
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.com
+
+   Blog at WordPress.com.
+
+   PowerDNS Blog
+   Blog at WordPress.com.
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Post to
+   Cancel Reblog Post
+   This is an OpenID server
+

@@ -1,0 +1,1999 @@
+    #Raspberry Pi FR » Activer les fichiers .htaccess sur Raspbian Flux
+   des commentaires
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KSNWSC
+
+   Raspberry Pi FR Raspberry Pi FR Raspberry Pi FR
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+
+   Quand les htaccess ne marchent pas, le cadenas est ouvert. Quand les
+   htaccess ne marchent pas, le cadenas est ouvert.
+
+Activer les fichiers .htaccess sur Raspbian
+
+   Mis à jour le 19 mai 2016 - 8 Commentaires - Apache, Configuration,
+   Ligne de commande, Linux, Serveur, tutoriels
+
+   Dans cet article nous allons parler de configuration serveur, et plus
+   particulièrement des fichiers .htaccess qui ne fonctionnent pas. Il
+   faut donc que vous ayez installé un serveur Apache sur votre Raspbian.
+
+   Mais d’abord, définissons ce qu’est un fichier .htaccess.
+
+Les .htaccess c’est quoi ?
+
+   Les « .htaccess », c’est des fichiers. Plus précisément, c’est des
+   fichiers de configuration, à destination du serveur Apache.
+
+   Ces fichiers servent à de nombreuses choses, on peut citer entre autres
+   la mise en place de redirections, la réécriture d’URL, ou la limitation
+   d’accès à un répertoire (par exemple avec un mot de passe).
+
+   La particularité des fichiers htaccess, c’est qu’ils se placent dans
+   les répertoires ciblés (et s’appliquent aux répertoires contenus par
+   ceux-ci). Ils permettent donc de gérer facilement des sites, sans avoir
+   la possibilité d’accéder à la configuration centrale d’Apache. Ils sont
+   donc utilisés dans de très nombreux projets, et sont sans doute le
+   meilleur moyen de gérer facilement la réécriture d’URL, ou les
+   redirections, et d’exporter ces réglages vers d’autres machines, sans
+   avoir besoin de configurer celles-ci.
+
+Ça fonctionne comment ?
+
+   Les fichiers htaccess sont analysés lorsqu’un utilisateur envoie une
+   requête au serveur. Lors de la requête, et afin de savoir comment y
+   répondre, le serveur possède dès le départ une configuration générale,
+   celle qui s’applique à tous les sites. Puis, il va consulter la
+   configuration spécifique du site, celle qui ne s’applique qu’au site
+   cible. Enfin, il va analyser chaque dossier depuis la racine des sites,
+   jusqu’à celui du dossier contenant la ressource demandée par la
+   requête, afin de voir si un fichier « .htaccess » est présent, et le
+   cas échéant appliquer le comportement adapté, à son contenu au dossier,
+   et à ses enfants.
+
+   Pour chaque étape, si une configuration déjà renseignée lors de l’étape
+   précédente est trouvée, elle viendra écraser la configuration appliquée
+   jusqu’alors.
+
+   On pourrait résumer ce comportement en disant que pour les
+   configurations, les cas les plus particuliers prévalent sur les cas
+   plus généraux.
+
+   Ce système signifie donc que la présence de fichier .htaccess va
+   forcément ralentir (bien qu’en pratique cela ne se voit que très peu)
+   le serveur Apache. Préférez donc aussi souvent que possible
+   l’utilisation de la configuration principale, ou de la configuration
+   dédiée au site, à la configuration par htaccess.
+
+   Un point important des fichiers .htaccess, c’est qu’ils bloquent les
+   requêtes des utilisateurs, mais pas du serveur lui-même. Il est donc
+   possible d’inclure en PHP un fichier dans un dossier protégé par
+   .htaccess. Cela permet par exemple de stocker des fichiers de
+   configuration, ou des fichiers servant de bases de données.
+
+   Pour que vous compreniez bien, voici un petit schéma résumant le
+   fonctionnement d’apache et des fichiers « .htaccess ».
+   Schéma de fonctionnement des .htaccess Schéma de fonctionnement des
+   .htaccess
+
+   Le fonctionnement des .htaccess et de la configuration Apache. En noir
+   les actions toujours effectuée, en vert celle effectuées si le test est
+   positif, en rouge si il est négatif.
+
+   Vous devriez maintenant avoir tout compris ! Les fichiers .htaccess
+   n’ont plus de secret pour vous, et vous saurez toujours quelle
+   configuration a la priorité !
+
+   Nous allons donc pouvoir passer au cœur du tutoriel, à savoir comment
+   activer les fichiers .htaccess.
+
+Pourquoi mes .htaccess ne marchent pas ?
+
+   C’est un problème que nous avons déjà rencontré dans l’équipe de
+   rédaction (comme toujours avec nos tutoriels). Nous prenons une
+   Raspberry, nous installons un serveur web dessus, nous créons un
+   dossier pour y stocker des sauvegardes de bases de données, ou des
+   fichiers de configurations sensibles, nous en restreignons l’accès via
+   un .htaccess, et… Ça marche pas. Le serveur ne nous empêche pas
+   d’accéder au contenu du dossier.
+
+   Alors pourquoi ça ? Pourquoi ce maudit serveur continue de nous fournir
+   les données sur un plateau d’argent ? Il y a trois possibilités qui
+   peuvent expliquer cette situation :
+    1. Le fichier .htaccess n’est pas au bon endroit.
+    2. Le fichier .htaccess est mal écrit.
+    3. Les fichiers .htaccess ne marchent pas, ils ne sont pas activés
+       dans Apache.
+
+Vérifier la cause du problème des .htaccess, et les activer.
+
+   Maintenant que nous connaissons les différentes causes d’erreurs
+   possibles, nous allons voir comment trouver laquelle empêche vos
+   .htaccess de fonctionner.
+
+Mauvais emplacement
+
+   Dans le premier cas, à vous de vérifier si le fichier .htaccess est
+   bien dans le répertoire adapté, par exemple via la commande suivante :
+ls -a chemin_repertoire | grep .htaccess
+
+   L’argument -a permet d’afficher tous les fichiers, même les fichiers
+   cachés (sous Unix, les fichiers commençant par un point, comme «
+   .htaccess » sont cachés). Et la commande grep permet de récupérer
+   uniquement la ligne concernant le fichier .htaccess. Vous devriez donc
+   obtenir comme retour « .htaccess ». Si vous obtenez un retour vide,
+   cela signifie que le fichier .htaccess n’est pas présent. À vous alors
+   de le créer et de le remplir comme il se doit.
+
+Htaccess mal écrit
+
+   Maintenant que nous avons vu que le problème ne provient pas du fait
+   que le fichier soit mal placé, nous allons vérifier s’il ne s’agit pas
+   d’un simple problème de fichier .htaccess mal fait. Pour cela, nous
+   allons créer à la racine du serveur web (le dossier contenant tous les
+   sites, a priori le répertoire « /var/www ») un fichier .htaccess
+   interdisant tous les accès, pour tous les utilisateurs.
+
+   Pour cela, utilisez la commande :
+echo 'deny from all' > /var/www/html/.htaccess
+
+   Tentez maintenant d’accéder à l’adresse de votre site. Vous devriez
+   obtenir une erreur 403, « You don’t have permission to access / on this
+   server. ».
+   Screenshot d'une erreur 403 par Apache. Screenshot d'une erreur 403 par
+   Apache.
+
+   Une jolie erreur 403 d’Apache.
+
+   Si c’est le cas, cela signifie que vous aviez simplement mal écrit
+   votre fichier .htaccess. Là encore, à vous de trouver comment écrire
+   correctement un fichier .htaccess, de la documentation sur le sujet
+   existe.
+
+   Si ce n’est pas le cas, cela signifie que la configuration par htaccess
+   n’est pas activée dans Apache. Il va donc falloir activer les .htaccess
+   dans Apache, et ça se passe dans la configuration.
+
+Htaccess pas activé
+
+   S’il ne s’agit ni d’un mauvais emplacement, ni d’un htaccess mal écrit,
+   alors c’est forcément que vos fichiers .htaccess ne sont pas activés.
+   C’est le cas par défaut lors de l’installation d’Apache sur Raspbian.
+
+Pourquoi Raspbian n’active pas les .htaccess par défaut ?
+
+   La question est tout de même légitime. Pourquoi, alors que tout le
+   monde les utilise, Raspbian n’active pas automatiquement les fichiers
+   .htaccess ?
+
+   La réponse à déjà été évoquée plus haut, c’est pour des raisons de
+   performances.
+
+   Lors de la partie sur le fonctionnement des .htaccess, nous avons dit
+   que le fait de mettre un .htaccess réduit les performances du serveur,
+   ce dernier devant le lire, interpréter les modifications à apporter, et
+   les mettre en place.
+
+   Cependant, même si l’on ne met pas de fichiers htaccess en place, cela
+   réduit quand même les performances du serveur. En effet, nous l’avons
+   également expliqué, le serveur va systématiquement chercher si un
+   fichier « .htaccess » existe, et ce pour chaque répertoire jusqu’à
+   celui (inclus) de la ressource demandée. Par conséquent, des ressources
+   seront utilisées à chaque fois, afin de vérifier la présence ou non de
+   ces fichiers, alors qu’il n’en existe aucun. Il s’agit donc de
+   ressources dépensées absolument pour rien.
+
+   Pour éviter cela, la seule solution est de désactiver le support des
+   htaccess dans Apache.
+
+   Par conséquent, certaines distributions, dont Debian, et par conséquent
+   Raspbian, ont choisi de désactiver par défaut le support des .htaccess
+   dans les options d’Apache, et ce dans l’optique d’optimiser la vitesse
+   du système, laissant le soin aux utilisateurs d’activer les .htaccess
+   dans Apache uniquement s‘ils en ont l’utilité.
+
+   Il s’agit finalement d’un vraie bonne idée.
+
+Activer le support des htaccess dans Apache
+
+   Pour cette partie nous allons réutiliser le fichier .htaccess créé lors
+   de la vérification de l’écriture du .htaccess. En conséquence, si ce
+   n’est pas encore fait, créez-le.
+
+   Jusqu’à présent, même avec le .htaccess refusant toutes les connexions
+   et placé dans le répertoire racine de vos sites web, lors d’une requête
+   votre serveur vous retourne toujours les ressources sans broncher.
+
+   Nous allons donc modifier les configurations d’Apache2, et activer les
+   htaccess. Pour cela, éditez le fichier de configuration par défaut des
+   sites d’Apache avec votre éditeur favori, pour nous ce sera « nano »
+   (il vous faudra les droits root, soit via l’utilisation du compte root,
+   soit via la commande sudo) :
+nano /etc/apache2/apache2.conf
+
+   Puis, cherchez les lignes :
+AllowOverride None
+
+   Et remplacez-les par
+AllowOverride All
+
+   Enfin, enregistrez les modifications.
+
+   Astuces :
+     * Avec nano vous pouvez faire une recherche via le raccourci clavier
+       Ctrl + w
+     * Avec vi (ou équivalent), vous pouvez directement remplacer les
+       lignes en tapant « :%s/AllowOverride None/AllowOverride All/g »
+
+   Si vous avez créé d’autres fichiers de configuration pour certains
+   sites, dans lesquelles sont renseignés « AllowOverride », assurez-vous
+   de bien les mettre à la bonne valeur eux aussi.
+
+   Pour que les modifications soient prises en compte, vous devez
+   redémarrer le serveur Apache :
+/etc/init.d/apache2 restart
+
+   Les fichiers htaccess devraient maintenant être opérationnels.
+
+   Vérifiez-le en tentant d’accéder à votre site. Si vous avez créé le
+   fichier .htaccess de la partie « htaccess mal écrit », vous devriez
+   alors obtenir une erreur 403. Il ne vous reste plus qu’à supprimer le
+   fichier « .htaccess » de test, via la commande :
+rm /var/www/html/.htaccess
+
+   Voilà, vos fichiers .htaccess sont maintenant activés, et vous pouvez
+   de nouveau utiliser vos redirections et autres restrictions d’accès.
+
+   Vous n’avez plus qu’à vous prendre un disque dur externe, et vous
+   pourrez stocker tous vos films sur votre serveur, et protéger le
+   répertoire avec un mot de passe, et ainsi accéder à vos films depuis
+   n’importe où !
+
+   Sinon, vous pouvez toujours vous amuser à créer d’autres choses avec
+   votre Raspberry Pi, comme un media-center pourquoi pas, ou encore une
+   console pour le rétro-gaming !
+   Partager
+   Newsletter
+   [favicon.png] [svg%3E]
+   Auteur :
+   Raspberry Pi FR
+   Débuter avec la raspberry pi
+   Le livre pour débuter
+   [book-fr.png] [svg%3E] Lire le livre
+   La formation vidéo
+   [elephorm-fr.png] [svg%3E] Suivre la formation
+   Nos partenaires
+   [amazon-fr.png] [svg%3E] Visiter Amazon
+   [kubii-fr.png] [svg%3E] Visiter Kubii
+   [ipvanish-fr.png] [svg%3E] Visiter IPVanish
+   Les indispensables
+   La nouvelle Raspberry Pi 4
+   [raspberry-pi-4-fr.jpg] [svg%3E] Voir la Raspberry Pi 4
+   Raspberry Pi 3B+
+   [raspberry-pi-3-fr.png] [svg%3E] Voir la Raspberry Pi 3B+
+   Alimentation 5v 3A
+   [power-supply-fr.png] [svg%3E] Voir l'alimentation
+   Carte MicroSD
+   [microsd-fr.png] [svg%3E] Voir la carte MicroSD
+   Boîtier de protection
+   [case-fr.png] [svg%3E] Voir le boîtier
+   Mini clavier sans fil
+   [keyboard-fr.png] [svg%3E] Voir le clavier
+   Rejoignez la communauté Raspberry Pi
+   Un ordinateur à 35€ déjà vendu à 10 millions d'exemplaires
+   ACHETEZ LA RASPBERRY PI 3 ACHETEZ LA NOUVELLE RASPBERRY PI 4
+   Tutoriels en rapport
+   Installer un media-center avec OSMC sur votre Raspberry Pi ! RaspiSMS
+   2.0, envoyer des SMS par internet avec la Raspberry Pi Bien choisir vos
+   accessoires pour les Raspberry Pi 3 et 2 Envoyer, gérer et recevoir des
+   SMS avec la Raspberry Pi Installer un serveur web sur votre Raspberry
+   (Apache + PHP + MySQL)
+   8 commentaires
+   Besoin d'aide ? Vous la trouverez plus vite sur notre forum.
+
+Annuler la réponse
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   ____________________
+
+   ____________________
+
+   ____________________
+
+   Laisser un commentaire
+
+    1. ExtraDev dit :
+       2 janvier 2017 à 12 h 18 min
+       Bonjour j’ai réalisé un site réalisé avec un fichier .htaccess pour
+       de la réécriture d’URL.
+       Dans celui-ci:
+       #follow symbolics links
+       Options +FollowSymlinks
+       #Enable rewrite module
+       RewriteEngine All
+       #Action without id
+       RewriteRule ^([a-zA-Z]+).html index.php?action=$1 [L]
+       #Action with id
+       RewriteRule ^([a-zA-Z]+)-([0-9]+).html index.php?action=$1&id=$2
+       [L]
+       Même avec votre tutoriel, cela ne fonctionnait pas. Je suis allez
+       voir dans les fichier d’erreurs et j’ai constaté que
+       « RewriteEngine » devait être en « On » ou « Off » et non en
+       « All » ou « None ». Si jamais des personnes ont des erreurs 500 de
+       vous recommande de vérifier cela.
+       Encore petit conseil, si votre site ne fonctionne pas, ne pas
+       hésiter à aller voir dans:
+       /var/log/apache2/error.log
+       C’est là que j’ai pu comprendre l’origine de mon erreur.
+       Répondre
+         1. Raspbian France dit :
+            8 janvier 2017 à 15 h 47 min
+            Bonjour,
+            merci de partager ton expérience !
+            le log c’est la vie 😉
+            Répondre
+    2. klode dit :
+       3 mars 2016 à 17 h 52 min
+       bonjour,
+       j’ai aussi ce problème de .htaccess donc je regarde dans
+       apache2.conf et j’ai ces lignes :
+       AccessFileName .htaccess
+       Order allow,deny
+       Deny from all
+       Satify all
+       que dois-je modifié ?
+       merci
+       Répondre
+         1. Raspbian France dit :
+            10 mars 2016 à 16 h 10 min
+            Salut,
+            c’est les seules lignes du fichier ?
+            Répondre
+    3. Kylernet dit :
+       8 novembre 2015 à 13 h 48 min
+       Bonjour,
+       superbes tutos merci encore, ils sont très utiles.
+       Par contre pour les .htaccess ce n’est pas dans
+       /etc/apache2/sites-enabled/000-default
+       car je n’ai aucune lignes où il y a AllowOverride
+       mais dans le fichier de conf apache2 ou il faut changer
+       AllowOverride All.
+       Options Indexes FollowSymLinks
+       AllowOverride All
+       Require all granted
+       J’espère ne pas dire de bêtises.
+       Merci encore!
+       Répondre
+    4. harun dit :
+       12 mai 2015 à 15 h 54 min
+       comment activer le rewrite module ???
+       parce j’ai toujours une erreur quand je met mes fichiers htaccess,
+       alors que sur mamp ça marche (en local)
+       c’est que il faut modifier une configuration dans l’apache du
+       raspberry ?
+       l’erreur c’est le 500 internal error
+       Répondre
+         1. Raspbian France dit :
+            21 mai 2015 à 14 h 16 min
+            Salut,
+            ouais c’est une config à faire dans l’Apache du Raspberry Pi.
+            Il faut que tu lances la commande « a2enmod rewrite » pour
+            activer la ré-écriture d’URL.
+            Répondre
+
+   Partager
+     * Twitter
+     * Facebook
+     * Google +
+     * E-mail
+
+   Inscription à la Newsletter
+   ____________________ S'inscrire
+   Inscrivez-vous à la Newsletter.
+   Vous avez aimé cet article ?
+   Inscrivez-vous et restez informé !
+   ____________________ S'inscrire
+
+   [logo-raspbian-gray-small.png] [svg%3E]
+   Copyright © 2016 Raspberry Pi FR - Textes soumis au droit d'auteur
+   Conditions Générales d'Utilisation
+   Raspberry Pi est une marque déposée de la Raspberry Pi Foundation
+   GitHub Twitter RSS
+    #Raspberry Pi FR » Installer Nginx Raspbian, et accélérez votre
+   serveur web Raspberry Flux des commentaires alternate alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KSNWSC
+
+   Raspberry Pi FR Raspberry Pi FR Raspberry Pi FR
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+          + English English
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+          + English English
+
+   Un serveur Nginx, une Raspberry, un Raspbian, une solution ! Un serveur
+   Nginx, une Raspberry, un Raspbian, une solution !
+
+Installer Nginx Raspbian, et accélérez votre serveur web Raspberry
+
+   Mis à jour le 22 mars 2018 - 57 Commentaires - Apache, Installation,
+   Ligne de commande, Linux, Nginx, Planet-libre, tutoriels
+
+   Cela fait quelques temps que nous n’avons pas écrit de tutoriel. En
+   effet, nous nous sommes octroyé quelques jours de vacances, et nous
+   voici aujourd’hui de retour.
+
+   C’est donc ici un tutoriel venant compléter celui traitant de
+   l’installation d’un serveur web sur la Raspberry. En effet, il sera ici
+   question de l’installation d’un serveur web autre qu’Apache, à savoir
+   Nginx.
+
+Nginx c’est quoi ?
+
+   Avant d’installer Nginx, il convient de comprendre ce qu’est au juste
+   Nginx.
+
+   Nginx c’est un serveur web.
+
+   Il permet donc à un client d’accéder à une ressource sur une machine
+   distante, et à cette machine de retourner la ressource adaptée au
+   client. Il s’agit d’un logiciel libre, distribué sous licence BSD. Il a
+   vu le jour en 2002, en Russie, mais ne c’est vraiment développé qu’à
+   partir de 2006, quand il a commencé à être traduit du russe vers
+   l’anglais.
+   Les parts de marché de Nginx monte rapidement Les parts de marché de
+   Nginx monte rapidement
+
+   Nginx monte rapidement, ici l’évolution des parts de marché des
+   serveurs web en 2016 – source : w3techs.com
+
+   Nginx représente 20,4 % des serveurs. C’est bien moins que son
+   principal concurrent Apache, qui représente 60,6 % de parts de marché,
+   mais c’est tout de même énorme. Il occupe ainsi la deuxième place des
+   serveurs (devant les boulets de chez Microsoft avec leurs 14,1%), ce
+   qui est une performance d’autant plus importante que le concurrent
+   Apache occupe une place historique absolument énorme, et est un acteur
+   majeur, non seulement au-travers de son serveur, mais aussi au-travers
+   de la licence Apache.
+
+Mais pourquoi installer Nginx plutôt qu’Apache ?
+
+   C’est bien sûr la question la plus importante. Pourquoi choisir un
+   serveur secondaire plutôt que l’acteur principal du marché ? La réponse
+   est simple, les performances !
+
+   Nginx est un serveur dit « Asynchrone ». Cela signifie qu’il peut
+   exécuter plusieurs actions en même temps, sans attendre la fin de la
+   première pour passer à la seconde. Ce n’est pas le cas d’Apache qui,
+   s’il permet plusieurs requêtes en même temps va alors lancer de
+   nouveaux processus.
+
+   En clair, cela signifie trois choses.
+
+   Premièrement, Nginx répond beaucoup plus vite qu’Apache.
+
+   Deuxièmement, Nginx permet de supporter plus d’utilisateurs
+   simultanément.
+
+   Troisièmement, Nginx consomme moins de RAM qu’Apache, ce qui est très
+   important compte tenu du fait que la Raspberry, même dans son modèle 3,
+   ne dispose que de 1024Mo de RAM non extensibles. Cela est d’autant plus
+   important dans le cadre du modèle B+ et de ses 512 Mo de RAM.
+
+   Alors vous vous doutez bien que tout cela n’est pas sans contrepartie.
+
+   Nginx ne réagit pas toujours comme Apache2 avec PHP.
+
+   Il n’est pas aussi facile de tester Nginx qu’Apache sur une machine
+   Windows.
+
+   Enfin, Nginx ne supporte pas les fichiers .htaccess, que vous devrez
+   convertir pour Nginx, et que vous ne mettrez pas dans un fichier dans
+   le répertoire cible, mais dans le fichier de configuration du site.
+
+   Cependant, Nginx vaut vraiment le coup, et c’est sans doute un meilleur
+   choix qu’Apache pour un serveur web sur la Raspberry.
+
+Désactiver le serveur Apache
+
+   Nous considérerons ici que vous avez déjà suivi le tutoriel sur
+   l’installation d’un serveur web Apache, avec PHP et MySQL. Par
+   conséquent nous ne réinstallerons pas les deux derniers, et nous
+   désactiverons le premier, sans toutefois le désinstaller. Il s’agira là
+   de notre première étape. Si vous n’avez pas installé de serveur Apache,
+   vous pouvez passer cette première étape.
+
+   Tout d’abord, il convient de désactiver le serveur Apache actuellement
+   en cours d’exécution.
+
+   Pour cela, il suffit d’utiliser la commande suivante :
+sudo /etc/init.d/apache2 stop
+
+   Le serveur Apache2 ne tourne plus. Nous allons maintenant l’empêcher de
+   se lancer automatiquement au démarrage de Raspbian comme il le fait
+   pour l’instant.
+
+Ne pas lancer Apache au démarrage
+
+   Sur les dernières versions de Debian (et donc Raspbian), systemd a pris
+   le pas sur la méthode traditionnel de gestion des services.
+
+   Nous allons donc désactiver Apache au démarrage. Pour cela, il vous
+   suffit de lancer la commande suivante :
+sudo systemctl disable apache2
+
+   Si vous le souhaitez, vous pouvez redémarrer votre Raspberry Pi
+
+Lancer automatiquement Apache au démarrage
+
+   Il est possible que vous souhaitiez un jour réactiver le démarrage
+   automatique d’Apache. Pour cela, vous devrez utiliser la même commande
+   que pour le désactiver, mais avec des arguments différents :
+sudo systemctl enable apache2
+
+   Cette fois l’argument « enable » va demander au programme de lancer
+   Apache2 au démarrage du serveur.
+
+   Notez que vous ne pourrez pas (par défaut) faire cohabiter Apache et
+   Nginx !
+
+   Vous savez désormais comment activer ou désactiver le démarrage
+   automatique d’Apache et nous allons maintenant pouvoir installer Nginx.
+
+Installer le serveur Nginx pour Raspbian
+
+   Comme nous l’avions fait pour Apache2, nous allons de nouveau utiliser
+   le gestionnaire de paquet « aptitude » pour installer Nginx et php-fpm
+   sur la Raspberry depuis les dépôts Raspbian.
+
+   Pour cela, il vous suffit d’utiliser la commande :
+sudo apt install nginx php-fpm
+
+   Par défaut, Nginx n’est pas lié à PHP. Lors du développement de Nginx,
+   le choix a été fait d’utiliser PHP-FMP (une version plus rapide de PHP)
+   plutôt qu’un PHP plus traditionnel. Par conséquent, on va installer
+   php-fpm pour gérer les fichiers PHP avec Nginx.
+
+
+   Vous pouvez vérifier si votre serveur marche correctement de la même
+   façon que pour vérifier si un serveur Apache fonctionne, c’est-à-dire
+   en lançant une requête sur le port 80 de votre serveur. Vous obtiendrez
+   alors une page marquée « Welcome to nginx! ».
+
+Configurer Nginx
+
+   Maintenant que Nginx est bien installé, il va falloir rajouter un tout
+   petit peu de configuration. Nous n’allons pas ici vous expliquer
+   comment se configure un serveur Nginx, nous allons simplement modifier
+   le dossier contenant vos sites, ajouter les pages index.php comme pages
+   par défaut, et enfin ajouter PHP.
+
+   Pour cela, éditez le fichier « /etc/nginx/sites-available/default »,
+   par exemple via la commande :
+sudo nano /etc/nginx/sites-available/default
+
+   et cherchez la ligne
+index index.html index.htm index.nginx-debian.html;
+
+
+   pour la remplacer par la ligne
+index index.html index.htm index.php;
+
+   Cela va rajouter une redirection automatique vers les fichiers «
+   index.php » pour les dossiers du site, comportement par défaut de
+   Apache.
+
+   Nous allons maintenant activer php-fpm pour Nginx. Pour cela, cherchez
+   les lignes
+ #location ~ \.php$ {
+ # include snippets/fastcgi-php.conf;
+ #
+ # # With php5-cgi alone:
+ # fastcgi_pass 127.0.0.1:9000;
+ # # With php5-fpm:
+ # fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+ #}
+
+
+   et modifier les afin d’obtenir le résultat suivant :
+ location ~ \.php$ {
+ include snippets/fastcgi-php.conf;
+ fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+ }
+
+
+   Il ne nous reste plus qu’à modifier les droits du dossier
+   « /var/www/html » pour pouvoir gérer nos sites plus facilement. Pour
+   cela, il vous suffit de lancer les commandes suivantes :
+
+
+ sudo chown -R www-data:pi /var/www/html/
+ sudo chmod -R 770 /var/www/html/
+
+
+   Enfin, nous allons ajouter un fichier « index.php » pour vérifier que
+   PHP fonctionne. Pour cela, lancez la commande suivante :
+ echo "<?php phpinfo(); ?>" > /var/www/html/index.php
+
+
+   Une fois tout ceci fait, vous devez redémarrer Nginx, afin d’appliquer
+   les modifications, toujours avec la commande :
+sudo /etc/init.d/nginx restart
+
+   Vous n’avez plus qu’à vérifier le bon fonctionnement du serveur, comme
+   précédemment. Vous devriez obtenir une page affichant les informations
+   de PHP.
+
+Erreur 403 forbidden, un classique de Nginx.
+
+   Il est possible que vous obteniez une erreur « 403 forbidden ». Cela
+   peut signifier deux choses.
+   Page d'erreur 403 d'un serveur Nginx Page d'erreur 403 d'un serveur
+   Nginx
+
+   L’erreur 403 est fréquente avec Nginx, mais simple à corriger.
+
+   Tout d’abord, cela peut signifier que Nginx ne trouve pas de fichier à
+   afficher, mais contrairement à Apache, il ne va pas lister les fichiers
+   du dossier. Pour tester cela, il vous suffit de créer un fichier
+   index.html dans le répertoire « /var/www », et de re-essayer d’accéder
+   à votre site. Par exemple via la commande :
+echo 'Nginx marche !' > /var/www/html/index.html
+
+   Si le problème venait bien de là, vous devriez obtenir une page marquée
+   « Nginx marche ! « . À vous maintenant de mettre un fichier d’index qui
+   vous convienne.
+
+   En revanche, si cela ne résout pas le problème, alors le problème est
+   probablement que Nginx ne peut accéder au répertoire « /var/www/html ».
+   Dans ce cas, il faut donner le répertoire à « www-data », avec les
+   autorisations suffisantes.
+
+   Pour cela, utilisez les deux lignes suivantes :
+ chown www-data:www-data /var/www
+ chmod 744 /var/www
+
+
+Conclusion
+
+   Voilà, Nginx est installé sur la Raspberry, et votre serveur web
+   Raspbian devrait tourner encore plus vite qu’avant !
+
+   Et si ce n’est pas suffisant, vous pouvez par exemple installer un
+   cache php. Nous ferons peut-être un tutoriel dessus dans quelques temps
+   ;).
+
+   Et dans tous les cas, vous pouvez toujours allez faire un tour ici, et
+   vous trouverez peut-être de nouvelles idées d’utilisations de votre
+   Raspberry.
+   Partager
+   Newsletter
+   [favicon.png] [svg%3E]
+   Auteur :
+   Raspberry Pi FR
+   Débuter avec la raspberry pi
+   Le livre pour débuter
+   [book-fr.png] [svg%3E] Lire le livre
+   La formation vidéo
+   [elephorm-fr.png] [svg%3E] Suivre la formation
+   Nos partenaires
+   [amazon-fr.png] [svg%3E] Visiter Amazon
+   [kubii-fr.png] [svg%3E] Visiter Kubii
+   [ipvanish-fr.png] [svg%3E] Visiter IPVanish
+   Les indispensables
+   La nouvelle Raspberry Pi 4
+   [raspberry-pi-4-fr.jpg] [svg%3E] Voir la Raspberry Pi 4
+   Raspberry Pi 3B+
+   [raspberry-pi-3-fr.png] [svg%3E] Voir la Raspberry Pi 3B+
+   Alimentation 5v 3A
+   [power-supply-fr.png] [svg%3E] Voir l'alimentation
+   Carte MicroSD
+   [microsd-fr.png] [svg%3E] Voir la carte MicroSD
+   Boîtier de protection
+   [case-fr.png] [svg%3E] Voir le boîtier
+   Mini clavier sans fil
+   [keyboard-fr.png] [svg%3E] Voir le clavier
+   Rejoignez la communauté Raspberry Pi
+   Un ordinateur à 35€ déjà vendu à 10 millions d'exemplaires
+   ACHETEZ LA RASPBERRY PI 3 ACHETEZ LA NOUVELLE RASPBERRY PI 4
+   Tutoriels en rapport
+   Installer un media-center avec OSMC sur votre Raspberry Pi ! RaspiSMS
+   2.0, envoyer des SMS par internet avec la Raspberry Pi Bien choisir vos
+   accessoires pour les Raspberry Pi 3 et 2 Envoyer, gérer et recevoir des
+   SMS avec la Raspberry Pi Installer un serveur web sur votre Raspberry
+   (Apache + PHP + MySQL)
+   57 commentaires
+   Besoin d'aide ? Vous la trouverez plus vite sur notre forum.
+
+Annuler la réponse
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   ____________________
+
+   ____________________
+
+   ____________________
+
+   Laisser un commentaire
+
+Navigation dans les commentaires
+
+   Commentaires plus anciens
+    1. Avery Castleberry dit :
+       28 août 2019 à 20 h 31 min
+       Do you mind if I quote a few of your articles as long as I provide
+       credit and sources back to your webpage? My blog site is in the
+       very same niche as yours and my users would definitely benefit from
+       some of the information you provide here. Please let me know if
+       this alright with you. Thank you!
+       Répondre
+         1. Raspberry Pi FR dit :
+            29 août 2019 à 14 h 27 min
+            Hello, absolutly no problem, if you can make a link to our
+            website we would appreciate that 🙂
+            Répondre
+    2. J-C dit :
+       21 mars 2018 à 19 h 10 min
+       Bonjour,
+       Merci pour le tuto. Juste 2 soucis rencontrés :
+       1) sudo aptitude install nginx php5-fpm au lieu de sudo aptitude
+       install nginx php-fpm
+       2) sudo nano /etc/nginx/sites-available/default au lieu de nano
+       /etc/nginx/sites-available/default
+       Sinon parfait j’ai pu enchainer après avec
+       https://raspberry-pi.fr/monitoring-raspberry-pi/
+       Répondre
+         1. Raspbian France dit :
+            22 mars 2018 à 17 h 22 min
+            Salut, on met ça à jour, merci du retour.
+            Répondre
+    3. thierry dit :
+       18 janvier 2018 à 12 h 52 min
+       merci pour ce tuto il m’a beaucoup aidé
+       Répondre
+
+Navigation dans les commentaires
+
+   Commentaires plus anciens
+   Partager
+     * Twitter
+     * Facebook
+     * Google +
+     * E-mail
+
+   Inscription à la Newsletter
+   ____________________ S'inscrire
+   Inscrivez-vous à la Newsletter.
+   Vous avez aimé cet article ?
+   Inscrivez-vous et restez informé !
+   ____________________ S'inscrire
+
+   [logo-raspbian-gray-small.png] [svg%3E]
+   Copyright © 2016 Raspberry Pi FR - Textes soumis au droit d'auteur
+   Conditions Générales d'Utilisation
+   Raspberry Pi est une marque déposée de la Raspberry Pi Foundation
+   GitHub Twitter RSS
+    #Raspberry Pi FR » Flux de l’étiquette Nginx alternate alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KSNWSC
+
+   Raspberry Pi FR Raspberry Pi FR Raspberry Pi FR
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+          + English English
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+          + English English
+
+Les articles qui parlent nginx
+
+   Vous cherchez un article autour de ce sujet ?
+   Vous êtes au bon endroit !
+   ____________________ (BUTTON)
+   Tous les articles
+
+   Nginx est le principal concurrent d’Apache, et un excellent serveur
+   web. Vous verrez ici comment l’installer et le configurer pour faire de
+   votre système Raspbian et de votre Raspberry Pi un parfait petit
+   serveur web, rapide et performant !
+   [wordpress-raspberry-pi2-626x320.jpg] [svg%3E]
+
+Installer WordPress sur une Raspberry Pi (avec Nginx).
+
+   Par Raspberry Pi FR le 5 août 2015 - 76 commentaires
+
+   Aujourd’hui, nous allons vous parler de wordpress, le CMS le plus
+   populaire du monde (sans parler du fait qu’il fait tourner Raspbian
+   France) et voir comment l’installer sur la Raspberry Pi. La
+   compatibilité Raspberry / WordPress existe depuis le début, néanmoins,
+   les performances sur les premières Raspberry Pi n’étaient pas
+   incroyables ! Aujourd’hui, avec la […]
+   Lire la suite de l'article
+   [htaccess_nginx-600x352.jpg] [svg%3E]
+
+Équivalent fichiers .htaccess pour Nginx
+
+   Par Raspberry Pi FR le 28 mai 2014 - 2 commentaires
+
+   Lors de notre précédent article, nous vous parlions de l’activation des
+   fichiers .htaccess pour votre Raspberry Pi. Cependant, les fichiers
+   htaccess sont une particularité d’Apache, qui bien que très pratique,
+   n’est pas présent sur tous les types de serveurs web, notamment les
+   serveurs Nginx. Nous allons donc voir comment remplacer les fichiers
+   .htaccess sous Nginx. […]
+   Lire la suite de l'article
+   [mariadb_raspbian.jpg] [svg%3E]
+
+Installer MariaDB sur Raspbian
+
+   Par Raspberry Pi FR le 2 mai 2014 - 18 commentaires
+
+   Lors du dernier tutoriel, nous vous avions montré comment remplacer
+   Apache par Nginx pour votre système Raspbian, afin d’obtenir un serveur
+   web plus rapide et moins consommateur de RAM. Aujourd’hui, c’est pour
+   une thématique proche que nous nous retrouvons, puisqu’il s’agit de
+   remplacer l’ancien système de base de données MySQL par le système
+   MariaDB pour […]
+   Lire la suite de l'article
+   [serveur_nginx-626x352.jpg] [svg%3E]
+
+Installer Nginx Raspbian, et accélérez votre serveur web Raspberry
+
+   Par Raspberry Pi FR le 21 avril 2014 - 57 commentaires
+
+   Cela fait quelques temps que nous n’avons pas écrit de tutoriel. En
+   effet, nous nous sommes octroyé quelques jours de vacances, et nous
+   voici aujourd’hui de retour. C’est donc ici un tutoriel venant
+   compléter celui traitant de l’installation d’un serveur web sur la
+   Raspberry. En effet, il sera ici question de l’installation d’un
+   serveur web […]
+   Lire la suite de l'article
+
+   [logo-raspbian-gray-small.png] [svg%3E]
+   Copyright © 2016 Raspberry Pi FR - Textes soumis au droit d'auteur
+   Conditions Générales d'Utilisation
+   Raspberry Pi est une marque déposée de la Raspberry Pi Foundation
+   GitHub Twitter RSS
+    #Raspberry Pi FR » Installer Nginx Raspbian, et accélérez votre
+   serveur web Raspberry Flux des commentaires alternate alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KSNWSC
+
+   Raspberry Pi FR Raspberry Pi FR Raspberry Pi FR
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+          + English English
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+          + English English
+
+   Un serveur Nginx, une Raspberry, un Raspbian, une solution ! Un serveur
+   Nginx, une Raspberry, un Raspbian, une solution !
+
+Installer Nginx Raspbian, et accélérez votre serveur web Raspberry
+
+   Mis à jour le 22 mars 2018 - 57 Commentaires - Apache, Installation,
+   Ligne de commande, Linux, Nginx, Planet-libre, tutoriels
+
+   Cela fait quelques temps que nous n’avons pas écrit de tutoriel. En
+   effet, nous nous sommes octroyé quelques jours de vacances, et nous
+   voici aujourd’hui de retour.
+
+   C’est donc ici un tutoriel venant compléter celui traitant de
+   l’installation d’un serveur web sur la Raspberry. En effet, il sera ici
+   question de l’installation d’un serveur web autre qu’Apache, à savoir
+   Nginx.
+
+Nginx c’est quoi ?
+
+   Avant d’installer Nginx, il convient de comprendre ce qu’est au juste
+   Nginx.
+
+   Nginx c’est un serveur web.
+
+   Il permet donc à un client d’accéder à une ressource sur une machine
+   distante, et à cette machine de retourner la ressource adaptée au
+   client. Il s’agit d’un logiciel libre, distribué sous licence BSD. Il a
+   vu le jour en 2002, en Russie, mais ne c’est vraiment développé qu’à
+   partir de 2006, quand il a commencé à être traduit du russe vers
+   l’anglais.
+   Les parts de marché de Nginx monte rapidement Les parts de marché de
+   Nginx monte rapidement
+
+   Nginx monte rapidement, ici l’évolution des parts de marché des
+   serveurs web en 2016 – source : w3techs.com
+
+   Nginx représente 20,4 % des serveurs. C’est bien moins que son
+   principal concurrent Apache, qui représente 60,6 % de parts de marché,
+   mais c’est tout de même énorme. Il occupe ainsi la deuxième place des
+   serveurs (devant les boulets de chez Microsoft avec leurs 14,1%), ce
+   qui est une performance d’autant plus importante que le concurrent
+   Apache occupe une place historique absolument énorme, et est un acteur
+   majeur, non seulement au-travers de son serveur, mais aussi au-travers
+   de la licence Apache.
+
+Mais pourquoi installer Nginx plutôt qu’Apache ?
+
+   C’est bien sûr la question la plus importante. Pourquoi choisir un
+   serveur secondaire plutôt que l’acteur principal du marché ? La réponse
+   est simple, les performances !
+
+   Nginx est un serveur dit « Asynchrone ». Cela signifie qu’il peut
+   exécuter plusieurs actions en même temps, sans attendre la fin de la
+   première pour passer à la seconde. Ce n’est pas le cas d’Apache qui,
+   s’il permet plusieurs requêtes en même temps va alors lancer de
+   nouveaux processus.
+
+   En clair, cela signifie trois choses.
+
+   Premièrement, Nginx répond beaucoup plus vite qu’Apache.
+
+   Deuxièmement, Nginx permet de supporter plus d’utilisateurs
+   simultanément.
+
+   Troisièmement, Nginx consomme moins de RAM qu’Apache, ce qui est très
+   important compte tenu du fait que la Raspberry, même dans son modèle 3,
+   ne dispose que de 1024Mo de RAM non extensibles. Cela est d’autant plus
+   important dans le cadre du modèle B+ et de ses 512 Mo de RAM.
+
+   Alors vous vous doutez bien que tout cela n’est pas sans contrepartie.
+
+   Nginx ne réagit pas toujours comme Apache2 avec PHP.
+
+   Il n’est pas aussi facile de tester Nginx qu’Apache sur une machine
+   Windows.
+
+   Enfin, Nginx ne supporte pas les fichiers .htaccess, que vous devrez
+   convertir pour Nginx, et que vous ne mettrez pas dans un fichier dans
+   le répertoire cible, mais dans le fichier de configuration du site.
+
+   Cependant, Nginx vaut vraiment le coup, et c’est sans doute un meilleur
+   choix qu’Apache pour un serveur web sur la Raspberry.
+
+Désactiver le serveur Apache
+
+   Nous considérerons ici que vous avez déjà suivi le tutoriel sur
+   l’installation d’un serveur web Apache, avec PHP et MySQL. Par
+   conséquent nous ne réinstallerons pas les deux derniers, et nous
+   désactiverons le premier, sans toutefois le désinstaller. Il s’agira là
+   de notre première étape. Si vous n’avez pas installé de serveur Apache,
+   vous pouvez passer cette première étape.
+
+   Tout d’abord, il convient de désactiver le serveur Apache actuellement
+   en cours d’exécution.
+
+   Pour cela, il suffit d’utiliser la commande suivante :
+sudo /etc/init.d/apache2 stop
+
+   Le serveur Apache2 ne tourne plus. Nous allons maintenant l’empêcher de
+   se lancer automatiquement au démarrage de Raspbian comme il le fait
+   pour l’instant.
+
+Ne pas lancer Apache au démarrage
+
+   Sur les dernières versions de Debian (et donc Raspbian), systemd a pris
+   le pas sur la méthode traditionnel de gestion des services.
+
+   Nous allons donc désactiver Apache au démarrage. Pour cela, il vous
+   suffit de lancer la commande suivante :
+sudo systemctl disable apache2
+
+   Si vous le souhaitez, vous pouvez redémarrer votre Raspberry Pi
+
+Lancer automatiquement Apache au démarrage
+
+   Il est possible que vous souhaitiez un jour réactiver le démarrage
+   automatique d’Apache. Pour cela, vous devrez utiliser la même commande
+   que pour le désactiver, mais avec des arguments différents :
+sudo systemctl enable apache2
+
+   Cette fois l’argument « enable » va demander au programme de lancer
+   Apache2 au démarrage du serveur.
+
+   Notez que vous ne pourrez pas (par défaut) faire cohabiter Apache et
+   Nginx !
+
+   Vous savez désormais comment activer ou désactiver le démarrage
+   automatique d’Apache et nous allons maintenant pouvoir installer Nginx.
+
+Installer le serveur Nginx pour Raspbian
+
+   Comme nous l’avions fait pour Apache2, nous allons de nouveau utiliser
+   le gestionnaire de paquet « aptitude » pour installer Nginx et php-fpm
+   sur la Raspberry depuis les dépôts Raspbian.
+
+   Pour cela, il vous suffit d’utiliser la commande :
+sudo apt install nginx php-fpm
+
+   Par défaut, Nginx n’est pas lié à PHP. Lors du développement de Nginx,
+   le choix a été fait d’utiliser PHP-FMP (une version plus rapide de PHP)
+   plutôt qu’un PHP plus traditionnel. Par conséquent, on va installer
+   php-fpm pour gérer les fichiers PHP avec Nginx.
+
+
+   Vous pouvez vérifier si votre serveur marche correctement de la même
+   façon que pour vérifier si un serveur Apache fonctionne, c’est-à-dire
+   en lançant une requête sur le port 80 de votre serveur. Vous obtiendrez
+   alors une page marquée « Welcome to nginx! ».
+
+Configurer Nginx
+
+   Maintenant que Nginx est bien installé, il va falloir rajouter un tout
+   petit peu de configuration. Nous n’allons pas ici vous expliquer
+   comment se configure un serveur Nginx, nous allons simplement modifier
+   le dossier contenant vos sites, ajouter les pages index.php comme pages
+   par défaut, et enfin ajouter PHP.
+
+   Pour cela, éditez le fichier « /etc/nginx/sites-available/default »,
+   par exemple via la commande :
+sudo nano /etc/nginx/sites-available/default
+
+   et cherchez la ligne
+index index.html index.htm index.nginx-debian.html;
+
+
+   pour la remplacer par la ligne
+index index.html index.htm index.php;
+
+   Cela va rajouter une redirection automatique vers les fichiers «
+   index.php » pour les dossiers du site, comportement par défaut de
+   Apache.
+
+   Nous allons maintenant activer php-fpm pour Nginx. Pour cela, cherchez
+   les lignes
+ #location ~ \.php$ {
+ # include snippets/fastcgi-php.conf;
+ #
+ # # With php5-cgi alone:
+ # fastcgi_pass 127.0.0.1:9000;
+ # # With php5-fpm:
+ # fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+ #}
+
+
+   et modifier les afin d’obtenir le résultat suivant :
+ location ~ \.php$ {
+ include snippets/fastcgi-php.conf;
+ fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+ }
+
+
+   Il ne nous reste plus qu’à modifier les droits du dossier
+   « /var/www/html » pour pouvoir gérer nos sites plus facilement. Pour
+   cela, il vous suffit de lancer les commandes suivantes :
+
+
+ sudo chown -R www-data:pi /var/www/html/
+ sudo chmod -R 770 /var/www/html/
+
+
+   Enfin, nous allons ajouter un fichier « index.php » pour vérifier que
+   PHP fonctionne. Pour cela, lancez la commande suivante :
+ echo "<?php phpinfo(); ?>" > /var/www/html/index.php
+
+
+   Une fois tout ceci fait, vous devez redémarrer Nginx, afin d’appliquer
+   les modifications, toujours avec la commande :
+sudo /etc/init.d/nginx restart
+
+   Vous n’avez plus qu’à vérifier le bon fonctionnement du serveur, comme
+   précédemment. Vous devriez obtenir une page affichant les informations
+   de PHP.
+
+Erreur 403 forbidden, un classique de Nginx.
+
+   Il est possible que vous obteniez une erreur « 403 forbidden ». Cela
+   peut signifier deux choses.
+   Page d'erreur 403 d'un serveur Nginx Page d'erreur 403 d'un serveur
+   Nginx
+
+   L’erreur 403 est fréquente avec Nginx, mais simple à corriger.
+
+   Tout d’abord, cela peut signifier que Nginx ne trouve pas de fichier à
+   afficher, mais contrairement à Apache, il ne va pas lister les fichiers
+   du dossier. Pour tester cela, il vous suffit de créer un fichier
+   index.html dans le répertoire « /var/www », et de re-essayer d’accéder
+   à votre site. Par exemple via la commande :
+echo 'Nginx marche !' > /var/www/html/index.html
+
+   Si le problème venait bien de là, vous devriez obtenir une page marquée
+   « Nginx marche ! « . À vous maintenant de mettre un fichier d’index qui
+   vous convienne.
+
+   En revanche, si cela ne résout pas le problème, alors le problème est
+   probablement que Nginx ne peut accéder au répertoire « /var/www/html ».
+   Dans ce cas, il faut donner le répertoire à « www-data », avec les
+   autorisations suffisantes.
+
+   Pour cela, utilisez les deux lignes suivantes :
+ chown www-data:www-data /var/www
+ chmod 744 /var/www
+
+
+Conclusion
+
+   Voilà, Nginx est installé sur la Raspberry, et votre serveur web
+   Raspbian devrait tourner encore plus vite qu’avant !
+
+   Et si ce n’est pas suffisant, vous pouvez par exemple installer un
+   cache php. Nous ferons peut-être un tutoriel dessus dans quelques temps
+   ;).
+
+   Et dans tous les cas, vous pouvez toujours allez faire un tour ici, et
+   vous trouverez peut-être de nouvelles idées d’utilisations de votre
+   Raspberry.
+   Partager
+   Newsletter
+   [favicon.png] [svg%3E]
+   Auteur :
+   Raspberry Pi FR
+   Débuter avec la raspberry pi
+   Le livre pour débuter
+   [book-fr.png] [svg%3E] Lire le livre
+   La formation vidéo
+   [elephorm-fr.png] [svg%3E] Suivre la formation
+   Nos partenaires
+   [amazon-fr.png] [svg%3E] Visiter Amazon
+   [kubii-fr.png] [svg%3E] Visiter Kubii
+   [ipvanish-fr.png] [svg%3E] Visiter IPVanish
+   Les indispensables
+   La nouvelle Raspberry Pi 4
+   [raspberry-pi-4-fr.jpg] [svg%3E] Voir la Raspberry Pi 4
+   Raspberry Pi 3B+
+   [raspberry-pi-3-fr.png] [svg%3E] Voir la Raspberry Pi 3B+
+   Alimentation 5v 3A
+   [power-supply-fr.png] [svg%3E] Voir l'alimentation
+   Carte MicroSD
+   [microsd-fr.png] [svg%3E] Voir la carte MicroSD
+   Boîtier de protection
+   [case-fr.png] [svg%3E] Voir le boîtier
+   Mini clavier sans fil
+   [keyboard-fr.png] [svg%3E] Voir le clavier
+   Rejoignez la communauté Raspberry Pi
+   Un ordinateur à 35€ déjà vendu à 10 millions d'exemplaires
+   ACHETEZ LA RASPBERRY PI 3 ACHETEZ LA NOUVELLE RASPBERRY PI 4
+   Tutoriels en rapport
+   Installer un media-center avec OSMC sur votre Raspberry Pi ! RaspiSMS
+   2.0, envoyer des SMS par internet avec la Raspberry Pi Bien choisir vos
+   accessoires pour les Raspberry Pi 3 et 2 Envoyer, gérer et recevoir des
+   SMS avec la Raspberry Pi Installer un serveur web sur votre Raspberry
+   (Apache + PHP + MySQL)
+   57 commentaires
+   Besoin d'aide ? Vous la trouverez plus vite sur notre forum.
+
+Annuler la réponse
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   ____________________
+
+   ____________________
+
+   ____________________
+
+   Laisser un commentaire
+
+Navigation dans les commentaires
+
+   Commentaires plus récents
+    1. Christophe dit :
+       6 février 2017 à 15 h 24 min
+       Bonjour !
+       D’abord, je me joins aux nombreux commentaires de félicitations :
+       continuez ainsi !
+       Je bloque cependant sur ma config que j’ai mise en place à partir
+       de ce tuto, mais en choisissant d’utiliser des versions plus
+       récentes : nginx 10.2 et php7.0 qui semble offrir des résultats
+       plus rapides.
+       Alors que php7 semble bien installé (j’ai bien une réponse à la
+       commande « php –version ») et nginx également (j’arrive bien à
+       afficher les fichiers html, notamment le « Welcome to nginx on
+       Debian! »), le fichier index.php me renvoie l’erreur « File not
+       Found. »
+       Mon fichier default :
+       server {
+       listen 80 default_server;
+       listen [::]:80 default_server;
+       root /var/www/html;
+       index index.php index.html index.htm;
+       server_name _;
+       location / {
+       try_files $uri $uri/ =404;
+       }
+       location ~ \.php$ {
+       include snippets/fastcgi-php.conf;
+       fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+       # # With php-cgi (or other tcp sockets):
+       #fastcgi_pass 127.0.0.1:9000;
+       }
+       }
+       J’ai déjà bidouillé pas mal le fichier default de nginx, sans
+       succès.
+       Y aurait-il une étape qui m’aurait échappée ?
+       Merci d’avance !
+       Répondre
+    2. Tafsir dit :
+       18 janvier 2017 à 18 h 06 min
+       Bonjour
+       Pour ma part j’utilise un site en local sous mon Raspberry pi 2
+       avec le serveur nginx. J’ai constaté qu’après avoir mise a jour
+       Raspbian pour pouvoir utiliser sur un Raspberry pi 3, mon site
+       n’est plus accessible et j’ai une erreur « 502 Bad Gateway Nginx
+       1.2.1 »
+       Quelqu’un a une astuce sur la marche a suivre
+       Merci d’avance.
+       Répondre
+    3. Marco dit :
+       22 juin 2016 à 20 h 39 min
+       Help !
+       Bonjour,
+       Après avoir passé l’étape de la modification suivante :
+       #location ~ \.php$ {
+       # include snippets/fastcgi-php.conf;
+       #
+       # # With php5-cgi alone:
+       # fastcgi_pass 127.0.0.1:9000;
+       # # With php5-fpm:
+       # fastcgi_pass unix:/var/run/php5-fpm.sock;
+       #}
+       En
+       location ~ \.php$ {
+       include snippets/fastcgi-php.conf;
+       fastcgi_pass unix:/var/run/php5-fpm.sock;
+       }
+       Impossible de sauvegarder les modifications (il semblerait que le
+       fichier soit en lecture seule) … Que dois-je faire pour pouvoir
+       sauvegarder les modifications faites et ainsi passer à l’étape
+       suivante (qui est de taper les commandes sudo chown -R www-data:pi
+       /var/www/html/
+       sudo chmod -R 770 /var/www/html/) ?!
+       Merci d’avance pour votre aide !!!
+       Répondre
+         1. Raspbian France dit :
+            24 juin 2016 à 15 h 22 min
+            Bonjour,
+            Tu dois simplement avoir les droits root pour effectuer cette
+            opération. Pour cela lance la commande :
+            nano /etc/nginx/sites-available/default
+            Répondre
+              1. Julien Vankrinkelen dit :
+                 4 décembre 2016 à 22 h 16 min
+                 Bonjour ! tout d’abord j’adore ce que vous faites, merci
+                 pour ce superbe tuto, mais je suis dans la même situation
+                 que Marco: après avoir remplacer les quelques lignes par
+                 les autres, c’est à dire celles-là:
+                 -location ~ \.php$ {
+                 include snippets/fastcgi-php.conf;
+                 fastcgi_pass unix:/var/run/php5-fpm.sock;
+                 }
+                 -index index.html index.htm index.php;
+                 je ne sais pas comment les enregistrer et ainsi même
+                 quitter cette fenêtre, pourtant j’ai bien rentré cette
+                 ligne:
+                 nano /etc/nginx/sites-available/default
+                 (je suis débutant en raspberry, je ne m’y connais pas du
+                 tout). Donc si vous pouviez m’indiquer comment
+                 enregistrer puis quitter cette fenêtre pour rentrer les
+                 lignes de codes suivantes du tutoriel, je vous remercie
+                 d’avance.
+                 Répondre
+                   1. Raspbian France dit :
+                      8 décembre 2016 à 15 h 17 min
+                      Bonjour,
+                      Pour enregistrer un fichier avec nano, c’est « ctrl
+                      gauche + O », nano va te demander le nom du fichier,
+                      presse entrer pour le valider
+                      Et pour quitter le fichier, c’est « ctrl + X ». : )
+                      Bonne continuation,
+                      RF
+                      Répondre
+    4. EvergreenGOD dit :
+       24 avril 2016 à 14 h 46 min
+       Bonjour à tous!
+       J’ai un problème lorsque je fais la commande sudo /etc/init.d/nginx
+       restart..
+       La console m’affiche :
+       [….] estarting nginx (via systemctl) : nginx.serviceJob for
+       nginx.service failed. See ‘systemctl status nginx.service’ and
+       ‘journalctl -xn’ for details.
+       failed!
+       J’ai donc exécuté ces deux lignes de commandes.
+       ‘systemctl status nginx.service’ me donne (le point devant
+       nginx.service est rouge) :
+       • nginx.service – A high performance web server and a reverse proxy
+       server
+       Loaded ; loaded (/lib/systemd/nginx.service; enabled)
+       Active : failed (Result: exit-code) since dim. 2016-04-24 12:38:56
+       UTC; 28s ago
+       Process: 1815 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on;
+       master_process on; (code=exited, status=1 / FAILURE)
+       ‘journalctl -xn’ quant à lui me donne :
+       Nor journal files were found
+       Est-ce que vous connaissez ce problème? Si oui, comment le résoudre
+       svp?
+       En attendant, je réactive Apache2 😉
+       Répondre
+         1. EvergreenGOD dit :
+            24 avril 2016 à 20 h 05 min
+            J’ai réinitialisé mon Raspberry et réinstallé NGinx sans
+            passer par Apache au préalable, aucun problème ce coup-ci.
+            J’avais dû faire une erreur lors de l’installation au premier
+            essai 😉
+            Merci pour vos tutos, ils sont carrément plus que pratique
+            Répondre
+         2. Raspbian France dit :
+            16 mai 2016 à 19 h 22 min
+            Désolé, mais là pour le coup les logs ne sont pas très
+            parlants :/
+            Nous ne pouvons pas trop t’aider, il va falloir que tu trouves
+            tout seul, sorry !
+            Répondre
+    5. admin dit :
+       10 mars 2016 à 14 h 18 min
+       Le premier pour mon blog autohébergé, le second pour tous mes
+       services perso (wallabag, etc etc)
+       Justement, je suis en train d’installer un etherpad. Celui-ci
+       fonctionne correctement sous 192.168.x.x:9001
+       Je ne veux pas rediriger le port 9001 de ma box vers mon RPI et je
+       souhaite donc rediriger les requêtes du port 80 vers un
+       « sous-dossier » vers la bonne adressr sur le port différent. En
+       théorie, ça me semble très facile à lire les doc que je trouve sur
+       le net mais… j’y arrive pas !
+       Suivi un tuto assez simple sur le net, j’ai créé dans
+       /etc/nginx/conf.d/proxy.conf contenant :
+       proxy_redirect off; (pourquoi off?!?)
+       proxy_set_header Host $host;
+       proxy_set_header X-Real-IP $remote_addr;
+       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       client_max_body_size 10m;
+       client_body_buffer_size 128k;
+       client_header_buffer_size 64k;
+       proxy_connect_timeout 90;
+       proxy_send_timeout 90;
+       proxy_read_timeout 90;
+       proxy_buffer_size 16k;
+       proxy_buffers 32 16k;
+       proxy_busy_buffers_size 64k;
+       Et dans le fichier /etc/nginx/sites-available/monsite (j’ai ajouté
+       le premier « location », le reste fonctionnait nickel avant cet
+       essai, et continue d’ailleurs, pour mes autres services qui sont
+       tous hébergés dans un sous-répertoire, donc simple)
+       server {
+       listen 80;
+       server_name www.monsite.net monsite.net;
+       root /var/www/html;
+       index index index.php index.html index.htm;
+       if (!-e $request_filename) {
+       rewrite ^/(.+)$ /index.php?url=$1 last;
+       break;
+       }
+       location = /pad { // <– j'ai aussi essayé : location = pad {
+       proxy_pass http://127.0.0.1:9001;
+       }
+       location ~ .php$ {
+       try_files $uri =404;
+       fastcgi_pass unix:/var/run/php5-fpm.sock;
+       fastcgi_index index.php;
+       include /etc/nginx/fastcgi.conf;
+       }
+       }
+       Il doit y avoir un truc tout con que je ne pige pas…
+       Une idée? Merci beaucoup d'avance !
+       Répondre
+         1. Raspbian France dit :
+            10 mars 2016 à 17 h 01 min
+            Salut,
+            nous n’avons jamais eu l’occasion d’essayer ce cas, quelqu’un
+            à une idée ?
+            Répondre
+    6. Louis dit :
+       2 mars 2016 à 19 h 20 min
+       Bonjour,
+       Merci pour ce super tuto.
+       J’ai récupéré un site wordpress auparavant hébergé par ovh et l’ai
+       migré sur mon raspberry avec nginx.
+       Celui-ci est bien accessible en local mais pas en distant (j’ai
+       bien configuré le NAT de ma box) : j’obtiens un ‘access denied’ à
+       la racine et une 404 générée par nginx lorsque j’appelle une autre
+       page.
+       Je ne trouve pas d’équivalent à mon problème sur internet, et ne
+       comprends pas pourquoi le comportement est différent en local et en
+       distant.
+       Merci d’avance pour votre aide
+       Répondre
+         1. Raspbian France dit :
+            10 mars 2016 à 16 h 02 min
+            Salut,
+            le problème ne viendrait-il pas du fait que tu as installé
+            WordPress depuis ton réseau locale et que l’URL enregistré par
+            WordPress en base de données ne correspond pas à l’URL
+            publique ?
+            Il ne devrait pas y avoir de différence entre l’accès local et
+            distant !
+            Après, si tu essayes d’appeler une URL noip depuis ton réseau
+            local, tu ne pourras pas y accéder. En revanche, si tu est
+            depuis un réseau externe (smartphone en 3G par exemple), tu
+            devrais y accéder sans problèmes !
+            Répondre
+    7. éric dit :
+       30 janvier 2016 à 12 h 12 min
+       Bonjour, nouveau avec la raspberry pi 2 j’essai d’installer en
+       local un site sous joomla.
+       En suivant votre tuto la dernière version téléchargée de NGINX
+       semble avoir modifié quelque peu le ficher « default » situé dans :
+       /etc/nginx/sites-available (comme le signal plus haut Florian
+       Rolland).
+       après avoir « débloqué les droits » pour pouvoir modifier le
+       fichier « default » avec la ligne :
+       sudo chown -R pi:www-data /etc/nginx/sites-available
+       voici les contenus du fichier « default » :
+       a – dans votre tuto vous dites : et cherchez les lignes
+       1 root /usr/share/nginx/www;
+       2 index index.html index.htm;
+       pour les remplacer par les lignes
+       1 root /var/www;
+       2 index index.html index.htm index.php;
+       or voici ce que j’ai dans mon fichier « default » qui ressemble le
+       plus ! :
+       1 root /var/www/html;
+       2 # Add index.php to the list if you are using PHP
+       index index.html index.htm index.nginx-debian.html;
+       —-Merci de m’indiquer les modis à faire pour ces 2 lignes—-
+       b – par la suite vous dites :
+       Nous allons maintenant activer php-fpm pour Nginx.
+       …
+       et décommentez les lignes nécessaires, afin d’obtenir le résultat
+       suivant :
+       …
+       voici ce que j’ai :
+       #location ~ \.php$ {
+       # include snippets/fastcgi-php.conf;
+       #
+       # # With php5-cgi alone:
+       # fastcgi_pass 127.0.0.1:9000;
+       # # With php5-fpm:
+       # fastcgi_pass unix:/var/run/php5-fpm.sock;
+       #}
+       —-Merci de m’indiquer les lignes à décommenter—-
+       merci d’avance,
+       salsaplus
+       Répondre
+         1. Raspbian France dit :
+            8 février 2016 à 11 h 55 min
+            Salut,
+            pour « /var/wwww/html », tu peux laisser comme tel, il faudra
+            donc que tu mettes tes sites dans ce dossier.
+            Pour les index, il faut simplement ajouter « index.php » avant
+            le point virgule.
+            Pour la partie activation de php, décommente la ligne
+            « location », la ligne en dessous et les deux dernières
+            lignes.
+            Répondre
+    8. Florian Rolland dit :
+       5 janvier 2016 à 20 h 00 min
+       Bonsoir,
+       En voulant paramétré Nginx pour le php, j’obtiens rien d’identique
+       :
+       #location ~ \.php$ {
+       # include snippets/fastcgi-php.conf;
+       #
+       # # With php5-cgi alone:
+       # fastcgi_pass 127.0.0.1:9000;
+       # # With php5-fpm:
+       # fastcgi_pass unix:/var/run/php5-fpm.sock;
+       #}
+       Je prend quand même le contenue de celui du tuto ?
+       Répondre
+         1. Florian Rolland dit :
+            5 janvier 2016 à 21 h 06 min
+            Edit: Problème resolue
+            Répondre
+              1. Raspbian France dit :
+                 12 janvier 2016 à 18 h 16 min
+                 Ok, super !
+                 Répondre
+         2. Raspbian France dit :
+            12 janvier 2016 à 18 h 13 min
+            Salut,
+            tu peux nous donner ce que tu as ?
+            Répondre
+         3. Don Peco dit :
+            2 février 2016 à 16 h 12 min
+            Bonjour, merci pour le tuto, effectivement!
+            Je reviens sur le com de Florian Rolland, je viens de me
+            lancer dans l’aventure, et je n’ai pas du tout le même contenu
+            dans le fichier /etc/nginx/sites-available/default
+            Et donc, je voulais savoir également si c’est une histoire de
+            mise à jour, et comment gérer ça. Perso, j’ai des bases en
+            info, mais elles prennent régulièrement la poussière :p Vous
+            me conseillerez Apache aussi?
+            Merci
+            Répondre
+    9. numa dit :
+       4 décembre 2015 à 22 h 57 min
+       Bonjour,
+       Je vous invite à lire ce lien concernant l’activation de php-fpm :
+       http://www.pedaldrivenprogramming.com/2015/04/upgrading-wheezy-to-j
+       essie:-nginx-and-php-fpm/
+       Pour faire court, si vous obtenez une page blanche lorsque vous
+       tentez d’accéder à votre index.php, il faut modifier votre
+       /etc/nginx/sites-available/default en remplaçant :
+       include fastcgi_params
+       par :
+       include fastcgi.conf
+       Personnellement je n’ai pas rencontré le problème sur les wheezy
+       « dist-upgradé » en jessie (debian 7.8) mais j’ai dû faire la modif
+       sur mes Pi natifs en 2015-11-21-raspbian-Jessie (debian 8.0).
+       Répondre
+   10. Phil dit :
+       27 septembre 2015 à 13 h 47 min
+       Bonjour,
+       la version proposée par Raspbian est la 1.2 alors que sur le site
+       de Nginx on présente une 1.8 stable.
+       J’ai essayé beaucoup de tutoriels sensés proposer une version plus
+       récente, mais sans succès.
+       Auriez-vous une idée ?
+       Merci.
+       Répondre
+         1. Raspbian France dit :
+            23 octobre 2015 à 23 h 11 min
+            Bonjour,
+            avec la dernière version de Raspbian, le problème est-il
+            toujours présent ?
+            Répondre
+   11. PAQUELIER dit :
+       27 avril 2015 à 16 h 27 min
+       merci je crois avoir compris
+       alain
+       Répondre
+   12. PAQUELIER dit :
+       27 avril 2015 à 14 h 57 min
+       1° médecin à la recherche d’une sécurité sur certains dossiers
+       médicaux j’avais retrouvé une tour ancienne sur laquelle je me suis
+       installé un »cloud  » (owncloud sous ubuntu)ssh.le ventilateur
+       commence a être à faire beaucoup de bruit après 15 ans de loyaux
+       service.
+       j’ai acheté un raspburryPI2 et je comptais transférer mon owncloud
+       auquel je suis habitué (graphisme) à la lecture il semblerait
+       « mieux » de passer à « ngnix ».
+       Pourrais-je alimenter mon serveur automatique a partir de mon
+       laptop lorsque je suis aux us autrement dit y a il un  » ngnix
+       client » a charger sur mon laptop?
+       Sur le serveur ngnix pourrais-je accueillir comme sous « owncloud
+       » un autre client (confrère)?
+       Répondre
+         1. Raspbian France dit :
+            27 avril 2015 à 15 h 42 min
+            Salut,
+            en fait Nginx sert de base à Owncloud. En gros Owncloud viens
+            poser une couche supplémentaire, et c’est lui qui va gérer
+            toute la partie « cloud ».
+            Nginx permet juste à ton navigateur internet et au serveur de
+            discuter entre eux.
+            Si tu n’es pas très à l’aise avec l’informatique, je te
+            conseil plutôt d’installer Apache que Nginx (un tutoriel est
+            disponible sur notre site), celui-ci étant plus simple à
+            mettre en place et à configurer.
+            Répondre
+   13. Qwaser dit :
+       15 février 2015 à 3 h 35 min
+       J’aurai une question, je compte avoir deux sites web sur mon
+       Raspberry Pi 2, est-il possible de faire tourner le site (ou plutôt
+       la page web) statique sous Nginx et le site dynamique (PHP + Base
+       de donnée) sous Apache ?
+       En tout cas merci pour vos tutoriels qui me sont d’une aide
+       précieuse pour apprendre à maîtriser mon Raspberry 🙂
+       Répondre
+         1. Raspbian France dit :
+            17 février 2015 à 10 h 06 min
+            Bonjour,
+            oui cela est possible, il faudra cependant que tu définisse
+            les pots d’écoute des deux serveur sur deux ports différents.
+            Sinon, tu dois pouvoir y arriver avec des « virtual host ».
+            Mais pourquoi souhaite tu mettre un site statique sous Nginx
+            et un autre sous Apache ? Pourquoi ne pas tout mettre sous
+            Nginx ?
+            Répondre
+              1. Qwaser dit :
+                 26 février 2015 à 12 h 55 min
+                 Merci de votre réponse 🙂
+                 Je demandais cela car j’avais lu qu’Nginx était plus
+                 adapté au site statique alors qu’Apache était plus
+                 conseillé pour les sites dynamique ^^
+                 Mais du coup je vais tout passer sur Nginx et ajoutant
+                 PHP, MySQL et PHPMyAdmin 😀
+                 Répondre
+                   1. Raspbian France dit :
+                      3 mars 2015 à 9 h 33 min
+                      Ok, je pense que c’est effectivement la bonne
+                      solution.
+                      Nginx est tout à fait adapté à un site dynamique,
+                      seul point noir peut-être, le fait que sa mise en
+                      place en terme de configuration soit souvent un
+                      petit peu plus complexe.
+                      Répondre
+   14. Epoc dit :
+       16 janvier 2015 à 15 h 22 min
+       Hello,
+       Vers la fin de l’article, il y a écrit :
+       « Et si ce n’est pas suffisant, vous pouvez installer un cache php,
+       **ou encore un php5-fpm**. Nous ferons peut-être un tutoriel dessus
+       dans quelques temps ;). »
+       Je pense que c’est une petite coquille 🙂
+       Répondre
+         1. Raspbian France dit :
+            17 janvier 2015 à 13 h 15 min
+            Salut,
+            merci pour l’info, c’est corrigé 🙂
+            C’était effectivement une petite erreur de notre part lors de
+            l’écriture du tutoriel.
+            Répondre
+   15. cybR dit :
+       10 décembre 2014 à 2 h 54 min
+       Impeccable pour moi en tout cas, mais je me pose tout de même une
+       question :
+       pour accéder a phpinfo(); il me faut entrer
+       ‘http://192.168.x.x/index.php’ ,
+       est-ce normal ?
+       tuto excellent qui va surement me rendre heureux ….
+       Répondre
+         1. Raspbian France dit :
+            17 décembre 2014 à 11 h 29 min
+            Salut,
+            as-tu bien une ligne fastcgi_index index.php; dans ton fichier
+            de configuration Nginx ?
+            Si ce n’est pas le cas, rajoute là et redémarre Nginx.
+            Ça devrait permettre d’utiliser la page « index.php » par
+            défaut, et tu n’aurais donc plus qu’à aller sur
+            « http://192.168.x.x/ ».
+            Répondre
+   16. JPhi dit :
+       8 décembre 2014 à 22 h 47 min
+       merci Gorhyan !!
+       grâce aux commentaires j’ai pu compléter l’installation ! 😉 🙂
+       maintenant je passe à PHPMyAdmin
+       Répondre
+   17. Théo Fleury dit :
+       4 octobre 2014 à 17 h 12 min
+       Très bon article,
+       Cependant un faute c’est glissé dedans :
+       « Cependant, Nginx **vos** vraiment le coup, et c’est sans doute un
+       meilleur choix qu’Apache pour un serveur web sur la Raspberry. »
+       ** vos = vaut **
+       Cdt
+       Répondre
+         1. Raspbian France dit :
+            17 décembre 2014 à 13 h 55 min
+            Merci, nous avons corrigé.
+            Répondre
+   18. JF dit :
+       3 septembre 2014 à 13 h 03 min
+       Bonjour,
+       Je voulais savoir ce qui vous a emmener à faire un tuto sur Nginx
+       plutôt que lighthttpd ?
+       Merci et bonne journée 🙂
+       Répondre
+         1. Raspbian France dit :
+            17 décembre 2014 à 14 h 11 min
+            Bonjour,
+            nous avons choisi Nginx parce-qu’il fait une réelle percée en
+            ce moment, et qu’il est de plus en plus utilisé en entreprise.
+            De plus, Nginx semble montrer une stabilité en terme de
+            consommation de ressource et des performances en terme de
+            requêtes par seconde, qui sont légèrement au dessus de celles
+            de Lighthttpd.
+            Néanmoins, nous réfléchirons à faire un tutoriel sur
+            Lighthttpd.
+            Répondre
+   19. Gorhyan dit :
+       31 juillet 2014 à 20 h 05 min
+       Je continu mon petit monologue de questions reponses, mais j’ais
+       réussis à m’en sortir après de nombreux bidouillage.
+       Tout d’abord création du var/www:
+       mkdir /var/www
+       chown -R www-data:www-data /var/www
+       Ensuite dans « /etc/nginx/sites-available/default » j’ai décommenté
+       la ligne server tout en haut, l’écoute sur le port 80, et une ligne
+       qui parle de l’index.html (je ne suis pas sur que tout soit utile,
+       mais aprés de nombreux essais cela marche enfin). Voici ce que cela
+       me donne (je ne tape que les lignes modifiées):
+       server {
+       listen 80;
+       root /var/www;
+       index index.php index.html index.htm;
+       location / {
+       try_files $uri $uri/ /index.html;
+       }
+       location ~ \.php$ {
+       fastcgi_split_path_info ^(.+\.php)(/.+)$;
+       fastcgi_pass unix:/var/run/php5-fpm.sock;
+       fastcgi_index index.php;
+       include fastcgi_params;
+       }
+       Répondre
+   20. Gorhyan dit :
+       31 juillet 2014 à 18 h 11 min
+       Bonjour, encore moi…
+       J’ai bien suivis le tuto, quand je lance une requête depuis la rasp
+       j’obtiens le message « Welcome to nginx! ».
+       Par contre si j’essaye « echo ‘Nginx marche !’ >
+       /var/www/index.html » la j’obtient: « aucun fichier ou dossier de
+       ce type ». Que faire?
+       Répondre
+   21. Gorhyan dit :
+       23 juillet 2014 à 1 h 29 min
+       Bonjour,
+       Tout d’abord bravo pour votre site et ces tutos clairs.
+       Je me permet se message car je souhaiterai me monter un serveur de
+       stockage afin de partager des donnés avec mes proches (qui habitent
+       loin). Pour cela j’ai enfin franchis le pas en commandant une belle
+       framboise qui me fais de l’œil depuis pas mal de temps (j’attends
+       avec impatience un B+).
+       N’y connaissant rien en serveur, je me posai la question suivante:
+       vos tutos portent sur l’installation d’un serveur web. Est ce que
+       cela fonctionne tout pareil auquel cas j’installe les même
+       logiciels, ou y à t’il des différences?
+       Merci d’avance.
+       Répondre
+         1. Gorhyan dit :
+            29 juillet 2014 à 19 h 35 min
+            en fait pas besoin de répondre je me rend comte de l’énorme
+            bêtise de ma question. j’heberge ce que je veux sur le serveur
+            (autant site web que des fichiers)
+            Répondre
+              1. Raspbian France dit :
+                 30 juillet 2014 à 19 h 00 min
+                 Pas de problème, la question est loin d’être idiote. Tu
+                 peux effectivement monter un serveur web et herbergé tes
+                 fichiers dessus, mais tu peux aussi avoir intéret à
+                 monter plutôt un serveur ftp.
+                 Nous n’avons pas encore fait de tutoriels sur le sujet,
+                 car nous n’utilisons nous-même que rarement de tels
+                 serveurs, cependant nous prendront prochainement le temps
+                 de faire un tutoriel dessus.
+                 Répondre
+   22. Arthurius dit :
+       22 juillet 2014 à 14 h 29 min
+       Merci pour ce tuto, vraiment très utile. Je viens d’effectuer ma
+       migration de apache à Nginx et le résultat est vraiment FLAGRANT !
+       Nginx est vraiment beaucoup plus rapide, merci =)
+       Répondre
+         1. Raspbian France dit :
+            22 juillet 2014 à 16 h 37 min
+            Ravi de t’avoir aidé, si tu as un site, n’hésite pas à mettre
+            un lien pour faire connaitre Raspbian France.
+            Répondre
+   23. PatBriPerso dit :
+       19 juin 2014 à 22 h 30 min
+       Il manque, de mon point de vue, une chose à ce tuto pourtant déjà
+       très fourni : la configuration de phpmyadmin avec nginx.
+       En suivant votre tuto sur l’installation de Apache/PHP/MySQL,
+       j’avais également installé phpmyadmin. Mais en installant nginx (et
+       donc en arrêtant apache), phpmyadmin ne répond plus.
+       Je suppose qu’il est possible de le reconfigurer avec nginx mais
+       comment procéder ?
+       Je vais chercher dans la doc de nginx 😉
+       Répondre
+         1. PatBriPerso dit :
+            19 juin 2014 à 23 h 23 min
+            J’ai trouvé un exemple de configuration pour phpmyadmin ici :
+            http://www.howtoforge.com/running-phpmyadmin-on-nginx-lemp-on-
+            debian-squeeze-ubuntu-11.04
+            Je l’ai adapté (en remplaçant les lignes concernant fastcgi)
+            et voilà ce que cela donne :
+            location /phpmyadmin {
+            root /usr/share/;
+            index index.php index.html index.htm;
+            location ~ ^/phpmyadmin/(.+\.php)$ {
+            try_files $uri =404;
+            root /usr/share/;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            fastcgi_index index.php;
+            include fastcgi_params;
+            }
+            location ~*
+            ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$
+            {
+            root /usr/share/;
+            }
+            }
+            J’ai collé ce texte juste après
+            location / {
+            …
+            }
+            J’ai enregistré le fichier puis redémarré nginx et phpmyadmin
+            fonctionne (en tout cas je peux me connecter et voir les
+            bases).
+            Répondre
+              1. raspbian-france dit :
+                 20 juin 2014 à 15 h 24 min
+                 Effectivement, nous n’avions pas pensé à PHPMyAdmin,
+                 ayant plutôt tendance à employer la ligne de commande
+                 MySQL sur le serveur exécutant Nginx.
+                 Nous ajouterons une partie sur PHPMyAdmin sous peu, avec
+                 la configuration que tu donnes, merci à toi.
+                 Répondre
+   24. Maxime dit :
+       11 juin 2014 à 11 h 18 min
+       Merci pour ce tuto très utile !!!
+       Je me permet de vous signaler une faute de frappe, le fichier de
+       configuration de Nginx se situe dans
+       « /etc/nginx/sites-available/default » et non pas dans
+       « /etc/nginx/sites-avaible/default ». La commande à exécuter est
+       donc « nano /etc/nginx/sites-available/default ».
+       Répondre
+         1. raspbian-france dit :
+            11 juin 2014 à 15 h 17 min
+            Merci de nous avoir signalé le problème, nous corrigeons
+            immédiatement.
+            Répondre
+
+Navigation dans les commentaires
+
+   Commentaires plus récents
+   Partager
+     * Twitter
+     * Facebook
+     * Google +
+     * E-mail
+
+   Inscription à la Newsletter
+   ____________________ S'inscrire
+   Inscrivez-vous à la Newsletter.
+   Vous avez aimé cet article ?
+   Inscrivez-vous et restez informé !
+   ____________________ S'inscrire
+
+   [logo-raspbian-gray-small.png] [svg%3E]
+   Copyright © 2016 Raspberry Pi FR - Textes soumis au droit d'auteur
+   Conditions Générales d'Utilisation
+   Raspberry Pi est une marque déposée de la Raspberry Pi Foundation
+   GitHub Twitter RSS
+    #Raspberry Pi FR » Flux de l’étiquette vpn
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KSNWSC
+
+   Raspberry Pi FR Raspberry Pi FR Raspberry Pi FR
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+     * Accueil
+     * Tutoriels
+     * Actualités
+     * Téléchargements
+     * Contact
+          + Publiez un article chez Raspbian France
+          + Contactez nous
+          + Nos partenaires
+     * Forum
+     * Français Français
+
+Les articles qui parlent vpn
+
+   Vous cherchez un article autour de ce sujet ?
+   Vous êtes au bon endroit !
+   ____________________ (BUTTON)
+   Tous les articles
+   [anonymous-626x352.jpeg] [svg%3E]
+
+Connectez votre Raspberry Pi à un VPN
+
+   Par Raspberry Pi FR le 28 juin 2017 - 11 commentaires
+
+   Cet article fait suite à l’article sorti la semaine dernière sur la
+   mise en place d’une seedbox personnelle. En effet comme on l’a suggéré
+   à la fin de l’article, il peut être très intéressant de rendre anonyme
+   le trafic internet de votre seedbox grâce à l’utilisation d’un VPN. Cet
+   article restera néanmoins utile à tous ceux […]
+   Lire la suite de l'article
+
+   [logo-raspbian-gray-small.png] [svg%3E]
+   Copyright © 2016 Raspberry Pi FR - Textes soumis au droit d'auteur
+   Conditions Générales d'Utilisation
+   Raspberry Pi est une marque déposée de la Raspberry Pi Foundation
+   GitHub Twitter RSS

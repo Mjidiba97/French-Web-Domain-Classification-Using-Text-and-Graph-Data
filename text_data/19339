@@ -1,0 +1,4372 @@
+   #Accueil Archives Un calendrier toujours à portée de main Dépôt
+   Mercurial sur CentOs, Part 2 : Mercurial RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+   « Dépôt Mercurial sur CentOs, Part 2 : Mercurial --|-- Un calendrier
+                       toujours à portée de main »
+
+Midori, un navigateur web léger et configurable.
+
+   Cet article a été publié par Xenom le 07-12-09 à 14:41 dans la
+   catégorie Logiciels
+   Tags : - Libre - Test
+
+   J'ai découvert il y a quelques temps un navigateur web léger et rapide.
+   Il s'agit de Midori.
+
+   Midori est basé sur GTK+2 et WebkitGTK+ (un portage de Webkit pour
+   GTK+). C'est d'ailleurs le navigateur web du projet XFCE.
+   La dernière version est la 0.2.1 sortie le 14 novembre 2009.
+
+   Pour ceux qui se le demande, ce logo représente une patte de chat verte
+   stylisée.
+
+   C'est un navigateur encore jeune, mais il est déjà assez complet et
+   performant. Personnellement j'utilise la version git, de développement,
+   pour suivre les évolutions qui sont assez rapides, mais qui est quand
+   même relativement stable, je dois avoir un crash toutes les quelques
+   heures au maximum.
+
+Un aperçu des fonctionnalités :
+
+     * Intégration avec GTK+2.
+     * Rendu rapide et respectueux des normes grâce à Webkit.
+     * Onglets et gestions des fenêtres et session.
+     * Gestion des signets (marques-pages).
+     * Scripts et styles utilisateur.
+     * Barre d'adresse "intelligente".
+     * Vérification orthographique.
+     * Interface configurable.
+     * Suppression des données personnelles (historiques, cookies,
+       "cookies Flash") et gestionnaire de cookie.
+     * Page d'appel rapide (comme FastDial ou SpeedDial).
+     * Personnalisation des barres d'outils.
+
+Utilisation et paramétrage:
+
+   Midori à une interface semblable à la plupart des navigateurs, vous ne
+   serez pas trop surpris.
+
+   Midori à un tableau latéral qui permet d'afficher les extensions,
+   l'historique, les télechargements...
+     * Les scripts utilisateurs permettent principalement d'agir sur les
+       pages, comme Greasemonkey sous Firefox, d'ailleurs beaucoup de
+       scripts Greasemonkey peuvent être utilisés avec Midori. Ces scripts
+       sont à placer dans le répertoire ~/.local/share/midori/scripts, les
+       styles dans le répertoire ~/.local/share/midori/styles. Un exemple
+       : FlashBlock WannaBe. Les styles sont des feuilles de style (CSS)
+       appliqués à certains/tous les sites. Pour en trouver :
+       http://userstyles.org/.
+     * Parmi les extensions proposées avec Midori, il y a un bloqueur de
+       pub, une fonction "cadre" pour afficher plusieurs pages en
+       parallèle, la gestion des mouvements de souris ("mouse gesture"),
+       un cache web,...
+     * Il faut préciser la langue pour le correcteur orthographique. Il
+       doit être paramétré avec "fr_FR" pour le français.
+     * Il est possible de choisir son agrégateur de flux RSS, qu'il soit
+       local ou en ligne. Pour les navigateurs en ligne, il suffit
+       d'entrer  : « midori » suivi d'une espace et du lien de
+       souscription terminé par les caractères « %s » (par exemple, pour
+       Netvibes : midori http://www.netvibes.com/subscribe.php?url=%s).
+
+   SCREENSHOT!!
+
+   En conclusion, je dirait que si vous cherchez un navigateur web léger,
+   rapide, configurable et en GTK+2 je vous conseille fortement Midori. Il
+   n'a peut être pas toutes les extensions de Firefox, mais grâces aux
+   scripts et aux extensions présente par défaut , il présente les
+   fonctions essentielles et d'autres très pratique.
+
+   Si vous préférez Qt je vous conseille aussi Arora. Je vous ferais aussi
+   bientôt un article sur un navigateur un peu plus particulier : uzbl.
+   Site officiel.
+
+   La page de documentation pour ubuntu, pour les PPA de la versions de
+   développement.
+
+Commentaires
+
+   1. Le 07-12-09, 23:56 par antistress
+          Tiens, un devoir de collégien !
+          Etant à l'origine de la plus grande partie de la page wikipédia,
+          ça me fait drôle de lire une resucée qui ne dit pas sa source.
+          Allez, je prendrai ça pour un compliment ;-)
+
+   2. Le 08-12-09, 08:28 par Desidia
+          @antistress :
+
+          Ça n'est pas un peu de la mauvaise foi, ce commentaire ? Il n'y
+          a pas trente-six mille manières d'énumérer les fonctionnalités
+          d'un logiciel. On peut aussi planter un panneau «propriété
+          privée» sur les articles de Wikipédia, et quelques barbelés pour
+          faire joli.
+
+   3. Le 08-12-09, 10:36 par antistress
+          @Desidia :
+          "Il n'y a pas trente-six mille manières d'énumérer les
+          fonctionnalités d'un logiciel"
+          En parlant de mauvaise foi tu t'y connais visiblement : c'est un
+          copier-coller au mot près, pas une coïncidence
+          Collégien, va !
+
+   4. Le 08-12-09, 15:36 par dhoko
+          Un très bon navigateur qui grandit vite, il y a pas si longtemps
+          il n'était pas très stable. Je l'utilise très souvent car hélas
+          Opera n'est pas aussi bon sous linux que sous Windows. Il est
+          rapide et se lance très rapidement. Mais depuis la disponibilité
+          de Chromium sous Linux je le trouve moins intéressant car il est
+          un peu plus lent. Mais bien plus complet.
+          Comme son cousin Arora il est prêt pour une utilisation
+          quotidienne comme navigateur usuel je trouve.
+
+   5. Le 08-12-09, 16:02 par Benjamin
+          C'est marrant comme insulte ça : "Collégien"...
+          Je pense que l'auteur de l'article appréciera ;)
+
+   6. Le 08-12-09, 17:27 par xenom
+          @antistress : La seule chose reprise de Wikipedia est l'exemple
+          pour netvibes (que j'ai d'ailleurs trouvé d'abord sur un autre
+          site).
+          La liste est reprise du site officiel. L'article sur Wikipedia
+          n'a fait que la reprendre. Mais bon si ca te fait plaisir de
+          croire avoir ecrit un article original.
+
+   7. Le 08-12-09, 17:46 par antistress
+          Extrait de Wikipedia, outre la liste de fonctionnalités, citons
+          au hasard :
+          "Paramétrer et optimiser Midori
+          - Les scripts sont à placer dans le répertoire
+          ~/.local/share/midori/scripts, les styles dans le répertoire
+          ~/.local/share/midori/styles. Quelques exemples : Ad Blocking
+          FiltersetP, FlashBlock WannaBe.
+          - le vérificateur d'orthographe doit être paramétré avec "fr_FR"
+          pour le français,
+          - Il est possible de déclarer dans les préférences du navigateur
+          (onglet Général) quel agrégateur utiliser pour gérer les flux
+          RSS. Ce peut être un agrégateur local ou en ligne. Dans ce
+          dernier cas, il suffit d'entrer pour commande : « midori » suivi
+          d'une espace et du lien de souscription terminé par les
+          caractères « %s » (par exemple, pour Netvibes : midori
+          http://www.netvibes.com/subscribe.p...)."
+
+          Chacun se fera sa propre opinion. Pour moi citer la source
+          (Wikipedia) est une question d'éthique, ce genre de choses qui
+          fait le monde des logiciels libres. La parenthèse étant
+          refermée, n'hésite pas à compléter/modifier la page wikipédia de
+          Midori au fur et à mesure de ton utilisation du logiciel, il en
+          vaut effectivement la peine
+
+   8. Le 08-12-09, 18:21 par Xenom
+          @antistress : Comme je l'ai deja dit , l'astuce sur Netvibes
+          provient de wikipedia. Mais nullement le reste. Toute la partie
+          sur les scripts est décrite dans la faq de midori, qui
+          effectivement donne les même exemples (d'un cote c'est les
+          fonctions les plus demandés).
+          L'astuce sur la langue n'est pas dure à trouver quand on a
+          l'habitude de configurer a(i)spell.
+
+          Je cite les sources quand je les utilisent, je n'y peut rien si
+          l'article de wikipedia est comme mon article un résumé de la faq
+          officielle... Il faut pas crier au plagiat quand on reprend deja
+          une source soit même.
+
+   9. Le 08-12-09, 18:36 par antistress
+          Pout ton info le rédacteur de la FAQ et moi-même échangeons sur
+          le forum ubuntu-fr dans l'intérêt de la documentation relative à
+          Midori il n'y donc pas de plagiat en ce qui me concerne mais une
+          mise à jour parallèle des deux sources.
+          Je crois que tout est dit et bien plus clair maintenant.
+
+          Sinon : une coquille à "Pour ceux qui se le demande".
+
+          Voilà pour terminer cette longue parenthèse sur la forme
+
+          Sur le fond : dommage que tu ne donnes pas d'avantage ton avis
+          sur le soft, on reste un peu sur sa faim (même si, il est vrai,
+          un des gros avantages du logiciel libre est que chacun peut se
+          faire son avis facilement en installant le logiciel)
+
+   10. Le 17-12-09, 21:01 par blinux83
+          J'ai un pc sous debian lenny xfce et la compliation de midori
+          est impossible a cause de trop de dépendances non résolues.
+          Par contre sur le pc sous debian testing xfce et celui sous
+          ubuntu karmic gnome pas de soucis !
+          C'est dommage car il aurais été intérressant de l'utiliser sur
+          un ordinausor reconditionné avec une Lenny sous openbox ou xfce
+          !
+
+   11. Le 25-12-09, 14:50 par dam
+          HELP !!!!! Etant très satisfait de Slitaz je viens de
+          télécharger Midori afin de bénéficier d'un navigateur plus léger
+          que firefox ... hormis le fait qu'il soit un peu plus lent, je
+          n'arrive pas à me signer sur des pages essentielles telles
+          qu'hotmail ou facebook ... que faut il que je configure ?
+
+   12. Le 20-01-10, 05:35 par tatave
+          Heu..
+          excellent
+          mais kelkun peut me dire ou placer les fichiers de styles et
+          scripts [INS: mais sous xp :INS] dans midori?
+
+          merci
+
+   13. Le 10-05-10, 14:52 par Le_mecreant
+          Comment faire pour lire des video real player sous midori. Peut
+          on y integrer un plugin xine?
+          Merci d'avance
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives billets précédents billets suivants Auto-hébergment :
+   mon système de sauvegarde Auto-hébergement : Mon experience, mes
+   problèmes, mes idées Auto-hébergement : compte-rendu de vos témoignages
+   Soyez votre propre fournisseur OpenID avec SimpleID Sécurisation de son
+   serveur : fail2ban RSS 2.0 Atom 1.0 Blogroll
+
+     * Accueil
+     * Archives
+     * Tags
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+
+Mot-clé - Serveur
+
+   Fil des billets
+
+   19-06-11
+
+Auto-hébergment : mon système de sauvegarde
+
+   Par Benjamin le 19-06-11, 18:58 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   La sauvegarde est un élément très important dans l'auto-hébergement. On
+   oublie la sauvegarde, ça crash, on a plus rien...
+   Pendant quelques semaines après avoir mis en place mon
+   auto-hébergement, je n'avais toujours qu'un seul disque dur dans mon
+   serveur, je lui faisais confiance :)
+
+   Et puis j'ai eu un petit problème sur un serveur au boulot, problème
+   qui a miraculeusement été résolu grâce à une sauvegarde efficace. Je me
+   suis donc décidé à investir un peu de mon temps dans la sauvegarde de
+   mon serveur perso.
+
+   backup.png
+
+   Lire la suite...
+
+   9 commentaires
+
+   31-03-11
+
+Auto-hébergement : Mon experience, mes problèmes, mes idées
+
+   Par Benjamin le 31-03-11, 21:38 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   Il est inutile de rappeler les (nombreuses) raisons qui m'ont poussé à
+   m'auto-héberger (contrôle de ses données, indépendance, faire du vrai
+   Internet, etc.). J'ai décidé de faire un article sur mon expérience
+   dans l'auto-hébergement. Mes interrogations, mes succès, mes échecs, où
+   j'en suis actuellement, les difficultés rencontrées, comment je les ai
+   résolues.
+
+   Cela suscitera peut-être des "vocations" d'auto-hébergement chez
+   certaines personnes hésitant encore.
+
+   logo_internet.png
+
+   Lire la suite...
+
+   13 commentaires
+
+   15-01-11
+
+Auto-hébergement : compte-rendu de vos témoignages
+
+   Par Benjamin le 15-01-11, 22:30 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   Vous avez été nombreux à répondre aux questions que je vous avais posé
+   sur l'article Auto-hébergement : vos témoignages m'intéressent !.
+   Merci à tous !
+
+   Je vais donc faire un résumé de vos réponses, réponses qui m'ont fait
+   découvrir de nombreux logiciels, beaucoup de matériel et qui m'a montré
+   que l'auto-hébergement se démocratise de plus en plus.
+
+   Lire la suite...
+
+   7 commentaires
+
+   08-01-11
+
+Soyez votre propre fournisseur OpenID avec SimpleID
+
+   Par Benjamin le 08-01-11, 13:01 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+     * Tutoriel
+
+   J'ai eu du mal à trouver un titre court et précis pour cet article.
+   Voici les points que je sohaite aborder dans cet article : Qu'est ce
+   qu'OpenID ? Qu'est ce qu'être fournisseur OpenID ? Pourquoi l'être ?
+   Comment l'être ?
+
+   Il est temps de reprendre le contrôle de nos données. Ça, je ne vous
+   l'apprends pas. Mais que pensez-vous de reprendre également le contrôle
+   de votre identité numérique, de vos identifiants, de vos mots de passe.
+   Comment centraliser vos informations personnelles chez vous, sur votre
+   machine ?
+
+   Je vais essayer de répondre à ces questions dans cet article.
+
+   Lire la suite...
+
+   24 commentaires
+
+   27-12-10
+
+Sécurisation de son serveur : fail2ban
+
+   Par Benjamin le 27-12-10, 21:34 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   Comme l'a très bien dit Tancrède dans son article "La sécurité
+   sera-t-elle l'argument anti auto-hébergement ?" :
+
+     S'il y a bien une raison qui pourrait s'opposer à
+     l'auto-hébergement, je pense que ce serait celle de la sécurité.
+     C'est probablement le point noir qui empêchera, voire interdira,
+     l'auto-hébergement.
+
+   Je suis assez d'accord avec lui et vous invite à lire son article.
+   Aussi, j'ai décidé de partager mon experience en vous montrant une
+   première sécurisation quasi-indispensable pour votre serveur =>
+   fail2ban, un logiciel qui scrute les fichiers de logs à la recherche
+   d'actions suspectes et bannit les utilisateurs mal intentionnés grâce
+   aux iptables.
+
+   Lire la suite...
+
+   8 commentaires
+
+   « billets précédents - page 3 de 9 - billets suivants »
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives billets précédents billets suivants Un émulateur
+   Super Nintendo sous Linux : ZSNES The Battle for Wesnoth Comment
+   installer Heart Of Darkness sur le Eeepc 701 Installation de jeux
+   Windows sous GNU/Linux avec PlayOnLinux Savage 2 devient gratuit RSS
+   2.0 Atom 1.0 Blogroll
+
+     * Accueil
+     * Archives
+     * Tags
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+
+Mot-clé - Jeux
+
+   Fil des billets
+
+   06-01-09
+
+Un émulateur Super Nintendo sous Linux : ZSNES
+
+   Par Benjamin le 06-01-09, 01:00 - Jeux
+     * EeePC
+     * Jeux
+     * Libre
+     * Tutoriel
+     * Ubuntu
+
+   Je continue ma série des émulateurs sous Linux. Après l'émulateur NES,
+   j'ai décidé de vous présenter zsnes, l'émulateur pour ma deuxième
+   console préférée : la Super Nintendo.
+
+   Lire la suite...
+
+   32 commentaires
+
+   27-12-08
+
+The Battle for Wesnoth
+
+   Par Vincent Valentine le 27-12-08, 17:56 - Jeux
+     * Jeux
+     * Libre
+     * Test
+     * Ubuntu
+
+   Bonjour,
+   Aujourd'hui, je vais vous faire découvrir un jeu de stratégie au tour
+   par tour : The Battle for Wesnoth.
+
+   Lire la suite...
+
+   6 commentaires
+
+   23-12-08
+
+Comment installer Heart Of Darkness sur le Eeepc 701
+
+   Par Vincent Valentine le 23-12-08, 12:20 - Autres
+     * Jeux
+     * Libre
+     * Tutoriel
+     * Ubuntu
+
+   Bonjour,
+
+   Comme promis, je fais suite au sujet sur PlayOnLinux et Wine.
+   Aujourd'hui, nous allons donc voir comment installer un jeux Windows
+   sur le Eeepc avec GNU/Linux/Ubuntu (Na !), Wine et PlayOnLinux.
+
+Atelier bricolage : Comment installer Heart Of Darkness sur le Eeepc 701.
+
+   Lire la suite...
+
+   7 commentaires
+
+   16-12-08
+
+Installation de jeux Windows sous GNU/Linux avec PlayOnLinux
+
+   Par Vincent Valentine le 16-12-08, 19:54 - Jeux
+     * Jeux
+     * Libre
+     * Tutoriel
+     * Ubuntu
+
+   Bonjour,
+   comme les vacances arrivent, je me disais qu'il me faudrait un FPS pour
+   me défouler un peu. Et comme je suis un peu geek, j'ai envie de les
+   installer sous Linux, c'est l'occasion d'installer des vieux jeux avec
+   Wine et PlayOnLinux.... Vous voyez venir le sujet là ? ;)
+   Tout d'abord, que vais-je vous présenter exactement ?
+
+Comment installer Call of Duty 1 et Half Life 1 sous GNU/Linux/Xubuntu 8.10
+avec Wine 1.1.10 et PlayOnLinux 3.2.2. Ouf !
+
+   Lire la suite...
+
+   17 commentaires
+
+   13-12-08
+
+Savage 2 devient gratuit
+
+   Par Jerome le 13-12-08, 12:00 - News
+     * Jeux
+     * News
+
+   Voila tout est dans le titre ^^
+
+   Savage 2 vient de passer totalement gratuit (Free to play)
+
+   Lire la suite...
+
+   un commentaire
+
+   « billets précédents - page 3 de 6 - billets suivants »
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Reportage Ubuntu Party Nancy du 7 mars 09
+   Compiz-Fusion sans environnement de bureau (standalone) RSS 2.0 Atom
+   1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+      « Compiz-Fusion sans environnement de bureau (standalone) --|--
+                Reportage Ubuntu Party Nancy du 7 mars 09 »
+
+Neverball : un jeu qui peut faire tourner en bourrique
+
+   Cet article a été publié par idoric le 05-03-09 à 19:22 dans la
+   catégorie Jeux
+   Tags : - Jeux - Libre - Ubuntu
+
+   Aujourd'hui, j'avais envie de vous parler de Neverball, un jeu bien
+   évidemment libre.
+   Neverball est un jeu de plateforme solo en 3D où une balle doit
+   atteindre une sortie en collectant des pièces, le tout en temps limité.
+
+1. Présentation
+
+   La première originalité réside dans le fait que vous ne contrôlez pas
+   directement votre balle, vous pouvez uniquement modifier l'inclinaison
+   du plateau de jeu et compter sur la gravitation et les lois de la
+   physique. La deuxième originalité n'en aurait pas été une sans la
+   première : vous ne pouvez voir le plateau entièrement d'un point fixe
+   (comme dans un jeu de flipper), la caméra suit quand même la balle, à
+   la manière d'un third person shooter.
+
+   Contrôler le plateau du point de vue de la balle donne à ce jeu son
+   gameplay si particulier. En effet, vous pouvez faire tourner votre
+   caméra autour de votre balle, automatiquement ou manuellement, afin de
+   voir où va celle-ci, mais alors les commandes gauche/droite et
+   avant/arrière d'inclinaison du plateau adopteront également ce nouveau
+   point de vue ! Incliner le plateau vers la droite n'aura pas forcément
+   pour effet de redresser le plateau que vous aviez penché sur
+   l'«ancienne» gauche, surtout si votre balle se met à rebondir partout !
+
+2. Installation
+
+   Vous pouvez installer Neverball sur pratiquement toutes les
+   distributions Linux à partir de son gestionnaire de paquet.
+
+   Par exemple, avec (K)Ubuntu, si vous ne voulez pas perdre de temps à
+   lancer le gestionnaire graphique, la commande classique suffit : sudo
+   aptitude install neverball
+
+   À noter que la version 1.5.0 à laquelle je me réfère dans la suite doit
+   encore attendre la prochaine version pour certaines distributions, mais
+   je ne vais pas détailler ici la compilation (bien que j'ai du moi-même
+   la faire).
+
+3. Utilisation
+
+3.1 Configuration et choix d'une collection de niveaux
+
+   La fenêtre d'accueil est on ne peut plus classique (les captures ne
+   sont qu'en 800x600 pour des raisons de place):
+
+   neverball_accueil.png
+
+   Commençons par jetter un œil du côté des options :
+
+   neverball_options.png
+
+   C'est ici qu'on augmentera ou diminuera la définition et le niveau des
+   détails graphiques, selon que l'on veuille améliorer la qualité des
+   graphismes ou regagner en fluidité sur une configuration peu puissante.
+
+   Pour jouer, il vous faudra d'abord choisir une collection de niveaux :
+
+   neverball_collections.png
+
+   Dans chaque collection, vous trouverez une série de niveaux numérotés
+   en chiffres indo-arabes, où peuvent venir s'intercaler des niveaux
+   bonus numérotés en chiffres romains.
+
+   Les 5 collections de la première page sont constituées de 20 niveaux
+   normaux et 5 niveaux bonus. À cela il faut ajouter une collection de 16
+   niveaux sans bonus à la difficulté diabolique, soit 141 niveaux dans la
+   version actuelle.
+
+   Les trois collections «Neverball Facile», «Neverball Moyen» et
+   «Neverball Difficile» offrent des niveaux de difficultés croissants
+   comme leur nom l'indique. Si par erreur vous avez tenté un niveau moyen
+   ou difficile pour commencer, sachez que la courbe de progression est
+   très rapide au départ, et qu'après avoir pris le temps de finir les
+   niveaux faciles, les premiers niveaux moyens paraissent bien moins
+   impossibles qu'au premier abord. De plus, la collection facile est
+   destinée à vous faire découvrir en douceur les éléments classiques des
+   niveaux du jeu, comme les différents types de pièces par exemple
+   (certaines valent plus que d'autres).
+
+3.2 Mode normal et mode challenge
+
+   neverball_collection.png
+
+   La première fois, tous les niveaux sont bloqués à l'exception du
+   premier. Pour terminer ce niveau, vous devrez avec votre balle activer
+   la sortie par la collecte de pièces, puis atteindre celle-ci, le tout
+   dans le temps imparti. Dès que vous l'aurez réussi, vous pourrez tenter
+   de résoudre le deuxième niveau normal sans jamais avoir à refaire le
+   premier niveau, et ainsi de suite.
+
+   Vous pouvez également relever le «challenge» de réussir tous les
+   niveaux normaux presque à la suite : vous démarrez avec le droit de
+   perdre deux balles, plus une toutes les 100 pièces collectées. Le mode
+   «challenge» est la seule manière de débloquer les niveaux bonus
+   auxquels vous pourrez ensuite accéder en mode normal.
+
+3.3 Les commandes
+
+   neverball_niveau.png
+
+   Plusieurs moyens sont à votre disposition pour contrôler l'inclinaison
+   du plateau : clavier, souris, manette de jeu… Le clavier peut permettre
+   de réussir plus rapidement les premiers niveaux, mais votre manque de
+   finesse dans la réalisation vous empêchera ensuite d'aller plus loin.
+   Je vous conseille donc très fortement de manier le jeu à la souris (ou
+   touchpad, ou trackball) dès vos premières parties.
+
+   Les seules autres commandes à votre disposition concernent le
+   comportement de votre caméra : la touche F1 active la «poursuite»
+   (c'est celui par défaut au premier lancement du jeu) où la caméra suit
+   la balle de près, la touche F2 sa variante «paresseuse», et enfin F3 la
+   commande purement «manuelle». Dans tous les cas, vous pouvez forcer la
+   caméra à tourner autour de votre balle avec les boutons de votre souris
+   (la touche shift permet d'accélérer cette rotation).
+
+3.4 Les 3 différents records
+
+   Pour chaque niveau, vous pouvez chercher à améliorer le temps qu'il
+   vous est nécessaire pour terminer celui-ci, c'est le record de
+   «déverrouillage», mais vous pouvez également chercher à terminer le
+   niveau en collectant un maximum de pièces, c'est le record «le plus de
+   pièces».
+
+   Par défaut et en mode normal, il n'est plus nécessaire de collecter les
+   pièces pour activer la sortie d'un niveau déjà fini, d'où une troisième
+   possibilité consistant à rejoindre cette sortie le plus rapidement
+   possible, c'est le record «meilleur temps», qui peut être trivial pour
+   certains niveaux, mais très intéressant pour d'autres.
+
+   Il peut parfois être gênant d'avoir la sortie activée immédiatement,
+   car cela peut vous obliger inutilement à la contourner. Si cela vous
+   gêne, il suffit de répondre oui à la question «Fermer la sortie des
+   niv. complétés ?» qui apparaît sur la page de la collection.
+
+4. Conclusion
+
+   Neverball est un jeu qui nécessite un peu de réflexion, pas mal
+   d'anticipation, et beaucoup de dextérité et de concentration, où vous
+   pourrez vous surprendre à compter, le cœur battant, les secondes que
+   met une plate-forme pour descendre et remonter. Vous pourrez également
+   confronter vos plus grandes réussites avec les autres membres de la
+   communauté de joueurs sur la table en ligne des records, mais attention
+   à ne pas vous spoiler vous-même !
+
+Commentaires
+
+   1. Le 06-03-09, 14:34 par Richard
+          très bon article, comme d'habitude sur ce blog, donnant vraiment
+          envie de jouer à Neverball.
+
+          Sur ubuntu, l'installation via dépôt par défaut ne semble pas
+          installer le jeu en version française.
+          Si quelqu'un sait comment le franciser avec ubuntu, merci
+          d'avance.
+
+          Cordialement, Richard
+
+   2. Le 06-03-09, 15:45 par idoric
+          Malheureusement, l'internationalisation est une nouveauté de la
+          version 1.5.0, et l'actuelle version stable d'ubuntu (Intrepid
+          8.10) ne fournit que la 1.4.0.
+
+   3. Le 07-03-09, 11:21 par VV666
+          Bonjour, j'avais déjà tester ce super jeux. Est-il toujours
+          aussi gourmand en ressources 3D ? Car sur mon portabel avec une
+          AIT X1400 (256Mo) et l'accélération matériel activé (composition
+          opérationnelle) ça ramait pas mal...
+
+          En tout cas, ce jeux est vraiment sympa. Bon article ;)
+
+   4. Le 07-03-09, 12:05 par idoric
+          > «Est-il toujours aussi gourmand en ressources 3D ?»
+
+          Quand on va voir la liste des modifications
+          (http://neverball.org/changes.php), plusieurs se rapportent à
+          l'accélération graphique, mais je n'ai pas connaissance d'un
+          benchmark détaillé sur la question. Je peux juste dire que sur
+          mon Dell Inspiron 6400 (contrôleur graphique Intel GMA 950), en
+          1280x800 avec le maximum de détails graphiques, c'est fluide
+          sauf sur certains niveaux bien particuliers (Neverball facile,
+          niveau 14, par exemple), faisant qu'au final pour être
+          tranquille j'ai désactivé la réflexion.
+
+   5. Le 09-03-09, 23:51 par Thibauld
+          Merci pour cet article! Je ne connaissais pas Neverball, je
+          viens de tester et il est clair (au vu du temps que j'y ai passé
+          :)) que le jeu est prenant! J'en ai profité pour faire quelques
+          screenshots et pour le mettre en première page sur allmyapps :
+          http://allmyapps.com/app/neverball
+          Merci de m'avoir fait découvrir ce jeu que je ne connaissais pas
+          :)
+
+   6. Le 24-03-09, 03:01 par mym
+          Merci pour cet article de qualité !
+
+          > «Est-il toujours aussi gourmand en ressources 3D ?»
+
+          La majorité des niveaux a été améliorée, par un lissage des
+          courbes, et donc une augmentation du nombre de polygones.
+          Donc, oui c'est plus gourmand en ressources, mais pas de
+          beaucoup, et il ne faut pas oublier que c'était surtout le cas à
+          sa sortie... en 2003, et nous sommes déjà en 2009, les
+          ordinateurs ont évolué depuis, et normalement tout devrait être
+          largement fluide avec n'importe quels carte graphique et
+          processeur vieux d'au plus quelques années.
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Compiz-Fusion sans environnement de bureau
+   (standalone) Clé USB wifi "Hercules HWNU-300" sous Ubuntu RSS 2.0 Atom
+   1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+  « Clé USB wifi "Hercules HWNU-300" sous Ubuntu --|-- Compiz-Fusion sans
+                   environnement de bureau (standalone) »
+
+Le jeu du mois : Tuxfisher
+
+   Cet article a été publié par Benjamin le 03-03-09 à 10:50 dans la
+   catégorie Jeux
+   Tags : - Jeux - Libre - Test - Ubuntu
+
+   Ce mois-ci j'ai voulu vous présenter un petit jeu tout simple, très
+   facile à prendre en main mais qui peut vite devenir extrêmement
+   casse-tête : Tuxfisher.
+
+   I. Présentation
+
+   J'ai toujours été un grand fan du jeu Boulder Dash sur Nintendo Nes, je
+   cherchais donc un jeu équivalent sous Linux, j'ai trouvé Tuxfisher qui
+   répond très bien à mes attentes.
+   Pour ne pas paraphraser, je vais juste reprendre la présentation
+   disponible sur le site officiel :
+
+   TuxFisher est un jeu 2D de réflexion/stratégie open source, libre,
+   gratuit et multiplateforme (Windows, Linux, Mac OS).
+   Le jeu met en scène la mascotte de Linux: Tux le manchot.
+   Il s'agit d'un jeu dérivé de Boulder Dash. C'est un clone du jeu Mr
+   Matt.
+   L'objectif du jeu est de dévorer tous les poissons sans tomber sous une
+   avalanche de neige et sans se retrouver bloqué.
+   TuxFisher est développé en C++. Il utilise Qt4 pour les fenêtres,
+   OpenAL et ALUT pour le son et OpenGL pour l'affichage. Toutes ces
+   bibliothèques sont libres.
+
+   II. Installation
+
+   Il n'existe encore aucun paquet deb de Tuxfisher, il suffit donc de se
+   rendre dans la partie téléchargement du site officiel et télécharger
+   soit les sources, soit le programme "pré-compilé" où il ne vous suffira
+   que de cliquer sur le lanceur pour jouer, sans rien installer.
+   Un paquet rpm est également disponible ainsi qu'un exécutable pour
+   windows.
+
+   III. Présentation
+
+   Le but de ce jeu est donc très simple : vous incarnez Tux et vous devez
+   manger tous les poissons sans qu'une boule de neige ne vous tombe
+   dessus.
+
+   Quand vous lancez le jeu, vous arrivez sur la page d'accueil avec un
+   icône d'ouverture de niveau :
+
+   Choisissez le niveau de tutoriel si c'est la première fois que vous
+   jouez :
+
+   Comme vous pouvez le voir, en haut de la fenêtre vous trouverez
+   plusieurs renseignements :
+     * Le temps parcouru sur ce niveau
+     * Le nombre de déplacements effectués
+     * Le numéro du niveau sur lequel vous vous trouvez actuellement
+     * Des raccourcis pour accéder au niveau précédent ou suivant (si vous
+       l'avez déjà terminé auparavant)
+     * La possibilité d'ouvrir un nouveau niveau
+
+   Sachez que vous pouvez annuler vos déplacements. Par exemple, vous vous
+   rendez compte que votre dernier déplacement vous a bloqué, il vous
+   suffit d'appuyer sur la touche backspace pour revenir en arrière.
+
+   VI. Les niveaux
+
+   Tuxfisher contient déjà pas mal de niveaux "de base", mais s'ajoute à
+   cela la possibilité de créer ses propres niveaux et de les mettre à
+   disposition pour les autres joueurs.
+
+   Pour créer un niveau, il suffit de lancer l'éditeur de niveaux et
+   d'ouvrir un nouveau projet :
+
+   Vous devez ensuite renseigner le nom que vous souhaiter donner à ce
+   projet, votre nom et le niveau de difficulté. Une autre fenêtre
+   apparaitra vous demandant de renseigner le nom du premier niveau et sa
+   taille (Petite, Moyenne ou Grande) :
+
+   Vous pouvez ensuite créer votre premier niveau :
+
+   Une fois ce niveau créé, vous pouvez en créer d'autres ou bien
+   sauvegarder votre projet. Vous pouvez sauvegarder votre projet sur
+   votre machine (Fichier > Sauvegarder Jeu) ou bien mettre votre jeu à
+   disposition des autres joueurs (Fichier > Mettre en ligne).
+
+   Pour télécharger les jeux créés par les autres joueurs, il vous suffit
+   d'aller dans le jeu en lui-même (en non plus l'éditeur) puis Fichier >
+   Télécharger partie.
+
+   Il est également possible de créer vos propres graphismes (voir dans le
+   répertoire "graphismes"). D'ailleurs, Xavier, le créateur du jeu, est
+   actuellement à la recherche de contributeurs pour de nouveaux
+   graphismes (voir au bas de cette page), je vais certainement l'aider
+   car j'aimerais bien créer une ambiance plus "chaude" :)
+
+   J'en ai fini pour cette présentation, je vous invite, comme d'habitude,
+   à essayer ce superbe jeu et, pourquoi pas, à y contribuer. En tout cas
+   félicitations à Xavier !!
+
+Commentaires
+
+   1. Le 03-03-09, 15:42 par VV666
+          Boulder Dash.... ça nous rajeunit pas !!!!!!!!! NES powa !!!
+
+   2. Le 03-03-09, 21:10 par twolff
+          Salut
+          je suis encore sous Ubuntu 7.10 et ca me plante l'interface
+          graphique .... relance et je tombe sur la page de démarrage
+          login - mot de passe d'ubuntu !
+          dommage
+
+   3. Le 04-03-09, 05:43 par Benjamin
+          C'est étrange, tu l'a compilé ou tu as utilisé le paquet
+          "pré-compilé" ?
+
+   4. Le 04-03-09, 09:15 par mikedafunk
+          Cette version est excellente et va plaire surement à mon
+          beauf... Merci Benjamin !
+
+   5. Le 04-03-09, 13:08 par Clem
+          Un petit jeu qui a l'air bien sympa ! Une question cependant :
+          les graphismes sont vraiment en OpenGL ? Parceque çà ressemble à
+          du SDL.
+
+   6. Le 04-03-09, 15:01 par twolff
+          Non j'ai pris le pré-compilé, j'ai vais éssayer de le compiler
+          ... bizarre
+
+   7. Le 05-03-09, 18:31 par Xavier Monin
+          Bonjour, je suis le développeur du jeu.
+          C'est avec joie que je vois que mon jeu a obtenu un article dans
+          le site.
+          Pour répondre au commentaire de Clem, le jeu utilise bien OpenGL
+          via Qt.
+          Pour twolfff, je vais tenter d'élucider ce bug. Si vous trouvez
+          une solution, faites la parvenir.
+
+          Merci beaucoup pour vos commentaires.
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Un calendrier toujours à portée de main Dépôt
+   Mercurial sur CentOs, Part 2 : Mercurial RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+   « Dépôt Mercurial sur CentOs, Part 2 : Mercurial --|-- Un calendrier
+                       toujours à portée de main »
+
+Midori, un navigateur web léger et configurable.
+
+   Cet article a été publié par Xenom le 07-12-09 à 14:41 dans la
+   catégorie Logiciels
+   Tags : - Libre - Test
+
+   J'ai découvert il y a quelques temps un navigateur web léger et rapide.
+   Il s'agit de Midori.
+
+   Midori est basé sur GTK+2 et WebkitGTK+ (un portage de Webkit pour
+   GTK+). C'est d'ailleurs le navigateur web du projet XFCE.
+   La dernière version est la 0.2.1 sortie le 14 novembre 2009.
+
+   Pour ceux qui se le demande, ce logo représente une patte de chat verte
+   stylisée.
+
+   C'est un navigateur encore jeune, mais il est déjà assez complet et
+   performant. Personnellement j'utilise la version git, de développement,
+   pour suivre les évolutions qui sont assez rapides, mais qui est quand
+   même relativement stable, je dois avoir un crash toutes les quelques
+   heures au maximum.
+
+Un aperçu des fonctionnalités :
+
+     * Intégration avec GTK+2.
+     * Rendu rapide et respectueux des normes grâce à Webkit.
+     * Onglets et gestions des fenêtres et session.
+     * Gestion des signets (marques-pages).
+     * Scripts et styles utilisateur.
+     * Barre d'adresse "intelligente".
+     * Vérification orthographique.
+     * Interface configurable.
+     * Suppression des données personnelles (historiques, cookies,
+       "cookies Flash") et gestionnaire de cookie.
+     * Page d'appel rapide (comme FastDial ou SpeedDial).
+     * Personnalisation des barres d'outils.
+
+Utilisation et paramétrage:
+
+   Midori à une interface semblable à la plupart des navigateurs, vous ne
+   serez pas trop surpris.
+
+   Midori à un tableau latéral qui permet d'afficher les extensions,
+   l'historique, les télechargements...
+     * Les scripts utilisateurs permettent principalement d'agir sur les
+       pages, comme Greasemonkey sous Firefox, d'ailleurs beaucoup de
+       scripts Greasemonkey peuvent être utilisés avec Midori. Ces scripts
+       sont à placer dans le répertoire ~/.local/share/midori/scripts, les
+       styles dans le répertoire ~/.local/share/midori/styles. Un exemple
+       : FlashBlock WannaBe. Les styles sont des feuilles de style (CSS)
+       appliqués à certains/tous les sites. Pour en trouver :
+       http://userstyles.org/.
+     * Parmi les extensions proposées avec Midori, il y a un bloqueur de
+       pub, une fonction "cadre" pour afficher plusieurs pages en
+       parallèle, la gestion des mouvements de souris ("mouse gesture"),
+       un cache web,...
+     * Il faut préciser la langue pour le correcteur orthographique. Il
+       doit être paramétré avec "fr_FR" pour le français.
+     * Il est possible de choisir son agrégateur de flux RSS, qu'il soit
+       local ou en ligne. Pour les navigateurs en ligne, il suffit
+       d'entrer  : « midori » suivi d'une espace et du lien de
+       souscription terminé par les caractères « %s » (par exemple, pour
+       Netvibes : midori http://www.netvibes.com/subscribe.php?url=%s).
+
+   SCREENSHOT!!
+
+   En conclusion, je dirait que si vous cherchez un navigateur web léger,
+   rapide, configurable et en GTK+2 je vous conseille fortement Midori. Il
+   n'a peut être pas toutes les extensions de Firefox, mais grâces aux
+   scripts et aux extensions présente par défaut , il présente les
+   fonctions essentielles et d'autres très pratique.
+
+   Si vous préférez Qt je vous conseille aussi Arora. Je vous ferais aussi
+   bientôt un article sur un navigateur un peu plus particulier : uzbl.
+   Site officiel.
+
+   La page de documentation pour ubuntu, pour les PPA de la versions de
+   développement.
+
+Commentaires
+
+   1. Le 07-12-09, 23:56 par antistress
+          Tiens, un devoir de collégien !
+          Etant à l'origine de la plus grande partie de la page wikipédia,
+          ça me fait drôle de lire une resucée qui ne dit pas sa source.
+          Allez, je prendrai ça pour un compliment ;-)
+
+   2. Le 08-12-09, 08:28 par Desidia
+          @antistress :
+
+          Ça n'est pas un peu de la mauvaise foi, ce commentaire ? Il n'y
+          a pas trente-six mille manières d'énumérer les fonctionnalités
+          d'un logiciel. On peut aussi planter un panneau «propriété
+          privée» sur les articles de Wikipédia, et quelques barbelés pour
+          faire joli.
+
+   3. Le 08-12-09, 10:36 par antistress
+          @Desidia :
+          "Il n'y a pas trente-six mille manières d'énumérer les
+          fonctionnalités d'un logiciel"
+          En parlant de mauvaise foi tu t'y connais visiblement : c'est un
+          copier-coller au mot près, pas une coïncidence
+          Collégien, va !
+
+   4. Le 08-12-09, 15:36 par dhoko
+          Un très bon navigateur qui grandit vite, il y a pas si longtemps
+          il n'était pas très stable. Je l'utilise très souvent car hélas
+          Opera n'est pas aussi bon sous linux que sous Windows. Il est
+          rapide et se lance très rapidement. Mais depuis la disponibilité
+          de Chromium sous Linux je le trouve moins intéressant car il est
+          un peu plus lent. Mais bien plus complet.
+          Comme son cousin Arora il est prêt pour une utilisation
+          quotidienne comme navigateur usuel je trouve.
+
+   5. Le 08-12-09, 16:02 par Benjamin
+          C'est marrant comme insulte ça : "Collégien"...
+          Je pense que l'auteur de l'article appréciera ;)
+
+   6. Le 08-12-09, 17:27 par xenom
+          @antistress : La seule chose reprise de Wikipedia est l'exemple
+          pour netvibes (que j'ai d'ailleurs trouvé d'abord sur un autre
+          site).
+          La liste est reprise du site officiel. L'article sur Wikipedia
+          n'a fait que la reprendre. Mais bon si ca te fait plaisir de
+          croire avoir ecrit un article original.
+
+   7. Le 08-12-09, 17:46 par antistress
+          Extrait de Wikipedia, outre la liste de fonctionnalités, citons
+          au hasard :
+          "Paramétrer et optimiser Midori
+          - Les scripts sont à placer dans le répertoire
+          ~/.local/share/midori/scripts, les styles dans le répertoire
+          ~/.local/share/midori/styles. Quelques exemples : Ad Blocking
+          FiltersetP, FlashBlock WannaBe.
+          - le vérificateur d'orthographe doit être paramétré avec "fr_FR"
+          pour le français,
+          - Il est possible de déclarer dans les préférences du navigateur
+          (onglet Général) quel agrégateur utiliser pour gérer les flux
+          RSS. Ce peut être un agrégateur local ou en ligne. Dans ce
+          dernier cas, il suffit d'entrer pour commande : « midori » suivi
+          d'une espace et du lien de souscription terminé par les
+          caractères « %s » (par exemple, pour Netvibes : midori
+          http://www.netvibes.com/subscribe.p...)."
+
+          Chacun se fera sa propre opinion. Pour moi citer la source
+          (Wikipedia) est une question d'éthique, ce genre de choses qui
+          fait le monde des logiciels libres. La parenthèse étant
+          refermée, n'hésite pas à compléter/modifier la page wikipédia de
+          Midori au fur et à mesure de ton utilisation du logiciel, il en
+          vaut effectivement la peine
+
+   8. Le 08-12-09, 18:21 par Xenom
+          @antistress : Comme je l'ai deja dit , l'astuce sur Netvibes
+          provient de wikipedia. Mais nullement le reste. Toute la partie
+          sur les scripts est décrite dans la faq de midori, qui
+          effectivement donne les même exemples (d'un cote c'est les
+          fonctions les plus demandés).
+          L'astuce sur la langue n'est pas dure à trouver quand on a
+          l'habitude de configurer a(i)spell.
+
+          Je cite les sources quand je les utilisent, je n'y peut rien si
+          l'article de wikipedia est comme mon article un résumé de la faq
+          officielle... Il faut pas crier au plagiat quand on reprend deja
+          une source soit même.
+
+   9. Le 08-12-09, 18:36 par antistress
+          Pout ton info le rédacteur de la FAQ et moi-même échangeons sur
+          le forum ubuntu-fr dans l'intérêt de la documentation relative à
+          Midori il n'y donc pas de plagiat en ce qui me concerne mais une
+          mise à jour parallèle des deux sources.
+          Je crois que tout est dit et bien plus clair maintenant.
+
+          Sinon : une coquille à "Pour ceux qui se le demande".
+
+          Voilà pour terminer cette longue parenthèse sur la forme
+
+          Sur le fond : dommage que tu ne donnes pas d'avantage ton avis
+          sur le soft, on reste un peu sur sa faim (même si, il est vrai,
+          un des gros avantages du logiciel libre est que chacun peut se
+          faire son avis facilement en installant le logiciel)
+
+   10. Le 17-12-09, 21:01 par blinux83
+          J'ai un pc sous debian lenny xfce et la compliation de midori
+          est impossible a cause de trop de dépendances non résolues.
+          Par contre sur le pc sous debian testing xfce et celui sous
+          ubuntu karmic gnome pas de soucis !
+          C'est dommage car il aurais été intérressant de l'utiliser sur
+          un ordinausor reconditionné avec une Lenny sous openbox ou xfce
+          !
+
+   11. Le 25-12-09, 14:50 par dam
+          HELP !!!!! Etant très satisfait de Slitaz je viens de
+          télécharger Midori afin de bénéficier d'un navigateur plus léger
+          que firefox ... hormis le fait qu'il soit un peu plus lent, je
+          n'arrive pas à me signer sur des pages essentielles telles
+          qu'hotmail ou facebook ... que faut il que je configure ?
+
+   12. Le 20-01-10, 05:35 par tatave
+          Heu..
+          excellent
+          mais kelkun peut me dire ou placer les fichiers de styles et
+          scripts [INS: mais sous xp :INS] dans midori?
+
+          merci
+
+   13. Le 10-05-10, 14:52 par Le_mecreant
+          Comment faire pour lire des video real player sous midori. Peut
+          on y integrer un plugin xine?
+          Merci d'avance
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives billets précédents billets suivants Auto-hébergment :
+   mon système de sauvegarde Auto-hébergement : Mon experience, mes
+   problèmes, mes idées Auto-hébergement : compte-rendu de vos témoignages
+   Soyez votre propre fournisseur OpenID avec SimpleID Sécurisation de son
+   serveur : fail2ban RSS 2.0 Atom 1.0 Blogroll
+
+     * Accueil
+     * Archives
+     * Tags
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+
+Mot-clé - Serveur
+
+   Fil des billets
+
+   19-06-11
+
+Auto-hébergment : mon système de sauvegarde
+
+   Par Benjamin le 19-06-11, 18:58 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   La sauvegarde est un élément très important dans l'auto-hébergement. On
+   oublie la sauvegarde, ça crash, on a plus rien...
+   Pendant quelques semaines après avoir mis en place mon
+   auto-hébergement, je n'avais toujours qu'un seul disque dur dans mon
+   serveur, je lui faisais confiance :)
+
+   Et puis j'ai eu un petit problème sur un serveur au boulot, problème
+   qui a miraculeusement été résolu grâce à une sauvegarde efficace. Je me
+   suis donc décidé à investir un peu de mon temps dans la sauvegarde de
+   mon serveur perso.
+
+   backup.png
+
+   Lire la suite...
+
+   9 commentaires
+
+   31-03-11
+
+Auto-hébergement : Mon experience, mes problèmes, mes idées
+
+   Par Benjamin le 31-03-11, 21:38 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   Il est inutile de rappeler les (nombreuses) raisons qui m'ont poussé à
+   m'auto-héberger (contrôle de ses données, indépendance, faire du vrai
+   Internet, etc.). J'ai décidé de faire un article sur mon expérience
+   dans l'auto-hébergement. Mes interrogations, mes succès, mes échecs, où
+   j'en suis actuellement, les difficultés rencontrées, comment je les ai
+   résolues.
+
+   Cela suscitera peut-être des "vocations" d'auto-hébergement chez
+   certaines personnes hésitant encore.
+
+   logo_internet.png
+
+   Lire la suite...
+
+   13 commentaires
+
+   15-01-11
+
+Auto-hébergement : compte-rendu de vos témoignages
+
+   Par Benjamin le 15-01-11, 22:30 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   Vous avez été nombreux à répondre aux questions que je vous avais posé
+   sur l'article Auto-hébergement : vos témoignages m'intéressent !.
+   Merci à tous !
+
+   Je vais donc faire un résumé de vos réponses, réponses qui m'ont fait
+   découvrir de nombreux logiciels, beaucoup de matériel et qui m'a montré
+   que l'auto-hébergement se démocratise de plus en plus.
+
+   Lire la suite...
+
+   7 commentaires
+
+   08-01-11
+
+Soyez votre propre fournisseur OpenID avec SimpleID
+
+   Par Benjamin le 08-01-11, 13:01 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+     * Tutoriel
+
+   J'ai eu du mal à trouver un titre court et précis pour cet article.
+   Voici les points que je sohaite aborder dans cet article : Qu'est ce
+   qu'OpenID ? Qu'est ce qu'être fournisseur OpenID ? Pourquoi l'être ?
+   Comment l'être ?
+
+   Il est temps de reprendre le contrôle de nos données. Ça, je ne vous
+   l'apprends pas. Mais que pensez-vous de reprendre également le contrôle
+   de votre identité numérique, de vos identifiants, de vos mots de passe.
+   Comment centraliser vos informations personnelles chez vous, sur votre
+   machine ?
+
+   Je vais essayer de répondre à ces questions dans cet article.
+
+   Lire la suite...
+
+   24 commentaires
+
+   27-12-10
+
+Sécurisation de son serveur : fail2ban
+
+   Par Benjamin le 27-12-10, 21:34 - Auto hébergement
+     * auto-hebergement
+     * Libre
+     * Serveur
+
+   Comme l'a très bien dit Tancrède dans son article "La sécurité
+   sera-t-elle l'argument anti auto-hébergement ?" :
+
+     S'il y a bien une raison qui pourrait s'opposer à
+     l'auto-hébergement, je pense que ce serait celle de la sécurité.
+     C'est probablement le point noir qui empêchera, voire interdira,
+     l'auto-hébergement.
+
+   Je suis assez d'accord avec lui et vous invite à lire son article.
+   Aussi, j'ai décidé de partager mon experience en vous montrant une
+   première sécurisation quasi-indispensable pour votre serveur =>
+   fail2ban, un logiciel qui scrute les fichiers de logs à la recherche
+   d'actions suspectes et bannit les utilisateurs mal intentionnés grâce
+   aux iptables.
+
+   Lire la suite...
+
+   8 commentaires
+
+   « billets précédents - page 3 de 9 - billets suivants »
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives billets précédents billets suivants Un émulateur
+   Super Nintendo sous Linux : ZSNES The Battle for Wesnoth Comment
+   installer Heart Of Darkness sur le Eeepc 701 Installation de jeux
+   Windows sous GNU/Linux avec PlayOnLinux Savage 2 devient gratuit RSS
+   2.0 Atom 1.0 Blogroll
+
+     * Accueil
+     * Archives
+     * Tags
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+
+Mot-clé - Jeux
+
+   Fil des billets
+
+   06-01-09
+
+Un émulateur Super Nintendo sous Linux : ZSNES
+
+   Par Benjamin le 06-01-09, 01:00 - Jeux
+     * EeePC
+     * Jeux
+     * Libre
+     * Tutoriel
+     * Ubuntu
+
+   Je continue ma série des émulateurs sous Linux. Après l'émulateur NES,
+   j'ai décidé de vous présenter zsnes, l'émulateur pour ma deuxième
+   console préférée : la Super Nintendo.
+
+   Lire la suite...
+
+   32 commentaires
+
+   27-12-08
+
+The Battle for Wesnoth
+
+   Par Vincent Valentine le 27-12-08, 17:56 - Jeux
+     * Jeux
+     * Libre
+     * Test
+     * Ubuntu
+
+   Bonjour,
+   Aujourd'hui, je vais vous faire découvrir un jeu de stratégie au tour
+   par tour : The Battle for Wesnoth.
+
+   Lire la suite...
+
+   6 commentaires
+
+   23-12-08
+
+Comment installer Heart Of Darkness sur le Eeepc 701
+
+   Par Vincent Valentine le 23-12-08, 12:20 - Autres
+     * Jeux
+     * Libre
+     * Tutoriel
+     * Ubuntu
+
+   Bonjour,
+
+   Comme promis, je fais suite au sujet sur PlayOnLinux et Wine.
+   Aujourd'hui, nous allons donc voir comment installer un jeux Windows
+   sur le Eeepc avec GNU/Linux/Ubuntu (Na !), Wine et PlayOnLinux.
+
+Atelier bricolage : Comment installer Heart Of Darkness sur le Eeepc 701.
+
+   Lire la suite...
+
+   7 commentaires
+
+   16-12-08
+
+Installation de jeux Windows sous GNU/Linux avec PlayOnLinux
+
+   Par Vincent Valentine le 16-12-08, 19:54 - Jeux
+     * Jeux
+     * Libre
+     * Tutoriel
+     * Ubuntu
+
+   Bonjour,
+   comme les vacances arrivent, je me disais qu'il me faudrait un FPS pour
+   me défouler un peu. Et comme je suis un peu geek, j'ai envie de les
+   installer sous Linux, c'est l'occasion d'installer des vieux jeux avec
+   Wine et PlayOnLinux.... Vous voyez venir le sujet là ? ;)
+   Tout d'abord, que vais-je vous présenter exactement ?
+
+Comment installer Call of Duty 1 et Half Life 1 sous GNU/Linux/Xubuntu 8.10
+avec Wine 1.1.10 et PlayOnLinux 3.2.2. Ouf !
+
+   Lire la suite...
+
+   17 commentaires
+
+   13-12-08
+
+Savage 2 devient gratuit
+
+   Par Jerome le 13-12-08, 12:00 - News
+     * Jeux
+     * News
+
+   Voila tout est dans le titre ^^
+
+   Savage 2 vient de passer totalement gratuit (Free to play)
+
+   Lire la suite...
+
+   un commentaire
+
+   « billets précédents - page 3 de 6 - billets suivants »
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Reportage Ubuntu Party Nancy du 7 mars 09
+   Compiz-Fusion sans environnement de bureau (standalone) RSS 2.0 Atom
+   1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+      « Compiz-Fusion sans environnement de bureau (standalone) --|--
+                Reportage Ubuntu Party Nancy du 7 mars 09 »
+
+Neverball : un jeu qui peut faire tourner en bourrique
+
+   Cet article a été publié par idoric le 05-03-09 à 19:22 dans la
+   catégorie Jeux
+   Tags : - Jeux - Libre - Ubuntu
+
+   Aujourd'hui, j'avais envie de vous parler de Neverball, un jeu bien
+   évidemment libre.
+   Neverball est un jeu de plateforme solo en 3D où une balle doit
+   atteindre une sortie en collectant des pièces, le tout en temps limité.
+
+1. Présentation
+
+   La première originalité réside dans le fait que vous ne contrôlez pas
+   directement votre balle, vous pouvez uniquement modifier l'inclinaison
+   du plateau de jeu et compter sur la gravitation et les lois de la
+   physique. La deuxième originalité n'en aurait pas été une sans la
+   première : vous ne pouvez voir le plateau entièrement d'un point fixe
+   (comme dans un jeu de flipper), la caméra suit quand même la balle, à
+   la manière d'un third person shooter.
+
+   Contrôler le plateau du point de vue de la balle donne à ce jeu son
+   gameplay si particulier. En effet, vous pouvez faire tourner votre
+   caméra autour de votre balle, automatiquement ou manuellement, afin de
+   voir où va celle-ci, mais alors les commandes gauche/droite et
+   avant/arrière d'inclinaison du plateau adopteront également ce nouveau
+   point de vue ! Incliner le plateau vers la droite n'aura pas forcément
+   pour effet de redresser le plateau que vous aviez penché sur
+   l'«ancienne» gauche, surtout si votre balle se met à rebondir partout !
+
+2. Installation
+
+   Vous pouvez installer Neverball sur pratiquement toutes les
+   distributions Linux à partir de son gestionnaire de paquet.
+
+   Par exemple, avec (K)Ubuntu, si vous ne voulez pas perdre de temps à
+   lancer le gestionnaire graphique, la commande classique suffit : sudo
+   aptitude install neverball
+
+   À noter que la version 1.5.0 à laquelle je me réfère dans la suite doit
+   encore attendre la prochaine version pour certaines distributions, mais
+   je ne vais pas détailler ici la compilation (bien que j'ai du moi-même
+   la faire).
+
+3. Utilisation
+
+3.1 Configuration et choix d'une collection de niveaux
+
+   La fenêtre d'accueil est on ne peut plus classique (les captures ne
+   sont qu'en 800x600 pour des raisons de place):
+
+   neverball_accueil.png
+
+   Commençons par jetter un œil du côté des options :
+
+   neverball_options.png
+
+   C'est ici qu'on augmentera ou diminuera la définition et le niveau des
+   détails graphiques, selon que l'on veuille améliorer la qualité des
+   graphismes ou regagner en fluidité sur une configuration peu puissante.
+
+   Pour jouer, il vous faudra d'abord choisir une collection de niveaux :
+
+   neverball_collections.png
+
+   Dans chaque collection, vous trouverez une série de niveaux numérotés
+   en chiffres indo-arabes, où peuvent venir s'intercaler des niveaux
+   bonus numérotés en chiffres romains.
+
+   Les 5 collections de la première page sont constituées de 20 niveaux
+   normaux et 5 niveaux bonus. À cela il faut ajouter une collection de 16
+   niveaux sans bonus à la difficulté diabolique, soit 141 niveaux dans la
+   version actuelle.
+
+   Les trois collections «Neverball Facile», «Neverball Moyen» et
+   «Neverball Difficile» offrent des niveaux de difficultés croissants
+   comme leur nom l'indique. Si par erreur vous avez tenté un niveau moyen
+   ou difficile pour commencer, sachez que la courbe de progression est
+   très rapide au départ, et qu'après avoir pris le temps de finir les
+   niveaux faciles, les premiers niveaux moyens paraissent bien moins
+   impossibles qu'au premier abord. De plus, la collection facile est
+   destinée à vous faire découvrir en douceur les éléments classiques des
+   niveaux du jeu, comme les différents types de pièces par exemple
+   (certaines valent plus que d'autres).
+
+3.2 Mode normal et mode challenge
+
+   neverball_collection.png
+
+   La première fois, tous les niveaux sont bloqués à l'exception du
+   premier. Pour terminer ce niveau, vous devrez avec votre balle activer
+   la sortie par la collecte de pièces, puis atteindre celle-ci, le tout
+   dans le temps imparti. Dès que vous l'aurez réussi, vous pourrez tenter
+   de résoudre le deuxième niveau normal sans jamais avoir à refaire le
+   premier niveau, et ainsi de suite.
+
+   Vous pouvez également relever le «challenge» de réussir tous les
+   niveaux normaux presque à la suite : vous démarrez avec le droit de
+   perdre deux balles, plus une toutes les 100 pièces collectées. Le mode
+   «challenge» est la seule manière de débloquer les niveaux bonus
+   auxquels vous pourrez ensuite accéder en mode normal.
+
+3.3 Les commandes
+
+   neverball_niveau.png
+
+   Plusieurs moyens sont à votre disposition pour contrôler l'inclinaison
+   du plateau : clavier, souris, manette de jeu… Le clavier peut permettre
+   de réussir plus rapidement les premiers niveaux, mais votre manque de
+   finesse dans la réalisation vous empêchera ensuite d'aller plus loin.
+   Je vous conseille donc très fortement de manier le jeu à la souris (ou
+   touchpad, ou trackball) dès vos premières parties.
+
+   Les seules autres commandes à votre disposition concernent le
+   comportement de votre caméra : la touche F1 active la «poursuite»
+   (c'est celui par défaut au premier lancement du jeu) où la caméra suit
+   la balle de près, la touche F2 sa variante «paresseuse», et enfin F3 la
+   commande purement «manuelle». Dans tous les cas, vous pouvez forcer la
+   caméra à tourner autour de votre balle avec les boutons de votre souris
+   (la touche shift permet d'accélérer cette rotation).
+
+3.4 Les 3 différents records
+
+   Pour chaque niveau, vous pouvez chercher à améliorer le temps qu'il
+   vous est nécessaire pour terminer celui-ci, c'est le record de
+   «déverrouillage», mais vous pouvez également chercher à terminer le
+   niveau en collectant un maximum de pièces, c'est le record «le plus de
+   pièces».
+
+   Par défaut et en mode normal, il n'est plus nécessaire de collecter les
+   pièces pour activer la sortie d'un niveau déjà fini, d'où une troisième
+   possibilité consistant à rejoindre cette sortie le plus rapidement
+   possible, c'est le record «meilleur temps», qui peut être trivial pour
+   certains niveaux, mais très intéressant pour d'autres.
+
+   Il peut parfois être gênant d'avoir la sortie activée immédiatement,
+   car cela peut vous obliger inutilement à la contourner. Si cela vous
+   gêne, il suffit de répondre oui à la question «Fermer la sortie des
+   niv. complétés ?» qui apparaît sur la page de la collection.
+
+4. Conclusion
+
+   Neverball est un jeu qui nécessite un peu de réflexion, pas mal
+   d'anticipation, et beaucoup de dextérité et de concentration, où vous
+   pourrez vous surprendre à compter, le cœur battant, les secondes que
+   met une plate-forme pour descendre et remonter. Vous pourrez également
+   confronter vos plus grandes réussites avec les autres membres de la
+   communauté de joueurs sur la table en ligne des records, mais attention
+   à ne pas vous spoiler vous-même !
+
+Commentaires
+
+   1. Le 06-03-09, 14:34 par Richard
+          très bon article, comme d'habitude sur ce blog, donnant vraiment
+          envie de jouer à Neverball.
+
+          Sur ubuntu, l'installation via dépôt par défaut ne semble pas
+          installer le jeu en version française.
+          Si quelqu'un sait comment le franciser avec ubuntu, merci
+          d'avance.
+
+          Cordialement, Richard
+
+   2. Le 06-03-09, 15:45 par idoric
+          Malheureusement, l'internationalisation est une nouveauté de la
+          version 1.5.0, et l'actuelle version stable d'ubuntu (Intrepid
+          8.10) ne fournit que la 1.4.0.
+
+   3. Le 07-03-09, 11:21 par VV666
+          Bonjour, j'avais déjà tester ce super jeux. Est-il toujours
+          aussi gourmand en ressources 3D ? Car sur mon portabel avec une
+          AIT X1400 (256Mo) et l'accélération matériel activé (composition
+          opérationnelle) ça ramait pas mal...
+
+          En tout cas, ce jeux est vraiment sympa. Bon article ;)
+
+   4. Le 07-03-09, 12:05 par idoric
+          > «Est-il toujours aussi gourmand en ressources 3D ?»
+
+          Quand on va voir la liste des modifications
+          (http://neverball.org/changes.php), plusieurs se rapportent à
+          l'accélération graphique, mais je n'ai pas connaissance d'un
+          benchmark détaillé sur la question. Je peux juste dire que sur
+          mon Dell Inspiron 6400 (contrôleur graphique Intel GMA 950), en
+          1280x800 avec le maximum de détails graphiques, c'est fluide
+          sauf sur certains niveaux bien particuliers (Neverball facile,
+          niveau 14, par exemple), faisant qu'au final pour être
+          tranquille j'ai désactivé la réflexion.
+
+   5. Le 09-03-09, 23:51 par Thibauld
+          Merci pour cet article! Je ne connaissais pas Neverball, je
+          viens de tester et il est clair (au vu du temps que j'y ai passé
+          :)) que le jeu est prenant! J'en ai profité pour faire quelques
+          screenshots et pour le mettre en première page sur allmyapps :
+          http://allmyapps.com/app/neverball
+          Merci de m'avoir fait découvrir ce jeu que je ne connaissais pas
+          :)
+
+   6. Le 24-03-09, 03:01 par mym
+          Merci pour cet article de qualité !
+
+          > «Est-il toujours aussi gourmand en ressources 3D ?»
+
+          La majorité des niveaux a été améliorée, par un lissage des
+          courbes, et donc une augmentation du nombre de polygones.
+          Donc, oui c'est plus gourmand en ressources, mais pas de
+          beaucoup, et il ne faut pas oublier que c'était surtout le cas à
+          sa sortie... en 2003, et nous sommes déjà en 2009, les
+          ordinateurs ont évolué depuis, et normalement tout devrait être
+          largement fluide avec n'importe quels carte graphique et
+          processeur vieux d'au plus quelques années.
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Compiz-Fusion sans environnement de bureau
+   (standalone) Clé USB wifi "Hercules HWNU-300" sous Ubuntu RSS 2.0 Atom
+   1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+  « Clé USB wifi "Hercules HWNU-300" sous Ubuntu --|-- Compiz-Fusion sans
+                   environnement de bureau (standalone) »
+
+Le jeu du mois : Tuxfisher
+
+   Cet article a été publié par Benjamin le 03-03-09 à 10:50 dans la
+   catégorie Jeux
+   Tags : - Jeux - Libre - Test - Ubuntu
+
+   Ce mois-ci j'ai voulu vous présenter un petit jeu tout simple, très
+   facile à prendre en main mais qui peut vite devenir extrêmement
+   casse-tête : Tuxfisher.
+
+   I. Présentation
+
+   J'ai toujours été un grand fan du jeu Boulder Dash sur Nintendo Nes, je
+   cherchais donc un jeu équivalent sous Linux, j'ai trouvé Tuxfisher qui
+   répond très bien à mes attentes.
+   Pour ne pas paraphraser, je vais juste reprendre la présentation
+   disponible sur le site officiel :
+
+   TuxFisher est un jeu 2D de réflexion/stratégie open source, libre,
+   gratuit et multiplateforme (Windows, Linux, Mac OS).
+   Le jeu met en scène la mascotte de Linux: Tux le manchot.
+   Il s'agit d'un jeu dérivé de Boulder Dash. C'est un clone du jeu Mr
+   Matt.
+   L'objectif du jeu est de dévorer tous les poissons sans tomber sous une
+   avalanche de neige et sans se retrouver bloqué.
+   TuxFisher est développé en C++. Il utilise Qt4 pour les fenêtres,
+   OpenAL et ALUT pour le son et OpenGL pour l'affichage. Toutes ces
+   bibliothèques sont libres.
+
+   II. Installation
+
+   Il n'existe encore aucun paquet deb de Tuxfisher, il suffit donc de se
+   rendre dans la partie téléchargement du site officiel et télécharger
+   soit les sources, soit le programme "pré-compilé" où il ne vous suffira
+   que de cliquer sur le lanceur pour jouer, sans rien installer.
+   Un paquet rpm est également disponible ainsi qu'un exécutable pour
+   windows.
+
+   III. Présentation
+
+   Le but de ce jeu est donc très simple : vous incarnez Tux et vous devez
+   manger tous les poissons sans qu'une boule de neige ne vous tombe
+   dessus.
+
+   Quand vous lancez le jeu, vous arrivez sur la page d'accueil avec un
+   icône d'ouverture de niveau :
+
+   Choisissez le niveau de tutoriel si c'est la première fois que vous
+   jouez :
+
+   Comme vous pouvez le voir, en haut de la fenêtre vous trouverez
+   plusieurs renseignements :
+     * Le temps parcouru sur ce niveau
+     * Le nombre de déplacements effectués
+     * Le numéro du niveau sur lequel vous vous trouvez actuellement
+     * Des raccourcis pour accéder au niveau précédent ou suivant (si vous
+       l'avez déjà terminé auparavant)
+     * La possibilité d'ouvrir un nouveau niveau
+
+   Sachez que vous pouvez annuler vos déplacements. Par exemple, vous vous
+   rendez compte que votre dernier déplacement vous a bloqué, il vous
+   suffit d'appuyer sur la touche backspace pour revenir en arrière.
+
+   VI. Les niveaux
+
+   Tuxfisher contient déjà pas mal de niveaux "de base", mais s'ajoute à
+   cela la possibilité de créer ses propres niveaux et de les mettre à
+   disposition pour les autres joueurs.
+
+   Pour créer un niveau, il suffit de lancer l'éditeur de niveaux et
+   d'ouvrir un nouveau projet :
+
+   Vous devez ensuite renseigner le nom que vous souhaiter donner à ce
+   projet, votre nom et le niveau de difficulté. Une autre fenêtre
+   apparaitra vous demandant de renseigner le nom du premier niveau et sa
+   taille (Petite, Moyenne ou Grande) :
+
+   Vous pouvez ensuite créer votre premier niveau :
+
+   Une fois ce niveau créé, vous pouvez en créer d'autres ou bien
+   sauvegarder votre projet. Vous pouvez sauvegarder votre projet sur
+   votre machine (Fichier > Sauvegarder Jeu) ou bien mettre votre jeu à
+   disposition des autres joueurs (Fichier > Mettre en ligne).
+
+   Pour télécharger les jeux créés par les autres joueurs, il vous suffit
+   d'aller dans le jeu en lui-même (en non plus l'éditeur) puis Fichier >
+   Télécharger partie.
+
+   Il est également possible de créer vos propres graphismes (voir dans le
+   répertoire "graphismes"). D'ailleurs, Xavier, le créateur du jeu, est
+   actuellement à la recherche de contributeurs pour de nouveaux
+   graphismes (voir au bas de cette page), je vais certainement l'aider
+   car j'aimerais bien créer une ambiance plus "chaude" :)
+
+   J'en ai fini pour cette présentation, je vous invite, comme d'habitude,
+   à essayer ce superbe jeu et, pourquoi pas, à y contribuer. En tout cas
+   félicitations à Xavier !!
+
+Commentaires
+
+   1. Le 03-03-09, 15:42 par VV666
+          Boulder Dash.... ça nous rajeunit pas !!!!!!!!! NES powa !!!
+
+   2. Le 03-03-09, 21:10 par twolff
+          Salut
+          je suis encore sous Ubuntu 7.10 et ca me plante l'interface
+          graphique .... relance et je tombe sur la page de démarrage
+          login - mot de passe d'ubuntu !
+          dommage
+
+   3. Le 04-03-09, 05:43 par Benjamin
+          C'est étrange, tu l'a compilé ou tu as utilisé le paquet
+          "pré-compilé" ?
+
+   4. Le 04-03-09, 09:15 par mikedafunk
+          Cette version est excellente et va plaire surement à mon
+          beauf... Merci Benjamin !
+
+   5. Le 04-03-09, 13:08 par Clem
+          Un petit jeu qui a l'air bien sympa ! Une question cependant :
+          les graphismes sont vraiment en OpenGL ? Parceque çà ressemble à
+          du SDL.
+
+   6. Le 04-03-09, 15:01 par twolff
+          Non j'ai pris le pré-compilé, j'ai vais éssayer de le compiler
+          ... bizarre
+
+   7. Le 05-03-09, 18:31 par Xavier Monin
+          Bonjour, je suis le développeur du jeu.
+          C'est avec joie que je vois que mon jeu a obtenu un article dans
+          le site.
+          Pour répondre au commentaire de Clem, le jeu utilise bien OpenGL
+          via Qt.
+          Pour twolfff, je vais tenter d'élucider ce bug. Si vous trouvez
+          une solution, faites la parvenir.
+
+          Merci beaucoup pour vos commentaires.
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Bash : personnalisation de l'invite. Virtualisation
+   avec VirtualBox sous Fedora RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+         « Virtualisation avec VirtualBox sous Fedora --|-- Bash :
+                      personnalisation de l'invite. »
+
+Le jeu du mois : Teeworlds
+
+   Cet article a été publié par Benjamin le 03-02-09 à 18:43 dans la
+   catégorie Jeux
+   Tags : - Jeux - Libre - Test - Ubuntu
+   Ce mois-ci, j'ai décidé de vous présenter un jeu, encore une fois,
+   extrêmement addictif : Teeworlds. C'est un TPS (Third Person Shooter)
+   multijoueur en 2D. Ses graphismes vous feront certainement penser au
+   jeu Worms. Un gros avantage de ce Teeworlds est qu'il est disponible
+   sous les trois grands systèmes : Linux, MacOS et Windows.
+   Voici donc le test complet de ce superbe jeu...
+
+   I. Présentation
+
+   Teeworlds est un jeu de plateforme multijoueurs en ligne, libre et
+   disponible pour Linux, MacOS et Windows. Vous incarnez un Tee, petit
+   personnage-boule dont la seule mission est d'anéantir son prochain
+   (oui, j'y vais un peu fort).
+
+   Bref, le tee peut effectuer des double-sauts et s'aider de son grappin
+   pour se déplacer. Il dispose également d'un arsenal d'armes assez
+   classiques (que nous détailleront tout à l'heure) pour tuer ses
+   adversaires.
+
+   C'est un jeu extrêmement rapide où la maîtrise des déplacements sera,
+   sans aucun doute, le principal facteur de réussite.
+
+   II. Installation
+
+   La version présente dans les dépôts officiels d'Ubuntu est la version
+   0.4.2, vous pouvez la télécharger grâce à cette commande :
+
+   apt-get install teeworlds
+
+   Cependant, la version actuelle de Teeworlds (à l'heure où j'écris ces
+   lignes) est la version 0.5.1. C'est cette version que je vais vous
+   présenter aujourd'hui. Elle est disponible sur le site officiel. Deux
+   solutions s'offrent donc à vous :
+     * Vous pouvez télécharger les sources à compiler vous même si vous
+       voulez une installation "propre"
+     * Vous pouvez utiliser l'archive "pré-compilée". Il vous suffira, à
+       l'instar d'Urban Terror, de décompresser cette archive et de
+       cliquer sur l'exécutable pour jouer sans rien installer.
+
+   III. Utilisation
+
+   Lorsque vous lancez le jeu, vous arrivez sur cette fenêtre :
+
+   Vous pouvez donc choisir la partie que vous souhaitez rejoindre sur
+   Internet. Dans la première colonne se trouve le nom du serveur, dans la
+   deuxième colonne, vous pouvez choisir le type de votre partie. Voici
+   les différents types disponibles :
+     * CTF : Capture The Flag, deux équipes s'opposent, les bleus et les
+       rouges. Chacun doit aller prendre le drapeau de l'autre et le
+       rapporter dans sa base
+     * DM : DeathMatch, chacun pour soi, vous devez tuer le premier Tee
+       qui vous tombe sous la main
+     * TDM : Team DeathMatch, deux équipes, les bleus et les rouges, vous
+       faites partie d'une équipe et devez tuer tous les Tees de l'équipe
+       adverse
+
+   Ensuite vous avez le nom de la map en cours et le nombre de joueurs
+   (exemple 5/10 : 5 joueurs actuels et 10 maximum). A droite, vous avez
+   un onglet filtre qui vous permet de n'afficher que les maps d'une
+   certaine catégorie (maps sans mot de passe, maps avec au moins un
+   joueur, maps standard, ...). Vous avez également l'onglet Info dans
+   lequel vous pourrez voir les informations du serveur sélectionné (le
+   nom des joueurs ainsi que leur score, la version du serveur, ...)
+
+   Maintenant nous allons configurer Teewords, pour cela, rendez-vous dans
+   l'onglet Settings en haut à droite. Vous arrivez sur la configuration
+   du joueur :
+
+   À partir de ce menu, vous pouvez choisir votre pseudo ainsi que
+   quelques options (caméra mobile ou fixe, changement d'arme automatique
+   si vous en ramassez une, ...). C'est également ici que vous allez
+   choisir votre Tee :)
+
+   Ensuite, vous pouvez configurer les touches de Teeworlds (dans le menu
+   Controls) :
+
+   Il n'y a que peu de touches à paramétrer, ce qui prouve que ce jeu est
+   vraiment très facile à prendre en main. Les différentes touches sont
+   les touches de mouvement (déplacement, saut, utilisation de l'arme ou
+   du grappin), les touches de changement d'arme (vous pouvez affecter une
+   touche par arme ou switcher entre les différentes armes (que je
+   présenterai après) et enfin, les touches diverses (votes, accès à une
+   console, screenshot, chat, ...)
+
+   Ensuite, vous pouvez configurer les graphismes grâce au menu Graphics :
+
+   Ici, vous pourrez choisir votre résolution, la qualité des détails,
+   activer/désactiver le mode plein écran, ...
+
+   Et enfin, la configuration du son via le menu Sound :
+
+   Vous pourrez choisir d'activer ou non le son, de régler le volume et de
+   choisir la qualité de son.
+
+   Une fois votre configuration effectuée, vous pouvez commencer une
+   partie. Pour cela, rendez vous sur le liste des serveurs et
+   double-cliquez sur le serveur de votre choix. La partie commence...
+
+   Vous devez choisir votre équipe (si vous avez rejoint une partie CTF ou
+   TDM) pour commencer à jouer.
+
+   Il est temps de vous présenter les différentes armes de Teeworlds, il y
+   en a 6 différentes pour le moment :
+
+    1. Le marteau : Arme de base, vous en avez un quoi qu'il arrive, assez
+       puissant mais de courte portée forcément
+    2. Le pistolet : Arme de base également, se recharge au fil du temps,
+       tir assez rapide mais peu dommageable
+    3. Le fusil à pompe : Arme très puissante si vous êtes proche de votre
+       ennemi, cadence de tir assez faible
+    4. Le lance grenade : Ne nécessite pas d'être proche de l'ennemi,
+       cadence de tir assez lente également
+    5. L'épée : Disponible dans certaines maps, arme extrêmement puissante
+       (tue en une fois) mais avec une durée de vie très limitée
+    6. Le laser : Disponible dans certaines maps également, nécessite une
+       très grande précision pour toucher sa cible
+    7. Le grappin (que je ne considère pas comme une arme) : Vous aide à
+       vous déplacer, vous accrocher sur les parois, agripper d'autres
+       Tees, ... un outil indispensable !
+
+   Voilà, vous connaissez à peu près tout ce qu'il faut savoir. Maintenant
+   il faut jouer, jouer et rejouer pour maîtriser les déplacements. Voici
+   une petite vidéo qui vous montrera à quoi ressemble Teeworlds (ne vous
+   attendez pas à jouer comme eux dès le premier jour) :
+
+   P.S : Si vous avez fait une belle vidéo illustrant bien Teeworlds, je
+   suis preneur :)
+
+   Ainsi se termine cette petite présentation. Comme d'habitude, j'espère
+   vous avoir donné envie de l'essayer. N'hésitez pas, c'est vraiment une
+   petite merveille !
+
+   A bientôt !
+
+Commentaires
+
+   1. Le 03-02-09, 18:32 par ZycKer
+          Vraiment sympa ce jeu, il me fait étrangement penser à Quake III
+          avec la rapidité et la qualité des déplacements.
+
+          Attention Ludo va louper ses exams si il commence avec ce jeu xP
+
+   2. Le 03-02-09, 19:57 par Poupi
+          Ça donne envie!
+
+          Le jeu se joue exclusivement online ou est-il possible de jouer
+          en solo face à des bots (pratique quand on n'a pas de connexion
+          internet sous la main)?
+
+   3. Le 03-02-09, 21:09 par Benjamin
+          D'après ce que j'ai pu voir, les bots ne sont qu'expérimentaux,
+          donc je dirais uniquement online pour l'instant :)
+
+   4. Le 03-02-09, 21:27 par william
+          ca fais vachement penser a kirby =D
+
+   5. Le 03-02-09, 21:35 par hype
+          À noter, comme le disait ZycKer, ce jeu fait penser à quake.
+          Et il existe quelques mec particulièrement balèses, et il y'a
+          des cups, tournois comme pour tout les quake like.
+          Assez impressionnant ;D
+
+   6. Le 03-02-09, 22:00 par louiz'
+          Par pitié, arrêtez de mettre des vidéos Youtube pour présenter
+          des logiciels Libres ! è_é
+
+          Bon, ceci dit, teeworlds est LE meilleur jeu du monde.
+          J'en ai d'ailleurs fait un article ici :
+          http://louizatakk.no-ip.org/wordpre... (et c'est pas totalement
+          du spam gratos, parce que y'a une vidéo, faite par mes soins
+          (mais pas tellement palpitante), dans un format libre, en bas,
+          ainsi que des screenshots ;) )
+
+          Je fais d'ailleurs tourner un serveur (on trouve les infos en
+          suivant les liens sur l'article sus-cité), et je fais parti des
+          développeur de Teestat, un logiciel qui permet de récupérer des
+          statistiques d'un serveur et de les afficher sur une page web
+          ensuite (exemple ici : http://louizatakk.no-ip.org/teeworl...),
+          si ça vous intéresse : http://codingteam.net/project/teest...
+
+          Franchement, c'est jeu est génial : fun, beau, convivial,
+          rapide, Libre...
+          J'adore.
+
+          (ce message est en totale adéquation avec le sujet donc je me
+          permets de mettre tout plein de liens :o Et aussi : « Venez
+          jouer avec moi ! »)
+
+   7. Le 03-02-09, 22:07 par BenP
+          Ça ressemble un peu dans le principe à l'excellent «soldat» qui
+          malheureusement ne tourne que sous Windows (et en plus pas libre
+          mais gratuit)
+
+          http://www.soldat.pl/
+
+   8. Le 03-02-09, 22:47 par dup
+          Hehe je joues à ce jeu depuis plusieurs mois déjà (j'ai du
+          commencer sur la v 0.4.1 de mémoire) et le fun est toujours
+          présent; la récente version 0.5 apporte une réelle fraicheur au
+          niveau des maps et du nombre de joueur (jusqu'a 16, il me semble
+          que cela n'a pas été précisé dans l'article).
+
+          En vidéo impressionante j'en ai une mais sur un mode course (mod
+          non officiel) donc pas représentatif du jeu en lui même mais de
+          ce qu'on peut faire avec un lance grenade ;)
+
+          Une coupe organisé en ce moment même est la Master Tee Cup qu'un
+          gars de ma team organise : http://www.masterteecup.com (le
+          tournoi en mode instagib démarre ce week-end).
+
+          Le mode instagib est un mode non officiel de teeworlds mais très
+          joué (bien que je préfère le CTF classique), dans ce mode il n'y
+          a aucun bonus (ni coeur/bouclier), et tout le monde a pour arme
+          de base le laser et un coup suffit à tuer un tee, donc il est
+          rare de rester longtemps en vie ;)
+
+   9. Le 03-02-09, 23:59 par Doobs
+          A noter aussi comme 3ème méthode qu'on peut aussi l'installer en
+          un clic avec djl.
+
+   10. Le 05-02-09, 18:11 par koyot
+          quand je lance le jeu, mon écran affiche "out of range", et je
+          ne m'en sortir qu'avec Ctrl-Alt-Suppr :-( j'ai eu le même souci
+          au départ avec Urban Terror, comment m'en sortir ici ? D'avance,
+          merci beaucoup :-)
+
+   11. Le 03-03-09, 01:21 par Chr0nos
+          C'est avec un plaisir des plus humides que je joue à ce jeux que
+          je ne conaissais pas avant cet article !
+          par contre petit bémol: le jeux a tendence à planter:
+
+          X Error of failed request: BadMatch (invalid parameter
+          attributes)
+          Major opcode of failed request: 42 (X_SetInputFocus)
+          Serial number of failed request: 206242
+          Current serial number in output stream: 206243
+          Locking assertion failure. Backtrace:
+          #0 /usr/lib/libxcb-xlib.so.0 [0x7f0abe4f79fc]
+          #1 /usr/lib/libxcb-xlib.so.0(xcb_xlib_lock+0x17)
+          [0x7f0abe4f7b77]
+          #2 /usr/lib/libX11.so.6 [0x7f0ac012a8c0]
+          #3 /usr/lib/libGL.so.1 [0x7f0abfd6efd6]
+
+          domage car mis à part ca c'est une merveille
+
+   12. Le 16-03-09, 14:36 par lidless eye
+          excellent petit jeu, tourne pile poil sur mon eeepc, joli,
+          rapie, fun!! je sens que je vais y passer du temps.par contre
+          faut vraiment quej'investisse dans une souris, au touchpad je me
+          fais exploser! :p
+          Merci Ben pour m'avoir fait découvrir ce bon ptit jeu :)
+
+   13. Le 16-08-12, 12:58 par Ulime
+          Un jeu super mais qui peut devenir nul si les gens n’arrête pas
+          de tricher via les hack et tout autre choses
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Résultats du concours Génération Linux Blocage de
+   spam dans Pidgin RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+   « Blocage de spam dans Pidgin --|-- Résultats du concours Génération
+                                  Linux »
+
+Le jeu du mois : Urban Terror
+
+   Cet article a été publié par Benjamin le 12-01-09 à 02:22 dans la
+   catégorie Jeux
+   Tags : - Jeux - Libre - Test - Ubuntu
+   Pour ce nouveau jeu du mois, j'ai décidé de vous parler d'un jeu que
+   j'ai découvert il y a quelques mois et dont je ne peux plus me passer :
+   Urban Terror !
+
+   I. Présentation
+
+   Urban Terror (ou UrT) est un FPS (First Person Shooter). Autrefois un
+   mod de Quake 3, il est aujourd'hui distribué en stand alone, ce qui
+   signifie que Quake 3 n'est plus nécessaire pour faire tourner UrT,
+   c'est devenu un jeu à part entière. Pour les connaisseurs, c'est en
+   fait un mix entre Quake et Counter Strike.
+
+   La version actuelle de Urban Terror est la version 4.1 qui est
+   disponible pour les principales plateformes (Linux, Windows et MacOS).
+
+   Ce jeu n'a pas vocation à être le plus réaliste possible, il n'en est
+   pas moins joli et très agréable, tant au niveau du design que du
+   gameplay. Voici une petite illustration tirée du site officiel pour
+   vous montrer le genre de graphismes de ce jeu (cliquez sur l'image pour
+   l'agrandir).
+
+   II. Téléchargement
+
+   Ce qui est agréable (enfin c'est mon avis) c'est que sous Linux, Urban
+   Terror ne s'installe pas via les dépôts, il suffit de télécharger le
+   fichier zip.
+
+   En détail, une fois que vous avez extrait le contenu du fichier zip,
+   dans un terminal, allez dans ce dossier créé :
+
+   cd /home/login/Bureau/UrbanTerror/
+
+   puis assignez les droits d'exécution :
+
+   pour une architecture 32 bits : chmod ugo+x ioUrbanTerror.i386
+   pour une architecture 64 bits : chmod ugo+x ioUrbanTerror.x86_64
+
+   Explication de la commande :
+
+   chmod : change les droits
+   ugo+x : ajoute le droit d'exécution (+x) au propriétaire du fichier
+   (u), au groupe(s) du ficher (g) et à tout les autres (o).
+
+   En clair, on ajoute le droit d'exécution à tout le monde. (ce qui peut
+   se faire également avec cette commande : chmod a+x, a=all)
+
+   Pour les autres systèmes ou les miroirs de téléchargement, rendez-vous
+   sur la page de téléchargement du site officiel.
+
+   III. Utilisation
+
+   Je disais justement à mon collègue que je ne savais pas par où
+   commencer l'explication d'un tel jeu. En effet, ce jeu est tellement
+   complet qu'il faut absolument lire la documentation officielle afin de
+   bien comprendre tous les mécanismes. Je vais toutefois essayer d'en
+   dire le plus possible dans cet article.
+
+   Nous allons commencer par le début, la configuration minimale.
+
+   Dans le menu Controls, vous pourrez modifier, entre autres, les touches
+   de direction du personnage, les touches de tir, de changement d'arme,
+   saut, course, accroupissement, bandage (nous reviendrons sur cette
+   fonctionnalité), chat, etc.
+
+   Un autre onglet de configuration est l'onglet System :
+
+   Ici, vous pourrez configurer la vidéo (fullscreen, résolution, qualité
+   d'image, etc.), le son (le volume principalement) et le réseau.
+
+   Je vous laisse vous promener dans le paramétrage du jeu, de nombreuses
+   options sont présentes, cependant l'utilisateur lambda n'aura pas
+   besoin de configurer le reste, la section Control et System sera
+   suffisante, c'est pourquoi je ne m'attarde pas sur le reste :)
+
+   Nous allons passer au plus important, rejoindre une partie. Pour cela,
+   dans le menu principal, cliquez sur play online, vous arriverez sur
+   cette page :
+
+   Si c'est la première fois que vous jouez, vous devrez cliquer sur Get
+   New List afin d'obtenir la liste des serveurs, sinon, il vous suffit de
+   cliquer sur Refresh pour mettre à jour cette même liste.
+
+   Plus bas, plusieurs options se présentent à vous : Find Friend permet
+   de trouver le serveur sur lequel se trouve un joueur (s'il est
+   connecté) identifié par son pseudo (le mien est benj(fr) pour ceux qui
+   souhaitent me rejoindre :)). Vous pouvez également ajouter des serveurs
+   à vos favoris, choisir de ne pas afficher les serveurs complets ou
+   vides, etc.
+   En dessous, vous pouvez choisir la source. Vous aurez le choix entre
+   Internet (le plus fréquent), un réseau local ou directement vos
+   favoris.
+
+   Enfin, vous pouvez choisir d'afficher uniquement les serveurs d'un
+   certain type de jeu. Pour les connaisseurs, ce sont les types habituels
+   (CTF, TDM, FFA, ...), pour les autres, voici les différents types en
+   détail (avec le jargon des joueurs) :
+     * Team Deathmatch (TDM) : Il y a deux équipes (rouges/bleus),
+       l'objectif est de tuer ("fragger") les membres de l'équipe adverse.
+       Si vous vous faites tuer, vous renaissez ("respawnez", vient de
+       "spawn" : l'endroit où l'on renait) aussitôt.
+     * Free For All (FFA) : Là pas d'équipe, chacun pour soi, vous fraggez
+       à tout va, n'importe qui, n'importe quand. Si vous vous faites tuer
+       ("owned"), vous respawnez aussitôt.
+     * Survivor : Deux équipes, comme le TDM sauf que là, quand vous vous
+       faites "owned", vous ne "respawnez" pas tout de suite, vous
+       regardez les autres membres de votre équipe "fragger" vos
+       adversaires. L'équipe qui gagne est celle où il y a au moins un
+       survivant. (Ça va avec le vocabulaire de "PGM" ? PGM : ProGaMer)
+     * Capture The Flag (CTF) : Deux équipes, le but est d'aller chercher
+       le drapeau ennemi dans leur base (en le touchant) et de le
+       rapporter dans votre base sans mourir. Un bon TP est donc
+       indispensable (TP : Team Play, jeu d'équipe).
+     * Follow The Leader (FTL) : Deux équipes, au début de chaque partie,
+       un leader de chaque équipe est désigné au hasard et un drapeau de
+       votre couleur apparaît chez vous. Les points sont distribués ainsi
+       : 5 points si votre leader touche le drapeau ennemi, 3 points si
+       vous fraggez toute l'équipe adverse mais que votre leader reste en
+       vie, s'il est mort, 1 point.
+     * Capture & Hold (C&H) : Plusieurs drapeaux sont dispersés sur la map
+       ("map" : le terrain de jeu), quand vous en touchez un, il devient
+       de la couleur de votre équipe. Toutes les minutes vous gagnez
+       autant de point que de drapeaux aux couleurs de votre équipe. Si
+       vous vous faites owned, vous respawnez tout de suite.
+     * Bomb/Defuse (Bomb) : L'équipe rouge doit poser une bombe dans un
+       des deux endroits prévus sur la map. L'équipe bleue doit empêcher
+       cela en tuant les membres de l'équipe rouge ou en désamorçant la
+       bombe posée par les rouges (comme à Counter Strike en fait).
+
+   Une fois que vous avez choisi votre partie, cliquez deux fois dessus
+   pour la rejoindre (mes maps préférées sont casa et riadh).
+   Une fois la map chargée, vous pouvez choisir votre équipe ou laisser le
+   serveur choisir pour vous (auto-join) en fonction des équipes déjà en
+   place (utilisez cette fonction si vous jouez sur un serveur public).
+   Ensuite, et c'est ce qui est une particularité d'Urban Terror, vous
+   pouvez choisir vos armes (pas besoin de les acheter comme à Counter
+   Strike) :
+   Vous devez donc choisir plusieurs types d'armes : une arme primaire
+   (vous avez le choix entre 11 armes tel qu'un sniper, une AK47, une
+   sulfateuse, etc.), une arme secondaire (3 armes : un fusil à pompe et
+   deux mitraillettes) et un pistolet d'appoint (Le fameux Deagle et un
+   pistolet classique). Vous pourrez passer de votre arme primaire à la
+   secondaire ou au pistolet en actionnant le molette de votre souris au
+   cours de la partie.
+   En plus de vos armes, vous devez choisir vos équipements, vous avez
+   donc pas mal de choix (grenades, fumigènes, kevlar, casque, laser de
+   visée, vision de nuit, medikit, ...), je vous laisse explorer les
+   différents matériels.
+   Une fois vos armes et équipements choisis, à vous les joies du frag :)
+   (P.S. si au cours du jeu vous souhaitez changer vos armes ou
+   équipements, appuyez sur Echap, Player, Weapon / Gear select. Vos
+   nouvelles armes seront disponibles au prochain respawn !
+   NB : Je vous ai dit plus haut que vous pouviez paramétrer la touche
+   bandage, voici à quoi elle sert :
+   C'est également une spécificité d'Urban Terror, vous pouvez soigner les
+   membres de votre équipe (ou vous-même) tout au long de la partie. En
+   effet, vous pourrez vous rendre compte qu'une fois que vous avez été
+   touché par une balle, vous perdez des PV (points de vie). Pour stopper
+   "l'hémorragie", appuyez sur la touche "bandage". De même, si un membre
+   de votre équipe n'a plus beaucoup de PV, vous pourrez le soigner en
+   allant à côté de lui et en appuyant plusieurs fois sur la touche
+   bandage. Si vous choisissez le medikit dans votre équipement de base,
+   vous pourrez soigner vos coéquipiers plus rapidement. C'est vraiment
+   une fonctionnalité très utile !
+
+                        Petite image pour le plaisir
+
+   Nous avons vu comment rejoindre une partie déjà créée, cependant, vous
+   pouvez, si vous le désirez, créer votre propre serveur de jeu. Dans le
+   menu principal, il suffit de cliquer sur start server.
+   Vous pouvez tout paramétrer à partir de ce menu, que ce soit la map en
+   elle-même, un message à afficher au démarrage de la partie, le type de
+   jeu, le temps de jeu par défaut, etc.
+   Je ne m'attarde pas plus sur le sujet car tout est très intuitif :)
+
+      Impossible de faire un screenshot tranquillement sur cette map :)
+
+   Ainsi se termine cette présentation, j'espère vous avoir donné envie
+   d'essayer ce jeu, vous verrez, vous ne le regretterez pas :)
+
+   A bientôt sur Urban Terror !
+   Si vous souhaitez de plus amples informations, voici le site de la
+   communauté francophone.
+
+   P.S. Pour les plus débutants, voici un petit dictionnaire français -
+   PGM, ou des expressions que vous pourrez être amenés à rencontrer au
+   cours de votre partie :) (si vous en avez d'autres, n'hésitez pas !)
+     * thx : merci (thanks)
+     * np : Pas de problème (no problem)
+     * gg : Bien joué (good game)
+     * ns : Joli coup (nice shot)
+     * no tk ! : On ne tire pas sur un joueur de son équipe (no team-kill)
+     * fu : Va te faire **** (f*ck you)
+     * noob : débutant (newbie)
+     * sry : désolé (sorry)
+     * ...
+
+Commentaires
+
+   1. Le 12-01-09, 08:10 par Le collègue (mal1n)
+          Tu as peut etre juste oubié de dire que ça tournait sur un eeepc
+          (testé et approuvé en cours). Pas de quoi faire tourner le jeu
+          façon pgm, mais pour s'occuper ça reste correct :)
+
+          Quel classe d'apparaitre dans un article de generation-linux ;-)
+
+   2. Le 12-01-09, 08:31 par Dradge
+          Juste pour information : http://www.urbanterror.free.fr est le
+          site de la communauté francophone pour ceux qui auraient des
+          questions ou des soucis techniques.
+
+   3. Le 12-01-09, 08:46 par bass000
+          super présentation qui donne envie d'aller jouer à ce jeu!
+
+   4. Le 12-01-09, 08:49 par loran42o
+          la commande chmod ugo+x pourrait être réduite à chmod a+x où a
+          signifie all soit le propriétaire, le groupe et les autres ;)
+
+   5. Le 12-01-09, 08:59 par Benjamin
+          @Dradge : Merci de me l'avoir signalé, j'avais oublié de la
+          préciser. C'est fait
+
+          @loran42o : En effet, je n'ai pas pensé à le dire (car je ne
+          l'utilise jamais de cette façon:))
+
+   6. Le 12-01-09, 09:01 par tabarez
+          question, est ce qu'on peut décaler la banane en rushant le
+          pigeo ?
+
+          biz biz les collègues
+
+   7. Le 12-01-09, 13:40 par Ner0lph
+          D'après ce que je comprends, le jeu est en anglais. Il n'existe
+          pas en français ?
+
+   8. Le 12-01-09, 14:03 par Benjamin
+          Tu sais c'est enfantin comme anglais, pas besoin d'être
+          bilingue, n'importe qui peut comprendre (surtout que j'ai décris
+          les 3/4 des menus donc pas de problème).
+          Mais pour répondre clairement à ta question, je ne pense pas
+          qu'il existe une version française.
+
+   9. Le 12-01-09, 14:50 par manslipkorn
+          Bonjour à vous.
+
+          Juste un petit mot pour vous dire que des paquets debs sont
+          disponibles sur le site Getdeb:
+          http://www.getdeb.net/
+
+          Et, encore plus simple, il existe le dépôt playdeb qui
+          maintiendra automatiquement à jour le jeu:
+          http://www.playdeb.net/
+
+   10. Le 12-01-09, 15:22 par Edouard
+          Énorme ! Je ne m'attendais pas à cette fluidité !
+          Merci pour ce billet
+
+   11. Le 12-01-09, 18:56 par lezouave
+          Cool j'ai decouvert ce jeu aujouurd'hui et j'y joue sur mon acer
+          aspire one ! ! je suis très surpris par la fluidité ! je suis
+          pas un grand joueur et j'espere finir par apprendre à force !
+          lol ! je cherche des gens pour jouer ! a plus
+          le zouave
+
+   12. Le 12-01-09, 19:22 par Benjamin
+          Si vous voulez, on pourrait tous se rejoindre sur un serveur un
+          de ces 4 :)
+
+   13. Le 12-01-09, 20:27 par MCMic
+          Bin désolé, mais je ne peux décemment pas accepter des phrases
+          comme "Ce qui est agréable (enfin c'est mon avis) c'est que sous
+          Linux, Urban Terror ne s'installe pas via les dépôts, il suffit
+          de télécharger le fichier zip ici ou là (719 Mo), de l'extraire
+          où bon vous semble, de rendre le fichier de lancement exécutable
+          et c'est tout, vous pouvez jouer !"
+          Je ne supporte pas les jeux ne proposant pas de paquet, j'essaie
+          au maximum d'avoir des installations propres, je passe donc en
+          priorité par un dépôt, si je trouve pas par un paquet et sinon
+          par Djl.
+          Merci donc de présenter les différentes façon d'installer quand
+          tu présentes un jeu, tout le monde n'aime pas dézipper des trucs
+          n'importe où.
+          De plus la plupart des jeux peuvent s'installer via un zip,
+          c'est loin d'être spécifique à Urban Terror.
+
+          Personnellement j'ai installé Urban Terror depuis un dépôt, mais
+          je sais plus lequel. Sûrement les dépôts officiels d'Ubuntu s'il
+          y ai, sinon ça doit être depuis Playdeb :
+          http://www.playdeb.net/
+
+          À part ça, oui le jeu est vraiment bien, c'est donc d'autant
+          plus dommage que les données ne soient pas libres.
+
+   14. Le 13-01-09, 04:03 par chilperik
+          coucou :)
+
+          merci de parler un peu de notre jeu favori ^^
+
+          pour toutes vos questions direction le forum officiel fr,
+          l'équipe est dynamique et sympathique ;)
+
+          @dradge : hey !!! reviens copaiin !! :D
+
+   15. Le 15-01-09, 10:03 par alexandre
+          N'existe-t-il pas de torrent officiel du jeu ? S'il y en a un ça
+          serait intéressant de l'indiquer.
+
+   16. Le 17-01-09, 21:13 par Did
+          Gros geek va ! Même à 7h du mat' avant d'aller en cours, tu te
+          pointes sur une map !!:D
+
+   17. Le 23-01-09, 15:54 par Emo-GlObine
+          SLT !! tous le monde c t pour vous dire merci surtout a toi
+          d'avoir fait ce site car sa faisait o moin 5 mois que j'essayer
+          de telecharger urt sur mon nouvo ordi et jy suis enfin arriver
+          merci et je vouler savoir si tu jouer encore parce que je
+          voudrai te rejoindre donc voila ben ... salu tou le monde et
+          encore merci ben :D
+
+   18. Le 24-01-09, 10:58 par Benjamin
+          A dire vrai, je ne joue plus trop en ce moment (partiels,
+          création d'un nouveau design pour le blog, ...)
+          Peut-être dans le courant de la semaine :)
+
+          Merci pour ton commentaire en tout cas
+
+   19. Le 27-03-09, 15:25 par [KFTD][.:WE:.]Mcgee[fr][UBU]
+          Salut les gars
+
+          Merci de me parler de ce jeu formidable mais j'ai des ptits
+          soucis :
+          *J'ai fait comme il est expliqué pour l'installer sur Linux il
+          est installer tout est ok
+
+          cepandant 1 probleme subsiste ...
+          Quand je clique pour tirer un écran blanc s'affiche a chaque
+          clique comment faire POUR y remédier
+
+          Que faire ?
+
+          Merci d'avance pour votre réponse
+
+          Mcgee
+
+          P.S : Pour les parties quand vous voulez je vous propose 4
+          serveur :
+
+          Ubu
+
+          Kftd
+
+          Krakow
+
+          Urban Terror for Atheist
+
+   20. Le 30-03-09, 17:53 par farse
+          Lu mais moi ariive pas a rejouindre un serveur comment faire Plz
+          pour que je rejouindre un serveur pour ji joue ARFF!!!!!
+
+   21. Le 12-05-09, 15:51 par manu 62
+          slt tout le monde le jeu est tres bien mais est il possible de
+          connecter une manette ?ce serez cool de repondre merci
+
+   22. Le 12-05-09, 18:08 par Benjamin
+          Il doit être possible de connecter une manette mais tu aurais
+          besoin de plus de touches selon moi :)
+
+   23. Le 30-05-09, 23:17 par Plop
+          Yo
+          Pour le pitit dictionnaire français des kikou
+          Hi ou lo : Salut (Hello)
+          n1 : bien jouer a toi (nice one)
+          gl : Bonne chance (Good Luck)
+          hf : Du fun (Have Fun)
+          ty : merci a toi (Thanks you)
+          inc : ennemie en approche (incomming)
+          wtf : Mais me*de alors (What the fuck) "difficile a traduire"
+          ++ ou a+ ou @+ : à plus
+          bb ou cu : en revoir (bye bye)
+          gtg : je doit partir (gotta go)
+
+   24. Le 31-05-09, 12:46 par Plop
+          encore mieux
+          http://fr.wikipedia.org/wiki/Liste_...
+          la liste de la wiki pour tous les termes d'argo sur le net :)
+          (dsl pour le double post)
+
+   25. Le 18-07-09, 11:22 par Hakim
+          Merci ennormement pour ce tuto. Vu que j'arrivais pas a
+          installer CS 1.6 sur Ubu ce jeu est une jolie alternative encore
+          merci.
+          Ps: Certain de tes tutos ce retrouve sur un forum marocain
+          HaKwArA et il sont postés pas un certain said_algerie.
+
+   26. Le 23-07-09, 09:53 par sp4rk
+          urban teror le jeu du mois ???
+
+          ce jeu et vraiment l'un des pire jeux qui existe, la raison, i a
+          pas un mec qui cheat pas, c'est assez saoulant a la longue, joué
+          le en lan ou sinon assurez vous que les gens avec qui vous jouez
+          ne sont pas des cheater, un jeu gratuit sera tj une daube la
+          cause trop de joueur, trop de boulet qui cheat parce que faire
+          du 30/7 c'est génial, mais il n'y a plus l'esprit d'un vrai fps,
+          en plus y en a il ne s'en lasse pas c'est assez flippant (soit
+          de cheater soit de se faire tj défoncer , ...
+
+          pour jouer a arme égale télécharger mombot avec (...)
+
+          Urbant terror = Cheat War
+
+   27. Le 30-07-09, 16:42 par *LDO*Rosenrot
+          Salut , moi qui suis un adepte de urt depuis bientot 8mois ,
+          c'est vrai que l'on vois de plus en plus de cheateurs sur se
+          jeux mais peut etre que tu n'est pas de bon niveaux toi aussi ,
+          mais j'en doute , fait toi recruter dans une team , tu verra la
+          au moins c'est garantie sans tricheurs , moins de noobs(tout
+          dépend de ta team) et plus de plaisir a jouer , de plus il y a
+          toujours des mecs qui ont de bons conseils pour jouer et
+          apprendre a jouer... Sur ce bonne journée a la communauté linux
+          (meme si je ne suis pas sous cette OS) . J'espere pouvoir jouer
+          avec vous .
+
+          page pub' ==> http://lalegiondor.clanfree.net/ind... .merci
+
+   28. Le 14-08-09, 13:39 par Give_Me_Milk_Olol_XD
+          ça ne vaut pas un warsow (qui tourne magnifiquement bien sur un
+          netbook), le cell shading donnant des graphismes nettement plus
+          appréciables !
+
+          http://www.warsow.net/
+
+   29. Le 10-11-09, 14:24 par sebsauvage
+          (désolé de re-sortir ce "vieux" sujet).
+
+          mmm... Warsow est bien, mais il rame à mort sur mon Pentium 4 (3
+          GHz), même en réduisant le niveau détail. Même chose pour Nexuiz
+          (même s'il rame un peu moins que Warsow).
+
+          Je m'éclate sur Urban Terror (ou plutôt: Je me fais éclater). Il
+          est vraiment excellent et ne rame pas.
+          Il y a en permanence un bon millier de serveurs actifs, remplis
+          de joueurs prêts à se battre.
+          Il y a plusieurs teams françaises, et ils ont aussi des serveurs
+          de jeu (SniperGaulois, P'tit Bigorneaux, BUG, UBU-Team (la team
+          Ubuntu-fr), etc.). Mais pas besoin de faire partie d'une team
+          pour s'éclater, ni même pour jouer sur leurs serveurs (ils sont
+          ouverts à tous).
+
+          A tout hasard, j'ai mis quelques conseils de jeu là:
+          http://www.commentcamarche.net/faq/...
+          Et des vidéos (histoire de voir différents niveaux) là:
+          http://sebsauvage.net/v/urbanterror...
+          Et si vous voulez faire des vidéos du jeu, le guide est là:
+          http://www.commentcamarche.net/faq/...
+
+          Quant aux cheaters, ce n'est pas vraiment un problème: La
+          plupart des admins de serveur UrT sont membres de l'UAA, et les
+          cheaters sont maintenant vite repérés. Et ils risquent un
+          bannissement définitif de tous les serveurs UrT.
+          Il suffit de voir rien que le serveur des SniperGaulois, qui
+          repère les cheaters et les rapportent à l'UAA pour bannissement:
+          http://www.snipersgaulois.com/bans....
+          (Les bans définitif sont en bas de page.)
+
+          Et si vous cherchez d'autres FPS gratuits (vraiment gratuits,
+          pas comme CombatArms ou GunZ), il y en a pour Linux et Windows:
+          http://www.commentcamarche.net/faq/...
+
+   30. Le 09-12-09, 13:32 par cherche arme ^^
+          ou on télécharge les armes et les autre patch
+
+   31. Le 13-12-09, 17:49 par sebsauvage
+          Les armes sont toutes disponibles dès l'installation.
+          Mais il faut savoir qu'on ne peut pas porter toutes les armes en
+          même temps pendant le jeu.
+
+          Il n'y a pas de patch à télécharger: La dernière version est la
+          4.1
+
+   32. Le 05-09-10, 19:05 par fan urt
+          bonjour je voudrais savoir j'ai telecharger une map sur internet
+          pour urban terror et je voudrais la mettre dans mon dossier
+          q3ut4 mais sa me dit permission non accorder comment faire (je
+          suis sous ubuntu) avant javais windows je jouer tout le temps a
+          urt je crée mes propre map mais maintene avec ubuntu sa devient
+          dure de manipuler urt merci davance de votre aide Passage à la
+          ligne Liste à pucesListe numérotée Lien
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Blocage de spam dans Pidgin Superswitcher et
+   l'utilisation intensive des espaces de travail RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+   « Superswitcher et l'utilisation intensive des espaces de travail --|--
+                       Blocage de spam dans Pidgin »
+
+Dosbox, jeux DOS et retour dans le temps
+
+   Cet article a été publié par Vincent Valentine le 08-01-09 à 01:00 dans
+   la catégorie Jeux
+   Tags : - Jeux - Libre - Tutoriel - Ubuntu
+
+   Bonne année à tous !
+   Pour commencer l'année 2009, nous allons faire un tour dans un passé
+   lointain, celui des jeux DOS. Et oui, ça nous rajeunit pas tout ça ! Et
+   pour cela, nous allons jouer à Kyrandia grâce à l'émulateur DOS :
+   Dosbox.
+
+   Mais qu'est ce donc que ce nom ésotérique ? C'est le nom d'un bon jeu
+   "point & clic", genre un peu désuet mais qui recèle de vraies perles !
+
+   Pourquoi Kyrandia ? Parce que qu'il était vraiment joli à l'époque,
+   qu'il a un charme fou, parce que l'histoire est marrante et enfin,
+   parce que le héros à une vrai tête de benêt !
+   Ha oui ! Le jeu est passé dans les abandonware, il est donc
+   téléchargeable gratuitement !
+   Kyrandia est un jeu qui fut développé par Westwood Studios en 1992.
+
+   Pour faire fonctionner les jeux DOS, il existe un excellent émulateur
+   nommé Dosbox. Nous allons donc l'installer.
+   Installation de Dosbox
+   Dans un terminal, tapez :
+sudo apt-get install dosbox
+
+   Téléchargement du jeu
+   Vous trouverez le jeu à cette adresse :
+   http://www.abandonware-france.org/ltf_abandon/ltf_jeu.php?id=121&fic=li
+   ens
+
+   Prenez le jeu disquette, c'est bien plus léger et téléchargez aussi le
+   manuel.
+   Créez un répertoire Kyrandia dans votre home ou sur une carte SDHC.
+   Dézippez le jeu dedans. Ensuite il suffit de le lancer en console avec
+   cette commande :
+dosbox /Le/Repertoire/De/Kyrandia/Kyrandia.bat
+
+   Chez moi, le jeu est installé sur une carte SDHC dans un répertoire
+   jeux. Le chemin donne ceci :
+dosbox /media/SDHC/Jeux/Kyrandia/Kyrandia.bat
+
+   Pour sortir de la console de Dosbox, il suffit de taper :
+exit
+
+   Problème le plus fréquent
+   Dosbox ne fait pas trop bon ménage avec Pulseaudio, donc si vous n'avez
+   pas de son, cherchez de ce côté. Je n'ai pas eu d'ennui avec Dosbox et
+   le son, mais j'avais déjà bidouillé pour Zsnes un peu avant (l'astuce
+   de Benj pour Zsnes doit marcher)
+   Un dernier mot
+   Vous venez de télécharger le jeu sur un site d'abandonware : Lost
+   Treasure. J'ai pris Kyrandia comme exemple, mais il existe de nombreux
+   jeux en téléchargement car leurs auteurs n'assurent plus la vente, le
+   service après vente ou ont renoncé à leurs droits dessus. Ce n'est pas
+   légal en soi, mais toléré. Discworld ou Duke Nukem en font partie. ;)
+   Amusez-vous bien !
+
+Commentaires
+
+   1. Le 08-01-09, 06:18 par Benjamin
+          Merci pour cet article Vincent, personnellement je vous
+          conseille le jeu The Incredible Machine (TIM) ! Un must have
+          absolu.
+
+          Enfin petit question, je joue en mode fenestré avec Dosbox,
+          est-il possible, via une combinaison de touches, de quitter
+          l'interface de Dosbox pour retourner sur la machine hôte ?
+
+   2. Le 08-01-09, 09:03 par seb
+          Normalement c'est ctrl-F10 pour libérer la souris et ctrl-ENTER
+          pour entrer et sortir du monde full screen.
+          Tu trouveras tous les raccourcis sur le net :)
+
+   3. Le 08-01-09, 09:19 par skisoo
+          Kyrandia fonctionne aussi très bien avec ScummVM ce qui permet
+          d'y jouer sur toutes les plate formes où ScummVM a été porté. Et
+          de nombreux point & click fonctionne avec ScummVM (notamment les
+          LucasArts mais qui ne sont pas des abandonwares eux
+          malheuresement).
+
+   4. Le 08-01-09, 09:32 par LP
+          Pour information : on trouve un article sur le moyen de faire
+          fonctionner Microsoft Word sous DOSBox depuis Ubuntu dans le
+          Linux Pratique n°51 actuellement en kiosque.
+
+          Sinon effectivement :
+          - La ScummVM permet de se passer de DOSBox pour beaucoup de jeux
+          LucasArts ;
+          - TIM est un excellent jeu (le premier opus est mieux que le
+          second).
+
+          DOSBox reste un outil bien utile pour bien d'autres jeux (
+          notamment http://fr.wikipedia.org/wiki/Z_(jeu...) ).
+
+   5. Le 08-01-09, 10:26 par VV666
+          Merci à tous pour ces précisions. On peux aussi lancer le jeux
+          en plein écran directement en rajoutant --fullscreen dans la
+          commande, ce qui donne :
+          dosbox --fullscreen /media/SDHC/Jeux/Kyrandia/Kyrandia.bat
+          (Chez moi, Kyrandia ne se lance pas comme ça, mais j'ai pas trop
+          creusé la question).
+
+   6. Le 08-01-09, 15:53 par mikedafunk
+          il me semble que c'est alt + entrée pour permuter en mode
+          fenêtre / plein écran.
+          Ça fait un baille que je n'ai pas installé dosbox, je m'amuse
+          avec gxmame en ce moment ;)
+          quelqu'un a essayé le paquet wine-dosbox ?
+
+   7. Le 08-01-09, 18:41 par Kedoc
+          Intéressant ! Et celà fonctionne également pour les jeux
+          nécessitant une installation ?
+
+   8. Le 08-01-09, 19:27 par Colar
+          Génial, merci.
+
+          Je vais pouvoir me refaire discworld (:
+
+   9. Le 08-01-09, 20:40 par dominique
+          Même les jeux avec installation peuvent fonctionner.
+          Voici la commande pour que le fichier de conf de dosbox soit
+          créé :
+          dosbox -c 'config -writeconf dosbox.conf' (a coller dans votre
+          terminal)
+
+          Pour se simplifier la vie , voici quelques commandes a rajouter
+          a la fin de ce même fichier de configuration.
+
+          Keyb fr (clavier français , c'est mieux)
+          mount c /votre dossier de stockage
+
+          Il ne reste plus qu'a lancer dosbox et taper c: et a vous la
+          navigation dos dans votre dossier jeux.
+
+          Avec gtk-recordmydesktop, j'arrive même a "filmer" cet émulateur
+          sous linux.
+
+   10. Le 09-01-09, 07:59 par benji64
+          salut a tous!
+
+          juste pour info, l'excellent logiciel PlayOnLinux (voir le site
+          du meme non) supporte DosBox (en plus de wine). Il y a déjà
+          plusieurs scripts d'installation d'abandonware proposés. il
+          télécharge et installe les jeux automatiquement et vous lancez
+          le jeu comme tous les autres, via l'interface d'accueil de POL.
+
+          je vous propose mon abandonware préféré : UFO Enemy Unknown
+
+          Bon jeu à tous
+
+   11. Le 11-01-09, 20:11 par Armel
+          C'est ma belle mere qui a été ravie de rejouer à perestroika :
+          http://2.bp.blogspot.com/_-kA5TysN_...
+          Merci pour cette astuce qui lui a fait encore plus aimer linux!
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Des nouvelles de Gnome Shell, en route vers gnome 3.2
+   et plus Apprenez Linux grâce à TF1 RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+   « Apprenez Linux grâce à TF1 --|-- Des nouvelles de Gnome Shell, en
+                       route vers gnome 3.2 et plus »
+
+rssLounge, un excellent gestionnaire de flux RSS !
+
+   Cet article a été publié par Benjamin le 02-07-11 à 14:46 dans la
+   catégorie Auto hébergement
+   Tags : - auto-hebergement - Libre - Serveur - Test - Tutoriel
+
+   J'utilise Tiny Tiny RSS depuis déjà quelques temps. Quand je cherchais
+   des alternatives à Netvibes (début 2009), Tiny Tiny RSS m'avait semblé
+   être le meilleur outil disponible pour lire ses flux RSS à partir de
+   son serveur (toujours dans mon optique d'auto-hébergement).
+
+   Après avoir lu l'article de ®om, je me suis rendu compte que pas mal de
+   gens se plaignaient de TTRSS (pour des raisons que j'évoquerai dans cet
+   article) et préféraient rssLounge. Étant également un peu insatisfait
+   de TTRSS (j'en parlerai là aussi plus en détail), j'ai décidé de tester
+   rssLounge. Un excellent logiciel que j'ai adopté et que je vous invite
+   à découvrir :
+
+   small-logo-rsslounge.png
+
+I. Le changement
+
+   Je vais tout d'abord vous détailler les raisons qui m'ont fait
+   abandonner Tiny Tiny RSS au profit d'une nouvelle solution de gestion
+   de flux RSS :
+     * Le temps de chargement : c'est l'inconvénient qui revenait le plus
+       souvent (forcément), je viens de chronométrer, Tiny Tiny RSS met
+       précisément 9 secondes entre le temps où je valide mes identifiants
+       et où l'application est opérationnelle. 9 secondes ça peut paraitre
+       peu, mais pour un temps de chargement de page web, je vous assure
+       que c'est énorme ! Par ailleurs, la navigation au sein des
+       différentes catégories, des flux RSS ou dans la configuration est
+       assez longue également.
+     * L'espace pris par la base de données : Mon installation actuelle de
+       TInty Tiny RSS date d'un peu plus de 6 mois et ma base de données
+       fait déjà 60 Mo ! Alors j'ai bien vu qu'il y avait une option de
+       purge. Cependant, comme je l'ai évoqué ici, je n'ai pas réussi à la
+       faire fonctionner (et c'est pas faute d'avoir essayé). J'avais beau
+       mettre une purge pour les articles plus vieux de 3 jours, j'avais
+       encore tous mes articles en base de données...
+     * L'installation pénible : J'ai trouvé cela pénible de devoir, lors
+       de l'installation, créer sa base de données et la peupler "à la
+       main" avec un banal fichier .sql. Un installeur est simple à mettre
+       en place, je n'ai pas compris pourquoi il n'y en avait pas.
+     * Un système de mise à jour des flux pas très intuitif : J'ai trouvé
+       le système de mise à jour des flux assez "difficile" à comprendre
+       et n'est pas très bien expliqué dans la documentation officielle.
+
+   Ce sont donc les principales raisons qui m'ont fait abandonner Tiny
+   Tiny RSS. Comme vous pouvez le constater, ce ne sont pas des problèmes
+   bloquants, mais c'est juste que mis les uns à la suite des autres,
+   l'utilisation finale ne devient plus très agréable.
+   J'ai donc décidé de tester rssLounge.
+
+II. Fonctionnalités
+
+   Voici ses principales caractéristiques traduites du site officiel :
+     * Un lecteur RSS très complet
+     * Permet de définir des priorités pour des flux et n'afficher que
+       certaines priorités (et donc certains flux)
+     * Supporte les images et photos, et permet de suivre facilement les
+       photoblogs et les sites du genre deviantart, flickr, tumblr
+     * Une belle interface (ajax), très intuitive et facile à utiliser
+       (drag & drop, etc.)
+     * Un système de plugins pour définir de nouvelles sources de données,
+       permettant ainsi de suivre des pages ne supportant pas les RSS
+     * Possibilité de définir des expressions régulières pour filtrer les
+       messages
+     * Supporte les mises à jour ajax et via crontab
+     * Import/export OPML
+     * Multilingue
+
+   Voici un screenshot de mon rrsLounge actuel (où on peut voir un
+   photoblog (tumblr) en haut des articles). Cliquez pour agrandir :
+   interface_tumblr.png
+
+III. Installation
+
+   Pour commencer, il faut aller récupérer l'application sur le site
+   officiel puis le mettre en place sur un serveur web. Pensez à donner
+   les droits d'apache sur votre répertoire (chown -R www-data:www-data
+   /var/www/rss). Il n'y a plus qu'à aller sur l'URL en question. Un
+   installeur s'affiche.
+
+   install_err.png
+
+   Ici, j'avais 2 erreurs, j'ai voulu vous les montrer pour que vous
+   sachiez comment faire si vous les rencontriez. La première, mod_rewrite
+   non chargé c'est parce que le fichier .htaccess de votre application
+   n'est pas interprété. Dans le répertoire de rssLounge, il y a un
+   fichier .htaccess indispensable.
+   Chez moi, c'est parce que dans ma configuration apache, j'avais
+   AllowOverride None (qui empêche l'interprétation d'un fichier
+   .htaccess). Je l'ai changé pour AllowOverride All.
+
+   La deuxième erreur m'annonce qu'il me manque l'extension GD pour PHP.
+   En général, cette extension est packagée, j'ai donc simplement fait un
+   apt-get install php5-gd.
+
+   Je redémarre le serveur apache et voilà :
+
+   install.png
+
+   L'installeur me demande les identifiants de la base de données (il faut
+   que vous ayez déjà créé une base de données vide) puis plus bas (non
+   affiché ci-dessus), me demande un nom d'utilisateur, un mot de passe et
+   une case à cocher pour savoir sur rssLounge doit être public
+   (accessible à tous sans mot de passe) ou privé (accessible uniquement
+   avec un mot de passe).
+   J'ai choisi privé et ai validé.
+
+   install_finie.png
+
+   C'est déjà fini, il ne me reste plus qu'à aller sur rssLounge :
+
+   login.png Je rentre les identifiants et arrive sur la page de mon
+   rssLounge vide :
+
+   rssl_vide.png
+
+   L'installation est déjà terminée !
+
+   Récupération des flux
+
+   Il y a 2 manières de récupérer les flux. Si vous n'avez pas mis en
+   place d'automatisation de récupération des flux, les flux seront mis à
+   jour au moment où vous vous connecterez sur rssLounge (c'est bien
+   pratique quand on a pas accès à la configuration du cron sur son
+   serveur).
+
+   Pour mettre les flux à jour automatiquement, il suffit de déclarer une
+   ligne dans la crontab :
+
+   */30 * * * * curl http://<rsslounge url>/update/silent >/dev/null 2>&1
+
+   Cette ligne va lancer toutes les 30 minutes un appel via curl à la mise
+   à jour de rssLounge. Notez qu'il faut que curl soit installé sur votre
+   machine (apt-get install curl).
+
+IV. Migration de Tiny Tiny RSS vers rssLounge
+
+   Avant d'aller plus loin dans la découverte de l'outil, je vais
+   rapatrier mes flux RSS de Tiny Tiny RSS vers rssLounge. Pour cela, je
+   vais utiliser l'import/export OPML disponible dans TTRSS et rrsLounge.
+
+   Export
+
+   Dans Tiny Tiny RSS, je vais dans "Configuration" puis l'onglet "Flux"
+   et "OPML". Je clique sur "Exporter en OPML" puis enregistre le fichier
+   opml.php sur mon Bureau.
+
+   Import
+
+   Je vais maintenant importer mes flux dans rssLounge. Il suffit de
+   cliquer sur l'icône des préférences (en haut à droite, les rouages)
+   puis de cliquer sur "OPML Import".
+   Il ne reste qu'à choisir le fichier OPML.php et rssLounge importe tout
+   ça, c'est très simple : import_feeds.png
+
+   Le rendu une fois terminé (cliquez sur l'image pour agrandir) :
+
+   apres_import_feeds.png
+
+V. Présentation
+
+   Maintenant que j'ai de la matière, je vais pouvoir vous présenter les
+   possibilités de cette application.
+
+   Affichage des différents flux
+
+   Par défaut, les flux les plus récents et non lus seront affichés en
+   tête de liste. Vous pouvez choisir de n'afficher que les flux non-lus
+   ou tous les flux, dans l'ordre que vous voulez.
+
+   Une fonctionnalité assez intéressante est celle du calendrier. Si vos
+   flux ne sont pas purgés, vous pouvez cliquer sur le calendrier en haut
+   à gauche pour afficher les flux d'un jour en particulier (ou d'une
+   tranche de jours) :
+
+   calendar.png
+
+   Ajout de flux
+
+   En cliquant sur "Ajouter un flux" en haut à gauche, vous afficherez
+   cette fenêtre d'ajout :
+
+   ajout_flux.png
+
+   Sur la gauche, vous pouvez choisir le type de flux que vous voulez
+   ajouter (RSS simple, images, etc.). Vous renseignerez aussi le nom du
+   flux, son URL, sa catégorie (j'en parlerai après), sa priorité (vous
+   pouvez ensuite n'afficher que les flux de priorité comprise entre 3 et
+   5 par exemple), mettre l'URL d'un favicon (bien que celui-ci soit en
+   général récupéré automatiquement) et positionner un filtre.
+
+   Pour paramétrer rssLounge, il faut cliquer sur la petite icône en forme
+   de rouage en haut à droite de la fenêtre :
+
+   liste_param.png
+
+   Gestion des catégories
+
+   Comme je l'ai dit juste au dessus, en ajoutant un flux RSS, on peut
+   choisir de l'ajouter dans une catégorie. Voici l'interface de gestion
+   des catégories :
+
+   liste_categories.png
+
+   Là encore, tout est très intuitif.
+
+   Gestion des paramètres
+
+   Contrairement à Tiny Tiny RSS, il y a peu d'options dans rssLounge,
+   uniquement l'essentiel, c'est très appréciable :
+
+   parametres.png
+
+   Comme vous le voyez, là encore, tout est très intuitif et très simple.
+   Ça se passe même d'explication :) La souscription aux flux présentée
+   tout en bas est vraiment très pratique !
+
+   Concernant l'anomyzer, il semblerait que l'option permette de récupérer
+   les flux via anonym.to. Du coup, le site accédé ne peut pas connaitre
+   l'origine de la requête et permet donc a rsslounge d’être "anonyme"
+   (merci thom).
+
+VI. Mes impressions
+
+   Voici mes impressions, un peu en vrac, de mon utilisation de rssLounge
+   (que j'utilise depuis maintenant 2 semaines).
+     * rssLounge est très simple à installer et à paramétrer
+       (contrairement à Tiny Tiny RSS)
+     * La navigation est très rapide, que ce soit au démarrage, à la
+       lecture, au changement des catégories, etc. (contrairement à Tiny
+       Tiny RSS)
+     * Une base de données qui prend très peu de place. Actuellement, j'ai
+       gardé tous mes flux depuis 15 jours et j'en suis à 3Mo de BDD. Pour
+       tester, j'ai purgé mes articles plus vieux de 5 jours et j'ai
+       désormais 1.15Mo de BDD. Je vais également afficher certains
+       chiffres de Cyrille BORNE : 175 flux suivis, 7500 articles stockés
+       : 14 Mo de BDD !
+     * Les raccourcis claviers sont bien sympas (J pour faire défiler),
+       (Ctrl+M pour tout marquer comme lu), etc.
+     * rssLounge affiche en rouge les flux RSS morts, ce qui permet de
+       voir les sites qui n'existent plus ou qui ont changé d'adresse
+       (merci cborne)
+     * On peut définir des articles favoris (étoiles) et n'afficher, par
+       la suite, que ses favoris.
+     * L'interface n'est pas divisée en 3 parties comme dans Tiny Tiny
+       RSS, quand on clique sur un article, il s'ouvre juste en dessous
+       (et se referme quand on re-clique dessus). C'est un peu perturbant
+       au début si on a l'habitude de TTRSS mais moi je préfère ça
+       maintenant !
+
+   menu_deroul.png
+   J'en oublie certainement, il y a tellement de bons côtés à cette
+   application !
+   Cependant, le projet est encore jeune, quelques fonctionnalités ou
+   détails sont encore à perfectionner. Voici quelques exemples :
+     * La traduction française n'est pas complète et est mal encodée.
+     * Il est actuellement impossible de changer de thème. L'interface est
+       un peu trop chargée à mon gout. J'avais l'habitude de mon Tiny Tiny
+       RSS qui était très clair, très épuré. J'ai hâte qu'une possibilité
+       de changement de thème soit offerte.
+
+VII. Conclusion
+
+   J'ai fait cet article pour vous présenter ce nouvel outil que je trouve
+   absolument génial. J'ai abandonné Tiny Tiny RSS au profit de rssLounge
+   et je ne le regrette vraiment pas !
+
+   Si vous avez des questions, si vous utilisez rssLounge et que vous
+   voulez témoigner, n'hésitez pas à vous exprimer ;)
+
+   Et si vous voulez une démo, rendez-vous sur cette page.
+
+Commentaires
+
+   1. Le 02-07-11, 15:09 par Gibbon
+          Ouch ! J'essaie de faire fonctionner le machin depuis une heure
+          et chaque fois que j'entame une action (ajouter un flux, ajouter
+          une catégorie, importer des données depuis TTRSS en OPML), je me
+          paie une belle page blanche et un vilain message d'erreur dans
+          les logs :
+
+          PHP Warning: unpack(): Type L: not enough input, need 4, have 0
+          in /srv/apache/libertus.eu/rss/library/floIcon.php on line 788
+
+          Là, je veux bien qu'on m'explique ce qui manque parce que la
+          fonction en question est plutôt obscure et je peux pas vraiment
+          me permettre de bousiller tout le code pour le plaisir :)
+
+   2. Le 02-07-11, 16:13 par MaKoTo
+          C'est vrai que la dernière mise à jours que j'ai faite du TTRSS
+          m'a sérieusement gonflé, autant avec des difficultés sur la base
+          de donnée, que j'ai fini par balancer pour repartir sur une
+          nouvelle, qu'avec le système de MAJ des flux qui avait changé
+          entre temps… et comme tu l'indiques, très peu documenté quand
+          c'est pas simplement pas clair du tout… j'avais quand même fini
+          par réussir à démoniser le truc…
+          Bref, perdu une journée si ce n'est plus !
+
+          Je vais donc tester cette nouvelle application :)
+
+   3. Le 02-07-11, 17:53 par Benjamin
+          @Gibbon : Je n'ai jamais rencontré cette erreur. En regardant un
+          peu sur le net, j'ai vu que cela pouvait provenir de ta conf php
+          (magic_quotes_runtime doit être à off pour régler le problème).
+          Essaye ça on sait jamais :)
+
+          @MaKoTo : J'ai eu exactement les mêmes problèmes que toi :)
+
+   4. Le 02-07-11, 18:05 par xenom
+          Je l'avais vu, mais pas testé quand je cherchais justement un
+          lecteur de flux.
+
+          Cet article m'a donné envie de le tester, surtout que je cherche
+          un remplaçant pour tt-rss. Pas pour les même raisons, mais pour
+          la lenteur de l'interface de tt-rss, l'interface elle même que
+          je ne trouve pas très agréable (surtout pour la gestion des
+          flux,...).
+
+          J'aime beaucoup l'interface, et je la préfère largement à celle
+          de tt-rss.
+
+          Par contre je le trouve encore bugué. rien ne s'affiche quand je
+          fais "Import OPML", la partie "Erreurs" ou "Info" ne s'affiche
+          qu'une fois sur 2.
+          Après un import de Flux, l'import se passe correctement, je vois
+          bien la liste de mes flux defiler (y compris dans les logs),
+          mais les catégories sont vides, et rien dans les logs (pourtant
+          en debug).
+
+          Et le gros point noir, pas de gestion du multi-utilisateur.
+
+          Je finirais quand même sur les bons cotés :
+          - l'interface, super sympa. J'aime beaucoup l'ouverture de
+          l'article en dessous.
+          - les raccourcis clavier
+          - les plugins
+
+          Avec la gestion du multi-utilisateur, et si je trouve comment
+          corriger mes bugs, il aurait fait un parfait remplaçant de
+          tt-rss.
+
+   5. Le 02-07-11, 18:48 par ®om
+          Je ne connaissais pas du tout avant les commentaires sous mon
+          article tt-rss, ça a l'air d'être une bonne alternative. Je
+          testerai quand j'aurai un peu de temps.
+
+          Par contre, y'a-t-il une version spéciale mobile intégrée, et
+          une API pour y accéder à partir d'applications tiers ?
+
+          "L'interface n'est pas divisée en 3 parties comme dans Tiny Tiny
+          RSS, quand on clique sur un article, il s'ouvre juste en dessous
+          (et se referme quand on re-clique dessus)"
+          Ça par contre je n'aime pas trop. On peut aussi choisir de faire
+          comme ça dans tt-rss (je ne sais plus où, mais je l'ai déjà fait
+          il me semble).
+
+   6. Le 02-07-11, 19:16 par Benjamin
+          @xenom : Je n'ai constaté aucun bug moi, c'est étrange... Pour
+          le multi-utilisateurs, je n'y avais pas pensé mais en effet,
+          cela ne semble pas encore possible. Enfin, comme je l'ai dit,
+          c'est un projet jeune qui ne peut que s'améliorer :)
+
+          @®om : Pas à ma connaissance non (pas encore en tout cas) :)
+
+   7. Le 02-07-11, 19:48 par bob
+          Bonjour,
+          Juste une question par curiosité:
+          Lors de l'installation, pour les paramètres de la base de
+          données, tu as utilisé l'user root ou un crée pour l'occasion ?
+          Merci.
+
+   8. Le 02-07-11, 19:55 par Benjamin
+          @bob : Non, je créé toujours un utilisateur par application (et
+          donc par base).
+
+   9. Le 02-07-11, 20:06 par bob
+          Ok, merci
+          Une autre quesiton:
+          J'ai sur une debian 6.0.2 rsslounge d'installer sans erreur
+          apparente. J'arrive a me connecter sur la page web de rsslounge,
+          par contre là, j'ai beau cliquer sur tout ce que je veux, rien
+          ne se passe.
+
+          J'ai ceci par contre dans les logs: File does not exist:
+          /usr/share/javascript/all.js
+
+          Une idée peut etre ?
+
+   10. Le 02-07-11, 20:21 par Benjamin
+          @bob : C'est fou tous les bugs que vous rencontrez, moi j'ai
+          fait 4 installs sur 3 machines différentes, jamais eu de
+          problème...
+          Ton .htaccess est-il bien pris en compte ? Un problème de
+          rewrite peut-être ?
+
+   11. Le 02-07-11, 20:25 par Gibbon
+          Pour les gens qui ont quelques soucis :
+
+          page blanche après l'ajout d'un flux (avec le message d'erreur
+          curieux dans les logs) --> sur les fora de l'application
+          (heureusement que je maîtrise l'allemand), il est indiqué qu'il
+          vaut mieux virer le cache des icônes cache.iconcaching = 0 dans
+          config/config.ini
+
+          les flux ne s'affichent pas (j'ai eu le souci après l'import
+          OPML) : il faut placer une valeur pour currentPriorityEnd dans
+          la table settings de la base de données.
+
+          Et pour le fichier inexistant : il faut que l'utilisateur Apache
+          ait les droits pour écrire dans pas mal de répertoire (notamment
+          data et cache).
+
+          En espérant avoir aidé quelques personnes.
+
+   12. Le 02-07-11, 20:27 par bob
+          Le mieux dans l'affaire, c'est que je viens de l'essayer sur une
+          vm de tests avec la meme version de debian, une conf lamp
+          similaire, et ca fonctionne ... :/
+
+          Sinon, je pense pas avoir de soucis avec le rewrite, ni avec le
+          htaccess.
+
+   13. Le 02-07-11, 21:20 par bob
+          Bonsoir,
+          Un premier petit retour sur cette histoire de fichier javascript
+          non existant:
+
+          Visiblement le problème vient de l'alias crée dans
+          apache2/conf.d/javascript-common.conf (cad
+          /etc/javascript-common/javascript-common.conf):
+          Alias /javascript /usr/share/javascript/
+
+          Car en effet si je retire ce lien de conf.d ou encore que je
+          commente l'Alias, ca fonctionne de nouveau correctement.
+
+          C'est pas parfait, car sur un serveur je doit le supprimer, hors
+          sur une vm de test, ca fonctionne bien avec ...
+
+          A suivre. ..
+
+   14. Le 03-07-11, 08:55 par jc1
+          Bonjour,
+
+          Et coté consommation en RAM, qu'est-ce que cela donne ?
+          Liferea ne convenait pas ?
+
+          Et avec un autre serveur web comme nginx ou Light HTTPd cela
+          fonctionne aussi ?
+
+   15. Le 03-07-11, 09:07 par Benjamin
+          @bob @Gibbon, merci pour vos retours, ça sera surement utile à
+          d'autres personnes :)
+
+          @jc1 : Liferea est un client lourd non ? Moi je lis mes flux RSS
+          depuis 4 ou 5 lieux différents, avec 4 ou 5 PC différents, je
+          voulais donc mettre ça en ligne :)
+          Il est possible d'installer rssLounge sur nginx et lighttpd,
+          voir la doc d'installation :
+          http://code.google.com/p/rsslounge/...
+
+   16. Le 03-07-11, 10:50 par xenom
+          Bon je viens de réessayer .
+
+          L'import OPML ne fonctionne pas, mais uniquement avec Firefox,
+          avec Chromium cela fonctionne. Le problème doit donc venir de
+          Firefox, même si je vois pas trop ce qui pourrait poser
+          problème.
+
+          L'import a correctement fonctionné cette fois.
+
+          C'est vrai que rssLounge est beaucoup plus rapide et agréable
+          que tt-rss. La il ne manque vraiment plus qu'une chose pour que
+          je l'utilise, le multi-utilisateur. Il remplacera peut-être
+          (surement même) liferea.
+
+   17. Le 03-07-11, 11:33 par MaKoTo
+          Pour ceux qui malgré « AllowOverride All » auraient toujours le
+          message « mod_rewrite n'est pas chargé »
+          Activer le module apache peut-être bien utile…
+
+          a2enmod rewrite
+
+   18. Le 03-07-11, 13:32 par MaKoTo
+          Bon bah marche pas… m'échine depuis au moins 4h sans pouvoir
+          lancer l'install :
+
+          database connection error (ensure that the database exists)
+
+          Testé avec plusieurs user, nouvelles bases, etc.
+          Je laisse tomber… enfin j'essaye car têtu, j'y reviens dés que
+          j'ai une nouvelle idée -_-
+          Tenterais peut-être sur un autre serveur lamp puisque j'imagine
+          que quelque chose cloche sur mon lamp actuel…
+
+   19. Le 04-07-11, 09:07 par yagraph
+          Sinon, en utilisant juste Firefox, l'extension Brief :
+          https://addons.mozilla.org/fr/firef...
+          et si on utilise aussi Sync (éventuellement auto-hébergé), ça
+          marche partout...
+
+          Bon tests !
+
+   20. Le 04-07-11, 09:10 par François
+          Excellent rssLounge! J'avais fait un article dessus il y a
+          quelques temps (http://www.francoistessier.info/blo...). Je
+          l'utilise quotidiennement depuis 2 ans et j'en suis pleinement
+          satisfait. Le développeur est en plus très sympa! J'ai eu pas
+          mal d'échanges avec lui lors du développement d'une appli
+          Android permettant de lire/synchroniser ses flux depuis son
+          smartphone (appli pas encore terminée manque de temps...).
+
+   21. Le 04-07-11, 09:20 par Protux
+          Il manque un "/" dans ton curl :
+
+          + /30 * * * * curl http://<rsslounge url>/update/silent
+            >/dev/null 2>&1
+
+   22. Le 04-07-11, 09:28 par bynouze
+          Ce lecteur a l'air vraiment sympa mais existe-t-il un moyen de
+          migrer tout les articles de tt-rss (surtout les articles marqués
+          favoris) ? Ça m'embêterait de perdre tout ça !!!
+
+   23. Le 04-07-11, 12:11 par Loyl
+          Testé et adopté, j'attends avec impatience la possibilité de
+          changer de style.
+
+   24. Le 04-07-11, 13:34 par Benjamin
+          @MaKoTo : Si tu trouves d'où venait le problème, n'hésite pas ;)
+          @François : Merci pour l'info, comme ça on sait qu'une appli
+          android viendra d'ici peu :)
+          @Protux : Corrigé, merci
+          @bynouze : On peux, comme je l'ai dit, récupérer les flux, mais
+          les articles je ne pense pas...(à confirmer)
+          @Loyl : C'est clair, j'attends ça avec impatience aussi !
+
+   25. Le 04-07-11, 16:47 par jacques
+          Bonjour, merci pour cet article.
+
+          J'ai testé une petite dizaine d'agrégateurs jusqu'à aujourd'hui.
+          Mais rien ne remplace vraiment le bon vieux gregarius qui permet
+          de classer par dossiers + catégories + tags (avec une multitude
+          de plugins et une dizaine de thèmes). Malheureusement le
+          développement est arrêté (et le site n'est même plus online) et
+          c'est vrai qu'il faut parfois faire quelques petites recherches
+          dans les vieux messages pour trouver une solution quand un
+          problème se présente (Firefox 4 et 5 lui pose parfois maintenant
+          quelques problemes de login - pas chrome)
+          Quand on a comme moi des centaines et des centaines de flux (à
+          destination publique) un classement par simple catégorie est
+          totalement insuffisant.
+          Malgré tout mes essais, je n'ai pas encore trouvé un agrégateur
+          avec les possibilités et la puissance et la légèreté de
+          gregarius. J'espère vraiment que quelqu'un en reprendra le
+          développement.
+          Maintenant, il est vrai que lorsque rsslounge aura intégré le
+          multicatégories + tag et que la communauté aura développé
+          quelques thèmes et plugins, ça commencera à devenir tout à fait
+          intéressant.
+
+   26. Le 04-07-11, 22:21 par Matt2cv
+          J'ai tenté une installation. Une vrai galère. Pour moi, ceux
+          sont toutes les règles rewrite du fichier .htaccess qui me
+          gènent. Comme dit plus haut, rien que le cas de répertoire
+          javascript.
+          Donc pour le moment, je reste sur TinyTinyRSS. Mettre plus de 3h
+          pour arriver à rien, je zappe.
+
+   27. Le 10-07-11, 05:26 par thom
+          Salut Benjamin,
+
+          Merci pour l'article, je viens de le mettre en place et ça
+          tourne bien pour moi.
+          Une petite note concernant l'anomyzer, il semblerait que
+          l'option permet de récupérer les flux via anonym.to.
+          De coup, le site accédé ne peut pas savoir l'origine de la
+          requête et permet donc a rsslounge d’être "anonyme".
+
+          Plus d'info est dispo ici: http://anonym.to/en.html#info
+
+   28. Le 10-07-11, 08:50 par Benjamin
+          Merci thom, j'avais pas compris mais c'est désormais très clair
+          :)
+          Je vais modifier mon article avec ces renseignements.
+
+          Merci !
+
+   29. Le 10-07-11, 15:35 par Gamoth
+          Bonjour,
+
+          Je suis également intérréssé par un tel agrégateur de flux. Du
+          coup, je l'a installé sur mon serveur mutualisé 1and1 qui
+          jusqu'à présent ne m'a jamais fait défaut.
+          Première install : cela s'install sans soucis par contre je
+          n'avais aucun style ... tout était blanc ...
+          Je me décide donc à tout supprimer et à réinstaller ... et là
+          erreur :
+          Warning: require_once(Zend/Loader/Autoloader.php)
+          function.require-once: failed to open stream: No such file or
+          directory in /homepages/htdocs/rsslounge/updates/install.php on
+          line 11
+
+          Fatal error: require_once() function.require: Failed opening
+          required 'Zend/Loader/Autoloader.php'
+          (include_path='/homepages/htdocs/rsslounge/library:.:/usr/lib/ph
+          p5') in /homepages/htdocs/rsslounge/updates/install.php on line
+          11
+
+          Je ne sais pas pourquoi ???
+
+          Si quelqu'un a une idée ?
+
+   30. Le 10-07-11, 18:58 par Gamoth
+          J'ai repris l'installation, une enieme fois et je suis retourné
+          à la case départ. Pas de style ...
+
+   31. Le 10-07-11, 19:24 par Benjamin
+          @Gamoth : Il me semble que quand le style ne s'affiche pas,
+          c'est que le fichier .htaccess n'est pas bien interprété.
+
+   32. Le 10-07-11, 19:29 par Gamoth
+          C'est exact ... mais je suis sur un serveur mutualisé, je ne
+          sais pas comment je vais faire pour changer la config ?
+
+   33. Le 10-07-11, 21:35 par Benjamin
+          Je ne connais pas du tout 1and1. Il semble pourtant que toutes
+          leurs offres soient compatibles htaccess
+          (http://faq.1and1.fr/hebergements/ht...). Vérifie que ce fichier
+          est bien au bon endroit sur ton espace web.
+          Tu n'a pas eu d'erreur lors de l'installation ? Pas de phrases
+          en rouge comme dans mon exemple ?
+
+   34. Le 11-07-11, 14:21 par Gamoth
+          Après quelques heures de tests à farfouiller sur le web et sur
+          mon serveur.
+          J'ai validé le fait que mon hébergement était bien compatible
+          avec url_rewriting et j'ai résolu mon soucis en modifiant
+          l'htaccess du répertoire rsslounge :
+
+          Supression des balises IfModule mod_rewrite.c.
+          A la place j'ai ajouté :
+          Options +FollowSymLinks
+
+          Bonne continuation
+
+          Et décommenté :
+          RewriteBase /rsslounge/
+
+          Mon rsslounge marche comme il faut,
+          première reflexion : ça à l'air assez lent par rapport à Reader,
+          assez lourd ... mais cela me permet d'être libéré de Google
+          Deuxième reflexion : Rsslounge me permet de récupérer mes flux
+          avec un peu d'avance par rapport à Reader (vu que google
+          récupere vos flux à une fréquence proportionnelle au nombre de
+          visiteurs)
+
+   35. Le 11-07-11, 15:01 par Benjamin
+          Merci pour ton retour, cela servira certainement à d'autres ;)
+
+   36. Le 18-07-11, 18:09 par mystery_inter
+          Tout fonctionne à merveille, merci de m' avoir fait découvrir
+          cet outil. Pour la réécriture d' url, il peut également s' agir
+          d' une non activation. Il suffira donc, dans un terminal, de
+          taper ceci: sudo a2enmod rewrite .
+          Bonne soirée.
+
+   37. Le 20-07-11, 06:28 par dudumomo
+          Merci Bob, j'ai eu le meme soucis.
+          Impossible de cliquer. J'ai commente la ligne en question et ca
+          fonctionne...
+
+   38. Le 12-09-11, 15:33 par Eric
+          J'ai le même problème que Bob. J'ai beau relire ce thread dans
+          tous les sens... de quelle ligne parle t-il?
+          Je n'arrive toujours pas à cliquer sur les liens interne de
+          rsslounge.
+          Merci pr avance
+
+   39. Le 13-09-11, 08:28 par Benjamin
+          @Eric : il parle du fichier
+          /etc/apache2/conf.d/javascript-common.conf
+          Ceci dit, selon les distributions, c'est peut-être à un autre
+          endroit.
+          Si tu ne le trouve pas, essaye de lancer la commande suivante :
+          locate javascript-common.conf
+
+          ou encore
+          grep -Rl javascript /etc/apache2/*
+
+   40. Le 18-09-11, 09:23 par Lecapitan
+          Salut
+          Je suis aussi hébergé en mutualisé chez 1&1... et j'ai beau
+          tordre mon .htaccess rien n'y fait... erreur de connexion à la
+          bdd... Pouvez-vous publier un .htaccess appliqué à 1&1 s'il vous
+          plait ? Merci :)
+
+   41. Le 02-11-11, 14:42 par LeCharles
+          Pour l'installer chez 1and1, il faut suivre les instructions
+          indiquées ici (http://faq.1and1.fr/hebergements/ht...) ce qui
+          donne un .htacess avec cette tête là (uniquement la partie
+          modRewrite le reste n'est pas à changer) :
+          <IfModule mod_rewrite.c>
+
+   RewriteEngine on
+   Options +FollowSymLinks
+
+   RewriteBase /rsslounge/
+   #RewriteBase /path/to/rsslounge/
+
+   # rule for plugins
+   RewriteRule !plugins/([^/]+)/public/(.*)$ - [C]
+   RewriteRule plugins/([^/]+)/(.*)$ plugins/$1/public/$2 [L]
+
+   # rule for favicons
+   RewriteRule !data/favicons/(.*)$ - [C]
+   RewriteRule favicons/(.*)$ data/favicons/$1 [L]
+
+   # rule for thumbnails
+   RewriteRule !data/thumbnails/(.*)$ - [C]
+   RewriteRule thumbnails/(.*)$ data/thumbnails/$1 [L]
+
+   # rule for front controller
+   RewriteCond %{QUERY_STRING} ^(.*)$
+   RewriteRule !.(js|ico|gif|jpg|png|css|asc|txt)$ index.php?mod_rewrite=1&%1
+
+   # rule for files
+   RewriteRule !favicons - [C]
+   RewriteRule !thumbnails - [C]
+   RewriteRule !public - [C]
+   RewriteRule !plugins/([^/]+)/public/(.*)$ - [C]
+   RewriteRule !index.php - [C]
+   RewriteRule (.*) public/$1 [L]
+</IfModule>
+
+   42. Le 24-01-12, 06:10 par Couz
+          Salut Benjamin,
+
+          Encore merci pour tes tutos. Je me lance en utohébergement, et
+          après un an de tinytinyrss, j'en arrivais aux même conclusions
+          que toi.
+          Par contre, tu as oublié de préciser qu'il fallait créer la base
+          de données de rsslounge (vide) avant de lancer l'install.
+          C'est con, mais quand on est un "geek du dimanche"(tm) comme
+          moi, ce genre de chose ne coule pas vraiment de source!
+          Bref, une petite indication m'aurait fait gagner 20 minutes...
+
+          Encore merci
+
+          Couz
+
+   43. Le 24-01-12, 09:42 par Benjamin
+          @Couz : Bien vu, j'ai corrigé :)
+          Merci
+
+   44. Le 25-01-12, 11:26 par Couz
+          Une autre remarque, concernant l'import OPML TTRSS => RssLounge
+          : J'ai dû exporter mes flux de TTRSS, faire un export OPML de
+          RssLounge, et copier coller le "Body" du fichier TTRSS dans le
+          fichier RssLounge. Ensuite, un import du fichhier RssLounge
+          ainsi modifié a fonctionné.
+          Je me suis en effet aperçu que le format de fichier n'était pas
+          le même (php pour TTRSS, xml pour rssLounge), et le "head"
+          n'était pas identique non plus (dateCreated dans TTRSS,
+          dateModified dans RssLounge).
+          Ca peut sûrement en aider quelques uns...
+
+   45. Le 04-04-12, 18:52 par MaKoTo
+          @Benjamin : J'avais laissé tombé sans trouver de solution, (cf
+          com N°18)
+          Je viens d'installer la version 1.7 et cette fois l'installation
+          s'est déroulée correctement !
+
+   46. Le 31-05-12, 07:18 par Kane
+          Un agrégateur RSS très sympathique, je viens de l'installer chez
+          moi pour le tester et je le trouve assez agréable à utilisé,
+          mais il lui manque la possibilité de géré plusieurs utilisateurs
+          que je souhaiterai avoir, en auriez-vous un autre à conseiller
+          qui gère cette option ?
+
+   47. Le 29-06-12, 18:33 par clément
+          Bonjour et merci pour ce tuto !
+          Je suis arrivé au bout de l’installation mais une fois que je me
+          suis retrouvé sur la page « d’accueil », aucun bouton ne réagit
+          lorsque je clique dessus (pour ajouter un flux par exemple).
+          Que faire ?
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !
+   #Accueil Archives Installation de Rapsbian sur une carte SD à partir
+   d'Ubuntu Mon nouveau joujou à venir : le Raspberry Pi RSS 2.0 Atom 1.0
+
+     * Accueil
+     * News
+     * Auto hébergement
+     * Raspberry Pi
+     * Serveur
+     * Logiciels
+     * Jeux
+     * Cours Linux
+     * Trucs - Astuces
+     * Autres
+     * Contact / À propos
+
+   « Mon nouveau joujou à venir : le Raspberry Pi --|-- Installation de
+               Rapsbian sur une carte SD à partir d'Ubuntu »
+
+Raspberry Pi : vos témoignages m'interessent
+
+   Cet article a été publié par Benjamin le 11-01-13 à 23:16 dans la
+   catégorie Raspberry Pi
+   Tags : - auto-hebergement - Libre - Raspberry Pi - Serveur
+
+   Il y a un peu plus de 2 ans, quand je commençais à m'intéresser à
+   l'auto-hébergement, j'avais sollicité vos témoignages sur la question
+   dans cet article. Les témoignages que j'avais reçu étaient vraiment
+   très intéressants, très instructifs et m'avaient donné beaucoup d'idées
+   (et fait découvrir un certain nombre de nouvelles choses).
+
+   Comme je m'intéresse maintenant pas mal au Raspberry Pi, j'ai décidé de
+   recommencer l'expérience avec ce dernier. Je suis vraiment curieux
+   d'avoir vos avis et retours d'expériences.
+
+   point_inter.png
+
+   Tellement de choses sont possibles avec ce petit bijou !
+
+   Il y a des idées auxquelles j'ai déjà pensé (comme une webcam
+   transportable ou encore une "station d'émulation"), d'autres qui me
+   font envie mais pour lesquelles il me manque encore des compétences (en
+   électronique notamment) et d'autres encore auxquelles je n'ai même pas
+   pensé.
+
+   Cet article (et surtout ses commentaires) sont là pour ça. Pour me (et
+   vous) permettre de découvrir de nouvelles idées, d'avoir un retour des
+   utilisateurs, bref, d'échanger sur ce sujet. Voici quelques questions
+   qui vont nous permettre de mieux connaître vos motivations/réalisations
+   sur votre Raspberry Pi.
+
+   raspberry_pi_logo.jpg
+
+   Vous pouvez répondre à toutes les questions ou juste une partie, c'est
+   comme vous voulez. Si vous voulez ajouter des choses qui ne
+   correspondent à aucune question, n'hésitez pas non plus :)
+     * Avez-vous un Raspberry Pi ? Si oui, depuis quand ? Où l'avez vous
+       acheté ?
+     * Si vous l'utilisez depuis quelques temps, quels sont, selon vous,
+       ses principaux avantages et inconvénients ?
+     * Quel OS avez-vous installé dessus ? Pourquoi celui-ci ? En
+       avez-vous testé d'autres ?
+     * Quel matériel avez-vous branché dessus ?
+     * Quelle utilisation en avez-vous actuellement ? Quelles applications
+       avez-vous installé ?
+     * Quels sont vos prochains projets avec votre Raspberry (des plus
+       simples aux plus fous) ?
+     * Avez-vous des conseils pour ceux qui vont (ou viennent d') acquérir
+       un nouveau Raspberry d'ici peu de temps ?
+
+   Merci par avance pour vos réponses. La parole est à vous :)
+
+Commentaires
+
+   1. Le 12-01-13, 08:29 par GaLaK
+          1/ Non, deux. Reçus mi 2012 pour l'un (Farnell) et fin 2012 pour
+          l'autre (Radiospare). Commandés en même temps.
+          2/ C'est une petite machine pratique pour bidouiller et éviter
+          de faire ça sur mon NAS (par exemple).
+          3/ Raspian. J'ai acheté le RasPi pour apprendre et me plonger
+          dans "linux" du coup j'ai cherché ce qui semblait simple pour
+          commencer.
+          4/ Rien de particulier, RJ45 d'un côté et alim de l'autre.
+          5/ Serveur BIND (à changer par unbound pour tester), ICINGA (à
+          finir de configurer), FTP et Apache.
+          6/ Le plus gros morceau sera de configurer ICINGA pour monitorer
+          tous mes appareils, et voir pour mettre le second RasPi sur une
+          autre connexion pour le côté "sécu". Je les ai vraiment pris
+          pour m'amuser.
+          7/ Fonce, n'hésite pas, c'est un très bon petit appareil pour
+          tester, et la nouvelle version devrait être un peu plus péchu
+          (RAM x2).
+
+          Un lien qui pourrait t'intéresser :
+          http://blogs.wefrag.com/ecaheti/?s=...
+
+   2. Le 12-01-13, 09:10 par Michael
+          1. J'en ai acheté un en août, livré en novembre ... et là je
+          viens d'en commander un second tellement il y'a des choses à
+          faire avec :)
+          2. Petit / Pas bruyant / Chauffe très peu / Peu consommateur en
+          énergie / Relativement puissant pour un tas de choses
+          3. J'ai testé Raspbian / Raspbmc / Openelec
+          4. RJ 45 et alim pour le moment car il est sous raspbian, le
+          second sera sous Openelec donc hdmi en plus
+          5. Download box (mais chut faut surtout pas le dire !) | Openvpn
+          & Sabnzbd
+          6. Le second servira juste de mediacenter sous Openelec.
+          7. Testez plusieurs distribs, y'a des trucs sympa un peu
+          partout. Ne tapez surtout pas sur google "projets raspberry pi"
+          ou un truc du genre car vous allez vous ruiner à acheter des
+          tonnes de trucs pour faire des projets fun :)
+
+   3. Le 12-01-13, 09:24 par Toine
+          1/Oui, depuis juillet 2012, acheté chez Farnell/element 14
+          2/Avantage:Consommation faible, plutot véloce pour certaines
+          utilisations. Inconvénients:La prise USB ne délivre pas assez de
+          puissance pour une webcam par exemple, obligation de passer par
+          un hub alimenté.
+          3/J'utilise Raspbian, qui est à mon sens le plus maintenu et le
+          plus optimisé pour la "bète"
+          4/Un disque dur externe pour ne pas trop solliciter la carte SD,
+          un port ethernet
+          5/Je l'utilise comme un mini serveur:
+          lighttpd,php,mysql,transmission pour le bittorrent. J'utilise
+          Owncloud dessus pour l'agenda, les contacts, les photos....
+          6/Je pense peut être l'utiliser en plus comme une solution de
+          surveillance de mon domicile à distance avec zoneMindder
+          7/Ne pas hésiter à l'acheter, c'est vraiment un bon appareil qui
+          fonctionne très bien(les coupures proviennent en général de
+          coupure de courant affectant le quartier....)
+
+          Amusez vous bien avec :)
+
+   4. Le 12-01-13, 09:31 par Rolinh
+          Je possède un Raspberry Pi version B (512M) depuis le mois de
+          décembre dernier. Je l'ai commandé ici:https://shop.klingler.net
+          (au passage, reçu le lendemain du jour de mon paiement car ils
+          se sont permis de me l'envoyer en envoi prioritaire sans frais
+          supplémentaires :-) ).
+
+          Je ne l'utilise pas depuis très longtemps car je subissais un
+          bug du nouveau firmware qui m'empêchait de booter avec ma carte
+          SD (alors qu'avec l'ancien cela fonctionnait, allez
+          chercher...). Ceci dit, pour moi, ses avantages sont surtout sa
+          compacité, le fait qu'il soit parfaitement silencieux (ce qui
+          l'autorise à tourner 7/7 24/24 dans ma chambre sans que cela
+          dérange) et consomme très peu, la communauté qui s'est formée
+          autour du Pi, la sortie HDMI, les possibilités d'extensions
+          grâce au GPIO, l'excellente partie vidéo. Si on le compare au
+          cubieboard (voir http://cubieboard.org/, qui sera très
+          probablement ma prochaine acquisition), il lui manque surtout, à
+          mon sens, l'infrarouge ce qui est à mon avis une excellente
+          chose si on souhaite en faire un mediacenter/radio/etc. Le
+          cubieboard possède également un port SATA, un processeur et une
+          partie vidéo plus robuste, etc mais il est un petit peu plus
+          cher.
+
+          J'ai installé archlinux dessus parce que c'est la distribution
+          que j'utilise tous les jours et qu'elle est extrêmement
+          flexible. Aussi car Raspbian vient avec un tas de chose dont je
+          n'ai aucune utilité (LXDE (donc serveur X), un store, etc) et
+          que je ne souhaite avoir que le minimum nécessaire installé.
+
+          J'y ai branché une vieille webcam USB qui traînait chez moi
+          depuis quelques années, un disque dur externe et une paire
+          d'enceinte via le jack. Je compte y ajouter un écran LCD avec 5
+          boutons via le GPIO.
+
+          Je n'ai pas encore eu le temps de faire tout ce que je voulais
+          avec car je n'ai commencé à vraiment l'utilisé que... hier.
+          Cependant, j'y ai mis mpd pour en faire un serveur de musique et
+          transmission-cli pour télécharger des torrents. Par la suite,
+          j'aimerais notamment en faire un poste radio avancé avec
+          radio-internet, réveil matin qui me donne la météo du jour et me
+          lance de la musique. En fait, je compte en faire un petit Jarvis
+          ^^. Je suis en train de regarder pour faire de la détection de
+          visage via la webcam. Par la suite, il sera capable de faire des
+          choses comme par exemple couper la musique de mon réveil quand
+          je sors du lit, me saluer quand je rentre dans ma chambre ou me
+          demander qui est la personne qui m'accompagne. Le plus dur sera
+          évidemment de m'attaquer à la reconnaissance vocale...(je
+          commencerais par lui donner des instructions en tapant dans les
+          mains, c'est plus simple).
+
+          Sinon, s'il fallait un conseil: bien choisir une carte SD parmi
+          la liste de celles présentés comme parfaitement compatible. A
+          part ça: avoir du temps devant soi. :-P
+
+   5. Le 12-01-13, 09:54 par Olivaa
+          J'ai mon raspberry depuis 6 mois. J'utilise Raspbian (je voulais
+          mettre Archlinux mais la distribution ne prenait pas encore en
+          compte l'ABI). Je lui ai branché 3 disques externes (via un hub
+          alimenté) et une imprimante et je m'en sert comme serveur samba,
+          nfs et cups. Je lui ai aussi mis un serveur de téléchargement
+          (Transmission) et un serveur web (Apache, php, MySQL) pour
+          pouvoir y installer Ampache et streamer ma musique de n'importe
+          où. J'avais un peu peur qu'ampache ne puisse pas être utilisé
+          mais pour une utilisation perso, il est capable de lire ma
+          musique sur un disque dur externe en FLAC, de la transcoder en
+          mp3 à la volé et de la streamer sur internet !
+          Pour la carte mémoire, je n'ai pas encore "investi" dedans, je
+          fonctionne encore avec une vielle carte sd 4GO classe 4 qui me
+          restait d'un appareil photos !
+
+          Au final, c'est une très bonne machine et j'en suis très
+          content. Il faut aimer bidouiller et après c'est que du bonheur
+          !
+
+   6. Le 12-01-13, 11:02 par Pierre
+          Je lorgne sérieusement dessus.
+          Si j'en prends un, ce sera un peu pour bidouiller, mais surtout
+          pour installer Raspbmc dessus, et le brancher à mon téléviseur
+          en HDMI. Il sera relié à mon NAS (via le réseau RJ45), qui
+          contient ma médiathèque.
+          J'ai lu sur le Web qu'il fallait bien faire attention à
+          l'alimentation choisie, car le décodage de vidéos HD pompe pas
+          mal d'énergie.
+
+          J'attends tes articles :) Cette petite machine est vraiment une
+          super invention !
+
+   7. Le 12-01-13, 11:10 par Ziv
+          1/ Oui , depuis 1 mois chez RS (donc 512m de RAM)
+          2/ Consomation minimale ,taille, communauté // Chronophage
+          3/ Raspbian , Basé sous debian => même "commandes" que ubuntu ;
+          la plus généraliste ; non
+          4/ Ethernet ou Wifi ça dépend si j'ai besoin de l'avoir à
+          proximité + Alim sur secteur + Disque Dur interne branché via
+          dock en usb
+          5/Service routage DNS via no-ip pour une connexion facile en WAN
+          Serveur de téléchargement (Pyload / Bitorrent via transmission
+          en daemon ; le tout controlable depuis mon smartphone via
+          applications)
+          Serveur Web (Nginx,php,mysql) Pour dire que (pour l'instant) ;
+          NAS via samba (que je cherche à rendre accessible en WAN) ;
+          Player musical via daemon en dlna (controlable appli android)
+          Petit projet (momentané) de recolte de log de
+          connection/déconnection de contact facebook afin de regrouper ça
+          dans un agenda et voir l'évolution (oui c'est un peu vicieux
+          mais ça me fait réfléchir) Via Pidgin + Commandes sed + excel
+          Un peu de domotique via les GPIO mais un peu plus tard
+          6/ De la domotique ( Gérer des ondes radio 433mhz ; Gérer de
+          Infrarouge )
+          Faire des truc avec les GPIO
+          Faire ça http://pautex.fr/domotique/rgb.php
+          Me mettre à sécuriser drastiquement tout ce qui touche au réseau
+          Apprendre l'electronique , et me mettre vraiment au C
+          Des Liens !
+
+          Des Blog avec du contenu sur le Raspberry Pi
+          A lire obligatoirement : http://blog.idleman.fr/
+          http://blog.honeyshell.com/
+          http://rpi-blog.com/
+          http://pihomeserver.wordpress.com/
+          How To:
+          http://www.tropfacile.net/doku.php
+          http://elinux.org/RPi_Guides
+          Instalations logiciels:
+          http://www.megaleecher.net/Free_dow...
+          http://blog.scphillips.com/2013/01/...
+          GPIO:
+          http://aron.ws/projects/lirc_rpi/
+          http://www.raspberrypi.org/phpBB3/v...
+
+   8. Le 12-01-13, 11:20 par Dack46
+          1) J'ai acheté un RPI sur Farnell fin septembre et je l'ai reçu
+          début décembre.
+          2) Plusieurs avantages : fanless, très économe etc...
+          3) J'ai installé Archlinux car c'est l'OS qui est sur mes autres
+          ordinateurs. J'avais testé Openelec aussi mais la liberté de
+          pouvoir faire autre chose que xbmc me manquait.
+          4) J'ai branché la télé, un cable ethernet et je suis en attente
+          d'une DAC usb.
+          5) Actuellement, il me sert de PCHC avec xbmc et quand j'aurais
+          recu le DAC, je m'en servirai comme "squeezebox".
+          6) Mon prochain projet est d'en acheter un autre et de
+          l'utiliser comme "Car PC".
+          7) Seul l'imagination vous limitera car la documentation ne
+          manque pas sur internet ;)
+
+   9. Le 12-01-13, 14:00 par Yannick
+          Acheté il y a 2 mois.
+          Principal avantage -> Faible consommation electrique (par
+          rapport aux perf) (donc ideal serveur allumé 24/24)
+          Rasbian/Raspbmc
+          RJ45/HDMI/Carte USB / Recepteur infrarouge USB (pour
+          telecommande) (acheté 8$ chez DealExtreme)
+          Hub USB alimenté commandé...
+          Serveur de fichier/ MediaCenter
+
+          Ca pourrait etre sympa de créer un Planet Francophone pour
+          aggréger les flux "rasp" de tous les blogs ? Mais je n'ai pas
+          assez de temps pour m'y atteler (tout seul).. donc je lance
+          l'appel :)
+
+   10. Le 12-01-13, 16:59 par Benjamin
+          Merci pour vos réponses. Plein de choses intéressantes dans ces
+          commentaires, pas mal de découvertes grâce à tes liens Ziv.
+          Moi qui veut brancher au minimum une webcam et un dongle wifi,
+          j'ai bien compris qu'un HUB USB alimenté serait indispensable.
+          Ceci dit, il ne faudrait brancher que l'alim du HUB car le
+          Raspberry Pi en lui même pourrait être alimenté directement via
+          ce hub, ce qui est pas mal, cela ne fait toujours qu'un fil à
+          brancher.
+          En effet j'avais aussi pensé qu'un planet rapsberry serait sympa
+          Yannick. Moi j'ai le serveur, si on est plusieurs sur le projet,
+          pourquoi ne pas le mettre en place :)
+
+   11. Le 12-01-13, 21:07 par Ziv
+          +1 Pour le Planet ; pour un wiki j'ai oublié de préciser qu'il y
+          a pas mal de ressources sur: http://elinux.org/RPi_Hub
+
+   12. Le 13-01-13, 09:22 par Michael
+          Ha oui et j'oubliais quand même un sacré avantage du Raspberry
+          Pi sous OpenElec ou Raspbmc : le hdmi CEC !
+
+          En effet, pouvoir piloter le raspberry depuis la télécommande de
+          sa télé compatible hdmi CEC c'est juste un pur bonheur :)
+
+   13. Le 13-01-13, 12:03 par zobi8225
+          Il est beau, j'ai installé plein de trucs dessus et maintenant
+          je ne sais pas quoi en faire....
+          Je pense que j'ai encore du mal à me dire que je pourrais m'en
+          servir pour un truc mono-tache.
+
+   14. Le 13-01-13, 13:04 par Yannick
+          @Benjamin
+          Pour un planet, j'imagine qu'on pourrait utiliser
+          http://www.bilboplanet.com/ ?
+          Mon temps disponible étant limité, donc comme tu le dit, il
+          faudrait je pense trouver quelques autres personnes motivée en +
+          (et qui ont un peu de temps) avant de se lancer..
+          Ceci dit, je n'ai pas d'expérience précisément sur bilboplanet,
+          mais ce n'est peut etre pas trop compliqué.. Si tu veux
+          commencer a tester sur ton serveur.. ? je peux te filer un coup
+          de main.. et une fois le truc sur les rails (rien ne presse), on
+          pourra sans doute trouver d'autres personnes motivées... ?
+          Tu as mon mail.. .. A suivre
+
+          Je verrais bien un planet raspberry+arduino en fait..
+          A+
+
+   15. Le 13-01-13, 13:08 par ChrOnOs
+          1) J'en ai un depuis deux semaines, acheté sur RS (3 semaines de
+          livraison). Mais je vais en acheter un second pour mes beaux
+          parents sur snootlab.com quand ils auront du stock (livraison
+          rapide, service top)
+          2) Beau, sa taille, son prix, sa conso d'énergie, fanless,
+          raspbian, tous les articles autour
+          3) J'ai deux cartes SD, une vieille de 4Go avec Raspbian que
+          j'utilise pour m'amuser avec le GPIO, une autre de 8Go (5€) avec
+          SqueezePlug pour l'avoir testé pour mes beaux parents. Et cette
+          deuxième solution fonctionne au top pour un serveur de fichier &
+          UPNP s'alliant parfaitement avec BubbleUpnp pour Android. Ayant
+          une Freebox Revolution chez moi, tout est beaucoup plus rapide
+          avec le rPI sous SqueezePlug (MediaTomb). Donc si vous avez un
+          disque dur USB alimenté et que vous voulez le transformer en
+          serveur multimédia, c'est vraiment top (et simple en plus).
+          4) Disque dur, clavier, souris, breadboard sur le GPIO
+          5) Principalement des outils pour bidouiller avec le GPIO
+          (WebIOPi, Node.JS, NGinx-PHP-MySQL, PHP-GPIO, WiringPI)
+          6) M'initier à l’électronique et la domotique.
+          7) Rangez-le dans un tiroir, ça vous permettra de garder un
+          contact social.
+
+   16. Le 13-01-13, 14:19 par Gizeek
+          1) Un seul, commandé chez Radiospares arrivé 6 semaines tout
+          pile après la commande
+          2) Aucun inconvénients pour l'instant à part peut être le
+          décodage des pistes sons en DTS qui est mauvais
+          3) OpenElec beaucoup plus stable et fluide que raspbmc testé
+          aussi. Android pas encore prêt pour la plate forme.
+          4) TV HD via HDMI et normal: alim et réseau
+          5) Media center avec contrôle par télécommande de la TV avec
+          OpenElec et XBMC
+          6) Un mini serveur web, une TV Android
+          7) Gaffe à l'alim ! La plupart des problèmes viennent de l'alim.
+          Ne pas négliger la vitesse de la carte SD, je rame bcp moins sur
+          une Classe 10 qu'une Classe 4
+
+          Mon avis complet dispo ici:
+          http://www.gizeek.com/2012/12/28/ed...
+
+   17. Le 14-01-13, 09:19 par Jeoffrey
+          Hello,
+
+          Possesseur d'un RPI depuis 2 semaines, je serais moi aussi
+          intéressé pour gérer un planet sur le sujet du RPI :).
+
+          - Avez-vous un Raspberry Pi ? Si oui, depuis quand ? Où l'avez
+          vous acheté ?
+          Oui, commandé il ya 3 semaines sur Farnell ;).
+          - Si vous l'utilisez depuis quelques temps, quels sont, selon
+          vous, ses principaux avantages et inconvénients ?
+          Léger, peu bruyant, transportable facilement
+          - Quel OS avez-vous installé dessus ? Pourquoi celui-ci ? En
+          avez-vous testé d'autres ?
+          J'ai l'intention d'installer Raspbian pour en faire un media
+          center. Puis peut-être Achlinux.
+          - Quel matériel avez-vous branché dessus ?
+          Pour l'instant, ma TV, et plus tard un disque dur.
+          - Quelle utilisation en avez-vous actuellement ? Quelles
+          applications avez-vous installé ?
+          MediaCenter via XBMC
+          - Quels sont vos prochains projets avec votre Raspberry (des
+          plus simples aux plus fous) ?
+          Un mediacenter complet, avec lecteur Spotify
+          Faire de mon RPI un élément central de mon appartement
+          (contrôlle de tout : volets, élec, ...)
+          - Avez-vous des conseils pour ceux qui vont (ou viennent d')
+          acquérir un nouveau Raspberry d'ici peu de temps ?
+          Foncez ! Pour le cout de ce petit objet, ça vaut vraiment le
+          coup de tester !
+
+   18. Le 14-01-13, 20:17 par cosmoken
+          - Avez-vous un Raspberry Pi ? Si oui, depuis quand ? Où l'avez
+          vous acheté ?
+          Oui :) chez Farnell
+
+          - Si vous l'utilisez depuis quelques temps, quels sont, selon
+          vous, ses principaux avantages et inconvénients ?
+          Avantages : faible consommation, faible encombrement, silencieux
+          Inconvénient : pas de bouton off, pas de coque (mais j'aurais pu
+          en acheter une !)
+
+          - Quel OS avez-vous installé dessus ? Pourquoi celui-ci ? En
+          avez-vous testé d'autres ?
+          Debian, grâce à l'image distribuée sur le site de Raspberry.
+          Allégée à fond.
+
+          - Quel matériel avez-vous branché dessus ?
+          Ma Freebox pour le stockage
+          Ma webcam, mais je n'ai jamais terminé son installation.
+
+          - Quelle utilisation en avez-vous actuellement ? Quelles
+          applications avez-vous installé ?
+          Serveur Bacula (sauvegarde)
+          J'ai tenté baby phone grâce à la webcam, mais je n'ai pas
+          terminé
+          J'ai aussi tenté un serveur owncloud, mais mon instance chez
+          Gandi correspond plus au besoin, surtout en termes de réactivité
+          du serveur
+
+          - Quels sont vos prochains projets avec votre Raspberry (des
+          plus simples aux plus fous) ?
+          Simple : serveur cacti (supervision)
+
+          - Avez-vous des conseils pour ceux qui vont (ou viennent d')
+          acquérir un nouveau Raspberry d'ici peu de temps ?
+          Pour un serveur perso, ne pas hésiter !
+
+   19. Le 15-01-13, 17:58 par pavixx
+          - Avez-vous un Raspberry Pi ? Si oui, depuis quand ? Où l'avez
+          vous acheté ?
+             -- Chez Farnell ; obtenu assez rapidement (chance ?)
+          - Si vous l'utilisez depuis quelques temps, quels sont, selon
+          vous, ses principaux avantages et inconvénients ?
+            -- Avantages : prix, faible consommation, faible encombrement,
+          silencieux
+            -- Inconvénient : pas de bouton off
+          - Quel OS avez-vous installé dessus ? Pourquoi celui-ci ? En
+          avez-vous testé d'autres ?
+            -- Debian, grâce à l'image distribuée sur le site de Raspberry
+            -- J'attends que le portage de Puppylinux soit effectif.
+          - Quel matériel avez-vous branché dessus ?
+            -- Ma Freebox en réseau filaire pour l'accès au net. Mais le
+          wifi marchait aussi bien...
+          - Quelle utilisation en avez-vous actuellement ? Quelles
+          applications avez-vous installé ?
+            -- Client mail Icedove (Thunderbird de Debian) pour déplacer
+          les spams de mes boites email dans le dossier "spam", sans que
+          je sois connecté, en se basant sur le contenu des carnets
+          d'adresse
+            -- Une extension qui permet de synchroniser les carnets
+          d'adresse entre Icedove et Thunderbird (windows), en tâche de
+          fond via le ftp de free
+            -- VNCserver pour pouvoir me connecter au Rasp. à partir de
+          mon mobile (donc pas sans clavier, souris, écran connecté au
+          Rasp).
+          - Avez-vous des conseils pour ceux qui vont (ou viennent d')
+          acquérir un nouveau Raspberry d'ici peu de temps ?
+            -- Si vous n'êtes pas un habitué de la ligne de commande:
+          courage !!!
+            -- Personnellement, les débats du genre windows, macOs ou
+          Linux, n'ont pas d'interêt en eux-mêmes. J'apprends à les
+          utiliser. Point. Mais pour arriver à avoir tout ce que je veux,
+          sur le Raspberry Pi (et c'était pas grand-chose), ça m'a pris un
+          bon mois et au moins 15 reformatages de ma carte SD, à tout
+          recommencer à chaque fois... pourtant si je ne suis pas
+          informaticien-pro je ne suis pas non plus manchot dans ce
+          domaine.
+            -- exemples de ce qui vous attend: apprendre à mettre le
+          clavier (pour l'installation) en AZERTY, à mettre la vidéo en
+          PAL, à avoir une définition en HDMI qui soit compatible avec mon
+          écran, Savoir comment se connecter en wifi, télécharger une
+          application, comment l'installer et la supprimer, comment la
+          lancer au démarrage du Rasp... etc... et surtout: "comment je
+          sauvegarde ma carte SD quand je suis content pour ne pas y
+          repasser 3 heures à chaque fois".
+            -- Mais le résultat est là: peu de consommation d'énergie
+          électrique; ça marche... en silence... c'est petit dans un
+          coin... c'est pas cher... et c'est fiable.
+            -- Que du bonheur...
+
+   20. Le 23-01-13, 14:30 par Er0y
+          pavixx, ce serait intéressant d'avoir un blog ou liens répondant
+          clairement à ces problèmes via des tutos : "à mettre la vidéo en
+          PAL, à avoir une définition en HDMI qui soit compatible avec mon
+          écran, Savoir comment se connecter en wifi, comment la lancer au
+          démarrage du Rasp... etc... et surtout: "comment je sauvegarde
+          ma carte SD quand je suis content pour ne pas y repasser 3
+          heures à chaque fois""
+
+          Etant informaticien-pro (softeux), je n'ai pas honte d'avouer
+          que j'ai aussi acheté un RPi pour apprendre et me rappeler
+          comment résoudre ce genre de choses, et aussi pour apprendre
+          l'électronique et la domotique.
+
+   21. Le 10-02-13, 05:47 par ANDRE Ani
+          Moi, je n'en ai pas encore, mais j'en veux un ;-)
+          A lire tous ces commentaires, ça donne envie !
+          Ce sera pour auto-héberger mon blog (sur le libre), certainement
+          avec la distro fournit basée sur Debian.
+
+   22. Le 19-02-13, 09:22 par Thomas
+          J'ai deux Raspberry, achetés chez Farnell et RS. Cela fait +/- 6
+          mois que je les utilise.
+
+          Le grand avantage est que tous les composants ne sont pas
+          interchangables, cela permet de passé d'une machine à l'autre
+          sans se poser de question. Avec plusieurs carte sd il est
+          possible de passer en 30 seconde d'un OS à l'autre et tout le
+          travail réaliser sur un Rpi est applicable directement sur un
+          autre. Et son prix bien sur. Et comme inconvénient, je dirais
+          que ne n'en ai pas encore vraiment trouvé.
+
+          J'utilise OpenELEC, pour en faire un lecteur multimédia branché
+          à ma TV. Je n'ai utilisé que des OS tourné XBMC comme RaspBMC et
+          XBian.
+
+          J'ai bidouillé un un recepteur IR qui se branche sur le GPIO.
+
+          Lecteur multimédia, XBMC est vraiment génial et fonctionne à
+          merveille avec le Rpi
+
+          J'aimerais en faire un NAS, je l'ai déjà fais avec un autre ordi
+          mais j'aimerais réduire ma consomation energétique.
+
+          Faites vous plaisir, à ce prix la et avec toutes les possibilité
+          il ne faut pas trop hésiter.
+
+          J'ai trouvé le Raspberry vraiment top et j'ai donc décidé de le
+          proposer aux autres et d'essayer qu'il soit mieux connu, je
+          vends des Rpi sur mon site (seulement en belgique pour le
+          moment, si vous ètes pas belge envoyer moi un email!)
+          http://matojoli.be .
+
+   23. Le 21-02-13, 12:02 par Romary
+          Je viens juste d'en commander un chez Farnell.
+
+          Bien sûr, je ne l'ai pas encore reçu.
+
+          Totalement newby sur les bidouille informatique, linux etc, en
+          lisant vos commentaires, je m’aperçois que je en comprends pas
+          grand chose à toutes vos abréviation, j'espère que j'arriverai à
+          en faire quelque chose. En même temps, je ne cherche pas à faire
+          des choses compliqué
+
+   24. Le 21-02-13, 18:29 par OOZVY
+          Bonjour,
+          J' ai reçu mon Raspberry Pi voici 3 semaines. Couplé avec un HD
+          de 2T, l'objectif est de l'installer comme média serveur,
+          serveur web, coud personnel et serveur VPN.
+
+          Pour commencer, installation de Debian + OwnCloud :
+          http://www.instructables.com/id/Ras...
+          Ensuite installation de miniDLNA.
+          puis le serveur VPN ( pptp )
+          http://www.stuffaboutcode.com/2012/...
+          et enfin un serveur FTP : svfptd
+          Par facilité, installation d'un serveur VNC :
+          http://mitchtech.net/vnc-setup-on-r...
+
+          Actuellement, miniDLNA et SvFTPd fonctionnent parfaitement,
+          owncloud est opérationnel mais un peu lent et le serveur VPN est
+          en test...
+
+          -->>> http://titou.dnsdynamic.net/
+
+   25. Le 01-03-13, 09:59 par Steve
+          J'ai un Raspberry Pi depuis quelques semaines maintenant (modèle
+          B à 512) et je m'éclate avec :-)
+
+          J'ai d'abord fait joue-joue avec les différents OS et le serveur
+          X.
+          L'OS Raspbian et LXDE fonctionne bien et est mis à jour assez
+          fréquemment. J'ai aussi testé Risc OS et Fedora Remix que je
+          trouve très joli.
+          J'ai tenté l'installation d'Android dessus, Android 2 était trop
+          lent, ça saccade. Apparemment c'est lié à l'accélération
+          matérielle qui n'est pas prise en charge.
+          Il y a un projet avec Android 4 prometteur mais il semble à
+          l'abandon.
+
+          J'ai finalement mis en oeuvre mon projet initial de serveur web
+          et FTP, et ceci assez facilement.
+          Les instructions sont sur http://stevefuchs.fr/wiki/index.php...
+          Dans un premier temps je fais des tests, j'étudie la
+          consommation mémoire et d'autres choses pour savoir si ça peut
+          tenir le coup pour mon site privé.
+
+   26. Le 10-03-13, 11:16 par ybabel
+          35€ pour un mini ordinateur nu (sans écran, ni clavier ni
+          souris) + 15€ frais de port.
+          Pour démarrer je l'ai utilisé en SSH, et sessions VNC parfois.
+          Réalisé :
+
+   Récupération : carte SD d'un téléphone, chargeur microusb d'un téléphone, cab
+le ethernet (CPL)
+   Installation de raspbian, démarrage, connexion en SSH après un nmap pour trou
+ver l'IP
+   Affichage via cable HDMI
+   Connexion d'un clavier bluetooth (de récup)
+   Installation du stack LAMP
+   Installation d'un wordpress
+   Installation de owncloud via GIT
+   Installation messagerie Postfix et Installation de rouncube
+   Installation de webmin
+   Installation de prosody (XMPP)
+   Compilation de XMBC (24h de compil), installation et compilation de XBMC, mai
+s fonctionne mal
+   Montage automatique d'un DD média
+
+          Prochaines étaptes, tester RaspBMC , tester YunoHost2.0, voir si
+          montage SAMBA pour faire une sorte de serveur NAS, voir comment
+          faire un backup automatique (et de quoi)
+
+   27. Le 13-03-13, 15:34 par pavixx
+          Je ne comprends pas cet engouement pour le RPi : ça fait des
+          mois que je le teste donc je sais de quoi je parle.
+          Des tâches simples demandent une effort surhumain de recherche
+          de documentation, manipulations qui marchent plus ou moins:
+          - Régler la def vidéo correctement,
+          - Comprendre que Thunderbird, c'est Icedove
+          - Lancer un programme au démarrage
+          - Installer un VNC qui marche,
+          - etc...
+          quelle galère, mais surtout ça rame pas possible: c'est juste un
+          jouet avec lequel on ne peut pas faire grand chose. MAIS
+          SURTOUT: avec juste un client email + VNC, il tient pas plus de
+          quelques semaines. après il plante et il faut TOUT réinstaller;
+          j'ai probablement fait une erreur quelque part ? soit: je vous
+          renvoie au début de mon mail...
+
+          J'ai beaucoup mieux apprécié ces nouveaux PC sous forme de
+          dongle et sous android: ça, c'est puissant, ça c'est simple et
+          stable...
+
+          après, hein... chacun ses jouets, chacun dépense son temps comme
+          il veut...
+
+          pavixx
+
+   28. Le 26-03-13, 15:16 par mp.mac
+          Bonjour,
+          est-ce que quelqu'un a des infos sur le module camera de chez
+          Raspberry ?? J'ai tenté une pré-commande avec un mail à
+          l'adresse <iwantacamera@raspberrypi.org> il m'est revenu...
+          Cordialement.
+          Michel
+
+   29. Le 16-05-13, 15:25 par thetataz
+          1/ J'en ai 3, acheter l'année dernière, version 512Mo, acheter
+          chez partenaire de FARNELL.
+          2/ Petit, pratique, pas cher etc ..., manque de port GPIO par
+          contre
+          3/ Plusieurs distribution sur plusieurs carte mémoire, pour du
+          mediacenter préférence à darkelec (parsque light), niveau system
+          archLinux ARM (yaourt <3)
+          4/ Clavier, ethernet etc ..., + led + relais + ecran etc ....
+          5/ Mediacenter pour 1, domotique (en maquette pour le moment)
+          pour un autre, et bidouille electronique avec le dernier (couplé
+          au Arduino ^^)
+          6/ En ce moment je suis beaucoup sur de la domotique (radio), et
+          travaille sur une API PHP pour une gestion simple a distance.
+          7/ bidouiller bidouiller et encore bidouiller,
+
+   30. Le 03-12-13, 11:29 par miguipda
+          Bonjour,
+
+          Cubieboard est plus puissant que RPi.
+          J'attends leur prochaine version, qui devrait être la CubieJet,
+          qui servirait de Routeur / Serveur. Si ils la font réellement
+          comme proposé, cela sera génial puisqu'alors un seul système
+          aura la fonctionnalité Routeur / Serveur (imprimante, fichier,
+          mail, web, domotique, ...).
+
+          A suivre donc sur cubieboard.org
+
+          A+
+
+   31. Le 01-06-14, 11:22 par Acheter raspberry pi
+          "1/Oui, depuis mai 2013, acheté chez Amazon 2/Avantage: faible
+          consommation, facile à utiliser. Inconvénients: Alimentation US
+          et difficile à modifier.
+          3/OS fourni avec le matos.
+          4/Une carte SDHC 2 GB.
+          5/Comme une console de jeux portables.
+          6/je veux le transformer en Google TV.
+          J'aimerais bien savoir pourquoi vous chercher ces infos :p"
+
+                                [tux_rss.gif]
+
+Rechercher
+
+   __________ ok
+
+          Ce blog et tous ses articles sont sous licence CC BY-SA !

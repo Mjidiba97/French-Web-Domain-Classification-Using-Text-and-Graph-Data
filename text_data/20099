@@ -1,0 +1,1777 @@
+   Aller au contenu principal
+
+Accueil
+
+   L'air en France aujourd'hui et demain
+
+Formulaire de recherche
+
+   _______________ (BUTTON) Rechercher
+   (Rechercher) Rechercher
+
+     * La qualité de l'air
+          + Qualité de l'air et enjeux atmosphériques
+          + Origine et source de pollution
+          + Normes de qualité de l'air et gestion de la pollution
+     * Le dispositif français
+     * Analyses et bilans
+          + Analyses historiques et chroniques de polluants
+          + Bilans qualité de l'Air
+     * Actualités
+     * A propos de PREV'AIR
+     * Rechercher
+     * Accès Privé
+
+Vous êtes ici
+
+   Accueil » A propos de PREV'AIR
+
+A propos de PREV'AIR
+
+PREVISION DE LA QUALITÉ DE L’AIR
+
+   PREV’AIR, plate-forme nationale de prévision de la qualité de l’air,
+   est l’une des composantes du dispositif français de surveillance et de
+   gestion de la qualité de l’air, en complément des informations fournies
+   par les réseaux de mesure et d’observation « physiques » gérés par les
+   Associations Agréées de Surveillance de la Qualité de l’Air (AASQA).
+
+   Cette plateforme de prévision de la qualité de l’air, développée et
+   gérée au quotidien par l’INERIS, est le fruit du travail d’un
+   consortium intégrant aux côtés de l’INERIS, Météo France, le CNRS et le
+   LCSQA (Laboratoire central de Surveillance de la Qualité de l’air).
+   Elle est basée sur le résultat de simulations numériques et d’
+   observations recueillies sur le terrain pour prédire et cartographier
+   les concentrations de polluants atmosphériques réglementés.
+
+   Le système PREV'AIR a été mis en place en 2003 afin de diffuser
+   quotidiennement ces prévisions et des cartographies de qualité de l'air
+   à différentes échelles spatiales via son site internet.
+
+   Les cartes et données sont également en libre accès sur le site
+   data.gouv.fr à l'adresse
+   suivante https://www.data.gouv.fr/fr/datasets/mise-a-disposition-de-don
+   nees-de-qu...
+
+   Pour établir des prévisions des concentrations des principaux polluants
+   réglementés (ozone, dioxyde d’azote, particules PM10 et PM2,5) et
+   remplir quotidiennement ses missions, le système PREV’AIR repose sur
+   une succession d’opérations précisées ici :
+
+
+1. Recensement et compilation des données d’entrée
+
+   aq_modelling.inputdata.jpg
+
+   Le premier traitement consiste à récupérer les données d’entrée
+   nécessaires pour le lancement des modèles de qualité de l’air. Cela
+   concerne quatre grands types de données :
+
+
+a) Données d’émissions par secteur d’activité
+
+   Plusieurs inventaires d’émission alimentent PREV’AIR permettant
+   d’intégrer une description temporelle et spatiale des rejets de
+   polluants sur les domaines de prévision à savoir la France et l’Europe.
+   Que ce soit à partir de l’inventaire EMEP (European Monitoring and
+   Evaluation Programme), du TNO développé spécialement pour le programme
+   européen Copernicus ou de l’INS (l’inventaire national spatialisé) pour
+   la France, respectivement à 50 km, 8 km et 1 km de résolution
+   horizontale, PREV’AIR dispose d’émission horaire de polluant décrivant
+   l’intensité des rejets de polluant liés aux activités humaine.
+
+
+   Les émissions prises en compte dans PREV’AIR ne se limitent pas aux
+   émissions dites anthropiques, les émissions naturelles de composés
+   chimiques provenant de la végétation ou des sols et les émissions de
+   poussières telluriques font l’objet de traitements particuliers pour
+   intégrer leur contribution dans l’évaluation des niveaux de pollution
+   ambiant.
+
+   Les données anthropiques sont mises à jour annuellement d’après les
+   déclarations des émissions annuelles faites par les états membres.
+
+
+b) Données météorologiques
+
+   temps.png
+
+   Chaque jour des tâches de PREV’AIR ont pour mission de récupérer des
+   prévisions météorologiques issues de plusieurs centres météorologiques.
+   Météo-France et ECMWF (centre européen de la prévision à moyenne
+   échéance) et également le NCEP (centre météorologique américain) sont
+   les principaux fournisseurs de PREV’AIR. Un traitement intermédiaire
+   peut être réalisé pour affiner ces prévisions météorologiques sur la
+   France et l’Europe en utilisant des modèles météorologiques
+   méso-échelles.
+
+   Ces prévisions météorologiques couvrent la période de prévision et
+   permettent de prendre en compte les phénomènes de transport et de
+   dispersion des masses d’air et les transformations chimiques influant
+   les concentrations de polluants.
+
+
+c) Conditions aux limites
+
+   L’espace géographique étudié est influencé par des concentrations
+   atmosphériques extérieures, à échelle supérieure, qu’il s’agit de
+   quantifier. Il faut donc déterminer et renseigner les concentrations en
+   question aux frontières du domaine de modélisation. Pour cela sont
+   utilisées des données relatives à un certain nombre de composés
+   chimiques atmosphériques, soit issues de données de climatologie soit
+   des prévisions à l’échelle globale (comme celle établies dans le cadre
+   de Copernicus).
+
+
+d) Observations
+
+   Intégrée à part entière dans le système, les observations font l’objet
+   de récupération par PREV’AIR plusieurs fois par jour à l’aide de taches
+   et requêtes qui interrogent la base de données nationales alimentée en
+   temps réel par les mesures des AASQA (association agrée de surveillance
+   de la qualité de l’air). Les observations des pays européens font
+   également l’objet d’une récupération quotidienne via le site de
+   l’agence européenne de l’environnement.
+
+
+
+2. Exécution des modèles de chimie-transport CHIMERE et MOCAGE
+
+   Au terme de cette phase préparatoire, qui permet de regrouper
+   l’ensemble des données à fournir obligatoirement aux modèles de
+   chimie-transport, les lancements des codes de calcul régional et
+   tridimensionnel CHIMERE et MOCAGE permettent de déterminer heure après
+   heure pour les quatre jours de simulation du J-1 au J+2 les
+   concentrations des polluants atmosphériques – ozone, oxydes d’azote,
+   particules en suspension –sur chaque point des maillages géographiques
+   France et Europe. C’est au cœur des modèles que sont programmées des
+   dizaines et des dizaines d’équations retranscrivant la dispersion et
+   les processus physico-chimiques qui dictent l’évolution des
+   concentrations d’une centaine de variables chimiques dans l’atmosphère.
+
+   L’exécution de ces modèles nécessite des moyens informatiques
+   conséquents mobilisés au sein de structure de calcul informatique à
+   haute performance. L’INERIS dispose pour les calculs de CHIMERE d’un
+   cluster informatique (320 cpu) externalisé dans une structure
+   spécialisée permettant une supervision en 24/7 et assurant une haute
+   disponibilité des calculs.
+
+   Météo-France bénéficie d’une structure équivalente pour réaliser les
+   prévisions MOCAGE.
+
+   Quotidiennement au sein de PREV’AIR, à partir des 2 modèles et des
+   multiples sources de données d’entrée ce sont plus d’une douzaine de
+   prévisions qui sont établies dont une petite dizaine sur la France. Cet
+   ensemble de prévision revêt un caractère important pour évaluer le
+   degré d’incertitude lié à la prévision de la situation de la pollution
+   pour les journées à venir.
+
+
+3. Post-traitement : exploitation et traitement des informations produites
+
+   aq_modelling.posttraiteemnt.jpg
+
+a) Traitements cartographiques correctifs
+
+   Des traitements statistiques sont mis en œuvre pour corriger les
+   sorties brutes des modèles et fournir des produits plus pertinents et
+   justes autant pour la prévision que pour la représentation de la
+   pollution de la veille (analyse).
+
+   Pour la prévision (J+0 à J+2), une méthode d’adaptation statistique
+   calcule une correction des concentrations pour plusieurs polluants sur
+   la base de la connaissance des erreurs passées des modèles et d’un
+   ensemble de variables prévues et observées (polluant et météorologie).
+
+   Pour l’analyse (J-1), la correction s’opère à partir de la connaissance
+   des observations pour J-1.
+
+
+   etape_analyse.png
+
+   Ces produits de sorties de PREV’AIR sont le socle de toutes les
+   interprétations fournies par l’équipe PREV’AIR pour la gestion de la
+   qualité de l’air en France.
+
+
+b) Pourquoi les prévisions sur l'Europe et la France diffèrent-elles ?
+
+   A cette question d'utilisateur, des éléments de réponse sont apportés
+   ici pour expliquer les différences pouvant être observées entre les
+   cartographies Europe et France de PREV'AIR.
+
+   Les prévisions ciblant le domaine Europe et celles du domaine France
+   sont issues du même modèle numérique de qualité de l’air, CHIMERE, qui
+   permet de de simuler le transport des polluants atmosphériques et les
+   réactions chimiques qui conduisent à leur formation et leur
+   transformation dans l’atmosphère. Les équations de chimie-transport qui
+   décrivent ces phénomènes sont résolues en chaque point d’une grille qui
+   couvre l’ensemble du domaine de calcul.
+   Cependant la résolution de cette grille géographique diffère d’un
+   domaine à l’autre pour des raisons essentiellement liées au temps de
+   calcul nécessaire (plus il y a de points à traiter, plus il est long).
+   Le domaine Europe est maillé avec une grille dont chaque élément a
+   approximativement une taille de 50km*50km. Mais le domaine France est
+   beaucoup mieux résolu avec une grille de 10km*10km. Utiliser une
+   résolution plus grossière permet de limiter les ressources
+   informatiques et le temps de calcul nécessaire, mais conduit à un «
+   lissage » de la simulation : les structures des champs de pollution
+   sont représentées de façon moins précise, les variations de
+   concentrations à l’intérieur d’une maille sont diluées. Ainsi, les
+   niveaux les plus élevés de concentrations pourront être moins élevés
+   s’ils sont simulés sur un maillage basse résolution. La simulation
+   France est, en ce sens plus précise que la simulation Europe, même si
+   celle-ci reproduit correctement une tendance dans l’évolution de la
+   distribution géographique des concentrations.
+   Un autre aspect permet également d’expliquer les différences entre les
+   prévisions France et prévisions Europe. Alors que la carte Europe
+   restitue directement les résultats issus du modèle (appelés « prévision
+   brutes »), la carte France résulte d’une phase d’expertise
+   supplémentaire appelée « statistique ». En effet l’observation du
+   comportement du système PREv’air et de ses performances depuis plus de
+   10 ans, nous permettent d’anticiper certains biais systématiques des
+   calculs qui varient en fonction des polluants, de la zone géographique
+   et de la période de l’année. Un algorithme de traitement de ces biais a
+   été mis au point par l’équipe de prévisionnistes de l’INERIS établi à
+   partir de l’analyse des performances historiques du modèle (en
+   comparant les prévisions aux observations réelles de qualité de l’air),
+   des données d’observations réalisées par les Associations Agréées de
+   Surveillance de la Qualité de l’Air (AASQA), et de données auxiliaires
+   telles que la répartition de la population. L’algorithme statistique «
+   adapte » ou « dé-biaise » chaque jour les prévisions brutes réalisées
+   sur la France, en corrigeant les biais systématiques qu’elles
+   présentent à partir, entres autres, des observations de la veille. Ces
+   dernières sont collectées quotidiennement auprès des AASQA. Ces
+   techniques sont largement éprouvées dans le domaine de la prévision
+   météorologique. Elles améliorent considérablement la qualité de nos
+   prévisions.
+   De la même manière le système PREv’air fournit aussi quotidiennement
+   des analyses pour la journée de la veille reposant sur une combinaison
+   optimale de la simulation numérique et des observations disponibles.
+   Cet algorithme sophistiqué a pu être mis au point sur le domaine France
+   grâce à la disponibilité et la qualité des données d’observation, mais
+   nous n’avons pour l’instant pas pu l’étendre à toute l’Europe de façon
+   opérationnelle. L’Agence Européenne de l’Environnement met à
+   disposition un ensemble de données d’observation non validées
+   transmises par les Etats membres de l’Union. Nous ne disposons pas pour
+   l’instant de suffisamment de recul sur la qualité de ces données pour
+   générer des analyses et adaptations statistiques aussi fiables que sur
+   la France. Des travaux sont néanmoins en cours et une mise à jour de
+   ces approches modèle-mesure sur l’Europe devraient être disponibles en
+   2017...
+
+   Moyennes journalières de PM10 (µg/m3) pour la journée du 1/12/2016. En
+   haut à gauche : observations aux points de mesures en temps réel
+   fournies par l’Agence Européenne de l’Environnement. En haut à droite :
+   analyse combinant le modèle numérique et les observations pour le
+   domaine couvant la France métropolitaine. En bas à gauche : simulation
+   brute Européenne. En bas à droite : analyse combinant le modèle
+   numérique et les observations pour le domaine couvant l’Europe. Une
+   observation de PM10 élevée et particulièrement isolée en Macédoine a,
+   pour cette échéance, un impact fort sur la qualité de la cartographie
+   dans la partie Sud-Est de l’Europe.
+
+   Différence de résolution, adaptation statistique et assimilation de
+   donnée constituent donc les raisons majeures expliquant les différences
+   entre prévision Europe et prévision France, les prévisions sur la
+   France étant par construction, plus précises et plus fiables.
+
+
+c) Fourniture de donnée pour utilisateurs
+
+   L’une des missions de PREV’AIR est de soutenir l’action en région des
+   AASQA en leur donnant accès à l’ensemble des produits PREV’AIR sur leur
+   région à des fins cartographiques ou pour alimenter leur propre
+   plateforme régionale de prévision de la qualité de l’air.
+
+
+   aasqa_utilisateurs.png
+
+   D’autres acteurs nationaux ou européens de la qualité de l’air ont
+   également accès à ces données pour des activités de surveillance ou de
+   recherche.
+
+
+d) Evaluations
+
+   Les résultats issus de la modélisation sont comparés avec des données
+   issues des réseaux de mesure des AASQA, et regroupées puis traitées au
+   sein de la base de données nationale gérée par le LCSQA.
+
+   L’objectif est de contrôler le comportement des modèles et d’évaluer la
+   qualité de l’ensemble des prévisions établies dans le cadre de
+   PREV’AIR. Les résultats sont rendus public sur le site web PREV’AIR via
+   des indicateurs statistiques tels que le biais, l’erreur quadratique
+   moyenne et la corrélation.
+
+
+
+e) Communications
+
+   En cas d’épisode de pollution annoncé, une analyse de la situation est
+   réalisée par les prévisionnistes PREV’AIR et en synergie avec
+   l’expertise de la prévision PREV’AIR en région faite par les AASQA, un
+   bulletin descriptif de la situation est transmis au ministère en charge
+   de l’écologie. Sous certaines conditions, les éléments de ce bulletin
+   peuvent accompagnés des cartes de prévision PREV’AIR dans les médias.
+
+     * Mentions légales
+     * Conditions d'utilisation
+     * Nous contacter
+     * Plan du site
+   [["Code station","Nom station","AASQA","Code
+   insee","Commune","Latitude","Longitude","Type
+   station"],["01005","Hayange","ATMO
+   GRAND-EST","57306","HAYANGE","49.32472","6.07611","Industriel"],["01006
+   ","Florange","ATMO
+   GRAND-EST","57221","FLORANGE","49.31983","6.14061","Industriel"],["0100
+   9","Gandrange","ATMO
+   GRAND-EST","57242","GANDRANGE","49.27139","6.13250","Industriel"],["010
+   11","Metz-Centre","ATMO
+   GRAND-EST","57463","METZ","49.11968","6.18094","Urbain"],["01012","Metz
+   -Borny","ATMO
+   GRAND-EST","57463","METZ","49.11019","6.22323","P?riurbain"],["01014","
+   Pont-\u00e0-Mousson","ATMO
+   GRAND-EST","54431","PONT-A-MOUSSON","48.91499","6.05863","Urbain"],["01
+   015","Bl\u00e9nod-l\u00e8s-PAM","ATMO
+   GRAND-EST","54079","BLENOD-LES-PONT-A-MOUSSON","48.88462","6.05127","In
+   dustriel"],["01016","Atton","ATMO
+   GRAND-EST","54027","ATTON","48.88639","6.09361","Industriel"],["01018",
+   "Scy-Chazelles","ATMO
+   GRAND-EST","57642","SCY-CHAZELLES","49.10750","6.12262","P?riurbain"],[
+   "01019","Thionville-Piscine","ATMO
+   GRAND-EST","57672","THIONVILLE","49.36858","6.16100","Urbain"],["01020"
+   ,"Thionville-Centre","ATMO
+   GRAND-EST","57672","THIONVILLE","49.35824","6.15699","Urbain"],["01021"
+   ,"Thionville-Garche","ATMO
+   GRAND-EST","57672","THIONVILLE","49.39427","6.20151","P?riurbain"],["01
+   022","St-Julien-l\u00e8s-Metz","ATMO
+   GRAND-EST","57616","SAINT-JULIEN-LES-METZ","49.13118","6.20706","Indust
+   riel"],["02001","Berre l'Etang","ATMO
+   SUD","13014","BERRE-L'ETANG","43.48583","5.17194","Urbain"],["02003","C
+   hateauneuf","ATMO
+   SUD","13026","CHATEAUNEUF-LES-MARTIGUES","43.38694","5.16028","Industri
+   el"],["02004","Martigues P. Central","ATMO
+   SUD","13056","MARTIGUES","43.41667","5.04306","Urbain"],["02005","Marti
+   gues l'Ile","ATMO
+   SUD","13056","MARTIGUES","43.40520","5.05150","Urbain"],["02006","Marti
+   gues Laurons","ATMO
+   SUD","13056","MARTIGUES","43.36111","5.02472","Industriel"],["02007","M
+   artigues La Gatasse","ATMO
+   SUD","13056","MARTIGUES","43.36111","5.05833","Industriel"],["02008","P
+   ort de Bouc Leque","ATMO
+   SUD","13077","PORT-DE-BOUC","43.40222","4.98222","Urbain"],["02009","Po
+   rt Saint Louis","ATMO
+   SUD","13078","PORT-SAINT-LOUIS-DU-RHONE","43.40028","4.79639","Industri
+   el"],["02011","Fos sur Mer","ATMO
+   SUD","13039","FOS-SUR-MER","43.43750","4.94361","Urbain"],["02012","Ist
+   res","ATMO
+   SUD","13047","ISTRES","43.50944","4.98278","Urbain"],["02013","Fos Les
+   Carabins","ATMO
+   SUD","13039","FOS-SUR-MER","43.45889","4.93417","Urbain"],["02014","Por
+   t de Bouc Castil.","ATMO
+   SUD","13077","PORT-DE-BOUC","43.42556","4.99694","Industriel"],["02018"
+   ,"La Fare les Oliviers","ATMO
+   SUD","13014","BERRE-L'ETANG","43.53833","5.18528","Industriel"],["02019
+   ","Vitrolles","ATMO
+   SUD","13117","VITROLLES","43.45722","5.24430","Urbain"],["02020","Rogna
+   c les Brets","ATMO
+   SUD","13081","ROGNAC","43.51056","5.21972","Industriel"],["02021","Saus
+   set les Pins","ATMO
+   SUD","13104","SAUSSET-LES-PINS","43.33139","5.11778","Industriel"],["02
+   022","Arles","ATMO
+   SUD","13004","ARLES","43.67556","4.62861","Urbain"],["02023","St Remy
+   de Provence","ATMO
+   SUD","13100","SAINT-REMY-DE-PROVENCE","43.78833","4.83333","Rural"],["0
+   2024","Ste Maries de la Mer","ATMO
+   SUD","13096","SAINTES-MARIES-DE-LA-MER","43.45722","4.42667","Rural"],[
+   "02026","Miramas Centre Ville","ATMO
+   SUD","13063","MIRAMAS","43.58500","5.00639","Urbain"],["02028","Martigu
+   es Lavera","ATMO
+   SUD","13056","MARTIGUES","43.38600","5.02694","Industriel"],["02029","C
+   hateauneuf La Mede","ATMO
+   SUD","13026","CHATEAUNEUF-LES-MARTIGUES","43.39958","5.11472","Industri
+   el"],["02030","Berre Magasin STM","ATMO
+   SUD","13014","BERRE-L'ETANG","43.47528","5.16972","Urbain"],["02031","M
+   arignane Ville","ATMO
+   SUD","13054","MARIGNANE","43.41972","5.21278","Urbain"],["02033","Marti
+   gues Couronne","ATMO
+   SUD","13056","MARTIGUES","43.34056","5.05861","Industriel"],["02034","M
+   artigues Ventrons","ATMO
+   SUD","13056","MARTIGUES","43.37611","5.06444","Industriel"],["02035","C
+   arry le Rouet","ATMO
+   SUD","13021","CARRY-LE-ROUET","43.33083","5.15111","Industriel"],["0203
+   6","Martigues Pati","ATMO
+   SUD","13056","MARTIGUES","43.39833","5.07333","Industriel"],["02037","P
+   ort de Bouc EDF","ATMO
+   SUD","13077","PORT-DE-BOUC","43.41390","4.98580","Urbain"],["03004","MA
+   RSEILLE PLOMBIERES","ATMO
+   SUD","13055","MARSEILLE","43.31527","5.38753","Trafic"],["03006","MARSE
+   ILLE RABATAU","ATMO
+   SUD","13055","MARSEILLE","43.27633","5.39767","Trafic"],["03014","MARSE
+   ILLE ST LOUIS","ATMO
+   SUD","13055","MARSEILLE","43.34808","5.36066","Urbain"],["03021","AIX
+   ROY RENE","ATMO
+   SUD","13001","AIX-EN-PROVENCE","43.52406","5.44958","Trafic"],["03027",
+   "PLAN AUPS\/STE BAUME","ATMO
+   SUD","83093","PLAN-D'AUPS-SAINTE-BAUME","43.33519","5.72736","Rural"],[
+   "03029","AIX CENTRE ECOLE ART","ATMO
+   SUD","13001","AIX-EN-PROVENCE","43.53029","5.44139","Urbain"],["03030",
+   "GARDANNE","ATMO
+   SUD","13041","GARDANNE","43.45348","5.46711","Industriel"],["03032","AU
+   BAGNE LES PASSONS","ATMO
+   SUD","13005","AUBAGNE","43.29478","5.57174","Urbain"],["03037","VALLEE
+   HUVEAUNE","ATMO SUD","13070","LA
+   PENNE-SUR-HUVEAUNE","43.28313","5.51209","P?riurbain"],["03043","MARSEI
+   LLE 5 AVENUES","ATMO
+   SUD","13055","MARSEILLE","43.30608","5.39579","Urbain"],["03048","AIX
+   PLATANES","ATMO
+   SUD","13001","AIX-EN-PROVENCE","43.55576","5.46181","P?riurbain"],["030
+   60","La Seyne sur mer 2","ATMO SUD","83126","LA
+   SEYNE-SUR-MER","43.10159","5.87538","Urbain"],["03063","TOULON
+   ARSENAL","ATMO
+   SUD","83137","TOULON","43.12281","5.92933","Urbain"],["03064","LA
+   VALETTE\/LA GARDE","ATMO SUD","83144","LA
+   VALETTE-DU-VAR","43.13221","5.99221","P?riurbain"],["03067","BRIGNOLES"
+   ,"ATMO
+   SUD","83023","BRIGNOLES","43.39873","6.07610","P?riurbain"],["03068","T
+   OULON FOCH","ATMO
+   SUD","83137","TOULON","43.12679","5.92194","Trafic"],["03069","HYERES",
+   "ATMO
+   SUD","83069","HYERES","43.11972","6.13180","Urbain"],["03080","AVIGNON
+   MAIRIE","ATMO
+   SUD","84007","AVIGNON","43.94972","4.80508","Urbain"],["03084","LE
+   PONTET","ATMO SUD","84092","LE
+   PONTET","43.96016","4.85721","P?riurbain"],["03086","APT","ATMO
+   SUD","84003","APT","43.88009","5.36250","Rural"],["03087","Avignon
+   Semard","ATMO
+   SUD","84007","AVIGNON","43.93709","4.82493","Trafic"],["03088","CARPENT
+   RAS","ATMO
+   SUD","84031","CARPENTRAS","44.06043","5.06742","P?riurbain"],["04002","
+   GENNEVILLIERS","AIRPARIF","92036","GENNEVILLIERS","48.93026","2.29430",
+   "Urbain"],["04004","PARIS
+   18eme","AIRPARIF","75056","PARIS","48.89173","2.34558","Urbain"],["0400
+   8","CACHAN","AIRPARIF","94016","CACHAN","48.80019","2.32958","Urbain"],
+   ["04012","Place Victor
+   Basch","AIRPARIF","75056","PARIS","48.82764","2.32667","Trafic"],["0401
+   4","PARIS
+   12eme","AIRPARIF","75056","PARIS","48.83719","2.39381","Urbain"],["0401
+   7","NEUILLY-SUR-SEINE","AIRPARIF","92051","NEUILLY-SUR-SEINE","48.88133
+   ","2.27732","Urbain"],["04018","AUBERVILLIERS","AIRPARIF","93001","AUBE
+   RVILLIERS","48.90394","2.38472","Urbain"],["04023","CERGY-PONTOISE","AI
+   RPARIF","95127","CERGY","49.04603","2.04111","Urbain"],["04024","GONESS
+   E","AIRPARIF","95277","GONESSE","48.99086","2.44477","P?riurbain"],["04
+   029","VERSAILLES","AIRPARIF","78646","VERSAILLES","48.79933","2.13130",
+   "P?riurbain"],["04031","Av Champs
+   Elysees","AIRPARIF","75056","PARIS","48.86878","2.31163","Trafic"],["04
+   034","VITRY-SUR-SEINE","AIRPARIF","94081","VITRY-SUR-SEINE","48.77588",
+   "2.37572","Urbain"],["04037","PARIS
+   13eme","AIRPARIF","75056","PARIS","48.82847","2.35956","Urbain"],["0403
+   8","Zone Rurale
+   SO","AIRPARIF","78601","SONCHAMP","48.58231","1.88265","Rural"],["04048
+   ","Zone Rurale
+   Nord","AIRPARIF","95566","SAINT-MARTIN-DU-TERTRE","49.10027","2.34378",
+   "Rural"],["04049","LES ULIS","AIRPARIF","91692","LES
+   ULIS","48.67892","2.16455","P?riurbain"],["04051","ARGENTEUIL","AIRPARI
+   F","95018","ARGENTEUIL","48.95136","2.22237","Urbain"],["04053","Bd
+   Periph
+   Auteuil","AIRPARIF","75056","PARIS","48.85018","2.25232","Trafic"],["04
+   058","Auto A1
+   -Saint-Denis","AIRPARIF","93066","SAINT-DENIS","48.92519","2.35646","Tr
+   afic"],["04059","SAINT-DENIS","AIRPARIF","93066","SAINT-DENIS","48.9361
+   2","2.35853","Urbain"],["04060","PARIS
+   7eme","AIRPARIF","75056","PARIS","48.85719","2.29328","Urbain"],["04063
+   ","MANTES-LA-JOLIE","AIRPARIF","78361","MANTES-LA-JOLIE","48.99622","1.
+   70330","P?riurbain"],["04066","Zone rurale
+   Sud","AIRPARIF","91075","BOIS-HERPIN","48.36341","2.23523","Rural"],["0
+   4069","MELUN","AIRPARIF","77288","MELUN","48.54221","2.66110","P?riurba
+   in"],["04071","Rue
+   Bonaparte","AIRPARIF","75056","PARIS","48.85629","2.33447","Trafic"],["
+   04098","LOGNES","AIRPARIF","77258","LOGNES","48.84032","2.63466","Urbai
+   n"],["04099","NOGENT-SUR-MARNE","AIRPARIF","94052","NOGENT-SUR-MARNE","
+   48.84077","2.48435","Urbain"],["04100","VILLEMOMBLE","AIRPARIF","93077"
+   ,"VILLEMOMBLE","48.88161","2.50634","Urbain"],["04101","CHAMPIGNY-SUR-M
+   ARNE","AIRPARIF","94017","CHAMPIGNY-SUR-MARNE","48.81679","2.51632","Ur
+   bain"],["04105","BAGNOLET","AIRPARIF","93006","BAGNOLET","48.87278","2.
+   42194","Urbain"],["04118","Place de
+   l'Op\u00e9ra","AIRPARIF","75056","PARIS","48.87028","2.33252","Trafic"]
+   ,["04122","RN6-MELUN","AIRPARIF","77288","MELUN","48.52810","2.65395","
+   Trafic"],["04123","RN2-PANTIN","AIRPARIF","93055","PANTIN","48.90201","
+   2.39063","Trafic"],["04131","Boulevard
+   Haussmann","AIRPARIF","75056","PARIS","48.87334","2.32960","Trafic"],["
+   04141","Quai des
+   Celestins","AIRPARIF","75056","PARIS","48.85261","2.36012","Trafic"],["
+   04142","Zone Rurale
+   Nord-Est","AIRPARIF","77308","MONTGE-EN-GOELE","49.02829","2.74885","Ru
+   ral"],["04143","PARIS
+   Centre","AIRPARIF","75056","PARIS","48.85942","2.35112","Urbain"],["041
+   45","GARCHES","AIRPARIF","92033","GARCHES","48.84640","2.18774","Urbain
+   "],["04146","IVRY-SUR-SEINE","AIRPARIF","94041","IVRY-SUR-SEINE","48.81
+   749","2.39506","Urbain"],["04149","MONTGERON","AIRPARIF","91421","MONTG
+   ERON","48.70658","2.45708","Urbain"],["04150","LA
+   DEFENSE","AIRPARIF","92062","PUTEAUX","48.89117","2.24090","Urbain"],["
+   04156","BOBIGNY","AIRPARIF","93008","BOBIGNY","48.90241","2.45262","Urb
+   ain"],["04158","Zone Rurale
+   NO","AIRPARIF","95253","FREMAINVILLE","49.06309","1.86638","Rural"],["0
+   4299","Tour Eiffel 3e
+   etage","AIRPARIF","75056","PARIS","48.85809","2.29453","Urbain"],["0431
+   9","TREMBLAY-EN-FRANCE","AIRPARIF","93073","TREMBLAY-EN-FRANCE","48.955
+   54","2.57454","P?riurbain"],["04323","EVRY","AIRPARIF","91228","EVRY","
+   48.62736","2.42936","Urbain"],["04324","Zone Rurale
+   Est","AIRPARIF","77433","SAINTS","48.76067","3.05704","Rural"],["04328"
+   ,"Zone Rurale
+   SE","AIRPARIF","77186","FONTAINEBLEAU","48.35481","2.64519","Rural"],["
+   05010","St Romain de Colbosc","ATMO
+   NORMANDIE","76647","SAINT-ROMAIN-DE-COLBOSC","49.52893","0.35873","P?ri
+   urbain"],["05037","Caucriauville","ATMO NORMANDIE","76351","LE
+   HAVRE","49.50391","0.17573","Urbain"],["05040","Honfleur Sce
+   Tech.","ATMO
+   NORMANDIE","14333","HONFLEUR","49.41511","0.24370","Urbain"],["05054","
+   Le Havre Les Neiges","ATMO NORMANDIE","76351","LE
+   HAVRE","49.48109","0.16529","Industriel"],["05056","Quillebeuf
+   Phare","ATMO
+   NORMANDIE","27485","QUILLEBEUF-SUR-SEINE","49.47372","0.52616","Industr
+   iel"],["05066","Feu de Lillebonne","ATMO
+   NORMANDIE","76384","LILLEBONNE","49.48331","0.52141","Industriel"],["05
+   067","Z.I. Sandouville","ATMO
+   NORMANDIE","76660","SANDOUVILLE","49.48255","0.30362","Industriel"],["0
+   5068","ND Gravenchon TDF","ATMO
+   NORMANDIE","76476","NOTRE-DAME-DE-GRAVENCHON","49.49880","0.56688","Ind
+   ustriel"],["05069","Tancarville Mairie","ATMO
+   NORMANDIE","76684","TANCARVILLE","49.48768","0.45176","Industriel"],["0
+   5070","Harfleur Ecole Coty","ATMO
+   NORMANDIE","76341","HARFLEUR","49.50500","0.20169","Urbain"],["05072","
+   Sainte Adresse","ATMO
+   NORMANDIE","76552","SAINTE-ADRESSE","49.50386","0.08461","Urbain"],["05
+   074","Le Havre Ec. Herriot","ATMO NORMANDIE","76351","LE
+   HAVRE","49.48963","0.10070","Urbain"],["05078","Le Havre
+   Massillon","ATMO NORMANDIE","76351","LE
+   HAVRE","49.49830","0.14271","Urbain"],["05079","Montivilliers","ATMO
+   NORMANDIE","76447","MONTIVILLIERS","49.54541","0.18537","P?riurbain"],[
+   "05080","Rogerville Mairie","ATMO
+   NORMANDIE","76533","ROGERVILLE","49.50362","0.26687","Industriel"],["05
+   081","La Cerlangue","ATMO NORMANDIE","76169","LA
+   CERLANGUE","49.50404","0.41159","Industriel"],["05082","Touques","ATMO
+   NORMANDIE","14699","TOUQUES","49.34800","0.10924","P?riurbain"],["05083
+   ","Gonfreville l Orcher","ATMO
+   NORMANDIE","76305","GONFREVILLE-L'ORCHER","49.50273","0.23249","Industr
+   iel"],["05084","NDGravenchon Pasteur","ATMO
+   NORMANDIE","76476","NOTRE-DAME-DE-GRAVENCHON","49.49333","0.57185","Ind
+   ustriel"],["05085","Lillebonne","ATMO
+   NORMANDIE","76384","LILLEBONNE","49.51215","0.53904","Industriel"],["05
+   087","Maison Parc Brotonne","ATMO
+   NORMANDIE","76473","NOTRE-DAME-DE-BLIQUETUIT","49.49829","0.75883","Rur
+   al"],["05088","F\u00e9camp","ATMO
+   NORMANDIE","76259","FECAMP","49.75000","0.41590","P?riurbain"],["06001"
+   ,"VALENCIENNES ACACIAS","ATMO
+   HAUTS-DE-FRANCE","59606","VALENCIENNES","50.35853","3.50804","Urbain"],
+   ["06003","Douai Theuriet","ATMO
+   HAUTS-DE-FRANCE","59178","DOUAI","50.37822","3.06586","Urbain"],["06006
+   ","Valenciennes Wallon","ATMO
+   HAUTS-DE-FRANCE","59606","VALENCIENNES","50.36425","3.52273","Trafic"],
+   ["06007","Maubeuge Joyeuse","ATMO
+   HAUTS-DE-FRANCE","59392","MAUBEUGE","50.27936","3.97691","Urbain"],["06
+   009","Cambrai Gambetta","ATMO
+   HAUTS-DE-FRANCE","59122","CAMBRAI","50.17249","3.23606","Urbain"],["060
+   11","DENAIN VILLARS","ATMO
+   HAUTS-DE-FRANCE","59172","DENAIN","50.32276","3.39593","Urbain"],["0602
+   2","Station SNET","ATMO
+   HAUTS-DE-FRANCE","59314","HORNAING","50.36641","3.33942","Industriel"],
+   ["06023","ESCAUTPONT","ATMO
+   HAUTS-DE-FRANCE","59207","ESCAUTPONT","50.42029","3.55181","Industriel"
+   ],["06133","Cartignies","ATMO
+   HAUTS-DE-FRANCE","59134","CARTIGNIES","50.09225","3.85003","Rural"],["0
+   6134","Saint Amand","ATMO
+   HAUTS-DE-FRANCE","59526","SAINT-AMAND-LES-EAUX","50.45647","3.42794","P
+   ?riurbain"],["07001","Royat","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63308","ROYAT","45.76467","3.04719","P?riurbain"],["
+   07004","Montferrand","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.79728","3.11383","Urba
+   in"],["07009","Jardin Lecoq","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.77217","3.08750","Urba
+   in"],["07010","Montlucon Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03185","MONTLUCON","46.34372","2.59764","Trafic"],["
+   07011","Aurillac Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","15014","AURILLAC","44.92322","2.43660","Trafic"],["0
+   7012","Le Puy Centre","ATMO AUVERGNE - RH\u00d4NE-ALPES","43157","LE
+   PUY-EN-VELAY","45.04472","3.88267","Urbain"],["07013","Montlucon
+   Chateau","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03185","MONTLUCON","46.34008","2.60458","Urbain"],["
+   07014","Aurillac Aerodrome","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","15014","AURILLAC","44.89834","2.42019","P?riurbain"]
+   ,["07015","Sommet du Puy de Dome","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63263","ORCINES","45.77217","2.96458","Rural"],["070
+   16","Montlucon Hippodrome","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03185","MONTLUCON","46.32414","2.60131","P?riurbain"
+   ],["07017","Aurillac Mairie","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","15014","AURILLAC","44.93133","2.44517","Urbain"],["0
+   7018","Vals pres le Puy","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","43251","VALS-PRES-LE-PUY","45.03011","3.87608","P?ri
+   urbain"],["07020","Busset","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03045","BUSSET","46.06028","3.51514","Rural"],["0702
+   2","Paray le Fresil","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03203","PARAY-LE-FRESIL","46.65282","3.60096","Rural
+   "],["07028","Les Ancizes","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63004","LES
+   ANCIZES-COMPS","45.92933","2.82981","Industriel"],["07029","Sembadel","
+   ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","43237","SEMBADEL","45.27472","3.68792","Rural"],["07
+   031","Rageade","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","15158","RAGEADE","45.10467","3.27756","Rural"],["070
+   32","Riom","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63300","RIOM","45.89419","3.11506","Urbain"],["07034
+   ","Clermont-Esplanade Gare","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.77569","3.09625","Traf
+   ic"],["07039","Chamali\u00e8res Europe","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63075","CHAMALIERES","45.77478","3.06297","Trafic"],
+   ["07042","Site autoroutier A71","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.78369","3.14272","Traf
+   ic"],["08003","CHAPTAL","ATMO
+   OCCITANIE","34172","MONTPELLIER","43.61167","3.86472","Urbain"],["08004
+   ","SAINT DENIS","ATMO
+   OCCITANIE","34172","MONTPELLIER","43.60500","3.87460","Trafic"],["08016
+   ","PRES ARENES","ATMO
+   OCCITANIE","34172","MONTPELLIER","43.59152","3.88689","Urbain"],["08017
+   ","PERIURBAINE SUD","ATMO
+   OCCITANIE","34129","LATTES","43.57061","3.91156","P?riurbain"],["08018"
+   ,"PERIURBAINE NORd","ATMO
+   OCCITANIE","34255","SAINT-GELY-DU-FESC","43.69537","3.80082","P?riurbai
+   n"],["08020","LUNEL","ATMO
+   OCCITANIE","34146","LUNEL-VIEL","43.67576","4.08842","Industriel"],["08
+   022","AGATHOIS-PISCENOIS","ATMO
+   OCCITANIE","34003","AGDE","43.28776","3.50483","P?riurbain"],["08023","
+   BITEROIS-NARBONNAIS","ATMO
+   OCCITANIE","34084","CORNEILHAN","43.40679","3.18881","Rural"],["08025",
+   "HAUT-LANGUEDOC","ATMO
+   OCCITANIE","34107","FRAISSE-SUR-AGOUT","43.59478","2.80237","Rural"],["
+   08030","POMPIGNANE","ATMO
+   OCCITANIE","34172","MONTPELLIER","43.60998","3.89861","Trafic"],["08204
+   ","GARD RHODANIEN 1","ATMO
+   OCCITANIE","13108","TARASCON","43.82915","4.64295","Industriel"],["0820
+   9","GARD RHODANIEN 2","ATMO
+   OCCITANIE","30315","SAZE","43.94289","4.67969","Industriel"],["08614","
+   GAUZY","ATMO
+   OCCITANIE","30189","NIMES","43.83440","4.37422","Urbain"],["08616","PLA
+   NAS","ATMO
+   OCCITANIE","30189","NIMES","43.82989","4.36199","Trafic"],["08617","LA
+   CALMETTE","ATMO OCCITANIE","30061","LA
+   CALMETTE","43.92539","4.26581","P?riurbain"],["08618","ALES
+   CEVENNES","ATMO
+   OCCITANIE","30294","SAINT-PRIVAT-DES-VIEUX","44.14276","4.13880","P?riu
+   rbain"],["08712","ST ESTEVE","ATMO
+   OCCITANIE","66172","SAINT-ESTEVE","42.71983","2.83987","P?riurbain"],["
+   08713","RIGAUD","ATMO
+   OCCITANIE","66136","PERPIGNAN","42.68402","2.90345","Urbain"],["08714",
+   "LES CARMES","ATMO
+   OCCITANIE","66136","PERPIGNAN","42.69580","2.89970","Urbain"],["09003",
+   "place de VERDUN","ATMO NOUVELLE AQUITAINE","17300","LA
+   ROCHELLE","46.16256","-1.15360","Urbain"],["09008","Aytr\u00e9","ATMO
+   NOUVELLE
+   AQUITAINE","17028","AYTRE","46.13515","-1.11704","P?riurbain"],["09015"
+   ,"Les Couronneries","ATMO NOUVELLE
+   AQUITAINE","86194","POITIERS","46.58692","0.35858","P?riurbain"],["0901
+   6","La Couronne","ATMO NOUVELLE AQUITAINE","16113","LA
+   COURONNE","45.60882","0.09972","P?riurbain"],["09017","COGNAC","ATMO
+   NOUVELLE
+   AQUITAINE","16102","COGNAC","45.69472","-0.32336","Urbain"],["09019","E
+   cole Jules Ferry","ATMO NOUVELLE
+   AQUITAINE","79191","NIORT","46.32959","-0.45889","Urbain"],["09103","Sq
+   uare Pablo Casals","ATMO NOUVELLE
+   AQUITAINE","16015","ANGOULEME","45.64742","0.16717","Urbain"],["09203",
+   "Place Orbigny LR","ATMO NOUVELLE AQUITAINE","17300","LA
+   ROCHELLE","46.16161","-1.21120","Industriel"],["09301","AIRVAULT
+   2","ATMO NOUVELLE
+   AQUITAINE","79005","AIRVAULT","46.82437","-0.13546","Industriel"],["093
+   02","Zoodyss\u00e9e Chiz\u00e9","ATMO NOUVELLE
+   AQUITAINE","79350","VILLIERS-EN-BOIS","46.14317","-0.39604","Rural"],["
+   09399","Niort Trafic 6","ATMO NOUVELLE
+   AQUITAINE","79191","NIORT","46.32175","-0.46597","Trafic"],["10003","Du
+   nkerque Port","ATMO
+   HAUTS-DE-FRANCE","59183","DUNKERQUE","51.05206","2.35378","Industriel"]
+   ,["10004","Malo-les-Bains","ATMO
+   HAUTS-DE-FRANCE","59183","DUNKERQUE","51.04858","2.42004","Urbain"],["1
+   0007","St Pol\/mer Nord","ATMO
+   HAUTS-DE-FRANCE","59183","DUNKERQUE","51.03381","2.33520","Urbain"],["1
+   0012","Mardyck","ATMO
+   HAUTS-DE-FRANCE","59183","DUNKERQUE","51.01943","2.25099","Industriel"]
+   ,["10013","Loon-Plage","ATMO
+   HAUTS-DE-FRANCE","59359","LOON-PLAGE","50.99599","2.21466","Industriel"
+   ],["10016","Calais Berthelot","ATMO
+   HAUTS-DE-FRANCE","62193","CALAIS","50.94729","1.84308","Urbain"],["1002
+   5","Sangatte","ATMO
+   HAUTS-DE-FRANCE","62774","SANGATTE","50.94989","1.76917","P?riurbain"],
+   ["10026","Calais Parmentier","ATMO
+   HAUTS-DE-FRANCE","62193","CALAIS","50.95780","1.89008","Urbain"],["1002
+   7","Calais EREA","ATMO
+   HAUTS-DE-FRANCE","62193","CALAIS","50.96156","1.87390","Industriel"],["
+   10028","Gravelines PC\/Drire","ATMO
+   HAUTS-DE-FRANCE","59273","GRAVELINES","50.98106","2.14317","Industriel"
+   ],["10029","Cappelle","ATMO
+   HAUTS-DE-FRANCE","59131","CAPPELLE-LA-GRANDE","50.99591","2.36627","P?r
+   iurbain"],["10031","Boulogne Centre","ATMO
+   HAUTS-DE-FRANCE","62160","BOULOGNE-SUR-MER","50.71247","1.60810","Trafi
+   c"],["10032","Outreau","ATMO
+   HAUTS-DE-FRANCE","62643","OUTREAU","50.69435","1.57657","P?riurbain"],[
+   "10034","Grande-synthe","ATMO
+   HAUTS-DE-FRANCE","59271","GRANDE-SYNTHE","51.02446","2.30215","Industri
+   el"],["10041","St Omer Ribot","ATMO
+   HAUTS-DE-FRANCE","62765","SAINT-OMER","50.74823","2.25978","Urbain"],["
+   10132","Campagne les B.","ATMO
+   HAUTS-DE-FRANCE","62202","CAMPAGNE-LES-BOULONNAIS","50.61050","1.99150"
+   ,"Rural"],["11016","Marcq CTM","ATMO
+   HAUTS-DE-FRANCE","59378","MARCQ-EN-BAROEUL","50.67003","3.07656","Urbai
+   n"],["11022","Armentieres Centre","ATMO
+   HAUTS-DE-FRANCE","59017","ARMENTIERES","50.68719","2.88004","Urbain"],[
+   "11025","Lille Fives","ATMO
+   HAUTS-DE-FRANCE","59350","LILLE","50.62805","3.09031","Urbain"],["11026
+   ","Halluin stade","ATMO
+   HAUTS-DE-FRANCE","59279","HALLUIN","50.77548","3.12568","P?riurbain"],[
+   "11027","Tourcoing Centre","ATMO
+   HAUTS-DE-FRANCE","59599","TOURCOING","50.72420","3.15906","Urbain"],["1
+   1030","Salome Ecoles","ATMO
+   HAUTS-DE-FRANCE","59550","SALOME","50.53203","2.83900","P?riurbain"],["
+   11034","Roubaix Serres","ATMO
+   HAUTS-DE-FRANCE","59512","ROUBAIX","50.70654","3.18066","Trafic"],["120
+   01","COLOMIERS","ATMO
+   OCCITANIE","31149","COLOMIERS","43.62000","1.34750","P?riurbain"],["120
+   04","ECOLE M.JACQUIER","ATMO
+   OCCITANIE","31555","TOULOUSE","43.57556","1.41806","Urbain"],["12008","
+   RUE DE METZ","ATMO
+   OCCITANIE","31555","TOULOUSE","43.59998","1.44211","Trafic"],["12009","
+   RUE PARGAMINIERES","ATMO
+   OCCITANIE","31555","TOULOUSE","43.60452","1.43977","Trafic"],["12015","
+   MIRAMONT","ATMO
+   OCCITANIE","31344","MIRAMONT-DE-COMMINGES","43.09364","0.74359","Indust
+   riel"],["12016","DAURAT ST GAUDENS","ATMO
+   OCCITANIE","31483","SAINT-GAUDENS","43.10615","0.71947","Industriel"],[
+   "12020","PEYRUSSE","ATMO
+   OCCITANIE","32317","PEYRUSSE-VIEILLE","43.62873","0.17906","Rural"],["1
+   2021","MAZADES","ATMO
+   OCCITANIE","31555","TOULOUSE","43.62359","1.43857","Urbain"],["12026","
+   ALBI DELMAS","ATMO
+   OCCITANIE","81004","ALBI","43.92781","2.14588","Urbain"],["12029","GAUD
+   ONVILLE","ATMO
+   OCCITANIE","32139","GAUDONVILLE","43.88395","0.84562","Rural"],["12030"
+   ,"BERTHELOT","ATMO
+   OCCITANIE","31555","TOULOUSE","43.58733","1.44403","Urbain"],["12031","
+   BELESTA EN LAURAGAIS","ATMO
+   OCCITANIE","31060","BELESTA-EN-LAURAGAIS","43.44176","1.82140","Rural"]
+   ,["12039","EISENHOWER","ATMO
+   OCCITANIE","31555","TOULOUSE","43.55998","1.39343","Industriel"],["1204
+   0","CHAPITRE","ATMO
+   OCCITANIE","31555","TOULOUSE","43.55641","1.40392","Industriel"],["1204
+   1","SICOVAL","ATMO
+   OCCITANIE","31381","MONTGISCARD","43.45729","1.57148","P?riurbain"],["1
+   2042","LOURDES LAPACCA","ATMO
+   OCCITANIE","65286","LOURDES","43.09625","-0.04049","Urbain"],["12043","
+   Aeroport cote piste","ATMO
+   OCCITANIE","31069","BLAGNAC","43.62530","1.37725","Industriel"],["12044
+   ","Aeroport cote trafic","ATMO
+   OCCITANIE","31069","BLAGNAC","43.63347","1.37572","Industriel"],["12045
+   ","LOURDES PARADIS","ATMO
+   OCCITANIE","65286","LOURDES","43.09499","-0.05241","Trafic"],["12046","
+   MONTAUBAN","ATMO
+   OCCITANIE","82121","MONTAUBAN","44.02272","1.41173","Rural"],["12047","
+   BESSIERES","ATMO
+   OCCITANIE","31066","BESSIERES","43.80318","1.59549","Industriel"],["120
+   48","PERIPHERIQUE","ATMO
+   OCCITANIE","31555","TOULOUSE","43.57397","1.44960","Trafic"],["12052","
+   Lyc\u00e9e Dupuy \u00e0 Tarbes","ATMO
+   OCCITANIE","65440","TARBES","43.23035","0.06246","Urbain"],["12053","St
+   ade Travet CASTRES","ATMO
+   OCCITANIE","81065","CASTRES","43.61044","2.23021","Urbain"],["82010","M
+   ontb\u00e9liard centre","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25388","MONTBELIARD","47.51031","6.79400","Ur
+   bain"],["82020","Belfort Octroi","ATMO
+   BOURGOGNE-FRANCHE-COMTE","90010","BELFORT","47.64067","6.85928","Trafic
+   "],["82030","Montandon Baresans","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25387","MONTANDON","47.29464","6.82586","Rura
+   l"],["82012","Dambenois Citoyen","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25188","DAMBENOIS","47.53819","6.86836","P?ri
+   urbain"],["82060","Vesoul Pres Caillet","ATMO
+   BOURGOGNE-FRANCHE-COMTE","70550","VESOUL","47.62000","6.15761","Urbain"
+   ],["82021","Belfort centre","ATMO
+   BOURGOGNE-FRANCHE-COMTE","90010","BELFORT","47.63075","6.85903","Urbain
+   "],["14004","MAIRIE REIMS","ATMO
+   GRAND-EST","51454","REIMS","49.25861","4.03111","Urbain"],["14008","REV
+   IN","ATMO GRAND-EST","08284","LES
+   MAZURES","49.90778","4.63000","Rural"],["14010","BETHENY","ATMO
+   GRAND-EST","51055","BETHENY","49.28222","4.05111","P?riurbain"],["14012
+   ","Jean d Aulan","ATMO
+   GRAND-EST","51454","REIMS","49.22417","4.02056","Urbain"],["14022","CHA
+   LONS","ATMO
+   GRAND-EST","51108","CHALONS-EN-CHAMPAGNE","48.96222","4.36000","Urbain"
+   ],["14031","LA TOUR","ATMO
+   GRAND-EST","10387","TROYES","48.30167","4.07694","Urbain"],["14032","ST
+   PARRES AUX TERTRE","ATMO
+   GRAND-EST","10357","SAINT-PARRES-AUX-TERTRES","48.29917","4.11722","P?r
+   iurbain"],["14033","STE SAVINE","ATMO
+   GRAND-EST","10362","SAINTE-SAVINE","48.29500","4.05028","Urbain"],["140
+   42","St DIZIER L. Michel","ATMO
+   GRAND-EST","52448","SAINT-DIZIER","48.64584","4.96611","Urbain"],["1405
+   1","CHARLEVILLE","ATMO
+   GRAND-EST","08105","CHARLEVILLE-MEZIERES","49.74528","4.71917","Urbain"
+   ],["15013","Champ sur Drac","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38071","CHAMP-SUR-DRAC","45.07954","5.72865","P?riur
+   bain"],["15017","Fontaine Les Balmes","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38169","FONTAINE","45.19044","5.68696","Urbain"],["1
+   5018","Voiron Urbain","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38563","VOIRON","45.36018","5.58942","Urbain"],["150
+   31","Le Casset2","ATMO AUVERGNE - RH\u00d4NE-ALPES","05079","LE
+   MONETIER-LES-BAINS","44.99780","6.46940","Rural"],["15038","St Martin
+   d'Heres","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38421","SAINT-MARTIN-D'HERES","45.18280","5.75310","
+   Urbain"],["15039","Le Rondeau","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38151","ECHIROLLES","45.15836","5.70376","Trafic"],[
+   "15043","Grenoble Les Frenes","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38185","GRENOBLE","45.16190","5.73560","Urbain"],["1
+   5045","Grenoble PeriurbSud","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38545","VIF","45.05780","5.67670","P?riurbain"],["15
+   046","Grenoble Boulevards","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38185","GRENOBLE","45.18069","5.72006","Trafic"],["1
+   5048","Gresivaudan Periurb","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38140","CROLLES","45.27970","5.88220","P?riurbain"],
+   ["16001","STG Ouest","ATMO
+   GRAND-EST","67447","SCHILTIGHEIM","48.60882","7.70892","P?riurbain"],["
+   16006","STG CRR","ATMO
+   GRAND-EST","67389","REICHSTETT","48.66448","7.76224","Industriel"],["16
+   017","Nord-Est Alsace","ATMO
+   GRAND-EST","67308","MUNCHHAUSEN","48.91936","8.15846","Rural"],["16026"
+   ,"STG Drire","ATMO
+   GRAND-EST","67482","STRASBOURG","48.57905","7.76133","Urbain"],["16029"
+   ,"STG Nord","ATMO
+   GRAND-EST","67482","STRASBOURG","48.61036","7.78163","Urbain"],["16031"
+   ,"Vosges du Nord","ATMO GRAND-EST","67371","LA
+   PETITE-PIERRE","48.85731","7.31418","Rural"],["16034","STG
+   Clemenceau","ATMO
+   GRAND-EST","67482","STRASBOURG","48.59043","7.74498","Trafic"],["16038"
+   ,"STG Est","ATMO
+   GRAND-EST","67482","STRASBOURG","48.57038","7.76633","Urbain"],["16039"
+   ,"Vosges du Nord m\u00e9t\u00e9o","ATMO GRAND-EST","67371","LA
+   PETITE-PIERRE","48.86590","7.30124","Rural"],["16040","STG A35","ATMO
+   GRAND-EST","67482","STRASBOURG","48.57599","7.72748","Trafic"],["16041"
+   ,"STG Sud 2","ATMO
+   GRAND-EST","67152","GEISPOLSHEIM","48.51570","7.68782","P?riurbain"],["
+   16052","Thann","ATMO
+   GRAND-EST","68334","THANN","47.81093","7.10555","Industriel"],["16054",
+   "Colmar Centre","ATMO
+   GRAND-EST","68066","COLMAR","48.07464","7.35067","Urbain"],["16057","Mu
+   lhouse Nord","ATMO
+   GRAND-EST","68224","MULHOUSE","47.75744","7.34729","Urbain"],["16059","
+   Chalamp\u00e9","ATMO
+   GRAND-EST","68064","CHALAMPE","47.82025","7.53868","Industriel"],["1606
+   0","C.C.3 Fronti\u00e8res","ATMO
+   GRAND-EST","68349","VILLAGE-NEUF","47.59491","7.56818","P?riurbain"],["
+   16064","Colmar Sud","ATMO
+   GRAND-EST","68066","COLMAR","48.06541","7.33314","P?riurbain"],["16065"
+   ,"Mulhouse Est","ATMO
+   GRAND-EST","68224","MULHOUSE","47.72311","7.34160","P?riurbain"],["1606
+   6","Mulhouse Sud 2","ATMO
+   GRAND-EST","68224","MULHOUSE","47.73742","7.30908","Urbain"],["16302","
+   Vosges Moyennes 2","ATMO
+   GRAND-EST","67165","GRANDFONTAINE","48.49299","7.12980","Rural"],["8200
+   1","Besancon M\u00e9gevand","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25056","BESANCON","47.23597","6.02361","Trafi
+   c"],["82004","Besancon Chailluz","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25056","BESANCON","47.29731","6.05192","P?riu
+   rbain"],["82042","Damparis","ATMO
+   BOURGOGNE-FRANCHE-COMTE","39189","DAMPARIS","47.06564","5.41503","Indus
+   triel"],["82043","Chatenois","ATMO
+   BOURGOGNE-FRANCHE-COMTE","39121","CHATENOIS","47.14725","5.55612","Indu
+   striel"],["82040","Dole centre","ATMO
+   BOURGOGNE-FRANCHE-COMTE","39198","DOLE","47.09672","5.49639","Urbain"],
+   ["82002","Besancon Victor Hugo","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25056","BESANCON","47.23491","6.02947","Trafi
+   c"],["82041","Tavaux","ATMO
+   BOURGOGNE-FRANCHE-COMTE","39526","TAVAUX","47.04261","5.40090","Industr
+   iel"],["82050","Lons-le-Saunier CV","ATMO
+   BOURGOGNE-FRANCHE-COMTE","39300","LONS-LE-SAUNIER","46.67131","5.55681"
+   ,"Urbain"],["82005","Montfaucon","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25395","MONTFAUCON","47.23461","6.07647","P?r
+   iurbain"],["18008","P. Bert St Quentin","ATMO
+   HAUTS-DE-FRANCE","02571","OMISSY","49.86303","3.30658","P?riurbain"],["
+   18019","Nogent sur Oise","ATMO
+   HAUTS-DE-FRANCE","60463","NOGENT-SUR-OISE","49.27639","2.48217","P?riur
+   bain"],["18035","Salouel","ATMO
+   HAUTS-DE-FRANCE","80725","SALOUEL","49.86889","2.23981","P?riurbain"],[
+   "18036","Beaumont Beauvais","ATMO
+   HAUTS-DE-FRANCE","60057","BEAUVAIS","49.43889","2.09444","P?riurbain"],
+   ["18039","Arrest","ATMO
+   HAUTS-DE-FRANCE","80029","ARREST","50.12945","1.61083","Rural"],["18042
+   ","P. Roth St Quentin","ATMO
+   HAUTS-DE-FRANCE","02691","SAINT-QUENTIN","49.85133","3.28400","Urbain"]
+   ,["18043","Faiencerie Creil","ATMO
+   HAUTS-DE-FRANCE","60175","CREIL","49.25955","2.47440","Urbain"],["18045
+   ","Roye","ATMO
+   HAUTS-DE-FRANCE","80685","ROYE","49.69670","2.80133","Rural"],["18046",
+   "SMVO Rieux","ATMO
+   HAUTS-DE-FRANCE","60539","RIEUX","49.29792","2.51744","Industriel"],["1
+   8049","Ville de Chauny","ATMO
+   HAUTS-DE-FRANCE","02173","CHAUNY","49.61311","3.22334","Urbain"],["1805
+   0","A\u00e9roport de BEAUVAIS","ATMO
+   HAUTS-DE-FRANCE","60639","TILLE","49.46019","2.10911","P?riurbain"],["1
+   8053","St Pierre Amiens","ATMO
+   HAUTS-DE-FRANCE","80021","AMIENS","49.90169","2.30455","Urbain"],["1808
+   9","Trafic Beauvais 1","ATMO
+   HAUTS-DE-FRANCE","60057","BEAUVAIS","49.43593","2.08398","Trafic"],["19
+   002","Rennes Laennec","AIR
+   BREIZH","35238","RENNES","48.10862","-1.66588","Trafic"],["19005","Renn
+   es Triangle","AIR
+   BREIZH","35238","RENNES","48.08861","-1.65972","Urbain"],["19007","HALL
+   ES","AIR
+   BREIZH","35238","RENNES","48.10750","-1.67917","Trafic"],["19008","Serv
+   Tech Guipry","AIR
+   BREIZH","35129","GUIPRY","47.83194","-1.83667","Rural"],["19010","Renne
+   s St-Yves","AIR
+   BREIZH","35238","RENNES","48.11076","-1.68284","Urbain"],["19012","Bres
+   t Mace","AIR
+   BREIZH","29019","BREST","48.38638","-4.48682","Urbain"],["19014","Brest
+   Desmoulins","AIR
+   BREIZH","29019","BREST","48.39965","-4.46724","Trafic"],["19015","Brest
+   Pen Ar Streat","AIR
+   BREIZH","29019","BREST","48.40906","-4.47511","Urbain"],["19021","Lorie
+   nt CTM","AIR
+   BREIZH","56121","LORIENT","47.75223","-3.37566","Urbain"],["19031","Van
+   nes Roscanvec","AIR
+   BREIZH","56260","VANNES","47.65671","-2.75820","Urbain"],["19032","Lori
+   ent B. Bissonnet","AIR
+   BREIZH","56121","LORIENT","47.74250","-3.39481","Urbain"],["19033","Van
+   nes UTA","AIR
+   BREIZH","56260","VANNES","47.64889","-2.76389","Urbain"],["19061","Sain
+   t Brieuc Balzac","AIR
+   BREIZH","22278","SAINT-BRIEUC","48.51667","-2.75000","Urbain"],["19081"
+   ,"StMalo Courtoisville","AIR
+   BREIZH","35288","SAINT-MALO","48.65500","-1.99417","Urbain"],["19091","
+   Fougeres DSTE","AIR
+   BREIZH","35115","FOUGERES","48.34750","-1.20222","Urbain"],["20004","ST
+   JUST","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69123","LYON","45.75532","4.82033","Urbain"],["20013
+   ","A7 SUD LYONNAIS","ATMO AUVERGNE - RH\u00d4NE-ALPES","69142","LA
+   MULATIERE","45.72002","4.81816","Trafic"],["20017","GERLAND","ATMO
+   AUVERGNE -
+   RH\u00d4NE-ALPES","69123","LYON","45.73529","4.82979","Urbain"],["20019
+   ","GRANDCLEMENT","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69266","VILLEURBANNE","45.75836","4.88621","Trafic"]
+   ,["20029","FEYZIN STADE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69276","FEYZIN","45.66390","4.84590","Industriel"],[
+   "20031","ST FONS CENTRE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69199","SAINT-FONS","45.70780","4.86440","Industriel
+   "],["20034","PIERRE BENITE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69152","PIERRE-BENITE","45.69953","4.82969","Industr
+   iel"],["20037","TERNAY","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69297","TERNAY","45.60190","4.80220","P?riurbain"],[
+   "20045","GENAS","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69277","GENAS","45.73170","4.98030","P?riurbain"],["
+   20046","VAULX EN VELIN","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69256","VAULX-EN-VELIN","45.77890","4.92470","Urbain
+   "],["20047","COTIERE AIN","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","01249","MIRIBEL","45.82322","4.95396","P?riurbain"],
+   ["20048","SAINT EXUPERY","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69285","PUSIGNAN","45.75330","5.07220","P?riurbain"]
+   ,["20049","HAUT BEAUJOLAIS","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69075","DIEME","45.96141","4.46571","Rural"],["20060
+   ","VENISSIEUX Village","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69259","VENISSIEUX","45.70360","4.88360","Industriel
+   "],["20061","VILLEFRANCHE Village","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69264","VILLEFRANCHE-SUR-SAONE","45.98638","4.71928"
+   ,"Urbain"],["20062","LYON Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69123","LYON","45.75773","4.85421","Urbain"],["20064
+   ","VERNAISON","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69260","VERNAISON","45.65061","4.81691","Industriel"
+   ],["21001","Caen Chemin-Vert","ATMO
+   NORMANDIE","14118","CAEN","49.19244","-0.39118","Urbain"],["21016","Cae
+   n Vaucelles","ATMO
+   NORMANDIE","14118","CAEN","49.17511","-0.35360","Trafic"],["21017","Oui
+   streham","ATMO
+   NORMANDIE","14488","OUISTREHAM","49.28944","-0.25778","Inconnu"],["2101
+   9","IFS Caen sud","ATMO
+   NORMANDIE","14341","IFS","49.15126","-0.35270","P?riurbain"],["21021","
+   Lisieux","ATMO
+   NORMANDIE","14366","LISIEUX","49.14722","0.22722","Urbain"],["21030","a
+   lencon promenades","ATMO
+   NORMANDIE","61001","ALENCON","48.42861","0.07917","Urbain"],["21031","A
+   len\u00e7on M\u00e9t\u00e9o-France","ATMO
+   NORMANDIE","61077","CERISE","48.44555","0.11083","P?riurbain"],["21035"
+   ,"cherbourg doumer","ATMO
+   NORMANDIE","50129","CHERBOURG-OCTEVILLE","49.63639","-1.62667","Urbain"
+   ],["21040","Saint-L\u00f4 Eglise","ATMO
+   NORMANDIE","50502","SAINT-LO","49.11639","-1.08472","Urbain"],["21050",
+   "La Coulonche MERA","ATMO NORMANDIE","61124","LA
+   COULONCHE","48.64477","-0.45875","Rural"],["22005","L'H\u00d4PITAL-PUIT
+   S 2","ATMO
+   GRAND-EST","57336","L'HOPITAL","49.15753","6.74417","Industriel"],["220
+   07","L'H\u00d4PITAL-BOIS-RICHARD","ATMO
+   GRAND-EST","57336","L'HOPITAL","49.16543","6.73406","Industriel"],["220
+   09","Ecole de Carling(9)","ATMO
+   GRAND-EST","57123","CARLING","49.16572","6.71689","Industriel"],["22011
+   ","L H\u00f4pital - Mairie","ATMO
+   GRAND-EST","57336","L'HOPITAL","49.15826","6.73188","Industriel"],["220
+   14","SPICHEREN","ATMO
+   GRAND-EST","57659","SPICHEREN","49.15826","6.95735","P?riurbain"],["220
+   19","SCHOENECK (19)","ATMO
+   GRAND-EST","57638","SCHOENECK","49.22030","6.92609","P?riurbain"],["220
+   22","SARREGUEMINES","ATMO
+   GRAND-EST","57631","SARREGUEMINES","49.11876","7.08333","Urbain"],["220
+   54","FORBACH","ATMO
+   GRAND-EST","57227","FORBACH","49.18787","6.91051","Urbain"],["23001","A
+   MPERE","AIR PAYS DE LA
+   LOIRE","44052","DONGES","47.32420","-2.08150","Industriel"],["23003","L
+   A MEGRETAIS","AIR PAYS DE LA
+   LOIRE","44052","DONGES","47.32270","-2.03924","Industriel"],["23004","P
+   ASTEUR","AIR PAYS DE LA
+   LOIRE","44052","DONGES","47.31730","-2.07333","Industriel"],["23046","B
+   OSSENES","AIR PAYS DE LA
+   LOIRE","44052","DONGES","47.31310","-2.09336","Industriel"],["23068","F
+   ROSSAY","AIR PAYS DE LA
+   LOIRE","44061","FROSSAY","47.24730","-1.93652","Industriel"],["23069","
+   SAVENAY","AIR PAYS DE LA
+   LOIRE","44195","SAVENAY","47.36050","-1.95441","Industriel"],["23070","
+   S ETIENNE DE MONTLUC","AIR PAYS DE LA
+   LOIRE","44158","SAINT-ETIENNE-DE-MONTLUC","47.28310","-1.78308","Indust
+   riel"],["23075","JULES VERNE","AIR PAYS DE LA
+   LOIRE","44210","TRIGNAC","47.31550","-2.19044","Industriel"],["23078","
+   SAINT EXUPERY","AIR PAYS DE LA
+   LOIRE","49099","CHOLET","47.05580","-0.88355","Urbain"],["23091","CUTUL
+   LIC","AIR PAYS DE LA
+   LOIRE","44116","PAIMBOEUF","47.28666","-2.03028","Industriel"],["23092"
+   ,"JARDIN PREFECTURE","AIR PAYS DE LA LOIRE","72181","LE
+   MANS","48.00129","0.20095","Urbain"],["23107","LA CHAUVINIERE","AIR
+   PAYS DE LA
+   LOIRE","44109","NANTES","47.25290","-1.57328","Urbain"],["23110","LEON
+   BLUM","AIR PAYS DE LA
+   LOIRE","44184","SAINT-NAZAIRE","47.26410","-2.25012","Urbain"],["23120"
+   ,"BEAUX ARTS","AIR PAYS DE LA
+   LOIRE","49007","ANGERS","47.46850","-0.55593","Urbain"],["23123","MAZAG
+   RAN","AIR PAYS DE LA
+   LOIRE","53130","LAVAL","48.06950","-0.76751","Urbain"],["23124","LA
+   TARDIERE","AIR PAYS DE LA LOIRE","85289","LA
+   TARDIERE","46.65660","-0.74337","Rural"],["23140","VICTOR HUGO","AIR
+   PAYS DE LA
+   LOIRE","44109","NANTES","47.20440","-1.55291","Trafic"],["23149","CUTUL
+   LIC2","AIR PAYS DE LA
+   LOIRE","44116","PAIMBOEUF","47.28620","-2.03245","Industriel"],["23150"
+   ,"APPENTIS","AIR PAYS DE LA
+   LOIRE","49007","ANGERS","47.44730","-0.55010","Urbain"],["23152","DELAC
+   ROIX","AIR PAYS DE LA LOIRE","85191","LA
+   ROCHE-SUR-YON","46.66070","-1.43681","Urbain"],["23153","BONNE
+   FONTAINE","AIR PAYS DE LA
+   LOIRE","44103","MONTOIR-DE-BRETAGNE","47.33120","-2.15157","Industriel"
+   ],["23157","EPINETTES","AIR PAYS DE LA
+   LOIRE","44018","BOUAYE","47.14610","-1.69027","P?riurbain"],["23163","F
+   ill\u00e9","AIR PAYS DE LA
+   LOIRE","72344","SPAY","47.92190","0.15187","P?riurbain"],["23174","GUED
+   OU","AIR PAYS DE LA LOIRE","72181","LE
+   MANS","47.98890","0.19603","Urbain"],["23175","CLOS DES BEAUVAIS","AIR
+   PAYS DE LA
+   LOIRE","49035","BOUCHEMAINE","47.43010","-0.61001","P?riurbain"],["2317
+   7","SAINT-DENIS D'ANJOU","AIR PAYS DE LA
+   LOIRE","53210","SAINT-DENIS-D'ANJOU","47.78830","-0.44471","Rural"],["2
+   3178","PARSCAU DU PLESSIS","AIR PAYS DE LA
+   LOIRE","44052","DONGES","47.31890","-2.06687","Industriel"],["23181","P
+   ARC PAYSAGER","AIR PAYS DE LA
+   LOIRE","44184","SAINT-NAZAIRE","47.27310","-2.22316","Urbain"],["23182"
+   ,"SOURCES","AIR PAYS DE LA LOIRE","72181","LE
+   MANS","47.97110","0.22146","Urbain"],["23188","CIM BOUTEILLERIE","AIR
+   PAYS DE LA
+   LOIRE","44109","NANTES","47.22220","-1.53743","Urbain"],["23230","GASPA
+   RD","AIR PAYS DE LA
+   LOIRE","44132","PORNICHET","47.25310","-2.33194","P?riurbain"],["24006"
+   ,"ANTIBES GUYNEMER","ATMO
+   SUD","06004","ANTIBES","43.58167","7.12306","Trafic"],["24007","ANTIBES
+   JEAN MOULIN","ATMO
+   SUD","06004","ANTIBES","43.59972","7.09472","P?riurbain"],["24009","CAN
+   NES BROUSSAILLES","ATMO
+   SUD","06029","CANNES","43.56250","7.00722","Urbain"],["24011","NICE
+   OUEST BOTANIQUE","ATMO
+   SUD","06088","NICE","43.68611","7.21194","Urbain"],["24014","CIANS","AT
+   MO SUD","06016","BEUIL","44.08833","6.98917","Rural"],["24015","GRASSE
+   CLAVECIN","ATMO
+   SUD","06069","GRASSE","43.65781","6.92095","Urbain"],["24018","MANOSQUE
+   ","ATMO
+   SUD","04112","MANOSQUE","43.83528","5.78583","Urbain"],["24020","CAGNES
+   LADOUMEGUE","ATMO
+   SUD","06027","CAGNES-SUR-MER","43.65834","7.15778","Urbain"],["24021","
+   PEILLON","ATMO
+   SUD","06092","PEILLON","43.78660","7.37328","Industriel"],["24023","CON
+   TES 2","ATMO
+   SUD","06048","CONTES","43.79333","7.33139","Industriel"],["24024","BRIA
+   NCON","ATMO
+   SUD","05023","BRIANCON","44.89639","6.63798","Urbain"],["24030","AEROPO
+   RT NICE","ATMO
+   SUD","06088","NICE","43.65111","7.20444","Industriel"],["24032","Rivier
+   a Fran\u00e7aise","ATMO
+   SUD","06104","ROQUEBRUNE-CAP-MARTIN","43.75850","7.47886","Rural"],["24
+   033","GAP COMMANDERIE","ATMO
+   SUD","05061","GAP","44.55521","6.07306","Urbain"],["25011","Pt Couronne
+   Ch d eau","ATMO
+   NORMANDIE","76497","PETIT-COURONNE","49.38313","1.02576","Industriel"],
+   ["25026","Les Essarts","ATMO
+   NORMANDIE","76319","GRAND-COURONNE","49.34238","1.01597","P?riurbain"],
+   ["25032","Elbeuf CCI","ATMO
+   NORMANDIE","76231","ELBEUF","49.29111","1.00743","Urbain"],["25035","Gd
+   Couronne Mairie","ATMO
+   NORMANDIE","76319","GRAND-COURONNE","49.35821","1.00785","Industriel"],
+   ["25036","Espace du Palais","ATMO
+   NORMANDIE","76540","ROUEN","49.44246","1.09369","Urbain"],["25037","Rou
+   en Le Conquerant","ATMO
+   NORMANDIE","76540","ROUEN","49.44146","1.08266","Trafic"],["25039","Evr
+   eux Centre","ATMO
+   NORMANDIE","27229","EVREUX","49.02134","1.14832","Urbain"],["25040","Me
+   snil Esnard","ATMO NORMANDIE","76429","LE
+   MESNIL-ESNARD","49.40619","1.15515","P?riurbain"],["25043","Centre
+   Hospitalier","ATMO
+   NORMANDIE","76681","SOTTEVILLE-LES-ROUEN","49.40052","1.09882","Urbain"
+   ],["25045","Phare d Ailly","ATMO
+   NORMANDIE","76605","SAINTE-MARGUERITE-SUR-MER","49.91636","0.95718","Ru
+   ral"],["25048","Petit Quevilly","ATMO NORMANDIE","76498","LE
+   PETIT-QUEVILLY","49.42806","1.05778","Urbain"],["25049","Base loisirs
+   Poses","ATMO
+   NORMANDIE","27701","VAL-DE-REUIL","49.30487","1.21437","Rural"],["26002
+   ","Station TARNIER","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21231","DIJON","47.30467","5.02008","Urbain"]
+   ,["26005","Station PEJOCES","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21231","DIJON","47.30737","5.06588","Urbain"]
+   ,["26007","Station BALZAC","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21231","DIJON","47.34109","5.04689","Urbain"]
+   ,["26010","Station DAIX","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21223","DAIX","47.34560","5.00238","P?riurbai
+   n"],["26012","Station MORVAN","ATMO
+   BOURGOGNE-FRANCHE-COMTE","58235","SAINT-BRISSON","47.27590","4.09897","
+   Rural"],["26014","Station TREMOUILLE","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21231","DIJON","47.32574","5.04106","Urbain"]
+   ,["26016","Station SENS","ATMO
+   BOURGOGNE-FRANCHE-COMTE","89387","SENS","48.20044","3.27730","Urbain"],
+   ["26017","Station NEVERS ISAT","ATMO
+   BOURGOGNE-FRANCHE-COMTE","58194","NEVERS","46.99683","3.17109","Urbain"
+   ],["26019","Station AUXERRE","ATMO
+   BOURGOGNE-FRANCHE-COMTE","89024","AUXERRE","47.80058","3.57619","Urbain
+   "],["26035","ProxTrafRur-NuitsStG","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21464","NUITS-SAINT-GEORGES","47.13723","4.95
+   057","Trafic"],["27002","ROUSSILLON","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38344","ROUSSILLON","45.36782","4.80515","Urbain"],[
+   "27003","ROCHES DE CONDRIEU","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38340","LES
+   ROCHES-DE-CONDRIEU","45.45452","4.76653","Industriel"],["27004","Vienne
+   Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38544","VIENNE","45.52597","4.87541","Urbain"],["270
+   05","Sablons","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38349","SABLONS","45.31964","4.77287","P?riurbain"],
+   ["27007","Bourgoin-Jallieu","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38053","BOURGOIN-JALLIEU","45.60822","5.27087","Urba
+   in"],["27008","A7 Nord-Is\u00e8re","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38468","SALAISE-SUR-SANNE","45.35319","4.80482","Tra
+   fic"],["28010","Harnes Serres","ATMO
+   HAUTS-DE-FRANCE","62413","HARNES","50.44914","2.91287","P?riurbain"],["
+   28022","St-Laurent-Blangy","ATMO
+   HAUTS-DE-FRANCE","62753","SAINT-LAURENT-BLANGY","50.30886","2.80737","P
+   ?riurbain"],["28023","Wingles IME","ATMO
+   HAUTS-DE-FRANCE","62895","WINGLES","50.49651","2.86725","Industriel"],[
+   "28027","Evin-Malmaison","ATMO
+   HAUTS-DE-FRANCE","62321","EVIN-MALMAISON","50.43464","3.02964","P?riurb
+   ain"],["28028","Bethune Stade","ATMO
+   HAUTS-DE-FRANCE","62119","BETHUNE","50.53539","2.63569","Urbain"],["281
+   31","Lens Stade J. Moulin","ATMO
+   HAUTS-DE-FRANCE","62498","LENS","50.43680","2.82676","Urbain"],["29421"
+   ,"COUBERTIN","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42218","SAINT-ETIENNE","45.46672","4.38978","P?riurb
+   ain"],["29423","ROANNE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42187","ROANNE","46.04111","4.07466","Urbain"],["294
+   24","SAINT ETIENNE SUD","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42218","SAINT-ETIENNE","45.42009","4.39542","Urbain"
+   ],["29426","SAINT-CHAMOND","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42207","SAINT-CHAMOND","45.47532","4.51500","Urbain"
+   ],["29428","ST ETIENNE ROND PT","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42218","SAINT-ETIENNE","45.42120","4.41198","Trafic"
+   ],["29429","RIVE DE GIER","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42186","RIVE-DE-GIER","45.53342","4.62394","Trafic"]
+   ,["29439","LA TALAUDIERE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42305","LA
+   TALAUDIERE","45.48178","4.42967","P?riurbain"],["30016","Hotel
+   Districal","ATMO
+   GRAND-EST","54395","NANCY","48.68586","6.17511","Urbain"],["30018","Rem
+   iremont","ATMO
+   GRAND-EST","88383","REMIREMONT","48.02382","6.58664","Urbain"],["30019"
+   ,"EPINAL","ATMO
+   GRAND-EST","88160","EPINAL","48.17278","6.45281","Urbain"],["30020","Ba
+   r Le Duc","ATMO
+   GRAND-EST","55029","BAR-LE-DUC","48.77586","5.16279","Urbain"],["30021"
+   ,"Fl\u00e9ville","ATMO
+   GRAND-EST","54197","FLEVILLE-DEVANT-NANCY","48.62290","6.19492","P?riur
+   bain"],["30022","Gerardmer","ATMO
+   GRAND-EST","88196","GERARDMER","48.07182","6.87277","Urbain"],["30023",
+   "ST-NICOLAS DE PORT","ATMO
+   GRAND-EST","54483","SAINT-NICOLAS-DE-PORT","48.63334","6.30483","Indust
+   riel"],["30026","Luneville","ATMO
+   GRAND-EST","54329","LUNEVILLE","48.58485","6.48357","Trafic"],["30027",
+   "Frolois","ATMO
+   GRAND-EST","54214","FROLOIS","48.56430","6.12576","Industriel"],["30028
+   ","Schlucht","ATMO
+   GRAND-EST","88531","XONRUPT-LONGEMER","48.05182","7.01104","Rural"],["3
+   0029","Vittel","ATMO
+   GRAND-EST","88516","VITTEL","48.19404","5.93762","P?riurbain"],["30030"
+   ,"Neuves-Maisons","ATMO
+   GRAND-EST","54397","NEUVES-MAISONS","48.61491","6.10767","Urbain"],["30
+   032","Heming","ATMO
+   GRAND-EST","57314","HEMING","48.69472","6.96528","Industriel"],["30033"
+   ,"Jonville en Woevre","ATMO
+   GRAND-EST","55256","JONVILLE-EN-WOEVRE","49.06583","5.78556","Rural"],[
+   "30034","NANCY-CHARLES III","ATMO
+   GRAND-EST","54395","NANCY","48.68817","6.19043","Urbain"],["30036","NAN
+   CY-LIB\u00c9RATION","ATMO
+   GRAND-EST","54395","NANCY","48.69708","6.15417","Trafic"],["30037","NAN
+   CY-BRABOIS 2","ATMO
+   GRAND-EST","54578","VILLERS-LES-NANCY","48.65694","6.13602","P?riurbain
+   "],["31001","GRAND PARC","ATMO NOUVELLE
+   AQUITAINE","33063","BORDEAUX","44.86121","-0.58037","Urbain"],["31002",
+   "TALENCE","ATMO NOUVELLE
+   AQUITAINE","33522","TALENCE","44.80046","-0.58940","Urbain"],["31003","
+   BORDEAUX-BASTIDE","ATMO NOUVELLE
+   AQUITAINE","33063","BORDEAUX","44.84965","-0.54499","Trafic"],["31005",
+   "BORDEAUX-GAMBETTA","ATMO NOUVELLE
+   AQUITAINE","33063","BORDEAUX","44.84152","-0.58089","Trafic"],["31006",
+   "MERIGNAC","ATMO NOUVELLE
+   AQUITAINE","33281","MERIGNAC","44.84136","-0.65100","Trafic"],["31007",
+   "BASSENS","ATMO NOUVELLE
+   AQUITAINE","33032","BASSENS","44.90030","-0.51584","Urbain"],["31008","
+   LE TEMPLE","ATMO NOUVELLE AQUITAINE","33528","LE
+   TEMPLE","44.86600","-0.94007","Rural"],["31010","AMBES","ATMO NOUVELLE
+   AQUITAINE","33004","AMBES","45.01478","-0.53394","Industriel"],["31013"
+   ,"BILLERE","ATMO NOUVELLE
+   AQUITAINE","64129","BILLERE","43.31080","-0.39155","Urbain"],["31014","
+   HAMEAU","ATMO NOUVELLE
+   AQUITAINE","64132","BIZANOS","43.30698","-0.32316","Urbain"],["31016","
+   SAINT-CROUTS","ATMO NOUVELLE
+   AQUITAINE","64102","BAYONNE","43.47982","-1.48916","Urbain"],["31017","
+   ANGLET","ATMO NOUVELLE
+   AQUITAINE","64024","ANGLET","43.49404","-1.52875","Trafic"],["31020","L
+   ACQ","ATMO NOUVELLE
+   AQUITAINE","64300","LACQ","43.41104","-0.61770","Industriel"],["31021",
+   "LABASTIDE CEZERACQ","ATMO NOUVELLE
+   AQUITAINE","64288","LABASTIDE-CEZERACQ","43.37628","-0.53820","Rural"],
+   ["31022","LAGOR","ATMO NOUVELLE
+   AQUITAINE","64396","MONT","43.40988","-0.67313","Industriel"],["31023",
+   "MASLACQ","ATMO NOUVELLE
+   AQUITAINE","64367","MASLACQ","43.43646","-0.69494","Industriel"],["3102
+   4","MOURENX","ATMO NOUVELLE
+   AQUITAINE","64410","MOURENX","43.37718","-0.61028","Industriel"],["3102
+   6","TARTAS Pelletrin","ATMO NOUVELLE
+   AQUITAINE","40313","TARTAS","43.83892","-0.81204","Industriel"],["31027
+   ","IRATY","ATMO NOUVELLE
+   AQUITAINE","64316","LARRAU","43.03376","-1.03716","Rural"],["31029","LE
+   NDRESSE","ATMO NOUVELLE
+   AQUITAINE","64396","MONT","43.41700","-0.66175","Industriel"],["31030",
+   "LEOGNAN","ATMO NOUVELLE
+   AQUITAINE","33238","LEOGNAN","44.72244","-0.57607","P?riurbain"],["3103
+   1","SAINT-SULPICE","ATMO NOUVELLE
+   AQUITAINE","33483","SAINT-SULPICE-ET-CAMEYRAC","44.91318","-0.38464","P
+   ?riurbain"],["31032","AGEN","ATMO NOUVELLE
+   AQUITAINE","47001","AGEN","44.19230","0.62394","Urbain"],["31033","PERI
+   GUEUX","ATMO NOUVELLE
+   AQUITAINE","24322","PERIGUEUX","45.18983","0.72719","Urbain"],["31034",
+   "AMBES 2","ATMO NOUVELLE
+   AQUITAINE","33004","AMBES","45.01478","-0.53394","P?riurbain"],["31036"
+   ,"DAX","ATMO NOUVELLE
+   AQUITAINE","40088","DAX","43.70464","-1.03856","Urbain"],["31039","PAU
+   TOURASSE","ATMO NOUVELLE
+   AQUITAINE","64445","PAU","43.31109","-0.35212","Trafic"],["32001","Chal
+   on Centre Ville","ATMO
+   BOURGOGNE-FRANCHE-COMTE","71076","CHALON-SUR-SAONE","46.78231","4.84732
+   ","Trafic"],["32002","Champforgueil","ATMO
+   BOURGOGNE-FRANCHE-COMTE","71081","CHAMPFORGEUIL","46.82106","4.83508","
+   P?riurbain"],["32005","Montceau-les-Mines","ATMO
+   BOURGOGNE-FRANCHE-COMTE","71306","MONTCEAU-LES-MINES","46.67878","4.366
+   89","Urbain"],["32006","Macon Paul Bert","ATMO
+   BOURGOGNE-FRANCHE-COMTE","71270","MACON","46.31617","4.83999","Urbain"]
+   ,["32007","Le Creusot Molette","ATMO
+   BOURGOGNE-FRANCHE-COMTE","71153","LE
+   CREUSOT","46.80238","4.41749","Urbain"],["32014","Chalon St
+   Marie","ATMO
+   BOURGOGNE-FRANCHE-COMTE","71076","CHALON-SUR-SAONE","46.79736","4.85384
+   ","Urbain"],["33101","PASTEUR","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73065","CHAMBERY","45.56472","5.92833","Urbain"],["3
+   3102","CHAMBERY LE HAUT","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73065","CHAMBERY","45.59667","5.91861","Urbain"],["3
+   3111","SAINT JEAN","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73248","SAINT-JEAN-DE-MAURIENNE","45.27472","6.34972
+   ","Urbain"],["33114","St Julien trafic","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73250","SAINT-JULIEN-MONT-DENIS","45.25258","6.39701
+   ","Trafic"],["33120","CHAMONIX","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74056","CHAMONIX-MONT-BLANC","45.92250","6.87000","U
+   rbain"],["33121","Albertville","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73011","ALBERTVILLE","45.67500","6.38972","Urbain"],
+   ["33201","LOVERCHY","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74010","ANNECY","45.89528","6.11833","Urbain"],["332
+   02","NOVEL","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74010","ANNECY","45.91694","6.13556","Urbain"],["332
+   11","ANNEMASSE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74012","ANNEMASSE","46.19583","6.24056","Urbain"],["
+   33212","GAILLARD","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74133","GAILLARD","46.19369","6.21486","Urbain"],["3
+   3220","PASSY","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74208","PASSY","45.92361","6.71361","Urbain"],["3323
+   2","BOSSONS","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74056","CHAMONIX-MONT-BLANC","45.90722","6.84583","T
+   rafic"],["33233","Aiguille du Midi","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74056","CHAMONIX-MONT-BLANC","45.87861","6.88732","R
+   ural"],["33260","THONON les Bains","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74281","THONON-LES-BAINS","46.37444","6.48472","Urba
+   in"],["33302","St Germain\/Rh\u00f4ne","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74235","SAINT-GERMAIN-SUR-RHONE","46.07222","5.82083
+   ","Rural"],["33305","Bourg-en-Bresse","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","01053","BOURG-EN-BRESSE","46.21167","5.22639","Urbai
+   n"],["33411","PLAN DU LAC","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73290","TERMIGNON","45.34000","6.83028","Rural"],["3
+   4011","Prefecture","LIG'AIR","45234","ORLEANS","47.89944","1.91029","Ur
+   bain"],["34013","Gambeta","LIG'AIR","45234","ORLEANS","47.90707","1.901
+   14","Trafic"],["34014","St
+   Jean","LIG'AIR","45284","SAINT-JEAN-DE-BRAYE","47.91739","1.96626","Urb
+   ain"],["34017","Marigny-les-usages","LIG'AIR","45197","MARIGNY-LES-USAG
+   ES","47.95897","2.00929","P?riurbain"],["34018","Montargis","LIG'AIR","
+   45338","VILLEMANDEUR","47.99790","2.71951","Urbain"],["34024","Jou\u00e
+   9 l\u00e8s
+   Tours","LIG'AIR","37122","JOUE-LES-TOURS","47.34413","0.65378","Urbain"
+   ],["34025","La
+   Bruy\u00e8re","LIG'AIR","37261","TOURS","47.41908","0.68294","Urbain"],
+   ["34026","Tours
+   p\u00e9ri-urbaine","LIG'AIR","37054","CHANCEAUX-SUR-CHOISILLE","47.4692
+   6","0.71734","P?riurbain"],["34028","Pompidou","LIG'AIR","37261","TOURS
+   ","47.39464","0.70487","Trafic"],["34032","Leblanc","LIG'AIR","18033","
+   BOURGES","47.08278","2.40532","Urbain"],["34034","Vierzon","LIG'AIR","1
+   8279","VIERZON","47.22203","2.07299","Urbain"],["34038","Verneuil","LIG
+   'AIR","18277","VERNEUIL","46.81479","2.61008","Rural"],["34041","Fulber
+   t","LIG'AIR","28085","CHARTRES","48.44442","1.51015","Urbain"],["34042"
+   ,"Luc\u00e9","LIG'AIR","28218","LUCE","48.43931","1.46877","Urbain"],["
+   34043","Oysonville","LIG'AIR","28294","OYSONVILLE","48.39114","1.95562"
+   ,"Rural"],["34046","Dreux
+   Centre","LIG'AIR","28134","DREUX","48.72970","1.35846","Urbain"],["3405
+   1","Chateauroux
+   Sud","LIG'AIR","36044","CHATEAUROUX","46.79827","1.69313","Urbain"],["3
+   4054","Faverolles","LIG'AIR","36072","FAVEROLLES","47.17015","1.40968",
+   "Rural"],["34061","Blois
+   nord","LIG'AIR","41018","BLOIS","47.59453","1.30174","Urbain"],["34062"
+   ,"Blois
+   centre","LIG'AIR","41018","BLOIS","47.58429","1.33269","Urbain"],["3500
+   2","ST JUNIEN - Fontaine","ATMO NOUVELLE
+   AQUITAINE","87154","SAINT-JUNIEN","45.88486","0.89843","Urbain"],["3500
+   3","LIMOGES - Pr\u00e9sidial","ATMO NOUVELLE
+   AQUITAINE","87085","LIMOGES","45.83110","1.25688","Urbain"],["35004","B
+   RIVE - Dalton","ATMO NOUVELLE
+   AQUITAINE","19031","BRIVE-LA-GAILLARDE","45.15874","1.53722","Urbain"],
+   ["35005","GUERET - Nicolas","ATMO NOUVELLE
+   AQUITAINE","23096","GUERET","46.17364","1.87303","Urbain"],["35006","TU
+   LLE - Hugo","ATMO NOUVELLE
+   AQUITAINE","19272","TULLE","45.26267","1.76279","Urbain"],["35007","PAL
+   AIS S\/ V.- Garros","ATMO NOUVELLE AQUITAINE","87113","LE
+   PALAIS-SUR-VIENNE","45.87331","1.30792","P?riurbain"],["35010","LIMOGES
+   - Aine","ATMO NOUVELLE
+   AQUITAINE","87085","LIMOGES","45.82998","1.25477","Trafic"],["35012","L
+   A NOUAILLE - MERA","ATMO NOUVELLE AQUITAINE","23144","LA
+   NOUAILLE","45.80513","2.06234","Rural"],["35019","SAILLAT -
+   Ipaper","ATMO NOUVELLE
+   AQUITAINE","87131","SAILLAT-SUR-VIENNE","45.87583","0.82389","Industrie
+   l"],["36001","Valence P\u00e9riurb. Sud","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","26252","PORTES-LES-VALENCE","44.87024","4.87629","P?
+   riurbain"],["36002","Valence Urb. Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","26362","VALENCE","44.93351","4.89348","Urbain"],["36
+   003","Valence Trafic","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","26058","BOURG-LES-VALENCE","44.94892","4.88988","Tra
+   fic"],["36007","Saint Bauzile CECA","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","07219","SAINT-BAUZILE","44.67594","4.67359","Industr
+   iel"],["36019","Romans-sur-Is\u00e8re","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","26281","ROMANS-SUR-ISERE","45.04250","5.04430","Urba
+   in"],["37001","ST de Baie
+   mahault","GWAD'AIR","97103","BAIE-MAHAULT","16.25730","-61.59174","P?ri
+   urbain"],["37002","ST de Pointe \u00e0
+   Pitre","GWAD'AIR","97120","POINTE-A-PITRE","16.23870","-61.53810","Urba
+   in"],["37003","ST des Abymes","GWAD'AIR","97101","LES
+   ABYMES","16.26148","-61.52812","P?riurbain"],["38001","LYC. LISLET
+   GEOFFROY","ORA","97411","SAINT-DENIS","-20.88980","55.46915","Urbain"],
+   ["38002","MONTGAILLARD","ORA","97411","SAINT-DENIS","-20.90329","55.468
+   34","P?riurbain"],["38003","CAMBAIE","ORA","97415","SAINT-PAUL","-20.96
+   275","55.29625","Industriel"],["38005","CIRFIM","ORA","97407","LE
+   PORT","-20.93179","55.30598","Industriel"],["38008","Ecole
+   JOINVILLE","ORA","97411","SAINT-DENIS","-20.88450","55.45395","Urbain"]
+   ,["38009","Ecole La
+   Marine","ORA","97420","SAINTE-SUZANNE","-20.91055","55.61894","Industri
+   el"],["38010","Station TITAN","ORA","97407","LE
+   PORT","-20.94308","55.29060","Industriel"],["38011","Station Luther
+   King","ORA","97416","SAINT-PIERRE","-21.33438","55.45901","Urbain"],["3
+   8014","Ligne
+   Paradis","ORA","97416","SAINT-PIERRE","-21.31278","55.47410","P?riurbai
+   n"],["38016","Station Bourg-Murat","ORA","97422","LE
+   TAMPON","-21.20285","55.57997","Rural"],["38017","Grand
+   Coude","ORA","97412","SAINT-JOSEPH","-21.29433","55.62793","Rural"],["3
+   8097","Remorque
+   Laboratoire","ORA","97412","SAINT-JOSEPH","-21.37946","55.61941","Incon
+   nu"],["38098","SARDA
+   GARRIGA","ORA","97414","SAINT-LOUIS","-21.27816","55.40373","Industriel
+   "],["39002","Lycee
+   Schoelcher","MADININAIR","97209","FORT-DE-FRANCE","14.60330","-61.07770
+   ","P?riurbain"],["39003","ZAC Etang
+   Zabricot","MADININAIR","97209","FORT-DE-FRANCE","14.60350","-61.04120",
+   "Industriel"],["39007","Bishop","MADININAIR","97209","FORT-DE-FRANCE","
+   14.61040","-61.05460","Urbain"],["39008","Ville de
+   Schoelcher","MADININAIR","97229","SCHOELCHER","14.61639","-61.10080","U
+   rbain"],["39009","Lamentin Bas Mission","MADININAIR","97213","LE
+   LAMENTIN","14.61070","-61.00260","Urbain"],["39010","Rocade
+   Concorde","MADININAIR","97209","FORT-DE-FRANCE","14.61380","-61.06350",
+   "Trafic"],["39011","Reneville
+   Trafic","MADININAIR","97209","FORT-DE-FRANCE","14.61420","-61.05310","T
+   rafic"],["41001","AJACCIO CANETTO","QUALITAIR
+   CORSE","2A004","AJACCIO","41.92469","8.73569","Urbain"],["41002","BASTI
+   A GIRAUD","QUALITAIR
+   CORSE","2B033","BASTIA","42.69792","9.44642","Urbain"],["41003","AJACCI
+   O PIATANICCIA","QUALITAIR
+   CORSE","2A271","SARROLA-CARCOPINO","41.96444","8.82028","Industriel"],[
+   "41004","BASTIA LA MARANA","QUALITAIR
+   CORSE","2B148","LUCCIANA","42.53582","9.47598","Industriel"],["41007","
+   AJACCIO SPOSATA","QUALITAIR
+   CORSE","2A004","AJACCIO","41.94923","8.75759","P?riurbain"],["41017","B
+   ASTIA MONTESORO","QUALITAIR
+   CORSE","2B033","BASTIA","42.67134","9.43464","P?riurbain"],["41020","BA
+   STIA SAINT NICOLAS","QUALITAIR
+   CORSE","2B033","BASTIA","42.70010","9.45177","Trafic"],["41022","AJACCI
+   O DIAMANT","QUALITAIR
+   CORSE","2A004","AJACCIO","41.91817","8.73650","Trafic"],["41024","Venac
+   o","QUALITAIR
+   CORSE","2B341","VENACO","42.23610","9.19002","Rural"],["29440","COL_OEI
+   LLON","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42191","ROISEY","45.38958","4.61582","Rural"],["3312
+   2","La L\u00e9ch\u00e8re","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73187","LA
+   LECHERE","45.53583","6.47111","Industriel"],["24039","Obs
+   Haute-Provence","ATMO
+   SUD","04192","SAINT-MICHEL-L'OBSERVATOIRE","43.93350","5.71170","Rural"
+   ],["24038","GAP JEAN JAURES","ATMO
+   SUD","05061","GAP","44.54864","6.06730","Trafic"],["30038","OPE-Bure","
+   ATMO
+   GRAND-EST","55087","BURE","48.48676389","5.3565","Rural"],["18079","TRA
+   FIC AMIENS","ATMO
+   HAUTS-DE-FRANCE","80021","AMIENS","49.87722","2.28250","Trafic"],["3405
+   6","Montierchaume","LIG'AIR","36128","MONTIERCHAUME","46.86454","1.7719
+   5","P?riurbain"],["04329","Bld peripherique
+   Est","AIRPARIF","75056","PARIS","48.83856","2.41269","Trafic"],["05089"
+   ,"Le Havre Lafaurie-montant","ATMO NORMANDIE","76351","LE
+   HAVRE","49.50019","0.11090","Trafic"],["09402","Avenue de
+   Lib\u00e9ration","ATMO NOUVELLE
+   AQUITAINE","86194","POITIERS","46.57000","0.32358","Trafic"],["08252","
+   GARNOR03","ATMO
+   OCCITANIE","30278","SAINT-LAURENT-DES-ARBRES","44.05356","4.69736","P?r
+   iurbain"],["34029","La_Source-CNRS","LIG'AIR","45234","ORLEANS","47.837
+   76","1.94466","Urbain"],["34030","Bourges-Baffier","LIG'AIR","18033","B
+   OURGES","47.07504","2.40718","Trafic"],["34047","Saint-Remy","LIG'AIR",
+   "28359","SAINT-REMY-SUR-AVRE","48.76089","1.23365","Trafic"],["38018","
+   Centre Penitencier","ORA","97407","LE
+   PORT","-20.94980","55.31383","Industriel"],["02041","SALON","ATMO
+   SUD","13103","SALON-DE-PROVENCE","43.63894","5.10000","Urbain"],["01060
+   ","Malroy","ATMO
+   GRAND-EST","57438","MALROY","49.16885","6.21267","Industriel"],["35023"
+   ,"TULLE - Victor","ATMO NOUVELLE
+   AQUITAINE","19272","TULLE","45.26361","1.76389","Trafic"],["39013","Le
+   Robert","MADININAIR","97222","LE
+   ROBERT","14.67560","-60.97610","Trafic"],["31040","MARMANDE","ATMO
+   NOUVELLE
+   AQUITAINE","47157","MARMANDE","44.50866","0.14250","Trafic"],["31041","
+   MONT DE MARSAN","ATMO NOUVELLE
+   AQUITAINE","40192","MONT-DE-MARSAN","43.89608","-0.49062","Trafic"],["0
+   4173","RD934
+   Coulommiers","AIRPARIF","77131","COULOMMIERS","48.80550","3.08432","Tra
+   fic"],["25051","Dieppe proxi auto","ATMO
+   NORMANDIE","76217","DIEPPE","49.91801","1.07397","Trafic"],["12054","TR
+   AFIC_TOULOUSE","ATMO
+   OCCITANIE","31555","TOULOUSE","43.64389","1.46825","Trafic"],["25050","
+   Bures-en-bray","ATMO
+   NORMANDIE","76148","BURES-EN-BRAY","49.78122","1.34508","Rural"],["2403
+   5","NICE MAGNAN","ATMO
+   SUD","06088","NICE","43.68929","7.24208","Trafic"],["07045","Issoire
+   Ecole Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63178","ISSOIRE","45.54493","3.24765","Urbain"],["16
+   067","Vieux Thann 3","ATMO
+   GRAND-EST","68348","VIEUX-THANN","47.80221","7.12284","Industriel"],["1
+   8054","Hirson site 2","ATMO
+   HAUTS-DE-FRANCE","02381","HIRSON","49.91744","4.09137","P?riurbain"],["
+   19017","Rennes Pays-Bas","AIR
+   BREIZH","35238","RENNES","48.08967","-1.65903","Urbain"],["24036","NICE
+   ARSON","ATMO
+   SUD","06088","NICE","43.70208","7.28626","Urbain"],["82006","Besancon
+   Prevoyance","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25056","BESANCON","47.24740","6.01542","Urbai
+   n"],["25302","Evreux bel EBAT","ATMO
+   NORMANDIE","27229","EVREUX","49.02056","1.13840","Trafic"],["25303","Me
+   rcey","ATMO
+   NORMANDIE","27229","EVREUX","49.01908","1.14885","Trafic"],["09404","Po
+   itiers centre","ATMO NOUVELLE
+   AQUITAINE","86194","POITIERS","46.58396","0.34560","Urbain"],["36021","
+   Dr\u00f4me Rurale Sud-SND","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","26321","SAINT-NAZAIRE-LE-DESERT","44.56944","5.27897
+   ","Rural"],["19052","Quimper Pommiers","AIR
+   BREIZH","29232","QUIMPER","47.99583","-4.09944","Trafic"],["33203","ANN
+   ECY Rocade","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74010","ANNECY","45.90970","6.11825","Trafic"],["270
+   10","Plateau de Bonnevaux","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","38211","LIEUDIEU","45.46090","5.18108","Rural"],["05
+   090","Le Havre ville-haute","ATMO NORMANDIE","76351","LE
+   HAVRE","49.51421","0.10086","Urbain"],["18080","TRAF Saint Quent
+   14","ATMO
+   HAUTS-DE-FRANCE","02691","SAINT-QUENTIN","49.84282","3.28144","Trafic"]
+   ,["09206","La_Rochelle_trafic","ATMO NOUVELLE AQUITAINE","17300","LA
+   ROCHELLE","46.15806","-1.15619","Trafic"],["14011","Doumer","ATMO
+   GRAND-EST","51454","REIMS","49.25073","4.02306","Trafic"],["01064","Met
+   z_Pont-Grilles","ATMO
+   GRAND-EST","57463","METZ","49.12508","6.18122","Trafic"],["14028","Remp
+   art Perrier","ATMO
+   GRAND-EST","51230","EPERNAY","49.04610","3.95591","Trafic"],["01065","B
+   elleville sur Meuse","ATMO
+   GRAND-EST","55043","BELLEVILLE-SUR-MEUSE","49.16778","5.38746","Trafic"
+   ],["04135","Boulevard
+   Soult","AIRPARIF","75056","PARIS","48.83796","2.40806","Trafic"],["0704
+   8","Villeneuve sur Allie","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03316","VILLENEUVE-SUR-ALLIER","46.65906","3.24931",
+   "Trafic"],["14029","Capitainerie","ATMO
+   GRAND-EST","51649","VITRY-LE-FRANCOIS","48.72660","4.59478","P?riurbain
+   "],["07049","MOULINS","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","03190","MOULINS","46.56187","3.33109","Urbain"],["04
+   179","PARIS stade
+   Lenglen","AIRPARIF","75056","PARIS","48.83039","2.26989","Urbain"],["38
+   019","Boulevard
+   Jean-Jaur\u00e8s","ORA","97411","SAINT-DENIS","-20.89351","55.47082","T
+   rafic"],["38020","Plateau
+   Caillou","ORA","97415","SAINT-PAUL","-21.02209","55.26675","Urbain"],["
+   39014","Station Sainte
+   Luce","MADININAIR","97228","SAINTE-MARIE","14.46887","-60.92741","P?riu
+   rbain"],["39015","Fort de France- Hotel de
+   ville","MADININAIR","97209","FORT-DE-FRANCE","14.60611","-61.06527","Ur
+   bain"],["40007","MATOURY KALOU","ORA DE
+   GUYANE","97307","MATOURY","4.84816","-52.32382","P?riurbain"],["28033",
+   "Noeux les mines","ATMO
+   HAUTS-DE-FRANCE","62617","NOEUX-LES-MINES","50.48952","2.66643","P?riur
+   bain"],["04180","RN20
+   Montlh\u00e9ry","AIRPARIF","91425","MONTLHERY","48.64093","2.26871","Tr
+   afic"],["04181","Rambouillet","AIRPARIF","78517","RAMBOUILLET","48.6337
+   3","1.83053","P?riurbain"],["21037","Cherbourg port charb","ATMO
+   NORMANDIE","50602","TOURLAVILLE","49.64695","-1.59342","Inconnu"],["091
+   06","Angoul\u00eame trafic","ATMO NOUVELLE
+   AQUITAINE","16015","ANGOULEME","45.65144","0.16239","Trafic"],["09207",
+   "D137 - MARANS","ATMO NOUVELLE
+   AQUITAINE","17218","MARANS","46.30964","-0.99192","Trafic"],["20069","L
+   YON PERIPHERIQUE","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69266","VILLEURBANNE","45.77472","4.89853","Trafic"]
+   ,["33105","CHAMBERY TRAFIC","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73065","CHAMBERY","45.56943","5.93299","Trafic"],["3
+   4057","Issoudun_trafic_ZR","LIG'AIR","36088","ISSOUDUN","46.94294","2.0
+   0326","Trafic"],["38021","Grand
+   Fond","ORA","97415","SAINT-PAUL","-21.04462","55.22671","P?riurbain"],[
+   "38022","Chaussee
+   Royale","ORA","97415","SAINT-PAUL","-21.01099","55.27468","Trafic"],["3
+   8023","Station Blvd
+   BANKS","ORA","97416","SAINT-PIERRE","-21.33181","55.47855","Trafic"],["
+   14201","Bourgogne","ATMO
+   GRAND-EST","51075","BOURGOGNE","49.34920","4.06959","Rural"],["14202","
+   Ch\u00e2lons-en-Champagne","ATMO
+   GRAND-EST","51108","CHALONS-EN-CHAMPAGNE","48.95590","4.36528","Trafic"
+   ],["14203","Pourcy","ATMO
+   GRAND-EST","51445","POURCY","49.15860","3.91261","Rural"],["26039","Dij
+   on-Transval","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21231","DIJON","47.31547","5.03743","Trafic"]
+   ,["33235","SALLANCHES","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74256","SALLANCHES","45.935294","6.635340","Urbain"]
+   ,["01059","HAYANGE-MARSPICH","ATMO
+   GRAND-EST","57306","HAYANGE","49.33743","6.08207","Industriel"],["08026
+   ","MEZE TRAFIC","ATMO
+   OCCITANIE","34157","MEZE","43.42819","3.603556","Trafic"],["12055","MAS
+   SOL","ATMO
+   OCCITANIE","81004","ALBI","43.92218","2.14690","Trafic"],["07051","BEAU
+   LIEU-VERNEA","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.76839","03.15619","Ind
+   ustriel"],["36022","Aubenas_belvedere","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","07019","AUBENAS","44.62220","04.38516","Urbain"],["0
+   7054","Le Puy CAUSANS","ATMO AUVERGNE - RH\u00d4NE-ALPES","43157","LE
+   PUY-EN-VELAY","45.03881","03.88670","Trafic"],["11114","Wattignies","AT
+   MO
+   HAUTS-DE-FRANCE","59648","WATTIGNIES","50.59774","3.04946","P?riurbain"
+   ],["16068","Colmar Ladhof","ATMO
+   GRAND-EST","68066","COLMAR","48.08169","07.36459","Trafic"],["16069","M
+   ulhouse Briand","ATMO
+   GRAND-EST","68224","MULHOUSE","47.74768","07.32136","Trafic"],["24040",
+   "Massif du Cheiron","ATMO
+   SUD","06050","COURSEGOULES","43.79194","07.04833","Rural"],["33367","MA
+   RNAZ","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74169","MARNAZ","46.05772","6.53339","P?riurbain"],[
+   "28115","Lens Varsovie","ATMO
+   HAUTS-DE-FRANCE","62498","LENS","50.42750","2.83802","Trafic"],["40008"
+   ,"Cayenne Caiena 3","ORA DE
+   GUYANE","97302","CAYENNE","4.93784","-52.32093","Urbain"],["01061","Flo
+   range_Betange_HAP","ATMO
+   GRAND-EST","57221","FLORANGE","49.3331","6.1147","Industriel"],["01066"
+   ,"Fameck","ATMO
+   GRAND-EST","57290","HAMPONT","49.305131","6.101309","Industriel"],["020
+   43","Marignane","ATMO
+   SUD","13054","MARIGNANE","43.4165306","5.222281","Inconnu"],["03070","E
+   STEREL","ATMO
+   SUD","83118","SAINT-RAPHAEL","43.43786","6.768366","Inconnu"],["03071",
+   "TOULON CLARET","ATMO
+   SUD","83137","TOULON","43.131113","5.924184","Inconnu"],["04041","Boule
+   vard
+   Haussmann","AIRPARIF","75109","","48.87333","2.32972","Trafic"],["04184
+   ","BAGNEAUX-SUR-LOING","AIRPARIF","77016","BAGNEAUX-SUR-LOING","48.2314
+   75","2.706177778","Industriel"],["04185","POMMEUSE","AIRPARIF","77371",
+   "POMMEUSE","48.8158806","2.991247222","Inconnu"],["04331","LIMAY","AIRP
+   ARIF","78335","LIMAY","48.985523","1.754142","Industriel"],["04333","AR
+   GENTEUIL H\u00f4tel de
+   Ville","AIRPARIF","95018","ARGENTEUIL","48.948125","2.248817","Inconnu"
+   ],["05500","Gonfreville l Orcher C\u00f4te Blanche","ATMO
+   NORMANDIE","76305","GONFREVILLE-L'ORCHER","49.4989","0.2296","Industrie
+   l"],["05501","Gonfreville Pissotiere a Madame","ATMO
+   NORMANDIE","76533","ROGERVILLE","49.4975","0.2531","Industriel"],["0550
+   2","Quillebeuf sur Seine rue Feret","ATMO
+   NORMANDIE","27485","QUILLEBEUF-SUR-SEINE","49.4675","0.531","Industriel
+   "],["05503","Notre Dame de Gravenchon Prevert","ATMO
+   NORMANDIE","76476","NOTRE-DAME-DE-GRAVENCHON","49.4675","0.5746","Indus
+   triel"],["07052","Aurillac-Lagarde","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","15014","AURILLAC","44.92008","2.441082","Inconnu"],[
+   "07053","Edouard Michelin","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.780434","3.111592","Tr
+   afic"],["07056","Pays du Mezenc","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","43092","FAY-SUR-LIGNON","44.98377","4.226006","Incon
+   nu"],["07057","Moulins Centre","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","3190","","46.5619722","3.340638889","Inconnu"],["070
+   58","Montlu\u00e7on","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","3185","","46.340723","2.593945","Inconnu"],["07059",
+   "Vichy","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","3310","","46.130431","3.425694","Inconnu"],["07060",
+   "Royat Periurbaine","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63308","ROYAT","45.764111","3.046111","Inconnu"],["0
+   7202","Stade Leclanche","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","63113","CLERMONT-FERRAND","45.807487","3.111111","In
+   connu"],["08508","Vergeze","ATMO
+   OCCITANIE","30344","VERGEZE","43.724606","4.246406","Industriel"],["091
+   07","PGOG_4_00","ATMO NOUVELLE
+   AQUITAINE","16102","COGNAC","45.68695","-0.323869","Industriel"],["0940
+   3","Ecole maternelle Porte de Paris - exterieur","ATMO NOUVELLE
+   AQUITAINE","86194","POITIERS","46.5909","0.3404","Trafic"],["10017","St
+   Pol mer - cheminots","ATMO
+   HAUTS-DE-FRANCE","59183","DUNKERQUE","51.032761","2.332358","Inconnu"],
+   ["10030","Boulogne Diderot","ATMO
+   HAUTS-DE-FRANCE","62160","BOULOGNE-SUR-MER","50.717029","1.605913","Tra
+   fic"],["11007","Lille Leeds","ATMO
+   HAUTS-DE-FRANCE","59350","LILLE","50.6407944","3.074772","Trafic"],["12
+   012","Faure","ATMO
+   OCCITANIE","31555","TOULOUSE","43.63611","1.431389","Industriel"],["120
+   13","Ferry","ATMO
+   OCCITANIE","31555","TOULOUSE","43.63389","1.431108","Industriel"],["120
+   38","BOULODROME","ATMO
+   OCCITANIE","31555","TOULOUSE","43.635834","1.429444","Industriel"],["12
+   049","UMICORE VIVIEZ ","ATMO
+   OCCITANIE","12305","VIVIEZ","44.55528","2.21944","Industriel"],["12050"
+   ,"VIVIEZ-Place du 8 Mai","ATMO
+   OCCITANIE","12305","VIVIEZ","44.56028","2.226111","Industriel"],["12051
+   ","VIVIEZ-Stade","ATMO
+   OCCITANIE","12305","VIVIEZ","44.545834","2.225556","Industriel"],["1205
+   6","MILLAU","ATMO
+   OCCITANIE","12145","MILLAU","44.106178","3.072178","Inconnu"],["12057",
+   "PAMIERS","ATMO
+   OCCITANIE","9225","","43.114422","1.622587","Inconnu"],["12085","Port
+   de l Embouchure","ATMO
+   OCCITANIE","31555","TOULOUSE","43.610386","1.4152","Trafic"],["14048","
+   HAP Bourbonne","ATMO
+   GRAND-EST","52060","BOURBONNE-LES-BAINS","47.9542","5.7491","Inconnu"],
+   ["14801","Metaux BSN","ATMO
+   GRAND-EST","51454","REIMS","49.233612","4.056939","Inconnu"],["14802","
+   HAP Reims Prieur","ATMO
+   GRAND-EST","51454","REIMS","49.263817","4.048806","Inconnu"],["14857","
+   Bourg-Fidele_Mairie","ATMO
+   GRAND-EST","8078","","49.89096","4.53977","Industriel"],["16516","Thann
+   4","ATMO
+   GRAND-EST","68334","THANN","47.814","7.10456","Inconnu"],["19018","MORD
+   ELLES BELLAIS","AIR
+   BREIZH","35196","MORDELLES","48.082883","-1.834583","Inconnu"],["82210"
+   ,"Bouclans","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25418","NANCRAY","47.2458","6.1836","Inconnu"
+   ],["01063","Seremange Erzange","ATMO
+   GRAND-EST","57647","SEREMANGE-ERZANGE","49.321334","6.103931","Industri
+   el"],["82070","Baume les Dames","ATMO
+   BOURGOGNE-FRANCHE-COMTE","25047","BAUME-LES-DAMES","47.351288","6.35972
+   2","Trafic"],["21060","Moult proximite","ATMO
+   NORMANDIE","14456","MOULT","49.117196","-0.169666","Trafic"],["23238","
+   LEVOYER","AIR PAYS DE LA
+   LOIRE","44143","REZE","47.1941472","-1.581677778","Industriel"],["23239
+   ","LES COUETS","AIR PAYS DE LA
+   LOIRE","44020","BOUGUENAIS","47.1859194","-1.591497222","Industriel"],[
+   "25053","Rouen Proxi Quai de Paris","ATMO
+   NORMANDIE","76540","ROUEN","49.436699","1.098838","Trafic"],["25054","P
+   etit Quevilly Sud 3","ATMO NORMANDIE","76498","LE
+   PETIT-QUEVILLY","49.4341639","1.067052778","Trafic"],["25500","Rouen
+   Quai du Havre","ATMO
+   NORMANDIE","76540","ROUEN","49.4393","1.088","Trafic"],["25501","Saint
+   Saens","ATMO
+   NORMANDIE","76648","SAINT-SAENS","49.6713","1.2843","Inconnu"],["25502"
+   ,"Petit Couronne Berthet","ATMO
+   NORMANDIE","76497","PETIT-COURONNE","49.385","1.0187","Industriel"],["2
+   6043","Dijon Transvaal","ATMO
+   BOURGOGNE-FRANCHE-COMTE","21231","DIJON","47.315459","5.040202","Trafic
+   "],["28034","ISBERGUES","ATMO
+   HAUTS-DE-FRANCE","62473","ISBERGUES","50.6257583","2.473227778","Indust
+   riel"],["29441","ST ETIENNE BD URBAIN ","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","42218","SAINT-ETIENNE","45.4479806","4.388763889","T
+   rafic"],["31043","Biarritz hippodrome","ATMO NOUVELLE
+   AQUITAINE","64122","BIARRITZ","43.47024","-1.553843","Inconnu"],["31045
+   ","Bordeaux GAUTIER","ATMO NOUVELLE
+   AQUITAINE","33063","BORDEAUX","44.83383","-0.59853","Trafic"],["33213",
+   "ANNEMASSE TRAFIC","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","74012","ANNEMASSE","46.1908111","6.235536111","Trafi
+   c"],["33720","Ugine musee","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","73303","UGINE","45.7467","6.4208","Industriel"],["34
+   048","Chartres
+   trafic","LIG'AIR","28085","CHARTRES","48.44916","1.492475","Trafic"],["
+   34063","Blois
+   trafic","LIG'AIR","41018","BLOIS","47.590278","1.330844","Trafic"],["34
+   064","Montargis
+   trafic","LIG'AIR","45208","MONTARGIS","48.006936","2.74001","Trafic"],[
+   "34102","Bazoches","LIG'AIR","45025","BAZOCHES-LES-GALLERANDES","48.160
+   833","2.043612","Industriel"],["34106","Bazoches
+   CC","LIG'AIR","45025","BAZOCHES-LES-GALLERANDES","48.166053","2.044028"
+   ,"Industriel"],["36032","A7 Valence Est","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","26058","BOURG-LES-VALENCE","44.9492","4.890133","Tra
+   fic"],["37006","PTP
+   VICTOIRE","GWAD'AIR","97120","POINTE-A-PITRE","16.23674","-61.534101","
+   Inconnu"],["37007","ST Vieux Bourg ABYMES","GWAD'AIR","97101","LES
+   ABYMES","16.25066","-61.527794","Trafic"],["37010","BT
+   PICHON","GWAD'AIR","97105","BASSE-TERRE","15.994349","-61.727203","Inco
+   nnu"],["38024","RDT SAINT
+   LEU","ORA","97413","SAINT-LEU","-21.213212","55.302844","Trafic"],["380
+   91","Terrain de Sel","ORA","97408","LA
+   POSSESSION","-20.928686","55.332581","Industriel"],["39016","Robert
+   Bourg","MADININAIR","97222","LE
+   ROBERT","14.678064","-60.939065","Inconnu"],["39017","Bellevue","MADINI
+   NAIR","97209","FORT-DE-FRANCE","14.601709","-61.084694","Inconnu"],["39
+   018","CDST","MADININAIR","97225","SAINT-PIERRE","14.755416","-61.178713
+   ","Inconnu"],["39109","Office du
+   tourisme","MADININAIR","97234","BELLEFONTAINE","14.670771","-61.163428"
+   ,"Industriel"],["40006","Brady","ORA DE
+   GUYANE","97304","KOUROU","5.164248","-52.64649","Inconnu"],["41059","AJ
+   ACCIO ABBATUCCI","QUALITAIR
+   CORSE","2A004","AJACCIO","41.92575","8.738278","Trafic"],["41060","BAST
+   IA FANGO","QUALITAIR
+   CORSE","2B033","BASTIA","42.702783","9.446389","Trafic"],["19019","Renn
+   es Rue Saint Malo","AIR
+   BREIZH","35238","RENNES","48.12659","-1.68606","Trafic"],["19053","QUIM
+   PER ZOLA","AIR
+   BREIZH","29232","QUIMPER","47.986606","-4.097658","Inconnu"],["19082","
+   StMalo Rocabey","AIR
+   BREIZH","35288","SAINT-MALO","48.65306","-2.00268","Inconnu"],["19501",
+   "Rennes Rue Guehenno","AIR
+   BREIZH","35238","RENNES","48.11825","-1.67204","Trafic"],["19502","Renn
+   es Place Bretagne","AIR
+   BREIZH","35238","RENNES","48.1094","-1.68451","Trafic"],["20070","LYON
+   TRAFIC JAURES","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69387","","45.7496944","4.844388889","Trafic"],["200
+   77","Villefranche Centre ","ATMO AUVERGNE -
+   RH\u00d4NE-ALPES","69264","VILLEFRANCHE-SUR-SAONE","45.990112","4.71556
+   6","Inconnu"],["39019","Fran\u00e7ois Couchee","MADININAIR","97210","LE
+   FRANCOIS","14.637382","-60.89436","Inconnu"]]
+   false
+
+
+
+   [[null]]
+

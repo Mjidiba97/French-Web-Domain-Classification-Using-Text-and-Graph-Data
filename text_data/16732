@@ -1,0 +1,282 @@
+   #CASA Team » Feed CASA Team » Comments Feed CASA Team » CASA Team
+   Comments Feed alternate alternate alternate alternate alternate
+
+   (BUTTON) Toggle navigation
+
+CASA Team
+
+   ____________________ (BUTTON)
+     * Presentation
+     * Team members
+     * Research
+          + Projects
+          + Software
+     * Publications
+     * Jobs & internships
+     * Contact
+     * Intranet
+
+CASA Team
+
+   CASA is a research group of laboratory IRISA, Université Bretagne Sud.
+
+Overview
+
+   The research activity of team CASA aims at supporting communication and
+   service provision in challenged environments, and most notably in
+   partially or intermittently connected mobile networks. We mostly focus
+   on mobile ad hoc networks (MANETs), and investigate how the DTN
+   (Delay/Disruption-Tolerant Networking) approach can help support
+   communication and services when such networks are disconnected.
+
+   Part of our activity consists in designing opportunistic routing
+   protocols for disconnected MANETs (D-MANETs), and implementing these
+   protocols in communication middleware so they can be tested in real
+   conditions.
+
+   Additionally, we investigate how distributed applications can be
+   designed and implemented for networks whose characteristics keep
+   changing spontaneously and unpredictably. The term Opportunistic
+   Computing has been introduced recently in the literature in order to
+   refer to a new computing paradigm that relies exclusively on pairwise
+   contacts bewteen mobile hosts. Team CASA strives to contribute to the
+   development of this computing paradigm by designing methods, models,
+   and middleware tools that make it easier for programmers to tackle the
+   challenges presented by application development for D-MANETs.
+
+Keywords
+
+   Delay/Disruption-Tolerant Networking (DTN); Opportunistic
+   Networking/Computing; Mobile Ad Hoc Networks (MANETs); Wireless Sensor
+   Networks (WSNs); Service-Oriented Architecture
+
+Research directions
+
+     * Support for communications in Disconnected Mobile Ad Hoc NETworks
+       (D-MANETs)
+     * Communications in Disconnected Wireless Sensor Networks (D-WSN)
+     * Support for distributed services in D-MANETs
+     * Distributed applications for D-MANETs and trials in real conditions
+     * Application fields: m-Health, tactical networking, social networks,
+       robotics, maritime communication…
+
+Activity reports
+
+     * Year 2012
+     * Year 2013
+     * Year 2014
+     * Year 2017
+     * Year 2018
+
+Log In
+
+   Please log into the site.
+
+   Username ____________________
+
+   Password ____________________
+
+   [ ] Remember Me
+
+   Log In
+
+   © 2019 CASA Team.
+
+   Made with by Graphene Themes.
+   #CASA Team » Flux CASA Team » Flux des commentaires CASA Team »
+   (English) CASA Team Flux des commentaires alternate alternate alternate
+   alternate alternate
+
+   (BUTTON) Toggle navigation
+
+CASA Team
+
+   ____________________ (BUTTON)
+     * Intranet
+
+(English) CASA Team
+
+   Désolé, cet article est seulement disponible en Anglais Américain.
+
+Log In
+
+   Please log into the site.
+
+   Username ____________________
+
+   Password ____________________
+
+   [ ] Remember Me
+
+   Log In
+
+   © 2019 CASA Team.
+
+   Made with by Graphene Themes.
+   #CASA Team » Feed CASA Team » Comments Feed CASA Team » ADAM: Agreement
+   in Disconnected Ad hoc Mobile networks Comments Feed alternate
+   alternate alternate alternate alternate
+
+
+   (BUTTON) Toggle navigation
+
+CASA Team
+
+   ____________________ (BUTTON)
+     * Presentation
+     * Team members
+     * Research
+          + Projects
+          + Software
+     * Publications
+     * Jobs & internships
+     * Contact
+     * Intranet
+
+ADAM: Agreement in Disconnected Ad hoc Mobile networks
+
+   ADAM (Agreement in Disconnected Ad hoc Mobile networks) is an open
+   source consensus implementation specifically designed for the the
+   context of D-MANETs. ADAM is based on a variant of the One-Third-Rule
+   Heard-Of algorithm, extending it with DoDWAN.
+
+Authors
+
+   Main author: Abdulkader BENCHI
+
+Quick Links
+
+     * Pre-Requirements
+     * Download
+     * Getting started
+     * The Console
+
+Pre-Requirements
+
+   Before start using ADAM, DoDWAN is required to be installed and
+   configured on hosts. For installing DoDWAN, please refer here.
+
+                                                                    Top…
+
+Download
+
+   Copyright © 2014-2015 IRISA, Université Européenne de Bretagne. ADAM is
+   a free software, so you can redistribute it and/or modify it under the
+   terms of the GNU General Public License as published by the Free
+   Software Foundation; either version 3 of the License, or any later
+   version. The source code consists of about 3000 lines of code, and here
+   is:
+     * Source files
+     * Binary files (without dependencies)
+     * Binary files (with dependencies)
+
+                                                                    Top…
+
+Getting started
+
+   Here, I will present a code example demonstrating how to write a
+   consensus application for D-MANETs. It is intended to be the quickest
+   path to the consensus experience in such networks.
+//Step 1: Import the required Packages
+import casa.consensus.consensusImpl.*;
+import participantTable.*;
+import nodes.ConsensusNode;
+
+//Step 2: Create a ConsensusFactory. In general, consensus applications begin al
+l by looking up an instance of this class
+ConsensusFactory cFactory=new ConsensusFactory();
+
+//Step 3: Now you can start using the ConnectionFactory instance to create Sessi
+on and ConsensusNode instances
+// Session
+Session session=cFactory.createSession(...);
+// ConsensusNode
+ConsensusNode node=cFactory.createConsensusNode(...);
+
+//Step 4: Start the Session
+session.start(...);
+
+//Step 5: Sending Votes
+node.voting(...);
+
+//Step 6: Send the Decision
+node.decide(...);
+
+//Step 7: A ParticipantTable instance can be initialized as follows
+ParticipantTable pTable=ParticipantTableSingleton.getInstance();
+
+//Step 8: The ParticipantTable can be used to lookup/list known ConsensusNode(s)
+//lookup a consensus node
+ConsensusNode node = pTable.lookup(...);
+//list consensus nodes
+Collection nodes = pTable.list(...);
+
+                                                                    Top…
+
+The Console
+
+   You want to test ADAM in real conditions but you do not want to burn
+   yourself out writing too many applications. Okay, here is the solution.
+   I offer you an interactive tools, called Console. This console provides
+   you with the most commonly commands, i.e., create
+   Sessions/ConsensusNodes, start/list Sessions, send Votes/Decides and
+   the ParticipantTable commands. The console’s source code is available
+   at consensusImpl/console directory.
+
+   You can check the scenario in the following figure: there are four
+   devices, named here A, B, C and D. All of these hosts are
+   well-configured. And now, the following steps describe how to run the
+   Console in the this scenario:
+
+                                Web Template
+
+   Step 1: Launch the console on A, B, C and D
+java -cp consensusimpl-0.0.1-jar-with-dependencies.jar casa.consensus.consensusI
+mpl.console.TCPConsole
+
+   Step 2: Access to the console on A, B, C and D
+// The port number could be changed using the configuration file
+telnet localhost 8800
+
+   Congratulation! you can now use it. The following examples demonstrate
+   how to use some of the console commands:
+
+   To see the full list of console’s commands on any device, type:
+co help
+
+   On any device, in order to declare itself as a consensus node type:
+co node
+
+   On the device A, to create a session named “election_A” in which all
+   the known consensus nodes can participate (i.e., A,B,C and D) type:
+co start election_A
+
+   On the device B, in order to participate in the session “election_A”
+   and vote “B”, type:
+co vote election_A B
+
+   On the device C, in order to list the sessions in which it can
+   participate, type:
+co list
+
+   On the device D, in order to list all the consensus nodes that it knows
+   about (i.e., list the entries of the ParticipantTable)
+co participant
+
+                                                                    Top…
+
+Log In
+
+   Please log into the site.
+
+   Username ____________________
+
+   Password ____________________
+
+   [ ] Remember Me
+
+   Log In
+
+   © 2019 CASA Team.
+
+   Made with by Graphene Themes.

@@ -1,0 +1,137 @@
+              HEYU - X10 Automation for Linux, Unix, and Mac OS X
+
+Navigation
+
+     * Home
+     * FAQ
+     * Credits
+     * Utilities
+     * Version 1 pages
+     * Documentation
+     * Links
+     * Old Heyu License
+     * Download
+     * Projects
+
+Introduction
+
+   HEYU is a text-based console program for remotely controlling lights
+   and appliances in the home or office.   The complete source is made
+   available under the GNU GPLv3 license.
+
+   Heyu uses the CM11A computer interface to send and receive X10 control
+   signals over the AC power lines to modules which can turn On, Off, or
+   Dim attached lamps or appliances.   It can store a schedule of timed
+   events in the CM11A memory for execution when the computer is turned
+   off or disconnected.
+
+   Heyu supports an optional W800RF32A, MR26A, or RFXCOM RF receiver
+   connected to a second port as an auxiliary input device for RF signals
+   from X10 and other supported transmitters.
+
+   Heyu can also use an optional CM17A interface to transmit X10 RF
+   signals.
+
+Features
+
+   Highly configurable and able to transmit and receive any X10 signal
+   supported by the CM11A.
+
+   Monitor and/or log all X10 signals on the power line.
+
+   Maintain a record of the state (On, Off, Dim level) of modules based on
+   received or transmitted X10 signals.   A variety of different lamp and
+   appliance module types are supported as well as specialty modules like
+   RCS-compatible thermostats and remote thermometers, and shutter motor
+   controllers.
+
+   Decoders are included for RF signals received by a W800RF32A or RFXCOM
+   receiver from security remotes and sensors and from RFXSensor
+   Temperature, Humidity, and Barometric Pressure sensors, and with a
+   RFXCOM 433.92 MHz receiver for RF signals from RFXMeter Power, Water,
+   Gas, and Pulse sensors, Digimax thermostat, KaKu remotes, and Oregon
+   Scientific, Electrisave, and Owl CM119 sensors.
+
+   Execute scripts or commands based on received or transmitted X10
+   powerline or RF signals and the recorded states of modules.
+
+   Upload schedules of timed events and macros to the CM11A memory for
+   operation without a computer.
+     * Events may be scheduled for execution at local clock times or
+       relative to the times of daily Dawn or Dusk.
+     * Schedules may be uploaded for the calendar year, or alternatively
+       for a period beginning on the current date and extending a year
+       into the future.
+     * Event dates and times are automatically adjusted for Leap Years and
+       periods of Standard and Daylight Time.
+
+   Control multiple CM11A interfaces connected to different serial ports
+   on the same computer.
+
+   With an optional CM17A device, transmit X10 RF signals to a transceiver
+   for conversion to power line signals (possibly on a separate branch of
+   the AC line), or to an X10 RF receiver connected to a different
+   computer.   Any of the 64K different RF signals supported by the CM17A
+   may be transmitted.
+   Operating Systems
+
+   Heyu is developed and maintained under Linux.   Compile options for Mac
+   OS X (Darwin), FreeBSD, NetBSD, OpenBSD, SunOS/Solaris, SCO Unix, AIX,
+   NextStep, and OSF have been implemented with the aid of the Heyu User
+   Community.
+   Hardware
+
+   The CM11A is manufactured by X-10 (USA) Inc and sold as such and as
+   part of their CK11A ActiveHome kit.   It is also sold rebranded as the
+   IBM HD11 Home Director and the RCA HC60CRX Home Control Interface. It
+   plugs into an AC socket and connects to the computer via an RS232
+   serial port.   (A USB-Serial adapter can be used for computers which
+   don't have an RS232 port.)   It has a clock with battery backup and a 1
+   KB non-volatile memory for stored timers and macros.   Compatible 230
+   Volt devices are sold outside North America as various CM11x models;
+   in the UK as the CM12U.
+
+   Heyu also supports the CM10A (IBM HD16), an older device similar to the
+   CM11A but without clock or battery backup, and marketed as an early
+   version of the IBM Home Director.
+
+   The W800RF32A RF receiver is manufactured by WGL & Associates.   This
+   device can receive X10 RF signals from standard, entertainment, and
+   security remotes and sensors.   In addition to the US/Canada version,
+   an international version, the W800RF32AE, is available which operates
+   at the X10 RF frequency used in Europe and elsewhere.
+
+   The RFXCOM X10 RF receiver from RFXCOM is a USB device but incorporates
+   an FTDI USB-Serial chipset and maps to a serial port.    It can receive
+   X10 RF signals from standard, entertainment, and security remotes and
+   sensors, and is available in both 310 MHz US/Canada and 433.92 MHz
+   International frequency versions.   The International version can also
+   receive signals from RFXMeter sensors, Digimax thermostats, and Oregon
+   sensors.
+
+   The X-10 MR26A receiver can receive X10 RF signals from standard and
+   some entertainment remotes, but not security remotes or sensors.
+
+   For users in North America, Heyu optionally integrates support for the
+   X-10 CM17A "Firecracker", a small serial dongle which transmits X10 RF
+   signals.   (The CM11A and CM17A coexist on the same serial port - no
+   additional port is required.)
+
+   Heyu does NOT support the X-10 CP290 interface, the Smarthome PowerLinc
+   1132B interface, or any USB-only interface like the X-10 CM15A
+   "ActiveHome Pro".
+   Support
+
+   Support for Heyu is provided via the heyu_users forum at Yahoo groups.
+     Heyu developers and members of the Heyu User Community receive and
+   respond to Heyu questions, bug reports, and feature requests.   New
+   releases of Heyu will be announced there.
+   Development
+
+   Current activities can be followed on the Heyu project page at GitHub.
+   Some old development related information can still be found on Heyu
+   development space at Assembla site before it is migrated to GitHub.
+
+     * Website Copyright 2005 Charles W. Sullivan
+
+     * Valid XHTML 1.0! Valid CSS!

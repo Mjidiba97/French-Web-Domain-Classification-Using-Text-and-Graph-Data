@@ -1,0 +1,849 @@
+   Aller au contenu principal
+
+   ____________________
+   (BUTTON)
+     * Twitter
+     * Github
+
+   CNIL.FR
+
+   LINC - Laboratoire d'innovation numérique de la CNIL
+   .
+   (BUTTON) Toggle navigation
+     * Dossiers
+     * Expérimentations
+     * Publications
+     * À PROPOS DE LINC
+
+   (BUTTON) Diminuer la taille de la police de caractère (BUTTON)
+   Augmenter la taille de la police de caractère (BUTTON) Imprimer
+   l'article
+
+L’espion qui me logeait : assistants vocaux et objets connectés dans la
+maison
+
+   Rédigé par Régis Chatellier
+
+    -
+   10 avril 2018
+     __________________________________________________________________
+
+   [Dossier assistants vocaux] Installer des assistants vocaux et y
+   connecter l’ensemble des objets de son foyer répond à la promesse des
+   constructeurs de rendre son foyer « intelligent ». Une journaliste de
+   Gizmodo a tenté l’expérience, qu’elle relate dans un récit à la fois
+   drôle et inquiétant.
+   (BUTTON)
+   (BUTTON) ×
+   Facebook est désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+   (BUTTON)
+   (BUTTON) ×
+   Twitterest désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+   camera-cc-by-pixabay LINC CNIL assistants vocaux surveillance
+
+   En décembre 2017, et pour une période de deux mois, Kashmir Hill,
+   journaliste pour Gizmodo, se transformait en cobaye avec sa famille, en
+   choisissant de convertir en smart home son deux-pièces de San
+   Francisco. Tout ce qu’il était possible de connecter l’avait été dans
+   le logement : les lampes, la cafetière, le baby phone, les jouets des
+   enfants, la télévision, les brosses à dent, le cadre photos, un sex toy
+   et même son lit, sans bien sûr oublier l’assistant vocal Amazon Echo.
+   L’objectif était de documenter et comprendre ce qu’il se passe lorsque
+   l’on va au bout du tout connecté, notamment du point de vue de la
+   protection des données. De cette expérience résulte un long et
+   passionnant article, The House that Spied on Me, paru sur Gizmodo en
+   février 2018. La journaliste explique qu’elle a rendu intelligente sa
+   maison pour « découvrir si celle-ci allait me trahir », mais aussi « ce
+   qu’elle allait apprendre, et à qui elle le dirait. ».
+
+   Alors que Kashmir Hill et sa famille pouvaient tout commander par la
+   voix (allumer la lumière, faire le café ou lancer la musique), elle
+   pouvait aussi échanger des messages vocaux avec son jeune enfant, ou
+   avec sa nounou. Elle recevait des rappels de sa brosse à dents et son
+   lit avait la capacité à déclencher automatiquement son mode chauffage.
+
+   Afin de compléter l’expérience, un développeur associé avait déployé un
+   point d’accès wifi basé sur une Raspberry Pi pour suivre le
+   fonctionnement des objets connectés du foyer, de telle sorte qu’il
+   pouvait observer l’activité de la journaliste de la même manière que
+   les fournisseurs de services pourraient avoir la capacité de le faire.
+
+   Du point de vue de l’expérience utilisateur, Kashmir Hill relate par de
+   nombreux exemples le caractère exaspérant de vivre dans une maison dite
+   intelligente. Lorsque le système d’extinction des lampes complètement
+   centralisé se met à boguer, elle se voit contrainte de commander par la
+   voix chacune des ampoules de la maison, l’une après l’autre pour
+   pouvoir les éteindre, et ainsi passer beaucoup plus de temps qu’avec de
+   simples interrupteurs. Lorsque le détecteur de mouvement déclenche la
+   caméra alors qu’elle traversait – nue – le salon de l’appartement, les
+   vidéos sont directement uploadées en ligne, dans ce cas, heureusement
+   chiffrées.
+
+   « elle m’observait alors que je me préparais un café »
+
+   Parmi les exemples qu’elle développe, où l’on retrouve les
+   problématiques de consentement à l’utilisation d’assistants vocaux
+   intelligents et autre systèmes connectés, la manière dont son mari
+   réagit démontre comment ces nouvelles interfaces dites naturelles vont
+   à l’encontre de la libre capacité de chacun à consentir. Au cours des
+   deux mois de l’expérience, alors qu’elle part en voyage en Europe, la
+   journaliste souhaite se connecter à distance à la caméra qui désormais
+   orne la cuisine de son appartement, mais aucune image n’apparait.
+   Ennuyée, elle envoie un message à son mari pour le prévenir qu’une
+   caméra ne fonctionne pas. Celui-ci lui répond qu’il l’a lui-même
+   débranchée : « elle m’observait alors que je me préparais un café ».
+   Bien qu’elle lui ait expliqué qu’il fallait la maintenir connectée pour
+   le bon déroulement de l’expérimentation et l’analyse de données
+   collectées, celui-ci ne la rebranchera jamais. Kashmir Hill en tire
+   cette constatation : « avoir une maison connectée signifie que chacune
+   des personnes qui y vivent ou simplement la visitent entre dans votre
+   système panoptique, alors même qu’il n’est pas évident pour tout le
+   monde que les objets du quotidien aient de telles capacités
+   d’espionnage ». C’est vraiment là l’un des grands enjeux du
+   développement des objets connectés et des capteurs dans nos espaces
+   privés :  les impacts du consentement à la collecte de nos données par
+   de tels dispositifs ne sont pas que personnels, mais aussi collectifs,
+   dans la mesure où nous entrainons nos proches dans cette collecte sans
+   qu’ils en aient nécessairement conscience. On peut à cet égard faire le
+   parallèle avec l’affaire Facebook - Cambridge Analytica, où le
+   consentement d’une personne à partager ses données a automatiquement
+   entraîné la collecte de certaines données de tous ses contacts (sans
+   qu’elle en ait conscience en l’occurrence).
+
+   Chiffré mais pas trop
+
+   L’expérience montrait aussi que les données transmises sur les réseaux,
+   collectés par la Raspberry Pi, étaient pour la plupart chiffrées.
+   Certaines ne l’étaient toutefois pas comme par exemple les données de
+   la Vizio TV, ou de Hulu, qui pouvaient permettre de connaître
+   précisément ce qui était visionné sur cette plateforme de streaming
+   vidéo. Elle pouvait aussi récupérer les images des émissions
+   recommandées par Netflix, ce qui permettait par inférence de faire des
+   hypothèses sur ce qui était regardé sur le service. Même chiffrées, les
+   données permettaient de connaitre certaines habitudes du foyer :
+   l’heure du lever (à laquelle Amazon Echo lançait Spotify), le type de
+   musique écoutée entre 18h et 20h… Dans cette maison intelligente,
+   chacun des objets connectés agissait à la manière d’un traceur installé
+   sur notre navigateur, en mesure, si on sait l’utiliser, de déduire des
+   habitudes du foyer, et ses modes de consommation. Ces informations
+   pourraient grandement intéresser des data brokers, des agence marketing
+   voire d’autres types d’acteurs, raison pour laquelle il est nécessaire
+   d’accompagner les utilisateurs dans la compréhension du fonctionnement
+   de ces objets, de veiller à la mise en place de moyens d’information et
+   de collecte du consentement « libre, éclairé et révocable » adaptés à
+   ces interfaces, enfin, d’imposer aux constructeurs de sécuriser les
+   traitements et les connexions de l’ensemble de ces dispositifs. Des
+   mesures indispensables pour que le foyer reste un lieu d‘intimité.
+     __________________________________________________________________
+
+   Illustration :  camera-cc-by-pixabay
+     __________________________________________________________________
+
+   Régis Chatellier
+
+   Article rédigé par Régis Chatellier, Chargé des études prospectives
+
+   (BUTTON)
+   (BUTTON) ×
+   Facebook est désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+   (BUTTON)
+   (BUTTON) ×
+   Twitterest désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+
+Contenu annexe
+
+   Jeu-vidéo LAN
+   Jeux-vidéo, voix et réseaux sociaux
+   20 septembre 2019
+   Civic tech _crowd cc-by geralt -pixabay.com
+   Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+   données personnelles »
+   13 septembre 2019
+   civic tech
+   Sollicitations du cerveau
+   Dark patterns : quelle grille de lecture pour les réguler ?
+   02 septembre 2019
+
+   Logo CNIL footer
+     * Gestion des cookies
+     * RSS
+     * Contact
+     * Mentions légales
+     * Données personnelles
+
+     * Twitter
+     * Github
+   Aller au contenu principal
+
+   ____________________
+   (BUTTON)
+     * Twitter
+     * Github
+
+   CNIL.FR
+
+   LINC - Laboratoire d'innovation numérique de la CNIL
+   .
+   (BUTTON) Toggle navigation
+     * Dossiers
+     * Expérimentations
+     * Publications
+     * À PROPOS DE LINC
+
+   (BUTTON) Diminuer la taille de la police de caractère (BUTTON)
+   Augmenter la taille de la police de caractère (BUTTON) Imprimer
+   l'article
+
+Cookieviz, une dataviz en temps réel du tracking de votre navigation
+     __________________________________________________________________
+
+   Les experts de la CNIL, dans le cadre d'un des premiers projets du
+   laboratoire d'innovation, ont développé Cookieviz, un outil de
+   visualisation pour mesurer l'impact des cookies et autres traqueurs
+   lors de votre propre navigation. Premier logiciel à destination du
+   grand public développé en interne par la CNIL, CookieViz est en outre
+   un logiciel libre (licence GPLv3) qui peut-être repris par tout un
+   chacun, et auquel vous êtes tous invités à contribuer si vous le
+   souhaitez !
+   (BUTTON)
+   (BUTTON) ×
+   Facebook est désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+   (BUTTON)
+   (BUTTON) ×
+   Twitterest désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+   Cookieviz logo
+
+   Le logiciel Cookieviz, à télécharger gratuitement depuis le compte
+   Github de la CNIL (cliquer sur CookieViz_1.1_setup.exe pour installer
+   la version Windows), analyse les interactions entre votre ordinateur,
+   votre navigateur et des sites et serveurs distants. En l'installant
+   vous pourrez savoir à quels autres acteurs le site que vous visitez
+   envoie des informations.
+
+
+Cookieviz pour les internautes, découvrez la face cachée de votre navigation.
+
+   Comment découvrir la face caché de votre navigation :  installez
+   Cookieviz, puis visitez un site d'information, un réseau social ou une
+   plateforme de e-commerce. Cookieviz identifiera point par point les
+   acteurs du web qui auront accès aux traces que vous laissez. Plus vous
+   naviguez, plus vous verrez la quantité de points augmenter !
+
+
+Cookieviz pour les webmasters ou internautes, testez vos outils de travail.
+
+   Grâce à Cookieviz, les internautes peuvent mettre à l'épreuve les
+   capacités de filtrage de leur navigateur ou vérifier l'efficacité des
+   outils qui limitent les cookies. Les webmasters et éditeurs de site
+   auront la possibilité d'identifier les régies publicitaires liées à
+   leur site web.
+
+
+Cookieviz pour les développeurs et experts web, un projet open source auquel
+contribuer.
+
+   Le code source du logiciel Cookieviz est librement accessible et peut
+   être enrichi par les développeurs. Les plus expérimentés pourront
+   améliorer la version initiale de l'outil, corriger d'éventuels bugs ou
+   développer de nouvelles fonctionnalités plus poussées ...
+
+   Vous avez une idée que vous souhaitez partager avec nous pour améliorer
+   ce projet ? Vous avez envie de vous appuyer sur cette base pour
+   construire un projet de pédagogie de la traçabilité numérique ?
+   Contactez l’équipe du laboratoire CNIL par le formulaire de contact sur
+   notre page "à propos de LINC", ou sur le compte GitHub du labo !
+
+
+   Cookieviz est disponible en version Windows.
+
+   Pour Mac et linux : Cookieviz n'existe pour le moment qu’en version non
+   packagée.
+
+   Pour plus d’informations sur la méthode d’installation, voir le fichier
+   ReadMe sur le compte Github de la CNIL
+   Texte reference
+
+Pour aller plus loin
+
+   > Tutoriel : comment utiliser le logiciel CookieViz ?
+   > Téléchargez Cookieviz pour windows
+     __________________________________________________________________
+
+   Illustration : Wikimedia Commons cc-by KimberlyKV
+     __________________________________________________________________
+
+
+   IFRAME: //www.dailymotion.com/embed/video/x18gigz
+
+   (BUTTON)
+   (BUTTON) ×
+   Facebook est désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+   (BUTTON)
+   (BUTTON) ×
+   Twitterest désactivé. Autorisez le dépôt de cookies pour accéder à
+   cette fonctionnalité.
+   (BUTTON) Autoriser (BUTTON) Personnaliser
+
+   Logo CNIL footer
+     * Gestion des cookies
+     * RSS
+     * Contact
+     * Mentions légales
+     * Données personnelles
+
+     * Twitter
+     * Github
+   Aller au contenu principal
+
+   ____________________
+   (BUTTON)
+     * Twitter
+     * Github
+
+   CNIL.FR
+
+   LINC - Laboratoire d'innovation numérique de la CNIL
+   .
+   (BUTTON) Toggle navigation
+     * Dossiers
+     * Expérimentations
+     * Publications
+     * À PROPOS DE LINC
+
+Cahier IP6 - La forme des choix
+
+   Le laboratoire d'innovation numérique de la CNIL (LINC) publie son 6ème
+   cahier Innovation et prospective, La Forme des choix
+   17 avril 2019
+   la forme des choix
+   Tous
+   Dataculture
+   Drones
+   Blockchain
+   Robot
+   Véhicule connecté
+   Partage
+   [Tous_______________]
+   ______________________________
+   (Appliquer) Appliquer
+   données et design
+
+Données & Design: plateforme, outil et communauté pour les designers
+
+   données et design
+
+Données &amp; Design: plateforme, outil et communauté pour les designers
+
+   En complément du Cahier IP 6 "La forme des choix", LINC lance Données &
+   design, une plateforme...
+   partie1_jose-alejandro-cuffia-799485-unsplash.jpg
+
+IP Report: Shaping Choices in the Digital World
+
+   partie1_jose-alejandro-cuffia-799485-unsplash.jpg
+
+IP Report: Shaping Choices in the Digital World
+
+   CNIL publishes its 6th Innovation and Foresight Report (Shaping Choices
+   in the Digital World, From ...
+   Jeu-vidéo LAN
+
+Jeux-vidéo, voix et réseaux sociaux
+
+   20 septembre 2019
+   Jeu-vidéo LAN
+
+Jeux-vidéo, voix et réseaux sociaux
+
+   Le jeu-vidéo est en pleine mutation, par la convergence de trois
+   grandes tendances : ...
+   Civic tech _crowd cc-by geralt -pixabay.com
+
+Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+données personnelles »
+
+   13 septembre 2019
+   Civic tech _crowd cc-by geralt -pixabay.com
+
+Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+données personnelles »
+
+   Dans un entretien avec le LINC, Clément Mabi, Maître de conférence en
+   études de communication, ...
+   Sollicitations du cerveau
+
+Dark patterns : quelle grille de lecture pour les réguler ?
+
+   02 septembre 2019
+   Sollicitations du cerveau
+
+Dark patterns : quelle grille de lecture pour les réguler ?
+
+   Alors que les designs trompeurs sont de plus en plus portés à
+   l’attention du public, la question...
+   Pixabay cc-by time2innov8
+
+Les données personnelles : un levier pour différents régulateurs
+
+   05 juillet 2019
+   Pixabay cc-by time2innov8
+
+Les données personnelles : un levier pour différents régulateurs
+
+   Le 7 février 2019, l’Autorité de la concurrence allemande sanctionnait
+   Facebook pour ...
+   remise_de_prix_cnil_inria.jpg
+
+B. Baudry, P. Laperdrix et W. Rudametkin : « Il est essentiel de faire de la
+recherche sur la sécurité et la vie privée dans le domaine du numérique »
+
+   03 juillet 2019
+   remise_de_prix_cnil_inria.jpg
+
+B. Baudry, P. Laperdrix et W. Rudametkin : « Il est essentiel de faire de la
+recherche sur la sécurité et la vie privée dans le domaine du numérique »
+
+   Lauréats du troisième prix CNIL-Inria pour leur article « Beauty and
+   the Beast: diverting modern ...
+   Synthétiseur
+
+Les droits de la voix (2/2) - Quelle parole pour nos systèmes ?
+
+   27 juin 2019
+   Synthétiseur
+
+Les droits de la voix (2/2) - Quelle parole pour nos systèmes ?
+
+   Alors que nous donnons chaque jour de la voix auprès de nos interfaces,
+   il est essentiel de faire ...
+   Caméras
+
+En quête de reconnaissance faciale
+
+   25 juin 2019
+   Caméras
+
+En quête de reconnaissance faciale
+
+   Alors que les usages de la reconnaissance faciale à des fins
+   sécuritaires se multiplient, de plus ...
+   Assemblée Civic Tech
+
+Civic Tech, un objet politique et technologique à identifier
+
+   19 juin 2019
+   Assemblée Civic Tech
+
+Civic Tech, un objet politique et technologique à identifier
+
+   Civic Tech, Pol Tech, Gov Tech… la diversité des initiatives proposant
+   de coupler démocratie et...
+   Flickr cc by Ian Sane
+
+Y.A. de Montjoye and A. Gadotti: “Moving beyond de-identification will allow
+us to find a balance between using data and preserving people’s privacy"
+
+   13 juin 2019
+   Flickr cc by Ian Sane
+
+Y.A. de Montjoye and A. Gadotti: “Moving beyond de-identification will allow
+us to find a balance between using data and preserving people’s privacy&quot;
+
+   Following their visit to our laboratory, LINC interviewed
+   Yves-Alexandre de Montjoye and Andrea ...
+   Neurocibleur
+
+[Design Fiction] Sur la piste des neurocibleurs
+
+   28 mai 2019
+   Neurocibleur
+
+[Design Fiction] Sur la piste des neurocibleurs
+
+   En à peine 10 ans, le paysage du numérique a bien changé. Ecrans et
+   claviers ont laissé place à...
+     * Afficher plus
+
+   Logo CNIL footer
+     * Gestion des cookies
+     * RSS
+     * Contact
+     * Mentions légales
+     * Données personnelles
+
+     * Twitter
+     * Github
+   Aller au contenu principal
+
+   ____________________
+   (BUTTON)
+     * Twitter
+     * Github
+
+   CNIL.FR
+
+   LINC - Laboratoire d'innovation numérique de la CNIL
+   .
+   (BUTTON) Toggle navigation
+     * Dossiers
+     * Expérimentations
+     * Publications
+     * À PROPOS DE LINC
+
+Cahier IP6 - La forme des choix
+
+   Le laboratoire d'innovation numérique de la CNIL (LINC) publie son 6ème
+   cahier Innovation et prospective, La Forme des choix
+   17 avril 2019
+   la forme des choix
+   Tous
+   Dataculture
+   Drones
+   Blockchain
+   Robot
+   Véhicule connecté
+   Partage
+   [Tous_______________]
+   ______________________________
+   (Appliquer) Appliquer
+   données et design
+
+Données & Design: plateforme, outil et communauté pour les designers
+
+   données et design
+
+Données &amp; Design: plateforme, outil et communauté pour les designers
+
+   En complément du Cahier IP 6 "La forme des choix", LINC lance Données &
+   design, une plateforme...
+   partie1_jose-alejandro-cuffia-799485-unsplash.jpg
+
+IP Report: Shaping Choices in the Digital World
+
+   partie1_jose-alejandro-cuffia-799485-unsplash.jpg
+
+IP Report: Shaping Choices in the Digital World
+
+   CNIL publishes its 6th Innovation and Foresight Report (Shaping Choices
+   in the Digital World, From ...
+   Jeu-vidéo LAN
+
+Jeux-vidéo, voix et réseaux sociaux
+
+   20 septembre 2019
+   Jeu-vidéo LAN
+
+Jeux-vidéo, voix et réseaux sociaux
+
+   Le jeu-vidéo est en pleine mutation, par la convergence de trois
+   grandes tendances : ...
+   Civic tech _crowd cc-by geralt -pixabay.com
+
+Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+données personnelles »
+
+   13 septembre 2019
+   Civic tech _crowd cc-by geralt -pixabay.com
+
+Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+données personnelles »
+
+   Dans un entretien avec le LINC, Clément Mabi, Maître de conférence en
+   études de communication, ...
+   Sollicitations du cerveau
+
+Dark patterns : quelle grille de lecture pour les réguler ?
+
+   02 septembre 2019
+   Sollicitations du cerveau
+
+Dark patterns : quelle grille de lecture pour les réguler ?
+
+   Alors que les designs trompeurs sont de plus en plus portés à
+   l’attention du public, la question...
+   Pixabay cc-by time2innov8
+
+Les données personnelles : un levier pour différents régulateurs
+
+   05 juillet 2019
+   Pixabay cc-by time2innov8
+
+Les données personnelles : un levier pour différents régulateurs
+
+   Le 7 février 2019, l’Autorité de la concurrence allemande sanctionnait
+   Facebook pour ...
+   remise_de_prix_cnil_inria.jpg
+
+B. Baudry, P. Laperdrix et W. Rudametkin : « Il est essentiel de faire de la
+recherche sur la sécurité et la vie privée dans le domaine du numérique »
+
+   03 juillet 2019
+   remise_de_prix_cnil_inria.jpg
+
+B. Baudry, P. Laperdrix et W. Rudametkin : « Il est essentiel de faire de la
+recherche sur la sécurité et la vie privée dans le domaine du numérique »
+
+   Lauréats du troisième prix CNIL-Inria pour leur article « Beauty and
+   the Beast: diverting modern ...
+   Synthétiseur
+
+Les droits de la voix (2/2) - Quelle parole pour nos systèmes ?
+
+   27 juin 2019
+   Synthétiseur
+
+Les droits de la voix (2/2) - Quelle parole pour nos systèmes ?
+
+   Alors que nous donnons chaque jour de la voix auprès de nos interfaces,
+   il est essentiel de faire ...
+   Caméras
+
+En quête de reconnaissance faciale
+
+   25 juin 2019
+   Caméras
+
+En quête de reconnaissance faciale
+
+   Alors que les usages de la reconnaissance faciale à des fins
+   sécuritaires se multiplient, de plus ...
+   Assemblée Civic Tech
+
+Civic Tech, un objet politique et technologique à identifier
+
+   19 juin 2019
+   Assemblée Civic Tech
+
+Civic Tech, un objet politique et technologique à identifier
+
+   Civic Tech, Pol Tech, Gov Tech… la diversité des initiatives proposant
+   de coupler démocratie et...
+   Flickr cc by Ian Sane
+
+Y.A. de Montjoye and A. Gadotti: “Moving beyond de-identification will allow
+us to find a balance between using data and preserving people’s privacy"
+
+   13 juin 2019
+   Flickr cc by Ian Sane
+
+Y.A. de Montjoye and A. Gadotti: “Moving beyond de-identification will allow
+us to find a balance between using data and preserving people’s privacy&quot;
+
+   Following their visit to our laboratory, LINC interviewed
+   Yves-Alexandre de Montjoye and Andrea ...
+   Neurocibleur
+
+[Design Fiction] Sur la piste des neurocibleurs
+
+   28 mai 2019
+   Neurocibleur
+
+[Design Fiction] Sur la piste des neurocibleurs
+
+   En à peine 10 ans, le paysage du numérique a bien changé. Ecrans et
+   claviers ont laissé place à...
+     * Afficher plus
+
+   Logo CNIL footer
+     * Gestion des cookies
+     * RSS
+     * Contact
+     * Mentions légales
+     * Données personnelles
+
+     * Twitter
+     * Github
+   Aller au contenu principal
+
+   ____________________
+   (BUTTON)
+     * Twitter
+     * Github
+
+   CNIL.FR
+
+   LINC - Laboratoire d'innovation numérique de la CNIL
+   .
+   (BUTTON) Toggle navigation
+     * Dossiers
+     * Expérimentations
+     * Publications
+     * À PROPOS DE LINC
+
+Cahier IP6 - La forme des choix
+
+   Le laboratoire d'innovation numérique de la CNIL (LINC) publie son 6ème
+   cahier Innovation et prospective, La Forme des choix
+   17 avril 2019
+   la forme des choix
+   Tous
+   Dataculture
+   Drones
+   Blockchain
+   Robot
+   Véhicule connecté
+   Partage
+   [Tous_______________]
+   ______________________________
+   (Appliquer) Appliquer
+   données et design
+
+Données & Design: plateforme, outil et communauté pour les designers
+
+   données et design
+
+Données &amp; Design: plateforme, outil et communauté pour les designers
+
+   En complément du Cahier IP 6 "La forme des choix", LINC lance Données &
+   design, une plateforme...
+   partie1_jose-alejandro-cuffia-799485-unsplash.jpg
+
+IP Report: Shaping Choices in the Digital World
+
+   partie1_jose-alejandro-cuffia-799485-unsplash.jpg
+
+IP Report: Shaping Choices in the Digital World
+
+   CNIL publishes its 6th Innovation and Foresight Report (Shaping Choices
+   in the Digital World, From ...
+   Jeu-vidéo LAN
+
+Jeux-vidéo, voix et réseaux sociaux
+
+   20 septembre 2019
+   Jeu-vidéo LAN
+
+Jeux-vidéo, voix et réseaux sociaux
+
+   Le jeu-vidéo est en pleine mutation, par la convergence de trois
+   grandes tendances : ...
+   Civic tech _crowd cc-by geralt -pixabay.com
+
+Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+données personnelles »
+
+   13 septembre 2019
+   Civic tech _crowd cc-by geralt -pixabay.com
+
+Clément Mabi : « les civic tech entretiennent une relation ambiguë aux
+données personnelles »
+
+   Dans un entretien avec le LINC, Clément Mabi, Maître de conférence en
+   études de communication, ...
+   Sollicitations du cerveau
+
+Dark patterns : quelle grille de lecture pour les réguler ?
+
+   02 septembre 2019
+   Sollicitations du cerveau
+
+Dark patterns : quelle grille de lecture pour les réguler ?
+
+   Alors que les designs trompeurs sont de plus en plus portés à
+   l’attention du public, la question...
+   Pixabay cc-by time2innov8
+
+Les données personnelles : un levier pour différents régulateurs
+
+   05 juillet 2019
+   Pixabay cc-by time2innov8
+
+Les données personnelles : un levier pour différents régulateurs
+
+   Le 7 février 2019, l’Autorité de la concurrence allemande sanctionnait
+   Facebook pour ...
+   remise_de_prix_cnil_inria.jpg
+
+B. Baudry, P. Laperdrix et W. Rudametkin : « Il est essentiel de faire de la
+recherche sur la sécurité et la vie privée dans le domaine du numérique »
+
+   03 juillet 2019
+   remise_de_prix_cnil_inria.jpg
+
+B. Baudry, P. Laperdrix et W. Rudametkin : « Il est essentiel de faire de la
+recherche sur la sécurité et la vie privée dans le domaine du numérique »
+
+   Lauréats du troisième prix CNIL-Inria pour leur article « Beauty and
+   the Beast: diverting modern ...
+   Synthétiseur
+
+Les droits de la voix (2/2) - Quelle parole pour nos systèmes ?
+
+   27 juin 2019
+   Synthétiseur
+
+Les droits de la voix (2/2) - Quelle parole pour nos systèmes ?
+
+   Alors que nous donnons chaque jour de la voix auprès de nos interfaces,
+   il est essentiel de faire ...
+   Caméras
+
+En quête de reconnaissance faciale
+
+   25 juin 2019
+   Caméras
+
+En quête de reconnaissance faciale
+
+   Alors que les usages de la reconnaissance faciale à des fins
+   sécuritaires se multiplient, de plus ...
+   Assemblée Civic Tech
+
+Civic Tech, un objet politique et technologique à identifier
+
+   19 juin 2019
+   Assemblée Civic Tech
+
+Civic Tech, un objet politique et technologique à identifier
+
+   Civic Tech, Pol Tech, Gov Tech… la diversité des initiatives proposant
+   de coupler démocratie et...
+   Flickr cc by Ian Sane
+
+Y.A. de Montjoye and A. Gadotti: “Moving beyond de-identification will allow
+us to find a balance between using data and preserving people’s privacy"
+
+   13 juin 2019
+   Flickr cc by Ian Sane
+
+Y.A. de Montjoye and A. Gadotti: “Moving beyond de-identification will allow
+us to find a balance between using data and preserving people’s privacy&quot;
+
+   Following their visit to our laboratory, LINC interviewed
+   Yves-Alexandre de Montjoye and Andrea ...
+   Neurocibleur
+
+[Design Fiction] Sur la piste des neurocibleurs
+
+   28 mai 2019
+   Neurocibleur
+
+[Design Fiction] Sur la piste des neurocibleurs
+
+   En à peine 10 ans, le paysage du numérique a bien changé. Ecrans et
+   claviers ont laissé place à...
+     * Afficher plus
+
+   Logo CNIL footer
+     * Gestion des cookies
+     * RSS
+     * Contact
+     * Mentions légales
+     * Données personnelles
+
+     * Twitter
+     * Github

@@ -1,0 +1,513 @@
+   #ANR SOLHAR (ANR‐13‐MONU‐0007) start Sitemap Recent Changes Current
+   Namespace Plain HTML Wiki Markup
+
+     * skip to content
+
+ANR SOLHAR (ANR‐13‐MONU‐0007)
+
+User Tools
+
+     * Login
+
+Site Tools
+
+   ____________________ Search
+   [Tools__________] >
+     * Recent changes
+     * Media Manager
+     * Sitemap
+     __________________________________________________________________
+
+Sidebar
+
+   Content:
+
+   Home
+
+   Work packages
+
+   Members
+
+   Meetings
+
+   Publications
+
+   Software
+   start
+
+ANR SOLHAR (ANR‐13‐MONU‐0007)
+
+   During the last five years, the interest of the scientific computing
+   community towards accelerating devices and, specifically, Graphical
+   Processing Units (GPUs) has been rapidly growing. The reason for this
+   interest lies in the massive computational power delivered by these
+   devices which are originally meant and designed to perform image
+   processing and rendering operations. Much research has been devoted to
+   porting numerical codes on such devices which significantly contributed
+   to the development of production-quality scientific libraries as well
+   as of General Purpose programming models for GPUs (GPGPU). The design
+   of GPU cards and other accelerator devices like intel Xeon-Phi (MIC),
+   at the same time, quickly steered towards the needs of the scientific
+   computing community; as a result modern accelerators can execute
+   double-precision floating point arithmetical operations at rates that
+   outperform general purpose CPU chips by a typical factor of 8. Several
+   software libraries for dense linear algebra have been produced; the
+   MAGMA project at University of Tennessee Knoxville (co-authored by one
+   of this project’s partner institutions) can be cited among the most
+   successful ones. The most common dense linear algorithms are extremely
+   rich in computation and exhibit a very regular pattern of access to
+   data which makes them extremely good candidates for execution on
+   accelerators. The most common sparse linear algebra algorithms are the
+   methods for the solution of linear systems which, contrary to the dense
+   linear algebra variants, usually have irregular, indirect memory access
+   patterns that adversely interact with typical accelerator throughput
+   optimizations. These solution methods can be roughly classified in two
+   families:
+     * iterative methods: these methods are widely employed for the
+       solution of linear systems of equations. In their basic,
+       unpreconditioned version, they are very easily parallelizable and
+       for this reason they have been the object of research on GPU
+       scientific computing. However, the accelerator implementation of
+       efficient preconditioners is extremely complicated, and the lack of
+       such implementations renders iterative solvers for accelerators
+       insufficiently reliable and robust at present. Furthermore,
+       iterative methods are based on operations such as the sparse
+       matrix-vector product characterized by a very low
+       computation-to-communication ratio which can considerably limit
+       their performance and scalability.
+     * direct methods: in algorithms belonging to this family, such as
+       sparse matrix factorization methods, the computation is commonly
+       casted in terms of operations on a sparse collection of dense
+       matrices which makes them much denser in floating-point operations
+       and opens up opportunities for massive multithreaded
+       parallelization and porting on accelerators. Nonetheless, sparse
+       matrix factorization methods have extremely complicated data access
+       patterns which render their high-performance implementation on
+       accelerator devices complicated.
+
+   This project aims at studying and designing algorithms and parallel
+   programming models for implementing direct methods for the solution of
+   sparse linear systems on emerging computing platforms equipped with
+   accelerators. The ultimate aim of this project is to achieve the
+   implementation of a software package providing a solver based on
+   sparse, direct methods. Several attempts have been made to port these
+   methods on such architectures; the proposed approaches are mostly based
+   on a simple offloading of some computational tasks (the coarsest
+   grained ones) to the accelerators and requires a fine hand-tuning of
+   the code and accurate performance modeling to achieve efficiency. This
+   project proposes an innovative approach which relies on the efficiency
+   and portability of runtime systems, such as the StarPU tool developed
+   by the runtime team (Bordeaux). Although the SOLHAR project will focus
+   on heterogeneous computers equipped with GPUs due to their wide
+   availability and affordable cost, the research accomplished on
+   algorithms, methods and programming models will be readily applicable
+   to other accelerator devices such as Intel MIC boards or Cell
+   processors. The development of a production-quality, sparse direct
+   solver requires a considerable research effort along three distinct
+   axis:
+     * linear algebra: algorithms have to be adapted or redesigned in
+       order to exhibit properties that make their implementation and
+       execution on heterogeneous computing platforms efficient and
+       reliable. This may require the development of novel methods for
+       defining data access patterns that are more suitable for the
+       dynamic scheduling of computational tasks on processing units with
+       considerably different capabilities as well as techniques for
+       guaranteeing a reliable and robust behavior and accurate solutions.
+       In addition, it will be necessary to develop novel and efficient
+       accelerator implementations of the specific dense linear algebra
+       kernels that are used within sparse, direct solvers;
+     * runtime systems: tools such as the StarPU runtime system proved to
+       be extremely efficient and robust for the implementation of dense
+       linear algebra algorithms. Sparse linear algebra algorithms,
+       however, are commonly characterized by complicated data access
+       patterns, computational tasks with extremely variable granularity
+       and complex dependencies. Therefore, a substantial research effort
+       is necessary to design and implement features as well as interfaces
+       to comply with the needs formalized by the research activity on
+       direct methods;
+     * scheduling: executing a heterogeneous workload with complex
+       dependencies on a heterogeneous architecture is a very challenging
+       problem that demands the development of effective scheduling
+       algorithms. These will be confronted with possibly limited views of
+       dependencies among tasks and multiple, and potentially conflicting
+       objectives, such as minimizing the makespan, maximizing the
+       locality of data or, where it applies, minimizing the memory
+       consumption.
+
+   Given the wide availability of computing platforms equipped with
+   accelerators and the numerical robustness of direct solution methods
+   for sparse linear systems, it is reasonable to expect that the outcome
+   of this project will have a considerable impact on both academic and
+   industrial scientific computing. This project will moreover provide a
+   substantial contribution to the computational science and
+   high-performance computing communities, as it will deliver an
+   unprecedented example of a complex numerical code whose parallelization
+   completely relies on runtime scheduling systems and which is,
+   therefore, extremely portable, maintainable and evolvable towards
+   future computing architectures. Finally, research on preconditioning
+   methods for iterative solvers as well as on hybrid,
+   domain-decomposition solvers for heterogeneous computing platforms will
+   naturally benefit from the methods developed in this project.
+   start.txt · Last modified: 2015/03/24 22:48 by abuttari
+     __________________________________________________________________
+
+Page Tools
+
+     * Show pagesource
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Share Alike 3.0 Unported
+   CC Attribution-Share Alike 3.0 Unported Donate Powered by PHP Valid
+   HTML5 Valid CSS Driven by DokuWiki
+   #ANR SOLHAR (ANR‐13‐MONU‐0007) start Sitemap Recent Changes Current
+   Namespace Plain HTML Wiki Markup
+
+     * skip to content
+
+ANR SOLHAR (ANR‐13‐MONU‐0007)
+
+User Tools
+
+     * Login
+
+Site Tools
+
+   ____________________ Search
+   [Tools_________] >
+     * Recent changes
+     * Media Manager
+     * Sitemap
+     __________________________________________________________________
+
+   start
+
+Sitemap
+
+   This is a sitemap over all available pages ordered by namespaces.
+     * playground
+     * wiki
+     * meetings
+     * members
+     * pubs
+     * sidebar
+     * soft
+     * start
+     * wpkgs
+
+   start.txt · Last modified: 2015/03/24 22:48 by abuttari
+     __________________________________________________________________
+
+Page Tools
+
+     * Show page
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Share Alike 3.0 Unported
+   CC Attribution-Share Alike 3.0 Unported Donate Powered by PHP Valid
+   HTML5 Valid CSS Driven by DokuWiki
+   #ANR SOLHAR (ANR‐13‐MONU‐0007) start Sitemap Recent Changes Current
+   Namespace Plain HTML Wiki Markup
+
+ANR SOLHAR (ANR‐13‐MONU‐0007)
+
+   During the last five years, the interest of the scientific computing
+   community towards accelerating devices and, specifically, Graphical
+   Processing Units (GPUs) has been rapidly growing. The reason for this
+   interest lies in the massive computational power delivered by these
+   devices which are originally meant and designed to perform image
+   processing and rendering operations. Much research has been devoted to
+   porting numerical codes on such devices which significantly contributed
+   to the development of production-quality scientific libraries as well
+   as of General Purpose programming models for GPUs (GPGPU). The design
+   of GPU cards and other accelerator devices like intel Xeon-Phi (MIC),
+   at the same time, quickly steered towards the needs of the scientific
+   computing community; as a result modern accelerators can execute
+   double-precision floating point arithmetical operations at rates that
+   outperform general purpose CPU chips by a typical factor of 8. Several
+   software libraries for dense linear algebra have been produced; the
+   MAGMA project at University of Tennessee Knoxville (co-authored by one
+   of this project’s partner institutions) can be cited among the most
+   successful ones. The most common dense linear algorithms are extremely
+   rich in computation and exhibit a very regular pattern of access to
+   data which makes them extremely good candidates for execution on
+   accelerators. The most common sparse linear algebra algorithms are the
+   methods for the solution of linear systems which, contrary to the dense
+   linear algebra variants, usually have irregular, indirect memory access
+   patterns that adversely interact with typical accelerator throughput
+   optimizations. These solution methods can be roughly classified in two
+   families:
+     * iterative methods: these methods are widely employed for the
+       solution of linear systems of equations. In their basic,
+       unpreconditioned version, they are very easily parallelizable and
+       for this reason they have been the object of research on GPU
+       scientific computing. However, the accelerator implementation of
+       efficient preconditioners is extremely complicated, and the lack of
+       such implementations renders iterative solvers for accelerators
+       insufficiently reliable and robust at present. Furthermore,
+       iterative methods are based on operations such as the sparse
+       matrix-vector product characterized by a very low
+       computation-to-communication ratio which can considerably limit
+       their performance and scalability.
+     * direct methods: in algorithms belonging to this family, such as
+       sparse matrix factorization methods, the computation is commonly
+       casted in terms of operations on a sparse collection of dense
+       matrices which makes them much denser in floating-point operations
+       and opens up opportunities for massive multithreaded
+       parallelization and porting on accelerators. Nonetheless, sparse
+       matrix factorization methods have extremely complicated data access
+       patterns which render their high-performance implementation on
+       accelerator devices complicated.
+
+   This project aims at studying and designing algorithms and parallel
+   programming models for implementing direct methods for the solution of
+   sparse linear systems on emerging computing platforms equipped with
+   accelerators. The ultimate aim of this project is to achieve the
+   implementation of a software package providing a solver based on
+   sparse, direct methods. Several attempts have been made to port these
+   methods on such architectures; the proposed approaches are mostly based
+   on a simple offloading of some computational tasks (the coarsest
+   grained ones) to the accelerators and requires a fine hand-tuning of
+   the code and accurate performance modeling to achieve efficiency. This
+   project proposes an innovative approach which relies on the efficiency
+   and portability of runtime systems, such as the StarPU tool developed
+   by the runtime team (Bordeaux). Although the SOLHAR project will focus
+   on heterogeneous computers equipped with GPUs due to their wide
+   availability and affordable cost, the research accomplished on
+   algorithms, methods and programming models will be readily applicable
+   to other accelerator devices such as Intel MIC boards or Cell
+   processors. The development of a production-quality, sparse direct
+   solver requires a considerable research effort along three distinct
+   axis:
+     * linear algebra: algorithms have to be adapted or redesigned in
+       order to exhibit properties that make their implementation and
+       execution on heterogeneous computing platforms efficient and
+       reliable. This may require the development of novel methods for
+       defining data access patterns that are more suitable for the
+       dynamic scheduling of computational tasks on processing units with
+       considerably different capabilities as well as techniques for
+       guaranteeing a reliable and robust behavior and accurate solutions.
+       In addition, it will be necessary to develop novel and efficient
+       accelerator implementations of the specific dense linear algebra
+       kernels that are used within sparse, direct solvers;
+     * runtime systems: tools such as the StarPU runtime system proved to
+       be extremely efficient and robust for the implementation of dense
+       linear algebra algorithms. Sparse linear algebra algorithms,
+       however, are commonly characterized by complicated data access
+       patterns, computational tasks with extremely variable granularity
+       and complex dependencies. Therefore, a substantial research effort
+       is necessary to design and implement features as well as interfaces
+       to comply with the needs formalized by the research activity on
+       direct methods;
+     * scheduling: executing a heterogeneous workload with complex
+       dependencies on a heterogeneous architecture is a very challenging
+       problem that demands the development of effective scheduling
+       algorithms. These will be confronted with possibly limited views of
+       dependencies among tasks and multiple, and potentially conflicting
+       objectives, such as minimizing the makespan, maximizing the
+       locality of data or, where it applies, minimizing the memory
+       consumption.
+
+   Given the wide availability of computing platforms equipped with
+   accelerators and the numerical robustness of direct solution methods
+   for sparse linear systems, it is reasonable to expect that the outcome
+   of this project will have a considerable impact on both academic and
+   industrial scientific computing. This project will moreover provide a
+   substantial contribution to the computational science and
+   high-performance computing communities, as it will deliver an
+   unprecedented example of a complex numerical code whose parallelization
+   completely relies on runtime scheduling systems and which is,
+   therefore, extremely portable, maintainable and evolvable towards
+   future computing architectures. Finally, research on preconditioning
+   methods for iterative solvers as well as on hybrid,
+   domain-decomposition solvers for heterogeneous computing platforms will
+   naturally benefit from the methods developed in this project.
+   #ANR SOLHAR (ANR‐13‐MONU‐0007) start Sitemap Recent Changes Current
+   Namespace Plain HTML Wiki Markup
+
+     * skip to content
+
+ANR SOLHAR (ANR‐13‐MONU‐0007)
+
+User Tools
+
+     * Login
+
+Site Tools
+
+   ____________________ Search
+   [Tools__________] >
+     * Recent changes
+     * Media Manager
+     * Sitemap
+     __________________________________________________________________
+
+Sidebar
+
+   Content:
+
+   Home
+
+   Work packages
+
+   Members
+
+   Meetings
+
+   Publications
+
+   Software
+   start
+
+ANR SOLHAR (ANR‐13‐MONU‐0007)
+
+   During the last five years, the interest of the scientific computing
+   community towards accelerating devices and, specifically, Graphical
+   Processing Units (GPUs) has been rapidly growing. The reason for this
+   interest lies in the massive computational power delivered by these
+   devices which are originally meant and designed to perform image
+   processing and rendering operations. Much research has been devoted to
+   porting numerical codes on such devices which significantly contributed
+   to the development of production-quality scientific libraries as well
+   as of General Purpose programming models for GPUs (GPGPU). The design
+   of GPU cards and other accelerator devices like intel Xeon-Phi (MIC),
+   at the same time, quickly steered towards the needs of the scientific
+   computing community; as a result modern accelerators can execute
+   double-precision floating point arithmetical operations at rates that
+   outperform general purpose CPU chips by a typical factor of 8. Several
+   software libraries for dense linear algebra have been produced; the
+   MAGMA project at University of Tennessee Knoxville (co-authored by one
+   of this project’s partner institutions) can be cited among the most
+   successful ones. The most common dense linear algorithms are extremely
+   rich in computation and exhibit a very regular pattern of access to
+   data which makes them extremely good candidates for execution on
+   accelerators. The most common sparse linear algebra algorithms are the
+   methods for the solution of linear systems which, contrary to the dense
+   linear algebra variants, usually have irregular, indirect memory access
+   patterns that adversely interact with typical accelerator throughput
+   optimizations. These solution methods can be roughly classified in two
+   families:
+     * iterative methods: these methods are widely employed for the
+       solution of linear systems of equations. In their basic,
+       unpreconditioned version, they are very easily parallelizable and
+       for this reason they have been the object of research on GPU
+       scientific computing. However, the accelerator implementation of
+       efficient preconditioners is extremely complicated, and the lack of
+       such implementations renders iterative solvers for accelerators
+       insufficiently reliable and robust at present. Furthermore,
+       iterative methods are based on operations such as the sparse
+       matrix-vector product characterized by a very low
+       computation-to-communication ratio which can considerably limit
+       their performance and scalability.
+     * direct methods: in algorithms belonging to this family, such as
+       sparse matrix factorization methods, the computation is commonly
+       casted in terms of operations on a sparse collection of dense
+       matrices which makes them much denser in floating-point operations
+       and opens up opportunities for massive multithreaded
+       parallelization and porting on accelerators. Nonetheless, sparse
+       matrix factorization methods have extremely complicated data access
+       patterns which render their high-performance implementation on
+       accelerator devices complicated.
+
+   This project aims at studying and designing algorithms and parallel
+   programming models for implementing direct methods for the solution of
+   sparse linear systems on emerging computing platforms equipped with
+   accelerators. The ultimate aim of this project is to achieve the
+   implementation of a software package providing a solver based on
+   sparse, direct methods. Several attempts have been made to port these
+   methods on such architectures; the proposed approaches are mostly based
+   on a simple offloading of some computational tasks (the coarsest
+   grained ones) to the accelerators and requires a fine hand-tuning of
+   the code and accurate performance modeling to achieve efficiency. This
+   project proposes an innovative approach which relies on the efficiency
+   and portability of runtime systems, such as the StarPU tool developed
+   by the runtime team (Bordeaux). Although the SOLHAR project will focus
+   on heterogeneous computers equipped with GPUs due to their wide
+   availability and affordable cost, the research accomplished on
+   algorithms, methods and programming models will be readily applicable
+   to other accelerator devices such as Intel MIC boards or Cell
+   processors. The development of a production-quality, sparse direct
+   solver requires a considerable research effort along three distinct
+   axis:
+     * linear algebra: algorithms have to be adapted or redesigned in
+       order to exhibit properties that make their implementation and
+       execution on heterogeneous computing platforms efficient and
+       reliable. This may require the development of novel methods for
+       defining data access patterns that are more suitable for the
+       dynamic scheduling of computational tasks on processing units with
+       considerably different capabilities as well as techniques for
+       guaranteeing a reliable and robust behavior and accurate solutions.
+       In addition, it will be necessary to develop novel and efficient
+       accelerator implementations of the specific dense linear algebra
+       kernels that are used within sparse, direct solvers;
+     * runtime systems: tools such as the StarPU runtime system proved to
+       be extremely efficient and robust for the implementation of dense
+       linear algebra algorithms. Sparse linear algebra algorithms,
+       however, are commonly characterized by complicated data access
+       patterns, computational tasks with extremely variable granularity
+       and complex dependencies. Therefore, a substantial research effort
+       is necessary to design and implement features as well as interfaces
+       to comply with the needs formalized by the research activity on
+       direct methods;
+     * scheduling: executing a heterogeneous workload with complex
+       dependencies on a heterogeneous architecture is a very challenging
+       problem that demands the development of effective scheduling
+       algorithms. These will be confronted with possibly limited views of
+       dependencies among tasks and multiple, and potentially conflicting
+       objectives, such as minimizing the makespan, maximizing the
+       locality of data or, where it applies, minimizing the memory
+       consumption.
+
+   Given the wide availability of computing platforms equipped with
+   accelerators and the numerical robustness of direct solution methods
+   for sparse linear systems, it is reasonable to expect that the outcome
+   of this project will have a considerable impact on both academic and
+   industrial scientific computing. This project will moreover provide a
+   substantial contribution to the computational science and
+   high-performance computing communities, as it will deliver an
+   unprecedented example of a complex numerical code whose parallelization
+   completely relies on runtime scheduling systems and which is,
+   therefore, extremely portable, maintainable and evolvable towards
+   future computing architectures. Finally, research on preconditioning
+   methods for iterative solvers as well as on hybrid,
+   domain-decomposition solvers for heterogeneous computing platforms will
+   naturally benefit from the methods developed in this project.
+   start.txt · Last modified: 2015/03/24 22:48 by abuttari
+     __________________________________________________________________
+
+Page Tools
+
+     * Show pagesource
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Share Alike 3.0 Unported
+   CC Attribution-Share Alike 3.0 Unported Donate Powered by PHP Valid
+   HTML5 Valid CSS Driven by DokuWiki
+                           Index of /lib/tpl/dokuwiki
+
+   [ICO] Name Last modified Size Description
+     __________________________________________________________________
+
+   [PARENTDIR] Parent Directory   -
+   [DIR] css/ 2013-11-02 14:36 -
+   [ ] detail.php 2013-10-28 20:28 6.6K
+   [DIR] images/ 2013-11-02 14:36 -
+   [ ] main.php 2013-10-28 20:28 4.9K
+   [ ] mediamanager.php 2013-10-28 20:28 1.5K
+   [ ] script.js 2013-10-28 20:28 2.3K
+   [ ] style.ini 2013-10-28 20:28 3.2K
+   [TXT] template.info.txt 2013-10-28 20:28 216
+   [ ] tpl_footer.php 2013-10-28 20:28 1.6K
+   [ ] tpl_header.php 2013-10-28 20:28 3.0K
+     __________________________________________________________________
+
+
+    Apache/2.4.10 (Debian) Server at solhar.gforge.inria.fr Port 80

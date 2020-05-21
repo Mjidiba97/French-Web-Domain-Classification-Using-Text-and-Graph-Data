@@ -1,0 +1,252 @@
+    cadastre.data.gouv.fr cadastre data.gouv.fr
+     * Données cadastrales
+     * DVF
+     * FAQ
+
+Cadastre Etalab
+
+Raison d’être de ce jeu de données
+
+   Le Plan Cadastral Informatisé est diffusé sous deux formats experts
+   rendant sa réutilisation difficile en dehors du contexte des
+   applications métiers.
+   Etalab a donc pris l’initiative d’en redistribuer une version
+   retravaillée, dans des formats plus largement répandus.
+
+Données sources
+
+   Ces données sont produites à partir :
+     * des données EDIGÉO du PCI Vecteur ;
+     * des données cadastrales de l’Eurométropole de Strasbourg.
+
+Processus de construction
+
+   Les différentes couches sont constituées par juxtaposition des
+   feuilles, sans correction de topologie.
+   Les données de l’Eurométropole Strasbourg sont ajoutées par écrasement
+   de celles éventuellement présentes dans le PCI Vecteur.
+   Le modèle de données est simplifié, et ne sont conservés que les
+   sections, les feuilles, les lieux-dits, les parcelles, les subdivisions
+   fiscales, les limites de communes et le bâti.
+   La couche des contours des préfixes de sections est construite à partir
+   de la couche des sections.
+   Le code source est ouvert et disponible sur GitHub.
+
+Couverture
+
+   Les 33 682 communes couvertes par le PCI Vecteur, ainsi que les
+   communes de l’Eurométropole de Strasbourg.
+   Les collectivités d’outre-mer de Saint-Martin et de Saint-Barthelemy
+   sont présentes et intégrées dans le département de la Guadeloupe (971).
+
+Formats disponibles
+
+   Les données sont actuellement disponibles aux formats GeoJSON
+   compressé, GeoJSON simple et Shapefile, via l’outil d’aide au
+   téléchargement.
+
+Couches géographiques
+
+     * parcelles (polygones ou multi polygones)
+     * subdivisions_fiscales (polygones)
+     * lieux_dits (polygones)
+     * feuilles (multi polygones)
+     * sections (multi polygones)
+     * prefixes_sections (multi polygones)
+     * communes (multi polygones)
+     * batiments (polygones)
+
+Mise à disposition
+
+   Les données sont mises à disposition de deux manières :
+     * En téléchargement direct à la commune, au département ou France
+       entière, pour le format GeoJSON compressé, au département ou France
+       entière pour le format Shapefile. Ce sont ces URL qu’il faut
+       utiliser si vous souhaitez automatiser la récupération des données
+       et bénéficier des meilleures performances.
+     * Via un outil en ligne pour les données aux formats GeoJSON et
+       Shapefile, quel que soit le niveau de granularité.
+
+   Les deux modes de mise à disposition sont accessibles ci-dessous.
+
+Historique
+
+     * 30/09/2017 : première diffusion des données
+     * 08/11/2017 : nouveau millésime PCI + correction projection
+       Saint-Barthelemy et Saint-Martin + intégration données Strasbourg +
+       corrections diverses (détails)
+     * 07/02/2018 : nouveau millésime PCI + nouvelles données Strasbourg +
+       ajout des lieux-dits + amélioration des géométries + corrections
+       diverses (détails)
+     * 20/05/2018 : nouveau millésime PCI + ajout des subdivisions
+       fiscales et des préfixes de sections + ajout des assemblages
+       nationaux + ajout du format Shapefile + corrections diverses
+       (détails)
+     * 16/07/2018 : nouveau millésime PCI + corrections diverses (détails)
+     * 31/10/2018 : nouveau millésime PCI + nouvelles données Strasbourg
+     * 29/01/2019 : nouveau millésime PCI + nouvelles données Strasbourg
+     * 27/04/2019 : nouveau millésime PCI + nouvelles données Strasbourg
+     * 25/07/2019 : nouveau millésime PCI + nouvelles données Strasbourg +
+       ajout du champ ‘arpente’ (détails)
+
+Millésimes disponibles en téléchargement direct
+
+   Les liens suivants permettent de télécharger les données cadastrales à
+   la commune, ou au département.
+   Dans le cas d’un téléchargement à la commune, vous serez invité à
+   choisir un code département puis un code de commune.
+
+   NB : Il est possible de remplacer la date du millésime par `latest`
+   dans les URL.
+   Dernier millésime
+
+Millésime 1er juillet 2019
+
+   Format GeoJSON
+   par communepar départementFrance entière
+   Format Shapefile
+   par départementFrance entière
+
+Millésime 1er avril 2019
+
+   Format GeoJSON
+   par communepar départementFrance entière
+   Format Shapefile
+   par départementFrance entière
+
+Millésime 1er janvier 2019
+
+   Format GeoJSON
+   par communepar départementFrance entière
+   Format Shapefile
+   par départementFrance entière
+
+Millésime 1er octobre 2018
+
+   Format GeoJSON
+   par communepar départementFrance entière
+   Format Shapefile
+   par départementFrance entière
+
+Millésime 29 juin 2018
+
+   Format GeoJSON
+   par communepar départementFrance entière
+   Format Shapefile
+   par départementFrance entière
+
+Millésime 3 avril 2018
+
+   Format GeoJSON
+   par communepar départementFrance entière
+   Format Shapefile
+   par départementFrance entière
+
+Millésime 2 janvier 2018
+
+   Format GeoJSON
+   par communepar département
+
+Millésime 12 octobre 2017
+
+   Format GeoJSON
+   par communepar département
+
+Millésime 6 juillet 2017
+
+   Format GeoJSON
+   par communepar département
+
+Aide au téléchargement
+
+   Télécharger facilement n’importe quel niveau de granularité
+
+Sélectionner un territoire
+
+   départements
+   communes
+   epci
+   Bientôt disponible
+
+Sélectionner un format
+
+Sélectionner une couche
+
+   (*) communes
+   ( ) prefixes_sections
+   ( ) sections
+   ( ) feuilles
+   ( ) lieux_dits
+   ( ) parcelles
+   ( ) subdivisions_fiscales
+   ( ) batiments
+   [etalab.svg]
+     * Twitter
+     * Github
+     * Medium
+     * Contact
+
+     * cadastre.data.gouv.fr
+     * Mentions légales
+     * FAQ
+     * Contact
+    cadastre.data.gouv.fr cadastre data.gouv.fr
+     * Données cadastrales
+     * DVF
+     * FAQ
+
+Données cadastrales ouvertes
+
+   Consulter, télécharger et intégrer facilement les données cadastrales
+
+Qu’est-ce que le cadastre ?
+
+   Les données ouvertes à ce jour sont celles du plan cadastral :
+   parcelles, sections, bâti et éléments d’habillage. Les fichiers des
+   propriétés et des propriétaires ne sont pas concernés.
+
+Quelles sont les données ouvertes ?
+
+   Le cadastre est un ensemble de plans et fichiers administratifs qui
+   recensent toutes les propriétés immobilières situées dans chaque
+   commune française, et qui en consigne la valeur afin de servir de base
+   de calcul à certains impôts. (Wikipedia)
+
+Réutilisations possibles
+
+Collectivités
+
+   Télécharger et consulter le plan cadastral de ma commune
+
+Géomaticiens
+
+   Construire des zonages basés sur des données parcellaires
+
+Professionnels de l’aménagement
+
+   Disposer de l’emprise au sol des bâtiments
+
+Développeurs
+
+   Intégrer les références cadastrales dans les applications ou les
+   formulaires en ligne
+
+Pour être informé des nouveautés, inscrivez-vous à notre newsletter :
+
+   ____________________ (BUTTON) Inscription
+
+Voir aussi
+
+   [geo.svg]
+
+   Catalogue des données géographiques
+   [etalab.svg]
+     * Twitter
+     * Github
+     * Medium
+     * Contact
+
+     * cadastre.data.gouv.fr
+     * Mentions légales
+     * FAQ
+     * Contact

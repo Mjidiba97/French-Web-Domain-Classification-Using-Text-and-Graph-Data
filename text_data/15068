@@ -1,0 +1,182 @@
+     * Home
+     * Download
+     * News
+     * Blogs
+     * Tutorials & Docs
+     * Vision
+     * Academia
+     * Community
+     * About Jolie
+     * FAQ
+     * [fblogo.png]
+     * [twitterlogo.png]
+     * [github.png]
+     * Star
+       Watch
+
+   [microservice-logo.png]
+
+The first language for Microservices
+
+   Download Tutorials Vision
+   Next
+
+Native microservice programming
+
+   Jolie crystallises the programming concepts of microservices as native
+   language features: the basic building blocks of software are not
+   objects or functions, but rather services that can always be relocated
+   and replicated as needed. Distribution and reusability are achieved by
+   design.
+
+   Jolie is a service-oriented language.
+   Next
+
+Built for the networked age: distributable by design
+
+   Jolie code is always contained in services, which you can always move
+   from being local to remote and vice versa, without altering the logic
+   of your programs. A monolithical application can scale to being
+   distributed by design: if you decide to distribute a part of it, just
+   take it and execute it in another machine.
+
+Program your microservice system
+
+   [basesystem.png]
+
+Deploy it in a single machine
+
+   [monolithicaldeployment.png]
+
+Deploy it in two different machines
+
+   [doubledeployment.png]
+
+Deploy it in four different machines
+
+   [fourdeployment.png]
+   Next
+
+Protocol agnostic
+
+   Jolie is protocol agnostic: your services can exchange data by using
+   different protocols. Bridging two networks using different protocols is
+   a matter of a few lines of code! And if you need a protocol that Jolie
+   does not support yet, there is an API for easily developing new ones in
+   Java.
+   [protocolindependence.png]
+   Next
+
+Everything you build can be used to build again
+
+   Jolie offers many ways for building complex software from simple
+   services. Even the deployment architecture of a system can be
+   programmed with native primitives, generalising common practices.
+   Whatever you build, is again a service that you can expose; so, it can
+   be reused to build again! Here are some examples of composition:
+   Orchestration: an orchestrator is a service that offers functionalities
+   obtained by coordinating other services with a workflow.
+   [orchestration.png]
+   Aggregation: a generalisation of proxies and load balancers, which you
+   can use to compose and expose the APIs of separate services.
+   [aggregation.png]
+   Redirection: a generalisation of virtual servers, which hides the
+   actual locations of services to clients by assigning logical names to
+   services.
+   [redirection.png]
+   Embedding: a generalisation of application servers, which runs other
+   services as inner components. It enables fast local communications and
+   can even run code written in different languages than Jolie, such as
+   Java and Javascript (with more coming)!
+   [embedding.png]
+   Next
+
+Structured workflows
+
+   Jolie comes with native primitives for structuring workflows, for
+   example in sequences (one after the other) or parallels (go at the same
+   time). This makes the code follow naturally from the requirements,
+   avoiding error-prone bookkeeping variables for checking what happened
+   so far in a computation. For example, the following code says that the
+   operations publish and edit become available at the same time (|), but
+   only after (;) operation login is invoked:
+login( credentials )() { checkCredentials };
+{ publish( x ) | edit( y ) }
+
+Dynamic error handling for parallel code
+
+   Programming reliable parallel code is challenging because faults may
+   cause side-effects in parallel activities. Jolie comes with a solid
+   semantics for parallel fault handling. Programmers can update the
+   behaviour of fault handlers at runtime, following the execution of
+   activities thanks to the install primitive.
+include "console.iol"
+include "time.iol"
+
+main
+{
+    scope( grandFather )
+    {
+        install( this => println@Console( "recovering grandFather" )() );
+        scope( father )
+        {
+            install( this => println@Console( "recovering father" )() );
+            scope ( son )
+            {
+                install( this => println@Console( "recovering son" )() );
+                sleep@Time( 500 )();
+                println@Console( "Son's code block" )()
+            }
+        }
+    }
+    |
+    throw( a_fault )
+}
+
+   Next
+
+Revolutionise the way you develop web applications
+
+   Jolie requires interfaces to be clearly defined, thus web GUIs are
+   completely independent from the microservice system they interact with.
+   A Jolie service of a few lines of code, called Leonardo, acts as a web
+   server which can interoperate with web applications written in
+   different technologies. For example, we natively support JSON, XML,
+   AJAX, GWT, and other technologies.
+   [interface.png]
+   Next
+
+Solid foundations
+
+   [solid_foundations.png]
+   Jolie comes with formal specifications of its semantics. It is used in
+   Computer Science research and teaching at many universities around the
+   world. See the Academia page for more information about where you can
+   study or work with Jolie.
+   Next
+
+Join us!
+
+   Jolie is an open source project, with a growing community of
+   contributors and users that you are welcome to join. Check out our
+   project news, or have a look at our contributor blogs.
+   [news.png]
+
+Start now to build your distributed system!
+
+   [lego.png]
+
+You do not need frameworks, just an interpreter.
+
+   You do not need special frameworks for deploying services, nor an ESB
+   for achieving integration: you just need to install the Jolie
+   interpreter, write a few lines of code, and run them with a single
+   command:
+   jolie my_service.ol
+
+   Copyright (C) 2014-2016 The Jolie Team. This work is licensed under a
+   Creative Commons Attribution 4.0 International License, except for the
+   code samples, which are instead licensed under the GNU GPL License
+   (v2). This website is made with Jolie and is powered by Leonardo.Please
+   contact our webmaster for questions or comments concerning this
+   website.

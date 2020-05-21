@@ -1,0 +1,936 @@
+   #Compu-tek.fr » Flux Compu-tek.fr » Flux des commentaires Compu-tek.fr
+   » Sécuriser mon imprimante 3D-Partie 2/3 Flux des commentaires Un
+   centre de présence avec Jeedom ! Partie 1 Sécuriser mon imprimante
+   3D-Partie 1 alternate alternate
+
+   Aller au contenu
+
+   Menu
+
+     * Rechercher
+       Rechercher : ____________________ Rechercher
+
+   Compu-tek.fr
+
+   Informatique et Domotique
+
+Sécuriser mon imprimante 3D-Partie 2/3
+
+   guillaume18 mai 20190
+
+   Nov 6, 2017
+     * bricolage
+     * diy
+     * domotique
+     * jeedom
+     * pi1
+
+   Voila la suite du tuto Sécurisez votre imprimante 3 D (partie 1 ici)
+
+   Je vais aborder la partie 2 et 3 en même temps et je reviendrai sur la
+   partie 4 ( mise en place d’un buzzer) un peu plus tard.
+
+Partie 2 :
+
+   Bon maintenant nous savons configurer une sonde de température et nous
+   savons récupérer les infos.
+
+   Raspberry-Pi-DS18B20-Temperature-Sensor-Tutorial-Temperature-Output-to-
+   SSH-Terminal.png
+   Raspberry-Pi-DS18B20-Temperature-Sensor-Tutorial-Temperature-Output-to-
+   SSH-Terminal.png
+
+   Avant d’aller plus loin , on va mettre en place la sonde sur l’
+   imprimante.
+
+   Je ne parle que pour la Anet a8 et donc, bien sûr, adaptée à votre
+   config.
+
+   Pour ma part j’ai appris à l’école que ‘la chaleur montait. En toute
+   logique on place la sonde en hauteur, au dessus de l’extrudeur. S’il
+   doit y avoir un départ de feu il partira, presque à tous les coups, de
+   la buzz ou du bed.
+
+   Personnellement j’ai placé la sonde sur le chariot de l’extrudeur ! oui
+   j’ai préféré la mettre à cet endroit car plus tôt je suis averti que la
+   température monte plus tôt je peux agir !
+
+   Nyx86LhCJRcJM8WY2DvIv1rnw3kt0VQyDQuph0tb4pZiM-r20WBipW2b5fvfGogphh6VZ52
+   0KTiyhbfjAGeeMyzTAaV-n__yND-BcqU3Y1XVyHOr27VxLz2XuJ83z4F7MJ1mUSM5dx3_WO
+   NLMn1gGWM5WCDUqwafREPtE_3HZuU2FrBBrDzIwVxCkvC8maSEXE1LmW7tLEqv469Y4FGUh
+   bx6RmhJ3WY7HKbuDazfC7Fmu3yLHIfsIBpkMkf-nqBRwREHvk2SAF5aL8zJIAwCn4aQSdSX
+   eJnc3ZUtTVuImwynlrDTkCBVNZ2oDZ8LTLB4PDoCfqej0YGeS2dCML5CiIgNk2QXbM5ORH_
+   nz5-Wda2zKEf2ay23FS5scchRErLP-7iZ8CCsbfryNm6zwBBDaD03jyBK7ZqwOBsf3rWcDs
+   DRYpOZgngGmtw7w5nbTV6iHOnJyb6Vyjr-twZ84CJRp8NNl82o1u3a2DmnlvPuN0QPIoeWg
+   25Aom7WvynQcwIrsHwlTNlg3piXCrgr1GD5Ym8hD8AcO4gr5w8ChpwpNs4Wyv_dN5q9LpWG
+   6h5tZNAtFdqjV2yAhGgi5eVjHXFEiD2RXtEUxV8DsO8=w886-h664-no
+   Nyx86LhCJRcJM8WY2DvIv1rnw3kt0VQyDQuph0tb4pZiM-r20WBipW2b5fvfGogphh6VZ52
+   0KTiyhbfjAGeeMyzTAaV-n__yND-BcqU3Y1XVyHOr27VxLz2XuJ83z4F7MJ1mUSM5dx3_WO
+   NLMn1gGWM5WCDUqwafREPtE_3HZuU2FrBBrDzIwVxCkvC8maSEXE1LmW7tLEqv469Y4FGUh
+   bx6RmhJ3WY7HKbuDazfC7Fmu3yLHIfsIBpkMkf-nqBRwREHvk2SAF5aL8zJIAwCn4aQSdSX
+   eJnc3ZUtTVuImwynlrDTkCBVNZ2oDZ8LTLB4PDoCfqej0YGeS2dCML5CiIgNk2QXbM5ORH_
+   nz5-Wda2zKEf2ay23FS5scchRErLP-7iZ8CCsbfryNm6zwBBDaD03jyBK7ZqwOBsf3rWcDs
+   DRYpOZgngGmtw7w5nbTV6iHOnJyb6Vyjr-twZ84CJRp8NNl82o1u3a2DmnlvPuN0QPIoeWg
+   25Aom7WvynQcwIrsHwlTNlg3piXCrgr1GD5Ym8hD8AcO4gr5w8ChpwpNs4Wyv_dN5q9LpWG
+   6h5tZNAtFdqjV2yAhGgi5eVjHXFEiD2RXtEUxV8DsO8=w886-h664-no
+
+   Sonde.jpg Sonde.jpg
+
+   Alors oui c’est vrai , j’aurais pu la mettre du côté de la buse. Mais
+   j’ai eu peur que la chaleur du bloc ne fasse trop monter la température
+   et donc ne me signale pas une anomalie éventuelle…
+
+   A vous de tester et de me dire ce que vous trouvez le mieux.
+
+   Prenez le temps, également, de mettre en place votre raspberry afin
+   qu’il ne gêne pas votre progression.
+
+Partie 3 :
+
+   Là, nous entrons dans le domaine de la “ domotique “ simple ( ici se
+   sera avec un buzzer ) ou plus “aboutie” ( ci-après avec jeedom)
+
+   Pour ce qui est de Jeedom il n’y a rien de compliqué. Il faut d’abord
+   retourner sur votre Raspberry et il va falloir mettre en place un
+   script qui va permettre d’envoyer à Jeedom le relevé de température
+   toutes les x secondes.
+
+   De là.vous créez un script, que vous appelez comme vous voulez, et vous
+   y mettez ce qui suit :
+
+   #!/bin/bash
+
+   #URL JEEDOM
+
+   url= »http://ipdejeedom/core/api/jeeApi.php?plugin=virtual&apikey=votre
+   api&type$
+
+   #On mets en variable la température
+
+   temp= »$(python votrescript.py) »
+
+   #On crée l’url compléte
+
+   url_full=$url$temp
+
+   #echo $url_full
+
+   #On mets a jour jeedom
+
+   curl $url_full
+
+   Ce script, en gros, lance votre script python ( partie 1) qui relève la
+   température et envoie le résultat à jeedom, qui lui s’occupe de
+   l’afficher.
+
+   Comme vous avez dû le voir, il y a des choses à adapter à votre config
+   ( ce qui est en rouge). Pour cela il faut aller dans jeedom, et créer
+   un virtuel
+
+   Virtuel.PNG Virtuel.PNG
+
+   Une fois cela fait il faut relever l’adresse du virtuel.
+
+   Virtuel2.jpg Virtuel2.jpg
+
+   Virtuel3.PNG Virtuel3.PNG
+
+   On retourne sur le raspberry et on remplace ce qui est en rouge par les
+   infos relevées auparavant.
+
+   Maintenant que tout est dans les bonnes cases, on sauvegarde et sur le
+   raspberry on lance le script.
+
+   Sudo ./lenomdemonscript.sh
+
+   Précision importante, ce qui semble aller de soi mais qui n’est pas
+   toujours évident en fonction de son niveau. On se place dans le dossier
+   où on a créé le script pour le lancer bien sûr !
+
+   Ici je fais comme si vous l’aviez mis à la racine mais on peut le
+   mettre où on veut.
+
+   Donc si le script s’exécute normalement il affiche une température sur
+   le raspberry. On va sur jeedom et on regarde. Si c’est la même alors
+   BINGO ça marche !
+
+   Virtuel.PNG Virtuel.PNG
+
+   On rend executable notre script :
+
+   Sudo chmod +x lenomdemonscript.sh
+
+   Et maintenant on programme un cron pour que le script soit lancé toutes
+   les X secondes ( le minimum est 6 secondes)
+
+   Nous faisons :
+
+   crontab -e.PNG crontab -e.PNG
+
+   Crontab -e
+
+   Puis nous rentrons la ligne suivante à la fin :
+
+   * * * * * /home/pi/lenomdemonscript.sh
+
+   On enregistre et là … on attend … on attend devant jeedom pour voir si
+   notre température change ou si l’heure de réception de la température
+   varie de minute en minute !
+
+   Si c’est tout bon il ne vous reste plus qu’à faire le reste !!
+
+   “ le reste mais c’est quoi ? on n’a pas fini? “
+
+   Non ca, c’est cool d’avoir la température de son imprimante sur le
+   dashbord mais pas très utile.
+
+   Si vous avec un système sonore relié à votre jeedom, on crée un
+   scénario qui dira :
+
+   Si la sonde atteint une température de X ° fait sonner , déclenche le
+   son ou encore joue le fichier X.
+
+   Ce qui vous alertera d’un problème voir un début d’incendie.
+
+   fire-650x200.jpg fire-650x200.jpg
+
+   Si vous avec une clé sms, on en profite pour s’envoyer un sms et aux
+   personnes qui sont près de chez vous.
+
+   Si on a telegram on fait pareil etc…
+
+   J’ai une petite faiblesse pour la clé sms qui marche même sans internet
+   .
+
+   Et si votre imprimante est sur un module type Sononf compatible jeedom
+   vous pouvez également lui dire de l’éteindre. Ce qui évitera que
+   l’imprimante reste sous tension et envenime la situation
+
+   Pour être encore plus sûr on couple le tout à un détecteur de fumée
+   Zwave ou Zigate et on se retrouve avec une double confirmation  🙂 🙂
+
+   Si la sonde et le détecteur se mettent en marche là … il faut speeder
+   ….
+
+   Enfin vous l’aurez compris seul votre imagination est la limite des
+   scénarios possibles :
+
+   Dans la partie 4 nous verrons, pour ceux qui n’ont pas de solution
+   domotique, comment mettre en place un buzzer sur le raspberry pour le
+   faire sonner à une certaine température et être averti.
+
+   Donc à très vite !!!!
+
+   Catégories
+     * Uncategorized
+
+   Article précédent
+
+Un centre de présence avec Jeedom ! Partie 1
+
+   Article suivant
+
+Sécuriser mon imprimante 3D-Partie 1
+
+Laisser un commentaire Annuler la réponse
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   [ ] Enregistrer mon nom, mon e-mail et mon site web dans le navigateur
+   pour mon prochain commentaire.
+
+   Laisser un commentaire
+
+   Rechercher : ____________________ Rechercher
+
+Articles récents
+
+     * Installer Squeezelite sur Raspbian
+     * Installation de Logitech Media Server (LMS) sur Debian 8 (Jessie)
+     * Installation de Logitech Media Serveur (LMS) sur Synology
+     * Installation de Samba sur Debian 8 ( Jessie)
+     * Contrôler Squeezebox via Jeedom
+
+Commentaires récents
+
+     * christophe dans Activez le HTTPS sur votre box Jeedom !
+     * JPM dans Un centre de présence avec Jeedom ! Partie 1
+     * Jeremy dans Installation de Logitech Media Serveur (LMS) sur
+       Synology
+
+Archives
+
+     * mai 2019
+
+Catégories
+
+     * Uncategorized
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Copyright 2019 © Compu-tek.fr Tous droits réservés.
+   Thème Codilight par FameThemes
+   REFRESH(0 sec): http://www.compu-tek.fr/blog/
+
+
+   #Compu-tek.fr » Flux Compu-tek.fr » Flux des commentaires
+
+   Aller au contenu
+
+   Menu
+
+     * Rechercher
+       Rechercher : ____________________ Rechercher
+
+Compu-tek.fr
+
+   Informatique et Domotique
+
+   Installer Squeezelite sur Raspbian Uncategorized
+
+Installer Squeezelite sur Raspbian
+
+   guillaume18 mai 20190
+   May 22, 2017 domotique installation multiroom pi pi1 Bonjour à tous...
+
+   Installation de Logitech Media Server (LMS) sur Debian 8 (Jessie)
+   Uncategorized
+
+Installation de Logitech Media Server (LMS) sur Debian 8 (Jessie)
+
+   guillaume18 mai 20190
+   Jul 26, 2017 debian installation jessie lms logitech Bonjour à tous.
+   A...
+
+   Installation de Logitech Media Serveur (LMS) sur Synology Uncategorized
+
+Installation de Logitech Media Serveur (LMS) sur Synology
+
+   guillaume18 mai 20191
+   Jul 28, 2017 lms logitech media multiroom serveur Bonjour à tous...
+
+   Installation de Samba sur Debian 8 ( Jessie) Uncategorized
+
+Installation de Samba sur Debian 8 ( Jessie)
+
+   guillaume18 mai 20190
+   Jul 31, 2017 debian jessie lms logitech media Bonjour à tous !
+   Aujourd’hui on...
+
+   Contrôler Squeezebox via Jeedom Uncategorized
+
+Contrôler Squeezebox via Jeedom
+
+   guillaume18 mai 20190
+   Aug 7, 2017 domotique jeedom lms logitech media Bonjour à tous...
+
+   Cohabitation de Squeezelite et BLEA sur Raspberry ! Uncategorized
+
+Cohabitation de Squeezelite et BLEA sur Raspberry !
+
+   guillaume18 mai 20190
+   Aug 15, 2017 blea bluetooth domotique jeedom lms Bonjour à tous !
+   Vous...
+
+   Les interactions dans Jeedom ! Partie 1 Uncategorized
+
+Les interactions dans Jeedom ! Partie 1
+
+   guillaume18 mai 20190
+   Oct 11, 2017 Artificielle domotique IA Intelligence interactions
+   Bonjour à tous !...
+
+   Les interactions dans Jeedom ! Partie 2 Uncategorized
+
+Les interactions dans Jeedom ! Partie 2
+
+   guillaume18 mai 20190
+   Oct 25, 2017 Artificielle domotique IA Intelligence interactions
+   Bonjour à tous...
+
+   Sécuriser mon imprimante 3D-Partie 1 Uncategorized
+
+Sécuriser mon imprimante 3D-Partie 1
+
+   guillaume18 mai 20190
+   Oct 26, 2017 bricolage diy iot jeedom pi Bon me voilà enfin avec mon
+   propre...
+
+   Sécuriser mon imprimante 3D-Partie 2/3 Uncategorized
+
+Sécuriser mon imprimante 3D-Partie 2/3
+
+   guillaume18 mai 20190
+   Nov 6, 2017 bricolage diy domotique jeedom pi1 Voila la suite du
+   tuto...
+
+Navigation des articles
+
+   Page 1 Page 2
+   Page 1 sur 2
+
+   Rechercher : ____________________ Rechercher
+
+Articles récents
+
+     * Installer Squeezelite sur Raspbian
+     * Installation de Logitech Media Server (LMS) sur Debian 8 (Jessie)
+     * Installation de Logitech Media Serveur (LMS) sur Synology
+     * Installation de Samba sur Debian 8 ( Jessie)
+     * Contrôler Squeezebox via Jeedom
+
+Commentaires récents
+
+     * christophe dans Activez le HTTPS sur votre box Jeedom !
+     * JPM dans Un centre de présence avec Jeedom ! Partie 1
+     * Jeremy dans Installation de Logitech Media Serveur (LMS) sur
+       Synology
+
+Archives
+
+     * mai 2019
+
+Catégories
+
+     * Uncategorized
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Copyright 2019 © Compu-tek.fr Tous droits réservés.
+   Thème Codilight par FameThemes
+   #Compu-tek.fr » Flux Compu-tek.fr » Flux des commentaires Compu-tek.fr
+   » Un centre de présence avec Jeedom ! Partie 1 Flux des commentaires
+   Déballage, Test, Avis du Excelvan CL720D Sécuriser mon imprimante
+   3D-Partie 2/3 alternate alternate
+
+   Aller au contenu
+
+   Menu
+
+     * Rechercher
+       Rechercher : ____________________ Rechercher
+
+   Compu-tek.fr
+
+   Informatique et Domotique
+
+Un centre de présence avec Jeedom ! Partie 1
+
+   guillaume18 mai 20191
+
+   Dec 4, 2017
+     * domotique
+     * gestion
+     * guide
+     * jeedom
+     * présence
+
+   Bonjour à tous !
+
+   Aujourd’hui, nous allons voir un principal avantage de la domotique.
+
+   Vous avez effectuer vos petits scénarios mais si vous utilisez la
+   fonction ASK par exemple, ça n’arrête pas de vous demander « Le soleil
+   est couché, je ferme le volet ? » « Les lumières sont allumées depuis
+   XXX heures, est tu a la maison ? »
+
+   Bref, vous êtes plutôt le matelot de la maison plutôt que le capitaine.
+
+   J’ai une excellente nouvelle pour vous ! Dans ce guide, nous allons
+   voir comment gérer la présence dans Jeedom !
+
+   Dans cette partie, nous allons voir 2 façons (celle que j’utilise) de
+   signaler notre présence à Jeedom. Si vous souhaitez, je pourrais vous
+   présenter les autres méthodes (gps, ifttt, etc). N’hésitez pas a
+   commenter et me demander si vous avez besoin  😉 😉
+
+
+   A l’heure d’aujourd’hui, et surtout nous les geeks, nous avons un
+   smartphone ! Qui dit smartphone dit wifi !
+
+   Nous avons trouvé la première façon, pour que la maison nous détecte.
+   Elle va effectuer des pings vers l’adresse IP de notre téléphone.
+
+Gestion via Ping
+
+   Afin que Jeedom effectue des pings vers notre téléphone, nous devons
+   fixer l’adresse IP des téléphones dans notre routeur. Je vous invite a
+   vous connecter sur le routeur, et de vous rendre dans la partie DHCP
+   afin de faire le nécessaire.
+
+   Une fois effectué, nous nous rendons sur notre Jeedom et on installe le
+   plugin Network.
+
+   On crée un équipement, on renseigne l’adresse IP qu’on a fixé et on
+   sauvegarde.
+
+Gestion avec le Bluetooth
+
+   Si vous avez aussi un bracelet Mi Band (1S ou 2) ou un NUT, vous pouvez
+   aussi récupérer son état de présence dans Jeedom avec le plugin BLEA de
+   Ludovic.
+
+Savoir qui est présent
+
+   Une fois que vous avez crée vos équipements, vous allez en avoir un
+   paquet.
+
+   La façon que j’utilise pour grouper les équipements en relation d’une
+   personne, c’est de faire un équipement virtuel qui groupe tout  🙂 🙂
+
+   Pour créer un équipement virtuel, nous devons installer le plugin
+   « Virtuel ».
+
+
+   On crée notre équipement virtuel, et on se rends directement dans les
+   commandes.
+
+   On se pose 2 min, on réfléchi a ce qu’on souhaite faire :
+     * Une info qui groupe tous les équipements qui signale ma présence
+       (Téléphone, Bracelet, etc)
+
+   On crée donc une info virtuelle, et dans le champs valeur, on saisie
+   nos commandes pour récupérer la présence.
+
+   Attention, j’insiste bien, j’utilise OU afin que si une des conditions
+   est vraie, c’est que je suis présent.
+
+
+   A présent, votre domotique sais détecter votre présence et elle sait
+   même qui est présent !
+
+   Je vous dit à bientôt pour la suite de ce guide, nous verrons comment
+   automatiser certaines taches au départ ou a l’arrivée à la maison !
+
+   Catégories
+     * Uncategorized
+
+   Article précédent
+
+Déballage, Test, Avis du Excelvan CL720D
+
+   Article suivant
+
+Sécuriser mon imprimante 3D-Partie 2/3
+
+1 Commentaire
+
+    1.
+   JPM 25 août 2019Répondre
+       Très utile ! Merci.
+
+Laisser un commentaire Annuler la réponse
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   [ ] Enregistrer mon nom, mon e-mail et mon site web dans le navigateur
+   pour mon prochain commentaire.
+
+   Laisser un commentaire
+
+   Rechercher : ____________________ Rechercher
+
+Articles récents
+
+     * Installer Squeezelite sur Raspbian
+     * Installation de Logitech Media Server (LMS) sur Debian 8 (Jessie)
+     * Installation de Logitech Media Serveur (LMS) sur Synology
+     * Installation de Samba sur Debian 8 ( Jessie)
+     * Contrôler Squeezebox via Jeedom
+
+Commentaires récents
+
+     * christophe dans Activez le HTTPS sur votre box Jeedom !
+     * JPM dans Un centre de présence avec Jeedom ! Partie 1
+     * Jeremy dans Installation de Logitech Media Serveur (LMS) sur
+       Synology
+
+Archives
+
+     * mai 2019
+
+Catégories
+
+     * Uncategorized
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Copyright 2019 © Compu-tek.fr Tous droits réservés.
+   Thème Codilight par FameThemes
+   #Compu-tek.fr » Flux Compu-tek.fr » Flux des commentaires Compu-tek.fr
+   » Sécuriser mon imprimante 3D-Partie 1 Flux des commentaires Sécuriser
+   mon imprimante 3D-Partie 2/3 Les interactions dans Jeedom ! Partie 2
+   alternate alternate
+
+   Aller au contenu
+
+   Menu
+
+     * Rechercher
+       Rechercher : ____________________ Rechercher
+
+   Compu-tek.fr
+
+   Informatique et Domotique
+
+Sécuriser mon imprimante 3D-Partie 1
+
+   guillaume18 mai 20190
+
+   Oct 26, 2017
+     * bricolage
+     * diy
+     * iot
+     * jeedom
+     * pi
+
+   Bon me voilà enfin avec mon propre petit article sur le blog de
+   Compu-tek.
+
+   Je mets les chose au clair immédiatement et merci d’y prêter attention,
+   cet article comportera 4 parties:
+    1. Utiliser une sonde DS18B20 sur une Sonoff ou un Raspberry Pi
+    2. Mise en place sur une imprimante
+    3. Configuration pour une solution domotique
+    4. Configuration d’un buzzer sur raspberry pour les personnes n’ayant
+       pas de solution domotique
+
+   Pour ce mémo, je voulais aborder un petit tuto avec toujours comme base
+   les modules Sonoff mais cette fois couplés avec une imprimante 3D
+
+   1505094122404301221.jpg 1505094122404301221.jpg
+
+   En vente ici avec le code promo GBA8US
+
+   Non ne vous inquiétez pas, je ne vais pas faire une énième présentation
+   de cette imprimante 3D. Il en existe 50 000 sur internet et pour faire
+   court, c’est une très bonne imprimante pour démarrer et faire ses armes
+   ! Mais se lancer dans le monde de l’impression 3D,croyez moi, c’est
+   loin d’être une promenade de santé . Cela sera le sujet d’un autre
+   article.
+
+   La seule chose sur laquelle je peux m’avancer, c’est qu’avoir une
+   imprimante 3D engage une certaine “ responsabilité” .
+
+   En effet c’est un matériel qui contient des résistances. Ces dernières
+   chauffent , pour certaines , à plus 230°parfois. De là , qui dit
+   chaleur, dit risque d’incendie !
+
+   Ca semble bête mais je peux vous certifier que si vous faites une
+   recherche sur Google vous seriez surpris …
+
+
+   Il me semble donc assez logique de ne pas laisser son imprimante sans
+   surveillance.
+
+   Toutefois si votre imprimante se trouve au sous sol ou dans une autre
+   pièce que celle où vous êtes, le temps d’action semble être essentiel.
+
+   “Je mets un détecteur de fumée et voilà !” oui…. Certes ….. Mais moi
+   j’aime bien m’amuser donc je vais voir un peu plus “compliqué” et plus
+   rapide en déclenchement.
+
+   En effet la 1ère des choses, dans un départ de feu, comme dans un
+   malaise, ce sont les 1ères minutes qui comptent. Plus tôt nous sommes
+   avertis et plus vite l’action sera bénéfique.
+
+– Première partie :
+
+Utiliser une sonde DS18B20 sur une Sonoff ou un Raspberry Pi
+
+   Dans un article sur mon blog (Allandnada) je vous présente les
+   différents modèles de Sonoff.
+
+   Allandnadn.PNG Allandnadn.PNG
+
+   Parmi ceux la il y le Th10 et Th16 ( le chiffre correspond à l’ampérage
+   souhaité).
+
+   Ces modèles correspondent au modèle ou l’on peut rajouter une sonde de
+   température voir une sonde d’humidité.
+
+   Et cette sonde bien placé sur mon imprimante peut être la première
+   alerte si une température plus que anormal est détecté !
+
+   Bingo ! exactement ce qu’il me faut !!! je commande donc la sonde de
+   température !!!!
+
+   sonde.PNG sonde.PNG
+
+   Vous les trouverez ici
+
+   Mais j’annonce un Sonoff Pow bien … c’est pas un Sonoff Th10…. Pas
+   l’option ……
+
+   Ok je commande le TH 10 mais en attendant qu’est ce que je peux faire ?
+
+   th16.PNG th16.PNG
+
+   Vous le trouverez ici avec la sonde
+
+   Sachant que la sonde est basé sur une puce ds18b20…..
+
+   Ah mais oui ! J’ai un raspberry pi avec octoprint dessus !!!! ( pour
+   faire simple, un logiciel de file d’attente d’impression 3D).
+
+   Je vais donc faire une sonde de température relié sur mon raspberry
+   pour m’avertir d’une t° excessive !!
+
+   Et avec un peu d’imagination nous pouvons prévoir de rajouter une
+   buzzer ainsi qu’une notification à ma domotique qui elle même m’envoie
+   un sms, une capture d’image de la cam octoprint et déclenche les
+   détecteurs de fumée de la maison !!
+
+   Par la suite elle ouvre la porte au pompier, les aident à éteindre le
+   feu et leur offre un café !!!
+
+   Bon … il ne faut plus que je laisse mon imagination divaguer, essayons
+   déjà je mettre la sonde le reste est réalisable mais pas tout de suite
+   ( non pas pour le café …. Quoi que … )
+
+   Du coup j’ai en ma possession une sonde de température étanche, une
+   sonde d’humidité/température et, c’est la que c’est le plus
+   intéressant, des puces ds18b20.
+
+   Puce.PNG Puce.PNG
+
+   Ici par pack de 5
+
+   Je les aient achetés en prévision car je compte faire moi même les
+   sondes.
+
+   Je vais commencer par la, le reste servira quand j’aurais mon Sonoff Th
+   16  🙂 🙂
+
+   Pour faire une sonde de température il faut :
+     * Un câble 3 brins pas trop épais
+     * Une puce ds18b20
+     * Une résistance de 4.7ohm
+
+   Et c’est tout ! Ouais c’est tout
+
+   On passe au câblage de la sonde. Rien de plus simple qu’un petit
+   schéma.
+
+   Raspberry-Pi-DS18B20-1024x450.png Raspberry-Pi-DS18B20-1024x450.png
+
+   Alors attention le câblage, de la droite vers la gauche, côté plat vers
+   vous, est :
+
+   3 vcc 2. data 1.gnd
+
+   Raspberry-Pi-DS18B20-Tutorial-DS18B20-Pinout-Diagram-300x293.png
+   Raspberry-Pi-DS18B20-Tutorial-DS18B20-Pinout-Diagram-300x293.png
+
+   Voici mon branchement :
+
+   Maintenant nous passons à la programmation pour récupérer la
+   température de la sonde :
+
+   Nous entrons en ssh ( rdv à la partie “Utiliser SSH sur un Mac ou un
+   PC”) dans le Raspberry. Ne vous inquiétez pas même si seulement
+   Octoprint est installé sur votre Raspberry dessus ça marche tout
+   pareil.
+
+   Et voilà si votre sonde est bien soudé et branché on passe à cette
+   étape.
+
+   Ouvrez /etc/modules avec nano et ajoutez les modules nécessaires
+   : w1-gpio et w1-therm :
+
+   Sudo nano /etc/modules
+
+   Ouvrez /boot/config.txt et ajoutez à la fin les lignes :
+
+   Sudo nano /boot/config.txt
+
+   # Sonde de température DS 18B20
+   dtoverlay=w1-gpio, gpiopin=4
+   gpiopin peut être changé en fonction du gpio que vous avez choisie
+
+   Suivez ce qui est dans la capture et surtout vérifiez dans le dossier
+   /sys/bus/w1/devices que vous avez bien un dossier commençant par 28.
+
+   C’est le dossier de la sonde. Il y aura un dossier par sonde si vous
+   décidez d’en mettre d’autre ( on peut en mettre plusieurs sur le même
+   Raspberry).
+
+   Bien-sur vous remplacez la partie cd 28-000006637696 par le nom de
+   votre dossier 28-xxxxxxxxxxxxx
+
+   Si tout marche vous avez la ligne finissant par t = 26187 (pour ce qui
+   est de la capture )
+
+   Ce qui donne une température de 26,187°
+
+   SI vous avez l’équivalent c’est que tout va bien.
+
+   Maintenant nous allons créer une script python qui va nous permettre
+   d’afficher la température de manière classique. Cette élément est
+   important pour les autres partie de ce tuto.
+
+   Tapez :
+
+   sudo nano votre nomdefichier.py
+
+   Et dans la fenêtre ouverte copier ce qui suit en prenant le soin de
+   changer le dossier 28-xxxxxxxxxx par le nom de votre dossier vu plus
+   haut
+
+   Script python.PNG Script python.PNG
+tfile = open("/sys/bus/w1/devices/28-xxxxxxxx/w1_slave")
+# Lire tout le texte du dossier.
+text = tfile.read()
+# Fermer le fichier apres qu'il ai ete lu.
+tfile.close()
+# Supprimer la seconde ligne.
+secondline = text.split("\n")[1]
+temperaturedata = secondline.split(" ")[9]
+# Supprimer le "t="
+temperature = float(temperaturedata[2:])
+# Mettre un chiffre apres la virgule
+temperature = temperature / 1000
+print "Temperature : " ,
+print temperature
+
+   De la on lance son script python en tapant :
+
+   Sudo python nomdefichier.py
+
+   Et la magie !!! la température apparaît sous la forme 20.187 ( bien sur
+   différent chez vous )
+
+   Pffiu ….. Bon c’est la fin de la 1er partie !
+
+   AH MAIS AU FAITE !! je vais quand même finir par parler des Sononf
+   Th10/ 16. Bien oui c’est quand même grâce à eux qu’on en est la !
+
+   Alors super simple, on branche une sonde déjà faite ou on en fait une
+   comme celle de ce tuto ( sans la résistance me semble t’il mais a
+   confirmer ). On branche le courant et hop c’est tout bon !!
+
+   Il vous reste plus qu’a aller dans l’appli mobile pour configurer ce
+   que vous voulais ( Cf article “ présentation des Sonoff”)
+
+   A très vite pour la suite ! ( oui oui très vite )
+
+   Catégories
+     * Uncategorized
+
+   Article précédent
+
+Sécuriser mon imprimante 3D-Partie 2/3
+
+   Article suivant
+
+Les interactions dans Jeedom ! Partie 2
+
+Laisser un commentaire Annuler la réponse
+
+   Votre adresse de messagerie ne sera pas publiée. Les champs
+   obligatoires sont indiqués avec *
+
+   Commentaire
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Nom * ______________________________
+
+   Adresse de messagerie * ______________________________
+
+   Site web ______________________________
+
+   [ ] Enregistrer mon nom, mon e-mail et mon site web dans le navigateur
+   pour mon prochain commentaire.
+
+   Laisser un commentaire
+
+   Rechercher : ____________________ Rechercher
+
+Articles récents
+
+     * Installer Squeezelite sur Raspbian
+     * Installation de Logitech Media Server (LMS) sur Debian 8 (Jessie)
+     * Installation de Logitech Media Serveur (LMS) sur Synology
+     * Installation de Samba sur Debian 8 ( Jessie)
+     * Contrôler Squeezebox via Jeedom
+
+Commentaires récents
+
+     * christophe dans Activez le HTTPS sur votre box Jeedom !
+     * JPM dans Un centre de présence avec Jeedom ! Partie 1
+     * Jeremy dans Installation de Logitech Media Serveur (LMS) sur
+       Synology
+
+Archives
+
+     * mai 2019
+
+Catégories
+
+     * Uncategorized
+
+Méta
+
+     * Connexion
+     * Flux RSS des articles
+     * RSS des commentaires
+     * Site de WordPress-FR
+
+   Copyright 2019 © Compu-tek.fr Tous droits réservés.
+   Thème Codilight par FameThemes

@@ -1,0 +1,3054 @@
+   #RSS 2.0
+
+   Sublime Text
+
+   Download Buy Support News Forum
+
+   Introducing our Git client
+   [merge_icon.svg] Sublime Merge [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+   A sophisticated text editor for
+   code, markup and prose
+   Download for Windows Download for Windows Install for Linux Download
+   for Mac
+   Sublime Text 3 (Build 3211)
+   Changelog
+
+   [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+
+   Use Multiple Selections to rename variables quickly Here Ctrl+D⌘+D is
+   used to select the next occurrence of the current word. Once created,
+   each selection allows for full-featured editing.
+   Quickly jump to files and functions with Goto Anything Here Ctrl+P⌘+P
+   is used to open the Goto Anything menu, xcc is used to select the file
+   xla_compilation_cache.cc, @ switches to symbol mode, and :c selects the
+   XlaCompilationCache::Compile method.
+   Navigate source using Goto Definition Here the mouse is hovered over a
+   symbol to jump to the definition. The keyboard shortcut F12 can be used
+   when the caret is located on a symbol, or Goto Symbol in Project can be
+   opened via Ctrl+Shift+R⇧+⌘+R to jump to the definition of any symbol in
+   the project.
+   Unsurpassed performance Here a 7MB source code file is opened, and Goto
+   Symbol Ctrl+R⌘+R is used to jump to a function 200k lines down. Full
+   editing features are retained for code in large files, or with complex
+   syntax.
+
+Some features our users love:
+
+Goto Anything
+
+   Use Goto Anything to open files with only a few keystrokes, and
+   instantly jump to symbols, lines or words.
+
+   Triggered with Ctrl+P⌘+P, it is possible to:
+     * Type part of a file name to open it.
+     * Type @ to jump to symbols, # to search within the file, and : to go
+       to a line number.
+
+   These shortcuts can be combined, so tp@rf may take you to a function
+   read_file within a file text_parser.py. Similarly, tp:100 would take
+   you to line 100 of the same file.
+
+Goto Definition
+
+   Using information from syntax definitions, Sublime Text automatically
+   generates a project-wide index of every class, method and function.
+   This index powers Goto Definition, which is exposed in three different
+   ways:
+     * A popup is displayed when hovering over a symbol
+     * Pressing F12 when the caret is on a symbol
+     * The Goto Symbol in Project functionality
+
+   Symbol indexing can be customized on a per-syntax basis via
+   configuration files, allowing users to tailor the feature to their
+   needs.
+
+Multiple Selections
+
+   Make ten changes at the same time, not one change ten times. Multiple
+   selections allow you to interactively change many lines at once, rename
+   variables with ease, and manipulate files faster than ever.
+
+   Try pressing Ctrl+Shift+L⇧+⌘+L to split the selection into lines and
+   Ctrl+D⌘+D to select the next occurrence of the selected word. To make
+   multiple selections with the mouse, take a look at the Column Selection
+   documentation.
+
+Command Palette
+
+   The Command Palette holds infrequently used functionality, like
+   sorting, changing the syntax and changing the indentation settings.
+   With just a few keystrokes, you can search for what you want, without
+   ever having to navigate through the menus or remember obscure key
+   bindings.
+
+   Show the Command Palette with Ctrl+Shift+P⇧+⌘+P.
+
+Powerful API and Package Ecosystem
+
+   Sublime Text has a powerful, Python API that allows plugins to augment
+   built-in functionality.
+
+   Package Control can be installed via the command palette, providing
+   simple access to thousands of packages built by the community.
+
+Customize Anything
+
+   Key bindings, menus, snippets, macros, completions and more - just
+   about everything in Sublime Text is customizable with simple JSON
+   files. This system gives you flexibility as settings can be specified
+   on a per-file type and per-project basis.
+
+Split Editing
+
+   Get the most out of your wide screen monitor with split editing
+   support. Edit files side by side, or edit two locations in the one
+   file. You can edit with as many rows and columns as you wish. Take
+   advantage of multiple monitors by editing with multiple windows, and
+   using multiple splits in each window.
+
+   Take a look at the View ▶ Layout menu for split editing options. To
+   open multiple views into the one file, use the File ▶ New View into
+   File menu item.
+
+Instant Project Switch
+
+   Projects in Sublime Text capture the full contents of the workspace,
+   including modified and unsaved files. You can switch between projects
+   in a manner similar to Goto Anything, and the switch is instant, with
+   no save prompts - all your modifications will be restored next time the
+   project is opened.
+
+Performance
+
+   Sublime Text is built from custom components, providing for unmatched
+   responsiveness. From a powerful, custom cross-platform UI toolkit, to
+   an unmatched syntax highlighting engine, Sublime Text sets the bar for
+   performance.
+
+Cross Platform
+
+   Sublime Text is available for Mac, Windows and Linux. One license is
+   all you need to use Sublime Text on every computer you own, no matter
+   what operating system it uses.
+
+   Sublime Text uses a custom UI toolkit, optimized for speed and beauty,
+   while taking advantage of native functionality on each platform.
+
+Sublime HQ Family
+
+Sublime Merge
+
+   Have you seen our sister product, Sublime Merge? It's a Git Client,
+   done the Sublime Text way.
+
+   © Sublime HQ Pty Ltd
+
+   Woollahra, Sydney.
+    http://www.sublimetext.com/blog Sublime Text News Tue, 2 May 2019
+   01:00:00 +0000 en hourly 1
+   https://www.sublimetext.com/blog/articles/use-mmap-with-care Tue, 2 May
+   2019 01:00:00 +0000 Benjamin Schaaf <p>When we implemented the git
+   portion of <a href="https://sublimemerge.com">Sublime Merge</a>, we
+   chose to use <code>mmap</code> for reading git object files. This
+   turned out to be considerably more difficult than we had first thought.
+   Using <code>mmap</code> in desktop applications has some serious
+   caveats, and here's why:</p> <p><i>You can follow along with <a
+   href="https://github.com/sublimehq/mmap-example" target="_blank">the
+   example project here.</a></i></p> <p>Say you were reading some binary
+   format, data you need throughout some application. You take the easiest
+   approach and use a simple <code>read</code> to get the full contents of
+   the file. You release your software and someone comes along and says:
+   "I need to parse this 3GB file, but I only have 2GB of memory. Could
+   you make it so that you're not using so much memory?". Of course you
+   want to help them, so you do some searching and come to the conclusion
+   that memory mapping is the perfect solution to this problem.</p>
+   <p>Memory mapped files work by mapping the full file into a virtual
+   address space and then using page faults to determine which chunks to
+   load into physical memory. In essence it allows you to access the file
+   as if you had read the whole thing into memory, without actually doing
+   so. Crucially it requires only a small change to the codebase:</p> <img
+   src="/screenshots/use_mmap_with_care/1.png"> <p>And with that, you've
+   fixed the memory usage issue. You've fixed the bug, people are happy
+   and all is well until you get another support ticket. Your program is
+   crashing with a SIGBUS.</p> <h2>Caveat 1: SIGBUS</h2> <p>SIGBUS (bus
+   error) is a signal that happens when you try to access memory that has
+   not been physically mapped. This is different to a SIGSEGV
+   (segmentation fault) in that a segfault happens when an address is
+   invalid, while a bus error means the address is valid but we failed to
+   read/write.</p> <p>As it turns out, the ticket comes from someone using
+   a networked drive. Their network happened to disconnect while your
+   memory mapped file was open, and since the file no longer existed the
+   OS couldn't load it into ram for you and gave you a SIGBUS instead.</p>
+   <p>Because the OS is loading the file on demand, you now have this
+   wonderful issue where any arbitrary read from an address into the
+   memory mapped file can and <em>will</em> fail at some point.</p>
+   <p>Luckily on POSIX systems we have signal handlers, and SIGBUS is a
+   signal we can handle. All you need to do is register a signal handler
+   for SIGBUS when the program starts and jump back to our code to handle
+   failures there.</p> <img src="/screenshots/use_mmap_with_care/2.png">
+   <p>Sadly our code actually has some edge cases we should consider:</p>
+   <p>Signal handlers are global, but signals themselves are per-thread.
+   So you need to make sure you're not messing with any other threads by
+   making all our data thread local. Let's also add some robustness by
+   making sure we've called <code>setjmp</code> before
+   <code>longjmp</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/3.png"> <p>Using
+   <code>setjmp</code> and <code>longjmp</code>ing from a signal handler
+   is actually unsafe. It seems to cause undefined behaviour, especially
+   on MacOS. Instead we must use <code>sigsetjmp</code> and
+   <code>siglongjmp</code>. Since we're jumping out of a signal handler,
+   we need that signal handler to not block any future signals, so we must
+   also pass <code>SA_NODEFER</code> to <code>sigaction</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/4.png"> <p>This is starting to get
+   quite complicated, especially if you were to have multiple places where
+   a SIGBUS could happen. Let's factor things out into functions to make
+   the logic a little cleaner.</p> <img
+   src="/screenshots/use_mmap_with_care/5.png"> <p>There, now you just
+   need to remember to always call <code>install_signal_handlers</code>
+   for every application, and wrap all <code>file</code> accesses with
+   <code>safe_mmap_try</code>. Annoying, but manageable. So now you've
+   covered POSIX systems, but what about Windows?</p> <h2>Caveat 2:
+   Windows</h2> <p>Windows doesn't have <code>mmap</code>, but it does
+   have <code>MapViewOfFile</code>. Both of these implement memory mapped
+   files, but there's one important difference: Windows keeps a lock on
+   the file, not allowing it to be deleted. Even with the Windows flag
+   <code>FILE_SHARE_DELETE</code> deletion does not work. This is an issue
+   when we expect another application to delete files from under us, such
+   as git garbage collection.</p> <p>One way around this with the windows
+   API is to essentially disable the system file cache entirely, which
+   just makes everything absurdly slow. The way <a
+   href="https://sublimemerge.com">Sublime Merge</a> handles this is by
+   releasing the memory mapped file on idle. Its not a pretty solution,
+   but it works.</p> <p>Windows also does not have a SIGBUS signal, but
+   you can trivially use structured exception handling in
+   <code>safe_mmap_try</code> instead:</p> <img
+   src="/screenshots/use_mmap_with_care/6.png"> <p>Now all is well, your
+   application functions on Windows. But then you decide that you would
+   like some crash reporting, to make it easier to identify issues in the
+   future. So you add <a
+   href="https://chromium.googlesource.com/breakpad/breakpad">Google
+   Breakpad</a>, but unbeknownst to you you've just broken Linux and MacOS
+   again�</p> <h2>Caveat 3: 3rd Parties</h2> <p>The problem with using
+   signal handlers is that they're global, across threads and libraries.
+   If you have or have added a library like Breakpad that uses signals
+   internally you're going to break your previously safe memory
+   mapping.</p> <p>Breakpad registers signal handlers at initialization
+   time on Linux, including one for SIGBUS. These signal handlers override
+   each other, so installation order is important. There is not a nice
+   solution to these types of situations: You can't simply set and reset
+   the signal handler in <code>safe_mmap_try</code> as that would break
+   multithreaded applications. At Sublime HQ our solution was to turn an
+   unhandled SIGBUS in our signal handler into a SIGSEGV. Not particularly
+   elegant but it's a reasonable compromise.</p> <p>On MacOS things get a
+   little more complicated. XNU, the MacOS kernel, is based on Mach, one
+   of the earliest microkernels. Instead of signals, Mach has an
+   asynchronous, message based exception handling mechanism. For
+   compatibility reasons signals are also supported, with Mach exceptions
+   taking priority. If a library such as Breakpad registers for Mach
+   exception messages, and handles those, it will prevent signals from
+   being fired. This is of course at odds with our signal handling. The
+   only workaround we've found so far involves patching Breakpad to not
+   handle SIGBUS.</p> <p>3rd party libraries are a problem because signals
+   are global state accessible from everywhere. The only available
+   solutions to this are unsatisfying workarounds.</p> <h2>Caveat 4: 32bit
+   Support</h2> <p>Memory mapping may not use physical memory, but it does
+   require virtual address space. On 32bit platforms your address space is
+   ~4GB. So while your application may not use 4GB of memory, it will run
+   out of address space if you try to memory map a too large file. This
+   has the same result as being out of memory.</p> <p>Sadly this doesn't
+   have a workaround like the other issues, it is a hard limitation of how
+   memory mapping works. You can now either rewrite the codebase to not
+   memory map the whole file, live with crashes on 32bit systems or not
+   support 32bit.</p> <p>With <a href="https://sublimemerge.com">Sublime
+   Merge</a> and <a
+   href="https://www.sublimetext.com/blog/articles/sublime-text-3-point-2"
+   >Sublime Text 3.2</a> we took the "no 32bit support" route. <a
+   href="https://sublimemerge.com">Sublime Merge</a> does not have a 32bit
+   build available and Sublime Text disables git integration on 32bit
+   versions.</p> <h2>An Alternative</h2> <p>I mentioned before that you
+   can rewrite your code to not use memory mapping. Instead of passing
+   around a long lived pointer into a memory mapped file all around the
+   codebase, you can use functions such as <code>pread</code> to copy only
+   the portions of the file that you require into memory. This is less
+   elegant initially than using <code>mmap</code>, but it avoids all the
+   problems you're otherwise going to have.</p> <p>Through some quick
+   benchmarks for the way <a href="https://sublimemerge.com">Sublime
+   Merge</a> reads git object files, <code>pread</code> was around � as
+   fast as <code>mmap</code> on linux. In hindsight it's difficult to
+   justify using <code>mmap</code> over <code>pread</code>, but now the
+   beast has been tamed and there's little reason to change any more.</p>
+   <p>If you think we've missed something or made a mistake, please leave
+   us a message on the forums. We hope this helps some of you in your
+   future endeavours. If you haven't already, check out our git client <a
+   href="https://sublimemerge.com">Sublime Merge</a>.</p>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-2 Wed,
+   13 Mar 2019 14:00:00 +1000 Will Bond <style> img.screenshot-32 { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-32 { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p>The past year has been busy here at Sublime HQ.
+   We've grown our engineering team, shipped Sublime Text 3.1 and released
+   our second product, <a href="https://www.sublimemerge.com">Sublime
+   Merge</a>. <em>If you use Git and like the ethos of Sublime Text, we
+   think you'll love it.</em></p> <p>Today we're pushing out Sublime Text
+   3.2, which builds off of a bunch of work we've done in Sublime Merge.
+   This includes: first-class <a href="/docs/3/git_integration.html">Git
+   integration</a>, <a href="/docs/3/incremental_diff.html">incremental
+   diffing</a>, new theme functionality and block caret support. Beyond
+   that is a slew of other enhancements, stability improvements and
+   performance gains. See the full changelog below for details.</p>
+   <p>Sublime Text 3.2 is available from the <a href="/3">Download</a>
+   page.</p> <img src="/screenshots/3.2/git_diff.png"
+   class="screenshot-32"> <p class="caption-32">Git status badges in the
+   side bar and incremental diff markers in the gutter</p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_32_ss() { var
+   ss = document.getElementsByClassName("screenshot-32"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_32_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_32_ss() }) } </script>
+   <h2>Changelog</h2> <article class="changelog"> <h3>Git Integration
+   <span class="new">New!</span></h3> <ul class="topic"> <li>Files and
+   folders in the sidebar will now display badges to indicate Git
+   status</li> <li>Ignored files and folders are visually
+   de-emphasized</li> <li>The current Git branch and number of
+   modifications is displayed in the status bar</li> <li>Commands have
+   been added to open a repository, see file or folder history, or blame a
+   file in <a href="https://www.sublimemerge.com">Sublime Merge</a></li>
+   <li>Themes may customize the display of sidebar badges and status bar
+   information</li> <li>The setting <tt>show_git_status</tt> allows
+   disabling Git integration</li> <li>All file reads are done through a
+   custom, high-performance Git library written for <a
+   href="https://www.sublimemerge.com">Sublime Merge</a></li> <li><a
+   href="/docs/3/git_integration.html">Read the documentation</a></li>
+   </ul> <h3>Incremental Diff <span class="new">New!</span></h3> <ul
+   class="topic"> <li>All changes to a document are now represented by
+   dedicated markers in the gutter</li> <li>Diff markers show added,
+   modified and deleted lines</li> <li>The setting <span
+   class="setting">mini_diff</span> controls incremental diff
+   behavior</li> <li>In coordination with the new Git functionality, diffs
+   can be calculated against HEAD or the index</li> <li>The <span
+   class="setting">git_diff_target</span> setting controls base document
+   source</li> <li>API methods <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> allow controlling the
+   diff</li> <li> The following diff-related commands were added: <ul>
+   <li>Next Modification</li> <li>Previous Modification</li> <li>Revert
+   Modification</li> </ul> </li> <li>Full inline diffs of each change can
+   be displayed via the right-click context menu, or keyboard
+   shortcuts</li> <li>Inline diff presentation can be changed by
+   customizing a color scheme</li> <li><a
+   href="/docs/3/incremental_diff.html">Read the documentation</a></li>
+   </ul> <h3>Editor Control</h3> <ul class="topic"> <li>Added <span
+   class="setting">block_caret</span> setting</li> <li>Improve positioning
+   and sizing of gutter icons in some situations</li> <li>Fixed <span
+   class="setting">draw_minimap_border</span> setting not working</li>
+   <li>Linux: Improved input method (IM) support - fcitx, ibus, etc</li>
+   <li>Linux: Fixed a crash when using <tt>GTK_IM_MODULE=xim</tt></li>
+   <li>Linux: Tweaked behavior of up/down when on the first and last lines
+   of a file to better match platform conventions</li> <li>Windows:
+   Improved IME support</li> </ul> <h3>Themes/UI</h3> <ul class="topic">
+   <li> Enhanced the <span class="file">.sublime-theme</span> format: <ul>
+   <li>Added variables support and associated revised JSON format with
+   <tt>variables</tt> key</li> <li>Added <tt>extends</tt> keyword to have
+   one theme derive from another</li> <li>Colors may be specified via CSS
+   syntax</li> </ul> </li> <li>Improved performance with large numbers of
+   rules in a <span class="file">.sublime-theme</span></li> <li>Linux:
+   Moved to GTK3</li> <li>Linux: Various high DPI fixes</li> <li>Mac:
+   Added Mojave support</li> <li>Mac: Add full support for macOS native
+   tabs</li> <li>Mac: Ensure context menus are shown without
+   scrolling</li> <li>Mac: Error message dialogs can now be closed with
+   the escape key</li> <li>Mac: Improved window placement</li> <li>Mac:
+   Improved resize performance</li> <li>Windows: Fixed minimized and
+   maximized state not restoring</li> <li>Windows: Fixed a bug where auto
+   complete entries would contain an ellipsis when not required</li> </ul>
+   <h3>Text Rendering</h3> <ul class="topic"> <li>Support for Unicode
+   11.0</li> <li>Improved rendering of combining characters</li> <li>Fixed
+   a caret positioning bug when non-trivial graphemes are present</li>
+   <li>Fixed some cases of incorrect glyph positions on Windows and
+   Mac</li> <li>Linux: Color glyphs are now drawn properly on light
+   backgrounds</li> <li>Windows: Fixed a rendering issue with certain
+   combining characters</li> <li>Windows: Fixed some fonts having an
+   incorrect baseline</li> </ul> <h3>Color Schemes</h3> <ul class="topic">
+   <li>Added <tt>block_caret</tt> key to use in conjunction with block
+   carets</li> <li><tt>caret</tt> values now respect alpha as expected,
+   rather than pre-blending against the background color</li> <li>Added
+   the <tt>foreground_adjust</tt> property to rules with a
+   <tt>background</tt>. Accepts CSS color mod adjusters to manipulate the
+   saturation, lightness or opacity of the foreground color.</li> </ul>
+   <h3>Syntax Highlighting</h3> <ul class="topic"> <li>Many syntax
+   highlighting improvements, including significant improvements to: <ul>
+   <li><i>Clojure</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>D</i></li> <li><i>Go</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>Lua</i>, with thanks to <a
+   href="https://github.com/Thom1729">Thomas Smith</a></li> </ul> </li>
+   <li>Fixed a crash that could occur when nesting embed patterns in <span
+   class="file">.sublime-syntax</span> files</li> <li>Syntax Tests: Allow
+   syntax test files to have a UTF-8 BOM</li> </ul> <h3>Files and
+   Folders</h3> <ul class="topic"> <li>Improve performance of file
+   watching for ignored paths on Windows and Mac</li> <li>Windows: Fixed
+   Open File treating paths as case-sensitive</li> <li>Windows: Properly
+   unlock directories after contained files are closed</li> </ul>
+   <h3>API</h3> <ul class="topic"> <li>Added
+   <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> to control diff
+   generation</li> <li>Phantoms are now drawn correctly in conjunction
+   with <span class="setting">draw_centered</span></li> <li>Various minor
+   improvements related to plugin module loading and unloading</li>
+   <li>Added support for <tt>hwb()</tt> colors to minihtml</li> <li>Added
+   a custom <tt>min-contrast()</tt> adjuster for the CSS color mod
+   function in minihtml</li> <li>Mac: Fixed a <tt>plugin_host</tt> crash
+   when running a process that itself crashes</li> </ul>
+   <h3>Miscellaneous</h3> <ul class="topic"> <li>Fixed a <i>Goto Symbol in
+   Project</i> performance regression</li> <li>F21..F24 keys can now be
+   bound</li> <li>Assorted minor fixes and stability improvements</li>
+   <li>Linux: Improved behavior of <tt>--wait</tt> command line argument
+   when Sublime Text isn't currently running</li> </ul> </article>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1107 Tue,
+   12 Mar 2019 20:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">Subli
+   me Merge</a>, our Git Client and Merge Tool, is out now with
+   improvements to the Merge Tool, Tree viewing, and Clone dialog. See the
+   <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">full
+   post</a> for more details.</p> <p>Sublime Text 3.2 will be coming very
+   soon now, featuring Git integration and more.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1092 Wed,
+   29 Nov 2018 20:00:00 +1000 Jon Skinner <p>Sublime HQ's Git Client, <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">Subli
+   me Merge</a>, is out now with Interactive Rebase, a new Contents View,
+   and Word Wrap - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-documentation
+   Mon, 05 Nov 2018 02:00:00 -0500 Will Bond <p> While we continue to add
+   more features and polish to the default Sublime Merge experience, we
+   know that developers love the ability to tweak their tools. Sublime
+   Merge is built on the same foundation as Sublime Text, so you can tweak
+   key bindings, menus, command palette entries, and even the look and
+   feel of the UI. </p> <p> To assist, we�ve just rolled out a number of <a
+   href="https://www.sublimemerge.com/docs/">pages of documentation</a>
+   for users who wish to customize Sublime Merge to look and function a
+   little differently. In addition, we�ve added a <a
+   href="https://www.sublimetext.com/docs/3/dev/">new documentation
+   section</a> for the <a href="https://www.sublimetext.com/3dev">dev
+   builds of Sublime Text</a>. It covers all of the features we added
+   during the development of Sublime Merge. </p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1070 Wed,
+   10 Oct 2018 19:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/download">Sublime Merge Build
+   1070</a> is out now with Commit Folding - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1070">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-roadmap Tue, 2
+   Oct 2018 10:00:00 +1000 Jon Skinner <p>Just a quick post about what
+   we're going to be adding to <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>. This isn't a
+   comprehensive list, but it should give an indication of what we're
+   focusing on right now.</p> <ul> <li><b>Branch Visualization</b>.
+   Sublime Merge itself handles large repositories well, but there's more
+   the UI could do to help users with a lot of branches on the go. We've
+   got some nice things cooking for this that will be coming in the near
+   future. Stay tuned!</li> <li><b>Submodule Management</b>. Sublime Merge
+   understands submodules, but doesn't provide any UI for managing them.
+   We'll be changing that soon.</li> <li><b>Tabs</b>. Tabs have been
+   frequently requested by users working on several repositories at once.
+   The <i>Switch Repository</i> functionality (under the <i>File</i> menu)
+   helps with this, but tabs have their own benefits, so they're on their
+   way.</li> <li><b>Git Flow Integration</b>. Git Flow is a branching
+   strategy with an accompanying set of command line tools. We've had a
+   lot of requests for UI support here, so it'll be making it in too.</li>
+   <li><b>Interactive Rebase</b>. Sublime Merge currently supports editing
+   commit messages and squashing commits (available from the commit
+   context menu). We'll be adding extra commit wrangling functionality,
+   including reordering commits, moving commits between branches, and
+   amending arbitrary commits.</li> <li><b>Plugins</b>. Sublime Text style
+   plugins are on our radar. This isn't at the top of the list, but
+   they're coming.</li> </ul> <p>We'll also be getting a new Sublime Text
+   Dev Build out this week, rolling in all the updates from Sublime Merge,
+   including the updated theming system and Mojave support.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge Mon, 20 Sep
+   2018 10:00:00 +0000 Jon Skinner <style> img.screenshot-sm { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-sm { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p><i>(You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a> from <a
+   href="https://www.sublimemerge.com/download">https://www.sublimemerge.c
+   om/download</a>)</i></p> <p> There's a company that makes photography
+   accessories, called Really Right Stuff. They make lovely equipment, but
+   what I really like is the name. It embodies the idea of building
+   something that goes beyond the minimum: making it as good as it can be,
+   paying attention to the details, and getting it really right. </p> <p>
+   When it comes to software, getting it really right goes beyond
+   functionality. The feel, aesthetics, and performance all have to be
+   there. </p> <p> There's a real pleasure using software that gets it
+   really right, as a lot of the time, it doesn't. We're all too familiar
+   with clunky layouts, unresponsive buttons, choppy scrolling, tedious
+   splash screens, and flickering on every interaction. </p> <p> After
+   typing <tt>git add -p</tt> in the terminal one too many times, I
+   thought to myself: we've got some pretty great tech in Sublime Text.
+   What if we used it to build a Git client? Could we make it fast? Could
+   we make it buttery smooth, without flickering or blocking? Could we
+   make something that's really, really right? </p> <p> Today, I'd like to
+   introduce <a href="https://www.sublimemerge.com">Sublime Merge</a>. It
+   combines the UI engine of Sublime Text, with a from-scratch
+   implementation of Git*. The result is, to us at least, something pretty
+   special. <a href="https://www.sublimemerge.com"><img
+   src="/screenshots/merge/staging.png" width="600" height="291"
+   class="screenshot-sm"></a> <p class="caption-sm">Sublime Merge - Commit
+   Dialog</p> </p> <p> You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>, and try it for
+   yourself - there's no time limit, no accounts, no metrics, and no
+   tracking. The evaluation version is fully functional, but is restricted
+   to the light theme only. Individual purchases are buy once, use
+   forever, with 3 years of updates included in the purchase. Business
+   licenses are available on a subscription basis. Sublime Merge runs on
+   Windows, Mac and Linux. </p> <p> It's still early days for Sublime
+   Merge - it has only been used by us and our small team of beta testers
+   so far. We'd love to hear what you think. We'll be on the <a
+   href="https://forum.sublimetext.com/">Forums</a> listening to any
+   feedback - let us know how you get on with it! </p> <br> <p><small> *
+   We have a custom implementation of Git for reading repositories, which
+   drives a lot of our high performance functionality. However we defer to
+   Git itself for operations that mutate the repository (Staging,
+   Committing, Checking out branches, etc). </small></p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_sm_ss() { var
+   ss = document.getElementsByClassName("screenshot-sm"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_sm_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_sm_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-1 Mon, 7
+   May 2018 10:00:00 +0000 Will Bond and Jon Skinner <p>Since version 3.0
+   we've been shipping frequent <a href="/3dev">dev builds</a>, refining
+   Sublime Text for a more polished experience all-around. Those dev
+   builds are now rolling out to everyone as Sublime Text 3.1. The <a
+   href="/3">full changelog for 3.1</a> includes every detail, but the
+   following are some we'd like to highlight: </p> <style> img.screenshot
+   { width: 600px; margin: 1em 0 0; display: block; filter:
+   drop-shadow(3px 3px 5px #9998); } p.caption { margin-top: 0.5em; color:
+   #999; font-style: italic; } </style> <h4>UI</h4> <ul class="topic">
+   <li>Windows 10/8.1 per-monitor DPI settings for handling mixed monitor
+   configurations and on-the-fly DPI switching</li> <li>Lots of
+   improvements for high DPI support on all platforms, including 8k
+   monitor and @3x texture support</li> </ul> <h4>Text Rendering</h4> <ul
+   class="topic"> <li> Ligature support, with controls for customizing
+   OpenType features and stylistic sets <img
+   src="/screenshots/3.1/ligatures.png" class="screenshot"> <p
+   class="caption">An example of ligatures with Fira Code</p> </li>
+   <li>Improved text rendering on Windows, now respecting ClearType
+   tuning</li> <li>Better handling of emojis in the editor control
+   &nbsp;�</li> </ul> <h4>Color Schemes</h4> <ul class="topic"> <li> A new
+   color scheme format based on JSON, with easier customization and new
+   features like <a
+   href="/docs/3/color_schemes.html#hashed_syntax_highlighting">hashed
+   syntax highlighting</a> <img
+   src="/screenshots/3.1/hashed_highlighting.png" class="screenshot"> <p
+   class="caption">Hashed syntax highlighting with the Celeste color
+   scheme</p> </li> <li>Improved selection rendering with <a
+   href="/docs/3/color_schemes.html#global_settings-selection">expanded
+   customization</a> via color schemes</li> </ul> <h4>Syntax
+   Definitions</h4> <ul class="topic"> <li>Syntax definitions for Git file
+   formats to allow Sublime Text to be a better <tt>core.editor</tt></li>
+   <li> Highlighting of fenced code blocks in Markdown <img
+   src="/screenshots/3.1/markdown.png" class="screenshot"> <p
+   class="caption">Python highlighted in a fenced code block</p> </li>
+   <li>Lots of TC39-track features have been added to the JavaScript
+   syntax</li> </ul> <h4>User Interaction</h4> <ul class="topic"> <li>
+   Goto References to augment Goto Definition <img
+   src="/screenshots/3.1/goto_references.png" class="screenshot"> <p
+   class="caption">Goto References shown in the symbol popup</p> </li>
+   <li>An improved Command Palette that can accept arbitrary user input
+   and complex interactions</li> </ul> <h4>File System</h4> <ul
+   class="topic"> <li>Expanded options for filtering files and folders
+   from the sidebar</li> <li>Improved handling of filesystem notifications
+   and symlinks</li> </ul> <h4>Performance</h4> <ul class="topic">
+   <li>Significantly improved memory usage - up to 30% in some cases</li>
+   <li>Lots of little performance improvements and bug fixes</li> </ul>
+   <h4>More!</h4> <ul class="topic"> <li>See the <a
+   href="/3">changelog</a> for the full list</li> </ul> <p>Many of these
+   changes were developed in response to the community's feedback, and in
+   some cases with your help! As may be evident, this dev cycle spent a
+   good amount of time polishing some foundational elements of the editor
+   and making it more robust for use on different configurations and for
+   different purposes. <p>We've got some exciting things planned for the
+   future, which will further build upon the foundation we've laid with
+   3.0 and 3.1! If you want to preview the latest changes and help provide
+   feedback during the next dev cycle, install the latest <a
+   href="/3dev">dev build</a> and you'll get notifications as we release
+   new updates. <script> if (!window.res) { scale = 1 res = function() {
+   scale = window.devicePixelRatio >= 1.3 && document.body.clientWidth >
+   1024 ? 2 : 1 return scale == 2 ? '@2x' : '' } } function
+   high_dpi_31_ss() { var ss =
+   document.getElementsByClassName("screenshot"); for(var i = 0; i <
+   ss.length; i++) { console.log(ss.item(i)) ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_31_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_31_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/the-adaptive-theme Fri, 06
+   Oct 2017 06:00:00 +0000 Will Bond <p>With the release of Sublime Text
+   3.0, we refreshed the visual design for the application, icon, and
+   website. The new icon ties into the colors and shapes of the old, but
+   is more abstract and fits well with other modern applications. The
+   updated Default theme is still distinctly Sublime Text, but has full
+   high DPI support, and works well with both dark and light color
+   schemes. The three new color schemes take advantage of the work that
+   has gone into modernizing and enhancing the syntax definitions included
+   with Sublime Text.</p> <table style="margin: 20px 0;"> <tr> <th
+   style="color: #777; font-style: italic; padding: 0 20px 12px 0;
+   line-height: 1.2"> <b>Sublime Text 3 Build 3126</b><br> <span
+   style="font-size: 0.9em">(Old) Default theme, IDLE color scheme</span>
+   </th> <th style="color: #777; font-style: italic; line-height: 1.2">
+   <b>Sublime Text 3.0</b><br> <span style="font-size: 0.9em">(New)
+   Default theme, Sixteen color scheme</span> </th> </tr> <tr> <td
+   style="padding-right: 30px;"> <img
+   src="/screenshots/the_adaptive_theme/3126_default_idle.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> <td> <img
+   src="/screenshots/the_adaptive_theme/3143_default_sixteen.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> </tr>
+   </table> <p>As well as an overhaul of the default theme, we've also
+   include a new theme, Adaptive, which uses the colors of your color
+   scheme and applies variations of them to the side bar and various
+   panels. The new color scheme setting <code>accent</code> is used to
+   highlight selected options in the find panel, and to highlight modified
+   tabs. Furthermore, on recent versions of macOS the title bar is also
+   styled by the Adaptive theme to follow your selected color scheme.</p>
+   <p>The result is a theme that acts as if it was custom designed for
+   your color scheme. Check out this sample of Adaptive in action:</p>
+   <script> var width = 800 var height = 400 if (!window.byid) { plat =
+   'osx' arch = '64' scale = 1 byid = function(x) { return
+   document.getElementById(x) } res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } </script> <div id="anim_shell">
+   <div id="anim_container"> <canvas id="target" style="width: 800px;
+   height: 400px"></canvas> <div id="fallback" style="width: 800px;
+   height: 400px; position: relative; display: none"></div> <div
+   id="title-overlay" class="show"><div></div></div> </div> </div>
+   <script> var images = [] var target = byid('target') var use_canvas =
+   target && target.getContext if (!use_canvas) {
+   byid('target').style.display = 'none' target = byid('fallback')
+   target.style.display = 'block' } function load_animation() { var script
+   = byid('anim_script') if (script) script.parentNode.removeChild(script)
+   script = document.createElement('script') script.setAttribute('src',
+   '/screencasts/adaptive' + res() + '.js') script.setAttribute('id',
+   'anim_script') document.body.appendChild(script) if (use_canvas) {
+   target.width = scale * width target.height = scale * height } }
+   load_animation() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { load_animation() }) } function
+   handle_resize(e) { target.style.height = Math.floor(target.clientWidth
+   / width * height) + 'px' } handle_resize() if (window.addEventListener)
+   window.addEventListener('resize', handle_resize, false) else if
+   (window.attachEvent) window.attachEvent('onresize', handle_resize) var
+   continuation = null var start_time = null var remaining_time = 0 var
+   timer = null function set_timeout(f, timeout) { start_time = new
+   Date().getTime() remaining_time = timeout continuation = f timer =
+   window.setTimeout(f, timeout) } // Only run a callback once an
+   animation frame is available, allowing // the animation to be paused
+   when in the background, etc function sync_frame(f) { if
+   (!window.requestAnimationFrame) f() else
+   window.requestAnimationFrame(f) } // Run a timeout synced to the
+   animation frame function sync_timeout(f, timeout) {
+   set_timeout(function() { sync_frame(f) }, timeout) } function
+   pause_timeout() { var elapsed = (new Date().getTime()) - start_time
+   remaining_time = Math.max(remaining_time - elapsed, 0)
+   window.clearTimeout(timer) } function continue_timeout() { start_time =
+   new Date().getTime() timer = window.setTimeout(continuation,
+   remaining_time) } function play() { continue_timeout() } function
+   pause() { pause_timeout() } var delay_scale = 1.0 var overlay =
+   byid('title-overlay') function display_error() {
+   window.clearTimeout(timer) continuation = null if (use_canvas) { var
+   ctx = target.getContext('2d') ctx.clearRect(0, 0, target.width,
+   target.height) } else { target.innerHTML = '' }
+   overlay.getElementsByTagName('div')[0].innerHTML = '<i>Error loading
+   screencast</i>'; overlay.className = 'show' } function transition() {
+   if (timer) window.clearTimeout(timer) sync_frame(function() { var
+   img_url = animation_urls[0] var timeline = animation_timelines[0] var
+   img = prep_animation(img_url, timeline, null) sync_timeout(function() {
+   animate(img, timeline, target, 0) }, 2400) }) } function
+   draw_canvas(img, element, frame, blits) { var ctx =
+   element.getContext('2d') for (j = 0; j < blits.length; ++j) { var blit
+   = blits[j] var sx = blit[0] var sy = blit[1] var w = blit[2] var h =
+   blit[3] var dx = blit[4] var dy = blit[5] ctx.drawImage(img, sx, sy, w,
+   h, dx, dy, w, h) } } function draw_fallback(img, element, frame, blits)
+   { if (frame == 0) { while (element.hasChildNodes())
+   element.removeChild(element.lastChild) } for (j = 0; j < blits.length;
+   ++j) { var blit = blits[j] var sx = blit[0] / scale var sy = blit[1] /
+   scale var w = blit[2] / scale var h = blit[3] / scale var dx = blit[4]
+   / scale var dy = blit[5] / scale var d = document.createElement('div')
+   d.style.position = 'absolute' d.style.left = dx + "px" d.style.top = dy
+   + "px" d.style.width = w + "px" d.style.height = h + "px"
+   d.style.backgroundImage = "url('" + img.src + "')"
+   d.style.backgroundPosition = "-" + sx + "px -" + sy + "px"
+   d.style.backgroundSize = width + "px auto" element.appendChild(d) } }
+   function draw(img, element, frame, blits) { if (use_canvas)
+   draw_canvas(img, element, frame, blits) else draw_fallback(img,
+   element, frame, blits) } function animate(img, timeline, element,
+   start_frame) { var i = start_frame; var f = function() { var frame =
+   i++ % timeline.length var delay = timeline[frame].delay * delay_scale
+   var blits = timeline[frame].blit draw(img, element, frame, blits) var
+   callback = f sync_timeout(callback, delay) } if (timer)
+   window.clearTimeout(timer) sync_frame(f) } function
+   prep_animation(img_url, timeline, preload_url) { var ready = function()
+   { overlay.className = '' sync_frame(function() { draw(images[img_url],
+   target, 0, timeline[0].blit) }) if (preload_url && !(preload_url in
+   images)) { images[preload_url] = new Image() images[preload_url].src =
+   preload_url } } if (img_url in images) { ready() } else {
+   images[img_url] = new Image() images[img_url].onload = ready
+   images[img_url].onerror = function() { delete images[img_url]
+   display_error() } images[img_url].src = img_url } return
+   images[img_url] } </script> <p>To try Adaptive out for yourself, open
+   the <span class="feature">Command Palette</span> and type <kbd>Select
+   Theme</kbd>. Once you've picked <em>Adaptive</em>, use the <kbd>Select
+   Color Scheme</kbd> command to preview the available color schemes.</p>
+   <p>Probably the best part is that all of the power of the Adaptive
+   theme is available for any theme to use. Additionally, we wrote up <a
+   href="/docs/3/themes.html">full documentation</a> about all of the
+   theme engine features and syntax. Having comprehensive documentation
+   will hopefully make theming accessible to a much wider audience. If you
+   are looking for help in customizing a theme, or creating your own, drop
+   by the <a href="https://forum.sublimetext.com/">forum</a> or ask some
+   questions on the <a href="https://discord.gg/HcmwdVK">Discord
+   server</a>.</p>
+   #RSS 2.0
+
+   Sublime Text
+
+   Download Buy Support News Forum
+
+   Introducing our Git client
+   [merge_icon.svg] Sublime Merge [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+   A sophisticated text editor for
+   code, markup and prose
+   Download for Windows Download for Windows Install for Linux Download
+   for Mac
+   Sublime Text 3 (Build 3211)
+   Changelog
+
+   [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+
+   Use Multiple Selections to rename variables quickly Here Ctrl+D⌘+D is
+   used to select the next occurrence of the current word. Once created,
+   each selection allows for full-featured editing.
+   Quickly jump to files and functions with Goto Anything Here Ctrl+P⌘+P
+   is used to open the Goto Anything menu, xcc is used to select the file
+   xla_compilation_cache.cc, @ switches to symbol mode, and :c selects the
+   XlaCompilationCache::Compile method.
+   Navigate source using Goto Definition Here the mouse is hovered over a
+   symbol to jump to the definition. The keyboard shortcut F12 can be used
+   when the caret is located on a symbol, or Goto Symbol in Project can be
+   opened via Ctrl+Shift+R⇧+⌘+R to jump to the definition of any symbol in
+   the project.
+   Unsurpassed performance Here a 7MB source code file is opened, and Goto
+   Symbol Ctrl+R⌘+R is used to jump to a function 200k lines down. Full
+   editing features are retained for code in large files, or with complex
+   syntax.
+
+Some features our users love:
+
+Goto Anything
+
+   Use Goto Anything to open files with only a few keystrokes, and
+   instantly jump to symbols, lines or words.
+
+   Triggered with Ctrl+P⌘+P, it is possible to:
+     * Type part of a file name to open it.
+     * Type @ to jump to symbols, # to search within the file, and : to go
+       to a line number.
+
+   These shortcuts can be combined, so tp@rf may take you to a function
+   read_file within a file text_parser.py. Similarly, tp:100 would take
+   you to line 100 of the same file.
+
+Goto Definition
+
+   Using information from syntax definitions, Sublime Text automatically
+   generates a project-wide index of every class, method and function.
+   This index powers Goto Definition, which is exposed in three different
+   ways:
+     * A popup is displayed when hovering over a symbol
+     * Pressing F12 when the caret is on a symbol
+     * The Goto Symbol in Project functionality
+
+   Symbol indexing can be customized on a per-syntax basis via
+   configuration files, allowing users to tailor the feature to their
+   needs.
+
+Multiple Selections
+
+   Make ten changes at the same time, not one change ten times. Multiple
+   selections allow you to interactively change many lines at once, rename
+   variables with ease, and manipulate files faster than ever.
+
+   Try pressing Ctrl+Shift+L⇧+⌘+L to split the selection into lines and
+   Ctrl+D⌘+D to select the next occurrence of the selected word. To make
+   multiple selections with the mouse, take a look at the Column Selection
+   documentation.
+
+Command Palette
+
+   The Command Palette holds infrequently used functionality, like
+   sorting, changing the syntax and changing the indentation settings.
+   With just a few keystrokes, you can search for what you want, without
+   ever having to navigate through the menus or remember obscure key
+   bindings.
+
+   Show the Command Palette with Ctrl+Shift+P⇧+⌘+P.
+
+Powerful API and Package Ecosystem
+
+   Sublime Text has a powerful, Python API that allows plugins to augment
+   built-in functionality.
+
+   Package Control can be installed via the command palette, providing
+   simple access to thousands of packages built by the community.
+
+Customize Anything
+
+   Key bindings, menus, snippets, macros, completions and more - just
+   about everything in Sublime Text is customizable with simple JSON
+   files. This system gives you flexibility as settings can be specified
+   on a per-file type and per-project basis.
+
+Split Editing
+
+   Get the most out of your wide screen monitor with split editing
+   support. Edit files side by side, or edit two locations in the one
+   file. You can edit with as many rows and columns as you wish. Take
+   advantage of multiple monitors by editing with multiple windows, and
+   using multiple splits in each window.
+
+   Take a look at the View ▶ Layout menu for split editing options. To
+   open multiple views into the one file, use the File ▶ New View into
+   File menu item.
+
+Instant Project Switch
+
+   Projects in Sublime Text capture the full contents of the workspace,
+   including modified and unsaved files. You can switch between projects
+   in a manner similar to Goto Anything, and the switch is instant, with
+   no save prompts - all your modifications will be restored next time the
+   project is opened.
+
+Performance
+
+   Sublime Text is built from custom components, providing for unmatched
+   responsiveness. From a powerful, custom cross-platform UI toolkit, to
+   an unmatched syntax highlighting engine, Sublime Text sets the bar for
+   performance.
+
+Cross Platform
+
+   Sublime Text is available for Mac, Windows and Linux. One license is
+   all you need to use Sublime Text on every computer you own, no matter
+   what operating system it uses.
+
+   Sublime Text uses a custom UI toolkit, optimized for speed and beauty,
+   while taking advantage of native functionality on each platform.
+
+Sublime HQ Family
+
+Sublime Merge
+
+   Have you seen our sister product, Sublime Merge? It's a Git Client,
+   done the Sublime Text way.
+
+   © Sublime HQ Pty Ltd
+
+   Woollahra, Sydney.
+    http://www.sublimetext.com/blog Sublime Text News Tue, 2 May 2019
+   01:00:00 +0000 en hourly 1
+   https://www.sublimetext.com/blog/articles/use-mmap-with-care Tue, 2 May
+   2019 01:00:00 +0000 Benjamin Schaaf <p>When we implemented the git
+   portion of <a href="https://sublimemerge.com">Sublime Merge</a>, we
+   chose to use <code>mmap</code> for reading git object files. This
+   turned out to be considerably more difficult than we had first thought.
+   Using <code>mmap</code> in desktop applications has some serious
+   caveats, and here's why:</p> <p><i>You can follow along with <a
+   href="https://github.com/sublimehq/mmap-example" target="_blank">the
+   example project here.</a></i></p> <p>Say you were reading some binary
+   format, data you need throughout some application. You take the easiest
+   approach and use a simple <code>read</code> to get the full contents of
+   the file. You release your software and someone comes along and says:
+   "I need to parse this 3GB file, but I only have 2GB of memory. Could
+   you make it so that you're not using so much memory?". Of course you
+   want to help them, so you do some searching and come to the conclusion
+   that memory mapping is the perfect solution to this problem.</p>
+   <p>Memory mapped files work by mapping the full file into a virtual
+   address space and then using page faults to determine which chunks to
+   load into physical memory. In essence it allows you to access the file
+   as if you had read the whole thing into memory, without actually doing
+   so. Crucially it requires only a small change to the codebase:</p> <img
+   src="/screenshots/use_mmap_with_care/1.png"> <p>And with that, you've
+   fixed the memory usage issue. You've fixed the bug, people are happy
+   and all is well until you get another support ticket. Your program is
+   crashing with a SIGBUS.</p> <h2>Caveat 1: SIGBUS</h2> <p>SIGBUS (bus
+   error) is a signal that happens when you try to access memory that has
+   not been physically mapped. This is different to a SIGSEGV
+   (segmentation fault) in that a segfault happens when an address is
+   invalid, while a bus error means the address is valid but we failed to
+   read/write.</p> <p>As it turns out, the ticket comes from someone using
+   a networked drive. Their network happened to disconnect while your
+   memory mapped file was open, and since the file no longer existed the
+   OS couldn't load it into ram for you and gave you a SIGBUS instead.</p>
+   <p>Because the OS is loading the file on demand, you now have this
+   wonderful issue where any arbitrary read from an address into the
+   memory mapped file can and <em>will</em> fail at some point.</p>
+   <p>Luckily on POSIX systems we have signal handlers, and SIGBUS is a
+   signal we can handle. All you need to do is register a signal handler
+   for SIGBUS when the program starts and jump back to our code to handle
+   failures there.</p> <img src="/screenshots/use_mmap_with_care/2.png">
+   <p>Sadly our code actually has some edge cases we should consider:</p>
+   <p>Signal handlers are global, but signals themselves are per-thread.
+   So you need to make sure you're not messing with any other threads by
+   making all our data thread local. Let's also add some robustness by
+   making sure we've called <code>setjmp</code> before
+   <code>longjmp</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/3.png"> <p>Using
+   <code>setjmp</code> and <code>longjmp</code>ing from a signal handler
+   is actually unsafe. It seems to cause undefined behaviour, especially
+   on MacOS. Instead we must use <code>sigsetjmp</code> and
+   <code>siglongjmp</code>. Since we're jumping out of a signal handler,
+   we need that signal handler to not block any future signals, so we must
+   also pass <code>SA_NODEFER</code> to <code>sigaction</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/4.png"> <p>This is starting to get
+   quite complicated, especially if you were to have multiple places where
+   a SIGBUS could happen. Let's factor things out into functions to make
+   the logic a little cleaner.</p> <img
+   src="/screenshots/use_mmap_with_care/5.png"> <p>There, now you just
+   need to remember to always call <code>install_signal_handlers</code>
+   for every application, and wrap all <code>file</code> accesses with
+   <code>safe_mmap_try</code>. Annoying, but manageable. So now you've
+   covered POSIX systems, but what about Windows?</p> <h2>Caveat 2:
+   Windows</h2> <p>Windows doesn't have <code>mmap</code>, but it does
+   have <code>MapViewOfFile</code>. Both of these implement memory mapped
+   files, but there's one important difference: Windows keeps a lock on
+   the file, not allowing it to be deleted. Even with the Windows flag
+   <code>FILE_SHARE_DELETE</code> deletion does not work. This is an issue
+   when we expect another application to delete files from under us, such
+   as git garbage collection.</p> <p>One way around this with the windows
+   API is to essentially disable the system file cache entirely, which
+   just makes everything absurdly slow. The way <a
+   href="https://sublimemerge.com">Sublime Merge</a> handles this is by
+   releasing the memory mapped file on idle. Its not a pretty solution,
+   but it works.</p> <p>Windows also does not have a SIGBUS signal, but
+   you can trivially use structured exception handling in
+   <code>safe_mmap_try</code> instead:</p> <img
+   src="/screenshots/use_mmap_with_care/6.png"> <p>Now all is well, your
+   application functions on Windows. But then you decide that you would
+   like some crash reporting, to make it easier to identify issues in the
+   future. So you add <a
+   href="https://chromium.googlesource.com/breakpad/breakpad">Google
+   Breakpad</a>, but unbeknownst to you you've just broken Linux and MacOS
+   again�</p> <h2>Caveat 3: 3rd Parties</h2> <p>The problem with using
+   signal handlers is that they're global, across threads and libraries.
+   If you have or have added a library like Breakpad that uses signals
+   internally you're going to break your previously safe memory
+   mapping.</p> <p>Breakpad registers signal handlers at initialization
+   time on Linux, including one for SIGBUS. These signal handlers override
+   each other, so installation order is important. There is not a nice
+   solution to these types of situations: You can't simply set and reset
+   the signal handler in <code>safe_mmap_try</code> as that would break
+   multithreaded applications. At Sublime HQ our solution was to turn an
+   unhandled SIGBUS in our signal handler into a SIGSEGV. Not particularly
+   elegant but it's a reasonable compromise.</p> <p>On MacOS things get a
+   little more complicated. XNU, the MacOS kernel, is based on Mach, one
+   of the earliest microkernels. Instead of signals, Mach has an
+   asynchronous, message based exception handling mechanism. For
+   compatibility reasons signals are also supported, with Mach exceptions
+   taking priority. If a library such as Breakpad registers for Mach
+   exception messages, and handles those, it will prevent signals from
+   being fired. This is of course at odds with our signal handling. The
+   only workaround we've found so far involves patching Breakpad to not
+   handle SIGBUS.</p> <p>3rd party libraries are a problem because signals
+   are global state accessible from everywhere. The only available
+   solutions to this are unsatisfying workarounds.</p> <h2>Caveat 4: 32bit
+   Support</h2> <p>Memory mapping may not use physical memory, but it does
+   require virtual address space. On 32bit platforms your address space is
+   ~4GB. So while your application may not use 4GB of memory, it will run
+   out of address space if you try to memory map a too large file. This
+   has the same result as being out of memory.</p> <p>Sadly this doesn't
+   have a workaround like the other issues, it is a hard limitation of how
+   memory mapping works. You can now either rewrite the codebase to not
+   memory map the whole file, live with crashes on 32bit systems or not
+   support 32bit.</p> <p>With <a href="https://sublimemerge.com">Sublime
+   Merge</a> and <a
+   href="https://www.sublimetext.com/blog/articles/sublime-text-3-point-2"
+   >Sublime Text 3.2</a> we took the "no 32bit support" route. <a
+   href="https://sublimemerge.com">Sublime Merge</a> does not have a 32bit
+   build available and Sublime Text disables git integration on 32bit
+   versions.</p> <h2>An Alternative</h2> <p>I mentioned before that you
+   can rewrite your code to not use memory mapping. Instead of passing
+   around a long lived pointer into a memory mapped file all around the
+   codebase, you can use functions such as <code>pread</code> to copy only
+   the portions of the file that you require into memory. This is less
+   elegant initially than using <code>mmap</code>, but it avoids all the
+   problems you're otherwise going to have.</p> <p>Through some quick
+   benchmarks for the way <a href="https://sublimemerge.com">Sublime
+   Merge</a> reads git object files, <code>pread</code> was around � as
+   fast as <code>mmap</code> on linux. In hindsight it's difficult to
+   justify using <code>mmap</code> over <code>pread</code>, but now the
+   beast has been tamed and there's little reason to change any more.</p>
+   <p>If you think we've missed something or made a mistake, please leave
+   us a message on the forums. We hope this helps some of you in your
+   future endeavours. If you haven't already, check out our git client <a
+   href="https://sublimemerge.com">Sublime Merge</a>.</p>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-2 Wed,
+   13 Mar 2019 14:00:00 +1000 Will Bond <style> img.screenshot-32 { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-32 { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p>The past year has been busy here at Sublime HQ.
+   We've grown our engineering team, shipped Sublime Text 3.1 and released
+   our second product, <a href="https://www.sublimemerge.com">Sublime
+   Merge</a>. <em>If you use Git and like the ethos of Sublime Text, we
+   think you'll love it.</em></p> <p>Today we're pushing out Sublime Text
+   3.2, which builds off of a bunch of work we've done in Sublime Merge.
+   This includes: first-class <a href="/docs/3/git_integration.html">Git
+   integration</a>, <a href="/docs/3/incremental_diff.html">incremental
+   diffing</a>, new theme functionality and block caret support. Beyond
+   that is a slew of other enhancements, stability improvements and
+   performance gains. See the full changelog below for details.</p>
+   <p>Sublime Text 3.2 is available from the <a href="/3">Download</a>
+   page.</p> <img src="/screenshots/3.2/git_diff.png"
+   class="screenshot-32"> <p class="caption-32">Git status badges in the
+   side bar and incremental diff markers in the gutter</p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_32_ss() { var
+   ss = document.getElementsByClassName("screenshot-32"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_32_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_32_ss() }) } </script>
+   <h2>Changelog</h2> <article class="changelog"> <h3>Git Integration
+   <span class="new">New!</span></h3> <ul class="topic"> <li>Files and
+   folders in the sidebar will now display badges to indicate Git
+   status</li> <li>Ignored files and folders are visually
+   de-emphasized</li> <li>The current Git branch and number of
+   modifications is displayed in the status bar</li> <li>Commands have
+   been added to open a repository, see file or folder history, or blame a
+   file in <a href="https://www.sublimemerge.com">Sublime Merge</a></li>
+   <li>Themes may customize the display of sidebar badges and status bar
+   information</li> <li>The setting <tt>show_git_status</tt> allows
+   disabling Git integration</li> <li>All file reads are done through a
+   custom, high-performance Git library written for <a
+   href="https://www.sublimemerge.com">Sublime Merge</a></li> <li><a
+   href="/docs/3/git_integration.html">Read the documentation</a></li>
+   </ul> <h3>Incremental Diff <span class="new">New!</span></h3> <ul
+   class="topic"> <li>All changes to a document are now represented by
+   dedicated markers in the gutter</li> <li>Diff markers show added,
+   modified and deleted lines</li> <li>The setting <span
+   class="setting">mini_diff</span> controls incremental diff
+   behavior</li> <li>In coordination with the new Git functionality, diffs
+   can be calculated against HEAD or the index</li> <li>The <span
+   class="setting">git_diff_target</span> setting controls base document
+   source</li> <li>API methods <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> allow controlling the
+   diff</li> <li> The following diff-related commands were added: <ul>
+   <li>Next Modification</li> <li>Previous Modification</li> <li>Revert
+   Modification</li> </ul> </li> <li>Full inline diffs of each change can
+   be displayed via the right-click context menu, or keyboard
+   shortcuts</li> <li>Inline diff presentation can be changed by
+   customizing a color scheme</li> <li><a
+   href="/docs/3/incremental_diff.html">Read the documentation</a></li>
+   </ul> <h3>Editor Control</h3> <ul class="topic"> <li>Added <span
+   class="setting">block_caret</span> setting</li> <li>Improve positioning
+   and sizing of gutter icons in some situations</li> <li>Fixed <span
+   class="setting">draw_minimap_border</span> setting not working</li>
+   <li>Linux: Improved input method (IM) support - fcitx, ibus, etc</li>
+   <li>Linux: Fixed a crash when using <tt>GTK_IM_MODULE=xim</tt></li>
+   <li>Linux: Tweaked behavior of up/down when on the first and last lines
+   of a file to better match platform conventions</li> <li>Windows:
+   Improved IME support</li> </ul> <h3>Themes/UI</h3> <ul class="topic">
+   <li> Enhanced the <span class="file">.sublime-theme</span> format: <ul>
+   <li>Added variables support and associated revised JSON format with
+   <tt>variables</tt> key</li> <li>Added <tt>extends</tt> keyword to have
+   one theme derive from another</li> <li>Colors may be specified via CSS
+   syntax</li> </ul> </li> <li>Improved performance with large numbers of
+   rules in a <span class="file">.sublime-theme</span></li> <li>Linux:
+   Moved to GTK3</li> <li>Linux: Various high DPI fixes</li> <li>Mac:
+   Added Mojave support</li> <li>Mac: Add full support for macOS native
+   tabs</li> <li>Mac: Ensure context menus are shown without
+   scrolling</li> <li>Mac: Error message dialogs can now be closed with
+   the escape key</li> <li>Mac: Improved window placement</li> <li>Mac:
+   Improved resize performance</li> <li>Windows: Fixed minimized and
+   maximized state not restoring</li> <li>Windows: Fixed a bug where auto
+   complete entries would contain an ellipsis when not required</li> </ul>
+   <h3>Text Rendering</h3> <ul class="topic"> <li>Support for Unicode
+   11.0</li> <li>Improved rendering of combining characters</li> <li>Fixed
+   a caret positioning bug when non-trivial graphemes are present</li>
+   <li>Fixed some cases of incorrect glyph positions on Windows and
+   Mac</li> <li>Linux: Color glyphs are now drawn properly on light
+   backgrounds</li> <li>Windows: Fixed a rendering issue with certain
+   combining characters</li> <li>Windows: Fixed some fonts having an
+   incorrect baseline</li> </ul> <h3>Color Schemes</h3> <ul class="topic">
+   <li>Added <tt>block_caret</tt> key to use in conjunction with block
+   carets</li> <li><tt>caret</tt> values now respect alpha as expected,
+   rather than pre-blending against the background color</li> <li>Added
+   the <tt>foreground_adjust</tt> property to rules with a
+   <tt>background</tt>. Accepts CSS color mod adjusters to manipulate the
+   saturation, lightness or opacity of the foreground color.</li> </ul>
+   <h3>Syntax Highlighting</h3> <ul class="topic"> <li>Many syntax
+   highlighting improvements, including significant improvements to: <ul>
+   <li><i>Clojure</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>D</i></li> <li><i>Go</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>Lua</i>, with thanks to <a
+   href="https://github.com/Thom1729">Thomas Smith</a></li> </ul> </li>
+   <li>Fixed a crash that could occur when nesting embed patterns in <span
+   class="file">.sublime-syntax</span> files</li> <li>Syntax Tests: Allow
+   syntax test files to have a UTF-8 BOM</li> </ul> <h3>Files and
+   Folders</h3> <ul class="topic"> <li>Improve performance of file
+   watching for ignored paths on Windows and Mac</li> <li>Windows: Fixed
+   Open File treating paths as case-sensitive</li> <li>Windows: Properly
+   unlock directories after contained files are closed</li> </ul>
+   <h3>API</h3> <ul class="topic"> <li>Added
+   <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> to control diff
+   generation</li> <li>Phantoms are now drawn correctly in conjunction
+   with <span class="setting">draw_centered</span></li> <li>Various minor
+   improvements related to plugin module loading and unloading</li>
+   <li>Added support for <tt>hwb()</tt> colors to minihtml</li> <li>Added
+   a custom <tt>min-contrast()</tt> adjuster for the CSS color mod
+   function in minihtml</li> <li>Mac: Fixed a <tt>plugin_host</tt> crash
+   when running a process that itself crashes</li> </ul>
+   <h3>Miscellaneous</h3> <ul class="topic"> <li>Fixed a <i>Goto Symbol in
+   Project</i> performance regression</li> <li>F21..F24 keys can now be
+   bound</li> <li>Assorted minor fixes and stability improvements</li>
+   <li>Linux: Improved behavior of <tt>--wait</tt> command line argument
+   when Sublime Text isn't currently running</li> </ul> </article>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1107 Tue,
+   12 Mar 2019 20:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">Subli
+   me Merge</a>, our Git Client and Merge Tool, is out now with
+   improvements to the Merge Tool, Tree viewing, and Clone dialog. See the
+   <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">full
+   post</a> for more details.</p> <p>Sublime Text 3.2 will be coming very
+   soon now, featuring Git integration and more.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1092 Wed,
+   29 Nov 2018 20:00:00 +1000 Jon Skinner <p>Sublime HQ's Git Client, <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">Subli
+   me Merge</a>, is out now with Interactive Rebase, a new Contents View,
+   and Word Wrap - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-documentation
+   Mon, 05 Nov 2018 02:00:00 -0500 Will Bond <p> While we continue to add
+   more features and polish to the default Sublime Merge experience, we
+   know that developers love the ability to tweak their tools. Sublime
+   Merge is built on the same foundation as Sublime Text, so you can tweak
+   key bindings, menus, command palette entries, and even the look and
+   feel of the UI. </p> <p> To assist, we�ve just rolled out a number of <a
+   href="https://www.sublimemerge.com/docs/">pages of documentation</a>
+   for users who wish to customize Sublime Merge to look and function a
+   little differently. In addition, we�ve added a <a
+   href="https://www.sublimetext.com/docs/3/dev/">new documentation
+   section</a> for the <a href="https://www.sublimetext.com/3dev">dev
+   builds of Sublime Text</a>. It covers all of the features we added
+   during the development of Sublime Merge. </p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1070 Wed,
+   10 Oct 2018 19:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/download">Sublime Merge Build
+   1070</a> is out now with Commit Folding - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1070">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-roadmap Tue, 2
+   Oct 2018 10:00:00 +1000 Jon Skinner <p>Just a quick post about what
+   we're going to be adding to <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>. This isn't a
+   comprehensive list, but it should give an indication of what we're
+   focusing on right now.</p> <ul> <li><b>Branch Visualization</b>.
+   Sublime Merge itself handles large repositories well, but there's more
+   the UI could do to help users with a lot of branches on the go. We've
+   got some nice things cooking for this that will be coming in the near
+   future. Stay tuned!</li> <li><b>Submodule Management</b>. Sublime Merge
+   understands submodules, but doesn't provide any UI for managing them.
+   We'll be changing that soon.</li> <li><b>Tabs</b>. Tabs have been
+   frequently requested by users working on several repositories at once.
+   The <i>Switch Repository</i> functionality (under the <i>File</i> menu)
+   helps with this, but tabs have their own benefits, so they're on their
+   way.</li> <li><b>Git Flow Integration</b>. Git Flow is a branching
+   strategy with an accompanying set of command line tools. We've had a
+   lot of requests for UI support here, so it'll be making it in too.</li>
+   <li><b>Interactive Rebase</b>. Sublime Merge currently supports editing
+   commit messages and squashing commits (available from the commit
+   context menu). We'll be adding extra commit wrangling functionality,
+   including reordering commits, moving commits between branches, and
+   amending arbitrary commits.</li> <li><b>Plugins</b>. Sublime Text style
+   plugins are on our radar. This isn't at the top of the list, but
+   they're coming.</li> </ul> <p>We'll also be getting a new Sublime Text
+   Dev Build out this week, rolling in all the updates from Sublime Merge,
+   including the updated theming system and Mojave support.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge Mon, 20 Sep
+   2018 10:00:00 +0000 Jon Skinner <style> img.screenshot-sm { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-sm { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p><i>(You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a> from <a
+   href="https://www.sublimemerge.com/download">https://www.sublimemerge.c
+   om/download</a>)</i></p> <p> There's a company that makes photography
+   accessories, called Really Right Stuff. They make lovely equipment, but
+   what I really like is the name. It embodies the idea of building
+   something that goes beyond the minimum: making it as good as it can be,
+   paying attention to the details, and getting it really right. </p> <p>
+   When it comes to software, getting it really right goes beyond
+   functionality. The feel, aesthetics, and performance all have to be
+   there. </p> <p> There's a real pleasure using software that gets it
+   really right, as a lot of the time, it doesn't. We're all too familiar
+   with clunky layouts, unresponsive buttons, choppy scrolling, tedious
+   splash screens, and flickering on every interaction. </p> <p> After
+   typing <tt>git add -p</tt> in the terminal one too many times, I
+   thought to myself: we've got some pretty great tech in Sublime Text.
+   What if we used it to build a Git client? Could we make it fast? Could
+   we make it buttery smooth, without flickering or blocking? Could we
+   make something that's really, really right? </p> <p> Today, I'd like to
+   introduce <a href="https://www.sublimemerge.com">Sublime Merge</a>. It
+   combines the UI engine of Sublime Text, with a from-scratch
+   implementation of Git*. The result is, to us at least, something pretty
+   special. <a href="https://www.sublimemerge.com"><img
+   src="/screenshots/merge/staging.png" width="600" height="291"
+   class="screenshot-sm"></a> <p class="caption-sm">Sublime Merge - Commit
+   Dialog</p> </p> <p> You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>, and try it for
+   yourself - there's no time limit, no accounts, no metrics, and no
+   tracking. The evaluation version is fully functional, but is restricted
+   to the light theme only. Individual purchases are buy once, use
+   forever, with 3 years of updates included in the purchase. Business
+   licenses are available on a subscription basis. Sublime Merge runs on
+   Windows, Mac and Linux. </p> <p> It's still early days for Sublime
+   Merge - it has only been used by us and our small team of beta testers
+   so far. We'd love to hear what you think. We'll be on the <a
+   href="https://forum.sublimetext.com/">Forums</a> listening to any
+   feedback - let us know how you get on with it! </p> <br> <p><small> *
+   We have a custom implementation of Git for reading repositories, which
+   drives a lot of our high performance functionality. However we defer to
+   Git itself for operations that mutate the repository (Staging,
+   Committing, Checking out branches, etc). </small></p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_sm_ss() { var
+   ss = document.getElementsByClassName("screenshot-sm"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_sm_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_sm_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-1 Mon, 7
+   May 2018 10:00:00 +0000 Will Bond and Jon Skinner <p>Since version 3.0
+   we've been shipping frequent <a href="/3dev">dev builds</a>, refining
+   Sublime Text for a more polished experience all-around. Those dev
+   builds are now rolling out to everyone as Sublime Text 3.1. The <a
+   href="/3">full changelog for 3.1</a> includes every detail, but the
+   following are some we'd like to highlight: </p> <style> img.screenshot
+   { width: 600px; margin: 1em 0 0; display: block; filter:
+   drop-shadow(3px 3px 5px #9998); } p.caption { margin-top: 0.5em; color:
+   #999; font-style: italic; } </style> <h4>UI</h4> <ul class="topic">
+   <li>Windows 10/8.1 per-monitor DPI settings for handling mixed monitor
+   configurations and on-the-fly DPI switching</li> <li>Lots of
+   improvements for high DPI support on all platforms, including 8k
+   monitor and @3x texture support</li> </ul> <h4>Text Rendering</h4> <ul
+   class="topic"> <li> Ligature support, with controls for customizing
+   OpenType features and stylistic sets <img
+   src="/screenshots/3.1/ligatures.png" class="screenshot"> <p
+   class="caption">An example of ligatures with Fira Code</p> </li>
+   <li>Improved text rendering on Windows, now respecting ClearType
+   tuning</li> <li>Better handling of emojis in the editor control
+   &nbsp;�</li> </ul> <h4>Color Schemes</h4> <ul class="topic"> <li> A new
+   color scheme format based on JSON, with easier customization and new
+   features like <a
+   href="/docs/3/color_schemes.html#hashed_syntax_highlighting">hashed
+   syntax highlighting</a> <img
+   src="/screenshots/3.1/hashed_highlighting.png" class="screenshot"> <p
+   class="caption">Hashed syntax highlighting with the Celeste color
+   scheme</p> </li> <li>Improved selection rendering with <a
+   href="/docs/3/color_schemes.html#global_settings-selection">expanded
+   customization</a> via color schemes</li> </ul> <h4>Syntax
+   Definitions</h4> <ul class="topic"> <li>Syntax definitions for Git file
+   formats to allow Sublime Text to be a better <tt>core.editor</tt></li>
+   <li> Highlighting of fenced code blocks in Markdown <img
+   src="/screenshots/3.1/markdown.png" class="screenshot"> <p
+   class="caption">Python highlighted in a fenced code block</p> </li>
+   <li>Lots of TC39-track features have been added to the JavaScript
+   syntax</li> </ul> <h4>User Interaction</h4> <ul class="topic"> <li>
+   Goto References to augment Goto Definition <img
+   src="/screenshots/3.1/goto_references.png" class="screenshot"> <p
+   class="caption">Goto References shown in the symbol popup</p> </li>
+   <li>An improved Command Palette that can accept arbitrary user input
+   and complex interactions</li> </ul> <h4>File System</h4> <ul
+   class="topic"> <li>Expanded options for filtering files and folders
+   from the sidebar</li> <li>Improved handling of filesystem notifications
+   and symlinks</li> </ul> <h4>Performance</h4> <ul class="topic">
+   <li>Significantly improved memory usage - up to 30% in some cases</li>
+   <li>Lots of little performance improvements and bug fixes</li> </ul>
+   <h4>More!</h4> <ul class="topic"> <li>See the <a
+   href="/3">changelog</a> for the full list</li> </ul> <p>Many of these
+   changes were developed in response to the community's feedback, and in
+   some cases with your help! As may be evident, this dev cycle spent a
+   good amount of time polishing some foundational elements of the editor
+   and making it more robust for use on different configurations and for
+   different purposes. <p>We've got some exciting things planned for the
+   future, which will further build upon the foundation we've laid with
+   3.0 and 3.1! If you want to preview the latest changes and help provide
+   feedback during the next dev cycle, install the latest <a
+   href="/3dev">dev build</a> and you'll get notifications as we release
+   new updates. <script> if (!window.res) { scale = 1 res = function() {
+   scale = window.devicePixelRatio >= 1.3 && document.body.clientWidth >
+   1024 ? 2 : 1 return scale == 2 ? '@2x' : '' } } function
+   high_dpi_31_ss() { var ss =
+   document.getElementsByClassName("screenshot"); for(var i = 0; i <
+   ss.length; i++) { console.log(ss.item(i)) ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_31_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_31_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/the-adaptive-theme Fri, 06
+   Oct 2017 06:00:00 +0000 Will Bond <p>With the release of Sublime Text
+   3.0, we refreshed the visual design for the application, icon, and
+   website. The new icon ties into the colors and shapes of the old, but
+   is more abstract and fits well with other modern applications. The
+   updated Default theme is still distinctly Sublime Text, but has full
+   high DPI support, and works well with both dark and light color
+   schemes. The three new color schemes take advantage of the work that
+   has gone into modernizing and enhancing the syntax definitions included
+   with Sublime Text.</p> <table style="margin: 20px 0;"> <tr> <th
+   style="color: #777; font-style: italic; padding: 0 20px 12px 0;
+   line-height: 1.2"> <b>Sublime Text 3 Build 3126</b><br> <span
+   style="font-size: 0.9em">(Old) Default theme, IDLE color scheme</span>
+   </th> <th style="color: #777; font-style: italic; line-height: 1.2">
+   <b>Sublime Text 3.0</b><br> <span style="font-size: 0.9em">(New)
+   Default theme, Sixteen color scheme</span> </th> </tr> <tr> <td
+   style="padding-right: 30px;"> <img
+   src="/screenshots/the_adaptive_theme/3126_default_idle.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> <td> <img
+   src="/screenshots/the_adaptive_theme/3143_default_sixteen.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> </tr>
+   </table> <p>As well as an overhaul of the default theme, we've also
+   include a new theme, Adaptive, which uses the colors of your color
+   scheme and applies variations of them to the side bar and various
+   panels. The new color scheme setting <code>accent</code> is used to
+   highlight selected options in the find panel, and to highlight modified
+   tabs. Furthermore, on recent versions of macOS the title bar is also
+   styled by the Adaptive theme to follow your selected color scheme.</p>
+   <p>The result is a theme that acts as if it was custom designed for
+   your color scheme. Check out this sample of Adaptive in action:</p>
+   <script> var width = 800 var height = 400 if (!window.byid) { plat =
+   'osx' arch = '64' scale = 1 byid = function(x) { return
+   document.getElementById(x) } res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } </script> <div id="anim_shell">
+   <div id="anim_container"> <canvas id="target" style="width: 800px;
+   height: 400px"></canvas> <div id="fallback" style="width: 800px;
+   height: 400px; position: relative; display: none"></div> <div
+   id="title-overlay" class="show"><div></div></div> </div> </div>
+   <script> var images = [] var target = byid('target') var use_canvas =
+   target && target.getContext if (!use_canvas) {
+   byid('target').style.display = 'none' target = byid('fallback')
+   target.style.display = 'block' } function load_animation() { var script
+   = byid('anim_script') if (script) script.parentNode.removeChild(script)
+   script = document.createElement('script') script.setAttribute('src',
+   '/screencasts/adaptive' + res() + '.js') script.setAttribute('id',
+   'anim_script') document.body.appendChild(script) if (use_canvas) {
+   target.width = scale * width target.height = scale * height } }
+   load_animation() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { load_animation() }) } function
+   handle_resize(e) { target.style.height = Math.floor(target.clientWidth
+   / width * height) + 'px' } handle_resize() if (window.addEventListener)
+   window.addEventListener('resize', handle_resize, false) else if
+   (window.attachEvent) window.attachEvent('onresize', handle_resize) var
+   continuation = null var start_time = null var remaining_time = 0 var
+   timer = null function set_timeout(f, timeout) { start_time = new
+   Date().getTime() remaining_time = timeout continuation = f timer =
+   window.setTimeout(f, timeout) } // Only run a callback once an
+   animation frame is available, allowing // the animation to be paused
+   when in the background, etc function sync_frame(f) { if
+   (!window.requestAnimationFrame) f() else
+   window.requestAnimationFrame(f) } // Run a timeout synced to the
+   animation frame function sync_timeout(f, timeout) {
+   set_timeout(function() { sync_frame(f) }, timeout) } function
+   pause_timeout() { var elapsed = (new Date().getTime()) - start_time
+   remaining_time = Math.max(remaining_time - elapsed, 0)
+   window.clearTimeout(timer) } function continue_timeout() { start_time =
+   new Date().getTime() timer = window.setTimeout(continuation,
+   remaining_time) } function play() { continue_timeout() } function
+   pause() { pause_timeout() } var delay_scale = 1.0 var overlay =
+   byid('title-overlay') function display_error() {
+   window.clearTimeout(timer) continuation = null if (use_canvas) { var
+   ctx = target.getContext('2d') ctx.clearRect(0, 0, target.width,
+   target.height) } else { target.innerHTML = '' }
+   overlay.getElementsByTagName('div')[0].innerHTML = '<i>Error loading
+   screencast</i>'; overlay.className = 'show' } function transition() {
+   if (timer) window.clearTimeout(timer) sync_frame(function() { var
+   img_url = animation_urls[0] var timeline = animation_timelines[0] var
+   img = prep_animation(img_url, timeline, null) sync_timeout(function() {
+   animate(img, timeline, target, 0) }, 2400) }) } function
+   draw_canvas(img, element, frame, blits) { var ctx =
+   element.getContext('2d') for (j = 0; j < blits.length; ++j) { var blit
+   = blits[j] var sx = blit[0] var sy = blit[1] var w = blit[2] var h =
+   blit[3] var dx = blit[4] var dy = blit[5] ctx.drawImage(img, sx, sy, w,
+   h, dx, dy, w, h) } } function draw_fallback(img, element, frame, blits)
+   { if (frame == 0) { while (element.hasChildNodes())
+   element.removeChild(element.lastChild) } for (j = 0; j < blits.length;
+   ++j) { var blit = blits[j] var sx = blit[0] / scale var sy = blit[1] /
+   scale var w = blit[2] / scale var h = blit[3] / scale var dx = blit[4]
+   / scale var dy = blit[5] / scale var d = document.createElement('div')
+   d.style.position = 'absolute' d.style.left = dx + "px" d.style.top = dy
+   + "px" d.style.width = w + "px" d.style.height = h + "px"
+   d.style.backgroundImage = "url('" + img.src + "')"
+   d.style.backgroundPosition = "-" + sx + "px -" + sy + "px"
+   d.style.backgroundSize = width + "px auto" element.appendChild(d) } }
+   function draw(img, element, frame, blits) { if (use_canvas)
+   draw_canvas(img, element, frame, blits) else draw_fallback(img,
+   element, frame, blits) } function animate(img, timeline, element,
+   start_frame) { var i = start_frame; var f = function() { var frame =
+   i++ % timeline.length var delay = timeline[frame].delay * delay_scale
+   var blits = timeline[frame].blit draw(img, element, frame, blits) var
+   callback = f sync_timeout(callback, delay) } if (timer)
+   window.clearTimeout(timer) sync_frame(f) } function
+   prep_animation(img_url, timeline, preload_url) { var ready = function()
+   { overlay.className = '' sync_frame(function() { draw(images[img_url],
+   target, 0, timeline[0].blit) }) if (preload_url && !(preload_url in
+   images)) { images[preload_url] = new Image() images[preload_url].src =
+   preload_url } } if (img_url in images) { ready() } else {
+   images[img_url] = new Image() images[img_url].onload = ready
+   images[img_url].onerror = function() { delete images[img_url]
+   display_error() } images[img_url].src = img_url } return
+   images[img_url] } </script> <p>To try Adaptive out for yourself, open
+   the <span class="feature">Command Palette</span> and type <kbd>Select
+   Theme</kbd>. Once you've picked <em>Adaptive</em>, use the <kbd>Select
+   Color Scheme</kbd> command to preview the available color schemes.</p>
+   <p>Probably the best part is that all of the power of the Adaptive
+   theme is available for any theme to use. Additionally, we wrote up <a
+   href="/docs/3/themes.html">full documentation</a> about all of the
+   theme engine features and syntax. Having comprehensive documentation
+   will hopefully make theming accessible to a much wider audience. If you
+   are looking for help in customizing a theme, or creating your own, drop
+   by the <a href="https://forum.sublimetext.com/">forum</a> or ask some
+   questions on the <a href="https://discord.gg/HcmwdVK">Discord
+   server</a>.</p>
+   #RSS 2.0
+
+   Sublime Text
+
+   Download Buy Support News Forum
+
+   Introducing our Git client
+   [merge_icon.svg] Sublime Merge [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+   A sophisticated text editor for
+   code, markup and prose
+   Download for Windows Download for Windows Install for Linux Download
+   for Mac
+   Sublime Text 3 (Build 3211)
+   Changelog
+
+   [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+
+   Use Multiple Selections to rename variables quickly Here Ctrl+D⌘+D is
+   used to select the next occurrence of the current word. Once created,
+   each selection allows for full-featured editing.
+   Quickly jump to files and functions with Goto Anything Here Ctrl+P⌘+P
+   is used to open the Goto Anything menu, xcc is used to select the file
+   xla_compilation_cache.cc, @ switches to symbol mode, and :c selects the
+   XlaCompilationCache::Compile method.
+   Navigate source using Goto Definition Here the mouse is hovered over a
+   symbol to jump to the definition. The keyboard shortcut F12 can be used
+   when the caret is located on a symbol, or Goto Symbol in Project can be
+   opened via Ctrl+Shift+R⇧+⌘+R to jump to the definition of any symbol in
+   the project.
+   Unsurpassed performance Here a 7MB source code file is opened, and Goto
+   Symbol Ctrl+R⌘+R is used to jump to a function 200k lines down. Full
+   editing features are retained for code in large files, or with complex
+   syntax.
+
+Some features our users love:
+
+Goto Anything
+
+   Use Goto Anything to open files with only a few keystrokes, and
+   instantly jump to symbols, lines or words.
+
+   Triggered with Ctrl+P⌘+P, it is possible to:
+     * Type part of a file name to open it.
+     * Type @ to jump to symbols, # to search within the file, and : to go
+       to a line number.
+
+   These shortcuts can be combined, so tp@rf may take you to a function
+   read_file within a file text_parser.py. Similarly, tp:100 would take
+   you to line 100 of the same file.
+
+Goto Definition
+
+   Using information from syntax definitions, Sublime Text automatically
+   generates a project-wide index of every class, method and function.
+   This index powers Goto Definition, which is exposed in three different
+   ways:
+     * A popup is displayed when hovering over a symbol
+     * Pressing F12 when the caret is on a symbol
+     * The Goto Symbol in Project functionality
+
+   Symbol indexing can be customized on a per-syntax basis via
+   configuration files, allowing users to tailor the feature to their
+   needs.
+
+Multiple Selections
+
+   Make ten changes at the same time, not one change ten times. Multiple
+   selections allow you to interactively change many lines at once, rename
+   variables with ease, and manipulate files faster than ever.
+
+   Try pressing Ctrl+Shift+L⇧+⌘+L to split the selection into lines and
+   Ctrl+D⌘+D to select the next occurrence of the selected word. To make
+   multiple selections with the mouse, take a look at the Column Selection
+   documentation.
+
+Command Palette
+
+   The Command Palette holds infrequently used functionality, like
+   sorting, changing the syntax and changing the indentation settings.
+   With just a few keystrokes, you can search for what you want, without
+   ever having to navigate through the menus or remember obscure key
+   bindings.
+
+   Show the Command Palette with Ctrl+Shift+P⇧+⌘+P.
+
+Powerful API and Package Ecosystem
+
+   Sublime Text has a powerful, Python API that allows plugins to augment
+   built-in functionality.
+
+   Package Control can be installed via the command palette, providing
+   simple access to thousands of packages built by the community.
+
+Customize Anything
+
+   Key bindings, menus, snippets, macros, completions and more - just
+   about everything in Sublime Text is customizable with simple JSON
+   files. This system gives you flexibility as settings can be specified
+   on a per-file type and per-project basis.
+
+Split Editing
+
+   Get the most out of your wide screen monitor with split editing
+   support. Edit files side by side, or edit two locations in the one
+   file. You can edit with as many rows and columns as you wish. Take
+   advantage of multiple monitors by editing with multiple windows, and
+   using multiple splits in each window.
+
+   Take a look at the View ▶ Layout menu for split editing options. To
+   open multiple views into the one file, use the File ▶ New View into
+   File menu item.
+
+Instant Project Switch
+
+   Projects in Sublime Text capture the full contents of the workspace,
+   including modified and unsaved files. You can switch between projects
+   in a manner similar to Goto Anything, and the switch is instant, with
+   no save prompts - all your modifications will be restored next time the
+   project is opened.
+
+Performance
+
+   Sublime Text is built from custom components, providing for unmatched
+   responsiveness. From a powerful, custom cross-platform UI toolkit, to
+   an unmatched syntax highlighting engine, Sublime Text sets the bar for
+   performance.
+
+Cross Platform
+
+   Sublime Text is available for Mac, Windows and Linux. One license is
+   all you need to use Sublime Text on every computer you own, no matter
+   what operating system it uses.
+
+   Sublime Text uses a custom UI toolkit, optimized for speed and beauty,
+   while taking advantage of native functionality on each platform.
+
+Sublime HQ Family
+
+Sublime Merge
+
+   Have you seen our sister product, Sublime Merge? It's a Git Client,
+   done the Sublime Text way.
+
+   © Sublime HQ Pty Ltd
+
+   Woollahra, Sydney.
+    http://www.sublimetext.com/blog Sublime Text News Tue, 2 May 2019
+   01:00:00 +0000 en hourly 1
+   https://www.sublimetext.com/blog/articles/use-mmap-with-care Tue, 2 May
+   2019 01:00:00 +0000 Benjamin Schaaf <p>When we implemented the git
+   portion of <a href="https://sublimemerge.com">Sublime Merge</a>, we
+   chose to use <code>mmap</code> for reading git object files. This
+   turned out to be considerably more difficult than we had first thought.
+   Using <code>mmap</code> in desktop applications has some serious
+   caveats, and here's why:</p> <p><i>You can follow along with <a
+   href="https://github.com/sublimehq/mmap-example" target="_blank">the
+   example project here.</a></i></p> <p>Say you were reading some binary
+   format, data you need throughout some application. You take the easiest
+   approach and use a simple <code>read</code> to get the full contents of
+   the file. You release your software and someone comes along and says:
+   "I need to parse this 3GB file, but I only have 2GB of memory. Could
+   you make it so that you're not using so much memory?". Of course you
+   want to help them, so you do some searching and come to the conclusion
+   that memory mapping is the perfect solution to this problem.</p>
+   <p>Memory mapped files work by mapping the full file into a virtual
+   address space and then using page faults to determine which chunks to
+   load into physical memory. In essence it allows you to access the file
+   as if you had read the whole thing into memory, without actually doing
+   so. Crucially it requires only a small change to the codebase:</p> <img
+   src="/screenshots/use_mmap_with_care/1.png"> <p>And with that, you've
+   fixed the memory usage issue. You've fixed the bug, people are happy
+   and all is well until you get another support ticket. Your program is
+   crashing with a SIGBUS.</p> <h2>Caveat 1: SIGBUS</h2> <p>SIGBUS (bus
+   error) is a signal that happens when you try to access memory that has
+   not been physically mapped. This is different to a SIGSEGV
+   (segmentation fault) in that a segfault happens when an address is
+   invalid, while a bus error means the address is valid but we failed to
+   read/write.</p> <p>As it turns out, the ticket comes from someone using
+   a networked drive. Their network happened to disconnect while your
+   memory mapped file was open, and since the file no longer existed the
+   OS couldn't load it into ram for you and gave you a SIGBUS instead.</p>
+   <p>Because the OS is loading the file on demand, you now have this
+   wonderful issue where any arbitrary read from an address into the
+   memory mapped file can and <em>will</em> fail at some point.</p>
+   <p>Luckily on POSIX systems we have signal handlers, and SIGBUS is a
+   signal we can handle. All you need to do is register a signal handler
+   for SIGBUS when the program starts and jump back to our code to handle
+   failures there.</p> <img src="/screenshots/use_mmap_with_care/2.png">
+   <p>Sadly our code actually has some edge cases we should consider:</p>
+   <p>Signal handlers are global, but signals themselves are per-thread.
+   So you need to make sure you're not messing with any other threads by
+   making all our data thread local. Let's also add some robustness by
+   making sure we've called <code>setjmp</code> before
+   <code>longjmp</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/3.png"> <p>Using
+   <code>setjmp</code> and <code>longjmp</code>ing from a signal handler
+   is actually unsafe. It seems to cause undefined behaviour, especially
+   on MacOS. Instead we must use <code>sigsetjmp</code> and
+   <code>siglongjmp</code>. Since we're jumping out of a signal handler,
+   we need that signal handler to not block any future signals, so we must
+   also pass <code>SA_NODEFER</code> to <code>sigaction</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/4.png"> <p>This is starting to get
+   quite complicated, especially if you were to have multiple places where
+   a SIGBUS could happen. Let's factor things out into functions to make
+   the logic a little cleaner.</p> <img
+   src="/screenshots/use_mmap_with_care/5.png"> <p>There, now you just
+   need to remember to always call <code>install_signal_handlers</code>
+   for every application, and wrap all <code>file</code> accesses with
+   <code>safe_mmap_try</code>. Annoying, but manageable. So now you've
+   covered POSIX systems, but what about Windows?</p> <h2>Caveat 2:
+   Windows</h2> <p>Windows doesn't have <code>mmap</code>, but it does
+   have <code>MapViewOfFile</code>. Both of these implement memory mapped
+   files, but there's one important difference: Windows keeps a lock on
+   the file, not allowing it to be deleted. Even with the Windows flag
+   <code>FILE_SHARE_DELETE</code> deletion does not work. This is an issue
+   when we expect another application to delete files from under us, such
+   as git garbage collection.</p> <p>One way around this with the windows
+   API is to essentially disable the system file cache entirely, which
+   just makes everything absurdly slow. The way <a
+   href="https://sublimemerge.com">Sublime Merge</a> handles this is by
+   releasing the memory mapped file on idle. Its not a pretty solution,
+   but it works.</p> <p>Windows also does not have a SIGBUS signal, but
+   you can trivially use structured exception handling in
+   <code>safe_mmap_try</code> instead:</p> <img
+   src="/screenshots/use_mmap_with_care/6.png"> <p>Now all is well, your
+   application functions on Windows. But then you decide that you would
+   like some crash reporting, to make it easier to identify issues in the
+   future. So you add <a
+   href="https://chromium.googlesource.com/breakpad/breakpad">Google
+   Breakpad</a>, but unbeknownst to you you've just broken Linux and MacOS
+   again�</p> <h2>Caveat 3: 3rd Parties</h2> <p>The problem with using
+   signal handlers is that they're global, across threads and libraries.
+   If you have or have added a library like Breakpad that uses signals
+   internally you're going to break your previously safe memory
+   mapping.</p> <p>Breakpad registers signal handlers at initialization
+   time on Linux, including one for SIGBUS. These signal handlers override
+   each other, so installation order is important. There is not a nice
+   solution to these types of situations: You can't simply set and reset
+   the signal handler in <code>safe_mmap_try</code> as that would break
+   multithreaded applications. At Sublime HQ our solution was to turn an
+   unhandled SIGBUS in our signal handler into a SIGSEGV. Not particularly
+   elegant but it's a reasonable compromise.</p> <p>On MacOS things get a
+   little more complicated. XNU, the MacOS kernel, is based on Mach, one
+   of the earliest microkernels. Instead of signals, Mach has an
+   asynchronous, message based exception handling mechanism. For
+   compatibility reasons signals are also supported, with Mach exceptions
+   taking priority. If a library such as Breakpad registers for Mach
+   exception messages, and handles those, it will prevent signals from
+   being fired. This is of course at odds with our signal handling. The
+   only workaround we've found so far involves patching Breakpad to not
+   handle SIGBUS.</p> <p>3rd party libraries are a problem because signals
+   are global state accessible from everywhere. The only available
+   solutions to this are unsatisfying workarounds.</p> <h2>Caveat 4: 32bit
+   Support</h2> <p>Memory mapping may not use physical memory, but it does
+   require virtual address space. On 32bit platforms your address space is
+   ~4GB. So while your application may not use 4GB of memory, it will run
+   out of address space if you try to memory map a too large file. This
+   has the same result as being out of memory.</p> <p>Sadly this doesn't
+   have a workaround like the other issues, it is a hard limitation of how
+   memory mapping works. You can now either rewrite the codebase to not
+   memory map the whole file, live with crashes on 32bit systems or not
+   support 32bit.</p> <p>With <a href="https://sublimemerge.com">Sublime
+   Merge</a> and <a
+   href="https://www.sublimetext.com/blog/articles/sublime-text-3-point-2"
+   >Sublime Text 3.2</a> we took the "no 32bit support" route. <a
+   href="https://sublimemerge.com">Sublime Merge</a> does not have a 32bit
+   build available and Sublime Text disables git integration on 32bit
+   versions.</p> <h2>An Alternative</h2> <p>I mentioned before that you
+   can rewrite your code to not use memory mapping. Instead of passing
+   around a long lived pointer into a memory mapped file all around the
+   codebase, you can use functions such as <code>pread</code> to copy only
+   the portions of the file that you require into memory. This is less
+   elegant initially than using <code>mmap</code>, but it avoids all the
+   problems you're otherwise going to have.</p> <p>Through some quick
+   benchmarks for the way <a href="https://sublimemerge.com">Sublime
+   Merge</a> reads git object files, <code>pread</code> was around � as
+   fast as <code>mmap</code> on linux. In hindsight it's difficult to
+   justify using <code>mmap</code> over <code>pread</code>, but now the
+   beast has been tamed and there's little reason to change any more.</p>
+   <p>If you think we've missed something or made a mistake, please leave
+   us a message on the forums. We hope this helps some of you in your
+   future endeavours. If you haven't already, check out our git client <a
+   href="https://sublimemerge.com">Sublime Merge</a>.</p>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-2 Wed,
+   13 Mar 2019 14:00:00 +1000 Will Bond <style> img.screenshot-32 { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-32 { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p>The past year has been busy here at Sublime HQ.
+   We've grown our engineering team, shipped Sublime Text 3.1 and released
+   our second product, <a href="https://www.sublimemerge.com">Sublime
+   Merge</a>. <em>If you use Git and like the ethos of Sublime Text, we
+   think you'll love it.</em></p> <p>Today we're pushing out Sublime Text
+   3.2, which builds off of a bunch of work we've done in Sublime Merge.
+   This includes: first-class <a href="/docs/3/git_integration.html">Git
+   integration</a>, <a href="/docs/3/incremental_diff.html">incremental
+   diffing</a>, new theme functionality and block caret support. Beyond
+   that is a slew of other enhancements, stability improvements and
+   performance gains. See the full changelog below for details.</p>
+   <p>Sublime Text 3.2 is available from the <a href="/3">Download</a>
+   page.</p> <img src="/screenshots/3.2/git_diff.png"
+   class="screenshot-32"> <p class="caption-32">Git status badges in the
+   side bar and incremental diff markers in the gutter</p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_32_ss() { var
+   ss = document.getElementsByClassName("screenshot-32"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_32_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_32_ss() }) } </script>
+   <h2>Changelog</h2> <article class="changelog"> <h3>Git Integration
+   <span class="new">New!</span></h3> <ul class="topic"> <li>Files and
+   folders in the sidebar will now display badges to indicate Git
+   status</li> <li>Ignored files and folders are visually
+   de-emphasized</li> <li>The current Git branch and number of
+   modifications is displayed in the status bar</li> <li>Commands have
+   been added to open a repository, see file or folder history, or blame a
+   file in <a href="https://www.sublimemerge.com">Sublime Merge</a></li>
+   <li>Themes may customize the display of sidebar badges and status bar
+   information</li> <li>The setting <tt>show_git_status</tt> allows
+   disabling Git integration</li> <li>All file reads are done through a
+   custom, high-performance Git library written for <a
+   href="https://www.sublimemerge.com">Sublime Merge</a></li> <li><a
+   href="/docs/3/git_integration.html">Read the documentation</a></li>
+   </ul> <h3>Incremental Diff <span class="new">New!</span></h3> <ul
+   class="topic"> <li>All changes to a document are now represented by
+   dedicated markers in the gutter</li> <li>Diff markers show added,
+   modified and deleted lines</li> <li>The setting <span
+   class="setting">mini_diff</span> controls incremental diff
+   behavior</li> <li>In coordination with the new Git functionality, diffs
+   can be calculated against HEAD or the index</li> <li>The <span
+   class="setting">git_diff_target</span> setting controls base document
+   source</li> <li>API methods <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> allow controlling the
+   diff</li> <li> The following diff-related commands were added: <ul>
+   <li>Next Modification</li> <li>Previous Modification</li> <li>Revert
+   Modification</li> </ul> </li> <li>Full inline diffs of each change can
+   be displayed via the right-click context menu, or keyboard
+   shortcuts</li> <li>Inline diff presentation can be changed by
+   customizing a color scheme</li> <li><a
+   href="/docs/3/incremental_diff.html">Read the documentation</a></li>
+   </ul> <h3>Editor Control</h3> <ul class="topic"> <li>Added <span
+   class="setting">block_caret</span> setting</li> <li>Improve positioning
+   and sizing of gutter icons in some situations</li> <li>Fixed <span
+   class="setting">draw_minimap_border</span> setting not working</li>
+   <li>Linux: Improved input method (IM) support - fcitx, ibus, etc</li>
+   <li>Linux: Fixed a crash when using <tt>GTK_IM_MODULE=xim</tt></li>
+   <li>Linux: Tweaked behavior of up/down when on the first and last lines
+   of a file to better match platform conventions</li> <li>Windows:
+   Improved IME support</li> </ul> <h3>Themes/UI</h3> <ul class="topic">
+   <li> Enhanced the <span class="file">.sublime-theme</span> format: <ul>
+   <li>Added variables support and associated revised JSON format with
+   <tt>variables</tt> key</li> <li>Added <tt>extends</tt> keyword to have
+   one theme derive from another</li> <li>Colors may be specified via CSS
+   syntax</li> </ul> </li> <li>Improved performance with large numbers of
+   rules in a <span class="file">.sublime-theme</span></li> <li>Linux:
+   Moved to GTK3</li> <li>Linux: Various high DPI fixes</li> <li>Mac:
+   Added Mojave support</li> <li>Mac: Add full support for macOS native
+   tabs</li> <li>Mac: Ensure context menus are shown without
+   scrolling</li> <li>Mac: Error message dialogs can now be closed with
+   the escape key</li> <li>Mac: Improved window placement</li> <li>Mac:
+   Improved resize performance</li> <li>Windows: Fixed minimized and
+   maximized state not restoring</li> <li>Windows: Fixed a bug where auto
+   complete entries would contain an ellipsis when not required</li> </ul>
+   <h3>Text Rendering</h3> <ul class="topic"> <li>Support for Unicode
+   11.0</li> <li>Improved rendering of combining characters</li> <li>Fixed
+   a caret positioning bug when non-trivial graphemes are present</li>
+   <li>Fixed some cases of incorrect glyph positions on Windows and
+   Mac</li> <li>Linux: Color glyphs are now drawn properly on light
+   backgrounds</li> <li>Windows: Fixed a rendering issue with certain
+   combining characters</li> <li>Windows: Fixed some fonts having an
+   incorrect baseline</li> </ul> <h3>Color Schemes</h3> <ul class="topic">
+   <li>Added <tt>block_caret</tt> key to use in conjunction with block
+   carets</li> <li><tt>caret</tt> values now respect alpha as expected,
+   rather than pre-blending against the background color</li> <li>Added
+   the <tt>foreground_adjust</tt> property to rules with a
+   <tt>background</tt>. Accepts CSS color mod adjusters to manipulate the
+   saturation, lightness or opacity of the foreground color.</li> </ul>
+   <h3>Syntax Highlighting</h3> <ul class="topic"> <li>Many syntax
+   highlighting improvements, including significant improvements to: <ul>
+   <li><i>Clojure</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>D</i></li> <li><i>Go</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>Lua</i>, with thanks to <a
+   href="https://github.com/Thom1729">Thomas Smith</a></li> </ul> </li>
+   <li>Fixed a crash that could occur when nesting embed patterns in <span
+   class="file">.sublime-syntax</span> files</li> <li>Syntax Tests: Allow
+   syntax test files to have a UTF-8 BOM</li> </ul> <h3>Files and
+   Folders</h3> <ul class="topic"> <li>Improve performance of file
+   watching for ignored paths on Windows and Mac</li> <li>Windows: Fixed
+   Open File treating paths as case-sensitive</li> <li>Windows: Properly
+   unlock directories after contained files are closed</li> </ul>
+   <h3>API</h3> <ul class="topic"> <li>Added
+   <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> to control diff
+   generation</li> <li>Phantoms are now drawn correctly in conjunction
+   with <span class="setting">draw_centered</span></li> <li>Various minor
+   improvements related to plugin module loading and unloading</li>
+   <li>Added support for <tt>hwb()</tt> colors to minihtml</li> <li>Added
+   a custom <tt>min-contrast()</tt> adjuster for the CSS color mod
+   function in minihtml</li> <li>Mac: Fixed a <tt>plugin_host</tt> crash
+   when running a process that itself crashes</li> </ul>
+   <h3>Miscellaneous</h3> <ul class="topic"> <li>Fixed a <i>Goto Symbol in
+   Project</i> performance regression</li> <li>F21..F24 keys can now be
+   bound</li> <li>Assorted minor fixes and stability improvements</li>
+   <li>Linux: Improved behavior of <tt>--wait</tt> command line argument
+   when Sublime Text isn't currently running</li> </ul> </article>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1107 Tue,
+   12 Mar 2019 20:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">Subli
+   me Merge</a>, our Git Client and Merge Tool, is out now with
+   improvements to the Merge Tool, Tree viewing, and Clone dialog. See the
+   <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">full
+   post</a> for more details.</p> <p>Sublime Text 3.2 will be coming very
+   soon now, featuring Git integration and more.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1092 Wed,
+   29 Nov 2018 20:00:00 +1000 Jon Skinner <p>Sublime HQ's Git Client, <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">Subli
+   me Merge</a>, is out now with Interactive Rebase, a new Contents View,
+   and Word Wrap - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-documentation
+   Mon, 05 Nov 2018 02:00:00 -0500 Will Bond <p> While we continue to add
+   more features and polish to the default Sublime Merge experience, we
+   know that developers love the ability to tweak their tools. Sublime
+   Merge is built on the same foundation as Sublime Text, so you can tweak
+   key bindings, menus, command palette entries, and even the look and
+   feel of the UI. </p> <p> To assist, we�ve just rolled out a number of <a
+   href="https://www.sublimemerge.com/docs/">pages of documentation</a>
+   for users who wish to customize Sublime Merge to look and function a
+   little differently. In addition, we�ve added a <a
+   href="https://www.sublimetext.com/docs/3/dev/">new documentation
+   section</a> for the <a href="https://www.sublimetext.com/3dev">dev
+   builds of Sublime Text</a>. It covers all of the features we added
+   during the development of Sublime Merge. </p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1070 Wed,
+   10 Oct 2018 19:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/download">Sublime Merge Build
+   1070</a> is out now with Commit Folding - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1070">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-roadmap Tue, 2
+   Oct 2018 10:00:00 +1000 Jon Skinner <p>Just a quick post about what
+   we're going to be adding to <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>. This isn't a
+   comprehensive list, but it should give an indication of what we're
+   focusing on right now.</p> <ul> <li><b>Branch Visualization</b>.
+   Sublime Merge itself handles large repositories well, but there's more
+   the UI could do to help users with a lot of branches on the go. We've
+   got some nice things cooking for this that will be coming in the near
+   future. Stay tuned!</li> <li><b>Submodule Management</b>. Sublime Merge
+   understands submodules, but doesn't provide any UI for managing them.
+   We'll be changing that soon.</li> <li><b>Tabs</b>. Tabs have been
+   frequently requested by users working on several repositories at once.
+   The <i>Switch Repository</i> functionality (under the <i>File</i> menu)
+   helps with this, but tabs have their own benefits, so they're on their
+   way.</li> <li><b>Git Flow Integration</b>. Git Flow is a branching
+   strategy with an accompanying set of command line tools. We've had a
+   lot of requests for UI support here, so it'll be making it in too.</li>
+   <li><b>Interactive Rebase</b>. Sublime Merge currently supports editing
+   commit messages and squashing commits (available from the commit
+   context menu). We'll be adding extra commit wrangling functionality,
+   including reordering commits, moving commits between branches, and
+   amending arbitrary commits.</li> <li><b>Plugins</b>. Sublime Text style
+   plugins are on our radar. This isn't at the top of the list, but
+   they're coming.</li> </ul> <p>We'll also be getting a new Sublime Text
+   Dev Build out this week, rolling in all the updates from Sublime Merge,
+   including the updated theming system and Mojave support.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge Mon, 20 Sep
+   2018 10:00:00 +0000 Jon Skinner <style> img.screenshot-sm { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-sm { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p><i>(You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a> from <a
+   href="https://www.sublimemerge.com/download">https://www.sublimemerge.c
+   om/download</a>)</i></p> <p> There's a company that makes photography
+   accessories, called Really Right Stuff. They make lovely equipment, but
+   what I really like is the name. It embodies the idea of building
+   something that goes beyond the minimum: making it as good as it can be,
+   paying attention to the details, and getting it really right. </p> <p>
+   When it comes to software, getting it really right goes beyond
+   functionality. The feel, aesthetics, and performance all have to be
+   there. </p> <p> There's a real pleasure using software that gets it
+   really right, as a lot of the time, it doesn't. We're all too familiar
+   with clunky layouts, unresponsive buttons, choppy scrolling, tedious
+   splash screens, and flickering on every interaction. </p> <p> After
+   typing <tt>git add -p</tt> in the terminal one too many times, I
+   thought to myself: we've got some pretty great tech in Sublime Text.
+   What if we used it to build a Git client? Could we make it fast? Could
+   we make it buttery smooth, without flickering or blocking? Could we
+   make something that's really, really right? </p> <p> Today, I'd like to
+   introduce <a href="https://www.sublimemerge.com">Sublime Merge</a>. It
+   combines the UI engine of Sublime Text, with a from-scratch
+   implementation of Git*. The result is, to us at least, something pretty
+   special. <a href="https://www.sublimemerge.com"><img
+   src="/screenshots/merge/staging.png" width="600" height="291"
+   class="screenshot-sm"></a> <p class="caption-sm">Sublime Merge - Commit
+   Dialog</p> </p> <p> You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>, and try it for
+   yourself - there's no time limit, no accounts, no metrics, and no
+   tracking. The evaluation version is fully functional, but is restricted
+   to the light theme only. Individual purchases are buy once, use
+   forever, with 3 years of updates included in the purchase. Business
+   licenses are available on a subscription basis. Sublime Merge runs on
+   Windows, Mac and Linux. </p> <p> It's still early days for Sublime
+   Merge - it has only been used by us and our small team of beta testers
+   so far. We'd love to hear what you think. We'll be on the <a
+   href="https://forum.sublimetext.com/">Forums</a> listening to any
+   feedback - let us know how you get on with it! </p> <br> <p><small> *
+   We have a custom implementation of Git for reading repositories, which
+   drives a lot of our high performance functionality. However we defer to
+   Git itself for operations that mutate the repository (Staging,
+   Committing, Checking out branches, etc). </small></p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_sm_ss() { var
+   ss = document.getElementsByClassName("screenshot-sm"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_sm_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_sm_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-1 Mon, 7
+   May 2018 10:00:00 +0000 Will Bond and Jon Skinner <p>Since version 3.0
+   we've been shipping frequent <a href="/3dev">dev builds</a>, refining
+   Sublime Text for a more polished experience all-around. Those dev
+   builds are now rolling out to everyone as Sublime Text 3.1. The <a
+   href="/3">full changelog for 3.1</a> includes every detail, but the
+   following are some we'd like to highlight: </p> <style> img.screenshot
+   { width: 600px; margin: 1em 0 0; display: block; filter:
+   drop-shadow(3px 3px 5px #9998); } p.caption { margin-top: 0.5em; color:
+   #999; font-style: italic; } </style> <h4>UI</h4> <ul class="topic">
+   <li>Windows 10/8.1 per-monitor DPI settings for handling mixed monitor
+   configurations and on-the-fly DPI switching</li> <li>Lots of
+   improvements for high DPI support on all platforms, including 8k
+   monitor and @3x texture support</li> </ul> <h4>Text Rendering</h4> <ul
+   class="topic"> <li> Ligature support, with controls for customizing
+   OpenType features and stylistic sets <img
+   src="/screenshots/3.1/ligatures.png" class="screenshot"> <p
+   class="caption">An example of ligatures with Fira Code</p> </li>
+   <li>Improved text rendering on Windows, now respecting ClearType
+   tuning</li> <li>Better handling of emojis in the editor control
+   &nbsp;�</li> </ul> <h4>Color Schemes</h4> <ul class="topic"> <li> A new
+   color scheme format based on JSON, with easier customization and new
+   features like <a
+   href="/docs/3/color_schemes.html#hashed_syntax_highlighting">hashed
+   syntax highlighting</a> <img
+   src="/screenshots/3.1/hashed_highlighting.png" class="screenshot"> <p
+   class="caption">Hashed syntax highlighting with the Celeste color
+   scheme</p> </li> <li>Improved selection rendering with <a
+   href="/docs/3/color_schemes.html#global_settings-selection">expanded
+   customization</a> via color schemes</li> </ul> <h4>Syntax
+   Definitions</h4> <ul class="topic"> <li>Syntax definitions for Git file
+   formats to allow Sublime Text to be a better <tt>core.editor</tt></li>
+   <li> Highlighting of fenced code blocks in Markdown <img
+   src="/screenshots/3.1/markdown.png" class="screenshot"> <p
+   class="caption">Python highlighted in a fenced code block</p> </li>
+   <li>Lots of TC39-track features have been added to the JavaScript
+   syntax</li> </ul> <h4>User Interaction</h4> <ul class="topic"> <li>
+   Goto References to augment Goto Definition <img
+   src="/screenshots/3.1/goto_references.png" class="screenshot"> <p
+   class="caption">Goto References shown in the symbol popup</p> </li>
+   <li>An improved Command Palette that can accept arbitrary user input
+   and complex interactions</li> </ul> <h4>File System</h4> <ul
+   class="topic"> <li>Expanded options for filtering files and folders
+   from the sidebar</li> <li>Improved handling of filesystem notifications
+   and symlinks</li> </ul> <h4>Performance</h4> <ul class="topic">
+   <li>Significantly improved memory usage - up to 30% in some cases</li>
+   <li>Lots of little performance improvements and bug fixes</li> </ul>
+   <h4>More!</h4> <ul class="topic"> <li>See the <a
+   href="/3">changelog</a> for the full list</li> </ul> <p>Many of these
+   changes were developed in response to the community's feedback, and in
+   some cases with your help! As may be evident, this dev cycle spent a
+   good amount of time polishing some foundational elements of the editor
+   and making it more robust for use on different configurations and for
+   different purposes. <p>We've got some exciting things planned for the
+   future, which will further build upon the foundation we've laid with
+   3.0 and 3.1! If you want to preview the latest changes and help provide
+   feedback during the next dev cycle, install the latest <a
+   href="/3dev">dev build</a> and you'll get notifications as we release
+   new updates. <script> if (!window.res) { scale = 1 res = function() {
+   scale = window.devicePixelRatio >= 1.3 && document.body.clientWidth >
+   1024 ? 2 : 1 return scale == 2 ? '@2x' : '' } } function
+   high_dpi_31_ss() { var ss =
+   document.getElementsByClassName("screenshot"); for(var i = 0; i <
+   ss.length; i++) { console.log(ss.item(i)) ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_31_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_31_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/the-adaptive-theme Fri, 06
+   Oct 2017 06:00:00 +0000 Will Bond <p>With the release of Sublime Text
+   3.0, we refreshed the visual design for the application, icon, and
+   website. The new icon ties into the colors and shapes of the old, but
+   is more abstract and fits well with other modern applications. The
+   updated Default theme is still distinctly Sublime Text, but has full
+   high DPI support, and works well with both dark and light color
+   schemes. The three new color schemes take advantage of the work that
+   has gone into modernizing and enhancing the syntax definitions included
+   with Sublime Text.</p> <table style="margin: 20px 0;"> <tr> <th
+   style="color: #777; font-style: italic; padding: 0 20px 12px 0;
+   line-height: 1.2"> <b>Sublime Text 3 Build 3126</b><br> <span
+   style="font-size: 0.9em">(Old) Default theme, IDLE color scheme</span>
+   </th> <th style="color: #777; font-style: italic; line-height: 1.2">
+   <b>Sublime Text 3.0</b><br> <span style="font-size: 0.9em">(New)
+   Default theme, Sixteen color scheme</span> </th> </tr> <tr> <td
+   style="padding-right: 30px;"> <img
+   src="/screenshots/the_adaptive_theme/3126_default_idle.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> <td> <img
+   src="/screenshots/the_adaptive_theme/3143_default_sixteen.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> </tr>
+   </table> <p>As well as an overhaul of the default theme, we've also
+   include a new theme, Adaptive, which uses the colors of your color
+   scheme and applies variations of them to the side bar and various
+   panels. The new color scheme setting <code>accent</code> is used to
+   highlight selected options in the find panel, and to highlight modified
+   tabs. Furthermore, on recent versions of macOS the title bar is also
+   styled by the Adaptive theme to follow your selected color scheme.</p>
+   <p>The result is a theme that acts as if it was custom designed for
+   your color scheme. Check out this sample of Adaptive in action:</p>
+   <script> var width = 800 var height = 400 if (!window.byid) { plat =
+   'osx' arch = '64' scale = 1 byid = function(x) { return
+   document.getElementById(x) } res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } </script> <div id="anim_shell">
+   <div id="anim_container"> <canvas id="target" style="width: 800px;
+   height: 400px"></canvas> <div id="fallback" style="width: 800px;
+   height: 400px; position: relative; display: none"></div> <div
+   id="title-overlay" class="show"><div></div></div> </div> </div>
+   <script> var images = [] var target = byid('target') var use_canvas =
+   target && target.getContext if (!use_canvas) {
+   byid('target').style.display = 'none' target = byid('fallback')
+   target.style.display = 'block' } function load_animation() { var script
+   = byid('anim_script') if (script) script.parentNode.removeChild(script)
+   script = document.createElement('script') script.setAttribute('src',
+   '/screencasts/adaptive' + res() + '.js') script.setAttribute('id',
+   'anim_script') document.body.appendChild(script) if (use_canvas) {
+   target.width = scale * width target.height = scale * height } }
+   load_animation() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { load_animation() }) } function
+   handle_resize(e) { target.style.height = Math.floor(target.clientWidth
+   / width * height) + 'px' } handle_resize() if (window.addEventListener)
+   window.addEventListener('resize', handle_resize, false) else if
+   (window.attachEvent) window.attachEvent('onresize', handle_resize) var
+   continuation = null var start_time = null var remaining_time = 0 var
+   timer = null function set_timeout(f, timeout) { start_time = new
+   Date().getTime() remaining_time = timeout continuation = f timer =
+   window.setTimeout(f, timeout) } // Only run a callback once an
+   animation frame is available, allowing // the animation to be paused
+   when in the background, etc function sync_frame(f) { if
+   (!window.requestAnimationFrame) f() else
+   window.requestAnimationFrame(f) } // Run a timeout synced to the
+   animation frame function sync_timeout(f, timeout) {
+   set_timeout(function() { sync_frame(f) }, timeout) } function
+   pause_timeout() { var elapsed = (new Date().getTime()) - start_time
+   remaining_time = Math.max(remaining_time - elapsed, 0)
+   window.clearTimeout(timer) } function continue_timeout() { start_time =
+   new Date().getTime() timer = window.setTimeout(continuation,
+   remaining_time) } function play() { continue_timeout() } function
+   pause() { pause_timeout() } var delay_scale = 1.0 var overlay =
+   byid('title-overlay') function display_error() {
+   window.clearTimeout(timer) continuation = null if (use_canvas) { var
+   ctx = target.getContext('2d') ctx.clearRect(0, 0, target.width,
+   target.height) } else { target.innerHTML = '' }
+   overlay.getElementsByTagName('div')[0].innerHTML = '<i>Error loading
+   screencast</i>'; overlay.className = 'show' } function transition() {
+   if (timer) window.clearTimeout(timer) sync_frame(function() { var
+   img_url = animation_urls[0] var timeline = animation_timelines[0] var
+   img = prep_animation(img_url, timeline, null) sync_timeout(function() {
+   animate(img, timeline, target, 0) }, 2400) }) } function
+   draw_canvas(img, element, frame, blits) { var ctx =
+   element.getContext('2d') for (j = 0; j < blits.length; ++j) { var blit
+   = blits[j] var sx = blit[0] var sy = blit[1] var w = blit[2] var h =
+   blit[3] var dx = blit[4] var dy = blit[5] ctx.drawImage(img, sx, sy, w,
+   h, dx, dy, w, h) } } function draw_fallback(img, element, frame, blits)
+   { if (frame == 0) { while (element.hasChildNodes())
+   element.removeChild(element.lastChild) } for (j = 0; j < blits.length;
+   ++j) { var blit = blits[j] var sx = blit[0] / scale var sy = blit[1] /
+   scale var w = blit[2] / scale var h = blit[3] / scale var dx = blit[4]
+   / scale var dy = blit[5] / scale var d = document.createElement('div')
+   d.style.position = 'absolute' d.style.left = dx + "px" d.style.top = dy
+   + "px" d.style.width = w + "px" d.style.height = h + "px"
+   d.style.backgroundImage = "url('" + img.src + "')"
+   d.style.backgroundPosition = "-" + sx + "px -" + sy + "px"
+   d.style.backgroundSize = width + "px auto" element.appendChild(d) } }
+   function draw(img, element, frame, blits) { if (use_canvas)
+   draw_canvas(img, element, frame, blits) else draw_fallback(img,
+   element, frame, blits) } function animate(img, timeline, element,
+   start_frame) { var i = start_frame; var f = function() { var frame =
+   i++ % timeline.length var delay = timeline[frame].delay * delay_scale
+   var blits = timeline[frame].blit draw(img, element, frame, blits) var
+   callback = f sync_timeout(callback, delay) } if (timer)
+   window.clearTimeout(timer) sync_frame(f) } function
+   prep_animation(img_url, timeline, preload_url) { var ready = function()
+   { overlay.className = '' sync_frame(function() { draw(images[img_url],
+   target, 0, timeline[0].blit) }) if (preload_url && !(preload_url in
+   images)) { images[preload_url] = new Image() images[preload_url].src =
+   preload_url } } if (img_url in images) { ready() } else {
+   images[img_url] = new Image() images[img_url].onload = ready
+   images[img_url].onerror = function() { delete images[img_url]
+   display_error() } images[img_url].src = img_url } return
+   images[img_url] } </script> <p>To try Adaptive out for yourself, open
+   the <span class="feature">Command Palette</span> and type <kbd>Select
+   Theme</kbd>. Once you've picked <em>Adaptive</em>, use the <kbd>Select
+   Color Scheme</kbd> command to preview the available color schemes.</p>
+   <p>Probably the best part is that all of the power of the Adaptive
+   theme is available for any theme to use. Additionally, we wrote up <a
+   href="/docs/3/themes.html">full documentation</a> about all of the
+   theme engine features and syntax. Having comprehensive documentation
+   will hopefully make theming accessible to a much wider audience. If you
+   are looking for help in customizing a theme, or creating your own, drop
+   by the <a href="https://forum.sublimetext.com/">forum</a> or ask some
+   questions on the <a href="https://discord.gg/HcmwdVK">Discord
+   server</a>.</p>
+   #RSS 2.0
+
+   Sublime Text
+
+   Download Buy Support News Forum
+
+   Introducing our Git client
+   [merge_icon.svg] Sublime Merge [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+   A sophisticated text editor for
+   code, markup and prose
+   Download for Windows Download for Windows Install for Linux Download
+   for Mac
+   Sublime Text 3 (Build 3211)
+   Changelog
+
+   [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+
+   Use Multiple Selections to rename variables quickly Here Ctrl+D⌘+D is
+   used to select the next occurrence of the current word. Once created,
+   each selection allows for full-featured editing.
+   Quickly jump to files and functions with Goto Anything Here Ctrl+P⌘+P
+   is used to open the Goto Anything menu, xcc is used to select the file
+   xla_compilation_cache.cc, @ switches to symbol mode, and :c selects the
+   XlaCompilationCache::Compile method.
+   Navigate source using Goto Definition Here the mouse is hovered over a
+   symbol to jump to the definition. The keyboard shortcut F12 can be used
+   when the caret is located on a symbol, or Goto Symbol in Project can be
+   opened via Ctrl+Shift+R⇧+⌘+R to jump to the definition of any symbol in
+   the project.
+   Unsurpassed performance Here a 7MB source code file is opened, and Goto
+   Symbol Ctrl+R⌘+R is used to jump to a function 200k lines down. Full
+   editing features are retained for code in large files, or with complex
+   syntax.
+
+Some features our users love:
+
+Goto Anything
+
+   Use Goto Anything to open files with only a few keystrokes, and
+   instantly jump to symbols, lines or words.
+
+   Triggered with Ctrl+P⌘+P, it is possible to:
+     * Type part of a file name to open it.
+     * Type @ to jump to symbols, # to search within the file, and : to go
+       to a line number.
+
+   These shortcuts can be combined, so tp@rf may take you to a function
+   read_file within a file text_parser.py. Similarly, tp:100 would take
+   you to line 100 of the same file.
+
+Goto Definition
+
+   Using information from syntax definitions, Sublime Text automatically
+   generates a project-wide index of every class, method and function.
+   This index powers Goto Definition, which is exposed in three different
+   ways:
+     * A popup is displayed when hovering over a symbol
+     * Pressing F12 when the caret is on a symbol
+     * The Goto Symbol in Project functionality
+
+   Symbol indexing can be customized on a per-syntax basis via
+   configuration files, allowing users to tailor the feature to their
+   needs.
+
+Multiple Selections
+
+   Make ten changes at the same time, not one change ten times. Multiple
+   selections allow you to interactively change many lines at once, rename
+   variables with ease, and manipulate files faster than ever.
+
+   Try pressing Ctrl+Shift+L⇧+⌘+L to split the selection into lines and
+   Ctrl+D⌘+D to select the next occurrence of the selected word. To make
+   multiple selections with the mouse, take a look at the Column Selection
+   documentation.
+
+Command Palette
+
+   The Command Palette holds infrequently used functionality, like
+   sorting, changing the syntax and changing the indentation settings.
+   With just a few keystrokes, you can search for what you want, without
+   ever having to navigate through the menus or remember obscure key
+   bindings.
+
+   Show the Command Palette with Ctrl+Shift+P⇧+⌘+P.
+
+Powerful API and Package Ecosystem
+
+   Sublime Text has a powerful, Python API that allows plugins to augment
+   built-in functionality.
+
+   Package Control can be installed via the command palette, providing
+   simple access to thousands of packages built by the community.
+
+Customize Anything
+
+   Key bindings, menus, snippets, macros, completions and more - just
+   about everything in Sublime Text is customizable with simple JSON
+   files. This system gives you flexibility as settings can be specified
+   on a per-file type and per-project basis.
+
+Split Editing
+
+   Get the most out of your wide screen monitor with split editing
+   support. Edit files side by side, or edit two locations in the one
+   file. You can edit with as many rows and columns as you wish. Take
+   advantage of multiple monitors by editing with multiple windows, and
+   using multiple splits in each window.
+
+   Take a look at the View ▶ Layout menu for split editing options. To
+   open multiple views into the one file, use the File ▶ New View into
+   File menu item.
+
+Instant Project Switch
+
+   Projects in Sublime Text capture the full contents of the workspace,
+   including modified and unsaved files. You can switch between projects
+   in a manner similar to Goto Anything, and the switch is instant, with
+   no save prompts - all your modifications will be restored next time the
+   project is opened.
+
+Performance
+
+   Sublime Text is built from custom components, providing for unmatched
+   responsiveness. From a powerful, custom cross-platform UI toolkit, to
+   an unmatched syntax highlighting engine, Sublime Text sets the bar for
+   performance.
+
+Cross Platform
+
+   Sublime Text is available for Mac, Windows and Linux. One license is
+   all you need to use Sublime Text on every computer you own, no matter
+   what operating system it uses.
+
+   Sublime Text uses a custom UI toolkit, optimized for speed and beauty,
+   while taking advantage of native functionality on each platform.
+
+Sublime HQ Family
+
+Sublime Merge
+
+   Have you seen our sister product, Sublime Merge? It's a Git Client,
+   done the Sublime Text way.
+
+   © Sublime HQ Pty Ltd
+
+   Woollahra, Sydney.
+    http://www.sublimetext.com/blog Sublime Text News Tue, 2 May 2019
+   01:00:00 +0000 en hourly 1
+   https://www.sublimetext.com/blog/articles/use-mmap-with-care Tue, 2 May
+   2019 01:00:00 +0000 Benjamin Schaaf <p>When we implemented the git
+   portion of <a href="https://sublimemerge.com">Sublime Merge</a>, we
+   chose to use <code>mmap</code> for reading git object files. This
+   turned out to be considerably more difficult than we had first thought.
+   Using <code>mmap</code> in desktop applications has some serious
+   caveats, and here's why:</p> <p><i>You can follow along with <a
+   href="https://github.com/sublimehq/mmap-example" target="_blank">the
+   example project here.</a></i></p> <p>Say you were reading some binary
+   format, data you need throughout some application. You take the easiest
+   approach and use a simple <code>read</code> to get the full contents of
+   the file. You release your software and someone comes along and says:
+   "I need to parse this 3GB file, but I only have 2GB of memory. Could
+   you make it so that you're not using so much memory?". Of course you
+   want to help them, so you do some searching and come to the conclusion
+   that memory mapping is the perfect solution to this problem.</p>
+   <p>Memory mapped files work by mapping the full file into a virtual
+   address space and then using page faults to determine which chunks to
+   load into physical memory. In essence it allows you to access the file
+   as if you had read the whole thing into memory, without actually doing
+   so. Crucially it requires only a small change to the codebase:</p> <img
+   src="/screenshots/use_mmap_with_care/1.png"> <p>And with that, you've
+   fixed the memory usage issue. You've fixed the bug, people are happy
+   and all is well until you get another support ticket. Your program is
+   crashing with a SIGBUS.</p> <h2>Caveat 1: SIGBUS</h2> <p>SIGBUS (bus
+   error) is a signal that happens when you try to access memory that has
+   not been physically mapped. This is different to a SIGSEGV
+   (segmentation fault) in that a segfault happens when an address is
+   invalid, while a bus error means the address is valid but we failed to
+   read/write.</p> <p>As it turns out, the ticket comes from someone using
+   a networked drive. Their network happened to disconnect while your
+   memory mapped file was open, and since the file no longer existed the
+   OS couldn't load it into ram for you and gave you a SIGBUS instead.</p>
+   <p>Because the OS is loading the file on demand, you now have this
+   wonderful issue where any arbitrary read from an address into the
+   memory mapped file can and <em>will</em> fail at some point.</p>
+   <p>Luckily on POSIX systems we have signal handlers, and SIGBUS is a
+   signal we can handle. All you need to do is register a signal handler
+   for SIGBUS when the program starts and jump back to our code to handle
+   failures there.</p> <img src="/screenshots/use_mmap_with_care/2.png">
+   <p>Sadly our code actually has some edge cases we should consider:</p>
+   <p>Signal handlers are global, but signals themselves are per-thread.
+   So you need to make sure you're not messing with any other threads by
+   making all our data thread local. Let's also add some robustness by
+   making sure we've called <code>setjmp</code> before
+   <code>longjmp</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/3.png"> <p>Using
+   <code>setjmp</code> and <code>longjmp</code>ing from a signal handler
+   is actually unsafe. It seems to cause undefined behaviour, especially
+   on MacOS. Instead we must use <code>sigsetjmp</code> and
+   <code>siglongjmp</code>. Since we're jumping out of a signal handler,
+   we need that signal handler to not block any future signals, so we must
+   also pass <code>SA_NODEFER</code> to <code>sigaction</code>.</p> <img
+   src="/screenshots/use_mmap_with_care/4.png"> <p>This is starting to get
+   quite complicated, especially if you were to have multiple places where
+   a SIGBUS could happen. Let's factor things out into functions to make
+   the logic a little cleaner.</p> <img
+   src="/screenshots/use_mmap_with_care/5.png"> <p>There, now you just
+   need to remember to always call <code>install_signal_handlers</code>
+   for every application, and wrap all <code>file</code> accesses with
+   <code>safe_mmap_try</code>. Annoying, but manageable. So now you've
+   covered POSIX systems, but what about Windows?</p> <h2>Caveat 2:
+   Windows</h2> <p>Windows doesn't have <code>mmap</code>, but it does
+   have <code>MapViewOfFile</code>. Both of these implement memory mapped
+   files, but there's one important difference: Windows keeps a lock on
+   the file, not allowing it to be deleted. Even with the Windows flag
+   <code>FILE_SHARE_DELETE</code> deletion does not work. This is an issue
+   when we expect another application to delete files from under us, such
+   as git garbage collection.</p> <p>One way around this with the windows
+   API is to essentially disable the system file cache entirely, which
+   just makes everything absurdly slow. The way <a
+   href="https://sublimemerge.com">Sublime Merge</a> handles this is by
+   releasing the memory mapped file on idle. Its not a pretty solution,
+   but it works.</p> <p>Windows also does not have a SIGBUS signal, but
+   you can trivially use structured exception handling in
+   <code>safe_mmap_try</code> instead:</p> <img
+   src="/screenshots/use_mmap_with_care/6.png"> <p>Now all is well, your
+   application functions on Windows. But then you decide that you would
+   like some crash reporting, to make it easier to identify issues in the
+   future. So you add <a
+   href="https://chromium.googlesource.com/breakpad/breakpad">Google
+   Breakpad</a>, but unbeknownst to you you've just broken Linux and MacOS
+   again�</p> <h2>Caveat 3: 3rd Parties</h2> <p>The problem with using
+   signal handlers is that they're global, across threads and libraries.
+   If you have or have added a library like Breakpad that uses signals
+   internally you're going to break your previously safe memory
+   mapping.</p> <p>Breakpad registers signal handlers at initialization
+   time on Linux, including one for SIGBUS. These signal handlers override
+   each other, so installation order is important. There is not a nice
+   solution to these types of situations: You can't simply set and reset
+   the signal handler in <code>safe_mmap_try</code> as that would break
+   multithreaded applications. At Sublime HQ our solution was to turn an
+   unhandled SIGBUS in our signal handler into a SIGSEGV. Not particularly
+   elegant but it's a reasonable compromise.</p> <p>On MacOS things get a
+   little more complicated. XNU, the MacOS kernel, is based on Mach, one
+   of the earliest microkernels. Instead of signals, Mach has an
+   asynchronous, message based exception handling mechanism. For
+   compatibility reasons signals are also supported, with Mach exceptions
+   taking priority. If a library such as Breakpad registers for Mach
+   exception messages, and handles those, it will prevent signals from
+   being fired. This is of course at odds with our signal handling. The
+   only workaround we've found so far involves patching Breakpad to not
+   handle SIGBUS.</p> <p>3rd party libraries are a problem because signals
+   are global state accessible from everywhere. The only available
+   solutions to this are unsatisfying workarounds.</p> <h2>Caveat 4: 32bit
+   Support</h2> <p>Memory mapping may not use physical memory, but it does
+   require virtual address space. On 32bit platforms your address space is
+   ~4GB. So while your application may not use 4GB of memory, it will run
+   out of address space if you try to memory map a too large file. This
+   has the same result as being out of memory.</p> <p>Sadly this doesn't
+   have a workaround like the other issues, it is a hard limitation of how
+   memory mapping works. You can now either rewrite the codebase to not
+   memory map the whole file, live with crashes on 32bit systems or not
+   support 32bit.</p> <p>With <a href="https://sublimemerge.com">Sublime
+   Merge</a> and <a
+   href="https://www.sublimetext.com/blog/articles/sublime-text-3-point-2"
+   >Sublime Text 3.2</a> we took the "no 32bit support" route. <a
+   href="https://sublimemerge.com">Sublime Merge</a> does not have a 32bit
+   build available and Sublime Text disables git integration on 32bit
+   versions.</p> <h2>An Alternative</h2> <p>I mentioned before that you
+   can rewrite your code to not use memory mapping. Instead of passing
+   around a long lived pointer into a memory mapped file all around the
+   codebase, you can use functions such as <code>pread</code> to copy only
+   the portions of the file that you require into memory. This is less
+   elegant initially than using <code>mmap</code>, but it avoids all the
+   problems you're otherwise going to have.</p> <p>Through some quick
+   benchmarks for the way <a href="https://sublimemerge.com">Sublime
+   Merge</a> reads git object files, <code>pread</code> was around � as
+   fast as <code>mmap</code> on linux. In hindsight it's difficult to
+   justify using <code>mmap</code> over <code>pread</code>, but now the
+   beast has been tamed and there's little reason to change any more.</p>
+   <p>If you think we've missed something or made a mistake, please leave
+   us a message on the forums. We hope this helps some of you in your
+   future endeavours. If you haven't already, check out our git client <a
+   href="https://sublimemerge.com">Sublime Merge</a>.</p>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-2 Wed,
+   13 Mar 2019 14:00:00 +1000 Will Bond <style> img.screenshot-32 { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-32 { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p>The past year has been busy here at Sublime HQ.
+   We've grown our engineering team, shipped Sublime Text 3.1 and released
+   our second product, <a href="https://www.sublimemerge.com">Sublime
+   Merge</a>. <em>If you use Git and like the ethos of Sublime Text, we
+   think you'll love it.</em></p> <p>Today we're pushing out Sublime Text
+   3.2, which builds off of a bunch of work we've done in Sublime Merge.
+   This includes: first-class <a href="/docs/3/git_integration.html">Git
+   integration</a>, <a href="/docs/3/incremental_diff.html">incremental
+   diffing</a>, new theme functionality and block caret support. Beyond
+   that is a slew of other enhancements, stability improvements and
+   performance gains. See the full changelog below for details.</p>
+   <p>Sublime Text 3.2 is available from the <a href="/3">Download</a>
+   page.</p> <img src="/screenshots/3.2/git_diff.png"
+   class="screenshot-32"> <p class="caption-32">Git status badges in the
+   side bar and incremental diff markers in the gutter</p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_32_ss() { var
+   ss = document.getElementsByClassName("screenshot-32"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_32_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_32_ss() }) } </script>
+   <h2>Changelog</h2> <article class="changelog"> <h3>Git Integration
+   <span class="new">New!</span></h3> <ul class="topic"> <li>Files and
+   folders in the sidebar will now display badges to indicate Git
+   status</li> <li>Ignored files and folders are visually
+   de-emphasized</li> <li>The current Git branch and number of
+   modifications is displayed in the status bar</li> <li>Commands have
+   been added to open a repository, see file or folder history, or blame a
+   file in <a href="https://www.sublimemerge.com">Sublime Merge</a></li>
+   <li>Themes may customize the display of sidebar badges and status bar
+   information</li> <li>The setting <tt>show_git_status</tt> allows
+   disabling Git integration</li> <li>All file reads are done through a
+   custom, high-performance Git library written for <a
+   href="https://www.sublimemerge.com">Sublime Merge</a></li> <li><a
+   href="/docs/3/git_integration.html">Read the documentation</a></li>
+   </ul> <h3>Incremental Diff <span class="new">New!</span></h3> <ul
+   class="topic"> <li>All changes to a document are now represented by
+   dedicated markers in the gutter</li> <li>Diff markers show added,
+   modified and deleted lines</li> <li>The setting <span
+   class="setting">mini_diff</span> controls incremental diff
+   behavior</li> <li>In coordination with the new Git functionality, diffs
+   can be calculated against HEAD or the index</li> <li>The <span
+   class="setting">git_diff_target</span> setting controls base document
+   source</li> <li>API methods <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> allow controlling the
+   diff</li> <li> The following diff-related commands were added: <ul>
+   <li>Next Modification</li> <li>Previous Modification</li> <li>Revert
+   Modification</li> </ul> </li> <li>Full inline diffs of each change can
+   be displayed via the right-click context menu, or keyboard
+   shortcuts</li> <li>Inline diff presentation can be changed by
+   customizing a color scheme</li> <li><a
+   href="/docs/3/incremental_diff.html">Read the documentation</a></li>
+   </ul> <h3>Editor Control</h3> <ul class="topic"> <li>Added <span
+   class="setting">block_caret</span> setting</li> <li>Improve positioning
+   and sizing of gutter icons in some situations</li> <li>Fixed <span
+   class="setting">draw_minimap_border</span> setting not working</li>
+   <li>Linux: Improved input method (IM) support - fcitx, ibus, etc</li>
+   <li>Linux: Fixed a crash when using <tt>GTK_IM_MODULE=xim</tt></li>
+   <li>Linux: Tweaked behavior of up/down when on the first and last lines
+   of a file to better match platform conventions</li> <li>Windows:
+   Improved IME support</li> </ul> <h3>Themes/UI</h3> <ul class="topic">
+   <li> Enhanced the <span class="file">.sublime-theme</span> format: <ul>
+   <li>Added variables support and associated revised JSON format with
+   <tt>variables</tt> key</li> <li>Added <tt>extends</tt> keyword to have
+   one theme derive from another</li> <li>Colors may be specified via CSS
+   syntax</li> </ul> </li> <li>Improved performance with large numbers of
+   rules in a <span class="file">.sublime-theme</span></li> <li>Linux:
+   Moved to GTK3</li> <li>Linux: Various high DPI fixes</li> <li>Mac:
+   Added Mojave support</li> <li>Mac: Add full support for macOS native
+   tabs</li> <li>Mac: Ensure context menus are shown without
+   scrolling</li> <li>Mac: Error message dialogs can now be closed with
+   the escape key</li> <li>Mac: Improved window placement</li> <li>Mac:
+   Improved resize performance</li> <li>Windows: Fixed minimized and
+   maximized state not restoring</li> <li>Windows: Fixed a bug where auto
+   complete entries would contain an ellipsis when not required</li> </ul>
+   <h3>Text Rendering</h3> <ul class="topic"> <li>Support for Unicode
+   11.0</li> <li>Improved rendering of combining characters</li> <li>Fixed
+   a caret positioning bug when non-trivial graphemes are present</li>
+   <li>Fixed some cases of incorrect glyph positions on Windows and
+   Mac</li> <li>Linux: Color glyphs are now drawn properly on light
+   backgrounds</li> <li>Windows: Fixed a rendering issue with certain
+   combining characters</li> <li>Windows: Fixed some fonts having an
+   incorrect baseline</li> </ul> <h3>Color Schemes</h3> <ul class="topic">
+   <li>Added <tt>block_caret</tt> key to use in conjunction with block
+   carets</li> <li><tt>caret</tt> values now respect alpha as expected,
+   rather than pre-blending against the background color</li> <li>Added
+   the <tt>foreground_adjust</tt> property to rules with a
+   <tt>background</tt>. Accepts CSS color mod adjusters to manipulate the
+   saturation, lightness or opacity of the foreground color.</li> </ul>
+   <h3>Syntax Highlighting</h3> <ul class="topic"> <li>Many syntax
+   highlighting improvements, including significant improvements to: <ul>
+   <li><i>Clojure</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>D</i></li> <li><i>Go</i>, with thanks to <a
+   href="https://github.com/mitranim">Nelo Mitranim</a></li>
+   <li><i>Lua</i>, with thanks to <a
+   href="https://github.com/Thom1729">Thomas Smith</a></li> </ul> </li>
+   <li>Fixed a crash that could occur when nesting embed patterns in <span
+   class="file">.sublime-syntax</span> files</li> <li>Syntax Tests: Allow
+   syntax test files to have a UTF-8 BOM</li> </ul> <h3>Files and
+   Folders</h3> <ul class="topic"> <li>Improve performance of file
+   watching for ignored paths on Windows and Mac</li> <li>Windows: Fixed
+   Open File treating paths as case-sensitive</li> <li>Windows: Properly
+   unlock directories after contained files are closed</li> </ul>
+   <h3>API</h3> <ul class="topic"> <li>Added
+   <tt>View.set_reference_document()</tt> and
+   <tt>View.reset_reference_document()</tt> to control diff
+   generation</li> <li>Phantoms are now drawn correctly in conjunction
+   with <span class="setting">draw_centered</span></li> <li>Various minor
+   improvements related to plugin module loading and unloading</li>
+   <li>Added support for <tt>hwb()</tt> colors to minihtml</li> <li>Added
+   a custom <tt>min-contrast()</tt> adjuster for the CSS color mod
+   function in minihtml</li> <li>Mac: Fixed a <tt>plugin_host</tt> crash
+   when running a process that itself crashes</li> </ul>
+   <h3>Miscellaneous</h3> <ul class="topic"> <li>Fixed a <i>Goto Symbol in
+   Project</i> performance regression</li> <li>F21..F24 keys can now be
+   bound</li> <li>Assorted minor fixes and stability improvements</li>
+   <li>Linux: Improved behavior of <tt>--wait</tt> command line argument
+   when Sublime Text isn't currently running</li> </ul> </article>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1107 Tue,
+   12 Mar 2019 20:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">Subli
+   me Merge</a>, our Git Client and Merge Tool, is out now with
+   improvements to the Merge Tool, Tree viewing, and Clone dialog. See the
+   <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1107">full
+   post</a> for more details.</p> <p>Sublime Text 3.2 will be coming very
+   soon now, featuring Git integration and more.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1092 Wed,
+   29 Nov 2018 20:00:00 +1000 Jon Skinner <p>Sublime HQ's Git Client, <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">Subli
+   me Merge</a>, is out now with Interactive Rebase, a new Contents View,
+   and Word Wrap - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1092">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-documentation
+   Mon, 05 Nov 2018 02:00:00 -0500 Will Bond <p> While we continue to add
+   more features and polish to the default Sublime Merge experience, we
+   know that developers love the ability to tweak their tools. Sublime
+   Merge is built on the same foundation as Sublime Text, so you can tweak
+   key bindings, menus, command palette entries, and even the look and
+   feel of the UI. </p> <p> To assist, we�ve just rolled out a number of <a
+   href="https://www.sublimemerge.com/docs/">pages of documentation</a>
+   for users who wish to customize Sublime Merge to look and function a
+   little differently. In addition, we�ve added a <a
+   href="https://www.sublimetext.com/docs/3/dev/">new documentation
+   section</a> for the <a href="https://www.sublimetext.com/3dev">dev
+   builds of Sublime Text</a>. It covers all of the features we added
+   during the development of Sublime Merge. </p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-build-1070 Wed,
+   10 Oct 2018 19:00:00 +1000 Jon Skinner <p><a
+   href="https://www.sublimemerge.com/download">Sublime Merge Build
+   1070</a> is out now with Commit Folding - see the <a
+   href="https://www.sublimemerge.com/blog/sublime-merge-build-1070">full
+   post</a> for more details.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge-roadmap Tue, 2
+   Oct 2018 10:00:00 +1000 Jon Skinner <p>Just a quick post about what
+   we're going to be adding to <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>. This isn't a
+   comprehensive list, but it should give an indication of what we're
+   focusing on right now.</p> <ul> <li><b>Branch Visualization</b>.
+   Sublime Merge itself handles large repositories well, but there's more
+   the UI could do to help users with a lot of branches on the go. We've
+   got some nice things cooking for this that will be coming in the near
+   future. Stay tuned!</li> <li><b>Submodule Management</b>. Sublime Merge
+   understands submodules, but doesn't provide any UI for managing them.
+   We'll be changing that soon.</li> <li><b>Tabs</b>. Tabs have been
+   frequently requested by users working on several repositories at once.
+   The <i>Switch Repository</i> functionality (under the <i>File</i> menu)
+   helps with this, but tabs have their own benefits, so they're on their
+   way.</li> <li><b>Git Flow Integration</b>. Git Flow is a branching
+   strategy with an accompanying set of command line tools. We've had a
+   lot of requests for UI support here, so it'll be making it in too.</li>
+   <li><b>Interactive Rebase</b>. Sublime Merge currently supports editing
+   commit messages and squashing commits (available from the commit
+   context menu). We'll be adding extra commit wrangling functionality,
+   including reordering commits, moving commits between branches, and
+   amending arbitrary commits.</li> <li><b>Plugins</b>. Sublime Text style
+   plugins are on our radar. This isn't at the top of the list, but
+   they're coming.</li> </ul> <p>We'll also be getting a new Sublime Text
+   Dev Build out this week, rolling in all the updates from Sublime Merge,
+   including the updated theming system and Mojave support.</p>
+   https://www.sublimetext.com/blog/articles/sublime-merge Mon, 20 Sep
+   2018 10:00:00 +0000 Jon Skinner <style> img.screenshot-sm { width:
+   600px; margin: 1em 0 0; display: block; filter: drop-shadow(3px 3px 5px
+   #9998); } p.caption-sm { margin-top: 0.5em; color: #999; font-style:
+   italic; } </style> <p><i>(You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a> from <a
+   href="https://www.sublimemerge.com/download">https://www.sublimemerge.c
+   om/download</a>)</i></p> <p> There's a company that makes photography
+   accessories, called Really Right Stuff. They make lovely equipment, but
+   what I really like is the name. It embodies the idea of building
+   something that goes beyond the minimum: making it as good as it can be,
+   paying attention to the details, and getting it really right. </p> <p>
+   When it comes to software, getting it really right goes beyond
+   functionality. The feel, aesthetics, and performance all have to be
+   there. </p> <p> There's a real pleasure using software that gets it
+   really right, as a lot of the time, it doesn't. We're all too familiar
+   with clunky layouts, unresponsive buttons, choppy scrolling, tedious
+   splash screens, and flickering on every interaction. </p> <p> After
+   typing <tt>git add -p</tt> in the terminal one too many times, I
+   thought to myself: we've got some pretty great tech in Sublime Text.
+   What if we used it to build a Git client? Could we make it fast? Could
+   we make it buttery smooth, without flickering or blocking? Could we
+   make something that's really, really right? </p> <p> Today, I'd like to
+   introduce <a href="https://www.sublimemerge.com">Sublime Merge</a>. It
+   combines the UI engine of Sublime Text, with a from-scratch
+   implementation of Git*. The result is, to us at least, something pretty
+   special. <a href="https://www.sublimemerge.com"><img
+   src="/screenshots/merge/staging.png" width="600" height="291"
+   class="screenshot-sm"></a> <p class="caption-sm">Sublime Merge - Commit
+   Dialog</p> </p> <p> You can download <a
+   href="https://www.sublimemerge.com">Sublime Merge</a>, and try it for
+   yourself - there's no time limit, no accounts, no metrics, and no
+   tracking. The evaluation version is fully functional, but is restricted
+   to the light theme only. Individual purchases are buy once, use
+   forever, with 3 years of updates included in the purchase. Business
+   licenses are available on a subscription basis. Sublime Merge runs on
+   Windows, Mac and Linux. </p> <p> It's still early days for Sublime
+   Merge - it has only been used by us and our small team of beta testers
+   so far. We'd love to hear what you think. We'll be on the <a
+   href="https://forum.sublimetext.com/">Forums</a> listening to any
+   feedback - let us know how you get on with it! </p> <br> <p><small> *
+   We have a custom implementation of Git for reading repositories, which
+   drives a lot of our high performance functionality. However we defer to
+   Git itself for operations that mutate the repository (Staging,
+   Committing, Checking out branches, etc). </small></p> <script> if
+   (!window.res) { scale = 1 res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } function high_dpi_sm_ss() { var
+   ss = document.getElementsByClassName("screenshot-sm"); for(var i = 0; i
+   < ss.length; i++) { ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_sm_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_sm_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/sublime-text-3-point-1 Mon, 7
+   May 2018 10:00:00 +0000 Will Bond and Jon Skinner <p>Since version 3.0
+   we've been shipping frequent <a href="/3dev">dev builds</a>, refining
+   Sublime Text for a more polished experience all-around. Those dev
+   builds are now rolling out to everyone as Sublime Text 3.1. The <a
+   href="/3">full changelog for 3.1</a> includes every detail, but the
+   following are some we'd like to highlight: </p> <style> img.screenshot
+   { width: 600px; margin: 1em 0 0; display: block; filter:
+   drop-shadow(3px 3px 5px #9998); } p.caption { margin-top: 0.5em; color:
+   #999; font-style: italic; } </style> <h4>UI</h4> <ul class="topic">
+   <li>Windows 10/8.1 per-monitor DPI settings for handling mixed monitor
+   configurations and on-the-fly DPI switching</li> <li>Lots of
+   improvements for high DPI support on all platforms, including 8k
+   monitor and @3x texture support</li> </ul> <h4>Text Rendering</h4> <ul
+   class="topic"> <li> Ligature support, with controls for customizing
+   OpenType features and stylistic sets <img
+   src="/screenshots/3.1/ligatures.png" class="screenshot"> <p
+   class="caption">An example of ligatures with Fira Code</p> </li>
+   <li>Improved text rendering on Windows, now respecting ClearType
+   tuning</li> <li>Better handling of emojis in the editor control
+   &nbsp;�</li> </ul> <h4>Color Schemes</h4> <ul class="topic"> <li> A new
+   color scheme format based on JSON, with easier customization and new
+   features like <a
+   href="/docs/3/color_schemes.html#hashed_syntax_highlighting">hashed
+   syntax highlighting</a> <img
+   src="/screenshots/3.1/hashed_highlighting.png" class="screenshot"> <p
+   class="caption">Hashed syntax highlighting with the Celeste color
+   scheme</p> </li> <li>Improved selection rendering with <a
+   href="/docs/3/color_schemes.html#global_settings-selection">expanded
+   customization</a> via color schemes</li> </ul> <h4>Syntax
+   Definitions</h4> <ul class="topic"> <li>Syntax definitions for Git file
+   formats to allow Sublime Text to be a better <tt>core.editor</tt></li>
+   <li> Highlighting of fenced code blocks in Markdown <img
+   src="/screenshots/3.1/markdown.png" class="screenshot"> <p
+   class="caption">Python highlighted in a fenced code block</p> </li>
+   <li>Lots of TC39-track features have been added to the JavaScript
+   syntax</li> </ul> <h4>User Interaction</h4> <ul class="topic"> <li>
+   Goto References to augment Goto Definition <img
+   src="/screenshots/3.1/goto_references.png" class="screenshot"> <p
+   class="caption">Goto References shown in the symbol popup</p> </li>
+   <li>An improved Command Palette that can accept arbitrary user input
+   and complex interactions</li> </ul> <h4>File System</h4> <ul
+   class="topic"> <li>Expanded options for filtering files and folders
+   from the sidebar</li> <li>Improved handling of filesystem notifications
+   and symlinks</li> </ul> <h4>Performance</h4> <ul class="topic">
+   <li>Significantly improved memory usage - up to 30% in some cases</li>
+   <li>Lots of little performance improvements and bug fixes</li> </ul>
+   <h4>More!</h4> <ul class="topic"> <li>See the <a
+   href="/3">changelog</a> for the full list</li> </ul> <p>Many of these
+   changes were developed in response to the community's feedback, and in
+   some cases with your help! As may be evident, this dev cycle spent a
+   good amount of time polishing some foundational elements of the editor
+   and making it more robust for use on different configurations and for
+   different purposes. <p>We've got some exciting things planned for the
+   future, which will further build upon the foundation we've laid with
+   3.0 and 3.1! If you want to preview the latest changes and help provide
+   feedback during the next dev cycle, install the latest <a
+   href="/3dev">dev build</a> and you'll get notifications as we release
+   new updates. <script> if (!window.res) { scale = 1 res = function() {
+   scale = window.devicePixelRatio >= 1.3 && document.body.clientWidth >
+   1024 ? 2 : 1 return scale == 2 ? '@2x' : '' } } function
+   high_dpi_31_ss() { var ss =
+   document.getElementsByClassName("screenshot"); for(var i = 0; i <
+   ss.length; i++) { console.log(ss.item(i)) ss.item(i).src =
+   ss.item(i).src.replace(/(@2x)?\.png/, res() + '.png'); } }
+   high_dpi_31_ss() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { high_dpi_31_ss() }) } </script>
+   https://www.sublimetext.com/blog/articles/the-adaptive-theme Fri, 06
+   Oct 2017 06:00:00 +0000 Will Bond <p>With the release of Sublime Text
+   3.0, we refreshed the visual design for the application, icon, and
+   website. The new icon ties into the colors and shapes of the old, but
+   is more abstract and fits well with other modern applications. The
+   updated Default theme is still distinctly Sublime Text, but has full
+   high DPI support, and works well with both dark and light color
+   schemes. The three new color schemes take advantage of the work that
+   has gone into modernizing and enhancing the syntax definitions included
+   with Sublime Text.</p> <table style="margin: 20px 0;"> <tr> <th
+   style="color: #777; font-style: italic; padding: 0 20px 12px 0;
+   line-height: 1.2"> <b>Sublime Text 3 Build 3126</b><br> <span
+   style="font-size: 0.9em">(Old) Default theme, IDLE color scheme</span>
+   </th> <th style="color: #777; font-style: italic; line-height: 1.2">
+   <b>Sublime Text 3.0</b><br> <span style="font-size: 0.9em">(New)
+   Default theme, Sixteen color scheme</span> </th> </tr> <tr> <td
+   style="padding-right: 30px;"> <img
+   src="/screenshots/the_adaptive_theme/3126_default_idle.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> <td> <img
+   src="/screenshots/the_adaptive_theme/3143_default_sixteen.png"
+   style="width: 250px; max-width: 100%; height: auto;"> </td> </tr>
+   </table> <p>As well as an overhaul of the default theme, we've also
+   include a new theme, Adaptive, which uses the colors of your color
+   scheme and applies variations of them to the side bar and various
+   panels. The new color scheme setting <code>accent</code> is used to
+   highlight selected options in the find panel, and to highlight modified
+   tabs. Furthermore, on recent versions of macOS the title bar is also
+   styled by the Adaptive theme to follow your selected color scheme.</p>
+   <p>The result is a theme that acts as if it was custom designed for
+   your color scheme. Check out this sample of Adaptive in action:</p>
+   <script> var width = 800 var height = 400 if (!window.byid) { plat =
+   'osx' arch = '64' scale = 1 byid = function(x) { return
+   document.getElementById(x) } res = function() { scale =
+   window.devicePixelRatio >= 1.3 && document.body.clientWidth > 1024 ? 2
+   : 1 return scale == 2 ? '@2x' : '' } } </script> <div id="anim_shell">
+   <div id="anim_container"> <canvas id="target" style="width: 800px;
+   height: 400px"></canvas> <div id="fallback" style="width: 800px;
+   height: 400px; position: relative; display: none"></div> <div
+   id="title-overlay" class="show"><div></div></div> </div> </div>
+   <script> var images = [] var target = byid('target') var use_canvas =
+   target && target.getContext if (!use_canvas) {
+   byid('target').style.display = 'none' target = byid('fallback')
+   target.style.display = 'block' } function load_animation() { var script
+   = byid('anim_script') if (script) script.parentNode.removeChild(script)
+   script = document.createElement('script') script.setAttribute('src',
+   '/screencasts/adaptive' + res() + '.js') script.setAttribute('id',
+   'anim_script') document.body.appendChild(script) if (use_canvas) {
+   target.width = scale * width target.height = scale * height } }
+   load_animation() if (window.matchMedia) { window.matchMedia('screen and
+   (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 1025px), ' +
+   'only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width:
+   1025px), ' + 'only screen and (min-resolution: 120dpi) and (min-width:
+   1025px)').addListener(function(e) { load_animation() }) } function
+   handle_resize(e) { target.style.height = Math.floor(target.clientWidth
+   / width * height) + 'px' } handle_resize() if (window.addEventListener)
+   window.addEventListener('resize', handle_resize, false) else if
+   (window.attachEvent) window.attachEvent('onresize', handle_resize) var
+   continuation = null var start_time = null var remaining_time = 0 var
+   timer = null function set_timeout(f, timeout) { start_time = new
+   Date().getTime() remaining_time = timeout continuation = f timer =
+   window.setTimeout(f, timeout) } // Only run a callback once an
+   animation frame is available, allowing // the animation to be paused
+   when in the background, etc function sync_frame(f) { if
+   (!window.requestAnimationFrame) f() else
+   window.requestAnimationFrame(f) } // Run a timeout synced to the
+   animation frame function sync_timeout(f, timeout) {
+   set_timeout(function() { sync_frame(f) }, timeout) } function
+   pause_timeout() { var elapsed = (new Date().getTime()) - start_time
+   remaining_time = Math.max(remaining_time - elapsed, 0)
+   window.clearTimeout(timer) } function continue_timeout() { start_time =
+   new Date().getTime() timer = window.setTimeout(continuation,
+   remaining_time) } function play() { continue_timeout() } function
+   pause() { pause_timeout() } var delay_scale = 1.0 var overlay =
+   byid('title-overlay') function display_error() {
+   window.clearTimeout(timer) continuation = null if (use_canvas) { var
+   ctx = target.getContext('2d') ctx.clearRect(0, 0, target.width,
+   target.height) } else { target.innerHTML = '' }
+   overlay.getElementsByTagName('div')[0].innerHTML = '<i>Error loading
+   screencast</i>'; overlay.className = 'show' } function transition() {
+   if (timer) window.clearTimeout(timer) sync_frame(function() { var
+   img_url = animation_urls[0] var timeline = animation_timelines[0] var
+   img = prep_animation(img_url, timeline, null) sync_timeout(function() {
+   animate(img, timeline, target, 0) }, 2400) }) } function
+   draw_canvas(img, element, frame, blits) { var ctx =
+   element.getContext('2d') for (j = 0; j < blits.length; ++j) { var blit
+   = blits[j] var sx = blit[0] var sy = blit[1] var w = blit[2] var h =
+   blit[3] var dx = blit[4] var dy = blit[5] ctx.drawImage(img, sx, sy, w,
+   h, dx, dy, w, h) } } function draw_fallback(img, element, frame, blits)
+   { if (frame == 0) { while (element.hasChildNodes())
+   element.removeChild(element.lastChild) } for (j = 0; j < blits.length;
+   ++j) { var blit = blits[j] var sx = blit[0] / scale var sy = blit[1] /
+   scale var w = blit[2] / scale var h = blit[3] / scale var dx = blit[4]
+   / scale var dy = blit[5] / scale var d = document.createElement('div')
+   d.style.position = 'absolute' d.style.left = dx + "px" d.style.top = dy
+   + "px" d.style.width = w + "px" d.style.height = h + "px"
+   d.style.backgroundImage = "url('" + img.src + "')"
+   d.style.backgroundPosition = "-" + sx + "px -" + sy + "px"
+   d.style.backgroundSize = width + "px auto" element.appendChild(d) } }
+   function draw(img, element, frame, blits) { if (use_canvas)
+   draw_canvas(img, element, frame, blits) else draw_fallback(img,
+   element, frame, blits) } function animate(img, timeline, element,
+   start_frame) { var i = start_frame; var f = function() { var frame =
+   i++ % timeline.length var delay = timeline[frame].delay * delay_scale
+   var blits = timeline[frame].blit draw(img, element, frame, blits) var
+   callback = f sync_timeout(callback, delay) } if (timer)
+   window.clearTimeout(timer) sync_frame(f) } function
+   prep_animation(img_url, timeline, preload_url) { var ready = function()
+   { overlay.className = '' sync_frame(function() { draw(images[img_url],
+   target, 0, timeline[0].blit) }) if (preload_url && !(preload_url in
+   images)) { images[preload_url] = new Image() images[preload_url].src =
+   preload_url } } if (img_url in images) { ready() } else {
+   images[img_url] = new Image() images[img_url].onload = ready
+   images[img_url].onerror = function() { delete images[img_url]
+   display_error() } images[img_url].src = img_url } return
+   images[img_url] } </script> <p>To try Adaptive out for yourself, open
+   the <span class="feature">Command Palette</span> and type <kbd>Select
+   Theme</kbd>. Once you've picked <em>Adaptive</em>, use the <kbd>Select
+   Color Scheme</kbd> command to preview the available color schemes.</p>
+   <p>Probably the best part is that all of the power of the Adaptive
+   theme is available for any theme to use. Additionally, we wrote up <a
+   href="/docs/3/themes.html">full documentation</a> about all of the
+   theme engine features and syntax. Having comprehensive documentation
+   will hopefully make theming accessible to a much wider audience. If you
+   are looking for help in customizing a theme, or creating your own, drop
+   by the <a href="https://forum.sublimetext.com/">forum</a> or ask some
+   questions on the <a href="https://discord.gg/HcmwdVK">Discord
+   server</a>.</p>
+   #RSS 2.0
+
+   Sublime Text
+
+   Download Buy Support News Forum
+
+   Introducing our Git client
+   [merge_icon.svg] Sublime Merge [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+   A sophisticated text editor for
+   code, markup and prose
+   Download for Windows Download for Windows Install for Linux Download
+   for Mac
+   Sublime Text 3 (Build 3211)
+   Changelog
+
+   [yH5BAEAAAAALAAAAAABAAEAAAIBRAA7]
+
+   Use Multiple Selections to rename variables quickly Here Ctrl+D⌘+D is
+   used to select the next occurrence of the current word. Once created,
+   each selection allows for full-featured editing.
+   Quickly jump to files and functions with Goto Anything Here Ctrl+P⌘+P
+   is used to open the Goto Anything menu, xcc is used to select the file
+   xla_compilation_cache.cc, @ switches to symbol mode, and :c selects the
+   XlaCompilationCache::Compile method.
+   Navigate source using Goto Definition Here the mouse is hovered over a
+   symbol to jump to the definition. The keyboard shortcut F12 can be used
+   when the caret is located on a symbol, or Goto Symbol in Project can be
+   opened via Ctrl+Shift+R⇧+⌘+R to jump to the definition of any symbol in
+   the project.
+   Unsurpassed performance Here a 7MB source code file is opened, and Goto
+   Symbol Ctrl+R⌘+R is used to jump to a function 200k lines down. Full
+   editing features are retained for code in large files, or with complex
+   syntax.
+
+Some features our users love:
+
+Goto Anything
+
+   Use Goto Anything to open files with only a few keystrokes, and
+   instantly jump to symbols, lines or words.
+
+   Triggered with Ctrl+P⌘+P, it is possible to:
+     * Type part of a file name to open it.
+     * Type @ to jump to symbols, # to search within the file, and : to go
+       to a line number.
+
+   These shortcuts can be combined, so tp@rf may take you to a function
+   read_file within a file text_parser.py. Similarly, tp:100 would take
+   you to line 100 of the same file.
+
+Goto Definition
+
+   Using information from syntax definitions, Sublime Text automatically
+   generates a project-wide index of every class, method and function.
+   This index powers Goto Definition, which is exposed in three different
+   ways:
+     * A popup is displayed when hovering over a symbol
+     * Pressing F12 when the caret is on a symbol
+     * The Goto Symbol in Project functionality
+
+   Symbol indexing can be customized on a per-syntax basis via
+   configuration files, allowing users to tailor the feature to their
+   needs.
+
+Multiple Selections
+
+   Make ten changes at the same time, not one change ten times. Multiple
+   selections allow you to interactively change many lines at once, rename
+   variables with ease, and manipulate files faster than ever.
+
+   Try pressing Ctrl+Shift+L⇧+⌘+L to split the selection into lines and
+   Ctrl+D⌘+D to select the next occurrence of the selected word. To make
+   multiple selections with the mouse, take a look at the Column Selection
+   documentation.
+
+Command Palette
+
+   The Command Palette holds infrequently used functionality, like
+   sorting, changing the syntax and changing the indentation settings.
+   With just a few keystrokes, you can search for what you want, without
+   ever having to navigate through the menus or remember obscure key
+   bindings.
+
+   Show the Command Palette with Ctrl+Shift+P⇧+⌘+P.
+
+Powerful API and Package Ecosystem
+
+   Sublime Text has a powerful, Python API that allows plugins to augment
+   built-in functionality.
+
+   Package Control can be installed via the command palette, providing
+   simple access to thousands of packages built by the community.
+
+Customize Anything
+
+   Key bindings, menus, snippets, macros, completions and more - just
+   about everything in Sublime Text is customizable with simple JSON
+   files. This system gives you flexibility as settings can be specified
+   on a per-file type and per-project basis.
+
+Split Editing
+
+   Get the most out of your wide screen monitor with split editing
+   support. Edit files side by side, or edit two locations in the one
+   file. You can edit with as many rows and columns as you wish. Take
+   advantage of multiple monitors by editing with multiple windows, and
+   using multiple splits in each window.
+
+   Take a look at the View ▶ Layout menu for split editing options. To
+   open multiple views into the one file, use the File ▶ New View into
+   File menu item.
+
+Instant Project Switch
+
+   Projects in Sublime Text capture the full contents of the workspace,
+   including modified and unsaved files. You can switch between projects
+   in a manner similar to Goto Anything, and the switch is instant, with
+   no save prompts - all your modifications will be restored next time the
+   project is opened.
+
+Performance
+
+   Sublime Text is built from custom components, providing for unmatched
+   responsiveness. From a powerful, custom cross-platform UI toolkit, to
+   an unmatched syntax highlighting engine, Sublime Text sets the bar for
+   performance.
+
+Cross Platform
+
+   Sublime Text is available for Mac, Windows and Linux. One license is
+   all you need to use Sublime Text on every computer you own, no matter
+   what operating system it uses.
+
+   Sublime Text uses a custom UI toolkit, optimized for speed and beauty,
+   while taking advantage of native functionality on each platform.
+
+Sublime HQ Family
+
+Sublime Merge
+
+   Have you seen our sister product, Sublime Merge? It's a Git Client,
+   done the Sublime Text way.
+
+   © Sublime HQ Pty Ltd
+
+   Woollahra, Sydney.

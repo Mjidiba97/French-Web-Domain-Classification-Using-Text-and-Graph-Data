@@ -1,0 +1,980 @@
+   Apache Turbine
+     __________________________________________________________________
+
+   Last Published: 18 June 2019  | Version: 5.0
+   Apache | Turbine | Fulcrum
+     __________________________________________________________________
+
+General Information
+
+     * Overview
+     * Turbine Concepts
+     * Specification
+     * Further Reading
+     * News and Status
+     * Sites Using Turbine
+     * Sites Related to Turbine
+     * License
+     * Download
+     * Example Apps
+
+Shortcuts to Turbine Documentation
+
+     * Turbine Blog
+     * Turbine Wiki Home
+     * Frequently Asked Questions (FAQ)
+     * Tutorial
+     * User's Guide
+     * Development
+
+Events
+
+     *
+
+Turbine Releases
+
+     * Overview
+     * Turbine 2.3.3
+     * Turbine 4.0-M2
+     * Turbine 4.0
+     * Turbine 5.0
+
+Turbine Development
+
+     * Turbine 5.1
+
+Turbine Sub Projects
+
+     * Fulcrum
+
+Closed projects
+
+     * Stratum
+     * TDK
+     * META
+
+Community
+
+     * Who we are
+     * Contact us
+     * How to help
+     * How it works
+     * Board reports
+
+General Development Information
+
+     * Coding Specification
+     * Developer Links
+     * Improving Documentation
+
+Project Documentation
+
+     * Project Information
+     * Project Reports
+
+Apache
+
+     * Apache Website
+     * License
+     * How the ASF works
+     * Sponsorship
+     * Thanks
+     * Security
+
+   Built by Maven
+
+Apache Turbine™ Web Application Framework
+
+   Apache Turbine™ is a servlet based framework that allows experienced
+   Java developers to quickly build web applications. Turbine allows you
+   to use personalize the web sites and to use user logins to restrict
+   access to parts of your application.
+
+   Turbine is a matured and well established framework that is used as the
+   base of many other projects (like e.g. the excellent Jetspeed 1 Portals
+   framework.
+
+   Turbine is an excellent choice for developing applications that make
+   use of a services-oriented architecture. Some of the functionality
+   provided with Turbine includes a security management system (decoupled
+   in Fulcrum Security), a scheduling service (decoupled in Fulcrum
+   Quartz), XML-defined form validation server (Fulcrum Intake), and an
+   XML-RPC service for web services. It is a simple task to create new
+   services particular to your application.
+
+   The Turbine core is free of any dependency on a presentation layer
+   technology. Both JavaServer Pages (JSP) and Velocity are supported
+   inside Turbine. For developers already familiar with JSP, or have
+   existing JSP tag libraries, Turbine offers support for the Sun
+   standard. Velocity is the favorite view technology of most users of the
+   Turbine framework; try it out and see if Velocity can help you develop
+   your web applications faster and work more easily with non-programming
+   designers.
+
+   Turbine is developed in an open, participatory environment and released
+   under the Apache Software License. Turbine is intended to be a
+   collaboration of the best-of-breed developers from around the world. We
+   invite you to participate in this open development project. To learn
+   more about getting involved, look at our "How to Help" pages.
+
+Integration Hints: JS, JSON, REST
+
+   Modelling on the client side with JS-frameworks like KnockoutJS or
+   Vue.JS is supported of course. You may use the provided XML-RPC
+   service, simple Velocity context or Fulcrum JSON utilities. You may
+   even want to skip (almost) the entire (server) view part and decide to
+   use just REST-API libraries (Javax.ws.rs, Jersey). As an example
+   consider registering an JSON Fulcrum service returning a default
+   (Jackson) ObjectMapper object, which may be resolved by a javax.ws.rs
+   context Provider. For now no custom security integration is yet
+   provided, but this may be done with web-token or any other token based
+   authentification system or annotation based.
+
+Turbine Versions
+
+   Turbine is since version 4.0 developed in a single master/branch.
+     * Turbine 5.1 is the current development master. Download it from one
+       of the Apache Mirrors.
+     * Turbine 5.0 is using Servlet 3.1, Java 8, Log4J2, Velocity 2. It is
+       already used in some live applications, download it from one of the
+       Apache Mirrors.
+     * Turbine 4.0 should be used only, if starting a project restricted
+       with Java 7. Download it from one of the Apache Mirrors. Turbine
+       4.0 uses technologies like an Avalon-based container and decoupled
+       components from the Fulcrum sub-project of Turbine (most of the
+       benefits of these enhancements are realized in the 2.3.3 release).
+       One significant change in 4.0 is the introduction of a pipeline
+       concept that allows you to define via XML all the stages for
+       processing a request.
+     * Turbine 2.3.3 is the version you should use when migrating from an
+       older version of Turbine. The 2.3 branch of Turbine has been
+       switched to maintenance mode, however. You can download Turbine
+       2.3.3 from one of the Apache Mirrors
+
+Sub Projects
+
+     * Fulcrum components are by default in use since Turbine 4.x. It is a
+       collection of services originally developed as part of Turbine, but
+       now decoupled and usable in any environment that supports Avalon
+       components.
+
+Turbine Alumni
+
+   As a longtime, but now ex-member of the Apache Jakarta Project (before
+   2018) (old address*), Turbine has influenced quite a number of
+   projects:
+     * Torque is a persistence layer originally developed as part of
+       Turbine. Torque is now decoupled and part of the Apache Database
+       Project.
+     * Maven is an advanced Java Project Management tool originally
+       developed out of the frustration with the Turbine build process.
+       Maven is now a toplevel Apache project, residing at
+       maven.apache.org.
+     * In addition, Turbine has spawned a number of Commons components
+       like Commons configuration or Commons EMail.
+
+   * Note: Be aware, that Jakarta EE is since 2019 used as a brand label
+   for the Java EE Cloud Native project.
+
+The Apache Software Foundation
+
+   The Apache Software Foundation provides support for the Apache
+   community of open-source software projects. The Apache projects are
+   defined by collaborative consensus based processes, an open, pragmatic
+   software license and a desire to create high quality software that
+   leads the way in its field.
+
+   Apache Turbine, Turbine, Apache, the Apache feather logo, and the
+   Apache Turbine project logo are trademarks of The Apache Software
+   Foundation.
+
+   All other marks mentioned may be trademarks or registered trademarks of
+   their respective owners.
+     __________________________________________________________________
+
+   Copyright © 2000–2019 Apache Software Foundation. All rights reserved.
+     __________________________________________________________________
+   Apache Turbine
+     __________________________________________________________________
+
+   Last Published: 18 June 2019  | Version: 5.0
+   Apache | Turbine | Fulcrum
+     __________________________________________________________________
+
+General Information
+
+     * Overview
+     * Turbine Concepts
+     * Specification
+     * Further Reading
+     * News and Status
+     * Sites Using Turbine
+     * Sites Related to Turbine
+     * License
+     * Download
+     * Example Apps
+
+Shortcuts to Turbine Documentation
+
+     * Turbine Blog
+     * Turbine Wiki Home
+     * Frequently Asked Questions (FAQ)
+     * Tutorial
+     * User's Guide
+     * Development
+
+Events
+
+     *
+
+Turbine Releases
+
+     * Overview
+     * Turbine 2.3.3
+     * Turbine 4.0-M2
+     * Turbine 4.0
+     * Turbine 5.0
+
+Turbine Development
+
+     * Turbine 5.1
+
+Turbine Sub Projects
+
+     * Fulcrum
+
+Closed projects
+
+     * Stratum
+     * TDK
+     * META
+
+Community
+
+     * Who we are
+     * Contact us
+     * How to help
+     * How it works
+     * Board reports
+
+General Development Information
+
+     * Coding Specification
+     * Developer Links
+     * Improving Documentation
+
+Project Documentation
+
+     * Project Information
+     * Project Reports
+
+Apache
+
+     * Apache Website
+     * License
+     * How the ASF works
+     * Sponsorship
+     * Thanks
+     * Security
+
+   Built by Maven
+
+Apache Turbine™ Web Application Framework
+
+   Apache Turbine™ is a servlet based framework that allows experienced
+   Java developers to quickly build web applications. Turbine allows you
+   to use personalize the web sites and to use user logins to restrict
+   access to parts of your application.
+
+   Turbine is a matured and well established framework that is used as the
+   base of many other projects (like e.g. the excellent Jetspeed 1 Portals
+   framework.
+
+   Turbine is an excellent choice for developing applications that make
+   use of a services-oriented architecture. Some of the functionality
+   provided with Turbine includes a security management system (decoupled
+   in Fulcrum Security), a scheduling service (decoupled in Fulcrum
+   Quartz), XML-defined form validation server (Fulcrum Intake), and an
+   XML-RPC service for web services. It is a simple task to create new
+   services particular to your application.
+
+   The Turbine core is free of any dependency on a presentation layer
+   technology. Both JavaServer Pages (JSP) and Velocity are supported
+   inside Turbine. For developers already familiar with JSP, or have
+   existing JSP tag libraries, Turbine offers support for the Sun
+   standard. Velocity is the favorite view technology of most users of the
+   Turbine framework; try it out and see if Velocity can help you develop
+   your web applications faster and work more easily with non-programming
+   designers.
+
+   Turbine is developed in an open, participatory environment and released
+   under the Apache Software License. Turbine is intended to be a
+   collaboration of the best-of-breed developers from around the world. We
+   invite you to participate in this open development project. To learn
+   more about getting involved, look at our "How to Help" pages.
+
+Integration Hints: JS, JSON, REST
+
+   Modelling on the client side with JS-frameworks like KnockoutJS or
+   Vue.JS is supported of course. You may use the provided XML-RPC
+   service, simple Velocity context or Fulcrum JSON utilities. You may
+   even want to skip (almost) the entire (server) view part and decide to
+   use just REST-API libraries (Javax.ws.rs, Jersey). As an example
+   consider registering an JSON Fulcrum service returning a default
+   (Jackson) ObjectMapper object, which may be resolved by a javax.ws.rs
+   context Provider. For now no custom security integration is yet
+   provided, but this may be done with web-token or any other token based
+   authentification system or annotation based.
+
+Turbine Versions
+
+   Turbine is since version 4.0 developed in a single master/branch.
+     * Turbine 5.1 is the current development master. Download it from one
+       of the Apache Mirrors.
+     * Turbine 5.0 is using Servlet 3.1, Java 8, Log4J2, Velocity 2. It is
+       already used in some live applications, download it from one of the
+       Apache Mirrors.
+     * Turbine 4.0 should be used only, if starting a project restricted
+       with Java 7. Download it from one of the Apache Mirrors. Turbine
+       4.0 uses technologies like an Avalon-based container and decoupled
+       components from the Fulcrum sub-project of Turbine (most of the
+       benefits of these enhancements are realized in the 2.3.3 release).
+       One significant change in 4.0 is the introduction of a pipeline
+       concept that allows you to define via XML all the stages for
+       processing a request.
+     * Turbine 2.3.3 is the version you should use when migrating from an
+       older version of Turbine. The 2.3 branch of Turbine has been
+       switched to maintenance mode, however. You can download Turbine
+       2.3.3 from one of the Apache Mirrors
+
+Sub Projects
+
+     * Fulcrum components are by default in use since Turbine 4.x. It is a
+       collection of services originally developed as part of Turbine, but
+       now decoupled and usable in any environment that supports Avalon
+       components.
+
+Turbine Alumni
+
+   As a longtime, but now ex-member of the Apache Jakarta Project (before
+   2018) (old address*), Turbine has influenced quite a number of
+   projects:
+     * Torque is a persistence layer originally developed as part of
+       Turbine. Torque is now decoupled and part of the Apache Database
+       Project.
+     * Maven is an advanced Java Project Management tool originally
+       developed out of the frustration with the Turbine build process.
+       Maven is now a toplevel Apache project, residing at
+       maven.apache.org.
+     * In addition, Turbine has spawned a number of Commons components
+       like Commons configuration or Commons EMail.
+
+   * Note: Be aware, that Jakarta EE is since 2019 used as a brand label
+   for the Java EE Cloud Native project.
+
+The Apache Software Foundation
+
+   The Apache Software Foundation provides support for the Apache
+   community of open-source software projects. The Apache projects are
+   defined by collaborative consensus based processes, an open, pragmatic
+   software license and a desire to create high quality software that
+   leads the way in its field.
+
+   Apache Turbine, Turbine, Apache, the Apache feather logo, and the
+   Apache Turbine project logo are trademarks of The Apache Software
+   Foundation.
+
+   All other marks mentioned may be trademarks or registered trademarks of
+   their respective owners.
+     __________________________________________________________________
+
+   Copyright © 2000–2019 Apache Software Foundation. All rights reserved.
+     __________________________________________________________________
+   Apache Turbine
+     __________________________________________________________________
+
+   Last Published: 18 June 2019  | Version: 5.0
+   Apache | Turbine | Fulcrum
+     __________________________________________________________________
+
+General Information
+
+     * Overview
+     * Turbine Concepts
+     * Specification
+     * Further Reading
+     * News and Status
+     * Sites Using Turbine
+     * Sites Related to Turbine
+     * License
+     * Download
+     * Example Apps
+
+Shortcuts to Turbine Documentation
+
+     * Turbine Blog
+     * Turbine Wiki Home
+     * Frequently Asked Questions (FAQ)
+     * Tutorial
+     * User's Guide
+     * Development
+
+Events
+
+     *
+
+Turbine Releases
+
+     * Overview
+     * Turbine 2.3.3
+     * Turbine 4.0-M2
+     * Turbine 4.0
+     * Turbine 5.0
+
+Turbine Development
+
+     * Turbine 5.1
+
+Turbine Sub Projects
+
+     * Fulcrum
+
+Closed projects
+
+     * Stratum
+     * TDK
+     * META
+
+Community
+
+     * Who we are
+     * Contact us
+     * How to help
+     * How it works
+     * Board reports
+
+General Development Information
+
+     * Coding Specification
+     * Developer Links
+     * Improving Documentation
+
+Project Documentation
+
+     * Project Information
+     * Project Reports
+
+Apache
+
+     * Apache Website
+     * License
+     * How the ASF works
+     * Sponsorship
+     * Thanks
+     * Security
+
+   Built by Maven
+
+Apache Turbine™ Web Application Framework
+
+   Apache Turbine™ is a servlet based framework that allows experienced
+   Java developers to quickly build web applications. Turbine allows you
+   to use personalize the web sites and to use user logins to restrict
+   access to parts of your application.
+
+   Turbine is a matured and well established framework that is used as the
+   base of many other projects (like e.g. the excellent Jetspeed 1 Portals
+   framework.
+
+   Turbine is an excellent choice for developing applications that make
+   use of a services-oriented architecture. Some of the functionality
+   provided with Turbine includes a security management system (decoupled
+   in Fulcrum Security), a scheduling service (decoupled in Fulcrum
+   Quartz), XML-defined form validation server (Fulcrum Intake), and an
+   XML-RPC service for web services. It is a simple task to create new
+   services particular to your application.
+
+   The Turbine core is free of any dependency on a presentation layer
+   technology. Both JavaServer Pages (JSP) and Velocity are supported
+   inside Turbine. For developers already familiar with JSP, or have
+   existing JSP tag libraries, Turbine offers support for the Sun
+   standard. Velocity is the favorite view technology of most users of the
+   Turbine framework; try it out and see if Velocity can help you develop
+   your web applications faster and work more easily with non-programming
+   designers.
+
+   Turbine is developed in an open, participatory environment and released
+   under the Apache Software License. Turbine is intended to be a
+   collaboration of the best-of-breed developers from around the world. We
+   invite you to participate in this open development project. To learn
+   more about getting involved, look at our "How to Help" pages.
+
+Integration Hints: JS, JSON, REST
+
+   Modelling on the client side with JS-frameworks like KnockoutJS or
+   Vue.JS is supported of course. You may use the provided XML-RPC
+   service, simple Velocity context or Fulcrum JSON utilities. You may
+   even want to skip (almost) the entire (server) view part and decide to
+   use just REST-API libraries (Javax.ws.rs, Jersey). As an example
+   consider registering an JSON Fulcrum service returning a default
+   (Jackson) ObjectMapper object, which may be resolved by a javax.ws.rs
+   context Provider. For now no custom security integration is yet
+   provided, but this may be done with web-token or any other token based
+   authentification system or annotation based.
+
+Turbine Versions
+
+   Turbine is since version 4.0 developed in a single master/branch.
+     * Turbine 5.1 is the current development master. Download it from one
+       of the Apache Mirrors.
+     * Turbine 5.0 is using Servlet 3.1, Java 8, Log4J2, Velocity 2. It is
+       already used in some live applications, download it from one of the
+       Apache Mirrors.
+     * Turbine 4.0 should be used only, if starting a project restricted
+       with Java 7. Download it from one of the Apache Mirrors. Turbine
+       4.0 uses technologies like an Avalon-based container and decoupled
+       components from the Fulcrum sub-project of Turbine (most of the
+       benefits of these enhancements are realized in the 2.3.3 release).
+       One significant change in 4.0 is the introduction of a pipeline
+       concept that allows you to define via XML all the stages for
+       processing a request.
+     * Turbine 2.3.3 is the version you should use when migrating from an
+       older version of Turbine. The 2.3 branch of Turbine has been
+       switched to maintenance mode, however. You can download Turbine
+       2.3.3 from one of the Apache Mirrors
+
+Sub Projects
+
+     * Fulcrum components are by default in use since Turbine 4.x. It is a
+       collection of services originally developed as part of Turbine, but
+       now decoupled and usable in any environment that supports Avalon
+       components.
+
+Turbine Alumni
+
+   As a longtime, but now ex-member of the Apache Jakarta Project (before
+   2018) (old address*), Turbine has influenced quite a number of
+   projects:
+     * Torque is a persistence layer originally developed as part of
+       Turbine. Torque is now decoupled and part of the Apache Database
+       Project.
+     * Maven is an advanced Java Project Management tool originally
+       developed out of the frustration with the Turbine build process.
+       Maven is now a toplevel Apache project, residing at
+       maven.apache.org.
+     * In addition, Turbine has spawned a number of Commons components
+       like Commons configuration or Commons EMail.
+
+   * Note: Be aware, that Jakarta EE is since 2019 used as a brand label
+   for the Java EE Cloud Native project.
+
+The Apache Software Foundation
+
+   The Apache Software Foundation provides support for the Apache
+   community of open-source software projects. The Apache projects are
+   defined by collaborative consensus based processes, an open, pragmatic
+   software license and a desire to create high quality software that
+   leads the way in its field.
+
+   Apache Turbine, Turbine, Apache, the Apache feather logo, and the
+   Apache Turbine project logo are trademarks of The Apache Software
+   Foundation.
+
+   All other marks mentioned may be trademarks or registered trademarks of
+   their respective owners.
+     __________________________________________________________________
+
+   Copyright © 2000–2019 Apache Software Foundation. All rights reserved.
+     __________________________________________________________________
+   Apache Turbine
+     __________________________________________________________________
+
+   Last Published: 18 June 2019  | Version: 5.0
+   Apache | Turbine | Fulcrum
+     __________________________________________________________________
+
+General Information
+
+     * Overview
+     * Turbine Concepts
+     * Specification
+     * Further Reading
+     * News and Status
+     * Sites Using Turbine
+     * Sites Related to Turbine
+     * License
+     * Download
+     * Example Apps
+
+Shortcuts to Turbine Documentation
+
+     * Turbine Blog
+     * Turbine Wiki Home
+     * Frequently Asked Questions (FAQ)
+     * Tutorial
+     * User's Guide
+     * Development
+
+Events
+
+     *
+
+Turbine Releases
+
+     * Overview
+     * Turbine 2.3.3
+     * Turbine 4.0-M2
+     * Turbine 4.0
+     * Turbine 5.0
+
+Turbine Development
+
+     * Turbine 5.1
+
+Turbine Sub Projects
+
+     * Fulcrum
+
+Closed projects
+
+     * Stratum
+     * TDK
+     * META
+
+Community
+
+     * Who we are
+     * Contact us
+     * How to help
+     * How it works
+     * Board reports
+
+General Development Information
+
+     * Coding Specification
+     * Developer Links
+     * Improving Documentation
+
+Project Documentation
+
+     * Project Information
+     * Project Reports
+
+Apache
+
+     * Apache Website
+     * License
+     * How the ASF works
+     * Sponsorship
+     * Thanks
+     * Security
+
+   Built by Maven
+
+Apache Turbine™ Web Application Framework
+
+   Apache Turbine™ is a servlet based framework that allows experienced
+   Java developers to quickly build web applications. Turbine allows you
+   to use personalize the web sites and to use user logins to restrict
+   access to parts of your application.
+
+   Turbine is a matured and well established framework that is used as the
+   base of many other projects (like e.g. the excellent Jetspeed 1 Portals
+   framework.
+
+   Turbine is an excellent choice for developing applications that make
+   use of a services-oriented architecture. Some of the functionality
+   provided with Turbine includes a security management system (decoupled
+   in Fulcrum Security), a scheduling service (decoupled in Fulcrum
+   Quartz), XML-defined form validation server (Fulcrum Intake), and an
+   XML-RPC service for web services. It is a simple task to create new
+   services particular to your application.
+
+   The Turbine core is free of any dependency on a presentation layer
+   technology. Both JavaServer Pages (JSP) and Velocity are supported
+   inside Turbine. For developers already familiar with JSP, or have
+   existing JSP tag libraries, Turbine offers support for the Sun
+   standard. Velocity is the favorite view technology of most users of the
+   Turbine framework; try it out and see if Velocity can help you develop
+   your web applications faster and work more easily with non-programming
+   designers.
+
+   Turbine is developed in an open, participatory environment and released
+   under the Apache Software License. Turbine is intended to be a
+   collaboration of the best-of-breed developers from around the world. We
+   invite you to participate in this open development project. To learn
+   more about getting involved, look at our "How to Help" pages.
+
+Integration Hints: JS, JSON, REST
+
+   Modelling on the client side with JS-frameworks like KnockoutJS or
+   Vue.JS is supported of course. You may use the provided XML-RPC
+   service, simple Velocity context or Fulcrum JSON utilities. You may
+   even want to skip (almost) the entire (server) view part and decide to
+   use just REST-API libraries (Javax.ws.rs, Jersey). As an example
+   consider registering an JSON Fulcrum service returning a default
+   (Jackson) ObjectMapper object, which may be resolved by a javax.ws.rs
+   context Provider. For now no custom security integration is yet
+   provided, but this may be done with web-token or any other token based
+   authentification system or annotation based.
+
+Turbine Versions
+
+   Turbine is since version 4.0 developed in a single master/branch.
+     * Turbine 5.1 is the current development master. Download it from one
+       of the Apache Mirrors.
+     * Turbine 5.0 is using Servlet 3.1, Java 8, Log4J2, Velocity 2. It is
+       already used in some live applications, download it from one of the
+       Apache Mirrors.
+     * Turbine 4.0 should be used only, if starting a project restricted
+       with Java 7. Download it from one of the Apache Mirrors. Turbine
+       4.0 uses technologies like an Avalon-based container and decoupled
+       components from the Fulcrum sub-project of Turbine (most of the
+       benefits of these enhancements are realized in the 2.3.3 release).
+       One significant change in 4.0 is the introduction of a pipeline
+       concept that allows you to define via XML all the stages for
+       processing a request.
+     * Turbine 2.3.3 is the version you should use when migrating from an
+       older version of Turbine. The 2.3 branch of Turbine has been
+       switched to maintenance mode, however. You can download Turbine
+       2.3.3 from one of the Apache Mirrors
+
+Sub Projects
+
+     * Fulcrum components are by default in use since Turbine 4.x. It is a
+       collection of services originally developed as part of Turbine, but
+       now decoupled and usable in any environment that supports Avalon
+       components.
+
+Turbine Alumni
+
+   As a longtime, but now ex-member of the Apache Jakarta Project (before
+   2018) (old address*), Turbine has influenced quite a number of
+   projects:
+     * Torque is a persistence layer originally developed as part of
+       Turbine. Torque is now decoupled and part of the Apache Database
+       Project.
+     * Maven is an advanced Java Project Management tool originally
+       developed out of the frustration with the Turbine build process.
+       Maven is now a toplevel Apache project, residing at
+       maven.apache.org.
+     * In addition, Turbine has spawned a number of Commons components
+       like Commons configuration or Commons EMail.
+
+   * Note: Be aware, that Jakarta EE is since 2019 used as a brand label
+   for the Java EE Cloud Native project.
+
+The Apache Software Foundation
+
+   The Apache Software Foundation provides support for the Apache
+   community of open-source software projects. The Apache projects are
+   defined by collaborative consensus based processes, an open, pragmatic
+   software license and a desire to create high quality software that
+   leads the way in its field.
+
+   Apache Turbine, Turbine, Apache, the Apache feather logo, and the
+   Apache Turbine project logo are trademarks of The Apache Software
+   Foundation.
+
+   All other marks mentioned may be trademarks or registered trademarks of
+   their respective owners.
+     __________________________________________________________________
+
+   Copyright © 2000–2019 Apache Software Foundation. All rights reserved.
+     __________________________________________________________________
+   Apache Turbine
+     __________________________________________________________________
+
+   Last Published: 18 June 2019  | Version: 5.0
+   Apache | Turbine | Fulcrum
+     __________________________________________________________________
+
+General Information
+
+     * Overview
+     * Turbine Concepts
+     * Specification
+     * Further Reading
+     * News and Status
+     * Sites Using Turbine
+     * Sites Related to Turbine
+     * License
+     * Download
+     * Example Apps
+
+Shortcuts to Turbine Documentation
+
+     * Turbine Blog
+     * Turbine Wiki Home
+     * Frequently Asked Questions (FAQ)
+     * Tutorial
+     * User's Guide
+     * Development
+
+Events
+
+     *
+
+Turbine Releases
+
+     * Overview
+     * Turbine 2.3.3
+     * Turbine 4.0-M2
+     * Turbine 4.0
+     * Turbine 5.0
+
+Turbine Development
+
+     * Turbine 5.1
+
+Turbine Sub Projects
+
+     * Fulcrum
+
+Closed projects
+
+     * Stratum
+     * TDK
+     * META
+
+Community
+
+     * Who we are
+     * Contact us
+     * How to help
+     * How it works
+     * Board reports
+
+General Development Information
+
+     * Coding Specification
+     * Developer Links
+     * Improving Documentation
+
+Project Documentation
+
+     * Project Information
+     * Project Reports
+
+Apache
+
+     * Apache Website
+     * License
+     * How the ASF works
+     * Sponsorship
+     * Thanks
+     * Security
+
+   Built by Maven
+
+Apache Turbine™ Web Application Framework
+
+   Apache Turbine™ is a servlet based framework that allows experienced
+   Java developers to quickly build web applications. Turbine allows you
+   to use personalize the web sites and to use user logins to restrict
+   access to parts of your application.
+
+   Turbine is a matured and well established framework that is used as the
+   base of many other projects (like e.g. the excellent Jetspeed 1 Portals
+   framework.
+
+   Turbine is an excellent choice for developing applications that make
+   use of a services-oriented architecture. Some of the functionality
+   provided with Turbine includes a security management system (decoupled
+   in Fulcrum Security), a scheduling service (decoupled in Fulcrum
+   Quartz), XML-defined form validation server (Fulcrum Intake), and an
+   XML-RPC service for web services. It is a simple task to create new
+   services particular to your application.
+
+   The Turbine core is free of any dependency on a presentation layer
+   technology. Both JavaServer Pages (JSP) and Velocity are supported
+   inside Turbine. For developers already familiar with JSP, or have
+   existing JSP tag libraries, Turbine offers support for the Sun
+   standard. Velocity is the favorite view technology of most users of the
+   Turbine framework; try it out and see if Velocity can help you develop
+   your web applications faster and work more easily with non-programming
+   designers.
+
+   Turbine is developed in an open, participatory environment and released
+   under the Apache Software License. Turbine is intended to be a
+   collaboration of the best-of-breed developers from around the world. We
+   invite you to participate in this open development project. To learn
+   more about getting involved, look at our "How to Help" pages.
+
+Integration Hints: JS, JSON, REST
+
+   Modelling on the client side with JS-frameworks like KnockoutJS or
+   Vue.JS is supported of course. You may use the provided XML-RPC
+   service, simple Velocity context or Fulcrum JSON utilities. You may
+   even want to skip (almost) the entire (server) view part and decide to
+   use just REST-API libraries (Javax.ws.rs, Jersey). As an example
+   consider registering an JSON Fulcrum service returning a default
+   (Jackson) ObjectMapper object, which may be resolved by a javax.ws.rs
+   context Provider. For now no custom security integration is yet
+   provided, but this may be done with web-token or any other token based
+   authentification system or annotation based.
+
+Turbine Versions
+
+   Turbine is since version 4.0 developed in a single master/branch.
+     * Turbine 5.1 is the current development master. Download it from one
+       of the Apache Mirrors.
+     * Turbine 5.0 is using Servlet 3.1, Java 8, Log4J2, Velocity 2. It is
+       already used in some live applications, download it from one of the
+       Apache Mirrors.
+     * Turbine 4.0 should be used only, if starting a project restricted
+       with Java 7. Download it from one of the Apache Mirrors. Turbine
+       4.0 uses technologies like an Avalon-based container and decoupled
+       components from the Fulcrum sub-project of Turbine (most of the
+       benefits of these enhancements are realized in the 2.3.3 release).
+       One significant change in 4.0 is the introduction of a pipeline
+       concept that allows you to define via XML all the stages for
+       processing a request.
+     * Turbine 2.3.3 is the version you should use when migrating from an
+       older version of Turbine. The 2.3 branch of Turbine has been
+       switched to maintenance mode, however. You can download Turbine
+       2.3.3 from one of the Apache Mirrors
+
+Sub Projects
+
+     * Fulcrum components are by default in use since Turbine 4.x. It is a
+       collection of services originally developed as part of Turbine, but
+       now decoupled and usable in any environment that supports Avalon
+       components.
+
+Turbine Alumni
+
+   As a longtime, but now ex-member of the Apache Jakarta Project (before
+   2018) (old address*), Turbine has influenced quite a number of
+   projects:
+     * Torque is a persistence layer originally developed as part of
+       Turbine. Torque is now decoupled and part of the Apache Database
+       Project.
+     * Maven is an advanced Java Project Management tool originally
+       developed out of the frustration with the Turbine build process.
+       Maven is now a toplevel Apache project, residing at
+       maven.apache.org.
+     * In addition, Turbine has spawned a number of Commons components
+       like Commons configuration or Commons EMail.
+
+   * Note: Be aware, that Jakarta EE is since 2019 used as a brand label
+   for the Java EE Cloud Native project.
+
+The Apache Software Foundation
+
+   The Apache Software Foundation provides support for the Apache
+   community of open-source software projects. The Apache projects are
+   defined by collaborative consensus based processes, an open, pragmatic
+   software license and a desire to create high quality software that
+   leads the way in its field.
+
+   Apache Turbine, Turbine, Apache, the Apache feather logo, and the
+   Apache Turbine project logo are trademarks of The Apache Software
+   Foundation.
+
+   All other marks mentioned may be trademarks or registered trademarks of
+   their respective owners.
+     __________________________________________________________________
+
+   Copyright © 2000–2019 Apache Software Foundation. All rights reserved.
+     __________________________________________________________________

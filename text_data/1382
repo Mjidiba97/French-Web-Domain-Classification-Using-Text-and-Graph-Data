@@ -1,0 +1,619 @@
+   FRAME: TOC
+   FRAME: BODY
+
+   Pour visualiser ce site sans frames aller ici
+   Firefox
+
+   Home Page d'accueil (francais)
+
+   Home Homepage (english)
+
+  Contenu
+
+     * Page d'accueil
+     * Le calcul quantique
+     * Who is the master?
+     * Le compte est vraiment bon
+     * The last place on earth
+     * Les publications
+     * L'enseignement
+     * La recherche
+     * Un peu de gntique pour informaticien
+     * De l'enseignement de l'informatique
+     * La programmation par intervalles
+     * Les ensembles de Mandelbrot
+     * Philosophie des mathmatiques
+     * Logiques non classiques
+     * Algorithmes volutionnaires
+     * Rseaux de neurones
+     * La programmation des jeux
+     * Les jeux que j'ai programms
+     * Le systme d'enseignement suprieur
+     * Les prfixes scientifiques
+     * Textes rglementaires et lgislatifs
+     * Rapports relatifs l'enseignement suprieur et la recherche
+     * La gestion de la recherche et son valuation
+     * Motivation et comptence
+     * X et grands corps
+     * Mes anciens cours de l'cole polytechnique
+     * Un long CV
+     * La perception de la couleur
+     * Les travaux manuels:
+          + Pige souris
+     * Zones protges:
+          + Pour La Science
+          + Jeux et Stratgie
+          + L'Ordinateur Individuel
+          + Site de mon cours d'informatique de l'ISAE/Sup Aro
+
+  Mes autres sites
+
+     * La photographie
+     * Ordinateurs et machines calculer
+     * Les checs
+     * Mon site central
+     * Mon site professionel
+   headlogo
+
+                               Who is the master?
+
+   photo de garde
+
+   An english version of this text is available here .
+
+   Le problme du classement des joueurs d'checs est trs ancien. Avant
+   1970, plusieurs systmes ont coexist: Ingo de Anton Hoesslinger
+   (Allemagne), le systme Harkness utilis aux USA et conu par Kenneth
+   Harkness ou le systme anglais conu par Richard Clark.
+   A partir des annes 70, ces systmes furent tous remplacs par le systme
+   ELO, conu par Arpad Elo, autour de l'ide que les performances d'un
+   joueur suivent une loi de variable alatoire normalement distribue. A
+   l'heure actuelle, des raffinements de ce systme ont t proposs, comme
+   Chessmetrics (par Jeff Sonas), ou Glicko (par Mark Glickman) qui est
+   utilis pour classer les joueurs sur de nombreux sites d'checs en ligne.
+   Ces systmes partagent tous le mme principe: ils dduisent le classement
+   des joueurs partir des rsultats des parties qu'ils jouent, et non en
+   fonction de la qualit de leurs coups. Ainsi, il est tout fait possible
+   de gagner des points et des places dans le classement ELO, mme si l'on
+   a mal jou, si votre adversaire a simplement jou plus mal que vous. Ce
+   phnomne est suppos se compenser statistiquement sur le nombre de
+   parties joues, mais il existe un autre effet plus pervers. Comme les
+   points sont ajouts (ou soustraits) en fonction des rsultats de parties
+   joues, le systme ELO est statistiquement fiable sur une population de
+   joueurs oprant la mme poque. Il est en revanche plus difficile de
+   savoir si le classement ELO de 1970 est comparable avec le classement
+   ELO de 2016, un phnomne connu en anglais sous le nom de "drifting", ou
+   drive. Cela rend videmment impossible la comparaison objective de
+   joueurs clbres comme Robert Fischer, Gary Kasparov ou Magnus Carlsen,
+   et explique le nombre d'articles, ou mmes de livres (par exemple celui
+   de Raymond Keene et Nathan Divinsky: Warriors of the Mind, A Quest for
+   the Supreme Genius of the Chess Board) qui tentent de trouver le
+   "meilleur" joueur d'checs de tous les temps.
+
+   En 2006, Guid et Bratko (Computer analysis of World Chess Champions,
+   ICGA journal, 29-2, 2006) ont dvelopp l'ide originale que l'on pouvait
+   classer les joueurs d'checs non pas en fonction du rsultat de leurs
+   parties, mais en comparant les coups qu'ils jouent aux coups que
+   jouerait un ordinateur. L'ide sous-jacente tait qu'un bon programme
+   d'ordinateur en 2006 tait meilleur que la grande majorit des joueurs
+   humains, et qu'en regardant le pourcentage de coups "parfaits"
+   (identiques ceux choisis par l'ordinateur) jous, on pourrait ainsi
+   trouver le "meilleur" joueur. Cette ide, pour remarquable qu'elle soit,
+   prtait cependant le flanc plusieurs critiques: sur le plan pratique, le
+   travail fait par Guid et Bratko souffrait de la "faible" qualit du
+   programme utilis pour valuer les coups l'poque, et aussi du peu de
+   parties values, essentiellement par manque de puissance de calcul. Mais
+   il existait un problme plus fondamental. Quel est le meilleur joueur:
+   celui qui joue presque chaque fois le meilleur coup, mais fait de temps
+   en temps d'normes erreurs, ou celui qui joue seulement "presque" le
+   meilleur coup chaque fois, mais ne commet jamais de graves erreurs?
+
+   En 2012, Diogo Ferreira (ICGA journal, Determining the strength of
+   chess players based on actual play, 35-1, 2012) a brillamment raffin
+   l'ide. Il a continu comparer les coups jous par les joueurs humains
+   avec ceux que jouerait un ordinateur, a calcul la diffrence entre les
+   deux, et a considr cette diffrence comme une loi de distribution propre
+   chaque joueur. En calculant la loi de convolution des deux lois de deux
+   joueurs diffrents (considres comme des lois indpendantes), il peut
+   corrler cette nouvelle loi avec les rsultats d'une partie.
+   Malheureusement, l aussi, le travail souffre de problmes de puissance
+   de calcul dans sa mise en oeuvre pour tre statistiquement
+   significative, et prsente d'autre part une petite imprcision
+   mthodologique. Enfin, il existe un autre problme plus fondamental, qui
+   est le problme du contexte. Une erreur n'a pas la mme "valeur" en
+   fonction du contexte dans laquelle elle est commise. Ainsi, faire une
+   petite erreur, voire une erreur un peu importante, dans une position
+   qui est dj largement gagnante (ou perdante) n'aura que peu d'influence
+   sur le rsultat de la partie, alors qu'elle sera peut-tre dcisive si la
+   partie est encore quilibre, et le systme de Ferreira ne permet pas de
+   distinguer les deux cas.
+
+   L'article publi dans la revue de l'ICGA (ICGA Journal, 39-1, 2017) que
+   l'on trouvera ci-dessous fait le bilan des mthodes utilises jusqu'ici
+   et en explique les avantages et les faiblesses, puis les raffine et les
+   value sur un corpus trs important de parties: 26000 parties,
+   correspondant toutes les parties joues par l'ensemble des champions du
+   monde de Steinitz Carlsen, values un temps de tournoi par le meilleur
+   programme actuel (Stockfish, dont le classement ELO est probablement
+   suprieur d'environ 300 points au meilleur joueur humain actuel), soit
+   62000 heures de CPU sur le cluster OSIRIM de l'Institut de Recherche en
+   Informatique de Toulouse.
+   Il montre surtout qu'il est possible de proposer une autre
+   interprtation, en considrant le jeu d'checs comme un processus
+   Markovien (et en utilisant toujours un ordinateur pour valuer la qualit
+   des coups). Cette interprtation rsout tous les problmes mentionns
+   ci-dessus, et, en utilisant un peu d'algbre linaire, permet donc en
+   thorie de raliser un classement plus fiable des joueurs d'checs travers
+   les sicles.
+   L'autre intrt de cet article est l'analyse statistique du jeu d'checs
+   qu'elle permet. Il montre par exemple que les joueurs jouent
+   statistiquement moins bien avec les noirs qu'avec les blancs, pour des
+   raisons probablement psychologiques.
+
+   La question que l'on me pose rgulirement arriv ce stade est "Alors,
+   quel tait le meilleur ?". L'article montre que la rponse n'est peut-tre
+   pas tout fait aussi simple que la question. Les mthodes bases sur des
+   interprtations de distributions, ou des interprtations markoviennes, ne
+   permettent pas de raliser un classement des joueurs, elles permettent
+   seulement de les comparer deux deux. J'encourage donc fortement lire
+   l'article dans sa totalit. Ceci dit, pour fournir une rponse simple (et
+   forcment incomplte) on trouve ci-dessous le tableau extrait de
+   l'article donnant les rsultats des confrontations en face face des 20
+   champions du monde considrs dans l'tude, en utilisant l'anne pendant
+   laquelle ils ont eu leur meilleur niveau de jeu (Carlsen: 2013,
+   Kramnik: 1999, Fischer: 1971, Kasparov: 2001, Anand: 2008, Khalifman:
+   2010, Smyslov: 1983, Petrosian: 1962, Karpov: 1988, Kasimdzhanov: 2011,
+   Botvinnik: 1945, Ponomariov: 2011, Lasker: 1907, Spassky: 1970,
+   Topalov: 2008, Capablanca: 1928, Euwe: 1941, Tal: 1981, Alekhine: 1922,
+   Steinitz: 1894). Chaque case du tableau correspond au pourcentage de
+   points marqus dans une confrontation hypothtique des deux joueurs, et
+   la colonne de gauche peut tre considre (avec des bmols) comme le
+   classement de ces 20 champions. Le tableau n'est pas symmtrique, car
+   les rsultats ne sont pas les mmes suivant que l'on joue en premier ou
+   en second.
+     __________________________________________________________________
+
+                Ca Kr Fi Ka An Kh Sm Pe Kp Ks Bo Po La Sp To Ca Ta Eu Al St
+   Carlsen         52 54 54 57 58 57 58 56 60 61 59 60 61 61 64 66 69 70 82
+   Kramnik      49    52 52 55 56 56 57 55 59 60 58 60 60 60 63 65 68 70 83
+   Fischer      47 49    51 53 57 56 57 56 59 60 60 61 61 62 64 68 70 73 85
+   Kasparov     47 49 50    53 54 54 54 53 57 58 56 56 58 58 60 62 66 68 82
+   Anand        44 46 48 48    54 52 53 53 57 56 57 57 59 59 62 64 69 71 86
+   Khalifman    43 45 44 47 47    50 51 52 53 54 55 55 56 56 60 62 64 67 79
+   Smyslov      43 45 45 47 49 51    50 51 53 55 54 54 54 55 59 63 64 68 82
+   Petrosian    43 44 45 47 49 50 51    52 53 54 54 55 55 56 59 63 63 67 80
+   Karpov       44 46 45 48 48 49 50 49    51 52 52 52 52 52 56 58 60 63 76
+   Kasimdzhanov 41 43 42 45 45 48 48 48 50    52 52 52 54 53 56 60 62 65 80
+   Botvinnik    40 41 41 44 45 48 46 48 49 49    50 54 52 52 56 60 60 64 80
+   Ponomariov   42 43 41 45 44 47 47 47 49 49 51    51 52 52 55 58 59 62 77
+   Lasker       41 41 40 45 44 46 47 46 49 49 48 50    51 50 54 58 59 63 78
+   Spassky      40 41 40 43 42 45 47 46 48 47 49 49 50    51 53 58 57 61 75
+   Topalov      40 41 39 44 42 45 46 45 49 48 49 49 50 51    54 57 57 61 75
+   Capablanca   37 38 37 41 39 42 42 42 45 45 45 47 47 48 47    53 54 59 76
+   Tal          35 36 34 39 37 39 39 38 43 41 41 43 43 43 44 48    49 54 72
+   Euwe         32 33 32 36 32 37 37 38 41 39 41 42 43 44 44 47 52    56 75
+   Alekhine     31 31 29 34 30 35 33 35 38 36 37 39 38 40 40 43 47 45    69
+   Steinitz     20 19 17 20 16 22 19 22 25 22 22 25 24 27 27 26 30 27 33
+   Table 9: Head to head match result predictions between different World
+   Champions in their best year
+     __________________________________________________________________
+
+   Il faut noter que la mthode peut tre applique n'importe quel jeu deux
+   joueurs pour lesquels on dispose d'un "oracle", c'est dire, en pratique
+   d'un programme suffisamment fort pour tre capable de fournir des coups
+   "quasi-parfaits". On pourrait donc tablir de la mme faon une valuation
+   des joueurs de reversi, de checkers, de dames, de backgammon et
+   probablement mme bientt de Go.
+
+   Le draft de l'article complet est disponible en pdf ici et une version
+   html peut tre consult en ligne l. Il est galement disponible en format
+   epub, mobi, et azw3 pour le consulter sur des liseuses. La version pdf
+   est quasiment identique la version finale publie dans le journal de
+   l'ICGA, l'exception de la mise en page et de quelques corrections
+   mineures. Les autres versions peuvent tre moins lisibles en ce qui
+   concerne les formules mathmatiques en raison de la conversion de
+   format, mais elles sont galement globalement identiques la version
+   finale.
+   Je tiens remercier nouveau Jaap Van Den Herik, qui fut l'diteur
+   principal de cet article est qui est aujourd'hui diteur honoraire du
+   journal. Il a en particulier accept de publier l'article dans son
+   intgralit, sans coupure et sans le rduire malgr sa longueur, mme si
+   cela le plaait en dehors des standards habituels. Je tiens aussi
+   remercier tout spcialement l'ensemble des rfrents de l'article, qui ont
+   contribu l'amliorer considrablement, avec des volutions qui ont pris
+   plus d'une anne entre la version originale et la version finale. Ils
+   ont prfr rester anonymes, mais cet article leur doit beaucoup. La
+   version finale de l'article peut tre consulte et commande sur le site
+   IOS Press.
+
+   Cet article a donn lieu un communique de presse et un article dans le
+   journal du CNRS, et a galement reu une couverture dans des media grands
+   publics comme l'Express, 20 minutes, la Dpche, le Figaro. Il a aussi t
+   prsent (en anglais) sur le site de chessbase.
+
+   Comme tout article scientifique, il doit tre lu, relu, critiqu, comment
+   et corrig. Il contient certainement encore des imprcisions ou des
+   erreurs. La base de donnes de parties (en PGN) values par Stockfish sur
+   le cluster de l'IRIT peut tre tlcharge ici ce qui permet qui le
+   souhaite de refaire l'ensemble des calculs faits dans l'article et d'en
+   vrifier les rsultats.
+
+   La rfrence exacte de l'article est:
+@Article{,
+  author =       {Jean-Marc Alliot},
+  title =        {Who is the master?},
+  journal =      {ICGA Journal},
+  year =         {2017},
+  volume =       {39},
+  number =       {1},
+  OPTpages =     {},
+  OPTmonth =     {},
+  note =         {DOI 10.3233/ICG-160012}
+}
+
+   Photo: Bundesarchiv, Bild 183-76052-0335 / Kohls, Ulrich / CC-BY-SA
+   3.0, CC BY-SA 3.0 de,
+   https://commons.wikimedia.org/w/index.php?curid=5665206
+     __________________________________________________________________
+
+   Retour ma page principale
+
+   Le tlchargement ou la reproduction des documents et photographies
+   prsents sur ce site sont autoriss condition que leur origine soit
+   explicitement mentionne et que leur utilisation se limite des fins non
+   commerciales, notamment de recherche, d'ducation et d'enseignement.
+   Tous droits rservs.
+
+   Dernire modification: 18:54, 13/05/2019 xhtml validation
+   FRAME: TOC
+   FRAME: BODY
+
+   Pour visualiser ce site sans frames aller ici
+   headlogo
+
+                                 Page d'accueil
+
+   IA et IT
+
+   This page is also available in english.
+
+Informations utiles
+
+     * Mon adresse mail (remplacer les AT et les DOT)
+
+Les dernires nouvelles
+
+     * Mise en ligne de la page consacre notre cours de programmation des
+       jeux SupAro. On y trouve plusieurs sries de slides prsentant la
+       plupart des algorithmes modernes, avec en particulier une srie
+       consacre l'utilisation du DeepLearning et du Machine Learning pour
+       AlphaGo et AlphaZero (mais les principes gnraux s'appliquent dans
+       tous les domaines du Machine Learning et du Deep Learning).
+       (22/05/2019)
+     * Notre article sur la modlisation et la manipulation des cartes
+       d'interaction molculaire, crit avec nos collgues du Centre de
+       Recherche en Cancrologie de Tououse, a t accept APIA2019. Le draft
+       est accessible ici en pdf (et en franais). (22/05/2019)
+     * Je commence mes cours sur l'IA, les jeux de stratgie et leur
+       programmation l'ISAE/Sup Aro la semaine prochaine. J'essaierai de
+       mettre les slides en ligne. La page sur ce site n'est plus jour
+       depuis longtemps, mais a reste une introduction... (14/05/2019)
+     * Si vous vous demandez ce que c'est que le calcul quantique, vous
+       pouvez jeter une coup d'oeil aux cours/confrences que j'ai faits
+       l'ENSEEIHT cette anne, accessibles depuis cette page. (14/04/2019)
+     * Le LabEx CIMI a t renouvel officiellement. Il est donc temps pour
+       moi aprs 5 ans de bons et loyaux services de laisser la place aux
+       jeunes, que ce soit la direction du LabEx, ou la tte du dpartement
+       CISO de l'IRIT. Je vais maintenant me consacrer la mise en place
+       d'une quipe d'informaticiens sur le site de l'oncopole toulousain,
+       en collaboration avec mes collgues et amis du Centre de Recherche
+       en Cancrologie de Toulouse (CRCT).
+     * Si vous voulez savoir comment on choisit le prsident de l'cole
+       polytechnique, allez jeter un coup d'oeil sur le blog de la
+       candidature de mon ami Alexandre Moatti (qui n'a pas gagn ☺ comme
+       prvu). Vous y trouverez ausi un lien sur mon propre site, consacr
+       l'X. (22/02/2019)
+     * J'ai t invit refaire ma confrence sur l'IA trois fois de plus en
+       rgion parisienne. C'est mon ami Sylvain Cussat-Blanc qui me
+       remplacera faute de disponibilit CNIV le 5 et 6 fvrier. Les autres
+       confs seront fin mars et debut juin. Stay tune for more details
+       .... ☺ (15/01/2019)
+     * Avec Gilles Favre et Pierre Brousset, nous rflchissons
+       l'implantation sur l'oncopole d'une quipe d'informaticiens qui
+       collaboreraient sur site avec les chercheurs du CRCT. Ce serait un
+       beau projet qui permettrait d'acclrer et de faciliter les
+       transferts scientifiques et technologiques entre informatique et
+       mdecine. (03/01/2019)
+     * J'ai t invit faire une prsentation gnrale sur l'IA par le GDR du
+       CNRS MI2B l'occasion des journes organises l'IUCT. Les slides sont
+       disponibles ici en pdf, mais sans les videos, ni les exemples, ni
+       les dmos, ni les animations, ce qui leur enlve pas mal de leur
+       intrt... La prsentation est (volontairement) plutt axe sur les
+       sujets " la mode" (Deep Neural Networks, Machine Learning, ...)
+       (04/12/2018)
+     * Je vais consacrer une grande partie de l'anne 2018-2019 la rdaction
+       de la troisime version de notre livre. La seconde dition n'avait t
+       qu'une volution mineure de la premire, celle-ci sera une volution
+       majeure, voire une refonte complte, avec l'ajout de plusieurs
+       chapitres (thorie axiomatique des ensembles, cryptographie, calcul
+       quantique, preuve de programmes, etc) et une rcriture complte d'un
+       grand nombre d'entre eux (jeux, langages, algorithmes
+       volutionnaires, rseaux de neurones, SAT, CSP, complexit, etc)
+       Mon co-auteur, Thomas Schiex, est heureusement partant dans
+       l'aventure, mailgr ses (trs) nombreuses occupations, la ranon du
+       succs... Cela va tre particulirement agrable de retravailler
+       activement ensemble, d'autant que nos discussions montrent qu'en 25
+       ans, nous avons volu largement de la mme faon, mme si nous ne nous
+       sommes pas tellement vus... Et comme le dit Thomas, il est temps de
+       s'y mettre, parce que si nous avons muri depuis la premire dition,
+       nous approchons, vu notre ge, du pourrissement ☺ ...
+       La premire version de notre ouvrage avait t rdige entre 1988 et
+       1992, au pinacle de l'IA "cognitive", et tait assez critique de ce
+       que nous considrions comme un effet de mode. Nous y avions prsent
+       pour la premire fois en franais ( ma connaissance) les techniques
+       volutionnaires et surtout les rseaux de neurones, l'poque des
+       domaines mal connus, voire pousss dans l'ombre, mais dans lesquels
+       je croyais fortement. Aujourd'hui, alors que le "Big Data" et les
+       "DNN" envahissent l'espace de la communication, il va falloir je le
+       crains s'atteler montrer que l'IA (et l'informatique) ne se limite
+       pas a... Ainsi va le monde, de mode en mode, et o d'ailleurs
+       certains hrauts du "cognitif" d'hier retournent leurs vestes tel
+       "l'opportuniste" de Jacques Dutronc, et sans la moindre vergogne...
+       De mon ct, j'ai toujours eu une prfrence pour le sens oppos au
+       courant ☺ ... (01/09/2018)
+     * Nous publions avec quelques collgues une tribune dans le Monde sur
+       la ncessaire volution des coles d'ingnieurs. Pour ceux qui ne sont
+       pas abonns, voici l'article tel qu'il parait dans la version
+       papier. (05/2018)
+     * Je viens galement de dcouvrir ma page wikipedia. La photo est la
+       mme que celle du chessprogramming wikispace, et doit bien remonter
+       15 ans...(05/2018)
+     * Alexandre Moatti a prsent sa candidature la prsidence de l'Ecole
+       Polytechnique, candidature que je soutiens fortement, mme si je
+       sais qu'elle n'a aucune chance d'aboutir...(05/2018)
+     * En prparant mon cours pour l'ISAE, je viens de dcouvrir que l'on
+       m'avait cr une page sur le chess wikispace. Mme s'il y a quelques
+       erreurs, des oublis, et une vieille photo en basse rsolution, je
+       suis super-fier. (04/2018)
+       PS: le lien a t mis a jour vers chessprogramming.org aprs la mort
+       de wikispace. Merci l'internaute qui m'a notifi le lien cass!
+       (12/2018)
+     * 25me anniversaire de la premire dition de notre (Thomas Schiex et
+       moi) livre Intelligence Artificielle et Informatique Thorique . La
+       seconde dition a, elle, dj 16 ans... Time goes by... (04/2018)
+     * Publication du rapport Villani sur l'IA. (03/2018)
+     * En 1994 nous organisions avec Marc Schoenauer et Evelyne Lutton la
+       premire confrence volution artificielle Toulouse.
+     * Le projet d'IDEX toulousain n'a pas t retenu. (03/2018)
+     * Bel expos de mon ami Thomas Schiex l'acadmie des sciences sur le
+       machine-learning. (02/2018)
+     * Notre (Franklin Delehelle, Patricia Balaresque, Sylvain
+       Cussat-Blanc, Herv Luga, Jean-Marc Alliot) article "ASGART: fast
+       and parallel genome scale segmental duplications mapping" a t
+       accept pour publication dans Bioinformatics (impact factor: 7).
+       (02/2018)
+     * On m'a rcemment demand de prouver que j'avais bien mon HDR, et ma
+       grande stupeur il m'a t impossible d'en trouver la preuve en ligne.
+       Si quelqu'un sait o se trouve le catalogue franais des HDR qu'il me
+       fasse signe. En attendant, je peux prouver que j'ai bien la mienne.
+       (03/2018)
+     * A l'occasion d'un camp d't sur l'Intelligence Artificielle organis
+       par le Centre International de Mathmatiques et d'Informatique, on
+       m'a invit faire une petite conf "grand public" d'une heure sur
+       l'histoire de l'IA. Vous trouverez sur cette page les slides, et
+       aussi quelques vidos, utiliss pour cette conf. C'est peut-tre un
+       peu dcapant, mais il est parfois bon de dire quelques vrits (ou ce
+       que l'on croit en tre en tous cas...) (08/2017)
+     * Nous avons commenc en collaboration avec le LISBP un travail sur
+       l'optimisation des rseaux mtaboliques (04/2017).
+     * Toujours dans la srie des articles de recherche un peu "grand
+       public" (et assez loign, faut-il le dire, de mes activits
+       principales de recherche), mon article sur l'valuation des joueurs
+       d'checs par des mthodes d'IA et de traitement de donnes massives
+       est paru ce mois-ci dans le journal de l'ICGA. Une prsentation
+       synthtique de l'article est disponible sur cette page. On peut
+       galement y tlcharger l'article en format pdf, epub et mobi, ou le
+       lire en ligne dans son intgralit. Cet article a donn lieu un
+       communiqu de presse et un article dans le journal du CNRS, et a
+       galement reu une couverture dans des media grands publics comme
+       l'Express, 20 minutes, la Dpche, le Figaro. Il a aussi t prsent (en
+       anglais) sur le site de l'diteur de logiciels Chessbase (04/2017).
+     * Toulouse a t autoris reprsenter un dossier pour l'obtention du
+       label IDEX. Le nouveau projet devrait s'organiser autour d'un
+       premier cercle plus resserr et beaucoup plus intgr qui devrait
+       comprendre les universits de Toulouse, ainsi que l'INSA Toulouse et
+       l'Institut National Polytechnique de Toulouse qui regroupe un grand
+       nombre des coles d'ingnieurs du site (ENSEEIHT, ENSIACET, ENM,
+       etc...) (03/2017)
+     * Ouverture sur ce site d'une nouvelle rubrique, les travaux manuels,
+       inaugure cette semaine par un premier article qui explique comment
+       capturer les rongeurs de tout poil sans les tuer. (09/2016)
+     * Publication chez Springer de Towards Paraconsistent Engineering
+       dont nous avons rdig le chapitre Temporal Logic Modeling of
+       Biological Systems. (08/2016)
+     * Aprs la perte du label IDEX par le site toulousain, Manuel Valls a
+       rpondu la prsidente de rgion. Un scan de sa lettre se trouve ici.
+       Il serait trop long de dtailler les raisons et les causes de la
+       perte de ce label, mais un problme de fond reste rcurrent: les
+       jurys internationaux qui valuent ce type de dossier ne peuvent pas
+       comprendre notre modle d'enseignement suprieur fait de petits
+       villages gaulois. Les IDEX ont t crs pour que la France ait des
+       tablissements susceptibles de lutter au niveau international avec
+       les grandes universits mondiales qui sont toutes aujourd'hui plus
+       ou moins construites sur le mme modle. Cela implique une fusion des
+       structures et des gouvernances; la recherche franaise a trs
+       largement fait cet effort dans les vingt dernires annes, avec le
+       large dveloppement des Units Mixtes de Recherche, qui regroupent
+       par discipline scientifique l'ensemble des chercheurs d'un site (
+       quelques malheureuses exceptions prs videmment: les villages
+       gaulois ont la vie dure). Les Labex (ou des entits comme la
+       Toulouse School of Economy) ont permis de poursuivre cette volution
+       vers des structures de grande taille, bien dotes, qui ont une relle
+       visibilit internationale, et permettent de faire une vraie
+       politique de site (il faut d'ailleurs noter que les Labex
+       toulousains ont de leur ct russi sans difficult leur valuation
+       internationale).
+       Aprs la recherche, il faudra que l'enseignement suprieur fasse lui
+       aussi cet effort, sous peine de voir disparaitre d'une part les
+       financements associs, mais surtout l'espoir d'tre reconnu en dehors
+       du sacro-saint territoire "franco-franais"... (06/2016)
+     * Une journe croise de prsentations entre les chercheurs de
+       l'oncopole et des instituts de mathmatiques et d'informatique de
+       Toulouse aura lieu le 20 juin aprs-midi. Cette journe est
+       co-organise par les Labex CIMI et TOUCAN . Me contacter pour plus
+       d'informations. (04/2016)
+     * Une premire version de notre travail sur la modlisation des
+       interactions dans les systmes biologiques a t publie au 7th
+       European Symposium on Computational Intelligence and Mathematics.
+       Les proceedings sont maintenant disponibles ici . Un article plus
+       labor rdig avec nos collgues de la cancropole paraitra dans le
+       cadre d'un livre cet t chez Springer, et on espre une version
+       prennant en compte tous les paramtres biologiques dans PLOS One
+       dans quelques mois (02/2016).
+     * Le dcret 2015-663 dcrivant l'organisation de la COMUE de Toulouse
+       est disponible sur la page des textes rglementaires et lgislatifs.
+       (01/2016)
+     * Notre livre Metaheuristics for Air Traffic Management a t publi
+       chez ISTE et chez Wiley. Il s'agit du testament de 25 ans de notre
+       vie professionnelle passe, rdig par mes anciens lves, thsards et
+       collgues , qui sont des gens formidables. Je porte sur cette poque
+       un regard empreint d'un peu de nostalgie ("c'tait le bon temps"),
+       de beaucoup de regrets (quand je pense aux conventions passes avec
+       les industriels et annules du jour au lendemain alors qu'elles
+       devaient mener au dveloppement de produits oprationnels), et d'un
+       soupon d'un sentiment indfinissable mais qui appartient
+       dfinitivement au ct obscur de la force. (12/2015)
+     * Notre thsard Charlie Vanaret a obtenu le prix
+       mathmatiques-informatique 2015 de l'acadmie des sciences de
+       Toulouse pour sa thse sur l'optimisation hybride (voir notre
+       article liminaire ECAI 2012 qui fut la base de la thse pour une
+       version plus synthtique). Il a galement reu le prix Lopold Escande
+       de l'INP Toulouse. (11/2015).
+     * Dans la srie des articles de recherche un peu "grand public",
+       publication GCAI 2015 d'une version rduite de mon article consacr
+       au jeu "Le compte est bon" (que l'on peut consulter ici), et qui
+       peut dsormais tre considr comme "peer reviewed" (10/2015).
+     * Alexandre Moatti a rdig, dans le cadre du rapport de Bernard Attali
+       sur l'volution de l'X, une contribution qui s'inspire en partie des
+       pages (sur l'enseignement suprieur et l'cole polytechnique) de ce
+       site. Ici encore, l'cole polytechnique sert de rvlateur piphnomnal
+       un problme beaucoup plus profond, celui de la ncessaire
+       transformation de l'enseignement suprieur franais dans le cadre de
+       la mondialisation. Contrairement beaucoup, j'y vois une chance la
+       fois pour les coles d'ingnieur et les universits franaises, si ce
+       problme est trait avec courage (il en faudra) par nos hommes
+       politiques. (05/2015)
+     * Mise en ligne de la page sur la vision humaine, qui fait un
+       complment celle sur la colorimtrie. (04/2015)
+     * L'ouvrage Mtaheuristiques chez Eyrolles sera bientt publi en
+       version anglaise chez Wiley. (04/2015)
+     * Brillante soutenance de l'excellente thse de Charlie Vanaret. Sa
+       thse et ses publications sont disponibles sur research gate. Il
+       s'agissait de la dernire thse que j'avais lance lorsque j'tais
+       encore au CENA, et conclut donc cette partie de ma
+       carrire.(01/2015)
+     * Soutenance de thse de Gwenael Bothorel sur les algorithmes
+       automatiques pour la fouille de donnes visuelle. Elle est
+       disponible ici (12/2014).
+     * Dmarrage de la thse de Franklin Delehelle faite en collaboration
+       avec le laboratoire AMIS et que je co-encadre sur l'tude
+       phylogntique des gnes de l'audition (09/2014).
+     * Je suis dsormais directeur adjoint du Labex CIMI (Centre
+       International de Mathmatiques et d'Informatique de Toulouse), une
+       tche extrmement intressante mais qui s'annonce aussi complexe et
+       prenante... (05/2014)
+     * Nous devrions bientt publier nos rsultats concernant l'utilisation
+       des mthodes d'algbre linaire de grande taille dans le cadre du
+       projet GBDS. Les rsultats sont meilleurs que ceux du modle linaire
+       mixte, classiquement employ jusqu'ici. (11/02/2014).
+     * Le draft de notre article pour Gecco 2014 sur notre algorithme
+       d'optimisation hybride est en ligne sur la page des publis.
+       (3/02/2014).
+     * Le draft de notre article pour Gecco 2014 sur l'optimisation des
+       champs d'oliennes est en ligne sur la page des publis (2/02/2014).
+     * Le livre collaboratif Mtaheuristiques sera publi prochainement chez
+       Eyrolles. Nous en avons rdig un chapitre (20/12/2014).
+     * L'article et la page sur un vieux jeu bien franais est en place ici
+       (13/11/2013).
+     * Le draft de notre papier pour AAAI 2013 est disponible sur la page
+       des publis. Nous y tablissons de nouveaux records de preuve
+       d'optimalit sur la fonction de Michalewicz et le problme de
+       Lennard-Jones (19/01/2013).
+     * Ma page d'introduction la gntique, autant pour les informaticiens
+       du projet GBDS que pour les nuls, est dsormais en ligne
+       (11/12/2012)
+     * Les slides de notre prsentation (Derivative Free Optimization: from
+       Nelder-Mead to global methods) au Centre de Comptences Techniques
+       (CCT) du CNES sont en ligne (10/12/2012)
+     * Notre papier sur l'implantation d'une librairie de programmation
+       par intervalle en OCAML t accept OUD/ICFP 2012, voir sur la page
+       des publis (10/07/2012)
+     * Notre papier sur les algorithmes d'optimisation coopratifs a t
+       accept ECAI 2012, voir sur la page des publis (26/05/2012) A noter
+       que nous avons battu avec cet algorithme plusieurs records en
+       matire de preuve d'optimalit sur des fonctions difficiles
+       (deceptive functions).
+     * Mise en ligne de ma page pour le sminaire MAAMI ("Mesurer,
+       Apprendre, Agir dans un Monde Incertain", sminaire de prsentation
+       et de vulgarisation pour les professeurs CPGE organise par l'ISAE)
+       (25/04/2012).
+     * Le projet Genomic breeding a dmarr (31/03/2012).
+
+Un bref CV
+
+   Pour plus d'infos vous pouvez cliquer sur le lien situ sur l'intervalle
+   temporel gauche.
+     * 2018- : Je suis dsormais responsable du dpartement "Calcul
+       intensif, simulation et optimisation" de l'IRIT (qui n'est autre
+       que l'ancien thme "Optimisation et calcul hautes performances"
+       auquel s'est ajoute la nouvelle quipe REVA, la suite de la
+       rorganisation de l'IRIT en vue de la prochaine valuation HCERES).
+       Cette volution nous permet de mieux couvrir les thmatiques
+       bio-inspires autour des algorithmes volutionnaires et des rseaux de
+       neurones (Deep Neural Networks).
+     * 2014- : Directeur adjoint du labex CIMI.
+     * 2011-2018 : Mis disposition de l'Institut de Recherche en
+       Informatique de Toulouse, responsable du thme "Optimisation et
+       calcul hautes performances".
+     * 2009-2011 :Chef du dpartement R&D de la Direction des Services de
+       la Navigation Arienne
+     * 2007-2009 :Adjoint au chef du dpartement R&D de la DSNA (DSNA)
+     * 2005-2007 :Coordonnateur scientifique du dpartement R&D (DSNA)
+     * 2002 : Passage dans le corps des Ponts et Chausses aprs la fusion
+       des corps des Ponts, de l'IGN, de la Mto et de l'Aviation Civile
+     * 1997-2005 : Directeur du Laboratoire d'Optimisation Globale (LOG).
+     * 1996 : Habilitation Diriger les Recherches soutenue l'Institut
+       National Polytechnique de Toulouse (INPT) sous la direction de
+       Joseph Noailles
+     * 1995 :Co-fondateur de l'association "Evolution Artificielle" avec
+       Evelyne Lutton et Marc Schoenauer
+     * 1993-1996 : Adjoint au directeur des tudes de l'ENAC, en charge de
+       la recherche.
+     * 1991-1993 : Adjoint au chef de la division Traitement Des Vols,
+       puis chef de la division Planification au Centre d'Etudes de la
+       Navigation Arienne (CENA).
+     * 1988-1992 : Thse de doctorat informatique (Intelligence
+       Artificielle) l'Institut de Recherche en Informatique de Toulouse
+       (IRIT), au sein de l'quipe "Formalisation du raisonnement", dirige
+       par Luis Farinas.
+     * 1987-1988 :DEA "Informatique Fondamentale et Paralllisme" de
+       l'Universit Paul Sabatier
+     * 1986-1988 : Ecole d'application a l'Ecole Nationale de l'Aviation
+       Civile ( ENAC).
+     * 1983-1986 : Elve l' Ecole Polytechnique (majeures: informatique,
+       mcanique quantique et biologie). Sorti dans le corps de l'Aviation
+       Civile.
+
+   Un CV beaucoup plus long (mais aussi beaucoup plus ennuyeux...) est
+   disponible ici.
+     __________________________________________________________________
+
+   Retour ma page principale
+
+   Le tlchargement ou la reproduction des documents et photographies
+   prsents sur ce site sont autoriss condition que leur origine soit
+   explicitement mentionne et que leur utilisation se limite des fins non
+   commerciales, notamment de recherche, d'ducation et d'enseignement.
+   Tous droits rservs.
+
+   Dernire modification: 04:01, 23/05/2019 xhtml validation

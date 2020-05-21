@@ -1,0 +1,726 @@
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Satanas: Scalapplix
+
+   Projets
+   Scalapplix (Lien vers la page du projet)
+
+   Responsable : J. Roman
+   Equipe Satanas
+
+   [INS: Prsentation du projet :INS]
+
+   L'objectif de ce projet est la mise en oeuvre de comptences
+   scientifiques complmentaires pour une recherche pluridisciplinaire dans
+   les domaines de l'informatique hautes performances et de la modlisation
+   numrique, et ce dans le but d'analyser et de rsoudre efficacement des
+   problmes de calcul scientifique provenant d'applications complexes
+   ncessitant des puissances de calcul et manipulant des tailles de donnes
+   traflopiques.
+
+   [INS: Axes de recherche :INS]
+     * Schmas multidimensionnels compacts
+     * Algorithmique hautes performances
+     * Mise en oeuvre hautes performances
+     * Visualisation et pilotage de simulations numriques distribues par
+       un code de ralit virtuelle
+
+   [INS: Relations internationales et industrielles :INS]
+
+   En plus des collaborations avec les membres extrieurs fortement
+   impliqus dans cette proposition, nous avons des collaborations avec un
+   certain nombre de chercheurs ou d'ingnieurs dans des institutions
+   acadmiques et industrielles.
+     * Collaborations acadmiques rgionales (Bordeaux)
+          + Biologie structurale et bio informatique: M. Laguerre - IECB;
+          + Dynamique molculaire quantique: L. Ducasse - LPCM;
+          + Image et ralit virtuelle: P. Guitton - LaBRI;
+          + Paralllisme: B. Cirou, M.C. Counilh, J.M. Lpine, F. Rubi -
+            LaBRI et P. Charrier - MAB.
+     * Collaborations acadmiques nationales
+          + Dynamique molculaire distribue et ralit virtuelle: Centre
+            Charles Hermite (Nancy);
+          + Dynamique des populations: P. Silan (UMR CNRS 5000, GPI, Ste);
+          + Ecoulements interface et diphasiques: H. Guillard (Smash INRIA
+            Sophia); R. Saurel (IUSTI Marseille et Smash INRIA Sophia);
+          + Plate-forme de Grid Computing (ACI GRID RMI), objets Corba
+            parallles: C. Perez, T. Priol (Paris, IRISA Rennes);
+          + Paralllisme, Solveurs creux: F. Desprez, J.Y. L'Excellent
+            (Remap, INRIA Rhne-Alpes); J. Erhel, B. Philippe (Aladin,
+            IRISA Rennes); I. Duff (CERFACS, Toulouse); Schmas
+            multidimensionnels compacts: A. Lerat (ENSAM Paris).
+     * Collaborations acadmiques internationales
+          + Ecoulements interface: S. Karni (Universit du Michigan, Ann
+            Arbor, USA);
+          + Paralllisme, Solveurs creux: Y. Saad, M. Sosonkina (Universit
+            de Minneapolis, USA); R. Bramley
+          + (Universit d'Indiana, USA); S. Li, E. Ng (NERSC-Lawrence
+            Berkeley Laboratory, USA); J.R. Gilbert (Xerocs, USA);
+          + Schmas multidimensionnels compacts: H. Deconinck (VKI,
+            Belgique); P.L. Roe (Universit du Michigan,
+          + Ann Arbor, USA); Z.J. Wang (Universit du Michigan, East
+            Lansing, USA); Th. Sonar (TU Braunschweig, Allemagne).
+     * Collaborations industrielles
+          + Ecoulements interface: EADS, ONERA;
+          + Equation d'Hamilton Jacobi: SNPE;
+          + Paralllisme, Interactions laser plasma: CEA - DAM;
+          + Paralllisme, Solveurs creux, Electromagntisme: CEA - DAM;
+          + Paralllisme, Propagation d'un faisceau laser dans une chane de
+            composants optiques de type laser Mga-Joule: CEA - DAM;
+          + Schmas multidimensionnels compacts, Ecoulements diphasiques:
+            Dassault, CEA - DAM.
+
+   Rcupr sur https://www.labri.fr/index.php?n=Satanas.Scalapplix
+   Page mise jour le 19/06/2008 à 15:39
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Satanas: RunTime
+
+   Projets
+   Run Time (Lien vers la page du projet)
+
+   Responsable : R. Namyst
+   Equipe Satanas
+
+   [INS: Prsentation du projet :INS]
+
+   Le projet RUNTIME s'inscrit dans le cadre du calcul parallle hautes
+   performances. Il s'intresse l'tude et la conception des principes,
+   ainsi qu' la mise en oeuvre et l'valuation des mcanismes qui seront au
+   coeur des supports excutifs parallles de demain. Plus prcisment, il
+   s'agit de dfinir, d'implanter et de valider une famille de supports
+   excutifs gnriques constituant une base flexible et performante pour la
+   construction d'environnements/applications dans le domaine du calcul
+   parallle intensif. Ceux-ci devront permettre l'exploitation efficace
+   des machines parallles que sont les grappes de grande taille, htrognes
+   et hirarchiques.
+
+   [INS: Axes de recherche :INS]
+
+   Le projet de recherche s'articule autour de trois dfis principaux :
+     * Matriser les configurations htrognes, de grande taille.
+
+   Il s'agit de proposer de nouveaux modles, principes et mcanismes
+   permettant d'organiser les communications (en particulier le routage
+   haute performance en contexte htrogne), l'ordonnancement des threads et
+   les entres/sorties sur ce type d'architectures, de manire la fois
+   portable et performante. Il s'agit galement de rflchir l'introduction
+   des ncessaires proprits de dynamicit, de tolrance aux pannes et de
+   passage l'chelle au sein de cette nouvelle gnration de supports
+   excutifs, en minimisant l'impact ngatif sur les performances des
+   applications.
+     * Exploiter les technologies nouvelles de manire optimale.
+
+   Il s'agit de continuer une activit de suivi technologique pointue
+   (rseaux, processeurs) de faon bien rester en phase avec les contraintes
+   relles imposes par les machines de ``production'' et surtout comprendre
+   comment exploiter ces nouvelles technologies de manire performante
+   (nouveaux paradigmes dans les modles de communication, stratgies
+   d'ordonnancement des threads, etc.) Sur ce point, nous comptons
+   travailler sur l'amlioration de l'expressivit des interfaces proposes
+   qui doivent idalement permettent de sparer les contraintes applicatives
+   des optimisations effectues par le support excutif.
+     * Amliorer l'intgration avec les environnements et les applications.
+
+   Il s'agit d'explorer la frontire entre les supports excutifs et les
+   environnements de plus haut niveau afin d'tudier la mise en place
+   d'optimisations encore plus performantes. Diffrentes voies sont suivre:
+   proposition d'extensions des interfaces des environnements qui
+   encapsulent trop souvent l'interface du support sous-jacent,
+   exploitation d'information fournies par un analyseur de programme dans
+   le but d'amliorer les heuristiques utilises au sein des supports,
+   raffinement du code applicatif par un spcialiseur l'aide d'informations
+   remontes par le support au moment du dploiement, etc.
+
+   [INS: Relations internationales et industrielles :INS]
+
+   Collaborations internationales:
+     * NSF/INRIA avec UNH (Philip Hatcher, USA)
+
+   Collaborations nationales:
+     * ACI Grid "RMI"
+     * ARC INRIA + ACI GRID 2002 "Algo itratifs asynchrones"
+
+   Collaborations industrielles :
+     * CEA/DAM
+     * Alcatel
+
+   [INS: Logiciels :INS]
+
+   PM2
+
+   Rcupr sur https://www.labri.fr/index.php?n=Satanas.RunTime
+   Page mise jour le 19/06/2008 à 15:39
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Projets: Scrime
+
+   Projets
+   Scrime (Lien vers la page du projet)
+
+   Le SCRIME (Studio de Cration et de Recherche en Informatique et Musique
+   lectroacoustique) est une cellule d'activit rassemblant artistes et
+   scientifiques. Son objectif est de permettre aux premiers de bnficier
+   d'un transfert de connaissances scientifiques et aux seconds d'une
+   expertise musicale. Le SCRIME rsulte d'une convention de coopration
+   entre le Conservatoire National de Rgion de Bordeaux, l'ENSEIRB, et
+   l'universit Bordeaux 1.
+
+   Les membres du SCRIME sont des chercheurs en informatique musicale du
+   LaBRI et des compositeurs issus du Conservatoire National de Rgion de
+   Bordeaux et de l'association Octandre, pour la plupart.
+
+   Rcupr sur https://www.labri.fr/index.php?n=Projets.Scrime
+   Page mise jour le 19/06/2008 à 15:07
+   #LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+   Laboratoire Bordelais de Recherche en Informatique (UMR 5800)
+       Actualités du LaBRI Manifestations Recrutements au LaBRI Intranet
+   Plan d'accès au LaBRI Contact Urgences
+
+     * Accueil
+     * Rechercher
+
+   Le LaBRI
+     * Présentation
+     * Tutelles et partenaires
+     * Coopérations
+     * Organigramme
+     * Effectifs
+     * Annuaires
+     * Rapports d'activité
+     * Événements
+
+   Recherches
+     * Équipes
+     * Projets
+     * Séminaires et
+       groupes de travail
+     * Publications
+     * Logiciels
+
+   Éthique et Recherche
+
+   Projets et Transfert
+     * Espace Entreprises
+     * Espace Chercheurs
+
+   Enseignements
+     * Doctorats
+     * Département Info.
+     * Miage
+     * Iut
+     * Bordeaux INP
+
+   Accès
+     * Accès sécurisé
+     __________________________________________________________________
+
+   Crédits
+   Mentions légales
+
+   Contact : webmaster at labri.fr
+   Logiciels
+   Description de Simbals
+   Le LaBRI
+
+   Nom : HANNA Pierre
+   Projet-équipe : Image/Son - Son
+   Nombre de personnes impliquées dans cette activité : 4 (Julien ALLALI,
+   Pascal FERRARO, Matthias ROBINE, Pierre HANNA)
+   Domaine scientifique : Nous nous intéressons aux méthodes de navigation
+   dans les bases de données musicales, en développant notamment des
+   méthodes de mesure de similarité musicale. Ces méthodes peuvent être
+   très lentes. Pourtant les expériences visant à les valider doivent
+   considérer des bases de données audio ou symbolique de taille très
+   importante. C'est pourquoi nous souhaitons étudier à terme des
+   optimisations possibles.
+   Logiciel : en cours de développement.
+   Langage : C/C++
+   Compilateurs : g++
+   Est-il parallèle ? Non
+   Est-il scalable ? Oui
+   Type de simulation :
+   Durée : dépend du nombre de processeurs
+   Besoins en logiciel/bibliothèque avec la machine : bibiliothèque FFTW
+   (Fastest Fourier Transform in the West)
+   Lien : http://simbals.labri.fr/
+   Page mise à jour le 19/06/2008 à 15:00
+
+   Imprimer
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Projets: Simbals
+
+   Logiciels
+   Description de Simbals
+   Le LaBRI
+
+   Nom : HANNA Pierre
+   Projet-quipe : Image/Son - Son
+   Nombre de personnes impliques dans cette activit : 4 (Julien ALLALI,
+   Pascal FERRARO, Matthias ROBINE, Pierre HANNA)
+   Domaine scientifique : Nous nous intressons aux mthodes de navigation
+   dans les bases de donnes musicales, en dveloppant notamment des mthodes
+   de mesure de similarit musicale. Ces mthodes peuvent tre trs lentes.
+   Pourtant les expriences visant les valider doivent considrer des bases
+   de donnes audio ou symbolique de taille trs importante. C'est pourquoi
+   nous souhaitons tudier terme des optimisations possibles.
+   Logiciel : en cours de dveloppement.
+   Langage : C/C++
+   Compilateurs : g++
+   Est-il parallle ? Non
+   Est-il scalable ? Oui
+   Type de simulation :
+   Dure : dpend du nombre de processeurs
+   Besoins en logiciel/bibliothque avec la machine : bibiliothque FFTW
+   (Fastest Fourier Transform in the West)
+   Lien : http://simbals.labri.fr/
+
+   Rcupr sur https://www.labri.fr/index.php?n=Projets.Simbals
+   Page mise jour le 19/06/2008 à 15:00
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Satanas: Scalapplix
+
+   Projets
+   Scalapplix (Lien vers la page du projet)
+
+   Responsable : J. Roman
+   Equipe Satanas
+
+   [INS: Prsentation du projet :INS]
+
+   L'objectif de ce projet est la mise en oeuvre de comptences
+   scientifiques complmentaires pour une recherche pluridisciplinaire dans
+   les domaines de l'informatique hautes performances et de la modlisation
+   numrique, et ce dans le but d'analyser et de rsoudre efficacement des
+   problmes de calcul scientifique provenant d'applications complexes
+   ncessitant des puissances de calcul et manipulant des tailles de donnes
+   traflopiques.
+
+   [INS: Axes de recherche :INS]
+     * Schmas multidimensionnels compacts
+     * Algorithmique hautes performances
+     * Mise en oeuvre hautes performances
+     * Visualisation et pilotage de simulations numriques distribues par
+       un code de ralit virtuelle
+
+   [INS: Relations internationales et industrielles :INS]
+
+   En plus des collaborations avec les membres extrieurs fortement
+   impliqus dans cette proposition, nous avons des collaborations avec un
+   certain nombre de chercheurs ou d'ingnieurs dans des institutions
+   acadmiques et industrielles.
+     * Collaborations acadmiques rgionales (Bordeaux)
+          + Biologie structurale et bio informatique: M. Laguerre - IECB;
+          + Dynamique molculaire quantique: L. Ducasse - LPCM;
+          + Image et ralit virtuelle: P. Guitton - LaBRI;
+          + Paralllisme: B. Cirou, M.C. Counilh, J.M. Lpine, F. Rubi -
+            LaBRI et P. Charrier - MAB.
+     * Collaborations acadmiques nationales
+          + Dynamique molculaire distribue et ralit virtuelle: Centre
+            Charles Hermite (Nancy);
+          + Dynamique des populations: P. Silan (UMR CNRS 5000, GPI, Ste);
+          + Ecoulements interface et diphasiques: H. Guillard (Smash INRIA
+            Sophia); R. Saurel (IUSTI Marseille et Smash INRIA Sophia);
+          + Plate-forme de Grid Computing (ACI GRID RMI), objets Corba
+            parallles: C. Perez, T. Priol (Paris, IRISA Rennes);
+          + Paralllisme, Solveurs creux: F. Desprez, J.Y. L'Excellent
+            (Remap, INRIA Rhne-Alpes); J. Erhel, B. Philippe (Aladin,
+            IRISA Rennes); I. Duff (CERFACS, Toulouse); Schmas
+            multidimensionnels compacts: A. Lerat (ENSAM Paris).
+     * Collaborations acadmiques internationales
+          + Ecoulements interface: S. Karni (Universit du Michigan, Ann
+            Arbor, USA);
+          + Paralllisme, Solveurs creux: Y. Saad, M. Sosonkina (Universit
+            de Minneapolis, USA); R. Bramley
+          + (Universit d'Indiana, USA); S. Li, E. Ng (NERSC-Lawrence
+            Berkeley Laboratory, USA); J.R. Gilbert (Xerocs, USA);
+          + Schmas multidimensionnels compacts: H. Deconinck (VKI,
+            Belgique); P.L. Roe (Universit du Michigan,
+          + Ann Arbor, USA); Z.J. Wang (Universit du Michigan, East
+            Lansing, USA); Th. Sonar (TU Braunschweig, Allemagne).
+     * Collaborations industrielles
+          + Ecoulements interface: EADS, ONERA;
+          + Equation d'Hamilton Jacobi: SNPE;
+          + Paralllisme, Interactions laser plasma: CEA - DAM;
+          + Paralllisme, Solveurs creux, Electromagntisme: CEA - DAM;
+          + Paralllisme, Propagation d'un faisceau laser dans une chane de
+            composants optiques de type laser Mga-Joule: CEA - DAM;
+          + Schmas multidimensionnels compacts, Ecoulements diphasiques:
+            Dassault, CEA - DAM.
+
+   Rcupr sur https://www.labri.fr/index.php?n=Satanas.Scalapplix
+   Page mise jour le 19/06/2008 à 15:39
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Satanas: RunTime
+
+   Projets
+   Run Time (Lien vers la page du projet)
+
+   Responsable : R. Namyst
+   Equipe Satanas
+
+   [INS: Prsentation du projet :INS]
+
+   Le projet RUNTIME s'inscrit dans le cadre du calcul parallle hautes
+   performances. Il s'intresse l'tude et la conception des principes,
+   ainsi qu' la mise en oeuvre et l'valuation des mcanismes qui seront au
+   coeur des supports excutifs parallles de demain. Plus prcisment, il
+   s'agit de dfinir, d'implanter et de valider une famille de supports
+   excutifs gnriques constituant une base flexible et performante pour la
+   construction d'environnements/applications dans le domaine du calcul
+   parallle intensif. Ceux-ci devront permettre l'exploitation efficace
+   des machines parallles que sont les grappes de grande taille, htrognes
+   et hirarchiques.
+
+   [INS: Axes de recherche :INS]
+
+   Le projet de recherche s'articule autour de trois dfis principaux :
+     * Matriser les configurations htrognes, de grande taille.
+
+   Il s'agit de proposer de nouveaux modles, principes et mcanismes
+   permettant d'organiser les communications (en particulier le routage
+   haute performance en contexte htrogne), l'ordonnancement des threads et
+   les entres/sorties sur ce type d'architectures, de manire la fois
+   portable et performante. Il s'agit galement de rflchir l'introduction
+   des ncessaires proprits de dynamicit, de tolrance aux pannes et de
+   passage l'chelle au sein de cette nouvelle gnration de supports
+   excutifs, en minimisant l'impact ngatif sur les performances des
+   applications.
+     * Exploiter les technologies nouvelles de manire optimale.
+
+   Il s'agit de continuer une activit de suivi technologique pointue
+   (rseaux, processeurs) de faon bien rester en phase avec les contraintes
+   relles imposes par les machines de ``production'' et surtout comprendre
+   comment exploiter ces nouvelles technologies de manire performante
+   (nouveaux paradigmes dans les modles de communication, stratgies
+   d'ordonnancement des threads, etc.) Sur ce point, nous comptons
+   travailler sur l'amlioration de l'expressivit des interfaces proposes
+   qui doivent idalement permettent de sparer les contraintes applicatives
+   des optimisations effectues par le support excutif.
+     * Amliorer l'intgration avec les environnements et les applications.
+
+   Il s'agit d'explorer la frontire entre les supports excutifs et les
+   environnements de plus haut niveau afin d'tudier la mise en place
+   d'optimisations encore plus performantes. Diffrentes voies sont suivre:
+   proposition d'extensions des interfaces des environnements qui
+   encapsulent trop souvent l'interface du support sous-jacent,
+   exploitation d'information fournies par un analyseur de programme dans
+   le but d'amliorer les heuristiques utilises au sein des supports,
+   raffinement du code applicatif par un spcialiseur l'aide d'informations
+   remontes par le support au moment du dploiement, etc.
+
+   [INS: Relations internationales et industrielles :INS]
+
+   Collaborations internationales:
+     * NSF/INRIA avec UNH (Philip Hatcher, USA)
+
+   Collaborations nationales:
+     * ACI Grid "RMI"
+     * ARC INRIA + ACI GRID 2002 "Algo itratifs asynchrones"
+
+   Collaborations industrielles :
+     * CEA/DAM
+     * Alcatel
+
+   [INS: Logiciels :INS]
+
+   PM2
+
+   Rcupr sur https://www.labri.fr/index.php?n=Satanas.RunTime
+   Page mise jour le 19/06/2008 à 15:39
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Projets: Scrime
+
+   Projets
+   Scrime (Lien vers la page du projet)
+
+   Le SCRIME (Studio de Cration et de Recherche en Informatique et Musique
+   lectroacoustique) est une cellule d'activit rassemblant artistes et
+   scientifiques. Son objectif est de permettre aux premiers de bnficier
+   d'un transfert de connaissances scientifiques et aux seconds d'une
+   expertise musicale. Le SCRIME rsulte d'une convention de coopration
+   entre le Conservatoire National de Rgion de Bordeaux, l'ENSEIRB, et
+   l'universit Bordeaux 1.
+
+   Les membres du SCRIME sont des chercheurs en informatique musicale du
+   LaBRI et des compositeurs issus du Conservatoire National de Rgion de
+   Bordeaux et de l'association Octandre, pour la plupart.
+
+   Rcupr sur https://www.labri.fr/index.php?n=Projets.Scrime
+   Page mise jour le 19/06/2008 à 15:07
+   #LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+   Laboratoire Bordelais de Recherche en Informatique (UMR 5800)
+       Actualités du LaBRI Manifestations Recrutements au LaBRI Intranet
+   Plan d'accès au LaBRI Contact Urgences
+
+     * Accueil
+     * Rechercher
+
+   Le LaBRI
+     * Présentation
+     * Tutelles et partenaires
+     * Coopérations
+     * Organigramme
+     * Effectifs
+     * Annuaires
+     * Rapports d'activité
+     * Événements
+
+   Recherches
+     * Équipes
+     * Projets
+     * Séminaires et
+       groupes de travail
+     * Publications
+     * Logiciels
+
+   Éthique et Recherche
+
+   Projets et Transfert
+     * Espace Entreprises
+     * Espace Chercheurs
+
+   Enseignements
+     * Doctorats
+     * Département Info.
+     * Miage
+     * Iut
+     * Bordeaux INP
+
+   Accès
+     * Accès sécurisé
+     __________________________________________________________________
+
+   Crédits
+   Mentions légales
+
+   Contact : webmaster at labri.fr
+   Logiciels
+   Description de Simbals
+   Le LaBRI
+
+   Nom : HANNA Pierre
+   Projet-équipe : Image/Son - Son
+   Nombre de personnes impliquées dans cette activité : 4 (Julien ALLALI,
+   Pascal FERRARO, Matthias ROBINE, Pierre HANNA)
+   Domaine scientifique : Nous nous intéressons aux méthodes de navigation
+   dans les bases de données musicales, en développant notamment des
+   méthodes de mesure de similarité musicale. Ces méthodes peuvent être
+   très lentes. Pourtant les expériences visant à les valider doivent
+   considérer des bases de données audio ou symbolique de taille très
+   importante. C'est pourquoi nous souhaitons étudier à terme des
+   optimisations possibles.
+   Logiciel : en cours de développement.
+   Langage : C/C++
+   Compilateurs : g++
+   Est-il parallèle ? Non
+   Est-il scalable ? Oui
+   Type de simulation :
+   Durée : dépend du nombre de processeurs
+   Besoins en logiciel/bibliothèque avec la machine : bibiliothèque FFTW
+   (Fastest Fourier Transform in the West)
+   Lien : http://simbals.labri.fr/
+   Page mise à jour le 19/06/2008 à 15:00
+
+   Imprimer
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Projets: Simbals
+
+   Logiciels
+   Description de Simbals
+   Le LaBRI
+
+   Nom : HANNA Pierre
+   Projet-quipe : Image/Son - Son
+   Nombre de personnes impliques dans cette activit : 4 (Julien ALLALI,
+   Pascal FERRARO, Matthias ROBINE, Pierre HANNA)
+   Domaine scientifique : Nous nous intressons aux mthodes de navigation
+   dans les bases de donnes musicales, en dveloppant notamment des mthodes
+   de mesure de similarit musicale. Ces mthodes peuvent tre trs lentes.
+   Pourtant les expriences visant les valider doivent considrer des bases
+   de donnes audio ou symbolique de taille trs importante. C'est pourquoi
+   nous souhaitons tudier terme des optimisations possibles.
+   Logiciel : en cours de dveloppement.
+   Langage : C/C++
+   Compilateurs : g++
+   Est-il parallle ? Non
+   Est-il scalable ? Oui
+   Type de simulation :
+   Dure : dpend du nombre de processeurs
+   Besoins en logiciel/bibliothque avec la machine : bibiliothque FFTW
+   (Fastest Fourier Transform in the West)
+   Lien : http://simbals.labri.fr/
+
+   Rcupr sur https://www.labri.fr/index.php?n=Projets.Simbals
+   Page mise jour le 19/06/2008 à 15:00
+From LaBRI - Laboratoire Bordelais de Recherche en Informatique
+
+Projets: Visidia
+
+   Projets
+   Visidia (Lien vers la page du projet)
+
+   Le dveloppement d'une information de plus en plus complexe et
+   massivement distribue sur les grands rseaux, comme Internet, est trs
+   rapide. Le nombre de serveurs et de machines connects Internet explose.
+   La mise en oeuvre d'une application web distribue dans ce contexte est
+   un vrai dfi. Les progrs technologiques des postes de travail et des
+   rseaux, notamment haut dbit, et les efforts de standardisation des
+   services d'interoprabilit (comme CORBA) ont permis de surmonter les
+   problmes classiques de bas niveaux lis aux rseaux htrognes, aux
+   diffrents systmes d'exploitation et aux langages de programmation.
+   Ainsi, les systmes distribus et les solutions coopratives sont devenus
+   une option accessible et mme courante pour de nombreuses applications:
+   industrielles, bancaires, multimdia, web. C'est une volution d'actualit
+   laquelle doivent s'adapter les entreprises afin de garantir une
+   productivit et une comptitivit en phase avec cette mutation. L'enjeu
+   conomique est donc considrable. Toutefois, le dveloppement
+   d'applications distribues est un processus trs difficile. la complexit
+   classique de dveloppement d'applications centralises, s'ajoute une
+   complexit lie la distribution et l'introduction de la communication
+   entre processus, de la concurrence, des conflits de ressources.
+
+   On se propose de fournir un atelier compos d'outils de simulation, de
+   visualisation et d'aide aux preuves devenus indispensables pour la
+   conception et la validation de programmes dans des environnements
+   distribus. Le modle classique consiste reprsenter le rseau par un
+   graphe o les sommets correspondent des machines ou processeurs, et les
+   artes des connexions. Pour les concepteurs et les chercheurs en
+   algorithmique distribue, cet atelier permettra d'effectuer facilement
+   des tests et des simulations, de comprendre le fonctionnement d'un
+   algorithme distribu et d'intuiter certaines proprits. Il est
+   indispensable en particulier de disposer de cet outil pour viter de
+   faire les tests la main, et surtout pour expliquer le droulement de
+   l'excution d'un algorithme distribu. Pour les dveloppeurs, la
+   visualisation de l'excution d'un programme distribu permet une
+   abstraction de l'application, ce qui est bnfique notamment pour
+   l'implantation, la mise au point et la vrification de programmes. Pour
+   plusieurs applications distribues, la mise au point effectue l'aide de
+   fichiers textes ou traces ou log, s'avre souvent inefficace cause de la
+   complexit et des changements dynamiques des donnes et du rseau. La
+   visualisation peut, dans ces cas, montrer l'excution du logiciel et
+   peut aider diagnostiquer les erreurs.
+
+   Le but de notre projet est de dvelopper un environnement de simulation
+   et de visualisation d'algorithmes distribus. Ce projet runit des
+   chercheurs de plusieurs quipes du LaBRI ayant des comptences varies
+   mais complmentaires: en algorithmique distribue, en graphes, en
+   rcriture, en objets distribus. Notre objectif final est une
+   exprimentation grandeur nature.
+
+   Rcupr sur https://www.labri.fr/index.php?n=Projets.Visidia
+   Page mise jour le 19/06/2008 à 15:07
+         Groupe de travail: Preuves formelles d'algorithmes distribués
+
+   Salle 381, Le jeudi de 9h30 à 10h30. Ce groupe s'intéresse
+   principalement à la preuve assistée d'algorithmes distribués présentés
+   sous forme de calculs locaux (systèmes de réétiquetage dans un graphe
+   (voir par exemple cet article et l'outil Visidia).
+   Nous construisons un environnement de preuve sur les calculs locaux où
+   la métathéorie est exprimée dans le calcul des constructions inductives
+   en utilisant l'assistant de preuves Coq. Le générateur d'obligations de
+   preuves
+   Outre l'algorithmique distribuée et sa modélisation, ce groupe
+   s'intéresse à tous les aspects de la preuve interactive en logique
+   d'ordre supérieur.
+
+Programme 2010-2011
+
+     * 7 octobre 2010:
+       Allyx Fontaine
+       Représentation de graphes en Coq.
+     * 30 septembre 2010:
+       Akka Zemmari
+       Suite du cours sur les algorithmes distribués probabilistes.
+     * 23 septembre 2010:
+       Vincent Filou
+       Une preuve d'algorithme de construction d'arbre recouvrant
+     * 16 septembre 2010:
+       Akka Zemmari d&ecute,bute une série de 3 cours sur les algorithmes
+       distribués probabilistes.
+       Les transparents
+
+   Responsable : Pierre Castéran
+   pierre dot casteran at labri dot fr
+
+
+
+       Accéder aux actualités
+       Evènements des groupes
+       Liste des groupes publics
+   Evènement pour le groupe BioInformatique et Visualisation
+   Date  2017-10-19  11:00-12:00
+   Titre Finding a gene tree in a phylogenetic network
+   Résumé Phylogenetic networks have been introduced as a model
+   generalizing phylogenetic trees in order to represent the evolution of
+   species. Contrary to trees, it allows to represent the transfer of
+   genetic material between coexisting species or populations, through
+   recombination, hybridization or horizontal gene transfers. Several
+   methods have been proposed to reconstruct phylogenetic networks by
+   combining together gene trees, where each gene tree represents the
+   evolution of one gene. These methods expect the gene trees to be
+   contained in the reconstructed phylogenetic network, but given the tree
+   and the network, just checking if the tree is contained in the network
+   is already an NP-hard problem. We will present some subclasses of
+   phylogenetic networks where polynomial-time algorithms can be found for
+   this decision problem, as well as a system describing those subclasses
+   and their inclusions.
+   Lieu salle 178, LaBRI
+   Orateur Philippe Gambette
+   Url Université Marne-la-Vallée
+   Aucun document lié à cet événement.
+   Retour
+   Retour à l'index
+
+
+
+       Accéder aux actualités
+       Evènements des groupes
+       Liste des groupes publics
+   Evènement pour le groupe BioInformatique et Visualisation
+   Date  2016-12-08  10:00-11:00
+   Titre D-Wave, le début de l'informatique quantique
+   Résumé La société canadienne D-Wave a commencé la commercialisation de
+   la machine D-Wave 2X, présentée comme le premier calculateur quantique
+   disponible. Quelles sont les capacités de cette machine? Comment
+   fonctionne-t-elle? Je vais tenter de répondre à ces questions, et
+   présenterai les résultats des premiers tests effectués sur de
+   l'algorithmique des graphes.
+   Lieu Amphi, LaBRI
+   Orateur Guillaume Rizk
+   Url INRIA, Rennes
+   Aucun document lié à cet événement.
+   Retour
+   Retour à l'index
+
+
+
+       Accéder aux actualités
+       Evènements des groupes
+       Liste des groupes publics
+   Evènement pour le groupe BioInformatique et Visualisation
+   Date  2016-06-30  11:00-12:00
+   Titre Mécanique chromosomique de l’oncogenèse des Leiomyosarcomes
+   Résumé Depuis 2009, le consortium international ICGC (International
+   Cancer Genome Consortium) a pour objectif de séquencer le génome de 50
+   types de cancers différents. Parmi ceux-ci nous avons la charge de
+   celui des Leiomyosarcomes, tumeur mésenchymateuse très agressive. Ces
+   sarcomes sont caractérisés par une génétique très complexe basée sur de
+   nombreux réarrangements chromosomiques et mutations. Nous présenterons
+   comment l’analyse des données de séquençage (WGseq et RNAseq) d’une
+   première série de 68 LMS nous permet d’avancer dans notre compréhension
+   de cette oncogenèse.
+   Lieu 178
+   Orateur Laetitia Bourgeade
+   Email l.bourgeade@bordeaux.unicancer.f
+   Url unicancer
+   Aucun document lié à cet événement.
+   Retour
+   Retour à l'index

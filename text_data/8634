@@ -1,0 +1,492 @@
+   _______________________________ Search
+
+   Ajax JavaScript CSS HTML 5 DOM
+
+                                   Toolbar
+
+   La toolbar est une boite particulière destinée à contenir des boutons
+   (mais qui peut contenir toutes sortes de composants), qui est
+   horizontale par défaut, et qui possède des "grippy", ce sont des cases
+   pointillées qui se déploient en groupe de boutons et se compactent avec
+   un clic.
+   Elle amène d'autres balises qui lui sont propres...
+
+Composants de toolbar
+
+   toolbarbutton
+
+     C'est un bouton destiné à être contenu dans une toolbar et qui est
+     traité différemment par l'interpréteur de XUL.
+
+   toolbargrippy
+
+     Icône pour cacher ou développer le contenu d'une toolbar.
+
+   toolbarseparator
+
+     Séparateur de barre d'outils. La différence avec un séparateur
+     basique est l'emploi de thèmes pour varier l'apparence.
+
+   toolbarspacer
+
+     Séparateur vide, affiche un blanc entre les boutons.
+
+   toolbaritem
+
+     Si l'on veut placer dans une barre d'outils des éléments autres que
+     des boutons et séparateurs, on les encapsule dans un toolbaritem.
+     Par exemple un champ d'entrée de texte..
+
+Exemple
+
+   Nous allons créer une petite interface avec une toolbar, quelques
+   boutons et autres composants graphiques et des commandes seront
+   ajoutées pour la tester.
+
+   On définit la barre d'outils:
+<toolbox>
+    <toolbar>
+    </toolbar>
+</toolbox>
+
+   On ajoute deux boutons open et save, seul le nom change par rapport aux
+   boutons tels que décrits précédemment:
+<toolbox>
+    <toolbar>
+        <toolbarbutton image="open.gif" />
+        <toolbarbutton image="save.gif" />
+    </toolbar>
+ </toolbox>
+
+   Pour ajouter un élément autre qu'un bouton, en l'occurence un libellé
+   et un champ d'entrée de texte, on l'encapsule dans toolbaritem:
+<toolbaritem>
+    <description value="Entrer une  URL" />
+    <textbox  />
+</toolbaritem>
+
+   Pour associer des commandes aux boutons, cela se passe comme avec les
+   menus, on attribue un id à chaque bouton et on crée des gestionnaires
+   d'événements par la méthode addEventListener à laquelle on passe les id
+   en paramètres..
+     * Démo: code.zip
+
+   (c)2007 Xul.fr - Denis Sureau. Tous droits réservés.
+   _______________________________ Search
+
+   Ajax JavaScript CSS HTML 5 DOM
+
+                            Barre de progression
+
+   La balise progressmeter présente un indicateur de progression sous
+   forme de barre dont le contenu se remplit au fur et à mesure de
+   l'achèvement de l'action que l'on mesure. Les exemples les plus
+   courants sont le téléchargement d'un fichier, ou l'installation d'un
+   logiciel.
+
+Progressmeter et attributs
+
+   progressmeter
+
+     La balise qui affiche la barre de progression. Elle doit être
+     initialisée à 0 par l'attribut value, sinon on ne pourra changer
+     l'indicateur.
+
+   mode
+
+     La valeur "determined" Indique que l'on connait la durée totale de
+     l'action au départ, et c'est la valeur par défaut. Si on ne la
+     connait pas, on assignera "undetermined". Dans ce cas on ne peut
+     changer l'indicateur.
+
+   value
+
+     La valeur de progression détermine la taille du contenu du
+     progressmeter quand il est déterminé. C'est une valeur en
+     pourcentage et elle va donc de 0 à 100 %. On associe un gestionnaire
+     d'évènement au progressmeter qui assigne cet attribut au fur et à
+     mesure de l'avancement de l'action mesurée.
+
+Exemple d'utilisation
+
+   Pour les besoins de l'exemple on va entrer directement des valeurs à
+   partir d'une liste et d'un champ d'entrée de texte, qui seront
+   assignées à l'indicateur.
+
+   Création de l'indicateur:
+<hbox style="padding:16px">
+    <progressmeter id="MonPM" value="0%"/>
+</hbox>
+
+   Ajout d'un champ d'entrée de texte et d'un bouton avec un attribut
+   oncommand pour appeller la fonction de mise à jour du progressmeter:
+<textbox id="inp" size="5" value="50" />
+<button label="Changer" oncommand="setProgress(); " />
+
+   Le code JavaScript:
+var inp = document.getElementById("inp");
+var mpm = document.getElementById("MonPM");
+
+function setProgress()
+{
+    var x = parseInt(inp.value);
+    mpm.value = x;
+}
+
+   On assigne les objets textbox et progressmeter à des variables (inp et
+   mpm) pour pouvoir lire la valeur de l'un et l'assigner au second. Le
+   texte entré est convertit en nombre entier par la fonction parseInt()
+   car progressmeter attend une valeur numérique.
+   Dans une application réelle, la valeur sera obtenue par une fonction
+   quelconque.
+     * Démo: code.zip
+
+   (c)2007 Xul.fr - Denis Sureau. Tous droits réservés.
+   _______________________________ Search
+
+   Ajax JavaScript CSS HTML 5 DOM
+
+                                    Tree
+
+   L'objet tree est une composante arborescente destinée à contenir et
+   afficher des données chargées dynamiquement. Son contenu et sa
+   structure varient après le lancement du logiciel et durant son
+   utilisation.
+   Il peut prendre la forme d'une liste, d'une table ou d'une
+   arborescence.
+   Contrairement à listbox, ce composant a une partie affiché, l'objet
+   tree et un contenu dynamique treeview. Treeview n'est pas un composant
+   graphique en ce qu'il n'est pas affiché lui-même, seul son contenu le
+   sera et ce contenu est fait de textes et d'images.
+
+Elements de tree
+
+   treecols
+
+     Groupe de colonnes. Pour une liste simple ou hiérarchique il n'y
+     aura qu'une colonne.
+
+   treecol
+
+     Ces éléments servent à définir le nombre de colonnes et de spécifier
+     les paramètres sur les colonnes.
+     Exemple de treecols:
+<tree>
+    <treecols>
+        <treecol label="Nom" />
+        <treecol label="Prénom" />
+        <treecol label="E-mail" />
+    </treecols>
+</tree>
+
+     Si la colonne est hiérarchique, elle aura l'attribut primary:
+<treecol primary="true" label="Nom" />
+
+   treechildren
+
+     Conteneur du corps de l'arborescence qui est aussi la partie
+     dynamique. Treechildren se place après treecols. Il contient des
+     treeitems.
+     Exemple:
+<tree>
+    <treecols>
+    </treecols>
+    <treechildren>
+        <treeitem>
+             ....
+    </treechildren>
+</tree>
+
+   treeitem
+
+     Un élement treetiem contient une ligne de la table (une treerow) et
+     éventuellement des treechildren s'il s'agit d'une hiérarchie. Le
+     nombre de treeitem est variable.
+
+   treerow
+
+     Une ligne. Elle contient des treecell. Le nombre de treecell dans
+     une treerow doit correspondre au nombre de colonnes, donc de treecol
+     dans treecols.
+
+   treecell
+
+     Un élément indivisible contenant des données.
+
+Construire une table
+
+   Dans une table, une correspondance doit se faire entre les colonnes et
+   les éléments, de sorte que les éléments soient des cellules.
+   La table est dynamique en ceci que le nombre de lignes est variable et
+   évolue lors de l'utilisation du programme. En outre il est possible
+   d'afficher ou cacher les colonnes.
+
+Afficher une arborescence dynamique
+
+   Pour créer une arborescence, on insère des éléments treechildren dans
+   des éléments treeitem .
+   Si l'on prend comme exemple le contenu d'un disque dur:
+   - Le treechildren équivaud à un sous-répertoire.
+   - Une treerow pour le nom du sous-répertoire.
+   - Un treeitem pour chaque fichier du répertoire. Le treeitem contient
+   une treerow qui contient une treecell.
+   Donc:
+   - Chaque treechildren contient une liste de treeitem.
+   - Chaque treeitem contient une treerow qui contient une treecell, et
+   éventuellement un treechildren.
+   Lorsque qu'un treeitem contient un treechildren il doit avoir deux
+   attributs, container pour indiquer qu'il contient une branche, et open
+   pour indiquer s'il est ouvert au départ ou non.
+<treeitem container="true" open="true" />
+
+   Si l'on veut créer une branche, on aura donc la structure suivante:
+<treeitem container="true" open="true">
+    <treerow
+        <treecell label="" />
+    <treerow>
+    <treechildren>
+        <treeitem>
+            ....
+        </treeitem>
+        <treeitem>
+             ...
+        </treeitem>
+    </treechildren>
+</treeitem>
+
+   Dans tous les cas, le nombre de treeitem peut évoluer.
+
+Combiner une arborescence et une table
+
+   La différence avec le cas précédent est simplement que le nombre de
+   treecol évolue et le nombre de treecell aussi en nombre égal.
+   Si l'on a trois colonnes, le listing précédent deviendra:
+<treeitem container="true" open="true">
+    <treerow
+        <treecell label="" />
+        <treecell label="" />
+        <treecell label="" />
+    <treerow>
+    <treechildren>
+        <treeitem>
+            ....
+        </treeitem>
+        <treeitem>
+             ...
+        </treeitem>
+    </treechildren>
+</treeitem>
+
+   Dans notre exemple, on a une colonne pour la personne, la ville et
+   l'e-mail. Mais la personne est un objet hiérarchique, elle possède une
+   liste dont chaque élément à un nom, une ville, une adresse e-mail.
+
+Accéder aux éléments de tree
+
+   Lorsque l'utilisateur clique sur un élément de tree, un évènement est
+   déclenché que l'on peut connaitre avec le gestionnaire d'évènement
+   onselect.
+   Et l'on sait quel élément a été sélectionné grâce à l'attribut
+   currentIndex qui contient le numéro dans la hiérarchie.
+   On ajoute donc le gestionnaire à l'objet tree:
+<tree onselect="selecting(currentIndex);" >
+
+   Et l'on crée une fonction JavaScript pour effectuer un traitement
+   quelconque, dans l'exemple on affiche le numéro de l'élément désigné:
+function selecting(idx)
+{
+    alert("Selection " + idx);
+}
+
+   L'exemple montre comment sont attribués les numéros aux éléments:
+     * Démo: code.zip
+
+   Ce chapitre ne présente que les bases de l'objet tree. Son utilisation
+   devient plus complexe avec l'emploi de fichiers RDF pour le contenu
+   dynamique.
+   (c)2007 Xul.fr - Denis Sureau. Tous droits réservés.
+   _______________________________ Search
+
+   Ajax JavaScript CSS HTML 5 DOM
+
+                            Du code HTML dans XUL
+
+   Au prix d'une définition d'espace de nom supplémentaire, vous pouvez
+   inclure du code HTML dans votre interface XUL:
+xmlns:html="http://www.w3.org/1999/xhtml"
+
+   Cet attribut s'ajoute aux attributs de window, et vient donc à coté de
+   l'espace de nom de XUL.
+
+   Le format global étant XML, les balises sans contenu sont terminées par
+   "/>" comme en XHTML et non pas par ">" comme en HTML 4.
+   Les noms de balises et attributs doivent être entièrement en
+   minuscules.
+
+Comment utiliser HTML
+
+   Toutes les balises HTML peuvent être intégrées parmi les balises XUL,
+   dès lors qu'elles sont préfixées par "html:", pour les marqueurs
+   ouvrant et fermant.
+   Par exemple:
+<box>
+    <html:div>
+        Mon texte
+    </html:div>
+</box>
+
+   Tandis que l'exemple suivant ne fonctionnerait pas:
+<box>
+    <div>
+        Mon texte
+    </div>
+</box>
+
+   car la balise div ne fait par partie de l'espace de nom par défaut,
+   celui de XUL.
+   Pas plus que cet autre exemple:
+<box>
+    <html:div>
+        Mon texte
+    </html:div>
+       Autre texte
+</box>
+
+   En effet, le second texte n'est pas placé dans une balise XUL ni HTML.
+
+Exemple
+
+   Nous utilisons un champ d'entrée de texte et un bouton HTML. Lorsque
+   l'utilisateur clique sur le bouton, le texte entré se trouve transféré
+   à un composant XUL, en l'occurence un simple label.
+
+   Le code HTML:
+<html:input id="hin" type="text" value="Taper un texte" />
+<html:input type="button" value="Submit" onclick="pass();"/>
+
+   Un gestionnaire d'évènement onclick appelle une fonction JavaScript
+   quand on clique sur le bouton.
+   Le code XUL:
+<label id="xlab" value="Vide" />
+
+   La fonction JavaScript:
+function pass()
+{
+        var source = document.getElementById("hin");
+        var target = document.getElementById("xlab");
+        target.value = source.value;
+}
+
+   L'élément HTML est retrouvé par son ID, de même que l'élément XUL.
+     * Démo: code.zip
+
+Voir aussi
+
+     * Canvas. Créer une surface de dessin.
+
+   Forum
+
+Du html dans un label ????
+
+   15-05-2007 14:57:06
+
+   smake
+   Bonjour, J'aimerais afficher du code html dans un label, est-ce
+   possible? Voici mon code :
+<script type="application/x-javascript"
+         src="chrome://perso/content/java.js" />
+ <statusbar id="status-bar">
+  <image id="image-your" src=""
+                    popup="popup-menu"
+                    tooltip="tooltip" />
+  <popupset>
+   <tooltip id="tooltip"   onpopupshowing="java.getStat()">
+    <vbox>
+     <div><label id="lbl_stat" value="essai"/></div>
+    </vbox>
+   </tooltip>
+  </popupset>
+  <statusbarpanel id="status-panel"
+                  label="Stat"
+                  tooltip="tooltip"
+                                  />
+ </statusbar>
+
+   Le fait est que mon code java modifie à la volée le texte contenu dans
+   le label. Mais ce n'est pas seulement du texte mais aussi du code html.
+   On m'a déjà conseillé d'utiliser une balise Iframe, mais une fois
+   initialisée si je change la source de ma balise Iframe la popup
+   affichée reste inchangée. Merci d'avance.
+   25-05-2007 14:40:35
+
+   webmaster
+   On ne peut pas mettre de HTML dans un attribut, seulement à l'intérieur
+   d'une balise HTML. On doit trouver un autre moyen d'insérer un contenu
+   dynamique.
+
+   © 2007-2013 Xul.fr - Tous droits réservés.
+   _______________________________ Search
+
+   Ajax JavaScript CSS HTML 5 DOM
+
+                                   Canvas
+
+   Canvas est une balise HTML qui ne fait pas partie de la version 4 et
+   n'est donc pas implémentée sur tous les navigateurs, mais elle l'est
+   sur Firefox et peut donc s'utiliser avec XUL. Elle permet de dessiner
+   sur une partie de l'interface, et ajoute donc à XUL une des
+   fonctionnalités majeures de XAML.
+   Par ailleurs elle fait partie de la spécification HTML 5 en cours.
+   Pour utiliser canvas, il faut d'abord ajouter la définition de l'espace
+   de nom HTML à la fenêtre:
+xmlns:html="http://www.w3.org/1999/xhtml"
+
+Utilisation de canvas
+
+   La balise s'intègre dans le fichier de description XUL avec le préfixe
+   html:
+<html:canvas id="MonCanvas" width="400" height="300">
+</html:canvas>
+
+   On a définit la largeur et la hauteur du canvas avec les attributs
+   width et height. Un identifieur a aussi été attribué pour permettre
+   d'accéder à l'élément à partir de JavaScript.
+   Dans la partie XUL, l'insertion de l'élément est tout ce dont on a
+   besoin pour créer une surface de dessin. Le contenu sera entièrement
+   créé avec du code JavaScript.
+
+   Celui-ci débute toujours par la définition d'un contexte graphique...
+
+   1) Retrouver l'objet:
+var canvas = document.getElementById("MonCanvas");
+
+   2) Lui attribuer un contexte graphique:
+var cg = canvas.getContext("2D");
+
+   Le paramètre indique que le canvas utilise des fonctions 2D.
+   Les fonctions sont des méthodes de l'objet graphique, par exemple:
+cg.strokeStyle = "green";
+cg.strokeRect(20,20,50,50);
+
+   On définit la couleur de tracé, en l'occurrence green (vert), et l'on
+   dessine un rectangle en position 20 et 20, avec une hauteur et une
+   largeur de 50 pixels.
+
+Les fonctions de canvas
+
+   Donner la liste des fonctions de dessin sur canvas va au-delà de ce
+   tutorial, car c'est une balise qui n'est pas native à XUL, mais un
+   objet de Gecko et qui deviendra plus tard une partie de HTML. On pourra
+   trouver un tutoriel sur cet objet sur le site de Mozilla.
+   Nous avons ajouté une fonction de cercle et utilisé une fonction de
+   rectangle arrondi donnée en exemple sur le site Mozilla. Si l'on veut
+   utiliser canvas en production, le mieux serait de continuer sur cette
+   voie et créer une interface à chaque fonction implémentée sur Gecko,
+   pour une réutilisation future en HTML 5.
+
+Exemple
+
+   L'exemple dessine des figures diverses sur un canevas.
+     * Démo: code.zip
+
+   (c)2007 Xul.fr - Denis Sureau. Tous droits réservés.

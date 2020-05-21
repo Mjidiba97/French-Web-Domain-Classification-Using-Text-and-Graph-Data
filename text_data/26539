@@ -1,0 +1,142 @@
+   #ICRA labels
+
+     * Skip to content
+     * Skip to link menu
+
+   KMPlayer Homepage
+     * KMPlayer Homepage • Inform
+
+
+
+KMPlayer - Media Player
+
+   Go here for KMPlayer for the Maemo platform.
+
+   Video player plugin for Konqueror and basic
+   MPlayer/Xine/ffmpeg/ffserver/VDR frontend for KDE
+
+Latest News
+
+      Date             Headline
+   25-Sep-2016 KMPlayer 0.12.0b Released
+   10-Jul-2016 KMPlayer 0.12.0a Released
+               KMPlayer 0.11.5b Released
+   6-May-2016  KMPlayer 0.12.0 Released
+               KMPlayer 0.11.5a Released
+
+Features
+
+   The KMPlayer KPart plugin for Konqueror mimics QuickTime, MS Media
+   Player and RealPlayer plugin browser plugins.
+
+   Screenshot from KMPlayer 0.9.1
+
+   Ballmer pleasing its shareholders ..
+   Screenshot from KMPlayer 0.9.1, controlpanel will shift up
+   when moving the mouse near bottom of video
+   so you can peek in playlist for eg. bookmarking a specific URL
+   Highlights are
+     * play movies from file/url using MPlayer, Xine (with ^*kxineplayer)
+       or GStreamer (with ^*kgstplayer), making the plugin support as many
+       as possible and, because all three are embedded external programs,
+       keeping konqueror from crashing,
+     * keep movie sizes ratio
+     * volume slider using backend players' volume control and a volume
+       slider using kmix or sound mixer applet (kicker) in the pop-down
+       menu,
+     * position slider
+     * Javascript support for controlling the plugin from web page's
+       javascript, and of course preventing script errors on pages calling
+       these functions,
+     * 'Click to Play' support for QuickTime's href attribute,
+     * lots of attributes supported, AUTOSTART, FULLSCREENMODE, CONSOLE,
+       CONTROLS etc. Also, the CONSOLE/CONTROLS for RealPlayer plugin,
+       allows KMPlayer to 'split-up' over multible objects,
+     * bookmark menu in the popup menu, so you can easily bookmark a
+       stream for later w/o having to visit the web site all the time,
+     * support for typical used playlist formats as ASX, RAM, m3u, pls,
+       partially SMIL and multi-media links in podcast RSS or ATOM feeds
+       and a dockable viewer for it. This allows you to easy navigate or
+       bookmark certain streams.
+     * recording using mencoder, mplayer -dumpstream, Xine's mrl extension
+       or ffmpeg
+     * resize/fullscreen support
+     * proxy settings from konqueror are used to set http_proxy
+       environment variable for backend processes,
+     * configurable pattern matching for MPlayer and easy Xine
+       configuration editor
+
+   The stand-alone player (libkdeinit_kmplayer.so) shares its core
+   (libkmplayercommon.so) with the plugin's (libkmplayerpart.so) one,
+   keeping both plugin and stand-alone player as lean (and secure) as
+   possible. Actually, I wouldn't be suprised if the majority of KMPlayer
+   users only use the plugin and use one of the other great movie players
+   for KDE for other means.
+   The stand-alone application can additionally:
+     * play DVD (DVDNav only with the Xine player)
+     * play VCD
+     * let the backend players play from a pipe (read from stdin), using a
+       seperate process (not piping to kmplayer itself)
+     * play from a TV device (experimental)
+     * show backend player's console output
+     * launch ffserver (only 0.4.8 works) when viewing from a v4l device
+     * DCOP KMediaPlayer interface support
+     * VDR viewer frontend (with ^*kxvplayer), configure VDR keys with
+       standard KDE shortcut configure window
+     * Lots of configurable shortcuts. Highly recommended for the VDR keys
+       (if you have VDR) and volume increase/decrease.
+     * Simple XML editor that make the XML under the current selected node
+       editable and allows you to sync it back at that point in the tree
+
+   ^*backend players that come with KMPlayer. These players are simple
+   command line applications (xsreensaver compatible) that embed inside
+   KMPlayer. Communication is done using DCOP.
+
+Help wanted
+
+   Some things simply stay low on my priority list, simply because I don't
+   need it right now. Anyway, if you like to contribute to KMPlayer, have
+   a look at this:
+     * Fix the debian build, don't end with an error, make kmplayer
+       package a real meta package of -lib, -plugin and -app.
+     * Improve the GStreamer backend (kgstplayer), audio visualisations,
+       dvdnav, flash, etc. Note, flash already works with the gstswfdec
+       plugin. Unfortunately it performs not very well. Fixing this would
+       allow kmplayer to replace the binary only flash plugin for
+       konqueror.
+     * MEncoder/FFMpeg encoding options.
+     * A new name, KMPlayer sounds like a frontend to MPlayer, no?
+     * Mute feature.
+     * Improve the TV playback. Currently device scanning is done using
+       MPlayer, but should be done more reliable (eg. HAL or XVideo).
+       Channel scanning is nice of course. Maybe an extra backend, like
+       tvtime.
+
+   [ Edit ]
+
+Inform
+
+   Skip menu "Inform"
+     * Home
+     * KDE Home
+     * News
+     * Screenshots
+     * Changelog
+     * Download
+     * Install
+
+Global navigation links
+
+     * KDE Home
+     * KDE Accessibility Home
+     * Description of Access Keys
+     * Back to content
+     * Back to menu
+
+Search:
+
+   Search: __________
+   Search
+   Maintained by kmplayer.kde.org Webmaster
+   KDE^® and the K Desktop Environment^® logo are registered trademarks of
+   KDE e.V. | Legal

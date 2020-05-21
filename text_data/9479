@@ -1,0 +1,1542 @@
+   # # robots.txt # # This file is to prevent the crawling and indexing of
+   certain parts # of your site by web crawlers and spiders run by sites
+   like Yahoo! # and Google. By telling these "robots" where not to go on
+   your site, # you save bandwidth and server resources. # # This file
+   will be ignored unless it is at the root of your host: # Used:
+   http://example.com/robots.txt # Ignored:
+   http://example.com/site/robots.txt # # For more information about the
+   robots.txt standard, see: # http://www.robotstxt.org/robotstxt.html # #
+   For syntax checking, see: # http://www.frobee.com/robots-txt-check
+   User-agent: * # Directories Crawl-delay: 10 Disallow: /includes/
+   Disallow: /misc/ Disallow: /modules/ Disallow: /profiles/ Disallow:
+   /scripts/ Disallow: /themes/ Disallow: /sites/default/files/public/ #
+   Files Disallow: /CHANGELOG.txt Disallow: /cron.php Disallow:
+   /INSTALL.mysql.txt Disallow: /INSTALL.pgsql.txt Disallow:
+   /INSTALL.sqlite.txt Disallow: /install.php Disallow: /INSTALL.txt
+   Disallow: /LICENSE.txt Disallow: /MAINTAINERS.txt Disallow: /update.php
+   Disallow: /UPGRADE.txt Disallow: /xmlrpc.php # Paths (clean URLs)
+   Disallow: /admin/ Disallow: /comment/reply/ Disallow: /filter/tips/
+   Disallow: /node/add/ Disallow: /search/ Disallow: /user/register/
+   Disallow: /user/password/ Disallow: /user/login/ Disallow:
+   /user/logout/ # Paths (no clean URLs) Disallow: /?q=admin/ Disallow:
+   /?q=comment/reply/ Disallow: /?q=filter/tips/ Disallow: /?q=node/add/
+   Disallow: /?q=search/ Disallow: /?q=user/password/ Disallow:
+   /?q=user/register/ Disallow: /?q=user/login/ Disallow: /?q=user/logout/
+   Disallow: /node/4291 Disallow: /node/6163 Disallow: /node/4868
+   Disallow: /voeux-2015 Disallow:
+   /node/193/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9EZ
+   W1hbmRlQ2hhbmdlbWVudFBhc3N3b3JkP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51
+   cmw9aHR0cCUzQSUyRiUyRmdlbXdlYi1wcm9kJTJGVGVsZWNoYXJnZW1lbnRQbGFxdWV0dGU
+   lM0ZpZFByb2R1aXQlM0Q1NTElMjZpZGNvbnRleHRlJ Disallow:
+   /node/193/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9SZ
+   XRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Qcm9zcGVj
+   dEV0dWRpYW50JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmx
+   lLWVtLmNvbSUyRndlYmNvbmYlM0ZpZFByb2R1aXQlM Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9
+   aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZ3ZWJjb25mJTN
+   GaWRQcm9kdWl0JTNENjA2JTI2aWRjb250ZXh0ZSUzR Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9
+   aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZ3ZWJjb25mJTN
+   GaWRQcm9kdWl0JTNENjA3JTI2aWRjb250ZXh0ZSUzR Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9
+   aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZ3ZWJjb25mJTN
+   GaWRQcm9kdWl0JTNENTUxJTI2aWRjb250ZXh0ZSUzR Disallow:
+   /node/4191/aHR0cHM6Ly93d3cub2ZmaWNlLmNvbT91aT1lbiUyRFVTJnJzPVVT
+   Disallow: /node/4209/- Disallow:
+   /node/4209/aHR0cHM6Ly90d2l0dGVyLmNvbT91dG1fc291cmNlPWdhemVibyZ1dG1fbWVk
+   aXVtPWJ1dHRvbiZ1dG1fdGVybT1ib3R0b20mdXRtX2NvbnRlbnQ9am9pbm5vdyZ1dG1fY2F
+   tcGFpZ249ZXZlcmdyZWVuJnJlZl9zcmM9dHdzcmMlM0FnYXplYm8lN0N0d2NhbXAlM0Fldm
+   VyZ3JlZW4lN0N0d2dyJTNBYnV0dG9uJTdDdHd0ZXJt Disallow:
+   /node/4209/aHR0cHM6Ly93d3cuYWxpcGF5LmNvbTo0NDM= Disallow:
+   /node/4209/aHR0cHM6Ly93d3cuYWxpcGF5LmNvbTo0NDM= Disallow:
+   /node/4209/aHR0cHM6Ly9yZWFkeXRvZ28ubWljcm9zb2Z0LmNvbS9lbi11cy9QYWdlcy9N
+   aWNyb3NvZnRTTUJMaXZlSDEuYXNweA== Disallow: /node/4293/- Disallow:
+   /node/4803/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9E
+   ZW1hbmRlQ2hhbmdlbWVudFBhc3N3b3Jk Disallow:
+   /node/4870/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9E
+   ZW1hbmRlQ2hhbmdlbWVudFBhc3N3b3JkP3JvbGU9Q29udGFjdCZyZXR1cm51cmw9aHR0cCU
+   zQSUyRiUyRmdlbXdlYi1wcm9kJTJGR2VzdGlvbkNvbXB0ZVdlYiUyRlByb2ZpbGU3
+   Disallow:
+   /node/4877/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/4880/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /node/4887/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9M
+   b2dvbj9yZXR1cm51cmw9aHR0cCUzQSUyRiUyRmdlbXdlYi1wcm9kJTJGQW5udWFpcmUlMkZ
+   Ib21l Disallow:
+   /node/4887/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/4887/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/4922/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5329/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwJTNBJTJGJTJGZ2Vtd2ViLXByb2QlMkZJbnNjcmlwdGlvbkV2ZW
+   5lbWVudCUyRkhvbWUlMkZJbmRleCUyRjY1MjElM0Zk Disallow:
+   /node/5401/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5401/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxlLWVtLmNvbS
+   UyRmpvYnRlYXNlciUyRkhvbWUlMkZJbmRleCUzRnR5 Disallow:
+   /node/5402/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5404/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9E
+   ZW1hbmRlQ2hhbmdlbWVudFBhc3N3b3JkP3JldHVybnVybD1odHRwJTNBJTJGJTJGZ2Vtd2V
+   iLXByb2QlMkZqb2J0ZWFzZXIlM0Z0eXBlJTNEZW50cmVwcmlzZTc= Disallow:
+   /node/5404/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5405/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxlLWVtLmNvbS
+   UyRmpvYnRlYXNlciUzRnR5cGUlM0RyZWNydXRlcg== Disallow:
+   /node/5405/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwJTNBJTJGJTJGZ2Vtd2ViLXByb2QlMkZqb2J0ZWFzZXIlM0Z0eX
+   BlJTNEcmVjcnV0ZXI= Disallow:
+   /node/5405/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /node/5541/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxlLWVtLmNvbS
+   UyRkluc2NyaXB0aW9uRXZlbmVtZW50JTJGSG9tZSUy Disallow:
+   /node/7264/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9M
+   b2dvbj9yZXR1cm51cmw9aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5
+   jb20lMkZKb2JUZWFzZXIlMkZIb21lJTJGQ2FyZWVyQ2VudGVy Disallow:
+   /node/82/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Qcm9zcGVjd
+   EV0dWRpYW50JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxl
+   LWVtLmNvbSUyRlRlbGVjaGFyZ2VtZW50UGxhcXVldH Disallow:
+   /node/82/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9a
+   HR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZUZWxlY2hhcmdl
+   bWVudFBsYXF1ZXR0ZSUzRmlkUHJvZHVpdCUzRDEwOD Disallow:
+   /node/82/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /node/83/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9SZX
+   Ryb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/83/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /app/essai-gem-contenu Disallow: /user/password Disallow:
+   /acces-interdit Disallow: /app/mot-de-passe-oublie Disallow:
+   /app/postuler-une-formation # allow images, CSS and JS for crawlers
+   likes googlebot Allow: /*.js* Allow: /*.css* Allow: /*.png* Allow:
+   /*.jpg* User-agent: Twitterbot Disallow: * Allow:
+   /sites/default/files/public/actualite/vignette_desktop/ Sitemap:
+   https://www.grenoble-em.com/sitemap.xml
+   Aller au contenu principal
+
+   Accueil
+   (BUTTON) Toggle navigation
+     * Accueil -
+     * Aller au menu -
+     * Aller au contenu -
+     * Rechercher -
+     * Accessibilité
+
+   _______________ (BUTTON)
+   (Rechercher) Rechercher
+   English 中文
+     * Programmes
+          + Formation initiale
+               o Programme Grande Ecole
+               o Niveau Bac +2 / Bac +3
+               o Niveau Bac +5
+               o Mastères Spécialisés
+               o Formations en alternance
+          + Formation continue
+               o Cycles longs
+               o Cycles courts
+               o Validation des Acquis (VAE)
+          + Formations en anglais
+               o Bachelor in International Business
+               o Masters of Science (MSc)
+               o MBA (Master of Business Administration)
+               o Master in International Business (MIB)
+          + Programmes doctoraux
+               o Doctorate of Business Administration (DBA)
+               o PhD in Business Administration
+          + Formations pour Sportifs de Haut Niveau
+               o Diplôme Grande Ecole pour Sportifs de haut niveau
+               o Programme responsable opérationnel d’unité
+               o BTS Management Commercial Opérationnel
+          + Programmes d'échanges
+          + Concours Post-Bac Diversité
+          + MOOCs
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * L'école
+          + Qui sommes-nous ?
+               o Mission & organisation
+               o Accréditations
+               o Classements
+               o International
+          + Expertises
+               o Expertises de recherche
+               o La géopolitique
+               o Innovation pédagogique
+          + Editions
+               o Newsletter Entreprises
+               o Baromètres
+          + Grands Evénements
+               o Festival de Géopolitique
+               o Les Trophées de la Paix Economique
+               o Altigliss
+               o Conférences GEMenDebat
+               o Forum stage et emploi
+          + Fondation GEM
+               o Data Asperger : Agir pour l’insertion des personnes
+                 autistes
+               o Les projets
+               o Les Chaires
+               o Publications
+               o Soutenir la Fondation GEM
+               o Organisation
+          + Vie étudiante
+               o Nos implantations
+               o Se loger
+               o Associations étudiantes
+               o Les services aux étudiants
+               o Vivre à Grenoble
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * Pédagogie
+          + Corps Professoral
+               o Départements
+               o Publications
+          + Innovation pédagogique
+               o GEM Learning Model
+               o Espaces et dispositifs innovants
+               o Serious Games
+          + Devenir partenaire académique
+               o Co-construire un programme
+               o Bénéficier d'une expertise
+               o Développer la recherche
+          + Bibliothèque
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+     * La recherche
+     * Entreprises
+     * Alumni
+
+     * [ban-climat.jpg?itok=0nx_-nH0]
+       Green Gown Awards : GEM récompensée
+       ... et parmi les premiers à répondre à l'appel pour le climat
+       En savoir plus
+
+Grenoble Ecole de Management - Technologie, Innovation, Entrepreneuriat
+
+   Étudiants
+
+Quel niveau de diplôme voulez-vous atteindre ?
+
+     * Niveau Bac +2 / Bac +3
+     * Niveau Bac +5
+     * Programme Grande Ecole
+     * Mastère Spécialisé
+     * Ph.D
+
+   Les formations initiales
+   Professionnels
+
+Quel type de formation recherchez-vous ?
+
+     * Formations diplômantes
+     * Formations courtes
+     * Formations sur mesure
+     * Programmes Doctoraux & DBA
+
+   Les formations continues
+   International
+
+Partenariats et implantations
+
+     * Campus et bureaux internationaux
+     * Partenaires internationaux
+
+   Agenda
+     * Conférence : L’Europe des riches, les inégalités au sein de l’UE
+       Le 4 oct 2019
+       avec Michael F. FÖRSTER de l'OCDE et animée par Olivier Nobleourt
+       du Ministère des Solidarités et de la Santé
+     * Medical Game Jam 1ère édition : Mettons la recherche médicale en
+       jeu
+       Du 15 nov 2019 Au 17 nov 2019
+       Organisée par ComPaRe et Grenoble Ecole de Management, la Medical
+       Game Jam est destinée aux patients, aux étudiants et aux
+       professionnels du monde du jeu vidéo, de la médiation scientifique
+       et de l’innovation. ​ L’objectif : créer des jeux en ligne, en 48h
+       et en équipe, pour encourager les...
+     * Midi Minatec: Le «phénomène» de l’écart d’efficacité d’énergie
+       Le 25 oct 2019
+       Le «phénomène» de l’écart d’efficacité d’énergie est la lente
+       adoption, par les différents acteurs de la société, des
+       technologies à haut rendement énergétique.
+     * Conférence C'est dans l'assiette de Christophe Aribert
+       Le 8 oct 2019
+       Christophe Aribert, chef double étoilé Michelin, interviendra lors
+       d'une conférence co-organisée par Gemendébat et Millési'Mets.
+
+     * Enquête « sexisme et violence envers les étudiants de GEM »
+       Actualités
+       02 oct 2019
+       Enquête « sexisme et violence envers les étudiants...
+       Enquête « sexisme et violence envers les étudiants de GEM »
+       02 oct 2019
+       Lutte contre les inégalités femmes – hommes (odd 5) / Comment les
+       étudiants de Grenoble Ecole de Management vivent...
+     * Georges Van Billoen Actualités
+       24 sep 2019
+       Fondation GEM : « Je veux contribuer à l’éclosion...
+       Georges Van Billoen 24 sep 2019
+       Ancien cadre dirigeant chez Engie et enseignant en management,
+       Georges Van Billoen s’implique aussi dans la...
+     * web série de sept épisodes de sept minutes sur sept entreprises aux
+       modèles alternatifs
+       Actualités
+       24 sep 2019
+       RSE : Zoom sur des modèles alternatifs probants
+       web série de sept épisodes de sept minutes sur sept entreprises aux
+       modèles alternatifs
+       24 sep 2019
+       Deux diplômés du MS Entrepreneurs de Grenoble Ecole de Management
+       ont décrypté les rouages d’entreprises plus...
+     * Notre-Dame de Paris : « Une ruine peut être considérée comme un
+       monument Actualités
+       24 sep 2019
+       Notre-Dame de Paris : une ruine peut être considé...
+       Notre-Dame de Paris : « Une ruine peut être considérée comme un
+       monument 24 sep 2019
+       La thèse de Sylvain Colombero, enseignant-chercheur à Grenoble
+       Ecole de Management, relève six facteurs clés...
+
+     * Grenoble EM dans les classements
+       Le Point : classement des Grandes Ecoles de commerce
+       Le Programme Grande Ecole à la 6° place en France
+       Le magazine Le Point classe le Programme Grande Ecole à la 6° place
+       sur 38 programmes français dans son palmarès des Grandes Ecoles de
+       commerce.
+       A retenir :
+       +2 rangs sur la recherche, grâce à la qualité du corps professoral
+       et de ses publications.
+       +7 rangs sur la professionnalisation de nos étudiants ; une
+       progression assurée par l'efficacité de notre Service Carrières.
+       [bitmap3x-opt_0_0.jpg]
+
+   Voir tous les classements
+   Chaine Grenoble EM
+
+GEM devient un Business Lab for Society
+
+   Grenoble Ecole de Management est plus qu’une école. C’est un
+   laboratoire à ciel ouvert pour inventer l’entreprise et la Société de
+   demain, un espace ouvert de test, d’expérimentations, de réflexion,
+   d’hybridation pour résoudre des problèmes complexes.
+   Visitez notre chaîne Youtube
+
+   IFRAME: https://www.youtube.com/embed/U46zEdcpb-I
+
+   Dernières nouvelles
+   [hashtag.png]
+   Les publications de nos réseaux sociaux
+     * 15699followers
+     * 0fans
+
+   Publié le 03.10.19
+   #Brésil : Derrière la tragédie amazonienne, que savons-nous vraiment
+   des acteurs et logiques liés à la déforestatio …
+   Publié le 03.10.19
+   RT @GEMAlumni: Don’t miss hearing @DomSteiler, Chairholder of the
+   #EconomicPeace, #Mindfulness and #WellbeingatWork Chair and Senior …
+     * Découvrir la ville
+       Grenoble, vivante et accueillante
+       [bitmap2x_0.png?itok=8jw4yQi8]
+
+   En savoir plus
+     * Contact
+       Grenoble Ecole de Management
+       12, rue Pierre Sémard
+       38000 Grenoble
+       Tél. : +33 4 76 70 60 60
+       Fax : +33 4 76 70 60 99
+       [map_0.png]
+
+   Contact
+
+   Une école
+   logo
+
+   12 rue Pierre Sémard
+   38000 Grenoble, France.
+   +33 4 76 70 60 60
+   Grenoble Ecole de Management Ⓒ 2019
+
+     * Autres sites
+     * Presse
+
+   Grenoble Ecole de Management Ⓒ 2019
+     * Données personnelles
+     * Mentions légales
+     * Contact
+
+   Suivez-nous
+     * Facebook
+     * LinkedIn
+     * Twitter
+     * Youtube
+     * Social Hub
+   Aller au contenu principal
+
+   Accueil
+   (BUTTON) Toggle navigation
+     * Accueil -
+     * Aller au menu -
+     * Aller au contenu -
+     * Rechercher -
+     * Accessibilité
+
+   _______________ (BUTTON)
+   (Rechercher) Rechercher
+   English 中文
+     * Programmes
+          + Formation initiale
+               o Programme Grande Ecole
+               o Niveau Bac +2 / Bac +3
+               o Niveau Bac +5
+               o Mastères Spécialisés
+               o Formations en alternance
+          + Formation continue
+               o Cycles longs
+               o Cycles courts
+               o Validation des Acquis (VAE)
+          + Formations en anglais
+               o Bachelor in International Business
+               o Masters of Science (MSc)
+               o MBA (Master of Business Administration)
+               o Master in International Business (MIB)
+          + Programmes doctoraux
+               o Doctorate of Business Administration (DBA)
+               o PhD in Business Administration
+          + Formations pour Sportifs de Haut Niveau
+               o Diplôme Grande Ecole pour Sportifs de haut niveau
+               o Programme responsable opérationnel d’unité
+               o BTS Management Commercial Opérationnel
+          + Programmes d'échanges
+          + Concours Post-Bac Diversité
+          + MOOCs
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * L'école
+          + Qui sommes-nous ?
+               o Mission & organisation
+               o Accréditations
+               o Classements
+               o International
+          + Expertises
+               o Expertises de recherche
+               o La géopolitique
+               o Innovation pédagogique
+          + Editions
+               o Newsletter Entreprises
+               o Baromètres
+          + Grands Evénements
+               o Festival de Géopolitique
+               o Les Trophées de la Paix Economique
+               o Altigliss
+               o Conférences GEMenDebat
+               o Forum stage et emploi
+          + Fondation GEM
+               o Data Asperger : Agir pour l’insertion des personnes
+                 autistes
+               o Les projets
+               o Les Chaires
+               o Publications
+               o Soutenir la Fondation GEM
+               o Organisation
+          + Vie étudiante
+               o Nos implantations
+               o Se loger
+               o Associations étudiantes
+               o Les services aux étudiants
+               o Vivre à Grenoble
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * Pédagogie
+          + Corps Professoral
+               o Départements
+               o Publications
+          + Innovation pédagogique
+               o GEM Learning Model
+               o Espaces et dispositifs innovants
+               o Serious Games
+          + Devenir partenaire académique
+               o Co-construire un programme
+               o Bénéficier d'une expertise
+               o Développer la recherche
+          + Bibliothèque
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+     * La recherche
+     * Entreprises
+     * Alumni
+
+     * [ecole-2-2018.jpg?itok=i20naTIv]
+       Découvrez l'école
+       Tout savoir sur Grenoble Ecole de Management
+       En savoir plus
+
+Vous êtes ici
+
+   Accueil
+
+Mentions légales
+
+Editeur
+
+   Site de Grenoble Ecole de Management, une école de la Chambre de
+   commerce et d'industrie de Grenoble
+
+   Grenoble Ecole de Management - GEM - EESC à but non lucratif - SA au
+   capital de 15 737 000 € - RCS de Grenoble 817 389 141
+
+   12 rue Pierre Sémard
+   38000 GRENOBLE
+   +33 4 76 70 60 60
+
+Directeur de la publication
+
+   Loïck Roche, Directeur Général de l’EESC GEM.
+
+Réalisation technique
+
+   EOLAS Business & Décision
+   Siège social :
+   29 Rue Servan 38000 Grenoble
+   FRANCE
+   Téléphone : +33 4 76 44 50 50
+
+Conception graphique et fonctionnelle
+
+   La Bonne Agence
+   8, Rue Jean Prévost
+   38000 Grenoble
+   FRANCE
+   Tél : +33 4 38 12 09 25
+
+Hébergement
+
+   EOLAS Business & Décision
+   29 Rue Servan
+   38000 Grenoble
+   FRANCE
+
+Droits d'auteur
+
+   L'ensemble de ce site relève de la législation française et
+   internationale sur le droit d'auteur et la propriété intellectuelle.
+   Tous les droits de reproduction sont réservés, y compris pour les
+   documents téléchargeables et les représentations iconographiques et
+   photographiques.
+
+   Les photographies, textes, logos, pictogrammes ainsi que toutes œuvres
+   intellectuelles de ce site sont la propriété de Grenoble Ecole de
+   Management ou de tiers ayant autorisé Grenoble Ecole de Management à
+   les utiliser. Les reproductions de tout ou partie de ce site sur un
+   support papier ou électronique ne sont autorisées que pour un usage
+   personnel et privé conforme aux dispositions du code de la Propriété
+   Intellectuelle. Ces reproductions devront mentionner de façon claire et
+   lisible la source et l'auteur du site. En aucun cas, ces reproductions
+   ne sauraient porter préjudice aux auteurs.
+
+   Toutes autres utilisations sont soumises à l'autorisation expresse du
+   directeur de la publication.
+
+   Auteurs des photographies éditées sur le site www.grenoble-em.com : ©
+   Copyright Agence Prisme / Pierre Jayet, Alexis Chézières, Jupiterimages
+   et Fotolia.
+
+Etablissement de liens
+
+   Grenoble Ecole de Management autorise la mise en place d'un lien
+   hypertexte pour tous les sites à l'exclusion de ceux diffusant des
+   informations à caractère polémique, pornographique, xénophobe ou
+   pouvant porter atteinte à la sensibilité du plus grand nombre. Sauf
+   autorisation spécifique, les pages du site https://www.grenoble-em.com
+   ne doivent en aucun cas être intégrées à l'intérieur des pages d'un
+   autre site.
+
+Liens vers des sites tiers
+
+   Grenoble Ecole de Management se réserve le droit de pointer vers des
+   sites tiers. Les sites cibles ne sont pas sous la responsabilité de
+   Grenoble Ecole de Management. Par conséquent, Grenoble Ecole de
+   Management n'est pas responsable du contenu de ces sites, des liens
+   qu'ils contiennent, ni des changements ou mises à jour qui leur sont
+   apportés.
+
+   Une école
+   logo
+
+   12 rue Pierre Sémard
+   38000 Grenoble, France.
+   +33 4 76 70 60 60
+   Grenoble Ecole de Management Ⓒ 2019
+
+     * Autres sites
+     * Presse
+
+   Grenoble Ecole de Management Ⓒ 2019
+     * Données personnelles
+     * Mentions légales
+     * Contact
+
+   Suivez-nous
+     * Facebook
+     * LinkedIn
+     * Twitter
+     * Youtube
+     * Social Hub
+   S'identifier
+
+   # # robots.txt # # This file is to prevent the crawling and indexing of
+   certain parts # of your site by web crawlers and spiders run by sites
+   like Yahoo! # and Google. By telling these "robots" where not to go on
+   your site, # you save bandwidth and server resources. # # This file
+   will be ignored unless it is at the root of your host: # Used:
+   http://example.com/robots.txt # Ignored:
+   http://example.com/site/robots.txt # # For more information about the
+   robots.txt standard, see: # http://www.robotstxt.org/robotstxt.html # #
+   For syntax checking, see: # http://www.frobee.com/robots-txt-check
+   User-agent: * # Directories Crawl-delay: 10 Disallow: /includes/
+   Disallow: /misc/ Disallow: /modules/ Disallow: /profiles/ Disallow:
+   /scripts/ Disallow: /themes/ Disallow: /sites/default/files/public/ #
+   Files Disallow: /CHANGELOG.txt Disallow: /cron.php Disallow:
+   /INSTALL.mysql.txt Disallow: /INSTALL.pgsql.txt Disallow:
+   /INSTALL.sqlite.txt Disallow: /install.php Disallow: /INSTALL.txt
+   Disallow: /LICENSE.txt Disallow: /MAINTAINERS.txt Disallow: /update.php
+   Disallow: /UPGRADE.txt Disallow: /xmlrpc.php # Paths (clean URLs)
+   Disallow: /admin/ Disallow: /comment/reply/ Disallow: /filter/tips/
+   Disallow: /node/add/ Disallow: /search/ Disallow: /user/register/
+   Disallow: /user/password/ Disallow: /user/login/ Disallow:
+   /user/logout/ # Paths (no clean URLs) Disallow: /?q=admin/ Disallow:
+   /?q=comment/reply/ Disallow: /?q=filter/tips/ Disallow: /?q=node/add/
+   Disallow: /?q=search/ Disallow: /?q=user/password/ Disallow:
+   /?q=user/register/ Disallow: /?q=user/login/ Disallow: /?q=user/logout/
+   Disallow: /node/4291 Disallow: /node/6163 Disallow: /node/4868
+   Disallow: /voeux-2015 Disallow:
+   /node/193/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9EZ
+   W1hbmRlQ2hhbmdlbWVudFBhc3N3b3JkP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51
+   cmw9aHR0cCUzQSUyRiUyRmdlbXdlYi1wcm9kJTJGVGVsZWNoYXJnZW1lbnRQbGFxdWV0dGU
+   lM0ZpZFByb2R1aXQlM0Q1NTElMjZpZGNvbnRleHRlJ Disallow:
+   /node/193/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9SZ
+   XRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Qcm9zcGVj
+   dEV0dWRpYW50JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmx
+   lLWVtLmNvbSUyRndlYmNvbmYlM0ZpZFByb2R1aXQlM Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9
+   aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZ3ZWJjb25mJTN
+   GaWRQcm9kdWl0JTNENjA2JTI2aWRjb250ZXh0ZSUzR Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9
+   aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZ3ZWJjb25mJTN
+   GaWRQcm9kdWl0JTNENjA3JTI2aWRjb250ZXh0ZSUzR Disallow:
+   /node/197/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvb
+   XB0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9
+   aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZ3ZWJjb25mJTN
+   GaWRQcm9kdWl0JTNENTUxJTI2aWRjb250ZXh0ZSUzR Disallow:
+   /node/4191/aHR0cHM6Ly93d3cub2ZmaWNlLmNvbT91aT1lbiUyRFVTJnJzPVVT
+   Disallow: /node/4209/- Disallow:
+   /node/4209/aHR0cHM6Ly90d2l0dGVyLmNvbT91dG1fc291cmNlPWdhemVibyZ1dG1fbWVk
+   aXVtPWJ1dHRvbiZ1dG1fdGVybT1ib3R0b20mdXRtX2NvbnRlbnQ9am9pbm5vdyZ1dG1fY2F
+   tcGFpZ249ZXZlcmdyZWVuJnJlZl9zcmM9dHdzcmMlM0FnYXplYm8lN0N0d2NhbXAlM0Fldm
+   VyZ3JlZW4lN0N0d2dyJTNBYnV0dG9uJTdDdHd0ZXJt Disallow:
+   /node/4209/aHR0cHM6Ly93d3cuYWxpcGF5LmNvbTo0NDM= Disallow:
+   /node/4209/aHR0cHM6Ly93d3cuYWxpcGF5LmNvbTo0NDM= Disallow:
+   /node/4209/aHR0cHM6Ly9yZWFkeXRvZ28ubWljcm9zb2Z0LmNvbS9lbi11cy9QYWdlcy9N
+   aWNyb3NvZnRTTUJMaXZlSDEuYXNweA== Disallow: /node/4293/- Disallow:
+   /node/4803/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9E
+   ZW1hbmRlQ2hhbmdlbWVudFBhc3N3b3Jk Disallow:
+   /node/4870/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9E
+   ZW1hbmRlQ2hhbmdlbWVudFBhc3N3b3JkP3JvbGU9Q29udGFjdCZyZXR1cm51cmw9aHR0cCU
+   zQSUyRiUyRmdlbXdlYi1wcm9kJTJGR2VzdGlvbkNvbXB0ZVdlYiUyRlByb2ZpbGU3
+   Disallow:
+   /node/4877/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/4880/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /node/4887/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9M
+   b2dvbj9yZXR1cm51cmw9aHR0cCUzQSUyRiUyRmdlbXdlYi1wcm9kJTJGQW5udWFpcmUlMkZ
+   Ib21l Disallow:
+   /node/4887/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/4887/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/4922/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5329/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwJTNBJTJGJTJGZ2Vtd2ViLXByb2QlMkZJbnNjcmlwdGlvbkV2ZW
+   5lbWVudCUyRkhvbWUlMkZJbmRleCUyRjY1MjElM0Zk Disallow:
+   /node/5401/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5401/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxlLWVtLmNvbS
+   UyRmpvYnRlYXNlciUyRkhvbWUlMkZJbmRleCUzRnR5 Disallow:
+   /node/5402/aHR0cDovLzEwLjIwMC4wLjM0L0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5404/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9E
+   ZW1hbmRlQ2hhbmdlbWVudFBhc3N3b3JkP3JldHVybnVybD1odHRwJTNBJTJGJTJGZ2Vtd2V
+   iLXByb2QlMkZqb2J0ZWFzZXIlM0Z0eXBlJTNEZW50cmVwcmlzZTc= Disallow:
+   /node/5404/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9S
+   ZXRyb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/5405/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxlLWVtLmNvbS
+   UyRmpvYnRlYXNlciUzRnR5cGUlM0RyZWNydXRlcg== Disallow:
+   /node/5405/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwJTNBJTJGJTJGZ2Vtd2ViLXByb2QlMkZqb2J0ZWFzZXIlM0Z0eX
+   BlJTNEcmVjcnV0ZXI= Disallow:
+   /node/5405/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /node/5541/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNv
+   bXB0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Db250YWN
+   0JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxlLWVtLmNvbS
+   UyRkluc2NyaXB0aW9uRXZlbmVtZW50JTJGSG9tZSUy Disallow:
+   /node/7264/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9M
+   b2dvbj9yZXR1cm51cmw9aHR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5
+   jb20lMkZKb2JUZWFzZXIlMkZIb21lJTJGQ2FyZWVyQ2VudGVy Disallow:
+   /node/82/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L0RlbWFuZGVDaGFuZ2VtZW50UGFzc3dvcmQ/cm9sZT1Qcm9zcGVjd
+   EV0dWRpYW50JnJldHVybnVybD1odHRwcyUzQSUyRiUyRmdlbXdlYi1wcm9kLmdyZW5vYmxl
+   LWVtLmNvbSUyRlRlbGVjaGFyZ2VtZW50UGxhcXVldH Disallow:
+   /node/82/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L0xvZ29uP3JvbGU9UHJvc3BlY3RFdHVkaWFudCZyZXR1cm51cmw9a
+   HR0cHMlM0ElMkYlMkZnZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20lMkZUZWxlY2hhcmdl
+   bWVudFBsYXF1ZXR0ZSUzRmlkUHJvZHVpdCUzRDEwOD Disallow:
+   /node/82/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /node/83/aHR0cDovL2dlbXdlYi1wcm9kL0dlc3Rpb25Db21wdGVXZWIvQWNjb3VudC9SZX
+   Ryb3V2ZXJJZGVudGlmaWFudERpcGxvbWU= Disallow:
+   /node/83/aHR0cHM6Ly9nZW13ZWItcHJvZC5ncmVub2JsZS1lbS5jb20vR2VzdGlvbkNvbX
+   B0ZVdlYi9BY2NvdW50L1JldHJvdXZlcklkZW50aWZpYW50RGlwbG9tZQ== Disallow:
+   /app/essai-gem-contenu Disallow: /user/password Disallow:
+   /acces-interdit Disallow: /app/mot-de-passe-oublie Disallow:
+   /app/postuler-une-formation # allow images, CSS and JS for crawlers
+   likes googlebot Allow: /*.js* Allow: /*.css* Allow: /*.png* Allow:
+   /*.jpg* User-agent: Twitterbot Disallow: * Allow:
+   /sites/default/files/public/actualite/vignette_desktop/ Sitemap:
+   https://www.grenoble-em.com/sitemap.xml
+   Aller au contenu principal
+
+   Accueil
+   (BUTTON) Toggle navigation
+     * Accueil -
+     * Aller au menu -
+     * Aller au contenu -
+     * Rechercher -
+     * Accessibilité
+
+   _______________ (BUTTON)
+   (Rechercher) Rechercher
+   English 中文
+     * Programmes
+          + Formation initiale
+               o Programme Grande Ecole
+               o Niveau Bac +2 / Bac +3
+               o Niveau Bac +5
+               o Mastères Spécialisés
+               o Formations en alternance
+          + Formation continue
+               o Cycles longs
+               o Cycles courts
+               o Validation des Acquis (VAE)
+          + Formations en anglais
+               o Bachelor in International Business
+               o Masters of Science (MSc)
+               o MBA (Master of Business Administration)
+               o Master in International Business (MIB)
+          + Programmes doctoraux
+               o Doctorate of Business Administration (DBA)
+               o PhD in Business Administration
+          + Formations pour Sportifs de Haut Niveau
+               o Diplôme Grande Ecole pour Sportifs de haut niveau
+               o Programme responsable opérationnel d’unité
+               o BTS Management Commercial Opérationnel
+          + Programmes d'échanges
+          + Concours Post-Bac Diversité
+          + MOOCs
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * L'école
+          + Qui sommes-nous ?
+               o Mission & organisation
+               o Accréditations
+               o Classements
+               o International
+          + Expertises
+               o Expertises de recherche
+               o La géopolitique
+               o Innovation pédagogique
+          + Editions
+               o Newsletter Entreprises
+               o Baromètres
+          + Grands Evénements
+               o Festival de Géopolitique
+               o Les Trophées de la Paix Economique
+               o Altigliss
+               o Conférences GEMenDebat
+               o Forum stage et emploi
+          + Fondation GEM
+               o Data Asperger : Agir pour l’insertion des personnes
+                 autistes
+               o Les projets
+               o Les Chaires
+               o Publications
+               o Soutenir la Fondation GEM
+               o Organisation
+          + Vie étudiante
+               o Nos implantations
+               o Se loger
+               o Associations étudiantes
+               o Les services aux étudiants
+               o Vivre à Grenoble
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * Pédagogie
+          + Corps Professoral
+               o Départements
+               o Publications
+          + Innovation pédagogique
+               o GEM Learning Model
+               o Espaces et dispositifs innovants
+               o Serious Games
+          + Devenir partenaire académique
+               o Co-construire un programme
+               o Bénéficier d'une expertise
+               o Développer la recherche
+          + Bibliothèque
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+     * La recherche
+     * Entreprises
+     * Alumni
+
+     * [ban-climat.jpg?itok=0nx_-nH0]
+       Green Gown Awards : GEM récompensée
+       ... et parmi les premiers à répondre à l'appel pour le climat
+       En savoir plus
+
+Grenoble Ecole de Management - Technologie, Innovation, Entrepreneuriat
+
+   Étudiants
+
+Quel niveau de diplôme voulez-vous atteindre ?
+
+     * Niveau Bac +2 / Bac +3
+     * Niveau Bac +5
+     * Programme Grande Ecole
+     * Mastère Spécialisé
+     * Ph.D
+
+   Les formations initiales
+   Professionnels
+
+Quel type de formation recherchez-vous ?
+
+     * Formations diplômantes
+     * Formations courtes
+     * Formations sur mesure
+     * Programmes Doctoraux & DBA
+
+   Les formations continues
+   International
+
+Partenariats et implantations
+
+     * Campus et bureaux internationaux
+     * Partenaires internationaux
+
+   Agenda
+     * Conférence : L’Europe des riches, les inégalités au sein de l’UE
+       Le 4 oct 2019
+       avec Michael F. FÖRSTER de l'OCDE et animée par Olivier Nobleourt
+       du Ministère des Solidarités et de la Santé
+     * Medical Game Jam 1ère édition : Mettons la recherche médicale en
+       jeu
+       Du 15 nov 2019 Au 17 nov 2019
+       Organisée par ComPaRe et Grenoble Ecole de Management, la Medical
+       Game Jam est destinée aux patients, aux étudiants et aux
+       professionnels du monde du jeu vidéo, de la médiation scientifique
+       et de l’innovation. ​ L’objectif : créer des jeux en ligne, en 48h
+       et en équipe, pour encourager les...
+     * Midi Minatec: Le «phénomène» de l’écart d’efficacité d’énergie
+       Le 25 oct 2019
+       Le «phénomène» de l’écart d’efficacité d’énergie est la lente
+       adoption, par les différents acteurs de la société, des
+       technologies à haut rendement énergétique.
+     * Conférence C'est dans l'assiette de Christophe Aribert
+       Le 8 oct 2019
+       Christophe Aribert, chef double étoilé Michelin, interviendra lors
+       d'une conférence co-organisée par Gemendébat et Millési'Mets.
+
+     * Enquête « sexisme et violence envers les étudiants de GEM »
+       Actualités
+       02 oct 2019
+       Enquête « sexisme et violence envers les étudiants...
+       Enquête « sexisme et violence envers les étudiants de GEM »
+       02 oct 2019
+       Lutte contre les inégalités femmes – hommes (odd 5) / Comment les
+       étudiants de Grenoble Ecole de Management vivent...
+     * Georges Van Billoen Actualités
+       24 sep 2019
+       Fondation GEM : « Je veux contribuer à l’éclosion...
+       Georges Van Billoen 24 sep 2019
+       Ancien cadre dirigeant chez Engie et enseignant en management,
+       Georges Van Billoen s’implique aussi dans la...
+     * web série de sept épisodes de sept minutes sur sept entreprises aux
+       modèles alternatifs
+       Actualités
+       24 sep 2019
+       RSE : Zoom sur des modèles alternatifs probants
+       web série de sept épisodes de sept minutes sur sept entreprises aux
+       modèles alternatifs
+       24 sep 2019
+       Deux diplômés du MS Entrepreneurs de Grenoble Ecole de Management
+       ont décrypté les rouages d’entreprises plus...
+     * Notre-Dame de Paris : « Une ruine peut être considérée comme un
+       monument Actualités
+       24 sep 2019
+       Notre-Dame de Paris : une ruine peut être considé...
+       Notre-Dame de Paris : « Une ruine peut être considérée comme un
+       monument 24 sep 2019
+       La thèse de Sylvain Colombero, enseignant-chercheur à Grenoble
+       Ecole de Management, relève six facteurs clés...
+
+     * Grenoble EM dans les classements
+       Le Point : classement des Grandes Ecoles de commerce
+       Le Programme Grande Ecole à la 6° place en France
+       Le magazine Le Point classe le Programme Grande Ecole à la 6° place
+       sur 38 programmes français dans son palmarès des Grandes Ecoles de
+       commerce.
+       A retenir :
+       +2 rangs sur la recherche, grâce à la qualité du corps professoral
+       et de ses publications.
+       +7 rangs sur la professionnalisation de nos étudiants ; une
+       progression assurée par l'efficacité de notre Service Carrières.
+       [bitmap3x-opt_0_0.jpg]
+
+   Voir tous les classements
+   Chaine Grenoble EM
+
+GEM devient un Business Lab for Society
+
+   Grenoble Ecole de Management est plus qu’une école. C’est un
+   laboratoire à ciel ouvert pour inventer l’entreprise et la Société de
+   demain, un espace ouvert de test, d’expérimentations, de réflexion,
+   d’hybridation pour résoudre des problèmes complexes.
+   Visitez notre chaîne Youtube
+
+   IFRAME: https://www.youtube.com/embed/U46zEdcpb-I
+
+   Dernières nouvelles
+   [hashtag.png]
+   Les publications de nos réseaux sociaux
+     * 15699followers
+     * 0fans
+
+   Publié le 03.10.19
+   #Brésil : Derrière la tragédie amazonienne, que savons-nous vraiment
+   des acteurs et logiques liés à la déforestatio …
+   Publié le 03.10.19
+   RT @GEMAlumni: Don’t miss hearing @DomSteiler, Chairholder of the
+   #EconomicPeace, #Mindfulness and #WellbeingatWork Chair and Senior …
+     * Découvrir la ville
+       Grenoble, vivante et accueillante
+       [bitmap2x_0.png?itok=8jw4yQi8]
+
+   En savoir plus
+     * Contact
+       Grenoble Ecole de Management
+       12, rue Pierre Sémard
+       38000 Grenoble
+       Tél. : +33 4 76 70 60 60
+       Fax : +33 4 76 70 60 99
+       [map_0.png]
+
+   Contact
+
+   Une école
+   logo
+
+   12 rue Pierre Sémard
+   38000 Grenoble, France.
+   +33 4 76 70 60 60
+   Grenoble Ecole de Management Ⓒ 2019
+
+     * Autres sites
+     * Presse
+
+   Grenoble Ecole de Management Ⓒ 2019
+     * Données personnelles
+     * Mentions légales
+     * Contact
+
+   Suivez-nous
+     * Facebook
+     * LinkedIn
+     * Twitter
+     * Youtube
+     * Social Hub
+   Aller au contenu principal
+
+   Accueil
+   (BUTTON) Toggle navigation
+     * Accueil -
+     * Aller au menu -
+     * Aller au contenu -
+     * Rechercher -
+     * Accessibilité
+
+   _______________ (BUTTON)
+   (Rechercher) Rechercher
+   English 中文
+     * Programmes
+          + Formation initiale
+               o Programme Grande Ecole
+               o Niveau Bac +2 / Bac +3
+               o Niveau Bac +5
+               o Mastères Spécialisés
+               o Formations en alternance
+          + Formation continue
+               o Cycles longs
+               o Cycles courts
+               o Validation des Acquis (VAE)
+          + Formations en anglais
+               o Bachelor in International Business
+               o Masters of Science (MSc)
+               o MBA (Master of Business Administration)
+               o Master in International Business (MIB)
+          + Programmes doctoraux
+               o Doctorate of Business Administration (DBA)
+               o PhD in Business Administration
+          + Formations pour Sportifs de Haut Niveau
+               o Diplôme Grande Ecole pour Sportifs de haut niveau
+               o Programme responsable opérationnel d’unité
+               o BTS Management Commercial Opérationnel
+          + Programmes d'échanges
+          + Concours Post-Bac Diversité
+          + MOOCs
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * L'école
+          + Qui sommes-nous ?
+               o Mission & organisation
+               o Accréditations
+               o Classements
+               o International
+          + Expertises
+               o Expertises de recherche
+               o La géopolitique
+               o Innovation pédagogique
+          + Editions
+               o Newsletter Entreprises
+               o Baromètres
+          + Grands Evénements
+               o Festival de Géopolitique
+               o Les Trophées de la Paix Economique
+               o Altigliss
+               o Conférences GEMenDebat
+               o Forum stage et emploi
+          + Fondation GEM
+               o Data Asperger : Agir pour l’insertion des personnes
+                 autistes
+               o Les projets
+               o Les Chaires
+               o Publications
+               o Soutenir la Fondation GEM
+               o Organisation
+          + Vie étudiante
+               o Nos implantations
+               o Se loger
+               o Associations étudiantes
+               o Les services aux étudiants
+               o Vivre à Grenoble
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * Pédagogie
+          + Corps Professoral
+               o Départements
+               o Publications
+          + Innovation pédagogique
+               o GEM Learning Model
+               o Espaces et dispositifs innovants
+               o Serious Games
+          + Devenir partenaire académique
+               o Co-construire un programme
+               o Bénéficier d'une expertise
+               o Développer la recherche
+          + Bibliothèque
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+     * La recherche
+     * Entreprises
+     * Alumni
+
+     * [ecole-2-2018.jpg?itok=i20naTIv]
+       Découvrez l'école
+       Tout savoir sur Grenoble Ecole de Management
+       En savoir plus
+
+Vous êtes ici
+
+   Accueil
+
+Mentions légales
+
+Editeur
+
+   Site de Grenoble Ecole de Management, une école de la Chambre de
+   commerce et d'industrie de Grenoble
+
+   Grenoble Ecole de Management - GEM - EESC à but non lucratif - SA au
+   capital de 15 737 000 € - RCS de Grenoble 817 389 141
+
+   12 rue Pierre Sémard
+   38000 GRENOBLE
+   +33 4 76 70 60 60
+
+Directeur de la publication
+
+   Loïck Roche, Directeur Général de l’EESC GEM.
+
+Réalisation technique
+
+   EOLAS Business & Décision
+   Siège social :
+   29 Rue Servan 38000 Grenoble
+   FRANCE
+   Téléphone : +33 4 76 44 50 50
+
+Conception graphique et fonctionnelle
+
+   La Bonne Agence
+   8, Rue Jean Prévost
+   38000 Grenoble
+   FRANCE
+   Tél : +33 4 38 12 09 25
+
+Hébergement
+
+   EOLAS Business & Décision
+   29 Rue Servan
+   38000 Grenoble
+   FRANCE
+
+Droits d'auteur
+
+   L'ensemble de ce site relève de la législation française et
+   internationale sur le droit d'auteur et la propriété intellectuelle.
+   Tous les droits de reproduction sont réservés, y compris pour les
+   documents téléchargeables et les représentations iconographiques et
+   photographiques.
+
+   Les photographies, textes, logos, pictogrammes ainsi que toutes œuvres
+   intellectuelles de ce site sont la propriété de Grenoble Ecole de
+   Management ou de tiers ayant autorisé Grenoble Ecole de Management à
+   les utiliser. Les reproductions de tout ou partie de ce site sur un
+   support papier ou électronique ne sont autorisées que pour un usage
+   personnel et privé conforme aux dispositions du code de la Propriété
+   Intellectuelle. Ces reproductions devront mentionner de façon claire et
+   lisible la source et l'auteur du site. En aucun cas, ces reproductions
+   ne sauraient porter préjudice aux auteurs.
+
+   Toutes autres utilisations sont soumises à l'autorisation expresse du
+   directeur de la publication.
+
+   Auteurs des photographies éditées sur le site www.grenoble-em.com : ©
+   Copyright Agence Prisme / Pierre Jayet, Alexis Chézières, Jupiterimages
+   et Fotolia.
+
+Etablissement de liens
+
+   Grenoble Ecole de Management autorise la mise en place d'un lien
+   hypertexte pour tous les sites à l'exclusion de ceux diffusant des
+   informations à caractère polémique, pornographique, xénophobe ou
+   pouvant porter atteinte à la sensibilité du plus grand nombre. Sauf
+   autorisation spécifique, les pages du site https://www.grenoble-em.com
+   ne doivent en aucun cas être intégrées à l'intérieur des pages d'un
+   autre site.
+
+Liens vers des sites tiers
+
+   Grenoble Ecole de Management se réserve le droit de pointer vers des
+   sites tiers. Les sites cibles ne sont pas sous la responsabilité de
+   Grenoble Ecole de Management. Par conséquent, Grenoble Ecole de
+   Management n'est pas responsable du contenu de ces sites, des liens
+   qu'ils contiennent, ni des changements ou mises à jour qui leur sont
+   apportés.
+
+   Une école
+   logo
+
+   12 rue Pierre Sémard
+   38000 Grenoble, France.
+   +33 4 76 70 60 60
+   Grenoble Ecole de Management Ⓒ 2019
+
+     * Autres sites
+     * Presse
+
+   Grenoble Ecole de Management Ⓒ 2019
+     * Données personnelles
+     * Mentions légales
+     * Contact
+
+   Suivez-nous
+     * Facebook
+     * LinkedIn
+     * Twitter
+     * Youtube
+     * Social Hub
+   S'identifier
+
+   Aller au contenu principal
+
+   Accueil
+   (BUTTON) Toggle navigation
+     * Accueil -
+     * Aller au menu -
+     * Aller au contenu -
+     * Rechercher -
+     * Accessibilité
+
+   _______________ (BUTTON)
+   (Rechercher) Rechercher
+   English 中文
+     * Programmes
+          + Formation initiale
+               o Programme Grande Ecole
+               o Niveau Bac +2 / Bac +3
+               o Niveau Bac +5
+               o Mastères Spécialisés
+               o Formations en alternance
+          + Formation continue
+               o Cycles longs
+               o Cycles courts
+               o Validation des Acquis (VAE)
+          + Formations en anglais
+               o Bachelor in International Business
+               o Masters of Science (MSc)
+               o MBA
+               o Master in International Business (MIB)
+          + Programmes doctoraux
+               o Doctorate of Business Administration (DBA)
+               o PhD in Business Administration
+          + Formations pour Sportifs de Haut Niveau
+               o Diplôme Grande Ecole pour Sportifs de haut niveau
+               o Programme responsable opérationnel d’unité
+               o BTS Management Commercial Opérationnel
+          + Programmes d'échanges
+          + Concours Post-Bac Diversité
+          + MOOCs
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * L'école
+          + Qui sommes-nous ?
+               o Mission & organisation
+               o Accréditations
+               o Classements
+               o International
+          + Expertises
+               o Expertises de recherche
+               o La géopolitique
+               o Innovation pédagogique
+          + Editions
+               o Newsletter Entreprises
+               o Baromètres
+          + Grands Evénements
+               o Festival de Géopolitique
+               o Les Trophées de la Paix Economique
+               o Altigliss
+               o Conférences GEMenDebat
+               o Forum stage et emploi
+          + Fondation GEM
+               o Data Asperger : Agir pour l’insertion des personnes
+                 autistes
+               o Les projets
+               o Les Chaires
+               o Publications
+               o Soutenir la Fondation GEM
+               o Organisation
+          + Vie étudiante
+               o Nos implantations
+               o Se loger
+               o Associations étudiantes
+               o Les services aux étudiants
+               o Vivre à Grenoble
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+          + Epargner et investir
+          + Géopolitique / Etudes globales
+          + Lever des Fonds pour ma Startup
+          + Transformation digitale des services
+     * Pédagogie
+          + Corps Professoral
+               o Départements
+               o Publications
+          + Innovation pédagogique
+               o GEM Learning Model
+               o Espaces et dispositifs innovants
+               o Serious Games
+          + Devenir partenaire académique
+               o Co-construire un programme
+               o Bénéficier d'une expertise
+               o Développer la recherche
+          + Bibliothèque
+       [menu_advertising_moocs_0.png]
+       Nos cours en ligne, accessibles gratuitement.
+     * La recherche
+     * Entreprises
+     * Alumni
+
+     * [ban-chats-pge.jpg?itok=PbGpjWCI]
+       Les chats thématiques de Grenoble Ecole de Management
+       Vous envisagez une poursuite d'études en école de management ?
+       S'inscrire
+     * [webinar-geopo.jpg?itok=xsTQHxIQ]
+       Cours en ligne gratuit : Le futur de la mondialisation
+       Pourquoi les gouvernements et les individus s'opposent à la
+       mondialisation ou l'acceptent
+       Voir le programme
+     * [ban-webinar-diversite.jpg?itok=Ddaq6bCl]
+       Webinar : politique Handicap et Diversité dans l'entreprise
+       Avec Susan Nallet, Marie Fritsch et Christine Maillard-Althuser
+       S'inscrire
+     * [ban-webinar-taxe-brandi-pottier.jpg?itok=4TB3LMK-]
+       Webinar : réforme de la Taxe d’apprentissage, enjeux et mode
+       d’emploi
+       Pour tout savoir sur la réforme 2020, avec Agnès Plessis Brandi et
+       Isabelle Pottier
+       S'inscrire au webinar
+     * [bann-jpo-2019_0.jpg?itok=jv99W2ux]
+       Journées Portes Ouvertes
+       Le 7 décembre à Grenoble
+       S'inscrire
+
+Grenoble Ecole de Management - Technologie, Innovation, Entrepreneuriat
+
+   Étudiants
+
+Quel niveau de diplôme voulez-vous atteindre ?
+
+     * Niveau Bac +2 / Bac +3
+     * Niveau Bac +5
+     * Programme Grande Ecole
+     * Mastère Spécialisé
+     * Ph.D
+
+   Les formations initiales
+   Professionnels
+
+Quel type de formation recherchez-vous ?
+
+     * Formations diplômantes
+     * Formations courtes
+     * Formations sur mesure
+     * Programmes Doctoraux & DBA
+
+   Les formations continues
+   International
+
+Nos campus et partenaires
+
+     * International
+     * Campus
+     * Partenaires
+
+   Agenda
+     * Les chats thématiques de Grenoble Ecole de Management
+       Du 20 nov 2019 Au 18 déc 2019
+       Vous envisagez une poursuite d'études en école de management ?
+       Grenoble Ecole de Management répond à vos interrogations lors d’une
+       série de chats thématiques !
+     * Conférence : l'impact du Numérique sur les humains et la planète
+       Le 21 nov 2019
+       Conférence débat avec Caroline Cuny et François Berthoud, animée
+       par GEM En Débats dans le cadre des Jeudis de l'Entreprise
+       Digitale.
+     * Webinar : politique Handicap et Diversité dans l'entreprise
+       Le 28 nov 2019
+       Comment réussir l’intégration des personnes en situation de
+       handicap dans votre entreprise. Une conférence animée par Grenoble
+       Ecole de Management et des partenaires.
+     * Conférence : Le pilotage d'un projet d'innovation et de
+       développement spatial : CRYOFENIX
+       Le 28 nov 2019
+       Sébastien BIANCHI, au travers du projet CRYOFENIX, présentera la
+       méthodologie et les spécificités d’un projet d’innovation et de
+       développement spatial réalisé dans le cadre d’une coopération
+       internationale
+
+     * Gérer le deuil et la compassion dans le milieu professionnel
+       Actualités
+       18 nov 2019
+       Gérer le deuil et la compassion dans le milieu pro...
+       Gérer le deuil et la compassion dans le milieu professionnel
+       18 nov 2019
+       Comment les managers devraient-ils réagir face à la perte d’un
+       collaborateur ? Comment peuvent-ils offrir un...
+     * La Chaire Energy for Society « embarque » les citoyens dans la
+       transition énergétique
+       Actualités
+       18 nov 2019
+       La Chaire Energy for Society embarque les citoyen...
+       La Chaire Energy for Society « embarque » les citoyens dans la
+       transition énergétique
+       18 nov 2019
+       Air Liquide, la Banque Populaire Auvergne-Rhône-Alpes et Engie
+       rejoignent la chaire de GEM pour répondre aux...
+     * Marcos Barros
+       Actualités
+       18 nov 2019
+       Réseaux sociaux. Comment créer un espace propice a...
+       Marcos Barros
+       18 nov 2019
+       Les réseaux sociaux laissent libre cours aux dissensions et à la
+       critique individuelle. Comment les organisations...
+     * Finethics est un nouveau serious game immersif créé en
+       collaboration avec des professionnels de l’entreprise et des
+       étudiants dont le but est d'aider les futurs leaders à construire
+       leur engagement éthique.
+       Actualités
+       13 nov 2019
+       Innovation pédagogique : mieux anticiper les dilem...
+       Finethics est un nouveau serious game immersif créé en
+       collaboration avec des professionnels de l’entreprise et des
+       étudiants dont le but est d'aider les futurs leaders à construire
+       leur engagement éthique.
+       13 nov 2019
+       Finethics est un nouveau serious game immersif créé en
+       collaboration avec des professionnels de l’entreprise et...
+
+     * Grenoble EM dans les classements
+       Le Point : classement des Grandes Ecoles de commerce
+       Le Programme Grande Ecole à la 6° place en France
+       Le magazine Le Point classe le Programme Grande Ecole à la 6° place
+       sur 38 programmes français dans son palmarès des Grandes Ecoles de
+       commerce.
+       A retenir :
+       +2 rangs sur la recherche, grâce à la qualité du corps professoral
+       et de ses publications.
+       +7 rangs sur la professionnalisation de nos étudiants ; une
+       progression assurée par l'efficacité de notre Service Carrières.
+       [bitmap3x-opt_0_0.jpg]
+
+   Voir tous les classements
+   Chaine Grenoble EM
+
+GEM devient un Business Lab for Society
+
+   Grenoble Ecole de Management est plus qu’une école. C’est un
+   laboratoire à ciel ouvert pour inventer l’entreprise et la Société de
+   demain, un espace ouvert de test, d’expérimentations, de réflexion,
+   d’hybridation pour résoudre des problèmes complexes.
+   Visitez notre chaîne Youtube
+
+   IFRAME: https://www.youtube.com/embed/U46zEdcpb-I
+
+   Dernières nouvelles
+   [hashtag.png]
+   Les publications de nos réseaux sociaux
+     * 15811followers
+     * 0fans
+
+   Publié le 19.11.19
+   [Agenda] Conférence : l'impact du #Numérique sur les humains & la
+   planète 🌍 🗓 21 novembre/18h30 📍 Grenoble EM ➡ Ave …
+   Publié le 19.11.19
+   RT @Laura_Leick: #Data Asperger : @ModisFrance agit pour l'inclusion de
+   l' #autisme Asperger avec @Grenoble_EM : https://t.co/03eyLriZ0E …
+     * Découvrir la ville
+       Grenoble, vivante et accueillante
+       [bitmap2x_0.png?itok=8jw4yQi8]
+
+   En savoir plus
+     * Contact
+       Grenoble Ecole de Management
+       12, rue Pierre Sémard
+       38000 Grenoble
+       Tél. : +33 4 76 70 60 60
+       Fax : +33 4 76 70 60 99
+       [map_0.png]
+
+   Contact
+
+   Une école
+   logo
+
+   12 rue Pierre Sémard
+   38000 Grenoble, France.
+   +33 4 76 70 60 60
+   Grenoble Ecole de Management Ⓒ 2019
+
+     * Autres sites
+     * Presse
+
+   Grenoble Ecole de Management Ⓒ 2019
+     * Données personnelles
+     * Mentions légales
+     * Contact
+
+   Suivez-nous
+     * Facebook
+     * LinkedIn
+     * Twitter
+     * Youtube
+     * Social Hub

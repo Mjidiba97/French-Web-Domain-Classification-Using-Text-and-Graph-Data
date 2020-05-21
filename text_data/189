@@ -1,0 +1,2715 @@
+   Memtest86+
+   [INS: :INS]
+     __________________________________________________________________
+
+   LATEST VERSION : 5.01
+
+                                                  LAST UPDATE : 27/09/2013
+     __________________________________________________________________
+
+   Based on the well-known original memtest86 written by Chris Brady,
+   memtest86+ is a port by some members of the x86-secret team, now
+   working at www.canardpc.com. Our goal is to provide an up-to-date and
+   completly reliable version of this software tool aimed at memory
+   failures detection. Memtest86+ was, is and will always be a free,
+   open-source software. The original Memtest86 is now handled by
+   PassMarkÂ® Software Pty Ltd.
+   Memtest86+ is released under the terms of the Gnu Public License (GPL).
+   No restrictions for use, private or commercial exist other than the
+   ones mentioned in the Gnu Public License (GPL). Texts about the
+   original version was taken from the original website and written by
+   Chris Brady.
+   PS : A newsletter for memtest86+ updates is available / Donation for
+   Memtest86+ welcome. Please support free GPL software.
+     __________________________________________________________________
+
+     * About Memtest86+
+          + History
+          + Change log
+          + Screenshots
+          + Download (Pre-built & ISOs)
+          + Download (Source Code)
+          + Features requests
+          + Bug Fixes requests
+          + Official Forum
+          + Newsletter
+
+     * About the original Memtest86 (Unchanged)
+          + Online Commands
+          + Memory Sizing
+          + Error Display
+          + Troubleshooting Memory Errors
+          + Change Log
+          + Acknowledgments
+
+     * About tests performed
+          + Memory Testing Philosophy
+          + Memtest86 Test Algorithms
+          + Individual Test Descriptions
+
+     * About the authors & contributors
+          + Author of Memtest86+
+          + Contributors of Memtest86/Memtest86+
+          + Donation from memtest86+ / Donator list
+     __________________________________________________________________
+
+   -= History =-
+
+   The first version of Memtest86+ was released on early 2004, based on
+   memtest86 v3.0 that was not updated since mid-2002. Our main challenge
+   was to provide an up-to-date version of this useful tool, as reliable
+   than the original. Our work started when we got the first AMD64 system.
+   Unfortunatly, the original memtest v3.0 didn't run at all. After
+   looking at the source code, we fixed the bug.After some days, I saw lot
+   of other things like chipsets or CPU that were not correctly detected
+   or not detected at all. As I'm the chief-editor of a french hardware
+   website (www.x86-secret.com now integrated into www.canardpc.com), I
+   have access to lot of recent hardware and I can test and debug on quite
+   all available motherboards on the market. After adding detection for
+   all current CPUs, I've added detection for all current chipsets (SiS,
+   VIA, nVidia, Intel) and ECC Polling for AMD64, i875P and E7205. Then, I
+   decided to display some useful settings for the most popular chipsets.
+   For exemple, on i865PE/i875P series, memtest86+ will now display FSB &
+   Memory frequency, PAT status, memory timings, ECC status and the number
+   of memory channels. Next version will perhaps contain several
+   enhancements and bug-fixes.
+     __________________________________________________________________
+
+   -= Change Log =-
+
+   Here is all the latest change logs for memtest86+ :
+
+     *** Enhancements in v5.01 : ***
+     * New Features
+          + Added support for up to 2 TB of RAM on X64 CPUs
+          + Added experimental SMT support up to 32 cores (Press F2 to
+            enable at startup)
+          + Added complete detection for memory controllers
+          + Added Motherboard Manufacturer & Model reporting
+          + Added CPU temperature reporting
+          + Added enhanced Fail Safe Mode (Press F1 at startup)
+          + Added support for Intel "Sandy Bridge-E" CPUs
+          + Added support for Intel "Ivy Bridge" CPUs
+          + Added preliminary support for Intel "Haswell" CPUs (Core 4th
+            Gen)
+          + Added preliminary support for Intel "Haswell-ULT" CPUs
+          + Added support for AMD "Kabini" (K16) CPUs
+          + Added support for AMD "Bulldozer" CPUs
+          + Added support for AMD "Trinity" CPUs
+          + Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
+          + Added support for Intel Atom "Pineview" CPUs
+          + Added support for Intel Atom "Cedar Trail" CPUs
+          + Added SPD detection on most AMD Chipsets
+     * Bug Fixes
+          + Enforced Coreboot support
+          + Optimized run time for faster memory error detection
+          + Rewriten lots of memory timings detection cod
+          + Corrected bugs, bugs and more bugs (some could remain)
+
+   Enhancements in v4.20 :
+     * Added failsafe mode (press F1 at startup)
+     * Added support for Intel "Sandy Bridge" CPU
+     * Added support for AMD "fusion" CPU
+     * Corrected some memory brands not detected properlyt
+     * Various bug fixes
+
+   Enhancements in v4.10 :
+     * Added support for Core i7 Extreme CPU (32nm)
+     * Added support for Core i5/i3 (32 nm)
+     * Added support for Pentium Gxxxx (32 mn)
+     * Added support for Westmere-based Xeont
+     * Added preliminary support for Intel SNB A0-step
+     * Added support for AMD 6-cores CPU
+     * Added detection for Intel 3200/3210
+     * New installer for USB Key
+     * Corrected a crash at startup
+     * Many others bug fixes
+
+   Enhancements in v4.00 :
+     * Major Architectural changes
+     * First pass twice faster (reduced iterations)
+     * Detect DDR2/3 brands and part numbers on Intel DDR2/3 chipsets
+     * Added detection for Intel "Clarkdale/Gulftown" CPUt
+     * Added detection for AMD "Magny-Cours" CPU
+     * Added detection for Intel XMP Memory
+     * Added for CPU w/ 0.5/1.5/3/6/12/16/18/24MB L3
+     * Added "clean" DMI detection for DDR3/FBDIMM2
+     * Corrected detection for Intel "Lynnfield" CPU
+     * Corrected detection for AMD 45nm K10 CPU
+     * Solved crash with AMD Geode LX
+     * Complies with SMBIOS 2.6.1 specst
+     * Fixed compilation issues with gcc 4.2+
+     * Many others bug fixes
+
+   PS : Memtest86+ "3.00" was skipped and renamed 4.00 in order to avoid
+   confusion with the original Memtest.
+
+   Enhancements in v2.11 :
+     * Added support for Intel Core i5 (Lynnfield) CPU
+     * Added support for Intel P55 Southbridge
+     * Added support for Intel PM45/GM45/GM47 Mobile chipset
+     * Added support for Intel GL40/GS45 Mobile chipset
+     * Corrected DDR2/DDR3 detection on Intel x35/x45
+     * Corrected detection on some Core i7 CPU
+     * Fixed a bug with some AMI BIOS (freeze at startup)
+     * Various bug fixes
+
+   Enhancements in v2.10 :
+     * Added support for Intel Core i7 (Nehalem) CU
+     * Added support for Intel Atom Processors
+     * Added support for Intel G41/G43/G45 Chipsets
+     * Added support for Intel P43/P45 Chipsets
+     * Added support for Intel US15W (Poulsbo) Chipset
+     * Added support for Intel EP80579 (Tolapai) SoC CPU
+     * Added support for ICH10 Southbridge (SPD/DMI)
+     * Added detection for Intel 5000X
+     * Now fully aware of CPU w/ L3 cache (Core i7 & K10)
+     * Added workaround for DDR3 DMI detection
+     * Fixed Intel 5000Z chipset detection
+     * Fixed Memory Frequency on AMD K10
+     * Fixed cache detection on C7/Isaiah CPU
+     * Fix Memtest86+ not recognized as Linux Kernel
+
+   Enhancements in v2.01 :
+     * Added support for i945GM/PM/GME & i946PL/GZ
+     * Added support for iGM965/iGL960/iPM965/iGME965/iGLE960
+     * Added detection for SiS 649/656/671/672
+     * Added detection for i430MX/i430TX
+     * Added an optional beep mode (pass completed w/o error)
+     * Pass duration 20% reduced
+     * Removed the blinking cursor
+     * Reverted Test #0 to cached
+     * Solved a major bug in Memory Address Errors Reporting
+     * Patched for Intel-Powered Mac
+     * Corrected Intel 3-Series (P35/X38) chipset init
+     * Corrected a bug with SPD Display and ESB6300
+     * Correct a detection bug on P965/G965 C-Stepping
+     * Solved a incoherency with pass progress indicator
+     * Patched Makefile to compile on x86_64
+     * Bootable Memtest86+ ISO more compatible
+
+   Enhancements in v2.00 :
+     * Major Architectures changes
+     * Modulo test now use random pattern for better accuracy
+     * Added Advanced DMI Errors Reporting Mode
+     * Added support for bus ratio changes on Intel Core CPU
+     * Added support for non-integer bus ratio on latest Intel CPU
+     * Added SPD Data Display for all Intel Chipsets (more to come)
+     * Added serial support as a linux boot parameter (Thanks to Michal
+       S.)
+     * Added preliminary support for VIA CN Isaiah CPU
+     * Added preliminary support for Intel Nehalem
+     * Added support for VIA C7/C7-D/C7-M/Eden on Esther Core
+     * Added support for AMD K10 (Phenom) CPU w/ timings detection
+     * Added support for Intel Pentium E w/ 1 MB L2 Cache
+     * Added support for Intel Core 2 45nm (Penryn)
+     * Added support for FSB1333/FSB1600 Intel CPU
+     * Added support for Intel 5400A/5400B w/ timings detection
+     * Added support for Intel Q35/P35/G33/Q33 w/ timings detection
+     * Added support for Intel X38/X48 w/ timings detection
+     * Added preliminary support for Intel 5000P/V/Z
+     * Removed on-fly memory timings change (unstable)
+     * Numerous (really) bug fixes
+
+
+     __________________________________________________________________
+
+   -= Screenshots =-
+
+   Some screenshots of memtest86+ on third recent platforms (i865/i875 -
+   nForce2 - AMD64) :
+
+                             memtest86+ on i875P
+
+                          Memtest86+ V1.00 on i875P
+
+                              memtest86+ on nF2
+
+                         Memtest86+ V1.00 on nForce2
+
+                             memtest86+ on amd64
+
+                          Memtest86+ V1.00 on AMD64
+
+     __________________________________________________________________
+
+   -= Download (Pre-built & ISOs) =-
+
+   Here is some pre-compiled distributions of memtest86+. Memtest86+ comes
+   in three different way, first is a pre-build bootable ISO, second is a
+   bootable binary and third an installable package for creating a
+   bootable floppy. Third version are compressed in .zip and .tar.gz.
+
+     ** Memtest86+ V5.01 (27/09/2013)**
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zip)
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7) *NEW!*
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     __________________________________________________________________
+
+   -= Download (Source Code) =-
+
+   Here is the source code (under GPL) :
+
+     ** Memtest86+ V5.01 (27/09/2013) **
+     * Download - Memtest86+ V5.01 source code (.tar.gz) - 209.3 KB
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Memtest86+ V4.00 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Memtest86+ V2.11 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Memtest86+ V2.10 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Memtest86+ V2.01 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Memtest86+ V2.00 source code (.tar.gz) - 139.8 KB
+
+
+       _______________________________________________________________
+
+     -= Features Requests & Features Requests =-
+
+     An official forum for all features Requests & bugs fixes has been
+     created on forum.canardpc.com. Even if the main forum is in french,
+     the memtest86+ forum is *ONLY* in english. No registration required
+     to post but *NO* help will be given to hardware issues. This forum
+     is only dedicated to features requests and bug fixes for memtest86+.
+     All other post will be erased.
+
+                        -- Offical Memtest86+ Forum --
+
+       _______________________________________________________________
+
+     -= Memtest86+ Newsletter =-
+
+     The Memtest86+ Newsletter is only intended to provide an information
+     about new Memtest86+ updates. Nothing more will be sent. Of course,
+     the emails addresses provided will NEVER be passed to others and
+     will be kept STRICTLY confidential. Subscribers will received an
+     email with the changelog when a new version of memtest will be
+     released.
+
+                          Your email address_______
+
+   (*) Subscribe
+
+                               ( ) Un-Subscribe
+                                    Submit
+       _______________________________________________________________
+
+     -= Author of Memtest86+ =-
+
+     Memtest86+ is written by Samuel DEMEULEMEESTER, chief editor of
+     www.x86-secret.com (visit us). You can send an email to
+     memtest[nospam]@memtest.org (sorry for the syntax, remove [nospam]).
+     But don't expect an answer...
+
+     PS : Again, the original author of memtest86 is Chris Brady
+     (www.memtest86.com)
+       _______________________________________________________________
+
+     -= Contributors of Memtest86/Memtest86+ =-
+
+     The initial versions of the source files bootsect.S, setup.S, head.S
+     and build.c are from the Linux 1.2.1 kernel and have been heavily
+     modified.
+
+     Doug Sisk provided code to support a console connected via a serial
+     port.
+
+     Code to create BadRAM patterns was provided by Rick van Rein.
+
+     Screen buffer code was provided by Jani Averbach.
+
+     On-fly timings change for A64/i865/915 was provided by Eric and Wee
+
+     Eric Biederman reworked the build process making it far simpler and
+     also to produce a network bootable ELF image. He produce a nice
+     patch in mid-2003 which was included in memtest86+
+
+     Memtest86+ Loader (and lots of help) was provided by Eric Auer.
+
+     Udo Rader create a piece of code for better badram support (remove
+     duplicate)
+
+     Thanks to Franck Delattre (www.cpuid.org) for his help.
+
+     Thanks to Michal Schmidt, Yann D. and Warren Togami for unvaluable
+     support
+
+     Thanks to Remko van der Vossen (aka Wichetael) for the FAQ
+
+     Thanks to CDH for his help.
+
+     Thanks to lechenejb for memtest86+ logo.
+
+     Thanks to all 5.xx contributors, especially Passmark guys.
+
+     Thanks to all Beta-testers.
+       _______________________________________________________________
+
+     -= Donation for Memtest86+ =-
+
+     We occasionally receive email that ask for a doantion, so, here is
+     the donation section ! So, if you've found memtest86+ useful - maybe
+     it saved you some money or helped you to understand an issue that's
+     been bothering you for ages - then please consider making a donation
+     to support free software and help us face costs that occur
+     (webhosting, buying of some hardware for debugging, ...etc). Don't
+     forget donations are very welcome, but by no means required.
+     However, they will directly increases the amount of time we can
+     spend on developing mt86+. Any amount is greatly appreciated.
+
+     As an individual, your name will be asked in the Paypal's form and
+     it will be added to this page as a mt86+ donator. Due to numerous
+     abuses, we reserve the right to remove companies' names, especially
+     when they are not related to IT. We only accept true donations. We
+     don't sell links on our website for SEO purposes!
+
+     PayPal â The safer, easier way to pay online!
+
+     Donators List (Thank you !) :
+
+     * 07/18/18 -> Hostiserver
+     * 10/25/17 -> KoDDoS
+     * 06/15/18 -> Gadget Council - How to use Memtest
+     * 03/10/17 -> FirstSiteGuide
+     * 01/13/16 -> Makawebsitehub.com
+     * 07/04/16 -> Disk Drill data recovery app
+     * 02/11/17 -> Web Hosting Buddy
+     * 04/24/17 -> Andre Nathan
+     * 10/27/16 -> John Miller
+     * 07/18/18 -> BestVPNWeb
+     * 03/29/17 -> Blogotech
+     * 12/03/13 -> NDCHost.com
+     * 08/24/16 -> 120Hz-plus Monitors
+     * 05/13/18 -> Top 10 Website Hosting
+     * 04/29/19 -> Robert Urban
+     * 02/15/16 -> annuaire ladenise
+     * 02/11/17 -> Zocker Gear
+     * 01/03/16 -> Julie Henriksen
+     * 07/18/18 -> HRank
+
+     * 08/14/18 -> Scrum Master
+     * 08/18/15 -> Excel Easy
+     * 11/13/18 -> VPSServer.com
+     * 11/13/18 -> Hosted.nl
+     * 04/05/16 -> 3DForged.com
+     * 10/25/17 -> Hostingplus.cl
+     * 10/19/16 -> Web Hosting Professor
+     * 04/25/19 -> monovm.com
+     * 01/27/19 -> CodeFirst
+     * 11/09/18 -> RouterHosting.Com
+     * 11/12/18 -> Error Vault
+     * 05/13/18 -> CompareGameHosting
+     * 05/06/18 -> WhatsTheHost.com
+     * 04/05/18 -> Design Bombs
+     * 01/24/18 -> Zuziko
+     * 10/18/16 -> LoadView-Testing.com
+     * 09/29/16 -> UK Web Host Review
+     * 11/01/13 -> Nicolas Chevallier
+     * 02/18/16 -> Elite Gaming Computers
+     * 07/19/16 -> Thara MK
+
+     * 02/06/17 -> Hosting Manual
+     * 04/26/15 -> Coupofy.com
+     * 08/19/16 -> Elite Media
+     * 01/14/14 -> Scankampagne
+     * 10/03/16 -> Heinz Bucher
+     * 12/29/13 -> Webpromotion GmbH
+     * 03/01/16 -> domstechblog.com
+     * 07/30/15 -> Hostname.cl
+     * 05/09/18 -> Hornetsecurity GmbH
+     * 09/11/15 -> Every Cloud Tech
+     * 08/14/18 -> CryptoNewsZ
+     * 04/11/17 -> eSS
+     * 01/21/14 -> Buy Hosting
+     * 07/02/13 -> Webagentur Website Werkstatt
+     * 09/22/16 -> Coding Supply
+     * 06/03/16 -> Nosy Nation
+     * 07/11/16 -> Gaming PC Test
+     * 07/14/16 -> planetahosting.cl
+     * 08/25/16 -> Planetahosting
+     * 07/01/16 -> Hosting.cl
+
+     * 02/22/16 -> Ian Power
+     * 06/03/16 -> O365cloudexperts.com
+     * 10/16/17 -> Only4Gamers
+     * 02/27/17 -> 3DInsider.com
+     * 09/30/16 -> Jim Gordon
+     * 09/28/16 -> Yashar Ghaffarloo
+     * 04/10/17 -> Dimitri Sedich
+     * 04/15/16 -> arena-studio.fr
+       _______________________________________________________________
+
+          Valid HTML 4.01!       Powered By Apache!       Valid CSS!
+   Memtest86+
+   [INS: :INS]
+     __________________________________________________________________
+
+   LATEST VERSION : 5.01
+
+                                                  LAST UPDATE : 27/09/2013
+     __________________________________________________________________
+
+   Based on the well-known original memtest86 written by Chris Brady,
+   memtest86+ is a port by some members of the x86-secret team, now
+   working at www.canardpc.com. Our goal is to provide an up-to-date and
+   completly reliable version of this software tool aimed at memory
+   failures detection. Memtest86+ was, is and will always be a free,
+   open-source software. The original Memtest86 is now handled by
+   PassMarkÂ® Software Pty Ltd.
+   Memtest86+ is released under the terms of the Gnu Public License (GPL).
+   No restrictions for use, private or commercial exist other than the
+   ones mentioned in the Gnu Public License (GPL). Texts about the
+   original version was taken from the original website and written by
+   Chris Brady.
+   PS : A newsletter for memtest86+ updates is available / Donation for
+   Memtest86+ welcome. Please support free GPL software.
+     __________________________________________________________________
+
+     * About Memtest86+
+          + History
+          + Change log
+          + Screenshots
+          + Download (Pre-built & ISOs)
+          + Download (Source Code)
+          + Features requests
+          + Bug Fixes requests
+          + Official Forum
+          + Newsletter
+
+     * About the original Memtest86 (Unchanged)
+          + Online Commands
+          + Memory Sizing
+          + Error Display
+          + Troubleshooting Memory Errors
+          + Change Log
+          + Acknowledgments
+
+     * About tests performed
+          + Memory Testing Philosophy
+          + Memtest86 Test Algorithms
+          + Individual Test Descriptions
+
+     * About the authors & contributors
+          + Author of Memtest86+
+          + Contributors of Memtest86/Memtest86+
+          + Donation from memtest86+ / Donator list
+     __________________________________________________________________
+
+   -= History =-
+
+   The first version of Memtest86+ was released on early 2004, based on
+   memtest86 v3.0 that was not updated since mid-2002. Our main challenge
+   was to provide an up-to-date version of this useful tool, as reliable
+   than the original. Our work started when we got the first AMD64 system.
+   Unfortunatly, the original memtest v3.0 didn't run at all. After
+   looking at the source code, we fixed the bug.After some days, I saw lot
+   of other things like chipsets or CPU that were not correctly detected
+   or not detected at all. As I'm the chief-editor of a french hardware
+   website (www.x86-secret.com now integrated into www.canardpc.com), I
+   have access to lot of recent hardware and I can test and debug on quite
+   all available motherboards on the market. After adding detection for
+   all current CPUs, I've added detection for all current chipsets (SiS,
+   VIA, nVidia, Intel) and ECC Polling for AMD64, i875P and E7205. Then, I
+   decided to display some useful settings for the most popular chipsets.
+   For exemple, on i865PE/i875P series, memtest86+ will now display FSB &
+   Memory frequency, PAT status, memory timings, ECC status and the number
+   of memory channels. Next version will perhaps contain several
+   enhancements and bug-fixes.
+     __________________________________________________________________
+
+   -= Change Log =-
+
+   Here is all the latest change logs for memtest86+ :
+
+     *** Enhancements in v5.01 : ***
+     * New Features
+          + Added support for up to 2 TB of RAM on X64 CPUs
+          + Added experimental SMT support up to 32 cores (Press F2 to
+            enable at startup)
+          + Added complete detection for memory controllers
+          + Added Motherboard Manufacturer & Model reporting
+          + Added CPU temperature reporting
+          + Added enhanced Fail Safe Mode (Press F1 at startup)
+          + Added support for Intel "Sandy Bridge-E" CPUs
+          + Added support for Intel "Ivy Bridge" CPUs
+          + Added preliminary support for Intel "Haswell" CPUs (Core 4th
+            Gen)
+          + Added preliminary support for Intel "Haswell-ULT" CPUs
+          + Added support for AMD "Kabini" (K16) CPUs
+          + Added support for AMD "Bulldozer" CPUs
+          + Added support for AMD "Trinity" CPUs
+          + Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
+          + Added support for Intel Atom "Pineview" CPUs
+          + Added support for Intel Atom "Cedar Trail" CPUs
+          + Added SPD detection on most AMD Chipsets
+     * Bug Fixes
+          + Enforced Coreboot support
+          + Optimized run time for faster memory error detection
+          + Rewriten lots of memory timings detection cod
+          + Corrected bugs, bugs and more bugs (some could remain)
+
+   Enhancements in v4.20 :
+     * Added failsafe mode (press F1 at startup)
+     * Added support for Intel "Sandy Bridge" CPU
+     * Added support for AMD "fusion" CPU
+     * Corrected some memory brands not detected properlyt
+     * Various bug fixes
+
+   Enhancements in v4.10 :
+     * Added support for Core i7 Extreme CPU (32nm)
+     * Added support for Core i5/i3 (32 nm)
+     * Added support for Pentium Gxxxx (32 mn)
+     * Added support for Westmere-based Xeont
+     * Added preliminary support for Intel SNB A0-step
+     * Added support for AMD 6-cores CPU
+     * Added detection for Intel 3200/3210
+     * New installer for USB Key
+     * Corrected a crash at startup
+     * Many others bug fixes
+
+   Enhancements in v4.00 :
+     * Major Architectural changes
+     * First pass twice faster (reduced iterations)
+     * Detect DDR2/3 brands and part numbers on Intel DDR2/3 chipsets
+     * Added detection for Intel "Clarkdale/Gulftown" CPUt
+     * Added detection for AMD "Magny-Cours" CPU
+     * Added detection for Intel XMP Memory
+     * Added for CPU w/ 0.5/1.5/3/6/12/16/18/24MB L3
+     * Added "clean" DMI detection for DDR3/FBDIMM2
+     * Corrected detection for Intel "Lynnfield" CPU
+     * Corrected detection for AMD 45nm K10 CPU
+     * Solved crash with AMD Geode LX
+     * Complies with SMBIOS 2.6.1 specst
+     * Fixed compilation issues with gcc 4.2+
+     * Many others bug fixes
+
+   PS : Memtest86+ "3.00" was skipped and renamed 4.00 in order to avoid
+   confusion with the original Memtest.
+
+   Enhancements in v2.11 :
+     * Added support for Intel Core i5 (Lynnfield) CPU
+     * Added support for Intel P55 Southbridge
+     * Added support for Intel PM45/GM45/GM47 Mobile chipset
+     * Added support for Intel GL40/GS45 Mobile chipset
+     * Corrected DDR2/DDR3 detection on Intel x35/x45
+     * Corrected detection on some Core i7 CPU
+     * Fixed a bug with some AMI BIOS (freeze at startup)
+     * Various bug fixes
+
+   Enhancements in v2.10 :
+     * Added support for Intel Core i7 (Nehalem) CU
+     * Added support for Intel Atom Processors
+     * Added support for Intel G41/G43/G45 Chipsets
+     * Added support for Intel P43/P45 Chipsets
+     * Added support for Intel US15W (Poulsbo) Chipset
+     * Added support for Intel EP80579 (Tolapai) SoC CPU
+     * Added support for ICH10 Southbridge (SPD/DMI)
+     * Added detection for Intel 5000X
+     * Now fully aware of CPU w/ L3 cache (Core i7 & K10)
+     * Added workaround for DDR3 DMI detection
+     * Fixed Intel 5000Z chipset detection
+     * Fixed Memory Frequency on AMD K10
+     * Fixed cache detection on C7/Isaiah CPU
+     * Fix Memtest86+ not recognized as Linux Kernel
+
+   Enhancements in v2.01 :
+     * Added support for i945GM/PM/GME & i946PL/GZ
+     * Added support for iGM965/iGL960/iPM965/iGME965/iGLE960
+     * Added detection for SiS 649/656/671/672
+     * Added detection for i430MX/i430TX
+     * Added an optional beep mode (pass completed w/o error)
+     * Pass duration 20% reduced
+     * Removed the blinking cursor
+     * Reverted Test #0 to cached
+     * Solved a major bug in Memory Address Errors Reporting
+     * Patched for Intel-Powered Mac
+     * Corrected Intel 3-Series (P35/X38) chipset init
+     * Corrected a bug with SPD Display and ESB6300
+     * Correct a detection bug on P965/G965 C-Stepping
+     * Solved a incoherency with pass progress indicator
+     * Patched Makefile to compile on x86_64
+     * Bootable Memtest86+ ISO more compatible
+
+   Enhancements in v2.00 :
+     * Major Architectures changes
+     * Modulo test now use random pattern for better accuracy
+     * Added Advanced DMI Errors Reporting Mode
+     * Added support for bus ratio changes on Intel Core CPU
+     * Added support for non-integer bus ratio on latest Intel CPU
+     * Added SPD Data Display for all Intel Chipsets (more to come)
+     * Added serial support as a linux boot parameter (Thanks to Michal
+       S.)
+     * Added preliminary support for VIA CN Isaiah CPU
+     * Added preliminary support for Intel Nehalem
+     * Added support for VIA C7/C7-D/C7-M/Eden on Esther Core
+     * Added support for AMD K10 (Phenom) CPU w/ timings detection
+     * Added support for Intel Pentium E w/ 1 MB L2 Cache
+     * Added support for Intel Core 2 45nm (Penryn)
+     * Added support for FSB1333/FSB1600 Intel CPU
+     * Added support for Intel 5400A/5400B w/ timings detection
+     * Added support for Intel Q35/P35/G33/Q33 w/ timings detection
+     * Added support for Intel X38/X48 w/ timings detection
+     * Added preliminary support for Intel 5000P/V/Z
+     * Removed on-fly memory timings change (unstable)
+     * Numerous (really) bug fixes
+
+
+     __________________________________________________________________
+
+   -= Screenshots =-
+
+   Some screenshots of memtest86+ on third recent platforms (i865/i875 -
+   nForce2 - AMD64) :
+
+                             memtest86+ on i875P
+
+                          Memtest86+ V1.00 on i875P
+
+                              memtest86+ on nF2
+
+                         Memtest86+ V1.00 on nForce2
+
+                             memtest86+ on amd64
+
+                          Memtest86+ V1.00 on AMD64
+
+     __________________________________________________________________
+
+   -= Download (Pre-built & ISOs) =-
+
+   Here is some pre-compiled distributions of memtest86+. Memtest86+ comes
+   in three different way, first is a pre-build bootable ISO, second is a
+   bootable binary and third an installable package for creating a
+   bootable floppy. Third version are compressed in .zip and .tar.gz.
+
+     ** Memtest86+ V5.01 (27/09/2013)**
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zip)
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7) *NEW!*
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     __________________________________________________________________
+
+   -= Download (Source Code) =-
+
+   Here is the source code (under GPL) :
+
+     ** Memtest86+ V5.01 (27/09/2013) **
+     * Download - Memtest86+ V5.01 source code (.tar.gz) - 209.3 KB
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Memtest86+ V4.00 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Memtest86+ V2.11 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Memtest86+ V2.10 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Memtest86+ V2.01 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Memtest86+ V2.00 source code (.tar.gz) - 139.8 KB
+
+
+       _______________________________________________________________
+
+     -= Features Requests & Features Requests =-
+
+     An official forum for all features Requests & bugs fixes has been
+     created on forum.canardpc.com. Even if the main forum is in french,
+     the memtest86+ forum is *ONLY* in english. No registration required
+     to post but *NO* help will be given to hardware issues. This forum
+     is only dedicated to features requests and bug fixes for memtest86+.
+     All other post will be erased.
+
+                        -- Offical Memtest86+ Forum --
+
+       _______________________________________________________________
+
+     -= Memtest86+ Newsletter =-
+
+     The Memtest86+ Newsletter is only intended to provide an information
+     about new Memtest86+ updates. Nothing more will be sent. Of course,
+     the emails addresses provided will NEVER be passed to others and
+     will be kept STRICTLY confidential. Subscribers will received an
+     email with the changelog when a new version of memtest will be
+     released.
+
+                          Your email address_______
+
+   (*) Subscribe
+
+                               ( ) Un-Subscribe
+                                    Submit
+       _______________________________________________________________
+
+     -= Author of Memtest86+ =-
+
+     Memtest86+ is written by Samuel DEMEULEMEESTER, chief editor of
+     www.x86-secret.com (visit us). You can send an email to
+     memtest[nospam]@memtest.org (sorry for the syntax, remove [nospam]).
+     But don't expect an answer...
+
+     PS : Again, the original author of memtest86 is Chris Brady
+     (www.memtest86.com)
+       _______________________________________________________________
+
+     -= Contributors of Memtest86/Memtest86+ =-
+
+     The initial versions of the source files bootsect.S, setup.S, head.S
+     and build.c are from the Linux 1.2.1 kernel and have been heavily
+     modified.
+
+     Doug Sisk provided code to support a console connected via a serial
+     port.
+
+     Code to create BadRAM patterns was provided by Rick van Rein.
+
+     Screen buffer code was provided by Jani Averbach.
+
+     On-fly timings change for A64/i865/915 was provided by Eric and Wee
+
+     Eric Biederman reworked the build process making it far simpler and
+     also to produce a network bootable ELF image. He produce a nice
+     patch in mid-2003 which was included in memtest86+
+
+     Memtest86+ Loader (and lots of help) was provided by Eric Auer.
+
+     Udo Rader create a piece of code for better badram support (remove
+     duplicate)
+
+     Thanks to Franck Delattre (www.cpuid.org) for his help.
+
+     Thanks to Michal Schmidt, Yann D. and Warren Togami for unvaluable
+     support
+
+     Thanks to Remko van der Vossen (aka Wichetael) for the FAQ
+
+     Thanks to CDH for his help.
+
+     Thanks to lechenejb for memtest86+ logo.
+
+     Thanks to all 5.xx contributors, especially Passmark guys.
+
+     Thanks to all Beta-testers.
+       _______________________________________________________________
+
+     -= Donation for Memtest86+ =-
+
+     We occasionally receive email that ask for a doantion, so, here is
+     the donation section ! So, if you've found memtest86+ useful - maybe
+     it saved you some money or helped you to understand an issue that's
+     been bothering you for ages - then please consider making a donation
+     to support free software and help us face costs that occur
+     (webhosting, buying of some hardware for debugging, ...etc). Don't
+     forget donations are very welcome, but by no means required.
+     However, they will directly increases the amount of time we can
+     spend on developing mt86+. Any amount is greatly appreciated.
+
+     As an individual, your name will be asked in the Paypal's form and
+     it will be added to this page as a mt86+ donator. Due to numerous
+     abuses, we reserve the right to remove companies' names, especially
+     when they are not related to IT. We only accept true donations. We
+     don't sell links on our website for SEO purposes!
+
+     PayPal â The safer, easier way to pay online!
+
+     Donators List (Thank you !) :
+
+     * 07/18/18 -> Hostiserver
+     * 10/25/17 -> KoDDoS
+     * 06/15/18 -> Gadget Council - How to use Memtest
+     * 03/10/17 -> FirstSiteGuide
+     * 01/13/16 -> Makawebsitehub.com
+     * 07/04/16 -> Disk Drill data recovery app
+     * 02/11/17 -> Web Hosting Buddy
+     * 04/24/17 -> Andre Nathan
+     * 10/27/16 -> John Miller
+     * 07/18/18 -> BestVPNWeb
+     * 03/29/17 -> Blogotech
+     * 12/03/13 -> NDCHost.com
+     * 08/24/16 -> 120Hz-plus Monitors
+     * 05/13/18 -> Top 10 Website Hosting
+     * 04/29/19 -> Robert Urban
+     * 02/15/16 -> annuaire ladenise
+     * 02/11/17 -> Zocker Gear
+     * 01/03/16 -> Julie Henriksen
+     * 07/18/18 -> HRank
+
+     * 08/14/18 -> Scrum Master
+     * 08/18/15 -> Excel Easy
+     * 11/13/18 -> VPSServer.com
+     * 11/13/18 -> Hosted.nl
+     * 04/05/16 -> 3DForged.com
+     * 10/25/17 -> Hostingplus.cl
+     * 10/19/16 -> Web Hosting Professor
+     * 04/25/19 -> monovm.com
+     * 01/27/19 -> CodeFirst
+     * 11/09/18 -> RouterHosting.Com
+     * 11/12/18 -> Error Vault
+     * 05/13/18 -> CompareGameHosting
+     * 05/06/18 -> WhatsTheHost.com
+     * 04/05/18 -> Design Bombs
+     * 01/24/18 -> Zuziko
+     * 10/18/16 -> LoadView-Testing.com
+     * 09/29/16 -> UK Web Host Review
+     * 11/01/13 -> Nicolas Chevallier
+     * 02/18/16 -> Elite Gaming Computers
+     * 07/19/16 -> Thara MK
+
+     * 02/06/17 -> Hosting Manual
+     * 04/26/15 -> Coupofy.com
+     * 08/19/16 -> Elite Media
+     * 01/14/14 -> Scankampagne
+     * 10/03/16 -> Heinz Bucher
+     * 12/29/13 -> Webpromotion GmbH
+     * 03/01/16 -> domstechblog.com
+     * 07/30/15 -> Hostname.cl
+     * 05/09/18 -> Hornetsecurity GmbH
+     * 09/11/15 -> Every Cloud Tech
+     * 08/14/18 -> CryptoNewsZ
+     * 04/11/17 -> eSS
+     * 01/21/14 -> Buy Hosting
+     * 07/02/13 -> Webagentur Website Werkstatt
+     * 09/22/16 -> Coding Supply
+     * 06/03/16 -> Nosy Nation
+     * 07/11/16 -> Gaming PC Test
+     * 07/14/16 -> planetahosting.cl
+     * 08/25/16 -> Planetahosting
+     * 07/01/16 -> Hosting.cl
+
+     * 02/22/16 -> Ian Power
+     * 06/03/16 -> O365cloudexperts.com
+     * 10/16/17 -> Only4Gamers
+     * 02/27/17 -> 3DInsider.com
+     * 09/30/16 -> Jim Gordon
+     * 09/28/16 -> Yashar Ghaffarloo
+     * 04/10/17 -> Dimitri Sedich
+     * 04/15/16 -> arena-studio.fr
+       _______________________________________________________________
+
+          Valid HTML 4.01!       Powered By Apache!       Valid CSS!
+   Memtest86+
+   [INS: :INS]
+     __________________________________________________________________
+
+   LATEST VERSION : 5.01
+
+                                                  LAST UPDATE : 27/09/2013
+     __________________________________________________________________
+
+   Based on the well-known original memtest86 written by Chris Brady,
+   memtest86+ is a port by some members of the x86-secret team, now
+   working at www.canardpc.com. Our goal is to provide an up-to-date and
+   completly reliable version of this software tool aimed at memory
+   failures detection. Memtest86+ was, is and will always be a free,
+   open-source software. The original Memtest86 is now handled by
+   PassMarkÂ® Software Pty Ltd.
+   Memtest86+ is released under the terms of the Gnu Public License (GPL).
+   No restrictions for use, private or commercial exist other than the
+   ones mentioned in the Gnu Public License (GPL). Texts about the
+   original version was taken from the original website and written by
+   Chris Brady.
+   PS : A newsletter for memtest86+ updates is available / Donation for
+   Memtest86+ welcome. Please support free GPL software.
+     __________________________________________________________________
+
+     * About Memtest86+
+          + History
+          + Change log
+          + Screenshots
+          + Download (Pre-built & ISOs)
+          + Download (Source Code)
+          + Features requests
+          + Bug Fixes requests
+          + Official Forum
+          + Newsletter
+
+     * About the original Memtest86 (Unchanged)
+          + Online Commands
+          + Memory Sizing
+          + Error Display
+          + Troubleshooting Memory Errors
+          + Change Log
+          + Acknowledgments
+
+     * About tests performed
+          + Memory Testing Philosophy
+          + Memtest86 Test Algorithms
+          + Individual Test Descriptions
+
+     * About the authors & contributors
+          + Author of Memtest86+
+          + Contributors of Memtest86/Memtest86+
+          + Donation from memtest86+ / Donator list
+     __________________________________________________________________
+
+   -= History =-
+
+   The first version of Memtest86+ was released on early 2004, based on
+   memtest86 v3.0 that was not updated since mid-2002. Our main challenge
+   was to provide an up-to-date version of this useful tool, as reliable
+   than the original. Our work started when we got the first AMD64 system.
+   Unfortunatly, the original memtest v3.0 didn't run at all. After
+   looking at the source code, we fixed the bug.After some days, I saw lot
+   of other things like chipsets or CPU that were not correctly detected
+   or not detected at all. As I'm the chief-editor of a french hardware
+   website (www.x86-secret.com now integrated into www.canardpc.com), I
+   have access to lot of recent hardware and I can test and debug on quite
+   all available motherboards on the market. After adding detection for
+   all current CPUs, I've added detection for all current chipsets (SiS,
+   VIA, nVidia, Intel) and ECC Polling for AMD64, i875P and E7205. Then, I
+   decided to display some useful settings for the most popular chipsets.
+   For exemple, on i865PE/i875P series, memtest86+ will now display FSB &
+   Memory frequency, PAT status, memory timings, ECC status and the number
+   of memory channels. Next version will perhaps contain several
+   enhancements and bug-fixes.
+     __________________________________________________________________
+
+   -= Change Log =-
+
+   Here is all the latest change logs for memtest86+ :
+
+     *** Enhancements in v5.01 : ***
+     * New Features
+          + Added support for up to 2 TB of RAM on X64 CPUs
+          + Added experimental SMT support up to 32 cores (Press F2 to
+            enable at startup)
+          + Added complete detection for memory controllers
+          + Added Motherboard Manufacturer & Model reporting
+          + Added CPU temperature reporting
+          + Added enhanced Fail Safe Mode (Press F1 at startup)
+          + Added support for Intel "Sandy Bridge-E" CPUs
+          + Added support for Intel "Ivy Bridge" CPUs
+          + Added preliminary support for Intel "Haswell" CPUs (Core 4th
+            Gen)
+          + Added preliminary support for Intel "Haswell-ULT" CPUs
+          + Added support for AMD "Kabini" (K16) CPUs
+          + Added support for AMD "Bulldozer" CPUs
+          + Added support for AMD "Trinity" CPUs
+          + Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
+          + Added support for Intel Atom "Pineview" CPUs
+          + Added support for Intel Atom "Cedar Trail" CPUs
+          + Added SPD detection on most AMD Chipsets
+     * Bug Fixes
+          + Enforced Coreboot support
+          + Optimized run time for faster memory error detection
+          + Rewriten lots of memory timings detection cod
+          + Corrected bugs, bugs and more bugs (some could remain)
+
+   Enhancements in v4.20 :
+     * Added failsafe mode (press F1 at startup)
+     * Added support for Intel "Sandy Bridge" CPU
+     * Added support for AMD "fusion" CPU
+     * Corrected some memory brands not detected properlyt
+     * Various bug fixes
+
+   Enhancements in v4.10 :
+     * Added support for Core i7 Extreme CPU (32nm)
+     * Added support for Core i5/i3 (32 nm)
+     * Added support for Pentium Gxxxx (32 mn)
+     * Added support for Westmere-based Xeont
+     * Added preliminary support for Intel SNB A0-step
+     * Added support for AMD 6-cores CPU
+     * Added detection for Intel 3200/3210
+     * New installer for USB Key
+     * Corrected a crash at startup
+     * Many others bug fixes
+
+   Enhancements in v4.00 :
+     * Major Architectural changes
+     * First pass twice faster (reduced iterations)
+     * Detect DDR2/3 brands and part numbers on Intel DDR2/3 chipsets
+     * Added detection for Intel "Clarkdale/Gulftown" CPUt
+     * Added detection for AMD "Magny-Cours" CPU
+     * Added detection for Intel XMP Memory
+     * Added for CPU w/ 0.5/1.5/3/6/12/16/18/24MB L3
+     * Added "clean" DMI detection for DDR3/FBDIMM2
+     * Corrected detection for Intel "Lynnfield" CPU
+     * Corrected detection for AMD 45nm K10 CPU
+     * Solved crash with AMD Geode LX
+     * Complies with SMBIOS 2.6.1 specst
+     * Fixed compilation issues with gcc 4.2+
+     * Many others bug fixes
+
+   PS : Memtest86+ "3.00" was skipped and renamed 4.00 in order to avoid
+   confusion with the original Memtest.
+
+   Enhancements in v2.11 :
+     * Added support for Intel Core i5 (Lynnfield) CPU
+     * Added support for Intel P55 Southbridge
+     * Added support for Intel PM45/GM45/GM47 Mobile chipset
+     * Added support for Intel GL40/GS45 Mobile chipset
+     * Corrected DDR2/DDR3 detection on Intel x35/x45
+     * Corrected detection on some Core i7 CPU
+     * Fixed a bug with some AMI BIOS (freeze at startup)
+     * Various bug fixes
+
+   Enhancements in v2.10 :
+     * Added support for Intel Core i7 (Nehalem) CU
+     * Added support for Intel Atom Processors
+     * Added support for Intel G41/G43/G45 Chipsets
+     * Added support for Intel P43/P45 Chipsets
+     * Added support for Intel US15W (Poulsbo) Chipset
+     * Added support for Intel EP80579 (Tolapai) SoC CPU
+     * Added support for ICH10 Southbridge (SPD/DMI)
+     * Added detection for Intel 5000X
+     * Now fully aware of CPU w/ L3 cache (Core i7 & K10)
+     * Added workaround for DDR3 DMI detection
+     * Fixed Intel 5000Z chipset detection
+     * Fixed Memory Frequency on AMD K10
+     * Fixed cache detection on C7/Isaiah CPU
+     * Fix Memtest86+ not recognized as Linux Kernel
+
+   Enhancements in v2.01 :
+     * Added support for i945GM/PM/GME & i946PL/GZ
+     * Added support for iGM965/iGL960/iPM965/iGME965/iGLE960
+     * Added detection for SiS 649/656/671/672
+     * Added detection for i430MX/i430TX
+     * Added an optional beep mode (pass completed w/o error)
+     * Pass duration 20% reduced
+     * Removed the blinking cursor
+     * Reverted Test #0 to cached
+     * Solved a major bug in Memory Address Errors Reporting
+     * Patched for Intel-Powered Mac
+     * Corrected Intel 3-Series (P35/X38) chipset init
+     * Corrected a bug with SPD Display and ESB6300
+     * Correct a detection bug on P965/G965 C-Stepping
+     * Solved a incoherency with pass progress indicator
+     * Patched Makefile to compile on x86_64
+     * Bootable Memtest86+ ISO more compatible
+
+   Enhancements in v2.00 :
+     * Major Architectures changes
+     * Modulo test now use random pattern for better accuracy
+     * Added Advanced DMI Errors Reporting Mode
+     * Added support for bus ratio changes on Intel Core CPU
+     * Added support for non-integer bus ratio on latest Intel CPU
+     * Added SPD Data Display for all Intel Chipsets (more to come)
+     * Added serial support as a linux boot parameter (Thanks to Michal
+       S.)
+     * Added preliminary support for VIA CN Isaiah CPU
+     * Added preliminary support for Intel Nehalem
+     * Added support for VIA C7/C7-D/C7-M/Eden on Esther Core
+     * Added support for AMD K10 (Phenom) CPU w/ timings detection
+     * Added support for Intel Pentium E w/ 1 MB L2 Cache
+     * Added support for Intel Core 2 45nm (Penryn)
+     * Added support for FSB1333/FSB1600 Intel CPU
+     * Added support for Intel 5400A/5400B w/ timings detection
+     * Added support for Intel Q35/P35/G33/Q33 w/ timings detection
+     * Added support for Intel X38/X48 w/ timings detection
+     * Added preliminary support for Intel 5000P/V/Z
+     * Removed on-fly memory timings change (unstable)
+     * Numerous (really) bug fixes
+
+
+     __________________________________________________________________
+
+   -= Screenshots =-
+
+   Some screenshots of memtest86+ on third recent platforms (i865/i875 -
+   nForce2 - AMD64) :
+
+                             memtest86+ on i875P
+
+                          Memtest86+ V1.00 on i875P
+
+                              memtest86+ on nF2
+
+                         Memtest86+ V1.00 on nForce2
+
+                             memtest86+ on amd64
+
+                          Memtest86+ V1.00 on AMD64
+
+     __________________________________________________________________
+
+   -= Download (Pre-built & ISOs) =-
+
+   Here is some pre-compiled distributions of memtest86+. Memtest86+ comes
+   in three different way, first is a pre-build bootable ISO, second is a
+   bootable binary and third an installable package for creating a
+   bootable floppy. Third version are compressed in .zip and .tar.gz.
+
+     ** Memtest86+ V5.01 (27/09/2013)**
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zip)
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7) *NEW!*
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     __________________________________________________________________
+
+   -= Download (Source Code) =-
+
+   Here is the source code (under GPL) :
+
+     ** Memtest86+ V5.01 (27/09/2013) **
+     * Download - Memtest86+ V5.01 source code (.tar.gz) - 209.3 KB
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Memtest86+ V4.00 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Memtest86+ V2.11 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Memtest86+ V2.10 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Memtest86+ V2.01 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Memtest86+ V2.00 source code (.tar.gz) - 139.8 KB
+
+
+       _______________________________________________________________
+
+     -= Features Requests & Features Requests =-
+
+     An official forum for all features Requests & bugs fixes has been
+     created on forum.canardpc.com. Even if the main forum is in french,
+     the memtest86+ forum is *ONLY* in english. No registration required
+     to post but *NO* help will be given to hardware issues. This forum
+     is only dedicated to features requests and bug fixes for memtest86+.
+     All other post will be erased.
+
+                        -- Offical Memtest86+ Forum --
+
+       _______________________________________________________________
+
+     -= Memtest86+ Newsletter =-
+
+     The Memtest86+ Newsletter is only intended to provide an information
+     about new Memtest86+ updates. Nothing more will be sent. Of course,
+     the emails addresses provided will NEVER be passed to others and
+     will be kept STRICTLY confidential. Subscribers will received an
+     email with the changelog when a new version of memtest will be
+     released.
+
+                          Your email address_______
+
+   (*) Subscribe
+
+                               ( ) Un-Subscribe
+                                    Submit
+       _______________________________________________________________
+
+     -= Author of Memtest86+ =-
+
+     Memtest86+ is written by Samuel DEMEULEMEESTER, chief editor of
+     www.x86-secret.com (visit us). You can send an email to
+     memtest[nospam]@memtest.org (sorry for the syntax, remove [nospam]).
+     But don't expect an answer...
+
+     PS : Again, the original author of memtest86 is Chris Brady
+     (www.memtest86.com)
+       _______________________________________________________________
+
+     -= Contributors of Memtest86/Memtest86+ =-
+
+     The initial versions of the source files bootsect.S, setup.S, head.S
+     and build.c are from the Linux 1.2.1 kernel and have been heavily
+     modified.
+
+     Doug Sisk provided code to support a console connected via a serial
+     port.
+
+     Code to create BadRAM patterns was provided by Rick van Rein.
+
+     Screen buffer code was provided by Jani Averbach.
+
+     On-fly timings change for A64/i865/915 was provided by Eric and Wee
+
+     Eric Biederman reworked the build process making it far simpler and
+     also to produce a network bootable ELF image. He produce a nice
+     patch in mid-2003 which was included in memtest86+
+
+     Memtest86+ Loader (and lots of help) was provided by Eric Auer.
+
+     Udo Rader create a piece of code for better badram support (remove
+     duplicate)
+
+     Thanks to Franck Delattre (www.cpuid.org) for his help.
+
+     Thanks to Michal Schmidt, Yann D. and Warren Togami for unvaluable
+     support
+
+     Thanks to Remko van der Vossen (aka Wichetael) for the FAQ
+
+     Thanks to CDH for his help.
+
+     Thanks to lechenejb for memtest86+ logo.
+
+     Thanks to all 5.xx contributors, especially Passmark guys.
+
+     Thanks to all Beta-testers.
+       _______________________________________________________________
+
+     -= Donation for Memtest86+ =-
+
+     We occasionally receive email that ask for a doantion, so, here is
+     the donation section ! So, if you've found memtest86+ useful - maybe
+     it saved you some money or helped you to understand an issue that's
+     been bothering you for ages - then please consider making a donation
+     to support free software and help us face costs that occur
+     (webhosting, buying of some hardware for debugging, ...etc). Don't
+     forget donations are very welcome, but by no means required.
+     However, they will directly increases the amount of time we can
+     spend on developing mt86+. Any amount is greatly appreciated.
+
+     As an individual, your name will be asked in the Paypal's form and
+     it will be added to this page as a mt86+ donator. Due to numerous
+     abuses, we reserve the right to remove companies' names, especially
+     when they are not related to IT. We only accept true donations. We
+     don't sell links on our website for SEO purposes!
+
+     PayPal â The safer, easier way to pay online!
+
+     Donators List (Thank you !) :
+
+     * 07/18/18 -> Hostiserver
+     * 10/25/17 -> KoDDoS
+     * 06/15/18 -> Gadget Council - How to use Memtest
+     * 03/10/17 -> FirstSiteGuide
+     * 01/13/16 -> Makawebsitehub.com
+     * 07/04/16 -> Disk Drill data recovery app
+     * 02/11/17 -> Web Hosting Buddy
+     * 04/24/17 -> Andre Nathan
+     * 10/27/16 -> John Miller
+     * 07/18/18 -> BestVPNWeb
+     * 03/29/17 -> Blogotech
+     * 12/03/13 -> NDCHost.com
+     * 08/24/16 -> 120Hz-plus Monitors
+     * 05/13/18 -> Top 10 Website Hosting
+     * 04/29/19 -> Robert Urban
+     * 02/15/16 -> annuaire ladenise
+     * 02/11/17 -> Zocker Gear
+     * 01/03/16 -> Julie Henriksen
+     * 07/18/18 -> HRank
+
+     * 08/14/18 -> Scrum Master
+     * 08/18/15 -> Excel Easy
+     * 11/13/18 -> VPSServer.com
+     * 11/13/18 -> Hosted.nl
+     * 04/05/16 -> 3DForged.com
+     * 10/25/17 -> Hostingplus.cl
+     * 10/19/16 -> Web Hosting Professor
+     * 04/25/19 -> monovm.com
+     * 01/27/19 -> CodeFirst
+     * 11/09/18 -> RouterHosting.Com
+     * 11/12/18 -> Error Vault
+     * 05/13/18 -> CompareGameHosting
+     * 05/06/18 -> WhatsTheHost.com
+     * 04/05/18 -> Design Bombs
+     * 01/24/18 -> Zuziko
+     * 10/18/16 -> LoadView-Testing.com
+     * 09/29/16 -> UK Web Host Review
+     * 11/01/13 -> Nicolas Chevallier
+     * 02/18/16 -> Elite Gaming Computers
+     * 07/19/16 -> Thara MK
+
+     * 02/06/17 -> Hosting Manual
+     * 04/26/15 -> Coupofy.com
+     * 08/19/16 -> Elite Media
+     * 01/14/14 -> Scankampagne
+     * 10/03/16 -> Heinz Bucher
+     * 12/29/13 -> Webpromotion GmbH
+     * 03/01/16 -> domstechblog.com
+     * 07/30/15 -> Hostname.cl
+     * 05/09/18 -> Hornetsecurity GmbH
+     * 09/11/15 -> Every Cloud Tech
+     * 08/14/18 -> CryptoNewsZ
+     * 04/11/17 -> eSS
+     * 01/21/14 -> Buy Hosting
+     * 07/02/13 -> Webagentur Website Werkstatt
+     * 09/22/16 -> Coding Supply
+     * 06/03/16 -> Nosy Nation
+     * 07/11/16 -> Gaming PC Test
+     * 07/14/16 -> planetahosting.cl
+     * 08/25/16 -> Planetahosting
+     * 07/01/16 -> Hosting.cl
+
+     * 02/22/16 -> Ian Power
+     * 06/03/16 -> O365cloudexperts.com
+     * 10/16/17 -> Only4Gamers
+     * 02/27/17 -> 3DInsider.com
+     * 09/30/16 -> Jim Gordon
+     * 09/28/16 -> Yashar Ghaffarloo
+     * 04/10/17 -> Dimitri Sedich
+     * 04/15/16 -> arena-studio.fr
+       _______________________________________________________________
+
+          Valid HTML 4.01!       Powered By Apache!       Valid CSS!
+   Memtest86+
+   [INS: :INS]
+     __________________________________________________________________
+
+   LATEST VERSION : 5.01
+
+                                                  LAST UPDATE : 27/09/2013
+     __________________________________________________________________
+
+   Based on the well-known original memtest86 written by Chris Brady,
+   memtest86+ is a port by some members of the x86-secret team, now
+   working at www.canardpc.com. Our goal is to provide an up-to-date and
+   completly reliable version of this software tool aimed at memory
+   failures detection. Memtest86+ was, is and will always be a free,
+   open-source software. The original Memtest86 is now handled by
+   PassMarkÂ® Software Pty Ltd.
+   Memtest86+ is released under the terms of the Gnu Public License (GPL).
+   No restrictions for use, private or commercial exist other than the
+   ones mentioned in the Gnu Public License (GPL). Texts about the
+   original version was taken from the original website and written by
+   Chris Brady.
+   PS : A newsletter for memtest86+ updates is available / Donation for
+   Memtest86+ welcome. Please support free GPL software.
+     __________________________________________________________________
+
+     * About Memtest86+
+          + History
+          + Change log
+          + Screenshots
+          + Download (Pre-built & ISOs)
+          + Download (Source Code)
+          + Features requests
+          + Bug Fixes requests
+          + Official Forum
+          + Newsletter
+
+     * About the original Memtest86 (Unchanged)
+          + Online Commands
+          + Memory Sizing
+          + Error Display
+          + Troubleshooting Memory Errors
+          + Change Log
+          + Acknowledgments
+
+     * About tests performed
+          + Memory Testing Philosophy
+          + Memtest86 Test Algorithms
+          + Individual Test Descriptions
+
+     * About the authors & contributors
+          + Author of Memtest86+
+          + Contributors of Memtest86/Memtest86+
+          + Donation from memtest86+ / Donator list
+     __________________________________________________________________
+
+   -= History =-
+
+   The first version of Memtest86+ was released on early 2004, based on
+   memtest86 v3.0 that was not updated since mid-2002. Our main challenge
+   was to provide an up-to-date version of this useful tool, as reliable
+   than the original. Our work started when we got the first AMD64 system.
+   Unfortunatly, the original memtest v3.0 didn't run at all. After
+   looking at the source code, we fixed the bug.After some days, I saw lot
+   of other things like chipsets or CPU that were not correctly detected
+   or not detected at all. As I'm the chief-editor of a french hardware
+   website (www.x86-secret.com now integrated into www.canardpc.com), I
+   have access to lot of recent hardware and I can test and debug on quite
+   all available motherboards on the market. After adding detection for
+   all current CPUs, I've added detection for all current chipsets (SiS,
+   VIA, nVidia, Intel) and ECC Polling for AMD64, i875P and E7205. Then, I
+   decided to display some useful settings for the most popular chipsets.
+   For exemple, on i865PE/i875P series, memtest86+ will now display FSB &
+   Memory frequency, PAT status, memory timings, ECC status and the number
+   of memory channels. Next version will perhaps contain several
+   enhancements and bug-fixes.
+     __________________________________________________________________
+
+   -= Change Log =-
+
+   Here is all the latest change logs for memtest86+ :
+
+     *** Enhancements in v5.01 : ***
+     * New Features
+          + Added support for up to 2 TB of RAM on X64 CPUs
+          + Added experimental SMT support up to 32 cores (Press F2 to
+            enable at startup)
+          + Added complete detection for memory controllers
+          + Added Motherboard Manufacturer & Model reporting
+          + Added CPU temperature reporting
+          + Added enhanced Fail Safe Mode (Press F1 at startup)
+          + Added support for Intel "Sandy Bridge-E" CPUs
+          + Added support for Intel "Ivy Bridge" CPUs
+          + Added preliminary support for Intel "Haswell" CPUs (Core 4th
+            Gen)
+          + Added preliminary support for Intel "Haswell-ULT" CPUs
+          + Added support for AMD "Kabini" (K16) CPUs
+          + Added support for AMD "Bulldozer" CPUs
+          + Added support for AMD "Trinity" CPUs
+          + Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
+          + Added support for Intel Atom "Pineview" CPUs
+          + Added support for Intel Atom "Cedar Trail" CPUs
+          + Added SPD detection on most AMD Chipsets
+     * Bug Fixes
+          + Enforced Coreboot support
+          + Optimized run time for faster memory error detection
+          + Rewriten lots of memory timings detection cod
+          + Corrected bugs, bugs and more bugs (some could remain)
+
+   Enhancements in v4.20 :
+     * Added failsafe mode (press F1 at startup)
+     * Added support for Intel "Sandy Bridge" CPU
+     * Added support for AMD "fusion" CPU
+     * Corrected some memory brands not detected properlyt
+     * Various bug fixes
+
+   Enhancements in v4.10 :
+     * Added support for Core i7 Extreme CPU (32nm)
+     * Added support for Core i5/i3 (32 nm)
+     * Added support for Pentium Gxxxx (32 mn)
+     * Added support for Westmere-based Xeont
+     * Added preliminary support for Intel SNB A0-step
+     * Added support for AMD 6-cores CPU
+     * Added detection for Intel 3200/3210
+     * New installer for USB Key
+     * Corrected a crash at startup
+     * Many others bug fixes
+
+   Enhancements in v4.00 :
+     * Major Architectural changes
+     * First pass twice faster (reduced iterations)
+     * Detect DDR2/3 brands and part numbers on Intel DDR2/3 chipsets
+     * Added detection for Intel "Clarkdale/Gulftown" CPUt
+     * Added detection for AMD "Magny-Cours" CPU
+     * Added detection for Intel XMP Memory
+     * Added for CPU w/ 0.5/1.5/3/6/12/16/18/24MB L3
+     * Added "clean" DMI detection for DDR3/FBDIMM2
+     * Corrected detection for Intel "Lynnfield" CPU
+     * Corrected detection for AMD 45nm K10 CPU
+     * Solved crash with AMD Geode LX
+     * Complies with SMBIOS 2.6.1 specst
+     * Fixed compilation issues with gcc 4.2+
+     * Many others bug fixes
+
+   PS : Memtest86+ "3.00" was skipped and renamed 4.00 in order to avoid
+   confusion with the original Memtest.
+
+   Enhancements in v2.11 :
+     * Added support for Intel Core i5 (Lynnfield) CPU
+     * Added support for Intel P55 Southbridge
+     * Added support for Intel PM45/GM45/GM47 Mobile chipset
+     * Added support for Intel GL40/GS45 Mobile chipset
+     * Corrected DDR2/DDR3 detection on Intel x35/x45
+     * Corrected detection on some Core i7 CPU
+     * Fixed a bug with some AMI BIOS (freeze at startup)
+     * Various bug fixes
+
+   Enhancements in v2.10 :
+     * Added support for Intel Core i7 (Nehalem) CU
+     * Added support for Intel Atom Processors
+     * Added support for Intel G41/G43/G45 Chipsets
+     * Added support for Intel P43/P45 Chipsets
+     * Added support for Intel US15W (Poulsbo) Chipset
+     * Added support for Intel EP80579 (Tolapai) SoC CPU
+     * Added support for ICH10 Southbridge (SPD/DMI)
+     * Added detection for Intel 5000X
+     * Now fully aware of CPU w/ L3 cache (Core i7 & K10)
+     * Added workaround for DDR3 DMI detection
+     * Fixed Intel 5000Z chipset detection
+     * Fixed Memory Frequency on AMD K10
+     * Fixed cache detection on C7/Isaiah CPU
+     * Fix Memtest86+ not recognized as Linux Kernel
+
+   Enhancements in v2.01 :
+     * Added support for i945GM/PM/GME & i946PL/GZ
+     * Added support for iGM965/iGL960/iPM965/iGME965/iGLE960
+     * Added detection for SiS 649/656/671/672
+     * Added detection for i430MX/i430TX
+     * Added an optional beep mode (pass completed w/o error)
+     * Pass duration 20% reduced
+     * Removed the blinking cursor
+     * Reverted Test #0 to cached
+     * Solved a major bug in Memory Address Errors Reporting
+     * Patched for Intel-Powered Mac
+     * Corrected Intel 3-Series (P35/X38) chipset init
+     * Corrected a bug with SPD Display and ESB6300
+     * Correct a detection bug on P965/G965 C-Stepping
+     * Solved a incoherency with pass progress indicator
+     * Patched Makefile to compile on x86_64
+     * Bootable Memtest86+ ISO more compatible
+
+   Enhancements in v2.00 :
+     * Major Architectures changes
+     * Modulo test now use random pattern for better accuracy
+     * Added Advanced DMI Errors Reporting Mode
+     * Added support for bus ratio changes on Intel Core CPU
+     * Added support for non-integer bus ratio on latest Intel CPU
+     * Added SPD Data Display for all Intel Chipsets (more to come)
+     * Added serial support as a linux boot parameter (Thanks to Michal
+       S.)
+     * Added preliminary support for VIA CN Isaiah CPU
+     * Added preliminary support for Intel Nehalem
+     * Added support for VIA C7/C7-D/C7-M/Eden on Esther Core
+     * Added support for AMD K10 (Phenom) CPU w/ timings detection
+     * Added support for Intel Pentium E w/ 1 MB L2 Cache
+     * Added support for Intel Core 2 45nm (Penryn)
+     * Added support for FSB1333/FSB1600 Intel CPU
+     * Added support for Intel 5400A/5400B w/ timings detection
+     * Added support for Intel Q35/P35/G33/Q33 w/ timings detection
+     * Added support for Intel X38/X48 w/ timings detection
+     * Added preliminary support for Intel 5000P/V/Z
+     * Removed on-fly memory timings change (unstable)
+     * Numerous (really) bug fixes
+
+
+     __________________________________________________________________
+
+   -= Screenshots =-
+
+   Some screenshots of memtest86+ on third recent platforms (i865/i875 -
+   nForce2 - AMD64) :
+
+                             memtest86+ on i875P
+
+                          Memtest86+ V1.00 on i875P
+
+                              memtest86+ on nF2
+
+                         Memtest86+ V1.00 on nForce2
+
+                             memtest86+ on amd64
+
+                          Memtest86+ V1.00 on AMD64
+
+     __________________________________________________________________
+
+   -= Download (Pre-built & ISOs) =-
+
+   Here is some pre-compiled distributions of memtest86+. Memtest86+ comes
+   in three different way, first is a pre-build bootable ISO, second is a
+   bootable binary and third an installable package for creating a
+   bootable floppy. Third version are compressed in .zip and .tar.gz.
+
+     ** Memtest86+ V5.01 (27/09/2013)**
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zip)
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7) *NEW!*
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     __________________________________________________________________
+
+   -= Download (Source Code) =-
+
+   Here is the source code (under GPL) :
+
+     ** Memtest86+ V5.01 (27/09/2013) **
+     * Download - Memtest86+ V5.01 source code (.tar.gz) - 209.3 KB
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Memtest86+ V4.00 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Memtest86+ V2.11 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Memtest86+ V2.10 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Memtest86+ V2.01 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Memtest86+ V2.00 source code (.tar.gz) - 139.8 KB
+
+
+       _______________________________________________________________
+
+     -= Features Requests & Features Requests =-
+
+     An official forum for all features Requests & bugs fixes has been
+     created on forum.canardpc.com. Even if the main forum is in french,
+     the memtest86+ forum is *ONLY* in english. No registration required
+     to post but *NO* help will be given to hardware issues. This forum
+     is only dedicated to features requests and bug fixes for memtest86+.
+     All other post will be erased.
+
+                        -- Offical Memtest86+ Forum --
+
+       _______________________________________________________________
+
+     -= Memtest86+ Newsletter =-
+
+     The Memtest86+ Newsletter is only intended to provide an information
+     about new Memtest86+ updates. Nothing more will be sent. Of course,
+     the emails addresses provided will NEVER be passed to others and
+     will be kept STRICTLY confidential. Subscribers will received an
+     email with the changelog when a new version of memtest will be
+     released.
+
+                          Your email address_______
+
+   (*) Subscribe
+
+                               ( ) Un-Subscribe
+                                    Submit
+       _______________________________________________________________
+
+     -= Author of Memtest86+ =-
+
+     Memtest86+ is written by Samuel DEMEULEMEESTER, chief editor of
+     www.x86-secret.com (visit us). You can send an email to
+     memtest[nospam]@memtest.org (sorry for the syntax, remove [nospam]).
+     But don't expect an answer...
+
+     PS : Again, the original author of memtest86 is Chris Brady
+     (www.memtest86.com)
+       _______________________________________________________________
+
+     -= Contributors of Memtest86/Memtest86+ =-
+
+     The initial versions of the source files bootsect.S, setup.S, head.S
+     and build.c are from the Linux 1.2.1 kernel and have been heavily
+     modified.
+
+     Doug Sisk provided code to support a console connected via a serial
+     port.
+
+     Code to create BadRAM patterns was provided by Rick van Rein.
+
+     Screen buffer code was provided by Jani Averbach.
+
+     On-fly timings change for A64/i865/915 was provided by Eric and Wee
+
+     Eric Biederman reworked the build process making it far simpler and
+     also to produce a network bootable ELF image. He produce a nice
+     patch in mid-2003 which was included in memtest86+
+
+     Memtest86+ Loader (and lots of help) was provided by Eric Auer.
+
+     Udo Rader create a piece of code for better badram support (remove
+     duplicate)
+
+     Thanks to Franck Delattre (www.cpuid.org) for his help.
+
+     Thanks to Michal Schmidt, Yann D. and Warren Togami for unvaluable
+     support
+
+     Thanks to Remko van der Vossen (aka Wichetael) for the FAQ
+
+     Thanks to CDH for his help.
+
+     Thanks to lechenejb for memtest86+ logo.
+
+     Thanks to all 5.xx contributors, especially Passmark guys.
+
+     Thanks to all Beta-testers.
+       _______________________________________________________________
+
+     -= Donation for Memtest86+ =-
+
+     We occasionally receive email that ask for a doantion, so, here is
+     the donation section ! So, if you've found memtest86+ useful - maybe
+     it saved you some money or helped you to understand an issue that's
+     been bothering you for ages - then please consider making a donation
+     to support free software and help us face costs that occur
+     (webhosting, buying of some hardware for debugging, ...etc). Don't
+     forget donations are very welcome, but by no means required.
+     However, they will directly increases the amount of time we can
+     spend on developing mt86+. Any amount is greatly appreciated.
+
+     As an individual, your name will be asked in the Paypal's form and
+     it will be added to this page as a mt86+ donator. Due to numerous
+     abuses, we reserve the right to remove companies' names, especially
+     when they are not related to IT. We only accept true donations. We
+     don't sell links on our website for SEO purposes!
+
+     PayPal â The safer, easier way to pay online!
+
+     Donators List (Thank you !) :
+
+     * 07/18/18 -> Hostiserver
+     * 10/25/17 -> KoDDoS
+     * 06/15/18 -> Gadget Council - How to use Memtest
+     * 03/10/17 -> FirstSiteGuide
+     * 01/13/16 -> Makawebsitehub.com
+     * 07/04/16 -> Disk Drill data recovery app
+     * 02/11/17 -> Web Hosting Buddy
+     * 04/24/17 -> Andre Nathan
+     * 10/27/16 -> John Miller
+     * 07/18/18 -> BestVPNWeb
+     * 03/29/17 -> Blogotech
+     * 12/03/13 -> NDCHost.com
+     * 08/24/16 -> 120Hz-plus Monitors
+     * 05/13/18 -> Top 10 Website Hosting
+     * 04/29/19 -> Robert Urban
+     * 02/15/16 -> annuaire ladenise
+     * 02/11/17 -> Zocker Gear
+     * 01/03/16 -> Julie Henriksen
+     * 07/18/18 -> HRank
+
+     * 08/14/18 -> Scrum Master
+     * 08/18/15 -> Excel Easy
+     * 11/13/18 -> VPSServer.com
+     * 11/13/18 -> Hosted.nl
+     * 04/05/16 -> 3DForged.com
+     * 10/25/17 -> Hostingplus.cl
+     * 10/19/16 -> Web Hosting Professor
+     * 04/25/19 -> monovm.com
+     * 01/27/19 -> CodeFirst
+     * 11/09/18 -> RouterHosting.Com
+     * 11/12/18 -> Error Vault
+     * 05/13/18 -> CompareGameHosting
+     * 05/06/18 -> WhatsTheHost.com
+     * 04/05/18 -> Design Bombs
+     * 01/24/18 -> Zuziko
+     * 10/18/16 -> LoadView-Testing.com
+     * 09/29/16 -> UK Web Host Review
+     * 11/01/13 -> Nicolas Chevallier
+     * 02/18/16 -> Elite Gaming Computers
+     * 07/19/16 -> Thara MK
+
+     * 02/06/17 -> Hosting Manual
+     * 04/26/15 -> Coupofy.com
+     * 08/19/16 -> Elite Media
+     * 01/14/14 -> Scankampagne
+     * 10/03/16 -> Heinz Bucher
+     * 12/29/13 -> Webpromotion GmbH
+     * 03/01/16 -> domstechblog.com
+     * 07/30/15 -> Hostname.cl
+     * 05/09/18 -> Hornetsecurity GmbH
+     * 09/11/15 -> Every Cloud Tech
+     * 08/14/18 -> CryptoNewsZ
+     * 04/11/17 -> eSS
+     * 01/21/14 -> Buy Hosting
+     * 07/02/13 -> Webagentur Website Werkstatt
+     * 09/22/16 -> Coding Supply
+     * 06/03/16 -> Nosy Nation
+     * 07/11/16 -> Gaming PC Test
+     * 07/14/16 -> planetahosting.cl
+     * 08/25/16 -> Planetahosting
+     * 07/01/16 -> Hosting.cl
+
+     * 02/22/16 -> Ian Power
+     * 06/03/16 -> O365cloudexperts.com
+     * 10/16/17 -> Only4Gamers
+     * 02/27/17 -> 3DInsider.com
+     * 09/30/16 -> Jim Gordon
+     * 09/28/16 -> Yashar Ghaffarloo
+     * 04/10/17 -> Dimitri Sedich
+     * 04/15/16 -> arena-studio.fr
+       _______________________________________________________________
+
+          Valid HTML 4.01!       Powered By Apache!       Valid CSS!
+   Memtest86+
+   [INS: :INS]
+     __________________________________________________________________
+
+   LATEST VERSION : 5.01
+
+                                                  LAST UPDATE : 27/09/2013
+     __________________________________________________________________
+
+   Based on the well-known original memtest86 written by Chris Brady,
+   memtest86+ is a port by some members of the x86-secret team, now
+   working at www.canardpc.com. Our goal is to provide an up-to-date and
+   completly reliable version of this software tool aimed at memory
+   failures detection. Memtest86+ was, is and will always be a free,
+   open-source software. The original Memtest86 is now handled by
+   PassMark® Software Pty Ltd.
+   Memtest86+ is released under the terms of the Gnu Public License (GPL).
+   No restrictions for use, private or commercial exist other than the
+   ones mentioned in the Gnu Public License (GPL). Texts about the
+   original version was taken from the original website and written by
+   Chris Brady.
+   PS : A newsletter for memtest86+ updates is available / Donation for
+   Memtest86+ welcome. Please support free GPL software.
+     __________________________________________________________________
+
+     * About Memtest86+
+          + History
+          + Change log
+          + Screenshots
+          + Download (Pre-built & ISOs)
+          + Download (Source Code)
+          + Features requests
+          + Bug Fixes requests
+          + Official Forum
+          + Newsletter
+
+     * About the original Memtest86 (Unchanged)
+          + Online Commands
+          + Memory Sizing
+          + Error Display
+          + Troubleshooting Memory Errors
+          + Change Log
+          + Acknowledgments
+
+     * About tests performed
+          + Memory Testing Philosophy
+          + Memtest86 Test Algorithms
+          + Individual Test Descriptions
+
+     * About the authors & contributors
+          + Author of Memtest86+
+          + Contributors of Memtest86/Memtest86+
+          + Donation from memtest86+ / Donator list
+     __________________________________________________________________
+
+   -= History =-
+
+   The first version of Memtest86+ was released on early 2004, based on
+   memtest86 v3.0 that was not updated since mid-2002. Our main challenge
+   was to provide an up-to-date version of this useful tool, as reliable
+   than the original. Our work started when we got the first AMD64 system.
+   Unfortunatly, the original memtest v3.0 didn't run at all. After
+   looking at the source code, we fixed the bug.After some days, I saw lot
+   of other things like chipsets or CPU that were not correctly detected
+   or not detected at all. As I'm the chief-editor of a french hardware
+   website (www.x86-secret.com now integrated into www.canardpc.com), I
+   have access to lot of recent hardware and I can test and debug on quite
+   all available motherboards on the market. After adding detection for
+   all current CPUs, I've added detection for all current chipsets (SiS,
+   VIA, nVidia, Intel) and ECC Polling for AMD64, i875P and E7205. Then, I
+   decided to display some useful settings for the most popular chipsets.
+   For exemple, on i865PE/i875P series, memtest86+ will now display FSB &
+   Memory frequency, PAT status, memory timings, ECC status and the number
+   of memory channels. Next version will perhaps contain several
+   enhancements and bug-fixes.
+     __________________________________________________________________
+
+   -= Change Log =-
+
+   Here is all the latest change logs for memtest86+ :
+
+     *** Enhancements in v5.01 : ***
+     * New Features
+          + Added support for up to 2 TB of RAM on X64 CPUs
+          + Added experimental SMT support up to 32 cores (Press F2 to
+            enable at startup)
+          + Added complete detection for memory controllers
+          + Added Motherboard Manufacturer & Model reporting
+          + Added CPU temperature reporting
+          + Added enhanced Fail Safe Mode (Press F1 at startup)
+          + Added support for Intel "Sandy Bridge-E" CPUs
+          + Added support for Intel "Ivy Bridge" CPUs
+          + Added preliminary support for Intel "Haswell" CPUs (Core 4th
+            Gen)
+          + Added preliminary support for Intel "Haswell-ULT" CPUs
+          + Added support for AMD "Kabini" (K16) CPUs
+          + Added support for AMD "Bulldozer" CPUs
+          + Added support for AMD "Trinity" CPUs
+          + Added support for AMD E-/C-/G-/Z- "Bobcat" CPUs
+          + Added support for Intel Atom "Pineview" CPUs
+          + Added support for Intel Atom "Cedar Trail" CPUs
+          + Added SPD detection on most AMD Chipsets
+     * Bug Fixes
+          + Enforced Coreboot support
+          + Optimized run time for faster memory error detection
+          + Rewriten lots of memory timings detection cod
+          + Corrected bugs, bugs and more bugs (some could remain)
+
+   Enhancements in v4.20 :
+     * Added failsafe mode (press F1 at startup)
+     * Added support for Intel "Sandy Bridge" CPU
+     * Added support for AMD "fusion" CPU
+     * Corrected some memory brands not detected properlyt
+     * Various bug fixes
+
+   Enhancements in v4.10 :
+     * Added support for Core i7 Extreme CPU (32nm)
+     * Added support for Core i5/i3 (32 nm)
+     * Added support for Pentium Gxxxx (32 mn)
+     * Added support for Westmere-based Xeont
+     * Added preliminary support for Intel SNB A0-step
+     * Added support for AMD 6-cores CPU
+     * Added detection for Intel 3200/3210
+     * New installer for USB Key
+     * Corrected a crash at startup
+     * Many others bug fixes
+
+   Enhancements in v4.00 :
+     * Major Architectural changes
+     * First pass twice faster (reduced iterations)
+     * Detect DDR2/3 brands and part numbers on Intel DDR2/3 chipsets
+     * Added detection for Intel "Clarkdale/Gulftown" CPUt
+     * Added detection for AMD "Magny-Cours" CPU
+     * Added detection for Intel XMP Memory
+     * Added for CPU w/ 0.5/1.5/3/6/12/16/18/24MB L3
+     * Added "clean" DMI detection for DDR3/FBDIMM2
+     * Corrected detection for Intel "Lynnfield" CPU
+     * Corrected detection for AMD 45nm K10 CPU
+     * Solved crash with AMD Geode LX
+     * Complies with SMBIOS 2.6.1 specst
+     * Fixed compilation issues with gcc 4.2+
+     * Many others bug fixes
+
+   PS : Memtest86+ "3.00" was skipped and renamed 4.00 in order to avoid
+   confusion with the original Memtest.
+
+   Enhancements in v2.11 :
+     * Added support for Intel Core i5 (Lynnfield) CPU
+     * Added support for Intel P55 Southbridge
+     * Added support for Intel PM45/GM45/GM47 Mobile chipset
+     * Added support for Intel GL40/GS45 Mobile chipset
+     * Corrected DDR2/DDR3 detection on Intel x35/x45
+     * Corrected detection on some Core i7 CPU
+     * Fixed a bug with some AMI BIOS (freeze at startup)
+     * Various bug fixes
+
+   Enhancements in v2.10 :
+     * Added support for Intel Core i7 (Nehalem) CU
+     * Added support for Intel Atom Processors
+     * Added support for Intel G41/G43/G45 Chipsets
+     * Added support for Intel P43/P45 Chipsets
+     * Added support for Intel US15W (Poulsbo) Chipset
+     * Added support for Intel EP80579 (Tolapai) SoC CPU
+     * Added support for ICH10 Southbridge (SPD/DMI)
+     * Added detection for Intel 5000X
+     * Now fully aware of CPU w/ L3 cache (Core i7 & K10)
+     * Added workaround for DDR3 DMI detection
+     * Fixed Intel 5000Z chipset detection
+     * Fixed Memory Frequency on AMD K10
+     * Fixed cache detection on C7/Isaiah CPU
+     * Fix Memtest86+ not recognized as Linux Kernel
+
+   Enhancements in v2.01 :
+     * Added support for i945GM/PM/GME & i946PL/GZ
+     * Added support for iGM965/iGL960/iPM965/iGME965/iGLE960
+     * Added detection for SiS 649/656/671/672
+     * Added detection for i430MX/i430TX
+     * Added an optional beep mode (pass completed w/o error)
+     * Pass duration 20% reduced
+     * Removed the blinking cursor
+     * Reverted Test #0 to cached
+     * Solved a major bug in Memory Address Errors Reporting
+     * Patched for Intel-Powered Mac
+     * Corrected Intel 3-Series (P35/X38) chipset init
+     * Corrected a bug with SPD Display and ESB6300
+     * Correct a detection bug on P965/G965 C-Stepping
+     * Solved a incoherency with pass progress indicator
+     * Patched Makefile to compile on x86_64
+     * Bootable Memtest86+ ISO more compatible
+
+   Enhancements in v2.00 :
+     * Major Architectures changes
+     * Modulo test now use random pattern for better accuracy
+     * Added Advanced DMI Errors Reporting Mode
+     * Added support for bus ratio changes on Intel Core CPU
+     * Added support for non-integer bus ratio on latest Intel CPU
+     * Added SPD Data Display for all Intel Chipsets (more to come)
+     * Added serial support as a linux boot parameter (Thanks to Michal
+       S.)
+     * Added preliminary support for VIA CN Isaiah CPU
+     * Added preliminary support for Intel Nehalem
+     * Added support for VIA C7/C7-D/C7-M/Eden on Esther Core
+     * Added support for AMD K10 (Phenom) CPU w/ timings detection
+     * Added support for Intel Pentium E w/ 1 MB L2 Cache
+     * Added support for Intel Core 2 45nm (Penryn)
+     * Added support for FSB1333/FSB1600 Intel CPU
+     * Added support for Intel 5400A/5400B w/ timings detection
+     * Added support for Intel Q35/P35/G33/Q33 w/ timings detection
+     * Added support for Intel X38/X48 w/ timings detection
+     * Added preliminary support for Intel 5000P/V/Z
+     * Removed on-fly memory timings change (unstable)
+     * Numerous (really) bug fixes
+
+
+     __________________________________________________________________
+
+   -= Screenshots =-
+
+   Some screenshots of memtest86+ on third recent platforms (i865/i875 -
+   nForce2 - AMD64) :
+
+                             memtest86+ on i875P
+
+                          Memtest86+ V1.00 on i875P
+
+                              memtest86+ on nF2
+
+                         Memtest86+ V1.00 on nForce2
+
+                             memtest86+ on amd64
+
+                          Memtest86+ V1.00 on AMD64
+
+     __________________________________________________________________
+
+   -= Download (Pre-built & ISOs) =-
+
+   Here is some pre-compiled distributions of memtest86+. Memtest86+ comes
+   in three different way, first is a pre-build bootable ISO, second is a
+   bootable binary and third an installable package for creating a
+   bootable floppy. Third version are compressed in .zip and .tar.gz.
+
+     ** Memtest86+ V5.01 (27/09/2013)**
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zip)
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7) *NEW!*
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Auto-installer for USB Key (Win 9x/2k/xp/7)
+     * Download - Pre-Compiled EXE file (Pure DOS - Obsolete)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Pre-Compiled Bootable ISO (.gz)
+     * Download - Pre-Compiled Bootable ISO (.zip)
+     * Download - Pre-Compiled Bootable Binary (.gz)
+     * Download - Pre-Compiled Bootable Binary (.zi
+     * Download - Pre-Compiled EXE file for USB Key (Pure DOS)
+     * Download - Pre-Compiled package for Floppy (DOS - Win)
+
+
+
+     __________________________________________________________________
+
+   -= Download (Source Code) =-
+
+   Here is the source code (under GPL) :
+
+     ** Memtest86+ V5.01 (27/09/2013) **
+     * Download - Memtest86+ V5.01 source code (.tar.gz) - 209.3 KB
+
+
+     * Memtest86+ V4.20 (25/01/2011) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.10 (04/05/2010) *
+
+     * Download - Memtest86+ V4.10 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V4.00 (22/09/2009) *
+
+     * Download - Memtest86+ V4.00 source code (.tar.gz) - 263.1 KB
+
+     * Memtest86+ V2.11 (22/12/2008) *
+
+     * Download - Memtest86+ V2.11 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.10 (15/11/2008) *
+
+     * Download - Memtest86+ V2.10 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.01 (21/02/2008) *
+
+     * Download - Memtest86+ V2.01 source code (.tar.gz) - 139.8 KB
+
+     * Memtest86+ V2.00 (08/02/2008) *
+
+     * Download - Memtest86+ V2.00 source code (.tar.gz) - 139.8 KB
+
+
+       _______________________________________________________________
+
+     -= Features Requests & Features Requests =-
+
+     An official forum for all features Requests & bugs fixes has been
+     created on forum.canardpc.com. Even if the main forum is in french,
+     the memtest86+ forum is *ONLY* in english. No registration required
+     to post but *NO* help will be given to hardware issues. This forum
+     is only dedicated to features requests and bug fixes for memtest86+.
+     All other post will be erased.
+
+                        -- Offical Memtest86+ Forum --
+
+       _______________________________________________________________
+
+     -= Memtest86+ Newsletter =-
+
+     The Memtest86+ Newsletter is only intended to provide an information
+     about new Memtest86+ updates. Nothing more will be sent. Of course,
+     the emails addresses provided will NEVER be passed to others and
+     will be kept STRICTLY confidential. Subscribers will received an
+     email with the changelog when a new version of memtest will be
+     released.
+
+                          Your email address_______
+
+   (*) Subscribe
+
+                               ( ) Un-Subscribe
+                                    Submit
+       _______________________________________________________________
+
+     -= Author of Memtest86+ =-
+
+     Memtest86+ is written by Samuel DEMEULEMEESTER, chief editor of
+     www.x86-secret.com (visit us). You can send an email to
+     memtest[nospam]@memtest.org (sorry for the syntax, remove [nospam]).
+     But don't expect an answer...
+
+     PS : Again, the original author of memtest86 is Chris Brady
+     (www.memtest86.com)
+       _______________________________________________________________
+
+     -= Contributors of Memtest86/Memtest86+ =-
+
+     The initial versions of the source files bootsect.S, setup.S, head.S
+     and build.c are from the Linux 1.2.1 kernel and have been heavily
+     modified.
+
+     Doug Sisk provided code to support a console connected via a serial
+     port.
+
+     Code to create BadRAM patterns was provided by Rick van Rein.
+
+     Screen buffer code was provided by Jani Averbach.
+
+     On-fly timings change for A64/i865/915 was provided by Eric and Wee
+
+     Eric Biederman reworked the build process making it far simpler and
+     also to produce a network bootable ELF image. He produce a nice
+     patch in mid-2003 which was included in memtest86+
+
+     Memtest86+ Loader (and lots of help) was provided by Eric Auer.
+
+     Udo Rader create a piece of code for better badram support (remove
+     duplicate)
+
+     Thanks to Franck Delattre (www.cpuid.org) for his help.
+
+     Thanks to Michal Schmidt, Yann D. and Warren Togami for unvaluable
+     support
+
+     Thanks to Remko van der Vossen (aka Wichetael) for the FAQ
+
+     Thanks to CDH for his help.
+
+     Thanks to lechenejb for memtest86+ logo.
+
+     Thanks to all 5.xx contributors, especially Passmark guys.
+
+     Thanks to all Beta-testers.
+       _______________________________________________________________
+
+     -= Donation for Memtest86+ =-
+
+     We occasionally receive email that ask for a doantion, so, here is
+     the donation section ! So, if you've found memtest86+ useful - maybe
+     it saved you some money or helped you to understand an issue that's
+     been bothering you for ages - then please consider making a donation
+     to support free software and help us face costs that occur
+     (webhosting, buying of some hardware for debugging, ...etc). Don't
+     forget donations are very welcome, but by no means required.
+     However, they will directly increases the amount of time we can
+     spend on developing mt86+. Any amount is greatly appreciated.
+
+     As an individual, your name will be asked in the Paypal's form and
+     it will be added to this page as a mt86+ donator. Due to numerous
+     abuses, we reserve the right to remove companies' names, especially
+     when they are not related to IT. We only accept true donations. We
+     don't sell links on our website for SEO purposes!
+
+     PayPal – The safer, easier way to pay online!
+
+     Donators List (Thank you !) :
+
+     * 07/18/18 -> Hostiserver
+     * 10/25/17 -> KoDDoS
+     * 06/15/18 -> Gadget Council - How to use Memtest
+     * 03/10/17 -> FirstSiteGuide
+     * 01/13/16 -> Makawebsitehub.com
+     * 07/04/16 -> Disk Drill data recovery app
+     * 02/11/17 -> Web Hosting Buddy
+     * 04/24/17 -> Andre Nathan
+     * 10/27/16 -> John Miller
+     * 07/18/18 -> BestVPNWeb
+     * 03/29/17 -> Blogotech
+     * 12/03/13 -> NDCHost.com
+     * 08/24/16 -> 120Hz-plus Monitors
+     * 05/13/18 -> Top 10 Website Hosting
+     * 04/29/19 -> Robert Urban
+     * 02/15/16 -> annuaire ladenise
+     * 02/11/17 -> Zocker Gear
+     * 01/03/16 -> Julie Henriksen
+     * 07/18/18 -> HRank
+
+     * 08/14/18 -> Scrum Master
+     * 08/18/15 -> Excel Easy
+     * 11/13/18 -> VPSServer.com
+     * 11/13/18 -> Hosted.nl
+     * 04/05/16 -> 3DForged.com
+     * 10/25/17 -> Hostingplus.cl
+     * 10/19/16 -> Web Hosting Professor
+     * 04/25/19 -> monovm.com
+     * 01/27/19 -> CodeFirst
+     * 11/09/18 -> RouterHosting.Com
+     * 11/12/18 -> Error Vault
+     * 05/13/18 -> CompareGameHosting
+     * 05/06/18 -> WhatsTheHost.com
+     * 04/05/18 -> Design Bombs
+     * 01/24/18 -> Zuziko
+     * 10/18/16 -> LoadView-Testing.com
+     * 09/29/16 -> UK Web Host Review
+     * 11/01/13 -> Nicolas Chevallier
+     * 02/18/16 -> Elite Gaming Computers
+     * 07/19/16 -> Thara MK
+
+     * 02/06/17 -> Hosting Manual
+     * 04/26/15 -> Coupofy.com
+     * 08/19/16 -> Elite Media
+     * 01/14/14 -> Scankampagne
+     * 10/03/16 -> Heinz Bucher
+     * 12/29/13 -> Webpromotion GmbH
+     * 03/01/16 -> domstechblog.com
+     * 07/30/15 -> Hostname.cl
+     * 05/09/18 -> Hornetsecurity GmbH
+     * 09/11/15 -> Every Cloud Tech
+     * 08/14/18 -> CryptoNewsZ
+     * 04/11/17 -> eSS
+     * 01/21/14 -> Buy Hosting
+     * 07/02/13 -> Webagentur Website Werkstatt
+     * 09/22/16 -> Coding Supply
+     * 06/03/16 -> Nosy Nation
+     * 07/11/16 -> Gaming PC Test
+     * 07/14/16 -> planetahosting.cl
+     * 08/25/16 -> Planetahosting
+     * 07/01/16 -> Hosting.cl
+
+     * 02/22/16 -> Ian Power
+     * 06/03/16 -> O365cloudexperts.com
+     * 10/16/17 -> Only4Gamers
+     * 02/27/17 -> 3DInsider.com
+     * 09/30/16 -> Jim Gordon
+     * 09/28/16 -> Yashar Ghaffarloo
+     * 04/10/17 -> Dimitri Sedich
+     * 04/15/16 -> arena-studio.fr
+       _______________________________________________________________
+
+          Valid HTML 4.01!       Powered By Apache!       Valid CSS!

@@ -1,0 +1,595 @@
+   www.prismmodelchecker.org
+   P
+   ______________________________ Search
+
+     * Home
+     *  •
+     * About
+          + » About PRISM
+          + » People
+          + » Sponsors
+          + » Contact
+          + » News
+          + » Screenshots
+          + » Other tools
+          + » Links
+     *  •
+     * Downloads
+          + » PRISM
+          + » Development versions
+          + » Benchmarks
+          + » PRISM-games
+          + » Other downloads
+     *  •
+     * Documentation
+          + » Installation
+          + » Manual
+          + » FAQ
+          + » Tutorial
+          + » Lectures
+     *  •
+     * Manual
+     *  •
+     * Tutorial
+     *  •
+     * Publications
+          + » Selected publications
+          + » PRISM publications
+          + » PRISM bibliography
+          + » External publications
+          + » Search
+     *  •
+     * Case Studies
+     *  •
+     * Support
+          + » Installation FAQ
+          + » PRISM FAQ
+          + » Forum (Google)
+     *  •
+     * Developers
+          + » Developer resources
+          + » Developer forum
+     *  •
+     * PRISM-games
+          + » Download
+          + » Publications
+            PRISM-games
+            PRISM-games is an extension of PRISM for probabilistic model
+            checking of stochastic multi-player games.
+            See the website and read the papers for more information.
+            PRISM is a probabilistic model checker, a tool for formal
+            modelling and analysis of systems that exhibit random or
+            probabilistic behaviour. It has been used to analyse systems
+            from many different application domains, including
+            communication and multimedia protocols, randomised distributed
+            algorithms, security protocols, biological systems and many
+            others.
+            Example PRISM graph PRISM can build and analyse several types
+            of probabilistic models:
+               o discrete-time Markov chains (DTMCs)
+               o continuous-time Markov chains (CTMCs)
+               o Markov decision processes (MDPs)
+               o probabilistic automata (PAs)
+               o probabilistic timed automata (PTAs)
+            plus extensions of these models with costs and rewards.
+            Models are described using the PRISM language, a simple,
+            state-based language. PRISM provides support for automated
+            analysis of a wide range of quantitative properties of these
+            models, e.g. "what is the probability of a failure causing the
+            system to shut down within 4 hours?", "what is the worst-case
+            probability of the protocol terminating in error, over all
+            possible initial configurations?", "what is the expected size
+            of the message queue after 30 minutes?", or "what is the
+            worst-case expected time taken for the algorithm to
+            terminate?". The property specification language incorporates
+            the temporal logics PCTL, CSL, LTL and PCTL*, as well as
+            extensions for quantitative specifications and costs/rewards.
+            PRISM incorporates state-of-the art symbolic data structures
+            and algorithms, based on BDDs (Binary Decision Diagrams) and
+            MTBDDs (Multi-Terminal Binary Decision Diagrams) [KNP04b,
+            Par02]. It also includes a discrete-event simulation engine,
+            providing support for approximate/statistical model checking,
+            and implementations of various different analysis techniques,
+            such as quantitative abstraction refinement and symmetry
+            reduction.
+            PRISM is free and open source, released under the GNU General
+            Public License (GPL).
+            To cite PRISM, please use the most recent tool paper, from
+            CAV'11:
+               o Marta Kwiatkowska, Gethin Norman and David Parker. PRISM
+                 4.0: Verification of Probabilistic Real-time Systems. In
+                 Proc. 23rd International Conference on Computer Aided
+                 Verification (CAV’11), volume 6806 of LNCS, pages
+                 585-591, Springer, 2011. [pdf] [bib]
+            Valid HTML 4.1 Powered by PHP Valid CSS Site hosted at the
+            Department of Computer Science, University of Oxford
+
+Latest News
+            September 2019: Senior researcher position and studentship are
+            available at Oxford on the forthcoming FUN2MODEL project
+            project. Applications close 30 Oct and 28 Oct respectively,
+            and interviews will be on 8 Nov 2019. See here and here for
+            more details.
+            May 2019: PRISM-games 2.1 is now available, providing simpler
+            installation/compilation, updates from PRISM 4.5 and more.
+            More information here.
+            April 2019: PRISM 4.5 is now available, including a wide range
+            of updates and fixes for users and developers. More
+            information here.
+            [ more news... ]
+   www.prismmodelchecker.org
+   P
+   ______________________________ Search
+
+     * Home
+     *  •
+     * About
+          + » About PRISM
+          + » People
+          + » Sponsors
+          + » Contact
+          + » News
+          + » Screenshots
+          + » Other tools
+          + » Links
+     *  •
+     * Downloads
+          + » PRISM
+          + » Development versions
+          + » Benchmarks
+          + » PRISM-games
+          + » Other downloads
+     *  •
+     * Documentation
+          + » Installation
+          + » Manual
+          + » FAQ
+          + » Tutorial
+          + » Lectures
+     *  •
+     * Manual
+     *  •
+     * Tutorial
+     *  •
+     * Publications
+          + » Selected publications
+          + » PRISM publications
+          + » PRISM bibliography
+          + » External publications
+          + » Search
+     *  •
+     * Case Studies
+     *  •
+     * Support
+          + » Installation FAQ
+          + » PRISM FAQ
+          + » Forum (Google)
+     *  •
+     * Developers
+          + » Developer resources
+          + » Developer forum
+     *  •
+     * PRISM-games
+          + » Download
+          + » Publications
+            PRISM-games
+            PRISM-games is an extension of PRISM for probabilistic model
+            checking of stochastic multi-player games.
+            See the website and read the papers for more information.
+            PRISM is a probabilistic model checker, a tool for formal
+            modelling and analysis of systems that exhibit random or
+            probabilistic behaviour. It has been used to analyse systems
+            from many different application domains, including
+            communication and multimedia protocols, randomised distributed
+            algorithms, security protocols, biological systems and many
+            others.
+            Example PRISM graph PRISM can build and analyse several types
+            of probabilistic models:
+               o discrete-time Markov chains (DTMCs)
+               o continuous-time Markov chains (CTMCs)
+               o Markov decision processes (MDPs)
+               o probabilistic automata (PAs)
+               o probabilistic timed automata (PTAs)
+            plus extensions of these models with costs and rewards.
+            Models are described using the PRISM language, a simple,
+            state-based language. PRISM provides support for automated
+            analysis of a wide range of quantitative properties of these
+            models, e.g. "what is the probability of a failure causing the
+            system to shut down within 4 hours?", "what is the worst-case
+            probability of the protocol terminating in error, over all
+            possible initial configurations?", "what is the expected size
+            of the message queue after 30 minutes?", or "what is the
+            worst-case expected time taken for the algorithm to
+            terminate?". The property specification language incorporates
+            the temporal logics PCTL, CSL, LTL and PCTL*, as well as
+            extensions for quantitative specifications and costs/rewards.
+            PRISM incorporates state-of-the art symbolic data structures
+            and algorithms, based on BDDs (Binary Decision Diagrams) and
+            MTBDDs (Multi-Terminal Binary Decision Diagrams) [KNP04b,
+            Par02]. It also includes a discrete-event simulation engine,
+            providing support for approximate/statistical model checking,
+            and implementations of various different analysis techniques,
+            such as quantitative abstraction refinement and symmetry
+            reduction.
+            PRISM is free and open source, released under the GNU General
+            Public License (GPL).
+            To cite PRISM, please use the most recent tool paper, from
+            CAV'11:
+               o Marta Kwiatkowska, Gethin Norman and David Parker. PRISM
+                 4.0: Verification of Probabilistic Real-time Systems. In
+                 Proc. 23rd International Conference on Computer Aided
+                 Verification (CAV’11), volume 6806 of LNCS, pages
+                 585-591, Springer, 2011. [pdf] [bib]
+            Valid HTML 4.1 Powered by PHP Valid CSS Site hosted at the
+            Department of Computer Science, University of Oxford
+
+Latest News
+            September 2019: Senior researcher position and studentship are
+            available at Oxford on the forthcoming FUN2MODEL project
+            project. Applications close 30 Oct and 28 Oct respectively,
+            and interviews will be on 8 Nov 2019. See here and here for
+            more details.
+            May 2019: PRISM-games 2.1 is now available, providing simpler
+            installation/compilation, updates from PRISM 4.5 and more.
+            More information here.
+            April 2019: PRISM 4.5 is now available, including a wide range
+            of updates and fixes for users and developers. More
+            information here.
+            [ more news... ]
+   www.prismmodelchecker.org
+   P
+   ______________________________ Search
+
+     * Home
+     *  •
+     * About
+          + » About PRISM
+          + » People
+          + » Sponsors
+          + » Contact
+          + » News
+          + » Screenshots
+          + » Other tools
+          + » Links
+     *  •
+     * Downloads
+          + » PRISM
+          + » Development versions
+          + » Benchmarks
+          + » PRISM-games
+          + » Other downloads
+     *  •
+     * Documentation
+          + » Installation
+          + » Manual
+          + » FAQ
+          + » Tutorial
+          + » Lectures
+     *  •
+     * Manual
+     *  •
+     * Tutorial
+     *  •
+     * Publications
+          + » Selected publications
+          + » PRISM publications
+          + » PRISM bibliography
+          + » External publications
+          + » Search
+     *  •
+     * Case Studies
+     *  •
+     * Support
+          + » Installation FAQ
+          + » PRISM FAQ
+          + » Forum (Google)
+     *  •
+     * Developers
+          + » Developer resources
+          + » Developer forum
+     *  •
+     * PRISM-games
+          + » Download
+          + » Publications
+            PRISM-games
+            PRISM-games is an extension of PRISM for probabilistic model
+            checking of stochastic multi-player games.
+            See the website and read the papers for more information.
+            PRISM is a probabilistic model checker, a tool for formal
+            modelling and analysis of systems that exhibit random or
+            probabilistic behaviour. It has been used to analyse systems
+            from many different application domains, including
+            communication and multimedia protocols, randomised distributed
+            algorithms, security protocols, biological systems and many
+            others.
+            Example PRISM graph PRISM can build and analyse several types
+            of probabilistic models:
+               o discrete-time Markov chains (DTMCs)
+               o continuous-time Markov chains (CTMCs)
+               o Markov decision processes (MDPs)
+               o probabilistic automata (PAs)
+               o probabilistic timed automata (PTAs)
+            plus extensions of these models with costs and rewards.
+            Models are described using the PRISM language, a simple,
+            state-based language. PRISM provides support for automated
+            analysis of a wide range of quantitative properties of these
+            models, e.g. "what is the probability of a failure causing the
+            system to shut down within 4 hours?", "what is the worst-case
+            probability of the protocol terminating in error, over all
+            possible initial configurations?", "what is the expected size
+            of the message queue after 30 minutes?", or "what is the
+            worst-case expected time taken for the algorithm to
+            terminate?". The property specification language incorporates
+            the temporal logics PCTL, CSL, LTL and PCTL*, as well as
+            extensions for quantitative specifications and costs/rewards.
+            PRISM incorporates state-of-the art symbolic data structures
+            and algorithms, based on BDDs (Binary Decision Diagrams) and
+            MTBDDs (Multi-Terminal Binary Decision Diagrams) [KNP04b,
+            Par02]. It also includes a discrete-event simulation engine,
+            providing support for approximate/statistical model checking,
+            and implementations of various different analysis techniques,
+            such as quantitative abstraction refinement and symmetry
+            reduction.
+            PRISM is free and open source, released under the GNU General
+            Public License (GPL).
+            To cite PRISM, please use the most recent tool paper, from
+            CAV'11:
+               o Marta Kwiatkowska, Gethin Norman and David Parker. PRISM
+                 4.0: Verification of Probabilistic Real-time Systems. In
+                 Proc. 23rd International Conference on Computer Aided
+                 Verification (CAV’11), volume 6806 of LNCS, pages
+                 585-591, Springer, 2011. [pdf] [bib]
+            Valid HTML 4.1 Powered by PHP Valid CSS Site hosted at the
+            Department of Computer Science, University of Oxford
+
+Latest News
+            September 2019: Senior researcher position and studentship are
+            available at Oxford on the forthcoming FUN2MODEL project
+            project. Applications close 30 Oct and 28 Oct respectively,
+            and interviews will be on 8 Nov 2019. See here and here for
+            more details.
+            May 2019: PRISM-games 2.1 is now available, providing simpler
+            installation/compilation, updates from PRISM 4.5 and more.
+            More information here.
+            April 2019: PRISM 4.5 is now available, including a wide range
+            of updates and fixes for users and developers. More
+            information here.
+            [ more news... ]
+   www.prismmodelchecker.org
+   P
+   ______________________________ Search
+
+     * Home
+     *  •
+     * About
+          + » About PRISM
+          + » People
+          + » Sponsors
+          + » Contact
+          + » News
+          + » Screenshots
+          + » Other tools
+          + » Links
+     *  •
+     * Downloads
+          + » PRISM
+          + » Development versions
+          + » Benchmarks
+          + » PRISM-games
+          + » Other downloads
+     *  •
+     * Documentation
+          + » Installation
+          + » Manual
+          + » FAQ
+          + » Tutorial
+          + » Lectures
+     *  •
+     * Manual
+     *  •
+     * Tutorial
+     *  •
+     * Publications
+          + » Selected publications
+          + » PRISM publications
+          + » PRISM bibliography
+          + » External publications
+          + » Search
+     *  •
+     * Case Studies
+     *  •
+     * Support
+          + » Installation FAQ
+          + » PRISM FAQ
+          + » Forum (Google)
+     *  •
+     * Developers
+          + » Developer resources
+          + » Developer forum
+     *  •
+     * PRISM-games
+          + » Download
+          + » Publications
+            PRISM-games
+            PRISM-games is an extension of PRISM for probabilistic model
+            checking of stochastic multi-player games.
+            See the website and read the papers for more information.
+            PRISM is a probabilistic model checker, a tool for formal
+            modelling and analysis of systems that exhibit random or
+            probabilistic behaviour. It has been used to analyse systems
+            from many different application domains, including
+            communication and multimedia protocols, randomised distributed
+            algorithms, security protocols, biological systems and many
+            others.
+            Example PRISM graph PRISM can build and analyse several types
+            of probabilistic models:
+               o discrete-time Markov chains (DTMCs)
+               o continuous-time Markov chains (CTMCs)
+               o Markov decision processes (MDPs)
+               o probabilistic automata (PAs)
+               o probabilistic timed automata (PTAs)
+            plus extensions of these models with costs and rewards.
+            Models are described using the PRISM language, a simple,
+            state-based language. PRISM provides support for automated
+            analysis of a wide range of quantitative properties of these
+            models, e.g. "what is the probability of a failure causing the
+            system to shut down within 4 hours?", "what is the worst-case
+            probability of the protocol terminating in error, over all
+            possible initial configurations?", "what is the expected size
+            of the message queue after 30 minutes?", or "what is the
+            worst-case expected time taken for the algorithm to
+            terminate?". The property specification language incorporates
+            the temporal logics PCTL, CSL, LTL and PCTL*, as well as
+            extensions for quantitative specifications and costs/rewards.
+            PRISM incorporates state-of-the art symbolic data structures
+            and algorithms, based on BDDs (Binary Decision Diagrams) and
+            MTBDDs (Multi-Terminal Binary Decision Diagrams) [KNP04b,
+            Par02]. It also includes a discrete-event simulation engine,
+            providing support for approximate/statistical model checking,
+            and implementations of various different analysis techniques,
+            such as quantitative abstraction refinement and symmetry
+            reduction.
+            PRISM is free and open source, released under the GNU General
+            Public License (GPL).
+            To cite PRISM, please use the most recent tool paper, from
+            CAV'11:
+               o Marta Kwiatkowska, Gethin Norman and David Parker. PRISM
+                 4.0: Verification of Probabilistic Real-time Systems. In
+                 Proc. 23rd International Conference on Computer Aided
+                 Verification (CAV’11), volume 6806 of LNCS, pages
+                 585-591, Springer, 2011. [pdf] [bib]
+            Valid HTML 4.1 Powered by PHP Valid CSS Site hosted at the
+            Department of Computer Science, University of Oxford
+
+Latest News
+            September 2019: Senior researcher position and studentship are
+            available at Oxford on the forthcoming FUN2MODEL project
+            project. Applications close 30 Oct and 28 Oct respectively,
+            and interviews will be on 8 Nov 2019. See here and here for
+            more details.
+            May 2019: PRISM-games 2.1 is now available, providing simpler
+            installation/compilation, updates from PRISM 4.5 and more.
+            More information here.
+            April 2019: PRISM 4.5 is now available, including a wide range
+            of updates and fixes for users and developers. More
+            information here.
+            [ more news... ]
+   www.prismmodelchecker.org
+   P
+   ______________________________ Search
+
+     * Home
+     *  •
+     * About
+          + » About PRISM
+          + » People
+          + » Sponsors
+          + » Contact
+          + » News
+          + » Screenshots
+          + » Other tools
+          + » Links
+     *  •
+     * Downloads
+          + » PRISM
+          + » Development versions
+          + » Benchmarks
+          + » PRISM-games
+          + » Other downloads
+     *  •
+     * Documentation
+          + » Installation
+          + » Manual
+          + » FAQ
+          + » Tutorial
+          + » Lectures
+     *  •
+     * Manual
+     *  •
+     * Tutorial
+     *  •
+     * Publications
+          + » Selected publications
+          + » PRISM publications
+          + » PRISM bibliography
+          + » External publications
+          + » Search
+     *  •
+     * Case Studies
+     *  •
+     * Support
+          + » Installation FAQ
+          + » PRISM FAQ
+          + » Forum (Google)
+     *  •
+     * Developers
+          + » Developer resources
+          + » Developer forum
+     *  •
+     * PRISM-games
+          + » Download
+          + » Publications
+            PRISM-games
+            PRISM-games is an extension of PRISM for probabilistic model
+            checking of stochastic multi-player games.
+            See the website and read the papers for more information.
+            PRISM is a probabilistic model checker, a tool for formal
+            modelling and analysis of systems that exhibit random or
+            probabilistic behaviour. It has been used to analyse systems
+            from many different application domains, including
+            communication and multimedia protocols, randomised distributed
+            algorithms, security protocols, biological systems and many
+            others.
+            Example PRISM graph PRISM can build and analyse several types
+            of probabilistic models:
+               o discrete-time Markov chains (DTMCs)
+               o continuous-time Markov chains (CTMCs)
+               o Markov decision processes (MDPs)
+               o probabilistic automata (PAs)
+               o probabilistic timed automata (PTAs)
+            plus extensions of these models with costs and rewards.
+            Models are described using the PRISM language, a simple,
+            state-based language. PRISM provides support for automated
+            analysis of a wide range of quantitative properties of these
+            models, e.g. "what is the probability of a failure causing the
+            system to shut down within 4 hours?", "what is the worst-case
+            probability of the protocol terminating in error, over all
+            possible initial configurations?", "what is the expected size
+            of the message queue after 30 minutes?", or "what is the
+            worst-case expected time taken for the algorithm to
+            terminate?". The property specification language incorporates
+            the temporal logics PCTL, CSL, LTL and PCTL*, as well as
+            extensions for quantitative specifications and costs/rewards.
+            PRISM incorporates state-of-the art symbolic data structures
+            and algorithms, based on BDDs (Binary Decision Diagrams) and
+            MTBDDs (Multi-Terminal Binary Decision Diagrams) [KNP04b,
+            Par02]. It also includes a discrete-event simulation engine,
+            providing support for approximate/statistical model checking,
+            and implementations of various different analysis techniques,
+            such as quantitative abstraction refinement and symmetry
+            reduction.
+            PRISM is free and open source, released under the GNU General
+            Public License (GPL).
+            To cite PRISM, please use the most recent tool paper, from
+            CAV'11:
+               o Marta Kwiatkowska, Gethin Norman and David Parker. PRISM
+                 4.0: Verification of Probabilistic Real-time Systems. In
+                 Proc. 23rd International Conference on Computer Aided
+                 Verification (CAV’11), volume 6806 of LNCS, pages
+                 585-591, Springer, 2011. [pdf] [bib]
+            Valid HTML 4.1 Powered by PHP Valid CSS Site hosted at the
+            Department of Computer Science, University of Oxford
+
+Latest News
+            September 2019: Senior researcher position and studentship are
+            available at Oxford on the forthcoming FUN2MODEL project
+            project. Applications close 30 Oct and 28 Oct respectively,
+            and interviews will be on 8 Nov 2019. See here and here for
+            more details.
+            May 2019: PRISM-games 2.1 is now available, providing simpler
+            installation/compilation, updates from PRISM 4.5 and more.
+            More information here.
+            April 2019: PRISM 4.5 is now available, including a wide range
+            of updates and fixes for users and developers. More
+            information here.
+            [ more news... ]

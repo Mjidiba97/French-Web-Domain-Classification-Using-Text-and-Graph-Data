@@ -1,0 +1,3808 @@
+   #Google AI Blog - Atom Google AI Blog - RSS Google AI Blog - Atom
+
+   [GoogleAI_logo_horizontal_color_rgb.png]
+
+Blog
+
+   The latest news from Google AI
+
+Deep Learning for Electronic Health Records
+
+   Tuesday, May 8, 2018
+   Posted by Alvin Rajkomar MD, Research Scientist and Eyal Oren PhD,
+   Product Manager, Google AI
+   When patients get admitted to a hospital, they have many questions
+   about what will happen next. When will I be able to go home? Will I get
+   better? Will I have to come back to the hospital? Having precise
+   answers to those questions helps doctors and nurses make care better,
+   safer, and faster — if a patient’s health is deteriorating, doctors
+   could be sent proactively to act before things get worse.
+   Predicting what will happen next is a natural application of machine
+   learning. We wondered if the same types of machine learning that
+   predict traffic during your commute or the next word in a translation
+   from English to Spanish could be used for clinical predictions. For
+   predictions to be useful in practice they should be, at least:
+    1. Scalable: Predictions should be straightforward to create for any
+       important outcome and for different hospital systems. Since
+       healthcare data is very complicated and requires much data
+       wrangling, this requirement is not straightforward to satisfy.
+    2. Accurate: Predictions should alert clinicians to problems but not
+       distract them with false alarms. With the widespread adoption of
+       electronic health records, we set out to use that data to create
+       more accurate prediction models.
+
+   Together with colleagues at UC San Francisco, Stanford Medicine, and
+   The University of Chicago Medicine, we published “Scalable and Accurate
+   Deep Learning with Electronic Health Records” in Nature Partner
+   Journals: Digital Medicine, which contributes to these two aims.
+   [image2.png]
+   We used deep learning models to make a broad set of predictions
+   relevant to hospitalized patients using de-identified electronic health
+   records. Importantly, we were able to use the data as-is, without the
+   laborious manual effort typically required to extract, clean,
+   harmonize, and transform relevant variables in those records. Our
+   partners had removed sensitive individual information before we
+   received it, and on our side, we protected the data using
+   state-of-the-art security including logical separation, strict access
+   controls, and encryption of data at rest and in transit.
+   Scalability
+   Electronic health records (EHRs) are tremendously complicated. Even a
+   temperature measurement has a different meaning depending on if it’s
+   taken under the tongue, through your eardrum, or on your forehead. And
+   that's just a simple vital sign. Moreover, each health system
+   customizes their EHR system, making the data collected at one hospital
+   look different than data on a similar patient receiving similar care at
+   another hospital. Before we could even apply machine learning, we
+   needed a consistent way to represent patient records, which we built on
+   top of the open Fast Healthcare Interoperability Resources (FHIR)
+   standard as described in an earlier blog post.
+   Once in a consistent format, we did not have to manually select or
+   harmonize the variables to use. Instead, for each prediction, a deep
+   learning model reads all the data-points from earliest to most recent
+   and then learns which data helps predict the outcome. Since there are
+   thousands of data points involved, we had to develop some new types of
+   deep learning modeling approaches based on recurrent neural networks
+   (RNNs) and feedforward networks.
+
+                                            [image3.png]
+        Data in a patient's record is represented as a timeline. For
+   illustrative purposes, we display various types of clinical data (e.g.
+      encounters, lab tests) by row. Each piece of data, indicated as a
+    little grey dot, is stored in FHIR, an open data standard that can be
+    used by any healthcare institution. A deep learning model analyzed a
+    patient's chart by reading the timeline from left to right, from the
+   beginning of a chart to the current hospitalization, and used this data
+                   to make different types of predictions.
+
+   Thus we engineered a computer system to render predictions without
+   hand-crafting a new dataset for each task, in a scalable manner. But
+   setting up the data is only one part of the work; the predictions also
+   need to be accurate.
+   Prediction Accuracy
+   The most common way to assess accuracy is by a measure called the
+   area-under-the-receiver-operator curve, which measures how well a model
+   distinguishes between a patient who will have a particular future
+   outcome compared to one who will not. In this metric, 1.00 is perfect,
+   and 0.50 is no better than random chance, so higher numbers mean the
+   model is more accurate. By this measure, the models we reported in the
+   paper scored 0.86 in predicting if patients will stay long in the
+   hospital (traditional logistic regression scored 0.76); they scored
+   0.95 in predicting inpatient mortality (traditional methods were 0.86),
+   and they scored 0.77 in predicting unexpected readmissions after
+   patients are discharged (traditional methods were 0.70). These gains
+   were statistically significant.
+   We also used these models to identify the conditions for which the
+   patients were being treated. For example, if a doctor prescribed
+   ceftriaxone and doxycycline for a patient with an elevated temperature,
+   fever and cough, the model could identify these as signals that the
+   patient was being treated for pneumonia. We emphasize that the model is
+   not diagnosing patients — it picks up signals about the patient, their
+   treatments and notes written by their clinicians, so the model is more
+   like a good listener than a master diagnostician.
+   An important focus of our work includes the interpretability of the
+   deep learning models used. An “attention map” of each prediction shows
+   the important data points considered by the models as they make that
+   prediction. We show an example as a proof-of-concept and see this as an
+   important part of what makes predictions useful for clinicians.
+
+                                              [image1.jpg]
+   A deep learning model was used to render a prediction 24 hours after a
+     patient was admitted to the hospital. The timeline (top of figure)
+    contains months of historical data and the most recent data is shown
+   enlarged in the middle. The model "attended" to information highlighted
+   in red that was in the patient's chart to "explain" its prediction. In
+   this case-study, the model highlighted pieces of information that make
+                  sense clinically. Figure from our paper.
+
+   What does this mean for patients and clinicians?
+   The results of this work are early and on retrospective data only.
+   Indeed, this paper represents just the beginning of the work that is
+   needed to test the hypothesis that machine learning can be used to make
+   healthcare better. Doctors are already inundated with alerts and
+   demands on their attention — could models help physicians with tedious,
+   administrative tasks so they can better focus on the patient in front
+   of them or ones that need extra attention? Can we help patients get
+   high-quality care no matter where they seek it? We look forward to
+   collaborating with doctors and patients to figure out the answers to
+   these questions and more.
+   Share on Twitter Share on Facebook
+     
+   ____________________
+   [ncccFICB87qzQMia5FsJfOui0zMnmRvipU1ormHQuxGTxUsAcCFLxJQBLBLn4UoAFglW8B
+   kATwS5eC6CBEBWvCShBiIvXBkgQRcVbADiI4uKtABSESvGWgB9EzHt3+tNwyO0qa9SoIYtv
+   AQYAqDJhaWWeMecAAAAASUVORK5CYII=]
+
+Labels
+
+   
+     * 2018
+     * accessibility
+     * ACL
+     * ACM
+     * Acoustic Modeling
+     * Adaptive Data Analysis
+     * ads
+     * adsense
+     * adwords
+     * Africa
+     * AI
+     * AI for Social Good
+     * Algorithms
+     * Android
+     * Android Wear
+     * API
+     * App Engine
+     * App Inventor
+     * April Fools
+     * Art
+     * Audio
+     * Augmented Reality
+     * Australia
+     * Automatic Speech Recognition
+     * AutoML
+     * Awards
+     * BigQuery
+     * Cantonese
+     * Chemistry
+     * China
+     * Chrome
+     * Cloud Computing
+     * Collaboration
+     * Compression
+     * Computational Imaging
+     * Computational Photography
+     * Computer Science
+     * Computer Vision
+     * conference
+     * conferences
+     * Conservation
+     * correlate
+     * Course Builder
+     * crowd-sourcing
+     * CVPR
+     * Data Center
+     * Data Discovery
+     * data science
+     * datasets
+     * Deep Learning
+     * DeepDream
+     * DeepMind
+     * distributed systems
+     * Diversity
+     * Earth Engine
+     * economics
+     * Education
+     * Electronic Commerce and Algorithms
+     * electronics
+     * EMEA
+     * EMNLP
+     * Encryption
+     * entities
+     * Entity Salience
+     * Environment
+     * Europe
+     * Exacycle
+     * Expander
+     * Faculty Institute
+     * Faculty Summit
+     * Flu Trends
+     * Fusion Tables
+     * gamification
+     * Gboard
+     * Gmail
+     * Google Accelerated Science
+     * Google Books
+     * Google Brain
+     * Google Cloud Platform
+     * Google Docs
+     * Google Drive
+     * Google Genomics
+     * Google Maps
+     * Google Photos
+     * Google Play Apps
+     * Google Science Fair
+     * Google Sheets
+     * Google Translate
+     * Google Trips
+     * Google Voice Search
+     * Google+
+     * Government
+     * grants
+     * Graph
+     * Graph Mining
+     * Hardware
+     * HCI
+     * Health
+     * High Dynamic Range Imaging
+     * ICCV
+     * ICLR
+     * ICML
+     * ICSE
+     * Image Annotation
+     * Image Classification
+     * Image Processing
+     * Inbox
+     * India
+     * Information Retrieval
+     * internationalization
+     * Internet of Things
+     * Interspeech
+     * IPython
+     * Journalism
+     * jsm
+     * jsm2011
+     * K-12
+     * Kaggle
+     * KDD
+     * Keyboard Input
+     * Klingon
+     * Korean
+     * Labs
+     * Linear Optimization
+     * localization
+     * Low-Light Photography
+     * Machine Hearing
+     * Machine Intelligence
+     * Machine Learning
+     * Machine Perception
+     * Machine Translation
+     * Magenta
+     * MapReduce
+     * market algorithms
+     * Market Research
+     * Mixed Reality
+     * ML
+     * ML Fairness
+     * MOOC
+     * Moore's Law
+     * Multimodal Learning
+     * NAACL
+     * Natural Language Processing
+     * Natural Language Understanding
+     * Network Management
+     * Networks
+     * Neural Networks
+     * NeurIPS
+     * Nexus
+     * Ngram
+     * NIPS
+     * NLP
+     * On-device Learning
+     * open source
+     * operating systems
+     * Optical Character Recognition
+     * optimization
+     * osdi
+     * osdi10
+     * patents
+     * Peer Review
+     * ph.d. fellowship
+     * PhD Fellowship
+     * PhotoScan
+     * Physics
+     * PiLab
+     * Pixel
+     * Policy
+     * Professional Development
+     * Proposals
+     * Public Data Explorer
+     * publication
+     * Publications
+     * Quantum AI
+     * Quantum Computing
+     * Reinforcement Learning
+     * renewable energy
+     * Research
+     * Research Awards
+     * resource optimization
+     * Robotics
+     * schema.org
+     * Search
+     * search ads
+     * Security and Privacy
+     * Semantic Models
+     * Semi-supervised Learning
+     * SIGCOMM
+     * SIGMOD
+     * Site Reliability Engineering
+     * Social Networks
+     * Software
+     * Sound Search
+     * Speech
+     * Speech Recognition
+     * statistics
+     * Structured Data
+     * Style Transfer
+     * Supervised Learning
+     * Systems
+     * TensorBoard
+     * TensorFlow
+     * TPU
+     * Translate
+     * trends
+     * TTS
+     * TV
+     * UI
+     * University Relations
+     * UNIX
+     * Unsupervised Learning
+     * User Experience
+     * video
+     * Video Analysis
+     * Virtual Reality
+     * Vision Research
+     * Visiting Faculty
+     * Visualization
+     * VLDB
+     * Voice Search
+     * Wiki
+     * wikipedia
+     * WWW
+     * Year in Review
+     * YouTube
+
+   
+
+Archive
+
+   
+     *     2019
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2018
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2017
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2016
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2015
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2014
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2013
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2012
+          + Dec
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2011
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2010
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2009
+          + Dec
+          + Nov
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2008
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Jul
+          + May
+          + Apr
+          + Mar
+          + Feb
+
+     *     2007
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Feb
+
+     *     2006
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Apr
+          + Mar
+          + Feb
+
+   [8LnOxYWFhZG4leAAQAAQHEaYuzHbAAAAABJRU5ErkJggg==]
+
+Feed
+
+   (BUTTON) Follow @googleai
+   Give us feedback in our Product Forums.
+
+   [P2DAYDAaDwWAwGAwGg8FgMBgMBoPBYDD2Cf8IMADDRGoQTe+E9AAAAABJRU5ErkJggg==]
+     * Google
+     * Privacy
+     * Terms
+   #Google AI Blog - Atom Google AI Blog - RSS
+
+   [GoogleAI_logo_horizontal_color_rgb.png]
+
+Blog
+
+   The latest news from Google AI
+
+Improving Quantum Computation with Classical Machine Learning
+
+   Thursday, October 3, 2019
+   Posted by Murphy Yuezhen Niu and Sergio Boixo, Research Scientists
+   One of the primary challenges for the realization of near-term quantum
+   computers has to do with their most basic constituent: the qubit.
+   Qubits can interact with anything in close proximity that carries
+   energy close to their own—stray photons (i.e., unwanted electromagnetic
+   fields), phonons (mechanical oscillations of the quantum device), or
+   quantum defects (irregularities in the substrate of the chip formed
+   during manufacturing)—which can unpredictably change the state of the
+   qubits themselves.
+   Further complicating matters, there are numerous challenges posed by
+   the tools used to control qubits. Manipulating and reading out qubits
+   is performed via classical controls: analog signals in the form of
+   electromagnetic fields coupled to a physical substrate in which the
+   qubit is embedded, e.g., superconducting circuits. Imperfections in
+   these control electronics (giving rise to white noise), interference
+   from external sources of radiation, and fluctuations in
+   digital-to-analog converters, introduce even more stochastic errors
+   that degrade the performance of quantum circuits. These practical
+   issues impact the fidelity of the computation and thus limit the
+   applications of near-term quantum devices.
+   To improve the computational capacity of quantum computers, and to pave
+   the road towards large-scale quantum computation, it is necessary to
+   first build physical models that accurately describe these experimental
+   problems.
+   In “Universal Quantum Control through Deep Reinforcement Learning”,
+   published in Nature Partner Journal (npj) Quantum Information, we
+   present a new quantum control framework generated using deep
+   reinforcement learning, where various practical concerns in quantum
+   control optimization can be encapsulated by a single control cost
+   function. Our framework provides a reduction in the average quantum
+   logic gate error of up to two orders-of-magnitude over standard
+   stochastic gradient descent solutions and a significant decrease in
+   gate time from optimal gate synthesis counterparts. Our results open a
+   venue for wider applications in quantum simulation, quantum chemistry
+   and quantum supremacy tests using near-term quantum devices.
+   The novelty of this new quantum control paradigm hinges upon the
+   development of a quantum control function and an efficient optimization
+   method based on deep reinforcement learning. To develop a comprehensive
+   cost function, we first need to develop a physical model for the
+   realistic quantum control process, one where we are able to reliably
+   predict the amount of error. One of the most detrimental errors to the
+   accuracy of quantum computation is leakage: the amount of quantum
+   information lost during the computation. Such information leakage
+   usually occurs when the quantum state of a qubit gets excited to a
+   higher energy state, or decays to a lower energy state through
+   spontaneous emission. Leakage errors not only lose useful quantum
+   information, they also degrade the “quantumness” and eventually reduce
+   the performance of a quantum computer to that of a classical one.
+   A common practice to accurately evaluate the leaked information during
+   the quantum computation is to simulate the whole computation first.
+   However, this defeats the purpose of building large-scale quantum
+   computers, since their advantage is that they are able to perform
+   calculations infeasible for classical systems. With improved physical
+   modeling, our generic cost function enables a joint optimization over
+   the accumulated leakage errors, violations of control boundary
+   conditions, total gate time, and gate fidelity.
+   With the new quantum control cost function in hand, the next step is to
+   apply an efficient optimization tool to minimize it. Existing
+   optimization methods turn out to be unsatisfactory in finding high
+   fidelity solutions that are also robust to control fluctuations.
+   Instead, we apply an on-policy deep reinforcement learning (RL) method,
+   trusted-region RL, since this method exhibits good performance in all
+   benchmark problems, is inherently robust to sample noise, and has the
+   capability to optimize hard control problems with hundreds of millions
+   of control parameters. The salient difference between this on-policy RL
+   from previously studied off-policy RL methods is that the control
+   policy is represented independently from the control cost. Off-policy
+   RL, such as Q-learning, on the other hand, uses a single neural network
+   (NN) to represent both the control trajectory, and the associated
+   reward, where the control trajectory specifies the control signals to
+   be coupled to qubits at different time steps, and the associated award
+   evaluates how good the current step of the quantum control is.
+   On-policy RL is well known for its ability to leverage non-local
+   features in control trajectories, which becomes crucial when the
+   control landscape is high-dimensional and packed with a combinatorially
+   large number of non-global solutions, as is often the case for quantum
+   systems.
+   We encode the control trajectory into a three-layer, fully connected
+   NN—the policy NN—and the control cost function into a second NN—the
+   value NN—which encodes the discounted future reward. Robust control
+   solutions were obtained by reinforcement learning agents, which trains
+   both NNs under a stochastic environment that mimics a realistic noisy
+   control actuation. We provide control solutions to a set of
+   continuously parameterized two-qubit quantum gates that are important
+   for quantum chemistry applications but are costly to implement using
+   the conventional universal gate set.
+   [image1.png]
+   Under this new framework, our numerical simulations show a 100x
+   reduction in quantum gate errors and reduced gate times for a family of
+   continuously parameterized simulation gates by an average of one
+   order-of-magnitude over traditional approaches using a universal gate
+   set.
+   This work highlights the importance of using novel machine learning
+   techniques and near-term quantum algorithms that leverage the
+   flexibility and additional computational capacity of a universal
+   quantum control scheme. More experiments are needed to integrate
+   machine learning techniques, such as the one developed in this work,
+   into practical quantum computation procedures to fully improve its
+   computational capacity through machine learning.
+   Share on Twitter Share on Facebook
+
+Releasing PAWS and PAWS-X: Two New Datasets to Improve Natural Language
+Understanding Models
+
+   Wednesday, October 2, 2019
+   Posted by Yuan Zhang, Research Scientist and Yinfei Yang, Software
+   Engineer, Google Research
+   Word order and syntactic structure have a large impact on sentence
+   meaning — even small perturbations in word order can completely change
+   interpretation. For example, consider the following related sentences:
+    1. Flights from New York to Florida.
+    2. Flights to Florida from New York.
+    3. Flights from Florida to New York.
+
+   All three have the same set of words. However, 1 and 2 have the same
+   meaning — known as paraphrase pairs — while 1 and 3 have very different
+   meanings — known as non-paraphrase pairs. The task of identifying
+   whether pairs are paraphrase or not is called paraphrase
+   identification, and this task is important to many real-world natural
+   language understanding (NLU) applications such as question answering.
+   Perhaps surprisingly, even state-of-the-art models, like BERT, would
+   fail to correctly identify the difference between many non-paraphrase
+   pairs like 1 and 3 above if trained only on existing NLU datasets. This
+   is because existing datasets lack training pairs like this, so it is
+   hard for machine learning models to learn this pattern even if they
+   have the capability to understand complex contextual phrasings.
+   To address this, we are releasing two new datasets for use in the
+   research community: Paraphrase Adversaries from Word Scrambling (PAWS)
+   in English, and PAWS-X, an extension of the PAWS dataset to six
+   typologically distinct languages: French, Spanish, German, Chinese,
+   Japanese, and Korean. Both datasets contain well-formed sentence pairs
+   with high lexical overlap, in which about half of the pairs are
+   paraphrase and others are not. Including new pairs in training data for
+   state-of-the-art models improves their accuracy on this problem
+   from <50% to 85-90%. In contrast, models that do not capture non-local
+   contextual information fail even with new training examples. The new
+   datasets therefore provide an effective instrument for measuring the
+   sensitivity of models to word order and structure.
+   The PAWS dataset contains 108,463 human-labeled pairs in English,
+   sourced from Quora Question Pairs (QQP) and Wikipedia pages. PAWS-X
+   contains 23,659 human translated PAWS evaluation pairs and 296,406
+   machine translated training pairs. The table below gives detailed
+   statistics of the datasets.
+
+                                 PAWS PAWS-X
+   Language English English Chinese French German Japanese Korean Spanish
+           (QQP) (Wiki) (Wiki) (Wiki) (Wiki) (Wiki) (Wiki) (Wiki)
+Training 11,988 79,798 49,401^† 49,401^† 49,401^† 49,401^† 49,401^†
+                                 49,401^†
+              Dev 677 8,000 1,984 1,992 1,932 1,980 1,965 1,962
+              Test - 8,000 1,975 1,985 1,967 1,946 1,972 1,999
+
+  † The training set of PAWS-X is machine translated from a subset of the
+                        PAWS Wiki dataset in English.
+
+   Creating the PAWS Dataset in English
+   In “PAWS: Paraphrase Adversaries from Word Scrambling,” we introduce a
+   workflow for generating pairs of sentences that have high word overlap,
+   but which are balanced with respect to whether they are paraphrases or
+   not. To generate examples, source sentences are first passed to a
+   specialized language model that creates word-swapped variants that are
+   still semantically meaningful, but ambiguous as to whether they are
+   paraphrase pairs or not. These were then judged by human raters for
+   grammaticality and then multiple raters judged whether they were
+   paraphrases of each other.
+
+                               [image3.png]
+                       PAWS corpus creation workflow.
+
+   One problem with this swapping strategy is that it tends to produce
+   pairs that aren't paraphrases (e.g., "why do bad things happen to good
+   people" != "why do good things happen to bad people"). In order to
+   ensure balance between paraphrases and non-paraphrases, we added other
+   examples based on back-translation. Back-translation has the opposite
+   bias as it tends to preserve meaning while changing word order and word
+   choice. These two strategies lead to PAWS being balanced overall,
+   especially for the Wikipedia portion.
+   Creating the Multilingual PAWS-X Dataset
+   After creating PAWS, we extended it to six more languages: Chinese,
+   French, German, Korean, Japanese, and Spanish. We hired human
+   translators to translate the development and test sets, and used a
+   neural machine translation (NMT) service to translate the training set.
+   We obtained human translations (native speakers) on a random sample of
+   4,000 sentence pairs from the PAWS development set for each of the six
+   languages (48,000 translations). Each sentence in a pair is presented
+   independently so that translation is not affected by context. A
+   randomly sampled subset was validated by a second worker. The final
+   dataset has less than 5% word level error rate.
+   Note, we allowed professionals to not translate a sentence if it was
+   incomplete or ambiguous. On average, less than 2% of the pairs were not
+   translated, and we simply excluded them. The final translated pairs are
+   split then into new development and test sets, ~2,000 pairs for each.
+
+                               [image2.png]
+     Examples of human translated pairs for German(de) and Chinese(zh).
+
+   Language Understanding with PAWS and PAWS-X
+   We train multiple models on the created dataset and measure the
+   classification accuracy on the eval set. When trained with PAWS, strong
+   models, such as BERT and DIIN, show remarkable improvement over when
+   they are trained on the existing Quora Question Pairs (QQP) dataset.
+   For example, on the PAWS data sourced from QQP (PAWS-QQP), BERT gets
+   only 33.5 accuracy if trained on existing QQP, but it recovers to 83.1
+   accuracy when given PAWS training examples. Unlike BERT, a simple
+   Bag-of-Words (BOW) model fails to learn from PAWS training examples,
+   demonstrating its weakness at capturing non-local contextual
+   information. These results demonstrate that PAWS effectively measures
+   sensitivity of models to word order and structure.
+
+                         [image4%2B-%2BEdited.png]
+                  Accuracy on PAWS-QQP Eval Set (English).
+
+   The figure below shows the performance of the popular multilingual BERT
+   model on PAWS-X using several common strategies:
+    1. Zero Shot: The model is trained on the PAWS English training data,
+       and then directly evaluated on all others. Machine translation is
+       not involved in this strategy.
+    2. Translate Test: Train a model using the English training data, and
+       machine-translate all test examples to English for evaluation.
+    3. Translate Train: The English training data is machine-translated
+       into each target language to provide data to train each model.
+    4. Merged: Train a multilingual model on all languages, including the
+       original English pairs and machine-translated data in all other
+       languages.
+
+   The results show that cross-lingual techniques help, while it also
+   leaves considerable headroom to drive multilingual research on the
+   problem of paraphrase identification
+
+                               [image1.png]
+               Accuracy of PAWS-X Test Set using BERT Models.
+
+   It is our hope that these datasets will be useful to the research
+   community to drive further progress on multilingual models that better
+   exploit structure, context, and pairwise comparisons.
+   Acknowledgements
+   The core team includes Luheng He, Jason Baldridge, Chris Tar. We would
+   like to thank the Language team in Google Research, especially Emily
+   Pitler, for the insightful comments that contributed to our papers.
+   Many thanks also to Ashwin Kakarla, Henry Jicha, and Mengmeng Niu, for
+   the help with the annotations.
+   Share on Twitter Share on Facebook
+
+Large-Scale Multilingual Speech Recognition with a Streaming End-to-End Model
+
+   Monday, September 30, 2019
+   Posted by Arindrima Datta and Anjuli Kannan, Software Engineers, Google
+   Research
+   Google's mission is not just to organize the world's information but to
+   make it universally accessible, which means ensuring that our products
+   work in as many of the world's languages as possible. When it comes to
+   understanding human speech, which is a core capability of the Google
+   Assistant, extending to more languages poses a challenge: high-quality
+   automatic speech recognition (ASR) systems require large amounts of
+   audio and text data — even more so as data-hungry neural models
+   continue to revolutionize the field. Yet many languages have little
+   data available.
+   We wondered how we could keep the quality of speech recognition high
+   for speakers of data-scarce languages. A key insight from the research
+   community was that much of the "knowledge" a neural network learns from
+   audio data of a data-rich language is re-usable by data-scarce
+   languages; we don't need to learn everything from scratch. This led us
+   to study multilingual speech recognition, in which a single model
+   learns to transcribe multiple languages.
+   In “Large-Scale Multilingual Speech Recognition with a Streaming
+   End-to-End Model”, published at Interspeech 2019, we present an
+   end-to-end (E2E) system trained as a single model, which allows for
+   real-time multilingual speech recognition. Using nine Indian languages,
+   we demonstrated a dramatic improvement in the ASR quality on several
+   data-scarce languages, while still improving performance for the
+   data-rich languages.
+   India: A Land of Languages
+   For this study, we focused on India, an inherently multilingual society
+   where there are more than thirty languages with at least a million
+   native speakers. Many of these languages overlap in acoustic and
+   lexical content due to the geographic proximity of the native speakers
+   and shared cultural history. Additionally, many Indians are bilingual
+   or trilingual, making the use of multiple languages within a
+   conversation a common phenomenon, and a natural case for training a
+   single multilingual model. In this work, we combined nine primary
+   Indian languages, namely Hindi, Marathi, Urdu, Bengali, Tamil, Telugu,
+   Kannada, Malayalam and Gujarati.
+   A Low-latency All-neural Multilingual Model
+   Traditional ASR systems contain separate components for acoustic,
+   pronunciation, and language models. While there have been attempts to
+   make some or all of the traditional ASR components multilingual
+   [1,2,3,4], this approach can be complex and difficult to scale. E2E ASR
+   models combine all three components into a single neural network and
+   promise scalability and ease of parameter sharing. Recent works have
+   extended E2E models to be multilingual [1,2], but they did not address
+   the need for real-time speech recognition, a key requirement for
+   applications such as the Assistant, Voice Search and GBoard dictation.
+   For this, we turned to recent research at Google that used a Recurrent
+   Neural Network Transducer (RNN-T) model to achieve streaming E2E ASR.
+   The RNN-T system outputs words one character at a time, just as if
+   someone was typing in real time, however this was not multilingual. We
+   built upon this architecture to develop a low-latency model for
+   multilingual speech recognition.
+
+                                             [image1.png]
+      [Left] A traditional monolingual speech recognizer comprising of
+   Acoustic, Pronunciation and Language Models for each language. [Middle]
+     A traditional multilingual speech recognizer where the Acoustic and
+      Pronunciation model is multilingual, while the Language model is
+   language-specific. [Right] An E2E multilingual speech recognizer where
+      the Acoustic, Pronunciation and Language Model is combined into a
+                         single multilingual model.
+
+   Large-Scale Data Challenges
+   Using large-scale, real-world data for training a multilingual model is
+   complicated by data imbalance. Given the steep skew in the distribution
+   of speakers across the languages and speech product maturity, it is not
+   surprising to have varying amounts of transcribed data available per
+   language. As a result, a multilingual model can tend to be more
+   influenced by languages that are over-represented in the training set.
+   This bias is more prominent in an E2E model, which unlike a traditional
+   ASR system, does not have access to additional in-language text data
+   and learns lexical characteristics of the languages solely from the
+   audio training data.
+
+                [Screen%2BShot%2B2019-09-27%2Bat%2B2.49.32%2BPM.png]
+     Histogram of training data for the nine languages showing the steep
+                         skew in the data available.
+
+   We addressed this issue with a few architectural modifications. First,
+   we provided an extra language identifier input, which is an external
+   signal derived from the language locale of the training data; i.e. the
+   language preference set in an individual’s phone. This signal is
+   combined with the audio input as a one-hot feature vector. We
+   hypothesize that the model is able to use the language vector not only
+   to disambiguate the language but also to learn separate features for
+   separate languages, as needed, which helped with data imbalance.
+   Building on the idea of language-specific representations within the
+   global model, we further augmented the network architecture by
+   allocating extra parameters per language in the form of residual
+   adapter modules. Adapters helped fine-tune a global model on each
+   language while maintaining parameter efficiency of a single global
+   model, and in turn, improved performance.
+
+               [Screen%2BShot%2B2019-09-27%2Bat%2B2.51.18%2BPM.png]
+     [Left] Multilingual RNN-T architecture with a language identifier.
+    [Middle] Residual adapters inside the encoder. For a Tamil utterance,
+       only the Tamil adapters are applied to each activation. [Right]
+   Architecture details of the Residual Adapter modules. For more details
+                            please see our paper.
+
+   Putting all of these elements together, our multilingual model
+   outperforms all the single-language recognizers, with especially large
+   improvements in data-scarce languages like Kannada and Urdu. Moreover,
+   since it is a streaming E2E model, it simplifies training and serving,
+   and is also usable in low-latency applications like the Assistant.
+   Building on this result, we hope to continue our research on
+   multilingual ASRs for other language groups, to better assist our
+   growing body of diverse users.
+   Acknowledgements
+   We would like to thank the following for their contribution to this
+   research: Tara N. Sainath, Eugene Weinstein, Bo Li, Shubham Toshniwal,
+   Ron Weiss, Bhuvana Ramabhadran, Yonghui Wu, Ankur Bapna, Zhifeng Chen,
+   Seungji Lee, Meysam Bastani, Mikaela Grace, Pedro Moreno, Yanzhang
+   (Ryan) He, Khe Chai Sim.
+   Share on Twitter Share on Facebook
+
+Contributing Data to Deepfake Detection Research
+
+   Tuesday, September 24, 2019
+   Posted by Nick Dufour, Google Research and Andrew Gully, Jigsaw
+   Deep learning has given rise to technologies that would have been
+   thought impossible only a handful of years ago. Modern generative
+   models are one example of these, capable of synthesizing hyperrealistic
+   images, speech, music, and even video. These models have found use in a
+   wide variety of applications, including making the world more
+   accessible through text-to-speech, and helping generate training data
+   for medical imaging.
+   Like any transformative technology, this has created new challenges.
+   So-called "deepfakes"—produced by deep generative models that can
+   manipulate video and audio clips—are one of these. Since their first
+   appearance in late 2017, many open-source deepfake generation methods
+   have emerged, leading to a growing number of synthesized media clips.
+   While many are likely intended to be humorous, others could be harmful
+   to individuals and society.
+   Google considers these issues seriously. As we published in our AI
+   Principles last year, we are committed to developing AI best practices
+   to mitigate the potential for harm and abuse. Last January, we
+   announced our release of a dataset of synthetic speech in support of an
+   international challenge to develop high-performance fake audio
+   detectors. The dataset was downloaded by more than 150 research and
+   industry organizations as part of the challenge, and is now freely
+   available to the public.
+   Today, in collaboration with Jigsaw, we're announcing the release of a
+   large dataset of visual deepfakes we've produced that has been
+   incorporated into the Technical University of Munich and the University
+   Federico II of Naples’ new FaceForensics benchmark, an effort that
+   Google co-sponsors. The incorporation of these data into the
+   FaceForensics video benchmark is in partnership with leading
+   researchers, including Prof. Matthias Niessner, Prof. Luisa Verdoliva
+   and the FaceForensics team. You can download the data on the
+   FaceForensics github page.
+
+                                            [new_gif1.gif]
+    A sample of videos from Google’s contribution to the FaceForensics
+    benchmark. To generate these, pairs of actors were selected randomly
+   and deep neural networks swapped the face of one actor onto the head of
+                                  another.
+
+   To make this dataset, over the past year we worked with paid and
+   consenting actors to record hundreds of videos. Using publicly
+   available deepfake generation methods, we then created thousands of
+   deepfakes from these videos. The resulting videos, real and fake,
+   comprise our contribution, which we created to directly support
+   deepfake detection efforts. As part of the FaceForensics benchmark,
+   this dataset is now available, free to the research community, for use
+   in developing synthetic video detection methods.
+
+                                            [new_gif2.gif]
+     Actors were filmed in a variety of scenes. Some of these actors are
+    pictured here (top) with an example deepfake (bottom), which can be a
+    subtle or drastic change, depending on the other actor used to create
+                                    them.
+
+   Since the field is moving quickly, we'll add to this dataset as
+   deepfake technology evolves over time, and we’ll continue to work with
+   partners in this space. We firmly believe in supporting a thriving
+   research community around mitigating potential harms from misuses of
+   synthetic media, and today's release of our deepfake dataset in the
+   FaceForensics benchmark is an important step in that direction.
+   Acknowledgements
+   Special thanks to all our team members and collaborators who work on
+   this project with us: Daisy Stanton, Per Karlsson, Alexey Victor
+   Vorobyov, Thomas Leung, Jeremiah "Spudde" Childs, Christoph Bregler,
+   Andreas Roessler, Davide Cozzolino, Justus Thies, Luisa Verdoliva,
+   Matthias Niessner, and the hard-working actors and film crew who helped
+   make this dataset possible.
+   Share on Twitter Share on Facebook
+
+An Inside Look at Flood Forecasting
+
+   Wednesday, September 18, 2019
+   Sella Nevo, Senior Software Engineer, Google Research, Tel Aviv
+   Several years ago, we identified flood forecasts as a unique
+   opportunity to improve people’s lives, and began looking into how
+   Google’s infrastructure and machine learning expertise can help in this
+   field. Last year, we started our flood forecasting pilot in the Patna
+   region, and since then we have expanded our flood forecasting coverage,
+   as part of our larger AI for Social Good efforts. In this post, we
+   discuss some of the technology and methodology behind this effort.
+   The Inundation Model
+   A critical step in developing an accurate flood forecasting system is
+   to develop inundation models, which use either a measurement or a
+   forecast of the water level in a river as an input, and simulate the
+   water behavior across the floodplain.
+
+                                             [image2.gif]
+      A 3D visualization of a hydraulic model simulating various river
+                                 conditions.
+
+   This allows us to translate current or future river conditions, to
+   highly spatially accurate risk maps - which tell us what areas will be
+   flooded and what areas will be safe. Inundation models depend on four
+   major components, each with its own challenges and innovations:
+   Real-time Water Level Measurements
+   To run these models operationally, we need to know what is happening on
+   the ground in real-time, and thus we rely on partnerships with the
+   relevant government agencies to receive timely and accurate
+   information. Our first governmental partner is the Indian Central Water
+   Commission (CWC), which measures water levels hourly in over a thousand
+   stream gauges across all of India, aggregates this data, and produces
+   forecasts based on upstream measurements. The CWC provides these
+   real-time river measurements and forecasts, which are then used as
+   inputs for our models.
+
+                               [image3.png]
+   CWC employees measuring water level and discharge near Lucknow, India.
+
+   Elevation Map Creation
+   Once we know how much water is in a river, it is critical that the
+   models have a good map of the terrain. High-resolution digital
+   elevation models (DEMs) are incredibly useful for a wide range of
+   applications in the earth sciences, but are still difficult to acquire
+   in most of the world, especially for flood forecasting. This is because
+   meter-wide features of the ground conditions can create a critical
+   difference in the resulting flooding (embankments are one exceptionally
+   important example), but publicly accessible global DEMs have
+   resolutions of tens of meters. To help address this challenge, we’ve
+   developed a novel methodology to produce high resolution DEMs based on
+   completely standard optical imagery.
+   We start with the large and varied collection of satellite images used
+   in Google Maps. Correlating and aligning the images in large batches,
+   we simultaneously optimize for satellite camera model corrections (for
+   orientation errors, etc.) and for coarse terrain elevation. We then use
+   the corrected camera models to create a depth map for each image. To
+   make the elevation map, we optimally fuse the depth maps together at
+   each location. Finally, we remove objects such as trees and bridges so
+   that they don’t block water flow in our simulations. This can be done
+   manually or by training convolutional neural networks that can identify
+   where the terrain elevations need to be interpolated. The result is a
+   roughly 1 meter DEM, which can be used to run hydraulic models.
+
+                [Screen%2BShot%2B2019-09-25%2Bat%2B11.19.59%2BAM.png]
+   A 30m SRTM-based DEM of the Yamuna river compared to a Google-generated
+                          1m DEM of the same area.
+
+   Hydraulic Modeling
+   Once we have both these inputs - the riverine measurements and
+   forecasts, and the elevation map - we can begin the modeling itself,
+   which can be divided into two main components. The first and most
+   substantial component is the physics-based hydraulic model, which
+   updates the location and velocity of the water through time based on
+   (an approximated) computation of the laws of physics. Specifically,
+   we’ve implemented a solver for the 2D form of the shallow-water
+   Saint-Venant equations. These models are suitably accurate when given
+   accurate inputs and run at high resolutions, but their computational
+   complexity creates challenges - it is proportional to the cube of the
+   resolution desired. That is, if you double the resolution, you’ll need
+   roughly 8 times as much processing time. Since we’re committed to the
+   high-resolution required for highly accurate forecasts, this can lead
+   to unscalable computational costs, even for Google!
+   To help address this problem, we’ve created a unique implementation of
+   our hydraulic model, optimized for Tensor Processing Units (TPUs).
+   While TPUs were optimized for neural networks (rather than differential
+   equation solvers like our hydraulic model), their highly parallelized
+   nature leads to the performance per TPU core being 85x times faster
+   than the performance per CPU core. For additional efficiency
+   improvements, we’re also looking at using machine learning to replace
+   some of the physics-based algorithmics, extending data-driven
+   discretization to two-dimensional hydraulic models, so we can support
+   even larger grids and cover even more people.
+
+                                            [image1.png]
+        A snapshot of a TPU-based simulation of flooding in Goalpara,
+                                 mid-event.
+
+   As mentioned earlier, the hydraulic model is only one component of our
+   inundation forecasts. We’ve repeatedly found locations where our
+   hydraulic models are not sufficiently accurate - whether that’s due to
+   inaccuracies in the DEM, breaches in embankments, or unexpected water
+   sources. Our goal is to find effective ways to reduce these errors. For
+   this purpose, we added a predictive inundation model, based on
+   historical measurements. Since 2014, the European Space Agency has been
+   operating a satellite constellation named Sentinel-1 with C-band
+   Synthetic-Aperture Radar (SAR) instruments. SAR imagery is great at
+   identifying inundation, and can do so regardless of weather conditions
+   and clouds. Based on this valuable data set, we correlate historical
+   water level measurements with historical inundations, allowing us to
+   identify consistent corrections to our hydraulic model. Based on the
+   outputs of both components, we can estimate which disagreements are due
+   to genuine ground condition changes, and which are due to modeling
+   inaccuracies.
+
+                               [image5.gif]
+                 Flood warnings across Google’s interfaces.
+
+   Looking Forward
+   We still have a lot to do to fully realize the benefits of our
+   inundation models. First and foremost, we’re working hard to expand the
+   coverage of our operational systems, both within India and to new
+   countries. There’s also a lot more information we want to be able to
+   provide in real time, including forecasted flood depth, temporal
+   information and more. Additionally, we’re researching how to best
+   convey this information to individuals to maximize clarity and
+   encourage them to take the necessary protective actions.
+   Computationally, while the inundation model is a good tool for
+   improving the spatial resolution (and therefore the accuracy and
+   reliability) of existing flood forecasts, multiple governmental
+   agencies and international organizations we’ve spoken to are concerned
+   about areas that do not have access to effective flood forecasts at
+   all, or whose forecasts don’t provide enough lead time for effective
+   response. In parallel to our work on the inundation model, we’re
+   working on some basic research into improved hydrologic models, which
+   we hope will allow governments not only to produce more spatially
+   accurate forecasts, but also achieve longer preparation time.
+   Hydrologic models accept as inputs things like precipitation, solar
+   radiation, soil moisture and the like, and produce a forecast for the
+   river discharge (among other things), days into the future. These
+   models are traditionally implemented using a combination of conceptual
+   models approximating different core processes such as snowmelt, surface
+   runoff, evapotranspiration and more.
+
+                                               [image6.png]
+   The core processes of a hydrologic model. Designed by Daniel Klotz, JKU
+                       Institute for Machine Learning.
+
+   These models also traditionally require a large amount of manual
+   calibration, and tend to underperform in data scarce regions. We are
+   exploring how multi-task learning can be used to address both of these
+   problems — making hydrologic models both more scalable, and more
+   accurate. In research collaboration with JKU Institute For Machine
+   Learning group under Sepp Hochreiter on developing ML-based hydrologic
+   models, Kratzert et al. show how LSTMs perform better than all
+   benchmarked classic hydrologic models.
+
+                                              [image7.png]
+    The distribution of NSE scores on basins across the United States for
+   various models, showing the proposed EA-LSTM consistently outperforming
+                    a wide range of commonly used models.
+
+   Though this work is still in the basic research stage and not yet
+   operational, we think it is an important first step, and hope it can
+   already be useful for other researchers and hydrologists. It’s an
+   incredible privilege to take part in the large eco-system of
+   researchers, governments, and NGOs working to reduce the harms of
+   flooding. We’re excited about the potential impact this type of
+   research can provide, and look forward to where research in this field
+   will go.
+   Acknowledgements
+   There are many people who contributed to this large effort, and we’d
+   like to highlight some of the key contributors: Aaron Yonas, Adi Mano,
+   Ajai Tirumali, Avinatan Hassidim, Carla Bromberg, Damien Pierce, Gal
+   Elidan, Guy Shalev, John Anderson, Karan Agarwal, Kartik Murthy, Manan
+   Singhi, Mor Schlesinger, Ofir Reich, Oleg Zlydenko, Pete Giencke,
+   Piyush Poddar, Ruha Devanesan, Slava Salasin, Varun Gulshan, Vova
+   Anisimov, Yossi Matias, Yi-fan Chen, Yotam Gigi, Yusef Shafi, Zach
+   Moshe and Zvika Ben-Haim.
+   Share on Twitter Share on Facebook
+
+Project Ihmehimmeli: Temporal Coding in Spiking Neural Networks
+
+   Wednesday, September 18, 2019
+   Posted by Iulia-Maria Comșa and Krzysztof Potempa, Research Engineers,
+   Google Research, Zürich
+   The discoveries being made regularly in neuroscience are an ongoing
+   source of inspiration for creating more efficient artificial neural
+   networks that process information in the same way as biological
+   organisms. These networks have recently achieved resounding success in
+   domains ranging from playing board and video games to fine-grained
+   understanding of video. However, there is one fundamental aspect of
+   biological brains that artificial neural networks are not yet fully
+   leveraging: temporal encoding of information. Preserving temporal
+   information allows a better representation of dynamic features, such as
+   sounds, and enables fast responses to events that may occur at any
+   moment. Furthermore, despite the fact that biological systems can
+   consist of billions of neurons, information can be carried by a single
+   signal (‘spike’) fired by an individual neuron, with information
+   encoded in the timing of the signal itself.
+   Based on this biological insight, project Ihmehimmeli explores how
+   artificial spiking neural networks can exploit temporal dynamics using
+   various architectures and learning settings. “Ihmehimmeli” is a Finnish
+   tongue-in-cheek word for a complex tool or a machine element whose
+   purpose is not immediately easy to grasp. The essence of this word
+   captures our aim to build complex recurrent neural network
+   architectures with temporal encoding of information. We use artificial
+   spiking networks with a temporal coding scheme, in which more
+   interesting or surprising information, such as louder sounds or
+   brighter colours, causes earlier neuronal spikes. Along the information
+   processing hierarchy, the winning neurons are those that spike first.
+   Such an encoding can naturally implement a classification scheme where
+   input features are encoded in the spike times of their corresponding
+   input neurons, while the output class is encoded by the output neuron
+   that spikes earliest.
+
+                                               [image4.jpg]
+   The Ihmehimmeli project team holding a himmeli, a symbol for the aim to
+   build recurrent neural network architectures with temporal encoding of
+                                information.
+
+   We recently published and open-sourced a model in which we demonstrated
+   the computational capabilities of fully connected spiking networks that
+   operate using temporal coding. Our model uses a biologically-inspired
+   synaptic transfer function, where the electric potential on the
+   membrane of a neuron rises and gradually decays over time in response
+   to an incoming signal, until there is a spike. The strength of the
+   associated change is controlled by the "weight" of the connection,
+   which represents the synapse efficiency. Crucially, this formulation
+   allows exact derivatives of postsynaptic spike times with respect to
+   presynaptic spike times and weights. The process of training the
+   network consists of adjusting the weights between neurons, which in
+   turn leads to adjusted spike times across the network. Much like in
+   conventional artificial neural networks, this was done using
+   backpropagation. We used synchronization pulses, whose timing is also
+   learned with backpropagation, to provide a temporal reference to the
+   network.
+   We trained the network on classic machine learning benchmarks, with
+   features encoded in time. The spiking network successfully learned to
+   solve noisy Boolean logic problems and achieved a test accuracy of
+   97.96% on MNIST, a result comparable to conventional fully connected
+   networks with the same architecture. However, unlike conventional
+   networks, our spiking network uses an encoding that is in general more
+   biologically-plausible, and, for a small trade-off in accuracy, can
+   compute the result in a highly energy-efficient manner, as detailed
+   below.
+   While training the spiking network on MNIST, we observed the neural
+   network spontaneously shift between two operating regimes. Early during
+   training, the network exhibited a slow and highly accurate regime,
+   where almost all neurons fired before the network made a decision.
+   Later in training, the network spontaneously shifted into a fast but
+   slightly less accurate regime. This behaviour was intriguing, as we did
+   not optimize for it explicitly. Thus spiking networks can, in a sense,
+   be “deliberative”, or make a snap decision on the spot. This is
+   reminiscent of the trade-off between speed and accuracy in human
+   decision-making.
+
+                                                [image1.png]
+                                                [image3.png]
+A slow (“deliberative”) network (top) and a fast (“impulsive”) network
+    (bottom) classifying the same MNIST digit. The figures show a raster
+    plot of spike times of individual neurons in individual layers, with
+   synchronization pulses shown in orange. In this example, both networks
+   classify the digit correctly; overall, the “slow” network achieves
+                better accuracy than the “fast” network.
+
+   We were also able to recover representations of the digits learned by
+   the spiking network by gradually adjusting a blank input image to
+   maximize the response of a target output neuron. This indicates that
+   the network learns human-like representations of the digits, as opposed
+   to other possible combinations of pixels that might look “alien” to
+   people. Having interpretable representations is important in order to
+   understand what the network is truly learning and to prevent a small
+   change in input from causing a large change in the result.
+
+                               [image2.png]
+            How the network “imagines” the digits 0, 1, 3 and 7.
+
+   This work is one example of an initial step that project Ihmehimmeli is
+   taking in exploring the potential of time-based biology-inspired
+   computing. In other on-going experiments, we are training spiking
+   networks with temporal coding to control the walking of an artificial
+   insect in a virtual environment, or taking inspiration from the
+   development of the neural system to train a 2D spiking grid to predict
+   words using axonal growth. Our goal is to increase our familiarity with
+   the mechanisms that nature has evolved for natural intelligence,
+   enabling the exploration of time-based artificial neural networks with
+   varying internal states and state transitions.
+   Acknowledgements
+   The work described here was authored by Iulia Comsa, Krzysztof Potempa,
+   Luca Versari, Thomas Fischbacher, Andrea Gesmundo and Jyrki Alakuijala.
+   We are grateful for all discussions and feedback on this work that we
+   received from our colleagues at Google.
+   Share on Twitter Share on Facebook
+
+Google at Interspeech 2019
+
+   Sunday, September 15, 2019
+   Andrew Helton, Editor, Google Research Communications
+   This week, Graz, Austria hosts the 20th Annual Conference of the
+   International Speech Communication Association (Interspeech 2019), one
+   of the world‘s most extensive conferences on the research and
+   engineering for spoken language processing. Over 2,000 experts in
+   speech-related research fields gather to take part in oral
+   presentations and poster sessions and to collaborate with streamed
+   events across the globe.
+   As a Gold Sponsor of Interspeech 2019, we are excited to present 30
+   research publications, and demonstrate some of the impact speech
+   technology has made in our products, from accessible, automatic video
+   captioning to a more robust, reliable Google Assistant. If you’re
+   attending Interspeech 2019, we hope that you’ll stop by the Google
+   booth to meet our researchers and discuss projects and opportunities at
+   Google that go into solving interesting problems for billions of
+   people. Our researchers will also be on hand to discuss Google Cloud
+   Text-to-Speech and Speech-to-text, demo Parrotron, and more. You can
+   also learn more about the Google research being presented at
+   Interspeech 2019 below (Google affiliations in blue).
+   Organizing Committee includes:
+   Michiel Bacchiani
+   Technical Program Committee includes:
+   Tara Sainath
+   Tutorials
+   Neural Machine Translation
+   Organizers include: Wolfgang Macherey, Yuan Cao
+   Accepted Publications
+   Building Large-Vocabulary ASR Systems for Languages Without Any Audio
+   Training Data (link to appear soon)
+   Manasa Prasad, Daan van Esch, Sandy Ritchie, Jonas Fromseier Mortensen
+   Multi-Microphone Adaptive Noise Cancellation for Robust Hotword
+   Detection (link to appear soon)
+   Yiteng Huang, Turaj Shabestary, Alexander Gruenstein, Li Wan
+   Direct Speech-to-Speech Translation with a Sequence-to-Sequence Model
+   Ye Jia, Ron Weiss, Fadi Biadsy, Wolfgang Macherey, Melvin Johnson,
+   Zhifeng Chen, Yonghui Wu
+   Improving Keyword Spotting and Language Identification via Neural
+   Architecture Search at Scale (link to appear soon)
+   Hanna Mazzawi, Javier Gonzalvo, Aleks Kracun, Prashant Sridhar,
+   Niranjan Subrahmanya, Ignacio Lopez Moreno, Hyun Jin Park, Patrick
+   Violette
+   Shallow-Fusion End-to-End Contextual Biasing (link to appear soon)
+   Ding Zhao, Tara Sainath, David Rybach, Pat Rondon, Deepti Bhatia, Bo
+   Li, Ruoming Pang
+   VoiceFilter: Targeted Voice Separation by Speaker-Conditioned
+   Spectrogram Masking
+   Quan Wang, Hannah Muckenhirn, Kevin Wilson, Prashant Sridhar, Zelin Wu,
+   John Hershey, Rif Saurous, Ron Weiss, Ye Jia, Ignacio Lopez Moreno
+   SpecAugment: A Simple Data Augmentation Method for Automatic Speech
+   Recognition
+   Daniel Park, William Chan, Yu Zhang, Chung-Cheng Chiu, Barret Zoph,
+   Ekin Dogus Cubuk, Quoc Le
+   Two-Pass End-to-End Speech Recognition
+   Ruoming Pang, Tara Sainath, David Rybach, Yanzhang He, Rohit
+   Prabhavalkar, Mirko Visontai, Qiao Liang, Trevor Strohman, Yonghui Wu,
+   Ian McGraw, Chung-Cheng Chiu
+   On the Choice of Modeling Unit for Sequence-to-Sequence Speech
+   Recognition
+   Kazuki Irie, Rohit Prabhavalkar, Anjuli Kannan, Antoine Bruguier, David
+   Rybach, Patrick Nguyen
+   Contextual Recovery of Out-of-Lattice Named Entities in Automatic
+   Speech Recognition (link to appear soon)
+   Jack Serrino, Leonid Velikovich, Petar Aleksic, Cyril Allauzen
+   Joint Speech Recognition and Speaker Diarization via Sequence
+   Transduction
+   Laurent El Shafey, Hagen Soltau, Izhak Shafran
+   Personalizing ASR for Dysarthric and Accented Speech with Limited Data
+   Joel Shor, Dotan Emanuel, Oran Lang, Omry Tuval, Michael Brenner, Julie
+   Cattiau, Fernando Vieira, Maeve McNally, Taylor Charbonneau, Melissa
+   Nollstadt, Avinatan Hassidim, Yossi Matias
+   An Investigation Into On-Device Personalization of End-to-End Automatic
+   Speech Recognition Models (link to appear soon)
+   Khe Chai Sim, Petr Zadrazil, Francoise Beaufays
+   Salient Speech Representations Based on Cloned Networks
+   Bastiaan Kleijn, Felicia Lim, Michael Chinen, Jan Skoglund
+   Cross-Lingual Consistency of Phonological Features: An Empirical
+   Study (link to appear soon)
+   Cibu Johny, Alexander Gutkin, Martin Jansche
+   LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech
+   Heiga Zen, Viet Dang, Robert Clark, Yu Zhang, Ron Weiss, Ye Jia,
+   Zhifeng Chen, Yonghui Wu
+   Improving Performance of End-to-End ASR on Numeric Sequences
+   Cal Peyser, Hao Zhang, Tara Sainath, Zelin Wu
+   Developing Pronunciation Models in New Languages Faster by Exploiting
+   Common Grapheme-to-Phoneme Correspondences Across Languages (link to
+   appear soon)
+   Harry Bleyan, Sandy Ritchie, Jonas Fromseier Mortensen, Daan van Esch
+   Phoneme-Based Contextualization for Cross-Lingual Speech Recognition in
+   End-to-End Models
+   Ke Hu, Antoine Bruguier, Tara Sainath, Rohit Prabhavalkar, Golan Pundak
+   Fréchet Audio Distance: A Reference-free Metric for Evaluating Music
+   Enhancement Algorithms
+   Kevin Kilgour, Mauricio Zuluaga, Dominik Roblek, Matthew Sharifi
+   Learning to Speak Fluently in a Foreign Language: Multilingual Speech
+   Synthesis and Cross-Language Voice Cloning
+   Yu Zhang, Ron Weiss, Heiga Zen, Yonghui Wu, Zhifeng Chen, RJ
+   Skerry-Ryan, Ye Jia, Andrew Rosenberg, Bhuvana Ramabhadran
+   Sampling from Stochastic Finite Automata with Applications to CTC
+   Decoding
+   Martin Jansche, Alexander Gutkin
+   Large-Scale Multilingual Speech Recognition with a Streaming End-to-End
+   Model (link to appear soon)
+   Anjuli Kannan, Arindrima Datta, Tara Sainath, Eugene Weinstein, Bhuvana
+   Ramabhadran, Yonghui Wu, Ankur Bapna, Zhifeng Chen, SeungJi Lee
+   A Real-Time Wideband Neural Vocoder at 1.6 kb/s Using LPCNet
+   Jean-Marc Valin, Jan Skoglund
+   Low-Dimensional Bottleneck Features for On-Device Continuous Speech
+   Recognition
+   David Ramsay, Kevin Kilgour, Dominik Roblek, Matthew Sharif
+   Unified Verbalization for Speech Recognition & Synthesis Across
+   Languages (link to appear soon)
+   Sandy Ritchie, Richard Sproat, Kyle Gorman, Daan van Esch, Christian
+   Schallhart, Nikos Bampounis, Benoit Brard, Jonas Mortensen, Amelia
+   Holt, Eoin Mahon
+   Better Morphology Prediction for Better Speech Systems (link to appear
+   soon)
+   Dravyansh Sharma, Melissa Wilson, Antoine Bruguier
+   Dual Encoder Classifier Models as Constraints in Neural Text
+   Normalization
+   Ajda Gokcen, Hao Zhang, Richard Sproat
+   Large-Scale Visual Speech Recognition
+   Brendan Shillingford, Yannis Assael, Matthew Hoffman, Thomas Paine,
+   Cían Hughes, Utsav Prabhu, Hank Liao, Hasim Sak, Kanishka Rao, Lorrayne
+   Bennett, Marie Mulville, Ben Coppin, Ben Laurie, Andrew Senior, Nando
+   de Freitas
+   Parrotron: An End-to-End Speech-to-Speech Conversion Model and its
+   Applications to Hearing-Impaired Speech and Speech Separation
+   Fadi Biadsy, Ron Weiss, Pedro Moreno, Dimitri Kanevsky, Ye Jia
+   Share on Twitter Share on Facebook
+
+Using Deep Learning to Inform Differential Diagnoses of Skin Diseases
+
+   Thursday, September 12, 2019
+   Posted by Yuan Liu, PhD, Software Engineer and Peggy Bui, MD, Technical
+   Program Manager, Google Health
+   An estimated 1.9 billion people worldwide suffer from a skin condition
+   at any given time, and due to a shortage of dermatologists, many cases
+   are seen by general practitioners instead. In the United States alone,
+   up to 37% of patients seen in the clinic have at least one skin
+   complaint and more than half of those patients are seen by
+   non-dermatologists. However, studies demonstrate a significant gap in
+   the accuracy of skin condition diagnoses between general practitioners
+   and dermatologists, with the accuracy of general practitioners between
+   24% and 70%, compared to 77-96% for dermatologists. This can lead to
+   suboptimal referrals, delays in care, and errors in diagnosis and
+   treatment.
+   Existing strategies for non-dermatologists to improve diagnostic
+   accuracy include the use of reference textbooks, online resources, and
+   consultation with a colleague. Machine learning tools have also been
+   developed with the aim of helping to improve diagnostic accuracy.
+   Previous research has largely focused on early screening of skin
+   cancer, in particular, whether a lesion is malignant or benign, or
+   whether a lesion is melanoma. However, upwards of 90% of skin problems
+   are not malignant, and addressing these more common conditions is also
+   important to reduce the global burden of skin disease.
+   In “A Deep Learning System for Differential Diagnosis of Skin
+   Diseases,” we developed a deep learning system (DLS) to address the
+   most common skin conditions seen in primary care. Our results showed
+   that a DLS can achieve an accuracy across 26 skin conditions that is on
+   par with U.S. board-certified dermatologists, when presented with
+   identical information about a patient case (images and metadata). This
+   study highlights the potential of the DLS to augment the ability of
+   general practitioners who did not have additional specialty training to
+   accurately diagnose skin conditions.
+   DLS Design
+   Clinicians often face ambiguous cases for which there is no clear cut
+   answer. For example, is this patient’s rash stasis dermatitis or
+   cellulitis, or perhaps both superimposed? Rather than giving just one
+   diagnosis, clinicians generate a differential diagnosis, which is a
+   ranked list of possible diagnoses. A differential diagnosis frames the
+   problem so that additional workup (laboratory tests, imaging,
+   procedures, consultations) and treatments can be systematically applied
+   until a diagnosis is confirmed. As such, a deep learning system (DLS)
+   that produces a ranked list of possible skin conditions for a skin
+   complaint closely mimics how clinicians think and is key to prompt
+   triage, diagnosis and treatment for patients.
+   To render this prediction, the DLS processes inputs, including one or
+   more clinical images of the skin abnormality and up to 45 types of
+   metadata (self-reported components of the medical history such as age,
+   sex, symptoms, etc.). For each case, multiple images were processed
+   using the Inception-v4 neural network architecture and combined with
+   feature-transformed metadata, for use in the classification layer. In
+   our study, we developed and evaluated the DLS with 17,777 de-identified
+   cases that were primarily referred from primary care clinics to a
+   teledermatology service. Data from 2010-2017 were used for training and
+   data from 2017-2018 for evaluation. During model training, the DLS
+   leveraged over 50,000 differential diagnoses provided by over 40
+   dermatologists.
+   To evaluate the DLS’s accuracy, we compared it to a rigorous reference
+   standard based on the diagnoses from three U.S. board-certified
+   dermatologists. In total, dermatologists provided differential
+   diagnoses for 3,756 cases (“Validation set A”), and these diagnoses
+   were aggregated via a voting process to derive the ground truth labels.
+   The DLS’s ranked list of skin conditions was compared with this
+   dermatologist-derived differential diagnosis, achieving 71% and 93%
+   top-1 and top-3 accuracies, respectively.
+
+                                              [image3.png]
+   Schematic of the DLS and how the reference standard (ground truth) was
+   derived via the voting of three board-certified dermatologists for each
+                         case in the validation set.
+
+   Comparison to Professional Evaluations
+   In this study, we also compared the accuracy of the DLS to that of
+   three categories of clinicians on a subset of the validation A dataset
+   (“Validation set B”): dermatologists, primary care physicians (PCPs),
+   and nurse practitioners (NPs) — all chosen randomly and representing a
+   range of experience, training, and diagnostic accuracy. Because typical
+   differential diagnoses provided by clinicians only contain up to three
+   diagnoses, we compared only the top three predictions by the DLS with
+   the clinicians. The DLS achieved a top-3 diagnostic accuracy of 90% on
+   the validation B dataset, which was comparable to dermatologists and
+   substantially higher than primary care physicians (PCPs) and nurse
+   practitioners (NPs)—75%, 60%, and 55%, respectively, for the 6
+   clinicians in each group. This high top-3 accuracy suggests that the
+   DLS may help prompt clinicians (including dermatologists) to consider
+   possibilities that were not originally in their differential diagnoses,
+   thus improving diagnostic accuracy and condition management.
+
+                                              [image4.png]
+     The DLS’s leading (top-1) differential diagnosis is substantially
+   higher than PCPs and NPs, and on par with dermatologists. This accuracy
+     increases substantially when we look at the DLS’s top-3 accuracy,
+     suggesting that in the majority of cases the DLS’s ranked list of
+      diagnoses contains the correct ground truth answer for the case.
+
+   Assessing Demographic Performance
+   Skin type, in particular, is highly relevant to dermatology, where
+   visual assessment of the skin itself is crucial to diagnosis. To
+   evaluate potential bias towards skin type, we examined DLS performance
+   based on the Fitzpatrick skin type, which is a scale that ranges from
+   Type I (“pale white, always burns, never tans”) to Type VI (“darkest
+   brown, never burns”). To ensure sufficient numbers of cases on which to
+   draw convincing conclusions, we focused on skin types that represented
+   at least 5% of the data — Fitzpatrick skin types II through IV. On
+   these categories, the DLS’s accuracy was similar, with a top-1 accuracy
+   ranging from 69-72%, and the top-3 accuracy from 91-94%. Encouragingly,
+   the DLS also remained accurate in patient subgroups for which
+   significant numbers (at least 5%) were present in the dataset based on
+   other self-reported demographic information: age, sex, and
+   race/ethnicities. As further qualitative analysis, we assessed via
+   saliency (explanation) techniques that the DLS was reassuringly
+   “focusing” on the abnormalities instead of on skin tone.
+
+                                             [image2.png]
+     Left: An example of a case with hair loss that was challenging for
+   non-specialists to arrive at the specific diagnosis, which is necessary
+     for determining appropriate treatment. Right: An image with regions
+      highlighted in green showing the areas that the DLS identified as
+   important and used to make its prediction. Center: The combined image,
+   which indicates that the DLS mostly focused on the area with hair loss
+       to make this prediction, instead of on forehead skin color, for
+                 example, which may indicate potential bias.
+
+   Incorporating Multiple Data Types
+   We also studied the effect of different types of input data on the DLS
+   performance. Much like how having images from several angles can help a
+   teledermatologist more accurately diagnose a skin condition, the
+   accuracy of the DLS improves with increasing number of images. If
+   metadata (e.g., the medical history) is missing, the model does not
+   perform as well. This accuracy gap, which may occur in scenarios where
+   no medical history is available, can be partially mitigated by training
+   the DLS with only images. Nevertheless, this data suggests that
+   providing the answers to a few questions about the skin condition can
+   substantially improve the DLS accuracy.
+
+                                              [image1.png]
+    The DLS performance improves when more images (blue line) or metadata
+    (blue compared with red line) are present. In the absence of metadata
+       as input, training a separate DLS using images alone leads to a
+       marginal improvement compared to the current DLS (green line).
+
+   Future Work and Applications
+   Though these results are very promising, much work remains ahead.
+   First, as reflective of real-world practice, the relative rarity of
+   skin cancer such as melanoma in our dataset hindered our ability to
+   train an accurate system to detect cancer. Related to this, the skin
+   cancer labels in our dataset were not biopsy-proven, limiting the
+   quality of the ground truth in this regard. Second, while our dataset
+   did contain a variety of Fitzpatrick skin types, some skin types were
+   too rare in this dataset to allow meaningful training or analysis.
+   Finally, the validation dataset was from one teledermatology service.
+   Though 17 primary care locations across two states were included,
+   additional validation on cases from a wider geographical region will be
+   critical. We believe these limitations can be addressed by including
+   more cases of biopsy-proven skin cancers in the training and validation
+   sets, and including cases representative of additional Fitzpatrick skin
+   types and from other clinical centers.
+   The success of deep learning to inform the differential diagnosis of
+   skin disease is highly encouraging of such a tool’s potential to assist
+   clinicians. For example, such a DLS could help triage cases to guide
+   prioritization for clinical care or could help non-dermatologists
+   initiate dermatologic care more accurately and potentially improve
+   access. Though significant work remains, we are excited for future
+   efforts in examining the usefulness of such a system for clinicians.
+   For research collaboration inquiries, please contact
+   dermatology-research@google.com.
+   Acknowledgements
+   This work involved the efforts of a multidisciplinary team of software
+   engineers, researchers, clinicians and cross functional contributors.
+   Key contributors to this project include Yuan Liu, Ayush Jain, Clara
+   Eng, David H. Way, Kang Lee, Peggy Bui, Kimberly Kanada, Guilherme de
+   Oliveira Marinho, Jessica Gallegos, Sara Gabriele, Vishakha Gupta,
+   Nalini Singh, Vivek Natarajan, Rainer Hofmann-Wellenhof, Greg S.
+   Corrado, Lily H. Peng, Dale R. Webster, Dennis Ai, Susan Huang, Yun
+   Liu, R. Carter Dunn and David Coz. The authors would like to
+   acknowledge William Chen, Jessica Yoshimi, Xiang Ji and Quang Duong for
+   software infrastructure support for data collection. Thanks also go to
+   Genevieve Foti, Ken Su, T Saensuksopa, Devon Wang, Yi Gao and Linh
+   Tran. Last but not least, this work would not have been possible
+   without the participation of the dermatologists, primary care
+   physicians, nurse practitioners who reviewed cases for this study,
+   Sabina Bis who helped to establish the skin condition mapping and Amy
+   Paller who provided feedback on the manuscript.
+   Share on Twitter Share on Facebook
+
+Learning Cross-Modal Temporal Representations from Unlabeled Videos
+
+   Wednesday, September 11, 2019
+   Posted by Chen Sun and Cordelia Schmid, Research Scientists, Google
+   Research
+   While people can easily recognize what activities are taking place in
+   videos and anticipate what events may happen next, it is much more
+   difficult for machines. Yet, increasingly, it is important for machines
+   to understand the contents and dynamics of videos for applications,
+   such as temporal localization, action detection and navigation for
+   self-driving cars. In order to train neural networks to perform such
+   tasks, it is common to use supervised training, in which the training
+   data consists of videos that have been meticulously labeled by people
+   on a frame-by-frame basis. Such annotations are hard to acquire at
+   scale. Consequently, there is much interest in self-supervised
+   learning, in which models are trained on various proxy tasks, and the
+   supervision of those tasks naturally resides in the data itself.
+   In “VideoBERT: A Joint Model for Video and Language Representation
+   Learning” (VideoBERT) and “Contrastive Bidirectional Transformer for
+   Temporal Representation Learning” (CBT), we propose to learn temporal
+   representations from unlabeled videos. The goal is to discover
+   high-level semantic features that correspond to actions and events that
+   unfold over longer time scales. To accomplish this, we exploit the key
+   insight that human language has evolved words to describe high-level
+   objects and events. In videos, speech tends to be temporally aligned
+   with the visual signals, and can be extracted by using off-the-shelf
+   automatic speech recognition (ASR) systems, and thus provides a natural
+   source of self-supervision. Our model is an example of cross-modal
+   learning, as it jointly utilizes the signals from visual and audio
+   (speech) modalities during training.
+
+                                              [image4.gif]
+    Image frames and human speech from the same video locations are often
+     semantically aligned. The alignment is non-exhaustive and sometimes
+   noisy, which we hope to mitigate by pretraining on larger datasets. For
+   the left example, the ASR output is, “Keep rolling tight and squeeze
+   the air out to its side and you can kind of pull a little bit.”, where
+     the actions are captured by speech but the objects are not. For the
+  right example, the ASR output is, “This is where you need to be patient
+   patient patient,” which is not related to the visual content at all.
+
+   A BERT Model for Videos
+   The first step of representation learning is to define a proxy task
+   that leads the model to learn temporal dynamics and cross-modal
+   semantic correspondence from long, unlabeled videos. To this end, we
+   generalize the Bidirectional Encoder Representations from Transformers
+   (BERT) model. The BERT model has shown state-of-the-art performance on
+   various natural language processing tasks, by applying the Transformer
+   architecture to encode long sequences, and pretraining on a corpus
+   containing a large amount of text. BERT uses the cloze test as its
+   proxy task, in which the BERT model is forced to predict missing words
+   from context bidirectionally, instead of just predicting the next word
+   in a sequence.
+   To do this, we generalize the BERT training objective, using image
+   frames combined with the ASR sentence output at the same locations to
+   compose cross-modal “sentences”. The image frames are converted into
+   visual tokens with durations of 1.5 seconds, based on visual feature
+   similarities. They are then concatenated with the ASR word tokens. We
+   train the VideoBERT model to fill out the missing tokens from the
+   visual-text sentences. Our hypothesis, which our experiments support,
+   is that by pretraining on this proxy task, the model learns to reason
+   about longer-range temporal dynamics (visual cloze) and high-level
+   semantics (visual-text cloze).
+
+                                              [image1.png]
+     Illustration of VideoBERT in the context of a video and text masked
+   token prediction, or cloze, task. Bottom: visual and text (ASR) tokens
+    from the same locations of videos are concatenated to form the inputs
+      to VideoBERT. Some visual and text tokens are masked out. Middle:
+      VideoBERT applies the Transformer architecture to jointly encode
+   bidirectional visual-text context. Yellow and pink boxes correspond to
+      the input and output embeddings, respectively. Top: the training
+    objective is to recover the correct tokens for the masked locations.
+
+   Inspecting the VideoBERT Model
+   We trained VideoBERT on over one million instructional videos, such as
+   cooking, gardening and vehicle repair. Once trained, one can inspect
+   what the VideoBERT model learns on a number of tasks to verify that the
+   output accurately reflects the video content. For example,
+   text-to-video prediction can be used to automatically generate a set of
+   instructions (such as a recipe) from video, yielding video segments
+   (tokens) that reflect what is described at each step. In addition,
+   video-to-video prediction can be used to visualize possible future
+   content based on an initial video token.
+
+                                              [image3.png]
+   Qualitative results from VideoBERT, pretrained on cooking videos. Top:
+      Given some recipe text, we generate a sequence of visual tokens.
+      Bottom: Given a visual token, we show the top three future tokens
+   forecast by VideoBERT at different time scales. In this case, the model
+   predicts that a bowl of flour and cocoa powder may be baked in an oven,
+     and may become a brownie or cupcake. We visualize the visual tokens
+   using the images from the training set closest to the tokens in feature
+                                   space.
+
+   To verify if VideoBERT learns semantic correspondences between videos
+   and text, we tested its “zero-shot” classification accuracy on a
+   cooking video dataset in which neither the videos nor annotations were
+   used during pre-training. To perform classification, the video tokens
+   were concatenated with a template sentence “now let me show you how to
+   [MASK] the [MASK]” and the predicted verb and noun tokens were
+   extracted. The VideoBERT model matched the top-5 accuracy of a
+   fully-supervised baseline, indicating that the model is able to perform
+   competitively in this “zero-shot” setting.
+   Transfer Learning with Contrastive Bidirectional Transformers
+   While VideoBERT showed impressive results in learning how to
+   automatically label and predict video content, we noticed that the
+   visual tokens used by VideoBERT can lose fine-grained visual
+   information, such as smaller objects and subtle motions. To explore
+   this, we propose the Contrastive Bidirectional Transformers (CBT) model
+   which removes this tokenization step, and further evaluated the quality
+   of learned representations by transfer learning on downstream tasks.
+   CBT applies a different loss function, the contrastive loss, in order
+   to maximize the mutual information between the masked positions and the
+   rest of cross-modal sentences. We evaluated the learned representations
+   for a diverse set of tasks (e.g., action segmentation, action
+   anticipation and video captioning) and on various video datasets. The
+   CBT approach outperforms previous state-of-the-art by significant
+   margins on most benchmarks. We observe that: (1) the cross-modal
+   objective is important for transfer learning performance; (2) a bigger
+   and more diverse pre-training set leads to better representations; (3)
+   compared with baseline methods such as average pooling or LSTMs, the
+   CBT model is much better at utilizing long temporal context.
+
+                                             [image2.png]
+      Action anticipation accuracy with the CBT approach from untrimmed
+   videos with 200 activity classes. We compare with AvgPool and LSTM, and
+      report performance when the observation time is 15, 30, 45 and 72
+                                  seconds.
+
+   Conclusion & future work
+   Our results demonstrate the power of the BERT model for learning
+   visual-linguistic and visual representations from unlabeled videos. We
+   find that our models are not only useful for zero-shot action
+   classification and recipe generation, but the learned temporal
+   representations also transfer well to various downstream tasks, such as
+   action anticipation. Future work includes learning low-level visual
+   features jointly with long-term temporal representations, which enables
+   better adaptation to the video context. Furthermore, we plan to expand
+   the number of pre-training videos to be larger and more diverse.
+   Acknowledgements
+   The core team includes Chen Sun, Fabien Baradel, Austin Myers, Carl
+   Vondrick, Kevin Murphy and Cordelia Schmid. We would like to thank Jack
+   Hessel, Bo Pang, Radu Soricut, Baris Sumengen, Zhenhai Zhu, and the
+   BERT team for sharing amazing tools that greatly facilitated our
+   experiments. We also thank Justin Gilmer, Abhishek Kumar, Ben Poole,
+   David Ross, and Rahul Sukthankar for helpful discussions.
+   Share on Twitter Share on Facebook
+     
+   ____________________
+   [ncccFICB87qzQMia5FsJfOui0zMnmRvipU1ormHQuxGTxUsAcCFLxJQBLBLn4UoAFglW8B
+   kATwS5eC6CBEBWvCShBiIvXBkgQRcVbADiI4uKtABSESvGWgB9EzHt3+tNwyO0qa9SoIYtv
+   AQYAqDJhaWWeMecAAAAASUVORK5CYII=]
+
+Labels
+
+   
+     * 2018
+     * accessibility
+     * ACL
+     * ACM
+     * Acoustic Modeling
+     * Adaptive Data Analysis
+     * ads
+     * adsense
+     * adwords
+     * Africa
+     * AI
+     * AI for Social Good
+     * Algorithms
+     * Android
+     * Android Wear
+     * API
+     * App Engine
+     * App Inventor
+     * April Fools
+     * Art
+     * Audio
+     * Augmented Reality
+     * Australia
+     * Automatic Speech Recognition
+     * AutoML
+     * Awards
+     * BigQuery
+     * Cantonese
+     * Chemistry
+     * China
+     * Chrome
+     * Cloud Computing
+     * Collaboration
+     * Compression
+     * Computational Imaging
+     * Computational Photography
+     * Computer Science
+     * Computer Vision
+     * conference
+     * conferences
+     * Conservation
+     * correlate
+     * Course Builder
+     * crowd-sourcing
+     * CVPR
+     * Data Center
+     * Data Discovery
+     * data science
+     * datasets
+     * Deep Learning
+     * DeepDream
+     * DeepMind
+     * distributed systems
+     * Diversity
+     * Earth Engine
+     * economics
+     * Education
+     * Electronic Commerce and Algorithms
+     * electronics
+     * EMEA
+     * EMNLP
+     * Encryption
+     * entities
+     * Entity Salience
+     * Environment
+     * Europe
+     * Exacycle
+     * Expander
+     * Faculty Institute
+     * Faculty Summit
+     * Flu Trends
+     * Fusion Tables
+     * gamification
+     * Gboard
+     * Gmail
+     * Google Accelerated Science
+     * Google Books
+     * Google Brain
+     * Google Cloud Platform
+     * Google Docs
+     * Google Drive
+     * Google Genomics
+     * Google Maps
+     * Google Photos
+     * Google Play Apps
+     * Google Science Fair
+     * Google Sheets
+     * Google Translate
+     * Google Trips
+     * Google Voice Search
+     * Google+
+     * Government
+     * grants
+     * Graph
+     * Graph Mining
+     * Hardware
+     * HCI
+     * Health
+     * High Dynamic Range Imaging
+     * ICCV
+     * ICLR
+     * ICML
+     * ICSE
+     * Image Annotation
+     * Image Classification
+     * Image Processing
+     * Inbox
+     * India
+     * Information Retrieval
+     * internationalization
+     * Internet of Things
+     * Interspeech
+     * IPython
+     * Journalism
+     * jsm
+     * jsm2011
+     * K-12
+     * Kaggle
+     * KDD
+     * Keyboard Input
+     * Klingon
+     * Korean
+     * Labs
+     * Linear Optimization
+     * localization
+     * Low-Light Photography
+     * Machine Hearing
+     * Machine Intelligence
+     * Machine Learning
+     * Machine Perception
+     * Machine Translation
+     * Magenta
+     * MapReduce
+     * market algorithms
+     * Market Research
+     * Mixed Reality
+     * ML
+     * ML Fairness
+     * MOOC
+     * Moore's Law
+     * Multimodal Learning
+     * NAACL
+     * Natural Language Processing
+     * Natural Language Understanding
+     * Network Management
+     * Networks
+     * Neural Networks
+     * NeurIPS
+     * Nexus
+     * Ngram
+     * NIPS
+     * NLP
+     * On-device Learning
+     * open source
+     * operating systems
+     * Optical Character Recognition
+     * optimization
+     * osdi
+     * osdi10
+     * patents
+     * Peer Review
+     * ph.d. fellowship
+     * PhD Fellowship
+     * PhotoScan
+     * Physics
+     * PiLab
+     * Pixel
+     * Policy
+     * Professional Development
+     * Proposals
+     * Public Data Explorer
+     * publication
+     * Publications
+     * Quantum AI
+     * Quantum Computing
+     * Reinforcement Learning
+     * renewable energy
+     * Research
+     * Research Awards
+     * resource optimization
+     * Robotics
+     * schema.org
+     * Search
+     * search ads
+     * Security and Privacy
+     * Semantic Models
+     * Semi-supervised Learning
+     * SIGCOMM
+     * SIGMOD
+     * Site Reliability Engineering
+     * Social Networks
+     * Software
+     * Sound Search
+     * Speech
+     * Speech Recognition
+     * statistics
+     * Structured Data
+     * Style Transfer
+     * Supervised Learning
+     * Systems
+     * TensorBoard
+     * TensorFlow
+     * TPU
+     * Translate
+     * trends
+     * TTS
+     * TV
+     * UI
+     * University Relations
+     * UNIX
+     * Unsupervised Learning
+     * User Experience
+     * video
+     * Video Analysis
+     * Virtual Reality
+     * Vision Research
+     * Visiting Faculty
+     * Visualization
+     * VLDB
+     * Voice Search
+     * Wiki
+     * wikipedia
+     * WWW
+     * Year in Review
+     * YouTube
+
+   
+
+Archive
+
+   
+     *     2019
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2018
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2017
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2016
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2015
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2014
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2013
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2012
+          + Dec
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2011
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2010
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2009
+          + Dec
+          + Nov
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2008
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Jul
+          + May
+          + Apr
+          + Mar
+          + Feb
+
+     *     2007
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Feb
+
+     *     2006
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Apr
+          + Mar
+          + Feb
+
+   [8LnOxYWFhZG4leAAQAAQHEaYuzHbAAAAABJRU5ErkJggg==]
+
+Feed
+
+   (BUTTON) Follow @googleai
+   Give us feedback in our Product Forums.
+
+   [P2DAYDAaDwWAwGAwGg8FgMBgMBoPBYDD2Cf8IMADDRGoQTe+E9AAAAABJRU5ErkJggg==]
+     * Google
+     * Privacy
+     * Terms
+   #Google AI Blog - Atom Google AI Blog - RSS Google AI Blog - Atom
+
+   [GoogleAI_logo_horizontal_color_rgb.png]
+
+Blog
+
+   The latest news from Google AI
+
+Improving End-to-End Models For Speech Recognition
+
+   Thursday, December 14, 2017
+   Posted by Tara N. Sainath, Research Scientist, Speech Team and Yonghui
+   Wu, Software Engineer, Google Brain Team
+   Traditional automatic speech recognition (ASR) systems, used for a
+   variety of voice search applications at Google, are comprised of an
+   acoustic model (AM), a pronunciation model (PM) and a language model
+   (LM), all of which are independently trained, and often manually
+   designed, on different datasets [1]. AMs take acoustic features and
+   predict a set of subword units, typically context-dependent or
+   context-independent phonemes. Next, a hand-designed lexicon (the PM)
+   maps a sequence of phonemes produced by the acoustic model to words.
+   Finally, the LM assigns probabilities to word sequences. Training
+   independent components creates added complexities and is suboptimal
+   compared to training all components jointly. Over the last several
+   years, there has been a growing popularity in developing end-to-end
+   systems, which attempt to learn these separate components jointly as a
+   single system. While these end-to-end models have shown promising
+   results in the literature [2, 3], it is not yet clear if such
+   approaches can improve on current state-of-the-art conventional
+   systems.
+   Today we are excited to share “State-of-the-art Speech Recognition With
+   Sequence-to-Sequence Models [4],” which describes a new end-to-end
+   model that surpasses the performance of a conventional production
+   system [1]. We show that our end-to-end system achieves a word error
+   rate (WER) of 5.6%, which corresponds to a 16% relative improvement
+   over a strong conventional system which achieves a 6.7% WER.
+   Additionally, the end-to-end model used to output the initial word
+   hypothesis, before any hypothesis rescoring, is 18 times smaller than
+   the conventional model, as it contains no separate LM and PM.
+   Our system builds on the Listen-Attend-Spell (LAS) end-to-end
+   architecture, first presented in [2]. The LAS architecture consists of
+   3 components. The listener encoder component, which is similar to a
+   standard AM, takes the a time-frequency representation of the input
+   speech signal, x, and uses a set of neural network layers to map the
+   input to a higher-level feature representation, h^enc. The output of
+   the encoder is passed to an attender, which uses h^enc to learn an
+   alignment between input features x and predicted subword units {y[n], …
+   y[0]}, where each subword is typically a grapheme or wordpiece.
+   Finally, the output of the attention module is passed to the speller
+   (i.e., decoder), similar to an LM, that produces a probability
+   distribution over a set of hypothesized words.
+
+                                [image1.png]
+                   Components of the LAS End-to-End Model.
+
+   All components of the LAS model are trained jointly as a single
+   end-to-end neural network, instead of as separate modules like
+   conventional systems, making it much simpler.
+   Additionally, because the LAS model is fully neural, there is no need
+   for external, manually designed components such as finite state
+   transducers, a lexicon, or text normalization modules. Finally, unlike
+   conventional models, training end-to-end models does not require
+   bootstrapping from decision trees or time alignments generated from a
+   separate system, and can be trained given pairs of text transcripts and
+   the corresponding acoustics.
+   In [4], we introduce a variety of novel structural improvements,
+   including improving the attention vectors passed to the decoder and
+   training with longer subword units (i.e., wordpieces). In addition, we
+   also introduce numerous optimization improvements for training,
+   including the use of minimum word error rate training [5]. These
+   structural and optimization improvements are what accounts for
+   obtaining the 16% relative improvement over the conventional model.
+   Another exciting potential application for this research is
+   multi-dialect and multi-lingual systems, where the simplicity of
+   optimizing a single neural network makes such a model very attractive.
+   Here data for all dialects/languages can be combined to train one
+   network, without the need for a separate AM, PM and LM for each
+   dialect/language. We find that these models work well on 7 english
+   dialects [6] and 9 Indian languages [7], while outperforming a model
+   trained separately on each individual language/dialect.
+   While we are excited by our results, our work is not done. Currently,
+   these models cannot process speech in real time [8, 9, 10], which is a
+   strong requirement for latency-sensitive applications such as voice
+   search. In addition, these models still compare negatively to
+   production when evaluated on live production data. Furthermore, our
+   end-to-end model is learned on 22 million audio-text pair utterances
+   compared to a conventional system that is typically trained on
+   significantly larger corpora. In addition, our proposed model is not
+   able to learn proper spellings for rarely used words such as proper
+   nouns, which is normally performed with a hand-designed PM. Our ongoing
+   efforts are focused now on addressing these challenges.
+   Acknowledgements
+   This work was done as a strong collaborative effort between Google
+   Brain and Speech teams. Contributors include Tara Sainath, Rohit
+   Prabhavalkar, Bo Li, Kanishka Rao, Shankar Kumar, Shubham Toshniwal,
+   Michiel Bacchiani and Johan Schalkwyk from the Speech team; as well as
+   Yonghui Wu, Patrick Nguyen, Zhifeng Chen, Chung-cheng Chiu, Anjuli
+   Kannan, Ron Weiss, Navdeep Jaitly, William Chan, Yu Zhang and Jan
+   Chorowski from the Google Brain team. The work is described in more
+   detail in papers [4-12].
+   References
+   [1] G. Pundak and T. N. Sainath, “Lower Frame Rate Neural Network
+   Acoustic Models," in Proc. Interspeech, 2016.
+   [2] W. Chan, N. Jaitly, Q. V. Le, and O. Vinyals, “Listen, attend and
+   spell,” CoRR, vol. abs/1508.01211, 2015
+   [3] R. Prabhavalkar, K. Rao, T. N. Sainath, B. Li, L. Johnson, and N.
+   Jaitly, “A Comparison of Sequence-to-sequence Models for Speech
+   Recognition,” in Proc. Interspeech, 2017.
+   [4] C.C. Chiu, T.N. Sainath, Y. Wu, R. Prabhavalkar, P. Nguyen, Z.
+   Chen, A. Kannan, R.J. Weiss, K. Rao, K. Gonina, N. Jaitly, B. Li, J.
+   Chorowski and M. Bacchiani, “State-of-the-art Speech Recognition With
+   Sequence-to-Sequence Models,” submitted to ICASSP 2018.
+   [5] R. Prabhavalkar, T.N. Sainath, Y. Wu, P. Nguyen, Z. Chen, C.C. Chiu
+   and A. Kannan, “Minimum Word Error Rate Training for Attention-based
+   Sequence-to-Sequence Models,” submitted to ICASSP 2018.
+   [6] B. Li, T.N. Sainath, K. Sim, M. Bacchiani, E. Weinstein, P. Nguyen,
+   Z. Chen, Y. Wu and K. Rao, “Multi-Dialect Speech Recognition With a
+   Single Sequence-to-Sequence Model” submitted to ICASSP 2018.
+   [7] S. Toshniwal, T.N. Sainath, R.J. Weiss, B. Li, P. Moreno, E.
+   Weinstein and K. Rao, “End-to-End Multilingual Speech Recognition using
+   Encoder-Decoder Models”, submitted to ICASSP 2018.
+   [8] T.N. Sainath, C.C. Chiu, R. Prabhavalkar, A. Kannan, Y. Wu, P.
+   Nguyen and Z. Chen, “Improving the Performance of Online Neural
+   Transducer Models”, submitted to ICASSP 2018.
+   [9] C.C. Chiu* and C. Raffel*, “Monotonic Chunkwise Attention,”
+   submitted to ICLR 2018.
+   [10] D. Lawson*, C.C. Chiu*, G. Tucker*, C. Raffel, K. Swersky, N.
+   Jaitly. “Learning Hard Alignments with Variational Inference”,
+   submitted to ICASSP 2018.
+   [11] T.N. Sainath, R. Prabhavalkar, S. Kumar, S. Lee, A. Kannan, D.
+   Rybach, V. Schogol, P. Nguyen, B. Li, Y. Wu, Z. Chen and C.C. Chiu, “No
+   Need for a Lexicon? Evaluating the Value of the Pronunciation Lexica in
+   End-to-End Models,” submitted to ICASSP 2018.
+   [12] A. Kannan, Y. Wu, P. Nguyen, T.N. Sainath, Z. Chen and R.
+   Prabhavalkar. “An Analysis of Incorporating an External Language Model
+   into a Sequence-to-Sequence Model,” submitted to ICASSP 2018.
+   Share on Twitter Share on Facebook
+     
+   ____________________
+   [ncccFICB87qzQMia5FsJfOui0zMnmRvipU1ormHQuxGTxUsAcCFLxJQBLBLn4UoAFglW8B
+   kATwS5eC6CBEBWvCShBiIvXBkgQRcVbADiI4uKtABSESvGWgB9EzHt3+tNwyO0qa9SoIYtv
+   AQYAqDJhaWWeMecAAAAASUVORK5CYII=]
+
+Labels
+
+   
+     * 2018
+     * accessibility
+     * ACL
+     * ACM
+     * Acoustic Modeling
+     * Adaptive Data Analysis
+     * ads
+     * adsense
+     * adwords
+     * Africa
+     * AI
+     * AI for Social Good
+     * Algorithms
+     * Android
+     * Android Wear
+     * API
+     * App Engine
+     * App Inventor
+     * April Fools
+     * Art
+     * Audio
+     * Augmented Reality
+     * Australia
+     * Automatic Speech Recognition
+     * AutoML
+     * Awards
+     * BigQuery
+     * Cantonese
+     * Chemistry
+     * China
+     * Chrome
+     * Cloud Computing
+     * Collaboration
+     * Compression
+     * Computational Imaging
+     * Computational Photography
+     * Computer Science
+     * Computer Vision
+     * conference
+     * conferences
+     * Conservation
+     * correlate
+     * Course Builder
+     * crowd-sourcing
+     * CVPR
+     * Data Center
+     * Data Discovery
+     * data science
+     * datasets
+     * Deep Learning
+     * DeepDream
+     * DeepMind
+     * distributed systems
+     * Diversity
+     * Earth Engine
+     * economics
+     * Education
+     * Electronic Commerce and Algorithms
+     * electronics
+     * EMEA
+     * EMNLP
+     * Encryption
+     * entities
+     * Entity Salience
+     * Environment
+     * Europe
+     * Exacycle
+     * Expander
+     * Faculty Institute
+     * Faculty Summit
+     * Flu Trends
+     * Fusion Tables
+     * gamification
+     * Gboard
+     * Gmail
+     * Google Accelerated Science
+     * Google Books
+     * Google Brain
+     * Google Cloud Platform
+     * Google Docs
+     * Google Drive
+     * Google Genomics
+     * Google Maps
+     * Google Photos
+     * Google Play Apps
+     * Google Science Fair
+     * Google Sheets
+     * Google Translate
+     * Google Trips
+     * Google Voice Search
+     * Google+
+     * Government
+     * grants
+     * Graph
+     * Graph Mining
+     * Hardware
+     * HCI
+     * Health
+     * High Dynamic Range Imaging
+     * ICCV
+     * ICLR
+     * ICML
+     * ICSE
+     * Image Annotation
+     * Image Classification
+     * Image Processing
+     * Inbox
+     * India
+     * Information Retrieval
+     * internationalization
+     * Internet of Things
+     * Interspeech
+     * IPython
+     * Journalism
+     * jsm
+     * jsm2011
+     * K-12
+     * Kaggle
+     * KDD
+     * Keyboard Input
+     * Klingon
+     * Korean
+     * Labs
+     * Linear Optimization
+     * localization
+     * Low-Light Photography
+     * Machine Hearing
+     * Machine Intelligence
+     * Machine Learning
+     * Machine Perception
+     * Machine Translation
+     * Magenta
+     * MapReduce
+     * market algorithms
+     * Market Research
+     * Mixed Reality
+     * ML
+     * ML Fairness
+     * MOOC
+     * Moore's Law
+     * Multimodal Learning
+     * NAACL
+     * Natural Language Processing
+     * Natural Language Understanding
+     * Network Management
+     * Networks
+     * Neural Networks
+     * NeurIPS
+     * Nexus
+     * Ngram
+     * NIPS
+     * NLP
+     * On-device Learning
+     * open source
+     * operating systems
+     * Optical Character Recognition
+     * optimization
+     * osdi
+     * osdi10
+     * patents
+     * Peer Review
+     * ph.d. fellowship
+     * PhD Fellowship
+     * PhotoScan
+     * Physics
+     * PiLab
+     * Pixel
+     * Policy
+     * Professional Development
+     * Proposals
+     * Public Data Explorer
+     * publication
+     * Publications
+     * Quantum AI
+     * Quantum Computing
+     * Reinforcement Learning
+     * renewable energy
+     * Research
+     * Research Awards
+     * resource optimization
+     * Robotics
+     * schema.org
+     * Search
+     * search ads
+     * Security and Privacy
+     * Semantic Models
+     * Semi-supervised Learning
+     * SIGCOMM
+     * SIGMOD
+     * Site Reliability Engineering
+     * Social Networks
+     * Software
+     * Sound Search
+     * Speech
+     * Speech Recognition
+     * statistics
+     * Structured Data
+     * Style Transfer
+     * Supervised Learning
+     * Systems
+     * TensorBoard
+     * TensorFlow
+     * TPU
+     * Translate
+     * trends
+     * TTS
+     * TV
+     * UI
+     * University Relations
+     * UNIX
+     * Unsupervised Learning
+     * User Experience
+     * video
+     * Video Analysis
+     * Virtual Reality
+     * Vision Research
+     * Visiting Faculty
+     * Visualization
+     * VLDB
+     * Voice Search
+     * Wiki
+     * wikipedia
+     * WWW
+     * Year in Review
+     * YouTube
+
+   
+
+Archive
+
+   
+     *     2019
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2018
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2017
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2016
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2015
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2014
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2013
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2012
+          + Dec
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2011
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2010
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2009
+          + Dec
+          + Nov
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2008
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Jul
+          + May
+          + Apr
+          + Mar
+          + Feb
+
+     *     2007
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Feb
+
+     *     2006
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Apr
+          + Mar
+          + Feb
+
+   [8LnOxYWFhZG4leAAQAAQHEaYuzHbAAAAABJRU5ErkJggg==]
+
+Feed
+
+   (BUTTON) Follow @googleai
+   Give us feedback in our Product Forums.
+
+   [P2DAYDAaDwWAwGAwGg8FgMBgMBoPBYDD2Cf8IMADDRGoQTe+E9AAAAABJRU5ErkJggg==]
+     * Google
+     * Privacy
+     * Terms
+   #Google AI Blog - Atom Google AI Blog - RSS Google AI Blog - Atom
+
+   [GoogleAI_logo_horizontal_color_rgb.png]
+
+Blog
+
+   The latest news from Google AI
+
+An All-Neural On-Device Speech Recognizer
+
+   Tuesday, March 12, 2019
+   Posted by Johan Schalkwyk, Google Fellow, Speech Team
+   In 2012, speech recognition research showed significant accuracy
+   improvements with deep learning, leading to early adoption in products
+   such as Google's Voice Search. It was the beginning of a revolution in
+   the field: each year, new architectures were developed that further
+   increased quality, from deep neural networks (DNNs) to recurrent neural
+   networks (RNNs), long short-term memory networks (LSTMs), convolutional
+   networks (CNNs), and more. During this time, latency remained a prime
+   focus — an automated assistant feels a lot more helpful when it
+   responds quickly to requests.
+   Today, we're happy to announce the rollout of an end-to-end,
+   all-neural, on-device speech recognizer to power speech input in
+   Gboard. In our recent paper, "Streaming End-to-End Speech Recognition
+   for Mobile Devices", we present a model trained using RNN transducer
+   (RNN-T) technology that is compact enough to reside on a phone. This
+   means no more network latency or spottiness — the new recognizer is
+   always available, even when you are offline. The model works at the
+   character level, so that as you speak, it outputs words
+   character-by-character, just as if someone was typing out what you say
+   in real-time, and exactly as you'd expect from a keyboard dictation
+   system.
+
+                                               [image1.gif]
+   This video compares the production, server-side speech recognizer (left
+    panel) to the new on-device recognizer (right panel) when recognizing
+   the same spoken sentence. Video credit: Akshay Kannan and Elnaz Sarbar
+
+   A Bit of History
+   Traditionally, speech recognition systems consisted of several
+   components - an acoustic model that maps segments of audio (typically
+   10 millisecond frames) to phonemes, a pronunciation model that connects
+   phonemes together to form words, and a language model that expresses
+   the likelihood of given phrases. In early systems, these components
+   remained independently-optimized.
+   Around 2014, researchers began to focus on training a single neural
+   network to directly map an input audio waveform to an output sentence.
+   This sequence-to-sequence approach to learning a model by generating a
+   sequence of words or graphemes given a sequence of audio features led
+   to the development of "attention-based" and "listen-attend-spell"
+   models. While these models showed great promise in terms of accuracy,
+   they typically work by reviewing the entire input sequence, and do not
+   allow streaming outputs as the input comes in, a necessary feature for
+   real-time voice transcription.
+   Meanwhile, an independent technique called connectionist temporal
+   classification (CTC) had helped halve the latency of the production
+   recognizer at that time. This proved to be an important step in
+   creating the RNN-T architecture adopted in this latest release, which
+   can be seen as a generalization of CTC.
+   Recurrent Neural Network Transducers
+   RNN-Ts are a form of sequence-to-sequence models that do not employ
+   attention mechanisms. Unlike most sequence-to-sequence models, which
+   typically need to process the entire input sequence (the waveform in
+   our case) to produce an output (the sentence), the RNN-T continuously
+   processes input samples and streams output symbols, a property that is
+   welcome for speech dictation. In our implementation, the output symbols
+   are the characters of the alphabet. The RNN-T recognizer outputs
+   characters one-by-one, as you speak, with white spaces where
+   appropriate. It does this with a feedback loop that feeds symbols
+   predicted by the model back into it to predict the next symbols, as
+   described in the figure below.
+
+                                              [image2.png]
+    Representation of an RNN-T, with the input audio samples, x, and the
+     predicted symbols y. The predicted symbols (outputs of the Softmax
+    layer) are fed back into the model through the Prediction network, as
+   y[u-1], ensuring that the predictions are conditioned both on the audio
+   samples so far and on past outputs. The Prediction and Encoder Networks
+    are LSTM RNNs, the Joint model is a feedforward network (paper). The
+         Prediction Network comprises 2 layers of 2048 units, with a
+   640-dimensional projection layer. The Encoder Network comprises 8 such
+                    layers. Image credit: Chris Thornton
+
+   Training such models efficiently was already difficult, but with our
+   development of a new training technique that further reduced the word
+   error rate by 5%, it became even more computationally intensive. To
+   deal with this, we developed a parallel implementation so the RNN-T
+   loss function could run efficiently in large batches on Google's
+   high-performance Cloud TPU v2 hardware. This yielded an approximate 3x
+   speedup in training.
+   Offline Recognition
+   In a traditional speech recognition engine, the acoustic,
+   pronunciation, and language models we described above are "composed"
+   together into a large search graph whose edges are labeled with the
+   speech units and their probabilities. When a speech waveform is
+   presented to the recognizer, a "decoder" searches this graph for the
+   path of highest likelihood, given the input signal, and reads out the
+   word sequence that path takes. Typically, the decoder assumes a Finite
+   State Transducer (FST) representation of the underlying models. Yet,
+   despite sophisticated decoding techniques, the search graph remains
+   quite large, almost 2GB for our production models. Since this is not
+   something that could be hosted easily on a mobile phone, this method
+   requires online connectivity to work properly.
+   To improve the usefulness of speech recognition, we sought to avoid the
+   latency and inherent unreliability of communication networks by hosting
+   the new models directly on device. As such, our end-to-end approach
+   does not need a search over a large decoder graph. Instead, decoding
+   consists of a beam search through a single neural network. The RNN-T we
+   trained offers the same accuracy as the traditional server-based models
+   but is only 450MB, essentially making a smarter use of parameters and
+   packing information more densely. However, even on today's smartphones,
+   450MB is a lot, and propagating signals through such a large network
+   can be slow.
+   We further reduced the model size by using the parameter quantization
+   and hybrid kernel techniques we developed in 2016 and made publicly
+   available through the model optimization toolkit in the TensorFlow Lite
+   library. Model quantization delivered a 4x compression with respect to
+   the trained floating point models and a 4x speedup at run-time,
+   enabling our RNN-T to run faster than real time speech on a single
+   core. After compression, the final model is 80MB.
+   Our new all-neural, on-device Gboard speech recognizer is initially
+   being launched to all Pixel phones in American English only. Given the
+   trends in the industry, with the convergence of specialized hardware
+   and algorithmic improvements, we are hopeful that the techniques
+   presented here can soon be adopted in more languages and across broader
+   domains of application.
+   Acknowledgements:
+   Raziel Alvarez, Michiel Bacchiani, Tom Bagby, Françoise Beaufays,
+   Deepti Bhatia, Shuo-yiin Chang, Zhifeng Chen, Chung-Chen Chiu, Yanzhang
+   He, Alex Gruenstein, Anjuli Kannan, Bo Li, Wei Li, Qiao Liang, Ian
+   McGraw, Patrick Nguyen, Ruoming Pang, Rohit Prabhavalkar, Golan Pundak,
+   Kanishka Rao, David Rybach, Tara Sainath, Haşim Sak, June Yuan
+   Shangguan, Matt Shannon, Mohammadinamul Sheik, Khe Chai Sim, Gabor
+   Simko, Trevor Strohman, Mirkó Visontai, Ron Weiss, Yonghui Wu, Ding
+   Zhao, Dan Zivkovic, and Yu Zhang.
+   Share on Twitter Share on Facebook
+     
+   ____________________
+   [ncccFICB87qzQMia5FsJfOui0zMnmRvipU1ormHQuxGTxUsAcCFLxJQBLBLn4UoAFglW8B
+   kATwS5eC6CBEBWvCShBiIvXBkgQRcVbADiI4uKtABSESvGWgB9EzHt3+tNwyO0qa9SoIYtv
+   AQYAqDJhaWWeMecAAAAASUVORK5CYII=]
+
+Labels
+
+   
+     * 2018
+     * accessibility
+     * ACL
+     * ACM
+     * Acoustic Modeling
+     * Adaptive Data Analysis
+     * ads
+     * adsense
+     * adwords
+     * Africa
+     * AI
+     * AI for Social Good
+     * Algorithms
+     * Android
+     * Android Wear
+     * API
+     * App Engine
+     * App Inventor
+     * April Fools
+     * Art
+     * Audio
+     * Augmented Reality
+     * Australia
+     * Automatic Speech Recognition
+     * AutoML
+     * Awards
+     * BigQuery
+     * Cantonese
+     * Chemistry
+     * China
+     * Chrome
+     * Cloud Computing
+     * Collaboration
+     * Compression
+     * Computational Imaging
+     * Computational Photography
+     * Computer Science
+     * Computer Vision
+     * conference
+     * conferences
+     * Conservation
+     * correlate
+     * Course Builder
+     * crowd-sourcing
+     * CVPR
+     * Data Center
+     * Data Discovery
+     * data science
+     * datasets
+     * Deep Learning
+     * DeepDream
+     * DeepMind
+     * distributed systems
+     * Diversity
+     * Earth Engine
+     * economics
+     * Education
+     * Electronic Commerce and Algorithms
+     * electronics
+     * EMEA
+     * EMNLP
+     * Encryption
+     * entities
+     * Entity Salience
+     * Environment
+     * Europe
+     * Exacycle
+     * Expander
+     * Faculty Institute
+     * Faculty Summit
+     * Flu Trends
+     * Fusion Tables
+     * gamification
+     * Gboard
+     * Gmail
+     * Google Accelerated Science
+     * Google Books
+     * Google Brain
+     * Google Cloud Platform
+     * Google Docs
+     * Google Drive
+     * Google Genomics
+     * Google Maps
+     * Google Photos
+     * Google Play Apps
+     * Google Science Fair
+     * Google Sheets
+     * Google Translate
+     * Google Trips
+     * Google Voice Search
+     * Google+
+     * Government
+     * grants
+     * Graph
+     * Graph Mining
+     * Hardware
+     * HCI
+     * Health
+     * High Dynamic Range Imaging
+     * ICCV
+     * ICLR
+     * ICML
+     * ICSE
+     * Image Annotation
+     * Image Classification
+     * Image Processing
+     * Inbox
+     * India
+     * Information Retrieval
+     * internationalization
+     * Internet of Things
+     * Interspeech
+     * IPython
+     * Journalism
+     * jsm
+     * jsm2011
+     * K-12
+     * Kaggle
+     * KDD
+     * Keyboard Input
+     * Klingon
+     * Korean
+     * Labs
+     * Linear Optimization
+     * localization
+     * Low-Light Photography
+     * Machine Hearing
+     * Machine Intelligence
+     * Machine Learning
+     * Machine Perception
+     * Machine Translation
+     * Magenta
+     * MapReduce
+     * market algorithms
+     * Market Research
+     * Mixed Reality
+     * ML
+     * ML Fairness
+     * MOOC
+     * Moore's Law
+     * Multimodal Learning
+     * NAACL
+     * Natural Language Processing
+     * Natural Language Understanding
+     * Network Management
+     * Networks
+     * Neural Networks
+     * NeurIPS
+     * Nexus
+     * Ngram
+     * NIPS
+     * NLP
+     * On-device Learning
+     * open source
+     * operating systems
+     * Optical Character Recognition
+     * optimization
+     * osdi
+     * osdi10
+     * patents
+     * Peer Review
+     * ph.d. fellowship
+     * PhD Fellowship
+     * PhotoScan
+     * Physics
+     * PiLab
+     * Pixel
+     * Policy
+     * Professional Development
+     * Proposals
+     * Public Data Explorer
+     * publication
+     * Publications
+     * Quantum AI
+     * Quantum Computing
+     * Reinforcement Learning
+     * renewable energy
+     * Research
+     * Research Awards
+     * resource optimization
+     * Robotics
+     * schema.org
+     * Search
+     * search ads
+     * Security and Privacy
+     * Semantic Models
+     * Semi-supervised Learning
+     * SIGCOMM
+     * SIGMOD
+     * Site Reliability Engineering
+     * Social Networks
+     * Software
+     * Sound Search
+     * Speech
+     * Speech Recognition
+     * statistics
+     * Structured Data
+     * Style Transfer
+     * Supervised Learning
+     * Systems
+     * TensorBoard
+     * TensorFlow
+     * TPU
+     * Translate
+     * trends
+     * TTS
+     * TV
+     * UI
+     * University Relations
+     * UNIX
+     * Unsupervised Learning
+     * User Experience
+     * video
+     * Video Analysis
+     * Virtual Reality
+     * Vision Research
+     * Visiting Faculty
+     * Visualization
+     * VLDB
+     * Voice Search
+     * Wiki
+     * wikipedia
+     * WWW
+     * Year in Review
+     * YouTube
+
+   
+
+Archive
+
+   
+     *     2019
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2018
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2017
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2016
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2015
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2014
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2013
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2012
+          + Dec
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2011
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2010
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2009
+          + Dec
+          + Nov
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2008
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Jul
+          + May
+          + Apr
+          + Mar
+          + Feb
+
+     *     2007
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Feb
+
+     *     2006
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Apr
+          + Mar
+          + Feb
+
+   [8LnOxYWFhZG4leAAQAAQHEaYuzHbAAAAABJRU5ErkJggg==]
+
+Feed
+
+   (BUTTON) Follow @googleai
+   Give us feedback in our Product Forums.
+
+   [P2DAYDAaDwWAwGAwGg8FgMBgMBoPBYDD2Cf8IMADDRGoQTe+E9AAAAABJRU5ErkJggg==]
+     * Google
+     * Privacy
+     * Terms
+   #Google AI Blog - Atom Google AI Blog - RSS Google AI Blog - Atom
+
+   [GoogleAI_logo_horizontal_color_rgb.png]
+
+Blog
+
+   The latest news from Google AI
+
+Tacotron 2: Generating Human-like Speech from Text
+
+   Tuesday, December 19, 2017
+   Posted by Jonathan Shen and Ruoming Pang, Software Engineers, on behalf
+   of the Google Brain and Machine Perception Teams
+   Generating very natural sounding speech from text (text-to-speech, TTS)
+   has been a research goal for decades. There has been great progress in
+   TTS research over the last few years and many individual pieces of a
+   complete TTS system have greatly improved. Incorporating ideas from
+   past work such as Tacotron and WaveNet, we added more improvements to
+   end up with our new system, Tacotron 2. Our approach does not use
+   complex linguistic and acoustic features as input. Instead, we generate
+   human-like speech from text using neural networks trained using only
+   speech examples and corresponding text transcripts.
+   A full description of our new system can be found in our paper “Natural
+   TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions.”
+   In a nutshell it works like this: We use a sequence-to-sequence model
+   optimized for TTS to map a sequence of letters to a sequence of
+   features that encode the audio. These features, an 80-dimensional audio
+   spectrogram with frames computed every 12.5 milliseconds, capture not
+   only pronunciation of words, but also various subtleties of human
+   speech, including volume, speed and intonation. Finally these features
+   are converted to a 24 kHz waveform using a WaveNet-like architecture.
+
+                                              [image1.png]
+    A detailed look at Tacotron 2's model architecture. The lower half of
+   the image describes the sequence-to-sequence model that maps a sequence
+   of letters to a spectrogram. For technical details, please refer to the
+                                   paper.
+
+   You can listen to some of the Tacotron 2 audio samples that demonstrate
+   the results of our state-of-the-art TTS system. In an evaluation where
+   we asked human listeners to rate the naturalness of the generated
+   speech, we obtained a score that was comparable to that of professional
+   recordings.
+   While our samples sound great, there are still some difficult problems
+   to be tackled. For example, our system has difficulties pronouncing
+   complex words (such as “decorum” and “merlot”), and in extreme cases it
+   can even randomly generate strange noises. Also, our system cannot yet
+   generate audio in realtime. Furthermore, we cannot yet control the
+   generated speech, such as directing it to sound happy or sad. Each of
+   these is an interesting research problem on its own.
+   Acknowledgements
+   Jonathan Shen, Ruoming Pang, Ron J. Weiss, Mike Schuster, Navdeep
+   Jaitly, Zongheng Yang, Zhifeng Chen, Yu Zhang, Yuxuan Wang, RJ
+   Skerry-Ryan, Rif A. Saurous, Yannis Agiomyrgiannakis, Yonghui Wu, Sound
+   Understanding team, TTS Research team, and TensorFlow team.
+   Share on Twitter Share on Facebook
+     
+   ____________________
+   [ncccFICB87qzQMia5FsJfOui0zMnmRvipU1ormHQuxGTxUsAcCFLxJQBLBLn4UoAFglW8B
+   kATwS5eC6CBEBWvCShBiIvXBkgQRcVbADiI4uKtABSESvGWgB9EzHt3+tNwyO0qa9SoIYtv
+   AQYAqDJhaWWeMecAAAAASUVORK5CYII=]
+
+Labels
+
+   
+     * 2018
+     * accessibility
+     * ACL
+     * ACM
+     * Acoustic Modeling
+     * Adaptive Data Analysis
+     * ads
+     * adsense
+     * adwords
+     * Africa
+     * AI
+     * AI for Social Good
+     * Algorithms
+     * Android
+     * Android Wear
+     * API
+     * App Engine
+     * App Inventor
+     * April Fools
+     * Art
+     * Audio
+     * Augmented Reality
+     * Australia
+     * Automatic Speech Recognition
+     * AutoML
+     * Awards
+     * BigQuery
+     * Cantonese
+     * Chemistry
+     * China
+     * Chrome
+     * Cloud Computing
+     * Collaboration
+     * Compression
+     * Computational Imaging
+     * Computational Photography
+     * Computer Science
+     * Computer Vision
+     * conference
+     * conferences
+     * Conservation
+     * correlate
+     * Course Builder
+     * crowd-sourcing
+     * CVPR
+     * Data Center
+     * Data Discovery
+     * data science
+     * datasets
+     * Deep Learning
+     * DeepDream
+     * DeepMind
+     * distributed systems
+     * Diversity
+     * Earth Engine
+     * economics
+     * Education
+     * Electronic Commerce and Algorithms
+     * electronics
+     * EMEA
+     * EMNLP
+     * Encryption
+     * entities
+     * Entity Salience
+     * Environment
+     * Europe
+     * Exacycle
+     * Expander
+     * Faculty Institute
+     * Faculty Summit
+     * Flu Trends
+     * Fusion Tables
+     * gamification
+     * Gboard
+     * Gmail
+     * Google Accelerated Science
+     * Google Books
+     * Google Brain
+     * Google Cloud Platform
+     * Google Docs
+     * Google Drive
+     * Google Genomics
+     * Google Maps
+     * Google Photos
+     * Google Play Apps
+     * Google Science Fair
+     * Google Sheets
+     * Google Translate
+     * Google Trips
+     * Google Voice Search
+     * Google+
+     * Government
+     * grants
+     * Graph
+     * Graph Mining
+     * Hardware
+     * HCI
+     * Health
+     * High Dynamic Range Imaging
+     * ICCV
+     * ICLR
+     * ICML
+     * ICSE
+     * Image Annotation
+     * Image Classification
+     * Image Processing
+     * Inbox
+     * India
+     * Information Retrieval
+     * internationalization
+     * Internet of Things
+     * Interspeech
+     * IPython
+     * Journalism
+     * jsm
+     * jsm2011
+     * K-12
+     * Kaggle
+     * KDD
+     * Keyboard Input
+     * Klingon
+     * Korean
+     * Labs
+     * Linear Optimization
+     * localization
+     * Low-Light Photography
+     * Machine Hearing
+     * Machine Intelligence
+     * Machine Learning
+     * Machine Perception
+     * Machine Translation
+     * Magenta
+     * MapReduce
+     * market algorithms
+     * Market Research
+     * Mixed Reality
+     * ML
+     * ML Fairness
+     * MOOC
+     * Moore's Law
+     * Multimodal Learning
+     * NAACL
+     * Natural Language Processing
+     * Natural Language Understanding
+     * Network Management
+     * Networks
+     * Neural Networks
+     * NeurIPS
+     * Nexus
+     * Ngram
+     * NIPS
+     * NLP
+     * On-device Learning
+     * open source
+     * operating systems
+     * Optical Character Recognition
+     * optimization
+     * osdi
+     * osdi10
+     * patents
+     * Peer Review
+     * ph.d. fellowship
+     * PhD Fellowship
+     * PhotoScan
+     * Physics
+     * PiLab
+     * Pixel
+     * Policy
+     * Professional Development
+     * Proposals
+     * Public Data Explorer
+     * publication
+     * Publications
+     * Quantum AI
+     * Quantum Computing
+     * Reinforcement Learning
+     * renewable energy
+     * Research
+     * Research Awards
+     * resource optimization
+     * Robotics
+     * schema.org
+     * Search
+     * search ads
+     * Security and Privacy
+     * Semantic Models
+     * Semi-supervised Learning
+     * SIGCOMM
+     * SIGMOD
+     * Site Reliability Engineering
+     * Social Networks
+     * Software
+     * Sound Search
+     * Speech
+     * Speech Recognition
+     * statistics
+     * Structured Data
+     * Style Transfer
+     * Supervised Learning
+     * Systems
+     * TensorBoard
+     * TensorFlow
+     * TPU
+     * Translate
+     * trends
+     * TTS
+     * TV
+     * UI
+     * University Relations
+     * UNIX
+     * Unsupervised Learning
+     * User Experience
+     * video
+     * Video Analysis
+     * Virtual Reality
+     * Vision Research
+     * Visiting Faculty
+     * Visualization
+     * VLDB
+     * Voice Search
+     * Wiki
+     * wikipedia
+     * WWW
+     * Year in Review
+     * YouTube
+
+   
+
+Archive
+
+   
+     *     2019
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2018
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2017
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2016
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2015
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2014
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2013
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2012
+          + Dec
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2011
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2010
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2009
+          + Dec
+          + Nov
+          + Aug
+          + Jul
+          + Jun
+          + May
+          + Apr
+          + Mar
+          + Feb
+          + Jan
+
+     *     2008
+          + Dec
+          + Nov
+          + Oct
+          + Sep
+          + Jul
+          + May
+          + Apr
+          + Mar
+          + Feb
+
+     *     2007
+          + Oct
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Feb
+
+     *     2006
+          + Dec
+          + Nov
+          + Sep
+          + Aug
+          + Jul
+          + Jun
+          + Apr
+          + Mar
+          + Feb
+
+   [8LnOxYWFhZG4leAAQAAQHEaYuzHbAAAAABJRU5ErkJggg==]
+
+Feed
+
+   (BUTTON) Follow @googleai
+   Give us feedback in our Product Forums.
+
+   [P2DAYDAaDwWAwGAwGg8FgMBgMBoPBYDD2Cf8IMADDRGoQTe+E9AAAAABJRU5ErkJggg==]
+     * Google
+     * Privacy
+     * Terms

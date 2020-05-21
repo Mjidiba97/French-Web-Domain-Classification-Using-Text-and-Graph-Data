@@ -1,0 +1,3491 @@
+   W3C
+
+   This is an XML namespace defined in the XML Linking Language (XLink)
+   specification.
+
+   For more information about XML, please refer to The Extensible Markup
+   Language (XML) 1.0 specification. For more information about XML
+   namespaces, please refer to the Namespaces in XML specification.
+     __________________________________________________________________
+
+
+    Webmaster
+    Last modified: $Date: 2000/06/22 15:15:22 $
+                                                            W3C NOTE-datetime
+
+
+
+                            Date and Time Formats
+
+                           Status of this Document
+
+  Submitted to W3C 15 September 1997
+
+   This version:
+          http://www.w3.org/TR/1998/NOTE-datetime-19980827
+
+   Newest version:
+          http://www.w3.org/TR/NOTE-datetime
+
+   Authors:
+          Misha Wolf <misha.wolf@reuters.com>
+          Charles Wicksteed <charles.wicksteed@reuters.com>
+
+   Document Status
+
+Status of this document
+
+   This document is a NOTE made available by the W3 Consortium for
+   discussion only. This indicates no endorsement of its content, nor that
+   the Consortium has, is, or will be allocating any resources to the
+   issues addressed by the NOTE.
+
+   This document is a submission to W3C from Reuters Limited. Please see
+   Acknowledged Submissions to W3C regarding its disposition.
+
+   Comments on this document should be sent to datetime-comments@w3.org.
+     __________________________________________________________________
+
+Abstract
+
+   This document defines a profile of ISO 8601, the International Standard
+   for the representation of dates and times. ISO 8601 describes a large
+   number of date/time formats. To reduce the scope for error and the
+   complexity of software, it is useful to restrict the supported formats
+   to a small number. This profile defines a few date/time formats, likely
+   to satisfy most requirements.
+     __________________________________________________________________
+
+Introduction
+
+   The International Standard for the representation of dates and times is
+   ISO 8601. Its full reference number is ISO 8601 : 1988 (E), and its
+   title is "Data elements and interchange formats - Information
+   interchange - Representation of dates and times". A discussion of ISO
+   8601 has been written by Markus Kuhn.
+
+   ISO 8601 describes a large number of date/time formats. For example it
+   defines Basic Format, without punctuation, and Extended Format, with
+   punctuation, and it allows elements to be omitted. This profile defines
+   a restricted range of formats, all of which are valid ISO 8601 dates
+   and times. The aim is to simplify the use of ISO 8601 in World Wide
+   Web-related standards, and to avoid the need for the developers and
+   users of these standards to obtain copies of ISO 8601 itself.
+
+   A particular problem with ISO 8601 is that it allows the century to be
+   omitted from years, which is likely to cause trouble as we approach the
+   year 2000. This profile avoids the problem by expressing the year as
+   four digits in all cases.
+
+   This profile may be adopted by standards which require an unambiguous
+   representation of dates and times. As different standards have their
+   own requirements regarding granularity and flexibility, this profile
+   offers a number of options. An adopting standard must specify which of
+   these options it permits.
+     __________________________________________________________________
+
+Formats
+
+   Different standards may need different levels of granularity in the
+   date and time, so this profile defines six levels. Standards that
+   reference this profile should specify one or more of these
+   granularities. If a given standard allows more than one granularity, it
+   should specify the meaning of the dates and times with reduced
+   precision, for example, the result of comparing two dates with
+   different precisions.
+
+   The formats are as follows. Exactly the components shown here must be
+   present, with exactly this punctuation. Note that the "T" appears
+   literally in the string, to indicate the beginning of the time element,
+   as specified in ISO 8601.
+   Year:
+      YYYY (eg 1997)
+   Year and month:
+      YYYY-MM (eg 1997-07)
+   Complete date:
+      YYYY-MM-DD (eg 1997-07-16)
+   Complete date plus hours and minutes:
+      YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+   Complete date plus hours, minutes and seconds:
+      YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+   Complete date plus hours, minutes, seconds and a decimal fraction of a
+second
+      YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+
+   where:
+     YYYY = four-digit year
+     MM   = two-digit month (01=January, etc.)
+     DD   = two-digit day of month (01 through 31)
+     hh   = two digits of hour (00 through 23) (am/pm NOT allowed)
+     mm   = two digits of minute (00 through 59)
+     ss   = two digits of second (00 through 59)
+     s    = one or more digits representing a decimal fraction of a second
+     TZD  = time zone designator (Z or +hh:mm or -hh:mm)
+
+   This profile does not specify how many digits may be used to represent
+   the decimal fraction of a second. An adopting standard that permits
+   fractions of a second must specify both the minimum number of digits (a
+   number greater than or equal to one) and the maximum number of digits
+   (the maximum may be stated to be "unlimited").
+
+   This profile defines two ways of handling time zone offsets:
+    1. Times are expressed in UTC (Coordinated Universal Time), with a
+       special UTC designator ("Z").
+    2. Times are expressed in local time, together with a time zone offset
+       in hours and minutes. A time zone offset of "+hh:mm" indicates that
+       the date/time uses a local time zone which is "hh" hours and "mm"
+       minutes ahead of UTC. A time zone offset of "-hh:mm" indicates that
+       the date/time uses a local time zone which is "hh" hours and "mm"
+       minutes behind UTC.
+
+   A standard referencing this profile should permit one or both of these
+   ways of handling time zone offsets.
+     __________________________________________________________________
+
+Examples
+
+   1994-11-05T08:15:30-05:00 corresponds to November 5, 1994, 8:15:30 am,
+   US Eastern Standard Time.
+
+   1994-11-05T13:15:30Z corresponds to the same instant.
+     __________________________________________________________________
+
+Acknowledgments
+
+   This document draws on Chris Newman's Internet Draft "Date and Time on
+   the Internet" (draft-newman-datetime-01.txt).
+   #Help
+
+W3C W3C
+
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+     * ____________________ (BUTTON) Search
+
+Site Navigation
+
+Browsers and Authoring Tools Header link
+
+     * Authoring Tools
+     * Browsers
+
+     * Skip
+     * W3C »
+     * Standards »
+     * Browsers and Authoring Tools »
+     * Browsers and Media Players
+
+Browsers, Media Players
+
+     * On this page →
+     * examples of user agent standards issues •
+     * accessibility guidelines for user agents •
+     * current status of specifications and groups
+
+   'User agents' - web browsers, media players, browser extensions,
+   on-the-fly converters, plug-ins, bots, aggregators and mobile browsers
+   - provide a human or machine interface to the web. At their best, they
+   allow all of us to explore a universal space of web content.
+
+Examples of user agent standards issues
+
+   User agent developers need to pay particular heed to issues surrounding
+   use of their agents by people in other parts of the world, speaking
+   other languages, using other devices and with a variety of assistive
+   technologies that allow users to use different modes of input and
+   output (such as speech input, tactile displays, semantic navigation,
+   and a variety of display preferences).
+
+   Example 1: An online app developer wants to provide context-sensitive
+   help in a tooltip that is displayed when the user (with a mouse) hovers
+   over or (with a keyboard) focuses a "Help" icon. In most browsers, the
+   functionality automatically works for hover; the title element is
+   displayed. However, most browsers don't provide the same functionality
+   for keyboard users on focus. To compensate for the missing
+   functionality in the browsers, the developer has to create scripts to
+   provide it for her content. Unfortunately most developers don't do this
+   - and indeed, they shouldn't have to because the browser should provide
+   the same functionality for people who cannot use the mouse.
+
+   Example 2: A developer uses the css declaration text-transform:
+   lowercase to style a magazine headline (about fresh orange juice)
+   originally composed in caps. The content is then internationalised for
+   a Turkish-language audience, and a language of Turkish declared using
+   the attribute lang="tr". The lower case of the Turkish character İ (a
+   capital I dotted) should return a i. Major browsers, however convert
+   the Turkish character I to i. An innocuous headline "Squeeze Often"
+   suddenly becomes rather rude...
+
+   W3C staff documented some Common User Agent Problems in a Team
+   Submission, still a useful document although it was published in 2003.
+
+Accessibility Guidelines for User Agents
+
+   W3C publishes guidelines for creating accessible authoring tools: User
+   Agent Accessibility Guidelines (UAAG). UAAG 2.0 is intended for the
+   current and future generation of user agents. You can implement the
+   latest draft of the User Agent Accessibility Guidelines (UAAG 2.0) by
+   following Implementing UAAG 2.0 - a guide to implementing and
+   understanding the guidelines.
+
+   You may also wish to consult the current formally approved, stable and
+   referenceable technical recommendation for accessibility is UAAG 1.0.
+
+   Browser developers need some help at making the web readable by all;
+   extension developers can respond to limitations of particular browser
+   functionality, and the best extensions can be incorporated into the
+   browsers' standard functionality. Whether you develop browsers,
+   extensions, bots, aggregators, media players or an as-yet undreamed of
+   way of reading the web, to create that web that is readable by all, the
+   User Agent Accessibility Guidelines provide the place to start.
+
+Validators
+
+     * Markup
+
+Acknowledgments
+
+   Editor of introductory text: Liam McGee. Contributors: Shawn Lawton
+   Henry and participants of the Education and Outreach Working Group
+   (EOWG).
+
+Footer Navigation
+
+Navigation
+
+     * Home
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+
+Contact W3C
+
+     * Contact
+     * Help and FAQ
+     * Sponsor / Donate
+     * Site Map
+         * Feedback
+
+W3C Updates
+
+     * Twitter
+
+   Copyright © 2016 W3C ^® (MIT, ERCIM, Keio, Beihang) Usage policies
+   apply.
+W3C W3C
+
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+     * ____________________ (BUTTON) Search
+
+   logo shadow
+
+Site Navigation
+
+About W3C Header link
+
+     * W3C Mission
+     * Facts About W3C
+     * Press and Analysts
+     * Sponsorships and Donations
+     * Jobs and Fellowships
+     * Contact
+     * Help and FAQ
+
+     * Skip
+     * W3C »
+     * About W3C »
+     * Help and FAQ
+
+Help and FAQ
+
+     * What does W3C do?
+     * Where is W3C located?
+     * How is W3C funded?
+     * What is the difference between the Web and the Internet?
+     * What does it mean that Tim Berners-Lee invented the Web?
+     * W3C has a validation service. Does W3C approve all Web pages?
+     * What is the difference between open source and an open standard?
+     * Does W3C design Web sites? Can you recommend a designer?
+     * How do I get started building (or requesting) a standards-compliant
+       Web site?
+     * Do you have more FAQs?
+
+What does W3C do?
+
+   W3C's primary activity is to develop protocols and guidelines that
+   ensure long-term growth for the Web. W3C's standards define key parts
+   of what makes the World Wide Web work. Learn more about W3C's mission.
+
+Where is W3C located?
+
+   W3C does not have a single physical headquarters. There are four
+   institutions, however, that "host" W3C: MIT (in Cambridge, MA, USA),
+   ERCIM (in Sophia-Antipolis, France), Keio University (near Tokyo,
+   Japan), and Beihang University (in Beijing, China).
+
+   The W3C staff is distributed around the world, but there are
+   concentrations of people in Cambridge, Massachusetts (USA),
+   Sophia-Antipolis (France), and Tokyo (Japan). In addition, W3C is
+   represented in 17 other regions of the world via representatives based
+   at organizations. W3C calls these regional points of contact "W3C
+   Offices."
+
+How is W3C funded?
+
+   W3C receives funds from:
+     * W3C Member dues
+     * Research grants and other sources of private and public funding
+     * Individual donations of money and equipment
+
+What is the difference between the Web and the Internet?
+
+   From the definition in the Wikipedia: "The Internet is a global system
+   of interconnected computer networks that interchange data by packet
+   switching using the standardized Internet Protocol Suite (TCP/IP)."
+
+   Thus, the Internet is a network of networks, defined by the TPC/IP
+   standards.
+
+   The Web, on the other hand, is defined in W3C's Architecture of the
+   World Wide Web, Volume I as follows: "The World Wide Web (WWW, or
+   simply Web) is an information space in which the items of interest,
+   referred to as resources, are identified by global identifiers called
+   Uniform Resource Identifiers (URI)."
+
+   Thus, the Web is an information space. The first three specifications
+   for Web technologies defined URLs, HTTP, and HTML.
+
+What does it mean that Tim Berners-Lee invented the Web?
+
+   Tim Berners-Lee wrote a proposal in 1989 for a system called the World
+   Wide Web. He then wrote the first Web browser, server, and Web page. He
+   wrote the first specifications for URLs, HTTP, and HTML.
+
+W3C has a validation service. Does W3C approve all Web pages?
+
+   No. W3C does provide a free service for validating Web pages against
+   standard formats. Although validation is not mandatory on the Web, it
+   is useful for improving the quality of pages.
+
+What is the difference between an open standard and open source software?
+
+   In general terms: open source refers to software, and open standards
+   refer to documents (that may then be implemented by software). There is
+   no single definition global for either term.
+
+   Some elements of openness that apply to W3C standards include:
+     * All standards are available publicly at no cost
+     * W3C adopted a Patent Policy in 2004 with the stated goal of
+       assuring "that Recommendations produced under this policy can be
+       implemented on a Royalty-Free (RF) basis."
+     * W3C Process requires that groups address public comments
+     * All technical comments are handled on their merits, whether they
+       are made by W3C Members or public.
+     * W3C's process is vendor-neutral.
+     * W3C's persistence policy seeks to ensure that standards will be
+       available at the same URI, unchanged, indefinitely.
+
+Does W3C design Web sites? Can you recommend a designer?
+
+   W3C is not in the business of designing Web sites. Although we greatly
+   appreciate that many designers promote standards-based Web design, at
+   the current time for reasons of neutrality, we cannot officially
+   recommend any particular designers.
+
+How do I get started building (or requesting) a standards-compliant Web site?
+
+   W3C provides a list of resources that provides an introduction to
+   standards-based design.
+
+Do you have more FAQs?
+
+   Yes. These additional FAQs are maintained by various people in the
+   community; some are more up-to-date than others.
+
+About W3C
+
+     * Copyright and Intellectual Property
+     * Tim Berners-Lee
+     * Logos and Icons
+     * Mail and Mailing Lists
+     * Membership
+     * Participation
+     * Patent Policy
+     * Standards
+     * Web Site
+
+About Tools and Software
+
+     * HTML Validator
+     * CSS Validator
+     * Amaya
+     * Jigsaw
+     * Test Development
+
+Quick links
+
+     * Site map
+     * Glossary
+
+Ask The Webmaster
+
+     * Systems Status (outages)
+     * Found "W3C" in the source code of a page?
+     * Spam from W3C?
+     * Lost password?
+     * Blocked from w3.org?
+     * More…
+
+Footer Navigation
+
+Navigation
+
+     * Home
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+
+Contact W3C
+
+     * Contact
+     * Help and FAQ
+     * Donate
+     * Site Map
+         * Feedback
+
+W3C Updates
+
+     * Twitter
+
+   Copyright © 2019 W3C ^® ( MIT , ERCIM , Keio, Beihang) Usage policies
+   apply.
+   W3C
+
+                                XHTML Vocabulary
+
+   This is a vocabulary collection utilized by XHTML Family modules and
+   document types using XHTML Modularization, including XHTML Role and
+   XHTML + RDFa as defined in rdfa-syntax.
+
+   The XHTML specifications are developed by the W3C XHTML 2 Working Group
+   as part of the W3C HTML Activity.
+
+   For more information about XML, please refer to the Extensible Markup
+   Language (XML) 1.0 specification.
+
+   Version date: 2010-01-27
+     __________________________________________________________________
+
+1. Introduction
+
+   XHTML Modularization [XHTMLMOD] permits the development of XHTML
+   modules and XHTML family markup languages. These modules and markup
+   languages may, in turn, define local vocabulary items for use as values
+   of attributes. This document describes the items that are available in
+   the default XHTML vocabulary space:
+   http://www.w3.org/1999/xhtml/vocab#.
+
+2. XHTML Metainformation Vocabulary
+
+   The XHTML Metainformation Module defined as part of XHTML+RDFa
+   [XHTMLRDFa] specifies the following vocabulary items.
+
+   alternate
+          alternate designates alternate versions for a resource.
+
+   appendix
+          appendix refers to a resource serving as an appendix in a
+          collection.
+
+   bookmark
+          bookmark refers to a bookmark - a link to a key entry point
+          within an extended document.
+
+   cite
+          cite refers to a resource that defines a citation.
+
+   chapter
+          chapter refers to a resource serving as a chapter in a
+          collection.
+
+   contents
+          contents refers to a resource serving as a table of contents.
+
+   copyright
+          copyright refers to a copyright statement for the resource.
+
+   first
+          first refers the first item in a collection (see also start and
+          top).
+
+   glossary
+          glossary refers to a resource providing a glossary of terms.
+
+   help
+          help refers to a resource offering help.
+
+   icon
+          icon refers to a resource that represents an icon.
+
+   index
+          index refers to a resource providing an index.
+
+   itsRules
+          itsRules indicates that the designated resource is an [ITS] rule
+          set.
+
+   last
+          last refers to the last resource in a collection of resources.
+
+   license
+          license refers to a resource that defines the associated
+          license.
+
+   meta
+          meta refers to a resource that provides metadata.
+
+   next
+          next refers to the next resource (after the current one) in an
+          ordered collection of resources.
+
+   p3pv1
+          p3pv1 refers to a P3P Policy Reference File [P3P].
+
+   prev
+          prev refers to a previous resource (before the current one) in
+          an ordered collection of resources.
+
+   role
+          role indicates the purpose of the resource. See the XHTML Role
+          Vocabulary for roles in this vocabulary space, and XHTMLROLE for
+          information on extending the collection of roles.
+
+   section
+          section refers to a resource serving as a section in a
+          collection.
+
+   stylesheet
+          stylesheet refers to a resource serving as a stylesheet for a
+          resource.
+
+   subsection
+          subsection refers to a resource serving as a subsection in a
+          collection.
+
+   start
+          start refers to the first resource in a collection of resources.
+
+   top
+          top is a synonym for start.
+
+   up
+          up refers to a resource "above" in a hierarchically structured
+          set.
+
+3. XHTML Role Vocabulary
+
+  3.1 Items from the XHTML Role Module
+
+   The values in this section are defined for use in the role attribute as
+   specified in the XHTML Role Attribute Module. Note that the values in
+   Section 2 and Section 3.2 are also available.
+
+   banner
+          contains the prime heading or internal title of a page.
+
+   complementary
+          indicates that the section supports but is separable from the
+          main content of resource.
+
+   contentinfo
+          contains meta information about the content on the page or the
+          page as a whole.
+
+   definition
+          indicates the definition of a term or concept.
+
+   main
+          acts as the main content of the document.
+
+   navigation
+          indicates a collection of items suitable for navigating the
+          document or related documents.
+
+   note
+          indicates the content is parenthetic or ancillary to the main
+          content of the resource.
+
+   search
+          indicates that the section provides a search facility.
+
+  3.2 Items from the Accessible Rich Internet Applications Vocabulary
+
+   alert
+          A message with important, and usually time-sensitive,
+          information. Also see alertdialog and status.
+
+   alertdialog
+          A type of dialog that contains an alert message, where initial
+          focus goes an element within the dialog. Also see alert and
+          dialog.
+
+   application
+          A region declared as a web application, as opposed to a web
+          document.
+
+   article
+          A section of a page that consists of a composition that forms an
+          independent part of a document, page, or site.
+
+   button
+          An input that allows for user-triggered actions when clicked or
+          pressed. Also see link.
+
+   checkbox
+          A checkable input that has three possible values: true, false,
+          or mixed.
+
+   columnheader
+          A cell containing header information for a column.
+
+   combobox
+          A presentation of a select; usually similar to a textbox where
+          users can type ahead to select an option, or type to enter
+          arbitrary text as a new item in the list. Also see listbox.
+
+   dialog
+          A dialog is an application window that is designed to interrupt
+          the current processing of an application in order to prompt the
+          user to enter information or require a response. Also see
+          alertdialog.
+
+   directory
+          A list of references to members of a group, such as a static
+          table of contents.
+
+   document
+          A region containing related information that is declared as
+          document content, as opposed to a web application.
+
+   form
+          A landmark region that contains a collection of items and
+          objects that, as a whole, combine to create a form. Also see
+          search.
+
+   grid
+          A grid is an interactive control which contains cells of tabular
+          data arranged in rows and columns, like a table.
+
+   gridcell
+          A cell in a grid or treegrid.
+
+   group
+          A set of user interface objects which are not intended to be
+          included in a page summary or table of contents by assistive
+          technologies.
+
+   heading
+          A heading for a section of the page.
+
+   img
+          A container for a collection of elements that form an image.
+
+   link
+          An interactive reference to an internal or external resource
+          that, when activated, causes the user agent to navigate to that
+          resource. Also see button.
+
+   list
+          A group of non-interactive list items. Also see listbox.
+
+   listbox
+          A widget that allows the user to select one or more items from a
+          list of choices. Also see combobox and list.
+
+   listitem
+          A single item in a list or directory.
+
+   log
+          A type of live region where new information is added in
+          meaningful order and old information may disappear. Also see
+          marquee.
+
+   marquee
+          A type of live region where non-essential information changes
+          frequently. Also see log.
+
+   math
+          Content that represents a mathematical expression.
+
+   menu
+          A type of widget that offers a list of choices to the user.
+
+   menubar
+          A presentation of menu that usually remains visible and is
+          usually presented horizontally.
+
+   menuitem
+          An option in a group of choices contained by a menu or menubar.
+
+   menuitemcheckbox
+          A checkable menuitem that has three possible values: true,
+          false, or mixed.
+
+   menuitemradio
+          A checkable menuitem in a group of menuitemradio roles, only one
+          of which can be checked at a time.
+
+   option
+          A selectable item in a select list.
+
+   presentation
+          An element whose implicit native role semantics will not be
+          mapped to the accessibility API.
+
+   progressbar
+          An element that displays the progress status for tasks that take
+          a long time.
+
+   radio
+          A checkable input in a group of radio roles, only one of which
+          can be checked at a time.
+
+   radiogroup
+          A group of radio buttons.
+
+   region
+          A large perceivable section of a web page or document, that the
+          author feels is important enough to be included in a page
+          summary or table of contents, for example, an area of the page
+          containing live sporting event statistics.
+
+   row
+          A row of cells in a grid.
+
+   rowgroup
+          A group containing one or more row elements in a grid.
+
+   rowheader
+          A cell containing header information for a row in a grid.
+
+   scrollbar
+          A graphical object that controls the scrolling of content within
+          a viewing area, regardless of whether the content is fully
+          displayed within the viewing area.
+
+   separator
+          A divider that separates and distinguishes sections of content
+          or groups of menuitems.
+
+   slider
+          A user input where the user selects a value from within a given
+          range.
+
+   spinbutton
+          A form of range that expects a user to select from amongst
+          discrete choices.
+
+   status
+          A container whose content is advisory information for the user
+          but is not important enough to justify an alert. Also see alert.
+
+   tab
+          A grouping label providing a mechanism for selecting the tab
+          content that is to be rendered to the user.
+
+   tablist
+          A list of tab elements, which are references to tabpanel
+          elements.
+
+   tabpanel
+          A container for the resources associated with a tab, where each
+          tab is contained in a tablist.
+
+   textbox
+          Input that allows free-form text as its value.
+
+   timer
+          A type of live region containing a numerical counter which
+          indicates an amount of elapsed time from a start point, or the
+          time remaining until an end point.
+
+   toolbar
+          A collection of commonly used function buttons represented in
+          compact visual form.
+
+   tooltip
+          A contextual popup that displays a description for an element.
+
+   tree
+          A type of list that may contain sub-level nested groups that can
+          be collapsed and expanded.
+
+   treegrid
+          A grid whose rows can be expanded and collapsed in the same
+          manner as for a tree.
+
+   treeitem
+          An option item of a tree. This is an element within a tree that
+          may be expanded or collapsed if it contains a sub-level group of
+          treeitems.
+
+Appendix A - References
+
+   [ITS]
+          "The Internationalization Tag Set (ITS) Version 2.0", W3C
+          Recommendation, David Filip et al., 29 October 2013.
+          Available at: http://www.w3.org/TR/2013/REC-its20-20131029/
+
+   [P3P]
+          "The Platform for Privacy Preferences 1.0 (P3P1.0)
+          Specification", W3C Recommendation, L. Cranor et al., 16 April
+          2002.
+          Available at: http://www.w3.org/TR/2002/REC-P3P-20020416/
+
+   [XHTMLMOD]
+          XHTML Modularization 1.1, W3C Recommendation, Shane McCarron, et
+          al., 8 October 2008
+          http://www.w3.org/TR/2008/REC-xhtml-modularization-20081008
+
+   [XHTMLRDFa]
+          "RDFa in XHTML: Syntax and Processing", W3C Recommendation, B.
+          Adida, et al., 14 October 2008.
+          http://www.w3.org/TR/2008/REC-rdfa-syntax-20081014.
+
+   [XHTMLROLE]
+          "XHTML Role Attribute Module", W3C Working Draft, M. Birbeck,
+          et. al. 7 April 2008.
+          http://www.w3.org/TR/2008/WD-xhtml-role-20080407
+     __________________________________________________________________
+
+
+    Steven Pemberton, W3C HTML Activity Lead
+
+
+    Last edited: 2010-01-27
+   W3C
+
+   This is an XML namespace defined in the XML Linking Language (XLink)
+   specification.
+
+   For more information about XML, please refer to The Extensible Markup
+   Language (XML) 1.0 specification. For more information about XML
+   namespaces, please refer to the Namespaces in XML specification.
+     __________________________________________________________________
+
+
+    Webmaster
+    Last modified: $Date: 2000/06/22 15:15:22 $
+                                                            W3C NOTE-datetime
+
+
+
+                            Date and Time Formats
+
+                           Status of this Document
+
+  Submitted to W3C 15 September 1997
+
+   This version:
+          http://www.w3.org/TR/1998/NOTE-datetime-19980827
+
+   Newest version:
+          http://www.w3.org/TR/NOTE-datetime
+
+   Authors:
+          Misha Wolf <misha.wolf@reuters.com>
+          Charles Wicksteed <charles.wicksteed@reuters.com>
+
+   Document Status
+
+Status of this document
+
+   This document is a NOTE made available by the W3 Consortium for
+   discussion only. This indicates no endorsement of its content, nor that
+   the Consortium has, is, or will be allocating any resources to the
+   issues addressed by the NOTE.
+
+   This document is a submission to W3C from Reuters Limited. Please see
+   Acknowledged Submissions to W3C regarding its disposition.
+
+   Comments on this document should be sent to datetime-comments@w3.org.
+     __________________________________________________________________
+
+Abstract
+
+   This document defines a profile of ISO 8601, the International Standard
+   for the representation of dates and times. ISO 8601 describes a large
+   number of date/time formats. To reduce the scope for error and the
+   complexity of software, it is useful to restrict the supported formats
+   to a small number. This profile defines a few date/time formats, likely
+   to satisfy most requirements.
+     __________________________________________________________________
+
+Introduction
+
+   The International Standard for the representation of dates and times is
+   ISO 8601. Its full reference number is ISO 8601 : 1988 (E), and its
+   title is "Data elements and interchange formats - Information
+   interchange - Representation of dates and times". A discussion of ISO
+   8601 has been written by Markus Kuhn.
+
+   ISO 8601 describes a large number of date/time formats. For example it
+   defines Basic Format, without punctuation, and Extended Format, with
+   punctuation, and it allows elements to be omitted. This profile defines
+   a restricted range of formats, all of which are valid ISO 8601 dates
+   and times. The aim is to simplify the use of ISO 8601 in World Wide
+   Web-related standards, and to avoid the need for the developers and
+   users of these standards to obtain copies of ISO 8601 itself.
+
+   A particular problem with ISO 8601 is that it allows the century to be
+   omitted from years, which is likely to cause trouble as we approach the
+   year 2000. This profile avoids the problem by expressing the year as
+   four digits in all cases.
+
+   This profile may be adopted by standards which require an unambiguous
+   representation of dates and times. As different standards have their
+   own requirements regarding granularity and flexibility, this profile
+   offers a number of options. An adopting standard must specify which of
+   these options it permits.
+     __________________________________________________________________
+
+Formats
+
+   Different standards may need different levels of granularity in the
+   date and time, so this profile defines six levels. Standards that
+   reference this profile should specify one or more of these
+   granularities. If a given standard allows more than one granularity, it
+   should specify the meaning of the dates and times with reduced
+   precision, for example, the result of comparing two dates with
+   different precisions.
+
+   The formats are as follows. Exactly the components shown here must be
+   present, with exactly this punctuation. Note that the "T" appears
+   literally in the string, to indicate the beginning of the time element,
+   as specified in ISO 8601.
+   Year:
+      YYYY (eg 1997)
+   Year and month:
+      YYYY-MM (eg 1997-07)
+   Complete date:
+      YYYY-MM-DD (eg 1997-07-16)
+   Complete date plus hours and minutes:
+      YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+   Complete date plus hours, minutes and seconds:
+      YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+   Complete date plus hours, minutes, seconds and a decimal fraction of a
+second
+      YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+
+   where:
+     YYYY = four-digit year
+     MM   = two-digit month (01=January, etc.)
+     DD   = two-digit day of month (01 through 31)
+     hh   = two digits of hour (00 through 23) (am/pm NOT allowed)
+     mm   = two digits of minute (00 through 59)
+     ss   = two digits of second (00 through 59)
+     s    = one or more digits representing a decimal fraction of a second
+     TZD  = time zone designator (Z or +hh:mm or -hh:mm)
+
+   This profile does not specify how many digits may be used to represent
+   the decimal fraction of a second. An adopting standard that permits
+   fractions of a second must specify both the minimum number of digits (a
+   number greater than or equal to one) and the maximum number of digits
+   (the maximum may be stated to be "unlimited").
+
+   This profile defines two ways of handling time zone offsets:
+    1. Times are expressed in UTC (Coordinated Universal Time), with a
+       special UTC designator ("Z").
+    2. Times are expressed in local time, together with a time zone offset
+       in hours and minutes. A time zone offset of "+hh:mm" indicates that
+       the date/time uses a local time zone which is "hh" hours and "mm"
+       minutes ahead of UTC. A time zone offset of "-hh:mm" indicates that
+       the date/time uses a local time zone which is "hh" hours and "mm"
+       minutes behind UTC.
+
+   A standard referencing this profile should permit one or both of these
+   ways of handling time zone offsets.
+     __________________________________________________________________
+
+Examples
+
+   1994-11-05T08:15:30-05:00 corresponds to November 5, 1994, 8:15:30 am,
+   US Eastern Standard Time.
+
+   1994-11-05T13:15:30Z corresponds to the same instant.
+     __________________________________________________________________
+
+Acknowledgments
+
+   This document draws on Chris Newman's Internet Draft "Date and Time on
+   the Internet" (draft-newman-datetime-01.txt).
+   #Help
+
+W3C W3C
+
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+     * ____________________ (BUTTON) Search
+
+Site Navigation
+
+Browsers and Authoring Tools Header link
+
+     * Authoring Tools
+     * Browsers
+
+     * Skip
+     * W3C »
+     * Standards »
+     * Browsers and Authoring Tools »
+     * Browsers and Media Players
+
+Browsers, Media Players
+
+     * On this page →
+     * examples of user agent standards issues •
+     * accessibility guidelines for user agents •
+     * current status of specifications and groups
+
+   'User agents' - web browsers, media players, browser extensions,
+   on-the-fly converters, plug-ins, bots, aggregators and mobile browsers
+   - provide a human or machine interface to the web. At their best, they
+   allow all of us to explore a universal space of web content.
+
+Examples of user agent standards issues
+
+   User agent developers need to pay particular heed to issues surrounding
+   use of their agents by people in other parts of the world, speaking
+   other languages, using other devices and with a variety of assistive
+   technologies that allow users to use different modes of input and
+   output (such as speech input, tactile displays, semantic navigation,
+   and a variety of display preferences).
+
+   Example 1: An online app developer wants to provide context-sensitive
+   help in a tooltip that is displayed when the user (with a mouse) hovers
+   over or (with a keyboard) focuses a "Help" icon. In most browsers, the
+   functionality automatically works for hover; the title element is
+   displayed. However, most browsers don't provide the same functionality
+   for keyboard users on focus. To compensate for the missing
+   functionality in the browsers, the developer has to create scripts to
+   provide it for her content. Unfortunately most developers don't do this
+   - and indeed, they shouldn't have to because the browser should provide
+   the same functionality for people who cannot use the mouse.
+
+   Example 2: A developer uses the css declaration text-transform:
+   lowercase to style a magazine headline (about fresh orange juice)
+   originally composed in caps. The content is then internationalised for
+   a Turkish-language audience, and a language of Turkish declared using
+   the attribute lang="tr". The lower case of the Turkish character İ (a
+   capital I dotted) should return a i. Major browsers, however convert
+   the Turkish character I to i. An innocuous headline "Squeeze Often"
+   suddenly becomes rather rude...
+
+   W3C staff documented some Common User Agent Problems in a Team
+   Submission, still a useful document although it was published in 2003.
+
+Accessibility Guidelines for User Agents
+
+   W3C publishes guidelines for creating accessible authoring tools: User
+   Agent Accessibility Guidelines (UAAG). UAAG 2.0 is intended for the
+   current and future generation of user agents. You can implement the
+   latest draft of the User Agent Accessibility Guidelines (UAAG 2.0) by
+   following Implementing UAAG 2.0 - a guide to implementing and
+   understanding the guidelines.
+
+   You may also wish to consult the current formally approved, stable and
+   referenceable technical recommendation for accessibility is UAAG 1.0.
+
+   Browser developers need some help at making the web readable by all;
+   extension developers can respond to limitations of particular browser
+   functionality, and the best extensions can be incorporated into the
+   browsers' standard functionality. Whether you develop browsers,
+   extensions, bots, aggregators, media players or an as-yet undreamed of
+   way of reading the web, to create that web that is readable by all, the
+   User Agent Accessibility Guidelines provide the place to start.
+
+Validators
+
+     * Markup
+
+Acknowledgments
+
+   Editor of introductory text: Liam McGee. Contributors: Shawn Lawton
+   Henry and participants of the Education and Outreach Working Group
+   (EOWG).
+
+Footer Navigation
+
+Navigation
+
+     * Home
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+
+Contact W3C
+
+     * Contact
+     * Help and FAQ
+     * Sponsor / Donate
+     * Site Map
+         * Feedback
+
+W3C Updates
+
+     * Twitter
+
+   Copyright © 2016 W3C ^® (MIT, ERCIM, Keio, Beihang) Usage policies
+   apply.
+W3C W3C
+
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+     * ____________________ (BUTTON) Search
+
+   logo shadow
+
+Site Navigation
+
+About W3C Header link
+
+     * W3C Mission
+     * Facts About W3C
+     * Press and Analysts
+     * Sponsorships and Donations
+     * Jobs and Fellowships
+     * Contact
+     * Help and FAQ
+
+     * Skip
+     * W3C »
+     * About W3C »
+     * Help and FAQ
+
+Help and FAQ
+
+     * What does W3C do?
+     * Where is W3C located?
+     * How is W3C funded?
+     * What is the difference between the Web and the Internet?
+     * What does it mean that Tim Berners-Lee invented the Web?
+     * W3C has a validation service. Does W3C approve all Web pages?
+     * What is the difference between open source and an open standard?
+     * Does W3C design Web sites? Can you recommend a designer?
+     * How do I get started building (or requesting) a standards-compliant
+       Web site?
+     * Do you have more FAQs?
+
+What does W3C do?
+
+   W3C's primary activity is to develop protocols and guidelines that
+   ensure long-term growth for the Web. W3C's standards define key parts
+   of what makes the World Wide Web work. Learn more about W3C's mission.
+
+Where is W3C located?
+
+   W3C does not have a single physical headquarters. There are four
+   institutions, however, that "host" W3C: MIT (in Cambridge, MA, USA),
+   ERCIM (in Sophia-Antipolis, France), Keio University (near Tokyo,
+   Japan), and Beihang University (in Beijing, China).
+
+   The W3C staff is distributed around the world, but there are
+   concentrations of people in Cambridge, Massachusetts (USA),
+   Sophia-Antipolis (France), and Tokyo (Japan). In addition, W3C is
+   represented in 17 other regions of the world via representatives based
+   at organizations. W3C calls these regional points of contact "W3C
+   Offices."
+
+How is W3C funded?
+
+   W3C receives funds from:
+     * W3C Member dues
+     * Research grants and other sources of private and public funding
+     * Individual donations of money and equipment
+
+What is the difference between the Web and the Internet?
+
+   From the definition in the Wikipedia: "The Internet is a global system
+   of interconnected computer networks that interchange data by packet
+   switching using the standardized Internet Protocol Suite (TCP/IP)."
+
+   Thus, the Internet is a network of networks, defined by the TPC/IP
+   standards.
+
+   The Web, on the other hand, is defined in W3C's Architecture of the
+   World Wide Web, Volume I as follows: "The World Wide Web (WWW, or
+   simply Web) is an information space in which the items of interest,
+   referred to as resources, are identified by global identifiers called
+   Uniform Resource Identifiers (URI)."
+
+   Thus, the Web is an information space. The first three specifications
+   for Web technologies defined URLs, HTTP, and HTML.
+
+What does it mean that Tim Berners-Lee invented the Web?
+
+   Tim Berners-Lee wrote a proposal in 1989 for a system called the World
+   Wide Web. He then wrote the first Web browser, server, and Web page. He
+   wrote the first specifications for URLs, HTTP, and HTML.
+
+W3C has a validation service. Does W3C approve all Web pages?
+
+   No. W3C does provide a free service for validating Web pages against
+   standard formats. Although validation is not mandatory on the Web, it
+   is useful for improving the quality of pages.
+
+What is the difference between an open standard and open source software?
+
+   In general terms: open source refers to software, and open standards
+   refer to documents (that may then be implemented by software). There is
+   no single definition global for either term.
+
+   Some elements of openness that apply to W3C standards include:
+     * All standards are available publicly at no cost
+     * W3C adopted a Patent Policy in 2004 with the stated goal of
+       assuring "that Recommendations produced under this policy can be
+       implemented on a Royalty-Free (RF) basis."
+     * W3C Process requires that groups address public comments
+     * All technical comments are handled on their merits, whether they
+       are made by W3C Members or public.
+     * W3C's process is vendor-neutral.
+     * W3C's persistence policy seeks to ensure that standards will be
+       available at the same URI, unchanged, indefinitely.
+
+Does W3C design Web sites? Can you recommend a designer?
+
+   W3C is not in the business of designing Web sites. Although we greatly
+   appreciate that many designers promote standards-based Web design, at
+   the current time for reasons of neutrality, we cannot officially
+   recommend any particular designers.
+
+How do I get started building (or requesting) a standards-compliant Web site?
+
+   W3C provides a list of resources that provides an introduction to
+   standards-based design.
+
+Do you have more FAQs?
+
+   Yes. These additional FAQs are maintained by various people in the
+   community; some are more up-to-date than others.
+
+About W3C
+
+     * Copyright and Intellectual Property
+     * Tim Berners-Lee
+     * Logos and Icons
+     * Mail and Mailing Lists
+     * Membership
+     * Participation
+     * Patent Policy
+     * Standards
+     * Web Site
+
+About Tools and Software
+
+     * HTML Validator
+     * CSS Validator
+     * Amaya
+     * Jigsaw
+     * Test Development
+
+Quick links
+
+     * Site map
+     * Glossary
+
+Ask The Webmaster
+
+     * Systems Status (outages)
+     * Found "W3C" in the source code of a page?
+     * Spam from W3C?
+     * Lost password?
+     * Blocked from w3.org?
+     * More…
+
+Footer Navigation
+
+Navigation
+
+     * Home
+     * Standards
+     * Participate
+     * Membership
+     * About W3C
+
+Contact W3C
+
+     * Contact
+     * Help and FAQ
+     * Donate
+     * Site Map
+         * Feedback
+
+W3C Updates
+
+     * Twitter
+
+   Copyright © 2019 W3C ^® ( MIT , ERCIM , Keio, Beihang) Usage policies
+   apply.
+   W3C
+
+                                XHTML Vocabulary
+
+   This is a vocabulary collection utilized by XHTML Family modules and
+   document types using XHTML Modularization, including XHTML Role and
+   XHTML + RDFa as defined in rdfa-syntax.
+
+   The XHTML specifications are developed by the W3C XHTML 2 Working Group
+   as part of the W3C HTML Activity.
+
+   For more information about XML, please refer to the Extensible Markup
+   Language (XML) 1.0 specification.
+
+   Version date: 2010-01-27
+     __________________________________________________________________
+
+1. Introduction
+
+   XHTML Modularization [XHTMLMOD] permits the development of XHTML
+   modules and XHTML family markup languages. These modules and markup
+   languages may, in turn, define local vocabulary items for use as values
+   of attributes. This document describes the items that are available in
+   the default XHTML vocabulary space:
+   http://www.w3.org/1999/xhtml/vocab#.
+
+2. XHTML Metainformation Vocabulary
+
+   The XHTML Metainformation Module defined as part of XHTML+RDFa
+   [XHTMLRDFa] specifies the following vocabulary items.
+
+   alternate
+          alternate designates alternate versions for a resource.
+
+   appendix
+          appendix refers to a resource serving as an appendix in a
+          collection.
+
+   bookmark
+          bookmark refers to a bookmark - a link to a key entry point
+          within an extended document.
+
+   cite
+          cite refers to a resource that defines a citation.
+
+   chapter
+          chapter refers to a resource serving as a chapter in a
+          collection.
+
+   contents
+          contents refers to a resource serving as a table of contents.
+
+   copyright
+          copyright refers to a copyright statement for the resource.
+
+   first
+          first refers the first item in a collection (see also start and
+          top).
+
+   glossary
+          glossary refers to a resource providing a glossary of terms.
+
+   help
+          help refers to a resource offering help.
+
+   icon
+          icon refers to a resource that represents an icon.
+
+   index
+          index refers to a resource providing an index.
+
+   itsRules
+          itsRules indicates that the designated resource is an [ITS] rule
+          set.
+
+   last
+          last refers to the last resource in a collection of resources.
+
+   license
+          license refers to a resource that defines the associated
+          license.
+
+   meta
+          meta refers to a resource that provides metadata.
+
+   next
+          next refers to the next resource (after the current one) in an
+          ordered collection of resources.
+
+   p3pv1
+          p3pv1 refers to a P3P Policy Reference File [P3P].
+
+   prev
+          prev refers to a previous resource (before the current one) in
+          an ordered collection of resources.
+
+   role
+          role indicates the purpose of the resource. See the XHTML Role
+          Vocabulary for roles in this vocabulary space, and XHTMLROLE for
+          information on extending the collection of roles.
+
+   section
+          section refers to a resource serving as a section in a
+          collection.
+
+   stylesheet
+          stylesheet refers to a resource serving as a stylesheet for a
+          resource.
+
+   subsection
+          subsection refers to a resource serving as a subsection in a
+          collection.
+
+   start
+          start refers to the first resource in a collection of resources.
+
+   top
+          top is a synonym for start.
+
+   up
+          up refers to a resource "above" in a hierarchically structured
+          set.
+
+3. XHTML Role Vocabulary
+
+  3.1 Items from the XHTML Role Module
+
+   The values in this section are defined for use in the role attribute as
+   specified in the XHTML Role Attribute Module. Note that the values in
+   Section 2 and Section 3.2 are also available.
+
+   banner
+          contains the prime heading or internal title of a page.
+
+   complementary
+          indicates that the section supports but is separable from the
+          main content of resource.
+
+   contentinfo
+          contains meta information about the content on the page or the
+          page as a whole.
+
+   definition
+          indicates the definition of a term or concept.
+
+   main
+          acts as the main content of the document.
+
+   navigation
+          indicates a collection of items suitable for navigating the
+          document or related documents.
+
+   note
+          indicates the content is parenthetic or ancillary to the main
+          content of the resource.
+
+   search
+          indicates that the section provides a search facility.
+
+  3.2 Items from the Accessible Rich Internet Applications Vocabulary
+
+   alert
+          A message with important, and usually time-sensitive,
+          information. Also see alertdialog and status.
+
+   alertdialog
+          A type of dialog that contains an alert message, where initial
+          focus goes an element within the dialog. Also see alert and
+          dialog.
+
+   application
+          A region declared as a web application, as opposed to a web
+          document.
+
+   article
+          A section of a page that consists of a composition that forms an
+          independent part of a document, page, or site.
+
+   button
+          An input that allows for user-triggered actions when clicked or
+          pressed. Also see link.
+
+   checkbox
+          A checkable input that has three possible values: true, false,
+          or mixed.
+
+   columnheader
+          A cell containing header information for a column.
+
+   combobox
+          A presentation of a select; usually similar to a textbox where
+          users can type ahead to select an option, or type to enter
+          arbitrary text as a new item in the list. Also see listbox.
+
+   dialog
+          A dialog is an application window that is designed to interrupt
+          the current processing of an application in order to prompt the
+          user to enter information or require a response. Also see
+          alertdialog.
+
+   directory
+          A list of references to members of a group, such as a static
+          table of contents.
+
+   document
+          A region containing related information that is declared as
+          document content, as opposed to a web application.
+
+   form
+          A landmark region that contains a collection of items and
+          objects that, as a whole, combine to create a form. Also see
+          search.
+
+   grid
+          A grid is an interactive control which contains cells of tabular
+          data arranged in rows and columns, like a table.
+
+   gridcell
+          A cell in a grid or treegrid.
+
+   group
+          A set of user interface objects which are not intended to be
+          included in a page summary or table of contents by assistive
+          technologies.
+
+   heading
+          A heading for a section of the page.
+
+   img
+          A container for a collection of elements that form an image.
+
+   link
+          An interactive reference to an internal or external resource
+          that, when activated, causes the user agent to navigate to that
+          resource. Also see button.
+
+   list
+          A group of non-interactive list items. Also see listbox.
+
+   listbox
+          A widget that allows the user to select one or more items from a
+          list of choices. Also see combobox and list.
+
+   listitem
+          A single item in a list or directory.
+
+   log
+          A type of live region where new information is added in
+          meaningful order and old information may disappear. Also see
+          marquee.
+
+   marquee
+          A type of live region where non-essential information changes
+          frequently. Also see log.
+
+   math
+          Content that represents a mathematical expression.
+
+   menu
+          A type of widget that offers a list of choices to the user.
+
+   menubar
+          A presentation of menu that usually remains visible and is
+          usually presented horizontally.
+
+   menuitem
+          An option in a group of choices contained by a menu or menubar.
+
+   menuitemcheckbox
+          A checkable menuitem that has three possible values: true,
+          false, or mixed.
+
+   menuitemradio
+          A checkable menuitem in a group of menuitemradio roles, only one
+          of which can be checked at a time.
+
+   option
+          A selectable item in a select list.
+
+   presentation
+          An element whose implicit native role semantics will not be
+          mapped to the accessibility API.
+
+   progressbar
+          An element that displays the progress status for tasks that take
+          a long time.
+
+   radio
+          A checkable input in a group of radio roles, only one of which
+          can be checked at a time.
+
+   radiogroup
+          A group of radio buttons.
+
+   region
+          A large perceivable section of a web page or document, that the
+          author feels is important enough to be included in a page
+          summary or table of contents, for example, an area of the page
+          containing live sporting event statistics.
+
+   row
+          A row of cells in a grid.
+
+   rowgroup
+          A group containing one or more row elements in a grid.
+
+   rowheader
+          A cell containing header information for a row in a grid.
+
+   scrollbar
+          A graphical object that controls the scrolling of content within
+          a viewing area, regardless of whether the content is fully
+          displayed within the viewing area.
+
+   separator
+          A divider that separates and distinguishes sections of content
+          or groups of menuitems.
+
+   slider
+          A user input where the user selects a value from within a given
+          range.
+
+   spinbutton
+          A form of range that expects a user to select from amongst
+          discrete choices.
+
+   status
+          A container whose content is advisory information for the user
+          but is not important enough to justify an alert. Also see alert.
+
+   tab
+          A grouping label providing a mechanism for selecting the tab
+          content that is to be rendered to the user.
+
+   tablist
+          A list of tab elements, which are references to tabpanel
+          elements.
+
+   tabpanel
+          A container for the resources associated with a tab, where each
+          tab is contained in a tablist.
+
+   textbox
+          Input that allows free-form text as its value.
+
+   timer
+          A type of live region containing a numerical counter which
+          indicates an amount of elapsed time from a start point, or the
+          time remaining until an end point.
+
+   toolbar
+          A collection of commonly used function buttons represented in
+          compact visual form.
+
+   tooltip
+          A contextual popup that displays a description for an element.
+
+   tree
+          A type of list that may contain sub-level nested groups that can
+          be collapsed and expanded.
+
+   treegrid
+          A grid whose rows can be expanded and collapsed in the same
+          manner as for a tree.
+
+   treeitem
+          An option item of a tree. This is an element within a tree that
+          may be expanded or collapsed if it contains a sub-level group of
+          treeitems.
+
+Appendix A - References
+
+   [ITS]
+          "The Internationalization Tag Set (ITS) Version 2.0", W3C
+          Recommendation, David Filip et al., 29 October 2013.
+          Available at: http://www.w3.org/TR/2013/REC-its20-20131029/
+
+   [P3P]
+          "The Platform for Privacy Preferences 1.0 (P3P1.0)
+          Specification", W3C Recommendation, L. Cranor et al., 16 April
+          2002.
+          Available at: http://www.w3.org/TR/2002/REC-P3P-20020416/
+
+   [XHTMLMOD]
+          XHTML Modularization 1.1, W3C Recommendation, Shane McCarron, et
+          al., 8 October 2008
+          http://www.w3.org/TR/2008/REC-xhtml-modularization-20081008
+
+   [XHTMLRDFa]
+          "RDFa in XHTML: Syntax and Processing", W3C Recommendation, B.
+          Adida, et al., 14 October 2008.
+          http://www.w3.org/TR/2008/REC-rdfa-syntax-20081014.
+
+   [XHTMLROLE]
+          "XHTML Role Attribute Module", W3C Working Draft, M. Birbeck,
+          et. al. 7 April 2008.
+          http://www.w3.org/TR/2008/WD-xhtml-role-20080407
+     __________________________________________________________________
+
+
+    Steven Pemberton, W3C HTML Activity Lead
+
+
+    Last edited: 2010-01-27
+   SVG 1.1 (Second Edition) – 16 August 2011Top ⋅ Contents ⋅ Previous ⋅
+   Next ⋅ Elements ⋅ Attributes ⋅ Properties
+
+                          Appendix O: Feature Strings
+
+Contents
+
+     * O.1 Introduction
+     * O.2 SVG 1.1 feature strings
+     * O.3 SVG 1.0 feature strings
+
+   This appendix is normative.
+
+O.1 Introduction
+
+   The following are the feature strings for the ‘requiredFeatures’
+   attribute. These same feature strings apply to the hasFeature method
+   call that is part of the SVG DOM's support for the DOMImplementation
+   interface defined in DOM Level 2 Core [DOM2] (see Feature strings for
+   the hasFeature method call). In some cases the feature strings map
+   directly to a set of attributes, properties or elements, in others they
+   represent some functionality of the user agent (that it is a dynamic
+   viewer for example). Note that the format and naming for feature
+   strings changed from SVG 1.0 [SVG10] to SVG 1.1. The SVG 1.0 feature
+   strings are listed below after the SVG 1.1 feature strings and User
+   Agents should support all listed feature strings for compatibility
+   reasons. However, the SVG 1.0 feature strings can be considered
+   deprecated.
+
+O.2 SVG 1.1 feature strings
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVG
+
+   User Agent Supports:
+          At least one of the following (all of which are described
+          subsequently): "http://www.w3.org/TR/SVG11/feature#SVG-static",
+          "http://www.w3.org/TR/SVG11/feature#SVG-animation",
+          "http://www.w3.org/TR/SVG11/feature#SVG-dynamic" or
+          "http://www.w3.org/TR/SVG11/feature#SVGDOM". (Because the
+          feature string "http://www.w3.org/TR/SVG11/feature#SVG" can be
+          ambiguous in some circumstances, it is recommended that more
+          specific feature strings be used.)
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVGDOM
+
+   User Agent Supports:
+          At least one of the following (all of which are described
+          subsequently):
+          "http://www.w3.org/TR/SVG11/feature#SVGDOM-static",
+          "http://www.w3.org/TR/SVG11/feature#SVGDOM-animation" or
+          "http://www.w3.org/TR/SVG11/feature#SVGDOM-dynamic". (Because
+          the feature string "http://www.w3.org/TR/SVG11/feature#SVGDOM"
+          can be ambiguous in some circumstances, it is recommended that
+          more specific feature strings be used.)
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVG-static
+
+   User Agent Supports:
+          The following features (described below)
+
+          + http://www.w3.org/TR/SVG11/feature#CoreAttribute
+          + http://www.w3.org/TR/SVG11/feature#Structure
+          + http://www.w3.org/TR/SVG11/feature#ContainerAttribute
+          + http://www.w3.org/TR/SVG11/feature#ConditionalProcessing
+          + http://www.w3.org/TR/SVG11/feature#Image
+          + http://www.w3.org/TR/SVG11/feature#Style
+          + http://www.w3.org/TR/SVG11/feature#ViewportAttribute
+          + http://www.w3.org/TR/SVG11/feature#Shape
+          + http://www.w3.org/TR/SVG11/feature#Text
+          + http://www.w3.org/TR/SVG11/feature#PaintAttribute
+          + http://www.w3.org/TR/SVG11/feature#OpacityAttribute
+          + http://www.w3.org/TR/SVG11/feature#GraphicsAttribute
+          + http://www.w3.org/TR/SVG11/feature#Marker
+          + http://www.w3.org/TR/SVG11/feature#ColorProfile
+          + http://www.w3.org/TR/SVG11/feature#Gradient
+          + http://www.w3.org/TR/SVG11/feature#Pattern
+          + http://www.w3.org/TR/SVG11/feature#Clip
+          + http://www.w3.org/TR/SVG11/feature#Mask
+          + http://www.w3.org/TR/SVG11/feature#Filter
+          + http://www.w3.org/TR/SVG11/feature#XlinkAttribute
+          + http://www.w3.org/TR/SVG11/feature#Font
+          + http://www.w3.org/TR/SVG11/feature#Extensibility
+
+          For SVG viewers, "http://www.w3.org/TR/SVG11/feature#SVG-static"
+          indicates that the viewer can process and render successfully
+          all of the language features corresponding to the feature
+          strings listed above.
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVGDOM-static
+
+   User Agent Supports:
+          All of the DOM interfaces and methods that correspond to the
+          language features for
+          "http://www.w3.org/TR/SVG11/feature#SVG-static".
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVG-animation
+
+   User Agent Supports:
+          All of the language features from
+          "http://www.w3.org/TR/SVG11/feature#SVG-static" plus the feature
+          "http://www.w3.org/TR/SVG11/feature#Animation". For SVG viewers
+          running on media capable of rendering time-based material, such
+          as displays, "http://www.w3.org/TR/SVG11/feature#SVG-animation"
+          indicates that the viewer can process and render successfully
+          all of the corresponding language features.
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVGDOM-animation
+
+   User Agent Supports:
+          All of the DOM interfaces and methods that correspond to the
+          language features for
+          "http://www.w3.org/TR/SVG11/feature#SVG-animation".
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVG-dynamic
+
+   User Agent Supports:
+          All of the language features from
+          "http://www.w3.org/TR/SVG11/feature#SVG-animation" plus the
+          following features:
+
+          + http://www.w3.org/TR/SVG11/feature#Hyperlinking
+          + http://www.w3.org/TR/SVG11/feature#Scripting
+          + http://www.w3.org/TR/SVG11/feature#View
+          + http://www.w3.org/TR/SVG11/feature#Cursor
+          + http://www.w3.org/TR/SVG11/feature#GraphicalEventsAttribute
+          + http://www.w3.org/TR/SVG11/feature#DocumentEventsAttribute
+          + http://www.w3.org/TR/SVG11/feature#AnimationEventsAttribute
+
+          For SVG viewers running on media capable of rendering time-based
+          material, such as displays,
+          "http://www.w3.org/TR/SVG11/feature#SVG-dynamic" indicates that
+          the viewer can process and render successfully all of the
+          corresponding language features.
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#SVGDOM-dynamic
+
+   User Agent Supports:
+          All of the DOM interfaces and methods that correspond to the
+          language features for
+          "http://www.w3.org/TR/SVG11/feature#SVG-dynamic".
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#CoreAttribute
+
+   User Agent Supports:
+          the ‘id’, ‘xml:base’, ‘xml:lang’ and ‘xml:space’ attributes
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Structure
+
+   User Agent Supports:
+          ‘svg’, ‘g’, ‘defs’, ‘desc’, ‘title’, ‘metadata’, ‘symbol’ and
+          ‘use’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicStructure
+
+   User Agent Supports:
+          ‘svg’, ‘g’, ‘defs’, ‘desc’, ‘title’, ‘metadata’ and ‘use’
+          elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#ContainerAttribute
+
+   User Agent Supports:
+          the ‘enable-background’ property
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#ConditionalProcessing
+
+   User Agent Supports:
+          the ‘switch’ element, and the ‘requiredFeatures’,
+          ‘requiredExtensions’ and ‘systemLanguage’ attributes
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Image
+
+   User Agent Supports:
+          the ‘image’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Style
+
+   User Agent Supports:
+          the ‘style’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#ViewportAttribute
+
+   User Agent Supports:
+          the ‘clip’ and ‘overflow’ properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Shape
+
+   User Agent Supports:
+          the ‘rect’, ‘circle’, ‘line’, ‘polyline’, ‘polygon’, ‘ellipse’
+          and ‘path’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Text
+
+   User Agent Supports:
+          the ‘text’, ‘tspan’, ‘tref’, ‘textPath’, ‘altGlyph’,
+          ‘altGlyphDef’, ‘altGlyphItem’ and ‘glyphRef’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicText
+
+   User Agent Supports:
+          the ‘text’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#PaintAttribute
+
+   User Agent Supports:
+          the ‘color’, ‘fill’, ‘fill-rule’, ‘stroke’, ‘stroke-dasharray’,
+          ‘stroke-dashoffset’, ‘stroke-linecap’, ‘stroke-linejoin’,
+          ‘stroke-miterlimit’, ‘stroke-width’, ‘color-interpolation’ and
+          ‘color-rendering’ properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicPaintAttribute
+
+   User Agent Supports:
+          the ‘color’, ‘fill’, ‘fill-rule’, ‘stroke’, ‘stroke-dasharray’,
+          ‘stroke-dashoffset’, ‘stroke-linecap’, ‘stroke-linejoin’,
+          ‘stroke-miterlimit’, ‘stroke-width’ and ‘color-rendering’
+          properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#OpacityAttribute
+
+   User Agent Supports:
+          the ‘opacity’, ‘stroke-opacity’ and ‘fill-opacity’ properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#GraphicsAttribute
+
+   User Agent Supports:
+          the ‘display’, ‘image-rendering’, ‘pointer-events’,
+          ‘shape-rendering’, ‘text-rendering’ and ‘visibility’ properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicGraphicsAttribute
+
+   User Agent Supports:
+          the ‘display’ and ‘visibility’ properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Marker
+
+   User Agent Supports:
+          the ‘marker’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#ColorProfile
+
+   User Agent Supports:
+          the ‘color-profile’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Gradient
+
+   User Agent Supports:
+          the ‘linearGradient’, ‘radialGradient’ and ‘stop’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Pattern
+
+   User Agent Supports:
+          the ‘pattern’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Clip
+
+   User Agent Supports:
+          the ‘clipPath’ element and the ‘clip-path’ and ‘clip-rule’
+          properties
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicClip
+
+   User Agent Supports:
+          the ‘clipPath’ element and the ‘clip-path’ property
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Mask
+
+   User Agent Supports:
+          the ‘mask’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Filter
+
+   User Agent Supports:
+          the ‘filter’, ‘feBlend’, ‘feColorMatrix’, ‘feComponentTransfer’,
+          ‘feComposite’, ‘feConvolveMatrix’, ‘feDiffuseLighting’,
+          ‘feDisplacementMap’, ‘feFlood’, ‘feGaussianBlur’, ‘feImage’,
+          ‘feMerge’, ‘feMergeNode’, ‘feMorphology’, ‘feOffset’,
+          ‘feSpecularLighting’, ‘feTile’, ‘feDistantLight’,
+          ‘fePointLight’, ‘feSpotLight’, ‘feFuncR’, ‘feFuncG’, ‘feFuncB’
+          and ‘feFuncA’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicFilter
+
+   User Agent Supports:
+          the ‘filter’, ‘feBlend’, ‘feColorMatrix’, ‘feComponentTransfer’,
+          ‘feComposite’, ‘feFlood’, ‘feGaussianBlur’, ‘feImage’,
+          ‘feMerge’, ‘feMergeNode’, ‘feOffset’, ‘feTile’, ‘feFuncR’,
+          ‘feFuncG’, ‘feFuncB’ and ‘feFuncA’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#DocumentEventsAttribute
+
+   User Agent Supports:
+          the ‘onunload’, ‘onabort’, ‘onerror’, ‘onresize’, ‘onscroll’ and
+          ‘onzoom’ attributes
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#GraphicalEventsAttribute
+
+   User Agent Supports:
+          the ‘onfocusin’, ‘onfocusout’, ‘onactivate’, ‘onclick’,
+          ‘onmousedown’, ‘onmouseup’, ‘onmouseover’, ‘onmousemove’,
+          ‘onmouseout’ and ‘onload’ attributes
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#AnimationEventsAttribute
+
+   User Agent Supports:
+          the ‘onbegin’, ‘onend’, ‘onrepeat’ and ‘onload’ attributes
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Cursor
+
+   User Agent Supports:
+          the ‘cursor’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Hyperlinking
+
+   User Agent Supports:
+          the ‘a’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#XlinkAttribute
+
+   User Agent Supports:
+          the ‘xlink:type’, ‘xlink:href’, ‘xlink:role’, ‘xlink:arcrole’,
+          ‘xlink:title’, ‘xlink:show’ and ‘xlink:actuate’ attributes
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#ExternalResourcesRequired
+
+   User Agent Supports:
+          the ‘externalResourcesRequired’ attribute
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#View
+
+   User Agent Supports:
+          the ‘view’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Script
+
+   User Agent Supports:
+          the ‘script’ element
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Animation
+
+   User Agent Supports:
+          the ‘animate’, ‘set’, ‘animateMotion’, ‘animateTransform’,
+          ‘animateColor’ and ‘mpath’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Font
+
+   User Agent Supports:
+          the ‘font’, ‘font-face’, ‘glyph’, ‘missing-glyph’, ‘hkern’,
+          ‘vkern’, ‘font-face-src’, ‘font-face-uri’, ‘font-face-format’
+          and ‘font-face-name’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#BasicFont
+
+   User Agent Supports:
+          the ‘font’, ‘font-face’, ‘glyph’, ‘missing-glyph’, ‘hkern’,
+          ‘font-face-src’ and ‘font-face-name’ elements
+
+   Feature String:
+          http://www.w3.org/TR/SVG11/feature#Extensibility
+
+   User Agent Supports:
+          the ‘foreignObject’ element
+
+O.3 SVG 1.0 feature strings
+
+   All SVG 1.0 [SVG10] feature strings referring to language capabilities
+   begin with "org.w3c.svg". All SVG 1.0 feature strings referring to SVG
+   DOM capabilities begin with "org.w3c.dom.svg".
+     * The feature string "org.w3c.svg" indicates that the user agent
+       supports at least one of the following (all of which are described
+       subsequently): "org.w3c.svg.static", "org.w3c.svg.animation",
+       "org.w3c.svg.dynamic" or "org.w3c.dom.svg". (Because the feature
+       string "org.w3c.svg" can be ambiguous in some circumstances, it is
+       recommended that more specific feature strings be used.)
+     * The feature string "org.w3c.dom.svg" indicates that the user agent
+       supports at least one of the following (all of which are described
+       subsequently): "org.w3c.dom.svg.static",
+       "org.w3c.dom.svg.animation" or "org.w3c.dom.svg.dynamic". (Because
+       the feature string "org.w3c.dom.svg" can be ambiguous in some
+       circumstances, it is recommended that more specific feature strings
+       be used.)
+     * The feature string "org.w3c.svg.static" indicates the availability
+       of all of the language capabilities defined in:
+          + Basic Data Types and Interfaces
+          + Document Structure
+          + Styling
+          + Coordinate Systems, Transformations and Units
+          + Paths
+          + Basic Shapes
+          + Text
+          + Painting: Filling, Stroking and Marker Symbols
+          + Color
+          + Gradients and Patterns
+          + Clipping, Masking and Compositing
+          + Filter Effects
+          + Fonts
+          + The ‘switch’ element
+          + The ‘requiredFeatures’ attribute
+          + The ‘requiredExtensions’ attribute
+          + The ‘systemLanguage’ attribute
+       For SVG viewers, "org.w3c.svg.static" indicates that the viewer can
+       process and render successfully all of the language features listed
+       above.
+     * The feature string "org.w3c.dom.svg.static" indicates the
+       availability of all of the DOM interfaces and methods that
+       correspond to the language features for "org.w3c.svg.static".
+     * The feature string "org.w3c.svg.animation" includes all of the
+       language capabilities defined for "org.w3c.svg.static" plus the
+       availability of all of the language capabilities defined in
+       Animation. For SVG viewers running on media capable of rendering
+       time-based material, such as displays, "org.w3c.svg.animation"
+       indicates that the viewer can process and render successfully all
+       of the corresponding language features.
+     * The feature string "org.w3c.dom.svg.animation" corresponds to the
+       availability of DOM interfaces and methods that correspond to the
+       language features for "org.w3c.svg.animation".
+     * The feature string "org.w3c.svg.dynamic" includes all of the
+       language capabilities defined for "org.w3c.svg.animation" plus the
+       availability of all of the language capabilities defined in
+       Relationship with DOM2 events, Linking and Interactivity and
+       Scripting. For SVG viewers running on media capable of rendering
+       time-based material, such as displays, "org.w3c.svg.dynamic"
+       indicates that the viewer can process and render successfully all
+       of the corresponding language features.
+     * The feature string "org.w3c.dom.svg.dynamic" corresponds to the
+       availability of DOM interfaces and methods that correspond to the
+       language features for "org.w3c.svg.dynamic".
+     * The feature string "org.w3c.svg.all" corresponds to the
+       availability of all of the language capabilities defined in this
+       specification.
+     * The feature string "org.w3c.dom.svg.all" corresponds to the
+       availability of all of the DOM interfaces defined in this
+       specification.
+
+   SVG 1.1 (Second Edition) – 16 August 2011Top ⋅ Contents ⋅ Previous ⋅
+   Next ⋅ Elements ⋅ Attributes ⋅ Properties
+   W3C
+
+                                XHTML namespace
+
+   The namespace name http://www.w3.org/1999/xhtml is intended for use in
+   various specifications such as:
+
+   Recommendations:
+     * HTML 5: A vocabulary and associated APIs for HTML and XHTML
+     * XHTML™ 1.0: The Extensible HyperText Markup Language
+     * XHTML Modularization
+     * XHTML 1.1
+     * XHTML Basic
+     * XHTML Print
+     * XHTML+RDFa
+
+   Other Documents:
+     * HTML 5.1
+     * HTML 5.2
+
+   The charters of the following W3C Working Groups include work on HTML
+   that may impact this namespace:
+     * Web Platform Working Group, chartered October 2015
+
+   For more information about XML namespaces, please refer to Namespaces
+   in XML.
+     __________________________________________________________________
+
+
+    Michael Smith, W3C HTML Activity Lead
+
+
+    Last edited: $Date: 2016/09/07 14:16:54 $
+   #next contents
+
+           next   table of contents   elements   attributes   index
+     __________________________________________________________________
+
+   W3C
+
+HTML 4.01 Specification
+
+W3C Recommendation 24 December 1999
+superseded 27 March 2018
+
+   This version:
+          https://www.w3.org/TR/2018/SPSD-html401-20180327/
+
+   Latest version of HTML 4.01:
+          http://www.w3.org/TR/html401
+
+   Latest version of HTML 4:
+          http://www.w3.org/TR/html4
+
+   Latest version of HTML:
+          https://www.w3.org/TR/html/
+
+   Previous version of HTML 4.01:
+          http://www.w3.org/TR/1999/REC-html401-19991224
+
+   Previous HTML 4 Recommendation:
+          http://www.w3.org/TR/1998/REC-html40-19980424
+
+   Editors:
+          Dave Raggett <dsr@w3.org>
+          Arnaud Le Hors, W3C
+          Ian Jacobs, W3C
+
+   Copyright ©1997-1999 W3C^® (MIT, INRIA, Keio), All Rights Reserved. W3C
+   liability, trademark, document use and software licensing rules apply.
+     __________________________________________________________________
+
+Abstract
+
+   This specification defines the HyperText Markup Language (HTML), the
+   publishing language of the World Wide Web. This specification defines
+   HTML 4.01, which is a subversion of HTML 4. In addition to the text,
+   multimedia, and hyperlink features of the previous versions of HTML
+   (HTML 3.2 [HTML32] and HTML 2.0 [RFC1866]), HTML 4 supports more
+   multimedia options, scripting languages, style sheets, better printing
+   facilities, and documents that are more accessible to users with
+   disabilities. HTML 4 also takes great strides towards the
+   internationalization of documents, with the goal of making the Web
+   truly World Wide.
+
+   HTML 4 is an SGML application conforming to International Standard ISO
+   8879 -- Standard Generalized Markup Language [ISO8879].
+
+Status of this document
+
+   This section describes the status of this document at the time of its
+   publication. Other documents may supersede this document. The latest
+   status of this document series is maintained at the W3C.
+
+   This document has been reviewed by W3C Members and other interested
+   parties and has been endorsed by the Director as a W3C Recommendation.
+
+   This specification is a Superseded Recommendation. A newer
+   specification exists that is recommended for new adoption in place of
+   this specification. New implementations should follow the latest
+   version of the HTML specification.
+
+   A list of current W3C Recommendations and other technical documents can
+   be found at https://www.w3.org/TR/.
+
+  Available languages
+
+   The English version of this specification is the only normative
+   version. However, for translations of this document, see
+   http://www.w3.org/MarkUp/html4-updates/translations.
+
+  Errata
+
+   The list of known errors in this specification is available at:
+          http://www.w3.org/MarkUp/html4-updates/errata
+
+Quick Table of Contents
+
+    1. About the HTML 4 Specification
+    2. Introduction to HTML 4
+    3. On SGML and HTML
+    4. Conformance: requirements and recommendations
+    5. HTML Document Representation - Character sets, character encodings,
+       and entities
+    6. Basic HTML data types - Character data, colors, lengths, URIs,
+       content types, etc.
+    7. The global structure of an HTML document - The HEAD and BODY of a
+       document
+    8. Language information and text direction - International
+       considerations for text
+    9. Text - Paragraphs, Lines, and Phrases
+   10. Lists - Unordered, Ordered, and Definition Lists
+   11. Tables
+   12. Links - Hypertext and Media-Independent Links
+   13. Objects, Images, and Applets
+   14. Style Sheets - Adding style to HTML documents
+   15. Alignment, font styles, and horizontal rules
+   16. Frames - Multi-view presentation of documents
+   17. Forms - User-input Forms: Text Fields, Buttons, Menus, and more
+   18. Scripts - Animated Documents and Smart Forms
+   19. SGML reference information for HTML - Formal definition of HTML and
+       validation
+   20. SGML Declaration of HTML 4
+   21. Document Type Definition
+   22. Transitional Document Type Definition
+   23. Frameset Document Type Definition
+   24. Character entity references in HTML 4
+
+    A. Changes
+    B. Performance, Implementation, and Design Notes
+
+     * References
+     * Index of Elements
+     * Index of Attributes
+     * Index
+
+Full Table of Contents
+
+    1. About the HTML 4 Specification
+         1. How the specification is organized
+         2. Document conventions
+              1. Elements and attributes
+              2. Notes and examples
+         3. Acknowledgments
+              1. Acknowledgments for the current revision
+         4. Copyright Notice
+    2. Introduction to HTML 4
+         1. What is the World Wide Web?
+              1. Introduction to URIs
+              2. Fragment identifiers
+              3. Relative URIs
+         2. What is HTML?
+              1. A brief history of HTML
+         3. HTML 4
+              1. Internationalization
+              2. Accessibility
+              3. Tables
+              4. Compound documents
+              5. Style sheets
+              6. Scripting
+              7. Printing
+         4. Authoring documents with HTML 4
+              1. Separate structure and presentation
+              2. Consider universal accessibility to the Web
+              3. Help user agents with incremental rendering
+    3. On SGML and HTML
+         1. Introduction to SGML
+         2. SGML constructs used in HTML
+              1. Elements
+              2. Attributes
+              3. Character references
+              4. Comments
+         3. How to read the HTML DTD
+              1. DTD Comments
+              2. Parameter entity definitions
+              3. Element declarations
+                    # Content model definitions
+              4. Attribute declarations
+                    # DTD entities in attribute definitions
+                    # Boolean attributes
+    4. Conformance: requirements and recommendations
+         1. Definitions
+         2. SGML
+         3. The text/html content type
+    5. HTML Document Representation - Character sets, character encodings,
+       and entities
+         1. The Document Character Set
+         2. Character encodings
+              1. Choosing an encoding
+                    # Notes on specific encodings
+              2. Specifying the character encoding
+         3. Character references
+              1. Numeric character references
+              2. Character entity references
+         4. Undisplayable characters
+    6. Basic HTML data types - Character data, colors, lengths, URIs,
+       content types, etc.
+         1. Case information
+         2. SGML basic types
+         3. Text strings
+         4. URIs
+         5. Colors
+              1. Notes on using colors
+         6. Lengths
+         7. Content types (MIME types)
+         8. Language codes
+         9. Character encodings
+        10. Single characters
+        11. Dates and times
+        12. Link types
+        13. Media descriptors
+        14. Script data
+        15. Style sheet data
+        16. Frame target names
+    7. The global structure of an HTML document - The HEAD and BODY of a
+       document
+         1. Introduction to the structure of an HTML document
+         2. HTML version information
+         3. The HTML element
+         4. The document head
+              1. The HEAD element
+              2. The TITLE element
+              3. The title attribute
+              4. Meta data
+                    # Specifying meta data
+                    # The META element
+                    # Meta data profiles
+         5. The document body
+              1. The BODY element
+              2. Element identifiers: the id and class attributes
+              3. Block-level and inline elements
+              4. Grouping elements: the DIV and SPAN elements
+              5. Headings: The H1, H2, H3, H4, H5, H6 elements
+              6. The ADDRESS element
+    8. Language information and text direction - International
+       considerations for text
+         1. Specifying the language of content: the lang attribute
+              1. Language codes
+              2. Inheritance of language codes
+              3. Interpretation of language codes
+         2. Specifying the direction of text and tables: the dir attribute
+              1. Introduction to the bidirectional algorithm
+              2. Inheritance of text direction information
+              3. Setting the direction of embedded text
+              4. Overriding the bidirectional algorithm: the BDO element
+              5. Character references for directionality and joining
+                 control
+              6. The effect of style sheets on bidirectionality
+    9. Text - Paragraphs, Lines, and Phrases
+         1. White space
+         2. Structured text
+              1. Phrase elements: EM, STRONG, DFN, CODE, SAMP, KBD, VAR,
+                 CITE, ABBR, and ACRONYM
+              2. Quotations: The BLOCKQUOTE and Q elements
+                    # Rendering quotations
+              3. Subscripts and superscripts: the SUB and SUP elements
+         3. Lines and Paragraphs
+              1. Paragraphs: the P element
+              2. Controlling line breaks
+                    # Forcing a line break: the BR element
+                    # Prohibiting a line break
+              3. Hyphenation
+              4. Preformatted text: The PRE element
+              5. Visual rendering of paragraphs
+         4. Marking document changes: The INS and DEL elements
+   10. Lists - Unordered, Ordered, and Definition Lists
+         1. Introduction to lists
+         2. Unordered lists (UL), ordered lists (OL), and list items (LI)
+         3. Definition lists: the DL, DT, and DD elements
+              1. Visual rendering of lists
+         4. The DIR and MENU elements
+   11. Tables
+         1. Introduction to tables
+         2. Elements for constructing tables
+              1. The TABLE element
+                    # Table directionality
+              2. Table Captions: The CAPTION element
+              3. Row groups: the THEAD, TFOOT, and TBODY elements
+              4. Column groups: the COLGROUP and COL elements
+                    # The COLGROUP element
+                    # The COL element
+                    # Calculating the number of columns in a table
+                    # Calculating the width of columns
+              5. Table rows: The TR element
+              6. Table cells: The TH and TD elements
+                    # Cells that span several rows or columns
+         3. Table formatting by visual user agents
+              1. Borders and rules
+              2. Horizontal and vertical alignment
+                    # Inheritance of alignment specifications
+              3. Cell margins
+         4. Table rendering by non-visual user agents
+              1. Associating header information with data cells
+              2. Categorizing cells
+              3. Algorithm to find heading information
+         5. Sample table
+   12. Links - Hypertext and Media-Independent Links
+         1. Introduction to links and anchors
+              1. Visiting a linked resource
+              2. Other link relationships
+              3. Specifying anchors and links
+              4. Link titles
+              5. Internationalization and links
+         2. The A element
+              1. Syntax of anchor names
+              2. Nested links are illegal
+              3. Anchors with the id attribute
+              4. Unavailable and unidentifiable resources
+         3. Document relationships: the LINK element
+              1. Forward and reverse links
+              2. Links and external style sheets
+              3. Links and search engines
+         4. Path information: the BASE element
+              1. Resolving relative URIs
+   13. Objects, Images, and Applets
+         1. Introduction to objects, images, and applets
+         2. Including an image: the IMG element
+         3. Generic inclusion: the OBJECT element
+              1. Rules for rendering objects
+              2. Object initialization: the PARAM element
+              3. Global naming schemes for objects
+              4. Object declarations and instantiations
+         4. Including an applet: the APPLET element
+         5. Notes on embedded documents
+         6. Image maps
+              1. Client-side image maps: the MAP and AREA elements
+                    # Client-side image map examples
+              2. Server-side image maps
+         7. Visual presentation of images, objects, and applets
+              1. Width and height
+              2. White space around images and objects
+              3. Borders
+              4. Alignment
+         8. How to specify alternate text
+   14. Style Sheets - Adding style to HTML documents
+         1. Introduction to style sheets
+         2. Adding style to HTML
+              1. Setting the default style sheet language
+              2. Inline style information
+              3. Header style information: the STYLE element
+              4. Media types
+         3. External style sheets
+              1. Preferred and alternate style sheets
+              2. Specifying external style sheets
+         4. Cascading style sheets
+              1. Media-dependent cascades
+              2. Inheritance and cascading
+         5. Hiding style data from user agents
+         6. Linking to style sheets with HTTP headers
+   15. Alignment, font styles, and horizontal rules
+         1. Formatting
+              1. Background color
+              2. Alignment
+              3. Floating objects
+                    # Float an object
+                    # Float text around an object
+         2. Fonts
+              1. Font style elements: the TT, I, B, BIG, SMALL, STRIKE, S,
+                 and U elements
+              2. Font modifier elements: FONT and BASEFONT
+         3. Rules: the HR element
+   16. Frames - Multi-view presentation of documents
+         1. Introduction to frames
+         2. Layout of frames
+              1. The FRAMESET element
+                    # Rows and columns
+                    # Nested frame sets
+                    # Sharing data among frames
+              2. The FRAME element
+                    # Setting the initial contents of a frame
+                    # Visual rendering of a frame
+         3. Specifying target frame information
+              1. Setting the default target for links
+              2. Target semantics
+         4. Alternate content
+              1. The NOFRAMES element
+              2. Long descriptions of frames
+         5. Inline frames: the IFRAME element
+   17. Forms - User-input Forms: Text Fields, Buttons, Menus, and more
+         1. Introduction to forms
+         2. Controls
+              1. Control types
+         3. The FORM element
+         4. The INPUT element
+              1. Control types created with INPUT
+              2. Examples of forms containing INPUT controls
+         5. The BUTTON element
+         6. The SELECT, OPTGROUP, and OPTION elements
+              1. Pre-selected options
+         7. The TEXTAREA element
+         8. The ISINDEX element
+         9. Labels
+              1. The LABEL element
+        10. Adding structure to forms: the FIELDSET and LEGEND elements
+        11. Giving focus to an element
+              1. Tabbing navigation
+              2. Access keys
+        12. Disabled and read-only controls
+              1. Disabled controls
+              2. Read-only controls
+        13. Form submission
+              1. Form submission method
+              2. Successful controls
+              3. Processing form data
+                    # Step one: Identify the successful controls
+                    # Step two: Build a form data set
+                    # Step three: Encode the form data set
+                    # Step four: Submit the encoded form data set
+              4. Form content types
+                    # application/x-www-form-urlencoded
+                    # multipart/form-data
+   18. Scripts - Animated Documents and Smart Forms
+         1. Introduction to scripts
+         2. Designing documents for user agents that support scripting
+              1. The SCRIPT element
+              2. Specifying the scripting language
+                    # The default scripting language
+                    # Local declaration of a scripting language
+                    # References to HTML elements from a script
+              3. Intrinsic events
+              4. Dynamic modification of documents
+         3. Designing documents for user agents that don't support
+            scripting
+              1. The NOSCRIPT element
+              2. Hiding script data from user agents
+   19. SGML reference information for HTML - Formal definition of HTML and
+       validation
+         1. Document Validation
+         2. Sample SGML catalog
+   20. SGML Declaration of HTML 4
+         1. SGML Declaration
+   21. Document Type Definition
+   22. Transitional Document Type Definition
+   23. Frameset Document Type Definition
+   24. Character entity references in HTML 4
+         1. Introduction to character entity references
+         2. Character entity references for ISO 8859-1 characters
+              1. The list of characters
+         3. Character entity references for symbols, mathematical symbols,
+            and Greek letters
+              1. The list of characters
+         4. Character entity references for markup-significant and
+            internationalization characters
+              1. The list of characters
+
+    A. Changes
+         1. Changes between 24 April 1998 HTML 4.0 and 24 December 1999
+            HTML 4.01 versions
+              1. Changes to the specification
+                    # General changes
+                    # On SGML and HTML
+                    # HTML Document Representation
+                    # Basic HTML data types
+                    # Global structure of an HTML document
+                    # Language information and text direction
+                    # Tables
+                    # Links
+                    # Objects, Images, and Applets
+                    # Style Sheets in HTML Documents
+                    # Frames
+                    # Forms
+                    # SGML Declaration
+                    # Strict DTD
+                    # Notes
+                    # References
+              2. Errors that were corrected
+              3. Minor typographical errors that were corrected
+              4. Clarifications
+              5. Known Browser problems
+         2. Changes between 18 December 1997 and 24 April 1998 versions
+              1. Errors that were corrected
+              2. Minor typographical errors that were corrected
+         3. Changes between HTML 3.2 and HTML 4.0 (18 December 1997)
+              1. Changes to elements
+                    # New elements
+                    # Deprecated elements
+                    # Obsolete elements
+              2. Changes to attributes
+              3. Changes for accessibility
+              4. Changes for meta data
+              5. Changes for text
+              6. Changes for links
+              7. Changes for tables
+              8. Changes for images, objects, and image maps
+              9. Changes for forms
+             10. Changes for style sheets
+             11. Changes for frames
+             12. Changes for scripting
+             13. Changes for internationalization
+    B. Performance, Implementation, and Design Notes
+         1. Notes on invalid documents
+         2. Special characters in URI attribute values
+              1. Non-ASCII characters in URI attribute values
+              2. Ampersands in URI attribute values
+         3. SGML implementation notes
+              1. Line breaks
+              2. Specifying non-HTML data
+                    # Element content
+                    # Attribute values
+              3. SGML features with limited support
+              4. Boolean attributes
+              5. Marked Sections
+              6. Processing Instructions
+              7. Shorthand markup
+         4. Notes on helping search engines index your Web site
+              1. Search robots
+                    # The robots.txt file
+                    # Robots and the META element
+         5. Notes on tables
+              1. Design rationale
+                    # Dynamic reformatting
+                    # Incremental display
+                    # Structure and presentation
+                    # Row and column groups
+                    # Accessibility
+              2. Recommended Layout Algorithms
+                    # Fixed Layout Algorithm
+                    # Autolayout Algorithm
+         6. Notes on forms
+              1. Incremental display
+              2. Future projects
+         7. Notes on scripting
+              1. Reserved syntax for future script macros
+                    # Current Practice for Script Macros
+         8. Notes on frames
+         9. Notes on accessibility
+        10. Notes on security
+              1. Security issues for forms
+
+     * References
+         1. Normative references
+         2. Informative references
+     * Index of Elements
+     * Index of Attributes
+     * Index
+     __________________________________________________________________
+
+          next   table of contents   elements   attributes   index
+   #previous next contents
+
+          previous   next   contents   elements   attributes   index
+     __________________________________________________________________
+
+                      1 About the HTML 4 Specification
+
+   Contents
+    1. How the specification is organized
+    2. Document conventions
+         1. Elements and attributes
+         2. Notes and examples
+    3. Acknowledgments
+         1. Acknowledgments for the current revision
+    4. Copyright Notice
+
+1.1 How the specification is organized
+
+   This specification is divided into the following sections:
+
+   Sections 2 and 3: Introduction to HTML 4
+          The introduction describes HTML's place in the scheme of the
+          World Wide Web, provides a brief history of the development of
+          HTML, highlights what can be done with HTML 4, and provides some
+          HTML authoring tips.
+
+          The brief SGML tutorial gives readers some understanding of
+          HTML's relationship to SGML and gives summary information on how
+          to read the HTML Document Type Definition (DTD).
+
+   Sections 4 - 24: HTML 4 reference manual
+          The bulk of the reference manual consists of the HTML language
+          reference, which defines all elements and attributes of the
+          language.
+
+          This document has been organized by topic rather than by the
+          grammar of HTML. Topics are grouped into three categories:
+          structure, presentation, and interactivity. Although it is not
+          easy to divide HTML constructs perfectly into these three
+          categories, the model reflects the HTML Working Group's
+          experience that separating a document's structure from its
+          presentation produces more effective and maintainable documents.
+
+          The language reference consists of the following information:
+
+          + What characters may appear in an HTML document.
+          + Basic data types of an HTML document.
+          + Elements that govern the structure of an HTML document,
+            including text, lists, tables, links, and included objects,
+            images, and applets.
+          + Elements that govern the presentation of an HTML document,
+            including style sheets, fonts, colors, rules, and other visual
+            presentation, and frames for multi-windowed presentations.
+          + Elements that govern interactivity with an HTML document,
+            including forms for user input and scripts for active
+            documents.
+          + The SGML formal definition of HTML:
+               o The SGML declaration of HTML.
+               o Three DTDs: strict, transitional, and frameset.
+               o The list of character references.
+
+   Appendixes
+          The first appendix contains information about changes from HTML
+          3.2 to help authors and implementors with the transition to HTML
+          4, and changes from the 18 December 1997 specification. The
+          second appendix contains performance and implementation notes,
+          and is primarily intended to help implementors create user
+          agents for HTML 4.
+
+   References
+          A list of normative and informative references.
+
+   Indexes
+          Three indexes give readers rapid access to the definition of key
+          concepts, elements and attributes.
+
+1.2 Document conventions
+
+   This document has been written with two types of readers in mind:
+   authors and implementors. We hope the specification will provide
+   authors with the tools they need to write efficient, attractive, and
+   accessible documents, without over-exposing them to HTML's
+   implementation details. Implementors, however, should find all they
+   need to build conforming user agents.
+
+   The specification may be approached in several ways:
+     * Read from beginning to end. The specification begins with a general
+       presentation of HTML and becomes more and more technical and
+       specific towards the end.
+     * Quick access to information. In order to get information about
+       syntax and semantics as quickly as possible, the online version of
+       the specification includes the following features:
+         1. Every reference to an element or attribute is linked to its
+            definition in the specification. Each element or attribute is
+            defined in only one location.
+         2. Every page includes links to the indexes, so you never are
+            more than two links away from finding the definition of an
+            element or attribute.
+         3. The front pages of each section of the language reference
+            manual extend the initial table of contents with more detail
+            about that section.
+
+  1.2.1 Elements and attributes
+
+   Element names are written in uppercase letters (e.g., BODY). Attribute
+   names are written in lowercase letters (e.g., lang, onsubmit). Recall
+   that in HTML, element and attribute names are case-insensitive; the
+   convention is meant to encourage readability.
+
+   Element and attribute names in this document have been marked up and
+   may be rendered specially by some user agents.
+
+   Each attribute definition specifies the type of its value. If the type
+   allows a small set of possible values, the definition lists the set of
+   values, separated by a bar (|).
+
+   After the type information, each attribute definition indicates the
+   case-sensitivity of its values, between square brackets ("[]"). See the
+   section on case information for details.
+
+  1.2.2 Notes and examples
+
+   Informative notes are emphasized to stand out from surrounding text and
+   may be rendered specially by some user agents.
+
+   All examples illustrating deprecated usage are marked as "DEPRECATED
+   EXAMPLE". Deprecated examples also include recommended alternate
+   solutions. All examples that illustrates illegal usage are clearly
+   marked "ILLEGAL EXAMPLE".
+
+   Examples and notes have been marked up and may be rendered specially by
+   some user agents.
+
+1.3 Acknowledgments
+
+   Thanks to everyone who has helped to author the working drafts that
+   went into the HTML 4 specification, and to all those who have sent
+   suggestions and corrections.
+
+   Many thanks to the Web Accessibility Initiative task force (WAI HC
+   group) for their work on improving the accessibility of HTML and to
+   T.V. Raman (Adobe) for his early work on developing accessible forms.
+
+   The authors of this specification, the members of the W3C HTML Working
+   Group, deserve much applause for their diligent review of this
+   document, their constructive comments, and their hard work: John D.
+   Burger (MITRE), Steve Byrne (JavaSoft), Martin J. Dürst (University of
+   Zurich), Daniel Glazman (Electricité de France), Scott Isaacs
+   (Microsoft), Murray Maloney (GRIF), Steven Pemberton (CWI), Robert
+   Pernett (Lotus), Jared Sorensen (Novell), Powell Smith (IBM), Robert
+   Stevahn (HP), Ed Tecot (Microsoft), Jeffrey Veen (HotWired), Mike
+   Wexler (Adobe), Misha Wolf (Reuters), and Lauren Wood (SoftQuad).
+
+   Thank you Dan Connolly (W3C) for rigorous and bountiful input as
+   part-time editor and thoughtful guidance as chairman of the HTML
+   Working Group. Thank you Sally Khudairi (W3C) for your indispensable
+   work on press releases.
+
+   Thanks to David M. Abrahamson and Roger Price for their careful reading
+   of the specification and constructive comments.
+
+   Thanks to Jan Kärrman, author of html2ps for helping so much in
+   creating the Postscript version of the specification.
+
+   Of particular help from the W3C at Sophia-Antipolis were Janet Bertot,
+   Bert Bos, Stephane Boyera, Daniel Dardailler, Yves Lafon, Håkon Lie,
+   Chris Lilley, and Colas Nahaboo (Bull).
+
+   Lastly, thanks to Tim Berners-Lee without whom none of this would have
+   been possible.
+
+  1.3.1 Acknowledgments for the current revision
+
+   Many thanks to Shane McCarron for tracking errata for this revision of
+   the specification.
+
+1.4 Copyright Notice
+
+   For information about copyrights, please refer to the W3C Intellectual
+   Property Notice, the W3C Document Notice, and the W3C IPR Software
+   Notice.
+     __________________________________________________________________
+
+         previous   next   contents   elements   attributes   index
+   #next contents
+
+           next   table of contents   elements   attributes   index
+     __________________________________________________________________
+
+   W3C
+
+HTML 4.01 Specification
+
+W3C Recommendation 24 December 1999
+superseded 27 March 2018
+
+   This version:
+          https://www.w3.org/TR/2018/SPSD-html401-20180327/
+
+   Latest version of HTML 4.01:
+          http://www.w3.org/TR/html401
+
+   Latest version of HTML 4:
+          http://www.w3.org/TR/html4
+
+   Latest version of HTML:
+          https://www.w3.org/TR/html/
+
+   Previous version of HTML 4.01:
+          http://www.w3.org/TR/1999/REC-html401-19991224
+
+   Previous HTML 4 Recommendation:
+          http://www.w3.org/TR/1998/REC-html40-19980424
+
+   Editors:
+          Dave Raggett <dsr@w3.org>
+          Arnaud Le Hors, W3C
+          Ian Jacobs, W3C
+
+   Copyright ©1997-1999 W3C^® (MIT, INRIA, Keio), All Rights Reserved. W3C
+   liability, trademark, document use and software licensing rules apply.
+     __________________________________________________________________
+
+Abstract
+
+   This specification defines the HyperText Markup Language (HTML), the
+   publishing language of the World Wide Web. This specification defines
+   HTML 4.01, which is a subversion of HTML 4. In addition to the text,
+   multimedia, and hyperlink features of the previous versions of HTML
+   (HTML 3.2 [HTML32] and HTML 2.0 [RFC1866]), HTML 4 supports more
+   multimedia options, scripting languages, style sheets, better printing
+   facilities, and documents that are more accessible to users with
+   disabilities. HTML 4 also takes great strides towards the
+   internationalization of documents, with the goal of making the Web
+   truly World Wide.
+
+   HTML 4 is an SGML application conforming to International Standard ISO
+   8879 -- Standard Generalized Markup Language [ISO8879].
+
+Status of this document
+
+   This section describes the status of this document at the time of its
+   publication. Other documents may supersede this document. The latest
+   status of this document series is maintained at the W3C.
+
+   This document has been reviewed by W3C Members and other interested
+   parties and has been endorsed by the Director as a W3C Recommendation.
+
+   This specification is a Superseded Recommendation. A newer
+   specification exists that is recommended for new adoption in place of
+   this specification. New implementations should follow the latest
+   version of the HTML specification.
+
+   A list of current W3C Recommendations and other technical documents can
+   be found at https://www.w3.org/TR/.
+
+  Available languages
+
+   The English version of this specification is the only normative
+   version. However, for translations of this document, see
+   http://www.w3.org/MarkUp/html4-updates/translations.
+
+  Errata
+
+   The list of known errors in this specification is available at:
+          http://www.w3.org/MarkUp/html4-updates/errata
+
+Quick Table of Contents
+
+    1. About the HTML 4 Specification
+    2. Introduction to HTML 4
+    3. On SGML and HTML
+    4. Conformance: requirements and recommendations
+    5. HTML Document Representation - Character sets, character encodings,
+       and entities
+    6. Basic HTML data types - Character data, colors, lengths, URIs,
+       content types, etc.
+    7. The global structure of an HTML document - The HEAD and BODY of a
+       document
+    8. Language information and text direction - International
+       considerations for text
+    9. Text - Paragraphs, Lines, and Phrases
+   10. Lists - Unordered, Ordered, and Definition Lists
+   11. Tables
+   12. Links - Hypertext and Media-Independent Links
+   13. Objects, Images, and Applets
+   14. Style Sheets - Adding style to HTML documents
+   15. Alignment, font styles, and horizontal rules
+   16. Frames - Multi-view presentation of documents
+   17. Forms - User-input Forms: Text Fields, Buttons, Menus, and more
+   18. Scripts - Animated Documents and Smart Forms
+   19. SGML reference information for HTML - Formal definition of HTML and
+       validation
+   20. SGML Declaration of HTML 4
+   21. Document Type Definition
+   22. Transitional Document Type Definition
+   23. Frameset Document Type Definition
+   24. Character entity references in HTML 4
+
+    A. Changes
+    B. Performance, Implementation, and Design Notes
+
+     * References
+     * Index of Elements
+     * Index of Attributes
+     * Index
+
+Full Table of Contents
+
+    1. About the HTML 4 Specification
+         1. How the specification is organized
+         2. Document conventions
+              1. Elements and attributes
+              2. Notes and examples
+         3. Acknowledgments
+              1. Acknowledgments for the current revision
+         4. Copyright Notice
+    2. Introduction to HTML 4
+         1. What is the World Wide Web?
+              1. Introduction to URIs
+              2. Fragment identifiers
+              3. Relative URIs
+         2. What is HTML?
+              1. A brief history of HTML
+         3. HTML 4
+              1. Internationalization
+              2. Accessibility
+              3. Tables
+              4. Compound documents
+              5. Style sheets
+              6. Scripting
+              7. Printing
+         4. Authoring documents with HTML 4
+              1. Separate structure and presentation
+              2. Consider universal accessibility to the Web
+              3. Help user agents with incremental rendering
+    3. On SGML and HTML
+         1. Introduction to SGML
+         2. SGML constructs used in HTML
+              1. Elements
+              2. Attributes
+              3. Character references
+              4. Comments
+         3. How to read the HTML DTD
+              1. DTD Comments
+              2. Parameter entity definitions
+              3. Element declarations
+                    # Content model definitions
+              4. Attribute declarations
+                    # DTD entities in attribute definitions
+                    # Boolean attributes
+    4. Conformance: requirements and recommendations
+         1. Definitions
+         2. SGML
+         3. The text/html content type
+    5. HTML Document Representation - Character sets, character encodings,
+       and entities
+         1. The Document Character Set
+         2. Character encodings
+              1. Choosing an encoding
+                    # Notes on specific encodings
+              2. Specifying the character encoding
+         3. Character references
+              1. Numeric character references
+              2. Character entity references
+         4. Undisplayable characters
+    6. Basic HTML data types - Character data, colors, lengths, URIs,
+       content types, etc.
+         1. Case information
+         2. SGML basic types
+         3. Text strings
+         4. URIs
+         5. Colors
+              1. Notes on using colors
+         6. Lengths
+         7. Content types (MIME types)
+         8. Language codes
+         9. Character encodings
+        10. Single characters
+        11. Dates and times
+        12. Link types
+        13. Media descriptors
+        14. Script data
+        15. Style sheet data
+        16. Frame target names
+    7. The global structure of an HTML document - The HEAD and BODY of a
+       document
+         1. Introduction to the structure of an HTML document
+         2. HTML version information
+         3. The HTML element
+         4. The document head
+              1. The HEAD element
+              2. The TITLE element
+              3. The title attribute
+              4. Meta data
+                    # Specifying meta data
+                    # The META element
+                    # Meta data profiles
+         5. The document body
+              1. The BODY element
+              2. Element identifiers: the id and class attributes
+              3. Block-level and inline elements
+              4. Grouping elements: the DIV and SPAN elements
+              5. Headings: The H1, H2, H3, H4, H5, H6 elements
+              6. The ADDRESS element
+    8. Language information and text direction - International
+       considerations for text
+         1. Specifying the language of content: the lang attribute
+              1. Language codes
+              2. Inheritance of language codes
+              3. Interpretation of language codes
+         2. Specifying the direction of text and tables: the dir attribute
+              1. Introduction to the bidirectional algorithm
+              2. Inheritance of text direction information
+              3. Setting the direction of embedded text
+              4. Overriding the bidirectional algorithm: the BDO element
+              5. Character references for directionality and joining
+                 control
+              6. The effect of style sheets on bidirectionality
+    9. Text - Paragraphs, Lines, and Phrases
+         1. White space
+         2. Structured text
+              1. Phrase elements: EM, STRONG, DFN, CODE, SAMP, KBD, VAR,
+                 CITE, ABBR, and ACRONYM
+              2. Quotations: The BLOCKQUOTE and Q elements
+                    # Rendering quotations
+              3. Subscripts and superscripts: the SUB and SUP elements
+         3. Lines and Paragraphs
+              1. Paragraphs: the P element
+              2. Controlling line breaks
+                    # Forcing a line break: the BR element
+                    # Prohibiting a line break
+              3. Hyphenation
+              4. Preformatted text: The PRE element
+              5. Visual rendering of paragraphs
+         4. Marking document changes: The INS and DEL elements
+   10. Lists - Unordered, Ordered, and Definition Lists
+         1. Introduction to lists
+         2. Unordered lists (UL), ordered lists (OL), and list items (LI)
+         3. Definition lists: the DL, DT, and DD elements
+              1. Visual rendering of lists
+         4. The DIR and MENU elements
+   11. Tables
+         1. Introduction to tables
+         2. Elements for constructing tables
+              1. The TABLE element
+                    # Table directionality
+              2. Table Captions: The CAPTION element
+              3. Row groups: the THEAD, TFOOT, and TBODY elements
+              4. Column groups: the COLGROUP and COL elements
+                    # The COLGROUP element
+                    # The COL element
+                    # Calculating the number of columns in a table
+                    # Calculating the width of columns
+              5. Table rows: The TR element
+              6. Table cells: The TH and TD elements
+                    # Cells that span several rows or columns
+         3. Table formatting by visual user agents
+              1. Borders and rules
+              2. Horizontal and vertical alignment
+                    # Inheritance of alignment specifications
+              3. Cell margins
+         4. Table rendering by non-visual user agents
+              1. Associating header information with data cells
+              2. Categorizing cells
+              3. Algorithm to find heading information
+         5. Sample table
+   12. Links - Hypertext and Media-Independent Links
+         1. Introduction to links and anchors
+              1. Visiting a linked resource
+              2. Other link relationships
+              3. Specifying anchors and links
+              4. Link titles
+              5. Internationalization and links
+         2. The A element
+              1. Syntax of anchor names
+              2. Nested links are illegal
+              3. Anchors with the id attribute
+              4. Unavailable and unidentifiable resources
+         3. Document relationships: the LINK element
+              1. Forward and reverse links
+              2. Links and external style sheets
+              3. Links and search engines
+         4. Path information: the BASE element
+              1. Resolving relative URIs
+   13. Objects, Images, and Applets
+         1. Introduction to objects, images, and applets
+         2. Including an image: the IMG element
+         3. Generic inclusion: the OBJECT element
+              1. Rules for rendering objects
+              2. Object initialization: the PARAM element
+              3. Global naming schemes for objects
+              4. Object declarations and instantiations
+         4. Including an applet: the APPLET element
+         5. Notes on embedded documents
+         6. Image maps
+              1. Client-side image maps: the MAP and AREA elements
+                    # Client-side image map examples
+              2. Server-side image maps
+         7. Visual presentation of images, objects, and applets
+              1. Width and height
+              2. White space around images and objects
+              3. Borders
+              4. Alignment
+         8. How to specify alternate text
+   14. Style Sheets - Adding style to HTML documents
+         1. Introduction to style sheets
+         2. Adding style to HTML
+              1. Setting the default style sheet language
+              2. Inline style information
+              3. Header style information: the STYLE element
+              4. Media types
+         3. External style sheets
+              1. Preferred and alternate style sheets
+              2. Specifying external style sheets
+         4. Cascading style sheets
+              1. Media-dependent cascades
+              2. Inheritance and cascading
+         5. Hiding style data from user agents
+         6. Linking to style sheets with HTTP headers
+   15. Alignment, font styles, and horizontal rules
+         1. Formatting
+              1. Background color
+              2. Alignment
+              3. Floating objects
+                    # Float an object
+                    # Float text around an object
+         2. Fonts
+              1. Font style elements: the TT, I, B, BIG, SMALL, STRIKE, S,
+                 and U elements
+              2. Font modifier elements: FONT and BASEFONT
+         3. Rules: the HR element
+   16. Frames - Multi-view presentation of documents
+         1. Introduction to frames
+         2. Layout of frames
+              1. The FRAMESET element
+                    # Rows and columns
+                    # Nested frame sets
+                    # Sharing data among frames
+              2. The FRAME element
+                    # Setting the initial contents of a frame
+                    # Visual rendering of a frame
+         3. Specifying target frame information
+              1. Setting the default target for links
+              2. Target semantics
+         4. Alternate content
+              1. The NOFRAMES element
+              2. Long descriptions of frames
+         5. Inline frames: the IFRAME element
+   17. Forms - User-input Forms: Text Fields, Buttons, Menus, and more
+         1. Introduction to forms
+         2. Controls
+              1. Control types
+         3. The FORM element
+         4. The INPUT element
+              1. Control types created with INPUT
+              2. Examples of forms containing INPUT controls
+         5. The BUTTON element
+         6. The SELECT, OPTGROUP, and OPTION elements
+              1. Pre-selected options
+         7. The TEXTAREA element
+         8. The ISINDEX element
+         9. Labels
+              1. The LABEL element
+        10. Adding structure to forms: the FIELDSET and LEGEND elements
+        11. Giving focus to an element
+              1. Tabbing navigation
+              2. Access keys
+        12. Disabled and read-only controls
+              1. Disabled controls
+              2. Read-only controls
+        13. Form submission
+              1. Form submission method
+              2. Successful controls
+              3. Processing form data
+                    # Step one: Identify the successful controls
+                    # Step two: Build a form data set
+                    # Step three: Encode the form data set
+                    # Step four: Submit the encoded form data set
+              4. Form content types
+                    # application/x-www-form-urlencoded
+                    # multipart/form-data
+   18. Scripts - Animated Documents and Smart Forms
+         1. Introduction to scripts
+         2. Designing documents for user agents that support scripting
+              1. The SCRIPT element
+              2. Specifying the scripting language
+                    # The default scripting language
+                    # Local declaration of a scripting language
+                    # References to HTML elements from a script
+              3. Intrinsic events
+              4. Dynamic modification of documents
+         3. Designing documents for user agents that don't support
+            scripting
+              1. The NOSCRIPT element
+              2. Hiding script data from user agents
+   19. SGML reference information for HTML - Formal definition of HTML and
+       validation
+         1. Document Validation
+         2. Sample SGML catalog
+   20. SGML Declaration of HTML 4
+         1. SGML Declaration
+   21. Document Type Definition
+   22. Transitional Document Type Definition
+   23. Frameset Document Type Definition
+   24. Character entity references in HTML 4
+         1. Introduction to character entity references
+         2. Character entity references for ISO 8859-1 characters
+              1. The list of characters
+         3. Character entity references for symbols, mathematical symbols,
+            and Greek letters
+              1. The list of characters
+         4. Character entity references for markup-significant and
+            internationalization characters
+              1. The list of characters
+
+    A. Changes
+         1. Changes between 24 April 1998 HTML 4.0 and 24 December 1999
+            HTML 4.01 versions
+              1. Changes to the specification
+                    # General changes
+                    # On SGML and HTML
+                    # HTML Document Representation
+                    # Basic HTML data types
+                    # Global structure of an HTML document
+                    # Language information and text direction
+                    # Tables
+                    # Links
+                    # Objects, Images, and Applets
+                    # Style Sheets in HTML Documents
+                    # Frames
+                    # Forms
+                    # SGML Declaration
+                    # Strict DTD
+                    # Notes
+                    # References
+              2. Errors that were corrected
+              3. Minor typographical errors that were corrected
+              4. Clarifications
+              5. Known Browser problems
+         2. Changes between 18 December 1997 and 24 April 1998 versions
+              1. Errors that were corrected
+              2. Minor typographical errors that were corrected
+         3. Changes between HTML 3.2 and HTML 4.0 (18 December 1997)
+              1. Changes to elements
+                    # New elements
+                    # Deprecated elements
+                    # Obsolete elements
+              2. Changes to attributes
+              3. Changes for accessibility
+              4. Changes for meta data
+              5. Changes for text
+              6. Changes for links
+              7. Changes for tables
+              8. Changes for images, objects, and image maps
+              9. Changes for forms
+             10. Changes for style sheets
+             11. Changes for frames
+             12. Changes for scripting
+             13. Changes for internationalization
+    B. Performance, Implementation, and Design Notes
+         1. Notes on invalid documents
+         2. Special characters in URI attribute values
+              1. Non-ASCII characters in URI attribute values
+              2. Ampersands in URI attribute values
+         3. SGML implementation notes
+              1. Line breaks
+              2. Specifying non-HTML data
+                    # Element content
+                    # Attribute values
+              3. SGML features with limited support
+              4. Boolean attributes
+              5. Marked Sections
+              6. Processing Instructions
+              7. Shorthand markup
+         4. Notes on helping search engines index your Web site
+              1. Search robots
+                    # The robots.txt file
+                    # Robots and the META element
+         5. Notes on tables
+              1. Design rationale
+                    # Dynamic reformatting
+                    # Incremental display
+                    # Structure and presentation
+                    # Row and column groups
+                    # Accessibility
+              2. Recommended Layout Algorithms
+                    # Fixed Layout Algorithm
+                    # Autolayout Algorithm
+         6. Notes on forms
+              1. Incremental display
+              2. Future projects
+         7. Notes on scripting
+              1. Reserved syntax for future script macros
+                    # Current Practice for Script Macros
+         8. Notes on frames
+         9. Notes on accessibility
+        10. Notes on security
+              1. Security issues for forms
+
+     * References
+         1. Normative references
+         2. Informative references
+     * Index of Elements
+     * Index of Attributes
+     * Index
+     __________________________________________________________________
+
+          next   table of contents   elements   attributes   index

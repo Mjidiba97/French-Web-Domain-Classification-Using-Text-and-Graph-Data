@@ -1,0 +1,1901 @@
+   #Announcements publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+FluxBB is fast, light, user-friendly forum software for your website.
+
+   FluxBB is designed as a lighter, faster alternative to some of the
+   traditional feature heavy forum applications. It is easy to use and has
+   a proven track record of stability and security making it an ideal
+   choice of forum for your website.
+
+Features
+
+     * Supports PHP5 & PHP7
+     * Easy installation and setup
+     * Open-source (GNU General Public Licence)
+     * Clean administration interface
+     * Flexible permission system
+     * Lots of community modifications
+
+   [ Full feature list ] [ Tour of FluxBB v1.5.11 ]
+
+Get FluxBB
+
+   The current stable release is FluxBB v1.5.11.
+     * Download FluxBB v1.5.11
+
+Posted 2018-12-31FluxBB 1.5.11 released
+
+   I am glad to finally announce the next patch release of FluxBB: version
+   1.5.11.
+
+Feature updates
+
+     * Increase minimum password length
+     * Prohibit links in topic subjects (based on existing anti-spam
+       permission)
+     * Allow longer SMTP passwords
+     * Return correct HTTP status code on error and maintenance pages (to
+       prevent search engines from indexing)
+     * Prevent duplicate bans
+     * User profiles: Use user's date/time formats, not the viewer's
+     * Improve error message for very short searches
+
+   Please check out the details in the full changelog. In addition, this
+   release fixes nine bugs, some of which affect...
+
+Security
+
+     * Proper CSRF protection for rebuilding the search index, logging in
+       and promoting users
+     * Stop using insecure random number generator on certain PHP versions
+     * Fix insufficient escaping of HTML output in installer and error
+       pages
+
+   This release has benefited from contributions by jasonrohrer, nsuchy
+   and Visman. Thank you!
+
+   I also want to thank TheBritain, Visman, Li of SEC Consult
+   Vulnerability Lab and Omar Kurt of Netsparker for respectfully and
+   responsibly disclosing security-relevant issues.
+
+Project update
+
+   As you know, this is the first release in a long time. I have decided
+   to continue giving FluxBB the maintenance it deserves. However, I need
+   support to achieve this. Before I announce all of my plans, as a token
+   of goodwill and to regain some trust, I plan to release the
+   long-awaited v1.6 within the next few weeks. This release will clean up
+   some of the dusty bits under the hood of FluxBB. By removing support
+   for old PHP and browser versions, we can lay the foundations to
+   carefully modernize the codebase, while staying true to the spirit of
+   FluxBB. This means that 1.5.11 is the last release to support PHP 4
+   (which is horribly outdated). In addition, 1.6 will get some
+   much-needed love in the realm of security hardening.
+
+   With that out of the way: please go ahead and download the new version
+   on the downloads page. If you are upgrading an existing forum, you can
+   find instructions and resources on the upgrade page.
+
+   Enjoy using FluxBB and stay tuned for more news on v1.6!
+
+Latest announcements
+
+     * FluxBB 1.5.11 released
+     * FluxBB 1.5.10 released
+     * Merry Christmas from FluxBB
+     * FluxBB 1.5.9 released
+     * 2.0: Joining forces with Flarum
+     * FluxBB 1.5.8 released
+     * FluxBB 1.5.7 and 1.4.13 released
+     * Round-up #12 - Screw snow in particular
+     * Round up #11 - No snowflakes
+     * FluxBB 1.5.6 released
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!
+   #Page 2 Atom topic feed publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+Forums
+
+   Unfortunately no one can be told what FluxBB is - you have to see it
+   for yourself.
+     * Index
+     * Rules
+     * Search
+     * Register
+     * Login
+
+   You are not logged in.
+     * Topics: Active | Unanswered
+
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+   Pages: 1 2 Next
+
+#1 2018-12-31 02:39:09
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+FluxBB 1.5.11 released
+
+   I am glad to finally announce the next patch release of FluxBB: version
+   1.5.11.
+
+Feature updates
+
+     * Increase minimum password length
+     * Prohibit links in topic subjects (based on existing anti-spam
+       permission)
+     * Allow longer SMTP passwords
+     * Return correct HTTP status code on error and maintenance pages (to
+       prevent search engines from indexing)
+     * Prevent duplicate bans
+     * User profiles: Use user's date/time formats, not the viewer's
+     * Improve error message for very short searches
+
+   Please check out the details in the full changelog. In addition, this
+   release fixes nine bugs, some of which affect...
+
+Security
+
+     * Proper CSRF protection for rebuilding the search index, logging in
+       and promoting users
+     * Stop using insecure random number generator on certain PHP versions
+     * Fix insufficient escaping of HTML output in installer and error
+       pages
+
+   This release has benefited from contributions by jasonrohrer, nsuchy
+   and Visman. Thank you!
+
+   I also want to thank TheBritain, Visman, Li of SEC Consult
+   Vulnerability Lab and Omar Kurt of Netsparker for respectfully and
+   responsibly disclosing security-relevant issues.
+
+Project update
+
+   As you know, this is the first release in a long time. I have decided
+   to continue giving FluxBB the maintenance it deserves. However, I need
+   support to achieve this. Before I announce all of my plans, as a token
+   of goodwill and to regain some trust, I plan to release the
+   long-awaited v1.6 within the next few weeks. This release will clean up
+   some of the dusty bits under the hood of FluxBB. By removing support
+   for old PHP and browser versions, we can lay the foundations to
+   carefully modernize the codebase, while staying true to the spirit of
+   FluxBB. This means that 1.5.11 is the last release to support PHP 4
+   (which is horribly outdated). In addition, 1.6 will get some
+   much-needed love in the realm of security hardening.
+
+   With that out of the way: please go ahead and download the new version
+   on the downloads page. If you are upgrading an existing forum, you can
+   find instructions and resources on the upgrade page.
+
+   Enjoy using FluxBB and stay tuned for more news on v1.6!
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#2 2018-12-31 11:22:35
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,
+
+   I'm really sorry Franz, but, for the moment, I won't update my forum to
+   1.5.11. This means I won't update the Mod Installer plugin and
+   associated mods like VSABR.
+   In the names of those who participated in this update, Visman appears
+   and I thought some of these changes had been taken into account, but
+   the parser did not change by an iota between 1.5.10 and 1.5.11, which
+   means, for example, that the "create_function()" (obsolete since PHP
+   7.2) have not been replaced by "function() {...}.
+   At my age, I am in favour of the slightest effort, which means that I
+   absolutely do not want to have to reintegrate the modifications of
+   Visman's parser (which I thank very much) after having updated to
+   1.5.11.
+   I am the only developer of Wampserver and I already have a lot of work
+   to do with it, so I try not to change my workload.
+
+   With kind regards.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#3 2018-12-31 11:27:07
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi Otomatic,
+
+   thanks for your comments. As mentioned above, 1.6 will be coming soon,
+   which fully supports PHP 7.2.
+   And no worries, I fully understand the single-developer thing. wink
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#4 2018-12-31 11:50:46
+
+   grognard
+          Member
+          From: UK
+          Registered: 2014-09-18
+          Posts: 66
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Thanks for your continued work on FluxBB, Franz.
+   Have a happy and prosperous 2019!
+
+   Offline
+
+#5 2018-12-31 15:22:12
+
+   M1
+          Member
+          Registered: 2011-04-30
+          Posts: 14
+
+Re: FluxBB 1.5.11 released
+
+   Hello,
+
+   Many thanks, the hdiff doesn't look so heavy, I think any security
+   improvement is worth the upgrade.
+
+   Fluxbb is still the best forum CMS, all I miss is php 7.2 support but
+   7.1 is running fine for now wink
+
+   Best wishes for new year coming to all of you!
+
+   Offline
+
+#6 2019-01-01 15:35:30
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Franz wrote:
+
+   I fully understand the single-developer thing. wink
+
+   In the end, I thought I had to support the other single-developers. It
+   only took me four hours to update my forum in 1.5.11, those four hours
+   including the evolutions of my public and private mods and plugins.
+   This is why these mods and plugins for FluxBB 1.5.11 are now available
+   in Resources.
+
+   Cheer up, single-developers! wink
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#7 2019-01-02 16:06:41
+
+   Hungmi
+          FluxBB Donor
+          Registered: 2010-08-04
+          Posts: 19
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Thanks for update. I like this forum so much!
+
+   Offline
+
+#8 2019-01-10 02:37:13
+
+   fluxerbb
+          Member
+          Registered: 2018-04-18
+          Posts: 12
+
+Re: FluxBB 1.5.11 released
+
+   Amazing news!!!
+
+   Fluxbb 1.6 will be mobile responsive?
+
+   r4SlvEm__400x400.jpg
+
+   Last edited by fluxerbb (2019-01-10 02:38:29)
+
+   Offline
+
+#9 2019-01-14 10:09:20
+
+   blabla
+          Member
+          Registered: 2018-05-30
+          Posts: 9
+
+Re: FluxBB 1.5.11 released
+
+   Please update Fluxbb, if you have to pay to have updates or new
+   features more often as on phpbb it doesn't bother me.
+
+   Offline
+
+#10 2019-01-14 16:13:36
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,
+
+   Why do you want updates often?
+   A product, whatever it may be, that works well and provides the
+   services for which it was designed, does not specifically need to be
+   updated.
+   It is to confuse innovation with progress.
+   A French author, Henry de Montherlant, wrote fifty years ago:
+   Today, the ideal of progress is being replaced by the ideal of
+   innovation: it is not a question of being better, it is only a question
+   of being new, even if it's worse than before, and that's obviously the
+   case.
+   And it is still relevant today.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#11 2019-01-15 18:52:57
+
+   fluxerbb
+          Member
+          Registered: 2018-04-18
+          Posts: 12
+
+Re: FluxBB 1.5.11 released
+
+   For security.
+
+   Offline
+
+#12 2019-01-19 11:40:20
+
+   DarkZero
+          Member
+          From: France
+          Registered: 2015-03-11
+          Posts: 13
+
+Re: FluxBB 1.5.11 released
+
+   Hello,
+
+   We were waiting for her, she arrived, hoping this update would restart
+   the machine with the 1.6.
+
+   Did someone apply the update and have no problems after that? No bugs?
+
+   Offline
+
+#13 2019-01-23 01:09:49
+
+   quaker
+          Member
+          From: USA
+          Registered: 2008-05-09
+          Posts: 90
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Wow, been for ever since I login. I think over a yr or 2.
+   @franz what going on?
+     __________________________________________________________________
+
+   My stuff or my style might sux, but atleast I'm willing to help when I
+   can.
+   Don't be stupid and help ! We are the stupid one's !!!
+
+   Offline
+
+#14 2019-01-25 22:56:02
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   quaker wrote:
+
+   Wow, been for ever since I login. I think over a yr or 2.
+   @franz what going on?
+
+   Well, I am trying to revive the project a bit, to provide those still
+   using FluxBB solid, stable software - standing on solid feet. smile
+
+   Do you still run a FluxBB forum somewhere?
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#15 2019-01-27 23:40:57
+
+   blabla
+          Member
+          Registered: 2018-05-30
+          Posts: 9
+
+Re: FluxBB 1.5.11 released
+
+   Otomatic wrote:
+
+   Hi,
+
+   I'm really sorry Franz, but, for the moment, I won't update my forum to
+   1.5.11. This means I won't update the Mod Installer plugin and
+   associated mods like VSABR.
+   In the names of those who participated in this update, Visman appears
+   and I thought some of these changes had been taken into account, but
+   the parser did not change by an iota between 1.5.10 and 1.5.11, which
+   means, for example, that the "create_function()" (obsolete since PHP
+   7.2) have not been replaced by "function() {...}.
+   At my age, I am in favour of the slightest effort, which means that I
+   absolutely do not want to have to reintegrate the modifications of
+   Visman's parser (which I thank very much) after having updated to
+   1.5.11.
+   I am the only developer of Wampserver and I already have a lot of work
+   to do with it, so I try not to change my workload.
+
+   With kind regards.
+
+   Look at this page and you'll see what I'm talking about :
+   https://www.phpbb.com/community/viewfor … 3f0cacf9c0
+
+   Offline
+
+#16 2019-01-28 08:27:26
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,
+
+   Dear blabla, before you made any disguised advertising for PhpBB and
+   quoted my message, you should have read my answer afterwards and you
+   would have seen that your quotation was not necessary.
+
+   The more shitty ads you do for any product, the less I'd want to use
+   it.
+
+   Anyway, PhpBB is much too heavy for the use I want to make of it, it's
+   a real gas plant.
+
+   You wear your nickname "blabla" very well, since you speak for nothing.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#17 2019-02-01 00:35:19
+
+   kumiech
+          Member
+          From: Pieszcz
+          Registered: 2008-07-27
+          Posts: 7
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   It's amazing!
+   I have announced polish users of FluxBB FluxBB PL and updated files
+   with polish lang.
+     __________________________________________________________________
+
+   I'm from Poland, my English is bad, so I'm sorry sad
+
+   Offline
+
+#18 2019-02-01 08:52:44
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Thanks for the updated translations, kumiech!
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#19 2019-02-12 23:17:18
+
+   macadoum
+          Member
+          From: Lyon
+          Registered: 2019-02-12
+          Posts: 5
+
+Re: FluxBB 1.5.11 released
+
+   Hello and thanks for this new release. I would to know how to update
+   the french translation as it appear that the last french language pack
+   is for v1.5.9
+
+   Edit: Otomatic, je peux t'aider à mettre la traduction française à jour
+   si tu veux. Tu dois juste me donner la marche à suivre.
+
+   Last edited by macadoum (2019-02-12 23:38:28)
+
+   Offline
+
+#20 2019-02-13 08:10:11
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,/Bonjour,
+
+   See http://fluxbb.fr/forums/viewtopic.php?id=13836
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#21 2019-02-14 22:53:30
+
+   macadoum
+          Member
+          From: Lyon
+          Registered: 2019-02-12
+          Posts: 5
+
+Re: FluxBB 1.5.11 released
+
+   This is not the answer to my question. My question is : how to know
+   which strings have changed since v1.5.9 ? When I know this, I could
+   translate the missing files and make a pull request on github.
+
+   Offline
+
+#22 2019-02-14 23:40:18
+
+   quy
+          Administrator
+          From: California
+          Registered: 2008-05-09
+          Posts: 926
+
+Re: FluxBB 1.5.11 released
+
+   Go here: https://fluxbb.org/downloads/upgrade.html
+   Select fluxbb-1.5.9
+   Click Changeset
+   Scroll down to b/lang/English/ area (see the legend in the upper right
+   corner to the changes in the right column).
+
+   Offline
+
+#23 2019-02-15 00:18:15
+
+   macadoum
+          Member
+          From: Lyon
+          Registered: 2019-02-12
+          Posts: 5
+
+Re: FluxBB 1.5.11 released
+
+   Ok, thanks. I send a PR on github.
+
+   Offline
+
+#24 2019-07-30 15:48:51
+
+   tidju
+          New member
+          Registered: 2019-07-30
+          Posts: 1
+
+Re: FluxBB 1.5.11 released
+
+   Franz wrote:
+
+   Hi Otomatic,
+
+   thanks for your comments. As mentioned above, 1.6 will be coming soon,
+   which fully supports PHP 7.2.
+   And no worries, I fully understand the single-developer thing. wink
+
+   Sorry to ask it probably again: when will 1.6 be available ?
+
+   Offline
+
+#25 2019-08-01 06:39:14
+
+   Zan
+          New member
+          Registered: 2019-07-22
+          Posts: 4
+
+Re: FluxBB 1.5.11 released
+
+   tidju wrote:
+
+   Franz wrote:
+
+   Hi Otomatic,
+
+   thanks for your comments. As mentioned above, 1.6 will be coming soon,
+   which fully supports PHP 7.2.
+   And no worries, I fully understand the single-developer thing. ;)
+
+   Sorry to ask it probably again: when will 1.6 be available ?
+
+   Hopefully soon
+     __________________________________________________________________
+
+   pm me on discord for fluxbb support -> Motify#6550
+
+   Offline
+
+   Pages: 1 2 Next
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+Board footer
+
+   Jump to
+   [Announcements______________] Go
+
+   Atom topic feed
+
+   Powered by FluxBB
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!
+   #Page 1 Atom topic feed publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+Forums
+
+   Unfortunately no one can be told what FluxBB is - you have to see it
+   for yourself.
+     * Index
+     * Rules
+     * Search
+     * Register
+     * Login
+
+   You are not logged in.
+     * Topics: Active | Unanswered
+
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+   Pages: Previous 1 2
+
+#26 2019-08-01 07:09:53
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Maybe before, but not after.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#27 2019-09-12 13:54:35
+
+   fedora
+          New member
+          Registered: 2019-02-01
+          Posts: 2
+
+Re: FluxBB 1.5.11 released
+
+   hi
+   when will 1.6 be available ?
+
+   Offline
+
+   Pages: Previous 1 2
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+Board footer
+
+   Jump to
+   [Announcements______________] Go
+
+   Atom topic feed
+
+   Powered by FluxBB
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!
+   #Announcements publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+FluxBB is fast, light, user-friendly forum software for your website.
+
+   FluxBB is designed as a lighter, faster alternative to some of the
+   traditional feature heavy forum applications. It is easy to use and has
+   a proven track record of stability and security making it an ideal
+   choice of forum for your website.
+
+Features
+
+     * Supports PHP5 & PHP7
+     * Easy installation and setup
+     * Open-source (GNU General Public Licence)
+     * Clean administration interface
+     * Flexible permission system
+     * Lots of community modifications
+
+   [ Full feature list ] [ Tour of FluxBB v1.5.11 ]
+
+Get FluxBB
+
+   The current stable release is FluxBB v1.5.11.
+     * Download FluxBB v1.5.11
+
+Posted 2018-12-31FluxBB 1.5.11 released
+
+   I am glad to finally announce the next patch release of FluxBB: version
+   1.5.11.
+
+Feature updates
+
+     * Increase minimum password length
+     * Prohibit links in topic subjects (based on existing anti-spam
+       permission)
+     * Allow longer SMTP passwords
+     * Return correct HTTP status code on error and maintenance pages (to
+       prevent search engines from indexing)
+     * Prevent duplicate bans
+     * User profiles: Use user's date/time formats, not the viewer's
+     * Improve error message for very short searches
+
+   Please check out the details in the full changelog. In addition, this
+   release fixes nine bugs, some of which affect...
+
+Security
+
+     * Proper CSRF protection for rebuilding the search index, logging in
+       and promoting users
+     * Stop using insecure random number generator on certain PHP versions
+     * Fix insufficient escaping of HTML output in installer and error
+       pages
+
+   This release has benefited from contributions by jasonrohrer, nsuchy
+   and Visman. Thank you!
+
+   I also want to thank TheBritain, Visman, Li of SEC Consult
+   Vulnerability Lab and Omar Kurt of Netsparker for respectfully and
+   responsibly disclosing security-relevant issues.
+
+Project update
+
+   As you know, this is the first release in a long time. I have decided
+   to continue giving FluxBB the maintenance it deserves. However, I need
+   support to achieve this. Before I announce all of my plans, as a token
+   of goodwill and to regain some trust, I plan to release the
+   long-awaited v1.6 within the next few weeks. This release will clean up
+   some of the dusty bits under the hood of FluxBB. By removing support
+   for old PHP and browser versions, we can lay the foundations to
+   carefully modernize the codebase, while staying true to the spirit of
+   FluxBB. This means that 1.5.11 is the last release to support PHP 4
+   (which is horribly outdated). In addition, 1.6 will get some
+   much-needed love in the realm of security hardening.
+
+   With that out of the way: please go ahead and download the new version
+   on the downloads page. If you are upgrading an existing forum, you can
+   find instructions and resources on the upgrade page.
+
+   Enjoy using FluxBB and stay tuned for more news on v1.6!
+
+Latest announcements
+
+     * FluxBB 1.5.11 released
+     * FluxBB 1.5.10 released
+     * Merry Christmas from FluxBB
+     * FluxBB 1.5.9 released
+     * 2.0: Joining forces with Flarum
+     * FluxBB 1.5.8 released
+     * FluxBB 1.5.7 and 1.4.13 released
+     * Round-up #12 - Screw snow in particular
+     * Round up #11 - No snowflakes
+     * FluxBB 1.5.6 released
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!
+   #Page 2 Atom topic feed publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+Forums
+
+   Unfortunately no one can be told what FluxBB is - you have to see it
+   for yourself.
+     * Index
+     * Rules
+     * Search
+     * Register
+     * Login
+
+   You are not logged in.
+     * Topics: Active | Unanswered
+
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+   Pages: 1 2 Next
+
+#1 2018-12-31 02:39:09
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+FluxBB 1.5.11 released
+
+   I am glad to finally announce the next patch release of FluxBB: version
+   1.5.11.
+
+Feature updates
+
+     * Increase minimum password length
+     * Prohibit links in topic subjects (based on existing anti-spam
+       permission)
+     * Allow longer SMTP passwords
+     * Return correct HTTP status code on error and maintenance pages (to
+       prevent search engines from indexing)
+     * Prevent duplicate bans
+     * User profiles: Use user's date/time formats, not the viewer's
+     * Improve error message for very short searches
+
+   Please check out the details in the full changelog. In addition, this
+   release fixes nine bugs, some of which affect...
+
+Security
+
+     * Proper CSRF protection for rebuilding the search index, logging in
+       and promoting users
+     * Stop using insecure random number generator on certain PHP versions
+     * Fix insufficient escaping of HTML output in installer and error
+       pages
+
+   This release has benefited from contributions by jasonrohrer, nsuchy
+   and Visman. Thank you!
+
+   I also want to thank TheBritain, Visman, Li of SEC Consult
+   Vulnerability Lab and Omar Kurt of Netsparker for respectfully and
+   responsibly disclosing security-relevant issues.
+
+Project update
+
+   As you know, this is the first release in a long time. I have decided
+   to continue giving FluxBB the maintenance it deserves. However, I need
+   support to achieve this. Before I announce all of my plans, as a token
+   of goodwill and to regain some trust, I plan to release the
+   long-awaited v1.6 within the next few weeks. This release will clean up
+   some of the dusty bits under the hood of FluxBB. By removing support
+   for old PHP and browser versions, we can lay the foundations to
+   carefully modernize the codebase, while staying true to the spirit of
+   FluxBB. This means that 1.5.11 is the last release to support PHP 4
+   (which is horribly outdated). In addition, 1.6 will get some
+   much-needed love in the realm of security hardening.
+
+   With that out of the way: please go ahead and download the new version
+   on the downloads page. If you are upgrading an existing forum, you can
+   find instructions and resources on the upgrade page.
+
+   Enjoy using FluxBB and stay tuned for more news on v1.6!
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#2 2018-12-31 11:22:35
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,
+
+   I'm really sorry Franz, but, for the moment, I won't update my forum to
+   1.5.11. This means I won't update the Mod Installer plugin and
+   associated mods like VSABR.
+   In the names of those who participated in this update, Visman appears
+   and I thought some of these changes had been taken into account, but
+   the parser did not change by an iota between 1.5.10 and 1.5.11, which
+   means, for example, that the "create_function()" (obsolete since PHP
+   7.2) have not been replaced by "function() {...}.
+   At my age, I am in favour of the slightest effort, which means that I
+   absolutely do not want to have to reintegrate the modifications of
+   Visman's parser (which I thank very much) after having updated to
+   1.5.11.
+   I am the only developer of Wampserver and I already have a lot of work
+   to do with it, so I try not to change my workload.
+
+   With kind regards.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#3 2018-12-31 11:27:07
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi Otomatic,
+
+   thanks for your comments. As mentioned above, 1.6 will be coming soon,
+   which fully supports PHP 7.2.
+   And no worries, I fully understand the single-developer thing. wink
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#4 2018-12-31 11:50:46
+
+   grognard
+          Member
+          From: UK
+          Registered: 2014-09-18
+          Posts: 66
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Thanks for your continued work on FluxBB, Franz.
+   Have a happy and prosperous 2019!
+
+   Offline
+
+#5 2018-12-31 15:22:12
+
+   M1
+          Member
+          Registered: 2011-04-30
+          Posts: 14
+
+Re: FluxBB 1.5.11 released
+
+   Hello,
+
+   Many thanks, the hdiff doesn't look so heavy, I think any security
+   improvement is worth the upgrade.
+
+   Fluxbb is still the best forum CMS, all I miss is php 7.2 support but
+   7.1 is running fine for now wink
+
+   Best wishes for new year coming to all of you!
+
+   Offline
+
+#6 2019-01-01 15:35:30
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Franz wrote:
+
+   I fully understand the single-developer thing. wink
+
+   In the end, I thought I had to support the other single-developers. It
+   only took me four hours to update my forum in 1.5.11, those four hours
+   including the evolutions of my public and private mods and plugins.
+   This is why these mods and plugins for FluxBB 1.5.11 are now available
+   in Resources.
+
+   Cheer up, single-developers! wink
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#7 2019-01-02 16:06:41
+
+   Hungmi
+          FluxBB Donor
+          Registered: 2010-08-04
+          Posts: 19
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Thanks for update. I like this forum so much!
+
+   Offline
+
+#8 2019-01-10 02:37:13
+
+   fluxerbb
+          Member
+          Registered: 2018-04-18
+          Posts: 12
+
+Re: FluxBB 1.5.11 released
+
+   Amazing news!!!
+
+   Fluxbb 1.6 will be mobile responsive?
+
+   r4SlvEm__400x400.jpg
+
+   Last edited by fluxerbb (2019-01-10 02:38:29)
+
+   Offline
+
+#9 2019-01-14 10:09:20
+
+   blabla
+          Member
+          Registered: 2018-05-30
+          Posts: 9
+
+Re: FluxBB 1.5.11 released
+
+   Please update Fluxbb, if you have to pay to have updates or new
+   features more often as on phpbb it doesn't bother me.
+
+   Offline
+
+#10 2019-01-14 16:13:36
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,
+
+   Why do you want updates often?
+   A product, whatever it may be, that works well and provides the
+   services for which it was designed, does not specifically need to be
+   updated.
+   It is to confuse innovation with progress.
+   A French author, Henry de Montherlant, wrote fifty years ago:
+   Today, the ideal of progress is being replaced by the ideal of
+   innovation: it is not a question of being better, it is only a question
+   of being new, even if it's worse than before, and that's obviously the
+   case.
+   And it is still relevant today.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#11 2019-01-15 18:52:57
+
+   fluxerbb
+          Member
+          Registered: 2018-04-18
+          Posts: 12
+
+Re: FluxBB 1.5.11 released
+
+   For security.
+
+   Offline
+
+#12 2019-01-19 11:40:20
+
+   DarkZero
+          Member
+          From: France
+          Registered: 2015-03-11
+          Posts: 13
+
+Re: FluxBB 1.5.11 released
+
+   Hello,
+
+   We were waiting for her, she arrived, hoping this update would restart
+   the machine with the 1.6.
+
+   Did someone apply the update and have no problems after that? No bugs?
+
+   Offline
+
+#13 2019-01-23 01:09:49
+
+   quaker
+          Member
+          From: USA
+          Registered: 2008-05-09
+          Posts: 90
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Wow, been for ever since I login. I think over a yr or 2.
+   @franz what going on?
+     __________________________________________________________________
+
+   My stuff or my style might sux, but atleast I'm willing to help when I
+   can.
+   Don't be stupid and help ! We are the stupid one's !!!
+
+   Offline
+
+#14 2019-01-25 22:56:02
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   quaker wrote:
+
+   Wow, been for ever since I login. I think over a yr or 2.
+   @franz what going on?
+
+   Well, I am trying to revive the project a bit, to provide those still
+   using FluxBB solid, stable software - standing on solid feet. smile
+
+   Do you still run a FluxBB forum somewhere?
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#15 2019-01-27 23:40:57
+
+   blabla
+          Member
+          Registered: 2018-05-30
+          Posts: 9
+
+Re: FluxBB 1.5.11 released
+
+   Otomatic wrote:
+
+   Hi,
+
+   I'm really sorry Franz, but, for the moment, I won't update my forum to
+   1.5.11. This means I won't update the Mod Installer plugin and
+   associated mods like VSABR.
+   In the names of those who participated in this update, Visman appears
+   and I thought some of these changes had been taken into account, but
+   the parser did not change by an iota between 1.5.10 and 1.5.11, which
+   means, for example, that the "create_function()" (obsolete since PHP
+   7.2) have not been replaced by "function() {...}.
+   At my age, I am in favour of the slightest effort, which means that I
+   absolutely do not want to have to reintegrate the modifications of
+   Visman's parser (which I thank very much) after having updated to
+   1.5.11.
+   I am the only developer of Wampserver and I already have a lot of work
+   to do with it, so I try not to change my workload.
+
+   With kind regards.
+
+   Look at this page and you'll see what I'm talking about :
+   https://www.phpbb.com/community/viewfor … 3f0cacf9c0
+
+   Offline
+
+#16 2019-01-28 08:27:26
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,
+
+   Dear blabla, before you made any disguised advertising for PhpBB and
+   quoted my message, you should have read my answer afterwards and you
+   would have seen that your quotation was not necessary.
+
+   The more shitty ads you do for any product, the less I'd want to use
+   it.
+
+   Anyway, PhpBB is much too heavy for the use I want to make of it, it's
+   a real gas plant.
+
+   You wear your nickname "blabla" very well, since you speak for nothing.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#17 2019-02-01 00:35:19
+
+   kumiech
+          Member
+          From: Pieszcz
+          Registered: 2008-07-27
+          Posts: 7
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   It's amazing!
+   I have announced polish users of FluxBB FluxBB PL and updated files
+   with polish lang.
+     __________________________________________________________________
+
+   I'm from Poland, my English is bad, so I'm sorry sad
+
+   Offline
+
+#18 2019-02-01 08:52:44
+
+   Franz
+          Lead developer
+          From: Germany
+          Registered: 2008-05-13
+          Posts: 6,669
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Thanks for the updated translations, kumiech!
+     __________________________________________________________________
+
+   fluxbb.de | develoPHP
+
+   "As code is more often read than written it's really important to write
+   clean code."
+
+   Offline
+
+#19 2019-02-12 23:17:18
+
+   macadoum
+          Member
+          From: Lyon
+          Registered: 2019-02-12
+          Posts: 5
+
+Re: FluxBB 1.5.11 released
+
+   Hello and thanks for this new release. I would to know how to update
+   the french translation as it appear that the last french language pack
+   is for v1.5.9
+
+   Edit: Otomatic, je peux t'aider à mettre la traduction française à jour
+   si tu veux. Tu dois juste me donner la marche à suivre.
+
+   Last edited by macadoum (2019-02-12 23:38:28)
+
+   Offline
+
+#20 2019-02-13 08:10:11
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Hi,/Bonjour,
+
+   See http://fluxbb.fr/forums/viewtopic.php?id=13836
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#21 2019-02-14 22:53:30
+
+   macadoum
+          Member
+          From: Lyon
+          Registered: 2019-02-12
+          Posts: 5
+
+Re: FluxBB 1.5.11 released
+
+   This is not the answer to my question. My question is : how to know
+   which strings have changed since v1.5.9 ? When I know this, I could
+   translate the missing files and make a pull request on github.
+
+   Offline
+
+#22 2019-02-14 23:40:18
+
+   quy
+          Administrator
+          From: California
+          Registered: 2008-05-09
+          Posts: 926
+
+Re: FluxBB 1.5.11 released
+
+   Go here: https://fluxbb.org/downloads/upgrade.html
+   Select fluxbb-1.5.9
+   Click Changeset
+   Scroll down to b/lang/English/ area (see the legend in the upper right
+   corner to the changes in the right column).
+
+   Offline
+
+#23 2019-02-15 00:18:15
+
+   macadoum
+          Member
+          From: Lyon
+          Registered: 2019-02-12
+          Posts: 5
+
+Re: FluxBB 1.5.11 released
+
+   Ok, thanks. I send a PR on github.
+
+   Offline
+
+#24 2019-07-30 15:48:51
+
+   tidju
+          New member
+          Registered: 2019-07-30
+          Posts: 1
+
+Re: FluxBB 1.5.11 released
+
+   Franz wrote:
+
+   Hi Otomatic,
+
+   thanks for your comments. As mentioned above, 1.6 will be coming soon,
+   which fully supports PHP 7.2.
+   And no worries, I fully understand the single-developer thing. wink
+
+   Sorry to ask it probably again: when will 1.6 be available ?
+
+   Offline
+
+#25 2019-08-01 06:39:14
+
+   Zan
+          New member
+          Registered: 2019-07-22
+          Posts: 4
+
+Re: FluxBB 1.5.11 released
+
+   tidju wrote:
+
+   Franz wrote:
+
+   Hi Otomatic,
+
+   thanks for your comments. As mentioned above, 1.6 will be coming soon,
+   which fully supports PHP 7.2.
+   And no worries, I fully understand the single-developer thing. ;)
+
+   Sorry to ask it probably again: when will 1.6 be available ?
+
+   Hopefully soon
+     __________________________________________________________________
+
+   pm me on discord for fluxbb support -> Motify#6550
+
+   Offline
+
+   Pages: 1 2 Next
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+Board footer
+
+   Jump to
+   [Announcements______________] Go
+
+   Atom topic feed
+
+   Powered by FluxBB
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!
+   #Page 1 Atom topic feed publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+Forums
+
+   Unfortunately no one can be told what FluxBB is - you have to see it
+   for yourself.
+     * Index
+     * Rules
+     * Search
+     * Register
+     * Login
+
+   You are not logged in.
+     * Topics: Active | Unanswered
+
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+   Pages: Previous 1 2
+
+#26 2019-08-01 07:09:53
+
+   Otomatic
+          FluxBB Donor
+          From: Paris - France
+          Registered: 2010-01-26
+          Posts: 572
+          Website
+
+Re: FluxBB 1.5.11 released
+
+   Maybe before, but not after.
+     __________________________________________________________________
+
+   Ce n'est pas parce que l'erreur se propage qu'elle devient vérité.
+   Ghandi
+   An error does not become truth by reason of multiplied propagation.
+   Ghandi
+
+   Offline
+
+#27 2019-09-12 13:54:35
+
+   fedora
+          New member
+          Registered: 2019-02-01
+          Posts: 2
+
+Re: FluxBB 1.5.11 released
+
+   hi
+   when will 1.6 be available ?
+
+   Offline
+
+   Pages: Previous 1 2
+     * Index
+     * » Announcements
+     * » FluxBB 1.5.11 released
+
+Board footer
+
+   Jump to
+   [Announcements______________] Go
+
+   Atom topic feed
+
+   Powered by FluxBB
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!
+   #Announcements publisher
+
+   FluxBB Home
+
+   You are not logged in. Please login or register.
+     * Home
+     * About
+     * Downloads
+     * Resources
+     * Forums
+     * Community
+     * Documentation
+     * Development
+
+FluxBB is fast, light, user-friendly forum software for your website.
+
+   FluxBB is designed as a lighter, faster alternative to some of the
+   traditional feature heavy forum applications. It is easy to use and has
+   a proven track record of stability and security making it an ideal
+   choice of forum for your website.
+
+Features
+
+     * Supports PHP5 & PHP7
+     * Easy installation and setup
+     * Open-source (GNU General Public Licence)
+     * Clean administration interface
+     * Flexible permission system
+     * Lots of community modifications
+
+   [ Full feature list ] [ Tour of FluxBB v1.5.11 ]
+
+Get FluxBB
+
+   The current stable release is FluxBB v1.5.11.
+     * Download FluxBB v1.5.11
+
+Posted 2018-12-31FluxBB 1.5.11 released
+
+   I am glad to finally announce the next patch release of FluxBB: version
+   1.5.11.
+
+Feature updates
+
+     * Increase minimum password length
+     * Prohibit links in topic subjects (based on existing anti-spam
+       permission)
+     * Allow longer SMTP passwords
+     * Return correct HTTP status code on error and maintenance pages (to
+       prevent search engines from indexing)
+     * Prevent duplicate bans
+     * User profiles: Use user's date/time formats, not the viewer's
+     * Improve error message for very short searches
+
+   Please check out the details in the full changelog. In addition, this
+   release fixes nine bugs, some of which affect...
+
+Security
+
+     * Proper CSRF protection for rebuilding the search index, logging in
+       and promoting users
+     * Stop using insecure random number generator on certain PHP versions
+     * Fix insufficient escaping of HTML output in installer and error
+       pages
+
+   This release has benefited from contributions by jasonrohrer, nsuchy
+   and Visman. Thank you!
+
+   I also want to thank TheBritain, Visman, Li of SEC Consult
+   Vulnerability Lab and Omar Kurt of Netsparker for respectfully and
+   responsibly disclosing security-relevant issues.
+
+Project update
+
+   As you know, this is the first release in a long time. I have decided
+   to continue giving FluxBB the maintenance it deserves. However, I need
+   support to achieve this. Before I announce all of my plans, as a token
+   of goodwill and to regain some trust, I plan to release the
+   long-awaited v1.6 within the next few weeks. This release will clean up
+   some of the dusty bits under the hood of FluxBB. By removing support
+   for old PHP and browser versions, we can lay the foundations to
+   carefully modernize the codebase, while staying true to the spirit of
+   FluxBB. This means that 1.5.11 is the last release to support PHP 4
+   (which is horribly outdated). In addition, 1.6 will get some
+   much-needed love in the realm of security hardening.
+
+   With that out of the way: please go ahead and download the new version
+   on the downloads page. If you are upgrading an existing forum, you can
+   find instructions and resources on the upgrade page.
+
+   Enjoy using FluxBB and stay tuned for more news on v1.6!
+
+Latest announcements
+
+     * FluxBB 1.5.11 released
+     * FluxBB 1.5.10 released
+     * Merry Christmas from FluxBB
+     * FluxBB 1.5.9 released
+     * 2.0: Joining forces with Flarum
+     * FluxBB 1.5.8 released
+     * FluxBB 1.5.7 and 1.4.13 released
+     * Round-up #12 - Screw snow in particular
+     * Round up #11 - No snowflakes
+     * FluxBB 1.5.6 released
+
+     * Announcements
+     * Development
+
+     * Forums
+     * Report a bug
+
+     * Donate
+     * Contact us
+
+     * Follow us
+     * Newsletter
+
+     * Copyright © FluxBB 2008 - 2019
+     * Hosting provided by gandi.net. Thanks!

@@ -1,0 +1,162 @@
+   logo ANR
+   logo DFG
+   logo Région Lorraine
+
+SMArT
+
+Satisfiability Modulo Arithmetic and Theories
+
+Menu
+
+   Home
+   Investigators Meetings Publications
+
+Home
+
+   The SMArT project is funded by the call ANR-DFG Programmes blancs 2013,
+   a program of the French Agence Nationale de la Recherche (ANR) and the
+   (German) Deutsche Forschungsgemeinschaft (DFG).
+
+   The objective of the SMArT project is to provide advanced techniques
+   for arithmetic reasoning for formal system verification. During the
+   last decade, there has been tremendous progress on symbolic
+   verification techniques, spurred in particular by the development of
+   SMT (satisfiability modulo theories) techniques and tools. SMT solvers
+   are core engines that are successfully used for program verification,
+   bounded and parameterized model checking, test generation, etc. They
+   combine a SAT solver for deciding satisfiability of propositional logic
+   with theory reasoners for deciding satisfiability of sets of literals
+   over interpreted symbols, and instantiation techniques for handling
+   quantifiers.
+
+   Reasoning in various fragments of arithmetic is a fundamental and
+   ubiquitous requirement in verification. Today's SMT solvers are mostly
+   limited to quantifier-free formulas over linear arithmetic (i.e.,
+   formulas involving only constants, +, and <), for which efficient
+   decision procedures exist over both integer and real numbers. This
+   fragment is sufficient for ensuring certain properties such as the
+   absence of out-of-bound array accesses in simple heap-manipulating
+   programs. Nevertheless, the linear fragment represents a severe
+   restriction on expressiveness, and ideas have started to emerge on the
+   support for stronger arithmetic fragments within SMT solvers.
+
+   We propose to adapt known efficient techniques and algorithms to handle
+   rich arithmetic fragments and for which mature solvers exist, so that
+   they can be used within an SMT context. The advantages of such a
+   combination are: (1) the arithmetic solver no longer needs to handle
+   propositional operators, (2) the SMT solver gets access to a
+   sophisticated infrastructure (data structures and algorithms) for
+   handling much more expressive arithmetic fragments, (3) users benefit
+   from the modular architecture of SMT solvers where arithmetic can be
+   combined with other relevant theories.
+
+News
+
+   [30/09/17] The project reached its end of life. If you were interested
+   by the SMArT project, you might want to check the SC² project.
+
+   [29/07/17] The second SC² workshop (organized within the SC² CSA
+   project) takes place in Kaiserslautern on Saturday July 29th, 2017.
+
+   [08/05/17] We are preparing the wrapping up of the SMArT project with
+   the "SMArT week". All members are in Nancy, and we are happy to host
+   Marek Kosta for the week.
+
+   [19/04/17] Vijay Ganesh is visiting SMArT. He is giving a talk at 14:00
+   on April 20th, in room A006: On The Unreasonable Effectiveness of
+   Boolean SAT Solvers.
+
+   [03/12/16] Marek Kosta will defend his thesis in Saarbrücken. The title
+   is: New Concepts for Real Quantifier Elimination by Virtual
+   Substitution.
+
+   [01/12/16] Haniel Barbosa, close collaborator of the project, is
+   joining the project for 10 month.
+
+   [04/10/16] Martin Brain is in Nancy for discussing SMArT. He is giving
+   a talk at 14:00, room A006: Bit-Exact Automated Reasoning About
+   Floating-Point Arithmetic.
+
+   [24/09/16] The first SC² workshop (organized within the SC² CSA project
+   by Erika Abraham and Pascal Fontaine) takes place in Timisoara on
+   Saturday September 24th, 2016.
+
+   [02/08/16] Thomas Sturm is giving an invited talk at ACA 2016: Real
+   Problems over the Reals: From Complete Elimination Procedures to
+   Subtropical Decisions.
+
+   [28/04/16] SMArT is happy to host Prof. James Harold Davenport, from
+   the University of Bath, U.K. He is giving a talk on Friday, April 29th,
+   at 14:00 in room C103 in the Loria Building: The Complexity of
+   Cylindrical Algebraic Decomposition.
+
+   [29/03/16] Pascal Fontaine is giving a talk at the Journée “solveurs
+   SMT dans le contexte des systèmes embarqués critiques”
+
+   [28/02/16] The SC-square Coordination and Support Action is accepted by
+   the EU (H2020-FETOPN-2015-CSA_712689). The project aims to bridge the
+   communities of Satisfiability Checking and Symbolic Computation to
+   solve real problems. All members of the ANR-DFG SMArT are either
+   investigators or partners of SC², and the SMArT project has been
+   instrumental in triggering SC-square. Check out also the community web
+   page.
+
+   [15/01/16] A new version (1.3.0) of the SMT plugin for Rodin is
+   available on sourceforge.
+
+   [01/01/16] Thomas Sturm is joining the VeriDiS team in Nancy as a CNRS
+   Director of Research.
+   Michael Sagraloff takes over as the ANR-DFG coordinator in Saarbrücken.
+
+   [01/01/16] Maximilian Joroschek is joining Vienna (TU Wien). Maximilian
+   has been a postdoc funded by SMArT for 18 months.
+
+   [01/01/16] David Deharbe, external collaborator (Prof. at DIMAp, UFRN,
+   Natal, Brazil) is joining ClearSy.
+
+   [03/12/15-04/12/15] Martin Bromberger is coming at Loria to discuss
+   Satisfiability Modulo Arithmetic Theories (SMArT).
+
+   [15/11/15-20/11/15] The German and French coordinators of SMArT (Pascal
+   Fontaine and Thomas Sturm) are organizing, with Erika Abraham and
+   Dongming Wang, a Dagstuhl seminar on Symbolic Computation and
+   Satisfiability Checking.
+
+   [16/10/15] The SMArT project is meeting the ANR in Paris for half-time
+   evaluation.
+
+   [21/09/15] A prototype version of veriT running with Redlog is
+   available here. The software has been tested on the QF_NRA category of
+   the SMT-LIB and results are promising. You might experience some
+   difficulties to compile though. We are working hard to improve
+   performance, expressiveness, and the compilation procedure. Stay tuned!
+
+   [20/09/15] Thomas Sturm is giving an invited talk at FroCoS 2015: From
+   Complete Elimination Procedures to Subtropical Decisions over the
+   Reals.
+
+   [26/01/15] P. Fontaine and T. Sturm (coordinators of this project) are
+   co-organizing (with Erika Abraham and Dongming Wang) a Dagstuhl seminar
+   in Nov. 2015 on Symbolic Computation and Satisfiability Checking.
+
+   [13/11/14] Fifth meeting: the JAIST-Loria Workshop 2014 on SMT
+
+   [01/09/14] Pablo Federico Dobal is becoming a PhD Student in Nancy in
+   the project
+
+   [04/08/14] The SMArT Summer School will take place at MPI from August
+   04 to August 08.
+
+   [01/07/14] Maximilian Jaroschek is joining MPI as a PostDoc in the
+   project
+
+   [13/06/14] The next meeting is planned in Vienna on July 17-18 2014, in
+   the Vienna Summer of Logic
+
+   [12/06/14] Second meeting
+
+   [06/05/14] Kick-off meeting
+
+   [01/12/13] Haniel Barbosa is joining the team in Nancy as a PhD Student
+
+   [21/10/13] The ANR-DFG project SMArT has been accepted

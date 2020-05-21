@@ -1,0 +1,1523 @@
+    [ ] This website works better with JavaScript enabled, Please enable
+   JavaScript if you want to benefit from all the website's features (
+   Click to dismiss )
+
+How can we help you?
+
+   esc
+     * (BUTTON) all
+     * (BUTTON) website
+     * (BUTTON) blog
+     * (BUTTON) docs
+
+   (BUTTON) ____________________ Algolia Logo Search by Algolia
+     * (BUTTON) Site Search
+     * (BUTTON) Search API
+     * (BUTTON) Personalization
+     * (BUTTON) Analytics
+     * (BUTTON) InstantSearch
+     * (BUTTON) Customers
+     * (BUTTON) Pricing
+     * (BUTTON) Mobile Search
+     * (BUTTON) E-commerce
+    [ ] This website works better with JavaScript enabled, Please enable
+   JavaScript if you want to benefit from all the website's features (
+   Click to dismiss )
+
+   (BUTTON) Menu
+   (BUTTON)
+     * (BUTTON) Products
+
+     * Products Overview
+     * shared/algolia_icons/pricing
+       Pricing
+       Pricing that scales with the value of your business
+     * shared/algolia_icons/search-api
+       Search API
+       Powerful, hosted search API to create fast and relevant search
+     * shared/algolia_icons/analytics
+       Analytics
+       Understand your users, uncover hidden opportunities
+     * shared/algolia_icons/query-rules
+       Query Rules
+       Optimize results ranking for your users' queries
+     * shared/algolia_icons/ab-testing
+       A/B testing
+       Uncover the best performing relevance strategies
+     * shared/algolia_icons/instantsearch
+       InstantSearch
+       A set of UI components to design the perfect experience
+     * shared/algolia_icons/personalization
+       Personalization
+       Tailor the search and discovery to your users
+     * shared/algolia_icons/crawler
+       Custom crawler
+       Automatically extract and enrich your website content
+     * shared/algolia_icons/whats-new
+       What's new
+       Create “Now Moments” across web, mobile and voice
+
+     (BUTTON) Solutions
+
+     * Solutions Overview
+     * Site Search
+       Build frictionless experiences on any device
+     * Voice Search
+       Search without the box
+     * Geo Search
+       Leverage a location-based search and discovery
+     * Mobile Search
+       Accelerate engagement and conversion on mobile
+
+     * Industries
+     * E-commerce
+     * Media
+     * SaaS
+
+     * Popular Solutions
+     * shared/logos/magento-icon
+       Magento
+     * shared/logos/shopify-icon
+       Shopify
+
+     Pricing
+
+     (BUTTON) Enterprise
+     * Enterprise Overview
+     * Azure
+     * Customers
+     * Infrastructure
+     * Security & compliance
+
+     (BUTTON) Developers
+     * Developers Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+     * Resources
+
+     Resources
+     * Login
+     * Free trial
+     * Free trial
+     * Login
+     *
+
+   (BUTTON) Algolia logo blueprint
+
+Looking for our logo?
+
+We got you covered!
+
+   Download logo pack More algolia assets
+
+Search technology to power your business.
+
+Accelerate the user experience
+
+   Request a demoFree Trial
+
+   Birchbox logo
+
+Increaseorder value
+
+   Twitch logo
+
+Power content discoveryfor 100 million viewers
+
+   Lacoste logo
+
+Better relevanceand high sales
+
+   Stripe logo
+
+Global help deskdeployed in days
+
+Search beyond the box
+
+   Algolia’s full suite APIs enable teams to develop unique search and
+   discovery experiences for their customers across all platforms and
+   devices. Type a query. Click a link. Open an app. Everything your
+   customers do sends a signal about what they want. Algolia decodes that
+   intent to deliver the right content - instantly.
+
+Want to see what Algolia can do for you?
+
+   Assess your search experience in less than 5 minutes and get a
+   personalized report with our Grader
+   Evaluate your site
+   Grader image
+   Recommended products illustration
+
+   Find
+
+Help customers find what they are searching for
+
+   Create frictionless find-to-conversion paths by connecting users with
+   exactly what they’re looking for, with lightning fast and highly
+   relevant search.
+   Learn more
+   Recommended products illustration
+
+   Discover
+
+Create a path for customers to discover
+
+   Go beyond the search box with navigation, browse, and content discovery
+   experiences powered by Algolia.
+   Learn more
+
+   Inspire
+
+Design predictive and natural interactions
+
+   Build immersive experiences that surface unexpected and relevant
+   content to surprise and delight users.
+   Learn more
+
+Designed for the developer experience
+
+   Algolia obsesses over developer experience. Our mission is to give
+   development teams the building blocks to create a fast, relevant search
+   experience. Extensive documentation & guides, an active community, 24/7
+   support make it a pleasure to work with Algolia.
+   Read docs
+   Backend[Ruby______]
+   Frontend[JavaScript]
+   BackendFrontend
+     * (BUTTON) Ruby
+     * (BUTTON) Rails
+     * (BUTTON) Python
+     * (BUTTON) Django
+     * (BUTTON) PHP
+     * (BUTTON) Symfony
+     * (BUTTON) Laravel
+     * (BUTTON) JavaScript
+     * (BUTTON) Java
+     * (BUTTON) Scala
+     * (BUTTON) Go
+     * (BUTTON) C#
+     * (BUTTON) Kotlin
+     * (BUTTON) Swift
+     * (BUTTON) Android
+
+
+   my_index = Algolia::Index.new('contacts')
+   my_index.add_object :firstname => "Jimmie",
+   :lastname => "Barninger",
+   :company => "California Paint"
+
+   class Contact < ActiveRecord::Base
+   include AlgoliaSearch
+   algoliasearch do
+   attribute :firstname, :lastname, :company
+   end
+   end
+
+   myIndex = apiClient.init_index("contacts")
+   myIndex.add_object({
+   "firstname": "Jimmie",
+   "lastname": "Barninger",
+   "company": "California Paint"
+   })
+
+   from django.contrib.algoliasearch import AlgoliaIndex
+   class YourModelIndex(AlgoliaIndex):
+   fields = ('firstname', 'lastname', 'company')
+
+   $myIndex = $apiClient->initIndex("contacts");
+   $myIndex->addObject([
+   "firstname" => "Jimmie",
+   "lastname" => "Barninger",
+   "company" => "California Paint",
+   ]);
+
+
+   /**
+   * @ORM\Entity
+   */
+   class Contact
+   {
+   /**
+   * @var string
+   *
+   * @ORM\Column(name="firstname", type="string")
+   * @Group({searchable})
+   */
+   protected $firstname;
+   /**
+   * @var string
+   *
+   * @ORM\Column(name="lastname", type="string")
+   * @Group({searchable})
+   */
+   protected $lastname;
+   /**
+   * @var string
+   *
+   * @ORM\Column(name="company", type="string")
+   * @Group({searchable})
+   */
+   protected $company;
+   }
+
+
+   use Illuminate\Database\Eloquent\Model;
+   use Laravel\Scout\Searchable;
+   class Contact extends Model
+   {
+   use Searchable; // Simply add a trait
+   }
+
+
+   const myIndex = apiClient.initIndex('contacts');
+   myIndex
+   .addObject({
+   firstname: 'Jimmie',
+   lastname: 'Barninger',
+   company: 'California Paint',
+   })
+   .then(content => console.log(content))
+   .catch(err => console.error(err));
+
+
+   Index<Contact> index = client
+   .initIndex("contacts", Contact.class);
+   index.addObject(
+   new Contact()
+   .setFirstname("Jimmie")
+   .setLastname("Barninger")
+   .setCompany("California Paint")
+   );
+
+
+   import algolia.AlgoliaDsl._
+   import scala.concurrent.ExecutionContext.Implicits.global
+   case class Contact(
+   firstname: String,
+   lastname: String,
+   company: String
+   )
+   val indexing: Future[Indexing] = client.execute {
+   index into "contacts" `object` Contact(
+   "Jimmie",
+   "Barninger",
+   "California Paint"
+   )
+   }
+
+
+   object := map[string]string{
+   "firstname": "Jimmie",
+   "lastname": "Barninger",
+   "company": "California Paint"
+   }
+   res, err := index.SaveObject(object)
+
+
+   SearchIndex index = client.InitIndex("contacts");
+   var contact = new Contact
+   {
+   FirstName = "Jimmie",
+   LastName = "Barninger",
+   Company = "California Paint"
+   };
+   index.SaveObject(contact);
+
+
+   val index = client.initIndex(IndexName("contacts"))
+   val json = json {
+   "firstname" to "Jimmie"
+   "lastname" to "Barninger"
+   "company" to "California Paint"}
+   index.saveObject(json)
+
+
+   let myIndex = apiClient.getIndex("contacts")
+   let n = [
+   "firstname": "Jimmie",
+   "lastname": "Barninger",
+   "company": "California Paint"
+   ]
+   myIndex.addObject(n)
+
+
+   Index myIndex = apiClient.initIndex("contacts");
+   JSONObject jsonObject = new JSONObject()
+   .put("firstname", "Jimmie")
+   .put("lastname", "Barninger")
+   .put("company", "California Paint");
+   myIndex.addObjectAsync(jsonObject, null);
+
+
+   <div id="searchbox"></div>
+   <div id="hits"></div>
+   <script>
+   const {
+   searchBox,
+   hits
+   } = instantsearch.widgets;
+   search.addWidget(
+   searchBox({ container: "#searchbox" })
+   );
+   search.addWidget(
+   hits({ container: "#hits" })
+   );
+   search.start();
+   </script>
+
+
+   const App = (
+   <InstantSearch>
+   <SearchBox />
+   <Hits />
+   <Pagination />
+   <RefinementList
+   attribute="company"
+   />
+   </InstantSearch>
+   );
+
+
+   <RelativeLayout
+   xmlns:algolia="http://schemas.android.com/apk/res-auto"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+   <com.algolia.instantsearch.ui.views.SearchBox
+   android:id="@+id/search_box"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"/>
+   <com.algolia.instantsearch.ui.views.Stats
+   android:id="@+id/search_box"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"/>
+   <com.algolia.instantsearch.ui.views.Hits
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   algolia:itemLayout="@layout/hits_item"/>
+   </RelativeLayout>
+
+
+   <ais-instant-search>
+   <ais-search-box />
+   <ais-hits>
+   <template slot="item" scope="{ item }">
+   <h2>{{ item.company }}</h2>
+   <p>{{ item.firstname }} {{ item.lastname }}</p>
+   </template>
+   </ais-hits>
+   <ais-refinement-list attribute="company" />
+   <ais-pagination />
+   </ais-instant-search>
+
+
+   <ais-instantsearch>
+   <ais-search-box></ais-search-box>
+   <ais-hits>
+   <ng-template let-hits="hits">
+   <div *ngFor="let hit of hits">
+   <h2>{{ hit.company }}</h2>
+   <p>{{ hit.firstname }} {{ hit.lastname }}</p>
+   </div>
+   </ng-template>
+   </ais-hits>
+   </ais-instantsearch>
+
+
+   import InstantSearch
+   override func viewDidLoad() {
+   super.viewDidLoad()
+   let searchBar = SearchBarWidget(frame: ...)
+   let statsWidget = StatsLabelWidget(frame: ...)
+   self.view.addSubview(searchBar)
+   self.view.addSubview(statsWidget)
+   // Add all widgets in view to InstantSearch
+   InstantSearch.shared.registerAllWidgets(in: self.view)
+   }
+
+     * (BUTTON) JavaScript
+     * (BUTTON) React
+     * (BUTTON) Android
+     * (BUTTON) Vue
+     * (BUTTON) Angular
+     * (BUTTON) iOS
+
+   Join the community
+   Start building
+   Developer blog
+
+Experiences that matter to your business
+
+   Lacoste illustration
+
+   E-commerce
+
+Personalize the Shopping Experience
+
+   Your users want an intuitive shopping experience. Algolia enables teams
+   to create a personalized site search and discovery experience that
+   customers will love.
+   Learn more
+   Twitch illustration
+
+   Media
+
+Unique Experiences to Drive Engagement
+
+   Users are looking to consume engaging content. Algolia empowers teams
+   to surface the freshest and most relevant content, and ultimately drive
+   user satisfaction.
+   Learn more
+   Zendesk illustration
+
+   SaaS
+
+Powerful APIs to Fit Your Use Case
+
+   Every product deserves a bespoke search and discovery experience.
+   Algolia’s flexible APIs and UI toolkits provides teams with the
+   resources necessary to build the experience best suited for your needs.
+   Learn more
+   Birchbox logo
+   Weight Watchers logo
+   Stripe logo
+   National Geographic logo
+   Coursera logo
+   Strava logo
+   Sense logo
+   Lacoste logo
+   NPR logo
+   Ouest France logo
+   Universal logo
+   France TV logo
+   Bringmeister logo
+   Get a demo
+
+Secure, reliable & scalable
+
+   Secure
+
+Soc 3 & GDPR approved
+
+   Algolia is committed to delivering a highly secure and compliant
+   environment for our customers.
+   Security policies
+
+   Reliable
+
+SLA 99.999%
+
+   We stand behind our service with an industry leading 99.999% SLA
+   available on select plans with a 1000x rebate policy.
+   API status
+
+   Scalable
+
+Global scale
+
+   70+ data centers on 6 continents to ensure a consistent experience for
+   every user.
+   Infrastructure
+
+   Trusted by7,500customers
+
+   Powering20,000applications
+
+   Serving+70Bqueries / month
+
+   Start your search today
+
+   See Algolia in action.
+   Request a demo
+
+Products
+
+     * Pricing
+     * Search API
+     * Analytics
+     * A/B Testing
+     * Query rules
+     * Infrastructure
+     * InstantSearch
+     * Personalization
+     * Custom crawler
+     * API status
+     * What's new
+
+Solutions
+
+     * Enterprise
+     * Customers
+     * Azure
+     * E-commerce
+     * Media
+     * SaaS
+     * Site Search
+     * Voice Search
+     * Geo Search
+     * Mobile Search
+     * Partners
+
+Developers
+
+     * Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+
+Company
+
+     * About us
+     * Blog
+     * Press
+     * Careers
+     * Security & Compliance
+     * Contact us
+     * Social networks
+     *
+          +
+          +
+          +
+          +
+          +
+
+   2019 Algolia - All rights reserved.
+     * Privacy policy
+     * Terms of service
+     * Acceptable use policy
+     * Service level agreement
+    [ ] This website works better with JavaScript enabled, Please enable
+   JavaScript if you want to benefit from all the website's features (
+   Click to dismiss )
+
+   (BUTTON) Menu
+   (BUTTON)
+     * (BUTTON) Products
+
+     * Products Overview
+     * shared/algolia_icons/pricing
+       Pricing
+       Pricing that scales with the value of your business
+     * shared/algolia_icons/search-api
+       Search API
+       Powerful, hosted search API to create fast and relevant search
+     * shared/algolia_icons/analytics
+       Analytics
+       Understand your users, uncover hidden opportunities
+     * shared/algolia_icons/query-rules
+       Query Rules
+       Optimize results ranking for your users' queries
+     * shared/algolia_icons/ab-testing
+       A/B testing
+       Uncover the best performing relevance strategies
+     * shared/algolia_icons/instantsearch
+       InstantSearch
+       A set of UI components to design the perfect experience
+     * shared/algolia_icons/personalization
+       Personalization
+       Tailor the search and discovery to your users
+     * shared/algolia_icons/crawler
+       Custom crawler
+       Automatically extract and enrich your website content
+     * shared/algolia_icons/whats-new
+       What's new
+       Create “Now Moments” across web, mobile and voice
+
+     (BUTTON) Solutions
+
+     * Solutions Overview
+     * Site Search
+       Build frictionless experiences on any device
+     * Voice Search
+       Search without the box
+     * Geo Search
+       Leverage a location-based search and discovery
+     * Mobile Search
+       Accelerate engagement and conversion on mobile
+
+     * Industries
+     * E-commerce
+     * Media
+     * SaaS
+
+     * Popular Solutions
+     * shared/logos/magento-icon
+       Magento
+     * shared/logos/shopify-icon
+       Shopify
+
+     Pricing
+
+     (BUTTON) Enterprise
+     * Enterprise Overview
+     * Azure
+     * Customers
+     * Infrastructure
+     * Security & compliance
+
+     (BUTTON) Developers
+     * Developers Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+     * Resources
+
+     Resources
+     * Login
+     * Free trial
+     * Free trial
+     * Login
+     *
+
+   (BUTTON) Algolia logo blueprint
+
+Looking for our logo?
+
+We got you covered!
+
+   Download logo pack More algolia assets
+
+Search technology to power your business.
+
+Accelerate the user experience
+
+   Request a demoFree Trial
+
+   Birchbox logo
+
+Increaseorder value
+
+   Twitch logo
+
+Power content discoveryfor 100 million viewers
+
+   Lacoste logo
+
+Better relevanceand high sales
+
+   Stripe logo
+
+Global help deskdeployed in days
+
+Search beyond the box
+
+   Algolia’s full suite APIs enable teams to develop unique search and
+   discovery experiences for their customers across all platforms and
+   devices. Type a query. Click a link. Open an app. Everything your
+   customers do sends a signal about what they want. Algolia decodes that
+   intent to deliver the right content - instantly.
+
+Want to see what Algolia can do for you?
+
+   Assess your search experience in less than 5 minutes and get a
+   personalized report with our Grader
+   Evaluate your site
+   Grader image
+   Recommended products illustration
+
+   Find
+
+Help customers find what they are searching for
+
+   Create frictionless find-to-conversion paths by connecting users with
+   exactly what they’re looking for, with lightning fast and highly
+   relevant search.
+   Learn more
+   Recommended products illustration
+
+   Discover
+
+Create a path for customers to discover
+
+   Go beyond the search box with navigation, browse, and content discovery
+   experiences powered by Algolia.
+   Learn more
+
+   Inspire
+
+Design predictive and natural interactions
+
+   Build immersive experiences that surface unexpected and relevant
+   content to surprise and delight users.
+   Learn more
+
+Designed for the developer experience
+
+   Algolia obsesses over developer experience. Our mission is to give
+   development teams the building blocks to create a fast, relevant search
+   experience. Extensive documentation & guides, an active community, 24/7
+   support make it a pleasure to work with Algolia.
+   Read docs
+   Backend[Ruby______]
+   Frontend[JavaScript]
+   BackendFrontend
+     * (BUTTON) Ruby
+     * (BUTTON) Rails
+     * (BUTTON) Python
+     * (BUTTON) Django
+     * (BUTTON) PHP
+     * (BUTTON) Symfony
+     * (BUTTON) Laravel
+     * (BUTTON) JavaScript
+     * (BUTTON) Java
+     * (BUTTON) Scala
+     * (BUTTON) Go
+     * (BUTTON) C#
+     * (BUTTON) Kotlin
+     * (BUTTON) Swift
+     * (BUTTON) Android
+
+
+   my_index = Algolia::Index.new('contacts')
+   my_index.add_object :firstname => "Jimmie",
+   :lastname => "Barninger",
+   :company => "California Paint"
+
+   class Contact < ActiveRecord::Base
+   include AlgoliaSearch
+   algoliasearch do
+   attribute :firstname, :lastname, :company
+   end
+   end
+
+   myIndex = apiClient.init_index("contacts")
+   myIndex.add_object({
+   "firstname": "Jimmie",
+   "lastname": "Barninger",
+   "company": "California Paint"
+   })
+
+   from django.contrib.algoliasearch import AlgoliaIndex
+   class YourModelIndex(AlgoliaIndex):
+   fields = ('firstname', 'lastname', 'company')
+
+   $myIndex = $apiClient->initIndex("contacts");
+   $myIndex->addObject([
+   "firstname" => "Jimmie",
+   "lastname" => "Barninger",
+   "company" => "California Paint",
+   ]);
+
+
+   /**
+   * @ORM\Entity
+   */
+   class Contact
+   {
+   /**
+   * @var string
+   *
+   * @ORM\Column(name="firstname", type="string")
+   * @Group({searchable})
+   */
+   protected $firstname;
+   /**
+   * @var string
+   *
+   * @ORM\Column(name="lastname", type="string")
+   * @Group({searchable})
+   */
+   protected $lastname;
+   /**
+   * @var string
+   *
+   * @ORM\Column(name="company", type="string")
+   * @Group({searchable})
+   */
+   protected $company;
+   }
+
+
+   use Illuminate\Database\Eloquent\Model;
+   use Laravel\Scout\Searchable;
+   class Contact extends Model
+   {
+   use Searchable; // Simply add a trait
+   }
+
+
+   const myIndex = apiClient.initIndex('contacts');
+   myIndex
+   .addObject({
+   firstname: 'Jimmie',
+   lastname: 'Barninger',
+   company: 'California Paint',
+   })
+   .then(content => console.log(content))
+   .catch(err => console.error(err));
+
+
+   Index<Contact> index = client
+   .initIndex("contacts", Contact.class);
+   index.addObject(
+   new Contact()
+   .setFirstname("Jimmie")
+   .setLastname("Barninger")
+   .setCompany("California Paint")
+   );
+
+
+   import algolia.AlgoliaDsl._
+   import scala.concurrent.ExecutionContext.Implicits.global
+   case class Contact(
+   firstname: String,
+   lastname: String,
+   company: String
+   )
+   val indexing: Future[Indexing] = client.execute {
+   index into "contacts" `object` Contact(
+   "Jimmie",
+   "Barninger",
+   "California Paint"
+   )
+   }
+
+
+   object := map[string]string{
+   "firstname": "Jimmie",
+   "lastname": "Barninger",
+   "company": "California Paint"
+   }
+   res, err := index.SaveObject(object)
+
+
+   SearchIndex index = client.InitIndex("contacts");
+   var contact = new Contact
+   {
+   FirstName = "Jimmie",
+   LastName = "Barninger",
+   Company = "California Paint"
+   };
+   index.SaveObject(contact);
+
+
+   val index = client.initIndex(IndexName("contacts"))
+   val json = json {
+   "firstname" to "Jimmie"
+   "lastname" to "Barninger"
+   "company" to "California Paint"}
+   index.saveObject(json)
+
+
+   let myIndex = apiClient.getIndex("contacts")
+   let n = [
+   "firstname": "Jimmie",
+   "lastname": "Barninger",
+   "company": "California Paint"
+   ]
+   myIndex.addObject(n)
+
+
+   Index myIndex = apiClient.initIndex("contacts");
+   JSONObject jsonObject = new JSONObject()
+   .put("firstname", "Jimmie")
+   .put("lastname", "Barninger")
+   .put("company", "California Paint");
+   myIndex.addObjectAsync(jsonObject, null);
+
+
+   <div id="searchbox"></div>
+   <div id="hits"></div>
+   <script>
+   const {
+   searchBox,
+   hits
+   } = instantsearch.widgets;
+   search.addWidget(
+   searchBox({ container: "#searchbox" })
+   );
+   search.addWidget(
+   hits({ container: "#hits" })
+   );
+   search.start();
+   </script>
+
+
+   const App = (
+   <InstantSearch>
+   <SearchBox />
+   <Hits />
+   <Pagination />
+   <RefinementList
+   attribute="company"
+   />
+   </InstantSearch>
+   );
+
+
+   <RelativeLayout
+   xmlns:algolia="http://schemas.android.com/apk/res-auto"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+   <com.algolia.instantsearch.ui.views.SearchBox
+   android:id="@+id/search_box"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"/>
+   <com.algolia.instantsearch.ui.views.Stats
+   android:id="@+id/search_box"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"/>
+   <com.algolia.instantsearch.ui.views.Hits
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   algolia:itemLayout="@layout/hits_item"/>
+   </RelativeLayout>
+
+
+   <ais-instant-search>
+   <ais-search-box />
+   <ais-hits>
+   <template slot="item" scope="{ item }">
+   <h2>{{ item.company }}</h2>
+   <p>{{ item.firstname }} {{ item.lastname }}</p>
+   </template>
+   </ais-hits>
+   <ais-refinement-list attribute="company" />
+   <ais-pagination />
+   </ais-instant-search>
+
+
+   <ais-instantsearch>
+   <ais-search-box></ais-search-box>
+   <ais-hits>
+   <ng-template let-hits="hits">
+   <div *ngFor="let hit of hits">
+   <h2>{{ hit.company }}</h2>
+   <p>{{ hit.firstname }} {{ hit.lastname }}</p>
+   </div>
+   </ng-template>
+   </ais-hits>
+   </ais-instantsearch>
+
+
+   import InstantSearch
+   override func viewDidLoad() {
+   super.viewDidLoad()
+   let searchBar = SearchBarWidget(frame: ...)
+   let statsWidget = StatsLabelWidget(frame: ...)
+   self.view.addSubview(searchBar)
+   self.view.addSubview(statsWidget)
+   // Add all widgets in view to InstantSearch
+   InstantSearch.shared.registerAllWidgets(in: self.view)
+   }
+
+     * (BUTTON) JavaScript
+     * (BUTTON) React
+     * (BUTTON) Android
+     * (BUTTON) Vue
+     * (BUTTON) Angular
+     * (BUTTON) iOS
+
+   Join the community
+   Start building
+   Developer blog
+
+Experiences that matter to your business
+
+   Lacoste illustration
+
+   E-commerce
+
+Personalize the Shopping Experience
+
+   Your users want an intuitive shopping experience. Algolia enables teams
+   to create a personalized site search and discovery experience that
+   customers will love.
+   Learn more
+   Twitch illustration
+
+   Media
+
+Unique Experiences to Drive Engagement
+
+   Users are looking to consume engaging content. Algolia empowers teams
+   to surface the freshest and most relevant content, and ultimately drive
+   user satisfaction.
+   Learn more
+   Zendesk illustration
+
+   SaaS
+
+Powerful APIs to Fit Your Use Case
+
+   Every product deserves a bespoke search and discovery experience.
+   Algolia’s flexible APIs and UI toolkits provides teams with the
+   resources necessary to build the experience best suited for your needs.
+   Learn more
+   Birchbox logo
+   Weight Watchers logo
+   Stripe logo
+   National Geographic logo
+   Coursera logo
+   Strava logo
+   Sense logo
+   Lacoste logo
+   NPR logo
+   Ouest France logo
+   Universal logo
+   France TV logo
+   Bringmeister logo
+   Get a demo
+
+Secure, reliable & scalable
+
+   Secure
+
+Soc 3 & GDPR approved
+
+   Algolia is committed to delivering a highly secure and compliant
+   environment for our customers.
+   Security policies
+
+   Reliable
+
+SLA 99.999%
+
+   We stand behind our service with an industry leading 99.999% SLA
+   available on select plans with a 1000x rebate policy.
+   API status
+
+   Scalable
+
+Global scale
+
+   70+ data centers on 6 continents to ensure a consistent experience for
+   every user.
+   Infrastructure
+
+   Trusted by7,500customers
+
+   Powering20,000applications
+
+   Serving+70Bqueries / month
+
+   Start your search today
+
+   See Algolia in action.
+   Request a demo
+
+Products
+
+     * Pricing
+     * Search API
+     * Analytics
+     * A/B Testing
+     * Query rules
+     * Infrastructure
+     * InstantSearch
+     * Personalization
+     * Custom crawler
+     * API status
+     * What's new
+
+Solutions
+
+     * Enterprise
+     * Customers
+     * Azure
+     * E-commerce
+     * Media
+     * SaaS
+     * Site Search
+     * Voice Search
+     * Geo Search
+     * Mobile Search
+     * Partners
+
+Developers
+
+     * Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+
+Company
+
+     * About us
+     * Blog
+     * Press
+     * Careers
+     * Security & Compliance
+     * Contact us
+     * Social networks
+     *
+          +
+          +
+          +
+          +
+          +
+
+   2019 Algolia - All rights reserved.
+     * Privacy policy
+     * Terms of service
+     * Acceptable use policy
+     * Service level agreement
+    [ ] This website works better with JavaScript enabled, Please enable
+   JavaScript if you want to benefit from all the website's features (
+   Click to dismiss )
+
+   (BUTTON) Menu
+   (BUTTON)
+     * (BUTTON) Products
+
+     * Products Overview
+     * shared/algolia_icons/pricing
+       Pricing
+       Pricing that scales with the value of your business
+     * shared/algolia_icons/search-api
+       Search API
+       Powerful, hosted search API to create fast and relevant search
+     * shared/algolia_icons/analytics
+       Analytics
+       Understand your users, uncover hidden opportunities
+     * shared/algolia_icons/query-rules
+       Query Rules
+       Optimize results ranking for your users' queries
+     * shared/algolia_icons/ab-testing
+       A/B testing
+       Uncover the best performing relevance strategies
+     * shared/algolia_icons/instantsearch
+       InstantSearch
+       A set of UI components to design the perfect experience
+     * shared/algolia_icons/personalization
+       Personalization
+       Tailor the search and discovery to your users
+     * shared/algolia_icons/crawler
+       Custom crawler
+       Automatically extract and enrich your website content
+     * shared/algolia_icons/whats-new
+       What's new
+       Create “Now Moments” across web, mobile and voice
+
+     (BUTTON) Solutions
+
+     * Solutions Overview
+     * Site Search
+       Build frictionless experiences on any device
+     * Voice Search
+       Search without the box
+     * Geo Search
+       Leverage a location-based search and discovery
+     * Mobile Search
+       Accelerate engagement and conversion on mobile
+
+     * Industries
+     * E-commerce
+     * Media
+     * SaaS
+
+     * Popular Solutions
+     * shared/logos/magento-icon
+       Magento
+     * shared/logos/shopify-icon
+       Shopify
+
+     Pricing
+
+     (BUTTON) Enterprise
+     * Enterprise Overview
+     * Azure
+     * Customers
+     * Infrastructure
+     * Security & compliance
+
+     (BUTTON) Developers
+     * Developers Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+     * Resources
+
+     Resources
+     * Login
+     * Free trial
+     * Free trial
+     * Login
+     *
+
+   (BUTTON) Algolia logo blueprint
+
+Looking for our logo?
+
+We got you covered!
+
+   Download logo pack More algolia assets
+
+Find out what Algoliacan do for your organization
+
+Schedule a free demo to see Algolia in action.
+
+Request a free demo
+
+   First name ____________________Last name ____________________Business
+   email ____________________Company ____________________Country
+   ____________________Company size[1-10______]Phone
+   ____________________Job titleoptional
+   ____________________Messageoptional
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   [ ] Yes, I'd like to receive more information on Algolia products,
+   events and promotions via email.Refer to Algolia's Privacy Policy for
+   more information on how we use and protect your data.
+   (BUTTON) Get your free demo
+
+Products
+
+     * Pricing
+     * Search API
+     * Analytics
+     * A/B Testing
+     * Query rules
+     * Infrastructure
+     * InstantSearch
+     * Personalization
+     * Custom crawler
+     * API status
+     * What's new
+
+Solutions
+
+     * Enterprise
+     * Customers
+     * Azure
+     * E-commerce
+     * Media
+     * SaaS
+     * Site Search
+     * Voice Search
+     * Geo Search
+     * Mobile Search
+     * Partners
+
+Developers
+
+     * Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+
+Company
+
+     * About us
+     * Blog
+     * Press
+     * Careers
+     * Security & Compliance
+     * Contact us
+     * Social networks
+     *
+          +
+          +
+          +
+          +
+          +
+
+   2019 Algolia - All rights reserved.
+     * Privacy policy
+     * Terms of service
+     * Acceptable use policy
+     * Service level agreement
+    [ ] This website works better with JavaScript enabled, Please enable
+   JavaScript if you want to benefit from all the website's features (
+   Click to dismiss )
+
+   (BUTTON) Menu
+   (BUTTON)
+     * (BUTTON) Products
+
+     * Products Overview
+     * shared/algolia_icons/pricing
+       Pricing
+       Pricing that scales with the value of your business
+     * shared/algolia_icons/search-api
+       Search API
+       Powerful, hosted search API to create fast and relevant search
+     * shared/algolia_icons/analytics
+       Analytics
+       Understand your users, uncover hidden opportunities
+     * shared/algolia_icons/query-rules
+       Query Rules
+       Optimize results ranking for your users' queries
+     * shared/algolia_icons/ab-testing
+       A/B testing
+       Uncover the best performing relevance strategies
+     * shared/algolia_icons/instantsearch
+       InstantSearch
+       A set of UI components to design the perfect experience
+     * shared/algolia_icons/personalization
+       Personalization
+       Tailor the search and discovery to your users
+     * shared/algolia_icons/crawler
+       Custom crawler
+       Automatically extract and enrich your website content
+     * shared/algolia_icons/whats-new
+       What's new
+       Create “Now Moments” across web, mobile and voice
+
+     (BUTTON) Solutions
+
+     * Solutions Overview
+     * Site Search
+       Build frictionless experiences on any device
+     * Voice Search
+       Search without the box
+     * Geo Search
+       Leverage a location-based search and discovery
+     * Mobile Search
+       Accelerate engagement and conversion on mobile
+
+     * Industries
+     * E-commerce
+     * Media
+     * SaaS
+
+     * Popular Solutions
+     * shared/logos/magento-icon
+       Magento
+     * shared/logos/shopify-icon
+       Shopify
+
+     Pricing
+
+     (BUTTON) Enterprise
+     * Enterprise Overview
+     * Azure
+     * Customers
+     * Infrastructure
+     * Security & compliance
+
+     (BUTTON) Developers
+     * Developers Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+     * Resources
+
+     Resources
+     * Login
+     * Free trial
+     * Free trial
+     * Login
+     *
+
+   (BUTTON) Algolia logo blueprint
+
+Looking for our logo?
+
+We got you covered!
+
+   Download logo pack More algolia assets
+
+Let's connect
+
+Start a conversation with us today about search and discovery.
+
+How can we help?
+
+   Select the nature of your
+   inquiry[Request a quote_______________________________]First name
+   ____________________Last name ____________________Business email
+   ____________________Company ____________________Country
+   ____________________Company size[1-10______]Phone
+   ____________________Job titleoptional
+   ____________________Messageoptional
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   [ ] Yes, I'd like to receive more information on Algolia products,
+   events and promotions via email.Refer to Algolia's Privacy Policy for
+   more information on how we use and protect your data.
+   (BUTTON) Get in touch
+
+   Start your search today
+
+   See Algolia in action.
+   Request a demo
+
+Products
+
+     * Pricing
+     * Search API
+     * Analytics
+     * A/B Testing
+     * Query rules
+     * Infrastructure
+     * InstantSearch
+     * Personalization
+     * Custom crawler
+     * API status
+     * What's new
+
+Solutions
+
+     * Enterprise
+     * Customers
+     * Azure
+     * E-commerce
+     * Media
+     * SaaS
+     * Site Search
+     * Voice Search
+     * Geo Search
+     * Mobile Search
+     * Partners
+
+Developers
+
+     * Getting started
+     * Documentation
+     * Integrations
+     * Changelog
+     * Support
+     * Community
+     * FAQ
+
+Company
+
+     * About us
+     * Blog
+     * Press
+     * Careers
+     * Security & Compliance
+     * Contact us
+     * Social networks
+     *
+          +
+          +
+          +
+          +
+          +
+
+   2019 Algolia - All rights reserved.
+     * Privacy policy
+     * Terms of service
+     * Acceptable use policy
+     * Service level agreement

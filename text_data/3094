@@ -1,0 +1,2680 @@
+   ﻿
+
+YOURLS: Your Own URL Shortener
+
+     * More
+     * FAQ
+     * API
+     * YOURLS plugins
+     * Config
+     * Install/Upgrade
+     * About
+
+   Tweet
+
+About YOURLS
+
+What is YOURLS
+
+   YOURLS stands for Your Own URL Shortener. It is a small set of PHP
+   scripts that will allow you to run your own URL shortening service (a
+   la TinyURL or Bitly).
+
+   Running your own URL shortener is fun, geeky and useful: you own your
+   data and don't depend on third-party services. It's also a great way to
+   add branding to your short URLs, instead of using the same public URL
+   shortener everyone uses.
+
+YOURLS Features
+
+     * Free and open-source software.
+     * Private (your links only) or Public (everybody can create short
+       links, fine for an intranet)
+     * Sequential or custom URL keywords
+     * Handy bookmarklets to easily shorten and share links
+     * Awesome stats: historical click reports, referrers tracking,
+       visitors geo-location
+     * Neat Ajaxed interface
+     * Terrific Plugin architecture to easily implement new features
+     * Cool developer API
+     * Full jsonp support
+     * Friendly installer
+     * Sample files to create your own public interface and more
+
+Screenshots
+
+   Main admin dashboard
+   [admin-dashboard.gif]
+
+   Stats for each short URL
+   [stats-anim.gif]
+
+   See a live example of YOURLS stats on https://yourls.org/cookie+
+
+Download
+
+   Download YOURLS from Github
+
+   You can follow YOURLS' development on the commit history and get
+   current development build
+
+Credits
+
+   YOURLS is made by awesome people.
+
+   Keep up to date: follow @yourls, @ozh (lead developer) and read the
+   official YOURLS Blog
+
+Fresh Install
+
+    1. Unzip the YOURLS archive
+    2. Copy user/config-sample.php to user/config.php
+    3. Open user/config.php with a raw text editor (like Notepad) and fill
+       in the required settings
+    4. Upload the unzipped files to your domain public_html or www folder
+    5. Create a new database (see Configuration – you can also use an
+       existing one)
+    6. Point your browser to http://your-own-domain-here.com/admin/
+
+Install Guides
+
+   Here is a list of some (unofficial) install guides using automated
+   tools:
+     * How to Install YOURLS on Ubuntu 14.04
+     * How to install YOURLS on Ubuntu 18.04
+     * How to Install YOURLS on a VPS or shared hosting
+     * How to Install YOURLS using Softaculous
+
+Upgrade
+
+    1. Backup the database!
+    2. Unzip the YOURLS archive
+    3. Upload files to your server, overwriting your existing install
+    4. Point your browser to http://your-own-domain-here.com/admin/
+    5. Tip: you can now move your config.php file to the /user directory
+
+Configuration (in user/config.php)
+
+MySQL settings
+
+     * YOURLS_DB_USER
+       your MySQL username
+       Example: define( 'YOURLS_DB_USER', 'joe' );
+     * YOURLS_DB_PASS
+       your MySQL password
+       Example: define( 'YOURLS_DB_PASS', 'MySeCreTPaSsW0rd' );
+     * YOURLS_DB_NAME: The database name
+       Example: define( 'YOURLS_DB_NAME', 'yourls' );
+     * YOURLS_DB_HOST
+       The database host
+       Example: define( 'YOURLS_DB_HOST', 'localhost' );
+     * YOURLS_DB_PREFIX
+       The name prefix for all the tables YOURLS will need
+       Example: define( 'YOURLS_DB_PREFIX', 'yourls_' );
+
+Site options
+
+     * YOURLS_SITE
+       Your (hopefully short) domain URL, no trailing slash, lowercase. If
+       you pick the non-www version of your domain, don't use the www
+       version in your browser (and vice-versa)
+       Example: define( 'YOURLS_SITE', 'http://ozh.in' );
+     * YOURLS_HOURS_OFFSET
+       Timezone GMT offset
+       Example: define( 'YOURLS_HOURS_OFFSET', '-5' );
+     * YOURLS_PRIVATE
+       Private means the admin area will be protected with login/pass as
+       defined below. See Private or Public for more.
+       Example: define( 'YOURLS_PRIVATE', 'true' );
+     * YOURLS_UNIQUE_URLS
+       Allow multiple short URLs for a same long URL
+       Set to true to allow only one pair of shortURL/longURL (default
+       YOURLS behavior), or to false to allow creation of multiple short
+       URLs pointing to the same long URL (as bit.ly does)
+       Example: define( 'YOURLS_UNIQUE_URLS', 'true' );
+     * YOURLS_COOKIEKEY
+       A random secret hash used to encrypt cookies. You don't have to
+       remember it, make it long and complicated. Hint: generate a unique
+       one at https://yourls.org/cookie
+       Example: define( 'YOURLS_COOKIEKEY', 'qQ4KhL_pu|s@Zm7n#%:b^{A[vhm'
+       );
+     * yourls_user_passwords
+       A list of username(s) and password(s) allowed to access the site if
+       private
+       Passwords can either be in plain text, or encrypted: see
+       https://yourls.org/userpassword for more information.
+       Example: 'joe' => 'mypassword'
+
+URL Shortening settings
+
+     * YOURLS_URL_CONVERT
+       URL shortening method: base 36 or 62. See FAQ for more explanations
+     * yourls_reserved_URL
+       A list of reserved keywords that won't be used as short URLs.
+       Define here negative, unwanted or potentially misleading keywords
+       Example: 'porn', 'faggot', 'sex', 'nigger', 'fuck', 'cunt', 'dick'
+
+Optional settings
+
+     * YOURLS_PRIVATE_INFOS
+       If YOURLS_PRIVATE is set to true, you can still make stat pages
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_INFOS', false);
+     * YOURLS_PRIVATE_API
+       If YOURLS_PRIVATE is set to true, you can still make your API
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_API', false);
+     * YOURLS_NOSTATS
+       If YOURLS_NOSTATS is set to true, redirects won't be logged and
+       there will be not stats available.
+
+Advanced settings
+
+     * YOURLS will look for the MySQL extension PDO, MySQLi or MySQL, in
+       that order. If you want to force usage of one particular extension,
+       add the following line to your config.php:
+       define( 'YOURLS_DB_DRIVER', 'mysqli' );
+     * You can install YOURLS behind a firewall or a proxy: see Proxy
+       Support
+     * File includes/load-yourls.php contains a few more undocumented but
+       self explanatory and commented settings. Add them to your own
+       config.php if you know what you're doing.
+
+Plugins for YOURLS
+
+Plugins?
+
+   Plugins are additional PHP scripts that extend the functionalities or
+   features of YOURLS. The core of YOURLS is designed to be as light as
+   possible and avoid bloat (implementing functions not everybody needs)
+   and to allow for easy customization.
+
+   Using the plugin architecture, you can add new features to YOURLS
+   without having to modify core files. This way, your changes won't be
+   lost when you upgrade your YOURLS installation and you can easily
+   activate and deactivate a plugin from the admin interface.
+
+   There's a growing number of plugins available: check the Plugin list.
+
+Documentation
+
+   Several sample plugins are included in the archive. Read the source and
+   learn the concept. It's easy and fun!
+
+   Check the plugin API documentation to learn more
+
+YOURLS' API
+
+Features
+
+     * Generate or get existing short URLs, with sequential or custom
+       keyword
+     * Get some statistics about your links: top clicked links, least
+       clicked links, newest links
+     * Output format: JSON, XML, or simple raw text
+     * Authentify either with login/password or using a secure
+       passwordless mechanism
+
+Usage
+
+   You need to send parameters to
+   http://your-own-domain-here.com/yourls-api.php either via GET or POST
+   (remember to URL-encode parameters if via GET). These parameters are:
+     * A valid username / password pair, or your signature (see
+       Passwordless API requests)
+     * The requested action: "shorturl" (get short URL for a link),
+       "expand" (get long URL of a shorturl), "url-stats" (get stats about
+       one short URL), "stats" (get stats about your links) or "db-stats"
+       (get global link and click count)
+     * With action = "shorturl" :
+          + the url to shorten
+          + optional keyword and title for custom short URLs
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "expand" :
+          + the shorturl to expand (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "url-stats" :
+          + the shorturl for which to get stats (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "stats" :
+          + the filter: either "top", "bottom" , "rand" or "last"
+          + the limit (maximum number of links to return)
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "db-stats" :
+          + output format: either "jsonp", "json" or "xml"
+
+Sample requests
+
+   Example of a GET request with Javascript (using jQuery) to shorten a
+   URL
+var api_url  = 'http://sho.rt/yourls-api.php';
+var response = $.get( api_url, {
+    username: "your_username",
+    password: "your_password",
+    action:   "shorturl",
+    format:   "json",
+    url:      "http://ozh.org/"
+    },
+    // callback function that will deal with the server response
+    function( data) {
+        // now do something with the data, for instance show new short URL:
+        alert(data.shorturl);
+    }
+);
+
+   Example of a POST request with PHP to expand a short URL
+<?php
+$username = 'your_username';
+$password = 'your_password';
+$api_url =  'http://sho.rt/yourls-api.php';
+
+// Init the CURL session
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $api_url);
+curl_setopt($ch, CURLOPT_HEADER, 0);            // No header in the result
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return, do not echo result
+curl_setopt($ch, CURLOPT_POST, 1);              // This is a POST request
+curl_setopt($ch, CURLOPT_POSTFIELDS, array(     // Data to POST
+        'shorturl' => 'ozh',
+        'format'   => 'json',
+        'action'   => 'expand',
+        'username' => $username,
+        'password' => $password
+    ));
+
+// Fetch and return content
+$data = curl_exec($ch);
+curl_close($ch);
+
+// Do something with the result. Here, we echo the long URL
+$data = json_decode( $data );
+echo $data->longurl;
+
+Sample returns
+
+   Sample return in JSON format for the shorturl action
+{
+  "url": {
+    "keyword": "ozh",
+    "url": "http:\/\/ozh.org",
+    "title": "Ozh RICHARD \u00ab ozh.org",
+    "date": "2014-10-24 16:01:39",
+    "ip": "127.0.0.1"
+  },
+  "status": "success",
+  "message": "http:\/\/ozh.org added to database",
+  "title": "Ozh RICHARD \u00ab ozh.org",
+  "shorturl": "http:\/\/sho.rt\/1f",
+  "statusCode": 200
+}
+
+   Sample return in XML format for the expand action
+<result>
+    <keyword>ozh</keyword>
+    <shorturl>http://sho.rt/ozh</shorturl>
+    <longurl>http://ozh.org/</longurl>
+    <message>success</message>
+    <statusCode>200</statusCode>
+</result>
+
+Sample file
+
+   There's a sample PHP file included that serves as an example on how to
+   play with the API
+
+Expand the API
+
+   You can easily implement custom API actions with a plugin. See the
+   plugin list for examples.
+
+FAQ
+
+Server requirements
+
+    1. A server with mod_rewrite enabled
+    2. At least PHP 5.6
+    3. At least MYSQL 5
+    4. Note: YOURLS can also run on Nginx and Cherokee
+
+Server recommendations
+
+     * PHP CURL extension installed if you plan on playing with the API
+
+Limitations
+
+     * Maximum length of custom keyword is 200 characters
+     * That makes about 8 sexdecillions of centillions of available URLs
+       (seriously. That's a 355-digit number).
+
+Difference Between Base 36 And Base 62 Encoding
+
+     * Base 36 encoding uses 0123456789abcdefghijklmnopqrstuvwxyz for
+       short URLs
+     * Base 62 encoding uses
+       0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+     * Stick to one setting, don't change after you've created links as it
+       will change all your short URLs!
+     * Base 36 is the default and should be picked if you're not sure.
+
+Getting a short domain name for your YOURLS install
+
+     * Unless you plan on making it public and as popular as bit.ly, any
+       shared hosting will be fine. Ozh runs all his YOURLS instance on
+       Dreamhost and it works just great.
+     * Domainr is a fun search tool that might inspire and help you
+     * Aim for exotic top level domains (.in, .im, .li ...), they're often
+       cheap and a lot are still available. Gandi is a pretty
+       comprehensive registrar, for instance.
+
+YOURLS needs its own .htaccess
+
+     * You cannot install YOURLS and, say, WordPress, in the same
+       directory. Both need to handle URLs differently and need their own
+       .htaccess file.
+     * If you want to install YOURLS on the same domain than your blog,
+       give it its own (short) subdirectory, such as yourblog.com/s/ (for
+       "short") or yourblog.com/x/ (for "exit")
+
+If YOURLS generates 404 for your short URLs
+
+     * Make sure mod_rewrite is enabled with your Apache server
+     * Make sure your .htaccess file looks like this one
+     * Eventually, check your server Apache configuration allows use of
+       .htaccess (AllowOverride All directive, ask your server admin)
+
+Random versus sequential short URLs
+
+     * Out of the box, YOURLS generates sequential short URLS (ie ab31,
+       then ab32 and so on)
+     * If you prefer random short URLs (ie j3kz1 then 13hz7 like Bitly
+       does), just activate the plugin that comes with YOURLS.
+
+"Stats don't update as I think they should", "difference with Google
+Analytics", etc...
+
+     * Out of the box, YOURLS updates traffic stats every time a short URL
+       is requested. Period.
+     * This said, some clients (like indexing bots, your internet browser)
+       may skip requesting a short URL if they have the final destination
+       known in cache.
+     * Conversely, other stat tools may use different techniques to track
+       hits (using javascript or not, using IP adress, filtering multiple
+       requests by same client, etc...)
+     * Bottom line: your mileage may vary with different tools, but there
+       is no bug in YOURLS regarding that matter.
+
+There is no index page at the root of the install
+
+     * Indeed. It's intended. It's up to the user to make what they need.
+       Some will redirect the root to a different place, some make a
+       public interface for anyone to shorten links, some make a
+       portfolio. You make it.
+     * If you want to make a public interface and run your own little
+       bitly.com, there's a sample file provided as an example:
+       sample-public-front-page.txt. This implies important issues to deal
+       with: spam, performance and security. Read Public Shortening for
+       important information.
+
+Uppercase letters in short URLs are eaten up, eg "OmgOzh" becomes "mgzh" !
+
+     * Indeed. It's intented if you selected Base 36 (see above). Letters
+       that don't belong to the character set, eg @#! or ABC, are removed.
+     * If you want to force lowercase, you'll need a plugin.
+
+Feedback, feature requests and bug reporting
+
+    1. Please don't get in touch directly by mail or Twitter. Please.
+    2. Check the Road Map for future features.
+    3. Read all the wiki documents.
+    4. Search in all the issues, open and closed.
+    5. Eventually raise a new issue. To do so, please read the contribute
+       guidelines. Thanks!
+
+Community
+
+   YOURLS is open source, so the community of users plays a great role in
+   its development, by contributing, helping others or giving feedback
+   that helps improve the software.
+
+Resources
+
+     * The official YOURLS blog, for news, hints and showcase.
+     * The wiki: advanced documentation, plugins, tips and more
+     * Follow @YOURLS for hardcore development, and @Ozh for tips and news
+       (and random geekiness too)
+
+Showcase
+
+YOURLS reviews
+
+     * Early YOURLS review on Lifehacker
+     * Comprehensive YOURLS history and review on Dating News
+
+Here are a few examples of sites running YOURLS with a unique design or
+concept
+
+     * http://oe.cd/
+       OECD's internal URL shortener with a neat interface and private
+       features
+     * http://yourwish.es/
+       Easily share an Amazon wishlist
+     * http://vbly.us
+       Public YOURLS setup and early adopter, run by famous sex writer
+       Violet Blue as "the internet's first and only sex-positive url
+       shortener", once taken down by Libya (story)
+
+YOURLS and other platforms or frameworks
+
+     * WordPress
+       There are numerous WordPress plugin with YOURLS support. YOURLS
+       Link Creator is recommended.
+     * Drupal
+       Allows for the automatic creation of short urls using a YOURLS
+       installation
+     * Perl
+       WWW-Shorten-Yourls is a Perl module to shorten URLs using YOURLS
+     * Ruby
+       A Ruby wrapper for the YOURLS API
+     * Python
+       A Python client for YOURLS
+     * VB .Net
+       A VB .Net 4.0 wrapper for the YOURLS API
+     * Javascript
+       JavaScript bindings for the YOURLS API to leverage JSONP support
+     * CakePHP
+       Plugin which integrates CakePHP with Yourls
+     * status.net
+       A plugin for status.net to use YOURLS
+     * Sharetronix
+       A YOURLS addon for Sharetronix
+
+YOURLS works with your favorite software or device
+
+     * Tweetie 2
+       How to set up Tweetie2 so it uses your own service
+     * Tweetbot
+       Make Tweetbot run with YOURLS
+     * Twitterfeed
+       Use Twitterfeed with YOURLS
+     * Mac Client
+       Simple app to have a global keyboard shortcut send a link to YOURLS
+     * Android: aYourls, URLy and URL Shortener
+       Android apps that plays nice with YOURLS
+     * iOS: ShortTail for YOURLS, Clicklytics and myYOURLS
+       Apps to use YOURLS on iPhones and iPads
+     * Chrourls
+       Google Chrome quick link shortening addon for YOURLS
+     * Firefox Addon
+       Firefox Addon for YOURLS
+     * Textexpander and YOURLS
+       Making YOURLS and Textexpander on the Mac play together
+
+More stuff to do with YOURLS
+
+     * Infinity Squared
+       ∞² is a public page theme for YOURLS to help you design your own
+       public interface
+     * Sleeky
+       Sleeky is another public page theme for YOURLS
+     * Scott Helme's page
+       Example index page listing all the URLs held in a YOURLS database
+
+"Celebrity endorsements", sort of.
+
+     * http://epic.gm/ by Epic Games
+     * http://mclrn.co/ by McLaren Cars
+     * http://smashed.by/ by Smashing Magazine
+     * http://oe.cd/ by the OECD
+     * http://cuny.is/ by the City University of New York
+     * http://virg.in/ for the Virgin Group companies
+     * http://dhurl.org/ by Dreamhost
+     * https://rho.st/ by RoseHosting.com
+
+   Note: this whole site is the actual readme file included with YOURLS.
+   Neat huh?
+   ﻿
+
+YOURLS: Your Own URL Shortener
+
+     * More
+     * FAQ
+     * API
+     * YOURLS plugins
+     * Config
+     * Install/Upgrade
+     * About
+
+   Tweet
+
+About YOURLS
+
+What is YOURLS
+
+   YOURLS stands for Your Own URL Shortener. It is a small set of PHP
+   scripts that will allow you to run your own URL shortening service (a
+   la TinyURL or Bitly).
+
+   Running your own URL shortener is fun, geeky and useful: you own your
+   data and don't depend on third-party services. It's also a great way to
+   add branding to your short URLs, instead of using the same public URL
+   shortener everyone uses.
+
+YOURLS Features
+
+     * Free and open-source software.
+     * Private (your links only) or Public (everybody can create short
+       links, fine for an intranet)
+     * Sequential or custom URL keywords
+     * Handy bookmarklets to easily shorten and share links
+     * Awesome stats: historical click reports, referrers tracking,
+       visitors geo-location
+     * Neat Ajaxed interface
+     * Terrific Plugin architecture to easily implement new features
+     * Cool developer API
+     * Full jsonp support
+     * Friendly installer
+     * Sample files to create your own public interface and more
+
+Screenshots
+
+   Main admin dashboard
+   [admin-dashboard.gif]
+
+   Stats for each short URL
+   [stats-anim.gif]
+
+   See a live example of YOURLS stats on https://yourls.org/cookie+
+
+Download
+
+   Download YOURLS from Github
+
+   You can follow YOURLS' development on the commit history and get
+   current development build
+
+Credits
+
+   YOURLS is made by awesome people.
+
+   Keep up to date: follow @yourls, @ozh (lead developer) and read the
+   official YOURLS Blog
+
+Fresh Install
+
+    1. Unzip the YOURLS archive
+    2. Copy user/config-sample.php to user/config.php
+    3. Open user/config.php with a raw text editor (like Notepad) and fill
+       in the required settings
+    4. Upload the unzipped files to your domain public_html or www folder
+    5. Create a new database (see Configuration – you can also use an
+       existing one)
+    6. Point your browser to http://your-own-domain-here.com/admin/
+
+Install Guides
+
+   Here is a list of some (unofficial) install guides using automated
+   tools:
+     * How to Install YOURLS on Ubuntu 14.04
+     * How to install YOURLS on Ubuntu 18.04
+     * How to Install YOURLS on a VPS or shared hosting
+     * How to Install YOURLS using Softaculous
+
+Upgrade
+
+    1. Backup the database!
+    2. Unzip the YOURLS archive
+    3. Upload files to your server, overwriting your existing install
+    4. Point your browser to http://your-own-domain-here.com/admin/
+    5. Tip: you can now move your config.php file to the /user directory
+
+Configuration (in user/config.php)
+
+MySQL settings
+
+     * YOURLS_DB_USER
+       your MySQL username
+       Example: define( 'YOURLS_DB_USER', 'joe' );
+     * YOURLS_DB_PASS
+       your MySQL password
+       Example: define( 'YOURLS_DB_PASS', 'MySeCreTPaSsW0rd' );
+     * YOURLS_DB_NAME: The database name
+       Example: define( 'YOURLS_DB_NAME', 'yourls' );
+     * YOURLS_DB_HOST
+       The database host
+       Example: define( 'YOURLS_DB_HOST', 'localhost' );
+     * YOURLS_DB_PREFIX
+       The name prefix for all the tables YOURLS will need
+       Example: define( 'YOURLS_DB_PREFIX', 'yourls_' );
+
+Site options
+
+     * YOURLS_SITE
+       Your (hopefully short) domain URL, no trailing slash, lowercase. If
+       you pick the non-www version of your domain, don't use the www
+       version in your browser (and vice-versa)
+       Example: define( 'YOURLS_SITE', 'http://ozh.in' );
+     * YOURLS_HOURS_OFFSET
+       Timezone GMT offset
+       Example: define( 'YOURLS_HOURS_OFFSET', '-5' );
+     * YOURLS_PRIVATE
+       Private means the admin area will be protected with login/pass as
+       defined below. See Private or Public for more.
+       Example: define( 'YOURLS_PRIVATE', 'true' );
+     * YOURLS_UNIQUE_URLS
+       Allow multiple short URLs for a same long URL
+       Set to true to allow only one pair of shortURL/longURL (default
+       YOURLS behavior), or to false to allow creation of multiple short
+       URLs pointing to the same long URL (as bit.ly does)
+       Example: define( 'YOURLS_UNIQUE_URLS', 'true' );
+     * YOURLS_COOKIEKEY
+       A random secret hash used to encrypt cookies. You don't have to
+       remember it, make it long and complicated. Hint: generate a unique
+       one at https://yourls.org/cookie
+       Example: define( 'YOURLS_COOKIEKEY', 'qQ4KhL_pu|s@Zm7n#%:b^{A[vhm'
+       );
+     * yourls_user_passwords
+       A list of username(s) and password(s) allowed to access the site if
+       private
+       Passwords can either be in plain text, or encrypted: see
+       https://yourls.org/userpassword for more information.
+       Example: 'joe' => 'mypassword'
+
+URL Shortening settings
+
+     * YOURLS_URL_CONVERT
+       URL shortening method: base 36 or 62. See FAQ for more explanations
+     * yourls_reserved_URL
+       A list of reserved keywords that won't be used as short URLs.
+       Define here negative, unwanted or potentially misleading keywords
+       Example: 'porn', 'faggot', 'sex', 'nigger', 'fuck', 'cunt', 'dick'
+
+Optional settings
+
+     * YOURLS_PRIVATE_INFOS
+       If YOURLS_PRIVATE is set to true, you can still make stat pages
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_INFOS', false);
+     * YOURLS_PRIVATE_API
+       If YOURLS_PRIVATE is set to true, you can still make your API
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_API', false);
+     * YOURLS_NOSTATS
+       If YOURLS_NOSTATS is set to true, redirects won't be logged and
+       there will be not stats available.
+
+Advanced settings
+
+     * YOURLS will look for the MySQL extension PDO, MySQLi or MySQL, in
+       that order. If you want to force usage of one particular extension,
+       add the following line to your config.php:
+       define( 'YOURLS_DB_DRIVER', 'mysqli' );
+     * You can install YOURLS behind a firewall or a proxy: see Proxy
+       Support
+     * File includes/load-yourls.php contains a few more undocumented but
+       self explanatory and commented settings. Add them to your own
+       config.php if you know what you're doing.
+
+Plugins for YOURLS
+
+Plugins?
+
+   Plugins are additional PHP scripts that extend the functionalities or
+   features of YOURLS. The core of YOURLS is designed to be as light as
+   possible and avoid bloat (implementing functions not everybody needs)
+   and to allow for easy customization.
+
+   Using the plugin architecture, you can add new features to YOURLS
+   without having to modify core files. This way, your changes won't be
+   lost when you upgrade your YOURLS installation and you can easily
+   activate and deactivate a plugin from the admin interface.
+
+   There's a growing number of plugins available: check the Plugin list.
+
+Documentation
+
+   Several sample plugins are included in the archive. Read the source and
+   learn the concept. It's easy and fun!
+
+   Check the plugin API documentation to learn more
+
+YOURLS' API
+
+Features
+
+     * Generate or get existing short URLs, with sequential or custom
+       keyword
+     * Get some statistics about your links: top clicked links, least
+       clicked links, newest links
+     * Output format: JSON, XML, or simple raw text
+     * Authentify either with login/password or using a secure
+       passwordless mechanism
+
+Usage
+
+   You need to send parameters to
+   http://your-own-domain-here.com/yourls-api.php either via GET or POST
+   (remember to URL-encode parameters if via GET). These parameters are:
+     * A valid username / password pair, or your signature (see
+       Passwordless API requests)
+     * The requested action: "shorturl" (get short URL for a link),
+       "expand" (get long URL of a shorturl), "url-stats" (get stats about
+       one short URL), "stats" (get stats about your links) or "db-stats"
+       (get global link and click count)
+     * With action = "shorturl" :
+          + the url to shorten
+          + optional keyword and title for custom short URLs
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "expand" :
+          + the shorturl to expand (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "url-stats" :
+          + the shorturl for which to get stats (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "stats" :
+          + the filter: either "top", "bottom" , "rand" or "last"
+          + the limit (maximum number of links to return)
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "db-stats" :
+          + output format: either "jsonp", "json" or "xml"
+
+Sample requests
+
+   Example of a GET request with Javascript (using jQuery) to shorten a
+   URL
+var api_url  = 'http://sho.rt/yourls-api.php';
+var response = $.get( api_url, {
+    username: "your_username",
+    password: "your_password",
+    action:   "shorturl",
+    format:   "json",
+    url:      "http://ozh.org/"
+    },
+    // callback function that will deal with the server response
+    function( data) {
+        // now do something with the data, for instance show new short URL:
+        alert(data.shorturl);
+    }
+);
+
+   Example of a POST request with PHP to expand a short URL
+<?php
+$username = 'your_username';
+$password = 'your_password';
+$api_url =  'http://sho.rt/yourls-api.php';
+
+// Init the CURL session
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $api_url);
+curl_setopt($ch, CURLOPT_HEADER, 0);            // No header in the result
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return, do not echo result
+curl_setopt($ch, CURLOPT_POST, 1);              // This is a POST request
+curl_setopt($ch, CURLOPT_POSTFIELDS, array(     // Data to POST
+        'shorturl' => 'ozh',
+        'format'   => 'json',
+        'action'   => 'expand',
+        'username' => $username,
+        'password' => $password
+    ));
+
+// Fetch and return content
+$data = curl_exec($ch);
+curl_close($ch);
+
+// Do something with the result. Here, we echo the long URL
+$data = json_decode( $data );
+echo $data->longurl;
+
+Sample returns
+
+   Sample return in JSON format for the shorturl action
+{
+  "url": {
+    "keyword": "ozh",
+    "url": "http:\/\/ozh.org",
+    "title": "Ozh RICHARD \u00ab ozh.org",
+    "date": "2014-10-24 16:01:39",
+    "ip": "127.0.0.1"
+  },
+  "status": "success",
+  "message": "http:\/\/ozh.org added to database",
+  "title": "Ozh RICHARD \u00ab ozh.org",
+  "shorturl": "http:\/\/sho.rt\/1f",
+  "statusCode": 200
+}
+
+   Sample return in XML format for the expand action
+<result>
+    <keyword>ozh</keyword>
+    <shorturl>http://sho.rt/ozh</shorturl>
+    <longurl>http://ozh.org/</longurl>
+    <message>success</message>
+    <statusCode>200</statusCode>
+</result>
+
+Sample file
+
+   There's a sample PHP file included that serves as an example on how to
+   play with the API
+
+Expand the API
+
+   You can easily implement custom API actions with a plugin. See the
+   plugin list for examples.
+
+FAQ
+
+Server requirements
+
+    1. A server with mod_rewrite enabled
+    2. At least PHP 5.6
+    3. At least MYSQL 5
+    4. Note: YOURLS can also run on Nginx and Cherokee
+
+Server recommendations
+
+     * PHP CURL extension installed if you plan on playing with the API
+
+Limitations
+
+     * Maximum length of custom keyword is 200 characters
+     * That makes about 8 sexdecillions of centillions of available URLs
+       (seriously. That's a 355-digit number).
+
+Difference Between Base 36 And Base 62 Encoding
+
+     * Base 36 encoding uses 0123456789abcdefghijklmnopqrstuvwxyz for
+       short URLs
+     * Base 62 encoding uses
+       0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+     * Stick to one setting, don't change after you've created links as it
+       will change all your short URLs!
+     * Base 36 is the default and should be picked if you're not sure.
+
+Getting a short domain name for your YOURLS install
+
+     * Unless you plan on making it public and as popular as bit.ly, any
+       shared hosting will be fine. Ozh runs all his YOURLS instance on
+       Dreamhost and it works just great.
+     * Domainr is a fun search tool that might inspire and help you
+     * Aim for exotic top level domains (.in, .im, .li ...), they're often
+       cheap and a lot are still available. Gandi is a pretty
+       comprehensive registrar, for instance.
+
+YOURLS needs its own .htaccess
+
+     * You cannot install YOURLS and, say, WordPress, in the same
+       directory. Both need to handle URLs differently and need their own
+       .htaccess file.
+     * If you want to install YOURLS on the same domain than your blog,
+       give it its own (short) subdirectory, such as yourblog.com/s/ (for
+       "short") or yourblog.com/x/ (for "exit")
+
+If YOURLS generates 404 for your short URLs
+
+     * Make sure mod_rewrite is enabled with your Apache server
+     * Make sure your .htaccess file looks like this one
+     * Eventually, check your server Apache configuration allows use of
+       .htaccess (AllowOverride All directive, ask your server admin)
+
+Random versus sequential short URLs
+
+     * Out of the box, YOURLS generates sequential short URLS (ie ab31,
+       then ab32 and so on)
+     * If you prefer random short URLs (ie j3kz1 then 13hz7 like Bitly
+       does), just activate the plugin that comes with YOURLS.
+
+"Stats don't update as I think they should", "difference with Google
+Analytics", etc...
+
+     * Out of the box, YOURLS updates traffic stats every time a short URL
+       is requested. Period.
+     * This said, some clients (like indexing bots, your internet browser)
+       may skip requesting a short URL if they have the final destination
+       known in cache.
+     * Conversely, other stat tools may use different techniques to track
+       hits (using javascript or not, using IP adress, filtering multiple
+       requests by same client, etc...)
+     * Bottom line: your mileage may vary with different tools, but there
+       is no bug in YOURLS regarding that matter.
+
+There is no index page at the root of the install
+
+     * Indeed. It's intended. It's up to the user to make what they need.
+       Some will redirect the root to a different place, some make a
+       public interface for anyone to shorten links, some make a
+       portfolio. You make it.
+     * If you want to make a public interface and run your own little
+       bitly.com, there's a sample file provided as an example:
+       sample-public-front-page.txt. This implies important issues to deal
+       with: spam, performance and security. Read Public Shortening for
+       important information.
+
+Uppercase letters in short URLs are eaten up, eg "OmgOzh" becomes "mgzh" !
+
+     * Indeed. It's intented if you selected Base 36 (see above). Letters
+       that don't belong to the character set, eg @#! or ABC, are removed.
+     * If you want to force lowercase, you'll need a plugin.
+
+Feedback, feature requests and bug reporting
+
+    1. Please don't get in touch directly by mail or Twitter. Please.
+    2. Check the Road Map for future features.
+    3. Read all the wiki documents.
+    4. Search in all the issues, open and closed.
+    5. Eventually raise a new issue. To do so, please read the contribute
+       guidelines. Thanks!
+
+Community
+
+   YOURLS is open source, so the community of users plays a great role in
+   its development, by contributing, helping others or giving feedback
+   that helps improve the software.
+
+Resources
+
+     * The official YOURLS blog, for news, hints and showcase.
+     * The wiki: advanced documentation, plugins, tips and more
+     * Follow @YOURLS for hardcore development, and @Ozh for tips and news
+       (and random geekiness too)
+
+Showcase
+
+YOURLS reviews
+
+     * Early YOURLS review on Lifehacker
+     * Comprehensive YOURLS history and review on Dating News
+
+Here are a few examples of sites running YOURLS with a unique design or
+concept
+
+     * http://oe.cd/
+       OECD's internal URL shortener with a neat interface and private
+       features
+     * http://yourwish.es/
+       Easily share an Amazon wishlist
+     * http://vbly.us
+       Public YOURLS setup and early adopter, run by famous sex writer
+       Violet Blue as "the internet's first and only sex-positive url
+       shortener", once taken down by Libya (story)
+
+YOURLS and other platforms or frameworks
+
+     * WordPress
+       There are numerous WordPress plugin with YOURLS support. YOURLS
+       Link Creator is recommended.
+     * Drupal
+       Allows for the automatic creation of short urls using a YOURLS
+       installation
+     * Perl
+       WWW-Shorten-Yourls is a Perl module to shorten URLs using YOURLS
+     * Ruby
+       A Ruby wrapper for the YOURLS API
+     * Python
+       A Python client for YOURLS
+     * VB .Net
+       A VB .Net 4.0 wrapper for the YOURLS API
+     * Javascript
+       JavaScript bindings for the YOURLS API to leverage JSONP support
+     * CakePHP
+       Plugin which integrates CakePHP with Yourls
+     * status.net
+       A plugin for status.net to use YOURLS
+     * Sharetronix
+       A YOURLS addon for Sharetronix
+
+YOURLS works with your favorite software or device
+
+     * Tweetie 2
+       How to set up Tweetie2 so it uses your own service
+     * Tweetbot
+       Make Tweetbot run with YOURLS
+     * Twitterfeed
+       Use Twitterfeed with YOURLS
+     * Mac Client
+       Simple app to have a global keyboard shortcut send a link to YOURLS
+     * Android: aYourls, URLy and URL Shortener
+       Android apps that plays nice with YOURLS
+     * iOS: ShortTail for YOURLS, Clicklytics and myYOURLS
+       Apps to use YOURLS on iPhones and iPads
+     * Chrourls
+       Google Chrome quick link shortening addon for YOURLS
+     * Firefox Addon
+       Firefox Addon for YOURLS
+     * Textexpander and YOURLS
+       Making YOURLS and Textexpander on the Mac play together
+
+More stuff to do with YOURLS
+
+     * Infinity Squared
+       ∞² is a public page theme for YOURLS to help you design your own
+       public interface
+     * Sleeky
+       Sleeky is another public page theme for YOURLS
+     * Scott Helme's page
+       Example index page listing all the URLs held in a YOURLS database
+
+"Celebrity endorsements", sort of.
+
+     * http://epic.gm/ by Epic Games
+     * http://mclrn.co/ by McLaren Cars
+     * http://smashed.by/ by Smashing Magazine
+     * http://oe.cd/ by the OECD
+     * http://cuny.is/ by the City University of New York
+     * http://virg.in/ for the Virgin Group companies
+     * http://dhurl.org/ by Dreamhost
+     * https://rho.st/ by RoseHosting.com
+
+   Note: this whole site is the actual readme file included with YOURLS.
+   Neat huh?
+   ﻿
+
+YOURLS: Your Own URL Shortener
+
+     * More
+     * FAQ
+     * API
+     * YOURLS plugins
+     * Config
+     * Install/Upgrade
+     * About
+
+   Tweet
+
+About YOURLS
+
+What is YOURLS
+
+   YOURLS stands for Your Own URL Shortener. It is a small set of PHP
+   scripts that will allow you to run your own URL shortening service (a
+   la TinyURL or Bitly).
+
+   Running your own URL shortener is fun, geeky and useful: you own your
+   data and don't depend on third-party services. It's also a great way to
+   add branding to your short URLs, instead of using the same public URL
+   shortener everyone uses.
+
+YOURLS Features
+
+     * Free and open-source software.
+     * Private (your links only) or Public (everybody can create short
+       links, fine for an intranet)
+     * Sequential or custom URL keywords
+     * Handy bookmarklets to easily shorten and share links
+     * Awesome stats: historical click reports, referrers tracking,
+       visitors geo-location
+     * Neat Ajaxed interface
+     * Terrific Plugin architecture to easily implement new features
+     * Cool developer API
+     * Full jsonp support
+     * Friendly installer
+     * Sample files to create your own public interface and more
+
+Screenshots
+
+   Main admin dashboard
+   [admin-dashboard.gif]
+
+   Stats for each short URL
+   [stats-anim.gif]
+
+   See a live example of YOURLS stats on https://yourls.org/cookie+
+
+Download
+
+   Download YOURLS from Github
+
+   You can follow YOURLS' development on the commit history and get
+   current development build
+
+Credits
+
+   YOURLS is made by awesome people.
+
+   Keep up to date: follow @yourls, @ozh (lead developer) and read the
+   official YOURLS Blog
+
+Fresh Install
+
+    1. Unzip the YOURLS archive
+    2. Copy user/config-sample.php to user/config.php
+    3. Open user/config.php with a raw text editor (like Notepad) and fill
+       in the required settings
+    4. Upload the unzipped files to your domain public_html or www folder
+    5. Create a new database (see Configuration – you can also use an
+       existing one)
+    6. Point your browser to http://your-own-domain-here.com/admin/
+
+Install Guides
+
+   Here is a list of some (unofficial) install guides using automated
+   tools:
+     * How to Install YOURLS on Ubuntu 14.04
+     * How to install YOURLS on Ubuntu 18.04
+     * How to Install YOURLS on a VPS or shared hosting
+     * How to Install YOURLS using Softaculous
+
+Upgrade
+
+    1. Backup the database!
+    2. Unzip the YOURLS archive
+    3. Upload files to your server, overwriting your existing install
+    4. Point your browser to http://your-own-domain-here.com/admin/
+    5. Tip: you can now move your config.php file to the /user directory
+
+Configuration (in user/config.php)
+
+MySQL settings
+
+     * YOURLS_DB_USER
+       your MySQL username
+       Example: define( 'YOURLS_DB_USER', 'joe' );
+     * YOURLS_DB_PASS
+       your MySQL password
+       Example: define( 'YOURLS_DB_PASS', 'MySeCreTPaSsW0rd' );
+     * YOURLS_DB_NAME: The database name
+       Example: define( 'YOURLS_DB_NAME', 'yourls' );
+     * YOURLS_DB_HOST
+       The database host
+       Example: define( 'YOURLS_DB_HOST', 'localhost' );
+     * YOURLS_DB_PREFIX
+       The name prefix for all the tables YOURLS will need
+       Example: define( 'YOURLS_DB_PREFIX', 'yourls_' );
+
+Site options
+
+     * YOURLS_SITE
+       Your (hopefully short) domain URL, no trailing slash, lowercase. If
+       you pick the non-www version of your domain, don't use the www
+       version in your browser (and vice-versa)
+       Example: define( 'YOURLS_SITE', 'http://ozh.in' );
+     * YOURLS_HOURS_OFFSET
+       Timezone GMT offset
+       Example: define( 'YOURLS_HOURS_OFFSET', '-5' );
+     * YOURLS_PRIVATE
+       Private means the admin area will be protected with login/pass as
+       defined below. See Private or Public for more.
+       Example: define( 'YOURLS_PRIVATE', 'true' );
+     * YOURLS_UNIQUE_URLS
+       Allow multiple short URLs for a same long URL
+       Set to true to allow only one pair of shortURL/longURL (default
+       YOURLS behavior), or to false to allow creation of multiple short
+       URLs pointing to the same long URL (as bit.ly does)
+       Example: define( 'YOURLS_UNIQUE_URLS', 'true' );
+     * YOURLS_COOKIEKEY
+       A random secret hash used to encrypt cookies. You don't have to
+       remember it, make it long and complicated. Hint: generate a unique
+       one at https://yourls.org/cookie
+       Example: define( 'YOURLS_COOKIEKEY', 'qQ4KhL_pu|s@Zm7n#%:b^{A[vhm'
+       );
+     * yourls_user_passwords
+       A list of username(s) and password(s) allowed to access the site if
+       private
+       Passwords can either be in plain text, or encrypted: see
+       https://yourls.org/userpassword for more information.
+       Example: 'joe' => 'mypassword'
+
+URL Shortening settings
+
+     * YOURLS_URL_CONVERT
+       URL shortening method: base 36 or 62. See FAQ for more explanations
+     * yourls_reserved_URL
+       A list of reserved keywords that won't be used as short URLs.
+       Define here negative, unwanted or potentially misleading keywords
+       Example: 'porn', 'faggot', 'sex', 'nigger', 'fuck', 'cunt', 'dick'
+
+Optional settings
+
+     * YOURLS_PRIVATE_INFOS
+       If YOURLS_PRIVATE is set to true, you can still make stat pages
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_INFOS', false);
+     * YOURLS_PRIVATE_API
+       If YOURLS_PRIVATE is set to true, you can still make your API
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_API', false);
+     * YOURLS_NOSTATS
+       If YOURLS_NOSTATS is set to true, redirects won't be logged and
+       there will be not stats available.
+
+Advanced settings
+
+     * YOURLS will look for the MySQL extension PDO, MySQLi or MySQL, in
+       that order. If you want to force usage of one particular extension,
+       add the following line to your config.php:
+       define( 'YOURLS_DB_DRIVER', 'mysqli' );
+     * You can install YOURLS behind a firewall or a proxy: see Proxy
+       Support
+     * File includes/load-yourls.php contains a few more undocumented but
+       self explanatory and commented settings. Add them to your own
+       config.php if you know what you're doing.
+
+Plugins for YOURLS
+
+Plugins?
+
+   Plugins are additional PHP scripts that extend the functionalities or
+   features of YOURLS. The core of YOURLS is designed to be as light as
+   possible and avoid bloat (implementing functions not everybody needs)
+   and to allow for easy customization.
+
+   Using the plugin architecture, you can add new features to YOURLS
+   without having to modify core files. This way, your changes won't be
+   lost when you upgrade your YOURLS installation and you can easily
+   activate and deactivate a plugin from the admin interface.
+
+   There's a growing number of plugins available: check the Plugin list.
+
+Documentation
+
+   Several sample plugins are included in the archive. Read the source and
+   learn the concept. It's easy and fun!
+
+   Check the plugin API documentation to learn more
+
+YOURLS' API
+
+Features
+
+     * Generate or get existing short URLs, with sequential or custom
+       keyword
+     * Get some statistics about your links: top clicked links, least
+       clicked links, newest links
+     * Output format: JSON, XML, or simple raw text
+     * Authentify either with login/password or using a secure
+       passwordless mechanism
+
+Usage
+
+   You need to send parameters to
+   http://your-own-domain-here.com/yourls-api.php either via GET or POST
+   (remember to URL-encode parameters if via GET). These parameters are:
+     * A valid username / password pair, or your signature (see
+       Passwordless API requests)
+     * The requested action: "shorturl" (get short URL for a link),
+       "expand" (get long URL of a shorturl), "url-stats" (get stats about
+       one short URL), "stats" (get stats about your links) or "db-stats"
+       (get global link and click count)
+     * With action = "shorturl" :
+          + the url to shorten
+          + optional keyword and title for custom short URLs
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "expand" :
+          + the shorturl to expand (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "url-stats" :
+          + the shorturl for which to get stats (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "stats" :
+          + the filter: either "top", "bottom" , "rand" or "last"
+          + the limit (maximum number of links to return)
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "db-stats" :
+          + output format: either "jsonp", "json" or "xml"
+
+Sample requests
+
+   Example of a GET request with Javascript (using jQuery) to shorten a
+   URL
+var api_url  = 'http://sho.rt/yourls-api.php';
+var response = $.get( api_url, {
+    username: "your_username",
+    password: "your_password",
+    action:   "shorturl",
+    format:   "json",
+    url:      "http://ozh.org/"
+    },
+    // callback function that will deal with the server response
+    function( data) {
+        // now do something with the data, for instance show new short URL:
+        alert(data.shorturl);
+    }
+);
+
+   Example of a POST request with PHP to expand a short URL
+<?php
+$username = 'your_username';
+$password = 'your_password';
+$api_url =  'http://sho.rt/yourls-api.php';
+
+// Init the CURL session
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $api_url);
+curl_setopt($ch, CURLOPT_HEADER, 0);            // No header in the result
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return, do not echo result
+curl_setopt($ch, CURLOPT_POST, 1);              // This is a POST request
+curl_setopt($ch, CURLOPT_POSTFIELDS, array(     // Data to POST
+        'shorturl' => 'ozh',
+        'format'   => 'json',
+        'action'   => 'expand',
+        'username' => $username,
+        'password' => $password
+    ));
+
+// Fetch and return content
+$data = curl_exec($ch);
+curl_close($ch);
+
+// Do something with the result. Here, we echo the long URL
+$data = json_decode( $data );
+echo $data->longurl;
+
+Sample returns
+
+   Sample return in JSON format for the shorturl action
+{
+  "url": {
+    "keyword": "ozh",
+    "url": "http:\/\/ozh.org",
+    "title": "Ozh RICHARD \u00ab ozh.org",
+    "date": "2014-10-24 16:01:39",
+    "ip": "127.0.0.1"
+  },
+  "status": "success",
+  "message": "http:\/\/ozh.org added to database",
+  "title": "Ozh RICHARD \u00ab ozh.org",
+  "shorturl": "http:\/\/sho.rt\/1f",
+  "statusCode": 200
+}
+
+   Sample return in XML format for the expand action
+<result>
+    <keyword>ozh</keyword>
+    <shorturl>http://sho.rt/ozh</shorturl>
+    <longurl>http://ozh.org/</longurl>
+    <message>success</message>
+    <statusCode>200</statusCode>
+</result>
+
+Sample file
+
+   There's a sample PHP file included that serves as an example on how to
+   play with the API
+
+Expand the API
+
+   You can easily implement custom API actions with a plugin. See the
+   plugin list for examples.
+
+FAQ
+
+Server requirements
+
+    1. A server with mod_rewrite enabled
+    2. At least PHP 5.6
+    3. At least MYSQL 5
+    4. Note: YOURLS can also run on Nginx and Cherokee
+
+Server recommendations
+
+     * PHP CURL extension installed if you plan on playing with the API
+
+Limitations
+
+     * Maximum length of custom keyword is 200 characters
+     * That makes about 8 sexdecillions of centillions of available URLs
+       (seriously. That's a 355-digit number).
+
+Difference Between Base 36 And Base 62 Encoding
+
+     * Base 36 encoding uses 0123456789abcdefghijklmnopqrstuvwxyz for
+       short URLs
+     * Base 62 encoding uses
+       0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+     * Stick to one setting, don't change after you've created links as it
+       will change all your short URLs!
+     * Base 36 is the default and should be picked if you're not sure.
+
+Getting a short domain name for your YOURLS install
+
+     * Unless you plan on making it public and as popular as bit.ly, any
+       shared hosting will be fine. Ozh runs all his YOURLS instance on
+       Dreamhost and it works just great.
+     * Domainr is a fun search tool that might inspire and help you
+     * Aim for exotic top level domains (.in, .im, .li ...), they're often
+       cheap and a lot are still available. Gandi is a pretty
+       comprehensive registrar, for instance.
+
+YOURLS needs its own .htaccess
+
+     * You cannot install YOURLS and, say, WordPress, in the same
+       directory. Both need to handle URLs differently and need their own
+       .htaccess file.
+     * If you want to install YOURLS on the same domain than your blog,
+       give it its own (short) subdirectory, such as yourblog.com/s/ (for
+       "short") or yourblog.com/x/ (for "exit")
+
+If YOURLS generates 404 for your short URLs
+
+     * Make sure mod_rewrite is enabled with your Apache server
+     * Make sure your .htaccess file looks like this one
+     * Eventually, check your server Apache configuration allows use of
+       .htaccess (AllowOverride All directive, ask your server admin)
+
+Random versus sequential short URLs
+
+     * Out of the box, YOURLS generates sequential short URLS (ie ab31,
+       then ab32 and so on)
+     * If you prefer random short URLs (ie j3kz1 then 13hz7 like Bitly
+       does), just activate the plugin that comes with YOURLS.
+
+"Stats don't update as I think they should", "difference with Google
+Analytics", etc...
+
+     * Out of the box, YOURLS updates traffic stats every time a short URL
+       is requested. Period.
+     * This said, some clients (like indexing bots, your internet browser)
+       may skip requesting a short URL if they have the final destination
+       known in cache.
+     * Conversely, other stat tools may use different techniques to track
+       hits (using javascript or not, using IP adress, filtering multiple
+       requests by same client, etc...)
+     * Bottom line: your mileage may vary with different tools, but there
+       is no bug in YOURLS regarding that matter.
+
+There is no index page at the root of the install
+
+     * Indeed. It's intended. It's up to the user to make what they need.
+       Some will redirect the root to a different place, some make a
+       public interface for anyone to shorten links, some make a
+       portfolio. You make it.
+     * If you want to make a public interface and run your own little
+       bitly.com, there's a sample file provided as an example:
+       sample-public-front-page.txt. This implies important issues to deal
+       with: spam, performance and security. Read Public Shortening for
+       important information.
+
+Uppercase letters in short URLs are eaten up, eg "OmgOzh" becomes "mgzh" !
+
+     * Indeed. It's intented if you selected Base 36 (see above). Letters
+       that don't belong to the character set, eg @#! or ABC, are removed.
+     * If you want to force lowercase, you'll need a plugin.
+
+Feedback, feature requests and bug reporting
+
+    1. Please don't get in touch directly by mail or Twitter. Please.
+    2. Check the Road Map for future features.
+    3. Read all the wiki documents.
+    4. Search in all the issues, open and closed.
+    5. Eventually raise a new issue. To do so, please read the contribute
+       guidelines. Thanks!
+
+Community
+
+   YOURLS is open source, so the community of users plays a great role in
+   its development, by contributing, helping others or giving feedback
+   that helps improve the software.
+
+Resources
+
+     * The official YOURLS blog, for news, hints and showcase.
+     * The wiki: advanced documentation, plugins, tips and more
+     * Follow @YOURLS for hardcore development, and @Ozh for tips and news
+       (and random geekiness too)
+
+Showcase
+
+YOURLS reviews
+
+     * Early YOURLS review on Lifehacker
+     * Comprehensive YOURLS history and review on Dating News
+
+Here are a few examples of sites running YOURLS with a unique design or
+concept
+
+     * http://oe.cd/
+       OECD's internal URL shortener with a neat interface and private
+       features
+     * http://yourwish.es/
+       Easily share an Amazon wishlist
+     * http://vbly.us
+       Public YOURLS setup and early adopter, run by famous sex writer
+       Violet Blue as "the internet's first and only sex-positive url
+       shortener", once taken down by Libya (story)
+
+YOURLS and other platforms or frameworks
+
+     * WordPress
+       There are numerous WordPress plugin with YOURLS support. YOURLS
+       Link Creator is recommended.
+     * Drupal
+       Allows for the automatic creation of short urls using a YOURLS
+       installation
+     * Perl
+       WWW-Shorten-Yourls is a Perl module to shorten URLs using YOURLS
+     * Ruby
+       A Ruby wrapper for the YOURLS API
+     * Python
+       A Python client for YOURLS
+     * VB .Net
+       A VB .Net 4.0 wrapper for the YOURLS API
+     * Javascript
+       JavaScript bindings for the YOURLS API to leverage JSONP support
+     * CakePHP
+       Plugin which integrates CakePHP with Yourls
+     * status.net
+       A plugin for status.net to use YOURLS
+     * Sharetronix
+       A YOURLS addon for Sharetronix
+
+YOURLS works with your favorite software or device
+
+     * Tweetie 2
+       How to set up Tweetie2 so it uses your own service
+     * Tweetbot
+       Make Tweetbot run with YOURLS
+     * Twitterfeed
+       Use Twitterfeed with YOURLS
+     * Mac Client
+       Simple app to have a global keyboard shortcut send a link to YOURLS
+     * Android: aYourls, URLy and URL Shortener
+       Android apps that plays nice with YOURLS
+     * iOS: ShortTail for YOURLS, Clicklytics and myYOURLS
+       Apps to use YOURLS on iPhones and iPads
+     * Chrourls
+       Google Chrome quick link shortening addon for YOURLS
+     * Firefox Addon
+       Firefox Addon for YOURLS
+     * Textexpander and YOURLS
+       Making YOURLS and Textexpander on the Mac play together
+
+More stuff to do with YOURLS
+
+     * Infinity Squared
+       ∞² is a public page theme for YOURLS to help you design your own
+       public interface
+     * Sleeky
+       Sleeky is another public page theme for YOURLS
+     * Scott Helme's page
+       Example index page listing all the URLs held in a YOURLS database
+
+"Celebrity endorsements", sort of.
+
+     * http://epic.gm/ by Epic Games
+     * http://mclrn.co/ by McLaren Cars
+     * http://smashed.by/ by Smashing Magazine
+     * http://oe.cd/ by the OECD
+     * http://cuny.is/ by the City University of New York
+     * http://virg.in/ for the Virgin Group companies
+     * http://dhurl.org/ by Dreamhost
+     * https://rho.st/ by RoseHosting.com
+
+   Note: this whole site is the actual readme file included with YOURLS.
+   Neat huh?
+   ﻿
+
+YOURLS: Your Own URL Shortener
+
+     * More
+     * FAQ
+     * API
+     * YOURLS plugins
+     * Config
+     * Install/Upgrade
+     * About
+
+   Tweet
+
+About YOURLS
+
+What is YOURLS
+
+   YOURLS stands for Your Own URL Shortener. It is a small set of PHP
+   scripts that will allow you to run your own URL shortening service (a
+   la TinyURL or Bitly).
+
+   Running your own URL shortener is fun, geeky and useful: you own your
+   data and don't depend on third-party services. It's also a great way to
+   add branding to your short URLs, instead of using the same public URL
+   shortener everyone uses.
+
+YOURLS Features
+
+     * Free and open-source software.
+     * Private (your links only) or Public (everybody can create short
+       links, fine for an intranet)
+     * Sequential or custom URL keywords
+     * Handy bookmarklets to easily shorten and share links
+     * Awesome stats: historical click reports, referrers tracking,
+       visitors geo-location
+     * Neat Ajaxed interface
+     * Terrific Plugin architecture to easily implement new features
+     * Cool developer API
+     * Full jsonp support
+     * Friendly installer
+     * Sample files to create your own public interface and more
+
+Screenshots
+
+   Main admin dashboard
+   [admin-dashboard.gif]
+
+   Stats for each short URL
+   [stats-anim.gif]
+
+   See a live example of YOURLS stats on https://yourls.org/cookie+
+
+Download
+
+   Download YOURLS from Github
+
+   You can follow YOURLS' development on the commit history and get
+   current development build
+
+Credits
+
+   YOURLS is made by awesome people.
+
+   Keep up to date: follow @yourls, @ozh (lead developer) and read the
+   official YOURLS Blog
+
+Fresh Install
+
+    1. Unzip the YOURLS archive
+    2. Copy user/config-sample.php to user/config.php
+    3. Open user/config.php with a raw text editor (like Notepad) and fill
+       in the required settings
+    4. Upload the unzipped files to your domain public_html or www folder
+    5. Create a new database (see Configuration – you can also use an
+       existing one)
+    6. Point your browser to http://your-own-domain-here.com/admin/
+
+Install Guides
+
+   Here is a list of some (unofficial) install guides using automated
+   tools:
+     * How to Install YOURLS on Ubuntu 14.04
+     * How to install YOURLS on Ubuntu 18.04
+     * How to Install YOURLS on a VPS or shared hosting
+     * How to Install YOURLS using Softaculous
+
+Upgrade
+
+    1. Backup the database!
+    2. Unzip the YOURLS archive
+    3. Upload files to your server, overwriting your existing install
+    4. Point your browser to http://your-own-domain-here.com/admin/
+    5. Tip: you can now move your config.php file to the /user directory
+
+Configuration (in user/config.php)
+
+MySQL settings
+
+     * YOURLS_DB_USER
+       your MySQL username
+       Example: define( 'YOURLS_DB_USER', 'joe' );
+     * YOURLS_DB_PASS
+       your MySQL password
+       Example: define( 'YOURLS_DB_PASS', 'MySeCreTPaSsW0rd' );
+     * YOURLS_DB_NAME: The database name
+       Example: define( 'YOURLS_DB_NAME', 'yourls' );
+     * YOURLS_DB_HOST
+       The database host
+       Example: define( 'YOURLS_DB_HOST', 'localhost' );
+     * YOURLS_DB_PREFIX
+       The name prefix for all the tables YOURLS will need
+       Example: define( 'YOURLS_DB_PREFIX', 'yourls_' );
+
+Site options
+
+     * YOURLS_SITE
+       Your (hopefully short) domain URL, no trailing slash, lowercase. If
+       you pick the non-www version of your domain, don't use the www
+       version in your browser (and vice-versa)
+       Example: define( 'YOURLS_SITE', 'http://ozh.in' );
+     * YOURLS_HOURS_OFFSET
+       Timezone GMT offset
+       Example: define( 'YOURLS_HOURS_OFFSET', '-5' );
+     * YOURLS_PRIVATE
+       Private means the admin area will be protected with login/pass as
+       defined below. See Private or Public for more.
+       Example: define( 'YOURLS_PRIVATE', 'true' );
+     * YOURLS_UNIQUE_URLS
+       Allow multiple short URLs for a same long URL
+       Set to true to allow only one pair of shortURL/longURL (default
+       YOURLS behavior), or to false to allow creation of multiple short
+       URLs pointing to the same long URL (as bit.ly does)
+       Example: define( 'YOURLS_UNIQUE_URLS', 'true' );
+     * YOURLS_COOKIEKEY
+       A random secret hash used to encrypt cookies. You don't have to
+       remember it, make it long and complicated. Hint: generate a unique
+       one at https://yourls.org/cookie
+       Example: define( 'YOURLS_COOKIEKEY', 'qQ4KhL_pu|s@Zm7n#%:b^{A[vhm'
+       );
+     * yourls_user_passwords
+       A list of username(s) and password(s) allowed to access the site if
+       private
+       Passwords can either be in plain text, or encrypted: see
+       https://yourls.org/userpassword for more information.
+       Example: 'joe' => 'mypassword'
+
+URL Shortening settings
+
+     * YOURLS_URL_CONVERT
+       URL shortening method: base 36 or 62. See FAQ for more explanations
+     * yourls_reserved_URL
+       A list of reserved keywords that won't be used as short URLs.
+       Define here negative, unwanted or potentially misleading keywords
+       Example: 'porn', 'faggot', 'sex', 'nigger', 'fuck', 'cunt', 'dick'
+
+Optional settings
+
+     * YOURLS_PRIVATE_INFOS
+       If YOURLS_PRIVATE is set to true, you can still make stat pages
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_INFOS', false);
+     * YOURLS_PRIVATE_API
+       If YOURLS_PRIVATE is set to true, you can still make your API
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_API', false);
+     * YOURLS_NOSTATS
+       If YOURLS_NOSTATS is set to true, redirects won't be logged and
+       there will be not stats available.
+
+Advanced settings
+
+     * YOURLS will look for the MySQL extension PDO, MySQLi or MySQL, in
+       that order. If you want to force usage of one particular extension,
+       add the following line to your config.php:
+       define( 'YOURLS_DB_DRIVER', 'mysqli' );
+     * You can install YOURLS behind a firewall or a proxy: see Proxy
+       Support
+     * File includes/load-yourls.php contains a few more undocumented but
+       self explanatory and commented settings. Add them to your own
+       config.php if you know what you're doing.
+
+Plugins for YOURLS
+
+Plugins?
+
+   Plugins are additional PHP scripts that extend the functionalities or
+   features of YOURLS. The core of YOURLS is designed to be as light as
+   possible and avoid bloat (implementing functions not everybody needs)
+   and to allow for easy customization.
+
+   Using the plugin architecture, you can add new features to YOURLS
+   without having to modify core files. This way, your changes won't be
+   lost when you upgrade your YOURLS installation and you can easily
+   activate and deactivate a plugin from the admin interface.
+
+   There's a growing number of plugins available: check the Plugin list.
+
+Documentation
+
+   Several sample plugins are included in the archive. Read the source and
+   learn the concept. It's easy and fun!
+
+   Check the plugin API documentation to learn more
+
+YOURLS' API
+
+Features
+
+     * Generate or get existing short URLs, with sequential or custom
+       keyword
+     * Get some statistics about your links: top clicked links, least
+       clicked links, newest links
+     * Output format: JSON, XML, or simple raw text
+     * Authentify either with login/password or using a secure
+       passwordless mechanism
+
+Usage
+
+   You need to send parameters to
+   http://your-own-domain-here.com/yourls-api.php either via GET or POST
+   (remember to URL-encode parameters if via GET). These parameters are:
+     * A valid username / password pair, or your signature (see
+       Passwordless API requests)
+     * The requested action: "shorturl" (get short URL for a link),
+       "expand" (get long URL of a shorturl), "url-stats" (get stats about
+       one short URL), "stats" (get stats about your links) or "db-stats"
+       (get global link and click count)
+     * With action = "shorturl" :
+          + the url to shorten
+          + optional keyword and title for custom short URLs
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "expand" :
+          + the shorturl to expand (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "url-stats" :
+          + the shorturl for which to get stats (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "stats" :
+          + the filter: either "top", "bottom" , "rand" or "last"
+          + the limit (maximum number of links to return)
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "db-stats" :
+          + output format: either "jsonp", "json" or "xml"
+
+Sample requests
+
+   Example of a GET request with Javascript (using jQuery) to shorten a
+   URL
+var api_url  = 'http://sho.rt/yourls-api.php';
+var response = $.get( api_url, {
+    username: "your_username",
+    password: "your_password",
+    action:   "shorturl",
+    format:   "json",
+    url:      "http://ozh.org/"
+    },
+    // callback function that will deal with the server response
+    function( data) {
+        // now do something with the data, for instance show new short URL:
+        alert(data.shorturl);
+    }
+);
+
+   Example of a POST request with PHP to expand a short URL
+<?php
+$username = 'your_username';
+$password = 'your_password';
+$api_url =  'http://sho.rt/yourls-api.php';
+
+// Init the CURL session
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $api_url);
+curl_setopt($ch, CURLOPT_HEADER, 0);            // No header in the result
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return, do not echo result
+curl_setopt($ch, CURLOPT_POST, 1);              // This is a POST request
+curl_setopt($ch, CURLOPT_POSTFIELDS, array(     // Data to POST
+        'shorturl' => 'ozh',
+        'format'   => 'json',
+        'action'   => 'expand',
+        'username' => $username,
+        'password' => $password
+    ));
+
+// Fetch and return content
+$data = curl_exec($ch);
+curl_close($ch);
+
+// Do something with the result. Here, we echo the long URL
+$data = json_decode( $data );
+echo $data->longurl;
+
+Sample returns
+
+   Sample return in JSON format for the shorturl action
+{
+  "url": {
+    "keyword": "ozh",
+    "url": "http:\/\/ozh.org",
+    "title": "Ozh RICHARD \u00ab ozh.org",
+    "date": "2014-10-24 16:01:39",
+    "ip": "127.0.0.1"
+  },
+  "status": "success",
+  "message": "http:\/\/ozh.org added to database",
+  "title": "Ozh RICHARD \u00ab ozh.org",
+  "shorturl": "http:\/\/sho.rt\/1f",
+  "statusCode": 200
+}
+
+   Sample return in XML format for the expand action
+<result>
+    <keyword>ozh</keyword>
+    <shorturl>http://sho.rt/ozh</shorturl>
+    <longurl>http://ozh.org/</longurl>
+    <message>success</message>
+    <statusCode>200</statusCode>
+</result>
+
+Sample file
+
+   There's a sample PHP file included that serves as an example on how to
+   play with the API
+
+Expand the API
+
+   You can easily implement custom API actions with a plugin. See the
+   plugin list for examples.
+
+FAQ
+
+Server requirements
+
+    1. A server with mod_rewrite enabled
+    2. At least PHP 5.6
+    3. At least MYSQL 5
+    4. Note: YOURLS can also run on Nginx and Cherokee
+
+Server recommendations
+
+     * PHP CURL extension installed if you plan on playing with the API
+
+Limitations
+
+     * Maximum length of custom keyword is 200 characters
+     * That makes about 8 sexdecillions of centillions of available URLs
+       (seriously. That's a 355-digit number).
+
+Difference Between Base 36 And Base 62 Encoding
+
+     * Base 36 encoding uses 0123456789abcdefghijklmnopqrstuvwxyz for
+       short URLs
+     * Base 62 encoding uses
+       0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+     * Stick to one setting, don't change after you've created links as it
+       will change all your short URLs!
+     * Base 36 is the default and should be picked if you're not sure.
+
+Getting a short domain name for your YOURLS install
+
+     * Unless you plan on making it public and as popular as bit.ly, any
+       shared hosting will be fine. Ozh runs all his YOURLS instance on
+       Dreamhost and it works just great.
+     * Domainr is a fun search tool that might inspire and help you
+     * Aim for exotic top level domains (.in, .im, .li ...), they're often
+       cheap and a lot are still available. Gandi is a pretty
+       comprehensive registrar, for instance.
+
+YOURLS needs its own .htaccess
+
+     * You cannot install YOURLS and, say, WordPress, in the same
+       directory. Both need to handle URLs differently and need their own
+       .htaccess file.
+     * If you want to install YOURLS on the same domain than your blog,
+       give it its own (short) subdirectory, such as yourblog.com/s/ (for
+       "short") or yourblog.com/x/ (for "exit")
+
+If YOURLS generates 404 for your short URLs
+
+     * Make sure mod_rewrite is enabled with your Apache server
+     * Make sure your .htaccess file looks like this one
+     * Eventually, check your server Apache configuration allows use of
+       .htaccess (AllowOverride All directive, ask your server admin)
+
+Random versus sequential short URLs
+
+     * Out of the box, YOURLS generates sequential short URLS (ie ab31,
+       then ab32 and so on)
+     * If you prefer random short URLs (ie j3kz1 then 13hz7 like Bitly
+       does), just activate the plugin that comes with YOURLS.
+
+"Stats don't update as I think they should", "difference with Google
+Analytics", etc...
+
+     * Out of the box, YOURLS updates traffic stats every time a short URL
+       is requested. Period.
+     * This said, some clients (like indexing bots, your internet browser)
+       may skip requesting a short URL if they have the final destination
+       known in cache.
+     * Conversely, other stat tools may use different techniques to track
+       hits (using javascript or not, using IP adress, filtering multiple
+       requests by same client, etc...)
+     * Bottom line: your mileage may vary with different tools, but there
+       is no bug in YOURLS regarding that matter.
+
+There is no index page at the root of the install
+
+     * Indeed. It's intended. It's up to the user to make what they need.
+       Some will redirect the root to a different place, some make a
+       public interface for anyone to shorten links, some make a
+       portfolio. You make it.
+     * If you want to make a public interface and run your own little
+       bitly.com, there's a sample file provided as an example:
+       sample-public-front-page.txt. This implies important issues to deal
+       with: spam, performance and security. Read Public Shortening for
+       important information.
+
+Uppercase letters in short URLs are eaten up, eg "OmgOzh" becomes "mgzh" !
+
+     * Indeed. It's intented if you selected Base 36 (see above). Letters
+       that don't belong to the character set, eg @#! or ABC, are removed.
+     * If you want to force lowercase, you'll need a plugin.
+
+Feedback, feature requests and bug reporting
+
+    1. Please don't get in touch directly by mail or Twitter. Please.
+    2. Check the Road Map for future features.
+    3. Read all the wiki documents.
+    4. Search in all the issues, open and closed.
+    5. Eventually raise a new issue. To do so, please read the contribute
+       guidelines. Thanks!
+
+Community
+
+   YOURLS is open source, so the community of users plays a great role in
+   its development, by contributing, helping others or giving feedback
+   that helps improve the software.
+
+Resources
+
+     * The official YOURLS blog, for news, hints and showcase.
+     * The wiki: advanced documentation, plugins, tips and more
+     * Follow @YOURLS for hardcore development, and @Ozh for tips and news
+       (and random geekiness too)
+
+Showcase
+
+YOURLS reviews
+
+     * Early YOURLS review on Lifehacker
+     * Comprehensive YOURLS history and review on Dating News
+
+Here are a few examples of sites running YOURLS with a unique design or
+concept
+
+     * http://oe.cd/
+       OECD's internal URL shortener with a neat interface and private
+       features
+     * http://yourwish.es/
+       Easily share an Amazon wishlist
+     * http://vbly.us
+       Public YOURLS setup and early adopter, run by famous sex writer
+       Violet Blue as "the internet's first and only sex-positive url
+       shortener", once taken down by Libya (story)
+
+YOURLS and other platforms or frameworks
+
+     * WordPress
+       There are numerous WordPress plugin with YOURLS support. YOURLS
+       Link Creator is recommended.
+     * Drupal
+       Allows for the automatic creation of short urls using a YOURLS
+       installation
+     * Perl
+       WWW-Shorten-Yourls is a Perl module to shorten URLs using YOURLS
+     * Ruby
+       A Ruby wrapper for the YOURLS API
+     * Python
+       A Python client for YOURLS
+     * VB .Net
+       A VB .Net 4.0 wrapper for the YOURLS API
+     * Javascript
+       JavaScript bindings for the YOURLS API to leverage JSONP support
+     * CakePHP
+       Plugin which integrates CakePHP with Yourls
+     * status.net
+       A plugin for status.net to use YOURLS
+     * Sharetronix
+       A YOURLS addon for Sharetronix
+
+YOURLS works with your favorite software or device
+
+     * Tweetie 2
+       How to set up Tweetie2 so it uses your own service
+     * Tweetbot
+       Make Tweetbot run with YOURLS
+     * Twitterfeed
+       Use Twitterfeed with YOURLS
+     * Mac Client
+       Simple app to have a global keyboard shortcut send a link to YOURLS
+     * Android: aYourls, URLy and URL Shortener
+       Android apps that plays nice with YOURLS
+     * iOS: ShortTail for YOURLS, Clicklytics and myYOURLS
+       Apps to use YOURLS on iPhones and iPads
+     * Chrourls
+       Google Chrome quick link shortening addon for YOURLS
+     * Firefox Addon
+       Firefox Addon for YOURLS
+     * Textexpander and YOURLS
+       Making YOURLS and Textexpander on the Mac play together
+
+More stuff to do with YOURLS
+
+     * Infinity Squared
+       ∞² is a public page theme for YOURLS to help you design your own
+       public interface
+     * Sleeky
+       Sleeky is another public page theme for YOURLS
+     * Scott Helme's page
+       Example index page listing all the URLs held in a YOURLS database
+
+"Celebrity endorsements", sort of.
+
+     * http://epic.gm/ by Epic Games
+     * http://mclrn.co/ by McLaren Cars
+     * http://smashed.by/ by Smashing Magazine
+     * http://oe.cd/ by the OECD
+     * http://cuny.is/ by the City University of New York
+     * http://virg.in/ for the Virgin Group companies
+     * http://dhurl.org/ by Dreamhost
+     * https://rho.st/ by RoseHosting.com
+
+   Note: this whole site is the actual readme file included with YOURLS.
+   Neat huh?
+   ﻿
+
+YOURLS: Your Own URL Shortener
+
+     * More
+     * FAQ
+     * API
+     * YOURLS plugins
+     * Config
+     * Install/Upgrade
+     * About
+
+   Tweet
+
+About YOURLS
+
+What is YOURLS
+
+   YOURLS stands for Your Own URL Shortener. It is a small set of PHP
+   scripts that will allow you to run your own URL shortening service (a
+   la TinyURL or Bitly).
+
+   Running your own URL shortener is fun, geeky and useful: you own your
+   data and don't depend on third-party services. It's also a great way to
+   add branding to your short URLs, instead of using the same public URL
+   shortener everyone uses.
+
+YOURLS Features
+
+     * Free and open-source software.
+     * Private (your links only) or Public (everybody can create short
+       links, fine for an intranet)
+     * Sequential or custom URL keywords
+     * Handy bookmarklets to easily shorten and share links
+     * Awesome stats: historical click reports, referrers tracking,
+       visitors geo-location
+     * Neat Ajaxed interface
+     * Terrific Plugin architecture to easily implement new features
+     * Cool developer API
+     * Full jsonp support
+     * Friendly installer
+     * Sample files to create your own public interface and more
+
+Screenshots
+
+   Main admin dashboard
+   [admin-dashboard.gif]
+
+   Stats for each short URL
+   [stats-anim.gif]
+
+   See a live example of YOURLS stats on https://yourls.org/cookie+
+
+Download
+
+   Download YOURLS from GitHub
+
+   You can follow YOURLS' development on the commit history and get
+   current development build
+
+Credits
+
+   YOURLS is made by awesome people.
+
+   Keep up to date: follow @yourls, @ozh (lead developer) and read the
+   official YOURLS Blog
+
+Fresh Install
+
+    1. Unzip the YOURLS archive
+    2. Copy user/config-sample.php to user/config.php
+    3. Open user/config.php with a raw text editor (like Notepad) and fill
+       in the required settings
+    4. Upload the unzipped files to your domain public_html or www folder
+    5. Create a new database (see Configuration – you can also use an
+       existing one)
+    6. Point your browser to http://your-own-domain-here.com/admin/
+
+Install Guides
+
+   Here is a list of some (unofficial) install guides using automated
+   tools:
+     * How to Install YOURLS on Ubuntu 14.04
+     * How to install YOURLS on Ubuntu 18.04
+     * How to Install YOURLS on a VPS or shared hosting
+     * How to Install YOURLS using Softaculous
+
+Upgrade
+
+    1. Backup the database!
+    2. Unzip the YOURLS archive
+    3. Upload files to your server, overwriting your existing install
+    4. Point your browser to http://your-own-domain-here.com/admin/
+    5. Tip: you can now move your config.php file to the /user directory
+
+Configuration (in user/config.php)
+
+MySQL settings
+
+     * YOURLS_DB_USER
+       your MySQL username
+       Example: define( 'YOURLS_DB_USER', 'joe' );
+     * YOURLS_DB_PASS
+       your MySQL password
+       Example: define( 'YOURLS_DB_PASS', 'MySeCreTPaSsW0rd' );
+     * YOURLS_DB_NAME: The database name
+       Example: define( 'YOURLS_DB_NAME', 'yourls' );
+     * YOURLS_DB_HOST
+       The database host
+       Example: define( 'YOURLS_DB_HOST', 'localhost' );
+     * YOURLS_DB_PREFIX
+       The name prefix for all the tables YOURLS will need
+       Example: define( 'YOURLS_DB_PREFIX', 'yourls_' );
+
+Site options
+
+     * YOURLS_SITE
+       Your (hopefully short) domain URL, no trailing slash, lowercase. If
+       you pick the non-www version of your domain, don't use the www
+       version in your browser (and vice-versa)
+       Example: define( 'YOURLS_SITE', 'http://ozh.in' );
+     * YOURLS_HOURS_OFFSET
+       Timezone GMT offset
+       Example: define( 'YOURLS_HOURS_OFFSET', '-5' );
+     * YOURLS_PRIVATE
+       Private means the admin area will be protected with login/pass as
+       defined below. See Private or Public for more.
+       Example: define( 'YOURLS_PRIVATE', 'true' );
+     * YOURLS_UNIQUE_URLS
+       Allow multiple short URLs for a same long URL
+       Set to true to allow only one pair of shortURL/longURL (default
+       YOURLS behavior), or to false to allow creation of multiple short
+       URLs pointing to the same long URL (as bit.ly does)
+       Example: define( 'YOURLS_UNIQUE_URLS', 'true' );
+     * YOURLS_COOKIEKEY
+       A random secret hash used to encrypt cookies. You don't have to
+       remember it, make it long and complicated. Hint: generate a unique
+       one at https://yourls.org/cookie
+       Example: define( 'YOURLS_COOKIEKEY', 'qQ4KhL_pu|s@Zm7n#%:b^{A[vhm'
+       );
+     * yourls_user_passwords
+       A list of username(s) and password(s) allowed to access the site if
+       private
+       Passwords can either be in plain text, or encrypted: see
+       https://yourls.org/userpassword for more information.
+       Example: 'joe' => 'mypassword'
+
+URL Shortening settings
+
+     * YOURLS_URL_CONVERT
+       URL shortening method: base 36 or 62. See FAQ for more explanations
+     * yourls_reserved_URL
+       A list of reserved keywords that won't be used as short URLs.
+       Define here negative, unwanted or potentially misleading keywords
+       Example: 'porn', 'faggot', 'sex', 'nigger', 'fuck', 'cunt', 'dick'
+
+Optional settings
+
+     * YOURLS_PRIVATE_INFOS
+       If YOURLS_PRIVATE is set to true, you can still make stat pages
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_INFOS', false);
+     * YOURLS_PRIVATE_API
+       If YOURLS_PRIVATE is set to true, you can still make your API
+       public. To do so, define with:
+       define('YOURLS_PRIVATE_API', false);
+     * YOURLS_NOSTATS
+       If YOURLS_NOSTATS is set to true, redirects won't be logged and
+       there will be not stats available.
+
+Advanced settings
+
+     * YOURLS will look for the MySQL extension PDO, MySQLi or MySQL, in
+       that order. If you want to force usage of one particular extension,
+       add the following line to your config.php:
+       define( 'YOURLS_DB_DRIVER', 'mysqli' );
+     * You can install YOURLS behind a firewall or a proxy: see Proxy
+       Support
+     * File includes/load-yourls.php contains a few more undocumented but
+       self explanatory and commented settings. Add them to your own
+       config.php if you know what you're doing.
+
+Plugins for YOURLS
+
+Plugins?
+
+   Plugins are additional PHP scripts that extend the functionalities or
+   features of YOURLS. The core of YOURLS is designed to be as light as
+   possible and avoid bloat (implementing functions not everybody needs)
+   and to allow for easy customization.
+
+   Using the plugin architecture, you can add new features to YOURLS
+   without having to modify core files. This way, your changes won't be
+   lost when you upgrade your YOURLS installation and you can easily
+   activate and deactivate a plugin from the admin interface.
+
+   There's a growing number of plugins available: check the Plugin list.
+
+Documentation
+
+   Several sample plugins are included in the archive. Read the source and
+   learn the concept. It's easy and fun!
+
+   Check the plugin API documentation to learn more
+
+YOURLS' API
+
+Features
+
+     * Generate or get existing short URLs, with sequential or custom
+       keyword
+     * Get some statistics about your links: top clicked links, least
+       clicked links, newest links
+     * Output format: JSON, XML, or simple raw text
+     * Authentify either with login/password or using a secure
+       passwordless mechanism
+
+Usage
+
+   You need to send parameters to
+   http://your-own-domain-here.com/yourls-api.php either via GET or POST
+   (remember to URL-encode parameters if via GET). These parameters are:
+     * A valid username / password pair, or your signature (see
+       Passwordless API requests)
+     * The requested action: "shorturl" (get short URL for a link),
+       "expand" (get long URL of a shorturl), "url-stats" (get stats about
+       one short URL), "stats" (get stats about your links) or "db-stats"
+       (get global link and click count)
+     * With action = "shorturl" :
+          + the url to shorten
+          + optional keyword and title for custom short URLs
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "expand" :
+          + the shorturl to expand (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json", "xml" or "simple"
+     * With action = "url-stats" :
+          + the shorturl for which to get stats (can be either 'abc' or
+            'http://site/abc')
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "stats" :
+          + the filter: either "top", "bottom" , "rand" or "last"
+          + the limit (maximum number of links to return)
+          + output format: either "jsonp", "json" or "xml"
+     * With action = "db-stats" :
+          + output format: either "jsonp", "json" or "xml"
+
+Sample requests
+
+   Example of a GET request with Javascript (using jQuery) to shorten a
+   URL
+var api_url  = 'http://sho.rt/yourls-api.php';
+var response = $.get( api_url, {
+    username: "your_username",
+    password: "your_password",
+    action:   "shorturl",
+    format:   "json",
+    url:      "http://ozh.org/"
+    },
+    // callback function that will deal with the server response
+    function( data) {
+        // now do something with the data, for instance show new short URL:
+        alert(data.shorturl);
+    }
+);
+
+   Example of a POST request with PHP to expand a short URL
+<?php
+$username = 'your_username';
+$password = 'your_password';
+$api_url =  'http://sho.rt/yourls-api.php';
+
+// Init the CURL session
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $api_url);
+curl_setopt($ch, CURLOPT_HEADER, 0);            // No header in the result
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return, do not echo result
+curl_setopt($ch, CURLOPT_POST, 1);              // This is a POST request
+curl_setopt($ch, CURLOPT_POSTFIELDS, array(     // Data to POST
+        'shorturl' => 'ozh',
+        'format'   => 'json',
+        'action'   => 'expand',
+        'username' => $username,
+        'password' => $password
+    ));
+
+// Fetch and return content
+$data = curl_exec($ch);
+curl_close($ch);
+
+// Do something with the result. Here, we echo the long URL
+$data = json_decode( $data );
+echo $data->longurl;
+
+Sample returns
+
+   Sample return in JSON format for the shorturl action
+{
+  "url": {
+    "keyword": "ozh",
+    "url": "http:\/\/ozh.org",
+    "title": "Ozh RICHARD \u00ab ozh.org",
+    "date": "2014-10-24 16:01:39",
+    "ip": "127.0.0.1"
+  },
+  "status": "success",
+  "message": "http:\/\/ozh.org added to database",
+  "title": "Ozh RICHARD \u00ab ozh.org",
+  "shorturl": "http:\/\/sho.rt\/1f",
+  "statusCode": 200
+}
+
+   Sample return in XML format for the expand action
+<result>
+    <keyword>ozh</keyword>
+    <shorturl>http://sho.rt/ozh</shorturl>
+    <longurl>http://ozh.org/</longurl>
+    <message>success</message>
+    <statusCode>200</statusCode>
+</result>
+
+Sample file
+
+   There's a sample PHP file included that serves as an example on how to
+   play with the API
+
+Expand the API
+
+   You can easily implement custom API actions with a plugin. See the
+   plugin list for examples.
+
+FAQ
+
+Server requirements
+
+    1. A server with mod_rewrite enabled
+    2. At least PHP 5.6
+    3. At least MYSQL 5
+    4. Note: YOURLS can also run on Nginx and Cherokee
+
+Server recommendations
+
+     * PHP CURL extension installed if you plan on playing with the API
+
+Limitations
+
+     * Maximum length of custom keyword is 200 characters
+     * That makes about 8 sexdecillions of centillions of available URLs
+       (seriously. That's a 355-digit number).
+
+Difference Between Base 36 And Base 62 Encoding
+
+     * Base 36 encoding uses 0123456789abcdefghijklmnopqrstuvwxyz for
+       short URLs
+     * Base 62 encoding uses
+       0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+     * Stick to one setting, don't change after you've created links as it
+       will change all your short URLs!
+     * Base 36 is the default and should be picked if you're not sure.
+
+Getting a short domain name for your YOURLS install
+
+     * Unless you plan on making it public and as popular as bit.ly, any
+       shared hosting will be fine. Ozh runs all his YOURLS instance on
+       Dreamhost and it works just great.
+     * Domainr is a fun search tool that might inspire and help you
+     * Aim for exotic top level domains (.in, .im, .li ...), they're often
+       cheap and a lot are still available. Gandi is a pretty
+       comprehensive registrar, for instance.
+
+YOURLS needs its own .htaccess
+
+     * You cannot install YOURLS and, say, WordPress, in the same
+       directory. Both need to handle URLs differently and need their own
+       .htaccess file.
+     * If you want to install YOURLS on the same domain than your blog,
+       give it its own (short) subdirectory, such as yourblog.com/s/ (for
+       "short") or yourblog.com/x/ (for "exit")
+
+If YOURLS generates 404 for your short URLs
+
+     * Make sure mod_rewrite is enabled with your Apache server
+     * Make sure your .htaccess file looks like this one
+     * Eventually, check your server Apache configuration allows use of
+       .htaccess (AllowOverride All directive, ask your server admin)
+
+Random versus sequential short URLs
+
+     * Out of the box, YOURLS generates sequential short URLS (ie ab31,
+       then ab32 and so on)
+     * If you prefer random short URLs (ie j3kz1 then 13hz7 like Bitly
+       does), just activate the plugin that comes with YOURLS.
+
+"Stats don't update as I think they should", "difference with Google
+Analytics", etc...
+
+     * Out of the box, YOURLS updates traffic stats every time a short URL
+       is requested. Period.
+     * This said, some clients (like indexing bots, your internet browser)
+       may skip requesting a short URL if they have the final destination
+       known in cache.
+     * Conversely, other stat tools may use different techniques to track
+       hits (using javascript or not, using IP adress, filtering multiple
+       requests by same client, etc...)
+     * Bottom line: your mileage may vary with different tools, but there
+       is no bug in YOURLS regarding that matter.
+
+There is no index page at the root of the install
+
+     * Indeed. It's intended. It's up to the user to make what they need.
+       Some will redirect the root to a different place, some make a
+       public interface for anyone to shorten links, some make a
+       portfolio. You make it.
+     * If you want to make a public interface and run your own little
+       bitly.com, there's a sample file provided as an example:
+       sample-public-front-page.txt. This implies important issues to deal
+       with: spam, performance and security. Read Public Shortening for
+       important information.
+
+Uppercase letters in short URLs are eaten up, eg "OmgOzh" becomes "mgzh" !
+
+     * Indeed. It's intented if you selected Base 36 (see above). Letters
+       that don't belong to the character set, eg @#! or ABC, are removed.
+     * If you want to force lowercase, you'll need a plugin.
+
+Feedback, feature requests and bug reporting
+
+    1. Please don't get in touch directly by mail or Twitter. Please.
+    2. Check the Road Map for future features.
+    3. Read all the wiki documents.
+    4. Search in all the issues, open and closed.
+    5. Eventually raise a new issue. To do so, please read the contribute
+       guidelines. Thanks!
+
+Community
+
+   YOURLS is open source, so the community of users plays a great role in
+   its development, by contributing, helping others or giving feedback
+   that helps improve the software.
+
+Resources
+
+     * The official YOURLS blog, for news, hints and showcase.
+     * The wiki: advanced documentation, plugins, tips and more
+     * Follow @YOURLS for hardcore development, and @Ozh for tips and news
+       (and random geekiness too)
+
+Showcase
+
+YOURLS reviews
+
+     * Early YOURLS review on Lifehacker
+     * Comprehensive YOURLS history and review on Dating News
+
+Here are a few examples of sites running YOURLS with a unique design or
+concept
+
+     * http://oe.cd/
+       OECD's internal URL shortener with a neat interface and private
+       features
+     * http://yourwish.es/
+       Easily share an Amazon wishlist
+     * http://vbly.us
+       Public YOURLS setup and early adopter, run by famous sex writer
+       Violet Blue as "the internet's first and only sex-positive url
+       shortener", once taken down by Libya (story)
+
+YOURLS and other platforms or frameworks
+
+     * WordPress
+       There are numerous WordPress plugin with YOURLS support. YOURLS
+       Link Creator is recommended.
+     * Drupal
+       Allows for the automatic creation of short urls using a YOURLS
+       installation
+     * Perl
+       WWW-Shorten-Yourls is a Perl module to shorten URLs using YOURLS
+     * Ruby
+       A Ruby wrapper for the YOURLS API
+     * Python
+       A Python client for YOURLS
+     * VB .Net
+       A VB .Net 4.0 wrapper for the YOURLS API
+     * Javascript
+       JavaScript bindings for the YOURLS API to leverage JSONP support
+     * CakePHP
+       Plugin which integrates CakePHP with Yourls
+     * status.net
+       A plugin for status.net to use YOURLS
+     * Sharetronix
+       A YOURLS addon for Sharetronix
+
+YOURLS works with your favorite software or device
+
+     * Tweetie 2
+       How to set up Tweetie2 so it uses your own service
+     * Tweetbot
+       Make Tweetbot run with YOURLS
+     * Twitterfeed
+       Use Twitterfeed with YOURLS
+     * Mac Client
+       Simple app to have a global keyboard shortcut send a link to YOURLS
+     * Android: aYourls, URLy and URL Shortener
+       Android apps that plays nice with YOURLS
+     * iOS: ShortTail for YOURLS, Clicklytics and myYOURLS
+       Apps to use YOURLS on iPhones and iPads
+     * Chrourls
+       Google Chrome quick link shortening addon for YOURLS
+     * Firefox Addon
+       Firefox Addon for YOURLS
+     * Textexpander and YOURLS
+       Making YOURLS and Textexpander on the Mac play together
+
+More stuff to do with YOURLS
+
+     * Infinity Squared
+       ∞² is a public page theme for YOURLS to help you design your own
+       public interface
+     * Sleeky
+       Sleeky is another public page theme for YOURLS
+     * Scott Helme's page
+       Example index page listing all the URLs held in a YOURLS database
+
+"Celebrity endorsements", sort of.
+
+     * http://epic.gm/ by Epic Games
+     * http://mclrn.co/ by McLaren Cars
+     * http://smashed.by/ by Smashing Magazine
+     * http://oe.cd/ by the OECD
+     * http://cuny.is/ by the City University of New York
+     * http://virg.in/ for the Virgin Group companies
+     * http://dhurl.org/ by Dreamhost
+     * https://rho.st/ by RoseHosting.com
+
+   Note: this whole site is the actual readme file included with YOURLS.
+   Neat huh?

@@ -1,0 +1,420 @@
+   Tomcat Home
+
+Apache Tomcat^®
+
+   Support Apache The Apache Software Foundation
+   ____________________ (BUTTON) GO
+   Next ASF event
+   Save the date!
+
+Apache Tomcat
+
+     * Home
+     * Taglibs
+     * Maven Plugin
+
+Download
+
+     * Which version?
+     * Tomcat 9
+     * Tomcat 8
+     * Tomcat 7
+     * Tomcat Connectors
+     * Tomcat Native
+     * Taglibs
+     * Archives
+
+Documentation
+
+     * Tomcat 9.0
+     * Tomcat 8.5
+     * Tomcat 7.0
+     * Tomcat Connectors
+     * Tomcat Native
+     * Wiki
+     * Migration Guide
+     * Presentations
+
+Problems?
+
+     * Security Reports
+     * Find help
+     * FAQ
+     * Mailing Lists
+     * Bug Database
+     * IRC
+
+Get Involved
+
+     * Overview
+     * Source code
+     * Buildbot
+     * Tools
+
+Media
+
+     * Twitter
+     * YouTube
+     * Blog
+
+Misc
+
+     * Who We Are
+     * Swag
+     * Heritage
+     * Apache Home
+     * Resources
+     * Contact
+     * Legal
+     * Support Apache
+     * Sponsorship
+     * Thanks
+     * License
+
+Content
+
+Apache Tomcat
+
+   The Apache Tomcat^® software is an open source implementation of the
+   Java Servlet, JavaServer Pages, Java Expression Language and Java
+   WebSocket technologies. The Java Servlet, JavaServer Pages, Java
+   Expression Language and Java WebSocket specifications are developed
+   under the Java Community Process.
+
+   The Apache Tomcat software is developed in an open and participatory
+   environment and released under the Apache License version 2. The Apache
+   Tomcat project is intended to be a collaboration of the best-of-breed
+   developers from around the world. We invite you to participate in this
+   open development project. To learn more about getting involved, click
+   here.
+
+   Apache Tomcat software powers numerous large-scale, mission-critical
+   web applications across a diverse range of industries and
+   organizations. Some of these users and their stories are listed on the
+   PoweredBy wiki page.
+
+   Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache
+   Tomcat project logo are trademarks of the Apache Software Foundation.
+
+2019-09-19 Tomcat 9.0.26 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   9.0.26 of Apache Tomcat. The notable changes compared to 9.0.24
+   include:
+     * Update to Commons Daemon 1.2.1 to pick up fixes for regressions in
+       Commons Daemon 1.2.0, most notably a failure to start when using a
+       32-bit JVM on Windows.
+     * Avoid an NPE when accessing an https port using http.
+     * Correct the invalid automatic module names for the embedded JARs.
+     * Fix a potential hang when using HTTP/2 with the asynchronous
+       Servlet API.
+
+   Full details of these changes, and all the other changes, are available
+   in the Tomcat 9 changelog.
+
+   Download
+
+2019-09-19 Tomcat 8.5.46 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   8.5.46 of Apache Tomcat. Apache Tomcat 8.5.x replaces 8.0.x and
+   includes new features pulled forward from Tomcat 9.0.x. The minimum
+   Java version and implemented specification versions remain unchanged.
+   The notable changes compared to 8.5.45 include:
+     * Update to Commons Daemon 1.2.1 to pick up fixes for regressions in
+       Commons Daemon 1.2.0, most notably a failure to start when using a
+       32-bit JVM on Windows.
+     * Avoid an NPE when accessing an https port using http.
+     * Fix a potential hang when using HTTP/2 with the asynchronous
+       Servlet API.
+
+   Full details of these changes, and all the other changes, are available
+   in the Tomcat 8.5 changelog.
+
+   Download
+
+2019-07-29 Tomcat 7.0.96 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   7.0.96 of Apache Tomcat. This release contains a number of bug fixes
+   and improvements compared to version 7.0.94.
+
+   Full details of these changes, and all the other changes, are available
+   in the Tomcat 7 changelog.
+
+   Download
+
+2019-07-02 Tomcat Native 1.2.23 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   1.2.23 of Tomcat Native. The notable changes since 1.2.21 include:
+     * Add support for TLS key logging when using OpenSSL 1.1.1 or later.
+     * Fix crashes when a CRL file or path is configured.
+     * Update Windows binaries to APR 1.7.0 and OpenSSL 1.1.1c.
+
+   Download | ChangeLog for 1.2.23
+
+2018-10-13 Tomcat Connectors 1.2.46 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   1.2.46 of Apache Tomcat Connectors. This version fixes a number of bugs
+   found in previous releases.
+
+   Download | ChangeLog for 1.2.46
+
+2015-03-17 Apache Standard Taglib 1.2.5 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   1.2.5 of the Standard Taglib. This tag library provides Apache's
+   implementation of the JSTL 1.2 specification.
+
+   Version 1.2.5 is a minor bug fix release reverting a change made in
+   1.2.1 where <c:import> modified the HTTP method during POST operations,
+   and fixing an issues that resulted in an AccessControlException during
+   startup unless permission was granted to read the accessExternalEntity
+   property.
+
+   Please see the Taglibs section for more details.
+
+   Download | Changes
+
+2013-11-11 Tomcat Maven Plugin 2.2 Released
+
+   The Apache Tomcat team is pleased to announce the release of Tomcat
+   Maven Plugin 2.2. Changelog available here.
+
+   The Apache Tomcat Maven Plugin provides goals to manipulate WAR
+   projects within the Apache Tomcat servlet container.
+
+   The binaries are available from Maven repositories. You should specify
+   the version in your project's plugin configuration:
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat7-maven-plugin</artifactId>
+  <version>2.2</version>
+</plugin>
+
+   or
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat6-maven-plugin</artifactId>
+  <version>2.2</version>
+</plugin>
+
+Old news
+
+   See former announcements.
+   Copyright © 1999-2019, The Apache Software Foundation
+   Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache
+   Tomcat project logo are either registered trademarks or trademarks of
+   the Apache Software Foundation.
+   Tomcat Home
+
+Apache Tomcat^®
+
+   Support Apache The Apache Software Foundation
+   ____________________ (BUTTON) GO
+   Next ASF event
+   Save the date!
+
+Apache Tomcat
+
+     * Home
+     * Taglibs
+     * Maven Plugin
+
+Download
+
+     * Which version?
+     * Tomcat 9
+     * Tomcat 8
+     * Tomcat 7
+     * Tomcat Connectors
+     * Tomcat Native
+     * Taglibs
+     * Archives
+
+Documentation
+
+     * Tomcat 9.0
+     * Tomcat 8.5
+     * Tomcat 7.0
+     * Tomcat Connectors
+     * Tomcat Native
+     * Wiki
+     * Migration Guide
+     * Presentations
+
+Problems?
+
+     * Security Reports
+     * Find help
+     * FAQ
+     * Mailing Lists
+     * Bug Database
+     * IRC
+
+Get Involved
+
+     * Overview
+     * Source code
+     * Buildbot
+     * Tools
+
+Media
+
+     * Twitter
+     * YouTube
+     * Blog
+
+Misc
+
+     * Who We Are
+     * Swag
+     * Heritage
+     * Apache Home
+     * Resources
+     * Contact
+     * Legal
+     * Support Apache
+     * Sponsorship
+     * Thanks
+     * License
+
+Content
+
+Apache Tomcat
+
+   The Apache Tomcat^® software is an open source implementation of the
+   Java Servlet, JavaServer Pages, Java Expression Language and Java
+   WebSocket technologies. The Java Servlet, JavaServer Pages, Java
+   Expression Language and Java WebSocket specifications are developed
+   under the Java Community Process.
+
+   The Apache Tomcat software is developed in an open and participatory
+   environment and released under the Apache License version 2. The Apache
+   Tomcat project is intended to be a collaboration of the best-of-breed
+   developers from around the world. We invite you to participate in this
+   open development project. To learn more about getting involved, click
+   here.
+
+   Apache Tomcat software powers numerous large-scale, mission-critical
+   web applications across a diverse range of industries and
+   organizations. Some of these users and their stories are listed on the
+   PoweredBy wiki page.
+
+   Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache
+   Tomcat project logo are trademarks of the Apache Software Foundation.
+
+2019-09-19 Tomcat 9.0.26 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   9.0.26 of Apache Tomcat. The notable changes compared to 9.0.24
+   include:
+     * Update to Commons Daemon 1.2.1 to pick up fixes for regressions in
+       Commons Daemon 1.2.0, most notably a failure to start when using a
+       32-bit JVM on Windows.
+     * Avoid an NPE when accessing an https port using http.
+     * Correct the invalid automatic module names for the embedded JARs.
+     * Fix a potential hang when using HTTP/2 with the asynchronous
+       Servlet API.
+
+   Full details of these changes, and all the other changes, are available
+   in the Tomcat 9 changelog.
+
+   Download
+
+2019-09-19 Tomcat 8.5.46 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   8.5.46 of Apache Tomcat. Apache Tomcat 8.5.x replaces 8.0.x and
+   includes new features pulled forward from Tomcat 9.0.x. The minimum
+   Java version and implemented specification versions remain unchanged.
+   The notable changes compared to 8.5.45 include:
+     * Update to Commons Daemon 1.2.1 to pick up fixes for regressions in
+       Commons Daemon 1.2.0, most notably a failure to start when using a
+       32-bit JVM on Windows.
+     * Avoid an NPE when accessing an https port using http.
+     * Fix a potential hang when using HTTP/2 with the asynchronous
+       Servlet API.
+
+   Full details of these changes, and all the other changes, are available
+   in the Tomcat 8.5 changelog.
+
+   Download
+
+2019-07-29 Tomcat 7.0.96 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   7.0.96 of Apache Tomcat. This release contains a number of bug fixes
+   and improvements compared to version 7.0.94.
+
+   Full details of these changes, and all the other changes, are available
+   in the Tomcat 7 changelog.
+
+   Download
+
+2019-07-02 Tomcat Native 1.2.23 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   1.2.23 of Tomcat Native. The notable changes since 1.2.21 include:
+     * Add support for TLS key logging when using OpenSSL 1.1.1 or later.
+     * Fix crashes when a CRL file or path is configured.
+     * Update Windows binaries to APR 1.7.0 and OpenSSL 1.1.1c.
+
+   Download | ChangeLog for 1.2.23
+
+2018-10-13 Tomcat Connectors 1.2.46 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   1.2.46 of Apache Tomcat Connectors. This version fixes a number of bugs
+   found in previous releases.
+
+   Download | ChangeLog for 1.2.46
+
+2015-03-17 Apache Standard Taglib 1.2.5 Released
+
+   The Apache Tomcat Project is proud to announce the release of version
+   1.2.5 of the Standard Taglib. This tag library provides Apache's
+   implementation of the JSTL 1.2 specification.
+
+   Version 1.2.5 is a minor bug fix release reverting a change made in
+   1.2.1 where <c:import> modified the HTTP method during POST operations,
+   and fixing an issues that resulted in an AccessControlException during
+   startup unless permission was granted to read the accessExternalEntity
+   property.
+
+   Please see the Taglibs section for more details.
+
+   Download | Changes
+
+2013-11-11 Tomcat Maven Plugin 2.2 Released
+
+   The Apache Tomcat team is pleased to announce the release of Tomcat
+   Maven Plugin 2.2. Changelog available here.
+
+   The Apache Tomcat Maven Plugin provides goals to manipulate WAR
+   projects within the Apache Tomcat servlet container.
+
+   The binaries are available from Maven repositories. You should specify
+   the version in your project's plugin configuration:
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat7-maven-plugin</artifactId>
+  <version>2.2</version>
+</plugin>
+
+   or
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat6-maven-plugin</artifactId>
+  <version>2.2</version>
+</plugin>
+
+Old news
+
+   See former announcements.
+   Copyright © 1999-2019, The Apache Software Foundation
+   Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache
+   Tomcat project logo are either registered trademarks or trademarks of
+   the Apache Software Foundation.

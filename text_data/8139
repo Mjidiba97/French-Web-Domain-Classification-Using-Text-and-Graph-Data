@@ -1,0 +1,436 @@
+   #OpenIV – The ultimate modding tool for GTA V, GTA IV and Max Payne 3
+   RSS Feed
+
+   [OpenIV_logo.png]
+   Download now OpenIV 3.1
+   PayPal - The safer, easier way to pay online!
+
+   IFRAME: https://www.youtube.com/embed/eyKObXa6btE?controls=1
+
+   OpenIV on YouTube
+   OpenIV on Facebook
+   OpenIV on Twitter Follow @OpenIV
+   ____________________ Submit
+
+     * < English
+     * English
+     * Docs and Help
+     * F.A.Q
+     * Bug tracker
+     * Forums
+
+     * Русский >
+     * Русский
+     * Документация
+     * ЧАВО
+     * Баг трекер
+     * Форум
+
+   [ajax.gif]
+   Поддержать проект!
+   Вы можете поддержать OpenIV, щелкните здесь, чтобы узнать подробности.
+   Support us!
+   You can make donations for OpenIV click here for more information.
+   [ajax.gif]
+
+August 3rd, 2019OpenIV Package Format specification now on GitHub
+
+   Hello everyone,
+   As part of preparing our next OpenIV release, we decided to move OIV
+   Package Format specification from our own wiki to GitHub repository.
+     * From now on, you can find OIV Package Format specification here:
+       https://github.com/OpenIV-Team/OpenIV-PackageFormat
+     * The future specification for openFormats will be published here:
+       https://github.com/OpenIV-Team/OpenIV-openFormats
+     * Moreover, we have dedicated GitHub repository for OpenIV
+       localizations here:
+       https://github.com/OpenIV-Team/OpenIV-Languages
+
+   Since Package Format specification was the only useful thing on our
+   wiki, we are closing it.
+
+   If you have, any suggestions on how we can improve our documentation
+   feel free to leave a comment or create an issue on GitHub.
+
+   Thank you and we see you soon…
+   OpenIV Team.
+   .black, Docs/Help, English, Game plugins, Grand Theft Auto IV, Grand
+   Theft Auto V, Max Payne 3, OpenIV, Resources, This blog Comments Off on
+   OpenIV Package Format specification now on GitHub
+
+August 3rd, 2019Описание формата OIV пакетов теперь на GitHub
+
+   Всем привет,
+
+   В рамках подготовки нашего следующего обновления для OpenIV, мы решили
+   перенести описание формата OIV пакетов из нашей wiki в GitHub
+   репозиторий.
+     * Начиная с сегодняшнего дня, вы можете найти описание формата OIV
+       пакетов здесь:
+       https://github.com/OpenIV-Team/OpenIV-PackageFormat
+     * А будущие описание openFormats форматов будет опубликовано здесь:
+       https://github.com/OpenIV-Team/OpenIV-openFormats
+     * Также не стоит забывать, что у нас есть отдельный репозиторий для
+       локализации OpenIV:
+       https://github.com/OpenIV-Team/OpenIV-Languages
+
+   Так как описание формата OIV пакетов было единственной полезной вещью
+   на нашей вики мы приняли решение закрыть её.
+
+   Если у вас есть какие-либо предложения по улучшению нашей документации
+   или по самому формату OIV пакетов, пожалуйста оставляете свои
+   комментарии.
+
+   Спасибо,
+   Команда OpenIV.
+   .black, Grand Theft Auto IV, Grand Theft Auto V, Max Payne 3, OpenIV,
+   Модули для игры, Документация, Русский, Этот блог Comments Off on
+   Описание формата OIV пакетов теперь на GitHub
+
+December 28th, 2018OpenIV – First 10 years
+
+        IFRAME: https://www.youtube.com/embed/unah6PfivEs?controls=1
+
+   English, OpenIV, OpenIV, Video, Видео, Русский 1 Comment »
+
+December 27th, 2018OpenIV 3.1
+
+   Once again we will try to make OpenIV releases more frequently,
+   hopefully it will help us to speed up development process and as result
+   you will get new features faster. To start our new release cycle today
+   we releasing OpenIV 3.1 a minor but necessary update. Please, take a
+   look:
+
+        IFRAME: https://www.youtube.com/embed/asH1zPBZM0k?controls=1
+
+What’s new in OpenIV 3.1
+
+Grand Theft Auto V
+
+     * We added support for highly requested PSO file –
+       pedpersonality.ymt. As always with OpenIV this is means, you have
+       all the names and string values in file. You can edit
+       pedpersonality.ymt in inbuilt OpenIV Text Editor or export and
+       import it as META/XML.
+     * The “Title Update” notification for outdated update.rpf in “mods”
+       folder now also shown in read only mode. In previous versions, it
+       was shown only in edit mode and some people might miss it because
+       they do not have edit mode enabled by default.
+     * From now on, text based .dat files, .gxt2 files and .nametable
+       files will be opened in OpenIV Text Editor.
+     * We added support for new version of carcols.ymt from Arena Wars
+       update.
+     * We added support for new shaders in openFormats for GTA V models
+       from Arena Wars update.
+     * We added new names for audio tracks from Arena Wars update.
+     * We added new names for objects and models from Arena Wars game.
+
+XML Syntax validation in OpenIV Text Editor
+
+   We added new useful feature into OpenIV Text Editor – XML Syntax
+   validation. This feature was originally planned for text editor from
+   very beginning but was postponed due to time limitations. When you open
+   XML, META or PSO file in OpenIV Text Editor you will see new XML button
+   on the Home ribbon tab:
+
+   When you click on it, OpenIV will validate XML syntax of your file and
+   let you know if you have any errors or not:
+
+   In addition, when you try to save file OpenIV will automatically
+   validate XML syntax for you. OpenIV will not allow you to save PSO file
+   with invalid XML syntax:
+
+   However, for basic XML files you will decide whatever you want to save
+   file with errors or not:
+
+General changes, improvements, and fixes
+
+     * We fixed critical issue where OpenIV was not able to import big
+       number of openFormats files due to memory leak.
+     * We fixed critical issue where some audio files become completely
+       silent in the game after importing from openFormats.
+     * We fixed an issue resulting in OpenIV crash while importing
+       openFormats with specific DDS files.
+     * We added new option to always open extended context menu in the
+       main window.
+     * Copy name and Copy path features in context menu will now work with
+       multiple selected items.
+     * We added additional information in the error messages when OpenIV
+       is unable to edit archive.
+     * We added additional information into corrupted archive error to try
+       to determine what causes the corruption.
+     * We added combined size of selected files into main window status
+       bar.
+     * When you double click on OIV Package inside OpenIV, it will open it
+       in Package Installer.
+     * We added option to show “Confirm installation dialog” in Package
+       Installer. This option enabled by default.
+     * We added additional information into Package Installer log when it
+       is unable to edit archives.
+     * We fixed an issue resulting in OpenIV crash if Package Installer
+       was unable to create log file.
+     * We fixed an issue resulting in broken scroll bars in Package
+       Installer.
+     * We fixed an issue where OpenIV global search did not worked
+       properly while game was running.
+     * We improved performance of global search it now should be much
+       faster in most cases.
+     * We fixed an issue where OpenIV Texture Editor did not show error
+       message if it was not able to load DDS file.
+     * We added new option to show track name hash into OpenIV Audio
+       player.
+
+   You can find change log for this version on our bug-tracker here.
+
+UI Localization
+
+   We have an instruction how to translate OpenIV into your own language
+   and we are calling for you to do so. You can find the localization
+   guide on GitHub. As for existing localizations, you can find list of
+   differences between 3.0 and 3.1 here.
+
+Special thanks to our supporters
+
+   We want to say thank you to all our supporters on Patreon and other
+   platforms.
+
+   This release is supported by:
+     * MXKiN
+     * _30
+
+   Thank you.
+
+   To learn more visit our Patreon page at https://www.patreon.com/OpenIV
+
+Download
+
+   If you already have OpenIV, it will ask you for update next time you
+   run it. If you still do not have OpenIV, you can use the link below to
+   download it right now.
+
+                                  Download
+
+   English, Grand Theft Auto IV, Grand Theft Auto V, Max Payne 3, OpenIV,
+   Video 5 Comments »
+
+December 27th, 2018OpenIV 3.1
+
+   В очередной раз мы попытаемся выпускать OpenIV чаще, надеемся, что это
+   поможет нам ускорить разработку и как результат вы станете получать
+   новые функции быстрее. Что бы начать наш новый цикл выпусков сегодня мы
+   выпускаем OpenIV 3.1 – не большое, но необходимое обновление.
+   Пожалуйста, посмотрите:
+
+        IFRAME: https://www.youtube.com/embed/asH1zPBZM0k?controls=1
+
+Изменения в OpenIV 3.1
+
+Grand Theft Auto V
+
+     * Добавлена поддержка востребованного PSO файла pedpersonality.ymt.
+       Как обычно с OpenIV это означает что у вас есть все имена и
+       строковые значения в файле. Вы можете редактировать
+       pedpersonality.ymt во строенном текстовом редакторе OpenIV или
+       экспортировать и импортировать его как META/XML.
+     * Уведомление об устаревшей версии update.rpf в вашей папке “mods”
+       теперь также показывается и в режиме только чтение. В предыдущих
+       версиях это уведомление показывалось только в режиме редактирования
+       и некоторые пользователи могли пропустить его если у них не включён
+       режим редактирования по умолчанию.
+     * Теперь текстовые .dat, .gxt2 и .nametable файлы будет открываться в
+       текстовом редакторе OpenIV.
+     * Добавлена поддержка новой версии carcols.ymt из обновления Arena
+       Wars.
+     * Добавлена поддержка новых шейдеров в openFormats для моделей GTA V
+       из обновления Arena Wars.
+     * Добавлены имена новых аудио треков из обновления Arena Wars.
+     * Добавлены имена новых объектов и моделей из обновления Arena Wars.
+
+Проверка XML синтаксиса в Текстовом редакторе OpenIV
+
+   Мы добавили полезную функцию в текстовый редактор OpenIV – проверка XML
+   синтаксиса. Эта функция изначально планировалась в нашем текстовом
+   редакторе, но была отложена в связи с нехваткой времени. Когда вы
+   откроете XML, META или PSO файл в текстовом редакторе OpenIV вы увидите
+   новую кнопку XML на вкладке Главная:
+
+   Если вы нажмёте на эту кнопку OpenIV проверит XML синтаксис вашего
+   файла и скажет если ли в нём ошибки или нет:
+
+   Также, когда вы попытаетесь сохранить файл OpenIV, автоматически
+   проверит его XML синтаксис. OpenIV не даст вам сохранить PSO файл с
+   ошибками XML синтаксиса:
+
+   Но, для обычных XML файлов вам будет предоставлен выбор, сохранить файл
+   с ошибками или нет:
+
+Общие изменения, улучшения и исправления
+
+     * Исправлена критическая ошибка, из-за которой OpenIV не мог
+       импортировать большое количество openFormats файлов.
+     * Исправлена критическая ошибка, которая приводила к тому что
+       некоторые аудио файлы становились полностью беззвучными после
+       импорта их из openFormats.
+     * Исправлена ошибка, которая приводила к падению OpenIV во время
+       импорта openFormats с определёнными DDS файлами.
+     * Добавлена новая опция что бы всегда открывать расширенное
+       контекстное меню вместо обычного в главном окне.
+     * Функции копировать имя и копировать путь в контекстном меню теперь
+       работают с несколькими выделенными элементами.
+     * Дополнительная информация была добавлена в сообщения об ошибках,
+       когда OpenIV не может отредактировать архив.
+     * Дополнительная информация была добавлена в сообщения о повреждённых
+       архивах. Данная информация призвана помочь выяснить как именно
+       архив был повреждён.
+     * Размер выделенных файлов теперь показывается на строке состояния в
+       главном окне.
+     * Если вы дважды щёлкните на OIV файле внутри OpenIV теперь будет
+       открываться Package Installer.
+     * Добавлена новая опция для показа диалога подтверждения в Package
+       Installer. Данная опция включена по умолчанию.
+     * Добавлена дополнительная информация в лог Package Installer.
+     * Исправлена ошибка, которая приводила к падению OpenIV если Package
+       Installer не мог создать лог файл.
+     * Исправлена ошибка, приводящая к неправильно работающим полосам
+       прокрутки в Package Installer.
+     * Исправлена ошибка, из-за которой поиск не работал корректно если
+       запущена игра.
+     * Улучшена производительность поиска, он должен быть лучше в
+       большинстве случаев.
+     * Исправлена ошибка, из-за которой текстурый радетор OpenIV не
+       показывал сообщение об ошибке, когда не мог загрузить DDS файл.
+     * В аудио проигрывателе OpenIV добавлена новая опция для показа хеша
+       имени аудио трека.
+
+   Вы можете найти список изменений для этой версии на нашем баг-трекере
+   здесь.
+
+Локализация интерфейса
+
+   Доступна инструкция по локализации интерфейса OpenIV на другие языки.
+   Вы можете найти эти инструкцию на GitHub. Что касается существующих
+   локализаций – полный список различий между 3.0 и 3.1 доступен здесь.
+
+Особая благодарность
+
+   Мы хотим сказать спасибо всем людям кто поддерживает разработку OpenIV
+   на Patreon и других платформах.
+
+   Выпуск данной версии поддержали:
+     * MXKiN
+     * _30
+
+   Спасибо.
+
+   Что бы узнать подробнее посетите нашу Patreon страницу
+   https://www.patreon.com/OpenIV
+
+Скачать
+
+   Если у вас уже есть OpenIV, то он запросит обновление при следующем
+   запуске. Если у вас всё ещё нет OpenIV, вы можете скачать его по ссылке
+   ниже прямо сейчас.
+
+                                  Download
+
+   Grand Theft Auto IV, Grand Theft Auto V, Max Payne 3, OpenIV, Видео,
+   Русский Comments Off on OpenIV 3.1
+
+July 25th, 2018OpenIV 3.0 – “After Hours” Update (Build 1006)
+
+   Today, we are releasing “After Hours” compatibility update for OpenIV
+   3.0.
+
+What’s new in “After Hours” update for OpenIV 3.0
+
+Grand Theft Auto V
+
+     * We added support for new version of carcols.ymt;
+     * We added support for new version of carvariations.ymt;
+     * We added support for new shaders in openFormats for GTA V models
+       (emissive_additive_uv_alpha.sps, vehicle_paint4_emissive.sps);
+     * We added new names for objects and models from “After Hours” game
+       update. You will see normal names instead of hash values in
+       ymap/ytyp;
+     * We added new names for audio tracks from “After Hours” game update.
+     * We fixed an issue resulting in crash while playing some audio from
+       PS3 and XBOX 360 versions of GTA V.
+
+   English, Grand Theft Auto IV, Grand Theft Auto V, Max Payne 3, OpenIV 8
+   Comments »
+   Previous Entries
+     * Categories
+          + English (154)
+               o .black (40)
+               o Docs/Help (17)
+               o Game plugins (8)
+               o Grand Theft Auto IV (49)
+               o Grand Theft Auto V (48)
+               o Liberty City (6)
+               o Max Payne 3 (41)
+               o OpenIV (129)
+               o Resources (49)
+               o This blog (12)
+               o Video (84)
+          + Русский (152)
+               o .black (38)
+               o Grand Theft Auto IV (47)
+               o Grand Theft Auto V (46)
+               o Liberty City (4)
+               o Max Payne 3 (39)
+               o OpenIV (127)
+               o Модули для игры (7)
+               o Видео (82)
+               o Документация (18)
+               o Ресурсы (48)
+               o Этот блог (10)
+
+
+
+Official
+
+     * Grand Theft Auto IV
+     * Grand Theft Auto V
+     * Max Payne 3
+
+
+
+Links
+
+     * AB Software Development
+     * ENPY Studio
+     * GABUZO.ru
+     * GTA Riot Pixels
+     * GTA-Real.com
+     * GTA.com.ua
+     * GTA5-Mods.com
+     * GTAForums.com
+     * GTAMaps.net
+     * GTAModding.ru
+     * GTAPro.com
+     * ManiaMods.ru
+     * Sanny Builder
+     __________________________________________________________________
+
+   Current version > OpenIV 3.1 < Текущая версия
+   Change log - История изменений | Roadmap - План развития
+     __________________________________________________________________
+
+   © 2008-2019 OpenIV – The ultimate modding tool for GTA V, GTA IV and
+   Max Payne 3 | Theme based on iKon Wordpress Theme | Powered by
+   Wordpress
+   XHTML CSS RSS
+   Download current version of OpenIV
+   Version:      3.1 (openFormats) (Build 1030)
+   Release date: 2018-12-27 Change log | Roadmap
+   Downloaded:   2 475 222 (Total: 13 883 516)
+   Download OpenIV 3.1 (openFormats) (Build 1030)
+   Information
+   If you enjoy OpenIV or if you want to support us, please consider
+   donating any amount of money.
+   Select service:
+   [paypal.ico] PayPal ( http://paypal.com )
+   PayPal - The safer, easier way to pay online!
+   [money.yandex.ico] Yandex.Money ( https://money.yandex.ru/ )
+   Account number in Yandex.Money system:
+   41001379951319

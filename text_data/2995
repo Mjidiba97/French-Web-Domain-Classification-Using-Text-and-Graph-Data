@@ -1,0 +1,690 @@
+   Shuffle.js
+   (BUTTON) Docs
+    1. Install
+    2. Features
+    3. Options
+    4. Usage
+    5. Filters
+    6. Advanced Filters
+    7. Sorting
+    8. Events
+    9. Adding and Removing Items
+   10. Public Methods
+   11. Custom Styles
+   12. Dependencies
+   13. Supported Browsers
+   14. Changelog
+
+   (BUTTON) Demos
+     * Basic masonry layout Basic masonry layout
+     * Adding and removing items Adding and removing items
+     * Compound filtering Compound filtering
+     * Using images Using images
+     * Animated viewport entry Animated viewport entry
+     * Bootstrap 3 grid Bootstrap 3 grid
+     * Flexbox grid Flexbox grid
+     * Shuffle with RequireJS Shuffle with RequireJS
+     * Shuffle with React Shuffle with React
+     * Loading ajax content Loading ajax content
+     * CodePen template CodePen template
+
+   FAQ View Shuffle on GitHub
+
+Shuffle
+
+   Categorize, sort, and filter a responsive grid of items
+
+Install
+
+npm install shufflejs
+
+   Start a CodePen with a Shuffle template See the latest releases
+
+Example
+
+   Search ____________________
+
+   Filter
+   (BUTTON) Space (BUTTON) Nature (BUTTON) Animal (BUTTON) City
+
+   Sort
+
+   (*) Default ( ) Title ( ) Date Created
+
+   A deep blue lake sits in the middle of vast hills covered with
+   evergreen trees
+   Lake Walchen
+
+   nature
+   Looking down over one of the pillars of the Golden Gate Bridge to the
+   roadside and water below
+   Golden Gate Bridge
+
+   city
+   A close, profile view of a crocodile looking directly into the camera
+   Crocodile
+
+   animal
+   SpaceX launches a Falcon 9 rocket from Cape Canaveral Air Force Station
+   SpaceX
+
+   space
+
+   SpaceX launches a Falcon 9 rocket from Cape Canaveral Air Force Station
+   A multi-level highway stack interchange in Puxi, Shanghai
+   Crossroads
+
+   city
+   Dimly lit mountains give way to a starry night showing the Milky Way
+   Milky Way
+
+   space, nature
+   NASA Satellite view of Earth
+   Earth
+
+   space
+
+   NASA Satellite view of Earth
+   A close up of a turtle underwater
+   Turtle
+
+   animal
+
+   A close up of a turtle underwater
+   Many trees stand alonside a hill which overlooks a pedestrian path,
+   next to the ocean at Stanley Park in Vancouver, Canada
+   Stanley Park
+
+   nature
+   An intrigued cat sits in grass next to a flag planted in front of it
+   with an astronaut space kitty sticker on beige fabric.
+   Astronaut Cat
+
+   animal
+   Pier 14 at night, looking towards downtown San Francisco's brightly lit
+   buildings
+   San Francisco
+
+   city
+   Looking down on central park and the surrounding builds from the
+   Rockefellar Center
+   Central Park
+
+   nature, city
+
+   Open in CodePen
+
+Demos
+
+   Basic masonry layout
+   Basic masonry layout
+   Adding and removing items
+   Adding and removing items
+   Compound filtering
+   Compound filtering
+   Using images
+   Using images
+   Animated viewport entry
+   Animated viewport entry
+   Bootstrap 3 grid
+   Bootstrap 3 grid
+   Flexbox grid
+   Flexbox grid
+   Shuffle with RequireJS
+   Shuffle with RequireJS
+   Shuffle with React
+   Shuffle with React
+   Loading ajax content
+   Loading ajax content
+   CodePen template
+   CodePen template
+
+Features
+
+     * Fast - Only one forced synchronous layout (aka reflow) on init,
+       sort, or filter.
+     * Responsive (try resizing the window!)
+     * Filter items by groups
+     * Items can have multiple groups and be different sizes
+     * Sort items
+     * Advanced filtering (like searching)
+
+Options
+
+   Settings you can change (these are the defaults).
+// Overrideable options
+Shuffle.options = {
+  buffer: 0, // Useful for percentage based heights when they might not always b
+e exactly the same (in pixels).
+  columnThreshold: 0.01, // Reading the width of elements isn't precise enough a
+nd can cause columns to jump between values.
+  columnWidth: 0, // A static number or function that returns a number which tel
+ls the plugin how wide the columns are (in pixels).
+  delimiter: null, // If your group is not json, and is comma delimeted, you cou
+ld set delimiter to ','.
+  easing: 'cubic-bezier(0.4, 0.0, 0.2, 1)', // CSS easing function to use.
+  filterMode: Shuffle.FilterMode.ANY, // When using an array with filter(), the
+element passes the test if any of its groups are in the array. With "all", the e
+lement only passes if all groups are in the array.
+  group: Shuffle.ALL_ITEMS, // Initial filter group.
+  gutterWidth: 0, // A static number or function that tells the plugin how wide
+the gutters between columns are (in pixels).
+  initialSort: null, // Shuffle can be initialized with a sort object. It is the
+ same object given to the sort method.
+  isCentered: false, // Attempt to center grid items in each row.
+  itemSelector: '*', // e.g. '.picture-item'.
+  roundTransforms: true, // Whether to round pixel values used in translate(x, y
+). This usually avoids blurriness.
+  sizer: null, // Element or selector string. Use an element to determine the si
+ze of columns and gutters.
+  speed: 250, // Transition/animation speed (milliseconds).
+  staggerAmount: 15, // Transition delay offset for each item in milliseconds.
+  staggerAmountMax: 150, // Maximum stagger delay in milliseconds.
+  throttle: throttle, // By default, shuffle will throttle resize events. This c
+an be changed or removed.
+  throttleTime: 300, // How often shuffle can be called on resize (in millisecon
+ds).
+  useTransforms: true, // Whether to use transforms or absolute positioning.
+};
+
+   No options need to be specified, but itemSelector should be used. Other
+   common options to change are speed and sizer.
+
+Usage
+
+The HTML Structure
+
+   The only real important thing here is the data-groups attribute. It has
+   to be a valid JSON array of strings. It can also be a string delimeted
+   by a value you provide with the delimiter option.
+
+   This example is using this site's grid. Each item would be 4 columns at
+   the "sm" breakpoint (768px).
+
+Images
+
+   Images are wrapped in .aspect elements to take up the same amount of
+   space the image will when it loads. For details, check out the images
+   demo.
+<div class="row my-shuffle-container">
+  <figure class="col-4@sm picture-item" data-groups='["animal"]' data-date-creat
+ed="2016-08-12" data-title="Crocodile">
+    <div class="aspect aspect--16x9">
+      <div class="aspect__inner">
+        <img src="crocodile.jpg" alt="A close, profile view of a crocodile looki
+ng directly into the camera" />
+      </div>
+    </div>
+    <figcaption>Crocodile</figcaption>
+  </figure>
+  <figure class="col-4@sm picture-item" data-groups='["city"]' data-date-created
+="2016-06-09" data-title="Crossroads">
+    <div class="aspect aspect--16x9">
+      <div class="aspect__inner">
+        <img src="crossroads.jpg" alt="A multi-level highway stack interchange i
+n Puxi, Shanghai" />
+      </div>
+    </div>
+    <figcaption>Crossroads</figcaption>
+  </figure>
+  <figure class="col-4@sm picture-item" data-groups='["nature","city"]' data-dat
+e-created="2015-10-20" data-title="Central Park">
+    <div class="aspect aspect--16x9">
+      <div class="aspect__inner">
+        <img src="central-park.jpg" alt="Looking down on central park and the su
+rrounding builds from the Rockefellar Center" />
+      </div>
+    </div>
+    <figcaption>Central Park</figcaption>
+  </figure>
+  <div class="col-1@sm my-sizer-element"></div>
+</div>
+
+How column widths work
+
+   There are 4 options for defining the width of the columns:
+    1. Use a sizer element. This is the easiest way to specify column and
+       gutter widths. Add the sizer element and make it 1 column wide.
+       Shuffle will measure the width and margin-left of this sizer
+       element each time the grid resizes. This is awesome for responsive
+       or fluid grids where the width of a column is a percentage.
+    2. Use a function. When a function is used, its first parameter will
+       be the width of the shuffle element. You need to return the column
+       width for shuffle to use (in pixels).
+    3. A number. This will explicitly set the column width to your number
+       (in pixels).
+    4. By default, shuffle will use the width of the first item to
+       calculate the column width.
+
+A basic setup example
+
+   If you want functional buttons, check out the js file.
+
+   Shuffle uses a UMD definition so that you can use it with globals, AMD,
+   or CommonJS.
+var Shuffle = window.Shuffle;
+var element = document.querySelector('.my-shuffle-container');
+var sizer = element.querySelector('.my-sizer-element');
+
+var shuffleInstance = new Shuffle(element, {
+  itemSelector: '.picture-item',
+  sizer: sizer // could also be a selector: '.my-sizer-element'
+});
+
+Filters
+
+Filter by a group
+
+   Use the filter() method. If, for example, you wanted to show only items
+   that match "space", you would do this:
+shuffleInstance.filter('space');
+
+Filter by multiple groups
+
+   Show multiple groups at once by using an array.
+shuffleInstance.filter(['space', 'nature']);
+
+   By default, this will show items that match space or nature. To show
+   only groups that match space and nature, set the filterMode option to
+   Shuffle.FilterMode.ALL.
+
+Show all items
+
+   To go back to having no items filtered, you can call filter() without a
+   parameter, or use Shuffle.ALL_ITEMS (which by default is the string
+   "all").
+shuffleInstance.filter(Shuffle.ALL_ITEMS); // or .filter()
+
+Overrides
+
+   You can override both Shuffle.ALL_ITEMS and
+   Shuffle.FILTER_ATTRIBUTE_KEY if you want.
+// Defaults
+Shuffle.ALL_ITEMS = 'all';
+Shuffle.FILTER_ATTRIBUTE_KEY = 'groups';
+
+// You can change them to something else.
+Shuffle.ALL_ITEMS = 'any';
+Shuffle.FILTER_ATTRIBUTE_KEY = 'categories';
+
+   Then you would have to use data-categories attribute on your items
+   instead of data-groups.
+
+Advanced Filters
+
+   By passing a function to filter, you can fully customize filtering
+   items. Shuffle will iterate over each item and give your function the
+   element and the shuffle instance. Return true to keep the element or
+   false to hide it.
+
+Example
+
+// Filters elements with a data-title attribute with less than 10 characters
+shuffleInstance.filter(function (element) {
+  return element.getAttribute('data-title').length < 10;
+});
+
+Searching
+
+// Advanced filtering
+Demo.prototype.addSearchFilter = function () {
+  document.querySelector('.js-shuffle-search').addEventListener('keyup', this._h
+andleSearchKeyup.bind(this));
+};
+
+// Filter the shuffle instance by items with a title that matches the search inp
+ut.
+Demo.prototype._handleSearchKeyup = function (evt) {
+  var searchText = evt.target.value.toLowerCase();
+
+  this.shuffle.filter(function (element, shuffle) {
+    var titleElement = element.querySelector('.picture-item__title');
+    var titleText = titleElement.textContent.toLowerCase().trim();
+
+    return titleText.indexOf(searchText) !== -1;
+  });
+};
+
+   Check out the compounded filters demo.
+
+Sorting
+
+   You can order the elements with a function you supply. In the demo
+   above, each item has a data-date-created and data-title attribute which
+   are used for sorting.
+<figure class="col-4@sm picture-item" data-groups='["city"]' data-date-created="
+2016-06-09" data-title="Crossroads">…</figure>
+
+<select class="sort-options">
+  <option value="">Default</option>
+  <option value="title">Title</option>
+  <option value="date-created">Date Created</option>
+</select>
+
+Demo.prototype.addSorting = function () {
+  document.querySelector('.sort-options').addEventListener('change', this._handl
+eSortChange.bind(this));
+};
+
+Demo.prototype._handleSortChange = function (evt) {
+  var value = evt.target.value;
+
+  function sortByDate(element) {
+    return element.getAttribute('data-created');
+  }
+
+  function sortByTitle(element) {
+    return element.getAttribute('data-title').toLowerCase();
+  }
+
+  var options;
+  if (value === 'date-created') {
+    options = {
+      reverse: true,
+      by: sortByDate,
+    };
+  } else if (value === 'title') {
+    options = {
+      by: sortByTitle,
+    };
+  } else {
+    options = {};
+  }
+
+  this.shuffle.sort(options);
+};
+
+   The options object can contain three properties:
+     * reverse: a boolean which will reverse the resulting order.
+     * by: a function with an element as the parameter. Above, we’re
+       returning the value of the data-date-created or data-title
+       attribute.
+     * randomize: Make the order random.
+
+   Returning undefined from the by function will reset the order to DOM
+   order.
+
+   Calling sort with an empty object will reset the elements to DOM order.
+
+   Check out the demo.
+
+Filter and sort
+
+   You can filter and sort at the same time by passing a sort object as
+   the second parameter.
+shuffleInstance.filter('space', {
+  by: function (element) {
+    return element.getAttribute('data-title').toLowerCase();
+  },
+});
+
+Advanced sorting
+
+   You can provide the entire sort compare function if you need more
+   control.
+
+   The parameters (a, b) are ShuffleItem instances and you'll probably
+   only use the element property. The reverse option still works with the
+   compare function if you need it.
+
+   For example, if you wanted to sort by the first group in data-groups,
+   then by data-age, you could do this:
+shuffleInstance.sort({
+  compare: function (a, b) {
+    // Sort by first group, then by age.
+    var groupA = JSON.parse(a.element.getAttribute('data-groups'))[0];
+    var groupB = JSON.parse(b.element.getAttribute('data-groups'))[0];
+    if (groupA > groupB) {
+      return 1;
+    }
+    if (groupA < groupB) {
+      return -1;
+    }
+
+    // At this point, the group strings are the exact same. Test the age.
+    var ageA = parseInt(a.element.getAttribute('data-age'), 10);
+    var ageB = parseInt(b.element.getAttribute('data-age'), 10);
+    return ageA - ageB;
+  },
+});
+
+Events
+
+   Shuffle is a subclass of TinyEmitter. It emits an event when a layout
+   happens and when elements are removed. The event names are
+   Shuffle.EventType.LAYOUT and Shuffle.EventType.REMOVED.
+
+Get notified when a layout happens
+
+shuffleInstance.on(Shuffle.EventType.LAYOUT, function () {
+  console.log('Things finished moving!');
+});
+
+Do something when an item is removed
+
+shuffleInstance.on(Shuffle.EventType.REMOVED, function (data) {
+  console.log(this, data, data.collection, data.shuffle);
+});
+
+   Check out the demo at the top of the page, or its JavaScript file.
+
+Adding and Removing Items
+
+   You can add and remove elements from shuffle after it has been created.
+   This also works for infinite scrolling.
+
+Adding elements
+
+   Wherever you add the element in the DOM is where it will show up in the
+   grid (assuming you’re using the default sort-by-dom-order). With this
+   in mind, you can append, prepend, or insert elements wherever you need
+   to get them to show up in the right order.
+/**
+ * Create some DOM elements, append them to the shuffle container, then notify
+ * shuffle about the new items. You could also insert the HTML as a string.
+ */
+Demo.prototype.onAppendBoxes = function () {
+  var elements = this._getArrayOfElementsToAdd();
+
+  elements.forEach(function (element) {
+    this.shuffle.element.appendChild(element);
+  }, this);
+
+  // Tell shuffle elements have been appended.
+  // It expects an array of elements as the parameter.
+  this.shuffle.add(elements);
+};
+
+Removing elements
+
+   Shuffle will animate the element away and then remove it from the DOM
+   once it's finished. It will then emit the Shuffle.EventType.REMOVED
+   event with the array of elements in event.collection.
+this.shuffle.remove([element1, element2]);
+
+   Check out the adding and removing demo.
+
+Public Methods
+
+   A list of the methods available to you and what they do.
+     * filter(category, sortObject) - Filters all the shuffle items and
+       then sorts them. category can be a string, array of strings, or a
+       function. The sort object is optional and will use the last-used
+       sort object.
+     * sort(sortObject) - Sorts the currently filtered shuffle items.
+     * update() - Repositions everything. Useful for when dimensions (like
+       the window size) change.
+     * layout() - Use this instead of update() if you don't need the
+       columns and gutters updated. Maybe an image loaded and now has a
+       height.
+     * add(newItems) - New items have been appended to the shuffle
+       container. newItems is an array of elements.
+     * disable() - Disables Shuffle from updating dimensions and layout on
+       resize.
+     * enable() - Enables Shuffle again.
+     * remove() - Remove one or more shuffle items.
+     * getItemByElement(element) - Retrieve a ShuffleItem by its element.
+     * destroy() - Destroys Shuffle, removes events, styles, classes, and
+       references.
+
+Customizing Styles
+
+   You can customize the default styles which are applied to Shuffle items
+   upon initialization, before layout, after layout, before hiding, and
+   after hidden.
+
+   Here are the defaults:
+ShuffleItem.Css = {
+  INITIAL: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    visibility: 'visible',
+    'will-change': 'transform',
+  },
+  VISIBLE: {
+    before: {
+      opacity: 1,
+      visibility: 'visible',
+    },
+    after: {
+      transitionDelay: '',
+    },
+  },
+  HIDDEN: {
+    before: {
+      opacity: 0,
+    },
+    after: {
+      visibility: 'hidden',
+      transitionDelay: '',
+    },
+  },
+};
+
+ShuffleItem.Scale = {
+  VISIBLE: 1,
+  HIDDEN: 0.001,
+};
+
+   If you wanted to add a 50% red background to every item when they
+   initialize, you could do this:
+Shuffle.ShuffleItem.Css.INITIAL.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+
+   To set the text color to teal after the item has finished moving:
+Shuffle.ShuffleItem.Css.VISIBLE.after.color = 'teal';
+
+   You can also customize the scaling effect with visible or hidden items.
+Shuffle.ShuffleItem.Scale.HIDDEN = 0.5;
+
+Extra Features
+
+   Shuffle likely will not grow much farther than the current feature set.
+   If you need something with drag and drop, filling in gaps, more layout
+   modes, etc., I suggest looking into packery or isotope.
+
+Dependencies
+
+   Shuffle's dependencies are bundled with the dist file.
+
+   Shuffle does, however, expect the following ES6/7 features: Set,
+   Array.from, Object.assign, Array.prototype.find, and
+   Array.prototype.includes. In order to support browsers like IE11 and
+   Safari 8, you must include a polyfill for these features. You can use a
+   service like polyfill.io to only load the polyfills that specific
+   browser needs, or a polyfill script like @babel/polyfill (which uses
+   core-js internally).
+
+Supported Browsers
+
+     * Chrome
+     * Firefox
+     * Edge
+     * IE 11
+     * Safari
+
+   Depending on what browsers you support, you may need to polyfill
+   features used by Shuffle.
+
+Be Social
+
+   IFRAME:
+   https://ghbtns.com/github-btn.html?user=Vestride&repo=Shuffle&type=star
+   &size=large
+
+   Tweet
+
+Changelog
+
+   For a more detailed changelog, visit the latest releases on GitHub.
+     * v5.2.3 2019-08-29 - Add missing inherited methods from TinyEmitter
+       to TypeScript definitions.
+     * v5.2.2 2019-06-03 - Update TypeScript definitions.
+     * v5.2.1 2018-12-01 - Change `index.d.ts` to use `export default
+       Shuffle` (#214). Upgrade dev dependencies.
+     * v5.2.0 2018-08-19 - Lazily test whether the browser's
+       getComputedStyle includes padding. This allows the bundled file to
+       be imported in node for server side rendering.
+     * v5.1.2 2018-03-26 - Fix misspelled delimiter option. Both
+       "delimiter" and "delimeter" will continue to work for v5.
+     * v5.1.1 2018-03-02 - Fix new item animation when there is an active
+       filter.
+     * v5.1.0 2018-02-20 - Add compare option to sorter. Add es build to
+       package and "module" field to package.json.
+     * v5.0.3 2017-10-30 - Fix rounding error.
+     * v5.0.2 2017-09-23 - Update type definitions. Upgrade dev
+       dependencies.
+     * v5.0.1 2017-07-18 - Add roundTransforms option.
+     * v5.0.0 2017-07-18 - Change global export from shuffle to Shuffle.
+       Remove bower support. Expect ES6 environment. Make Shuffle
+       instances Event Emitters instead of dispatching CustomEvent.
+     * v4.2.0 2017-05-10 - Replace webpack build with rollup. Replace
+       jshint and jscs with eslint. Add filterMode option.
+     * v4.1.1 2017-03-21 - the before styles for a ShuffleItem were not
+       applied if the item didn’t move.
+     * v4.1.0 2017-01-30 - Use webpack-2 to bundle Shuffle.
+     * v4.0.2 2016-09-15 - Update custom-event-polyfill dependency.
+     * v4.0.1 2016-07-30 - Fix delimiter option.
+     * v4.0.0 2016-04-20 - Rewrite in ES6 with babel. Remove jQuery and
+       Modernizr dependencies. Remove support for IE<11. Docs
+       improvements. Switch to gulp build system with webpack.
+     * v3.1.0 2015-03-23 - Allow zero speed option (#64) and cancel
+       previous animations instead of ignoring new ones (#69). Handle
+       non-integer columns better (#46)
+     * v3.0.4 2015-02-16 - Publish to NPM.
+     * v3.0.2 2015-01-21 - Remove from jQuery plugins directory.
+     * v3.0.1 2014-12-29 - Add CommonJS support.
+     * v3.0.0 2014-10-06 - Refactored with improvements, added unit tests,
+       more documentation. Removed some triggered events.
+     * v2.1.2 2014-06-01 - Use window.jQuery instead of window.$ to work
+       better with noConflict. Fixed #25.
+     * v2.1.1 2014-04-16 - Fix items with zero opacity overlapping visible
+       ones in IE<10.
+     * v2.1.0 2014-04-12 - Register with bower as shufflejs.
+     * 2014-04-10 - Add AMD support.
+     * 2014-04-08 - Separate Modernizr into its own file and custom
+       Shuffle build.
+     * 2014-03-08 - Add Bootstrap 3 demo. Fixed issue with percentage
+       width items.
+     * 2013-10-04 - Moved some Shuffle instance properties to constants.
+       Converted from 4 to 2 space indentation. Added events enum and
+       pulled out some strings to constants.
+     * 2013-08-30 - Added animate-in demo.
+     * v2.0.0 2013-07-05 - Shuffle 2.0 with masonry, adding and removing,
+       and more.
+     * 2012-11-03 - Replaced layout system with masonry. Items can now be
+       different sizes! Added addtional examples.
+     * 2012-10-24 - Better handling of grid item dimensions. Added a
+       minimal markup page.
+     * 2012-09-20 - Added destroy method
+     * 2012-09-18 - Added sorting ability and made plugin responsive.
+       Updated to Modernizr 2.6.2
+     * 2012-07-21 - Rewrote plugin in more object oriented structure.
+       Added custom events. Updated to Modernizr 2.6.1
+     * 2012-07-03 - Removed dependency on the css file and now apply the
+       css with javascript
+
+     * FAQ
+     * View Shuffle on GitHub
+
+   Photos by the amazing people on Unsplash.com.

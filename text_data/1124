@@ -1,0 +1,1496 @@
+   #Persistent Memory Wiki start Sitemap Recent changes Current namespace
+   Plain HTML Wiki Markup
+
+     * skip to content
+
+Persistent Memory Wiki
+
+User Tools
+
+     * Login
+
+Site Tools
+
+   ____________________ Search
+   [Tools__________] >
+     * Recent changes
+     * Media Manager
+     * Sitemap
+
+   Trace: • start
+     __________________________________________________________________
+
+   start
+
+Table of Contents
+
+     * Persistent Memory
+          + Links
+          + Subtopics
+          + Quick Setup Guide
+          + Namespaces
+          + Persistent Naming
+          + Partitions
+          + Filesystems
+          + iostats
+          + fio
+
+Persistent Memory
+
+   These pages contain instructions, links and other information related
+   to persistent memory in Linux.
+
+Links
+
+Miscellaneous
+
+     * NVDIMM Namespace:
+       http://pmem.io/documents/NVDIMM_Namespace_Spec.pdf
+     * Driver Writer’s Guide:
+       http://pmem.io/documents/NVDIMM_Driver_Writers_Guide.pdf
+     * NVDIMM Kernel Tree:
+       https://git.kernel.org/cgit/linux/kernel/git/nvdimm/nvdimm.git
+     * NDCTL: https://github.com/pmem/ndctl.git
+     * NDCTL man pages online: http://pmem.io/ndctl/
+     * linux-nvdimm Mailing List:
+       https://lists.01.org/mailman/listinfo/linux-nvdimm
+     * linux-nvdimm Patchwork:
+       https://patchwork.kernel.org/project/linux-nvdimm/list/
+
+Blogs
+
+     * NVDIMM Enabling in SUSE Linux Enterprise 12, Service Pack 2 - Part
+       1
+     * NVDIMM Enabling in SUSE Linux Enterprise 12, Service Pack 2 - Part
+       2
+
+Industry standards and specifications
+
+     * Advanced Configuration and Power Interface (ACPI) 6.2a:
+       http://www.uefi.org/sites/default/files/resources/ACPI%206_2_A_Sept
+       29.pdf
+     * Unified Extensible Firmware Interface (UEFI) Specification 2.7:
+       http://www.uefi.org/sites/default/files/resources/UEFI_Spec_2_7.pdf
+     * DMTF System Management BIOS (SMBIOS 3.2.0):
+       https://www.dmtf.org/sites/default/files/standards/documents/DSP013
+       4_3.2.0.pdf
+     * JEDEC Byte Addressable Energy Backed Interface (JESD245B.01):
+       https://www.jedec.org/system/files/docs/JESD245B-01.pdf
+     * JEDEC DDR4 NVDIMM-N Design Specification (JESD248A):
+       https://www.jedec.org/system/files/docs/JESD248A.pdf
+
+Vendor-specific tools and specifications
+
+     * Intel Optane DC persistent memory management software:
+       https://github.com/intel/ipmctl
+     * Intel DSM Interface:
+       http://pmem.io/documents/NVDIMM_DSM_Interface-V1.7.pdf
+     * Microsoft DSM Interface:
+       https://docs.microsoft.com/en-us/windows-hardware/drivers/storage/-
+       dsm-interface-for-byte-addressable-energy-backed-function-class--fu
+       nction-interface-1-
+     * HPE DSM Interface: https://github.com/HewlettPackard/hpe-nvm
+
+Subtopics
+     __________________________________________________________________
+
+     * How to choose the correct memmap kernel parameter for PMEM on your
+       system
+     * How to get 2 MiB filesystem DAX faults
+     * Simulating persistent memory configurations using QEMU
+
+Quick Setup Guide
+     __________________________________________________________________
+
+   One interesting use of the PMEM driver is to allow users to begin
+   developing software using DAX, which was upstreamed in v4.0. On a
+   non-NFIT system this can be done by using PMEM's memmap kernel command
+   line to manually create a type 12 memory region.
+
+   Here are the additions I made for my system with 32 GiB of RAM:
+
+   1) Reserve 16 GiB of memory via the “memmap” kernel parameter in grub's
+   menu.lst, using PMEM's new “!” specifier:
+memmap=16G!16G
+
+   The documentation for this parameter can be found here:
+   https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.
+   txt
+
+   Also see: How to choose the correct memmap kernel parameter for PMEM on
+   your system.
+
+   2) Set up the correct kernel configuration options for PMEM and DAX in
+   .config. To use huge pages for mmapped files, you'll need
+   CONFIG_FS_DAX_PMD selected, which is done automatically if you have the
+   prerequisites marked below.
+
+   Options in make menuconfig:
+     * Device Drivers - NVDIMM (Non-Volatile Memory Device) Support
+          + PMEM: Persistent memory block device support
+          + BLK: Block data window (aperture) device support
+          + BTT: Block Translation Table (atomic sector updates)
+     * Enable the block layer
+          + Block device DAX support <not available in kernel-4.5 due to
+            page cache issues>
+     * File systems
+          + Direct Access (DAX) support
+     * Processor type and features
+          + Support non-standard NVDIMMs and ADR protected memory <if
+            using the memmap kernel parameter>
+          + Transparent Hugepage Support <needed for huge pages>
+          + Allow for memory hot-add <needed for huge pages>
+               o Allow for memory hot remove <needed for huge pages>
+          + Device memory (pmem, HMM, etc…) hotplug support <needed for
+            huge pages>
+
+CONFIG_ZONE_DEVICE=y
+CONFIG_MEMORY_HOTPLUG=y
+CONFIG_MEMORY_HOTREMOVE=y
+CONFIG_TRANSPARENT_HUGEPAGE=y
+CONFIG_ACPI_NFIT=m
+CONFIG_X86_PMEM_LEGACY=m
+CONFIG_OF_PMEM=m
+CONFIG_LIBNVDIMM=m
+CONFIG_BLK_DEV_PMEM=m
+CONFIG_BTT=y
+CONFIG_NVDIMM_PFN=y
+CONFIG_NVDIMM_DAX=y
+CONFIG_FS_DAX=y
+CONFIG_DAX=y
+CONFIG_DEV_DAX=m
+CONFIG_DEV_DAX_PMEM=m
+CONFIG_DEV_DAX_KMEM=m
+
+   This configuration gave me one pmem device with 16 GiB of space:
+$ fdisk -l /dev/pmem0
+
+Disk /dev/pmem0: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+   lsblk shows the block devices, including pmem devices. Examples:
+$ lsblk
+NAME                   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+pmem0                  259:0    0    16G  0 disk
+├─pmem0p1              259:6    0     4G  0 part /mnt/ext4-pmem0
+└─pmem0p2              259:7    0  11.9G  0 part /mnt/btrfs-pmem0
+pmem1                  259:1    0    16G  0 disk /mnt/xfs-pmem1
+pmem2                  259:2    0    16G  0 disk /mnt/xfs-pmem2
+pmem3                  259:3    0    16G  0 disk /mnt/xfs-pmem3
+$ lsblk -t
+NAME                   ALIGNMENT MIN-IO OPT-IO PHY-SEC LOG-SEC ROTA SCHED RQ-SIZ
+E  RA WSAME
+pmem0                          0   4096      0    4096     512    0           12
+8 128    0B
+pmem1                          0   4096      0    4096     512    0           12
+8 128    0B
+pmem2                          0   4096      0    4096     512    0           12
+8 128    0B
+pmem3                          0   4096      0    4096     512    0           12
+8 128    0B
+
+Namespaces
+     __________________________________________________________________
+
+   You can divide persistent memory address ranges into namespaces with
+   ndctl. This stores namespace label metadata at the beginning of the
+   persistent memory address range.
+
+   ndctl create-namespace ties a namespace to a block device or character
+   device:
+   mode description device path device type label metadata atomicity
+   filesystems DAX PFN metadata former name
+   raw raw /dev/pmemN block no no yes no no
+   sector sector atomic /dev/pmemNs block yes yes yes no no
+   fsdax filesystem DAX /dev/pmemN block yes no yes yes yes memory
+   devdax device DAX /dev/daxN.M character yes no no yes yes dax
+
+   There are two places to store PFN metadata (“struct page” metadata):
+     * –map=mem = regular system memory
+          + adequate for small persistent memory capacities
+     * –map=dev = persistent memory
+          + intended for large persistent memory capacities (there might
+            not be enough regular memory in the system!)
+          + persistence of the PFN metadata is not important; this is just
+            convenient because it scales with the persistent memory
+            capacity
+
+   The PFN metadata size is 64 bytes per 4 KiB of persistent memory
+   (1.5625%). For some common persistent memory capacities:
+   persistent memory capacity PFN metadata size example
+   8 GiB 128 MiB
+   16 GiB 256 MiB
+   96 GiB 1.5 GiB Six 16 GiB NVDIMMs
+   128 GiB 2 GiB
+   192 GiB 3 GiB Twelve 16 GiB NVDIMMs
+   256 GiB 4 GiB
+   512 GiB 8 GiB
+   768 GiB 12 GiB Six 128 GiB NVDIMMs
+   1 TiB 16 GiB
+   1.5 TiB 24 GiB Six 256 GiB NVDIMMs
+   3 TiB 48 GiB Six 512 GiB NVDIMMs
+   6 TiB 96 GiB Six 1 TiB NVDIMMs, or twelve 512 GiB NVDIMMs
+
+   Sector Atomic mode uses a Block Translation Layer (BTT) to help
+   software that doesn't understand sectors might end up with a mix of old
+   and new data if power loss occurs while writes were underway.
+
+   Filesystem DAX mode lets the filesystem provide direct access to
+   persistent memory to applications by using mmap() (e.g., ext4 and xfs
+   filesystems).
+
+   Device DAX mode creates a character device instead of a block device,
+   and is intended for applications that mmap() the the entire capacity.
+   It does not support filesystems or interact with the kernel page cache.
+
+   Example commands on an 8 GiB NVDIMM with output showing the resulting
+   sizes and /dev/ device names:
+$ ndctl create-namespace --mode raw -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"raw",
+  "size":"8.00 GiB (8.59 GB)",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode sector -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"sector",
+  "size":"7.99 GiB (8.58 GB)",
+  "uuid":"30868a48-9763-4d4d-a6b7-e43dbb165b16",
+  "sector_size":4096,
+  "blockdev":"pmem0s",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode fsdax --map mem -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"fsdax",
+  "map":"mem",
+  "size":"8.00 GiB (8.59 GB)",
+  "uuid":"f0ab3a91-c5bc-42b2-805f-4fa6c6075a50",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode fsdax --map dev -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"fsdax",
+  "map":"dev",
+  "size":"7.87 GiB (8.45 GB)",
+  "uuid":"64f617f3-b79a-4c92-8ca7-c02d05572d3c",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode devdax --map mem -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"devdax",
+  "map":"mem",
+  "size":"8.00 GiB (8.59 GB)",
+  "uuid":"7fc2ecfb-edb2-4370-b9e1-09ecbdf7df16",
+  "daxregion":{
+    "id":0,
+    "size":"8.00 GiB (8.59 GB)",
+    "align":2097152,
+    "devices":[
+      {
+        "chardev":"dax0.0",
+        "size":"8.00 GiB (8.59 GB)"
+      }
+    ]
+  },
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode devdax --map dev -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"devdax",
+  "map":"dev",
+  "size":"7.87 GiB (8.45 GB)",
+  "uuid":"47343804-46f5-49d8-a76e-76cc240d8fc7",
+  "daxregion":{
+    "id":0,
+    "size":"7.87 GiB (8.45 GB)",
+    "align":2097152,
+    "devices":[
+      {
+        "chardev":"dax0.0",
+        "size":"7.87 GiB (8.45 GB)"
+      }
+    ]
+  },
+  "numa_node":0
+}
+
+   When using QEMU (see the Simulating persistent memory configurations
+   using QEMU page) your namespaces will by default be in raw mode. You
+   can use the following bash script to convert all your raw mode
+   namespaces to fsdax mode:
+#!/usr/bin/bash -ex
+
+namespaces=$(ndctl list | jq -r '((. | arrays | .[]), . | objects) | select(.mod
+e == "raw") | .dev')
+for n in $namespaces; do
+        ndctl create-namespace -f -e $n --mode=memory
+done
+
+   This function highlights a tricky thing about ndctl and json. If you
+   have a single namespace, that is returned by ndctl list as a single
+   json object:
+# ndctl list
+{
+  "dev":"namespace0.0",
+  "mode":"fsdax",
+  "size":17834180608,
+  "uuid":"830d3440-df00-4e5a-9f89-a951dfb962cd",
+  "raw_uuid":"2dbddec6-44cc-41a4-bafd-a4cc3e345e50",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+   If you have two or more namespaces, though, they are returned as an
+   array of json objects:
+# ndctl list
+[
+  {
+    "dev":"namespace1.0",
+    "mode":"fsdax",
+    "size":17834180608,
+    "uuid":"ce92c90c-1707-4a39-abd8-1dd12788d137",
+    "raw_uuid":"f8130943-5867-4e84-b2e5-6c685434ef81",
+    "sector_size":512,
+    "blockdev":"pmem1",
+    "numa_node":0
+  },
+  {
+    "dev":"namespace0.0",
+    "mode":"fsdax",
+    "size":17834180608,
+    "uuid":"33d46163-095a-4bf8-acf0-6dbc5dc8a738",
+    "raw_uuid":"8f44ccd3-50f3-4dec-9817-554e9d1a5c5f",
+    "sector_size":512,
+    "blockdev":"pmem0",
+    "numa_node":0
+  }
+]
+
+   Note the outer [ and ] brackets surrounding the objects which turn it
+   into an array. The difficulty is that a given jq command expects to
+   either operate on objects or on an array, but not both. So, the command
+   you need to run will vary based on how many namespaces you have.
+
+   The command above works around this by first converting the multiple
+   namespace output from an array of objects to multiple objects in a
+   series:
+# ndctl list | jq -r '((. | arrays | .[]), . | objects)'
+{
+  "dev": "namespace1.0",
+  "mode": "fsdax",
+  "size": 17834180608,
+  "uuid": "ce92c90c-1707-4a39-abd8-1dd12788d137",
+  "raw_uuid": "f8130943-5867-4e84-b2e5-6c685434ef81",
+  "sector_size": 512,
+  "blockdev": "pmem1",
+  "numa_node": 0
+}
+{
+  "dev": "namespace0.0",
+  "mode": "fsdax",
+  "size": 17834180608,
+  "uuid": "33d46163-095a-4bf8-acf0-6dbc5dc8a738",
+  "raw_uuid": "8f44ccd3-50f3-4dec-9817-554e9d1a5c5f",
+  "sector_size": 512,
+  "blockdev": "pmem0",
+  "numa_node": 0
+}
+
+   We then structure the rest of the jq command to operate on normal
+   objects, and it works whether we have one namespace or many.
+
+Persistent Naming
+     __________________________________________________________________
+
+   The device names chosen by the kernel are subject to creation order and
+   discovery order. Environments can not rely the kernel name being
+   consistent from one boot to the next. For the most part they do not
+   change if the configuration stays static, but if a permanent name is
+   needed use /dev/disk/by-id. Recent versions of udev deploy the
+   following udev rule in 60-persistent-storage.rules:
+# PMEM devices
+KERNEL=="pmem*", ENV{DEVTYPE}=="disk", ATTRS{uuid}=="?*", SYMLINK+="disk/by-id/p
+mem-$attr{uuid}"
+
+   This rule yields symlinks like the following to be created for
+   namespaces defined by labels:
+ls -l /dev/disk/by-id/*
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-206dcdfe-69b7-4e86-a01b-f540621ce62
+e -> ../../pmem1.2
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-73840bf1-4e74-4ba4-a9c8-8248934c07c
+8 -> ../../pmem1.1
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-8137bdfd-3c4d-4b26-b326-21da3d4cd4e
+5 -> ../../pmem1.4
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-f43d1b6e-3300-46cb-8afc-06d66a7c16f
+6 -> ../../pmem1.3
+
+   The persistent name for a pmem namespace is then listed in /etc/fstab
+   like so:
+/dev/disk/by-id/pmem-206dcdfe-69b7-4e86-a01b-f540621ce62e /mnt/pmem xfs       de
+faults,dax        1 2
+
+Partitions
+     __________________________________________________________________
+
+   You can divide raw, sector, and fsdax devices (/dev/pmemN and
+   /dev/pmemNs) into partitions. In parted, the mkpart subcommand has this
+   syntax
+mkpart [part-type fs-type name] start end
+
+   Although mkpart defaults to 1 MiB alignment, you may want to use 2 MiB
+   alignment to support more efficient page mappings - see
+   https://nvdimm.wiki.kernel.org/2mib_fs_dax.
+
+   Example carving a 16 GiB /dev/pmem0 into 4 GiB, 8 GiB, and 4 GiB
+   partitions (constrained by 1 MiB alignment at the beginning and end)
+   (note: parted displays its outputs using SI decimal units; lsblk uses
+   binary units):
+$ parted -s -a optimal /dev/pmem0 \
+        mklabel gpt -- \
+        mkpart primary ext4 1MiB 4GiB \
+        mkpart primary xfs 4GiB 12GiB \
+        mkpart primary btrfs 12GiB -1MiB \
+        print
+
+Model: Unknown (unknown)
+Disk /dev/pmem0: 17.2GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  4295MB  4294MB  ext4         primary
+ 2      4295MB  12.9GB  8590MB  xfs          primary
+ 3      12.9GB  17.2GB  4294MB  btrfs        primary
+
+$ lsblk
+NAME                   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+pmem0                  259:0    0    16G  0 disk
+├─pmem0p1              259:4    0     4G  0 part
+├─pmem0p2              259:5    0     8G  0 part
+└─pmem0p3              259:8    0     4G  0 part
+
+$ fdisk -l /dev/pmem0
+Disk /dev/pmem0: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: B334CBC6-1C56-47DF-8981-770C866CEABE
+
+Device          Start      End  Sectors Size Type
+/dev/pmem0p1     2048  8388607  8386560   4G Linux filesystem
+/dev/pmem0p2  8388608 25165823 16777216   8G Linux filesystem
+/dev/pmem0p3 25165824 33552383  8386560   4G Linux filesystem
+
+Filesystems
+     __________________________________________________________________
+
+   You may place any filesystem (e.g., ext4, xfs, btrfs) on a raw or fsdax
+   device (e.g., /dev/pmem0), a partition on a raw or fsdax device (e.g.
+   /dev/pmem0p1), a sector device (e.g., /dev/pmem0s), or a partition on a
+   sector device (e.g., /dev/pmem0sp1).
+
+   ext4 and xfs support DAX, which allow applications to perform direct
+   access to persistent memory with mmap(). You may use DAX on raw devices
+   and fsdax devices, but not on sector devices.
+
+   Example creating ext4, xfs, and btrfs filesystems on three partitions
+   and mounting ext4 and xfs with DAX (note: df -h displays sizes in IEC
+   binary units; df -H uses SI decimal units):
+$ mkfs.ext4 -F /dev/pmem0p1
+$ mkfs.xfs -f -m reflink=0 /dev/pmem0p2
+$ mkfs.btrfs -f /dev/pmem0p3
+$ mount -o dax /dev/pmem0p1 /mnt/ext4-pmem0
+$ mount -o dax /dev/pmem0p2 /mnt/xfs-pmem0
+$ mount /dev/pmem0p3 /mnt/btrfs-pmem0
+
+$ lsblk
+NAME                   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+pmem0                  259:0    0    16G  0 disk
+├─pmem0p1              259:4    0     4G  0 part /mnt/ext4-pmem0
+├─pmem0p2              259:5    0     8G  0 part /mnt/xfs-pmem0
+└─pmem0p3              259:8    0     4G  0 part /mnt/btrfs-pmem0
+
+$ df -h
+Filesystem                      Size  Used Avail Use% Mounted on
+/dev/pmem0p1                    3.9G  8.0M  3.7G   1% /mnt/ext4-pmem0
+/dev/pmem0p2                    8.0G   33M  8.0G   1% /mnt/xfs-pmem0
+/dev/pmem0p3                    4.0G   17M  3.8G   1% /mnt/btrfs-pmem0
+
+$ df -H
+Filesystem                      Size  Used Avail Use% Mounted on
+/dev/pmem0p1                    4.2G  8.4M  4.0G   1% /mnt/ext4-pmem0
+/dev/pmem0p2                    8.6G   34M  8.6G   1% /mnt/xfs-pmem0
+/dev/pmem0p3                    4.3G   17M  4.1G   1% /mnt/btrfs-pmem0
+
+   Check the kernel log to ensure the DAX mount option was honored; mount
+   does not print this information. Example failures:
+$ dmesg | tail
+[1811131.922331] XFS (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at your ow
+n risk
+[1811131.962630] XFS (pmem0): DAX unsupported by block device. Turning off DAX.
+[1811131.999039] XFS (pmem0): Mounting V5 Filesystem
+[1811132.025458] XFS (pmem0): Ending clean mount
+
+[1811261.329868] EXT4-fs (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at you
+r own risk
+[1811261.371653] EXT4-fs (pmem0): DAX unsupported by block device. Turning off D
+AX.
+[1811261.410944] EXT4-fs (pmem0): mounted filesystem with ordered data mode. Opt
+s: dax
+
+   Example successes:
+$ dmesg | tail
+[1811420.919434] EXT4-fs (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at you
+r own risk
+[1811420.961539] EXT4-fs (pmem0): mounted filesystem with ordered data mode. Opt
+s: dax
+
+[1811472.505650] XFS (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at your ow
+n risk
+[1811472.545702] XFS (pmem0): Mounting V5 Filesystem
+[1811472.571268] XFS (pmem0): Ending clean mount
+
+iostats
+     __________________________________________________________________
+
+   iostats are disabled by default due to performance overhead (e.g., 12M
+   IOPS dropping 25% to 9M IOPS). However, they can be enabled in sysfs if
+   desired.
+
+   As of kernel 4.5, iostats are only collected for the base pmem device,
+   not per-partition. Also, I/Os that go through DAX paths (rw_page,
+   rw_bytes, and direct_access functions) are not counted, so nothing is
+   collected for:
+     * I/O to files in filesystems mounted with -o dax
+     * I/O to raw block devices if CONFIG_BLOCK_DAX is enabled
+
+$ echo 1 > /sys/block/pmem0/queue/iostats
+$ echo 1 > /sys/block/pmem1/queue/iostats
+$ echo 1 > /sys/block/pmem2/queue/iostats
+$ echo 1 > /sys/block/pmem3/queue/iostats
+
+$ iostat -mxy 1
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          21.53    0.00   78.47    0.00    0.00    0.00
+
+Device:         rrqm/s   wrqm/s        r/s     w/s    rMB/s    wMB/s avgrq-sz av
+gqu-sz   await r_await w_await  svctm  %util
+pmem0             0.00     0.00 4706551.00    0.00 18384.95     0.00     8.00
+  6.00    0.00    0.00    0.00   0.00 113.90
+pmem1             0.00     0.00 4701492.00    0.00 18365.20     0.00     8.00
+  6.01    0.00    0.00    0.00   0.00 119.30
+pmem2             0.00     0.00 4701851.00    0.00 18366.60     0.00     8.00
+  6.37    0.00    0.00    0.00   0.00 108.90
+pmem3             0.00     0.00 4688767.00    0.00 18315.50     0.00     8.00
+  6.43    0.00    0.00    0.00   0.00 117.40
+
+fio
+     __________________________________________________________________
+
+   Example fio script to perform 4 KiB random reads to four pmem devices:
+[global]
+direct=1
+ioengine=libaio
+norandommap
+randrepeat=0
+bs=256k         # for bandwidth
+bs=4k           # for IOPS and latency
+iodepth=1
+runtime=30
+time_based=1
+group_reporting
+thread
+gtod_reduce=0   # for latency
+gtod_reduce=1   # IOPS and bandwidth
+zero_buffers
+
+## local CPU
+numjobs=9       # for bandwidth
+numjobs=1       # for latency
+numjobs=18      # for IOPS
+cpus_allowed_policy=split
+
+rw=randwrite
+rw=randread
+
+# CPU affinity based on two 18-core CPUs with QPI snoop configuration of cluster
+-on-die
+
+[drive_0]
+filename=/dev/pmem0
+cpus_allowed=0-8,36-44
+
+[drive_1]
+filename=/dev/pmem1
+cpus_allowed=9-17,45-53
+
+[drive_2]
+filename=/dev/pmem2
+cpus_allowed=18-26,54-62
+
+[drive_3]
+filename=/dev/pmem3
+cpus_allowed=27-35,63-71
+
+   When using /dev/dax character devices, you must specify the size,
+   because character devices do not have a size.
+
+   Example fio script to perform 4 KiB random reads to four /dev/dax
+   character devices:
+[global]
+ioengine=mmap
+pre_read=1
+norandommap
+randrepeat=0
+bs=4k
+iodepth=1
+runtime=60000
+time_based=1
+group_reporting
+thread
+gtod_reduce=1   # reduce=1 except for latency test
+zero_buffers
+size=2G
+
+numjobs=36
+
+cpus_allowed=0-17,36-53
+cpus_allowed_policy=split
+
+[drive_0]
+filename=/dev/dax0.0
+rw=randread
+
+[drive_1]
+filename=/dev/dax1.0
+rw=randread
+
+[drive_2]
+filename=/dev/dax2.0
+rw=randread
+
+[drive_3]
+filename=/dev/dax3.0
+rw=randread
+
+   start.txt · Last modified: 2019/08/06 00:07 by Dan Williams
+     __________________________________________________________________
+
+Page Tools
+
+     * Show pagesource
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Noncommercial-Share Alike 3.0
+   Unported
+   CC Attribution-Noncommercial-Share Alike 3.0 Unported Donate Powered by
+   PHP Valid HTML5 Valid CSS Driven by DokuWiki
+   #Persistent Memory Wiki start Sitemap Recent changes Current namespace
+   Plain HTML Wiki Markup
+
+     * skip to content
+
+Persistent Memory Wiki
+
+User Tools
+
+     * Login
+
+Site Tools
+
+   ____________________ Search
+   [Tools_________] >
+     * Recent changes
+     * Media Manager
+     * Sitemap
+
+   Trace: • start
+     __________________________________________________________________
+
+   start
+
+Sitemap
+
+   This is a sitemap over all available pages ordered by namespaces.
+     * wiki
+     * 2mib_fs_dax
+     * how_to_choose_the_correct_memmap_kernel_parameter_for_pmem_on_your_
+       system
+     * pmem_in_qemu
+     * start
+
+   start.txt · Last modified: 2019/08/06 00:07 by Dan Williams
+     __________________________________________________________________
+
+Page Tools
+
+     * Show page
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Noncommercial-Share Alike 3.0
+   Unported
+   CC Attribution-Noncommercial-Share Alike 3.0 Unported Donate Powered by
+   PHP Valid HTML5 Valid CSS Driven by DokuWiki
+   #Persistent Memory Wiki start Sitemap Recent changes Current namespace
+   Plain HTML Wiki Markup
+
+Table of Contents
+
+     * Persistent Memory
+          + Links
+          + Subtopics
+          + Quick Setup Guide
+          + Namespaces
+          + Persistent Naming
+          + Partitions
+          + Filesystems
+          + iostats
+          + fio
+
+Persistent Memory
+
+   These pages contain instructions, links and other information related
+   to persistent memory in Linux.
+
+Links
+
+Miscellaneous
+
+     * NVDIMM Namespace:
+       http://pmem.io/documents/NVDIMM_Namespace_Spec.pdf
+     * Driver Writer’s Guide:
+       http://pmem.io/documents/NVDIMM_Driver_Writers_Guide.pdf
+     * NVDIMM Kernel Tree:
+       https://git.kernel.org/cgit/linux/kernel/git/nvdimm/nvdimm.git
+     * NDCTL: https://github.com/pmem/ndctl.git
+     * NDCTL man pages online: http://pmem.io/ndctl/
+     * linux-nvdimm Mailing List:
+       https://lists.01.org/mailman/listinfo/linux-nvdimm
+     * linux-nvdimm Patchwork:
+       https://patchwork.kernel.org/project/linux-nvdimm/list/
+
+Blogs
+
+     * NVDIMM Enabling in SUSE Linux Enterprise 12, Service Pack 2 - Part
+       1
+     * NVDIMM Enabling in SUSE Linux Enterprise 12, Service Pack 2 - Part
+       2
+
+Industry standards and specifications
+
+     * Advanced Configuration and Power Interface (ACPI) 6.2a:
+       http://www.uefi.org/sites/default/files/resources/ACPI%206_2_A_Sept
+       29.pdf
+     * Unified Extensible Firmware Interface (UEFI) Specification 2.7:
+       http://www.uefi.org/sites/default/files/resources/UEFI_Spec_2_7.pdf
+     * DMTF System Management BIOS (SMBIOS 3.2.0):
+       https://www.dmtf.org/sites/default/files/standards/documents/DSP013
+       4_3.2.0.pdf
+     * JEDEC Byte Addressable Energy Backed Interface (JESD245B.01):
+       https://www.jedec.org/system/files/docs/JESD245B-01.pdf
+     * JEDEC DDR4 NVDIMM-N Design Specification (JESD248A):
+       https://www.jedec.org/system/files/docs/JESD248A.pdf
+
+Vendor-specific tools and specifications
+
+     * Intel Optane DC persistent memory management software:
+       https://github.com/intel/ipmctl
+     * Intel DSM Interface:
+       http://pmem.io/documents/NVDIMM_DSM_Interface-V1.7.pdf
+     * Microsoft DSM Interface:
+       https://docs.microsoft.com/en-us/windows-hardware/drivers/storage/-
+       dsm-interface-for-byte-addressable-energy-backed-function-class--fu
+       nction-interface-1-
+     * HPE DSM Interface: https://github.com/HewlettPackard/hpe-nvm
+
+Subtopics
+     __________________________________________________________________
+
+     * How to choose the correct memmap kernel parameter for PMEM on your
+       system
+     * How to get 2 MiB filesystem DAX faults
+     * Simulating persistent memory configurations using QEMU
+
+Quick Setup Guide
+     __________________________________________________________________
+
+   One interesting use of the PMEM driver is to allow users to begin
+   developing software using DAX, which was upstreamed in v4.0. On a
+   non-NFIT system this can be done by using PMEM's memmap kernel command
+   line to manually create a type 12 memory region.
+
+   Here are the additions I made for my system with 32 GiB of RAM:
+
+   1) Reserve 16 GiB of memory via the “memmap” kernel parameter in grub's
+   menu.lst, using PMEM's new “!” specifier:
+memmap=16G!16G
+
+   The documentation for this parameter can be found here:
+   https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.
+   txt
+
+   Also see: How to choose the correct memmap kernel parameter for PMEM on
+   your system.
+
+   2) Set up the correct kernel configuration options for PMEM and DAX in
+   .config. To use huge pages for mmapped files, you'll need
+   CONFIG_FS_DAX_PMD selected, which is done automatically if you have the
+   prerequisites marked below.
+
+   Options in make menuconfig:
+     * Device Drivers - NVDIMM (Non-Volatile Memory Device) Support
+          + PMEM: Persistent memory block device support
+          + BLK: Block data window (aperture) device support
+          + BTT: Block Translation Table (atomic sector updates)
+     * Enable the block layer
+          + Block device DAX support <not available in kernel-4.5 due to
+            page cache issues>
+     * File systems
+          + Direct Access (DAX) support
+     * Processor type and features
+          + Support non-standard NVDIMMs and ADR protected memory <if
+            using the memmap kernel parameter>
+          + Transparent Hugepage Support <needed for huge pages>
+          + Allow for memory hot-add <needed for huge pages>
+               o Allow for memory hot remove <needed for huge pages>
+          + Device memory (pmem, HMM, etc…) hotplug support <needed for
+            huge pages>
+
+CONFIG_ZONE_DEVICE=y
+CONFIG_MEMORY_HOTPLUG=y
+CONFIG_MEMORY_HOTREMOVE=y
+CONFIG_TRANSPARENT_HUGEPAGE=y
+CONFIG_ACPI_NFIT=m
+CONFIG_X86_PMEM_LEGACY=m
+CONFIG_OF_PMEM=m
+CONFIG_LIBNVDIMM=m
+CONFIG_BLK_DEV_PMEM=m
+CONFIG_BTT=y
+CONFIG_NVDIMM_PFN=y
+CONFIG_NVDIMM_DAX=y
+CONFIG_FS_DAX=y
+CONFIG_DAX=y
+CONFIG_DEV_DAX=m
+CONFIG_DEV_DAX_PMEM=m
+CONFIG_DEV_DAX_KMEM=m
+
+   This configuration gave me one pmem device with 16 GiB of space:
+$ fdisk -l /dev/pmem0
+
+Disk /dev/pmem0: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+   lsblk shows the block devices, including pmem devices. Examples:
+$ lsblk
+NAME                   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+pmem0                  259:0    0    16G  0 disk
+├─pmem0p1              259:6    0     4G  0 part /mnt/ext4-pmem0
+└─pmem0p2              259:7    0  11.9G  0 part /mnt/btrfs-pmem0
+pmem1                  259:1    0    16G  0 disk /mnt/xfs-pmem1
+pmem2                  259:2    0    16G  0 disk /mnt/xfs-pmem2
+pmem3                  259:3    0    16G  0 disk /mnt/xfs-pmem3
+$ lsblk -t
+NAME                   ALIGNMENT MIN-IO OPT-IO PHY-SEC LOG-SEC ROTA SCHED RQ-SIZ
+E  RA WSAME
+pmem0                          0   4096      0    4096     512    0           12
+8 128    0B
+pmem1                          0   4096      0    4096     512    0           12
+8 128    0B
+pmem2                          0   4096      0    4096     512    0           12
+8 128    0B
+pmem3                          0   4096      0    4096     512    0           12
+8 128    0B
+
+Namespaces
+     __________________________________________________________________
+
+   You can divide persistent memory address ranges into namespaces with
+   ndctl. This stores namespace label metadata at the beginning of the
+   persistent memory address range.
+
+   ndctl create-namespace ties a namespace to a block device or character
+   device:
+   mode description device path device type label metadata atomicity
+   filesystems DAX PFN metadata former name
+   raw raw /dev/pmemN block no no yes no no
+   sector sector atomic /dev/pmemNs block yes yes yes no no
+   fsdax filesystem DAX /dev/pmemN block yes no yes yes yes memory
+   devdax device DAX /dev/daxN.M character yes no no yes yes dax
+
+   There are two places to store PFN metadata (“struct page” metadata):
+     * –map=mem = regular system memory
+          + adequate for small persistent memory capacities
+     * –map=dev = persistent memory
+          + intended for large persistent memory capacities (there might
+            not be enough regular memory in the system!)
+          + persistence of the PFN metadata is not important; this is just
+            convenient because it scales with the persistent memory
+            capacity
+
+   The PFN metadata size is 64 bytes per 4 KiB of persistent memory
+   (1.5625%). For some common persistent memory capacities:
+   persistent memory capacity PFN metadata size example
+   8 GiB 128 MiB
+   16 GiB 256 MiB
+   96 GiB 1.5 GiB Six 16 GiB NVDIMMs
+   128 GiB 2 GiB
+   192 GiB 3 GiB Twelve 16 GiB NVDIMMs
+   256 GiB 4 GiB
+   512 GiB 8 GiB
+   768 GiB 12 GiB Six 128 GiB NVDIMMs
+   1 TiB 16 GiB
+   1.5 TiB 24 GiB Six 256 GiB NVDIMMs
+   3 TiB 48 GiB Six 512 GiB NVDIMMs
+   6 TiB 96 GiB Six 1 TiB NVDIMMs, or twelve 512 GiB NVDIMMs
+
+   Sector Atomic mode uses a Block Translation Layer (BTT) to help
+   software that doesn't understand sectors might end up with a mix of old
+   and new data if power loss occurs while writes were underway.
+
+   Filesystem DAX mode lets the filesystem provide direct access to
+   persistent memory to applications by using mmap() (e.g., ext4 and xfs
+   filesystems).
+
+   Device DAX mode creates a character device instead of a block device,
+   and is intended for applications that mmap() the the entire capacity.
+   It does not support filesystems or interact with the kernel page cache.
+
+   Example commands on an 8 GiB NVDIMM with output showing the resulting
+   sizes and /dev/ device names:
+$ ndctl create-namespace --mode raw -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"raw",
+  "size":"8.00 GiB (8.59 GB)",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode sector -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"sector",
+  "size":"7.99 GiB (8.58 GB)",
+  "uuid":"30868a48-9763-4d4d-a6b7-e43dbb165b16",
+  "sector_size":4096,
+  "blockdev":"pmem0s",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode fsdax --map mem -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"fsdax",
+  "map":"mem",
+  "size":"8.00 GiB (8.59 GB)",
+  "uuid":"f0ab3a91-c5bc-42b2-805f-4fa6c6075a50",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode fsdax --map dev -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"fsdax",
+  "map":"dev",
+  "size":"7.87 GiB (8.45 GB)",
+  "uuid":"64f617f3-b79a-4c92-8ca7-c02d05572d3c",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode devdax --map mem -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"devdax",
+  "map":"mem",
+  "size":"8.00 GiB (8.59 GB)",
+  "uuid":"7fc2ecfb-edb2-4370-b9e1-09ecbdf7df16",
+  "daxregion":{
+    "id":0,
+    "size":"8.00 GiB (8.59 GB)",
+    "align":2097152,
+    "devices":[
+      {
+        "chardev":"dax0.0",
+        "size":"8.00 GiB (8.59 GB)"
+      }
+    ]
+  },
+  "numa_node":0
+}
+
+$ ndctl create-namespace --mode devdax --map dev -e namespace0.0 -f
+{
+  "dev":"namespace0.0",
+  "mode":"devdax",
+  "map":"dev",
+  "size":"7.87 GiB (8.45 GB)",
+  "uuid":"47343804-46f5-49d8-a76e-76cc240d8fc7",
+  "daxregion":{
+    "id":0,
+    "size":"7.87 GiB (8.45 GB)",
+    "align":2097152,
+    "devices":[
+      {
+        "chardev":"dax0.0",
+        "size":"7.87 GiB (8.45 GB)"
+      }
+    ]
+  },
+  "numa_node":0
+}
+
+   When using QEMU (see the Simulating persistent memory configurations
+   using QEMU page) your namespaces will by default be in raw mode. You
+   can use the following bash script to convert all your raw mode
+   namespaces to fsdax mode:
+#!/usr/bin/bash -ex
+
+namespaces=$(ndctl list | jq -r '((. | arrays | .[]), . | objects) | select(.mod
+e == "raw") | .dev')
+for n in $namespaces; do
+        ndctl create-namespace -f -e $n --mode=memory
+done
+
+   This function highlights a tricky thing about ndctl and json. If you
+   have a single namespace, that is returned by ndctl list as a single
+   json object:
+# ndctl list
+{
+  "dev":"namespace0.0",
+  "mode":"fsdax",
+  "size":17834180608,
+  "uuid":"830d3440-df00-4e5a-9f89-a951dfb962cd",
+  "raw_uuid":"2dbddec6-44cc-41a4-bafd-a4cc3e345e50",
+  "sector_size":512,
+  "blockdev":"pmem0",
+  "numa_node":0
+}
+
+   If you have two or more namespaces, though, they are returned as an
+   array of json objects:
+# ndctl list
+[
+  {
+    "dev":"namespace1.0",
+    "mode":"fsdax",
+    "size":17834180608,
+    "uuid":"ce92c90c-1707-4a39-abd8-1dd12788d137",
+    "raw_uuid":"f8130943-5867-4e84-b2e5-6c685434ef81",
+    "sector_size":512,
+    "blockdev":"pmem1",
+    "numa_node":0
+  },
+  {
+    "dev":"namespace0.0",
+    "mode":"fsdax",
+    "size":17834180608,
+    "uuid":"33d46163-095a-4bf8-acf0-6dbc5dc8a738",
+    "raw_uuid":"8f44ccd3-50f3-4dec-9817-554e9d1a5c5f",
+    "sector_size":512,
+    "blockdev":"pmem0",
+    "numa_node":0
+  }
+]
+
+   Note the outer [ and ] brackets surrounding the objects which turn it
+   into an array. The difficulty is that a given jq command expects to
+   either operate on objects or on an array, but not both. So, the command
+   you need to run will vary based on how many namespaces you have.
+
+   The command above works around this by first converting the multiple
+   namespace output from an array of objects to multiple objects in a
+   series:
+# ndctl list | jq -r '((. | arrays | .[]), . | objects)'
+{
+  "dev": "namespace1.0",
+  "mode": "fsdax",
+  "size": 17834180608,
+  "uuid": "ce92c90c-1707-4a39-abd8-1dd12788d137",
+  "raw_uuid": "f8130943-5867-4e84-b2e5-6c685434ef81",
+  "sector_size": 512,
+  "blockdev": "pmem1",
+  "numa_node": 0
+}
+{
+  "dev": "namespace0.0",
+  "mode": "fsdax",
+  "size": 17834180608,
+  "uuid": "33d46163-095a-4bf8-acf0-6dbc5dc8a738",
+  "raw_uuid": "8f44ccd3-50f3-4dec-9817-554e9d1a5c5f",
+  "sector_size": 512,
+  "blockdev": "pmem0",
+  "numa_node": 0
+}
+
+   We then structure the rest of the jq command to operate on normal
+   objects, and it works whether we have one namespace or many.
+
+Persistent Naming
+     __________________________________________________________________
+
+   The device names chosen by the kernel are subject to creation order and
+   discovery order. Environments can not rely the kernel name being
+   consistent from one boot to the next. For the most part they do not
+   change if the configuration stays static, but if a permanent name is
+   needed use /dev/disk/by-id. Recent versions of udev deploy the
+   following udev rule in 60-persistent-storage.rules:
+# PMEM devices
+KERNEL=="pmem*", ENV{DEVTYPE}=="disk", ATTRS{uuid}=="?*", SYMLINK+="disk/by-id/p
+mem-$attr{uuid}"
+
+   This rule yields symlinks like the following to be created for
+   namespaces defined by labels:
+ls -l /dev/disk/by-id/*
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-206dcdfe-69b7-4e86-a01b-f540621ce62
+e -> ../../pmem1.2
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-73840bf1-4e74-4ba4-a9c8-8248934c07c
+8 -> ../../pmem1.1
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-8137bdfd-3c4d-4b26-b326-21da3d4cd4e
+5 -> ../../pmem1.4
+ lrwxrwxrwx 1 root root 13 Jul  9 15:24 pmem-f43d1b6e-3300-46cb-8afc-06d66a7c16f
+6 -> ../../pmem1.3
+
+   The persistent name for a pmem namespace is then listed in /etc/fstab
+   like so:
+/dev/disk/by-id/pmem-206dcdfe-69b7-4e86-a01b-f540621ce62e /mnt/pmem xfs       de
+faults,dax        1 2
+
+Partitions
+     __________________________________________________________________
+
+   You can divide raw, sector, and fsdax devices (/dev/pmemN and
+   /dev/pmemNs) into partitions. In parted, the mkpart subcommand has this
+   syntax
+mkpart [part-type fs-type name] start end
+
+   Although mkpart defaults to 1 MiB alignment, you may want to use 2 MiB
+   alignment to support more efficient page mappings - see
+   https://nvdimm.wiki.kernel.org/2mib_fs_dax.
+
+   Example carving a 16 GiB /dev/pmem0 into 4 GiB, 8 GiB, and 4 GiB
+   partitions (constrained by 1 MiB alignment at the beginning and end)
+   (note: parted displays its outputs using SI decimal units; lsblk uses
+   binary units):
+$ parted -s -a optimal /dev/pmem0 \
+        mklabel gpt -- \
+        mkpart primary ext4 1MiB 4GiB \
+        mkpart primary xfs 4GiB 12GiB \
+        mkpart primary btrfs 12GiB -1MiB \
+        print
+
+Model: Unknown (unknown)
+Disk /dev/pmem0: 17.2GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name     Flags
+ 1      1049kB  4295MB  4294MB  ext4         primary
+ 2      4295MB  12.9GB  8590MB  xfs          primary
+ 3      12.9GB  17.2GB  4294MB  btrfs        primary
+
+$ lsblk
+NAME                   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+pmem0                  259:0    0    16G  0 disk
+├─pmem0p1              259:4    0     4G  0 part
+├─pmem0p2              259:5    0     8G  0 part
+└─pmem0p3              259:8    0     4G  0 part
+
+$ fdisk -l /dev/pmem0
+Disk /dev/pmem0: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: B334CBC6-1C56-47DF-8981-770C866CEABE
+
+Device          Start      End  Sectors Size Type
+/dev/pmem0p1     2048  8388607  8386560   4G Linux filesystem
+/dev/pmem0p2  8388608 25165823 16777216   8G Linux filesystem
+/dev/pmem0p3 25165824 33552383  8386560   4G Linux filesystem
+
+Filesystems
+     __________________________________________________________________
+
+   You may place any filesystem (e.g., ext4, xfs, btrfs) on a raw or fsdax
+   device (e.g., /dev/pmem0), a partition on a raw or fsdax device (e.g.
+   /dev/pmem0p1), a sector device (e.g., /dev/pmem0s), or a partition on a
+   sector device (e.g., /dev/pmem0sp1).
+
+   ext4 and xfs support DAX, which allow applications to perform direct
+   access to persistent memory with mmap(). You may use DAX on raw devices
+   and fsdax devices, but not on sector devices.
+
+   Example creating ext4, xfs, and btrfs filesystems on three partitions
+   and mounting ext4 and xfs with DAX (note: df -h displays sizes in IEC
+   binary units; df -H uses SI decimal units):
+$ mkfs.ext4 -F /dev/pmem0p1
+$ mkfs.xfs -f -m reflink=0 /dev/pmem0p2
+$ mkfs.btrfs -f /dev/pmem0p3
+$ mount -o dax /dev/pmem0p1 /mnt/ext4-pmem0
+$ mount -o dax /dev/pmem0p2 /mnt/xfs-pmem0
+$ mount /dev/pmem0p3 /mnt/btrfs-pmem0
+
+$ lsblk
+NAME                   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+pmem0                  259:0    0    16G  0 disk
+├─pmem0p1              259:4    0     4G  0 part /mnt/ext4-pmem0
+├─pmem0p2              259:5    0     8G  0 part /mnt/xfs-pmem0
+└─pmem0p3              259:8    0     4G  0 part /mnt/btrfs-pmem0
+
+$ df -h
+Filesystem                      Size  Used Avail Use% Mounted on
+/dev/pmem0p1                    3.9G  8.0M  3.7G   1% /mnt/ext4-pmem0
+/dev/pmem0p2                    8.0G   33M  8.0G   1% /mnt/xfs-pmem0
+/dev/pmem0p3                    4.0G   17M  3.8G   1% /mnt/btrfs-pmem0
+
+$ df -H
+Filesystem                      Size  Used Avail Use% Mounted on
+/dev/pmem0p1                    4.2G  8.4M  4.0G   1% /mnt/ext4-pmem0
+/dev/pmem0p2                    8.6G   34M  8.6G   1% /mnt/xfs-pmem0
+/dev/pmem0p3                    4.3G   17M  4.1G   1% /mnt/btrfs-pmem0
+
+   Check the kernel log to ensure the DAX mount option was honored; mount
+   does not print this information. Example failures:
+$ dmesg | tail
+[1811131.922331] XFS (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at your ow
+n risk
+[1811131.962630] XFS (pmem0): DAX unsupported by block device. Turning off DAX.
+[1811131.999039] XFS (pmem0): Mounting V5 Filesystem
+[1811132.025458] XFS (pmem0): Ending clean mount
+
+[1811261.329868] EXT4-fs (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at you
+r own risk
+[1811261.371653] EXT4-fs (pmem0): DAX unsupported by block device. Turning off D
+AX.
+[1811261.410944] EXT4-fs (pmem0): mounted filesystem with ordered data mode. Opt
+s: dax
+
+   Example successes:
+$ dmesg | tail
+[1811420.919434] EXT4-fs (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at you
+r own risk
+[1811420.961539] EXT4-fs (pmem0): mounted filesystem with ordered data mode. Opt
+s: dax
+
+[1811472.505650] XFS (pmem0): DAX enabled. Warning: EXPERIMENTAL, use at your ow
+n risk
+[1811472.545702] XFS (pmem0): Mounting V5 Filesystem
+[1811472.571268] XFS (pmem0): Ending clean mount
+
+iostats
+     __________________________________________________________________
+
+   iostats are disabled by default due to performance overhead (e.g., 12M
+   IOPS dropping 25% to 9M IOPS). However, they can be enabled in sysfs if
+   desired.
+
+   As of kernel 4.5, iostats are only collected for the base pmem device,
+   not per-partition. Also, I/Os that go through DAX paths (rw_page,
+   rw_bytes, and direct_access functions) are not counted, so nothing is
+   collected for:
+     * I/O to files in filesystems mounted with -o dax
+     * I/O to raw block devices if CONFIG_BLOCK_DAX is enabled
+
+$ echo 1 > /sys/block/pmem0/queue/iostats
+$ echo 1 > /sys/block/pmem1/queue/iostats
+$ echo 1 > /sys/block/pmem2/queue/iostats
+$ echo 1 > /sys/block/pmem3/queue/iostats
+
+$ iostat -mxy 1
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          21.53    0.00   78.47    0.00    0.00    0.00
+
+Device:         rrqm/s   wrqm/s        r/s     w/s    rMB/s    wMB/s avgrq-sz av
+gqu-sz   await r_await w_await  svctm  %util
+pmem0             0.00     0.00 4706551.00    0.00 18384.95     0.00     8.00
+  6.00    0.00    0.00    0.00   0.00 113.90
+pmem1             0.00     0.00 4701492.00    0.00 18365.20     0.00     8.00
+  6.01    0.00    0.00    0.00   0.00 119.30
+pmem2             0.00     0.00 4701851.00    0.00 18366.60     0.00     8.00
+  6.37    0.00    0.00    0.00   0.00 108.90
+pmem3             0.00     0.00 4688767.00    0.00 18315.50     0.00     8.00
+  6.43    0.00    0.00    0.00   0.00 117.40
+
+fio
+     __________________________________________________________________
+
+   Example fio script to perform 4 KiB random reads to four pmem devices:
+[global]
+direct=1
+ioengine=libaio
+norandommap
+randrepeat=0
+bs=256k         # for bandwidth
+bs=4k           # for IOPS and latency
+iodepth=1
+runtime=30
+time_based=1
+group_reporting
+thread
+gtod_reduce=0   # for latency
+gtod_reduce=1   # IOPS and bandwidth
+zero_buffers
+
+## local CPU
+numjobs=9       # for bandwidth
+numjobs=1       # for latency
+numjobs=18      # for IOPS
+cpus_allowed_policy=split
+
+rw=randwrite
+rw=randread
+
+# CPU affinity based on two 18-core CPUs with QPI snoop configuration of cluster
+-on-die
+
+[drive_0]
+filename=/dev/pmem0
+cpus_allowed=0-8,36-44
+
+[drive_1]
+filename=/dev/pmem1
+cpus_allowed=9-17,45-53
+
+[drive_2]
+filename=/dev/pmem2
+cpus_allowed=18-26,54-62
+
+[drive_3]
+filename=/dev/pmem3
+cpus_allowed=27-35,63-71
+
+   When using /dev/dax character devices, you must specify the size,
+   because character devices do not have a size.
+
+   Example fio script to perform 4 KiB random reads to four /dev/dax
+   character devices:
+[global]
+ioengine=mmap
+pre_read=1
+norandommap
+randrepeat=0
+bs=4k
+iodepth=1
+runtime=60000
+time_based=1
+group_reporting
+thread
+gtod_reduce=1   # reduce=1 except for latency test
+zero_buffers
+size=2G
+
+numjobs=36
+
+cpus_allowed=0-17,36-53
+cpus_allowed_policy=split
+
+[drive_0]
+filename=/dev/dax0.0
+rw=randread
+
+[drive_1]
+filename=/dev/dax1.0
+rw=randread
+
+[drive_2]
+filename=/dev/dax2.0
+rw=randread
+
+[drive_3]
+filename=/dev/dax3.0
+rw=randread
+   #Persistent Memory Wiki start Sitemap Recent changes Current namespace
+   Plain HTML Wiki Markup
+
+Media Files
+
+     * −
+       [root]
+          + +
+            wiki
+
+:
+
+   Sorry, you don't have enough rights to upload files.
+
+   Search file name: ____________________ Search
+   Nothing was found.
+   #Persistent Memory Wiki start Sitemap Recent changes Current namespace
+   Plain HTML Wiki Markup
+
+     * skip to content
+
+Persistent Memory Wiki
+
+User Tools
+
+     * Login
+
+Site Tools
+
+   ____________________ Search
+   [Tools__________] >
+     * Recent changes
+     * Media Manager
+     * Sitemap
+
+   Trace: • start
+     __________________________________________________________________
+
+   a
+
+This topic does not exist yet
+
+   You've followed a link to a topic that doesn't exist yet. If
+   permissions allow, you may create it by clicking on “Create this page”.
+     __________________________________________________________________
+
+Page Tools
+
+     * Show pagesource
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Noncommercial-Share Alike 3.0
+   Unported
+   CC Attribution-Noncommercial-Share Alike 3.0 Unported Donate Powered by
+   PHP Valid HTML5 Valid CSS Driven by DokuWiki

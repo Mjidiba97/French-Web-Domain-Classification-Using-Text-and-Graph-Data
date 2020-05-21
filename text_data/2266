@@ -1,0 +1,2316 @@
+   #alternate alternate alternate alternate We Live Security RSS 2.0 Feed
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-PMDGSM
+
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   (BUTTON) En français
+     * Em Português
+     * In English
+     * En Español
+     * In Deutsch
+
+   Menu (BUTTON) toggle menu
+   (BUTTON)
+
+     * Tous les articles
+     * Dernières recherches
+     * Vidéos
+     * Podcasts
+     * Présentations
+     * Rapports (White papers)
+     * Nos experts
+     * Glossaire
+
+     * Em Português
+     * In English
+     * En Español
+     * In Deutsch
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Actualités, opinions et astuces de la communauté de sécurité d’ESET
+
+Varenyky: Spambot à la Française
+
+   Les chercheurs d’ESET analysent des campagnes de spam distribuant des
+   logiciels malveillants ayant ciblé des personnes françaises.
+   ESET Research ESET Research 8 Aug 2019 - 11:32AM
+   Partagez
+
+   Les chercheurs d’ESET analysent des campagnes de spam distribuant des
+   logiciels malveillants ayant ciblé des personnes françaises.
+
+Introduction
+
+   En mai 2019, les chercheurs d’ESET ont observé un pic dans leurs
+   données télémétriques au sujet de logiciels malveillants ciblant la
+   France. Après une analyse plus poussée, nous avons identifié un
+   logiciel malveillant distribuant différents types de courrier
+   indésirable. L’un d’entre eux mène à un sondage qui redirige les
+   victimes potentielles vers une fausse offre promotionnelle pour une
+   smartphone (ou téléphone intelligent), tandis qu’une autre constitue
+   une campagne de sextorsion. Les spammeurs ciblent les utilisateurs du
+   fournisseur d’accès Internet français Orange S.A. Nous avons avisé
+   l’entreprise avant de mettre cette publication en ligne.
+
+   Nous croyons que ce spambot est en plein développement, car il a
+   considérablement changé depuis la première fois que nous l’avons
+   observé. Cette menace a été mentionnée sur twitter par AnyRun.
+   Cependant, aucune analyse détaillée de cette campagne n’a été publiée à
+   notre connaissance. Nous avons nommé ce nouveau logiciel malveillant
+   Varenyky et, le 22 juillet 2019, les chercheurs d’ESET ont observé le
+   lancement de sa première campagne d’arnaque de sextorsion.
+
+   Ce spambot est digne de mention, parce qu’il peut voler des mots de
+   passe, utiliser FFmpeg pour espionner l’écran de ses victimes
+   lorsqu’elles regardent du contenu pornographique en ligne. De plus, il
+   communique avec le serveur C&C via Tor, alors que le courrier
+   indésirable est envoyé comme étant du trafic Internet régulier. Le
+   présent article décrit les fonctionnalités de ce logiciel malveillant.
+
+Distribution et cibles
+
+Distribution
+
+   Varenyky a été vu pour la première fois au début de mai 2019. Nous ne
+   pouvons malheureusement pas affirmer pour l’instant comment il a été
+   distribué, mais la distribution et le contexte des plus récentes
+   tentatives d’hameçonnage par courriel suggèrent que l’opérateur utilise
+   cette technique depuis le début.
+
+   Un mois plus tard, soit en juin 2019, nous avons observé le premier
+   document malveillant joint à un message électronique qui déclenche
+   l’infection de l’ordinateur de la victime (Figure 1).
+
+   Figure 1 – Capture d’écran du courrier électronique distribuant le
+   téléchargeur de Varenyky
+
+   Le e-mail indique qu’une facture de 491,27 € est disponible en pièce
+   jointe. Le nom du fichier Microsoft Word comprend le mot « facture ».
+   En outre, lorsque la victime ouvre le fichier, il indique que ce
+   document est protégé par Microsoft Word et « nécessite une verification
+   humaine ».
+
+   Figure 2 – Document malveillant
+
+   Le contenu du document (Figure 2) explique comment effectuer ladite
+   vérification humaine qui, dans les faits, correspond à la façon
+   d’activer les macros. Pour des raisons de sécurité, les macros ne sont
+   pas activées par défaut par Word; une action de l’utilisateur est
+   requise pour les exécuter.
+
+   Dans l’ensemble, le contenu du texte du courriel, le nom de fichier du
+   document et le contenu « protégé » du document laisse entendre aux
+   destinataires qu’il s’agit d’une facture réelle et qu’ils doivent
+   l’ouvrir. La qualité du français est très bonne; dans l’ensemble, le
+   document est convaincant.
+
+Cible
+
+   Varenyky cible les utilisateurs français. La macro (Figure 3) contenue
+   dans le document Word a deux utilités. La première est de filtrer les
+   victimes non-françaises en fonction de la localisation de leur
+   ordinateur et la seconde est de télécharger et d’exécuter le logiciel
+   malveillant.
+
+   Figure 3 – La macro Word
+
+   La macro utilise la fonction
+   Application.LanguageSettings.LanguageID() pour obtenir l’identifiant de
+   la langue de l’ordinateur de la victime (language ID). Cet identifiant
+   contient la langue et le pays indiqué par l’utilisateur. Le script
+   vérifie si la valeur de retour est 1036 en décimal (ou 0x40C en
+   hexadécimal) ce qui, selon la documentation de Microsoft, correspond à
+   la langue française et la France (Figure 4).
+
+   Figure 4 – Table des identifiants linguistiques
+
+   Ceci constitue une astuce ingénieuse pour tromper les analyseurs
+   automatiques d’échantillons et éviter d’attirer l’attention, grâce au
+   nombre limité de configurations informatiques sur lesquelles ce
+   logiciel malveillant est installé.
+
+   Il est à noter qu’en utilisant cet identificateur de lieu spécifique,
+   il exclut les pays francophones autres que la France, comme la Belgique
+   et le Canada, qui disposent de leurs propres identificateurs.
+
+   On observe également un contrôle de langue supplémentaire dans
+   l’exécutable téléchargé concernant la disposition du clavier. Cette
+   vérification se fait au tout début de l’exécutable qui est téléchargé
+   et exécuté par la macro (Figure 5).
+
+   Figure 5 – Résultat de la vérification de la configuration du clavier
+   d’Hex-Rays
+
+   Une fois de plus, la vérification est faite afin de filtrer les gens
+   utilisant un clavier configuré en anglais ou russe. Dans ce cas, le
+   logiciel affiche la boite de message affichée à la Figure 6 et se
+   ferme.
+
+   Figure 6 – Boîte de message pour les utilisateurs utilisant un clavier
+   configuré en anglais ou russe
+
+   Décrivons maintenant les fonctionnalités du logiciel malveillant alors
+   qu’il s’exécute sur un appareil ciblé.
+
+Analyse technique et fonctionnalités
+
+   Des variantes plus anciennes de Varenyky utilisaient le compresseur de
+   données UPX, mais des échantillons plus récents utilisaient un
+   compresseur de données personnalisé. Le décompresseur personnalisé va
+   d’abord XOR sa charge utile avec une chaîne alphanumérique de 32
+   caractères, pour ensuite la décompresser en utilisant l’algorithme
+   LZNT1, qui est lui-même une variante de LZ77. Le logiciel malveillant
+   décompressé n’est jamais écrit sur le disque.
+
+   Si le logiciel malveillant n’a pas été installé auparavant, il crée
+   d’abord une librairie avec un nom spécifique dans %APPDATA%. Il s’agit
+   d’un hachage (ou hash) en majuscules composé du GUID de la machine, du
+   nom d’utilisateur, du nom de l’ordinateur et du nom du CPU (voir la
+   Figure 7). Il crée un mutex nommé à partir ce même hash, pour éviter
+   que deux instances ne s’exécutent en même temps..
+
+   Figure 7 – Fonctions collectant les informations utilisées pour
+   calculer le hachage
+
+   La charge utile malveillante extrait alors de multiples librairies et
+   l’exécutable Tor, qui sont à l’intérieur de celui-ci, vers le
+   répertoire qu’elle vient de créer. Les librairies incluent zlib et les
+   dépendances pour les programmes compilés avec MinGW. L’exécutable du
+   logiciel malveillant est finalement copié dans ce répertoire, puis
+   l’original est effacé du répertoire temporaire où il a été téléchargé
+   via la macro.
+
+   Le logiciel malveillant augmente sa persistance en ajoutant une entrée
+   vers HKLM\Software\Microsoft\Windows\CurrentVersion\Run dans le
+   répertoire Windows. Le mutex est relâché et le logiciel malveillant se
+   redémarre à partir de son répertoire dans %AppData%.
+
+   À sa deuxième exécution, le logiciel malveillant détecte qu’il a déjà
+   été installé. Il exécute alors Tor et récupère son adresse IP externe
+   en utilisant le service d’AWS checkip.amazonaws.com.
+
+   Il lance alors deux tâches : l’une est chargée de l’envoi des spams et
+   l’autre, de l’exécution des commandes provenant de son serveur Command
+   & Control. C’est ici que les différentes versions du logiciel
+   malveillant diffèrent. Certaines variantes incluent plus de tâches qui
+   envoient du courrier indésirable au même moment, alors que d’autres
+   disposent de fonctionnalités différentes quant aux commandes que le
+   serveur C&C peut le faire exécuter. L’ensemble des communications avec
+   le serveur C&C se fait via Tor au
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion en
+   utilisant le protocole HTTP.
+
+   Les premières versions du logiciel malveillant pouvaient recevoir une
+   commande pour télécharger un fichier et l’exécuter. Le logiciel
+   malveillant était capable de gérer les fichiers exécutables, les
+   fichiers batch et les scripts PowerShell. La prise en charge de la
+   dernière a été supprimée par la suite. Le logiciel malveillant peut
+   également être mis à jour à l’aide d’un exécutable qui doit être
+   téléchargé à partir d’une URL spécifique. Il y a une autre commande qui
+   désinstalle le logiciel malveillant de l’ordinateur, bien qu’elle ne
+   supprime pas le changement qu’elle a fait au registre.
+
+   Une nouvelle commande a été ajoutée par la suite, permettant au
+   logiciel malveillant de déployer les outils WebBrowserPassView et Mail
+   PassView de NirSoft. Ce sont des outils de récupération de mot de passe
+   pour les mots de passe des navigateurs Web et des clients de courrier
+   électronique. Ces outils sont régulièrement abusés par les logiciels
+   malveillants, et sont donc détectés par ESET comme étant des
+   applications potentiellement dangereuses. Tous deux sont des fichiers
+   exécutables compressés par LZNT1 et intégrés à l’intérieur du logiciel
+   malveillant. Ils sont extraits, injectés dans un autre exécutable et
+   exécutés une fois afin de voler les mots de passe de la victime. Ces
+   derniers sont alors exfiltrés vers le serveur C&C.
+
+   La dernière commande ajoutée crée un bureau caché sur l’ordinateur de
+   la victime. Le logiciel malveillant peut être dirigé pour démarrer
+   diverses applications qui ont une interface graphique, comme les
+   navigateurs Web et la boîte de dialogue Exécuter Windows sur ce bureau
+   invisible. Il a la capacité d’accomplir diverses tâches, telles que
+   naviguer dans les menus, lire du texte, prendre des captures d’écran,
+   cliquer sur l’écran, et aussi minimiser, restaurer et maximiser les
+   fenêtres.
+
+   Les commandes C&C sont récapitulées dans le Tableau 1.
+
+       Tableau 1. Liste des commandes que le serveur C&C peut envoyer
+
+   Command name Description
+   DL_EXEC Télécharge un fichier (.exe ou.bat) que le logiciel malveillant
+   exécutera
+   UPDATE Télécharge un exécutable pour remplacer l'exécutable du logiciel
+   malveillant
+   UNINSTALL Supprime le logiciel malveillant du disque de l'ordinateur
+   NIRSOFT Extrait les WebBrowserPassView et Mail PassView de NirSoft, les
+   exécute une fois et envoie les résultats au serveur C&C.
+   HIDDEN_DESK Crée un bureau caché pour accomplir diverses tâches
+
+   Une fonction qui a fait son apparition et qui a été modifiée dans les
+   versions ultérieures pour finalement être supprimée était une fonction
+   qui permettait au logiciel malveillant de rechercher le titre des
+   fenêtres ouvertes sur l’ordinateur. Si le logiciel malveillant trouve
+   un terme français associé à la pornographie ou le mot « bitcoin » dans
+   le titre d’une fenêtre, il envoie le titre de la fenêtre à son serveur
+   C&C.
+
+   Figure 8 – Liste des mots que le logiciel malveillant détecte
+
+   Cette fonctionnalité a été modifiée par la suite pour qu’à chaque fois
+   qu’il détecte le terme « sexe », le logiciel malveillant commence à
+   enregistrer l’écran d’ordinateur en utilisant un exécutable FFmpeg
+   précédemment installé via le réseau Tor. La vidéo est téléchargée dans
+   le serveur C&C après l’enregistrement.
+
+   Ces vidéos pourraient être utilisés pour exercer du chantage
+   convaincant. Cette pratique est appelée sextorsion (contraction des
+   mots « sexe » et « extorsion »). On ignore si ces vidéos ont été
+   enregistrées pour satisfaire la curiosité des auteurs du spambot ou si
+   ces derniers avaient l’intention de les monétiser en pratiquant la
+   sextorsion. Différentes versions de ce logiciel malveillant utilisaient
+   différentes chaines pour s’identifier au serveur C&C. L’une d’entre
+   elles étaient « Bataysk », qui est le nom d’une ville russe connue pour
+   avoir un « monument qui montre la main d’un homme saisissant une
+   poitrine de femme nubile ». Un autre échantillon est identifié comme
+   étant « PH », probablement en référence aux initiales d’un site
+   pornographique populaire. Une autre version est identifiée par la
+   chaîne « Gamiani_MON »; Gamiani étant le titre d’un roman érotique
+   français – MON signifie probablement « monitoring » dans le cas
+   présent.
+
+Page d’accueil du serveur C&C
+
+   Au fil du temps, de nombreux changements ont été apportés à ce qui
+   semble être la fenêtre de connexion du serveur C&C. Au départ (Figure
+   9), il affiche la formule latine VADE RETRO SATANA et une statue de
+   Marianne (figure symbolique importante de la République française) avec
+   les yeux rouges. Dans le coin supérieur droit, un sigle en allemand
+   s’affiche, qui se lit « Arrêt – Frontière de l’État – Entrée
+   interdite ». Le mot « войти » observé sous le clavier signifie
+   « connexion », en russe et en ukrainien.
+
+   Figure 9 – Première version de la fenêtre de connexion
+
+   Cette fenêtre a par la suite été mise à jour pour jouer la chanson
+   « F*ck them all », de Mylène Farmer, lorsque la page s’affiche (Figure
+   10).
+
+   Figure 10 – fenêtre de connexion du serveur C&C avec l’ajout de la
+   lecture du lecteur de la chanson
+
+   Avec la dernière mise à jour ajoutant du contenu, qu’on peut voir à la
+   Figure 11, la fenêtre de connexion du serveur C&C dansant avec un
+   drapeau serbe. On y fait un clin d’œil à OCaml, un langage de
+   programmation créé par des Français. Ricard est une référence au film
+   The Pink Panther, sorti en 1963. Dans le coin inférieur droit, il est
+   écrit, en français : « l’abus d’alcool est dangereux pour la santé. À
+   consommer avec modération », c’est-à-dire l’avertissement officiel sur
+   les publicités pour l’alcool en France. L’image au-dessus de cet
+   avertissement présente une pale lager Jelen pivo provenant d’une
+   brasserie serbe. La chanson diffusée est désormais « Opa! », du groupe
+   russe Diskoteka Avariya.
+
+   Figure 11 – Capture d’écran de la fenêtre de fenêtre de connexion du
+   serveur C&C
+
+   Au moment de la mise en ligne de cet article, la fenêtre de connexion a
+   été épurée et ne comprend plus que le clavier.
+
+« Vous avez un message »
+
+   Ce spambot envoie des emails en utilisant le protocole SMTP via le port
+   25 et cible uniquement les clients du fournisseur d’accès Internet
+   français Orange. Chaque bot reçoit des instructions du serveur C&C pour
+   la rédaction d’un courriel, incluant le corps du message, la liste
+   d’adresses auxquelles envoyer le message indésirable et le serveur à
+   utiliser pour l’envoi. Les serveurs de messagerie utilisés pour
+   diffuser ce message ne semblent pas appartenir aux acteurs
+   malveillants. Il semble plutôt s’agir de serveurs qui n’ont pas été
+   sécurisés adéquatement et ne requièrent pas d’authentification.
+
+   Figure 12 – Deux différents messages de spam
+
+   Les messages indésirables envoyés par ce spambot sont aussi simples que
+   Cliquez ici si ce message ne s’affiche pas correctement » ou « Veuillez
+   suivre le lien suivant : <URL> » (Figure 12).  On voit également des
+   emails avec des pièces jointes. Ces liens mènent à des arnaques, plus
+   précisément des sondages (Figure 13) où la victime « gagne » à tout
+   coup une promotion importante pour un smartphone récent.
+
+   Figure 13 – Sondage où la victime remporte à chaque fois un téléphone
+   intelligent
+
+   Le lien mène la victime vers un site où celle-ci semble avoir une
+   chance de « remporter » un prix tel qu’un iPhone X, un Galaxy S9 ou un
+   S10+ pour 2 € ou moins (Figure 14). Pour gagner, il leur « suffit »
+   d’inscrire leurs informations personnelles : nom, adresse, ville,
+   adresse email et numéro de téléphone. L’adresse courriel qui est entrée
+   pourrait ne pas fonctionner si ce n’est pas ce à quoi la page s’attend,
+   mais en cas de succès, la page invite la victime à entrer les détails
+   de sa carte de crédit, incluant le chiffre de vérification de la carte.
+
+   Les utilisateurs devraient éviter de fournir les renseignements de leur
+   carte de crédit à des sites Web qu’ils ne connaissent pas pour
+   bénéficier d’offres qui semblent trop belles pour être vraies. Il
+   s’agit souvent d’un stratagème visant à obtenir les informations de
+   carte de crédit d’un utilisateur non averti afin de lui facturer des
+   frais mensuels, ce que l’utilisateur peut parfois apprendre en
+   examinant les petits caractères. Les concours légitimes ne font pas
+   payer de frais aux gagnants afin de leur permettre de réclamer leur
+   prix.
+
+   Figure 14 – Pages d’arnaques aux smartphones
+
+   Bien que Varenyky ait l’habileté d’enregistrer une vidéo de l’écran
+   alors que l’utilisateur regarde probablement de la pornographie sur son
+   ordinateur, nous n’avons recueilli aucune évidence à ce jour indiquant
+   que les opérateurs de ce logiciel malveillant exploite ce type de
+   vidéos. À l’inverse, incidemment, nous avons vu au 22 juillet dernier
+   Varenyky amorcer une campagne d’arnaque à la sextorsion. Il convient de
+   noter que cette campagne correspond à une arnaque de sextorsion assez
+   courante, qui a été largement documentée et ne semble pas reliée à la
+   capacité partielle de Varenyky d’exécuter les fonctions des logiciels
+   malveillants fictifs décrits dans ces messages frauduleux. La Figure 15
+   présente le message d’arnaque que nous avons vu Varenyky envoyer. Ces
+   messages sont constitués de trois images JPG utilisés afin de
+   contourner les filtres de texte de contenus indésirables.
+
+   Figure 15 – Capture d’écran de l’email de sextorsion
+
+   Ce message prétend que l’auteur, qui est un pirate informatique, a
+   accédé à l’ordinateur de la victime par l’intermédiaire d’un virus qui
+   a été attrapé lors de la visite d’un site Web pour adultes (la
+   traduction de ceci est très similaire à celle de la version anglaise
+   documentée ici). On y indique que la victime aurait des goûts
+   particuliers en matière de pornographie et que le pirate a pris le
+   contrôle à distance de l’ordinateur de la victime. L’e-mail dit aussi
+   qu’une vidéo a été faite où sur une moitié de l’écran est un
+   enregistrement du navigateur de la victime et l’autre moitié est un
+   enregistrement de la webcam alors que l’utilisateur était « en train de
+   [s’]… amuser. »
+
+   De plus, l’email indique qu’une copie de la liste des contacts, des
+   photos, mots de passe, informations bancaires, et plusieurs autres
+   informations de la victime, a été faite. L’auteur affirme que la
+   victime n’est pas la seule et promet de la laisser tranquille dès
+   qu’elle aura versé 750 € en bitcoins à l’adresse BTC
+   1PBpawAYJG7FfAxmTagU34CfEFoNobb1Re.
+
+   Le courriel indique que la victime dispose de 72 heures pour payer,
+   avant que la vidéo ne soit envoyée à sa famille, à ses collègues,
+   affichée sur Facebook, Twitter et ailleurs. On y affirme qu’il est
+   inutile de changer les mots de passe, de supprimer le virus, d’envoyer
+   l’ordinateur pour réparation ou de nettoyer l’ordinateur, parce que les
+   données de la victime se trouvent sur un serveur distant (« Ne me
+   prenez pas pour un con »). L’auteur invite la victime à répondre
+   « Oui! » si elle veut une preuve; la vidéo serait alors envoyé à 6 de
+   ses contacts les plus importants.
+
+   Le message se termine par « C’est une offre non négociable, cela dit,
+   ne me faites pas perdre mon temps et le vôtre, pensez aux conséquences
+   de vos actes. »
+
+   Toutes les adresses de courrier électronique qui ont été visées
+   appartiennent aux domaines wanadoo.fr et orange.fr. Ces deux domaines
+   sont opérés par le FAI Orange S.A. Un seul de ces bots pour envoyer
+   jusqu’à 1500 emails l’heure.
+
+   Au moment de la publication de ce billet de blog, l’adresse bitcoin
+   utilisée pour cette arnaque avait reçu quatre paiements. L’adresse
+   bitcoin en question a déjà été rapportée sur bitcoinabuse.com pour
+   sextorsion (Figure 16).
+
+   Figure 16 – Capture d’écran des signalements de l’adresse bitcoin sur
+   BitcoinAbuse
+
+Conclusion
+
+   Ce spambot n’est pas très développé. Cependant, le contexte et
+   l’histoire l’entourant le rend intéressant à observer. Nous supposons
+   que, puisqu’il cible la France, les opérateurs ont une certaine
+   compréhension orale ou écrite (voire les deux) de la langue française.
+   Cependant, le fichier Word montre un manque d’attention dans le travail
+   des opérateurs. Dans la macro, l’opérateur a oublié de modifier la
+   valeur de la variable test_debug, ce qui implique que le logiciel
+   malveillant sera installé peu importe la valeur de l’identifiant
+   linguistique (que le système soit configuré en français ou pas).
+
+   Il existe de nombreuses fonctions rendant possible l’extorsion ou le
+   chantage des victimes qui regardent du contenu pornographique.
+   Cependant, bien qu’il ait envoyé des courriels d’arnaque de sextorsion
+   non lié, l’opérateur ne semble pas avoir utilisé celles-ci à notre
+   connaissance. De nombreuses fonctions ont été ajoutées puis rapidement
+   supprimées dans de nombreuses versions différentes en peu de temps
+   (deux mois). Cela montre que les opérateurs travaillent activement sur
+   leur botnet et sont enclins à expérimenter de nouvelles fonctionnalités
+   qui pourraient apporter une meilleure monétisation de leur travail.
+
+   Nous recommandons aux gens d’être prudents lorsqu’ils ouvrent des
+   pièces jointes provenant de sources inconnues. Maintenir à jour son
+   système ainsi que les logiciels de sécurité utilisés est également de
+   mise.
+
+Remerciements
+
+   Nous remercions Alexandre-Xavier Labonté-Lamoureux pour l’analyse
+   technique.
+
+   Merci également à nos confrères de proofpoint.com de nous avoir permis
+   d’utiliser une capture d’écran du courriel d’hameçonnage.
+
+Indicateurs de compromission (IoCs)
+
+                Hashes (SHA-1)                   ESET detection names
+   0970BDE765CB8F183CF68226460CDD930A596088 Win32/Varenyky.A
+   09EFD54E3014A7E67F0FCAA543F826AC06BBE155 Win32/Varenyky.A
+   1C27359023B7195AC739641BBC53789A0BA4A244 Win32/Varenyky.A
+   1D52D26FC2E7E24FA68F36FA04B36D9516DF036F Win32/Varenyky.A
+   21128D4E7124FD8F1D1A62FCC01F5D5F6C653811 Win32/Varenyky.A
+   25FF8154F1CEB0C8E13A3F0F72D855B40819D26B Win32/Varenyky.A
+   36D9AEF26D9B7E40F1140BB62FF6C76110791FAD Win32/Varenyky.A
+   6A9213A89708D2D304371A00678755F2C6AFE42B Win32/Varenyky.A
+   722FE03B7ECA8C11C73CF7206EF0E9A11E857182 Win32/Varenyky.A
+   7F04B6418E31967C12D30150D1CAE7F48980ED08 Win32/Varenyky.A
+   93D51AC86C5ED207DD6E77B2E767CDEB23106925 Win32/Varenyky.A
+   9987B0072EF9850CAB869981B05B85284FDDEE92 Win32/Varenyky.A
+   A9B04941548917BD67CAA533F5078B75D65DD1EE Win32/Varenyky.A
+   ABF3AC24BE92ABE3425379418CF53AA65F370279 VBA/TrojanDownloader.Agent.OAW
+   AC1EB847A456B851B900F6899A9FD13FD6FBEC7D Win32/Varenyky.A
+   B855C03A47901C52C901FFF606F90BC1C262EB87 Win32/Varenyky.A
+   C32552EFEDAC932AD53DB4569569780782B04704 Win32/Varenyky.A
+                           PDB paths
+   C:\NoCy\Release\Varenyky.pdb
+   C:\Users\lenovo\Desktop\NoCy\Release\Varenyky.pdb
+   C:\UnTroueCunTroueKhouya\Release\UnTroueCunTroueKhouya.pdb
+                               Network
+   artisticday[.]icu
+   astonishingwill[.]icu
+   directfood[.]icu
+   gradualrain[.]icu
+   proapp[.]icu
+   provincialwake[.]icu
+   shrek[.]icu
+   thinstop[.]icu
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd[.]onion
+   ESET Research 8 Aug 2019 - 11:32AM
+
+Articles semblables
+
+   Logiciel malveillant Varenyky: Spambot à la Française
+
+ESET a découvert une backdoor non documentée utilisée par Stealth Falcon
+
+   Logiciel malveillant Varenyky: Spambot à la Française
+
+Le premier espiongiciel d’un nouveau genre se faufile dans Google Play
+
+   Logiciel malveillant Varenyky: Spambot à la Française
+
+Dans les Balkans, les entreprises font face à une double menace
+
+   Logiciel malveillant Varenyky: Spambot à la Française
+
+Machette aiguisée
+
+Discussion
+
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+
+     * Accueil
+     * À propos
+     * Contactez‑nous
+
+     * Plan du site
+     * Nos experts
+     * ESET
+
+     * Dernières recherches
+     * Glossaire
+     * Catégories
+
+     * RSS
+     * News widget
+     *
+
+   Politique de confidentialité Informations juridiques
+   Copyright © ESET, Tous droits réservés
+
+   (BUTTON) Back to top
+   #next alternate alternate alternate alternate alternate We Live
+   Security RSS 2.0 Feed alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-PMDGSM
+
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   (BUTTON) In English
+     * Em Português
+     * En français
+     * En Español
+     * In Deutsch
+
+   Menu (BUTTON) toggle menu
+   (BUTTON)
+
+     * All Posts
+     * Latest Research
+     * How To
+     * Videos
+     * Podcasts
+     * Conference Materials
+     * White Papers
+     * Magazine
+     * Our Experts
+
+     * Em Português
+     * En français
+     * En Español
+     * In Deutsch
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Award-winning news, views, and insight from the ESET security community
+
+   Malware
+   ESET Research
+
+Casbaneiro: Dangerous cooking with a secret ingredient
+
+   ESET Research 3 Oct 2019 - 11:30AM
+
+   Malware
+   ESET Research
+
+No summer vacations for Zebrocy
+
+   ESET Research 24 Sep 2019 - 11:30AM
+
+   Malware
+
+An undocumented backdoor used by Stealth Falcon
+
+   ESET Research 9 Sep 2019 - 11:30AM
+
+   Ransomware
+
+Hospitals in US, Australia hobbled by ransomware
+
+   Privacy
+
+Do apps need all the permissions?
+
+Latest Articles
+
+   (BUTTON) Sort Newest
+     * Popular Articles
+
+   Ransomware Hospitals in US, Australia hobbled by ransomware
+
+Hospitals in US, Australia hobbled by ransomware
+
+   The incidents send medical staff back to the days of pen and paper
+   Editor 3 Oct 2019 - 04:53PM
+
+   Malware Casbaneiro: Dangerous cooking with a secret ingredient
+
+Casbaneiro: Dangerous cooking with a secret ingredient
+
+   Número dois in our series demystifying Latin American banking trojans
+   ESET Research 3 Oct 2019 - 11:30AM
+
+   Privacy Do apps need all the permissions?
+
+Do apps need all the permissions?
+
+   Why you should ensure that all those apps on your smartphone only run
+   with the permissions they reasonably need to do their job
+   Tony Anscombe 2 Oct 2019 - 11:30AM
+
+   Cybersecurity Cyber Security Awareness Month starts today!
+
+Cyber Security Awareness Month starts today!
+
+   October is upon us, reminding us to make choices every day that will
+   scare cybersecurity threats away
+   Tomáš Foltýn 1 Oct 2019 - 03:32PM
+
+   Videos Week in security with Tony Anscombe
+
+Week in security with Tony Anscombe
+
+   ESET researchers break down a revamped set of tools that the Sednit
+   group has added to its Zebrocy malware family
+   Tomáš Foltýn 27 Sep 2019 - 04:30PM
+
+   Cybersecurity Are you sure you wiped your hard drive properly?
+
+Are you sure you wiped your hard drive properly?
+
+   Almost 60% of second-hand hard drives hold leftover data from previous
+   owners, a study shows
+   Editor 27 Sep 2019 - 03:46PM
+
+   Vulnerability Microsoft rushes out patch for Internet Explorer zero‑day
+
+Microsoft rushes out patch for Internet Explorer zero‑day
+
+   There is no word on which threat actor is abusing the severe
+   vulnerability for attacks
+   Tomáš Foltýn 25 Sep 2019 - 03:50PM
+
+   Cybersecurity Do companies take cybersecurity seriously enough?
+
+Do companies take cybersecurity seriously enough?
+
+   Many companies are ranking cybersecurity as a top 5 priority but their
+   actions do not measure up to the claim, a survey finds
+   Editor 24 Sep 2019 - 04:18PM
+
+   Malware No summer vacations for Zebrocy
+
+No summer vacations for Zebrocy
+
+   ESET researchers describe the latest components used in a recent Sednit
+   campaign
+   ESET Research 24 Sep 2019 - 11:30AM
+
+   Videos Week in security with Tony Anscombe
+
+Week in security with Tony Anscombe
+
+   A nationwide data leak is believed to affect almost all citizens of
+   Ecuador, putting them at risk of identity theft
+   Tomáš Foltýn 20 Sep 2019 - 04:24PM
+
+   Cybersecurity Universities warned to brace for cyberattacks
+
+Universities warned to brace for cyberattacks
+
+   The UK’s cybersecurity agency also outlines precautions that academia
+   should take to mitigate risks
+   Tomáš Foltýn 19 Sep 2019 - 05:57PM
+
+   router Remote access flaws found in popular routers, NAS devices
+
+Remote access flaws found in popular routers, NAS devices
+
+   In almost all tested units, the researchers achieved their goal of
+   obtaining remote root-level access
+   Tomáš Foltýn 18 Sep 2019 - 06:38PM
+
+   Cybersecurity Nearly all of Ecuador’s citizens caught up in data leak
+
+Nearly all of Ecuador’s citizens caught up in data leak
+
+   The humongous collection of extensive personal details about millions
+   of people could be a gold mine for scam artists
+   Tomáš Foltýn 17 Sep 2019 - 04:33PM
+
+   Videos Week in security with Tony Anscombe
+
+Week in security with Tony Anscombe
+
+   ESET researchers found an undocumented backdoor used by the infamous
+   Stealth Falcon group, an operator of targeted spyware attacks against
+   journalists, activists and dissidents in the Middle East. With the
+   launch of the Safer Kids online initiative, a guide to help parents
+   protect their kids when they take selfie. The discovery of a serious
+   vulnerability
+   Gabrielle Ladouceur Despins 13 Sep 2019 - 06:23PM
+
+   Threats A vulnerability in Instagram exposes personal information of
+   users
+
+A vulnerability in Instagram exposes personal information of users
+
+   The bug, which has already been fixed by Facebook, allowed access to
+   private user information that could be abused by malicious actors.
+   Juan Manuel Harán 12 Sep 2019 - 11:31PM
+
+   Cybersecurity Education Selfies for kids – A guide for parents
+
+Selfies for kids – A guide for parents
+
+   Are you – and especially your children – aware of the risks that may
+   come with sharing selfies?
+   Tomáš Foltýn 11 Sep 2019 - 11:30AM
+
+   Malware ESET discovered an undocumented backdoor used by the infamous
+   Stealth Falcon group
+
+ESET discovered an undocumented backdoor used by the infamous Stealth Falcon
+group
+
+   ESET researchers discovered a backdoor linked to malware used by the
+   Stealth Falcon group, an operator of targeted spyware attacks against
+   journalists, activists and dissidents in the Middle East
+   ESET Research 9 Sep 2019 - 11:30AM
+
+   Videos Week in security with Tony Anscombe
+
+Week in security with Tony Anscombe
+
+   This week, we present an introduction to the MITRE ATT&CK framework,
+   the review of the mobile threats and vulnerabilities detected for
+   mobile during the first half of 2019, and Firefox 69 new features.
+   Gabrielle Ladouceur Despins 6 Sep 2019 - 10:34PM
+
+   Privacy Firefox 69: Third‑party tracking cookies and cryptomining now
+   blocked by default
+
+Firefox 69: Third‑party tracking cookies and cryptomining now blocked by
+default
+
+   Firefox new Enhanced Tracking Protection (ETP) feature launched to all
+   users of the browser to offer better privacy and protection from
+   cryptojacking.
+   Gabrielle Ladouceur Despins 6 Sep 2019 - 11:28AM
+
+   Mobile Security Semi‑annual balance of mobile security 2019
+
+Semi‑annual balance of mobile security 2019
+
+   Malware detections for iOS increased, as did the number of
+   vulnerabilities detected in this operating system, while in the case of
+   Android, the number of reported vulnerabilities decreased, although the
+   number of highly critical bugs reported increased.
+   Denise Giusto Bilić 5 Sep 2019 - 11:30AM
+   12345102030Next
+
+Follow us
+
+Newsletter
+
+   ____________________ (BUTTON) Submit
+
+Categories
+
+   Cybercrime Malware Privacy Password Scams How To Opinion Hacking Social
+   Engineering Android Mobile Security Windows Kids Online Mac Banking
+   Social Media Linux Interview Small business UEFI
+
+Our experts
+
+   Alexis Dorais-Joncas
+   Alexis Dorais-Joncas
+   Anton Cherepanov
+   Anton Cherepanov
+   Aryeh Goretsky
+   Aryeh Goretsky
+   Lukas Stefanko
+   Lukas Stefanko
+   Camilo Gutiérrez Amaya
+   Camilo Gutiérrez Amaya
+   Lysa Myers
+   Lysa Myers
+   Marc-Etienne M.Léveillé
+   Marc-Etienne M.Léveillé
+   Robert Lipovsky
+   Robert Lipovsky
+   Stephen Cobb
+   Stephen Cobb
+   All experts
+
+   Embed WeLiveSecurity news to your site. Set styling and topics so they
+   match your preferences.
+   News Widget Generator
+   Create Widget
+
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+
+     * Home
+     * About Us
+     * Contact Us
+
+     * Sitemap
+     * Our Experts
+     * ESET
+
+     * Research
+     * How To
+     * Categories
+
+     * RSS Configurator
+     * News Widget
+     *
+
+   Privacy policy Legal Information
+   Copyright © ESET, All Rights Reserved
+
+   (BUTTON) Back to top
+   #alternate alternate alternate alternate We Live Security RSS 2.0 Feed
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-PMDGSM
+
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   (BUTTON) In English
+     * Em Português
+     * En français
+     * En Español
+     * In Deutsch
+
+   Menu (BUTTON) toggle menu
+   (BUTTON)
+
+     * All Posts
+     * Latest Research
+     * How To
+     * Videos
+     * Podcasts
+     * Conference Materials
+     * White Papers
+     * Magazine
+     * Our Experts
+
+     * Em Português
+     * En français
+     * En Español
+     * In Deutsch
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Award-winning news, views, and insight from the ESET security community
+
+Varenyky: Spambot à la Française
+
+   ESET researchers document malware-distributing spam campaigns targeting
+   people in France
+   ESET Research ESET Research 8 Aug 2019 - 11:30AM
+   Share
+
+   ESET researchers document malware-distributing spam campaigns targeting
+   people in France
+
+Introduction
+
+   In May 2019, ESET researchers observed a spike in ESET telemetry data
+   regarding malware targeting France. After further investigations, we
+   identified malware that distributes various types of spam. One of them
+   is leading to a survey that redirects to a dodgy smartphone promotion
+   while the other is a sextortion campaign. The spam targets the users of
+   Orange S.A., a French ISP. We notified them before the release of this
+   publication.
+
+   We believe the spambot is under heavy development and it has changed a
+   lot since the first time we saw it. A mention about this threat was
+   posted on Twitter by AnyRun; however, to the best of our knowledge no
+   one has published a detailed analysis of it. We named this new malware
+   Varenyky, and on July 22^nd, ESET researchers saw it launch its first
+   sextortion scam campaign.
+
+   This spambot is interesting because it can steal passwords, spy on its
+   victims’ screen using FFmpeg when they watch pornographic content
+   online, and communication to the C&C server is done through Tor, while
+   spam is sent as regular internet traffic. This article describes the
+   functionality of the malware.
+
+Distribution and targets
+
+Distribution
+
+   Varenyky was seen for the first time early in May 2019. At this time,
+   we unfortunately cannot tell how it was distributed, but the more
+   recent email phishing distribution and context suggest that the
+   operator has been using this technique since the beginning.
+
+   One month later, in June 2019, we saw the first malicious document that
+   initiates the infection of the victim’s computer, attached to an email
+   message (Figure 1).
+
+   Figure 1. Screenshot of email distributing Varenyky downloader
+
+   That email states that a bill of €491.27 is available and attached. The
+   Microsoft Word document filename contains the word “facture” which is a
+   French word for “bill”. Also, when the victim opens the document, it
+   states that the document is protected by Microsoft Word and “requires
+   human verification”.
+
+   Figure 2. Malicious document
+
+   The content of the document (Figure 2) explains how to enable the
+   “human verification”, which, in fact, is how to enable macros. For
+   security purposes, Word macros are not enabled by default and need user
+   interaction to execute.
+
+   Overall, the email text content, the document’s filename and the
+   “protected” content of the document emphasize to the recipients that
+   they are dealing with a real bill and that they should open it. The
+   quality of the French is very good; overall, the document is
+   convincing.
+
+Targets
+
+   Varenyky targets the French. The macro (Figure 3) contained in the Word
+   document has two purposes: the first is to filter out non-French
+   victims based on their computers’ locale and the second is to download
+   and execute the malware.
+
+   Figure 3. Word macro
+
+   The macro uses the function Application.LanguageSettings.LanguageID()
+   to get the language ID of the victim’s computer. This ID contains the
+   country and the language set by the user. The script checks if the
+   value returned is 1036 in decimal (or 0x40C in hexadecimal) and
+   according to the Microsoft documentation this value corresponds to
+   France and the French language (Figure 4).
+
+   Figure 4. Language ID table
+
+   This is a good trick to fool automatic sample analyzers and to avoid
+   drawing attention because of the limited number of computer
+   configurations on which this malware will be installed.
+
+   It’s worth noting that by using this specific locale identifier, it
+   excludes French-speaking countries other than France such as Belgium
+   and Canada, which have their own identifiers.
+
+   There is also an additional language check in the downloaded executable
+   regarding the keyboard layout. This check is done at the very beginning
+   of the executable that is downloaded and run by the macro (Figure 5).
+
+   Figure 5. Hex-Rays output of keyboard layout check
+
+   Once again, a verification is done to filter out people with a keyboard
+   layout in English or Russian. If it matches, it displays the following
+   message box (Figure 6) and exits.
+
+   Figure 6. Message box for English and Russian keyboard layouts
+
+   Let’s describe the malware’s functionality once it’s running on a
+   system it targets.
+
+Technical analysis & functionality
+
+   Older variants of Varenyky used the UPX packer, but recent samples use
+   a custom packer. The custom unpacker will first XOR its payload with a
+   32 character-long alphanumeric string and then decompress it using the
+   LZNT1 algorithm, which is a variant of LZ77. The unpacked malware is
+   never written to disk.
+
+   If the malware has not yet been installed, it will create a directory
+   in %APPDATA% with a specific name. It’s an upper-case hash made of the
+   machine’s GUID, user name, computer name and CPU name: see Figure 7. It
+   creates a mutex named with this same hash to avoid two instances
+   running at the same time.
+
+   Figure 7. Functions that gather information used to compute the hash
+
+   The malicious payload will then extract multiple libraries and the Tor
+   executable, which are embedded inside of itself, to the directory it
+   just created. These libraries include zlib and dependencies for
+   programs compiled with MinGW. The malware’s executable is finally
+   copied to this directory and the original is deleted from the temporary
+   directory where it was downloaded via the macro.
+
+   It also makes itself persistent by adding an entry to
+   HKLM\Software\Microsoft\Windows\CurrentVersion\Run in the Windows
+   Registry. The mutex is released and the malware restarts itself from
+   its directory in %AppData%.
+
+   On the second run, the malware notices that it is already installed. It
+   will execute Tor and fetch its external IP address using AWS’
+   checkip.amazonaws.com service.
+
+   It will start two threads: one that’s in charge of sending spam and
+   another one that can execute commands coming from its C&C server. This
+   is where versions of the malware differ. Some variants have more
+   threads that are sending spam at the same time and some have different
+   functionalities when it comes to the commands that the C&C server can
+   have it execute. All communication to the C&C is done through Tor at
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion using
+   the HTTP protocol.
+
+   Early versions of the malware could receive a command to download a
+   file and execute it. The malware was able to handle executable files,
+   batch files and PowerShell scripts. Support for the last was later
+   removed. The malware could also be instructed to update itself with an
+   executable that had to be downloaded from a specific URL. There is
+   another command that will uninstall the malware from the computer,
+   although it doesn’t remove the change that it made to the registry.
+
+   A new command was later added, allowing the malware to deploy NirSoft’s
+   WebBrowserPassView and Mail PassView tools. These are password recovery
+   tools for web browser and email client passwords. They are routinely
+   abused by malware and thus detected by ESET as potentially unsafe
+   applications. Both are LZNT1‑compressed executable files embedded
+   inside the malware. They are extracted, injected into another
+   executable and run once to steal the victim’s passwords, which are then
+   exfiltrated to the C&C server.
+
+   The most recently added command will create a hidden desktop on the
+   victim’s computer. The malware can be directed to start various
+   applications that have a graphical interface, such as web browsers and
+   the Windows Run dialog on this invisible desktop. It has the ability to
+   accomplish various tasks, such as navigating menus, reading text,
+   taking screenshots, clicking on the screen, and also minimizing,
+   restoring and maximizing windows.
+
+   The C&C commands are summarized in Table 1.
+
+        Table 1. List of commands that can be sent by the C&C server
+
+   Command name Description
+   DL_EXEC Downloads a file (.exe or .bat) that the malware will execute
+   UPDATE Downloads an executable to replace the malware’s executable
+   UNINSTALL Removes the malware from the computer’s disk
+   NIRSOFT Extracts NirSoft’s WebBrowserPassView and Mail PassView, runs
+   them once and sends the results to the C&C server
+   HIDDEN_DESK Creates a hidden desktop to accomplish various tasks
+
+   A feature that made an appearance and was modified in subsequent
+   versions finally to be removed was a function that made the malware
+   scan the title of the open windows on the computer. If the malware
+   found a porn-related word in French or the word “bitcoin” in the title
+   of a window, it sent the window’s title to its C&C server.
+
+   Figure 8. Words that the malware looked for
+
+   This feature was later changed so that when encountering the word
+   “sexe”, the malware would record the computer’s screen using an FFmpeg
+   executable that it previously would have downloaded through the Tor
+   network. The video was uploaded to the C&C server after it was
+   recorded.
+
+   These videos could have been used for convincing sexual blackmail; a
+   practice called sextortion. It’s unknown if these videos were recorded
+   out of curiosity by the author(s) of the spambot or with an intention
+   to monetize them through sextortion. Different versions of this malware
+   used different strings to identify itself to the C&C server. One of
+   them was “Bataysk”, which is a Russian city known to have a “monument
+   that shows a man’s hand gripping a nubile female breast”. Another
+   sample identified with “PH”, which probably stands for the initials of
+   a popular pornography website. And another version identified with the
+   string “Gamiani_MON”; Gamiani is a French erotic novel and “MON”
+   probably means “monitoring”.
+
+C&C server home page
+
+   Over time, many changes were made to what appears to be the C&C
+   server’s login panel. At first (Figure 9), it displayed the VADE RETRO
+   SATANA verse in Latin and a red-eyed statue of Marianne, a national
+   personification of the French Republic. On the upper-right, the sign in
+   German reads “Stop – State border – No entry”. The word “войти” on the
+   button below the keypad means “login” in Russian and Ukrainian.
+
+   Figure 9. First version of the login panel
+
+   It was later updated to play the song “F*ck them all” by Mylène Farmer
+   when viewing the web page (Figure 10).
+
+   Figure 10. C&C server login panel with song player added
+
+   In the last update that added content, seen in Figure 11, the C&C login
+   panel displays dancing parrots with a Serbian flag. It makes a
+   reference to OCaml, a programming language created by French people.
+   Ricard is a reference to the 1963 movie The Pink Panther. On the
+   lower-right, it says, in French “Alcohol abuse is dangerous for your
+   health, drink with moderation”, which is the official warning on
+   alcohol advertisements in France. The picture above the warning shows a
+   Jelen pivo pale lager from a Serbian brewery. The song that plays is
+   now “Opa!” by the Russian band Diskoteka Avariya.
+
+   Figure 11. Screenshot of the login panel of the C&C server
+
+   At the time of publication of this blogpost, the login panel has been
+   uncluttered and only the keypad remains.
+
+“You’ve got mail”
+
+   This spambot will send emails using the SMTP protocol through port 25
+   and only targets the customers of the French ISP Orange. Each bot
+   receives instructions from the C&C server in order to craft an email,
+   including the body of the message, a list of email addresses to spam
+   and the server to use to send the emails. The mail servers used to
+   relay the spam don’t look like they belong to the malicious actors;
+   they look like servers that have not been properly secured and they
+   don’t require authentication.
+
+   Figure 12. Two different spam emails
+
+   Spam messages sent by this spambot are as simple as “If this message
+   doesn’t show up correctly, click here” or “Please follow the link:
+   <URL>” (Figure 12). There are also emails with attachments. These links
+   lead to a scam, which is a survey (Figure 13) where the victim always
+   “wins” a promotion for a recent smartphone.
+
+   Figure 13. Survey where the victim always wins a smartphone
+
+   The link takes victims to a site where they apparently have a chance to
+   “win” a prize such as an iPhone X, a Galaxy S9 or S10+ for €2 or less
+   (Figure 14). To win, they need “only” enter their personal information;
+   name, address, city, email and phone number. The email address that is
+   entered may not work if it’s not what the web page expects, but if
+   successful, the victims will be asked to enter their credit card
+   information including its validation numbers.
+
+   People should avoid providing their credit card information to websites
+   they don’t know for deals that are too good to be true. Such deals are
+   often a scheme to get unwitting users’ credit card information in order
+   to charge them monthly fees, which the user can sometimes learn about
+   by scrutinizing the fine prints. Legitimate contests don’t charge
+   winners a fee so they can claim their prize.
+
+   Figure 14. Scam pages with smartphones
+
+   Although Varenyky has the ability to record a video of the display
+   while the computer’s user is probably viewing pornography, so far we
+   have seen no evidence of the malware operator leveraging such video.
+   However, coincidentally, on July 22^nd we saw Varenyky start a
+   sextortion scam campaign. It is important to note that this campaign is
+   an example of the common sextortion scam that has been widely
+   documented and does not appear to be related to Varenyky’s partial
+   ability to carry out the functions of the fictitious malware described
+   in these scam emails. Figure 15 depicts the scam message we saw
+   Varenyky sending. These emails consist of three JPG images that are
+   used to bypass text-based spam filters.
+
+   Figure 15. Screenshot of the sextortion’s email
+
+   This email claims that the author, who is a hacker, has gained access
+   to the victim’s computer through a virus that was caught while visiting
+   an adult website (the translation of this is much like that in the
+   English version documented here). It says that the victim has
+   particular tastes in pornography and that the hacker has gained remote
+   control over the victim’s computer. The email also says a video has
+   been made where on one half of the screen is a recording of the
+   victim’s browser and the other half is a recording from the webcam of
+   “you having… fun”.
+
+   Furthermore, the email says a copy has been made of the victim’s
+   contact list, pictures, passwords, bank account data and more. It
+   promises that the recipient of this email is not the only victim and
+   that the victim will be left alone once €750 are paid in bitcoin to the
+   BTC address 1PBpawAYJG7FfAxmTagU34CfEFoNobb1Re
+
+   The email says the victim has 72 hours to pay before the video is sent
+   to family, colleagues, posted on Facebook, Twitter and elsewhere. It is
+   said that changing passwords, deleting the virus, sending the computer
+   for repair or cleaning the computer will be useless because the
+   victim’s data is on a remote server (“Don’t think I’m a fool”). For
+   proof, the victim can answer “Yes” to the email so the video is sent to
+   six of their most valuable contacts.
+
+   The email ends with “This offer is non-negotiable, do not waste my time
+   and yours, think about the consequences of your actions”.
+
+   All the email addresses that were seen being targeted are on the
+   domains wanadoo.fr and orange.fr; both are operated by the French ISP
+   Orange S.A. A single bot can send as many as 1500 emails an hour.
+
+   At the time of publication, the bitcoin address in the scam email had
+   received four payments. The bitcoin address has been already reported
+   on bitcoinabuse.com for sextortion (Figure 16).
+
+   Figure 16. Screenshot of the bitcoin address reported on BitcoinAbuse
+
+Conclusion
+
+   This spambot is not very advanced, but the context and story around it
+   make it interesting. We can assume from the fact that it targets France
+   could indicate that the operator has some French understanding, reading
+   or speaking the language, or maybe both. However, the Word document
+   showed us a lack of attention in the operator’s work. In the macro, the
+   operator forgot to change the value of the test_debug variable, which
+   means that the malware will be downloaded whatever the language ID is
+   (French or not French).
+
+   There are many functions related to possible extortion or blackmail of
+   victims watching pornographic content, but despite having sent
+   unrelated sextortion scam emails, the operator has not leveraged these
+   as far as we can tell. Many functions have been added and then quickly
+   removed across many different versions in a short period of time (two
+   months). This shows that the operators are actively working on their
+   botnet and are inclined to experiment with new features that could
+   bring a better monetization of their work.
+
+   We recommend that people be careful when they open attachments from
+   unknown sources. Keep system as well as security software up to date.
+
+Acknowledgments
+
+   Thanks to Alexandre-Xavier Labonté-Lamoureux for the technical
+   analysis.
+
+   Thanks to our peers at proofpoint.com for allowing us to use a
+   screenshot of the phishing email.
+
+Indicators of Compromise (IoCs)
+
+                Hashes (SHA-1)                   ESET detection names
+   0970BDE765CB8F183CF68226460CDD930A596088 Win32/Varenyky.A
+   09EFD54E3014A7E67F0FCAA543F826AC06BBE155 Win32/Varenyky.A
+   1C27359023B7195AC739641BBC53789A0BA4A244 Win32/Varenyky.A
+   1D52D26FC2E7E24FA68F36FA04B36D9516DF036F Win32/Varenyky.A
+   21128D4E7124FD8F1D1A62FCC01F5D5F6C653811 Win32/Varenyky.A
+   25FF8154F1CEB0C8E13A3F0F72D855B40819D26B Win32/Varenyky.A
+   36D9AEF26D9B7E40F1140BB62FF6C76110791FAD Win32/Varenyky.A
+   6A9213A89708D2D304371A00678755F2C6AFE42B Win32/Varenyky.A
+   722FE03B7ECA8C11C73CF7206EF0E9A11E857182 Win32/Varenyky.A
+   7F04B6418E31967C12D30150D1CAE7F48980ED08 Win32/Varenyky.A
+   93D51AC86C5ED207DD6E77B2E767CDEB23106925 Win32/Varenyky.A
+   9987B0072EF9850CAB869981B05B85284FDDEE92 Win32/Varenyky.A
+   A9B04941548917BD67CAA533F5078B75D65DD1EE Win32/Varenyky.A
+   ABF3AC24BE92ABE3425379418CF53AA65F370279 VBA/TrojanDownloader.Agent.OAW
+   AC1EB847A456B851B900F6899A9FD13FD6FBEC7D Win32/Varenyky.A
+   B855C03A47901C52C901FFF606F90BC1C262EB87 Win32/Varenyky.A
+   C32552EFEDAC932AD53DB4569569780782B04704 Win32/Varenyky.A
+                           PDB paths
+   C:\NoCy\Release\Varenyky.pdb
+   C:\Users\lenovo\Desktop\NoCy\Release\Varenyky.pdb
+   C:\UnTroueCunTroueKhouya\Release\UnTroueCunTroueKhouya.pdb
+                               Network
+   artisticday[.]icu
+   astonishingwill[.]icu
+   directfood[.]icu
+   gradualrain[.]icu
+   proapp[.]icu
+   provincialwake[.]icu
+   shrek[.]icu
+   thinstop[.]icu
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd[.]onion
+   ESET Research 8 Aug 2019 - 11:30AM
+
+Similar Articles
+
+   Malware Varenyky: Spambot à la Française
+
+Casbaneiro: Dangerous cooking with a secret ingredient
+
+   Malware Varenyky: Spambot à la Française
+
+No summer vacations for Zebrocy
+
+   Malware Varenyky: Spambot à la Française
+
+ESET discovered an undocumented backdoor used by the infamous Stealth Falcon
+group
+
+   Malware Varenyky: Spambot à la Française
+
+First-of-its-kind spyware sneaks into Google Play
+
+Discussion
+
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+
+     * Home
+     * About Us
+     * Contact Us
+
+     * Sitemap
+     * Our Experts
+     * ESET
+
+     * Research
+     * How To
+     * Categories
+
+     * RSS Configurator
+     * News Widget
+     *
+
+   Privacy policy Legal Information
+   Copyright © ESET, All Rights Reserved
+
+   (BUTTON) Back to top
+   #alternate alternate alternate alternate We Live Security RSS 2.0 Feed
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-PMDGSM
+
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   (BUTTON) En Español
+     * Em Português
+     * En français
+     * In English
+     * In Deutsch
+
+   Menu (BUTTON) toggle menu
+   (BUTTON)
+
+     * Últimos Posts
+     * Investigaciones
+     * Infografías
+     * Videos
+     * Podcasts
+     * White Papers
+     * Reportes
+     * Guías
+     * Nuestros Expertos
+     * Glosario
+
+     * Em Português
+     * En français
+     * In English
+     * In Deutsch
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Noticias, opiniones y análisis de la comunidad de seguridad de ESET
+
+Varenyky: Spambot que graba la pantalla de sus víctimas y luego las
+extorsiona
+
+   Investigadores de ESET analizan una campaña de spam que distribuye
+   malware y que apunta a usuarios de Francia
+   ESET Research ESET Research 12 Aug 2019 - 02:01PM
+   Compartir
+
+   Investigadores de ESET analizan una campaña de spam que distribuye
+   malware y que apunta a usuarios de Francia
+
+   En mayo de 2019, investigadores de ESET observaron en los datos de la
+   telemetría de ESET un aumento en la actividad de malware dirigido a
+   Francia. Después de posteriores investigaciones, identificamos la
+   presencia de malware distribuyendo diferentes tipos de spam. Uno de
+   estas campañas de spam está llevando a las personas a una encuesta que
+   redirige a una promoción de smartphones poco creíble, mientras que la
+   otra está llevando adelante una campaña de sextorsión. El spam está
+   dirigido a usuarios de Orange SA, un ISP francés al cual notificamos
+   antes del lanzamiento de esta publicación.
+
+   Creemos que este spambot está bajo un fuerte desarrollo y ha cambiado
+   mucho desde la primera vez que lo detectamos. Si bien AnyRun hizo una
+   mención en Twitter sobre esta amenaza; hasta donde nosotros sabemos,
+   nadie publicó un análisis detallado de la misma. Sin embargo, el pasado
+   22 Julio, los investigadores de ESET vimos lanzar la primera campaña
+   sextorsión de este nuevo malware que hemos decidido llamar Varenyky.
+
+   Resulta interesante de este spambot su capacidad para robar
+   contraseñas, espiar la pantalla de sus víctimas utilizando FFmpeg
+   cuando ven contenido pornográfico en línea, y el hecho de que su
+   comunicación con el servidor de C&C se realice a través de Tor;
+   mientras que el spam se envía como tráfico regular de Internet. En este
+   artículo describiremos las funcionalidades de este  malware.
+
+Blancos de ataque y distribución
+
+Distribución
+
+   Varenyky fue visto por primera vez a principios de mayo de 2019.
+   Lamentablemente, no podemos decir cómo fue que se distribuyó en ese
+   momento, pero la forma de distribución más reciente a través de correos
+   de phishing, sumado al contexto, sugieren que el operador ha estado
+   utilizando esta técnica desde el principio.
+
+   Un mes después, en junio de 2019, observamos el primer documento
+   malicioso que inicia la infección de la computadora de la víctima,
+   adjunto a un mensaje de correo electrónico (Figura 1).
+
+   Figura 1. Captura de pantalla del correo que distribuye el downloader
+   Varenyky
+
+   El correo que podemos observar en la Figura 1 indica que hay una
+   factura disponible y adjunta de 491,27 euros. El nombre de archivo del
+   documento de Microsoft Word contiene la palabra “facture”, término en
+   francés que significa “factura”. Por otra parte, cuando la víctima abre
+   el documento se indica que el mismo está protegido por Microsoft Word y
+   “requiere verificación humana”.
+
+   Figura 2. Documento malicioso
+
+   El contenido del documento (Figura 2) explica cómo habilitar la
+   “verificación humana”, lo cual en realidad quiere decir cómo habilitar
+   macros. Por motivos de seguridad, las macros en Word no están
+   habilitadas de forma predeterminada y necesitan la interacción del
+   usuario para ejecutarse.
+
+   En general, el contenido del mensaje del correo, el nombre del archivo
+   del documento y el contenido “protegido” del documento enfatizan a los
+   destinatarios que están tratando con una factura real y que deben
+   abrirla. Por otra parte, el nivel del francés es muy bueno, por lo que
+   el documento en general resulta convincente.
+
+Blancos de ataque
+
+   Varenyky apunta a usuarios franceses. La macro (Figura 3) contenida en
+   el documento de Word tiene dos propósitos: el primero es filtrar a las
+   víctimas no francesas en función de la ubicación de sus computadoras y
+   el segundo es descargar y ejecutar el malware.
+
+   Figura 3. Macro de Word
+
+   La macro utiliza la función Application.LanguageSettings.LanguageID ()
+   para obtener el ID de idioma de la computadora de la víctima. Esta ID
+   contiene el país y el idioma establecido por el usuario. El script
+   verifica si el valor devuelto es 1036 en decimal (o 0x40C en
+   hexadecimal) y, según la documentación de Microsoft, este valor
+   corresponde a Francia y al idioma francés (Figura 4).
+
+   Figura 4. Tabla de ID de idioma
+
+   Este es un buen truco para engañar a los analizadores de muestras
+   automáticos y evitar llamar la atención debido a la cantidad limitada
+   de configuraciones de computadora en las que se instalará este malware.
+
+   Vale la pena señalar que al utilizar este identificador de
+   configuración regional específico el malware excluye a los países de
+   habla francesa que no sean Francia, como es el caso de Bélgica y
+   Canadá, que tienen sus propios identificadores.
+
+   También hay una verificación adicional del idioma en el ejecutable
+   descargado en función a la distribución del teclado. Esta verificación
+   la realiza el ejecutable que la macro descarga y ejecuta al principio
+   (Figura 5).
+
+   Figura 5. Salida de Hex-Rays de la comprobación de la distribución del
+   teclado
+
+   Una vez más, se realiza una verificación para filtrar a las personas
+   que utilicen una distribución de teclado en inglés o ruso. En caso de
+   que así sea, se muestra el siguiente mensaje (Figura 6) y sale.
+
+   Figura 6. Cuadro de mensaje para usuarios con una distribución de
+   teclado en inglés y/o ruso
+
+   Describamos la funcionalidad del malware una vez que se ejecuta en uno
+   de los sistemas blanco de su ataque.
+
+Análisis técnico y funcionalidad de Varenyky
+
+   Las anteriores variantes de Varenyky utilizaban el empaquetador UPX,
+   pero las muestras más recientes utilizan un empaquetador personalizado.
+   El desempaquetador personalizado primero aplica XOR a su payload con
+   una cadena alfanumérica de 32 caracteres y luego lo descomprime
+   utilizando el algoritmo LZNT1, que es una variante de LZ77. El malware
+   desempaquetado nunca se escribe en el disco.
+
+   Si el malware aún no se instaló, creará un directorio en % APPDATA% con
+   un nombre específico. Es un hash en mayúsculas compuesto por el GUID de
+   la máquina, el nombre de usuario, el nombre de la computadora y el
+   nombre de la CPU: vea la Figura 7. Crea un mutex que es nombrado con
+   este mismo hash para evitar que se ejecuten dos instancias al mismo
+   tiempo.
+
+   Figura 7. Funciones que recopilan información utilizada para calcular
+   el hash
+
+   El payload malicioso extraerá múltiples librerías y el ejecutable Tor,
+   las cuales están embebidos dentro de sí mismo, en el directorio que
+   acaba de crear. Estas librerías incluyen zlib y dependencias para
+   programas compilados con MinGW. El ejecutable del malware es finalmente
+   copiado en este directorio y el original es eliminado del directorio
+   temporal donde se descargó a través de la macro.
+
+   También se hace persistente al agregar una entrada a
+   HKLM\Software\Microsoft\Windows\ CurrentVersion\Run en el Registro de
+   Windows. El mutex es liberado y el malware se reinicia desde su
+   directorio en % AppData%.
+
+   En la segunda ejecución, el malware se da cuenta de que ya está
+   instalado. Por lo tanto, ejecutará Tor y recuperará su dirección IP
+   externa utilizando el servicio checkip.amazonaws.com de AWS.
+
+   Comenzará dos hilos: uno que se encarga de enviar spam y otro que puede
+   ejecutar comandos provenientes de su servidor C&C. Aquí es donde las
+   versiones del malware difieren. Algunas variantes envían spam al mismo
+   tiempo y algunas tienen diferentes funcionalidades en lo que respecta a
+   los comandos que el servidor de C&C puede ejecutar. Toda la
+   comunicación con el servidor C&C se realiza a través de Tor en
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion usando
+   el protocolo HTTP.
+
+   Las primeras versiones del malware podían recibir un comando para
+   descargar y ejecutar un archivo. Estas versiones eran capaces de
+   manipular archivos ejecutables, archivos por lotes y scripts de
+   PowerShell, aunque el soporte para esta última capacidad fue eliminado
+   más tarde. El malware también podía recibir instrucciones para
+   actualizarse con un ejecutable que debía descargarse de una URL
+   específica. Hay otro comando que desinstalará el malware de la
+   computadora, aunque no elimina el cambio que realizó en el registro.
+
+   Un nuevo comando fue añadido más tarde, el cual permite al malware
+   desplegar dos herramientas de NirSoft: WebBrowserPassView y Mail
+   PassView. Se trata de herramientas de recuperación de contraseña, la
+   primera para el navegador web y la segunda para clientes de correo
+   electrónico. El malware abusa de forma rutinaria de estas herramientas,
+   por lo que ESET las detecta como aplicaciones potencialmente inseguras.
+   En ambos casos son embebidas dentro del malware como archivos
+   ejecutables comprimidos con el algoritmo LZNT1. Se extraen, se inyectan
+   en otro ejecutable y se ejecutan para robar las contraseñas de la
+   víctima, que luego se extraen al servidor de C&C.
+
+   El comando agregado más recientemente creará un escritorio oculto en la
+   computadora de la víctima. En este sentido, el malware puede ser
+   utilizado para iniciar varias aplicaciones que tienen una interfaz
+   gráfica, como los navegadores web y el cuadro de diálogo Ejecutar (Run)
+   de Windows en este escritorio invisible. Por otra parte, tiene la
+   capacidad de realizar diversas tareas, como navegar por los menús, leer
+   texto, tomar capturas de pantalla, hacer clic en la pantalla y también
+   minimizar, restaurar y maximizar ventanas.
+
+   Los comandos C&C están resumidos en la Tabla 1.
+
+        Table 1. List of commands that can be sent by the C&C server
+
+   Command name Description
+   DL_EXEC Downloads a file (.exe or .bat) that the malware will execute
+   UPDATE Downloads an executable to replace the malware’s executable
+   UNINSTALL Removes the malware from the computer’s disk
+   NIRSOFT Extracts NirSoft’s WebBrowserPassView and Mail PassView, runs
+   them once and sends the results to the C&C server
+   HIDDEN_DESK Creates a hidden desktop to accomplish various tasks
+
+   Una característica que apareció pero que luego se modificó en versiones
+   posteriores hasta ser finalmente eliminada fue una función que hizo que
+   el malware escaneara el título de las ventanas abiertas en la
+   computadora. A través de dicha función, si el malware encontraba una
+   palabra relacionada a pornografía en francés o la palabra “bitcoin” en
+   el título de una ventana, enviaba el título de la ventana a su servidor
+   C&C.
+
+   Figura 8. Palabras que buscaba el malware
+
+   Esta característica se modificó más tarde para que, al encontrar la
+   palabra “sexe”, el malware grabara la pantalla de la computadora
+   utilizando un ejecutable FFmpeg que previamente habría descargado a
+   través de la red Tor. Una vez realizada la grabación, el video se subió
+   al servidor de C&C.
+
+   Estos videos podrían haber sido utilizados para realizar un chantaje
+   sexual; práctica conocida como sextorsión. Se desconoce si estos videos
+   fueron grabados por curiosidad del autor/autores del spambot o con la
+   intención de monetizarlos a través de la sextorsión. Las diferentes
+   versiones de este malware utilizaron diferentes strings para
+   identificarse frente al servidor de C&C. Uno de ellos era “Bataysk“,
+   que es una ciudad rusa conocida por tener un “monumento que muestra la
+   mano de un hombre agarrando un seno femenino”. Otra muestra
+   identificada como “PH”, que probablemente representa las iniciales de
+   un popular sitio web de pornografía. Y otra versión identificada con el
+   string “Gamiani_MON”; donde Gamiani es el título de una novela erótica
+   francesa y “MON” probablemente esté relacionado con “monitoreo”.
+
+Página principal del servidor C&C
+
+   A lo largo del tiempo se realizaron varios cambios en lo que parece ser
+   el panel de inicio de sesión del servidor C&C. Al principio (Figura 9),
+   se mostraba el verso en latín VADE RETRO SATANA y una estatua de
+   Marianne con ojos rojos; una figura que representa la personificación
+   nacional de la República Francesa. En la esquina superior derecha un
+   cartel dice “Alto – Frontera estatal – Sin entrada”. La palabra “войти”
+   en el botón debajo del teclado significa “iniciar sesión” en ruso y
+   ucraniano.
+
+   Figura 9. Primera versión del panel de inicio de sesión
+
+   Más tarde se actualizó para reproducir la canción “F * ck them all” de
+   Mylène Farmer al ingresar a la página web (Figura 10).
+
+   Figura 10. Panel de inicio de sesión del servidor C&C con el
+   reproductor añadido
+
+   En la última actualización que agregó contenido (ver Figura 11), el
+   panel de inicio de sesión del servidor C&C muestra loros bailando con
+   una bandera serbia. Un pasaje de texto hace referencia a OCaml, un
+   lenguaje de programación creado por franceses. La imagen de Ricard es
+   una referencia a la película de 1963 La Pantera Rosa. En la esquina
+   inferior derecha, dice, en francés “El abuso del alcohol es peligroso
+   para su salud, beba con moderación”, que es la advertencia oficial en
+   los anuncios de alcohol en Francia. La imagen arriba de la advertencia
+   muestra un anuncio de la cerveza Jelen pivo, una marca serbia. La
+   canción que suena ahora en el reproductor es “Opa!”, de la banda rusa
+   Diskoteka Avariya.
+
+   Figura 11. Captura de pantalla del panel de inicio de sesión del
+   servidor de C&C
+
+   En el momento de la publicación de este artículo, el panel de inicio de
+   sesión estaba despejado y solo queda el teclado.
+
+“Tienes un nuevo correo”: concurso por un Smartphone y campaña de sextorsión
+
+   Este spambot enviará correos electrónicos utilizando el protocolo SMTP
+   a través del puerto 25 y solo se dirige a los clientes del ISP francés
+   Orange. Cada bot recibe instrucciones del servidor de C&C para elaborar
+   un correo electrónico, incluido el cuerpo del mensaje, una lista de
+   direcciones de correo electrónico y el servidor que se utilizará para
+   enviar los correos electrónicos. Los servidores de correo utilizados
+   para llevar a cabo el spam no parecen pertenecer a los actores
+   maliciosos; más bien parecen servidores que no se han protegido
+   correctamente y no requieren autenticación.
+
+   Figura 12. Dos correos spam diferentes
+
+   Los mensajes de spam enviados por este spambot son tan simples como “Si
+   este mensaje no se visualiza correctamente, haga clic aquí” o “Siga el
+   enlace: <URL>” (Figura 12). También hay correos electrónicos con
+   archivos adjuntos. Estos enlaces conducen a una estafa, que es una
+   encuesta (Figura 13) donde la víctima siempre “gana” una promoción para
+   un modelo de smartphone reciente.
+
+   Figura 13. Encuesta donde la víctima siempre gana un smartphone
+
+   El enlace lleva a las víctimas a un sitio donde aparentemente tienen la
+   oportunidad de “ganar” un premio como un iPhone X, un Galaxy S9 o S10 +
+   por 2 euros o menos (Figura 14). Para ganar, “solo” necesitan ingresar
+   su información personal; nombre, dirección, ciudad, correo electrónico
+   y número de teléfono. Es posible que la dirección de correo ingresada
+   no funcione si no es lo que la página web espera, pero si tiene éxito,
+   se le pedirá a la víctima que ingrese la información de su tarjeta de
+   crédito, incluidos sus números de validación.
+
+   Las personas deberían evitar proporcionar la información de su tarjeta
+   de crédito a sitios web que no conocen ante ofertas que son demasiado
+   buenas para ser verdad. Tales ofertas son a menudo un esquema de engaño
+   para obtener información de la tarjeta de crédito de un usuario con el
+   fin de cobrarle tarifas mensuales, que el usuario a veces puede
+   detectar al examinar la letra pequeña. Los concursos legítimos no
+   cobran una tarifa a los ganadores para que puedan reclamar su premio.
+
+   Figura 14. Páginas de estafas que prometen smartphones
+
+   Aunque Varenyky tiene la capacidad de grabar un video de la
+   pantalla (no desde la cámara web) mientras el usuario de la computadora
+   probablemente está viendo pornografía, hasta ahora no hemos visto
+   evidencia de que el operador de malware aproveche ese video. Sin
+   embargo y casualmente, el pasado 22 de julio vimos a Varenyky iniciar
+   una campaña de sextorsión. Cabe mencionar que los correos son similar a
+   la que vimos en una campaña de sextorsión ampliamente documentada y que
+   parece no tener relación alguna con la capacidad de Varenyky para
+   llevar a cabo las funciones descritas en dichos correos por el falso
+   malware que se menciona en dichos mensajes.
+
+   La Figura 15 muestra el mensaje extorsivo que vimos enviar a Varenyky.
+   Estos correos consisten en tres imágenes JPG que son utilizadas para
+   evitar los filtros de spam basados ​​en texto.
+
+   Figura 15. Captura de pantalla del correo electrónico enviado como
+   sextorsión
+
+   Este correo electrónico afirma que el autor, que es un hacker, ha
+   obtenido acceso a la computadora de la víctima a través de un virus que
+   fue detectado mientras visitaba un sitio web para adultos (la
+   traducción de este correo es muy similar a la versión en español que
+   documentamos en otro artículo). Dice que la víctima tiene interés
+   particular por la pornografía y que el hacker ha obtenido el control
+   remoto de la computadora de la víctima. El correo también dice que se
+   ha hecho un video donde en la mitad de la pantalla hay una grabación
+   del navegador de la víctima y la otra mitad es una grabación de la
+   cámara web de la víctima al momento de mirar contenido para adultos.
+
+   Además, el correo dice que se ha hecho una copia de la lista de
+   contactos de la víctima, imágenes, contraseñas, datos de la cuenta
+   bancaria y más. En el correo los responsables de esta extorsión
+   aseguran al destinatario del mismo que no es la única víctima y que se
+   liberará solamente una vez que pague la suma de 750 euros en bitcoins a
+   la dirección BTC 1PBpawAYJG7FfAxmTagU34CfEFoNobb1Re.
+
+   Quizás te interese: Campaña de extorsión activa envía correo que simula
+   ser desde la cuenta de la víctima
+
+   El correo dice que la víctima tiene 72 horas para pagar antes de que el
+   video se envíe a familiares, colegas, o que sea publicado en Facebook,
+   Twitter u otros lugares. El mensaje también dice que modificar las
+   contraseñas, eliminar el virus, enviar la computadora a reparar o
+   limpiarla no servirá de nada porque los datos de la víctima están en un
+   servidor remoto (“No creas que soy un tonto”). Como prueba, la víctima
+   puede responder “Sí” al correo electrónico para que el video se envíe a
+   seis de sus contactos más valiosos.
+
+   El correo electrónico termina con “Esta oferta no es negociable, no
+   pierda su tiempo ni me haga perder el mío, piense en las consecuencias
+   de sus acciones”.
+
+   Todas las direcciones de correo que, según hemos visto, fueron blancos
+   de este ataque están en los dominios wanadoo.fr y orange.fr; ambos son
+   operados por el ISP francés de Orange S.A. Un solo bot puede enviar
+   hasta 1500 correos electrónicos por hora.
+
+   En el momento de la publicación de este artículo, la dirección de
+   bitcoin incluida en el correo fraudulento recibió siete pagos. La
+   dirección de bitcoin ya fue reportada a bitcoinabuse.com por sextorsión
+   (Figura 16).
+
+   Figura 16. Captura de pantalla de la dirección de bitcoin reportada en
+   BitcoinAbuse
+
+Conclusión
+
+   Este spambot no está muy avanzado, pero el contexto y la historia a su
+   alrededor lo hacen interesante. Podemos suponer que el hecho de que se
+   dirija a Francia podría indicar que el operador entiende algo de
+   francés, lee o habla el idioma, o tal vez ambos. Sin embargo, el
+   documento de Word nos mostró una falta de atención por parte del
+   operador. En la macro, el operador olvidó cambiar el valor de la
+   variable test_debug, lo que significa que el malware se descargará sea
+   cual sea el ID de idioma (francés o no francés).
+
+   Varias funciones de Varenyky están relacionadas a posibles extorsiones
+   o chantajes dirigidas a víctimas que miran contenido pornográfico, y a
+   pesar de haber también enviado correos no relacionados con la campaña
+   de sextorsión, hasta donde nosotros sabemos los operadores no han
+   aprovechado esto. Se han agregado muchas funciones y luego se
+   eliminaron rápidamente en muchas versiones diferentes en un corto
+   período de tiempo (dos meses). Esto muestra que los operadores están
+   trabajando activamente en su botnet y están inclinados a experimentar
+   con nuevas características que podrían generar una mejor monetización
+   de su trabajo.
+
+   Recomendamos a las personas que tengan mucho cuidado a la hora de abrir
+   archivos adjuntos de fuentes desconocidas. Mantenga actualizado el
+   sistema y el software de seguridad.
+
+Agradecimientos
+
+   Gracias a Alexandre-Xavier Labonté-Lamoureux por el análisis técnico.
+
+   Gracias a nuestros colegas de proofpoint.com por permitirnos usar una
+   captura de pantalla del correo electrónico de phishing.
+
+Indicadores de Compromiso (IoCs)
+
+                Hashes (SHA-1)                   ESET detection names
+   0970BDE765CB8F183CF68226460CDD930A596088 Win32/Varenyky.A
+   09EFD54E3014A7E67F0FCAA543F826AC06BBE155 Win32/Varenyky.A
+   1C27359023B7195AC739641BBC53789A0BA4A244 Win32/Varenyky.A
+   1D52D26FC2E7E24FA68F36FA04B36D9516DF036F Win32/Varenyky.A
+   21128D4E7124FD8F1D1A62FCC01F5D5F6C653811 Win32/Varenyky.A
+   25FF8154F1CEB0C8E13A3F0F72D855B40819D26B Win32/Varenyky.A
+   36D9AEF26D9B7E40F1140BB62FF6C76110791FAD Win32/Varenyky.A
+   6A9213A89708D2D304371A00678755F2C6AFE42B Win32/Varenyky.A
+   722FE03B7ECA8C11C73CF7206EF0E9A11E857182 Win32/Varenyky.A
+   7F04B6418E31967C12D30150D1CAE7F48980ED08 Win32/Varenyky.A
+   93D51AC86C5ED207DD6E77B2E767CDEB23106925 Win32/Varenyky.A
+   9987B0072EF9850CAB869981B05B85284FDDEE92 Win32/Varenyky.A
+   A9B04941548917BD67CAA533F5078B75D65DD1EE Win32/Varenyky.A
+   ABF3AC24BE92ABE3425379418CF53AA65F370279 VBA/TrojanDownloader.Agent.OAW
+   AC1EB847A456B851B900F6899A9FD13FD6FBEC7D Win32/Varenyky.A
+   B855C03A47901C52C901FFF606F90BC1C262EB87 Win32/Varenyky.A
+   C32552EFEDAC932AD53DB4569569780782B04704 Win32/Varenyky.A
+                           PDB paths
+   C:\NoCy\Release\Varenyky.pdb
+   C:\Users\lenovo\Desktop\NoCy\Release\Varenyky.pdb
+   C:\UnTroueCunTroueKhouya\Release\UnTroueCunTroueKhouya.pdb
+                               Network
+   artisticday[.]icu
+   astonishingwill[.]icu
+   directfood[.]icu
+   gradualrain[.]icu
+   proapp[.]icu
+   provincialwake[.]icu
+   shrek[.]icu
+   thinstop[.]icu
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd[.]onion
+   ESET Research 12 Aug 2019 - 02:01PM
+
+Artículos similares
+
+   Amenazas Informáticas Varenyky: Spambot que graba la pantalla de sus
+   víctimas y luego las extorsiona
+
+Casbaneiro: particularidades de este troyano bancario que afecta a Brasil y
+México
+
+   Amenazas Informáticas Varenyky: Spambot que graba la pantalla de sus
+   víctimas y luego las extorsiona
+
+Cambios en el malware Zebrocy detectados en la última campaña del grupo
+Sednit
+
+   Amenazas Informáticas Varenyky: Spambot que graba la pantalla de sus
+   víctimas y luego las extorsiona
+
+Las 10 amenazas informáticas más detectadas en México durante el primer
+semestre de 2019
+
+   Amenazas Informáticas Varenyky: Spambot que graba la pantalla de sus
+   víctimas y luego las extorsiona
+
+Descubren backdoor utilizado por grupo conocido por realizar operaciones de
+ciberespionaje
+
+Discusión
+
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+
+     * Inicio
+     * Acerca de
+     * Contáctanos
+
+     * Mapa del Sitio
+     * Nuestros Expertos
+     * ESET
+
+     * Investigaciones
+     * Tutoriales
+     * Categorías
+
+     * RSS
+     * Noticias
+     *
+
+   Política de Privacidad Información Legal
+   Copyright © ESET, Todos Los Derechos Reservados
+
+   (BUTTON) Back to top
+   #alternate alternate alternate alternate We Live Security RSS 2.0 Feed
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-PMDGSM
+
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   (BUTTON) In Deutsch
+     * Em Português
+     * En français
+     * In English
+     * En Español
+
+   Menu (BUTTON) toggle menu
+   (BUTTON)
+
+     * Alle Beiträge
+     * Research
+     * Expertenmeinung
+     * Infografiken
+     * Videos
+     * Podcasts
+     * Konferenzmaterialien
+     * White Paper
+     * Unsere Experten
+
+     * Em Português
+     * En français
+     * In English
+     * En Español
+
+   ____________________ (BUTTON)
+   ____________________ (BUTTON)
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Neuigkeiten, Analysen und Tipps der ESET Sicherheitsexperten
+
+Varenyky: Spambot à la Française
+
+   Varenyky richtet sich gegen französische Kunden von Orange. Die Malware
+   ist in der Lage, Passwörter und Kreditkartendaten zu stehlen und den
+   Bildschirm des Opfers mithilfe von FFmpeg aufzuzeichnen.
+   ESET Research ESET Research 8 Aug 2019 - 11:30AM
+   Teilen
+
+   Varenyky richtet sich gegen französische Kunden von Orange. Die Malware
+   ist in der Lage, Passwörter und Kreditkartendaten zu stehlen und den
+   Bildschirm des Opfers mithilfe von FFmpeg aufzuzeichnen.
+
+Einleitende Worte zu Varenyky
+
+   Im Mai 2019 bemerkten die ESET-Forscher einen Peak in Bezug auf die
+   Erkennung einer Malware in Frankreich. Nach eingehenden Untersuchungen
+   identifizierten die Forschenden eine Malware, die verschiedenen Spam
+   verbreitete. Die eine Spam-Kampagne führte zu einer Umfrage, die auf
+   eine zwielichtige Smartphone Promotion-Webseite umleitete. Der andere
+   Spam ist eine Sextortion-Kampagne. Die Spam-Kampagnen richten sich an
+   die Kunden des französischen Orange S.A. Internet Service Providers.
+   Vor der Erscheinung dieses Beitrags informierten wir das Unternehmen
+   über die Spam-Kampagnen.
+
+   Wir kommen zum Schluss, dass der Spambot momentan noch stark in der
+   Entwicklung steckt, da dieser seit der ersten Sichtung enorm verändert
+   wurde. Via Twitter informierte AnyRun bereits über die Bedrohung.
+   Unseres Wissens existierten aber noch keine detaillierten Analysen
+   dazu. Wir gaben der Malware den Namen Varenyky. Am 22. Juli bemerkten
+   die ESET-Forscher den Start der Sextortion Scam-Kampagne.
+
+   Der Spambot ist in der Lage, Passwörter zu stehlen und den Bildschirm
+   des Opfers mithilfe von FFmpeg aufzuzeichnen. Die
+   C&C-Server-Kommunikation findet via Tor und der Spam-Versand als
+   normaler Internet-Traffic statt. Dieser Beitrag beschreibt die
+   Malware-Funktionen, Angriffsziele und Verbreitungstaktik genauer.
+
+Angriffsziele und Verbreitungstaktik von Varenyky
+
+Verbreitungstaktik
+
+   Das erste Mal entdeckte man Varenyky im Mai 2019. Wir können über die
+   damalige Spam-Verbreitungsmethode leider nichts berichten. Die neuen
+   Spam-Kampagnen und der Konnex zum E-Mail-Phishing lassen vermuten, dass
+   die Malware-Entwickler diese Verbreitungstaktik von Anfang an
+   verwendeten.
+
+   Im Juni 2019 sahen wir den ersten schädlichen E-Mail-Anhang (Abb. 1),
+   welcher die Kompromittierung des Opfer-Computers initialisiert.
+   Abbildung 1: Verbreitung des Varenyky Downloaders via schädlichen
+   E-Mail-Anhang
+
+   Abbildung 1: Verbreitung des Varenyky Downloaders via schädlichen
+   E-Mail-Anhang
+
+   In der E-Mail heißt es, dass eine Rechnung in Höhe von 491,27 Euro zu
+   begleichen ist – dazu ist ein .doc angehängt. Der Dateiname des
+   Microsoft Word-Dokuments enthält das Wort „facture“, ein französisches
+   Wort für „Rechnung“. Wenn das anvisierte Opfer den Anhang öffnet,
+   blendet Microsoft eine Sicherheitswarnung ein. Der Nutzer muss der
+   Bearbeitung des Dokuments aktiv zustimmen.
+   Abbildung 2: Inhalt des schädlichen Dokuments
+
+   Abbildung 2: Inhalt des schädlichen Dokuments
+
+   Das Dokument (Abb. 2) erklärt die „aktive Verifikation“, welche in
+   Wirklichkeit nur die Methode zur Aktivierung von Makros ist. Aus
+   Sicherheitsgründen sind Makros standardmäßig nicht eingeschaltet.
+   Hierfür bedarf es die Interaktion des Computer-Users.
+
+   Insgesamt überzeugen der geschützte E-Mail-Content und der Dateiname
+   davon, dass es sich hier um eine echte Rechnung handeln könnte, die
+   geöffnet werden sollte. Das Französisch ist sehr gut und
+   zusammengenommen ist das Dokument schlüssig.
+
+Angriffsziele
+
+   Varenyky zielt auf Franzosen ab. Das Makro aus der Word-Datei (Abb. 3)
+   erfüllt zwei Absichten: Zum einen filtert man alle nicht-französischen
+   Opfer heraus (basierend auf der eingestellten Computersprache). Zum
+   anderen wird die Varenyky-Malware heruntergeladen und ausgeführt.
+   Abbildung 3: Das schädliche Word-Makro
+
+   Abbildung 3: Das schädliche Word-Makro
+
+   Das Makro verwendet die Funktion
+   Application.LanguageSettings.LanguageID (), um die Sprach-ID des
+   kompromittierten Computers abzurufen. Diese ID enthält das Land und die
+   vom Benutzer eingestellte Sprache. Das Skript überprüft, ob der
+   zurückgegebene Wert 1036 (als Dezimalzahl, oder 0x40C als
+   Hexadezimalzahl) entspricht. Nach der Microsoft-Dokumentation steht
+   dieser Wert für „Frankreich“ und die französische Sprache (Abb. 4).
+   Abbildung 4: Sprache und dazugehöriger Hex-Wert
+
+   Abbildung 4: Sprache und dazugehöriger Hex-Wert
+
+   Die Methode ist zugleich ein guter Trick, um automatische
+   Sample-Analysen hereinzulegen. Durch die limitierte Anzahl an
+   angesprochenen Computern bliebt die Häufigkeit der
+   Malware-Installationen vergleichsweise gering.
+
+   Von der Malware ausgeschlossen werden auch französischsprachige Länder
+   wie Belgien und Teile Kanadas, da diese ihre eigenen
+   Gebietsschemas/Identifier besitzen.
+
+   Es findet außerdem noch ein weiterer nachgelagerter
+   Tastaturlayout-Check statt. Diese Überprüfung erfolgt ganz am Anfang
+   durch die Executable, die vom Makro heruntergeladen und ausgeführt wird
+   (Abb. 5).
+   Abbildung 5: Hex-Rays-Output der Tastaturlayoutprüfung
+
+   Abbildung 5: Hex-Ray-Output der Tastaturlayoutprüfung
+
+   Nun werden alle Computer mit englischem oder russischem Tastaturlayout
+   herausgefiltert. Die Computer-User bekommen folgende Fehlermeldung
+   eingeblendet:
+
+   Abbildung 6: Fehlermeldung, wenn Malware russisches oder englisches
+   Tastaturlayout erkennt.
+
+   Im Folgenden beschreiben wir die Malware-Funktionen, wenn Varenyky auf
+   den Computern der Opfer ausgeführt wird.
+
+Technische Analyse & Funktionalität von Varenyky
+
+   Alte Varenyky-Varianten benutzen den UPX-Packer – die neueren Samples
+   hingegen einen maßgefertigten. Dieser wird die Payload zunächst mit
+   einem 32 Zeichen langen alphanumerischen String
+   exklusiv-oder-verknüpfen und anschließend mithilfe des
+   LZNT1-Algorithmus dekomprimieren. Die entpackte Malware wird dabei nie
+   auf die Festplatte geschrieben.
+
+   Ist die Malware zum jetzigen Zeitpunkt noch nicht installiert, wird sie
+   unter %APPDATA% einen Ordner mit spezifischem Hash als Namen anlegen.
+   Dieser setzt sich aus der Computer GUID, dem User-, dem Computer- und
+   dem CPU-Namen (alles in Großbuchstaben) zusammen (Abb. 7). Eine Mutual
+   Exclusion (Mutex) sorgt dafür, dass unter dem Hash keine zweite Instanz
+   die Datenstrukturen gleichzeitig, unkoordiniert verändert.
+   Abbildung 7: Funktionen, die Informationen zusammenträgt, um Hash zu
+   erstellen.
+
+   Abbildung 7: Funktionen, die Informationen zusammenträgt, um Hash zu
+   erstellen.
+
+   Die bösartige Payload extrahiert verschiedene Bibliotheken und die
+   Tor.exe, welche im gerade erstellten Verzeichnis eingebettet sind.
+   Diese Bibliotheken enthalten Zlib und Dependencies für Programme, die
+   mit MinGW kompiliert wurden. Letztendlich wird die ausführbare Malware
+   in das Verzeichnis kopiert. Die originale Datei wird aus dem temporären
+   Verzeichnis gelöscht, in das diese über das Makro heruntergeladen
+   wurde.
+
+   Persistenz erreicht man mithilfe der Windows Registry, indem ein
+   Eintrag zu HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+   hinzugefügt wird. Der Mutex wird gelöst und die Malware startet sich
+   selbst aus ihrem Verzeichnis in %APPDATA% neu.
+
+   Bei der zweiten Ausführung stellt die Malware fest, dass sie bereits
+   auf dem Computer installiert ist. Nun führt sie die Tor.exe aus und
+   erhält die externe IP-Adresse via checkip.amazonaws.com AWS-Service.
+
+   Dann starten zwei Threads: Einer, der für das Versenden von Spam
+   zuständig ist, und einer, der vom C&C-Server erhaltene Befehle
+   ausführen kann. An dieser Stelle unterscheiden sich die
+   Malware-Versionen. Einige Varianten verfügen über mehrere Threads, die
+   gleichzeitig Malware verschicken und andere besitzen wiederum
+   unterschiedliche Funktionalitäten, wenn es um die Befehle geht, die der
+   C&C-Server ausführen lassen kann. Die gesamte C&C-Kommunikation findet
+   mithilfe HTTP via Tor über
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion statt.
+
+   Frühere Malware-Versionen konnten einen Befehl zum Herunterladen und
+   Ausführen einer Datei empfangen. Die Schadsoftware war in der Lage, mit
+   Executables, Batch-Files und PowerShell-Skripts umzugehen. Eine
+   Unterstützung für Letzteres verschwand aus nachfolgenden Varianten
+   wieder. Die Malware war zudem imstande, sich selbst mit einer
+   ausführbaren Datei zu aktualisieren, die von einer bestimmten URL
+   bezogen werden musste.
+
+   Später fügte man einen neuen Befehl hinzu. Dadurch konnte die Malware
+   NirSofts WebBrowserPassView und MailPassView Programme verwenden
+   (Passwort Recovery Tools für Web-Browser und E-Mail Client). Die
+   Programme werden immer wieder von Malware missbraucht und von ESET
+   Sicherheitsprodukten aus diesem Grund als potenziell unsichere
+   Anwendung gemeldet. Beide Programme liegen als LZNT1-komprimierte
+   Executables innerhalb der Malware bereit. Sie werden extrahiert und in
+   eine andere Executable geschleust. Nach einmaliger Ausführung schickt
+   die Malware die ergaunerten Passwörter an den C&C-Server.
+
+   Der zur Malware neuste hinzugefügte Befehl erstellt einen versteckten
+   Desktop auf dem Computer des Opfers. Die Malware kann nun angewiesen
+   werden, verschiedene Anwendungen mit GUI dort zu starten – wie
+   beispielsweise Web-Browser oder Windows Run Dialog. Die Malware kann
+   verschiedene Aufgaben ausführen, z. B. durch Menüs navigieren, Text
+   lesen, Screenshots machen, auf den Bildschirm klicken sowie Fenster
+   minimieren, wiederherstellen und maximieren.
+
+   Die C & C-Befehle sind in Tabelle 1 zusammengefasst.
+
+        Table 1. List of commands that can be sent by the C&C server
+
+   Command name Description
+   DL_EXEC Downloads a file (.exe or .bat) that the malware will execute
+   UPDATE Downloads an executable to replace the malware’s executable
+   UNINSTALL Removes the malware from the computer’s disk
+   NIRSOFT Extracts NirSoft’s WebBrowserPassView and Mail PassView, runs
+   them once and sends the results to the C&C server
+   HIDDEN_DESK Creates a hidden desktop to accomplish various tasks
+
+   Ein in früheren Varenyky-Versionen auftauchendes Feature konnte die
+   Title der geöffneten Browser-Fenster scannen. Fand die Malware
+   pornografische französische Wörter oder das Wort „Bitcoin“ meldete sie
+   das an den C&C-Server.
+   Abbildung 8: Wörter, nach denen die Malware suchte.
+
+   Abbildung 8: Wörter, nach denen die Malware suchte.
+
+   Die Funktion änderten die Malware-Entwickler im Nachhinein dahingehend,
+   dass das Schadprogramm via FFmpeg-Executable den Bildschirm des
+   kompromittierten Ziels aufzeichnete und später das Video auf den
+   C&C-Server schickte.
+
+   Die Aufzeichnungen könnten als sexuelle Erpressung gedient haben – eine
+   Praxis, die auch als Sextortion geläufig ist. Uns ist allerdings nicht
+   bekannt, ob man die Videos bloß aus Neugier aufzeichnete oder ob die
+   Varenyky-Entwickler die Absicht hegten, damit Geld zu erpressen. Die
+   unterschiedlichen Malware-Versionen verwendeten verschiedene Strings,
+   um sich dem C&C-Server zu erkennen zu geben – beispielsweise durch
+   „Bataysk“, „PH“, oder „Gamiani_MON“. „Gamiani“ ist ein französischer
+   Erotik-Roman und „MON“ steht wahrscheinlich für Monitoring.
+
+C&C-Server Homepage
+
+   Im Laufe der Zeit wurden am Login-Panel der C&C-Server Homepage viele
+   Veränderungen durchgeführt. Zuerst zeigt die Seite den lateinischen
+   Vers „VADE RETRO SATANA“ und eine rotäugige Statue der Marianne – eine
+   nationale Personifizierung der Französischen Republik. Oben rechts in
+   der Ecke ist ein ehemaliges Grenzschild mit dem Staatsemblem der DDR zu
+   sehen, darunter ein virtueller Nummernblock mit einer Schaltfläche in
+   Russisch / Ukrainisch: „войти“ – Anmelden.
+   Abbildung 9: Erste Version des Login-Panels
+
+   Abbildung 9: Erste Version des Login-Panels
+
+   Es wurde später aktualisiert und um das Lied „F * ck them all“ von
+   Mylène Farmer ergänzt, das beim Aufruf der Webseite beginnt (Abb. 10).
+   Abbildung 10: C&C-Server Login-Panel mit Song-Player
+
+   Abbildung 10: C&C-Server Login-Panel mit Song-Player
+
+   Nach einer weiteren Aktualisierung zeigte sich das Login-Panel, wie in
+   Abb. 11, nun mit tanzenden Papageien in den Farben der serbischen
+   Nationalflagge. Es gibt einen Hinweis auf OCaml, eine von Franzosen
+   erfundene Programmiersprache. Ricard deutet auf den 1963 erschienenen
+   Film „Pink Panther“ hin. Unten rechts in der Ecke steht die offizielle
+   französische Warnung gegen Alkoholmissbrauch geschrieben. Das Bild
+   darüber zeigt ein serbisches Pale Lager. Der nun abgespielte Song ist
+   „Opa!“ der russischen Band Diskoteka Avariya.
+   Abbildung 11:Screenshot des Login-Panels des C&C-Servers
+
+   Abbildung 11:Screenshot des Login-Panels des C&C-Servers
+
+“You’ve got mail”
+
+   Der Spambot sendet E-Mails mithilfe von SMTP via Port 25 und richtet
+   sich nur gegen Kunden des französischen Internetdienstleisters Orange.
+   Jeder Bot erhält vom C&C-Server die Anweisungen, eine Spam-E-Mail
+   aufzusetzen. Vom Server erhält der Bot auch den Nachrichteninhalt sowie
+   eine Empfängerliste und den Mail-Server, über den die Spam-Mails
+   verschickt werden sollen. Die für die Verteilung des Spams verwendeten
+   Mail-Server gehören wahrscheinlich nicht den Varenyky-Entwicklern,
+   sondern scheinen einfach nur schlecht gesichert zu sein.
+   Abbildung 12: Zwei verschiedene Spam-E-Mails
+
+   Abbildung 12: Zwei verschiedene Spam-E-Mails
+
+   Die von den Spam-Bots versendeten Nachrichten sind recht einfach
+   gestrickt. Es heißt bloß: „Wenn diese Nachricht nicht korrekt angezeigt
+   wird, klicken Sie hier“ oder „Bitte folgen Sie dem Link: <URL>“ (Abb.
+   12). Es existieren auch E-Mails mit Anhängen. Die Links leiten zu
+   Scam-Seiten weiter. In Abb. 13 ist beispielsweise eine Umfrage zu
+   sehen, laut derer die Opfer immer ein Smartphone „gewonnen“ haben.
+   Abbildung 13: Umfrage, bei der das Opfer angeblich immer ein Smartphone
+   „gewinnt“
+
+   Abbildung 13: Umfrage, bei der das Opfer angeblich immer ein Smartphone
+   „gewinnt“
+
+   Um zu gewinnen, müssen die Opfer nur ihre persönlichen Informationen
+   und Kreditkartendaten angeben. Das sollte man auf jeden Fall
+   unterlassen. Die angepriesenen Smartphones für 2€ erwerben zu können
+   (Abb. 14), ist schlichtweg Betrug. Diese Masche zielt eher darauf ab,
+   den Opfern ein überteuertes Abo anzudrehen.
+   Abbildung 14: Scam-Seiten mit angepriesenen Smartphones
+
+   Abbildung 14: Scam-Seiten mit angepriesenen Smartphones
+
+Fazit
+
+   Der Varenyky-Spambot ist nicht sehr ausgeklügelt. Aber der Kontext und
+   die Geschichte drumherum sind interessant. Da die Malware-Kampagne auf
+   Frankreich abzielt, gehen wir davon aus, dass die Malware-Entwickler
+   ein gewisses Verständnis für Französisch haben.
+
+   Das eingangs erwähnte Word-Dokument offenbart uns allerdings die
+   Schwächen der Entwickler. Im Makro haben sie vergessen, die
+   test_debug-Variable zu ändern. Das bedeutet, dass die Malware in jedem
+   Fall heruntergeladen wird – egal ob die Sprach-ID fr-FR lautet oder
+   nicht.
+
+   Einige Funktionen der Malware können dazu genutzt werden, Opfer zu
+   erpressen – beispielsweise durch Sextortion. Nach unseren Analysen
+   griffen die Varenyky-Entwickler darauf allerdings nicht zurück.
+   Innerhalb von zwei Monaten ergänzte man viele Features zur Malware, die
+   in späteren Versionen teilweise aber wieder aufgegeben wurden. Die
+   Malware-Operatoren arbeiten weiterhin aktiv am Ausbau des Botnets. Sie
+   experimentieren mit neuen Funktionen, die später eventuell zur höheren
+   Monetarisierung ihrer „Arbeit“ beitragen sollen.
+
+   Wir empfehlen, keine Anhänge oder Links von unbekannten Absendern zu
+   öffnen. Außerdem sollten das Betriebssystem und jegliche Software immer
+   auf dem neusten Stand sein. Eine zuverlässige Sicherheitslösung trägt
+   zum besseren Schutz des Computers bei.
+
+Danksagung
+
+   Vielen Dank an Alexandre-Xavier Labonté-Lamoureux für die technische
+   Analyse.
+
+   Vielen Dank auch an unsere Kollegen von proofpoint.com, die uns die
+   Verwendung eines Screenshots der Phishing-E-Mail ermöglicht haben.
+
+Indicators of Compromise (IoCs)
+
+                Hashes (SHA-1)                   ESET detection names
+   0970BDE765CB8F183CF68226460CDD930A596088 Win32/Varenyky.A
+   09EFD54E3014A7E67F0FCAA543F826AC06BBE155 Win32/Varenyky.A
+   1C27359023B7195AC739641BBC53789A0BA4A244 Win32/Varenyky.A
+   1D52D26FC2E7E24FA68F36FA04B36D9516DF036F Win32/Varenyky.A
+   21128D4E7124FD8F1D1A62FCC01F5D5F6C653811 Win32/Varenyky.A
+   25FF8154F1CEB0C8E13A3F0F72D855B40819D26B Win32/Varenyky.A
+   36D9AEF26D9B7E40F1140BB62FF6C76110791FAD Win32/Varenyky.A
+   6A9213A89708D2D304371A00678755F2C6AFE42B Win32/Varenyky.A
+   722FE03B7ECA8C11C73CF7206EF0E9A11E857182 Win32/Varenyky.A
+   7F04B6418E31967C12D30150D1CAE7F48980ED08 Win32/Varenyky.A
+   93D51AC86C5ED207DD6E77B2E767CDEB23106925 Win32/Varenyky.A
+   9987B0072EF9850CAB869981B05B85284FDDEE92 Win32/Varenyky.A
+   A9B04941548917BD67CAA533F5078B75D65DD1EE Win32/Varenyky.A
+   ABF3AC24BE92ABE3425379418CF53AA65F370279 VBA/TrojanDownloader.Agent.OAW
+   AC1EB847A456B851B900F6899A9FD13FD6FBEC7D Win32/Varenyky.A
+   B855C03A47901C52C901FFF606F90BC1C262EB87 Win32/Varenyky.A
+   C32552EFEDAC932AD53DB4569569780782B04704 Win32/Varenyky.A
+                           PDB paths
+   C:\NoCy\Release\Varenyky.pdb
+   C:\Users\lenovo\Desktop\NoCy\Release\Varenyky.pdb
+   C:\UnTroueCunTroueKhouya\Release\UnTroueCunTroueKhouya.pdb
+                               Network
+   artisticday[.]icu
+   astonishingwill[.]icu
+   directfood[.]icu
+   gradualrain[.]icu
+   proapp[.]icu
+   provincialwake[.]icu
+   shrek[.]icu
+   thinstop[.]icu
+   jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd[.]onion
+   ESET Research 8 Aug 2019 - 11:30AM
+
+Leser interessierte auch
+
+   Scams Varenyky: Spambot à la Française
+
+WhatsApp-Betrug offeriert "kostenfreies Internet"
+
+   Scams Varenyky: Spambot à la Française
+
+Emotet startet neue Spam-Kampagne
+
+   Scams Varenyky: Spambot à la Française
+
+Fake Fußball-Weltmeisterschaft Ticketverlosungen und Giveaways
+
+   Scams Varenyky: Spambot à la Française
+
+Windows Movie Maker Scam durch hohes Google Ranking begünstigt
+
+Hier können Sie mitdiskutieren
+
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+   Welivesecurity.com by ESET
+
+     * Home
+     * Über uns
+     * Kontakt
+
+     * Unsere Experten
+     * ESET
+     * Neuste Malware-Analysen
+
+     * How To
+     * Kategorien
+     * RSS
+
+     * Newsfeed Widget
+     *
+     *
+
+   Datenschutzerklärung Impressum
+   Copyright © ESET, All Rights Reserved
+
+   (BUTTON) Back to top

@@ -1,0 +1,603 @@
+   #Virtual Mountain » Feed Virtual Mountain » Comments Feed Virtual
+   Mountain WordPress.com
+
+Virtual Mountain
+
+One mountain at a time…
+
+   Search ____________________ Search
+
+Main menu
+
+   Skip to primary content
+   Skip to secondary content
+     * Home
+     * About
+
+Post navigation
+
+   ← Older posts
+
+May 2019 – New and updated Vmware Flings
+
+   Posted on June 2, 2019 by JP
+   Reply
+
+     The new ones are the Distributed Trust Incident
+     Reporting fling, vRealize Build Tools and Cloud Automation Services
+     SDK for Python. while the Horizon Toolbox and Horizon Migration
+     Tool have received updates.
+     https://www.retouw.nl/vexpert/the-vmware-labs-flings-mo
+
+   Advertisements
+
+   Posted in Journal | Leave a reply
+
+How to setup Photon OS 3 for Vagrant with VirtualBox
+
+   Posted on April 14, 2019 by JP
+   Reply
+
+   Image result for vagrant Image result for photon os images
+
+Introduction
+
+   Photon OS is a great minimal distribution of Linux for DevOPS,
+   especially for Docker and Kubernetes, but it’s not been available as a
+   option on VagrantCloud.com until now.
+
+   To use the version I created here, from your CLI type:
+vagrant init virtualmountain/photon3
+vagrant up
+vagrant ssh # you're in!
+
+   Some of the following is not original to me and I’d like to shout out
+   to this article from 2014 by Tyler Bird from which I have taken some of
+   the blog post and updated and modified it for PhotonOS version 3.
+
+   The goal of Vagrant is to make it so simple to create a local
+   development environment, you’d never want to do it another way again.
+   With two simple commands you can quickly setup your first vagrant
+   environment and with a third command, be connected into your first
+   vagrant box in under a few minutes.
+
+   This power is amazing and so useful for freelancers who work on many
+   different projects, or companies that need to bring new members of a
+   team up to speed as quickly as possible. With the use of Vagrant, the
+   configuration of the development and the production environment can be
+   mirrored as closely as possible. And errors like “works on my machine”
+   can become a thing of the past.
+
+The Base Build
+
+   Before you modify PhotonOS, you need to install it once on virtualbox.
+   What I did was create the base image of PhotonOS, updated to the latest
+   patches and then shut it down and cloned it as Photon-Vagrant and
+   worked from that to the final image.
+
+   Here are the settings I used for the base image in virtualbox:
+
+   Create a new Virtual Machine with the following settings:
+     * Name: Photon-base
+     * Type: Linux
+     * Version: Other Linux (64-bit)
+     * Memory Size: 1024MB
+     * New Virtual Disk: [Type: VDI, Size: 40 GB]
+
+   Modify the hardware settings of the virtual machine for performance and
+   because SSH needs port-forwarding enabled for the vagrant user:
+     * Disable audio
+     * Disable USB
+     * Ensure Network Adapter 1 is set to NAT
+     * Add this port-forwarding rule: [Name: SSH, Protocol: TCP, Host IP:
+       blank, Host Port: 2222, Guest IP: blank, Guest Port: 22]
+
+   Once built and cloned to Photon-vagrant, you’re ready to modify the
+   virtual machine for vagrant
+
+Vagrantize the OS
+
+   Login as root (the only account created by default in PhotonOS) and
+   change the password
+passwd
+
+   and change the password to ‘vagrant’.
+
+   Yes, you’re going to get a complaint about the password being too
+   simple and a dictionary word, but ignore this.
+
+Change the hostname
+
+   Not strictly essential but I like to give the hostname something
+   generic
+hostnamectl set-hostname photon
+
+   Next you will need to install sudo because vagrant boxes don’t use the
+   root account
+tdnf install sudo -y
+
+Create the vagrant account
+
+   Next you need to create the default vagrant user account with a home
+   directory and add it to the sudo group so it can elevate privileges on
+   demand
+useradd -m -G sudo vagrant
+
+   and set the default password for the vagrant account to ‘vagrant’ using
+passwd vagrant
+
+   and again, ignore the warnings about the password being too simple.
+
+   Next, we need to setup the vagrant account to use sudo without having
+   to type in the password to elevate the privileges every time.
+
+   Execute the following commands to create a file under /etc/sudoers.d
+   and negate the need for a password when invoking sudo
+vi /etc/sudoers.d/vagrant
+
+   and in the file add the following and save it:
+# add vagrant user
+vagrant ALL=(ALL) NOPASSWD:ALL
+
+   Test that this all works by logging out as root and logging as vagrant
+   with password ‘vagrant’ and running the following command:
+sudo pwd
+
+   It will return the home folder /home/vagrant without prompting you for
+   a password if everything is setup correctly.
+
+Setup SSH for vagrant
+
+   By default the SSH daemon will be running but will not allow access via
+   root so you must use the vagrant user.
+
+   You can check the SSH daemon is running via
+systemctl status sshd
+
+   From your host OS (in my case Windows 10), invoke your favourite SSH
+   client (in my case Putty), connect to 127.0.0.1 with port 2222 (as per
+   the port forwarding setup earlier) and login as vagrant with vagrant as
+   the password
+
+   image
+
+Install the Vagrant Key
+
+   The only way that all the vagrant commands will be able to communicate
+   over ssh from the host machine to the guest server is if the guest
+   server has an initial “insecure vagrant key” installed.
+
+   It’s called “insecure” because essentially everyone has this same
+   initial key and in the past theoretically anyone can hack into
+   everyone’s vagrant box if you use it.
+
+   But now, when vagrant issues a command to create a new vagrant box, it
+   detects this initial key and creates a new one just for this VM.
+
+   Even so, Vagrant boxes are meant solely for software development, not
+   production.
+
+   First we will be using wget to download the insecure key so we need to
+   install the package
+sudo tdnf install wget -y
+
+   In the SSH session, copy and paste the following commands to setup the
+   box for the vagrant key:
+mkdir -p /home/vagrant/.ssh
+chmod 0700 /home/vagrant/.ssh
+
+wget --no-check-certificate \
+    https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub \
+    -O /home/vagrant/.ssh/authorized_keys
+chmod 0600 /home/vagrant/.ssh/authorized_keys
+chown –R vagrant /home/vagrant/.ssh
+
+   Next we need to tell the SSH server that the location where the
+   insecure key we’ve just downloaded is authorized for SSH access.
+sudo vi /etc/ssh/sshd_config
+
+   and find and change the following line (around line 41):
+AuthorizedKeysFile     .ssh/authorized_keys
+
+   to
+AuthorizedKeysFile     %h/.ssh/authorized_keys
+
+   Save the file and restart the ssh daemon
+sudo systemctl restart sshd
+
+Finally add VirtualBoxadditions
+
+   This part is required if you are using the Shared Folder between the
+   Host OS and the Guest OS (/vagrant)
+
+   Go to your virtualbox menu for the VM and select Devices –> Insert
+   Guest Additions CD Image
+
+   image
+
+   Next in the console, logout and then login as root or just ‘sudo su –‘
+
+   mount –o loop /dev/cdrom /mnt/cdrom
+
+   The VirtualBoxAdditions installer uses ‘awk’ and ‘tar’ so we’ll have to
+   install those first
+tdnf install awk tar-y
+
+   and we will also need to install development tools and the linux
+   development headers since Virtualbox adds modules to the kernel with
+   the additional functionality
+tdnf install build-essential linux-devel -y
+
+   when that has installed, then you can run the virtualbox additions
+   installer
+
+   cd /mnt/cdrom
+
+   ./VBoxLinuxAdditions.run
+
+   This takes a few minutes to do, but when it is done, we’re going to
+   have to reboot the VM so it recognizes the extra modules added to the
+   kernel (because kernel-devel was for the next version of the kernel,
+   not the one I’m on – why VMware? Why? )
+
+The home stretch
+
+   The vagrantized VM is complete, we just to package it and put it in our
+   home repo
+
+   The packaging process involves compression so to improve the
+   compression we’re going to zero out the disks and then delete the
+   zeros.
+
+   Before you package the box you’ll want to “zero out” the drive. This
+   fixes fragmentation issues with the underlying virtual disk, which
+   allows it to compress much more efficiently later.
+sudo dd if=/dev/zero of=/EMPTY bs=1M
+sudo rm -f /EMPTY
+
+Package the Vagrantized VM
+
+   We’re ready to package the box. I usually make a folder to hold my
+   boxes like so:
+mkdir ~/code/personal/vagrant_boxes
+cd ~/code/personal/vagrant_boxes
+
+   This is the command that finally packages up the box for you as we
+   defined above into the compressed gzip tarball file, it also generates
+   and includes the Vagrantfile and the metadata.json file.
+vagrant package –base “Name of VM in Virtualbox”
+
+   Vagrant will then check VirtualBox for any instances of the name
+   vagrant-ubuntu64 and attempt to ssh into them and control them.
+→ vagrant package –base “photon 3 vagrant build”
+[Photon 3 Vagrant Build] Attempting graceful shutdown of VM...
+[Photon 3 Vagrant Build] Forcing shutdown of VM...
+[Photon 3 Vagrant Build] Clearing any previously set forwarded ports...
+[Photon 3 Vagrant Build] Exporting VM...
+[Photon 3 Vagrant Build] Compressing package to: /path/to/directory/package.box
+
+   You are left with the package.box file in your
+   ~/code/personal/vagrant_boxes folder.
+
+Test the package by uploading it to your local repository
+
+   From your same vagrant_boxes folder you can run these final test
+   commands. All the heavy lifting is really done at this point. If you’ve
+   screwed up something it’s probably in a step up above.
+
+   You should be in ~/code/personal/vagrant_boxes/ and type:
+vagrant box add photon3 package.box
+vagrant init photon3
+vagrant up
+
+   Connect to the server you created from start to finish!
+vagrant ssh
+
+The End (for now)
+
+   I’d like to give special thanks to Tyler Bird for his original post and
+   to ‘andyp73’ on the VirtualBox forums who helped immensely by finding
+   the missing step that enabled Photon to install the
+   VirtualBoxAdditions.
+
+   Posted in Journal | Leave a reply
+
+Migrating VMs using PowerCLI #1–the basics and rationale
+
+   Posted on December 24, 2018 by JP
+   Reply
+
+Introduction
+
+   Image result for moving vmware vms
+
+   This is the first of a series of posts about how to migrate VMs from
+   one vCenter to another – something that VMware sysadmins are increasing
+   asked to do as hosting migrates from one datacenter to another.
+
+   And I did promise to some redditors on /r/vmware that I would share the
+   scripts that I created when I had to migrate several hundred VMs from
+   one datacenter to another platform which was supposed to be IaaS (but I
+   don’t think it was and that’s another story)
+
+   But first the basics – I am not a programmer by trade and the scripts I
+   will be sharing are more like the scripts a gifted beginner would
+   create rather than the much more cleverly crafted scripts that a
+   seasoned Powershell wizard would write.
+
+   I had to start at the beginning in understanding how Powershell works
+   and what its syntax is and in a sense I am still learning, but at least
+   my scripts are easy to understand if you’ve got the minimum knowledge.
+
+   But here’s the catch: I can’t just give you the scripts for you to run
+   because every site and every installation is different and they will
+   fail or do things you don’t expect. You need to understand what the
+   scripts do, how to modify them to match your site and your
+   requirements.
+
+   Bottom line: Don’t skip the learning. Learn first, experiment in a
+   limited test environment and then (with proper backups and change
+   control) do them in your production
+
+   Continue reading →
+
+   Posted in PowerCLI, VMware | Tagged migration, PowerCLI, powershell,
+   VMware | Leave a reply
+
+VCSA 6.5 Migration Assistant fails with APPCRASH
+
+   Posted on August 7, 2018 by JP
+   Reply
+
+   Image result for vsphere This happened today.
+
+   Running the vCSA 6.5 Migration Assistant on the source vCenter server
+   on Windows 2008 R2.
+
+   Problem: Immediately stops with APPCRASH on module MSVCP120.DLL
+
+   What its not caused by:
+     * Administrative rights running the Migration Assistant
+     * Windows 2008R2 being not updated for a long time.
+     * Nothing to do with the version of vSphere (5.5)
+
+   What it is caused by:
+     * Group policy not allowing unauthorized applications to run.
+
+   Fix/Workaround:
+     * Disable the group policy and reboot the source vCenter server VM.
+
+   Posted in Journal | Leave a reply
+
+Upgrade vSphere Replication to version 8.1
+
+   Posted on August 2, 2018 by JP
+   Reply
+
+   WesleyGeelhoed.nl
+
+   Along with the vSphere 6.7 release, VMware released new versions of
+   other products from their portfolio as well. In this blog post, I would
+   like to demonstrate how you do an upgrade to the new vSphere
+   Replication 8.1 version which was released last April. Since this is
+   slightly different compared to the upgrade methods that are used in the
+   past.
+
+   View original post 881 more words
+
+   Posted in Journal | Leave a reply
+
+Autolab 3.0 released
+
+   Posted on August 2, 2018 by JP
+   Reply
+
+   AutoLab color leftside 72 dpi
+
+   After a long, long wait (frankly I’d given up hope) Alastair Cooke over
+   in New Zealand has released an updated version of Autolab that supports
+   vSphere 6.5 and 6.7!
+
+   Gone is the cute and extremely tiny router VM based on SCO (remember
+   them?) and in with the much more functional pfSense software router.
+
+   But the hardware requirements have gone up as well.
+   Hardware Minimum Great Choice Used to build the lab
+   CPU Dual Core, 64Bit Quad Core, i7 i7 Quad Core
+   RAM 24GB How much can you afford? 32GB
+   Hard Disk 120GB free space 200GB SSD free space 480 GB SSD
+   Operating System 64 Bit ESXi 6.7 Windows 7 64Bit
+   Virtualization Software VMware Player (untested) ESXi 6.7 VMware
+   Workstation 10
+
+   The minimum requirement for VMware workstation is 24GB of RAM, which
+   could be challenging for anyone with a laptop or desktop that only has
+   16GB of RAM.
+
+   So for me, the only useful hardware is the single server HP DL160 that
+   I have which has 136GB of RAM stuffed in it running ESXi 6.5 (not 6.7
+   as the processor is too old!)
+
+   The downloads are at http://www.labguides.com/autolab/
+
+   Ravello on Oracle has an updated blueprint which you can copy from the
+   repo at https://www.ravellosystems.com/repo/ and type autolab in the
+   search box.
+
+   The subreddit is in its usual place http://reddit.com/r/AutoLab/ for
+   community help (or commiseration).
+
+   Of course, I’d like someone to produce a variant which uses NSX rather
+   than pfSense. But that’s just me.
+
+   Posted in Journal | Leave a reply
+
+Using shared folders between VMware Workstation and Linux guest OS
+
+   Posted on April 11, 2017 by JP
+   Reply
+
+   This is a note that it is now perfectly possible to share folder and
+   files between a VMware workstation host (or VMware Player) and a Linux
+   guest OS without installing the proprietary VMware tools for Linux
+
+   It’s just surprising to me that no-one appears to have documented this
+   properly
+
+   VMware is no longer developing VMware tools any more for Linux distros,
+   but is instead putting VMware tools functionality into an open source
+   package available for most Linux flavours out there called
+   open-vm-tools
+
+   Assuming you have installed a Linux guest OS under VMware workstation,
+   then this is the procedure you will need to follow
+
+   First, create or identify a directory on your host Windows system that
+   you want to share with the Linux OS.
+     * For the sake of example, let’s assume you want to share the folder
+       C:\sharedfiles
+
+   Once done, open a console to your Linux guest and install open-vm-tools
+   from the repository of your chose Linux distribution. This will
+   probably entail connecting to the Internet to get it, but it needs to
+   be done.
+     * For CentOS for example, this means the following command:
+
+     sudo yum install –y open-vm-tools
+
+     * For Ubuntu it is
+
+     sudo apt-get install open-vm-tools
+
+   Once the package has been installed then you need to shutdown the Linux
+   guest OS gracefully via
+
+     sudo shutdown –h now
+
+   When the OS has been shutdown, then go to Settings for the Linux guest
+   and click on the Options tab and select Shared Folders
+
+   If the Folder Sharing is disabled then select “Always Enabled”
+
+   Add the Folder to be shared but giving it a name (eg “SharedFiles”) and
+   attach it to a directory on your host Windows OS (eg “C:\sharedfiles”)
+
+   Click Next, make the attribute “Enable this share” has been checked and
+   make sure the attribute for “Read-Only” is de-selected (unless you want
+   the host directory to be read-only, in which case check it)
+
+   Click Finish, OK when you’re done and then start the Linux guest OS
+   again.
+
+   Once the Linux OS has booted, go to the console and type the following
+   command:
+
+     sudo vmware-hgfsclient
+
+   which should return the shared folder (eg “SharedFiles”)
+
+   To  connect the two file systems you will need to create or nominate an
+   empty directory accessible by your Linux user
+
+   From the user home directory create a directory called “shared”, eg
+
+     mkdir ~/shared
+
+   Then mount the shared folder
+
+     sudo vmhgfs-fuse –o allow_other .host:/SharedFiles ~/shared
+
+   If you then change to the share directory then you should be able to
+   see files in that directory which are on the host Windows OS.
+
+   Posted in Journal | Leave a reply
+
+Post navigation
+
+   ← Older posts
+
+   [vcp-dcv-white.png]
+
+Follow Virtual Mountain via Email
+
+   Enter your email address to follow this blog and receive notifications
+   of new posts by email.
+
+   Join 27 other followers
+
+   ____________________
+
+   (BUTTON) Follow
+
+Blogroll
+
+     * ESX Virtualization – Vladan
+     * The Virtualization Practice
+     * Theme Showcase
+     * Virtual Design Master
+     * Vmware vCAT blog
+     * Wesley Geelhoed Dutch NSX vExpert
+     * WordPress Planet
+     * WordPress.com News
+
+Podcasts
+
+     * AdaptingIT AdaptingIT – Lauren Malhoit
+     * APAC Virtualization Roundtable APAC Virtualization Roundtable –
+       Roman Tarnavski, Rodney Haywood, Alastair Cooke, Andre Leibovici
+       and Craig Waters
+     * The Chinwag The Chinwag – Mike Laverick
+     * vBrownBag vBrownBag- Cody Bunch, Damian Karlson, Josh Atwell,
+       Alastair Cooke and Nick Marshall
+     * vCatchup vCatchup Podcast – Craig Waters
+     * vChat vChat – David Davis, Simon Seagrave, and Eric Siebert
+     * Virtualization Security Roundtable Virtualization Security
+       Roundtable – Edward Haletky
+     * VMware Communities Roundtable VMware Communities Roundtable – John
+       Mark Troyer and Mike Laverick
+     * vNews vNews Podcast – Stu McHugh
+     * vSoup from vSoup to vNuts! – Ed Czerwin, Chris Dearden and
+       Christian Mohn
+
+Resources
+
+     * Vmware myLearn
+
+Recent Posts
+
+     * May 2019 – New and updated Vmware Flings
+     * How to setup Photon OS 3 for Vagrant with VirtualBox
+     * Migrating VMs using PowerCLI #1–the basics and rationale
+     * VCSA 6.5 Migration Assistant fails with APPCRASH
+     * Upgrade vSphere Replication to version 8.1
+     * Autolab 3.0 released
+
+Meta
+
+     * Register
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.com
+
+   Advertisements
+
+   Blog at WordPress.com.
+
+   Virtual Mountain
+   Create a free website or blog at WordPress.com.
+
+   Close and accept Privacy & Cookies: This site uses cookies. By
+   continuing to use this website, you agree to their use.
+   To find out more, including how to control cookies, see here: Cookie
+   Policy
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Post to
+   Cancel Reblog Post
+   This is an OpenID server
+

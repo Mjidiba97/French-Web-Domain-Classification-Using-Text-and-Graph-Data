@@ -1,0 +1,2280 @@
+     * [knightlab-dark.png]
+
+     * Projects
+     * Class
+     * Device Lab
+     * Posts
+     * Community
+     * About
+
+                                  Timeline JS
+
+Easy-to-make, beautiful timelines.
+
+   Make a Timeline
+     * Timeline JS
+
+     * Overview
+     * Examples
+     * Make a Timeline
+     * Help
+
+   Because of an unexpected error in Google's spreadsheet access service
+   on 29 April 2019, many timelines stopped working. At this time, we
+   believe the issues have been resolved.
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&init
+   ial_zoom=2&height=100%
+
+   TimelineJS is an open-source tool that enables anyone to build visually
+   rich, interactive timelines. Beginners can create a timeline using
+   nothing more than a Google spreadsheet, like the one we used for the
+   Timeline above. Experts can use their JSON skills to create custom
+   installations, while keeping TimelineJS's core functionality.
+
+   IFRAME: https://player.vimeo.com/video/143407878
+
+   Knight Lab Watch this brief video for an overview of how to make a
+   timeline.
+
+Tips & tricks
+
+    1. Keep it short. We recommend not having more than 20 slides for a
+       reader to click through.
+    2. Pick stories that have a strong chronological narrative. It does
+       not work well for stories that need to jump around in the timeline.
+    3. Write each event as a part of a larger narrative.
+    4. Include events that build up to major occurrences — not just the
+       major events.
+
+Media sources
+
+   TimelineJS can pull in media from a variety of sources. Twitter,
+   Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia,
+   SoundCloud, Document Cloud and more!
+
+Examples
+
+   Mandela: A Life of Purpose Time Magazine
+
+Mandela: A Life of Purpose
+
+   Chronology of the French Presidential Race Le Monde
+
+Chronology of the French Presidential Race
+
+   Historic Fall at University of Missouri The Maneater
+
+Historic Fall at University of Missouri
+
+   North Korea's Nuclear Ambitions CNN
+
+North Korea's Nuclear Ambitions
+
+   Bulger on Trial WBUR
+
+Bulger on Trial
+
+   The Decline of IRS Nonprofit Regulation Center for Public Integrity
+
+The Decline of IRS Nonprofit Regulation
+
+   Aurora, Colorado Movie Theater Shooting Denver Post
+
+Aurora, Colorado Movie Theater Shooting
+
+   The Collapse of Microsoft and Nokia's Mobile Business Engadget
+
+The Collapse of Microsoft and Nokia's Mobile Business
+
+   How ISIS Spread to 10 Countries International Business Times
+
+How ISIS Spread to 10 Countries
+
+   Reported Sexual Assault Cases by Texas Educators KSAT
+
+Reported Sexual Assault Cases by Texas Educators
+
+   A History of Wine Around the World VinePair
+
+A History of Wine Around the World
+
+   The Mystery of Malaysia Airlines Flight 370 Mashable
+
+The Mystery of Malaysia Airlines Flight 370
+
+   Revolutionary User Interfaces Knight Lab
+
+Revolutionary User Interfaces
+
+   A Brief History of the Banana Business Beyond the Seal
+
+A Brief History of the Banana Business
+
+   The Republican Run-Up Knight Lab
+
+The Republican Run-Up
+
+   Whitney Houston: 1963-2012 Knight Lab
+
+Whitney Houston: 1963-2012
+
+Make a Timeline
+
+   TimelineJS works on any site or blog. Make your own in four easy steps.
+   Having trouble? Watch our video, or see the help section below.
+    1.
+
+Create your spreadsheet
+       Build a new Google Spreadsheet using our template. You'll need to
+       copy the template to your own Google Drive account by clicking the
+       "Make a Copy" button.
+       Drop dates, text and links to media into the appropriate columns.
+       For more about working with our template, see our help docs.
+       Get the Spreadsheet Template
+       Don't change the column headers, don't remove any columns, and
+       don't leave any blank rows in your spreadsheet.
+    2.
+
+Publish to the web
+       Under the File menu, select “Publish to the Web.”
+       [publish_to_web_small.png]
+       In the next window, click the blue "publish" button. When asked,
+       "Are you sure…?" click OK.
+       Now, copy the URL that appears in the center of the window. You'll
+       use this in the next step.
+       [publish_to_web_button_small.png] [publish_to_web_url_small.png]
+       The following has changed as of 18 July 2017!
+       Close the 'Publish to the web' window. Copy the URL for your
+       Timeline from the browser's address bar. It should look something
+       like this:
+       https://docs.google.com/spreadsheets/d/1xuY4upIooEeszZ_lCmeNx24eSFW
+       e0rHe9ZdqH2xqVNk/edit#gid=0
+       Disregard the URL that appears in the "publish to the web" window.
+       It used to be used below, but changes to Google mean that you'll
+       get an error if you use it now.
+    3.
+
+Generate your timeline
+       Copy/paste spreadsheet URL into the box below to generate your
+       timeline. (Make sure you've published the spreadsheet.)
+       Google Spreadsheet URL ____________________
+       Width 100%________________
+       Height 650_________________
+
+Optional settings (show) (hide)
+       Set language, fonts, starting slide and more.
+
+Language
+       [English______________________]
+
+Fonts
+       [default.png]
+          + PT Narrow and PT Serif
+          + Abril and Droid Sans
+          + Amatic and Andika
+          + Bevan and Pontano Sans
+          + Bitter and Raleway
+          + Clicker and Garamond
+          + Dancing and Ledger
+          + Fjalla and Average
+          + Georgia and Helvetica
+          + Lustria and Lato
+          + Medula One and Lato
+          + Old Standard
+          + Open Sans and Gentium Book
+          + Playfair and Fauna One
+          + Playfair SC and Playfair
+          + PT Sans, PT Sans Narrow, and PT Serif
+          + Roboto and Megrim
+          + Rufina and Sintony
+          + Unica One and Vollkorn
+
+Map Type
+       Currently all Google's base maps are supported. When creating a
+       Google map, style it the way you would like it to appear, and then
+       paste the resulting link into your Google Spreadsheet.
+
+Default start slide
+       Slide 0___________________
+       You can tell TimelineJS to start at a specific slide number.
+
+Initial zoom level
+       Zoom Level 2___________________
+       The zoom level at which the timeline portion of TimelineJS will
+       display on load. Specify a value from 0-10 (default is 2). Smaller
+       numbers show a greater span of time.
+
+Misc
+       [ ] Start at the end
+       Begins the timeline on the last slide.
+       [ ] Show nav on top
+       Switches the vertical order of the timeline navigation and the
+       media.
+       [ ] Debug
+       In debug mode, the JavaScript console will display logging
+       messages.
+       [ ] Use hash bookmarks
+       Assigns a hash bookmark to each slide's URL, allowing deep linking
+       to slides. (For directly linked Timelines only -- does not work for
+       iframe embeds)
+
+    4.
+
+Share your timeline
+
+Share Link
+       Use this to link directly to your timeline.
+       If you're embedding on Medium.com or other oembed-aware services,
+       just paste this link on a line by itself where you want your
+       timeline to appear.
+
+       https://cdn.knightlab.com/libs/timeline/latest/embed/?source
+                                       ____________________________
+       ____________________________________________________________
+
+Embed
+       Copy this embed code and paste it on your site where you want your
+       timeline to appear (just like a YouTube video).
+
+       <iframe src=ʼhttps://cdn.knightlab.com/libs/timeline/latest_
+                                       ____________________________
+       ____________________________________________________________
+       Preview  Open Preview in a new window
+
+Preview Embed
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&init
+   ial_zoom=2&height=650
+
+Help
+
+   Need help? First, please be sure to look at our list of frequently
+   asked questions below. If you're brand new to Timeline JS, you may also
+   want to watch our introductory video.
+
+   If you don't find an answer there, try our support forums or use our
+   tech support web form. Please be clear with your question, include a
+   link to your spreadsheet, and if appropriate, a link to a page which
+   shows the issue with which you need help. We can only answer support
+   questions in English. We try to be prompt, but please understand that
+   we do not have a dedicated tech support staff.
+
+   Find a bug? If you are confident you have found a bug, please report it
+   as a GitHub issue. Be sure to include detailed instructions on how to
+   reproduce the bug. If you're not sure, please start with the tech
+   support system.
+
+Technical documentation
+
+   Go further with Timeline:
+     * Use our spreadsheet template
+     * Supported Media Types
+     * JSON data format reference
+     * Using the TimelineJS CSS selectors
+     * Timeline Configuration Options
+     * Using TimelineJS in Javascript
+
+Frequently asked questions
+
+     * [X]
+    How do I edit my timeline?
+       Once you've created a timeline, you can make changes by going back
+       to your Google spreadsheet. Changes you make to the spreadsheet are
+       automatically available to your Timeline—you don't need to repeat
+       the 'publish to the web' step (step #2). If you want to make
+       changes to the optional settings, you will need to update your
+       embed code, but if you are only changing content in the
+       spreadsheet, then there's nothing else to do.
+     * [X]
+    What web browsers does TimelineJS work with?
+       Our primary development and testing browser is Google Chrome. We
+       adhere closely to web standards, so we believe that TimelineJS
+       should work effectively in all modern web browsers. TimelineJS is
+       known to not work with Internet Explorer versions before IE10.
+     * [X]
+    What are my options for changing how my Timeline looks?
+       First, make sure you know everything you can do in the spreadsheet
+       configuration, like background colors and images. Also, check out
+       the optional settings part of 'step 3' of the authoring tool. You
+       can change the fonts, the position of the timeline navigation, and
+       the initial zoom level. If you still want to do more, there are
+       some configuration options available. Most of those are for fine
+       tuning, but some of them may be helpful.
+     * [X]
+    There aren't enough options. I want more control over the [font
+       size/color/etc]. Can I change things using CSS?
+       Because there are so many details to the styling, this is not
+       exactly simple, but, if you have some technical capacity, you can
+       override TimelineJS's CSS rules and have complete control over the
+       look of the timeline. For details, see Using the TimelineJS CSS
+       selectors. You will need to be able to instantiate the Timeline in
+       javascript on your own page. (There is no way to override the CSS
+       using the iframe embed.) Then, either in <style> tags in that page,
+       or in an external stylesheet, you can specify CSS rules changing
+       some or all of TimelineJS's default presentation. The basis of
+       TimelineJS's styles are in these files, which use the Less CSS
+       preprocessor.
+     * [X]
+    How can I categorize or group my events?
+       Every event in a timeline can have a group property. Events with
+       the same group are shown in the same row or adjacent rows, and the
+       common value of their group property is used as a label at the left
+       edge of the timeline. Groups can be set using the 'group' column in
+       the Google Spreadsheet or the 'group' property of a JSON slide
+       object. TimelineJS does not support any other special styling for
+       events in the same group.
+     * [X]
+    The first slide in my timeline isn't the first chronologically. Why
+       did this happen?
+       When using the Google Spreadsheet to configure your timeline, if
+       you put the word title in the type column, that slide will be put
+       at the front, regardless of the values in the date columns. See the
+       Google Spreadsheet documentation for more information.
+     * [X]
+    Can I make media images clickable?
+       No. Many of TimelineJS's media types are interactive, and so would
+       not be able to handle a link, and other of TimelineJS's media types
+       have terms of service which require a link back to the source of
+       the media. As an alternative, consider using HTML to add links in
+       the caption, credit, or text for the slide.
+     * [X]
+    How can I format text (add line breaks, bold, italics)?
+       TimelineJS's text fields (headline, text, caption, and credit) all
+       accept HTML markup. A full tutorial on HTML is outside the scope of
+       this FAQ, but here are a few basics:
+          + Wrap paragraphs in <p></p> tags to create line breaks.
+          + Wrap text in <b></b> tags for bold text and <i></i> for
+            italics
+     * [X]
+    How do I enter BCE dates?
+       To enter dates before the common era, just use a negative value for
+       the year. Of course, you can also enter month and date if you need
+       them.
+     * [X]
+    How do I create very ancient dates?
+       Generally, you don't have to think about it -- just enter the dates
+       you want. Timeline can handle dates literally to the beginning of
+       time. For dates more than about 250,000 years ago, only the year is
+       usable. Support for those older dates is still relatively new, so
+       if anything seems off, visit our tech support site.
+     * [X]
+    Who can access the data in my Google spreadsheet?
+       You must make the data public to the web to use TimelineJS with a
+       Google Spreadsheet as the data source. Normally, the data is still
+       only visible to people who know the link, so if you publish a
+       timeline privately, outsiders are unlikely to see the data.
+       However, it is still public, so you must decide if that is
+       acceptable.
+     * [X]
+    Privacy is very important to me. How should I use TimelineJS?
+       If you want complete control over who can see the information in
+       your timeline, you cannot use Google Spreadsheets, and you cannot
+       use our standard iframe embed code. Instead, you must use JSON
+       format for the data and instantiate the timeline directly using
+       javascript. You can then use standard web server security measures
+       to control who has access to your timeline and the data used to
+       create it.
+     * [X]
+    Will my spreadsheet get picked up by search engines?
+       Under normal circumstances, Google tells search engines not to
+       index spreadsheets which are published to the web. Of course, if
+       the page is public on the web, it is possible that a search engine
+       will disregard those instructions.
+     * [X]
+    Can I use TimelineJS with Wordpress?
+       It depends. TimelineJS does not work with Wordpress.com sites. We
+       are researching ways to address this.
+       If you are able to install plugins to your Wordpress installation,
+       we have a Wordpress plugin for Timeline. It supports embedding
+       Timelines with Wordpress "shortcode", and as of version 3.3.14.0,
+       it also has experimental "oembed" support. That means that you can
+       take a direct URL to a timeline (like you get with the "get link to
+       preview" button) and put it in a post on a line by itself, and it
+       should be embedded. (Make sure you've updated the plugin before you
+       try it.)
+     * [X]
+    Is TimelineJS free for commercial use?
+       TimelineJS is released under the Mozilla Public License (MPL),
+       version 2.0. That means that TimelineJS is free to "use, reproduce,
+       make available, modify, display, perform, distribute" or otherwise
+       employ. You don't need our permission to publish stories with
+       TimelineJS and you don't need to pay us any fees or arrange any
+       further license beyond the MPL. To read more about what you can do
+       with TimelineJS, read our license page.
+
+  Storytelling Tools
+
+   We build easy-to-use tools that can help you tell better stories.
+
+   [screenshot-timeline.png]
+
+Timeline JS
+
+   Easy-to-make, beautiful timelines.
+   [screenshot-storymap.png]
+
+StoryMap JS
+
+   Maps that tell stories.
+   [screenshot-juxtapose.jpg]
+
+Juxtapose JS
+
+   Easy-to-make frame comparisons.
+   [screenshot-soundcite.png]
+
+Soundcite JS
+
+   Seamless inline audio.
+
+   View More
+
+   [logo-knightlab-stacked-dark-small.png]
+     *
+     *
+     *
+
+   The Northwestern University Knight Lab is a team of technologists and
+   journalists working at advancing news media innovation through
+   exploration and experimentation.
+   [logo-medill-dark.png]
+   [logo-mccormick-dark.png]
+
+
+    Knight Lab (847) 467-4971 1845 Sheridan Road Fisk #109 & #111
+
+   Evanston, IL 60208 Latitude: 42.056893
+   Longitude: -87.676735 Northwesten University Knight Lab | Advancing
+   media innovation through exploration and experimentation.
+
+
+   © Copyright Northwestern University
+     * [knightlab-dark.png]
+
+     * Projects
+     * Class
+     * Device Lab
+     * Posts
+     * Community
+     * About
+
+                                  Timeline JS
+
+Easy-to-make, beautiful timelines.
+
+   Make a Timeline
+     * Timeline JS
+
+     * Overview
+     * Examples
+     * Make a Timeline
+     * Help
+
+   Because of an unexpected error in Google's spreadsheet access service
+   on 29 April 2019, many timelines stopped working. At this time, we
+   believe the issues have been resolved.
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&init
+   ial_zoom=2&height=100%
+
+   TimelineJS is an open-source tool that enables anyone to build visually
+   rich, interactive timelines. Beginners can create a timeline using
+   nothing more than a Google spreadsheet, like the one we used for the
+   Timeline above. Experts can use their JSON skills to create custom
+   installations, while keeping TimelineJS's core functionality.
+
+   IFRAME: https://player.vimeo.com/video/143407878
+
+   Knight Lab Watch this brief video for an overview of how to make a
+   timeline.
+
+Tips & tricks
+
+    1. Keep it short. We recommend not having more than 20 slides for a
+       reader to click through.
+    2. Pick stories that have a strong chronological narrative. It does
+       not work well for stories that need to jump around in the timeline.
+    3. Write each event as a part of a larger narrative.
+    4. Include events that build up to major occurrences — not just the
+       major events.
+
+Media sources
+
+   TimelineJS can pull in media from a variety of sources. Twitter,
+   Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia,
+   SoundCloud, Document Cloud and more!
+
+Examples
+
+   Mandela: A Life of Purpose Time Magazine
+
+Mandela: A Life of Purpose
+
+   Chronology of the French Presidential Race Le Monde
+
+Chronology of the French Presidential Race
+
+   Historic Fall at University of Missouri The Maneater
+
+Historic Fall at University of Missouri
+
+   North Korea's Nuclear Ambitions CNN
+
+North Korea's Nuclear Ambitions
+
+   Bulger on Trial WBUR
+
+Bulger on Trial
+
+   The Decline of IRS Nonprofit Regulation Center for Public Integrity
+
+The Decline of IRS Nonprofit Regulation
+
+   Aurora, Colorado Movie Theater Shooting Denver Post
+
+Aurora, Colorado Movie Theater Shooting
+
+   The Collapse of Microsoft and Nokia's Mobile Business Engadget
+
+The Collapse of Microsoft and Nokia's Mobile Business
+
+   How ISIS Spread to 10 Countries International Business Times
+
+How ISIS Spread to 10 Countries
+
+   Reported Sexual Assault Cases by Texas Educators KSAT
+
+Reported Sexual Assault Cases by Texas Educators
+
+   A History of Wine Around the World VinePair
+
+A History of Wine Around the World
+
+   The Mystery of Malaysia Airlines Flight 370 Mashable
+
+The Mystery of Malaysia Airlines Flight 370
+
+   Revolutionary User Interfaces Knight Lab
+
+Revolutionary User Interfaces
+
+   A Brief History of the Banana Business Beyond the Seal
+
+A Brief History of the Banana Business
+
+   The Republican Run-Up Knight Lab
+
+The Republican Run-Up
+
+   Whitney Houston: 1963-2012 Knight Lab
+
+Whitney Houston: 1963-2012
+
+Make a Timeline
+
+   TimelineJS works on any site or blog. Make your own in four easy steps.
+   Having trouble? Watch our video, or see the help section below.
+    1.
+
+Create your spreadsheet
+       Build a new Google Spreadsheet using our template. You'll need to
+       copy the template to your own Google Drive account by clicking the
+       "Make a Copy" button.
+       Drop dates, text and links to media into the appropriate columns.
+       For more about working with our template, see our help docs.
+       Get the Spreadsheet Template
+       Don't change the column headers, don't remove any columns, and
+       don't leave any blank rows in your spreadsheet.
+    2.
+
+Publish to the web
+       Under the File menu, select “Publish to the Web.”
+       [publish_to_web_small.png]
+       In the next window, click the blue "publish" button. When asked,
+       "Are you sure…?" click OK.
+       Now, copy the URL that appears in the center of the window. You'll
+       use this in the next step.
+       [publish_to_web_button_small.png] [publish_to_web_url_small.png]
+       The following has changed as of 18 July 2017!
+       Close the 'Publish to the web' window. Copy the URL for your
+       Timeline from the browser's address bar. It should look something
+       like this:
+       https://docs.google.com/spreadsheets/d/1xuY4upIooEeszZ_lCmeNx24eSFW
+       e0rHe9ZdqH2xqVNk/edit#gid=0
+       Disregard the URL that appears in the "publish to the web" window.
+       It used to be used below, but changes to Google mean that you'll
+       get an error if you use it now.
+    3.
+
+Generate your timeline
+       Copy/paste spreadsheet URL into the box below to generate your
+       timeline. (Make sure you've published the spreadsheet.)
+       Google Spreadsheet URL ____________________
+       Width 100%________________
+       Height 650_________________
+
+Optional settings (show) (hide)
+       Set language, fonts, starting slide and more.
+
+Language
+       [English______________________]
+
+Fonts
+       [default.png]
+          + PT Narrow and PT Serif
+          + Abril and Droid Sans
+          + Amatic and Andika
+          + Bevan and Pontano Sans
+          + Bitter and Raleway
+          + Clicker and Garamond
+          + Dancing and Ledger
+          + Fjalla and Average
+          + Georgia and Helvetica
+          + Lustria and Lato
+          + Medula One and Lato
+          + Old Standard
+          + Open Sans and Gentium Book
+          + Playfair and Fauna One
+          + Playfair SC and Playfair
+          + PT Sans, PT Sans Narrow, and PT Serif
+          + Roboto and Megrim
+          + Rufina and Sintony
+          + Unica One and Vollkorn
+
+Map Type
+       Currently all Google's base maps are supported. When creating a
+       Google map, style it the way you would like it to appear, and then
+       paste the resulting link into your Google Spreadsheet.
+
+Default start slide
+       Slide 0___________________
+       You can tell TimelineJS to start at a specific slide number.
+
+Initial zoom level
+       Zoom Level 2___________________
+       The zoom level at which the timeline portion of TimelineJS will
+       display on load. Specify a value from 0-10 (default is 2). Smaller
+       numbers show a greater span of time.
+
+Misc
+       [ ] Start at the end
+       Begins the timeline on the last slide.
+       [ ] Show nav on top
+       Switches the vertical order of the timeline navigation and the
+       media.
+       [ ] Debug
+       In debug mode, the JavaScript console will display logging
+       messages.
+       [ ] Use hash bookmarks
+       Assigns a hash bookmark to each slide's URL, allowing deep linking
+       to slides. (For directly linked Timelines only -- does not work for
+       iframe embeds)
+
+    4.
+
+Share your timeline
+
+Share Link
+       Use this to link directly to your timeline.
+       If you're embedding on Medium.com or other oembed-aware services,
+       just paste this link on a line by itself where you want your
+       timeline to appear.
+
+       https://cdn.knightlab.com/libs/timeline/latest/embed/?source
+                                       ____________________________
+       ____________________________________________________________
+
+Embed
+       Copy this embed code and paste it on your site where you want your
+       timeline to appear (just like a YouTube video).
+
+       <iframe src=ʼhttps://cdn.knightlab.com/libs/timeline/latest_
+                                       ____________________________
+       ____________________________________________________________
+       Preview  Open Preview in a new window
+
+Preview Embed
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&init
+   ial_zoom=2&height=650
+
+Help
+
+   Need help? First, please be sure to look at our list of frequently
+   asked questions below. If you're brand new to Timeline JS, you may also
+   want to watch our introductory video.
+
+   If you don't find an answer there, try our support forums or use our
+   tech support web form. Please be clear with your question, include a
+   link to your spreadsheet, and if appropriate, a link to a page which
+   shows the issue with which you need help. We can only answer support
+   questions in English. We try to be prompt, but please understand that
+   we do not have a dedicated tech support staff.
+
+   Find a bug? If you are confident you have found a bug, please report it
+   as a GitHub issue. Be sure to include detailed instructions on how to
+   reproduce the bug. If you're not sure, please start with the tech
+   support system.
+
+Technical documentation
+
+   Go further with Timeline:
+     * Use our spreadsheet template
+     * Supported Media Types
+     * JSON data format reference
+     * Using the TimelineJS CSS selectors
+     * Timeline Configuration Options
+     * Using TimelineJS in Javascript
+
+Frequently asked questions
+
+     * [X]
+    How do I edit my timeline?
+       Once you've created a timeline, you can make changes by going back
+       to your Google spreadsheet. Changes you make to the spreadsheet are
+       automatically available to your Timeline—you don't need to repeat
+       the 'publish to the web' step (step #2). If you want to make
+       changes to the optional settings, you will need to update your
+       embed code, but if you are only changing content in the
+       spreadsheet, then there's nothing else to do.
+     * [X]
+    What web browsers does TimelineJS work with?
+       Our primary development and testing browser is Google Chrome. We
+       adhere closely to web standards, so we believe that TimelineJS
+       should work effectively in all modern web browsers. TimelineJS is
+       known to not work with Internet Explorer versions before IE10.
+     * [X]
+    What are my options for changing how my Timeline looks?
+       First, make sure you know everything you can do in the spreadsheet
+       configuration, like background colors and images. Also, check out
+       the optional settings part of 'step 3' of the authoring tool. You
+       can change the fonts, the position of the timeline navigation, and
+       the initial zoom level. If you still want to do more, there are
+       some configuration options available. Most of those are for fine
+       tuning, but some of them may be helpful.
+     * [X]
+    There aren't enough options. I want more control over the [font
+       size/color/etc]. Can I change things using CSS?
+       Because there are so many details to the styling, this is not
+       exactly simple, but, if you have some technical capacity, you can
+       override TimelineJS's CSS rules and have complete control over the
+       look of the timeline. For details, see Using the TimelineJS CSS
+       selectors. You will need to be able to instantiate the Timeline in
+       javascript on your own page. (There is no way to override the CSS
+       using the iframe embed.) Then, either in <style> tags in that page,
+       or in an external stylesheet, you can specify CSS rules changing
+       some or all of TimelineJS's default presentation. The basis of
+       TimelineJS's styles are in these files, which use the Less CSS
+       preprocessor.
+     * [X]
+    How can I categorize or group my events?
+       Every event in a timeline can have a group property. Events with
+       the same group are shown in the same row or adjacent rows, and the
+       common value of their group property is used as a label at the left
+       edge of the timeline. Groups can be set using the 'group' column in
+       the Google Spreadsheet or the 'group' property of a JSON slide
+       object. TimelineJS does not support any other special styling for
+       events in the same group.
+     * [X]
+    The first slide in my timeline isn't the first chronologically. Why
+       did this happen?
+       When using the Google Spreadsheet to configure your timeline, if
+       you put the word title in the type column, that slide will be put
+       at the front, regardless of the values in the date columns. See the
+       Google Spreadsheet documentation for more information.
+     * [X]
+    Can I make media images clickable?
+       No. Many of TimelineJS's media types are interactive, and so would
+       not be able to handle a link, and other of TimelineJS's media types
+       have terms of service which require a link back to the source of
+       the media. As an alternative, consider using HTML to add links in
+       the caption, credit, or text for the slide.
+     * [X]
+    How can I format text (add line breaks, bold, italics)?
+       TimelineJS's text fields (headline, text, caption, and credit) all
+       accept HTML markup. A full tutorial on HTML is outside the scope of
+       this FAQ, but here are a few basics:
+          + Wrap paragraphs in <p></p> tags to create line breaks.
+          + Wrap text in <b></b> tags for bold text and <i></i> for
+            italics
+     * [X]
+    How do I enter BCE dates?
+       To enter dates before the common era, just use a negative value for
+       the year. Of course, you can also enter month and date if you need
+       them.
+     * [X]
+    How do I create very ancient dates?
+       Generally, you don't have to think about it -- just enter the dates
+       you want. Timeline can handle dates literally to the beginning of
+       time. For dates more than about 250,000 years ago, only the year is
+       usable. Support for those older dates is still relatively new, so
+       if anything seems off, visit our tech support site.
+     * [X]
+    Who can access the data in my Google spreadsheet?
+       You must make the data public to the web to use TimelineJS with a
+       Google Spreadsheet as the data source. Normally, the data is still
+       only visible to people who know the link, so if you publish a
+       timeline privately, outsiders are unlikely to see the data.
+       However, it is still public, so you must decide if that is
+       acceptable.
+     * [X]
+    Privacy is very important to me. How should I use TimelineJS?
+       If you want complete control over who can see the information in
+       your timeline, you cannot use Google Spreadsheets, and you cannot
+       use our standard iframe embed code. Instead, you must use JSON
+       format for the data and instantiate the timeline directly using
+       javascript. You can then use standard web server security measures
+       to control who has access to your timeline and the data used to
+       create it.
+     * [X]
+    Will my spreadsheet get picked up by search engines?
+       Under normal circumstances, Google tells search engines not to
+       index spreadsheets which are published to the web. Of course, if
+       the page is public on the web, it is possible that a search engine
+       will disregard those instructions.
+     * [X]
+    Can I use TimelineJS with Wordpress?
+       It depends. TimelineJS does not work with Wordpress.com sites. We
+       are researching ways to address this.
+       If you are able to install plugins to your Wordpress installation,
+       we have a Wordpress plugin for Timeline. It supports embedding
+       Timelines with Wordpress "shortcode", and as of version 3.3.14.0,
+       it also has experimental "oembed" support. That means that you can
+       take a direct URL to a timeline (like you get with the "get link to
+       preview" button) and put it in a post on a line by itself, and it
+       should be embedded. (Make sure you've updated the plugin before you
+       try it.)
+     * [X]
+    Is TimelineJS free for commercial use?
+       TimelineJS is released under the Mozilla Public License (MPL),
+       version 2.0. That means that TimelineJS is free to "use, reproduce,
+       make available, modify, display, perform, distribute" or otherwise
+       employ. You don't need our permission to publish stories with
+       TimelineJS and you don't need to pay us any fees or arrange any
+       further license beyond the MPL. To read more about what you can do
+       with TimelineJS, read our license page.
+
+  Storytelling Tools
+
+   We build easy-to-use tools that can help you tell better stories.
+
+   [screenshot-timeline.png]
+
+Timeline JS
+
+   Easy-to-make, beautiful timelines.
+   [screenshot-storymap.png]
+
+StoryMap JS
+
+   Maps that tell stories.
+   [screenshot-juxtapose.jpg]
+
+Juxtapose JS
+
+   Easy-to-make frame comparisons.
+   [screenshot-soundcite.png]
+
+Soundcite JS
+
+   Seamless inline audio.
+
+   View More
+
+   [logo-knightlab-stacked-dark-small.png]
+     *
+     *
+     *
+
+   The Northwestern University Knight Lab is a team of technologists and
+   journalists working at advancing news media innovation through
+   exploration and experimentation.
+   [logo-medill-dark.png]
+   [logo-mccormick-dark.png]
+
+
+    Knight Lab (847) 467-4971 1845 Sheridan Road Fisk #109 & #111
+
+   Evanston, IL 60208 Latitude: 42.056893
+   Longitude: -87.676735 Northwesten University Knight Lab | Advancing
+   media innovation through exploration and experimentation.
+
+
+   © Copyright Northwestern University
+     * [knightlab-dark.png]
+
+     * Projects
+     * Class
+     * Device Lab
+     * Posts
+     * Community
+     * About
+
+                                  Timeline JS
+
+Easy-to-make, beautiful timelines.
+
+   Make a Timeline
+     * Timeline JS
+
+     * Overview
+     * Examples
+     * Make a Timeline
+     * Help
+
+   Because of an unexpected error in Google's spreadsheet access service
+   on 29 April 2019, many timelines stopped working. At this time, we
+   believe the issues have been resolved.
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&init
+   ial_zoom=2&height=100%
+
+   TimelineJS is an open-source tool that enables anyone to build visually
+   rich, interactive timelines. Beginners can create a timeline using
+   nothing more than a Google spreadsheet, like the one we used for the
+   Timeline above. Experts can use their JSON skills to create custom
+   installations, while keeping TimelineJS's core functionality.
+
+   IFRAME: https://player.vimeo.com/video/143407878
+
+   Knight Lab Watch this brief video for an overview of how to make a
+   timeline.
+
+Tips & tricks
+
+    1. Keep it short. We recommend not having more than 20 slides for a
+       reader to click through.
+    2. Pick stories that have a strong chronological narrative. It does
+       not work well for stories that need to jump around in the timeline.
+    3. Write each event as a part of a larger narrative.
+    4. Include events that build up to major occurrences — not just the
+       major events.
+
+Media sources
+
+   TimelineJS can pull in media from a variety of sources. Twitter,
+   Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia,
+   SoundCloud, Document Cloud and more!
+
+Examples
+
+   Mandela: A Life of Purpose Time Magazine
+
+Mandela: A Life of Purpose
+
+   Chronology of the French Presidential Race Le Monde
+
+Chronology of the French Presidential Race
+
+   Historic Fall at University of Missouri The Maneater
+
+Historic Fall at University of Missouri
+
+   North Korea's Nuclear Ambitions CNN
+
+North Korea's Nuclear Ambitions
+
+   Bulger on Trial WBUR
+
+Bulger on Trial
+
+   The Decline of IRS Nonprofit Regulation Center for Public Integrity
+
+The Decline of IRS Nonprofit Regulation
+
+   Aurora, Colorado Movie Theater Shooting Denver Post
+
+Aurora, Colorado Movie Theater Shooting
+
+   The Collapse of Microsoft and Nokia's Mobile Business Engadget
+
+The Collapse of Microsoft and Nokia's Mobile Business
+
+   How ISIS Spread to 10 Countries International Business Times
+
+How ISIS Spread to 10 Countries
+
+   Reported Sexual Assault Cases by Texas Educators KSAT
+
+Reported Sexual Assault Cases by Texas Educators
+
+   A History of Wine Around the World VinePair
+
+A History of Wine Around the World
+
+   The Mystery of Malaysia Airlines Flight 370 Mashable
+
+The Mystery of Malaysia Airlines Flight 370
+
+   Revolutionary User Interfaces Knight Lab
+
+Revolutionary User Interfaces
+
+   A Brief History of the Banana Business Beyond the Seal
+
+A Brief History of the Banana Business
+
+   The Republican Run-Up Knight Lab
+
+The Republican Run-Up
+
+   Whitney Houston: 1963-2012 Knight Lab
+
+Whitney Houston: 1963-2012
+
+Make a Timeline
+
+   TimelineJS works on any site or blog. Make your own in four easy steps.
+   Having trouble? Watch our video, or see the help section below.
+    1.
+
+Create your spreadsheet
+       Build a new Google Spreadsheet using our template. You'll need to
+       copy the template to your own Google Drive account by clicking the
+       "Make a Copy" button.
+       Drop dates, text and links to media into the appropriate columns.
+       For more about working with our template, see our help docs.
+       Get the Spreadsheet Template
+       Don't change the column headers, don't remove any columns, and
+       don't leave any blank rows in your spreadsheet.
+    2.
+
+Publish to the web
+       Under the File menu, select “Publish to the Web.”
+       [publish_to_web_small.png]
+       In the next window, click the blue "publish" button. When asked,
+       "Are you sure…?" click OK.
+       Now, copy the URL that appears in the center of the window. You'll
+       use this in the next step.
+       [publish_to_web_button_small.png] [publish_to_web_url_small.png]
+       The following has changed as of 18 July 2017!
+       Close the 'Publish to the web' window. Copy the URL for your
+       Timeline from the browser's address bar. It should look something
+       like this:
+       https://docs.google.com/spreadsheets/d/1xuY4upIooEeszZ_lCmeNx24eSFW
+       e0rHe9ZdqH2xqVNk/edit#gid=0
+       Disregard the URL that appears in the "publish to the web" window.
+       It used to be used below, but changes to Google mean that you'll
+       get an error if you use it now.
+    3.
+
+Generate your timeline
+       Copy/paste spreadsheet URL into the box below to generate your
+       timeline. (Make sure you've published the spreadsheet.)
+       Google Spreadsheet URL ____________________
+       Width 100%________________
+       Height 650_________________
+
+Optional settings (show) (hide)
+       Set language, fonts, starting slide and more.
+
+Language
+       [English______________________]
+
+Fonts
+       [default.png]
+          + PT Narrow and PT Serif
+          + Abril and Droid Sans
+          + Amatic and Andika
+          + Bevan and Pontano Sans
+          + Bitter and Raleway
+          + Clicker and Garamond
+          + Dancing and Ledger
+          + Fjalla and Average
+          + Georgia and Helvetica
+          + Lustria and Lato
+          + Medula One and Lato
+          + Old Standard
+          + Open Sans and Gentium Book
+          + Playfair and Fauna One
+          + Playfair SC and Playfair
+          + PT Sans, PT Sans Narrow, and PT Serif
+          + Roboto and Megrim
+          + Rufina and Sintony
+          + Unica One and Vollkorn
+
+Map Type
+       Currently all Google's base maps are supported. When creating a
+       Google map, style it the way you would like it to appear, and then
+       paste the resulting link into your Google Spreadsheet.
+
+Default start slide
+       Slide 0___________________
+       You can tell TimelineJS to start at a specific slide number.
+
+Initial zoom level
+       Zoom Level 2___________________
+       The zoom level at which the timeline portion of TimelineJS will
+       display on load. Specify a value from 0-10 (default is 2). Smaller
+       numbers show a greater span of time.
+
+Misc
+       [ ] Start at the end
+       Begins the timeline on the last slide.
+       [ ] Show nav on top
+       Switches the vertical order of the timeline navigation and the
+       media.
+       [ ] Debug
+       In debug mode, the JavaScript console will display logging
+       messages.
+       [ ] Use hash bookmarks
+       Assigns a hash bookmark to each slide's URL, allowing deep linking
+       to slides. (For directly linked Timelines only -- does not work for
+       iframe embeds)
+
+    4.
+
+Share your timeline
+
+Share Link
+       Use this to link directly to your timeline.
+       If you're embedding on Medium.com or other oembed-aware services,
+       just paste this link on a line by itself where you want your
+       timeline to appear.
+
+       https://cdn.knightlab.com/libs/timeline/latest/embed/?source
+                                       ____________________________
+       ____________________________________________________________
+
+Embed
+       Copy this embed code and paste it on your site where you want your
+       timeline to appear (just like a YouTube video).
+
+       <iframe src=ʼhttps://cdn.knightlab.com/libs/timeline/latest_
+                                       ____________________________
+       ____________________________________________________________
+       Preview  Open Preview in a new window
+
+Preview Embed
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&init
+   ial_zoom=2&height=650
+
+Help
+
+   Need help? First, please be sure to look at our list of frequently
+   asked questions below. If you're brand new to Timeline JS, you may also
+   want to watch our introductory video.
+
+   If you don't find an answer there, try our support forums or use our
+   tech support web form. Please be clear with your question, include a
+   link to your spreadsheet, and if appropriate, a link to a page which
+   shows the issue with which you need help. We can only answer support
+   questions in English. We try to be prompt, but please understand that
+   we do not have a dedicated tech support staff.
+
+   Find a bug? If you are confident you have found a bug, please report it
+   as a GitHub issue. Be sure to include detailed instructions on how to
+   reproduce the bug. If you're not sure, please start with the tech
+   support system.
+
+Technical documentation
+
+   Go further with Timeline:
+     * Use our spreadsheet template
+     * Supported Media Types
+     * JSON data format reference
+     * Using the TimelineJS CSS selectors
+     * Timeline Configuration Options
+     * Using TimelineJS in Javascript
+
+Frequently asked questions
+
+     * [X]
+    How do I edit my timeline?
+       Once you've created a timeline, you can make changes by going back
+       to your Google spreadsheet. Changes you make to the spreadsheet are
+       automatically available to your Timeline—you don't need to repeat
+       the 'publish to the web' step (step #2). If you want to make
+       changes to the optional settings, you will need to update your
+       embed code, but if you are only changing content in the
+       spreadsheet, then there's nothing else to do.
+     * [X]
+    What web browsers does TimelineJS work with?
+       Our primary development and testing browser is Google Chrome. We
+       adhere closely to web standards, so we believe that TimelineJS
+       should work effectively in all modern web browsers. TimelineJS is
+       known to not work with Internet Explorer versions before IE10.
+     * [X]
+    What are my options for changing how my Timeline looks?
+       First, make sure you know everything you can do in the spreadsheet
+       configuration, like background colors and images. Also, check out
+       the optional settings part of 'step 3' of the authoring tool. You
+       can change the fonts, the position of the timeline navigation, and
+       the initial zoom level. If you still want to do more, there are
+       some configuration options available. Most of those are for fine
+       tuning, but some of them may be helpful.
+     * [X]
+    There aren't enough options. I want more control over the [font
+       size/color/etc]. Can I change things using CSS?
+       Because there are so many details to the styling, this is not
+       exactly simple, but, if you have some technical capacity, you can
+       override TimelineJS's CSS rules and have complete control over the
+       look of the timeline. For details, see Using the TimelineJS CSS
+       selectors. You will need to be able to instantiate the Timeline in
+       javascript on your own page. (There is no way to override the CSS
+       using the iframe embed.) Then, either in <style> tags in that page,
+       or in an external stylesheet, you can specify CSS rules changing
+       some or all of TimelineJS's default presentation. The basis of
+       TimelineJS's styles are in these files, which use the Less CSS
+       preprocessor.
+     * [X]
+    How can I categorize or group my events?
+       Every event in a timeline can have a group property. Events with
+       the same group are shown in the same row or adjacent rows, and the
+       common value of their group property is used as a label at the left
+       edge of the timeline. Groups can be set using the 'group' column in
+       the Google Spreadsheet or the 'group' property of a JSON slide
+       object. TimelineJS does not support any other special styling for
+       events in the same group.
+     * [X]
+    The first slide in my timeline isn't the first chronologically. Why
+       did this happen?
+       When using the Google Spreadsheet to configure your timeline, if
+       you put the word title in the type column, that slide will be put
+       at the front, regardless of the values in the date columns. See the
+       Google Spreadsheet documentation for more information.
+     * [X]
+    Can I make media images clickable?
+       No. Many of TimelineJS's media types are interactive, and so would
+       not be able to handle a link, and other of TimelineJS's media types
+       have terms of service which require a link back to the source of
+       the media. As an alternative, consider using HTML to add links in
+       the caption, credit, or text for the slide.
+     * [X]
+    How can I format text (add line breaks, bold, italics)?
+       TimelineJS's text fields (headline, text, caption, and credit) all
+       accept HTML markup. A full tutorial on HTML is outside the scope of
+       this FAQ, but here are a few basics:
+          + Wrap paragraphs in <p></p> tags to create line breaks.
+          + Wrap text in <b></b> tags for bold text and <i></i> for
+            italics
+     * [X]
+    How do I enter BCE dates?
+       To enter dates before the common era, just use a negative value for
+       the year. Of course, you can also enter month and date if you need
+       them.
+     * [X]
+    How do I create very ancient dates?
+       Generally, you don't have to think about it -- just enter the dates
+       you want. Timeline can handle dates literally to the beginning of
+       time. For dates more than about 250,000 years ago, only the year is
+       usable. Support for those older dates is still relatively new, so
+       if anything seems off, visit our tech support site.
+     * [X]
+    Who can access the data in my Google spreadsheet?
+       You must make the data public to the web to use TimelineJS with a
+       Google Spreadsheet as the data source. Normally, the data is still
+       only visible to people who know the link, so if you publish a
+       timeline privately, outsiders are unlikely to see the data.
+       However, it is still public, so you must decide if that is
+       acceptable.
+     * [X]
+    Privacy is very important to me. How should I use TimelineJS?
+       If you want complete control over who can see the information in
+       your timeline, you cannot use Google Spreadsheets, and you cannot
+       use our standard iframe embed code. Instead, you must use JSON
+       format for the data and instantiate the timeline directly using
+       javascript. You can then use standard web server security measures
+       to control who has access to your timeline and the data used to
+       create it.
+     * [X]
+    Will my spreadsheet get picked up by search engines?
+       Under normal circumstances, Google tells search engines not to
+       index spreadsheets which are published to the web. Of course, if
+       the page is public on the web, it is possible that a search engine
+       will disregard those instructions.
+     * [X]
+    Can I use TimelineJS with Wordpress?
+       It depends. TimelineJS does not work with Wordpress.com sites. We
+       are researching ways to address this.
+       If you are able to install plugins to your Wordpress installation,
+       we have a Wordpress plugin for Timeline. It supports embedding
+       Timelines with Wordpress "shortcode", and as of version 3.3.14.0,
+       it also has experimental "oembed" support. That means that you can
+       take a direct URL to a timeline (like you get with the "get link to
+       preview" button) and put it in a post on a line by itself, and it
+       should be embedded. (Make sure you've updated the plugin before you
+       try it.)
+     * [X]
+    Is TimelineJS free for commercial use?
+       TimelineJS is released under the Mozilla Public License (MPL),
+       version 2.0. That means that TimelineJS is free to "use, reproduce,
+       make available, modify, display, perform, distribute" or otherwise
+       employ. You don't need our permission to publish stories with
+       TimelineJS and you don't need to pay us any fees or arrange any
+       further license beyond the MPL. To read more about what you can do
+       with TimelineJS, read our license page.
+
+  Storytelling Tools
+
+   We build easy-to-use tools that can help you tell better stories.
+
+   [screenshot-timeline.png]
+
+Timeline JS
+
+   Easy-to-make, beautiful timelines.
+   [screenshot-storymap.png]
+
+StoryMap JS
+
+   Maps that tell stories.
+   [screenshot-juxtapose.jpg]
+
+Juxtapose JS
+
+   Easy-to-make frame comparisons.
+   [screenshot-soundcite.png]
+
+Soundcite JS
+
+   Seamless inline audio.
+
+   View More
+
+   [logo-knightlab-stacked-dark-small.png]
+     *
+     *
+     *
+
+   The Northwestern University Knight Lab is a team of technologists and
+   journalists working at advancing news media innovation through
+   exploration and experimentation.
+   [logo-medill-dark.png]
+   [logo-mccormick-dark.png]
+
+
+    Knight Lab (847) 467-4971 1845 Sheridan Road Fisk #109 & #111
+
+   Evanston, IL 60208 Latitude: 42.056893
+   Longitude: -87.676735 Northwesten University Knight Lab | Advancing
+   media innovation through exploration and experimentation.
+
+
+   © Copyright Northwestern University
+     * [knightlab-dark.png]
+
+     * Projects
+     * Class
+     * Device Lab
+     * Posts
+     * Community
+     * About
+
+                                  Timeline JS
+
+Easy-to-make, beautiful timelines.
+
+   Make a Timeline
+     * Timeline JS
+
+     * Overview
+     * Examples
+     * Make a Timeline
+     * Help
+
+   Because of an unexpected error in Google's spreadsheet access service
+   on 29 April 2019, many timelines stopped working. At this time, we
+   believe the issues have been resolved.
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&init
+   ial_zoom=2&height=100%
+
+   TimelineJS is an open-source tool that enables anyone to build visually
+   rich, interactive timelines. Beginners can create a timeline using
+   nothing more than a Google spreadsheet, like the one we used for the
+   Timeline above. Experts can use their JSON skills to create custom
+   installations, while keeping TimelineJS's core functionality.
+
+   IFRAME: https://player.vimeo.com/video/143407878
+
+   Knight Lab Watch this brief video for an overview of how to make a
+   timeline.
+
+Tips & tricks
+
+    1. Keep it short. We recommend not having more than 20 slides for a
+       reader to click through.
+    2. Pick stories that have a strong chronological narrative. It does
+       not work well for stories that need to jump around in the timeline.
+    3. Write each event as a part of a larger narrative.
+    4. Include events that build up to major occurrences — not just the
+       major events.
+
+Media sources
+
+   TimelineJS can pull in media from a variety of sources. Twitter,
+   Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia,
+   SoundCloud, Document Cloud and more!
+
+Examples
+
+   Mandela: A Life of Purpose Time Magazine
+
+Mandela: A Life of Purpose
+
+   Chronology of the French Presidential Race Le Monde
+
+Chronology of the French Presidential Race
+
+   Historic Fall at University of Missouri The Maneater
+
+Historic Fall at University of Missouri
+
+   North Korea's Nuclear Ambitions CNN
+
+North Korea's Nuclear Ambitions
+
+   Bulger on Trial WBUR
+
+Bulger on Trial
+
+   The Decline of IRS Nonprofit Regulation Center for Public Integrity
+
+The Decline of IRS Nonprofit Regulation
+
+   Aurora, Colorado Movie Theater Shooting Denver Post
+
+Aurora, Colorado Movie Theater Shooting
+
+   The Collapse of Microsoft and Nokia's Mobile Business Engadget
+
+The Collapse of Microsoft and Nokia's Mobile Business
+
+   How ISIS Spread to 10 Countries International Business Times
+
+How ISIS Spread to 10 Countries
+
+   Reported Sexual Assault Cases by Texas Educators KSAT
+
+Reported Sexual Assault Cases by Texas Educators
+
+   A History of Wine Around the World VinePair
+
+A History of Wine Around the World
+
+   The Mystery of Malaysia Airlines Flight 370 Mashable
+
+The Mystery of Malaysia Airlines Flight 370
+
+   Revolutionary User Interfaces Knight Lab
+
+Revolutionary User Interfaces
+
+   A Brief History of the Banana Business Beyond the Seal
+
+A Brief History of the Banana Business
+
+   The Republican Run-Up Knight Lab
+
+The Republican Run-Up
+
+   Whitney Houston: 1963-2012 Knight Lab
+
+Whitney Houston: 1963-2012
+
+Make a Timeline
+
+   TimelineJS works on any site or blog. Make your own in four easy steps.
+   Having trouble? Watch our video, or see the help section below.
+    1.
+
+Create your spreadsheet
+       Build a new Google Spreadsheet using our template. You'll need to
+       copy the template to your own Google Drive account by clicking the
+       "Make a Copy" button.
+       Drop dates, text and links to media into the appropriate columns.
+       For more about working with our template, see our help docs.
+       Get the Spreadsheet Template
+       Don't change the column headers, don't remove any columns, and
+       don't leave any blank rows in your spreadsheet.
+    2.
+
+Publish to the web
+       Under the File menu, select “Publish to the Web.”
+       [publish_to_web_small.png]
+       In the next window, click the blue "publish" button. When asked,
+       "Are you sure…?" click OK.
+       Now, copy the URL that appears in the center of the window. You'll
+       use this in the next step.
+       [publish_to_web_button_small.png] [publish_to_web_url_small.png]
+       The following has changed as of 18 July 2017!
+       Close the 'Publish to the web' window. Copy the URL for your
+       Timeline from the browser's address bar. It should look something
+       like this:
+       https://docs.google.com/spreadsheets/d/1xuY4upIooEeszZ_lCmeNx24eSFW
+       e0rHe9ZdqH2xqVNk/edit#gid=0
+       Disregard the URL that appears in the "publish to the web" window.
+       It used to be used below, but changes to Google mean that you'll
+       get an error if you use it now.
+    3.
+
+Generate your timeline
+       Copy/paste spreadsheet URL into the box below to generate your
+       timeline. (Make sure you've published the spreadsheet.)
+       Google Spreadsheet URL ____________________
+       Width 100%________________
+       Height 650_________________
+
+Optional settings (show) (hide)
+       Set language, fonts, starting slide and more.
+
+Language
+       [English______________________]
+
+Fonts
+       [default.png]
+          + PT Narrow and PT Serif
+          + Abril and Droid Sans
+          + Amatic and Andika
+          + Bevan and Pontano Sans
+          + Bitter and Raleway
+          + Clicker and Garamond
+          + Dancing and Ledger
+          + Fjalla and Average
+          + Georgia and Helvetica
+          + Lustria and Lato
+          + Medula One and Lato
+          + Old Standard
+          + Open Sans and Gentium Book
+          + Playfair and Fauna One
+          + Playfair SC and Playfair
+          + PT Sans, PT Sans Narrow, and PT Serif
+          + Roboto and Megrim
+          + Rufina and Sintony
+          + Unica One and Vollkorn
+
+Map Type
+       Currently all Google's base maps are supported. When creating a
+       Google map, style it the way you would like it to appear, and then
+       paste the resulting link into your Google Spreadsheet.
+
+Default start slide
+       Slide 0___________________
+       You can tell TimelineJS to start at a specific slide number.
+
+Initial zoom level
+       Zoom Level 2___________________
+       The zoom level at which the timeline portion of TimelineJS will
+       display on load. Specify a value from 0-10 (default is 2). Smaller
+       numbers show a greater span of time.
+
+Misc
+       [ ] Start at the end
+       Begins the timeline on the last slide.
+       [ ] Show nav on top
+       Switches the vertical order of the timeline navigation and the
+       media.
+       [ ] Debug
+       In debug mode, the JavaScript console will display logging
+       messages.
+       [ ] Use hash bookmarks
+       Assigns a hash bookmark to each slide's URL, allowing deep linking
+       to slides. (For directly linked Timelines only -- does not work for
+       iframe embeds)
+
+    4.
+
+Share your timeline
+
+Share Link
+       Use this to link directly to your timeline.
+       If you're embedding on Medium.com or other oembed-aware services,
+       just paste this link on a line by itself where you want your
+       timeline to appear.
+
+       https://cdn.knightlab.com/libs/timeline/latest/embed/?source
+                                       ____________________________
+       ____________________________________________________________
+
+Embed
+       Copy this embed code and paste it on your site where you want your
+       timeline to appear (just like a YouTube video).
+
+       <iframe src=ʼhttps://cdn.knightlab.com/libs/timeline/latest_
+                                       ____________________________
+       ____________________________________________________________
+       Preview  Open Preview in a new window
+
+Preview Embed
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&init
+   ial_zoom=2&height=650
+
+Help
+
+   Need help? First, please be sure to look at our list of frequently
+   asked questions below. If you're brand new to Timeline JS, you may also
+   want to watch our introductory video.
+
+   If you don't find an answer there, try our support forums or use our
+   tech support web form. Please be clear with your question, include a
+   link to your spreadsheet, and if appropriate, a link to a page which
+   shows the issue with which you need help. We can only answer support
+   questions in English. We try to be prompt, but please understand that
+   we do not have a dedicated tech support staff.
+
+   Find a bug? If you are confident you have found a bug, please report it
+   as a GitHub issue. Be sure to include detailed instructions on how to
+   reproduce the bug. If you're not sure, please start with the tech
+   support system.
+
+Technical documentation
+
+   Go further with Timeline:
+     * Use our spreadsheet template
+     * Supported Media Types
+     * JSON data format reference
+     * Using the TimelineJS CSS selectors
+     * Timeline Configuration Options
+     * Using TimelineJS in Javascript
+
+Frequently asked questions
+
+     * [X]
+    How do I edit my timeline?
+       Once you've created a timeline, you can make changes by going back
+       to your Google spreadsheet. Changes you make to the spreadsheet are
+       automatically available to your Timeline—you don't need to repeat
+       the 'publish to the web' step (step #2). If you want to make
+       changes to the optional settings, you will need to update your
+       embed code, but if you are only changing content in the
+       spreadsheet, then there's nothing else to do.
+     * [X]
+    What web browsers does TimelineJS work with?
+       Our primary development and testing browser is Google Chrome. We
+       adhere closely to web standards, so we believe that TimelineJS
+       should work effectively in all modern web browsers. TimelineJS is
+       known to not work with Internet Explorer versions before IE10.
+     * [X]
+    What are my options for changing how my Timeline looks?
+       First, make sure you know everything you can do in the spreadsheet
+       configuration, like background colors and images. Also, check out
+       the optional settings part of 'step 3' of the authoring tool. You
+       can change the fonts, the position of the timeline navigation, and
+       the initial zoom level. If you still want to do more, there are
+       some configuration options available. Most of those are for fine
+       tuning, but some of them may be helpful.
+     * [X]
+    There aren't enough options. I want more control over the [font
+       size/color/etc]. Can I change things using CSS?
+       Because there are so many details to the styling, this is not
+       exactly simple, but, if you have some technical capacity, you can
+       override TimelineJS's CSS rules and have complete control over the
+       look of the timeline. For details, see Using the TimelineJS CSS
+       selectors. You will need to be able to instantiate the Timeline in
+       javascript on your own page. (There is no way to override the CSS
+       using the iframe embed.) Then, either in <style> tags in that page,
+       or in an external stylesheet, you can specify CSS rules changing
+       some or all of TimelineJS's default presentation. The basis of
+       TimelineJS's styles are in these files, which use the Less CSS
+       preprocessor.
+     * [X]
+    How can I categorize or group my events?
+       Every event in a timeline can have a group property. Events with
+       the same group are shown in the same row or adjacent rows, and the
+       common value of their group property is used as a label at the left
+       edge of the timeline. Groups can be set using the 'group' column in
+       the Google Spreadsheet or the 'group' property of a JSON slide
+       object. TimelineJS does not support any other special styling for
+       events in the same group.
+     * [X]
+    The first slide in my timeline isn't the first chronologically. Why
+       did this happen?
+       When using the Google Spreadsheet to configure your timeline, if
+       you put the word title in the type column, that slide will be put
+       at the front, regardless of the values in the date columns. See the
+       Google Spreadsheet documentation for more information.
+     * [X]
+    Can I make media images clickable?
+       No. Many of TimelineJS's media types are interactive, and so would
+       not be able to handle a link, and other of TimelineJS's media types
+       have terms of service which require a link back to the source of
+       the media. As an alternative, consider using HTML to add links in
+       the caption, credit, or text for the slide.
+     * [X]
+    How can I format text (add line breaks, bold, italics)?
+       TimelineJS's text fields (headline, text, caption, and credit) all
+       accept HTML markup. A full tutorial on HTML is outside the scope of
+       this FAQ, but here are a few basics:
+          + Wrap paragraphs in <p></p> tags to create line breaks.
+          + Wrap text in <b></b> tags for bold text and <i></i> for
+            italics
+     * [X]
+    How do I enter BCE dates?
+       To enter dates before the common era, just use a negative value for
+       the year. Of course, you can also enter month and date if you need
+       them.
+     * [X]
+    How do I create very ancient dates?
+       Generally, you don't have to think about it -- just enter the dates
+       you want. Timeline can handle dates literally to the beginning of
+       time. For dates more than about 250,000 years ago, only the year is
+       usable. Support for those older dates is still relatively new, so
+       if anything seems off, visit our tech support site.
+     * [X]
+    Who can access the data in my Google spreadsheet?
+       You must make the data public to the web to use TimelineJS with a
+       Google Spreadsheet as the data source. Normally, the data is still
+       only visible to people who know the link, so if you publish a
+       timeline privately, outsiders are unlikely to see the data.
+       However, it is still public, so you must decide if that is
+       acceptable.
+     * [X]
+    Privacy is very important to me. How should I use TimelineJS?
+       If you want complete control over who can see the information in
+       your timeline, you cannot use Google Spreadsheets, and you cannot
+       use our standard iframe embed code. Instead, you must use JSON
+       format for the data and instantiate the timeline directly using
+       javascript. You can then use standard web server security measures
+       to control who has access to your timeline and the data used to
+       create it.
+     * [X]
+    Will my spreadsheet get picked up by search engines?
+       Under normal circumstances, Google tells search engines not to
+       index spreadsheets which are published to the web. Of course, if
+       the page is public on the web, it is possible that a search engine
+       will disregard those instructions.
+     * [X]
+    Can I use TimelineJS with Wordpress?
+       It depends. TimelineJS does not work with Wordpress.com sites. We
+       are researching ways to address this.
+       If you are able to install plugins to your Wordpress installation,
+       we have a Wordpress plugin for Timeline. It supports embedding
+       Timelines with Wordpress "shortcode", and as of version 3.3.14.0,
+       it also has experimental "oembed" support. That means that you can
+       take a direct URL to a timeline (like you get with the "get link to
+       preview" button) and put it in a post on a line by itself, and it
+       should be embedded. (Make sure you've updated the plugin before you
+       try it.)
+     * [X]
+    Is TimelineJS free for commercial use?
+       TimelineJS is released under the Mozilla Public License (MPL),
+       version 2.0. That means that TimelineJS is free to "use, reproduce,
+       make available, modify, display, perform, distribute" or otherwise
+       employ. You don't need our permission to publish stories with
+       TimelineJS and you don't need to pay us any fees or arrange any
+       further license beyond the MPL. To read more about what you can do
+       with TimelineJS, read our license page.
+
+  Storytelling Tools
+
+   We build easy-to-use tools that can help you tell better stories.
+
+   [screenshot-timeline.png]
+
+Timeline JS
+
+   Easy-to-make, beautiful timelines.
+   [screenshot-storymap.png]
+
+StoryMap JS
+
+   Maps that tell stories.
+   [screenshot-juxtapose.jpg]
+
+Juxtapose JS
+
+   Easy-to-make frame comparisons.
+   [screenshot-soundcite.png]
+
+Soundcite JS
+
+   Seamless inline audio.
+
+   View More
+
+   [logo-knightlab-stacked-dark-small.png]
+     *
+     *
+     *
+
+   The Northwestern University Knight Lab is a team of technologists and
+   journalists working at advancing news media innovation through
+   exploration and experimentation.
+   [logo-medill-dark.png]
+   [logo-mccormick-dark.png]
+
+
+    Knight Lab (847) 467-4971 1845 Sheridan Road Fisk #109 & #111
+
+   Evanston, IL 60208 Latitude: 42.056893
+   Longitude: -87.676735 Northwesten University Knight Lab | Advancing
+   media innovation through exploration and experimentation.
+
+
+   © Copyright Northwestern University
+     * [knightlab-dark.png]
+
+     * Projects
+     * Class
+     * Device Lab
+     * Posts
+     * Community
+     * About
+
+                                  Timeline JS
+
+Easy-to-make, beautiful timelines.
+
+   Make a Timeline
+     * Timeline JS
+
+     * Overview
+     * Examples
+     * Make a Timeline
+     * Help
+
+   Because of an unexpected error in Google's spreadsheet access service
+   on 29 April 2019, many timelines stopped working. At this time, we
+   believe the issues have been resolved.
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1xuY4upIooEeszZ_lCmeNx24eSFWe0rHe9ZdqH2xqVNk&font=Default&lang=en&init
+   ial_zoom=2&height=100%
+
+   TimelineJS is an open-source tool that enables anyone to build visually
+   rich, interactive timelines. Beginners can create a timeline using
+   nothing more than a Google spreadsheet, like the one we used for the
+   Timeline above. Experts can use their JSON skills to create custom
+   installations, while keeping TimelineJS's core functionality.
+
+   IFRAME: https://player.vimeo.com/video/143407878
+
+   Knight Lab Watch this brief video for an overview of how to make a
+   timeline.
+
+Tips & tricks
+
+    1. Keep it short. We recommend not having more than 20 slides for a
+       reader to click through.
+    2. Pick stories that have a strong chronological narrative. It does
+       not work well for stories that need to jump around in the timeline.
+    3. Write each event as a part of a larger narrative.
+    4. Include events that build up to major occurrences — not just the
+       major events.
+
+Media sources
+
+   TimelineJS can pull in media from a variety of sources. Twitter,
+   Flickr, YouTube, Vimeo, Vine, Dailymotion, Google Maps, Wikipedia,
+   SoundCloud, Document Cloud and more!
+
+Examples
+
+   Mandela: A Life of Purpose Time Magazine
+
+Mandela: A Life of Purpose
+
+   Chronology of the French Presidential Race Le Monde
+
+Chronology of the French Presidential Race
+
+   Historic Fall at University of Missouri The Maneater
+
+Historic Fall at University of Missouri
+
+   North Korea's Nuclear Ambitions CNN
+
+North Korea's Nuclear Ambitions
+
+   Bulger on Trial WBUR
+
+Bulger on Trial
+
+   The Decline of IRS Nonprofit Regulation Center for Public Integrity
+
+The Decline of IRS Nonprofit Regulation
+
+   Aurora, Colorado Movie Theater Shooting Denver Post
+
+Aurora, Colorado Movie Theater Shooting
+
+   The Collapse of Microsoft and Nokia's Mobile Business Engadget
+
+The Collapse of Microsoft and Nokia's Mobile Business
+
+   How ISIS Spread to 10 Countries International Business Times
+
+How ISIS Spread to 10 Countries
+
+   Reported Sexual Assault Cases by Texas Educators KSAT
+
+Reported Sexual Assault Cases by Texas Educators
+
+   A History of Wine Around the World VinePair
+
+A History of Wine Around the World
+
+   The Mystery of Malaysia Airlines Flight 370 Mashable
+
+The Mystery of Malaysia Airlines Flight 370
+
+   Revolutionary User Interfaces Knight Lab
+
+Revolutionary User Interfaces
+
+   A Brief History of the Banana Business Beyond the Seal
+
+A Brief History of the Banana Business
+
+   The Republican Run-Up Knight Lab
+
+The Republican Run-Up
+
+   Whitney Houston: 1963-2012 Knight Lab
+
+Whitney Houston: 1963-2012
+
+Make a Timeline
+
+   TimelineJS works on any site or blog. Make your own in four easy steps.
+   Having trouble? Watch our video, or see the help section below.
+    1.
+
+Create your spreadsheet
+       Build a new Google Spreadsheet using our template. You'll need to
+       copy the template to your own Google Drive account by clicking the
+       "Make a Copy" button.
+       Drop dates, text and links to media into the appropriate columns.
+       For more about working with our template, see our help docs.
+       Get the Spreadsheet Template
+       Don't change the column headers, don't remove any columns, and
+       don't leave any blank rows in your spreadsheet.
+    2.
+
+Publish to the web
+       Under the File menu, select “Publish to the Web.”
+       [publish_to_web_small.png]
+       In the next window, click the blue "publish" button. When asked,
+       "Are you sure…?" click OK.
+       Now, copy the URL that appears in the center of the window. You'll
+       use this in the next step.
+       [publish_to_web_button_small.png] [publish_to_web_url_small.png]
+       The following has changed as of 18 July 2017!
+       Close the 'Publish to the web' window. Copy the URL for your
+       Timeline from the browser's address bar. It should look something
+       like this:
+       https://docs.google.com/spreadsheets/d/1xuY4upIooEeszZ_lCmeNx24eSFW
+       e0rHe9ZdqH2xqVNk/edit#gid=0
+       Disregard the URL that appears in the "publish to the web" window.
+       It used to be used below, but changes to Google mean that you'll
+       get an error if you use it now.
+    3.
+
+Generate your timeline
+       Copy/paste spreadsheet URL into the box below to generate your
+       timeline. (Make sure you've published the spreadsheet.)
+       Google Spreadsheet URL ____________________
+       Width 100%________________
+       Height 650_________________
+
+Optional settings (show) (hide)
+       Set language, fonts, starting slide and more.
+
+Language
+       [English______________________]
+
+Fonts
+       [default.png]
+          + PT Narrow and PT Serif
+          + Abril and Droid Sans
+          + Amatic and Andika
+          + Bevan and Pontano Sans
+          + Bitter and Raleway
+          + Clicker and Garamond
+          + Dancing and Ledger
+          + Fjalla and Average
+          + Georgia and Helvetica
+          + Lustria and Lato
+          + Medula One and Lato
+          + Old Standard
+          + Open Sans and Gentium Book
+          + Playfair and Fauna One
+          + Playfair SC and Playfair
+          + PT Sans, PT Sans Narrow, and PT Serif
+          + Roboto and Megrim
+          + Rufina and Sintony
+          + Unica One and Vollkorn
+
+Map Type
+       Currently all Google's base maps are supported. When creating a
+       Google map, style it the way you would like it to appear, and then
+       paste the resulting link into your Google Spreadsheet.
+
+Default start slide
+       Slide 0___________________
+       You can tell TimelineJS to start at a specific slide number.
+
+Initial zoom level
+       Zoom Level 2___________________
+       The zoom level at which the timeline portion of TimelineJS will
+       display on load. Specify a value from 0-10 (default is 2). Smaller
+       numbers show a greater span of time.
+
+Misc
+       [ ] Start at the end
+       Begins the timeline on the last slide.
+       [ ] Show nav on top
+       Switches the vertical order of the timeline navigation and the
+       media.
+       [ ] Debug
+       In debug mode, the JavaScript console will display logging
+       messages.
+       [ ] Use hash bookmarks
+       Assigns a hash bookmark to each slide's URL, allowing deep linking
+       to slides. (For directly linked Timelines only -- does not work for
+       iframe embeds)
+
+    4.
+
+Share your timeline
+
+Share Link
+       Use this to link directly to your timeline.
+       If you're embedding on Medium.com or other oembed-aware services,
+       just paste this link on a line by itself where you want your
+       timeline to appear.
+
+       https://cdn.knightlab.com/libs/timeline/latest/embed/?source
+                                       ____________________________
+       ____________________________________________________________
+
+Embed
+       Copy this embed code and paste it on your site where you want your
+       timeline to appear (just like a YouTube video).
+
+       <iframe src=ʼhttps://cdn.knightlab.com/libs/timeline/latest_
+                                       ____________________________
+       ____________________________________________________________
+       Preview  Open Preview in a new window
+
+Preview Embed
+
+   IFRAME:
+   https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source
+   =1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&init
+   ial_zoom=2&height=650
+
+Help
+
+   Need help? First, please be sure to look at our list of frequently
+   asked questions below. If you're brand new to Timeline JS, you may also
+   want to watch our introductory video.
+
+   If you don't find an answer there, try our support forums or use our
+   tech support web form. Please be clear with your question, include a
+   link to your spreadsheet, and if appropriate, a link to a page which
+   shows the issue with which you need help. We can only answer support
+   questions in English. We try to be prompt, but please understand that
+   we do not have a dedicated tech support staff.
+
+   Find a bug? If you are confident you have found a bug, please report it
+   as a GitHub issue. Be sure to include detailed instructions on how to
+   reproduce the bug. If you're not sure, please start with the tech
+   support system.
+
+Technical documentation
+
+   Go further with Timeline:
+     * Use our spreadsheet template
+     * Supported Media Types
+     * JSON data format reference
+     * Using the TimelineJS CSS selectors
+     * Timeline Configuration Options
+     * Using TimelineJS in Javascript
+
+Frequently asked questions
+
+     * [X]
+    How do I edit my timeline?
+       Once you've created a timeline, you can make changes by going back
+       to your Google spreadsheet. Changes you make to the spreadsheet are
+       automatically available to your Timeline—you don't need to repeat
+       the 'publish to the web' step (step #2). If you want to make
+       changes to the optional settings, you will need to update your
+       embed code, but if you are only changing content in the
+       spreadsheet, then there's nothing else to do.
+     * [X]
+    What web browsers does TimelineJS work with?
+       Our primary development and testing browser is Google Chrome. We
+       adhere closely to web standards, so we believe that TimelineJS
+       should work effectively in all modern web browsers. TimelineJS is
+       known to not work with Internet Explorer versions before IE10.
+     * [X]
+    What are my options for changing how my Timeline looks?
+       First, make sure you know everything you can do in the spreadsheet
+       configuration, like background colors and images. Also, check out
+       the optional settings part of 'step 3' of the authoring tool. You
+       can change the fonts, the position of the timeline navigation, and
+       the initial zoom level. If you still want to do more, there are
+       some configuration options available. Most of those are for fine
+       tuning, but some of them may be helpful.
+     * [X]
+    There aren't enough options. I want more control over the [font
+       size/color/etc]. Can I change things using CSS?
+       Because there are so many details to the styling, this is not
+       exactly simple, but, if you have some technical capacity, you can
+       override TimelineJS's CSS rules and have complete control over the
+       look of the timeline. For details, see Using the TimelineJS CSS
+       selectors. You will need to be able to instantiate the Timeline in
+       javascript on your own page. (There is no way to override the CSS
+       using the iframe embed.) Then, either in <style> tags in that page,
+       or in an external stylesheet, you can specify CSS rules changing
+       some or all of TimelineJS's default presentation. The basis of
+       TimelineJS's styles are in these files, which use the Less CSS
+       preprocessor.
+     * [X]
+    How can I categorize or group my events?
+       Every event in a timeline can have a group property. Events with
+       the same group are shown in the same row or adjacent rows, and the
+       common value of their group property is used as a label at the left
+       edge of the timeline. Groups can be set using the 'group' column in
+       the Google Spreadsheet or the 'group' property of a JSON slide
+       object. TimelineJS does not support any other special styling for
+       events in the same group.
+     * [X]
+    The first slide in my timeline isn't the first chronologically. Why
+       did this happen?
+       When using the Google Spreadsheet to configure your timeline, if
+       you put the word title in the type column, that slide will be put
+       at the front, regardless of the values in the date columns. See the
+       Google Spreadsheet documentation for more information.
+     * [X]
+    Can I make media images clickable?
+       No. Many of TimelineJS's media types are interactive, and so would
+       not be able to handle a link, and other of TimelineJS's media types
+       have terms of service which require a link back to the source of
+       the media. As an alternative, consider using HTML to add links in
+       the caption, credit, or text for the slide.
+     * [X]
+    How can I format text (add line breaks, bold, italics)?
+       TimelineJS's text fields (headline, text, caption, and credit) all
+       accept HTML markup. A full tutorial on HTML is outside the scope of
+       this FAQ, but here are a few basics:
+          + Wrap paragraphs in <p></p> tags to create line breaks.
+          + Wrap text in <b></b> tags for bold text and <i></i> for
+            italics
+     * [X]
+    How do I enter BCE dates?
+       To enter dates before the common era, just use a negative value for
+       the year. Of course, you can also enter month and date if you need
+       them.
+     * [X]
+    How do I create very ancient dates?
+       Generally, you don't have to think about it -- just enter the dates
+       you want. Timeline can handle dates literally to the beginning of
+       time. For dates more than about 250,000 years ago, only the year is
+       usable. Support for those older dates is still relatively new, so
+       if anything seems off, visit our tech support site.
+     * [X]
+    Who can access the data in my Google spreadsheet?
+       You must make the data public to the web to use TimelineJS with a
+       Google Spreadsheet as the data source. Normally, the data is still
+       only visible to people who know the link, so if you publish a
+       timeline privately, outsiders are unlikely to see the data.
+       However, it is still public, so you must decide if that is
+       acceptable.
+     * [X]
+    Privacy is very important to me. How should I use TimelineJS?
+       If you want complete control over who can see the information in
+       your timeline, you cannot use Google Spreadsheets, and you cannot
+       use our standard iframe embed code. Instead, you must use JSON
+       format for the data and instantiate the timeline directly using
+       javascript. You can then use standard web server security measures
+       to control who has access to your timeline and the data used to
+       create it.
+     * [X]
+    Will my spreadsheet get picked up by search engines?
+       Under normal circumstances, Google tells search engines not to
+       index spreadsheets which are published to the web. Of course, if
+       the page is public on the web, it is possible that a search engine
+       will disregard those instructions.
+     * [X]
+    Can I use TimelineJS with Wordpress?
+       It depends. TimelineJS does not work with Wordpress.com sites. We
+       are researching ways to address this.
+       If you are able to install plugins to your Wordpress installation,
+       we have a Wordpress plugin for Timeline. It supports embedding
+       Timelines with Wordpress "shortcode", and as of version 3.3.14.0,
+       it also has experimental "oembed" support. That means that you can
+       take a direct URL to a timeline (like you get with the "get link to
+       preview" button) and put it in a post on a line by itself, and it
+       should be embedded. (Make sure you've updated the plugin before you
+       try it.)
+     * [X]
+    Is TimelineJS free for commercial use?
+       TimelineJS is released under the Mozilla Public License (MPL),
+       version 2.0. That means that TimelineJS is free to "use, reproduce,
+       make available, modify, display, perform, distribute" or otherwise
+       employ. You don't need our permission to publish stories with
+       TimelineJS and you don't need to pay us any fees or arrange any
+       further license beyond the MPL. To read more about what you can do
+       with TimelineJS, read our license page.
+
+  Storytelling Tools
+
+   We build easy-to-use tools that can help you tell better stories.
+
+   [screenshot-timeline.png]
+
+Timeline JS
+
+   Easy-to-make, beautiful timelines.
+   [screenshot-storymap.png]
+
+StoryMap JS
+
+   Maps that tell stories.
+   [screenshot-juxtapose.jpg]
+
+Juxtapose JS
+
+   Easy-to-make frame comparisons.
+   [screenshot-soundcite.png]
+
+Soundcite JS
+
+   Seamless inline audio.
+
+   View More
+
+   [logo-knightlab-stacked-dark-small.png]
+     *
+     *
+     *
+
+   The Northwestern University Knight Lab is a team of technologists and
+   journalists working at advancing news media innovation through
+   exploration and experimentation.
+   [logo-medill-dark.png]
+   [logo-mccormick-dark.png]
+
+
+    Knight Lab (847) 467-4971 1845 Sheridan Road Fisk #109 & #111
+
+   Evanston, IL 60208 Latitude: 42.056893
+   Longitude: -87.676735 Northwesten University Knight Lab | Advancing
+   media innovation through exploration and experimentation.
+
+
+   © Copyright Northwestern University

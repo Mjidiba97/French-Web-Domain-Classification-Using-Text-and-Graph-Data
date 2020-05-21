@@ -1,0 +1,204 @@
+   #OpenWrt Project start Sitemap Recent Changes Current namespace Plain
+   HTML Wiki Markup
+
+     * skip to content
+
+OpenWrt Project
+
+User Tools
+
+     * Register
+     * Log In
+
+Site Tools
+
+   ____________________ (1) Search
+   [Tools__________] (BUTTON) >
+     * Recent Changes
+     * Media Manager
+     * Sitemap
+
+   You are here: Welcome to the OpenWrt Project » Downloads
+   en [English (en)________] →
+    ^?
+     __________________________________________________________________
+
+Sidebar
+
+     * Welcome to OpenWrt
+     * Supported Devices
+     * Packages
+     * Downloads
+     * Documentation
+     * Submitting patches
+     * Reporting bugs
+     * Wiki contribution guide
+     * OpenWrt Forum
+     * FAQ
+     __________________________________________________________________
+
+     * About OpenWrt/LEDE
+          + Rules
+          + Infrastructure
+          + Trademark Policy
+     * About this site
+
+     * Contact Us
+
+   downloads
+
+Table of Contents
+
+     * Downloads
+          + Browse the OpenWrt/LEDE firmware repository
+          + Download OpenWrt/LEDE firmware specific for your device
+          + Get additional software packages
+          + Build your own firmware
+          + Assemble your own firmware
+          + Build your own packages
+          + Buildbot activity
+          + Source code: Git repositories
+          + Source code: GitHub mirrors
+          + Mirrors
+               o How to mirror
+          + Download statistics
+
+Downloads
+
+Browse the OpenWrt/LEDE firmware repository
+
+   These links takes you to the download directory of the current
+   hardware, grouped by processor type of the devices.
+   OpenWrt/LEDE software has two distinct branches: a stable Release build
+   that is suitable for production use, and a Development build that
+   contains an ever-evolving set of enhancements.
+   Stable Release builds Development Snapshot builds
+   The Release builds have had significant testing. Use them for
+   production, or for your home where your family will rely on a
+   functioning router. More... Get the latest with a Development build.
+   These contain the latest technology, but may not work well, or at all.
+   Be prepared to supply bug reports, etc. More...
+
+Download OpenWrt/LEDE firmware specific for your device
+
+   Go to to the Table of Hardware, to easily locate the latest official
+   release firmware for your device hardware.
+     * Refer to the file signing documentation to learn how to verify the
+       integrity of the firmware downloads.
+     * Refer to the Quick Start or User Guide, to install the firmware on
+       your device
+
+Get additional software packages
+
+   After you have installed the OpenWrt firmware to your device, you can
+   install additional software packages on your OpenWrt/LEDE device.
+     * Packages per instructionset can be found here:
+       https://downloads.openwrt.org/releases/
+     * Find out which instructionset your device has
+
+Build your own firmware
+
+   OpenWrt ships with its own complete build system, you can download and
+   compile your own firmware from source, adding advanced tweaks or
+   modifications that can be done only on build time. OpenWrt build system
+   produces reproducible builds with checksums and git versioning, all
+   firmware you compile will be exactly the same until you change options
+   or you update OpenWrt sources. Start here if you want to compile your
+   own firmware.
+
+Assemble your own firmware
+
+   OpenWrt provides convenient tools to integrate pre-built packages into
+   a custom firmware image, striking a good balance between firmware
+   customization and time/resources required. All packages integrated this
+   way will be downloaded from the same online repositories used for
+   updates, so the process will take minutes even on weak PCs. Start here
+   if you want to assemble your own firmware.
+
+Build your own packages
+
+   If you just want to compile your program and create a custom package
+   without compiling from source a whole firmware for all architectures
+   you want to support, OpenWrt provides a convenient SDK package to do
+   so. Start here if you want to create packages for your own software.
+
+Buildbot activity
+
+   OpenWrt has a number of buildbot computers building firmware releases.
+   If you are interested in the latest developer snapshot release build
+   activities, you can find the Buildbot activity in the following links:
+     * Phase 1: target/subtargets
+     * Phase 2: packages
+
+Source code: Git repositories
+
+   The master OpenWrt/LEDE source code repositories reside on the
+   OpenWrt/LEDE Project git server: https://git.openwrt.org/
+
+Source code: GitHub mirrors
+
+   The OpenWrt/LEDE Project keeps a mirror of the master repository on
+   GitHub at: https://github.com/openwrt
+
+Mirrors
+
+   The contents of the download server are available on several mirrors as
+   well. Please refer to the list below for alternative locations.
+   Country HTTP HTTPS FTP RSYNC Sponsor
+   Austria HTTP HTTPS - rsync://mirror.kumi.systems/openwrt/ Sponsored by
+   Kumi Systems e.U.
+   Brazil HTTP HTTPS - rsync://openwrt.c3sl.ufpr.br/openwrt/ Sponsored by
+   Universidade Federal do Paraná
+   Bulgaria HTTP HTTPS - rsync://mirrors.linux-bulgaria.org/lede/
+   Sponsored by SiteGround
+   Canada HTTP HTTPS - - Sponsored by The Free Mirror Project
+   France HTTP HTTPS - rsync://openwrt.tetaneutral.net/openwrt/ Sponsored
+   by tetaneutral.net
+   France HTTP HTTPS - rsync://rsync.cyberbits.eu/openwrt/ Sponsored by
+   cyberbits.eu
+   Germany HTTP HTTPS - - Sponsored by A-M-Vpl
+   Netherlands HTTP - FTP rsync://ftp.snt.utwente.nl/lede/ Sponsored by
+   the SNT, University of Twente
+   Poland HTTP HTTPS - - Sponsored by A-M-Vpl
+   Romania HTTP - FTP rsync://mirrors.linux.ro/lede/downloads/ Sponsored
+   by RCS&RDS
+   Singapore HTTP HTTPS FTP rsync://mirror.0x.sg/openwrt/ Sponsored by
+   Andrew Yong
+   Switzerland HTTP HTTPS - - Sponsored by urown.net
+   Global CDN HTTP HTTPS - - Sponsored by A-M-Vpl
+   Tor Onion Service HTTP - - - Sponsored by urown.net
+
+How to mirror
+
+   Please use rsync://downloads.openwrt.org/downloads to obtain a copy of
+   the download repository.
+
+   Syncing the downloads share every 12 to 24 hours hours is ideal. Once a
+   mirror has been set up, feel free to announce it at
+   openwrt-adm@lists.openwrt.org so that it can be published on this page.
+
+   The data volume of the snapshots is roughly 35GB, we expect it to grow
+   by 30-40GB with each release. Due to current bandwidth constraints we
+   kindly ask you to use something like rsync --bwlimit=8000 when
+   initially pulling the data.
+
+Download statistics
+
+   You can see a statistics for few last months. See “OpenWrt firmware
+   image downloads” section and by link you can determine most popular
+   router models.
+   downloads.txt · Last modified: 2019/04/28 10:33 by pcela
+     __________________________________________________________________
+
+Page Tools
+
+     * Show pagesource
+     * Old revisions
+     * Backlinks
+     * Back to top
+
+   Except where otherwise noted, content on this wiki is licensed under
+   the following license: CC Attribution-Share Alike 4.0 International
+   CC Attribution-Share Alike 4.0 International Donate Powered by PHP
+   Valid HTML5 Valid CSS Driven by DokuWiki
+   [awstats_misc_tracker.js?nojs=y]

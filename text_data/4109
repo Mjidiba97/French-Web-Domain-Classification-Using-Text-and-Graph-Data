@@ -1,0 +1,1996 @@
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » Etude — Les Français sont accros aux emails!
+   Comments Feed E‑Mails: Fluch und Segen zugleich Studie: Omnichannel
+   stößt auf starke Hindernisse alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+Etude — Les Français sont accros aux emails!
+
+   Campaign Marketing
+
+   A travers l’Europe, nous sommes accros aux emails et passons plus de
+   temps à les écrire, les lire et y répondre qu’auparavant. Cela nous
+   prend littéralement des mois chaque année et nous nous y consacrons
+   partout où nous allons, mêlant emails professionnels et personnels. De
+   nouvelles recherches sur nos habitudes montrent aussi que les emojis
+   sont maintenant régulièrement associés à nos messages – avec des
+   sourires et des clins d’oeil répartis un peu partout. Consultez notre
+   infographie comparant les habitudes en termes d’emails des Allemands,
+   Français et Britanniques.
+
+   Pour plus d’informations et statistiques sur les évolutions de ces
+   messages numériques, lisez le blog post complet
+
+   0878_adobe-echosign_visual_05
+
+
+   Campaign Marketing
+   campagnes (2), cross canal (2), email (4), emojis (1)
+   John Watton
+
+   by John Watton
+
+   Posted on 10-04-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   #Getting to the Point with Reflex Vertices Winding rules in Canvas
+   alternate alternate
+
+     * Home
+     * About
+
+Adobe
+
+   decor
+
+Web Platform Team Blog
+
+Making the web awesome
+
+   twitter Follow us on Twitter @adobeweb
+   Search for: Search______________ Search
+
+Categories
+
+     * Blend Modes
+     * Canvas
+     * Community Events
+     * CSS Shaders
+     * CSS Text
+     * Custom Filters
+     * Exclusions
+     * Experiments & Research
+     * Image Events
+     * JavaScript
+     * Links of Interest
+     * Masking
+     * News
+     * Regions
+     * Shapes
+     * SVG
+     * Testing
+     * Tips and Tricks
+     * Transforms
+     * Web Animations
+     * Web Platform Features
+     * WebKit
+
+Archives
+
+     * January 2015
+     * November 2014
+     * October 2014
+     * September 2014
+     * August 2014
+     * July 2014
+     * June 2014
+     * May 2014
+     * April 2014
+     * March 2014
+     * February 2014
+     * January 2014
+     * December 2013
+     * November 2013
+     * October 2013
+     * September 2013
+     * August 2013
+     * July 2013
+     * June 2013
+     * May 2013
+     * April 2013
+     * March 2013
+     * February 2013
+     * January 2013
+     * December 2012
+     * November 2012
+     * October 2012
+     * September 2012
+     * August 2012
+     * July 2012
+     * June 2012
+     * May 2012
+     * April 2012
+     * March 2012
+     * January 2012
+
+Meta
+
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.org
+
+   ← Previous post
+   Next post →
+
+Blending features in Canvas
+
+   Posted on January 28, 2013 by Rik Cabanier
+
+   While working on adding CSS blending to the web platform, we noticed
+   that this feature is also missing in Canvas 2D. Since blending is such
+   a commonly used feature in our applications, it is very useful in
+   Canvas as well.
+
+   Also since Canvas 2D lives so close to the underlying graphics
+   libraries, it becomes easier to fix rendering inconsistencies before we
+   throw the switch that enables blending in CSS.
+
+   Canvas 2D defines a ‘globalCompositeOperation‘ that controls how
+   drawing commands are composited with existing pixels. After some
+   discussion on the public mailing lists,  it seemed that this was the
+   best place to add support for blending as well.
+
+Editing the spec
+
+   As a first step we edited the CSS compositing and blending spec so you
+   can specify blending in addition to compositing. The syntax
+   of  ‘globalCompositeOperation‘ was extended to:
+   Value:
+   <blend-mode> || <composite-mode> || <isolation-mode> || <knock-out-mode
+   >
+   Initial: source-over
+
+   For consistency, this is identical to how you will specify blending in
+   CSS.
+
+   ‘blend-mode’ is one of the following values:
+<blend-mode> = normal | multiply | screen | overlay |
+               darken | lighten | color-dodge | color-burn | hard-light |
+               soft-light | difference | exclusion | hue | saturation |
+               color | luminosity
+
+   ‘composite-mode’ is one of the following values:
+<composite-mode> = clear | copy | destination | source-over |
+                   destination-over | source-in | destination-in |
+                   source-out | destination-out | source-atop |
+                   destination-atop | xor | lighter
+
+   ‘isolation-mode’ and ‘knockout-mode’ are specific to CSS and are
+   ignored in the Canvas 2D context.
+
+   With this new syntax, you can write the following code:
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+// switch to multiply blending
+ctx.globalCompositeOperation = 'multiply';
+// draw magenta circle
+ctx.fillStyle = 'rgb(255,0,255)';
+ctx.beginPath();
+ctx.arc(50, 50, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+// draw cyan circle
+ctx.fillStyle = 'rgb(0,255,255)';
+ctx.beginPath();
+ctx.arc(100, 50, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+// draw yellow circle
+ctx.fillStyle = 'rgb(255,255,0)';
+ctx.beginPath();
+ctx.arc(75, 100, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+
+   which should give you the following result:
+
+   canvas
+
+Implementing the spec
+
+   In addition to creating the spec, we also implemented it in WebKit and
+   Firefox and are working on getting it enabled in Chromium. Browsers
+   that don’t support this feature will ignore the setting. Blending is
+   hardware accelerated where possible so it should not impact performance
+   of your application.
+
+   If you want to experiment with this feature, you can download the
+   latest nightly WebKit or Firefox. The feature is enabled by default so
+   you don’t have to enable any flags. Here’s a jsFiddle to get you
+   started.
+
+   For now, you can’t combine blending and compositing yet, but we will
+   allow it in the future when there is platform support.
+
+   You can ‘feature-check’ for support by setting and blending mode and
+   reading it back. As an example, here is a Modernizr test that checks if
+   blending is enabled:
+
+Modernizr.addTest('canvasblending', function () {
+   if (Modernizr.canvas === false) return false;
+   var ctx = document.createElement('canvas').getContext('2d');
+   ctx.globalCompositeOperation = 'screen';
+   return ctx.globalCompositeOperation == 'screen';
+});
+
+   You can find documentation on how to use this API here.
+   Let us know what you think and if you have any ideas on how we can
+   improve it!
+
+   This entry was posted in Blend Modes, Web Platform Features.
+   ← Previous post
+   Next post →
+
+17 Comments
+
+    1. January 29, 2013 at 3:21 am, André Fiedler said:
+       Here´s another one – Photoshop Blending Modes with WebGL (GLSL):
+       http://mouaif.wordpress.com/2009/01/05/photoshop-math-with-glsl-sha
+       ders/
+       Really nice read! Have used them, works great!
+       greetings André
+    2. February 01, 2013 at 2:33 pm, Kevin Gadd said:
+       How do you account for the fact that many of these blending modes
+       cannot trivially be hardware accelerated on modern GPUs (due to the
+       fact that the blending stage of 3D rasterization isn’t
+       customizable)? Will these blending modes force rendering to occur
+       in software?
+          + February 01, 2013 at 3:23 pm, Rik Cabanier said:
+            All of them are actually accelerated on the GPU.
+            Mozilla uses Direct2D and Core Graphics. Safari will use Core
+            graphics on MacOS and iOS.
+            The Skia will provide hardware support for Chrome. In
+            addition, Win8 (and 7 through updates) offers native blending
+            to Direct2D so IE should be able to implement this easily too.
+            It is true that in order to ‘blend’ you need to push the
+            backdrop in a texture which is expensive. However, on mobile
+            platforms such as PowerVR and Tegra there are tricks to avoid
+            that.
+               o February 01, 2013 at 4:13 pm, Kevin Gadd said:
+                 Thanks Rik. Glad to hear that mobile GPUs at least
+                 provide an efficient way to do customizable blending –
+                 the cost of pushing the backdrop to a texture on desktops
+                 will at least be less dire in comparison.
+    3. February 01, 2013 at 5:09 pm, kangax said:
+       Looks like non-standard (?) “darker” (in Chrome) and “multiply” (in
+       FF) — http://codepen.io/kangax/pen/Bhqtk
+          + February 01, 2013 at 5:17 pm, Rik Cabanier said:
+            ‘darker’ is indeed non-standard. It’s actually a compositing
+            operator and not a blend mode.
+            http://www.belightsoft.com/products/arttext/ATHelp/layers_blen
+            ding.html#plus_darker
+            I’m unsure why you mention ‘multiply’. That one is standard.
+    4. April 22, 2013 at 10:24 am, Grant Skinner said:
+       This is great to see. A couple quick thoughts:
+       1. It would be nice to be able to apply both a composite operation
+       and a blend mode simultaneously. For example, to do alpha masking
+       as well as blending. I don’t think this warrants complicating the
+       API though.
+       2. Operations like this really drive home how nice it would be to
+       have some kind of off-screen buffering mechanism built into
+       Context2D, so a blend can apply to a composited draw without devs
+       needing to manually create and maintain a separate canvas instance
+       for the task. Further, this could also potentially provide a way to
+       return the dimensions of draw operations (though that is
+       complicated by the implicit clipping path on a context). As a
+       really rough idea:
+       ctx.beginBuffer();
+       // draw a bunch of stuff into the buffer, utilizing the current
+       state of the target context.
+       var bounds = ctx.getBufferBounds(); // return the pixel bounds of
+       all the buffer draw operations.
+       ctx.globalCompositeOperation = “multiply”;
+       ctx.closeBuffer(); // draw the pre-composited buffer into the
+       original context
+       Or maybe alternately:
+       var bctx = ctx.getBuffer(); // returns a context buffer object
+       sharing the current ctx state
+       bctx.doABunchOfStuff(…etc…);
+       ctx.globalCompositeOperation = “screen”;
+       var bounds = bctx.getPixelBounds();
+       ctx.draw(bctx);
+       Just some quick ideas without a ton of thought behind them.
+          + April 22, 2013 at 3:54 pm, Rik Cabanier said:
+            for 1:
+            I made a proposal to add suport for masking to canvas:
+            http://lists.w3.org/Archives/Public/public-whatwg-archive/2013
+            Jan/0323.html
+            It will be compatible so you will be able to set up a mask and
+            have the masked content blend.
+            for 2:
+            Canvas on Safari is just a thin layer on top of Core Graphics.
+            If the following API was exposed, we could have something
+            you’re suggesting:
+            https://developer.apple.com/library/mac/documentation/graphics
+            imaging/reference/CGContext/Reference/reference.html#//apple_r
+            ef/doc/uid/TP30000950-CH1g-BCICIEGC
+            Basically, to draw a bunch of graphics and then have a
+            ‘multiply’ mode, you’d do the following:
+            ctx.clip(); // set up your clipping path to limit the size of
+            the intermediate buffer.
+            ctx.globalCompositeOperation = “multiply”;
+            ctx.beginTransparencyLayer();
+            …;// drawinfg
+            ctx.endTransparencyLayer(); // everything between start and
+            end will now blend with multiply.
+    5. April 22, 2013 at 11:27 am, Brian Reavis said:
+       A good first start! I really like the idea of being able to use
+       blending and compositing simultaneously.
+       Awhile back I built a custom context (on top of “2d”) that supports
+       blending modes with a “globalBlendMode” flag
+       (https://github.com/brianreavis/canvas.hdr.js). It only supports
+       basic drawing operations (pixel setting, images, rectangles), but
+       it’s along the same lines as what’s outlined in this post.
+       Obviously it’s slower than a native implementation. It’d be great
+       to see vendors pick up native blending.
+          + April 22, 2013 at 3:37 pm, Rik Cabanier said:
+            It will probably be a while before we can combine any blend
+            mode with any compositing mode. Core Graphics and Direct2D do
+            not have support for this so we need to wait until those
+            operating systems support this.
+            Could you turn your library into a polyfill for blending?
+    6. April 22, 2013 at 10:51 pm, timb said:
+       Very interesting, nice work. Besides the timing attack problem, why
+       not allow an arbitrary blending function?
+          + April 22, 2013 at 11:55 pm, Rik Cabanier said:
+            Core Graphics doesn’t support it and since that’s the basis
+            for Safari’s canvas implementation, it’s not trivial to
+            implement.
+    7. April 23, 2013 at 2:35 am, Matt Bindoff said:
+       I’d really also love to see hardware accelerated color matrix
+       manipulations. Realtime color matrix calculations in JS are a
+       massive CPU hog.
+          + April 23, 2013 at 8:27 am, Rik Cabanier said:
+            That’s more about filtering than blending.
+            Try to lobby for it on www-style. We already have some
+            accelerated shorthands so this could be added in the future.
+    8. May 22, 2013 at 5:04 pm, Evan said:
+       It isn’t working for me in chrome…
+       console.log( ctx.globalCompositeOperation ); returns color-dodge
+       for example but still draws with source-over mode.
+          + August 15, 2013 at 7:00 pm, EDIGames said:
+            I too am finding that Chrome ‘lies’ and returns the same named
+            mode; but doesn’t honor it.
+               o August 16, 2013 at 11:33 am, Rik Cabanier said:
+                 That’s odd. Can you post a jsfiddle so we can debug?
+                 Are none of the blend modes working?
+
+     * Home
+     * About
+
+   Copyright © 2012 Adobe Systems Incorporated. All rights reserved.
+   Terms of Use | Privacy Policy and Cookies (Updated).
+   #Blending features in Canvas Balancing Text for better readability
+   alternate alternate
+
+     * Home
+     * About
+
+Adobe
+
+   decor
+
+Web Platform Team Blog
+
+Making the web awesome
+
+   twitter Follow us on Twitter @adobeweb
+   Search for: Search______________ Search
+
+Categories
+
+     * Blend Modes
+     * Canvas
+     * Community Events
+     * CSS Shaders
+     * CSS Text
+     * Custom Filters
+     * Exclusions
+     * Experiments & Research
+     * Image Events
+     * JavaScript
+     * Links of Interest
+     * Masking
+     * News
+     * Regions
+     * Shapes
+     * SVG
+     * Testing
+     * Tips and Tricks
+     * Transforms
+     * Web Animations
+     * Web Platform Features
+     * WebKit
+
+Archives
+
+     * January 2015
+     * November 2014
+     * October 2014
+     * September 2014
+     * August 2014
+     * July 2014
+     * June 2014
+     * May 2014
+     * April 2014
+     * March 2014
+     * February 2014
+     * January 2014
+     * December 2013
+     * November 2013
+     * October 2013
+     * September 2013
+     * August 2013
+     * July 2013
+     * June 2013
+     * May 2013
+     * April 2013
+     * March 2013
+     * February 2013
+     * January 2013
+     * December 2012
+     * November 2012
+     * October 2012
+     * September 2012
+     * August 2012
+     * July 2012
+     * June 2012
+     * May 2012
+     * April 2012
+     * March 2012
+     * January 2012
+
+Meta
+
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.org
+
+   ← Previous post
+   Next post →
+
+Winding rules in Canvas
+
+   Posted on January 30, 2013 by Rik Cabanier
+
+What are winding rules?
+
+   Paths are a very basic building block of any graphics library. Every
+   time you draw a path, your browser needs to determine if a point on the
+   canvas falls inside the enclosed curve. When the path is a simple
+   circle or rectangle, this is obvious but when the path intersects
+   itself or has nested paths, it is not always clear.
+
+   There are 2 commonly used ways to compute if a point in a path should
+   be filled: ‘non-zero‘ and ‘even-odd‘.
+
+‘non-zero’ winding
+
+   This winding rule is most commonly used and was also the only rule that
+   was supported by Canvas 2D.
+
+   To determine if a point falls inside the curve, you draw an imaginary
+   line through that point. Next you will count how many times that line
+   crosses the curve before it reaches that point. For every clockwise
+   rotation, you subtract 1 and for every counter-clockwise rotation you
+   add 1.
+
+   A point is inside the curve if the total is not equal to zero.
+   Confused? Here is an example to make it more clear:
+
+                                                           non-zero
+
+   This is a single path that consists of 2 circles. The outer circle is
+   running counterclockwise and the inner circle is running clockwise.
+
+   We have 3 points and want to determine if they fall within the path.
+   The imaginary line in this example goes from bottom left to top right
+   but you can draw it any way you want.
+
+     * point 1. Total = 1 so inside and painted
+     * point 2. Total = 1 – 1 = 0  so outside and not painted
+     * point 3. Total = 1 – 1 – 1 = -1  so inside and painted
+
+   Now, let’s change the winding of the inner circle:
+
+                                                           nonzero_2
+
+     * point 1. Total = 1 so inside and painted
+     * point 2. Total = 1 + 1 = 2  so inside and painted
+     * point 3. Total = 1 + 1 + 1 = 3  so inside and painted
+
+‘even-odd’ winding
+
+   To determine if a point falls inside the path, you once again draw a
+   line through that point. This time, you will simply add the number of
+   times you cross a path. If the total is even, the point is outside; if
+   it’s odd, the point is inside. The winding of the path is ignored. For
+   example:
+
+                                                           evenodd
+     * point 1. Total = 1 so inside and painted
+     * point 2. Total = 1 + 1 = 2  so outside and  not painted
+     * point 3. Total = 1 + 1 + 1 = 3  so inside and painted
+
+   ‘Even-odd’ winding is easier to grasp for an author since winding is
+   hard to keep in your head. For instance, if you want to make a donut
+   using a big and a small circle with ‘non-zero’ winding, you have to do
+   tricks to change the winding of the inner circle. With ‘even-odd’, you
+   just draw the two circles and fill with ‘even-odd’ winding.
+
+Addition to canvas
+
+   As mentioned earlier, Canvas 2D did not have support for ‘even-odd’
+   winding.
+
+   Mozilla implemented a prefixed ‘mozFillRule’ property that set the fill
+   rule in the graphics state. This had a couple of drawbacks:
+    1. Adding this to the state will forces the user to always check the
+       winding rule before every fill or clip, or have a convention to set
+       and reset the winding rule that is not as commonly used
+    2. Clipping and hit detection is also affected by this rule, so the
+       name ‘fillRule’ is confusing
+    3. Adding more parameters to the graphics state introduces some
+       overhead
+    4. It’s more work for the author and the environment since you have to
+       make an extra call across the JavaScript boundary
+    5. Almost all other graphic languages (such as PDF and SVG) and
+       libraries (such as CoreGraphics, Direct2D and Skia) set the winding
+       at use time.
+
+   After a discussion on the mailing lists, we came up with the following
+   API:
+enum CanvasWindingRule { "nonzero", "evenodd" };
+void fill(optional CanvasWindingRule w = "nonzero");
+void clip(optional CanvasWindingRule w = "nonzero");
+boolean isPointInPath(unrestricted double x, unrestricted double y,
+                      optional CanvasWindingRule w = "nonzero");
+
+   ‘fill’, ‘clip’ and ‘isPointInPath’ will now take an optional parameter
+   that specifies what winding rule to apply. If you don’t specify it, you
+   get the old behavior which is ‘non-zero’.
+
+   Here is an example script that shows the feature in action:
+
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = 'rgb(255,0,255)';
+ctx.beginPath();
+ctx.arc(75, 75, 75, 0, Math.PI*2, true);
+ctx.arc(75, 75, 25, 0, Math.PI*2, true);
+ctx.fill("evenodd");
+
+   and the output will look like:
+
+   canvas_evenodd
+
+Implementation status
+
+   The underlying graphics APIs in WebKit and Mozilla already had support
+   for winding, so it was easy to wire this up.
+
+   You can download a nightly Firefox, WebKit or Chromium build to
+   experiment with the feature. A special thanks goes out to the mozilla
+   and webkit people that made this API progress so quickly!
+
+   Please let us know what you think and if you have any ideas for
+   improving Canvas further!
+
+   This entry was posted in Web Platform Features.
+   ← Previous post
+   Next post →
+
+5 Comments
+
+    1. February 03, 2013 at 11:43 pm, T. Reiss said:
+       Hi Rik,
+       > For every clockwise rotation, you add 1 and for every
+       counter-clockwise rotation you subtract 1.
+       Should be “For every counter-clockwise rotation, you add 1 and for
+       every clockwise rotation you subtract 1.”
+          + February 04, 2013 at 11:21 am, Rik Cabanier said:
+            Good catch! The text didn’t match the example.
+            I updated the article.
+    2. July 29, 2013 at 11:04 am, Filip said:
+       Little bit confused here…
+       Non-zero winding:
+       “point 1. Total = 1 so inside and painted
+       point 2. Total = 1 – 1 = 0 so outside and not painted”
+       ok, but now: I cross that inner circle one more time and because of
+       it’s clockwise rotation, I should substract 1, shouldn’t I?
+       And so: point 3. Total = 1 – 1 – 1 = -1 ?
+       Am I doing something wrong?
+          + July 29, 2013 at 5:19 pm, Rik Cabanier said:
+            You’re right! I will update the blog.
+    3. September 04, 2013 at 3:34 am, How to fill shapes on HTML5 Canvas
+       using EvenOdd winding rule said:
+       […] January of 2013, Rik Cabanier posted an article on the Adobe
+       blog announcing that the implementation details had been figured
+       out, and that support for both winding […]
+
+     * Home
+     * About
+
+   Copyright © 2012 Adobe Systems Incorporated. All rights reserved.
+   Terms of Use | Privacy Policy and Cookies (Updated).
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » E‑Mails: Fluch und Segen zugleich Comments
+   Feed Adobe Email Survey 2016: Infographic Etude — Les Français sont
+   accros aux emails! alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+E‑Mails: Fluch und Segen zugleich
+
+   Campaign Marketing
+
+   E‑Mails können im Büroalltag eine echte Plage sein. Fast jeder ärgert
+   sich dann und wann über sie. Doch seien wir ehrlich: Das Problem sind
+   weniger die E‑Mails an sich, sondern der falsche Umgang mit ihnen. Der
+   erste und häufigste Fehler ist, eine E‑Mail zu schreiben, wenn man
+   keine schreiben sollte: Jeder vierte deutsche Büroangestellte ärgert
+   sich regelmäßig über E‑Mails, weil ein persönliches Gespräch deutlich
+   besser gewesen wäre. 17 Prozent sind ebenfalls genervt von Kollegen,
+   die ständig „Allen Antworten“, obwohl der E‑Mail-Inhalt gar nicht für
+   alle bestimmt bzw. relevant ist. Auch den Vorgesetzten bei allem und
+   jeden in Kopie zu setzen (15 Prozent), weitergeleitete Mails, die man
+   längst erhalten hat (13 Prozent), und Kritik oder negatives Feedback
+   via E‑Mail (acht Prozent), kommen bei den Deutschen nicht allzu gut an.
+   Dies ist das Ergebnis einer aktuellen Adobe Studie, für die europaweit
+   mehr als 3.000 Büroangestellte befragt wurden.
+
+   Deutschlands Strategien gegen überfüllte Postfächer
+
+   Einer der größten Nerv-Faktoren ist nicht zuletzt die zunehmende
+   E‑Mail-Flut: Wenn das Postfach mal wieder überzuquellen droht, wird die
+   E‑Mail schnell zum echten Zeitfresser. Um dem entgegen zu wirken, haben
+   sich 81 Prozent der Deutschen eine Strategie zurechtgelegt. 38 Prozent
+   reagieren sofort auf eingehende E‑Mails, um erst gar keinen Mail-Stau
+   im Postfach aufkommen zu lassen. Nicht gelesene Newsletter werden von
+   35 Prozent regelmäßig abbestellt. Bei mehr als jeden Fünften hat es
+   sich bewährt, nur die letzte E‑Mail im Posteingang zu belassen – alle
+   anderen werden gelöscht oder in entsprechende Ordner sortiert. 16
+   Prozent nutzen Filter oder Tags, um die Mail-Flut von vornherein
+   einzudämmen.
+
+   E‑Mail bleibt einer der wichtigsten Marketing-Kanäle
+
+   Trotz aller Widrigkeiten spielt die E‑Mail im privaten und beruflichen
+   Umfeld nach wie vor eine zentrale Rolle. Für jeden fünften deutschen
+   Büroangestellten ist sie auch heute noch das bevorzugte
+   Kommunikationsmittel, um sich mit Kollegen auszutauschen. Mehr als vier
+   Stunden verbringen sie täglich damit, ihre privaten und beruflichen
+   E‑Mails zu checken. Für das Marketing bleibt die E‑Mail damit auch in
+   Zeiten von Snapchat und boomender What´s App-Kommunikation ein
+   relevanter Kanal, um potenzielle Interessenten zu erreichen. Und mehr
+   noch: Für 55 Prozent der Deutschen ist sie sogar der bevorzugte Weg, um
+   von einer Marke kontaktiert zu werden. Und das am liebsten Mobile,
+   denn: Mehr als zwei Drittel (69 Prozent) lesen ihre E‑Mails regelmäßig
+   auf dem Smartphone.
+
+   Werbe-Mailings: Darauf kommt es den Deutschen an
+
+   Damit die Werbe-Mail auch wirklich geöffnet und gelesen wird, muss sie
+   jedoch den gestiegenen Anforderungen der Verbraucher gerecht werden.
+   Knapp jeder zweite Deutsche (45 Prozent) ist beispielsweise genervt,
+   wenn zu häufig E‑Mails von ein- und derselben Marke reinkommen. Zu
+   lange und schlecht geschriebene Mailings sind für 33 Prozent der Grund,
+   die digitale Post umgehend im Papierkorb zu versenken. Ähnlich sieht es
+   bei den E‑Mails aus, die auf dem Smartphone empfangen werden: Für jeden
+   vierten Deutschen (26 Prozent) ist es ein absolutes „No-Go“, wenn er
+   erst endlos scrollen muss, um die gesamte E‑Mail lesen zu können. Aber
+   auch ein sperriges, nicht mobil-optimiertes Layout (22 Prozent) und
+   lange Ladezeiten (17 Prozent) tragen dazu bei, dass deutsche Nutzer
+   negativ aufs E‑Mail-Marketing reagieren.
+
+   Weitere Ergebnisse im Überblick:
+     * Mehr als jeder zweite deutsche Büroangestellte behält die digitale
+       Post auch im Urlaub stets im Blick.
+     * Rund ein Drittel glaubt, dass die E‑Mail-Nutzung weiter zunehmen
+       wird.
+     * 34 Prozent nutzen in E‑Mails Emojis.
+     * Gefährlich: 15 Prozent der Deutschen checken ihre E‑Mails beim
+       Autofahren.
+
+   0878_adobe-echosign_visual_05
+
+
+
+   Campaign Marketing
+   Adobe DACH
+
+   by Adobe DACH
+
+   Posted on 10-04-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » Studie: Omnichannel stößt auf starke
+   Hindernisse Comments Feed Etude — Les Français sont accros aux emails!
+   Pourquoi l’expérience de votre client est-elle plus importante que
+   votre produit ? alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+Studie: Omnichannel stößt auf starke Hindernisse
+
+   Digital Marketing
+
+   Alle Kundenbefragungen zeigen, dass die Verbindung von Online-Angeboten
+   mit stationären Geschäften für Unternehmen den größten Nutzen bringt.
+   Nicht nur im Bankenbereich oder im Einzelhandel. Doch in der Praxis
+   behindern heterogene IT-Systeme eine kanalübergreifende Analyse von
+   Kundendaten und damit den angestrebten Omnichannel-Ansatz im Marketing.
+   Das hat gerade wieder die Studie „Succeeding in the omnichannel age“
+   ergeben, die wir gemeinsam mit Econsultancy erstellt haben.
+
+   Die aktuelle Ausgabe des „Digital Intelligence Briefing“ zeigt, dass
+   zwar immer mehr Unternehmen integrierte Kampagnen über alle Kanäle (ein
+   Zuwachs von 29 Prozent gegenüber 2015) als Ziel nennen. Aber die Anzahl
+   der befragten Marketingentscheider, die derzeit keinen
+   Omnichannel-Ansatz in ihren Kampagnen umsetzen, hat sich in den
+   vergangenen drei Jahren jedoch mehr als verdoppelt.
+
+   Keine einheitliche Sicht auf den Kunden
+
+   Insbesondere mit der Daten-Analyse über alle Kanäle hinweg tun sich
+   viele Unternehmen schwer: Nur zwölf Prozent sind heute nach eigener
+   Aussage in der Lage, On- und Offline-Daten miteinander zu aggregieren
+   und intelligent zusammenzuführen. Allein ein Viertel der befragten
+   Entscheider verfügen bereits über eine einheitliche Sicht auf den
+   Kunden.
+
+   Ein weiteres zentrales Omnichannel-Hindernis ist der Einsatz
+   heterogener IT-Systeme: In mehr als jedem zweiten Unternehmen wird mit
+   unterschiedlichen Technologien für die kanalübergreifende Erfassung und
+   Analyse von Kundendaten gearbeitet. Dadurch entstehen häufig Probleme
+   bei der Integration der Daten (51 Prozent) sowie der reibungslosen
+   Verknüpfung mehrerer Datenquellen (40 Prozent). Über eine integrierte,
+   einheitliche IT‑Lösung zur Verknüpfung und unternehmensweiten
+   Bereitstellung aller relevanten Daten verfügen bislang lediglich fünf
+   Prozent der befragten Unternehmen.
+
+   360-Grad-Blick auf den Kunden ist Voraussetzung
+
+   Doch die Kunden nutzen längst verschiedene Kanäle, um sich über Marken
+   und Unternehmen zu informieren und erwarten, überall relevante
+   Botschaften zu erhalten. Für Marketingverantwortliche bedeutet das vor
+   allem eins: Nur mit einem 360-Grad-Blick auf den Kunden und einer
+   kanalübergreifenden, individuellen Ansprache können sie diesen
+   veränderten Anforderungen gerecht werden.
+   Digital Marketing
+   Andreas Helios
+
+   by Andreas Helios
+
+   Posted on 10-05-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » Etude — Les Français sont accros aux emails!
+   Comments Feed E‑Mails: Fluch und Segen zugleich Studie: Omnichannel
+   stößt auf starke Hindernisse alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+Etude — Les Français sont accros aux emails!
+
+   Campaign Marketing
+
+   A travers l’Europe, nous sommes accros aux emails et passons plus de
+   temps à les écrire, les lire et y répondre qu’auparavant. Cela nous
+   prend littéralement des mois chaque année et nous nous y consacrons
+   partout où nous allons, mêlant emails professionnels et personnels. De
+   nouvelles recherches sur nos habitudes montrent aussi que les emojis
+   sont maintenant régulièrement associés à nos messages – avec des
+   sourires et des clins d’oeil répartis un peu partout. Consultez notre
+   infographie comparant les habitudes en termes d’emails des Allemands,
+   Français et Britanniques.
+
+   Pour plus d’informations et statistiques sur les évolutions de ces
+   messages numériques, lisez le blog post complet
+
+   0878_adobe-echosign_visual_05
+
+
+   Campaign Marketing
+   campagnes (2), cross canal (2), email (4), emojis (1)
+   John Watton
+
+   by John Watton
+
+   Posted on 10-04-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   #Getting to the Point with Reflex Vertices Winding rules in Canvas
+   alternate alternate
+
+     * Home
+     * About
+
+Adobe
+
+   decor
+
+Web Platform Team Blog
+
+Making the web awesome
+
+   twitter Follow us on Twitter @adobeweb
+   Search for: Search______________ Search
+
+Categories
+
+     * Blend Modes
+     * Canvas
+     * Community Events
+     * CSS Shaders
+     * CSS Text
+     * Custom Filters
+     * Exclusions
+     * Experiments & Research
+     * Image Events
+     * JavaScript
+     * Links of Interest
+     * Masking
+     * News
+     * Regions
+     * Shapes
+     * SVG
+     * Testing
+     * Tips and Tricks
+     * Transforms
+     * Web Animations
+     * Web Platform Features
+     * WebKit
+
+Archives
+
+     * January 2015
+     * November 2014
+     * October 2014
+     * September 2014
+     * August 2014
+     * July 2014
+     * June 2014
+     * May 2014
+     * April 2014
+     * March 2014
+     * February 2014
+     * January 2014
+     * December 2013
+     * November 2013
+     * October 2013
+     * September 2013
+     * August 2013
+     * July 2013
+     * June 2013
+     * May 2013
+     * April 2013
+     * March 2013
+     * February 2013
+     * January 2013
+     * December 2012
+     * November 2012
+     * October 2012
+     * September 2012
+     * August 2012
+     * July 2012
+     * June 2012
+     * May 2012
+     * April 2012
+     * March 2012
+     * January 2012
+
+Meta
+
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.org
+
+   ← Previous post
+   Next post →
+
+Blending features in Canvas
+
+   Posted on January 28, 2013 by Rik Cabanier
+
+   While working on adding CSS blending to the web platform, we noticed
+   that this feature is also missing in Canvas 2D. Since blending is such
+   a commonly used feature in our applications, it is very useful in
+   Canvas as well.
+
+   Also since Canvas 2D lives so close to the underlying graphics
+   libraries, it becomes easier to fix rendering inconsistencies before we
+   throw the switch that enables blending in CSS.
+
+   Canvas 2D defines a ‘globalCompositeOperation‘ that controls how
+   drawing commands are composited with existing pixels. After some
+   discussion on the public mailing lists,  it seemed that this was the
+   best place to add support for blending as well.
+
+Editing the spec
+
+   As a first step we edited the CSS compositing and blending spec so you
+   can specify blending in addition to compositing. The syntax
+   of  ‘globalCompositeOperation‘ was extended to:
+   Value:
+   <blend-mode> || <composite-mode> || <isolation-mode> || <knock-out-mode
+   >
+   Initial: source-over
+
+   For consistency, this is identical to how you will specify blending in
+   CSS.
+
+   ‘blend-mode’ is one of the following values:
+<blend-mode> = normal | multiply | screen | overlay |
+               darken | lighten | color-dodge | color-burn | hard-light |
+               soft-light | difference | exclusion | hue | saturation |
+               color | luminosity
+
+   ‘composite-mode’ is one of the following values:
+<composite-mode> = clear | copy | destination | source-over |
+                   destination-over | source-in | destination-in |
+                   source-out | destination-out | source-atop |
+                   destination-atop | xor | lighter
+
+   ‘isolation-mode’ and ‘knockout-mode’ are specific to CSS and are
+   ignored in the Canvas 2D context.
+
+   With this new syntax, you can write the following code:
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+// switch to multiply blending
+ctx.globalCompositeOperation = 'multiply';
+// draw magenta circle
+ctx.fillStyle = 'rgb(255,0,255)';
+ctx.beginPath();
+ctx.arc(50, 50, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+// draw cyan circle
+ctx.fillStyle = 'rgb(0,255,255)';
+ctx.beginPath();
+ctx.arc(100, 50, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+// draw yellow circle
+ctx.fillStyle = 'rgb(255,255,0)';
+ctx.beginPath();
+ctx.arc(75, 100, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+
+   which should give you the following result:
+
+   canvas
+
+Implementing the spec
+
+   In addition to creating the spec, we also implemented it in WebKit and
+   Firefox and are working on getting it enabled in Chromium. Browsers
+   that don’t support this feature will ignore the setting. Blending is
+   hardware accelerated where possible so it should not impact performance
+   of your application.
+
+   If you want to experiment with this feature, you can download the
+   latest nightly WebKit or Firefox. The feature is enabled by default so
+   you don’t have to enable any flags. Here’s a jsFiddle to get you
+   started.
+
+   For now, you can’t combine blending and compositing yet, but we will
+   allow it in the future when there is platform support.
+
+   You can ‘feature-check’ for support by setting and blending mode and
+   reading it back. As an example, here is a Modernizr test that checks if
+   blending is enabled:
+
+Modernizr.addTest('canvasblending', function () {
+   if (Modernizr.canvas === false) return false;
+   var ctx = document.createElement('canvas').getContext('2d');
+   ctx.globalCompositeOperation = 'screen';
+   return ctx.globalCompositeOperation == 'screen';
+});
+
+   You can find documentation on how to use this API here.
+   Let us know what you think and if you have any ideas on how we can
+   improve it!
+
+   This entry was posted in Blend Modes, Web Platform Features.
+   ← Previous post
+   Next post →
+
+17 Comments
+
+    1. January 29, 2013 at 3:21 am, André Fiedler said:
+       Here´s another one – Photoshop Blending Modes with WebGL (GLSL):
+       http://mouaif.wordpress.com/2009/01/05/photoshop-math-with-glsl-sha
+       ders/
+       Really nice read! Have used them, works great!
+       greetings André
+    2. February 01, 2013 at 2:33 pm, Kevin Gadd said:
+       How do you account for the fact that many of these blending modes
+       cannot trivially be hardware accelerated on modern GPUs (due to the
+       fact that the blending stage of 3D rasterization isn’t
+       customizable)? Will these blending modes force rendering to occur
+       in software?
+          + February 01, 2013 at 3:23 pm, Rik Cabanier said:
+            All of them are actually accelerated on the GPU.
+            Mozilla uses Direct2D and Core Graphics. Safari will use Core
+            graphics on MacOS and iOS.
+            The Skia will provide hardware support for Chrome. In
+            addition, Win8 (and 7 through updates) offers native blending
+            to Direct2D so IE should be able to implement this easily too.
+            It is true that in order to ‘blend’ you need to push the
+            backdrop in a texture which is expensive. However, on mobile
+            platforms such as PowerVR and Tegra there are tricks to avoid
+            that.
+               o February 01, 2013 at 4:13 pm, Kevin Gadd said:
+                 Thanks Rik. Glad to hear that mobile GPUs at least
+                 provide an efficient way to do customizable blending –
+                 the cost of pushing the backdrop to a texture on desktops
+                 will at least be less dire in comparison.
+    3. February 01, 2013 at 5:09 pm, kangax said:
+       Looks like non-standard (?) “darker” (in Chrome) and “multiply” (in
+       FF) — http://codepen.io/kangax/pen/Bhqtk
+          + February 01, 2013 at 5:17 pm, Rik Cabanier said:
+            ‘darker’ is indeed non-standard. It’s actually a compositing
+            operator and not a blend mode.
+            http://www.belightsoft.com/products/arttext/ATHelp/layers_blen
+            ding.html#plus_darker
+            I’m unsure why you mention ‘multiply’. That one is standard.
+    4. April 22, 2013 at 10:24 am, Grant Skinner said:
+       This is great to see. A couple quick thoughts:
+       1. It would be nice to be able to apply both a composite operation
+       and a blend mode simultaneously. For example, to do alpha masking
+       as well as blending. I don’t think this warrants complicating the
+       API though.
+       2. Operations like this really drive home how nice it would be to
+       have some kind of off-screen buffering mechanism built into
+       Context2D, so a blend can apply to a composited draw without devs
+       needing to manually create and maintain a separate canvas instance
+       for the task. Further, this could also potentially provide a way to
+       return the dimensions of draw operations (though that is
+       complicated by the implicit clipping path on a context). As a
+       really rough idea:
+       ctx.beginBuffer();
+       // draw a bunch of stuff into the buffer, utilizing the current
+       state of the target context.
+       var bounds = ctx.getBufferBounds(); // return the pixel bounds of
+       all the buffer draw operations.
+       ctx.globalCompositeOperation = “multiply”;
+       ctx.closeBuffer(); // draw the pre-composited buffer into the
+       original context
+       Or maybe alternately:
+       var bctx = ctx.getBuffer(); // returns a context buffer object
+       sharing the current ctx state
+       bctx.doABunchOfStuff(…etc…);
+       ctx.globalCompositeOperation = “screen”;
+       var bounds = bctx.getPixelBounds();
+       ctx.draw(bctx);
+       Just some quick ideas without a ton of thought behind them.
+          + April 22, 2013 at 3:54 pm, Rik Cabanier said:
+            for 1:
+            I made a proposal to add suport for masking to canvas:
+            http://lists.w3.org/Archives/Public/public-whatwg-archive/2013
+            Jan/0323.html
+            It will be compatible so you will be able to set up a mask and
+            have the masked content blend.
+            for 2:
+            Canvas on Safari is just a thin layer on top of Core Graphics.
+            If the following API was exposed, we could have something
+            you’re suggesting:
+            https://developer.apple.com/library/mac/documentation/graphics
+            imaging/reference/CGContext/Reference/reference.html#//apple_r
+            ef/doc/uid/TP30000950-CH1g-BCICIEGC
+            Basically, to draw a bunch of graphics and then have a
+            ‘multiply’ mode, you’d do the following:
+            ctx.clip(); // set up your clipping path to limit the size of
+            the intermediate buffer.
+            ctx.globalCompositeOperation = “multiply”;
+            ctx.beginTransparencyLayer();
+            …;// drawinfg
+            ctx.endTransparencyLayer(); // everything between start and
+            end will now blend with multiply.
+    5. April 22, 2013 at 11:27 am, Brian Reavis said:
+       A good first start! I really like the idea of being able to use
+       blending and compositing simultaneously.
+       Awhile back I built a custom context (on top of “2d”) that supports
+       blending modes with a “globalBlendMode” flag
+       (https://github.com/brianreavis/canvas.hdr.js). It only supports
+       basic drawing operations (pixel setting, images, rectangles), but
+       it’s along the same lines as what’s outlined in this post.
+       Obviously it’s slower than a native implementation. It’d be great
+       to see vendors pick up native blending.
+          + April 22, 2013 at 3:37 pm, Rik Cabanier said:
+            It will probably be a while before we can combine any blend
+            mode with any compositing mode. Core Graphics and Direct2D do
+            not have support for this so we need to wait until those
+            operating systems support this.
+            Could you turn your library into a polyfill for blending?
+    6. April 22, 2013 at 10:51 pm, timb said:
+       Very interesting, nice work. Besides the timing attack problem, why
+       not allow an arbitrary blending function?
+          + April 22, 2013 at 11:55 pm, Rik Cabanier said:
+            Core Graphics doesn’t support it and since that’s the basis
+            for Safari’s canvas implementation, it’s not trivial to
+            implement.
+    7. April 23, 2013 at 2:35 am, Matt Bindoff said:
+       I’d really also love to see hardware accelerated color matrix
+       manipulations. Realtime color matrix calculations in JS are a
+       massive CPU hog.
+          + April 23, 2013 at 8:27 am, Rik Cabanier said:
+            That’s more about filtering than blending.
+            Try to lobby for it on www-style. We already have some
+            accelerated shorthands so this could be added in the future.
+    8. May 22, 2013 at 5:04 pm, Evan said:
+       It isn’t working for me in chrome…
+       console.log( ctx.globalCompositeOperation ); returns color-dodge
+       for example but still draws with source-over mode.
+          + August 15, 2013 at 7:00 pm, EDIGames said:
+            I too am finding that Chrome ‘lies’ and returns the same named
+            mode; but doesn’t honor it.
+               o August 16, 2013 at 11:33 am, Rik Cabanier said:
+                 That’s odd. Can you post a jsfiddle so we can debug?
+                 Are none of the blend modes working?
+
+     * Home
+     * About
+
+   Copyright © 2012 Adobe Systems Incorporated. All rights reserved.
+   Terms of Use | Privacy Policy and Cookies (Updated).
+   #Blending features in Canvas Balancing Text for better readability
+   alternate alternate
+
+     * Home
+     * About
+
+Adobe
+
+   decor
+
+Web Platform Team Blog
+
+Making the web awesome
+
+   twitter Follow us on Twitter @adobeweb
+   Search for: Search______________ Search
+
+Categories
+
+     * Blend Modes
+     * Canvas
+     * Community Events
+     * CSS Shaders
+     * CSS Text
+     * Custom Filters
+     * Exclusions
+     * Experiments & Research
+     * Image Events
+     * JavaScript
+     * Links of Interest
+     * Masking
+     * News
+     * Regions
+     * Shapes
+     * SVG
+     * Testing
+     * Tips and Tricks
+     * Transforms
+     * Web Animations
+     * Web Platform Features
+     * WebKit
+
+Archives
+
+     * January 2015
+     * November 2014
+     * October 2014
+     * September 2014
+     * August 2014
+     * July 2014
+     * June 2014
+     * May 2014
+     * April 2014
+     * March 2014
+     * February 2014
+     * January 2014
+     * December 2013
+     * November 2013
+     * October 2013
+     * September 2013
+     * August 2013
+     * July 2013
+     * June 2013
+     * May 2013
+     * April 2013
+     * March 2013
+     * February 2013
+     * January 2013
+     * December 2012
+     * November 2012
+     * October 2012
+     * September 2012
+     * August 2012
+     * July 2012
+     * June 2012
+     * May 2012
+     * April 2012
+     * March 2012
+     * January 2012
+
+Meta
+
+     * Log in
+     * Entries RSS
+     * Comments RSS
+     * WordPress.org
+
+   ← Previous post
+   Next post →
+
+Winding rules in Canvas
+
+   Posted on January 30, 2013 by Rik Cabanier
+
+What are winding rules?
+
+   Paths are a very basic building block of any graphics library. Every
+   time you draw a path, your browser needs to determine if a point on the
+   canvas falls inside the enclosed curve. When the path is a simple
+   circle or rectangle, this is obvious but when the path intersects
+   itself or has nested paths, it is not always clear.
+
+   There are 2 commonly used ways to compute if a point in a path should
+   be filled: ‘non-zero‘ and ‘even-odd‘.
+
+‘non-zero’ winding
+
+   This winding rule is most commonly used and was also the only rule that
+   was supported by Canvas 2D.
+
+   To determine if a point falls inside the curve, you draw an imaginary
+   line through that point. Next you will count how many times that line
+   crosses the curve before it reaches that point. For every clockwise
+   rotation, you subtract 1 and for every counter-clockwise rotation you
+   add 1.
+
+   A point is inside the curve if the total is not equal to zero.
+   Confused? Here is an example to make it more clear:
+
+                                                           non-zero
+
+   This is a single path that consists of 2 circles. The outer circle is
+   running counterclockwise and the inner circle is running clockwise.
+
+   We have 3 points and want to determine if they fall within the path.
+   The imaginary line in this example goes from bottom left to top right
+   but you can draw it any way you want.
+
+     * point 1. Total = 1 so inside and painted
+     * point 2. Total = 1 – 1 = 0  so outside and not painted
+     * point 3. Total = 1 – 1 – 1 = -1  so inside and painted
+
+   Now, let’s change the winding of the inner circle:
+
+                                                           nonzero_2
+
+     * point 1. Total = 1 so inside and painted
+     * point 2. Total = 1 + 1 = 2  so inside and painted
+     * point 3. Total = 1 + 1 + 1 = 3  so inside and painted
+
+‘even-odd’ winding
+
+   To determine if a point falls inside the path, you once again draw a
+   line through that point. This time, you will simply add the number of
+   times you cross a path. If the total is even, the point is outside; if
+   it’s odd, the point is inside. The winding of the path is ignored. For
+   example:
+
+                                                           evenodd
+     * point 1. Total = 1 so inside and painted
+     * point 2. Total = 1 + 1 = 2  so outside and  not painted
+     * point 3. Total = 1 + 1 + 1 = 3  so inside and painted
+
+   ‘Even-odd’ winding is easier to grasp for an author since winding is
+   hard to keep in your head. For instance, if you want to make a donut
+   using a big and a small circle with ‘non-zero’ winding, you have to do
+   tricks to change the winding of the inner circle. With ‘even-odd’, you
+   just draw the two circles and fill with ‘even-odd’ winding.
+
+Addition to canvas
+
+   As mentioned earlier, Canvas 2D did not have support for ‘even-odd’
+   winding.
+
+   Mozilla implemented a prefixed ‘mozFillRule’ property that set the fill
+   rule in the graphics state. This had a couple of drawbacks:
+    1. Adding this to the state will forces the user to always check the
+       winding rule before every fill or clip, or have a convention to set
+       and reset the winding rule that is not as commonly used
+    2. Clipping and hit detection is also affected by this rule, so the
+       name ‘fillRule’ is confusing
+    3. Adding more parameters to the graphics state introduces some
+       overhead
+    4. It’s more work for the author and the environment since you have to
+       make an extra call across the JavaScript boundary
+    5. Almost all other graphic languages (such as PDF and SVG) and
+       libraries (such as CoreGraphics, Direct2D and Skia) set the winding
+       at use time.
+
+   After a discussion on the mailing lists, we came up with the following
+   API:
+enum CanvasWindingRule { "nonzero", "evenodd" };
+void fill(optional CanvasWindingRule w = "nonzero");
+void clip(optional CanvasWindingRule w = "nonzero");
+boolean isPointInPath(unrestricted double x, unrestricted double y,
+                      optional CanvasWindingRule w = "nonzero");
+
+   ‘fill’, ‘clip’ and ‘isPointInPath’ will now take an optional parameter
+   that specifies what winding rule to apply. If you don’t specify it, you
+   get the old behavior which is ‘non-zero’.
+
+   Here is an example script that shows the feature in action:
+
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = 'rgb(255,0,255)';
+ctx.beginPath();
+ctx.arc(75, 75, 75, 0, Math.PI*2, true);
+ctx.arc(75, 75, 25, 0, Math.PI*2, true);
+ctx.fill("evenodd");
+
+   and the output will look like:
+
+   canvas_evenodd
+
+Implementation status
+
+   The underlying graphics APIs in WebKit and Mozilla already had support
+   for winding, so it was easy to wire this up.
+
+   You can download a nightly Firefox, WebKit or Chromium build to
+   experiment with the feature. A special thanks goes out to the mozilla
+   and webkit people that made this API progress so quickly!
+
+   Please let us know what you think and if you have any ideas for
+   improving Canvas further!
+
+   This entry was posted in Web Platform Features.
+   ← Previous post
+   Next post →
+
+5 Comments
+
+    1. February 03, 2013 at 11:43 pm, T. Reiss said:
+       Hi Rik,
+       > For every clockwise rotation, you add 1 and for every
+       counter-clockwise rotation you subtract 1.
+       Should be “For every counter-clockwise rotation, you add 1 and for
+       every clockwise rotation you subtract 1.”
+          + February 04, 2013 at 11:21 am, Rik Cabanier said:
+            Good catch! The text didn’t match the example.
+            I updated the article.
+    2. July 29, 2013 at 11:04 am, Filip said:
+       Little bit confused here…
+       Non-zero winding:
+       “point 1. Total = 1 so inside and painted
+       point 2. Total = 1 – 1 = 0 so outside and not painted”
+       ok, but now: I cross that inner circle one more time and because of
+       it’s clockwise rotation, I should substract 1, shouldn’t I?
+       And so: point 3. Total = 1 – 1 – 1 = -1 ?
+       Am I doing something wrong?
+          + July 29, 2013 at 5:19 pm, Rik Cabanier said:
+            You’re right! I will update the blog.
+    3. September 04, 2013 at 3:34 am, How to fill shapes on HTML5 Canvas
+       using EvenOdd winding rule said:
+       […] January of 2013, Rik Cabanier posted an article on the Adobe
+       blog announcing that the implementation details had been figured
+       out, and that support for both winding […]
+
+     * Home
+     * About
+
+   Copyright © 2012 Adobe Systems Incorporated. All rights reserved.
+   Terms of Use | Privacy Policy and Cookies (Updated).
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » E‑Mails: Fluch und Segen zugleich Comments
+   Feed Adobe Email Survey 2016: Infographic Etude — Les Français sont
+   accros aux emails! alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+E‑Mails: Fluch und Segen zugleich
+
+   Campaign Marketing
+
+   E‑Mails können im Büroalltag eine echte Plage sein. Fast jeder ärgert
+   sich dann und wann über sie. Doch seien wir ehrlich: Das Problem sind
+   weniger die E‑Mails an sich, sondern der falsche Umgang mit ihnen. Der
+   erste und häufigste Fehler ist, eine E‑Mail zu schreiben, wenn man
+   keine schreiben sollte: Jeder vierte deutsche Büroangestellte ärgert
+   sich regelmäßig über E‑Mails, weil ein persönliches Gespräch deutlich
+   besser gewesen wäre. 17 Prozent sind ebenfalls genervt von Kollegen,
+   die ständig „Allen Antworten“, obwohl der E‑Mail-Inhalt gar nicht für
+   alle bestimmt bzw. relevant ist. Auch den Vorgesetzten bei allem und
+   jeden in Kopie zu setzen (15 Prozent), weitergeleitete Mails, die man
+   längst erhalten hat (13 Prozent), und Kritik oder negatives Feedback
+   via E‑Mail (acht Prozent), kommen bei den Deutschen nicht allzu gut an.
+   Dies ist das Ergebnis einer aktuellen Adobe Studie, für die europaweit
+   mehr als 3.000 Büroangestellte befragt wurden.
+
+   Deutschlands Strategien gegen überfüllte Postfächer
+
+   Einer der größten Nerv-Faktoren ist nicht zuletzt die zunehmende
+   E‑Mail-Flut: Wenn das Postfach mal wieder überzuquellen droht, wird die
+   E‑Mail schnell zum echten Zeitfresser. Um dem entgegen zu wirken, haben
+   sich 81 Prozent der Deutschen eine Strategie zurechtgelegt. 38 Prozent
+   reagieren sofort auf eingehende E‑Mails, um erst gar keinen Mail-Stau
+   im Postfach aufkommen zu lassen. Nicht gelesene Newsletter werden von
+   35 Prozent regelmäßig abbestellt. Bei mehr als jeden Fünften hat es
+   sich bewährt, nur die letzte E‑Mail im Posteingang zu belassen – alle
+   anderen werden gelöscht oder in entsprechende Ordner sortiert. 16
+   Prozent nutzen Filter oder Tags, um die Mail-Flut von vornherein
+   einzudämmen.
+
+   E‑Mail bleibt einer der wichtigsten Marketing-Kanäle
+
+   Trotz aller Widrigkeiten spielt die E‑Mail im privaten und beruflichen
+   Umfeld nach wie vor eine zentrale Rolle. Für jeden fünften deutschen
+   Büroangestellten ist sie auch heute noch das bevorzugte
+   Kommunikationsmittel, um sich mit Kollegen auszutauschen. Mehr als vier
+   Stunden verbringen sie täglich damit, ihre privaten und beruflichen
+   E‑Mails zu checken. Für das Marketing bleibt die E‑Mail damit auch in
+   Zeiten von Snapchat und boomender What´s App-Kommunikation ein
+   relevanter Kanal, um potenzielle Interessenten zu erreichen. Und mehr
+   noch: Für 55 Prozent der Deutschen ist sie sogar der bevorzugte Weg, um
+   von einer Marke kontaktiert zu werden. Und das am liebsten Mobile,
+   denn: Mehr als zwei Drittel (69 Prozent) lesen ihre E‑Mails regelmäßig
+   auf dem Smartphone.
+
+   Werbe-Mailings: Darauf kommt es den Deutschen an
+
+   Damit die Werbe-Mail auch wirklich geöffnet und gelesen wird, muss sie
+   jedoch den gestiegenen Anforderungen der Verbraucher gerecht werden.
+   Knapp jeder zweite Deutsche (45 Prozent) ist beispielsweise genervt,
+   wenn zu häufig E‑Mails von ein- und derselben Marke reinkommen. Zu
+   lange und schlecht geschriebene Mailings sind für 33 Prozent der Grund,
+   die digitale Post umgehend im Papierkorb zu versenken. Ähnlich sieht es
+   bei den E‑Mails aus, die auf dem Smartphone empfangen werden: Für jeden
+   vierten Deutschen (26 Prozent) ist es ein absolutes „No-Go“, wenn er
+   erst endlos scrollen muss, um die gesamte E‑Mail lesen zu können. Aber
+   auch ein sperriges, nicht mobil-optimiertes Layout (22 Prozent) und
+   lange Ladezeiten (17 Prozent) tragen dazu bei, dass deutsche Nutzer
+   negativ aufs E‑Mail-Marketing reagieren.
+
+   Weitere Ergebnisse im Überblick:
+     * Mehr als jeder zweite deutsche Büroangestellte behält die digitale
+       Post auch im Urlaub stets im Blick.
+     * Rund ein Drittel glaubt, dass die E‑Mail-Nutzung weiter zunehmen
+       wird.
+     * 34 Prozent nutzen in E‑Mails Emojis.
+     * Gefährlich: 15 Prozent der Deutschen checken ihre E‑Mails beim
+       Autofahren.
+
+   0878_adobe-echosign_visual_05
+
+
+
+   Campaign Marketing
+   Adobe DACH
+
+   by Adobe DACH
+
+   Posted on 10-04-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » Studie: Omnichannel stößt auf starke
+   Hindernisse Comments Feed Etude — Les Français sont accros aux emails!
+   Pourquoi l’expérience de votre client est-elle plus importante que
+   votre produit ? alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+Studie: Omnichannel stößt auf starke Hindernisse
+
+   Digital Marketing
+
+   Alle Kundenbefragungen zeigen, dass die Verbindung von Online-Angeboten
+   mit stationären Geschäften für Unternehmen den größten Nutzen bringt.
+   Nicht nur im Bankenbereich oder im Einzelhandel. Doch in der Praxis
+   behindern heterogene IT-Systeme eine kanalübergreifende Analyse von
+   Kundendaten und damit den angestrebten Omnichannel-Ansatz im Marketing.
+   Das hat gerade wieder die Studie „Succeeding in the omnichannel age“
+   ergeben, die wir gemeinsam mit Econsultancy erstellt haben.
+
+   Die aktuelle Ausgabe des „Digital Intelligence Briefing“ zeigt, dass
+   zwar immer mehr Unternehmen integrierte Kampagnen über alle Kanäle (ein
+   Zuwachs von 29 Prozent gegenüber 2015) als Ziel nennen. Aber die Anzahl
+   der befragten Marketingentscheider, die derzeit keinen
+   Omnichannel-Ansatz in ihren Kampagnen umsetzen, hat sich in den
+   vergangenen drei Jahren jedoch mehr als verdoppelt.
+
+   Keine einheitliche Sicht auf den Kunden
+
+   Insbesondere mit der Daten-Analyse über alle Kanäle hinweg tun sich
+   viele Unternehmen schwer: Nur zwölf Prozent sind heute nach eigener
+   Aussage in der Lage, On- und Offline-Daten miteinander zu aggregieren
+   und intelligent zusammenzuführen. Allein ein Viertel der befragten
+   Entscheider verfügen bereits über eine einheitliche Sicht auf den
+   Kunden.
+
+   Ein weiteres zentrales Omnichannel-Hindernis ist der Einsatz
+   heterogener IT-Systeme: In mehr als jedem zweiten Unternehmen wird mit
+   unterschiedlichen Technologien für die kanalübergreifende Erfassung und
+   Analyse von Kundendaten gearbeitet. Dadurch entstehen häufig Probleme
+   bei der Integration der Daten (51 Prozent) sowie der reibungslosen
+   Verknüpfung mehrerer Datenquellen (40 Prozent). Über eine integrierte,
+   einheitliche IT‑Lösung zur Verknüpfung und unternehmensweiten
+   Bereitstellung aller relevanten Daten verfügen bislang lediglich fünf
+   Prozent der befragten Unternehmen.
+
+   360-Grad-Blick auf den Kunden ist Voraussetzung
+
+   Doch die Kunden nutzen längst verschiedene Kanäle, um sich über Marken
+   und Unternehmen zu informieren und erwarten, überall relevante
+   Botschaften zu erhalten. Für Marketingverantwortliche bedeutet das vor
+   allem eins: Nur mit einem 360-Grad-Blick auf den Kunden und einer
+   kanalübergreifenden, individuellen Ansprache können sie diesen
+   veränderten Anforderungen gerecht werden.
+   Digital Marketing
+   Andreas Helios
+
+   by Andreas Helios
+
+   Posted on 10-05-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   #Digital Experience Blog RSS Feed Digital Experience Blog Atom Feed
+   Digital Experience Blog » Etude — Les Français sont accros aux emails!
+   Comments Feed E‑Mails: Fluch und Segen zugleich Studie: Omnichannel
+   stößt auf starke Hindernisse alternate alternate
+
+   ____________________
+
+   Adobe | Systems Incorporated
+
+Digital Experience Blog
+
+     * Categories
+          + Customer Experience
+          + Analytics
+          + Advertising
+          + Mobile Marketing
+          + Campaign Marketing
+          + Digital Marketing
+          + Technology
+          + News
+          + Customer Success
+          + Creativity
+     * Adobe Summit
+
+Etude — Les Français sont accros aux emails!
+
+   Campaign Marketing
+
+   A travers l’Europe, nous sommes accros aux emails et passons plus de
+   temps à les écrire, les lire et y répondre qu’auparavant. Cela nous
+   prend littéralement des mois chaque année et nous nous y consacrons
+   partout où nous allons, mêlant emails professionnels et personnels. De
+   nouvelles recherches sur nos habitudes montrent aussi que les emojis
+   sont maintenant régulièrement associés à nos messages – avec des
+   sourires et des clins d’oeil répartis un peu partout. Consultez notre
+   infographie comparant les habitudes en termes d’emails des Allemands,
+   Français et Britanniques.
+
+   Pour plus d’informations et statistiques sur les évolutions de ces
+   messages numériques, lisez le blog post complet
+
+   0878_adobe-echosign_visual_05
+
+
+   Campaign Marketing
+   campagnes (2), cross canal (2), email (4), emojis (1)
+   John Watton
+
+   by John Watton
+
+   Posted on 10-04-2016
+     __________________________________________________________________
+
+   Prev
+   Next
+
+Join the discussion
+
+   Name ____________________E-Mail ____________________Website
+   ____________________Comment
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Post
+
+   {{{message}}}
+
+   {{{error}}}
+
+   {{{message}}}
+
+   {{{error}}}
+
+   Adobe Blog Privacy Policy Terms of Use
+
+   Copyright © 2019 Adobe Systems Incorporated.
+   All rights reserved.
+   Adobe
+     * Products
+     * Learn
+     * Support
+     * Company
+
+   Search______________ Search
+
+Adobe Blogs
+
+Menu
+
+   [Adobe_Remix_GMUNK.png]
+
+Visit the Adobe Blog
+
+   Get the latest from our Creative Cloud, Document Cloud, and Experience
+   Cloud businesses along with news and views from across the company.
+   Read more >
+
+   Adobe Blogs Around the World
+
+Asia Pacific:
+
+     * Creative Dialogue
+
+Japan:
+
+     * Adobe Japan Blog
+     * Creative Station
+     * Experience Cloud Japan Blog
+
+Europe:
+
+     * Creative Connection
+     * Digital Experience
+
+Latin America:
+
+     * Brazil
+     * Latin America
+
+US
+
+     * The Adobe Blog
+
+   Other Adobe Blogs
+     * Adobe Life
+     * Adobe MAX
+     * Adobe Summit
+     * ColdFusion
+     * Education
+     * Installation and Licensing
+     * Julianne Kost
+     * Product Security Incident Response
+     * Public Policy
+     * Public Sector
+     * Security
+     * Spark
+     __________________________________________________________________
+
+   Copyright © 2018 Adobe Systems Incorporated. All rights reserved.
+
+   Terms of Use | Privacy Policy and Cookies
+
+   Reviewed by TRUSTe: site privacy statement
+   Adobe
+     * Products
+     * Learn
+     * Support
+     * Company
+
+   Search______________ Search
+
+Adobe Blogs
+
+Menu
+
+   [Adobe_Remix_GMUNK.png]
+
+Visit the Adobe Blog
+
+   Get the latest from our Creative Cloud, Document Cloud, and Experience
+   Cloud businesses along with news and views from across the company.
+   Read more >
+
+   Adobe Blogs Around the World
+
+Asia Pacific:
+
+     * Creative Dialogue
+
+Japan:
+
+     * Adobe Japan Blog
+     * Creative Station
+     * Experience Cloud Japan Blog
+
+Europe:
+
+     * Creative Connection
+     * Digital Experience
+
+Latin America:
+
+     * Brazil
+     * Latin America
+
+US
+
+     * The Adobe Blog
+
+   Other Adobe Blogs
+     * Adobe Life
+     * Adobe MAX
+     * Adobe Summit
+     * ColdFusion
+     * Education
+     * Installation and Licensing
+     * Julianne Kost
+     * Product Security Incident Response
+     * Public Policy
+     * Public Sector
+     * Security
+     * Spark
+     __________________________________________________________________
+
+   Copyright © 2018 Adobe Systems Incorporated. All rights reserved.
+
+   Terms of Use | Privacy Policy and Cookies
+
+   Reviewed by TRUSTe: site privacy statement

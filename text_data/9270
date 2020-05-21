@@ -1,0 +1,688 @@
+   #ThorAndCo » Flux ThorAndCo » Flux des commentaires
+
+ThorAndCo
+
+Un peu de tout, et de rien...
+
+   (BUTTON) (BUTTON)
+
+     * Les Editos
+     * Projets
+     * Domotique
+     * Informatique
+     * CV
+
+   Rechercher ____________________ Rechercher
+
+Catégories
+
+     * # Edito
+     * Android
+     * Blogs
+     * Cloud
+     * Developpement
+     * Domotique
+     * Informatique
+     * Linux
+     * Materiel
+     * Mobiles
+     * Monitoring
+     * NAS
+     * Open Source
+     * Sauvegarde
+     * Scripts
+     * Sécurité
+     * Téléphonie
+     * Versionning
+     * Virtualisation
+     * Wordpress
+
+Étiquettes
+
+   administration android apache blog cloud cluster cv domotique dropbox
+   dédié fabric fail2ban firewall git github gitlab hubiC hébergement
+   linux materiel meteor migration monitoring munin nagios nas nginx
+   notification notifry open source openvz ovh projet proxmox push qnap
+   sauvegarde shell sophos supervision switch syslog ubuntu versionning
+   virtualisation
+
+2019 et ces futurs articles
+
+   1 janvier 2019 par cschwartz·0 Commentaires
+
+   Bonjour
+
+   2019 est une nouvelle année, et je vais essayer j’ai bien essayer
+   d’être plus rigoureux sur la fréquence de publication des articles de
+   ce blog.
+
+   De quoi allons nous parler dans les prochains articles… oui 2019 va
+   être une année riche en contenu… j’ai plein de projet en attente…
+     * Un article sur Centreon que j’utilise maintenant pour la
+       supervision de l’ensemble de mon réseau aussi bien interne
+       qu’externe via le VPN.
+     * Mon passage de Fabric à Ansible pour la gestion automatisé des
+       machines sous linux (98% des machines utilisées).
+     * La mise en place du réseau OpenVPN entre mon réseau domestique, OVH
+       et Aruba Cloud.
+     * La mise en place de la solution HAProxy pour la gestion de l’accès
+       aux ressources hébergées.
+     * La mise en place du SSL sur l’ensemble des accès externes via ACME
+       & Let’s Encrypt le tout intégré dans HAProxy.
+     * L’utilisation constante de Git pour chaque serveur pour le suivi
+       des scripts utilisés.
+     * Et plein d’autres choses vont sûrement se rajouter… une année c’est
+       long…
+
+   Cette article évoluera en fonction des projets à venir sur cette
+   nouvelle année.
+
+Git fait enfin parti de mon quotidien avec GitLab
+
+   4 mai 2019 par cschwartz·0 Commentaires
+
+   Bonjour à tous
+
+   GitLab est un logiciel libre de forge basée sur git proposant les
+   fonctionnalités de wiki, un système de suivi des bugs, l’intégration
+   continue et la livraison continue
+
+   J’avais fait déjà plusieurs articles sur l’utilisation de Git avec
+   Gitlab
+   … après avoir testé la version auto hébergée, puis la version sous
+   docker, j’ai enfin décidé de généraliser tous mes développement en
+   utilisant git et plus précisément en m’appuyant sur Gitlab.
+
+   Et au final après pas mal de tests, de comparaisons, je n’ai pas trouvé
+   l’utilité d’auto héberger une telle solution. L’ouverture des projets
+   privés illimités sur Gitlab a fini de me convaincre.
+
+   Donc pour l’instant et je pense pour un bon moment, j’ai créé mon
+   espace en ligne et migré en une soirée pas loin de 70 projets existants
+   (je pensais pas en avoir autant) au sein de mon infrastructure aussi
+   bien à titre personnel qu’au titre de mon auto-entreprise.
+
+   Gitlab permet d’organiser tous ces projets en groupes de projets qui
+   pour moi est primordial pour arriver à avoir quelque choses
+   d’exploitable.
+   Au final pour l’instant j’ai créé 4 groupes (et pas mal de sous
+   groupes) :
+     * TAC-Infrastructure pour les scripts des différents serveurs, etc.
+     * TAC-Developpement pour tous les projets de développement pur comme
+       mon dernier projet de gestion des motion de mes caméra Ubiquiti via
+       l’api (je ferais un article sur le sujet prochainement).
+     * TAC-SandBox pour tous les tests et oui je reste encore novice sous
+       Git
+     * Infra-Expertise pour l’ensemble des projets de mon auto entreprise.
+
+   Au final j’écris cette article après justement modifié un projet sous
+   Git maintenant et je me demande comment je faisais avant…
+   Bref une migration qui était plus que nécessaire mais qui aura mit son
+   temps pour aboutir.
+
+   Bonne lecture
+
+A quoi je consacre mon début d’année… la mise en place et l’utilisation de
+git
+
+   12 janvier 2019 par cschwartz·0 Commentaires
+
+   Bonjour à tous, ce début d’année est consacré à une réflexion sur
+   comment faire tel ou tel chose avant de se lancer dans un truc et de ce
+   dire j’aurais mieux faire autrement.
+
+   Avec tous les projets prévus cette année j’ai décidé de commencer par
+   mettre en place Git sur l’ensemble de mon infrastructure pour gagner en
+   flexibilité, en efficacité et aussi en suivi des fichiers des
+   modifications de l’ensemble des fichiers importants (scripts / fichiers
+   de configuration / etc…).
+   Si l’utilisation en est assez simple après avoir compris son
+   fonctionnement, le choix de la solution à utiliser pour héberger ses
+   repositories est plus compliqué.
+
+   La vraie question est auto hébergé avec Gitlab (ou autre) ou en ligne
+   sur la plateforme avec Gitlab ou Github (surtout depuis cette semaine
+   ou les repositories privés sont devenus gratuits).
+   Après plusieurs comparaisons et tests dans tous les sens au final je
+   vais partir sur l’utilisation de Gitlab en ligne pour des raisons de
+   fonctionnalités comme la gestion des groupes qui n’hésite pas à ma
+   connaissance sous Github.
+   Le fait que je n’héberge pas mon “Serveur Git” me permet aussi de na
+   pas avoir à me soucier des points suivants :
+     * La mise à jour et le maintien de la solution auto hébergée
+     * La gestion des sauvegardes et surtout les tests de restauration
+     * La réplication des sauvegardes vers un environnement externe à mon
+       infrastructure
+
+   Vient ensuite le choix de l’utilisation ou non d’un “browser”
+   graphique, mais après pas mal de tests je pense que je vais partir pour
+   mon Imac avec le logiciel SourceTree.
+
+   Pour ma part sur 90% de mes machines soit l’ensemble de serveurs je
+   n’utiliserais pas de version dit “graphique” avec l’environnement de
+   git mais uniquement la ligne de commande pour mettre à jour des
+   repositories , voir mon article sur l’utilisation de git en ligne de
+   commande.
+
+   Je pense avoir fait le tour, il ne reste plus qu’à trouver comment
+   organiser tous les repositories et de mettre cette solution en place,
+   ce qui est prévu courant de ce mois.
+
+Déjà parlons un peu d’organisation
+
+   4 janvier 2019 par cschwartz·0 Commentaires
+
+   Avant de se lancer dans cette nouvelle année, posons nous déjà deux
+   minutes pour essayer de s’organiser le mieux possible et partir sur des
+   bonnes bases dès le départ.
+
+   Je ne peux pas dire que j’ai découvert Trello il y a peu, mais depuis
+   un peu plus d’un mois je l’utilise enfin aussi bien pour la gestion de
+   ce blog, que pour tout le reste :
+     * La gestion des articles à venir sur ce blog
+     * La gestion des évolutions ou nouveau besoin au sein de mon
+       infrastructure informatique
+     * La gestion de mon Auto-Entreprise
+     * Et tout simplement pour l’ensemble des tâches, à prévoir à plus ou
+       moins long terme au sein de ma famille
+
+   Cela permet d’avoir une vue synthétique et rapide mais aussi et surtout
+   de prioriser certaines tâches par rapport à d’autres.
+
+   Au début, le plus difficile est d’arriver à lister l’ensemble des
+   choses que l’on veut faire et d’essayer de les catégoriser soit par
+   projet global, soit par thème (infrastructure / blog / domotique par
+   exemple) et ensuite de se créer des sous tâches à réaliser.
+
+   Mais une fois ce travail fait on a notre roadmap pour les prochains
+   temps. Je ne dis pas que celle ci n’évoluera pas au fil du temps mais
+   ça donne une ligne directrice.
+
+   Pour vous donner un exemple niveau informatique personnel je me suis
+   crée les catégories suivantes pour classifier mes futures actions :
+     * [En cours] : me permet de voir ce que j’ai commencé
+     * [A tester] : la liste des trucs sympa à tester
+     * [Blog] : tout ce qui a un rapport avec ce blog, la liste des
+       prochains articles par exemple
+     * [Supervision] : la liste des tâches pour améliorer l’ensemble de ma
+       supervision déjà en place
+     * [Développement] : tout ce qui s’approche de prêt à du développement
+       que ce soit web ou scripting comme Ansible
+     * [Infrastructure] : regroupe l’ensemble des projets d’évolution ou
+       d’amélioration que j’aimerai faire sur mon infra.
+     * [Migration Frontal] : qui pour cette catégorie est un projet à elle
+       seule tellement il y a de choses à prévoir et faire, et me permet
+       de la découper en sous projets eux même divisés en tâches
+
+   Voilà me reste plus qu’à mettre tout ça en application et à vous
+   souhaitez encore une bonne année 2019.
+
+Abandon de Dropbox et Hubic… Vive NextCloud
+
+   19 août 2018 par cschwartz·0 Commentaires
+
+   Bonjour
+
+   Après plusieurs tests, je ne peux plus avoir confiance en Hubic pour la
+   synchronisation de mes fichiers, en parallèle j’utilisais aussi un
+   compte Dropbox pour l’envoi de mes photos et vidéos depuis mes mobiles
+   (Hubic ne prenant toujours pas en charge l’upload des vidéos).
+
+   Deux outils dont un peu fiable et un ou je limite l’usage (condition
+   tarifaire non en adéquation avec mon besoin), ça fait deux outils de
+   trop.
+
+   Après avoir mis en place quelques NextCloud en mode Actif/Backup pour
+   mes clients, je décide qu’il est temps de monter la même infrastructure
+   pour mes propres besoins et me passer des principaux acteurs payants du
+   marché.
+
+   Ce billet n’as pas pour but de vous donner la procédure d’installation
+   et de configuration de NextCloud (il y a déjà assez de blogs qui le
+   font très bien), mais juste de faire un point sur l’évolution de mon
+   infrastructure.
+
+   Donc pour faire court, je suis partie sur deux VM hébergées une à mon
+   domicile en DMZ et une chez OVH (le tout sur deux serveurs Proxmox).
+
+   La VM à mon domicile est le serveur NextCloud principal, alors que qui
+   ce trouve chez OVH est en mode backup, la synchronisation ce fait via
+   trois scripts :
+     * Le premier est programmé toutes les heures et synchronise les
+       “datas” entre les deux serveurs
+     * Le second n’est lancé qu’une fois par jour et permet la
+       synchronisation de la base de données (au final très peu de
+       changements)
+     * Le troisième s’exécute une fois par nuit et intégré les données
+       brutes synchronisées dans la base de données du serveur backup
+
+   Les deux serveurs sont accessibles via un serveur HAProxy portant le
+   certificat SSL (un article sur ce sujet devrait arriver sous peu).
+   Celui ci est hébergé sur un VPS de chez OVH avec un lien direct
+   OpenVPN vers les deux VM. L’avantage de ce mode d’accès est la bascule
+   rapide sur le second serveur en cas de défaillance du serveur primaire
+   et une gestion simplifié du certificat SSL.
+
+   Bonne lecture à tous
+
+Ma nouvelle solution d’alerting via Slack & IFTTT
+
+   31 mai 2018 par cschwartz·2 Commentaires
+
+   Bonjour
+
+   Depuis toujours j’utilisais le mail pour faire de l’alerting. J’étais
+   conscient que cela n’était pas efficace mais c’est aussi ce qui est
+   plus natif dans l’ensemble des applications (Supervision, Sauvegardes…)
+
+   Après avoir tester pas mal de choses comme le tweet sur un compte
+   privé, j’ai décidé de trouver quelques choses de plus efficaces, je
+   suis tombé sur Slack qui est en premier une plate-forme de
+   communication collaborative mais qui propose pas mal de possibilités.
+
+   Slack a l’avantage de pouvoir créer via l’API des Incoming Webhooks
+   dédiés à un channel permettant de catégoriser les messages en fonction
+   de ses propres critères.
+
+   Je ne vais pas faire un article technique mais plutôt partager avec
+   vous ma façon de faire et t’intégrer ça dans mon alerting quotidien.
+
+   Le lien ci dessus est très bien fait pour la mise en place via un
+   simple script, mais je vous mets la syntaxe de base pour information :
+
+   curl -X POST \ --data-urlencode 'payload={"text":"Exemple de
+   notification.\nCeci est un message de test."}' \
+   https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXX
+
+   Dans mon cas dans un premier temps j’ai décidé de dédier un
+   compte Slack pour l’ensemble de l’alerting réseau avec des channels en
+   fonction de la source de la notification. Dans mon cas et au moment ou
+   je vous écris cet article, mes channels sont les suivants :
+     * backup : Regroupant tous les logs de sauvegardes ou plus
+       précisément l’état des sauvergardes pour avoir eu vu synthétique et
+       rapide
+     * centreon : avec l’ensemble des notifications de ma plateforme de
+       supervision (voir screenshot ci dessous)
+     * opnsense : avec les notifications de mon firewall OPNsense
+     * proxmox: avec les messages d’alertes, de sauvegardes de l’ensemble
+       de mes serveurs Proxmox
+     * qnap: avec les messages de mon Qnap aussi bien les mises à jour
+       disponibles que les alertes techniques
+     * rclone : avec tous les logs d’externalisation des mes données via
+       Rclone actuellement vers un compte Hubic 10To
+     * syno: avec les messages de mon Synology aussi bien les mises à jour
+       disponibles que les alertes techniques
+     * ubiquiti : avec l’alerting des mes produits Ubiquiti comme les AP
+       ou les caméras
+     * uptimerobot : avec les messages de supervision externe envoyés par
+       UptimeRobot
+
+   Sur un second compte Slack j’ai actuellement deux channels uniquement :
+     * home-irobot : m’indiquant la fin du nettoyage de mon aspirateur
+       IRobot Roomba
+     * thorandco-blog : me permettant d’avoir un suivi sur la publication
+       des nouveaux articles de ce blog
+
+   Vous allez me dire que tout ca n’est pas possible uniquement
+   avec Slack et vous avez raison, il y a pas mal de chose comme par
+   exemple mon firewall ou l’aspirateur qu’on en peut pas interfacer
+   directement, et c’est la que rentre en scène IFTTT en passerelle.
+
+   IFTTT est un service web gratuit permettant à ses utilisateurs de créer
+   des chaînes d’instruction simples appelées applets. Une applet est
+   déclenchée par des changements qui interviennent au sein de services
+   web tels que Gmail, Facebook, Instagram ou Pinterest.
+
+   Dans notre cas c’est encore une fois les mails qui vont nous sauver.
+   Par exemple une applet peut envoyer un Slack lorsque un compte Gmail
+   reçoit un e-mail marqué d’un label spécifique, c’est cette
+   fonctionnalité que j’utilise pour intercepter tous les notifications
+   d’application ou de service ne pouvant pas simplement envoyer leurs
+   messages vers Slack.
+
+   Voila à un rapide résumé de mon système de mon nouveau système de
+   notification basé sur Slack
+
+   Slack est tout aussi bien fonctionnel sous Android et me permet donc
+   d’avoir toujours un oeil sur mes notifications peut importe où je me
+   trouve.
+
+   Bonne lecture à tous
+
+
+Le remplacement de mon Firewall UTM Sophos par la solution OPNsense
+
+   20 mai 2018 par cschwartz·2 Commentaires
+
+   Bonjour
+
+   Cet article est venu plus vite que prévu, étant donné que les limites
+   de la licence de mon Firewall UTM Sophos ont été atteinte début avril.
+
+   Après plusieurs tests, de différentes solutions c’est la solution
+   OPNsense qui a été retenue, pour remplacer la solution actuelle au cœur
+   de mon réseau.
+
+   Cette migration est dans les cartons, mais lors d’un week-end avec un
+   peu de monde à la maison et donc des équipements en wifi en plus sur le
+   réseau, j’ai reçu une alerte de mon firewall Sophos me disant que
+   j’avais atteinte 48 IPs gérés sur 50 maximum. Après validation du
+   support Sophos, il n’y a pas de moyen de réinitialiser la liste des IPs
+   sous licence avec le baux de 7 jours glissants.
+
+   Ce point a fait accélérer le remplacement, car je ne pouvais plus
+   garder cette épée de Damoclès sur mon réseau.
+
+   La migration a été réalisée sur un week-end en utilisant la même
+   machine (lien ici et ici) que le serveur Sophos en remplaçant juste le
+   disque dur par un nouveau permettant un retour arrière simple rapide et
+   complet en cas de migration partielle en fin du week-end.
+
+   Je ne vais pas détailler l’installation en elle-même j’ai tout
+   simplement suivi la documentation officielle disponible sur le site
+   officiel du projet OPNsense.
+
+   Par contre je vais essayer de lister les différentes fonctionnalités
+   utilisées sur cette nouvelle solution après un mois de migration, mais
+   avant tout voici un petit rappel sur les connectivités de ce firewall :
+     * Une zone LAN, hébergeant les périphérique filaires de mon réseau
+       (ordinateurs, imprimantes, tv etc)
+     * Une zone DMZ hébergeant les services accessible aussi bien depuis
+       la zone LAN mais surtout depuis l’extérieur (NAS / Proxmox, etc…)
+     * Une zone WLAN, donnant accès à tous les périphérique wifi via une
+       solution de point d’accès Ubiquiti diffusant deux SSID différents
+       dont un tagué Guest.
+     * Une zone WAN1 reliée au réseau K-Net Fibre
+     * Une zone WAN2 reliée au réseaux Orange en ASDL
+
+   Ces deux dernières zones gèrent le multi wan en actif / backup.
+
+   Quelles sont les différentes fonctions que j’utilise et que j’ai
+   reprise lors de la re configuration de ce nouvelle machine :
+     * La gestion du multi WAN (Fibre & ADSL pour ma part)
+     * Le routage
+     * Les règles de filtrage entre les différentes zones
+     * Le NAT très peu au final car tout passe par le réseau OpenVPN pour
+       l’accès aux données internes depuis l’extérieur. Au final le nat ne
+       sert que d’accès de secours en cas de soucis.
+     * Les serveurs DHCP
+          + Un pour la zone LAN
+          + Un pour la zone WLAN Guest, pour la zone WLAN traditionnelle
+            c’est par filtrage MAC que l’attribution des IPs se fait
+     * Le service de DNS Dynamique via OVH DynHOST
+     * Les services comme SNMP / Smart / NTP / WOL sont bien sûr activés
+       et utilisés
+     * La sauvegarde automatique vers Google Drive (un peu compliqué à
+       mettre en place mais on n’y touche plus après et pour moi une
+       sauvegarde automatique externe est indispensable, le tout bien
+       évidemment chiffré)
+
+   De plus par rapport à mon ancien Firewalll UTM Sophos, j’utilise la
+   fonctionnalité de client OpenVPN pour connecter mon réseau domestique à
+   mes hébergeurs externes comme OVH et Aruba Cloud.
+
+   Cette fonctionnalité était remplie jusqu’à présent par un machine
+   virtuelle en zone DMZ en attendant mieux, celle ci est devenu inutile à
+   ce jour.
+
+   De plus j’ai aussi activé la fonction de Netflow interne pour avoir une
+   vision plus fine des flux transitant par ce firewall.
+
+   Après un mois d’utilisation et configuration, je confirme l’efficacité
+   du produit OPNsense, en tout cas il comble à ce jour tous les points de
+   mon cahier de charge.
+
+   Il reste encore quelques paramétrages et affinages à faire, mais je
+   suis satisfait du changement et de mon choix.
+
+   Bonne lecture
+
+Ma migration de mon serveur Proxmox d’un HP Proliant MicroServer N54L vers un
+serveur IBM x3650 M3
+
+   31 mars 2018 par cschwartz·0 Commentaires
+
+   Bonjour à tous
+
+   Ce petit article pour faire un point sur mes hyperviseur Proxmox depuis
+   le déménagement d’octobre 2017.
+
+   Depuis 2013, je virtualise uniquement via Proxmox chez moi, sur un
+   cluster de deux serveurs HP NL54 Microserver avec chacun 6 go de ram,
+   ce qui me suffisait pour mes besoins et me permettait de pouvoir
+   répartir mes VM en fonction de la charge sur l’un ou l’autre serveur.
+
+   Durant mon activité professionnel, j’ai pu récupérer deux nouveaux
+   serveurs pour remplacer mes deux petits cubes qui auront fait leur
+   temps en tant qu’hyperviseur, il est certain qu’ils auront une autre
+   utilité dans les mois à venir (potentiellement un serveur NVR Ubiquiti)
+
+   Les nouveaux serveurs sont deux serveurs IBM x3650 M3 rackable et ne
+   prenant qu’un seul U chacun dans la baie informatique, niveau
+   configuration on est aussi largement mieux qu’avant :
+     * CPU : 2 x  Intel(R) Xeon(R) CPU L5630 @ 2.13GHz
+     * RAM : 80 Go
+     * Disque
+          + Un premier raid 1 avec deux disque de 68 Go en 10000 tours
+            pour le système
+          + Un second raid 5 avec 6 disques de 146 Go soit 680 Go en 10000
+            tours pour les machines virtuelles
+     * Alimentation : 2 alimentations sur deux PDU connecté à deux groupes
+       différents sur l’onduleur
+     * Réseau : 4 interfaces gigabits
+
+   Les deux serveurs sont rackés mais uniquement le premier est allumé et
+   héberge les machines virtuelles, le second est en backup (mais celui-ci
+   est allumé automatique et mis à jour régulièrement pour qu’en cas de
+   besoin il soit tout de suite opérationnel)
+
+   A ce niveau j’ai décidé de ne pas les mettre en cluster car la fonction
+   principale de HA inter nodes est compensé par le fait que les snapshots
+   des machines virtuelles sont disponible sur le QNAP pour les deux
+   serveurs au besoin et que la restauration est rapide.
+
+   La migration en elle-même fût super rapide :
+     * Sauvegardes des machines virtuelles des deux serveurs HP sur le
+       QNAP
+     * Arrêt des deux anciens serveurs (lors du déménagement)
+     * Installation du nouveau serveur
+          + Proxmox
+          + Supervision
+          + Automatisation via Ansible
+          + Configuration du QNAP en NFS sur ce nouveau serveur pour
+            disposer d’un espace de stockage supplémentaire ainsi que de
+            sauvegarde
+     * Restauration des machines virtuelles et démarrage de celles-ci
+     * Mise en place des sauvegardes automatiques vers le QNAP
+
+   Actuellement je fais tourner sans soucis 11 machines virtuelles Debian
+   avec une consommation des ressources plus que raisonnable :
+
+
+   A date de ce jour cette nouvelle machine remplie toutes les fonctions
+   nécessaires à la virtualisation des mes serveurs.
+
+   Bonne lecture à tous
+
+Ma stratégie de sauvegarde
+
+   21 mars 2018 par cschwartz·0 Commentaires
+
+   Bonjour
+
+   La sauvegarde est un point ultra important pour moi et devrait l’être
+   pour chacun qui gère des données. Ma stratégie de sauvegarde est en
+   adéquation avec mon niveau de sécurité demandé et cet article n’as pas
+   vocation à être généralisable à chacun mais uniquement montrer
+   l’exhaustivité de ma stratégie. Chacun pourra prendre et adapter les
+   différents points à son propre besoin.
+
+   Pour moi une stratégie de sauvegarde doit être interne et externe pour
+   garantir un niveau de sécurité satisfaisant.
+     * Ma stratégie de sauvegarde en interne
+          + Mon Imac, poste de travail principal est sauvegardé de
+            plusieurs manières et à plusieurs endroits :
+               o Sur mon QNAP TS-453 Pro (en RAID 5 avec 4 x 3To)
+                    # En TimeMachine automatiquement toutes les heures
+                    # De plus toutes les nuits mes données brutes sont
+                      sauvegardées via Rsync vers ce même NAS
+               o Sur un disque externe en USB
+                    # Tout les 10 jours via les même processus que sur le
+                      QNAP (merci à mon iMac de me le rappeler
+                      automatiquement)
+                    # Avant de partir par exemple en vacances pour pouvoir
+                      emmener une copie avec moi dans la boite à gant de
+                      la voiture
+          + Le reste des machines à la maison sont de serveurs Linux :
+               o Les machines virtuelles sont snapshotées toutes les
+                 semaines automatiquement via l’hyperviseur Proxmox coeur
+                 de mon système de virtualisation (cela correspond à mon
+                 besoin de sauvegarde sur ce domaine)
+                    # Les snapshots sont locaux dans un premier temps
+                    # Puis dans un second temps, ils sont exportés vers la
+                      QNAP
+               o Les machines physique comme les hyperviseurs, les
+                 fichiers importants (configuration / log / etc…) sont
+                 sauvegardées toute les nuits via Rsync vers le QNAP
+          + Pour moi un NAS même en RAID 5 reste du stockage, et ne peut
+            en aucun cas garantir la pérennité des données à lui seul
+               o Toutes les données en RAID 5 sont automatiquement
+                 répliquées toutes les nuits vers un autre NAS Synology
+                 servant de backup au point central de mon stockage
+               o C’est stratégie de sauvegarde avec différents points de
+                 redondance des données mais à mon goût encore incomplète,
+                 c’est la qu’intervient la sauvegarde externalisée
+                 quotidienne
+          + Depuis que l’intégralité des hébergements aussi bien à
+            domicile, qu’en datacenter sont reliés via un réseau OpenVPN
+            (un article à venir sur le sujet expliquera sa mise en place),
+            je ne fais plus de distinction entre les serveurs en local ou
+            à distance d’un point de vue sauvegarde.
+
+     * Ma stratégie de sauvegarde en externe
+          + Ca fait un bout de temps que j’externalise mes données, au
+            début les plus sensibles par faute de place et d’une solution
+            pérenne et puis les années passant je me suis rendu comptes
+            qu’aucune donnée n’est plus importante qu’une autre et qu’il
+            fallait externaliser la totalité de mon stockage
+          + Pour moi je différencie deux sortes d’externalisation de mes
+            données :
+               o Un simple cloud type Dropbox / Hubic etc… pour rendre des
+                 données accessibles de n’importe quel endroit , pour ma
+                 part c’est un mix des deux fournisseurs pour l’instant :
+                    # Dropbox (8Go) dans mon cas me sert à l’envoi des
+                      photos et videos de l’ensemble de nos périphériques
+                      de type téléphones et tablettes
+                         @ Un jour j’espère abandonner cette solution,
+                           mais pour l’instant Hubic ne permet pas
+                           l’upload des vidéos en automatique
+                           contrairement aux photos
+                    # Hubic (25 Go) pour l’ensemble des données à
+                      synchroniser et accessible depuis n’importe quel
+                      périphérique
+                    # Après avoir fait des tests avec un OwnCloud puis
+                      NextCloud auto-hébergé , je ne vois pas l’utilité
+                      pour des données peu sensibles de gérer mon propre
+                      Cloud (je le fais pour des besoins de certains de
+                      mes clients dans le cadre de mon auto-entreprise)
+                      Et le stockage dit à froid, qui consiste à stocker
+                      mes données dont je n’aurais pas besoin sauf en cas
+                      exceptionnel comme dans le cas d’une perte des la
+                      totalité des sauvegardes locales.
+                    # Après avoir testé pas mal de solution en tout genre
+                      pour externalisé mes données, je crois que j’ai
+                      enfin trouvé une solution qui complète ma stratégie
+                      de sauvegarde :
+                         @ Pour rappel toute mes données sont centralisées
+                           sur mon NAS, c’est donc ces données qui sont
+                           toujours à jour qu’il faut exporter :
+                              - Pour ma part j’ai donc décidé d’utilisé un
+                                compte Hubic dédié au stockage à froid de
+                                10 To (pour 5 euros par mois ou 50 euros
+                                l’année)
+                              - La solution retenue pour transférer mes
+                                données est l’utilisation du logiciel
+                                Rclone qui permet en même temps de
+                                chiffrer les données pour un stockage en
+                                sécurité (un article est à venir sur le
+                                blog à ce sujet)
+          +
+             Et le stockage dit à froid, qui consiste à stocker mes
+                 données dont je n’aurais pas besoin sauf en cas
+                 exceptionnel comme dans le cas d’une perte des la
+                 totalité des sauvegardes locales.
+               o Après avoir testé pas mal de solution en tout genre pour
+                 externalisé mes données, je crois que j’ai enfin trouvé
+                 une solution qui complète ma stratégie de sauvegarde :
+                    # Pour rappel toute mes données sont centralisées sur
+                      mon NAS, c’est donc ces données qui sont toujours à
+                      jour qu’il faut exporter :
+                         @ Pour ma part j’ai donc décidé d’utilisé un
+                           compte Hubic dédié au stockage à froid de 10 To
+                           (pour 5 euros par mois ou 50 euros l’année)
+                         @ La solution retenue pour transférer mes données
+                           est l’utilisation du logiciel Rclone qui permet
+                           en même temps de chiffrer les données pour un
+                           stockage en sécurité (un article est à venir
+                           sur le blog à ce sujet)
+
+   A priori je n’ai rien oublié, mais une stratégie de sauvegarde n’est
+   pas quelque chose de figée, mais celle-ci doit évoluer dans le temps.
+
+   Je mettrais donc cet article à jour en fonction des évolutions de mon
+   architecture future.
+
+   Bonne lecture à tous
+
+Et mon infra étendue ça donne quoi en 2018
+
+   14 février 2018 par cschwartz·0 Commentaires
+   flashcode-thorandco.fr
+
+   Bonjour à tous
+
+   Pour faire suite au post d’avant, celui a pour but de faire l’état des
+   lieux sur mon infrastructure dite étendue.
+
+   En plus de tout ce qui est hébergé à mon domicilie, le reste de mon
+   infra est héberger dans sa majorité chez OVH.
+     * Un serveur dédié KS2 sous Proxmox pour les petites choses que je
+       veux hors de chez moi ou en redondance
+     * Un second serveurdédié  KS2 mais non utilisé en ce moment (servait
+       de sauvegarde distante jusqu’à peu)
+     * Un VPS SSD 1 qui à lui pas mal de fonctions vitales pour le bon
+       fonctionnement
+          + HAProxy  over SSL
+          + Frontal SSH
+          + Serveur OpenVPN
+
+   Mais depuis peu je me suis intéressé à l’offre Cloud d’Aruba Cloud à 1€
+   HT qui est cohérente par rapport à ce qu’il propose pour ce tarif.
+   Actuellement j’ai un VPS pour test chez eux, et si c’est concluant,
+   pourquoi pas utiliser cette solution pour des tests dans un premier
+   temps.
+
+   A venir courant de l’année dès que j’ai un peu de temps et testé deux
+   trois solutions techniques :
+     * Un second VPS chez OVH pour doubler les fonctionnalités déjà
+       présentes sur le premier et pouvoir basculer l’IP de failover au
+       besoin d’un VPS à l’autre et ainsi assurer une redondance des
+       services
+     * Tester la solution d’Aruba Cloud pour évaluer la possibilité de
+       créer une solution de haute disponibilité voir de PRA
+
+   Tout ces instances sont en VPN toutes entre elles et avec
+   l’infrastructure auto hébergé chez nous et tous les flux passent par le
+   VPS d’OVH, d’où l’envie et le besoin de sécurisé ce point.
+
+   A bientôt pour la suite
+
+Navigation des articles
+
+   1 2 … 7
+
+   Fièrement propulsé par WordPress. Thème Flat 1.7.11 par Themeisle
+
+   Nous utilisons des cookies pour vous garantir la meilleure expérience
+   sur notre site web. Si vous continuez à utiliser ce site, nous
+   supposerons que vous en êtes satisfait.Accepter

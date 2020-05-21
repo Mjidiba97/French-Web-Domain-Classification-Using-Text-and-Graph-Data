@@ -1,0 +1,3306 @@
+   (BUTTON) Menu
+
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge Developer
+     * Business
+
+   Search for: ____________________ (BUTTON) Submit
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   August 26, 2019 02:07 PM
+
+Testing the throttled delivery approach for 19H2
+
+     Dona Sarkar and Brandon LeBlanc
+
+   UPDATE 9/25: Today we have released 19H1 Build 18362.387 for Windows
+   Insiders in Release Preview who are still on 19H1 only. This is just a
+   small refresh update from Build 18362.385. We plan to enable this
+   update for 19H2 soon.
+
+   UPDATE 9/23: We have released 19H1 Build 18362.385 / 19H2 Build
+   18363.385 (KB4517211) to the Release Preview ring.
+     * Windows Insiders in the Release Preview ring who are on 19H1 Build
+       18362.329 will get 19H1 Build 18362.385 today.
+     * Windows Insiders in the Release Preview ring who are on 19H2 Build
+       18363.329 will get 19H2 Build 18363.385 today.
+
+   As a reminder, 19H1 and 19H2 share the same servicing content. That
+   means they share the same Cumulative Update package.
+
+   For Insiders in the Release Preview ring who are not yet on 19H2, you
+   will continue to see a Windows 10, version 1909 update available If you
+   go to Settings > Update & Security > Windows Update. You can choose to
+   install this update to receive 19H2 Build 18363.385 and future 19H2
+   builds.
+
+   This update contains all the same 19H2 features also available to
+   Insiders in the Slow ring:
+     * Windows containers require matched host and container version. This
+       restricts customers and limits Windows containers from supporting
+       mixed-version container pod scenarios This update includes 5 fixes
+       to address this and allow the host to run down-level containers on
+       up-level for process (Argon) isolation.
+     * A fix to allow OEMs to reduce the inking latency based on the
+       hardware capabilities of their devices rather than being stuck with
+       latency selected on typical hardware configuration by the OS.
+     * Key-rolling or Key-rotation feature enables secure rolling of
+       Recovery passwords on MDM managed AAD devices upon on demand
+       request from Microsoft Intune/MDM tools or upon every time recovery
+       password is used to unlock the BitLocker protected drive. This
+       feature will help prevent accidental recovery password disclosure
+       as part of manual BitLocker drive unlock by users.
+     * A change to enable third-party digital assistants to voice activate
+       above the Lock screen.
+     * You can now quickly create an event straight from the Calendar
+       flyout on the Taskbar. Just click on the date and time at the lower
+       right corner of the Taskbar to open the Calendar flyout and pick
+       your desired date and start typing in the text box – you’ll now see
+       inline options to set a time and location.
+     * The navigation pane on the Start menu now expands when you hover
+       over it with your mouse to better inform where clicking goes.
+     * We have added friendly images to show what is meant by “banner” and
+       “Action Center” when adjusting the notifications on apps in order
+       to make these settings more approachable and understandable.
+     * Notifications settings under Settings > System > Notifications will
+       now default to sorting notification senders by most recently shown
+       notification, rather than sender name. This makes it easier to find
+       and configure frequent and recent senders. We have also added a
+       setting to turn off playing sound when notifications appear.
+     * We now show the options to configure and turn off notifications
+       from an app/website right on the notification, both as a banner and
+       in Action Center.
+     * We have added a “Manage notifications” button to the top of Action
+       Center that launches the main “Notifications & actions” Settings
+       page.
+     * We have added additional debugging capabilities for newer Intel
+       processors. This is only relevant for hardware manufacturers.
+     * We have made general battery life and power efficiency improvements
+       for PCs with certain processors.
+     * A CPU may have multiple “favored” cores (logical processors of the
+       highest available scheduling class). To provide better performance
+       and reliability, we have implemented a rotation policy that
+       distributes work more fairly among these favored cores.
+     * We have enabled Windows Defender Credential Guard for ARM64 devices
+       for additional protection against credential theft for enterprises
+       deploying ARM64 devices in their organizations.
+     * We have enabled the ability for enterprises to supplement the
+       Windows 10 in S Mode policy to allow traditional Win32 (desktop)
+       apps from Microsoft Intune.
+     * We’re updating the search box in File Explorer to now be powered by
+       Windows Search. This change will help integrate your OneDrive
+       content online with the traditional indexed results. More
+       details here.
+     * We have added the ability for Narrator and other assistive
+       technologies to read and learn where the FN key is located on
+       keyboards and what state it is in (locked versus unlocked).
+
+   Additionally, this update will now be offered if you use Windows
+   Defender Application Guard (WDAG) or containers.
+
+   NOTE: We are continuing to push 19H2 out to 10% of Windows Insiders in
+   the Release Preview ring automatically.
+
+   UPDATE 9/5: We have increased the “seeker” experience for 19H2 in the
+   Release Preview ring to 100%. This means that everyone in the Release
+   Preview ring should see a Windows 10, version 1909 update available If
+   they go to Settings > Update & Security > Windows Update. Insiders who
+   choose to install this update will be updated to 19H2 Build 18363.329.
+   We are also beginning to push 19H2 out to 10% of Windows Insiders in
+   the Release Preview ring as well. This means 10% of Insiders in the
+   Release Preview should see 19H2 Build 18363.329 offered automatically.
+
+   NOTE: IF your PC uses Windows Defender Application Guard (WDAG) or
+   containers, you will not be offered this build of 19H2.
+
+   UPDATE 8/29: We have released 19H1 Build 18362.329 and 19H2 Build
+   18363.329 to Windows Insiders in the Release Preview ring with the
+   following fixes:
+     * We fixed an issue where on devices with LTE capability, some SIM
+       cards from certain carriers would not work correctly.
+     * We fixed several issues resulting in bugchecks on some devices.
+
+   To offer a clarification on these releases – 19H1 and 19H2 share the
+   same servicing content. That means they share the same Cumulative
+   Update package. For the small subset of Windows Insiders (the 10%) in
+   Release Preview who were given the option to install 19H2, an
+   enablement package is downloaded from Windows Update that turns on the
+   19H2 features. This *changes* the build number for the OS from 19H1
+   Build 18362 to 19H2 Build 18363. Because they use the same servicing
+   content, the build revision number (the number that comes after the
+   dot) will always match between 19H1 and 19H2. As we continue to test
+   our servicing packages in the Release Preview ring, Insiders on 19H1
+   and 19H2 will get a single Cumulative Update with the same fixes.
+
+   [ORIGINAL POST FROM 8/26 BELOW]
+
+   Hello Windows Insiders,
+
+   Today, we are beginning to test the throttled approach we intend to use
+   to rollout 19H2 to customers with Windows Insiders using the Release
+   Preview ring. This is not the final 19H2 build that we intend to make
+   available via the Release Preview ring once we are closer to launch.
+
+   For a small subset of Insiders (around 10%) in the Release Preview
+   ring, we have enabled the “seeker” experience for 19H2. For these
+   Insiders, if they go to Settings > Update & Security > Windows Update,
+   they will see that there is a Windows 10, version 1909 update
+   available. They will be able to choose to download and install this
+   update on their PC. After the update finishes, they will be on 19H2
+   Build 18363.327.
+
+   As John Cable mentioned in July, we will be delivering 19H2 to
+   customers using our servicing technology (just like the monthly update
+   process) for customers running the May 2019 Update (19H1). We have been
+   testing 19H2 with Insiders in the Slow ring using the same baseline
+   build number as the May 2019 Update but with an increased revision
+   number like we normally use to show a build has been serviced with a
+   Cumulative Update. However, to designate 19H2 as a feature update, we
+   are revising the baseline build number by one full build.
+
+   Insiders in the Release Preview ring who get 19H2 Build 18363.327 today
+   will not see all the 19H2 features the Slow ring currently has as not
+   all the features have been incorporated into the build yet. Because of
+   the differences between the way the 19H2 updates are packaged between
+   the Slow and Release Preview rings, Insiders in the Slow ring will not
+   be able to switch to the Release Preview ring and get updates yet.
+   Insiders who are thinking of switching rings should stay put for now.
+   We will communicate to Insiders when it is ok to make the switch.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program
+
+     * Contact Us
+     * Terms of Use
+     * Trademarks
+     * Privacy Statement
+
+   © 2019 Microsoft
+   (BUTTON) Menu
+
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge Developer
+     * Business
+
+   Search for: ____________________ (BUTTON) Submit
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   August 20, 2019 09:00 AM
+
+Introducing Microsoft Edge Beta: Be one of the first to try it now
+
+     Joe Belfiore
+
+   Today I’m thrilled to announce that a Beta release for the next version
+   of Microsoft Edge is now available for all supported versions of
+   Windows and macOS. Our goal with Microsoft Edge is to create better web
+   compatibility with better performance for our customers while ensuring
+   less fragmentation of the web for all web developers. Our community has
+   been with us on this journey from the beginning and your feedback is
+   making it possible to rapidly improve. To date, there have been more
+   than one million downloads of our preview builds, across all supported
+   versions of Windows and Mac, from which we have received more than
+   140,000 individual pieces of feedback. Thank you!
+
+   Now that the Beta channel for the next version of Microsoft Edge is
+   available, I’d like to call on all of you to jump in today and be some
+   of the first to download and try it!
+
+   Microsoft Edge Beta Channel: The next chapter
+
+   Beta is the third and final preview channel which will come online
+   before launch. As we release Beta, we remain committed to delivering a
+   high-quality product and nailing the fundamentals of a great browsing
+   experience. Beta represents the most stable preview channel, as
+   features are added to Beta only after they have cleared quality testing
+   in first the Canary channel and then the Dev channel. Major version
+   updates can be expected roughly every six weeks, alongside periodic
+   minor updates for bug fixes and security.
+
+   While still in the preview stage, with this announcement the next
+   version of Microsoft Edge is ready for everyday use. In the Beta today,
+   you will see new ways to personalize your experience, along with
+   support for 14 languages. With new tab page customization, you have the
+   ability to choose what you want to see when you open a new web page by
+   selecting either a Focused, Inspirational or Informational layout. You
+   can also set a dark theme or visit the Microsoft Edge Insider Addons
+   store or other Chromium-based web stores, such as the Chrome Web Store,
+   to add your favorite extensions.
+
+   You can personalize your experience further by enabling tracking
+   prevention, a feature designed to protect you from being tracked by
+   websites that you don’t visit. Today, this feature is behind a flag but
+   you can enable it in the Beta builds. When enabled, a customer will be
+   able to choose from three levels of privacy – Basic, Balanced and
+   Strict. Additional features that we showed at the Build 2019 Conference
+   will come to the Beta channel in the coming months. Collections
+   is already available for testing in the Canary channel today.
+
+   Microsoft Edge is getting even better for business
+
+   Beta also includes many of the commercial features we announced at our
+   Build conference, such as:
+     * Microsoft Search built-in to Bing, which will reduce the time spent
+       looking for things at work by intelligently connecting an
+       organization’s people, documents, sites, locations and
+       conversations.
+     * Internet Explorer mode, which streamlines today’s not-so-great
+       experience of viewing the web through two different browsers by
+       bringing Internet Explorer 11 compatibility directly into Microsoft
+       Edge, creating one simple experience. This
+       is an important feature for the more than 60% of worldwide
+       organizations that use both IE as well as another browser.
+
+     * Windows Defender Application Guard helps to isolate
+       enterprise-defined untrusted sites, protecting the company while
+       employees browse the Internet.
+
+   Additional features, like the enterprise-focused new tab, will be
+   coming soon to the Canary and Dev channels as well.
+
+   Security Bounty Program for Edge Beta
+
+   With this Beta release, we are also announcing that we have extended
+   the Microsoft Edge browser security bounty program to cover the Beta
+   and Dev channels. We welcome researchers to seek out and disclose any
+   high-impact vulnerabilities they may find in these channels and offer
+   rewards up to US$30,000 for eligible vulnerabilities. See the MSRC
+   blog for more details.
+
+   Chromium contributions
+
+   We are also continuing our commitment to be an active contributor to
+   the Chromium community. To date, we’ve contributed more than 1,000
+   commits to the Chromium project, and we look forward to continuing our
+   active engagement with the community in the shared pursuit of making
+   the web better for everyone.
+
+   Time to try! Download Microsoft Edge Beta today
+
+   If you are an enterprise customer, the next version of Microsoft Edge
+   is ready to pilot with either Beta or Dev builds. We invite you to
+   check out the enterprise tab of the Microsoft Edge Insider site,
+   download a build and begin trialing it in your organization.
+
+   If you are a consumer who is comfortable testing a beta, visit the
+   Microsoft Edge Insider site to learn more and download the builds. Your
+   feedback is critical in helping us build the future of Microsoft Edge
+   and we’re excited to hear what you think.
+
+   As with the Canary and Dev builds, if you’re not comfortable using
+   early release software there is nothing for you to do today. Keep using
+   the Microsoft Edge you know and love, and we’ll let you know when it’s
+   time to make the move to the next version of the browser.
+
+   Thanks again to everyone who has continued engaging with us on this
+   journey. Stay tuned for more as we get closer to launch!
+
+   Tags Bing Browser Chromium Collections Internet Explorer Microsoft Edge
+   Microsoft Edge Beta Web Browser
+
+     * Contact Us
+     * Terms of Use
+     * Trademarks
+     * Privacy Statement
+
+   © 2019 Microsoft
+   #prev next
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Xbox Wire
+
+   RSS Facebook Twitter
+
+   August 26, 2019
+
+Testing the throttled delivery approach for 19H2
+
+   By Dona Sarkar
+
+   UPDATE 9/25: Today we have released 19H1 Build for Windows Insiders in
+   Release Preview who are still on 19H1 This is just a small refresh
+   update from Build We plan to enable this update for 19H2 UPDATE 9/23:
+   We have… Read more
+
+   August 26, 2019
+
+Windows 10 Tip: Streamline your tasks using Microsoft To-Do
+
+   By Athima Chansanchai
+
+   Editor’s note: We’re back with the summer batch of weekly Windows 10
+   tips posts, which highlight some of the many helpful features that come
+   with the Windows 10 May 2019 We’ve been working hard behind the scenes
+   to make your… Read more
+
+   August 22, 2019
+
+‘Gears POP!’ now available
+
+   By Athima Chansanchai
+
+   “Gears POP!” is now available to play on iOS, Android and Windows 10 In
+   this game, players collect and upgrade dozens of “Gears of War” heroes
+   and villains, which appear as Funko Pop! vinyl Build the ultimate squad
+   and compete… Read more
+
+   August 21, 2019
+
+Announcing Windows 10 Insider Preview Build 18965
+
+   By Dona Sarkar
+
+   UPDATE 8/22: Hello Windows Insiders, we have released Windows 10
+   Insider Preview Build (KB4517787) to Windows Insiders in the Fast This
+   Cumulative Update is a little bit bigger as it is designed to help us
+   test our servicing pipeline with… Read more
+
+   August 21, 2019
+
+Sign-in and sync with work or school accounts in Microsoft Edge Insider
+builds
+
+   By Avi Vaid
+
+   A top piece of feedback we’ve heard from Microsoft Edge Insiders is
+   that you want to be able to roam your settings and browsing data across
+   your work or school accounts in Microsoft Today, we’re excited to
+   announce that Azure… Read more
+
+   August 21, 2019
+
+IFA 2019: Dell adds new 10th Generation Intel Core processors to XPS 13 and
+Inspiron systems, makes XPS 13 2-in-1 available
+
+   By Athima Chansanchai
+
+   Just before the IFA tradeshow in Berlin, Dell announces the expansion
+   of its consumer portfolio with brand new form factors and the addition
+   of new 10th Generation Intel Core processors, delivering performance
+   gains needed for compute-intensive, demanding, multi-thread workloads
+   –… Read more
+
+   August 21, 2019
+
+Growing Web Template Studio
+
+   By Lea Akkari
+
+   We're excited to announce Version of Microsoft Web Template Studio a
+   cross-platform extension for Visual Studio Code that simplifies and
+   accelerates creating new full-stack web What's Web Template Studio? Web
+   Template Studio (WebTS) is a user-friendly wizard to quickly bootstrap
+   a… Read more
+
+   August 20, 2019
+
+Windows Admin Center Preview 1908
+
+   By Dona Sarkar
+
+   Hello Windows Insiders, Thanks for staying up to date on the Windows
+   Admin Center journey! You’ll start to see visual changes in this
+   version as minor style updates to the Windows Admin Center UI,
+   including a new, rich, entry page… Read more
+
+   August 20, 2019
+
+Collections is now available to test in the Canary channel
+
+   By Microsoft Edge Team
+
+   Today, we’re releasing an experimental preview of Collections for
+   Microsoft We initially demoed this feature during the Microsoft Build
+   2019 conference Microsoft Edge Insiders can now try out an early
+   version of Collections by enabling the experimental flag on Microsoft…
+   Read more
+
+   August 20, 2019
+
+gamescom 2019: HP reveals OMEN X 27 display, new Pavilion Gaming desktop and
+laptop, new services
+
+   By Athima Chansanchai
+
+   At gamescom 2019, HP showed off new displays, desktops and laptops, as
+   well as powerful gaming software and Esports players will be able to
+   level up with the OMEN X 27, a Quad HD (2560 x 1440) resolution display
+   that… Read more
+
+   August 19, 2019
+
+Announcing Windows 10 Insider Preview Build 18362.10014 & 18362.10015 (19H2)
+
+   By Dona Sarkar
+
+   Hello Windows Insiders! Today we are releasing 19H2 Build and Build to
+   Windows Insiders in the Slow As a reminder, we are testing the ability
+   to ship these updates with features turned off by default so that we
+   can then… Read more
+
+Popular Articles
+
+Announcing Windows 10 Insider Preview Build 18970
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18980
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18975
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18985
+
+   Read more
+
+Testing the throttled delivery approach for 19H2
+
+   Read more
+
+     * 1
+     * 2
+     * 3
+     * 4
+     * 5
+     * …
+     * 1,269
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   #alternate alternate
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   RSS Facebook Twitter
+
+   September 10, 2019 11:02 am
+
+Announcing Windows Server vNext Insider Preview Build 18975
+
+   By Dona Sarkar and Brandon LeBlanc
+   Share Tweet Share Share (BUTTON) Skype
+
+   Hello Windows Insiders!
+
+   Today we are pleased to release a new Insider preview build of the
+   Windows Server VNext Semi-Annual Channel editions.
+
+Available Content
+
+     * Windows Server vNext Semi-Annual Preview
+
+   The Server Core Edition is available in the 18 supported Server
+   languages in ISO format and in VHDX format in English only.
+     * Windows Server Core App Compatibility FoD Preview
+     * Windows Server Language Packs
+     * Windows Admin Center 1908
+
+   Symbols are available on the public symbol server – see Update on
+   Microsoft’s Symbol Server blog post and Using the Microsoft Symbol
+   Server. Matching Windows Server container images will be available via
+   Docker Hub. For more information about Windows Server containers and
+   Insider builds, click here.
+
+   The following keys allow for unlimited activations of Windows Server
+   Semi-Annual Channel Previews
+     * Server Standard: V6N4W-86M3X-J77X3-JF6XW-D9PRV
+     * Server Datacenter: B69WH-PRNHK-BXVK3-P9XF7-XD84W
+
+   This Windows Server Preview will expire July 31st, 2020.
+
+How to Download
+
+   Registered Insiders may navigate directly to the Windows Server Insider
+   Preview download page.  See the Additional Downloads dropdown for
+   Windows Admin Center and other supplemental apps and products. If you
+   have not yet registered as an Insider, see GETTING STARTED WITH SERVER
+   on the Windows Insiders for Business portal.
+
+We value your feedback!
+
+   The most important part of a frequent release cycle is to hear what’s
+   working and what needs to be improved, so your feedback is extremely
+   valued. For Windows Server, use your registered Windows 10 Insider
+   device and use the Feedback Hub application. In the app, choose the
+   Windows Server category and then the appropriate subcategory for your
+   feedback. In the title of the Feedback, please indicate the build
+   number you are providing feedback as shown below:
+
+   [Server #####] Title of my feedback
+
+   See Share Feedback on Windows Server via Feedback Hub for specifics. We
+   also encourage you to visit the Windows Server Insiders space on the
+   Microsoft Tech Communities forum to collaborate, share and learn from
+   experts.
+
+   For Windows Admin Center, Send us feedback via UserVoice. We also
+   encourage you to visit the Windows Admin Center space on the Microsoft
+   Tech Communities.
+
+Known Issues
+
+   There is an issue where the App Compatibility FOD cannot be added to
+   the OS .wim image offline using DISM /image method.  After upgrade, it
+   is necessary to reinstall the new FOD using DISM /online method.
+
+Terms of Use
+
+   This is pre-release software – it is provided for use “as-is” and is
+   not supported in production environments. Users are responsible for
+   installing any updates made available from Windows Update.   All
+   pre-release software made available to you via the Windows Server
+   Insider program are governed by the Insider Terms of Use.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program Windows Server
+   Share Tweet Share Share (BUTTON) Skype
+
+Related Posts
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18990
+
+   Read more
+
+Announcing Windows Server vNext Insider Preview Build 18985
+
+   Read more
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   (BUTTON) Menu
+
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge Developer
+     * Business
+
+   Search for: ____________________ (BUTTON) Submit
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   September 25, 2019 11:42 AM
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+     Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders!
+
+   Today we are releasing 19H2 Build 18362.10022 to Windows Insiders in
+   the Slow ring. This build includes the improvements and fixes from
+   KB4515384 as well as general improvements to the overall quality of
+   19H2.
+
+   NOTE: For an explanation as to why the 19H2 build number in the Slow
+   ring is different than the 19H2 build number in the Release Preview
+   ring – see this blog post. We are working to move Insiders in the Slow
+   ring to 19H2 Build 18363 builds.
+
+   We also announced yesterday that we will begin making pre-release
+   Windows 10 feature updates available to IT administrators using Windows
+   Server Update Service (WSUS). For all the details, check out this blog
+   post from Aria Carley. We also announced that Windows Insider Program
+   for Business customers can now request Microsoft Support for Windows 10
+   Version 1909 (19H2) builds in the Release Preview and Slow rings.
+
+   As always, Insiders are encouraged to report any issues they experience
+   with these updates through Feedback Hub.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program
+
+     * Contact Us
+     * Terms of Use
+     * Trademarks
+     * Privacy Statement
+
+   © 2019 Microsoft
+   (BUTTON) Menu
+
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge Developer
+     * Business
+
+   Search for: ____________________ (BUTTON) Submit
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   August 26, 2019 02:07 PM
+
+Testing the throttled delivery approach for 19H2
+
+     Dona Sarkar and Brandon LeBlanc
+
+   UPDATE 9/25: Today we have released 19H1 Build 18362.387 for Windows
+   Insiders in Release Preview who are still on 19H1 only. This is just a
+   small refresh update from Build 18362.385. We plan to enable this
+   update for 19H2 soon.
+
+   UPDATE 9/23: We have released 19H1 Build 18362.385 / 19H2 Build
+   18363.385 (KB4517211) to the Release Preview ring.
+     * Windows Insiders in the Release Preview ring who are on 19H1 Build
+       18362.329 will get 19H1 Build 18362.385 today.
+     * Windows Insiders in the Release Preview ring who are on 19H2 Build
+       18363.329 will get 19H2 Build 18363.385 today.
+
+   As a reminder, 19H1 and 19H2 share the same servicing content. That
+   means they share the same Cumulative Update package.
+
+   For Insiders in the Release Preview ring who are not yet on 19H2, you
+   will continue to see a Windows 10, version 1909 update available If you
+   go to Settings > Update & Security > Windows Update. You can choose to
+   install this update to receive 19H2 Build 18363.385 and future 19H2
+   builds.
+
+   This update contains all the same 19H2 features also available to
+   Insiders in the Slow ring:
+     * Windows containers require matched host and container version. This
+       restricts customers and limits Windows containers from supporting
+       mixed-version container pod scenarios This update includes 5 fixes
+       to address this and allow the host to run down-level containers on
+       up-level for process (Argon) isolation.
+     * A fix to allow OEMs to reduce the inking latency based on the
+       hardware capabilities of their devices rather than being stuck with
+       latency selected on typical hardware configuration by the OS.
+     * Key-rolling or Key-rotation feature enables secure rolling of
+       Recovery passwords on MDM managed AAD devices upon on demand
+       request from Microsoft Intune/MDM tools or upon every time recovery
+       password is used to unlock the BitLocker protected drive. This
+       feature will help prevent accidental recovery password disclosure
+       as part of manual BitLocker drive unlock by users.
+     * A change to enable third-party digital assistants to voice activate
+       above the Lock screen.
+     * You can now quickly create an event straight from the Calendar
+       flyout on the Taskbar. Just click on the date and time at the lower
+       right corner of the Taskbar to open the Calendar flyout and pick
+       your desired date and start typing in the text box – you’ll now see
+       inline options to set a time and location.
+     * The navigation pane on the Start menu now expands when you hover
+       over it with your mouse to better inform where clicking goes.
+     * We have added friendly images to show what is meant by “banner” and
+       “Action Center” when adjusting the notifications on apps in order
+       to make these settings more approachable and understandable.
+     * Notifications settings under Settings > System > Notifications will
+       now default to sorting notification senders by most recently shown
+       notification, rather than sender name. This makes it easier to find
+       and configure frequent and recent senders. We have also added a
+       setting to turn off playing sound when notifications appear.
+     * We now show the options to configure and turn off notifications
+       from an app/website right on the notification, both as a banner and
+       in Action Center.
+     * We have added a “Manage notifications” button to the top of Action
+       Center that launches the main “Notifications & actions” Settings
+       page.
+     * We have added additional debugging capabilities for newer Intel
+       processors. This is only relevant for hardware manufacturers.
+     * We have made general battery life and power efficiency improvements
+       for PCs with certain processors.
+     * A CPU may have multiple “favored” cores (logical processors of the
+       highest available scheduling class). To provide better performance
+       and reliability, we have implemented a rotation policy that
+       distributes work more fairly among these favored cores.
+     * We have enabled Windows Defender Credential Guard for ARM64 devices
+       for additional protection against credential theft for enterprises
+       deploying ARM64 devices in their organizations.
+     * We have enabled the ability for enterprises to supplement the
+       Windows 10 in S Mode policy to allow traditional Win32 (desktop)
+       apps from Microsoft Intune.
+     * We’re updating the search box in File Explorer to now be powered by
+       Windows Search. This change will help integrate your OneDrive
+       content online with the traditional indexed results. More
+       details here.
+     * We have added the ability for Narrator and other assistive
+       technologies to read and learn where the FN key is located on
+       keyboards and what state it is in (locked versus unlocked).
+
+   Additionally, this update will now be offered if you use Windows
+   Defender Application Guard (WDAG) or containers.
+
+   NOTE: We are continuing to push 19H2 out to 10% of Windows Insiders in
+   the Release Preview ring automatically.
+
+   UPDATE 9/5: We have increased the “seeker” experience for 19H2 in the
+   Release Preview ring to 100%. This means that everyone in the Release
+   Preview ring should see a Windows 10, version 1909 update available If
+   they go to Settings > Update & Security > Windows Update. Insiders who
+   choose to install this update will be updated to 19H2 Build 18363.329.
+   We are also beginning to push 19H2 out to 10% of Windows Insiders in
+   the Release Preview ring as well. This means 10% of Insiders in the
+   Release Preview should see 19H2 Build 18363.329 offered automatically.
+
+   NOTE: IF your PC uses Windows Defender Application Guard (WDAG) or
+   containers, you will not be offered this build of 19H2.
+
+   UPDATE 8/29: We have released 19H1 Build 18362.329 and 19H2 Build
+   18363.329 to Windows Insiders in the Release Preview ring with the
+   following fixes:
+     * We fixed an issue where on devices with LTE capability, some SIM
+       cards from certain carriers would not work correctly.
+     * We fixed several issues resulting in bugchecks on some devices.
+
+   To offer a clarification on these releases – 19H1 and 19H2 share the
+   same servicing content. That means they share the same Cumulative
+   Update package. For the small subset of Windows Insiders (the 10%) in
+   Release Preview who were given the option to install 19H2, an
+   enablement package is downloaded from Windows Update that turns on the
+   19H2 features. This *changes* the build number for the OS from 19H1
+   Build 18362 to 19H2 Build 18363. Because they use the same servicing
+   content, the build revision number (the number that comes after the
+   dot) will always match between 19H1 and 19H2. As we continue to test
+   our servicing packages in the Release Preview ring, Insiders on 19H1
+   and 19H2 will get a single Cumulative Update with the same fixes.
+
+   [ORIGINAL POST FROM 8/26 BELOW]
+
+   Hello Windows Insiders,
+
+   Today, we are beginning to test the throttled approach we intend to use
+   to rollout 19H2 to customers with Windows Insiders using the Release
+   Preview ring. This is not the final 19H2 build that we intend to make
+   available via the Release Preview ring once we are closer to launch.
+
+   For a small subset of Insiders (around 10%) in the Release Preview
+   ring, we have enabled the “seeker” experience for 19H2. For these
+   Insiders, if they go to Settings > Update & Security > Windows Update,
+   they will see that there is a Windows 10, version 1909 update
+   available. They will be able to choose to download and install this
+   update on their PC. After the update finishes, they will be on 19H2
+   Build 18363.327.
+
+   As John Cable mentioned in July, we will be delivering 19H2 to
+   customers using our servicing technology (just like the monthly update
+   process) for customers running the May 2019 Update (19H1). We have been
+   testing 19H2 with Insiders in the Slow ring using the same baseline
+   build number as the May 2019 Update but with an increased revision
+   number like we normally use to show a build has been serviced with a
+   Cumulative Update. However, to designate 19H2 as a feature update, we
+   are revising the baseline build number by one full build.
+
+   Insiders in the Release Preview ring who get 19H2 Build 18363.327 today
+   will not see all the 19H2 features the Slow ring currently has as not
+   all the features have been incorporated into the build yet. Because of
+   the differences between the way the 19H2 updates are packaged between
+   the Slow and Release Preview rings, Insiders in the Slow ring will not
+   be able to switch to the Release Preview ring and get updates yet.
+   Insiders who are thinking of switching rings should stay put for now.
+   We will communicate to Insiders when it is ok to make the switch.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program
+
+     * Contact Us
+     * Terms of Use
+     * Trademarks
+     * Privacy Statement
+
+   © 2019 Microsoft
+   (BUTTON) Menu
+
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge Developer
+     * Business
+
+   Search for: ____________________ (BUTTON) Submit
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   August 20, 2019 09:00 AM
+
+Introducing Microsoft Edge Beta: Be one of the first to try it now
+
+     Joe Belfiore
+
+   Today I’m thrilled to announce that a Beta release for the next version
+   of Microsoft Edge is now available for all supported versions of
+   Windows and macOS. Our goal with Microsoft Edge is to create better web
+   compatibility with better performance for our customers while ensuring
+   less fragmentation of the web for all web developers. Our community has
+   been with us on this journey from the beginning and your feedback is
+   making it possible to rapidly improve. To date, there have been more
+   than one million downloads of our preview builds, across all supported
+   versions of Windows and Mac, from which we have received more than
+   140,000 individual pieces of feedback. Thank you!
+
+   Now that the Beta channel for the next version of Microsoft Edge is
+   available, I’d like to call on all of you to jump in today and be some
+   of the first to download and try it!
+
+   Microsoft Edge Beta Channel: The next chapter
+
+   Beta is the third and final preview channel which will come online
+   before launch. As we release Beta, we remain committed to delivering a
+   high-quality product and nailing the fundamentals of a great browsing
+   experience. Beta represents the most stable preview channel, as
+   features are added to Beta only after they have cleared quality testing
+   in first the Canary channel and then the Dev channel. Major version
+   updates can be expected roughly every six weeks, alongside periodic
+   minor updates for bug fixes and security.
+
+   While still in the preview stage, with this announcement the next
+   version of Microsoft Edge is ready for everyday use. In the Beta today,
+   you will see new ways to personalize your experience, along with
+   support for 14 languages. With new tab page customization, you have the
+   ability to choose what you want to see when you open a new web page by
+   selecting either a Focused, Inspirational or Informational layout. You
+   can also set a dark theme or visit the Microsoft Edge Insider Addons
+   store or other Chromium-based web stores, such as the Chrome Web Store,
+   to add your favorite extensions.
+
+   You can personalize your experience further by enabling tracking
+   prevention, a feature designed to protect you from being tracked by
+   websites that you don’t visit. Today, this feature is behind a flag but
+   you can enable it in the Beta builds. When enabled, a customer will be
+   able to choose from three levels of privacy – Basic, Balanced and
+   Strict. Additional features that we showed at the Build 2019 Conference
+   will come to the Beta channel in the coming months. Collections
+   is already available for testing in the Canary channel today.
+
+   Microsoft Edge is getting even better for business
+
+   Beta also includes many of the commercial features we announced at our
+   Build conference, such as:
+     * Microsoft Search built-in to Bing, which will reduce the time spent
+       looking for things at work by intelligently connecting an
+       organization’s people, documents, sites, locations and
+       conversations.
+     * Internet Explorer mode, which streamlines today’s not-so-great
+       experience of viewing the web through two different browsers by
+       bringing Internet Explorer 11 compatibility directly into Microsoft
+       Edge, creating one simple experience. This
+       is an important feature for the more than 60% of worldwide
+       organizations that use both IE as well as another browser.
+
+     * Windows Defender Application Guard helps to isolate
+       enterprise-defined untrusted sites, protecting the company while
+       employees browse the Internet.
+
+   Additional features, like the enterprise-focused new tab, will be
+   coming soon to the Canary and Dev channels as well.
+
+   Security Bounty Program for Edge Beta
+
+   With this Beta release, we are also announcing that we have extended
+   the Microsoft Edge browser security bounty program to cover the Beta
+   and Dev channels. We welcome researchers to seek out and disclose any
+   high-impact vulnerabilities they may find in these channels and offer
+   rewards up to US$30,000 for eligible vulnerabilities. See the MSRC
+   blog for more details.
+
+   Chromium contributions
+
+   We are also continuing our commitment to be an active contributor to
+   the Chromium community. To date, we’ve contributed more than 1,000
+   commits to the Chromium project, and we look forward to continuing our
+   active engagement with the community in the shared pursuit of making
+   the web better for everyone.
+
+   Time to try! Download Microsoft Edge Beta today
+
+   If you are an enterprise customer, the next version of Microsoft Edge
+   is ready to pilot with either Beta or Dev builds. We invite you to
+   check out the enterprise tab of the Microsoft Edge Insider site,
+   download a build and begin trialing it in your organization.
+
+   If you are a consumer who is comfortable testing a beta, visit the
+   Microsoft Edge Insider site to learn more and download the builds. Your
+   feedback is critical in helping us build the future of Microsoft Edge
+   and we’re excited to hear what you think.
+
+   As with the Canary and Dev builds, if you’re not comfortable using
+   early release software there is nothing for you to do today. Keep using
+   the Microsoft Edge you know and love, and we’ll let you know when it’s
+   time to make the move to the next version of the browser.
+
+   Thanks again to everyone who has continued engaging with us on this
+   journey. Stay tuned for more as we get closer to launch!
+
+   Tags Bing Browser Chromium Collections Internet Explorer Microsoft Edge
+   Microsoft Edge Beta Web Browser
+
+     * Contact Us
+     * Terms of Use
+     * Trademarks
+     * Privacy Statement
+
+   © 2019 Microsoft
+   #prev next
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Xbox Wire
+
+   RSS Facebook Twitter
+
+   August 26, 2019
+
+Testing the throttled delivery approach for 19H2
+
+   By Dona Sarkar
+
+   UPDATE 9/25: Today we have released 19H1 Build for Windows Insiders in
+   Release Preview who are still on 19H1 This is just a small refresh
+   update from Build We plan to enable this update for 19H2 UPDATE 9/23:
+   We have… Read more
+
+   August 26, 2019
+
+Windows 10 Tip: Streamline your tasks using Microsoft To-Do
+
+   By Athima Chansanchai
+
+   Editor’s note: We’re back with the summer batch of weekly Windows 10
+   tips posts, which highlight some of the many helpful features that come
+   with the Windows 10 May 2019 We’ve been working hard behind the scenes
+   to make your… Read more
+
+   August 22, 2019
+
+‘Gears POP!’ now available
+
+   By Athima Chansanchai
+
+   “Gears POP!” is now available to play on iOS, Android and Windows 10 In
+   this game, players collect and upgrade dozens of “Gears of War” heroes
+   and villains, which appear as Funko Pop! vinyl Build the ultimate squad
+   and compete… Read more
+
+   August 21, 2019
+
+Announcing Windows 10 Insider Preview Build 18965
+
+   By Dona Sarkar
+
+   UPDATE 8/22: Hello Windows Insiders, we have released Windows 10
+   Insider Preview Build (KB4517787) to Windows Insiders in the Fast This
+   Cumulative Update is a little bit bigger as it is designed to help us
+   test our servicing pipeline with… Read more
+
+   August 21, 2019
+
+Sign-in and sync with work or school accounts in Microsoft Edge Insider
+builds
+
+   By Avi Vaid
+
+   A top piece of feedback we’ve heard from Microsoft Edge Insiders is
+   that you want to be able to roam your settings and browsing data across
+   your work or school accounts in Microsoft Today, we’re excited to
+   announce that Azure… Read more
+
+   August 21, 2019
+
+IFA 2019: Dell adds new 10th Generation Intel Core processors to XPS 13 and
+Inspiron systems, makes XPS 13 2-in-1 available
+
+   By Athima Chansanchai
+
+   Just before the IFA tradeshow in Berlin, Dell announces the expansion
+   of its consumer portfolio with brand new form factors and the addition
+   of new 10th Generation Intel Core processors, delivering performance
+   gains needed for compute-intensive, demanding, multi-thread workloads
+   –… Read more
+
+   August 21, 2019
+
+Growing Web Template Studio
+
+   By Lea Akkari
+
+   We're excited to announce Version of Microsoft Web Template Studio a
+   cross-platform extension for Visual Studio Code that simplifies and
+   accelerates creating new full-stack web What's Web Template Studio? Web
+   Template Studio (WebTS) is a user-friendly wizard to quickly bootstrap
+   a… Read more
+
+   August 20, 2019
+
+Windows Admin Center Preview 1908
+
+   By Dona Sarkar
+
+   Hello Windows Insiders, Thanks for staying up to date on the Windows
+   Admin Center journey! You’ll start to see visual changes in this
+   version as minor style updates to the Windows Admin Center UI,
+   including a new, rich, entry page… Read more
+
+   August 20, 2019
+
+Collections is now available to test in the Canary channel
+
+   By Microsoft Edge Team
+
+   Today, we’re releasing an experimental preview of Collections for
+   Microsoft We initially demoed this feature during the Microsoft Build
+   2019 conference Microsoft Edge Insiders can now try out an early
+   version of Collections by enabling the experimental flag on Microsoft…
+   Read more
+
+   August 20, 2019
+
+gamescom 2019: HP reveals OMEN X 27 display, new Pavilion Gaming desktop and
+laptop, new services
+
+   By Athima Chansanchai
+
+   At gamescom 2019, HP showed off new displays, desktops and laptops, as
+   well as powerful gaming software and Esports players will be able to
+   level up with the OMEN X 27, a Quad HD (2560 x 1440) resolution display
+   that… Read more
+
+   August 19, 2019
+
+Announcing Windows 10 Insider Preview Build 18362.10014 & 18362.10015 (19H2)
+
+   By Dona Sarkar
+
+   Hello Windows Insiders! Today we are releasing 19H2 Build and Build to
+   Windows Insiders in the Slow As a reminder, we are testing the ability
+   to ship these updates with features turned off by default so that we
+   can then… Read more
+
+Popular Articles
+
+Announcing Windows 10 Insider Preview Build 18970
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18980
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18975
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18985
+
+   Read more
+
+Testing the throttled delivery approach for 19H2
+
+   Read more
+
+     * 1
+     * 2
+     * 3
+     * 4
+     * 5
+     * …
+     * 1,269
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   #alternate alternate
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   RSS Facebook Twitter
+
+   September 10, 2019 11:02 am
+
+Announcing Windows Server vNext Insider Preview Build 18975
+
+   By Dona Sarkar and Brandon LeBlanc
+   Share Tweet Share Share (BUTTON) Skype
+
+   Hello Windows Insiders!
+
+   Today we are pleased to release a new Insider preview build of the
+   Windows Server VNext Semi-Annual Channel editions.
+
+Available Content
+
+     * Windows Server vNext Semi-Annual Preview
+
+   The Server Core Edition is available in the 18 supported Server
+   languages in ISO format and in VHDX format in English only.
+     * Windows Server Core App Compatibility FoD Preview
+     * Windows Server Language Packs
+     * Windows Admin Center 1908
+
+   Symbols are available on the public symbol server – see Update on
+   Microsoft’s Symbol Server blog post and Using the Microsoft Symbol
+   Server. Matching Windows Server container images will be available via
+   Docker Hub. For more information about Windows Server containers and
+   Insider builds, click here.
+
+   The following keys allow for unlimited activations of Windows Server
+   Semi-Annual Channel Previews
+     * Server Standard: V6N4W-86M3X-J77X3-JF6XW-D9PRV
+     * Server Datacenter: B69WH-PRNHK-BXVK3-P9XF7-XD84W
+
+   This Windows Server Preview will expire July 31st, 2020.
+
+How to Download
+
+   Registered Insiders may navigate directly to the Windows Server Insider
+   Preview download page.  See the Additional Downloads dropdown for
+   Windows Admin Center and other supplemental apps and products. If you
+   have not yet registered as an Insider, see GETTING STARTED WITH SERVER
+   on the Windows Insiders for Business portal.
+
+We value your feedback!
+
+   The most important part of a frequent release cycle is to hear what’s
+   working and what needs to be improved, so your feedback is extremely
+   valued. For Windows Server, use your registered Windows 10 Insider
+   device and use the Feedback Hub application. In the app, choose the
+   Windows Server category and then the appropriate subcategory for your
+   feedback. In the title of the Feedback, please indicate the build
+   number you are providing feedback as shown below:
+
+   [Server #####] Title of my feedback
+
+   See Share Feedback on Windows Server via Feedback Hub for specifics. We
+   also encourage you to visit the Windows Server Insiders space on the
+   Microsoft Tech Communities forum to collaborate, share and learn from
+   experts.
+
+   For Windows Admin Center, Send us feedback via UserVoice. We also
+   encourage you to visit the Windows Admin Center space on the Microsoft
+   Tech Communities.
+
+Known Issues
+
+   There is an issue where the App Compatibility FOD cannot be added to
+   the OS .wim image offline using DISM /image method.  After upgrade, it
+   is necessary to reinstall the new FOD using DISM /online method.
+
+Terms of Use
+
+   This is pre-release software – it is provided for use “as-is” and is
+   not supported in production environments. Users are responsible for
+   installing any updates made available from Windows Update.   All
+   pre-release software made available to you via the Windows Server
+   Insider program are governed by the Insider Terms of Use.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program Windows Server
+   Share Tweet Share Share (BUTTON) Skype
+
+Related Posts
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18990
+
+   Read more
+
+Announcing Windows Server vNext Insider Preview Build 18985
+
+   Read more
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   (BUTTON) Menu
+
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge Developer
+     * Business
+
+   Search for: ____________________ (BUTTON) Submit
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   September 25, 2019 11:42 AM
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+     Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders!
+
+   Today we are releasing 19H2 Build 18362.10022 to Windows Insiders in
+   the Slow ring. This build includes the improvements and fixes from
+   KB4515384 as well as general improvements to the overall quality of
+   19H2.
+
+   NOTE: For an explanation as to why the 19H2 build number in the Slow
+   ring is different than the 19H2 build number in the Release Preview
+   ring – see this blog post. We are working to move Insiders in the Slow
+   ring to 19H2 Build 18363 builds.
+
+   We also announced yesterday that we will begin making pre-release
+   Windows 10 feature updates available to IT administrators using Windows
+   Server Update Service (WSUS). For all the details, check out this blog
+   post from Aria Carley. We also announced that Windows Insider Program
+   for Business customers can now request Microsoft Support for Windows 10
+   Version 1909 (19H2) builds in the Release Preview and Slow rings.
+
+   As always, Insiders are encouraged to report any issues they experience
+   with these updates through Feedback Hub.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program
+
+     * Contact Us
+     * Terms of Use
+     * Trademarks
+     * Privacy Statement
+
+   © 2019 Microsoft
+   #alternate alternate
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   RSS Facebook Twitter
+
+   August 26, 2019 2:07 pm
+
+Testing the throttled delivery approach for 19H2
+
+   By Dona Sarkar and Brandon LeBlanc
+   Share Tweet Share Share (BUTTON) Skype
+
+   UPDATE 9/25: Today we have released 19H1 Build 18362.387 for Windows
+   Insiders in Release Preview who are still on 19H1 only. This is just a
+   small refresh update from Build 18362.385. We plan to enable this
+   update for 19H2 soon.
+
+   UPDATE 9/23: We have released 19H1 Build 18362.385 / 19H2 Build
+   18363.385 (KB4517211) to the Release Preview ring.
+     * Windows Insiders in the Release Preview ring who are on 19H1 Build
+       18362.329 will get 19H1 Build 18362.385 today.
+     * Windows Insiders in the Release Preview ring who are on 19H2 Build
+       18363.329 will get 19H2 Build 18363.385 today.
+
+   As a reminder, 19H1 and 19H2 share the same servicing content. That
+   means they share the same Cumulative Update package.
+
+   For Insiders in the Release Preview ring who are not yet on 19H2, you
+   will continue to see a Windows 10, version 1909 update available If you
+   go to Settings > Update & Security > Windows Update. You can choose to
+   install this update to receive 19H2 Build 18363.385 and future 19H2
+   builds.
+
+   This update contains all the same 19H2 features also available to
+   Insiders in the Slow ring:
+     * Windows containers require matched host and container version. This
+       restricts customers and limits Windows containers from supporting
+       mixed-version container pod scenarios This update includes 5 fixes
+       to address this and allow the host to run down-level containers on
+       up-level for process (Argon) isolation.
+     * A fix to allow OEMs to reduce the inking latency based on the
+       hardware capabilities of their devices rather than being stuck with
+       latency selected on typical hardware configuration by the OS.
+     * Key-rolling or Key-rotation feature enables secure rolling of
+       Recovery passwords on MDM managed AAD devices upon on demand
+       request from Microsoft Intune/MDM tools or upon every time recovery
+       password is used to unlock the BitLocker protected drive. This
+       feature will help prevent accidental recovery password disclosure
+       as part of manual BitLocker drive unlock by users.
+     * A change to enable third-party digital assistants to voice activate
+       above the Lock screen.
+     * You can now quickly create an event straight from the Calendar
+       flyout on the Taskbar. Just click on the date and time at the lower
+       right corner of the Taskbar to open the Calendar flyout and pick
+       your desired date and start typing in the text box – you’ll now see
+       inline options to set a time and location.
+       Add events directly from the Calendar flyout on your Taskbar!
+     * The navigation pane on the Start menu now expands when you hover
+       over it with your mouse to better inform where clicking goes.
+     * We have added friendly images to show what is meant by “banner” and
+       “Action Center” when adjusting the notifications on apps in order
+       to make these settings more approachable and understandable.
+       We have added friendly images to show what is meant by "banner" and
+       "Action Center" when adjusting the notifications on apps.
+     * Notifications settings under Settings > System > Notifications will
+       now default to sorting notification senders by most recently shown
+       notification, rather than sender name. This makes it easier to find
+       and configure frequent and recent senders. We have also added a
+       setting to turn off playing sound when notifications appear.
+     * We now show the options to configure and turn off notifications
+       from an app/website right on the notification, both as a banner and
+       in Action Center.
+     * We have added a “Manage notifications” button to the top of Action
+       Center that launches the main “Notifications & actions” Settings
+       page.
+     * We have added additional debugging capabilities for newer Intel
+       processors. This is only relevant for hardware manufacturers.
+     * We have made general battery life and power efficiency improvements
+       for PCs with certain processors.
+     * A CPU may have multiple “favored” cores (logical processors of the
+       highest available scheduling class). To provide better performance
+       and reliability, we have implemented a rotation policy that
+       distributes work more fairly among these favored cores.
+     * We have enabled Windows Defender Credential Guard for ARM64 devices
+       for additional protection against credential theft for enterprises
+       deploying ARM64 devices in their organizations.
+     * We have enabled the ability for enterprises to supplement the
+       Windows 10 in S Mode policy to allow traditional Win32 (desktop)
+       apps from Microsoft Intune.
+     * We’re updating the search box in File Explorer to now be powered by
+       Windows Search. This change will help integrate your OneDrive
+       content online with the traditional indexed results. More
+       details here.
+     * We have added the ability for Narrator and other assistive
+       technologies to read and learn where the FN key is located on
+       keyboards and what state it is in (locked versus unlocked).
+
+   Additionally, this update will now be offered if you use Windows
+   Defender Application Guard (WDAG) or containers.
+
+   NOTE: We are continuing to push 19H2 out to 10% of Windows Insiders in
+   the Release Preview ring automatically.
+
+   UPDATE 9/5: We have increased the “seeker” experience for 19H2 in the
+   Release Preview ring to 100%. This means that everyone in the Release
+   Preview ring should see a Windows 10, version 1909 update available If
+   they go to Settings > Update & Security > Windows Update. Insiders who
+   choose to install this update will be updated to 19H2 Build 18363.329.
+   We are also beginning to push 19H2 out to 10% of Windows Insiders in
+   the Release Preview ring as well. This means 10% of Insiders in the
+   Release Preview should see 19H2 Build 18363.329 offered automatically.
+
+   NOTE: IF your PC uses Windows Defender Application Guard (WDAG) or
+   containers, you will not be offered this build of 19H2.
+
+   UPDATE 8/29: We have released 19H1 Build 18362.329 and 19H2 Build
+   18363.329 to Windows Insiders in the Release Preview ring with the
+   following fixes:
+     * We fixed an issue where on devices with LTE capability, some SIM
+       cards from certain carriers would not work correctly.
+     * We fixed several issues resulting in bugchecks on some devices.
+
+   To offer a clarification on these releases – 19H1 and 19H2 share the
+   same servicing content. That means they share the same Cumulative
+   Update package. For the small subset of Windows Insiders (the 10%) in
+   Release Preview who were given the option to install 19H2, an
+   enablement package is downloaded from Windows Update that turns on the
+   19H2 features. This *changes* the build number for the OS from 19H1
+   Build 18362 to 19H2 Build 18363. Because they use the same servicing
+   content, the build revision number (the number that comes after the
+   dot) will always match between 19H1 and 19H2. As we continue to test
+   our servicing packages in the Release Preview ring, Insiders on 19H1
+   and 19H2 will get a single Cumulative Update with the same fixes.
+
+   [ORIGINAL POST FROM 8/26 BELOW]
+
+   Hello Windows Insiders,
+
+   Today, we are beginning to test the throttled approach we intend to use
+   to rollout 19H2 to customers with Windows Insiders using the Release
+   Preview ring. This is not the final 19H2 build that we intend to make
+   available via the Release Preview ring once we are closer to launch.
+
+   For a small subset of Insiders (around 10%) in the Release Preview
+   ring, we have enabled the “seeker” experience for 19H2. For these
+   Insiders, if they go to Settings > Update & Security > Windows Update,
+   they will see that there is a Windows 10, version 1909 update
+   available. They will be able to choose to download and install this
+   update on their PC. After the update finishes, they will be on 19H2
+   Build 18363.327.
+
+   As John Cable mentioned in July, we will be delivering 19H2 to
+   customers using our servicing technology (just like the monthly update
+   process) for customers running the May 2019 Update (19H1). We have been
+   testing 19H2 with Insiders in the Slow ring using the same baseline
+   build number as the May 2019 Update but with an increased revision
+   number like we normally use to show a build has been serviced with a
+   Cumulative Update. However, to designate 19H2 as a feature update, we
+   are revising the baseline build number by one full build.
+
+   Insiders in the Release Preview ring who get 19H2 Build 18363.327 today
+   will not see all the 19H2 features the Slow ring currently has as not
+   all the features have been incorporated into the build yet. Because of
+   the differences between the way the 19H2 updates are packaged between
+   the Slow and Release Preview rings, Insiders in the Slow ring will not
+   be able to switch to the Release Preview ring and get updates yet.
+   Insiders who are thinking of switching rings should stay put for now.
+   We will communicate to Insiders when it is ok to make the switch.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program
+   Share Tweet Share Share (BUTTON) Skype
+
+Related Posts
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18990
+
+   Read more
+
+Announcing Windows Server vNext Insider Preview Build 18985
+
+   Read more
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   #alternate alternate
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   RSS Facebook Twitter
+
+   August 20, 2019 9:00 am
+
+Introducing Microsoft Edge Beta: Be one of the first to try it now
+
+   By Joe Belfiore / Corporate Vice President, Windows
+   Share Tweet Share Share (BUTTON) Skype
+
+   Screenshot of Microsoft Edge Beta screen
+
+   Today I’m thrilled to announce that a Beta release for the next version
+   of Microsoft Edge is now available for all supported versions of
+   Windows and macOS. Our goal with Microsoft Edge is to create better web
+   compatibility with better performance for our customers while ensuring
+   less fragmentation of the web for all web developers. Our community has
+   been with us on this journey from the beginning and your feedback is
+   making it possible to rapidly improve. To date, there have been more
+   than one million downloads of our preview builds, across all supported
+   versions of Windows and Mac, from which we have received more than
+   140,000 individual pieces of feedback. Thank you!
+
+   Now that the Beta channel for the next version of Microsoft Edge is
+   available, I’d like to call on all of you to jump in today and be some
+   of the first to download and try it!
+
+   Microsoft Edge Beta Channel: The next chapter
+
+   Illustration showing construction of the Microsoft Edge Beta browser on
+   a laptop
+
+   Beta is the third and final preview channel which will come online
+   before launch. As we release Beta, we remain committed to delivering a
+   high-quality product and nailing the fundamentals of a great browsing
+   experience. Beta represents the most stable preview channel, as
+   features are added to Beta only after they have cleared quality testing
+   in first the Canary channel and then the Dev channel. Major version
+   updates can be expected roughly every six weeks, alongside periodic
+   minor updates for bug fixes and security.
+
+   While still in the preview stage, with this announcement the next
+   version of Microsoft Edge is ready for everyday use. In the Beta today,
+   you will see new ways to personalize your experience, along with
+   support for 14 languages. With new tab page customization, you have the
+   ability to choose what you want to see when you open a new web page by
+   selecting either a Focused, Inspirational or Informational layout. You
+   can also set a dark theme or visit the Microsoft Edge Insider Addons
+   store or other Chromium-based web stores, such as the Chrome Web Store,
+   to add your favorite extensions.
+
+   You can personalize your experience further by enabling tracking
+   prevention, a feature designed to protect you from being tracked by
+   websites that you don’t visit. Today, this feature is behind a flag but
+   you can enable it in the Beta builds. When enabled, a customer will be
+   able to choose from three levels of privacy – Basic, Balanced and
+   Strict. Additional features that we showed at the Build 2019 Conference
+   will come to the Beta channel in the coming months. Collections
+   is already available for testing in the Canary channel today.
+
+   Microsoft Edge is getting even better for business
+
+   Beta also includes many of the commercial features we announced at our
+   Build conference, such as:
+     * Microsoft Search built-in to Bing, which will reduce the time spent
+       looking for things at work by intelligently connecting an
+       organization’s people, documents, sites, locations and
+       conversations.
+     * Internet Explorer mode, which streamlines today’s not-so-great
+       experience of viewing the web through two different browsers by
+       bringing Internet Explorer 11 compatibility directly into Microsoft
+       Edge, creating one simple experience. This
+       is an important feature for the more than 60% of worldwide
+       organizations that use both IE as well as another browser.
+
+     * Windows Defender Application Guard helps to isolate
+       enterprise-defined untrusted sites, protecting the company while
+       employees browse the Internet.
+
+   Additional features, like the enterprise-focused new tab, will be
+   coming soon to the Canary and Dev channels as well.
+
+   Security Bounty Program for Edge Beta
+
+   With this Beta release, we are also announcing that we have extended
+   the Microsoft Edge browser security bounty program to cover the Beta
+   and Dev channels. We welcome researchers to seek out and disclose any
+   high-impact vulnerabilities they may find in these channels and offer
+   rewards up to US$30,000 for eligible vulnerabilities. See the MSRC
+   blog for more details.
+
+   Chromium contributions
+
+   We are also continuing our commitment to be an active contributor to
+   the Chromium community. To date, we’ve contributed more than 1,000
+   commits to the Chromium project, and we look forward to continuing our
+   active engagement with the community in the shared pursuit of making
+   the web better for everyone.
+
+   Time to try! Download Microsoft Edge Beta today
+
+   If you are an enterprise customer, the next version of Microsoft Edge
+   is ready to pilot with either Beta or Dev builds. We invite you to
+   check out the enterprise tab of the Microsoft Edge Insider site,
+   download a build and begin trialing it in your organization.
+
+   If you are a consumer who is comfortable testing a beta, visit the
+   Microsoft Edge Insider site to learn more and download the builds. Your
+   feedback is critical in helping us build the future of Microsoft Edge
+   and we’re excited to hear what you think.
+
+   Screenshot of Microsoft Edge Insider Channels
+
+   As with the Canary and Dev builds, if you’re not comfortable using
+   early release software there is nothing for you to do today. Keep using
+   the Microsoft Edge you know and love, and we’ll let you know when it’s
+   time to make the move to the next version of the browser.
+
+   Thanks again to everyone who has continued engaging with us on this
+   journey. Stay tuned for more as we get closer to launch!
+
+   Tags Bing Browser Chromium Collections Internet Explorer Microsoft Edge
+   Microsoft Edge Beta Web Browser
+   Share Tweet Share Share (BUTTON) Skype
+
+Mentioned in this article
+
+   Microsoft Edge
+
+Microsoft Edge
+
+   Microsoft Edge is a modern web browser designed for faster, safer
+   browsing on Windows 10. Get more done on the web with built-in tools
+   for notetaking, reading and more.
+
+   Read more
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   #next
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Xbox Wire
+
+   RSS Facebook Twitter
+
+   Nicole Dezen at IFA 2019
+
+   September 5, 2019 Windows Experience Blog
+
+The holidays come early at IFA 2019
+
+   By Nicole Dezen
+   Read more
+
+   September 5, 2019 Windows Experience Blog
+
+Early access begins for ‘Gears 5’ Ultimate Edition owners and Xbox Game Pass
+Ultimate members
+
+   By Athima Chansanchai
+
+   “Gears 5” will be available 5 immediately following the television
+   debut of its launch ad during the NFL season This begins the four-day
+   early access period… Read more
+
+   September 5, 2019 Windows Experience Blog
+
+IFA 2019: Lenovo introduces smart features on new and refreshed Yoga laptops
+
+   By Athima Chansanchai
+
+   At this week’s IFA event in Berlin, Lenovo introduced exclusive smart
+   features that adapt to users’ performance needs on the new 14-inch Yoga
+   C940 and Yoga S740: Super Resolution upscales video up to FHD 1080p on
+   Windows Media Player [1]… Read more
+
+   Photo of the Razer Blade Stealth 13, open and facing right with
+   colorful waves on the screen, green backlit keyboard
+
+   September 3, 2019 Windows Experience Blog
+
+IFA 2019: Razer announces ‘world’s first gaming ultrabook’
+
+   By Athima Chansanchai
+
+   At this week’s IFA tradeshow in Berlin, Razer announced their new Razer
+   Blade Stealth 13 (below) with NVIDIA GeForce GTX 1650 graphics, which
+   the company is calling the “world’s first gaming ” Powered by Intel’s
+   new 10th Generation processor, it… Read more
+
+   Screenshot of Microsoft Edge Beta screen
+
+   August 20, 2019 Windows Experience Blog
+
+Introducing Microsoft Edge Beta: Be one of the first to try it now
+
+   By Joe Belfiore
+
+   Today I’m thrilled to announce that a Beta release for the next version
+   of Microsoft Edge is now available for all supported versions of
+   Windows and Our goal… Read more
+
+   Acer ConceptD
+
+   September 4, 2019 Windows Experience Blog
+
+IFA 2019: Acer shows off ConceptD Pro family of notebooks, the Predator
+Triton 300 gaming notebook and more
+
+   By Athima Chansanchai
+
+   At IFA 2019, Acer announced its ConceptD Pro series notebook family
+   with NVIDIA Quadro GPUs, built for peak performance and hours of
+   uninterrupted The Pro series with Windows 10 meets the stringent
+   requirements of applications in virtual reality, artificial
+   intelligence… Read more
+
+   September 25, 2019 Windows Experience Blog
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+   By Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders! Today we are releasing 19H2 Build to Windows
+   Insiders in the Slow This build includes the improvements and fixes
+   from KB4515384 as… Read more
+
+   September 24, 2019 Windows Experience Blog
+
+Announcing Windows 10 Insider Preview Build 18990
+
+   By Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders, today we’re releasing Windows 10 Insider
+   Preview Build 18990 (20H1) to Windows Insiders in the Fast IMPORTANT:
+   As is normal with pre-release… Read more
+
+   September 24, 2019 Windows Developer Blog
+
+Windows 10 SDK Preview Build 18985 available now!
+
+   By Kevin Larkin
+
+   Today, we released a new Windows 10 Preview Build of the SDK to be used
+   in conjunction with Windows 10 Insider Preview (Build 18985 or
+   greater). The… Read more
+
+   September 24, 2019 Windows Experience Blog
+
+Announcing Windows Server vNext Insider Preview Build 18985
+
+   By Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders! Today we are pleased to release a new Insider
+   preview build of the Windows Server VNext Semi-Annual Channel Available
+   Content Windows Server… Read more
+
+   September 23, 2019 Windows Experience Blog
+
+Windows 10 Tip: Text suggestions expands language support
+
+   By Athima Chansanchai
+
+   Editor’s note: We’re back with the latest batch of weekly Windows 10
+   tips posts, which highlight some of the many helpful features that come
+   with… Read more
+
+   September 19, 2019 Windows Experience Blog
+
+Announcing Windows 10 Insider Preview Build 18985
+
+   By Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders, today we’re releasing Windows 10 Insider
+   Preview Build 18985 (20H1) to Windows Insiders in the Fast IMPORTANT:
+   As is normal with pre-release… Read more
+
+   September 17, 2019 Windows Developer Blog
+
+Windows 10 SDK Preview Build 18980 available now!
+
+   By Kevin Larkin
+
+   Today, we released a new Windows 10 Preview Build of the SDK to be used
+   in conjunction with Windows 10 Insider Preview (Build 18980 or
+   greater). The… Read more
+
+   September 17, 2019 Windows Experience Blog
+
+Windows Admin Center Preview 1909
+
+   By Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders! Thanks for staying up to date on the Windows
+   Admin Center journey! This release contains incremental changes and
+   quality improvements for the… Read more
+
+   September 16, 2019 Windows Developer Blog
+
+New Ways to do Screen Capture
+
+   By Kelly Renner
+
+   Screen capture supports scenarios like screen recording for eLearning,
+   screen sharing for collaboration, game streaming, remote diagnostics,
+   and taking screen shots for visual comparison or… Read more
+
+   September 11, 2019 Windows Experience Blog
+
+Announcing Windows 10 Insider Preview Build 18980
+
+   By Dona Sarkar and Brandon LeBlanc
+
+   Hello Windows Insiders, today we’re releasing Windows 10 Insider
+   Preview Build 18980 (20H1) to Windows Insiders in the Fast IMPORTANT:
+   As is normal with pre-release… Read more
+
+   September 10, 2019 Windows Developer Blog
+
+Windows 10 SDK Preview Build 18975 available now!
+
+   By Kevin Larkin
+
+   Today, we released a new Windows 10 Preview Build of the SDK to be used
+   in conjunction with Windows 10 Insider Preview (Build 18975 or
+   greater). The… Read more
+
+     * 1
+     * 2
+     * 3
+     * …
+     * 1,269
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   #prev next
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Xbox Wire
+
+   RSS Facebook Twitter
+
+   September 10, 2019
+
+Announcing Windows Server vNext Insider Preview Build 18975
+
+   By Dona Sarkar
+
+   Hello Windows Insiders! Today we are pleased to release a new Insider
+   preview build of the Windows Server VNext Semi-Annual Channel Available
+   Content Windows Server vNext Semi-Annual Preview The Server Core
+   Edition is available in the 18 supported Server languages… Read more
+
+   September 6, 2019
+
+Announcing Windows 10 Insider Preview Build 18975
+
+   By Dona Sarkar
+
+   Hello Windows Insiders, today we’re releasing Windows 10 Insider
+   Preview Build 18975 (20H1) to Windows Insiders in the Fast    NOTE: If
+   you have Centennial Office installed from the Microsoft Store, you
+   won’t be offered this IMPORTANT: As is normal with pre-release builds,
+   these builds may… Read more
+
+   September 5, 2019
+
+Announcing Windows 10 Insider Preview Build 18362.10019 (19H2)
+
+   By Dona Sarkar
+
+   Hello Windows Insiders! Today we are releasing 19H2 Build to ALL
+   Windows Insiders in the Slow IF you received Build with 19H2 features
+   turned OFF by default on 8/19 – you WILL receive Build today with all
+   19H2 features turned… Read more
+
+   September 4, 2019
+
+IFA 2019: ASUS announces full lineup of ProArt series, ROG creator-ready
+laptops for gamers and more
+
+   By Athima Chansanchai
+
+   At the IFA tradeshow in Berlin, ASUS celebrated its 30th anniversary
+   and unveiled a lineup of digital solutions aimed at content creators
+   and To meet the evolving needs of professional workflows in traditional
+   content-creation fields, such as photography and videography,… Read
+   more
+
+   September 3, 2019
+
+Windows 10 SDK Preview Build 18970 available now!
+
+   By Kevin Larkin
+
+   Today, we released a new Windows 10 Preview Build of the SDK to be used
+   in conjunction with Windows 10 Insider Preview (Build 18970 or
+   greater). The Preview SDK Build 18970 contains bug fixes and under
+   development changes to the API surface… Read more
+
+   August 30, 2019
+
+Update on removing Flash from Microsoft Edge and Internet Explorer
+
+   By Microsoft Edge Team
+
+   In 2017, we published a roadmap to remove Adobe Flash from Microsoft
+   Edge and Internet Explorer by Since that post, we announced our intent
+   to build Microsoft Edge on the Chromium open source In this post, we
+   will provide an… Read more
+
+   August 29, 2019
+
+Announcing Windows 10 Insider Preview Build 18970
+
+   By Dona Sarkar
+
+   UPDATE 8/30: Windows Insiders in Skip Ahead will see this update a
+   little differently than Insiders in the Fast Skip Ahead will first get
+   Build 18970, and then they'll get the Cumulative Update Build
+   (KB4518974). Hello Windows Insiders, today we’re… Read more
+
+   August 29, 2019
+
+IFA 2019: Lenovo unveils consumer lineup loaded with intelligent features
+
+   By Athima Chansanchai
+
+   Ahead of the annual IFA consumer electronics show, Lenovo unveils its
+   latest consumer lineup for Here’s a first look at the intelligent
+   features set to debut on these new Lenovo laptops, monitors and an
+   all-in-one Two new 13-inch Windows 10… Read more
+
+   August 27, 2019
+
+‘The Bard’s Tale IV: Director’s Cut’ arrives on PC and Xbox One
+
+   By Athima Chansanchai
+
+   The definitive edition of “The Bard’s Tale IV” from inXile
+   entertainment arrives on Xbox One and PC with Xbox Game Return to Skara
+   Brae to defeat a newly awakened In this upgraded and extended version
+   of the acclaimed 2018 RPG… Read more
+
+   August 27, 2019
+
+Windows 10 SDK Preview Build 18965 available now!
+
+   By Kevin Larkin
+
+   Today, we released a new Windows 10 Preview Build of the SDK to be used
+   in conjunction with Windows 10 Insider Preview (Build 18965 or
+   greater). The Preview SDK Build 18965 contains bug fixes and under
+   development changes to the API surface… Read more
+
+   August 27, 2019
+
+Announcing Windows Server vNext Insider Preview Build 18965
+
+   By Dona Sarkar
+
+   Hello Windows Insiders! Today we are pleased to release a new Insider
+   preview build of the Windows Server VNext Semi-Annual Channel Available
+   Content Windows Server vNext Semi-Annual Preview The Server Core
+   Edition is available in the 18 supported Server languages… Read more
+
+Popular Articles
+
+Announcing Windows 10 Insider Preview Build 18970
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18980
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18975
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18985
+
+   Read more
+
+Testing the throttled delivery approach for 19H2
+
+   Read more
+
+     * 1
+     * 2
+     * 3
+     * 4
+     * …
+     * 1,269
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019
+   #alternate alternate
+
+   Skip to Content Skip to Footer
+
+   Get the Bing + MSN extension Breaking news from around the world Get
+   the Bing + MSN extension
+   (BUTTON) No thanks Add it now
+   This site uses cookies for analytics, personalized content and ads. By
+   continuing to browse this site, you agree to this use. Learn more
+   Skip to main content
+
+   (BUTTON) (BUTTON) Microsoft
+   (BUTTON) Windows Blogs (BUTTON)
+   Windows Blogs
+   (BUTTON) Windows Blogs
+
+     * Home
+     * Windows 10
+     * Devices
+     * Windows Developer
+     * Microsoft Edge
+     * Microsoft 365
+     * (BUTTON) More
+
+     * (BUTTON) All Microsoft
+          +
+               o Office
+               o Windows
+               o Surface
+               o Xbox
+               o Deals
+               o Support
+          + (BUTTON) Software
+               o Windows apps
+               o OneDrive
+               o Outlook
+               o Skype
+               o OneNote
+          + (BUTTON) PCs & Devices
+               o PCs & tablets
+               o Accessories
+          + (BUTTON) Entertainment
+               o Xbox games
+               o PC games
+               o Windows digital games
+               o Movies & TV
+               o Books
+          + (BUTTON) Business
+               o Microsoft Azure
+               o Microsoft Dynamics 365
+               o Microsoft 365
+               o Microsoft Industry
+               o Data platform
+               o Microsoft Advertising
+               o Licensing
+          + (BUTTON) Developer & IT
+               o .NET
+               o Visual Studio
+               o Windows Server
+               o Windows Dev Center
+               o Docs
+          + (BUTTON) Other
+               o Microsoft Store
+               o Microsoft Rewards
+               o Free downloads & security
+               o Education
+               o Store locations
+               o Gift cards
+          + View Sitemap
+
+   ____________________ (BUTTON) Search
+
+   (BUTTON) Cancel
+
+     * Windows Insider Program
+     * Windows 10 Tips
+     * Mixed Reality
+
+   RSS Facebook Twitter
+
+   September 25, 2019 11:42 am
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+   By Dona Sarkar and Brandon LeBlanc
+   Share Tweet Share Share (BUTTON) Skype
+
+   Hello Windows Insiders!
+
+   Today we are releasing 19H2 Build 18362.10022 to Windows Insiders in
+   the Slow ring. This build includes the improvements and fixes from
+   KB4515384 as well as general improvements to the overall quality of
+   19H2.
+
+   NOTE: For an explanation as to why the 19H2 build number in the Slow
+   ring is different than the 19H2 build number in the Release Preview
+   ring – see this blog post. We are working to move Insiders in the Slow
+   ring to 19H2 Build 18363 builds.
+
+   We also announced yesterday that we will begin making pre-release
+   Windows 10 feature updates available to IT administrators using Windows
+   Server Update Service (WSUS). For all the details, check out this blog
+   post from Aria Carley. We also announced that Windows Insider Program
+   for Business customers can now request Microsoft Support for Windows 10
+   Version 1909 (19H2) builds in the Release Preview and Slow rings.
+
+   As always, Insiders are encouraged to report any issues they experience
+   with these updates through Feedback Hub.
+
+   Thanks,
+   Dona and Brandon
+
+   Tags Windows Insider Program
+   Share Tweet Share Share (BUTTON) Skype
+
+Related Posts
+
+Announcing Windows 10 Insider Preview Build 18362.10022 (19H2)
+
+   Read more
+
+Announcing Windows 10 Insider Preview Build 18990
+
+   Read more
+
+Announcing Windows Server vNext Insider Preview Build 18985
+
+   Read more
+
+What's new
+
+     * Surface Pro 6
+     * Surface Laptop 2
+     * Surface Go
+     * Xbox One X
+     * Xbox One S
+     * VR & mixed reality
+     * Windows 10 apps
+     * Office apps
+
+Microsoft Store
+
+     * Account profile
+     * Download Center
+     * Microsoft Store support
+     * Returns
+     * Order tracking
+     * Store locations
+     * Buy online, pick up in store
+
+Education
+
+     * Microsoft in education
+     * Office for students
+     * Office 365 for schools
+     * Deals for students & parents
+     * Microsoft Azure in education
+
+Enterprise
+
+     * Azure
+     * AppSource
+     * Automotive
+     * Government
+     * Healthcare
+     * Manufacturing
+     * Financial services
+     * Retail
+
+Developer
+
+     * Microsoft Visual Studio
+     * Windows Dev Center
+     * Developer Network
+     * TechNet
+     * Microsoft developer program
+     * Channel 9
+     * Office Dev Center
+     * Microsoft Garage
+
+Company
+
+     * Careers
+     * About Microsoft
+     * Company news
+     * Privacy at Microsoft
+     * Investors
+     * Diversity and inclusion
+     * Accessibility
+     * Security
+
+     * Sitemap
+     * Contact Microsoft
+     * Privacy & cookies
+     * Terms of use
+     * Trademarks
+     * Safety & eco
+     * About our ads
+     * © Microsoft 2019

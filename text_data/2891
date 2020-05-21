@@ -1,0 +1,1591 @@
+   #Robin Herzog : Grow with data
+
+   Robin Herzog : Grow with data
+     * Home
+     * Conact
+
+   Subscribe
+
+   7 May 2017
+
+16 leçons que j’ai apprises après un an de Mixpanel
+
+   Mixpanel est une plateforme d'analytics incroyable.
+
+   Grâce à Mixpanel, vous êtes capable de répondre à des questions
+   complexes sur votre produit sans l'intervention de votre développeur
+   après l'implémentation de la plateforme.
+
+   Qui sont mes utilisateurs ? Où s'arrêtent-ils dans mon funnel de sign
+   up ? Sont-ils loyaux ? Quelle fonctionnalité est la plus utilisée par
+   mes utilisateurs acquis par Twitter qui ne sont pas premium ?
+
+   Voilà des exemples de questions auxquelles Mixpanel répondra en un
+   instant.
+
+   Après avoir utilisé Mixpanel pendant une année entière, je vous livre
+   toutes les erreurs que j'ai commises et les leçons apprises à ne pas
+   reproduire chez vous.
+
+   Dans cet article je vais employer 4 termes Mixpanel :
+     * Evénement: Donnée envoyée à Mixpanel lors d'une action exécutée
+       dans votre app
+     * Propertie : Paramètre rattaché à un événement qui le précise.
+     * Super propertie : Propertie a définir qu'une fois qui sera appliqué
+       à tous vos événements futurs
+     * People propertie : Donnée sur votre utilisateur connecté enregistré
+       dans Mixpanel
+
+Connaitre ses objectifs business avant de se lancer
+
+   L'outil n'est pas magique. Il ne vous donnera pas de réponses sans rien
+   faire avant. La première étape avant d'utiliser Mixpanel est de savoir
+   clairement pourquoi vous l'utilisez. Fixez-vous des objectifs que vous
+   voulez atteindre grâce à Mixpanel. Augmenter votre chiffre d'affaires,
+   améliorer votre rétention, améliorer votre tunnel de conversion...
+
+   Un objectif clair vous permettra de savoir quoi mesurer et où.
+
+Faire un plan de tracking réfléchi et précis
+
+   Le plan de tracking est la base de Mixpanel. Il contient tous les
+   événements à coder et permet au développeur d'en avoir la liste pour le
+   guider. J'utilise google sheet pour créer ce plan.
+
+   Je l'ai spécialement conçu pour les développeurs. Il est précis et
+   adapté à eux pour leur rendre la tâche plus facile.
+
+   Téléchargez ici le plan de tracking
+
+   Tracking plan
+
+   J'ai mélangé plusieurs exemples d'événement Mixpanel dans ce tableau.
+     * Colonne A : (Date added) Pour savoir quand vous avez ajouté
+       l'événement. Il permet de garder une trace et de suivre l'évolution
+       lorsque vous rajouterez des événements dans le futur.
+     * Colonne B : (Trigger) Très importante. Elle doit décrire de façon
+       très précise quand exactement l'événement doit se produire. Au
+       click, à l'affichage d'une vue, au passage de la souris sur un
+       élément... Prenez le temps de décrire votre événement. Les
+       développeurs selon les plateformes n'ont pas les même trigger en
+       tête pour une action.
+     * Colonne C : C'est le nom de l'événement.
+     * Colonne D : Elle contient tous les noms des properties de
+       l'événement.
+     * Colonne E : Il s'agit des valeurs des properties. Le plus souvent
+       ce sont des variables.
+     * Colonne F : Nom de la people properties
+     * Colonne G : La valeur de la people properties
+     * Colonne H : Nom de la super properties
+     * Colonne I : Valeur de la super properties
+
+   Les trois dernières colonnes permettent de cocher si l'événement est
+   implémenter ou non.
+
+   Une colonne que vous pouvez rajouter est la "WHY". Je ne l'utilise pas,
+   mais permets d'être clair dans son raisonnement et expliquer à vos
+   développeurs l'utilité de cette ligne.
+
+   Comme mise en forme, j'ai choisi de séparer chaque événement par une
+   barre grise. Ainsi si vous devez rajouter un événement au milieu plus
+   tard, ça ne pose pas de problème.
+
+   D'autres exemples sont présents ici.
+
+Intégrer les peoples properties standard de Mixpanel
+
+   Lors de la création d'un compte, si vous utilisez bien Mixpanel, vous
+   serez amené à créer son profil automatiquement dans Mixpanel. Il est
+   important d'utiliser les properties standards de Mixpanel pour avoir un
+   affichage normal dans l'UI de Mixpanel. En voici la liste :
+     * $first_name
+     * $last_name
+     * $name
+     * $email
+     * $phone : Optionnel
+     * $created : [date]
+
+   Ne les oubliez pas, car cela rend l'utilisation de "Explore" presque
+   inutilisable.
+
+Pensez à des events properties et peoples properties pas si évidents au début
+
+   Lorsque vous réfléchissez à votre plan de tracking, vous ne pensez pas
+   toujours à tout ce qui peut être tracké. Attrapez un maximum de
+   properties en event et people !
+
+   Exemple d'event properties :
+     * userId : id de votre user par rapport à votre bdd
+     * Premium : true / false
+     * Option A : true / false
+     * Ad Campaign : "FB-01"
+     * Source signup : string
+     * Logged : true / false
+
+   Device : iOS / Android / Web
+   (super propertie)
+   Mixpanel n'intègre pas de segmentation par device facilement
+   exploitable. Rajoutez la propertie si besoin.
+
+   Exemple de people properties :
+     * of login : increment
+     * Swipe left : increment
+     * Swipe right : increment
+     * Swipe total : number
+     * Job : string
+     * Last purchase : date
+     * of purchase :increment
+     * average price of purchase : number
+     * of item buyed : increment
+     * Points earned : number
+     * Games played : increment
+
+   J'ai volontairement mis une liste longue sans trop de sens pour vous
+   donner un maximum de données. Je le répète, pensez à tout.
+
+   Notez également que Mixpanel intègre nativement des properties tels que
+   l'OS, l'app version, le pays, etc... disponible là.
+
+Choisir la bonne nomenclature pour ses événements
+
+   Mes événements et people properties commencent tous par une majuscule
+   et les mots sont séparés par des espaces : Event id ; Email ; # of
+   message sent... Je préfère adopter une nomenclature humaine plutôt que
+   code. La navigation dans Mixpanel y sera plus facile.
+
+   Un bon événement, c'est celui qui peut être segmenté.
+
+   Exemple : Sur mon site j'ai plusieurs boutons de partages. L'un pour
+   Facebook, l'autre pour Linkedin et le dernier pour Twitter, et je veux
+   les traquer.
+
+   Deux choix s'offrent à moi :
+     * Je crée un événement distinct par boutons : "Share by Facebook",
+       "Share by Twitter"...
+     * Je crée un événement "Partage" et j'y ajoute la propriété "Medium".
+
+   La bonne solution est la 2. Je réduis le nombre d'événements et je peux
+   savoir combien de partage il y a eu au total puis segmenter plus en
+   profondeur. C'est également plus scalabe car je peux y rajouter un
+   medium sans problème.
+
+Correctement organiser ses événements Mixpanel
+
+   C'est la parti la plus compliquée. Prenez le temps de le faire et
+   réfléchissez bien avant de compléter le tableau. Pensez à
+   l'implémentation de l'événement et de son utilisation plus tard dans
+   Mixpanel.
+
+   Il y a plusieurs façons d'organiser vos événements, voici la mienne :
+
+   Dans mon plan de tracking, je suis absolument tout ce qui est possible.
+   De l'affichage d'une vue, à la pression sur un bouton de logout, au
+   submit d'un formulaire... C'est un choix que j'ai fait. Ainsi, je peux
+   anticiper des reports complets sur Mixpanel et des funnels longs pour
+   vraiment savoir où s'arrêtent mes utilisateurs. Attention à ne pas
+   aller dans l'abus, le tracking doit garder un minium de sens.
+
+   Un bon événement est celui qui aura un impact sur votre décisions
+
+   Le premier réflexe est de créer un événement distinct par événement
+   effectué dans l'app. Je n'ai pas suivi cette idée. Pour ne pas être
+   englouti par des centaines d'événements Mixpanel j'ai pris la décision
+   suivante :
+
+   Je regroupe les événements par catégorie de fonctionnalités : Scan,
+   Chat, Sign up, Cart, Buy... Puis, je précise pour chacun des événements
+   l'action exécutée en event properties.
+
+   Event : Chat ; Action : View chat
+   Event : Chat ; Action : Create conversation
+
+   Chat
+
+   Ainsi, je réduis le nombre d'événements visible dans Mixpanel et y
+   accède grâce à la segmentation.
+
+   Il y a un inconvénient à utiliser cette méthode. Mixpanel et d'autres
+   outils comme Amplitude se basent sur des événements pour faire leurs
+   analyses et non des properties d'événements.
+
+   Je m'explique : Signal, fonctionnalité que j'explique plus bas, a pour
+   but de vous dire "voilà, quand cet événement est exécuté par
+   l'utilisateur, il reste loyal". Le problème est que si vous regroupez
+   par catégorie comme je le fais, Mixpanel sera moins précis et ne pourra
+   pas dire "oui, c'est cet événement qui est le bon". Aujourd'hui, il n'y
+   a pas de solution si vous utilisez ma méthode.
+
+   L'autre méthode que met en avant Mixpanel dans ses exemples de tracking
+   plan est de rester en surface. Ne pas mesurer absolument tout, mais
+   uniquement les événements vraiment important pour vous. Vous limitez la
+   data, mais c'est plus adapté à l'analyse des données par Mixpanel. Pour
+   savoir quoi mesurer dans ce cas, n'utilisez que des événements qui
+   peuvent avoir un impact sur votre business tel que "Acheter", "Play
+   video", "Watch video". Pour en faire la liste, créez votre funnel qui
+   répond à votre problématique et attachez-y les événements associés.
+
+Vérifier sur toutes les plateformes le tracking avant la mise en production
+
+   Une fois que vos développeurs ont fini de codé Mixpanel, il est très
+   important de vérifier la bonne implémentation de celui-ci. Voici
+   quelques consignes à respecter pour ne rien oublier :
+     * Un événement doit être exécuté de la même façon sur toutes les
+       plateformes (iOS, Android, Webapp) sinon ils n'ont pas la même
+       valeur et sens
+     * Le reset() est exécuté au log out et génère un nouveau distinct_id.
+     * Les peoples properties sont bien créés à l'inscription
+     * Il y a un tas d'autres choses à vérifier... à vous de les trouver
+       en fonction de votre cas
+
+   Pourquoi c'est important ? La mise en production est toujours un
+   processus lourd et préparé à l'avance. Une fois que vos utilisateurs
+   ont téléchargé votre application, ils embarquent avec eux une certaine
+   version de Mixpanel. Si vous vous rendez compte qu'il y a un bug, un
+   oublie de people properties etc... vous devrez faire une nouvelle
+   version de l'app. Or, certains de vos utilisateurs ne feront pas la
+   mise à jour. Vous aurez donc toujours des utilisateurs avec l'ancienne
+   version de l'app et donc de Mixpanel. Même si vous pouvez segmenter par
+   version d'app, c'est mieux d'avoir un code propre dès le début.
+
+   Attention, sur iOS et Android les événements mettent une minute à
+   apparaître et c'est normal.
+
+Le distinct_id ne doit jamais changer dans le live-view de Mixpanel
+
+   Le distinct_id est un id (non sans blague) qui est assigné
+   automatiquement à chacun de vos utilisateurs. Il est ajouté à tout vos
+   événements Mixpanel pour savoir quel utilisateur a exécuté cet
+   événement.
+
+   Le distinct_id a aussi pour but de dire à Mixpanel : "L'user a fait X
+   et X événements avant d'être enregistré". Sur la fiche utilisateur, on
+   pourra voir :
+    1. Visite de la page A2
+    2. Visite de la page B
+    3. Inscription
+    4. Visite de l'espace membre
+
+   Profile Mixpanel *L'user n'était pas encore connecté, mais je sais quel
+   événement il a fait avant de l'être
+
+   distinct id
+
+   De votre côté, vous devez vous assurer que votre utilisateur garde
+   toujours le même distinct-id. Ouvrez la page live-view de Mixpanel et
+   exécutez plusieurs événements Mixpanel avec un register au milieu. Si
+   le distinct_id ne change pas entre les événements fait et après le
+   register, c'est OK. Si au contraire, vous ne voyez pas les événements
+   faits avant le register, il y a un problème.
+
+   Dans le code, la fonction alias() doit être utilisé avant le
+   identify(). Votre dev comprendra.
+
+   Plus d'information sur cette page.
+
+La fonction reset() n'est pas suffisante sur iOS et à ne pas oublier
+
+   La fonction Mixpanel.reset() est à implémenter lorsque votre
+   utilisateur se déconnecte de votre application. Cela aura pour effet de
+   :
+     * Régénérer un nouveau distinct_id
+     * Vider les people properties
+     * Vider les super event properties
+
+   Sur iOS, la tâche est un peu plus longue. Le reset() de iOS ne crée pas
+   de nouveau distinct_id, il faut le faire manuellement.
+
+   Voilà le code à rajouter après le reset(). Je ne suis pas développeur
+   swift mais votre dev comprendra.
+Mixpanel.mainInstance().reset()
+
+let uuid = UUID().uuidString
+
+Mixpanel.mainInstance().identify(distinctId: uuid)
+
+    1. Je clean les super properties et people grâce au reset
+    2. Je génère un nouveau uuid
+    3. Je l'assigne à mon utilisateur
+
+   Vous trouverez plus d'information sur cet article.
+
+   Si vous avez des super events properties, n'oubliez pas de les définir
+   à nouveau après le reset().
+
+Mixpanel vous donne le what, mais pas le why
+
+   C'est l'un des gros problème de Mixpanel. Lorsque je dit "what", je
+   sous-entends que la plateforme est parfaite pour vous montrer ce qu'il
+   se passe en ce moment dans votre app. La segmentation des données est
+   géniale et l'affichage également.
+
+   Ce qui regrettable est que vous ne saurez pas à partir de quand vos
+   utilisateurs deviennent loyaux par exemple. Il n'y a pas d'analyse
+   vraiment poussé sur vos données. Comparé à Amplitude (le concurrent de
+   Mixpanel), l'outil est x10 mieux. Je ferai sans doute un article qui
+   compare les deux.
+
+   Cependant, Mixpanel a conscience de se retard. Dans leur roadmap, ils
+   se concentrent sur l'exploitation de données. On peut noter par exemple
+   la feature "Survey" qui a disparu. Elle permettaient de créer des
+   sondages affichable directement dans l'app.
+
+   J'ai dit précédemment qu'il n'y a pas d'analyse poussée de vos données.
+   Ce n'est pas tout à fait vrai. Deux fonctionnalités Mixpanel existent
+   mais sont très loin de celles offertes par Amplitude : Signal &
+   Predict.
+
+   Signal répond à la question que j'évoquais avant. "Pourquoi mes
+   utilisateurs restent-ils ?" et "Quels événements sont associés à une
+   rétention ?"
+
+   Je n'ai pas encore pu utiliser cette fonction.
+   Signal
+   Signal est expliqué en détail sur cet article.
+
+   Predict se base sur du machine learning pour donner une note à vos
+   utilisateurs de A à D s'ils sont plus ou moins susceptibles d'exécuter
+   telle ou telle fonction que vous aurez définie.
+
+   Je n'ai malheureusement pas encore trouvé d'utilité dans cette
+   prédiction.
+
+   Plus d'explication ici et sur la vidéo ci-dessous.
+
+   IFRAME: https://www.youtube.com/embed/X0gGkqO3ObM
+
+L'API est très développée et peut être utile
+
+   Mixpanel intègre une API pour interagir avec vos données. C'est utile
+   pour créer votre propre dashbord par exemple.
+
+   Dans la société dans laquelle je travaille, nous l'utilisons pour
+   plusieurs fonctions :
+     * J'ai programmé un bot slack en node.js qui m'envoie un MP tous les
+       lundi matin pour me donner les KPI Marketing. Un article pour faire
+       de même sera publié.
+     * On utilise aussi l'API pour donner à nos clients (organisateurs
+       d'événements) des stats sur l'utilisation de Swapcard pendant leurs
+       événements. L'intégration est très poussée et couplée avec d'autres
+       data...
+
+   En bref, si Mixpanel ne fait pas tout ce que vous souhaitez, créez-le.
+
+Rester disponible auprès de ses devs pendant le codage
+
+   Même avec un tableau de tracking parfait, vos développeurs auront des
+   questions. Dites-leur clairement que vous êtes dispo pour répondre à
+   toutes leurs questions pendant qu'ils codent Mixpanel dans votre app.
+   Le plus souvent, ils vous demanderont quand l'événement doit être
+   envoyé.
+
+   Si vous avez des notions de code, je vous invite à comprendre comment
+   marche le SDK Mixpanel pour aider vos développeurs s'ils ont des
+   soucis.
+
+   Pour ma part, j'ai des bases avancés (5 ans de dev PHP entre autres) en
+   codage. Avec le développeur iOS de Swapcard, nous étions bloqués sur la
+   fonction reset() car je ne comprenais pas pourquoi le distinct_id ne
+   changeait pas lors du reset(). Pour faire gagner un maximum de temps à
+   Serguy (dev iOS), j'ai créé un projet iOS sur mon mac et j'ai essayé de
+   comprendre Mixpanel sur iOS. Au final, j'ai résolu le problème tout
+   seul et fait gagné du temps à toute l'équipe.
+
+   Projet iOs
+
+Se mettre à la place du développeur
+
+   Ce n'est pas simple lorsqu'on ne comprend rien au code mais implémenter
+   certains événement ou properties n'est pas toujours simple pour le
+   développeur. Une variable voulu en properties n'est pas toujours
+   disponible dans le code comme vous le voulez. Cela oblige le dev à
+   coder une fonction exprès pour créer votre événement. Je préfère
+   trouver une solution alternative si c'est trop de contrainte pour lui.
+
+   Aussi, comprenez que ce n'est pas une chose excitante pour votre
+   développeur d'installer Mixpanel. Expliquez leur clairement le but de
+   cet outil et comment il sera utile pour améliorer le produit. D'où
+   l'importance d'être dispo pour votre développeur.
+
+Se documenter au maximum avant de se lancer dans le vide
+
+   Mixpanel n'est pas facile à prendre en main. Il y a plusieurs notions à
+   assimiler. Comment tracker mes événements, que sont les super
+   properties, people, distinct_id, etc...
+
+   La plateforme offre une multitude de documentations pour bien la
+   comprendre. Voilà des liens utiles pour vous aider :
+     * Common question
+     * Doc développeur
+     * Chaine Youtube Mixpanel
+
+   Je recommande de lire le livre "The Lean Analytics" pour avoir une
+   vision globale de l'analytics en startup.
+
+   Et n'oubliez pas que Google est votre ami ;)
+
+Assigner une personne responsable de Mixpanel
+
+   Nommez une personne responsable de Mixpanel qui devra créer le plan de
+   tracking, être l'interlocuteur entre vos devs et le service marketing
+   et vérifiera la bonne implémentation de Mixpanel. Je pense que c'est
+   important d'avoir une personne qui a une totale maîtrise du projet dans
+   son ensemble.
+
+Créer un projet PROD et DEV sur Mixpanel
+
+   Votre développeur le fera sans doute naturellement. Je conseille de
+   créer deux projets distincts dans Mixpanel pour ne pas "salir" vos
+   données réelles. Créez deux projets dans Mixpanel et dites à votre
+   développeur de changer le token en fonction de son environnement de
+   code. Lors de la mise en production, veillez à ce que le token soit
+   bien changé.
+
+Le support Mixpanel est incroyable
+
+   Je ne pouvais pas écrire cet article sans parler du support qu'offre
+   Mixpanel. Il est magique. Pour communiquer avec eux, je passe par mail
+   et ils répondent généralement dans les 24 heures.
+
+   C'est une équipe qui fera l'effort de toujours vous donner une réponse
+   complète et de comprendre au maximum votre problème. Si nécessaire le
+   support ira sur votre projet pour vous montrer un exemple. Lorsque vous
+   avez un souci avec Mixpanel, donnez-leur un maximum de détails pour
+   aller plus vite.
+
+Conclusion
+
+   Mixpanel est l'outil parfait pour mieux comprendre votre produit et vos
+   utilisateurs à condition de l'utiliser avec soin. J'espère vous avoir
+   transmis mes connaissances acquises pendant cette année et que vous ne
+   reproduirez pas les mêmes erreurs que moi.
+
+   Pour résumer, traquer tout et bien. Pensez à toutes les properties
+   possible. Elles sont une mine d'or quand elles sont là. Soyez
+   disponible pour vos développeurs et tout ira bien.
+
+   Si vous êtes sur le point d'adopter Mixpanel, surtout n'hésitez pas à
+   me contacter pour plus de renseignement.
+
+   J'ai déjà plusieurs idées de prochain article :
+     * Etre alerté sur Slack quand un event précis est envoyé
+     * Recevoir des KPI Mixpanel sur son Slack
+     * Comment utiliser les notifications sur Mixpanel
+
+   Merci d'avoir lu mon 1er article !
+
+   Que penses tu de Mixpanel et de son potentiel pour améliorer ton
+   produit ? Dis-le-moi en commentaire.
+
+   PS: Si tu connais un ami susceptible d'être intéressé par mon article,
+   partage-le-lui.
+
+Subscribe to Robin Herzog : Grow with data
+
+   Get the latest posts delivered right to your inbox
+   ____________________
+   (BUTTON) Subscribe
+
+Robin Herzog
+
+   Read more posts by this author.
+   Read More
+
+16 lessons I learned after a year of Mixpanel
+
+   Mixpanel is an incredible analytics platform. Thanks to Mixpanel, you
+   are able to answer complex questions about your product without the
+   intervention of your developer after the implementation of the
+   platform. Who are
+
+     * Robin Herzog
+
+   12 min read
+   Robin Herzog : Grow with data
+   —
+   16 leçons que j’ai apprises après un an de Mixpanel
+   Share this
+
+   Robin Herzog : Grow with data © 2019
+
+   Latest Posts Ghost
+
+Subscribe to Robin Herzog : Grow with data
+
+   Stay up to date! Get all the latest & greatest posts delivered straight
+   to your inbox
+   ____________________
+   (BUTTON) Subscribe
+   #Robin Herzog : Grow with data
+
+   Robin Herzog : Grow with data
+     * Home
+     * Conact
+
+   Subscribe
+
+   7 May 2017
+
+16 leçons que j’ai apprises après un an de Mixpanel
+
+   Mixpanel est une plateforme d'analytics incroyable.
+
+   Grâce à Mixpanel, vous êtes capable de répondre à des questions
+   complexes sur votre produit sans l'intervention de votre développeur
+   après l'implémentation de la plateforme.
+
+   Qui sont mes utilisateurs ? Où s'arrêtent-ils dans mon funnel de sign
+   up ? Sont-ils loyaux ? Quelle fonctionnalité est la plus utilisée par
+   mes utilisateurs acquis par Twitter qui ne sont pas premium ?
+
+   Voilà des exemples de questions auxquelles Mixpanel répondra en un
+   instant.
+
+   Après avoir utilisé Mixpanel pendant une année entière, je vous livre
+   toutes les erreurs que j'ai commises et les leçons apprises à ne pas
+   reproduire chez vous.
+
+   Dans cet article je vais employer 4 termes Mixpanel :
+     * Evénement: Donnée envoyée à Mixpanel lors d'une action exécutée
+       dans votre app
+     * Propertie : Paramètre rattaché à un événement qui le précise.
+     * Super propertie : Propertie a définir qu'une fois qui sera appliqué
+       à tous vos événements futurs
+     * People propertie : Donnée sur votre utilisateur connecté enregistré
+       dans Mixpanel
+
+Connaitre ses objectifs business avant de se lancer
+
+   L'outil n'est pas magique. Il ne vous donnera pas de réponses sans rien
+   faire avant. La première étape avant d'utiliser Mixpanel est de savoir
+   clairement pourquoi vous l'utilisez. Fixez-vous des objectifs que vous
+   voulez atteindre grâce à Mixpanel. Augmenter votre chiffre d'affaires,
+   améliorer votre rétention, améliorer votre tunnel de conversion...
+
+   Un objectif clair vous permettra de savoir quoi mesurer et où.
+
+Faire un plan de tracking réfléchi et précis
+
+   Le plan de tracking est la base de Mixpanel. Il contient tous les
+   événements à coder et permet au développeur d'en avoir la liste pour le
+   guider. J'utilise google sheet pour créer ce plan.
+
+   Je l'ai spécialement conçu pour les développeurs. Il est précis et
+   adapté à eux pour leur rendre la tâche plus facile.
+
+   Téléchargez ici le plan de tracking
+
+   Tracking plan
+
+   J'ai mélangé plusieurs exemples d'événement Mixpanel dans ce tableau.
+     * Colonne A : (Date added) Pour savoir quand vous avez ajouté
+       l'événement. Il permet de garder une trace et de suivre l'évolution
+       lorsque vous rajouterez des événements dans le futur.
+     * Colonne B : (Trigger) Très importante. Elle doit décrire de façon
+       très précise quand exactement l'événement doit se produire. Au
+       click, à l'affichage d'une vue, au passage de la souris sur un
+       élément... Prenez le temps de décrire votre événement. Les
+       développeurs selon les plateformes n'ont pas les même trigger en
+       tête pour une action.
+     * Colonne C : C'est le nom de l'événement.
+     * Colonne D : Elle contient tous les noms des properties de
+       l'événement.
+     * Colonne E : Il s'agit des valeurs des properties. Le plus souvent
+       ce sont des variables.
+     * Colonne F : Nom de la people properties
+     * Colonne G : La valeur de la people properties
+     * Colonne H : Nom de la super properties
+     * Colonne I : Valeur de la super properties
+
+   Les trois dernières colonnes permettent de cocher si l'événement est
+   implémenter ou non.
+
+   Une colonne que vous pouvez rajouter est la "WHY". Je ne l'utilise pas,
+   mais permets d'être clair dans son raisonnement et expliquer à vos
+   développeurs l'utilité de cette ligne.
+
+   Comme mise en forme, j'ai choisi de séparer chaque événement par une
+   barre grise. Ainsi si vous devez rajouter un événement au milieu plus
+   tard, ça ne pose pas de problème.
+
+   D'autres exemples sont présents ici.
+
+Intégrer les peoples properties standard de Mixpanel
+
+   Lors de la création d'un compte, si vous utilisez bien Mixpanel, vous
+   serez amené à créer son profil automatiquement dans Mixpanel. Il est
+   important d'utiliser les properties standards de Mixpanel pour avoir un
+   affichage normal dans l'UI de Mixpanel. En voici la liste :
+     * $first_name
+     * $last_name
+     * $name
+     * $email
+     * $phone : Optionnel
+     * $created : [date]
+
+   Ne les oubliez pas, car cela rend l'utilisation de "Explore" presque
+   inutilisable.
+
+Pensez à des events properties et peoples properties pas si évidents au début
+
+   Lorsque vous réfléchissez à votre plan de tracking, vous ne pensez pas
+   toujours à tout ce qui peut être tracké. Attrapez un maximum de
+   properties en event et people !
+
+   Exemple d'event properties :
+     * userId : id de votre user par rapport à votre bdd
+     * Premium : true / false
+     * Option A : true / false
+     * Ad Campaign : "FB-01"
+     * Source signup : string
+     * Logged : true / false
+
+   Device : iOS / Android / Web
+   (super propertie)
+   Mixpanel n'intègre pas de segmentation par device facilement
+   exploitable. Rajoutez la propertie si besoin.
+
+   Exemple de people properties :
+     * of login : increment
+     * Swipe left : increment
+     * Swipe right : increment
+     * Swipe total : number
+     * Job : string
+     * Last purchase : date
+     * of purchase :increment
+     * average price of purchase : number
+     * of item buyed : increment
+     * Points earned : number
+     * Games played : increment
+
+   J'ai volontairement mis une liste longue sans trop de sens pour vous
+   donner un maximum de données. Je le répète, pensez à tout.
+
+   Notez également que Mixpanel intègre nativement des properties tels que
+   l'OS, l'app version, le pays, etc... disponible là.
+
+Choisir la bonne nomenclature pour ses événements
+
+   Mes événements et people properties commencent tous par une majuscule
+   et les mots sont séparés par des espaces : Event id ; Email ; # of
+   message sent... Je préfère adopter une nomenclature humaine plutôt que
+   code. La navigation dans Mixpanel y sera plus facile.
+
+   Un bon événement, c'est celui qui peut être segmenté.
+
+   Exemple : Sur mon site j'ai plusieurs boutons de partages. L'un pour
+   Facebook, l'autre pour Linkedin et le dernier pour Twitter, et je veux
+   les traquer.
+
+   Deux choix s'offrent à moi :
+     * Je crée un événement distinct par boutons : "Share by Facebook",
+       "Share by Twitter"...
+     * Je crée un événement "Partage" et j'y ajoute la propriété "Medium".
+
+   La bonne solution est la 2. Je réduis le nombre d'événements et je peux
+   savoir combien de partage il y a eu au total puis segmenter plus en
+   profondeur. C'est également plus scalabe car je peux y rajouter un
+   medium sans problème.
+
+Correctement organiser ses événements Mixpanel
+
+   C'est la parti la plus compliquée. Prenez le temps de le faire et
+   réfléchissez bien avant de compléter le tableau. Pensez à
+   l'implémentation de l'événement et de son utilisation plus tard dans
+   Mixpanel.
+
+   Il y a plusieurs façons d'organiser vos événements, voici la mienne :
+
+   Dans mon plan de tracking, je suis absolument tout ce qui est possible.
+   De l'affichage d'une vue, à la pression sur un bouton de logout, au
+   submit d'un formulaire... C'est un choix que j'ai fait. Ainsi, je peux
+   anticiper des reports complets sur Mixpanel et des funnels longs pour
+   vraiment savoir où s'arrêtent mes utilisateurs. Attention à ne pas
+   aller dans l'abus, le tracking doit garder un minium de sens.
+
+   Un bon événement est celui qui aura un impact sur votre décisions
+
+   Le premier réflexe est de créer un événement distinct par événement
+   effectué dans l'app. Je n'ai pas suivi cette idée. Pour ne pas être
+   englouti par des centaines d'événements Mixpanel j'ai pris la décision
+   suivante :
+
+   Je regroupe les événements par catégorie de fonctionnalités : Scan,
+   Chat, Sign up, Cart, Buy... Puis, je précise pour chacun des événements
+   l'action exécutée en event properties.
+
+   Event : Chat ; Action : View chat
+   Event : Chat ; Action : Create conversation
+
+   Chat
+
+   Ainsi, je réduis le nombre d'événements visible dans Mixpanel et y
+   accède grâce à la segmentation.
+
+   Il y a un inconvénient à utiliser cette méthode. Mixpanel et d'autres
+   outils comme Amplitude se basent sur des événements pour faire leurs
+   analyses et non des properties d'événements.
+
+   Je m'explique : Signal, fonctionnalité que j'explique plus bas, a pour
+   but de vous dire "voilà, quand cet événement est exécuté par
+   l'utilisateur, il reste loyal". Le problème est que si vous regroupez
+   par catégorie comme je le fais, Mixpanel sera moins précis et ne pourra
+   pas dire "oui, c'est cet événement qui est le bon". Aujourd'hui, il n'y
+   a pas de solution si vous utilisez ma méthode.
+
+   L'autre méthode que met en avant Mixpanel dans ses exemples de tracking
+   plan est de rester en surface. Ne pas mesurer absolument tout, mais
+   uniquement les événements vraiment important pour vous. Vous limitez la
+   data, mais c'est plus adapté à l'analyse des données par Mixpanel. Pour
+   savoir quoi mesurer dans ce cas, n'utilisez que des événements qui
+   peuvent avoir un impact sur votre business tel que "Acheter", "Play
+   video", "Watch video". Pour en faire la liste, créez votre funnel qui
+   répond à votre problématique et attachez-y les événements associés.
+
+Vérifier sur toutes les plateformes le tracking avant la mise en production
+
+   Une fois que vos développeurs ont fini de codé Mixpanel, il est très
+   important de vérifier la bonne implémentation de celui-ci. Voici
+   quelques consignes à respecter pour ne rien oublier :
+     * Un événement doit être exécuté de la même façon sur toutes les
+       plateformes (iOS, Android, Webapp) sinon ils n'ont pas la même
+       valeur et sens
+     * Le reset() est exécuté au log out et génère un nouveau distinct_id.
+     * Les peoples properties sont bien créés à l'inscription
+     * Il y a un tas d'autres choses à vérifier... à vous de les trouver
+       en fonction de votre cas
+
+   Pourquoi c'est important ? La mise en production est toujours un
+   processus lourd et préparé à l'avance. Une fois que vos utilisateurs
+   ont téléchargé votre application, ils embarquent avec eux une certaine
+   version de Mixpanel. Si vous vous rendez compte qu'il y a un bug, un
+   oublie de people properties etc... vous devrez faire une nouvelle
+   version de l'app. Or, certains de vos utilisateurs ne feront pas la
+   mise à jour. Vous aurez donc toujours des utilisateurs avec l'ancienne
+   version de l'app et donc de Mixpanel. Même si vous pouvez segmenter par
+   version d'app, c'est mieux d'avoir un code propre dès le début.
+
+   Attention, sur iOS et Android les événements mettent une minute à
+   apparaître et c'est normal.
+
+Le distinct_id ne doit jamais changer dans le live-view de Mixpanel
+
+   Le distinct_id est un id (non sans blague) qui est assigné
+   automatiquement à chacun de vos utilisateurs. Il est ajouté à tout vos
+   événements Mixpanel pour savoir quel utilisateur a exécuté cet
+   événement.
+
+   Le distinct_id a aussi pour but de dire à Mixpanel : "L'user a fait X
+   et X événements avant d'être enregistré". Sur la fiche utilisateur, on
+   pourra voir :
+    1. Visite de la page A2
+    2. Visite de la page B
+    3. Inscription
+    4. Visite de l'espace membre
+
+   Profile Mixpanel *L'user n'était pas encore connecté, mais je sais quel
+   événement il a fait avant de l'être
+
+   distinct id
+
+   De votre côté, vous devez vous assurer que votre utilisateur garde
+   toujours le même distinct-id. Ouvrez la page live-view de Mixpanel et
+   exécutez plusieurs événements Mixpanel avec un register au milieu. Si
+   le distinct_id ne change pas entre les événements fait et après le
+   register, c'est OK. Si au contraire, vous ne voyez pas les événements
+   faits avant le register, il y a un problème.
+
+   Dans le code, la fonction alias() doit être utilisé avant le
+   identify(). Votre dev comprendra.
+
+   Plus d'information sur cette page.
+
+La fonction reset() n'est pas suffisante sur iOS et à ne pas oublier
+
+   La fonction Mixpanel.reset() est à implémenter lorsque votre
+   utilisateur se déconnecte de votre application. Cela aura pour effet de
+   :
+     * Régénérer un nouveau distinct_id
+     * Vider les people properties
+     * Vider les super event properties
+
+   Sur iOS, la tâche est un peu plus longue. Le reset() de iOS ne crée pas
+   de nouveau distinct_id, il faut le faire manuellement.
+
+   Voilà le code à rajouter après le reset(). Je ne suis pas développeur
+   swift mais votre dev comprendra.
+Mixpanel.mainInstance().reset()
+
+let uuid = UUID().uuidString
+
+Mixpanel.mainInstance().identify(distinctId: uuid)
+
+    1. Je clean les super properties et people grâce au reset
+    2. Je génère un nouveau uuid
+    3. Je l'assigne à mon utilisateur
+
+   Vous trouverez plus d'information sur cet article.
+
+   Si vous avez des super events properties, n'oubliez pas de les définir
+   à nouveau après le reset().
+
+Mixpanel vous donne le what, mais pas le why
+
+   C'est l'un des gros problème de Mixpanel. Lorsque je dit "what", je
+   sous-entends que la plateforme est parfaite pour vous montrer ce qu'il
+   se passe en ce moment dans votre app. La segmentation des données est
+   géniale et l'affichage également.
+
+   Ce qui regrettable est que vous ne saurez pas à partir de quand vos
+   utilisateurs deviennent loyaux par exemple. Il n'y a pas d'analyse
+   vraiment poussé sur vos données. Comparé à Amplitude (le concurrent de
+   Mixpanel), l'outil est x10 mieux. Je ferai sans doute un article qui
+   compare les deux.
+
+   Cependant, Mixpanel a conscience de se retard. Dans leur roadmap, ils
+   se concentrent sur l'exploitation de données. On peut noter par exemple
+   la feature "Survey" qui a disparu. Elle permettaient de créer des
+   sondages affichable directement dans l'app.
+
+   J'ai dit précédemment qu'il n'y a pas d'analyse poussée de vos données.
+   Ce n'est pas tout à fait vrai. Deux fonctionnalités Mixpanel existent
+   mais sont très loin de celles offertes par Amplitude : Signal &
+   Predict.
+
+   Signal répond à la question que j'évoquais avant. "Pourquoi mes
+   utilisateurs restent-ils ?" et "Quels événements sont associés à une
+   rétention ?"
+
+   Je n'ai pas encore pu utiliser cette fonction.
+   Signal
+   Signal est expliqué en détail sur cet article.
+
+   Predict se base sur du machine learning pour donner une note à vos
+   utilisateurs de A à D s'ils sont plus ou moins susceptibles d'exécuter
+   telle ou telle fonction que vous aurez définie.
+
+   Je n'ai malheureusement pas encore trouvé d'utilité dans cette
+   prédiction.
+
+   Plus d'explication ici et sur la vidéo ci-dessous.
+
+   IFRAME: https://www.youtube.com/embed/X0gGkqO3ObM
+
+L'API est très développée et peut être utile
+
+   Mixpanel intègre une API pour interagir avec vos données. C'est utile
+   pour créer votre propre dashbord par exemple.
+
+   Dans la société dans laquelle je travaille, nous l'utilisons pour
+   plusieurs fonctions :
+     * J'ai programmé un bot slack en node.js qui m'envoie un MP tous les
+       lundi matin pour me donner les KPI Marketing. Un article pour faire
+       de même sera publié.
+     * On utilise aussi l'API pour donner à nos clients (organisateurs
+       d'événements) des stats sur l'utilisation de Swapcard pendant leurs
+       événements. L'intégration est très poussée et couplée avec d'autres
+       data...
+
+   En bref, si Mixpanel ne fait pas tout ce que vous souhaitez, créez-le.
+
+Rester disponible auprès de ses devs pendant le codage
+
+   Même avec un tableau de tracking parfait, vos développeurs auront des
+   questions. Dites-leur clairement que vous êtes dispo pour répondre à
+   toutes leurs questions pendant qu'ils codent Mixpanel dans votre app.
+   Le plus souvent, ils vous demanderont quand l'événement doit être
+   envoyé.
+
+   Si vous avez des notions de code, je vous invite à comprendre comment
+   marche le SDK Mixpanel pour aider vos développeurs s'ils ont des
+   soucis.
+
+   Pour ma part, j'ai des bases avancés (5 ans de dev PHP entre autres) en
+   codage. Avec le développeur iOS de Swapcard, nous étions bloqués sur la
+   fonction reset() car je ne comprenais pas pourquoi le distinct_id ne
+   changeait pas lors du reset(). Pour faire gagner un maximum de temps à
+   Serguy (dev iOS), j'ai créé un projet iOS sur mon mac et j'ai essayé de
+   comprendre Mixpanel sur iOS. Au final, j'ai résolu le problème tout
+   seul et fait gagné du temps à toute l'équipe.
+
+   Projet iOs
+
+Se mettre à la place du développeur
+
+   Ce n'est pas simple lorsqu'on ne comprend rien au code mais implémenter
+   certains événement ou properties n'est pas toujours simple pour le
+   développeur. Une variable voulu en properties n'est pas toujours
+   disponible dans le code comme vous le voulez. Cela oblige le dev à
+   coder une fonction exprès pour créer votre événement. Je préfère
+   trouver une solution alternative si c'est trop de contrainte pour lui.
+
+   Aussi, comprenez que ce n'est pas une chose excitante pour votre
+   développeur d'installer Mixpanel. Expliquez leur clairement le but de
+   cet outil et comment il sera utile pour améliorer le produit. D'où
+   l'importance d'être dispo pour votre développeur.
+
+Se documenter au maximum avant de se lancer dans le vide
+
+   Mixpanel n'est pas facile à prendre en main. Il y a plusieurs notions à
+   assimiler. Comment tracker mes événements, que sont les super
+   properties, people, distinct_id, etc...
+
+   La plateforme offre une multitude de documentations pour bien la
+   comprendre. Voilà des liens utiles pour vous aider :
+     * Common question
+     * Doc développeur
+     * Chaine Youtube Mixpanel
+
+   Je recommande de lire le livre "The Lean Analytics" pour avoir une
+   vision globale de l'analytics en startup.
+
+   Et n'oubliez pas que Google est votre ami ;)
+
+Assigner une personne responsable de Mixpanel
+
+   Nommez une personne responsable de Mixpanel qui devra créer le plan de
+   tracking, être l'interlocuteur entre vos devs et le service marketing
+   et vérifiera la bonne implémentation de Mixpanel. Je pense que c'est
+   important d'avoir une personne qui a une totale maîtrise du projet dans
+   son ensemble.
+
+Créer un projet PROD et DEV sur Mixpanel
+
+   Votre développeur le fera sans doute naturellement. Je conseille de
+   créer deux projets distincts dans Mixpanel pour ne pas "salir" vos
+   données réelles. Créez deux projets dans Mixpanel et dites à votre
+   développeur de changer le token en fonction de son environnement de
+   code. Lors de la mise en production, veillez à ce que le token soit
+   bien changé.
+
+Le support Mixpanel est incroyable
+
+   Je ne pouvais pas écrire cet article sans parler du support qu'offre
+   Mixpanel. Il est magique. Pour communiquer avec eux, je passe par mail
+   et ils répondent généralement dans les 24 heures.
+
+   C'est une équipe qui fera l'effort de toujours vous donner une réponse
+   complète et de comprendre au maximum votre problème. Si nécessaire le
+   support ira sur votre projet pour vous montrer un exemple. Lorsque vous
+   avez un souci avec Mixpanel, donnez-leur un maximum de détails pour
+   aller plus vite.
+
+Conclusion
+
+   Mixpanel est l'outil parfait pour mieux comprendre votre produit et vos
+   utilisateurs à condition de l'utiliser avec soin. J'espère vous avoir
+   transmis mes connaissances acquises pendant cette année et que vous ne
+   reproduirez pas les mêmes erreurs que moi.
+
+   Pour résumer, traquer tout et bien. Pensez à toutes les properties
+   possible. Elles sont une mine d'or quand elles sont là. Soyez
+   disponible pour vos développeurs et tout ira bien.
+
+   Si vous êtes sur le point d'adopter Mixpanel, surtout n'hésitez pas à
+   me contacter pour plus de renseignement.
+
+   J'ai déjà plusieurs idées de prochain article :
+     * Etre alerté sur Slack quand un event précis est envoyé
+     * Recevoir des KPI Mixpanel sur son Slack
+     * Comment utiliser les notifications sur Mixpanel
+
+   Merci d'avoir lu mon 1er article !
+
+   Que penses tu de Mixpanel et de son potentiel pour améliorer ton
+   produit ? Dis-le-moi en commentaire.
+
+   PS: Si tu connais un ami susceptible d'être intéressé par mon article,
+   partage-le-lui.
+
+Subscribe to Robin Herzog : Grow with data
+
+   Get the latest posts delivered right to your inbox
+   ____________________
+   (BUTTON) Subscribe
+
+Robin Herzog
+
+   Read more posts by this author.
+   Read More
+
+16 lessons I learned after a year of Mixpanel
+
+   Mixpanel is an incredible analytics platform. Thanks to Mixpanel, you
+   are able to answer complex questions about your product without the
+   intervention of your developer after the implementation of the
+   platform. Who are
+
+     * Robin Herzog
+
+   12 min read
+   Robin Herzog : Grow with data
+   —
+   16 leçons que j’ai apprises après un an de Mixpanel
+   Share this
+
+   Robin Herzog : Grow with data © 2019
+
+   Latest Posts Ghost
+
+Subscribe to Robin Herzog : Grow with data
+
+   Stay up to date! Get all the latest & greatest posts delivered straight
+   to your inbox
+   ____________________
+   (BUTTON) Subscribe
+   #Robin Herzog : Grow with data
+
+   Robin Herzog : Grow with data
+
+            16 leçons que j’ai apprises après un an de Mixpanel
+
+   by Robin Herzog
+   2017-05-07
+
+   Mixpanel est une plateforme d'analytics incroyable.
+
+   Grâce à Mixpanel, vous êtes capable de répondre à des questions
+   complexes sur votre produit sans l'intervention de votre développeur
+   après l'implémentation de la plateforme.
+
+   Qui sont mes utilisateurs ? Où s'arrêtent-ils dans mon funnel de sign
+   up ? Sont-ils loyaux ? Quelle fonctionnalité est la plus utilisée par
+   mes utilisateurs acquis par Twitter qui ne sont pas premium ?
+
+   Voilà des exemples de questions auxquelles Mixpanel répondra en un
+   instant.
+
+   Après avoir utilisé Mixpanel pendant une année entière, je vous livre
+   toutes les erreurs que j'ai commises et les leçons apprises à ne pas
+   reproduire chez vous.
+
+   Dans cet article je vais employer 4 termes Mixpanel :
+     * Evénement: Donnée envoyée à Mixpanel lors d'une action exécutée
+       dans votre app
+     * Propertie : Paramètre rattaché à un événement qui le précise.
+     * Super propertie : Propertie a définir qu'une fois qui sera appliqué
+       à tous vos événements futurs
+     * People propertie : Donnée sur votre utilisateur connecté enregistré
+       dans Mixpanel
+
+Connaitre ses objectifs business avant de se lancer
+
+   L'outil n'est pas magique. Il ne vous donnera pas de réponses sans rien
+   faire avant. La première étape avant d'utiliser Mixpanel est de savoir
+   clairement pourquoi vous l'utilisez. Fixez-vous des objectifs que vous
+   voulez atteindre grâce à Mixpanel. Augmenter votre chiffre d'affaires,
+   améliorer votre rétention, améliorer votre tunnel de conversion...
+
+   Un objectif clair vous permettra de savoir quoi mesurer et où.
+
+Faire un plan de tracking réfléchi et précis
+
+   Le plan de tracking est la base de Mixpanel. Il contient tous les
+   événements à coder et permet au développeur d'en avoir la liste pour le
+   guider. J'utilise google sheet pour créer ce plan.
+
+   Je l'ai spécialement conçu pour les développeurs. Il est précis et
+   adapté à eux pour leur rendre la tâche plus facile.
+
+   Téléchargez ici le plan de tracking
+
+   J'ai mélangé plusieurs exemples d'événement Mixpanel dans ce tableau.
+     * Colonne A : (Date added) Pour savoir quand vous avez ajouté
+       l'événement. Il permet de garder une trace et de suivre l'évolution
+       lorsque vous rajouterez des événements dans le futur.
+     * Colonne B : (Trigger) Très importante. Elle doit décrire de façon
+       très précise quand exactement l'événement doit se produire. Au
+       click, à l'affichage d'une vue, au passage de la souris sur un
+       élément... Prenez le temps de décrire votre événement. Les
+       développeurs selon les plateformes n'ont pas les même trigger en
+       tête pour une action.
+     * Colonne C : C'est le nom de l'événement.
+     * Colonne D : Elle contient tous les noms des properties de
+       l'événement.
+     * Colonne E : Il s'agit des valeurs des properties. Le plus souvent
+       ce sont des variables.
+     * Colonne F : Nom de la people properties
+     * Colonne G : La valeur de la people properties
+     * Colonne H : Nom de la super properties
+     * Colonne I : Valeur de la super properties
+
+   Les trois dernières colonnes permettent de cocher si l'événement est
+   implémenter ou non.
+
+   Une colonne que vous pouvez rajouter est la "WHY". Je ne l'utilise pas,
+   mais permets d'être clair dans son raisonnement et expliquer à vos
+   développeurs l'utilité de cette ligne.
+
+   Comme mise en forme, j'ai choisi de séparer chaque événement par une
+   barre grise. Ainsi si vous devez rajouter un événement au milieu plus
+   tard, ça ne pose pas de problème.
+
+   D'autres exemples sont présents ici.
+
+Intégrer les peoples properties standard de Mixpanel
+
+   Lors de la création d'un compte, si vous utilisez bien Mixpanel, vous
+   serez amené à créer son profil automatiquement dans Mixpanel. Il est
+   important d'utiliser les properties standards de Mixpanel pour avoir un
+   affichage normal dans l'UI de Mixpanel. En voici la liste :
+     * $first_name
+     * $last_name
+     * $name
+     * $email
+     * $phone : Optionnel
+     * $created : [date]
+
+   Ne les oubliez pas, car cela rend l'utilisation de "Explore" presque
+   inutilisable.
+
+Pensez à des events properties et peoples properties pas si évidents au début
+
+   Lorsque vous réfléchissez à votre plan de tracking, vous ne pensez pas
+   toujours à tout ce qui peut être tracké. Attrapez un maximum de
+   properties en event et people !
+
+   Exemple d'event properties :
+     * userId : id de votre user par rapport à votre bdd
+     * Premium : true / false
+     * Option A : true / false
+     * Ad Campaign : "FB-01"
+     * Source signup : string
+     * Logged : true / false
+
+   Device : iOS / Android / Web
+   (super propertie)
+   Mixpanel n'intègre pas de segmentation par device facilement
+   exploitable. Rajoutez la propertie si besoin.
+
+   Exemple de people properties :
+     * of login : increment
+     * Swipe left : increment
+     * Swipe right : increment
+     * Swipe total : number
+     * Job : string
+     * Last purchase : date
+     * of purchase :increment
+     * average price of purchase : number
+     * of item buyed : increment
+     * Points earned : number
+     * Games played : increment
+
+   J'ai volontairement mis une liste longue sans trop de sens pour vous
+   donner un maximum de données. Je le répète, pensez à tout.
+
+   Notez également que Mixpanel intègre nativement des properties tels que
+   l'OS, l'app version, le pays, etc... disponible là.
+
+Choisir la bonne nomenclature pour ses événements
+
+   Mes événements et people properties commencent tous par une majuscule
+   et les mots sont séparés par des espaces : Event id ; Email ; # of
+   message sent... Je préfère adopter une nomenclature humaine plutôt que
+   code. La navigation dans Mixpanel y sera plus facile.
+
+   Un bon événement, c'est celui qui peut être segmenté.
+
+   Exemple : Sur mon site j'ai plusieurs boutons de partages. L'un pour
+   Facebook, l'autre pour Linkedin et le dernier pour Twitter, et je veux
+   les traquer.
+
+   Deux choix s'offrent à moi :
+     * Je crée un événement distinct par boutons : "Share by Facebook",
+       "Share by Twitter"...
+     * Je crée un événement "Partage" et j'y ajoute la propriété "Medium".
+
+   La bonne solution est la 2. Je réduis le nombre d'événements et je peux
+   savoir combien de partage il y a eu au total puis segmenter plus en
+   profondeur. C'est également plus scalabe car je peux y rajouter un
+   medium sans problème.
+
+Correctement organiser ses événements Mixpanel
+
+   C'est la parti la plus compliquée. Prenez le temps de le faire et
+   réfléchissez bien avant de compléter le tableau. Pensez à
+   l'implémentation de l'événement et de son utilisation plus tard dans
+   Mixpanel.
+
+   Il y a plusieurs façons d'organiser vos événements, voici la mienne :
+
+   Dans mon plan de tracking, je suis absolument tout ce qui est possible.
+   De l'affichage d'une vue, à la pression sur un bouton de logout, au
+   submit d'un formulaire... C'est un choix que j'ai fait. Ainsi, je peux
+   anticiper des reports complets sur Mixpanel et des funnels longs pour
+   vraiment savoir où s'arrêtent mes utilisateurs. Attention à ne pas
+   aller dans l'abus, le tracking doit garder un minium de sens.
+
+   Un bon événement est celui qui aura un impact sur votre décisions
+
+   Le premier réflexe est de créer un événement distinct par événement
+   effectué dans l'app. Je n'ai pas suivi cette idée. Pour ne pas être
+   englouti par des centaines d'événements Mixpanel j'ai pris la décision
+   suivante :
+
+   Je regroupe les événements par catégorie de fonctionnalités : Scan,
+   Chat, Sign up, Cart, Buy... Puis, je précise pour chacun des événements
+   l'action exécutée en event properties.
+
+   Event : Chat ; Action : View chat
+   Event : Chat ; Action : Create conversation
+
+   Ainsi, je réduis le nombre d'événements visible dans Mixpanel et y
+   accède grâce à la segmentation.
+
+   Il y a un inconvénient à utiliser cette méthode. Mixpanel et d'autres
+   outils comme Amplitude se basent sur des événements pour faire leurs
+   analyses et non des properties d'événements.
+
+   Je m'explique : Signal, fonctionnalité que j'explique plus bas, a pour
+   but de vous dire "voilà, quand cet événement est exécuté par
+   l'utilisateur, il reste loyal". Le problème est que si vous regroupez
+   par catégorie comme je le fais, Mixpanel sera moins précis et ne pourra
+   pas dire "oui, c'est cet événement qui est le bon". Aujourd'hui, il n'y
+   a pas de solution si vous utilisez ma méthode.
+
+   L'autre méthode que met en avant Mixpanel dans ses exemples de tracking
+   plan est de rester en surface. Ne pas mesurer absolument tout, mais
+   uniquement les événements vraiment important pour vous. Vous limitez la
+   data, mais c'est plus adapté à l'analyse des données par Mixpanel. Pour
+   savoir quoi mesurer dans ce cas, n'utilisez que des événements qui
+   peuvent avoir un impact sur votre business tel que "Acheter", "Play
+   video", "Watch video". Pour en faire la liste, créez votre funnel qui
+   répond à votre problématique et attachez-y les événements associés.
+
+Vérifier sur toutes les plateformes le tracking avant la mise en production
+
+   Une fois que vos développeurs ont fini de codé Mixpanel, il est très
+   important de vérifier la bonne implémentation de celui-ci. Voici
+   quelques consignes à respecter pour ne rien oublier :
+     * Un événement doit être exécuté de la même façon sur toutes les
+       plateformes (iOS, Android, Webapp) sinon ils n'ont pas la même
+       valeur et sens
+     * Le reset() est exécuté au log out et génère un nouveau distinct_id.
+     * Les peoples properties sont bien créés à l'inscription
+     * Il y a un tas d'autres choses à vérifier... à vous de les trouver
+       en fonction de votre cas
+
+   Pourquoi c'est important ? La mise en production est toujours un
+   processus lourd et préparé à l'avance. Une fois que vos utilisateurs
+   ont téléchargé votre application, ils embarquent avec eux une certaine
+   version de Mixpanel. Si vous vous rendez compte qu'il y a un bug, un
+   oublie de people properties etc... vous devrez faire une nouvelle
+   version de l'app. Or, certains de vos utilisateurs ne feront pas la
+   mise à jour. Vous aurez donc toujours des utilisateurs avec l'ancienne
+   version de l'app et donc de Mixpanel. Même si vous pouvez segmenter par
+   version d'app, c'est mieux d'avoir un code propre dès le début.
+
+   Attention, sur iOS et Android les événements mettent une minute à
+   apparaître et c'est normal.
+
+Le distinct_id ne doit jamais changer dans le live-view de Mixpanel
+
+   Le distinct_id est un id (non sans blague) qui est assigné
+   automatiquement à chacun de vos utilisateurs. Il est ajouté à tout vos
+   événements Mixpanel pour savoir quel utilisateur a exécuté cet
+   événement.
+
+   Le distinct_id a aussi pour but de dire à Mixpanel : "L'user a fait X
+   et X événements avant d'être enregistré". Sur la fiche utilisateur, on
+   pourra voir :
+    1. Visite de la page A2
+    2. Visite de la page B
+    3. Inscription
+    4. Visite de l'espace membre
+
+   *L'user n'était pas encore connecté, mais je sais quel événement il a
+   fait avant de l'être
+
+   De votre côté, vous devez vous assurer que votre utilisateur garde
+   toujours le même distinct-id. Ouvrez la page live-view de Mixpanel et
+   exécutez plusieurs événements Mixpanel avec un register au milieu. Si
+   le distinct_id ne change pas entre les événements fait et après le
+   register, c'est OK. Si au contraire, vous ne voyez pas les événements
+   faits avant le register, il y a un problème.
+
+   Dans le code, la fonction alias() doit être utilisé avant le
+   identify(). Votre dev comprendra.
+
+   Plus d'information sur cette page.
+
+La fonction reset() n'est pas suffisante sur iOS et à ne pas oublier
+
+   La fonction Mixpanel.reset() est à implémenter lorsque votre
+   utilisateur se déconnecte de votre application. Cela aura pour effet de
+   :
+     * Régénérer un nouveau distinct_id
+     * Vider les people properties
+     * Vider les super event properties
+
+   Sur iOS, la tâche est un peu plus longue. Le reset() de iOS ne crée pas
+   de nouveau distinct_id, il faut le faire manuellement.
+
+   Voilà le code à rajouter après le reset(). Je ne suis pas développeur
+   swift mais votre dev comprendra.
+Mixpanel.mainInstance().reset()
+
+let uuid = UUID().uuidString
+
+Mixpanel.mainInstance().identify(distinctId: uuid)
+
+    1. Je clean les super properties et people grâce au reset
+    2. Je génère un nouveau uuid
+    3. Je l'assigne à mon utilisateur
+
+   Vous trouverez plus d'information sur cet article.
+
+   Si vous avez des super events properties, n'oubliez pas de les définir
+   à nouveau après le reset().
+
+Mixpanel vous donne le what, mais pas le why
+
+   C'est l'un des gros problème de Mixpanel. Lorsque je dit "what", je
+   sous-entends que la plateforme est parfaite pour vous montrer ce qu'il
+   se passe en ce moment dans votre app. La segmentation des données est
+   géniale et l'affichage également.
+
+   Ce qui regrettable est que vous ne saurez pas à partir de quand vos
+   utilisateurs deviennent loyaux par exemple. Il n'y a pas d'analyse
+   vraiment poussé sur vos données. Comparé à Amplitude (le concurrent de
+   Mixpanel), l'outil est x10 mieux. Je ferai sans doute un article qui
+   compare les deux.
+
+   Cependant, Mixpanel a conscience de se retard. Dans leur roadmap, ils
+   se concentrent sur l'exploitation de données. On peut noter par exemple
+   la feature "Survey" qui a disparu. Elle permettaient de créer des
+   sondages affichable directement dans l'app.
+
+   J'ai dit précédemment qu'il n'y a pas d'analyse poussée de vos données.
+   Ce n'est pas tout à fait vrai. Deux fonctionnalités Mixpanel existent
+   mais sont très loin de celles offertes par Amplitude : Signal &
+   Predict.
+
+   Signal répond à la question que j'évoquais avant. "Pourquoi mes
+   utilisateurs restent-ils ?" et "Quels événements sont associés à une
+   rétention ?"
+
+   Je n'ai pas encore pu utiliser cette fonction.
+   Signal est expliqué en détail sur cet article.
+
+   Predict se base sur du machine learning pour donner une note à vos
+   utilisateurs de A à D s'ils sont plus ou moins susceptibles d'exécuter
+   telle ou telle fonction que vous aurez définie.
+
+   Je n'ai malheureusement pas encore trouvé d'utilité dans cette
+   prédiction.
+
+   Plus d'explication ici et sur la vidéo ci-dessous.
+
+L'API est très développée et peut être utile
+
+   Mixpanel intègre une API pour interagir avec vos données. C'est utile
+   pour créer votre propre dashbord par exemple.
+
+   Dans la société dans laquelle je travaille, nous l'utilisons pour
+   plusieurs fonctions :
+     * J'ai programmé un bot slack en node.js qui m'envoie un MP tous les
+       lundi matin pour me donner les KPI Marketing. Un article pour faire
+       de même sera publié.
+     * On utilise aussi l'API pour donner à nos clients (organisateurs
+       d'événements) des stats sur l'utilisation de Swapcard pendant leurs
+       événements. L'intégration est très poussée et couplée avec d'autres
+       data...
+
+   En bref, si Mixpanel ne fait pas tout ce que vous souhaitez, créez-le.
+
+Rester disponible auprès de ses devs pendant le codage
+
+   Même avec un tableau de tracking parfait, vos développeurs auront des
+   questions. Dites-leur clairement que vous êtes dispo pour répondre à
+   toutes leurs questions pendant qu'ils codent Mixpanel dans votre app.
+   Le plus souvent, ils vous demanderont quand l'événement doit être
+   envoyé.
+
+   Si vous avez des notions de code, je vous invite à comprendre comment
+   marche le SDK Mixpanel pour aider vos développeurs s'ils ont des
+   soucis.
+
+   Pour ma part, j'ai des bases avancés (5 ans de dev PHP entre autres) en
+   codage. Avec le développeur iOS de Swapcard, nous étions bloqués sur la
+   fonction reset() car je ne comprenais pas pourquoi le distinct_id ne
+   changeait pas lors du reset(). Pour faire gagner un maximum de temps à
+   Serguy (dev iOS), j'ai créé un projet iOS sur mon mac et j'ai essayé de
+   comprendre Mixpanel sur iOS. Au final, j'ai résolu le problème tout
+   seul et fait gagné du temps à toute l'équipe.
+
+Se mettre à la place du développeur
+
+   Ce n'est pas simple lorsqu'on ne comprend rien au code mais implémenter
+   certains événement ou properties n'est pas toujours simple pour le
+   développeur. Une variable voulu en properties n'est pas toujours
+   disponible dans le code comme vous le voulez. Cela oblige le dev à
+   coder une fonction exprès pour créer votre événement. Je préfère
+   trouver une solution alternative si c'est trop de contrainte pour lui.
+
+   Aussi, comprenez que ce n'est pas une chose excitante pour votre
+   développeur d'installer Mixpanel. Expliquez leur clairement le but de
+   cet outil et comment il sera utile pour améliorer le produit. D'où
+   l'importance d'être dispo pour votre développeur.
+
+Se documenter au maximum avant de se lancer dans le vide
+
+   Mixpanel n'est pas facile à prendre en main. Il y a plusieurs notions à
+   assimiler. Comment tracker mes événements, que sont les super
+   properties, people, distinct_id, etc...
+
+   La plateforme offre une multitude de documentations pour bien la
+   comprendre. Voilà des liens utiles pour vous aider :
+     * Common question
+     * Doc développeur
+     * Chaine Youtube Mixpanel
+
+   Je recommande de lire le livre "The Lean Analytics" pour avoir une
+   vision globale de l'analytics en startup.
+
+   Et n'oubliez pas que Google est votre ami ;)
+
+Assigner une personne responsable de Mixpanel
+
+   Nommez une personne responsable de Mixpanel qui devra créer le plan de
+   tracking, être l'interlocuteur entre vos devs et le service marketing
+   et vérifiera la bonne implémentation de Mixpanel. Je pense que c'est
+   important d'avoir une personne qui a une totale maîtrise du projet dans
+   son ensemble.
+
+Créer un projet PROD et DEV sur Mixpanel
+
+   Votre développeur le fera sans doute naturellement. Je conseille de
+   créer deux projets distincts dans Mixpanel pour ne pas "salir" vos
+   données réelles. Créez deux projets dans Mixpanel et dites à votre
+   développeur de changer le token en fonction de son environnement de
+   code. Lors de la mise en production, veillez à ce que le token soit
+   bien changé.
+
+Le support Mixpanel est incroyable
+
+   Je ne pouvais pas écrire cet article sans parler du support qu'offre
+   Mixpanel. Il est magique. Pour communiquer avec eux, je passe par mail
+   et ils répondent généralement dans les 24 heures.
+
+   C'est une équipe qui fera l'effort de toujours vous donner une réponse
+   complète et de comprendre au maximum votre problème. Si nécessaire le
+   support ira sur votre projet pour vous montrer un exemple. Lorsque vous
+   avez un souci avec Mixpanel, donnez-leur un maximum de détails pour
+   aller plus vite.
+
+Conclusion
+
+   Mixpanel est l'outil parfait pour mieux comprendre votre produit et vos
+   utilisateurs à condition de l'utiliser avec soin. J'espère vous avoir
+   transmis mes connaissances acquises pendant cette année et que vous ne
+   reproduirez pas les mêmes erreurs que moi.
+
+   Pour résumer, traquer tout et bien. Pensez à toutes les properties
+   possible. Elles sont une mine d'or quand elles sont là. Soyez
+   disponible pour vos développeurs et tout ira bien.
+
+   Si vous êtes sur le point d'adopter Mixpanel, surtout n'hésitez pas à
+   me contacter pour plus de renseignement.
+
+   J'ai déjà plusieurs idées de prochain article :
+     * Etre alerté sur Slack quand un event précis est envoyé
+     * Recevoir des KPI Mixpanel sur son Slack
+     * Comment utiliser les notifications sur Mixpanel
+
+   Merci d'avoir lu mon 1er article !
+
+   Que penses tu de Mixpanel et de son potentiel pour améliorer ton
+   produit ? Dis-le-moi en commentaire.
+
+   PS: Si tu connais un ami susceptible d'être intéressé par mon article,
+   partage-le-lui.
+
+   Robin Herzog : Grow with data © 2019
+
+   Proudly published with Ghost
+   #Robin Herzog : Grow with data
+
+   Robin Herzog : Grow with data
+     * Home
+     * Conact
+
+   Subscribe
+
+Robin Herzog
+
+   2 posts •
+
+16 lessons I learned after a year of Mixpanel
+
+   Mixpanel is an incredible analytics platform. Thanks to Mixpanel, you
+   are able to answer complex questions about your product without the
+   intervention of your developer after the implementation of the
+   platform. Who are
+
+     * Robin Herzog
+
+   12 min read
+
+16 leçons que j’ai apprises après un an de Mixpanel
+
+   Mixpanel est une plateforme d'analytics incroyable. Grâce à Mixpanel,
+   vous êtes capable de répondre à des questions complexes sur votre
+   produit sans l'intervention de votre développeur après l'implémentation
+   de la plateforme. Qui sont
+
+     * Robin Herzog
+
+   13 min read
+
+   Robin Herzog : Grow with data © 2019
+
+   Latest Posts Ghost
+
+Subscribe to Robin Herzog : Grow with data
+
+   Stay up to date! Get all the latest & greatest posts delivered straight
+   to your inbox
+   ____________________
+   (BUTTON) Subscribe
+   #Robin Herzog : Grow with data
+
+Robin Herzog : Grow with data
+
+I eat data everyday
+
+     * Home
+     * Conact
+
+   Subscribe
+
+16 lessons I learned after a year of Mixpanel
+
+   Mixpanel is an incredible analytics platform. Thanks to Mixpanel, you
+   are able to answer complex questions about your product without the
+   intervention of your developer after the implementation of the
+   platform. Who are
+
+     * Robin Herzog
+
+   12 min read
+
+16 leçons que j’ai apprises après un an de Mixpanel
+
+   Mixpanel est une plateforme d'analytics incroyable. Grâce à Mixpanel,
+   vous êtes capable de répondre à des questions complexes sur votre
+   produit sans l'intervention de votre développeur après l'implémentation
+   de la plateforme. Qui sont
+
+     * Robin Herzog
+
+   13 min read
+
+   Robin Herzog : Grow with data © 2019
+
+   Latest Posts Ghost
+
+Subscribe to Robin Herzog : Grow with data
+
+   Stay up to date! Get all the latest & greatest posts delivered straight
+   to your inbox
+   ____________________
+   (BUTTON) Subscribe

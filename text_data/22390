@@ -1,0 +1,2424 @@
+   #Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique »
+   Flux Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   » Flux des commentaires Tech2Tech | News, Astuces, Tutos, Vidéos autour
+   de l'informatique » Passbolt : Installation Community Edition sur
+   Debian 9 Flux des commentaires Surveiller la disponibilité de vos sites
+   web et services avec UptimeRobot Reformater facilement votre ordinateur
+   DELL : DELL OS Recovery Tool alternate alternate
+
+   Menu
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+     * Windows OS
+          + Windows Client
+               o Windows XP
+               o Windows Vista
+               o Windows 7
+               o Windows 8
+               o Windows 10
+          + Windows Server
+               o Windows Server 2008 R2
+               o Windows Server 2012 R2
+               o Windows Server 2016
+     * Logiciels
+          + Office
+          + Outils du tech
+     * Sécurité
+     * Matériels
+          + Matos du Tech
+          + NAS
+          + Hackintosh
+          + Réseau – ADSL
+          + Smartphone
+     * Web
+          + Services
+          + CMS
+               o WordPress
+     * Bons Plans
+
+     * Rechercher
+     * Sidebar (barre latérale)
+     * Connexion
+     * Suivre
+          + Facebook
+          + Twitter
+          + Linkedin
+          + YouTube
+          + Instagram
+          + RSS
+
+   Tendances
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020
+     * Acronis True Image 2020 : Quoi de neuf ?
+     * SolarWinds Real-Time Bandwidth Monitor (free)
+     * 🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à
+       28€ et d’autres promotions…
+     * Fab’s AutoBackup v7 Pro : Les nouveautés
+     * UBIQUITI : Installation de l’UniFi Cloud Key
+     * Comment savoir si une machine virtuelle Hyper-V est de Génération 1
+       ou Génération 2
+     * Retrouver vos contacts dans le nouveau Gmail
+     * Comment changer l’ordre de priorité de vos cartes réseau sur
+       Windows 10
+     * Microsoft améliore OneDrive en ajoutant un coffre-fort numérique et
+       plus de stockage
+
+     * Forum des techs
+     * Annuaire
+     * Offres d’emploi
+     * Soutenir Tech2Tech.fr
+     * Annonceurs
+     * Contact
+     * A Propos
+          + L’équipe
+
+   Accueil/Web/Services/Passbolt : Installation Community Edition sur
+   Debian 9
+   ServicesWeb
+
+Passbolt : Installation Community Edition sur Debian 9
+
+   Youssef Lachgar 2 juillet 2018
+   0 1 725 2 minutes de lecture
+   Facebook Twitter Google+ Linkedin Reddit WhatsApp
+   Password Security Login Technology Business Concept from
+   Rawpixel.com/Shutterstock
+
+   Retrouver mon article précédent ici : Passbolt, ou comment gérer ses
+   mots de passe en entreprise pour pas un rond ?
+
+   J’ai eu l’occasion de me jeter dans l’aventure des gestionnaires de
+   mots de passe et j’aimerais partager ce voyage avec vous … on attaque
+   maintenant la seconde partie aka L’installation !
+   Aujourd’hui on vous prépare une bonne recette de sécurisation des
+   passwords !
+   Sommaire Montrer
+   L’installation du serveur Passbolt sur Debian 9
+   Retour sur l’installation Community Edition
+   Retour sur l’installation Pro Edition
+   Le support Pro Edition
+
+L’installation du serveur Passbolt sur Debian 9
+
+   Étant donné que nous somme entre gens de bonne éducation, on va
+   s’amuser à installer Passbolt CE (Community Edition) avant de sauter
+   sur l’installation Business (professionnel).
+
+   Comme je suis un peu fainéant et que je n’aime pas reprendre un travail
+   bien fait.
+   Pour installer Passbolt en CE rien de plus simple :
+    1. Monter un serveur Debian 9 en suivant ce tuto
+    2. Installer Passbolt via le tuto « step by step » ici  ^(c’est en
+       anglais, mais un petit « Click Droit -Traduire en Français »
+       devrait faire votre bonheur)
+    3. Souffrir !
+
+Retour sur l’installation Community Edition
+
+   Disons-le clairement, l’installation via le tutoriel est … compliquée.
+   En effet, j’ai à plusieurs reprises du recommencer l’install from
+   scratch pour des problèmes de clés PGP non reconnu, des versions
+   différentes de package et autre joyeusetés.
+
+   Fort heureusement, nous avons la communauté Passbolt pour nous aider à
+   démêler tout ça. C’est un peu l’Excalibur des erreurs de config à
+   l’installation (pour rester sur le thème de Kaamelott). Plus
+   particulièrement la partie « installation issue« .
+
+   Vous pourrez trouver les nombreux cas d’école qui permet, dans la
+   majeure partie des cas, de solutionner votre incident.
+
+   Je n’ai pas eu le temps de tester l’ensemble des options, mais je suis
+   certain de ne pas avoir pris la plus simple.
+   En effet la version « Community Edition » vous permet également
+   d’utiliser une install Docker ou une install CentOS7.
+
+Retour sur l’installation Pro Edition
+
+   Pour l’installation Pro, on est tout de suite dans un autre monde.
+   Les scripts d’installation sont performant, automatisé au possible et
+   en 5 mn chrono … mon installation était fonctionnel. Il ne reste plus
+   qu’à suivre la configuration step by step et ça, c’est cadeau !
+
+   Néanmoins, grâce aux qualités exceptionnelles de mon infrastructure, je
+   me suis vite retrouvé dans un « Cas exceptionnel » . Mon domaine email
+   est différent du domaine de mon serveur. Comme nous l’avons vu
+   précédemment, Passbolt se base sur les emails et les clés PGP pour
+   donner accès à un mot de passe, partager un mot de passe ou informer
+   les utilisateurs … bref, j’étais pas bien :-/
+   www.nowhe…. merde ça marche pas !
+
+Le support Pro Edition
+
+   Contrairement à l’installation Community Edition, la version Pro vient
+   avec un support de Qualitay !
+   Et pas besoin de black card, j’ai eu la chance d’être pris en charge
+   par mail d’abord avec Cédric (un des fondateurs de Passbolt) et très
+   rapidement une discussion Hangout avec partage d’écran.
+
+   Mon problème s’est vu régler en 2-3 ligne de commande, et un
+   rendez-vous fixé pour mettre à jour le bébé avec la dernière release
+   qui a réglé définitivement mon souci.
+
+   Évidemment cela à un coût, compter environs 200 euros pour une licence
+   d’un an pour 10 users, ils font également des offres « early birds »
+   pour les PME qui serait intéressé par l’outil. Notre prochain article
+   portera sur l’utilisation de Passbolt et de mon ressenti quant aux
+   améliorations à apporter !
+
+Puisque vous êtes encore là...
+
+   ...Si cet article vous a aidé ou informé, laissez-moi vous demander une
+   petite faveur. Nombreux d'entre vous utilise AdBlock sur tech2tech.
+   Alors n'hésitez pas à désactiver AdBlock sur ce site ou bien à faire un
+   don pour m'aider à couvrir les frais autour du site.
+
+   Si chacun de ceux qui ont lu et apprécié cet article participe, le
+   futur de tech2tech ne pourra être que meilleur. Merci à vous !.
+   FAIRE UN DON
+   Source
+   Credit Photo : Password Security Login Technology Business Concept par
+   Rawpixel.com
+   Tags
+   Installation Passbolt Password
+   Partager
+   Facebook Twitter Google+ Linkedin Reddit Partager par email Imprimer
+   [INS: :INS]
+
+Youssef Lachgar
+
+   Passionné par les nouvelles technologies et la culture Geek en
+   Générale, je suis actuellement Service Delivery Manager au sein d'un
+   groupe Industriel. J'officie dans des projets Infrastructure, Migration
+   ou encore dans la stratégie des services IT. Touche a tout, je vais
+   m'en donner a cœur joie pour vous présenter des solutions Linux, MS ou
+   encore les nouvelles technologies de développement comme Angular JS ou
+   Rails 5.
+     * Twitter
+     * Linkedin
+
+Surveiller la disponibilité de vos sites web et services avec UptimeRobot
+
+Reformater facilement votre ordinateur DELL : DELL OS Recovery Tool
+
+Articles similaires
+
+Pourquoi j’achète sur Amazon plutôt qu’ailleurs ?
+
+   4 février 2013
+
+Télécharger les photos de son compte Flickr
+
+   20 mai 2010
+
+Raccourcir vos urls avec Google
+
+   1 octobre 2010
+
+Le retour de PopCorn Time ! \o/
+
+   18 novembre 2015
+
+Voir Aussi
+
+   Fermer
+     *
+
+Firebug sur internet explorer 6
+       13 janvier 2010
+
+Suivez-nous !
+
+     * 3214 Fans
+     * 4010 Followers
+     * 42679 Abonnés
+     * 564 Followers
+     * Abonnés
+     * 2899 Abonnés
+
+   [INS: :INS]
+   [Forums-Tech2Tech.png]
+
+Booster votre veille informatique
+
+Inscrivez-vous à notre newsletter pour recevoir nos derniers articles !
+
+   Des news, des astuces et plein de tutoriels !
+   Entrez votre adresse Email ____________________
+   S'abonner
+     * Récent
+     * Populaire
+     * Commentaires
+
+     *
+
+Comment sauvegarder l’intégralité d’un PC avec Acronis True Image 2020
+       il y a 11 heures
+     *
+
+Acronis True Image 2020 : Quoi de neuf ?
+       il y a 1 semaine
+     *
+
+SolarWinds Real-Time Bandwidth Monitor (free)
+       12 juillet 2019
+     *
+
+🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à 28€ et
+d’autres promotions…
+       11 juillet 2019
+     * Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Fab’s AutoBackup v7 Pro : Les nouveautés
+       10 juillet 2019
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+Articles Populaires
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+   [INS: :INS]
+
+Articles les plus consultés
+
+     * 29 novembre 2018
+
+Clés de licence génériques pour l’installation de Windows
+     * 18 mars 2013
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Les derniers articles
+
+   Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Suivez-nous
+
+     * #Archives #OldPost Comment savoir si une machine virtuelle Hyper-V
+       est de Génération 1 ou Génération 2… https://t.co/GM7jgewqWa
+       il y a 5 heures
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020 https://t.co/y3isMne72X https://t.co/R6fclyNhTV
+       il y a 9 heures
+
+   Suivez-nous sur Twitter
+
+Partenaires
+
+     * Blogmotion
+     * Coreight
+     * Dépannage informatique à domicile
+
+   Administrateur Systèmes dans la vie, j'aime la veille techno et
+   partager mes découvertes. C'est pourquoi j'ai créé ce blog en 2009 en
+   même temps que la création de mon auto entreprise de dépannage
+   informatique en seine et marne. Pour en savoir un peu plus sur moi,
+   vous pouvez en lire un peu plus sur la page "A Propos" du blog
+   Entrez votre adresse Email ____________________
+   S'abonner
+   © Copyright 2019, All Rights Reserved
+     * Accueil
+     * Contact
+     * Annonceurs
+     * Soutenir Tech2Tech.fr
+     * A Propos
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Facebook Twitter WhatsApp Telegram
+   Bouton retour en haut de la page
+
+   Fermer
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Rechercher : ____________________ Rechercher
+
+Popular Posts
+
+     *
+
+Windows OS
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+Most Commented
+
+     * 23 décembre 2013
+
+Installer Mac OS X 10.9 Mavericks sur Windows avec VMware
+     * 11 juin 2014
+
+Installation et configuration d’une SeedBox Multi Utilisateur
+     * 2 juin 2014
+
+Le kit du Technicien Informatique à l’image de votre Entreprise (Kit de
+Documents)
+     * 4 août 2016
+
+Test du Terra Master D2-310
+     * 20 octobre 2014
+
+Installer Mac OS X 10.10 Yosemite sur Vmware
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Recent Comments
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+   Fermer
+   ____________________ (BUTTON)
+
+   Fermer
+
+Connexion
+
+   ____________________
+   ____________________ Mot de passe oublié?
+   [X] Se souvenir de moi (BUTTON) Connexion
+
+   Ce site utilise des cookies afin de fournir des services, personnaliser
+   les annonces et analyser le trafic. Les informations relatives à votre
+   utilisation du site sont partagées avec des tiers. En continuant votre
+   visite sur ce site, vous acceptez l'utilisation des cookies.OkEn savoir
+   plus
+   #Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique »
+   Flux Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   » Flux des commentaires Tech2Tech | News, Astuces, Tutos, Vidéos autour
+   de l'informatique » Surveiller la disponibilité de vos sites web et
+   services avec UptimeRobot Flux des commentaires Amazon Prime : Les
+   nombreux avantages disponibles en France Passbolt : Installation
+   Community Edition sur Debian 9 alternate alternate
+
+   Menu
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+     * Windows OS
+          + Windows Client
+               o Windows XP
+               o Windows Vista
+               o Windows 7
+               o Windows 8
+               o Windows 10
+          + Windows Server
+               o Windows Server 2008 R2
+               o Windows Server 2012 R2
+               o Windows Server 2016
+     * Logiciels
+          + Office
+          + Outils du tech
+     * Sécurité
+     * Matériels
+          + Matos du Tech
+          + NAS
+          + Hackintosh
+          + Réseau – ADSL
+          + Smartphone
+     * Web
+          + Services
+          + CMS
+               o WordPress
+     * Bons Plans
+
+     * Rechercher
+     * Sidebar (barre latérale)
+     * Connexion
+     * Suivre
+          + Facebook
+          + Twitter
+          + Linkedin
+          + YouTube
+          + Instagram
+          + RSS
+
+   Tendances
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020
+     * Acronis True Image 2020 : Quoi de neuf ?
+     * SolarWinds Real-Time Bandwidth Monitor (free)
+     * 🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à
+       28€ et d’autres promotions…
+     * Fab’s AutoBackup v7 Pro : Les nouveautés
+     * UBIQUITI : Installation de l’UniFi Cloud Key
+     * Comment savoir si une machine virtuelle Hyper-V est de Génération 1
+       ou Génération 2
+     * Retrouver vos contacts dans le nouveau Gmail
+     * Comment changer l’ordre de priorité de vos cartes réseau sur
+       Windows 10
+     * Microsoft améliore OneDrive en ajoutant un coffre-fort numérique et
+       plus de stockage
+
+     * Forum des techs
+     * Annuaire
+     * Offres d’emploi
+     * Soutenir Tech2Tech.fr
+     * Annonceurs
+     * Contact
+     * A Propos
+          + L’équipe
+
+   Accueil/Web/Services/Surveiller la disponibilité de vos sites web et
+   services avec UptimeRobot
+   ServicesWeb
+
+Surveiller la disponibilité de vos sites web et services avec UptimeRobot
+
+   Mikaël GUILLERM 25 juin 2018
+   0 2 556 Temps de lecture 1 minute
+   Facebook Twitter Google+ Linkedin Reddit WhatsApp
+
+   Quoi de plus énervant de savoir son ou ses sites web down. Je vous
+   propose aujourd’hui une solution simple et efficace pour contrôler
+   l’état de vos sites web. En quasi-temps réel, vous serez en mesure
+   d’être alerté lorsque votre site web ne répond plus, mais également
+   lorsqu’il revient en ligne.
+
+   Il existe de nombreux sites qui propose ce type de services, j’en
+   citerai quelques-uns comme Pingdom, uptrends, ou encore Site Uptime.
+
+   Mais aujourd’hui on va parler de celui que j’utilise en ce moment :
+   UpTimeRobot
+
+   IFRAME: //www.youtube.com/embed/vm28aNbQ0yo
+
+   IFRAME: //www.youtube.com/embed/vm28aNbQ0yo
+
+   UptimeRobot est un service de monitoring qui vous permettra de suivre
+   l’état d’un ou plusieurs sites web, mais pas que. UptimeRobot vous
+   permettra de monitorer la disponibilité et les temps de réponse de
+   nombreux services comme FTP, SMTP, POP3, IMAP ou encore tout autre port
+   personnalisé. Si l’un de ces services ne répond plus, une alerte vous
+   est envoyée par mail ou SMS.
+
+   Sommaire Montrer
+   Gratuit ou payant ?
+   Alors, UptimetRobot, comment ça marche ?
+   Ajouter un nouveau « Monitor »
+
+Gratuit ou payant ?
+
+   Il existe deux versions d’UptimeRobot, la version gratuite qui permet
+   déjà beaucoup de choses, comme la possibilité de monter jusqu’à 50
+   moniteurs, d’avoir un rafraichissement toutes les 5 minutes et jusqu’à
+   2 mois de logs. Ce qui reste très généreux si vous souhaitez monitorer
+   vos quelques sites et services perso.
+
+   Pour allez plus loin, vous pouvez opter pour la version pro qui vous
+   permettra de monitorer beaucoup plus de services d’avoir jusqu’à 12
+   mois d’historique et des alertes par SMS. Cette offre est disponible à
+   partir de 4,5$ par mois.
+
+Alors, UptimetRobot, comment ça marche ?
+
+   C’est très simple, une fois inscrit sur la plateforme, vous pouvez
+   ajouter des sites, services, ports à monitorer.
+
+   Voici le dashboard une fois quelques services ajoutés :
+
+   Vous serez alerté par mail dès que votre service sera down puis up (au
+   moins dans les 5 minutes avec un compte gratuit) :
+
+Ajouter un nouveau « Monitor »
+
+   Une fois inscrit et dans votre Dashboard, vous allez pouvoir ajouter
+   des services ou sites web à monitorer.
+
+   Cliquez sur le bouton « Add New Monitor » et sélectionnez le type de
+   service a monitorer (HTTP, Keyword, Ping, Port) et sélectionner le type
+   de notification.
+
+   Remplissez les champs en fonction du type de service à surveiller. Vous
+   pouvez également modifier l’intervalle de temps entre chaque
+   vérification. Il sera au minimum d’une minute pour un compte payant et
+   de cinq minutes pour un compte gratuit.
+
+   Concernant les alertes, vous pouvez ajouter et éditer les méthodes
+   d’alerte depuis vos paramètres utilisateurs (Email, Twitter, SMS, Push
+   iOS…).
+
+   Et toujours depuis vos paramètres utilisateur, vous allez pouvoir créer
+   une page publique du statut de vos services.
+
+   Et franchement, ça à de la gueule 🙂
+
+   Si vous utilisez un autre service de monitoring en ligne, n’hésitez pas
+   à le partager via les commentaires.
+
+Puisque vous êtes encore là...
+
+   ...Si cet article vous a aidé ou informé, laissez-moi vous demander une
+   petite faveur. Nombreux d'entre vous utilise AdBlock sur tech2tech.
+   Alors n'hésitez pas à désactiver AdBlock sur ce site ou bien à faire un
+   don pour m'aider à couvrir les frais autour du site.
+
+   Si chacun de ceux qui ont lu et apprécié cet article participe, le
+   futur de tech2tech ne pourra être que meilleur. Merci à vous !.
+   FAIRE UN DON
+   Tags
+   Supervision UptimeRobot
+   Partager
+   Facebook Twitter Google+ Linkedin Reddit Partager par email Imprimer
+   [INS: :INS]
+
+Mikaël GUILLERM
+
+   Administrateur Système et Autoentrepreneur depuis 2009 chez
+   homeinformatique. Je partage mes connaissances, problèmes et solutions
+   a travers articles ou tweets !
+     * Website
+     * Facebook
+     * Twitter
+     * Google+
+     * Linkedin
+     * YouTube
+     * Instagram
+
+Amazon Prime : Les nombreux avantages disponibles en France
+
+Passbolt : Installation Community Edition sur Debian 9
+
+Articles similaires
+
+Créer son CV en ligne
+
+   26 mai 2010
+
+Bonne année 2013 à tous !
+
+   7 janvier 2013
+
+HARDAH : Le projet web suisse monte en puissance
+
+   14 novembre 2016
+
+Télécharger les documents sur issuu.com
+
+   5 octobre 2010
+
+Voir Aussi
+
+   Fermer
+     *
+
+Web
+
+Les requêtes Google les plus délirantes…
+       17 janvier 2013
+
+Suivez-nous !
+
+     * 3214 Fans
+     * 4010 Followers
+     * 42679 Abonnés
+     * 564 Followers
+     * Abonnés
+     * 2899 Abonnés
+
+   [INS: :INS]
+   [Forums-Tech2Tech.png]
+
+Booster votre veille informatique
+
+Inscrivez-vous à notre newsletter pour recevoir nos derniers articles !
+
+   Des news, des astuces et plein de tutoriels !
+   Entrez votre adresse Email ____________________
+   S'abonner
+     * Récent
+     * Populaire
+     * Commentaires
+
+     *
+
+Comment sauvegarder l’intégralité d’un PC avec Acronis True Image 2020
+       il y a 11 heures
+     *
+
+Acronis True Image 2020 : Quoi de neuf ?
+       il y a 1 semaine
+     *
+
+SolarWinds Real-Time Bandwidth Monitor (free)
+       12 juillet 2019
+     *
+
+🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à 28€ et
+d’autres promotions…
+       11 juillet 2019
+     * Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Fab’s AutoBackup v7 Pro : Les nouveautés
+       10 juillet 2019
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+Articles Populaires
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+   [INS: :INS]
+
+Articles les plus consultés
+
+     * 29 novembre 2018
+
+Clés de licence génériques pour l’installation de Windows
+     * 18 mars 2013
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Les derniers articles
+
+   Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Suivez-nous
+
+     * #Archives #OldPost Comment savoir si une machine virtuelle Hyper-V
+       est de Génération 1 ou Génération 2… https://t.co/GM7jgewqWa
+       il y a 5 heures
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020 https://t.co/y3isMne72X https://t.co/R6fclyNhTV
+       il y a 9 heures
+
+   Suivez-nous sur Twitter
+
+Partenaires
+
+     * Blogmotion
+     * Coreight
+     * Dépannage informatique à domicile
+
+   Administrateur Systèmes dans la vie, j'aime la veille techno et
+   partager mes découvertes. C'est pourquoi j'ai créé ce blog en 2009 en
+   même temps que la création de mon auto entreprise de dépannage
+   informatique en seine et marne. Pour en savoir un peu plus sur moi,
+   vous pouvez en lire un peu plus sur la page "A Propos" du blog
+   Entrez votre adresse Email ____________________
+   S'abonner
+   © Copyright 2019, All Rights Reserved
+     * Accueil
+     * Contact
+     * Annonceurs
+     * Soutenir Tech2Tech.fr
+     * A Propos
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Facebook Twitter WhatsApp Telegram
+   Bouton retour en haut de la page
+
+   Fermer
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Rechercher : ____________________ Rechercher
+
+Popular Posts
+
+     *
+
+Windows OS
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+Most Commented
+
+     * 23 décembre 2013
+
+Installer Mac OS X 10.9 Mavericks sur Windows avec VMware
+     * 11 juin 2014
+
+Installation et configuration d’une SeedBox Multi Utilisateur
+     * 2 juin 2014
+
+Le kit du Technicien Informatique à l’image de votre Entreprise (Kit de
+Documents)
+     * 4 août 2016
+
+Test du Terra Master D2-310
+     * 20 octobre 2014
+
+Installer Mac OS X 10.10 Yosemite sur Vmware
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Recent Comments
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+   Fermer
+   ____________________ (BUTTON)
+
+   Fermer
+
+Connexion
+
+   ____________________
+   ____________________ Mot de passe oublié?
+   [X] Se souvenir de moi (BUTTON) Connexion
+
+   Ce site utilise des cookies afin de fournir des services, personnaliser
+   les annonces et analyser le trafic. Les informations relatives à votre
+   utilisation du site sont partagées avec des tiers. En continuant votre
+   visite sur ce site, vous acceptez l'utilisation des cookies.OkEn savoir
+   plus
+   #Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique »
+   Flux Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   » Flux des commentaires Tech2Tech | News, Astuces, Tutos, Vidéos autour
+   de l'informatique » Amazon Prime : Les nombreux avantages disponibles
+   en France Flux des commentaires Passbolt, ou comment gérer ses mots de
+   passe en entreprise pour pas un rond ? Surveiller la disponibilité de
+   vos sites web et services avec UptimeRobot alternate alternate
+
+   Menu
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+     * Windows OS
+          + Windows Client
+               o Windows XP
+               o Windows Vista
+               o Windows 7
+               o Windows 8
+               o Windows 10
+          + Windows Server
+               o Windows Server 2008 R2
+               o Windows Server 2012 R2
+               o Windows Server 2016
+     * Logiciels
+          + Office
+          + Outils du tech
+     * Sécurité
+     * Matériels
+          + Matos du Tech
+          + NAS
+          + Hackintosh
+          + Réseau – ADSL
+          + Smartphone
+     * Web
+          + Services
+          + CMS
+               o WordPress
+     * Bons Plans
+
+     * Rechercher
+     * Sidebar (barre latérale)
+     * Connexion
+     * Suivre
+          + Facebook
+          + Twitter
+          + Linkedin
+          + YouTube
+          + Instagram
+          + RSS
+
+   Tendances
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020
+     * Acronis True Image 2020 : Quoi de neuf ?
+     * SolarWinds Real-Time Bandwidth Monitor (free)
+     * 🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à
+       28€ et d’autres promotions…
+     * Fab’s AutoBackup v7 Pro : Les nouveautés
+     * UBIQUITI : Installation de l’UniFi Cloud Key
+     * Comment savoir si une machine virtuelle Hyper-V est de Génération 1
+       ou Génération 2
+     * Retrouver vos contacts dans le nouveau Gmail
+     * Comment changer l’ordre de priorité de vos cartes réseau sur
+       Windows 10
+     * Microsoft améliore OneDrive en ajoutant un coffre-fort numérique et
+       plus de stockage
+
+     * Forum des techs
+     * Annuaire
+     * Offres d’emploi
+     * Soutenir Tech2Tech.fr
+     * Annonceurs
+     * Contact
+     * A Propos
+          + L’équipe
+
+   Accueil/Bons Plans/Amazon Prime : Les nombreux avantages disponibles en
+   France
+   Bons PlansServicesWeb
+
+Amazon Prime : Les nombreux avantages disponibles en France
+
+   Mikaël GUILLERM 20 juin 2018
+   0 2 351 3 minutes de lecture
+   Facebook Twitter Google+ Linkedin Reddit WhatsApp
+
+   J’ai Amazon Prime depuis déjà longtemps, au début pour recevoir
+   rapidement mes colis, j’ai maintenant accès a de nombreux services
+   supplémentaires et très intéressants.
+
+   Encore cette semaine, j’ai découvert des services compris dans le pack
+   « Prime« , mais que je n’utilisais pas. C’est pourquoi j’ai pensé à
+   vous faire un petit résumé des nombreux avantages à devenir Amazon
+   Prime.
+
+   D’ailleurs, si vous n’êtes pas Prime, mais que vous souhaitez vous y
+   essayer, c’est tout à fait possible grâce à l’offre d’essai d’un mois.
+   Et l’un des premiers avantages concerne les 18-24ans, puisque vous
+   pouvez bénéficier de Prime à seulement 24€ par ans pendant 4 ans, soit
+   50% de réduction.
+
+   Alors si Amazon Prime est encore plus riche outre-Atlantique, en France
+   nous sommes tout de même de plus en plus gâtés et de nombreux avantages
+   sont disponibles. Je vais essayer de tous vous les lister dans cet
+   article.
+   Sommaire Montrer
+   La livraison sous 24H, gratuite
+   Amazon Drive et Prime Photos
+   Amazon Prime Video
+   Twitch Prime pour les Gamers
+   Réduction sur Amazon pour les gamers
+   Prime Reading : Profitez de la bibliothèque Amazon !
+   Amazon Prime Now
+   Les Ventes Flash en avance
+   Partager son compte Prime
+   Se désabonner d’Amazon Prime
+
+La livraison sous 24H, gratuite
+
+   Amazon s’est entre autres fait connaitre pour ça, une livraison rapide
+   et gratuite pour une commande de 25 euros d’achat (et initialement pour
+   les livres). Si vous êtes Prime, alors tous vos achats sont livrés
+   gratuitement en 24H quel que soit le montant de votre commande. (Voir
+   même le jour même pour les grandes villes tels que Paris, Lyon,
+   Marseille..)
+
+Amazon Drive et Prime Photos
+
+   Oui, c’est entre autres cette fonctionnalité que j’ai découverte il y a
+   quelques jours (honte à moi). Aujourd’hui, les offres de stockage sont
+   nombreuses avec de gros acteurs tels que Microsoft (OneDrive), Google
+   (Drive), Dropbox et bien d’autres.
+
+   L’offre de stockage d’Amazon est juste dingue, notamment l’offre de
+   sauvegarde de vos photos. Vous pouvez stocker vos photos sur Amazon
+   Drive, gratuitement et sans limites… Et vous verrez dans quelques jours
+   que couplé à un NAS, c’est génial. Le stockage des documents ou autres
+   fichiers est quant à lui limité à 5Go et peut être étendu à 100Go en
+
+   Par la suite vos documents et photos seront consultables sur
+   smartphone, sur le web ou grâce à l’application PC Amazon Drive.
+
+   Accédez à vos photos où que vous soyez. Affichez et partagez vos photos
+   depuis vos téléphone, tablette ou ordinateur.
+
+   Stockage sécurisé de photos. Protégez vos photos sans en altérer la
+   résolution ni la qualité
+
+   Libérez de l’espace sur votre téléphone. Chargez un nombre illimité de
+   photos, puis supprimez-les de votre téléphone en toute sécurité.
+
+Amazon Prime Video
+
+   Prime Vidéo vient directement concurrencer Netflix, cependant selon moi
+   (et mes enfants) pour le moment le contenu ne fait pas le poids (Sauf
+   peut être pour les amateurs de bagnoles). Quoi qu’il en soit, les
+   abonnés Prime auront alors un accès sans limites à tout le contenu de
+   prime vidéo, soit des centaines de films et surtout de nombreuses
+   séries réalisées par Amazon.
+
+Twitch Prime pour les Gamers
+
+   Twitch ayant été racheté par Amazon, vous pouvez obtenir certains
+   avantages si vous êtes abonné Amazon Prime. L’offre Twitch Turbo est
+   désormais accessible à n’importe quel abonné Prime gratuitement s’il
+   connecte son compte Twitch à son compte Amazon. Vous aurez également
+   accès aux avantages suivants : Certains jeux gratuits, un abonnement à
+   une chaîne gratuit, à la lecture de toutes les vidéos sans publicité ou
+   encore de nombreux skin sur les jeux.
+
+Réduction sur Amazon pour les gamers
+
+   Toujours pour les gamers, Amazon offre une réduction de 2€ sur tous les
+   jeux vidéo vendus sur Amazon lorsqu’ils sont en précommande et jusqu’à
+   14 jours après leur sortie.
+
+Prime Reading : Profitez de la bibliothèque Amazon !
+
+   La bibliothèque de prêt Kindle : pour tous les utilisateurs de liseuse
+   numérique Kindle, un compte Prime vous permettra d’emprunter un livre
+   par mois dans la bibliothèque. Pas mal !
+
+Amazon Prime Now
+
+   Pour le moment, ce service est exclusivement destiné aux abonnés de
+   Paris intra-muros, Prime Now est un service de livraisons (ultra)
+   rapides. Les courses sont réalisées dans la boutique Amazon ou les
+   boutiques partenaires et sont livrées par les livreurs du service. Les
+   prix de la boutique Amazon sont généralement intéressants, car la firme
+   pratique des réductions et des offres spéciales nombreuses.
+
+Les Ventes Flash en avance
+
+   Les ventes flash sont fréquentes sur Amazon. Les abonnées Prime ont
+   accès à celles-ci 30 minutes avant l’heure de disponibilité à tous les
+   clients.
+
+Partager son compte Prime
+
+   Eh oui, cela fait partit des avantages que peu de personnes utilisent,
+   car Amazon n’en fait pas forcément la pub, mais il est tout à fait
+   possible de partager gratuitement votre compte Prime avec deux membres
+   de votre foyer. Pour inviter une personne à profiter de son abonnement,
+   il faut se rendre sur son compte et procéder à l’invitation. La
+   personne devra connaitre votre date de naissance pour confirmer.
+   Notez que si vous invitez des gens à partager votre abonnement Prime,
+   ils n’auront pas accès à Prime Video ou Prime music : seul le compte
+   principal y a droit.
+
+   Je pense que l’on a fait le tour des offres accessibles via Amazon
+   Prime. C’est vrai que l’on peut trouver ça cher lorsque l’on utilise
+   Prime seulement pour l’envoi de colis en 24H et sans supplément. Mais
+   si on fait la somme des avantages supplémentaires (partage de compte,
+   Prime Vidéo, Prime music…) L’offre Prime d’Amazon est plutôt
+   intéressante.
+
+   Je vous prépare un petit article pour vous expliquer comment
+   sauvegarder toutes vos photos à l’aide d’Amazon Drive, que vous ayez
+   10Go de photos ou plusieurs terra, vous pourrez alors les garder aux
+   chauds sur les serveurs d’Amazon.
+
+   Cliquez ici pour vous abonner à Amazon Prime
+
+Se désabonner d’Amazon Prime
+
+   Le service payant d’Amazon reconduira votre abonnement chaque année
+   après votre première souscription. C’est à dire que si vous ne vous
+   désabonnez pas, vous payerez ainsi tous les ans les 49 € de frais pour
+   être un membre Prime.
+
+   Pour arrêter votre abonnement, vous devez vous connecter et vous rendre
+   sur la page Mon Compte. Puis dans Vos Paramètres, vous trouverez
+   l’intitulé Amazon Prime : gérer mes paramètres. Ensuite, vous trouverez
+   l’option, sur le côté gauche de la page, nommée Fin d’adhésion. Vous
+   avez ensuite à confirmer pour terminer votre abonnement Prime.
+
+Puisque vous êtes encore là...
+
+   ...Si cet article vous a aidé ou informé, laissez-moi vous demander une
+   petite faveur. Nombreux d'entre vous utilise AdBlock sur tech2tech.
+   Alors n'hésitez pas à désactiver AdBlock sur ce site ou bien à faire un
+   don pour m'aider à couvrir les frais autour du site.
+
+   Si chacun de ceux qui ont lu et apprécié cet article participe, le
+   futur de tech2tech ne pourra être que meilleur. Merci à vous !.
+   FAIRE UN DON
+   Tags
+   Amazon Prime
+   Partager
+   Facebook Twitter Google+ Linkedin Reddit Partager par email Imprimer
+   [INS: :INS]
+
+Mikaël GUILLERM
+
+   Administrateur Système et Autoentrepreneur depuis 2009 chez
+   homeinformatique. Je partage mes connaissances, problèmes et solutions
+   a travers articles ou tweets !
+     * Website
+     * Facebook
+     * Twitter
+     * Google+
+     * Linkedin
+     * YouTube
+     * Instagram
+
+Passbolt, ou comment gérer ses mots de passe en entreprise pour pas un rond ?
+
+Surveiller la disponibilité de vos sites web et services avec UptimeRobot
+
+Articles similaires
+
+Gmail : Utiliser la fonctionnalité d’envoi de messages sécurisés (Mode
+confidentiel)
+
+   17 mai 2018
+
+Les bonnes affaires! Semaine 9 – 2016
+
+   29 février 2016
+
+Concours : Gagnez votre licence Acronis True Image Cloud
+
+   17 août 2015
+
+Ouverture du forum Tech2Tech !
+
+   4 septembre 2012
+
+Voir Aussi
+
+   Fermer
+     *
+
+Web
+
+Comparaison des navigateurs avec une arme
+       14 novembre 2011
+
+Suivez-nous !
+
+     * 3214 Fans
+     * 4010 Followers
+     * 42679 Abonnés
+     * 564 Followers
+     * Abonnés
+     * 2899 Abonnés
+
+   [INS: :INS]
+   [Forums-Tech2Tech.png]
+
+Booster votre veille informatique
+
+Inscrivez-vous à notre newsletter pour recevoir nos derniers articles !
+
+   Des news, des astuces et plein de tutoriels !
+   Entrez votre adresse Email ____________________
+   S'abonner
+     * Récent
+     * Populaire
+     * Commentaires
+
+     *
+
+Comment sauvegarder l’intégralité d’un PC avec Acronis True Image 2020
+       il y a 11 heures
+     *
+
+Acronis True Image 2020 : Quoi de neuf ?
+       il y a 1 semaine
+     *
+
+SolarWinds Real-Time Bandwidth Monitor (free)
+       12 juillet 2019
+     *
+
+🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à 28€ et
+d’autres promotions…
+       11 juillet 2019
+     * Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Fab’s AutoBackup v7 Pro : Les nouveautés
+       10 juillet 2019
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+Articles Populaires
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+   [INS: :INS]
+
+Articles les plus consultés
+
+     * 29 novembre 2018
+
+Clés de licence génériques pour l’installation de Windows
+     * 18 mars 2013
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Les derniers articles
+
+   Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Suivez-nous
+
+     * #Archives #OldPost Comment savoir si une machine virtuelle Hyper-V
+       est de Génération 1 ou Génération 2… https://t.co/GM7jgewqWa
+       il y a 6 heures
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020 https://t.co/y3isMne72X https://t.co/R6fclyNhTV
+       il y a 9 heures
+
+   Suivez-nous sur Twitter
+
+Partenaires
+
+     * Blogmotion
+     * Coreight
+     * Dépannage informatique à domicile
+
+   Administrateur Systèmes dans la vie, j'aime la veille techno et
+   partager mes découvertes. C'est pourquoi j'ai créé ce blog en 2009 en
+   même temps que la création de mon auto entreprise de dépannage
+   informatique en seine et marne. Pour en savoir un peu plus sur moi,
+   vous pouvez en lire un peu plus sur la page "A Propos" du blog
+   Entrez votre adresse Email ____________________
+   S'abonner
+   © Copyright 2019, All Rights Reserved
+     * Accueil
+     * Contact
+     * Annonceurs
+     * Soutenir Tech2Tech.fr
+     * A Propos
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Facebook Twitter WhatsApp Telegram
+   Bouton retour en haut de la page
+
+   Fermer
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Rechercher : ____________________ Rechercher
+
+Popular Posts
+
+     *
+
+Windows OS
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+Most Commented
+
+     * 23 décembre 2013
+
+Installer Mac OS X 10.9 Mavericks sur Windows avec VMware
+     * 11 juin 2014
+
+Installation et configuration d’une SeedBox Multi Utilisateur
+     * 2 juin 2014
+
+Le kit du Technicien Informatique à l’image de votre Entreprise (Kit de
+Documents)
+     * 4 août 2016
+
+Test du Terra Master D2-310
+     * 20 octobre 2014
+
+Installer Mac OS X 10.10 Yosemite sur Vmware
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Recent Comments
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+   Fermer
+   ____________________ (BUTTON)
+
+   Fermer
+
+Connexion
+
+   ____________________
+   ____________________ Mot de passe oublié?
+   [X] Se souvenir de moi (BUTTON) Connexion
+
+   Ce site utilise des cookies afin de fournir des services, personnaliser
+   les annonces et analyser le trafic. Les informations relatives à votre
+   utilisation du site sont partagées avec des tiers. En continuant votre
+   visite sur ce site, vous acceptez l'utilisation des cookies.OkEn savoir
+   plus
+   #Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique »
+   Flux Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   » Flux des commentaires Tech2Tech | News, Astuces, Tutos, Vidéos autour
+   de l'informatique » Flux de la catégorie Web
+
+   Menu
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+     * Windows OS
+          + Windows Client
+               o Windows XP
+               o Windows Vista
+               o Windows 7
+               o Windows 8
+               o Windows 10
+          + Windows Server
+               o Windows Server 2008 R2
+               o Windows Server 2012 R2
+               o Windows Server 2016
+     * Logiciels
+          + Office
+          + Outils du tech
+     * Sécurité
+     * Matériels
+          + Matos du Tech
+          + NAS
+          + Hackintosh
+          + Réseau – ADSL
+          + Smartphone
+     * Web
+          + Services
+          + CMS
+               o WordPress
+     * Bons Plans
+
+     * Rechercher
+     * Sidebar (barre latérale)
+     * Connexion
+     * Suivre
+          + Facebook
+          + Twitter
+          + Linkedin
+          + YouTube
+          + Instagram
+          + RSS
+
+   Tendances
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020
+     * Acronis True Image 2020 : Quoi de neuf ?
+     * SolarWinds Real-Time Bandwidth Monitor (free)
+     * 🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à
+       28€ et d’autres promotions…
+     * Fab’s AutoBackup v7 Pro : Les nouveautés
+     * UBIQUITI : Installation de l’UniFi Cloud Key
+     * Comment savoir si une machine virtuelle Hyper-V est de Génération 1
+       ou Génération 2
+     * Retrouver vos contacts dans le nouveau Gmail
+     * Comment changer l’ordre de priorité de vos cartes réseau sur
+       Windows 10
+     * Microsoft améliore OneDrive en ajoutant un coffre-fort numérique et
+       plus de stockage
+
+     * Forum des techs
+     * Annuaire
+     * Offres d’emploi
+     * Soutenir Tech2Tech.fr
+     * Annonceurs
+     * Contact
+     * A Propos
+          + L’équipe
+
+   Accueil/Web
+
+Web
+
+     * Youssef Lachgar 18 juin 2018
+       0 6 190
+
+Passbolt, ou comment gérer ses mots de passe en entreprise pour pas un rond ?
+       Salut les techos, Comme vous savez certainement, la gestion des
+       mots de passe en entreprise ou personnels est souvent une…
+       Lire la suite »
+     * Mikaël GUILLERM 17 mai 2018
+       0 1 800
+
+Gmail : Utiliser la fonctionnalité d’envoi de messages sécurisés (Mode
+confidentiel)
+       Gmail a fait peau neuve il y a quelques jours, l’une des
+       fonctionnalités très attendues était l’envoi de messages
+       sécurisés.…
+       Lire la suite »
+     * Mikaël GUILLERM 17 mai 2018
+       0 2 143
+
+Gmail : Activer le mode hors ligne et consulter vos mails sans internet
+       Il y a quelques jours, je vous parlai des nouveautés de la
+       messagerie de Google. Certaines des nouvelles fonctionnalités
+       annoncées…
+       Lire la suite »
+     * Mikaël GUILLERM 4 mai 2018
+       0 1 169
+
+Comment sécuriser votre compte Twitter : Ajouter la double authentification
+       Hey les techos, j’espère que vous avez regarder ma vidéo sur
+       Dashlane ou j’explique l’avantage d’avoir un mot de passe…
+       Lire la suite »
+     * Mikaël GUILLERM 3 mai 2018
+       0 3 971
+
+Nouvelle version de Gmail : Présentation des nouveautés
+       Une nouvelle version de la messagerie de Google vient tout juste de
+       sortir. Cette messagerie au milliard d’utilisateurs n’avait pas…
+       Lire la suite »
+     * Samuel Monier 23 mars 2018
+       0 3 657
+
+NAS Synology et modification PHP
+       Lors de l’installation d’une application web sur un NAS Synology
+       pour un client, j’ai eu un soucis avec des modifications…
+       Lire la suite »
+     * Mikaël GUILLERM 13 novembre 2017
+       16 21 681
+
+Quickbox : Installer votre seedbox multi-utilisateur Easy Peasy
+       Que le temps passe vite… il y a déjà quelques années, je vous avais
+       pondu un guide pas à pas…
+       Lire la suite »
+     * Mikaël GUILLERM 18 septembre 2017
+       3 6 838
+
+QuickBox : Installer Plex sur une seedbox QuickBox
+       On a vu récemment comment installer une seedbox multi-utilisateurs
+       avec QuickBox. C’est effectivement assez simple et l’avantage de
+       Quickbox en…
+       Lire la suite »
+     * Mikaël GUILLERM 10 août 2017
+       4 4 136
+
+GPSearch : Un moteur de recherche pour GPO
+       C’est bien la preuve que ce petit discord en vaut la peine, on en
+       apprend tous jours. Aujourd’hui c’est Nilz…
+       Lire la suite »
+     * Mikaël GUILLERM 7 août 2017
+       3 3 495
+
+Discord sysadmin_fr : Le chan IRC 2.0 des Sysadmins
+       Aujourd’hui, petite promo pour une super initiative de Xhark de
+       Blogmotion. Xhark est blogueur, mais également syadmin et comme
+       nous…
+       Lire la suite »
+
+   Page précédente Page suivante
+
+Suivez-nous !
+
+     * 3214 Fans
+     * 4010 Followers
+     * 42679 Abonnés
+     * 564 Followers
+     * Abonnés
+     * 2899 Abonnés
+
+   [INS: :INS]
+   [Forums-Tech2Tech.png]
+
+Booster votre veille informatique
+
+Inscrivez-vous à notre newsletter pour recevoir nos derniers articles !
+
+   Des news, des astuces et plein de tutoriels !
+   Entrez votre adresse Email ____________________
+   S'abonner
+     * Récent
+     * Populaire
+     * Commentaires
+
+     *
+
+Comment sauvegarder l’intégralité d’un PC avec Acronis True Image 2020
+       il y a 11 heures
+     *
+
+Acronis True Image 2020 : Quoi de neuf ?
+       il y a 1 semaine
+     *
+
+SolarWinds Real-Time Bandwidth Monitor (free)
+       12 juillet 2019
+     *
+
+🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à 28€ et
+d’autres promotions…
+       11 juillet 2019
+     * Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Fab’s AutoBackup v7 Pro : Les nouveautés
+       10 juillet 2019
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+Articles Populaires
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+   [INS: :INS]
+
+Articles les plus consultés
+
+     * 29 novembre 2018
+
+Clés de licence génériques pour l’installation de Windows
+     * 18 mars 2013
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Les derniers articles
+
+   Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Suivez-nous
+
+     * #Archives #OldPost Comment savoir si une machine virtuelle Hyper-V
+       est de Génération 1 ou Génération 2… https://t.co/GM7jgewqWa
+       il y a 6 heures
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020 https://t.co/y3isMne72X https://t.co/R6fclyNhTV
+       il y a 9 heures
+
+   Suivez-nous sur Twitter
+
+Partenaires
+
+     * Blogmotion
+     * Coreight
+     * Dépannage informatique à domicile
+
+   Administrateur Systèmes dans la vie, j'aime la veille techno et
+   partager mes découvertes. C'est pourquoi j'ai créé ce blog en 2009 en
+   même temps que la création de mon auto entreprise de dépannage
+   informatique en seine et marne. Pour en savoir un peu plus sur moi,
+   vous pouvez en lire un peu plus sur la page "A Propos" du blog
+   Entrez votre adresse Email ____________________
+   S'abonner
+   © Copyright 2019, All Rights Reserved
+     * Accueil
+     * Contact
+     * Annonceurs
+     * Soutenir Tech2Tech.fr
+     * A Propos
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Bouton retour en haut de la page
+
+   Fermer
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Rechercher : ____________________ Rechercher
+
+Popular Posts
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+Most Commented
+
+     * 23 décembre 2013
+
+Installer Mac OS X 10.9 Mavericks sur Windows avec VMware
+     * 11 juin 2014
+
+Installation et configuration d’une SeedBox Multi Utilisateur
+     * 2 juin 2014
+
+Le kit du Technicien Informatique à l’image de votre Entreprise (Kit de
+Documents)
+     * 4 août 2016
+
+Test du Terra Master D2-310
+     * 20 octobre 2014
+
+Installer Mac OS X 10.10 Yosemite sur Vmware
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Recent Comments
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+   Fermer
+   ____________________ (BUTTON)
+
+   Fermer
+
+Connexion
+
+   ____________________
+   ____________________ Mot de passe oublié?
+   [X] Se souvenir de moi (BUTTON) Connexion
+
+   Ce site utilise des cookies afin de fournir des services, personnaliser
+   les annonces et analyser le trafic. Les informations relatives à votre
+   utilisation du site sont partagées avec des tiers. En continuant votre
+   visite sur ce site, vous acceptez l'utilisation des cookies.OkEn savoir
+   plus
+   #Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique »
+   Flux Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   » Flux des commentaires Tech2Tech | News, Astuces, Tutos, Vidéos autour
+   de l'informatique » Passbolt, ou comment gérer ses mots de passe en
+   entreprise pour pas un rond ? Flux des commentaires La sécurité
+   commence par la sensibilisation – Télécharger le Kit de sensibilisation
+   Amazon Prime : Les nombreux avantages disponibles en France alternate
+   alternate
+
+   Menu
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+   Tech2Tech | News, Astuces, Tutos, Vidéos autour de l'informatique
+     * Windows OS
+          + Windows Client
+               o Windows XP
+               o Windows Vista
+               o Windows 7
+               o Windows 8
+               o Windows 10
+          + Windows Server
+               o Windows Server 2008 R2
+               o Windows Server 2012 R2
+               o Windows Server 2016
+     * Logiciels
+          + Office
+          + Outils du tech
+     * Sécurité
+     * Matériels
+          + Matos du Tech
+          + NAS
+          + Hackintosh
+          + Réseau – ADSL
+          + Smartphone
+     * Web
+          + Services
+          + CMS
+               o WordPress
+     * Bons Plans
+
+     * Rechercher
+     * Sidebar (barre latérale)
+     * Connexion
+     * Suivre
+          + Facebook
+          + Twitter
+          + Linkedin
+          + YouTube
+          + Instagram
+          + RSS
+
+   Tendances
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020
+     * Acronis True Image 2020 : Quoi de neuf ?
+     * SolarWinds Real-Time Bandwidth Monitor (free)
+     * 🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à
+       28€ et d’autres promotions…
+     * Fab’s AutoBackup v7 Pro : Les nouveautés
+     * UBIQUITI : Installation de l’UniFi Cloud Key
+     * Comment savoir si une machine virtuelle Hyper-V est de Génération 1
+       ou Génération 2
+     * Retrouver vos contacts dans le nouveau Gmail
+     * Comment changer l’ordre de priorité de vos cartes réseau sur
+       Windows 10
+     * Microsoft améliore OneDrive en ajoutant un coffre-fort numérique et
+       plus de stockage
+
+     * Forum des techs
+     * Annuaire
+     * Offres d’emploi
+     * Soutenir Tech2Tech.fr
+     * Annonceurs
+     * Contact
+     * A Propos
+          + L’équipe
+
+   Accueil/Logiciels/Passbolt, ou comment gérer ses mots de passe en
+   entreprise pour pas un rond ?
+   LogicielsOutils du techServicesWeb
+
+Passbolt, ou comment gérer ses mots de passe en entreprise pour pas un rond ?
+
+   Youssef Lachgar 18 juin 2018
+   0 6 189 3 minutes de lecture
+   Facebook Twitter Google+ Linkedin Reddit WhatsApp
+
+   Salut les techos,
+
+   Comme vous savez certainement, la gestion des mots de passe en
+   entreprise ou personnels est souvent une aventure difficile. Le choix
+   de la solution, Cloud ou Local, Open source ou payante, duo
+   authentification ou simple … bref … il faut de tout pour faire un monde
+   !
+
+   J’ai eu l’occasion de me jeter dans l’aventure des gestionnaires de
+   mots de passe et j’aimerais partager ce voyage avec vous … bon en gros
+   c’est un peu long donc on va découper ça en 3 parties
+     * La solution
+     * L’installation
+     * La gestion
+
+   Sinon c’est trop long et comme c’est mon premier article, il s’agirait
+   de ne pas se louper ^_^
+   Le mec du milieu sait que tu as perdu ton password.
+   Sommaire Montrer
+   Le choix de la solution …
+   La techno de sécurisation des mots de passe
+   Et l’interface dans tout ça ?
+   Local ou Cloud ?
+   Passbolt, ça coute combien ?
+
+Le choix de la solution …
+
+   C’est lorsqu’on m’a proposé de mettre en place une solution de gestion
+   des mots de passe pour l’ensemble de nos équipes en Europe, que je me
+   suis intéressé au sujet. Et voici le cahier des charges que j’ai reçu :
+     * Gérer plus de 500 mots de passe
+     * Serveur Local
+     * Créer des groupes différents avec des niveaux d’accès différent
+     * Mettre en place un processus de « Fire Fighting » ^(je vous
+       explique ça après)
+     * Sécurisation de la Base de données
+     * Sécurisation des attaques type « Man in the Middle«
+     * Une belle interface utilisateur, simple et intuitive
+
+   Et évidemment, tous les basiques de la gestion de mot de passe
+   (Chiffrage, Sécurité contre les failles, SSL, et autres
+   joyeusetés). Comme tout bon geek qui se respecte, j’étais déjà au jus
+   des différentes solutions d’entreprise type :
+     * Dashlane
+     * Keepass
+     * Lastpass
+     * …
+
+   Mais mes problématiques étant multiples, le budget inexistant, les
+   utilisateurs peu habitués à une solution Global, le Top Management,
+   très à cheval sur la sécurité et les fonctionnalités … il me fallait du
+   bon et du gratuit ! J’en ai donc discuté avec notre « Chevalier IT« ,
+   l’inénarrable Mikael, qui m’a doucement poussé vers Passbolt, une
+   solution que je ne connaissais pas.
+   Mika les bon tuyaux – Mars 2018
+
+La techno de sécurisation des mots de passe
+
+   Tout d’abord, j’ai jeté un œil à leurs technos pour couvrir le besoin
+   sécurité avant même de vérifier les fonctionnalités et le moins qu’on
+   puisse dire, c’est que c’est pas mal du tout :
+
+   Nos frenchies ont construit leur solution, d’une maniéré assez bien
+   ficelé coté sécurité, et uniquement open source ! Elle est donc
+   hébergée sur Github et le code accessible à tous (d’où l’anglais).
+
+   Pour la faire simple, on utilise une clef OpenPgp privée et publique
+   pour chiffrer et on utilise une clef privée, un email et une passphrase
+   pour les logins. C’est simple, mais diablement efficace, à noter  qu’on
+   couvre pas mal de types d’attaques, dont el famoso « Man in the
+   Middle »
+
+   L’architecture du logiciel a vite été validée au travers d’un audit
+   très positif réalisé par CakeDC, la société derrière le framework
+   CakePHP, mais aussi en travaillant étroitement avec des hackers au
+   travers des programmes de « Bug Bounty » mis en place.
+
+   J’ai eu la chance de gérer un projet RGPD au sein de ma boite et
+   j’étais donc particulièrement sensible au chiffrement des données, et
+   j’ai été agréablement surpris, je vous invite à jeter un œil à leurs
+   FAQ.
+
+   Je ne vais pas vous détailler ici les briques de solution open source
+   qui sont utilisés chez Passbolt (on fera ça dans l’article
+   d’installation), mais je peux vous « teaser » d’ores et déjà que nos
+   amis linuxiens que ce soit Debian 9 ou CentOS7 vont être ravis.
+     * Maria DB
+     * Nginx
+     * Php-Fmp7
+     * Cake
+     * …
+
+   J’espère que tu as ta clef privée gamin …
+
+Et l’interface dans tout ça ?
+
+   Et bien en plus d’être sécurisé, il est terriblement efficace. Passbolt
+   s’intégrera très facilement à votre navigateur (Firefox et Chrome) à
+   l’aide d’un petit complément/module. Vous pourrez ensuite peupler
+   Passbolt de tous vos mots de passe personnels ou d’équipe. Oui, puisque
+   Passbolt c’est aussi le partage de mot de passe entre les équipes.
+
+Local ou Cloud ?
+
+   Ce qui est sympa avec Passbolt, c’est la flexibilité, que ce soit Cloud
+   ou local  :
+     * Self hosted
+          + Docker
+          + VM
+          + Install from Scratch
+     * Cloud Based
+          + À checker
+          + Offre de Hosting chez passbolt (OVH, AWS, Azure …)
+
+   Pour résumer, on peut tranquillement l’installer sur un serveur local
+   Linux ou le faire directement chez Passbolt ou un autre hébergeur. Pour
+   aider dans la tâche il y a deux solutions, soit en loup solitaire, mais
+   avec l’aide de la communauté GitHub sinon via leurs scripts d’install,
+   VM et autre Docker à condition de payer une suscription.
+
+   Et comme j’ai fait les deux … ben on va analyser ça dans le prochain
+   article 🙂
+
+Passbolt, ça coute combien ?
+
+   En fonction de votre besoin, Passbolt peut être soit gratuit, soit
+   payant. En effet, une version « CE » pour Community Edition est
+   disponible gratuitement, mais sans support de la part de la team
+   passbolt.
+
+   Si vous avez besoin d’aide, dans ce cas, il existe plutôt type de
+   souscription que je vous laisse observer dans le tableau ci dessous
+   (disponible a cette adresse) :
+
+   À noter également que cela fait plusieurs années que la team Passbolt
+   œuvre pour faire le meilleur gestionnaire de mot de passe pour
+   entreprise. Et pour ça, de nombreuses fonctionnalités sont récemment
+   sorties, mais aussi beaucoup d’autres encore en développement.
+
+   Vous pouvez consulter la Roadmap du projet ici.
+
+Puisque vous êtes encore là...
+
+   ...Si cet article vous a aidé ou informé, laissez-moi vous demander une
+   petite faveur. Nombreux d'entre vous utilise AdBlock sur tech2tech.
+   Alors n'hésitez pas à désactiver AdBlock sur ce site ou bien à faire un
+   don pour m'aider à couvrir les frais autour du site.
+
+   Si chacun de ceux qui ont lu et apprécié cet article participe, le
+   futur de tech2tech ne pourra être que meilleur. Merci à vous !.
+   FAIRE UN DON
+   Tags
+   Entreprise Passbolt Password
+   Partager
+   Facebook Twitter Google+ Linkedin Reddit Partager par email Imprimer
+   [INS: :INS]
+
+Youssef Lachgar
+
+   Passionné par les nouvelles technologies et la culture Geek en
+   Générale, je suis actuellement Service Delivery Manager au sein d'un
+   groupe Industriel. J'officie dans des projets Infrastructure, Migration
+   ou encore dans la stratégie des services IT. Touche a tout, je vais
+   m'en donner a cœur joie pour vous présenter des solutions Linux, MS ou
+   encore les nouvelles technologies de développement comme Angular JS ou
+   Rails 5.
+     * Twitter
+     * Linkedin
+
+La sécurité commence par la sensibilisation - Télécharger le Kit de
+sensibilisation
+
+Amazon Prime : Les nombreux avantages disponibles en France
+
+Articles similaires
+
+Revoir la vidéo de la conférence de Free pour le lancement de Free Mobile
+
+   10 janvier 2012
+
+Migration de messagerie : MailStore
+
+   3 décembre 2015
+
+Les requêtes Google les plus délirantes…
+
+   17 janvier 2013
+
+Est-il possible de contrer les Ransomwares avec Acronis True Image 2017 NG ?
+Verdict
+
+   17 février 2017
+
+Voir Aussi
+
+   Fermer
+     *
+
+Web
+
+Supprimer vos données du service 123people
+       12 janvier 2011
+
+Suivez-nous !
+
+     * 3214 Fans
+     * 4001 Followers
+     * 42644 Abonnés
+     * 562 Followers
+     * Abonnés
+     * 2899 Abonnés
+
+   [INS: :INS]
+   [Forums-Tech2Tech.png]
+
+Booster votre veille informatique
+
+Inscrivez-vous à notre newsletter pour recevoir nos derniers articles !
+
+   Des news, des astuces et plein de tutoriels !
+   Entrez votre adresse Email ____________________
+   S'abonner
+     * Récent
+     * Populaire
+     * Commentaires
+
+     *
+
+Comment sauvegarder l’intégralité d’un PC avec Acronis True Image 2020
+       il y a 6 heures
+     *
+
+Acronis True Image 2020 : Quoi de neuf ?
+       il y a 1 semaine
+     *
+
+SolarWinds Real-Time Bandwidth Monitor (free)
+       12 juillet 2019
+     *
+
+🔥 Solde d’été URcdkey : Pack de licences Windows 10 + Office 2016 à 28€ et
+d’autres promotions…
+       11 juillet 2019
+     * Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Fab’s AutoBackup v7 Pro : Les nouveautés
+       10 juillet 2019
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+Articles Populaires
+
+     *
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+   [INS: :INS]
+
+Articles les plus consultés
+
+     * 29 novembre 2018
+
+Clés de licence génériques pour l’installation de Windows
+     * 18 mars 2013
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Les derniers articles
+
+   Fab's AutoBackup v7 Fab's AutoBackup v7
+
+Suivez-nous
+
+     * Comment sauvegarder l’intégralité d’un PC avec Acronis True Image
+       2020 https://t.co/y3isMne72X https://t.co/R6fclyNhTV
+       il y a 3 heures
+     * @Fred_Oah effectivement :)
+       il y a 4 heures
+
+   Suivez-nous sur Twitter
+
+Partenaires
+
+     * Blogmotion
+     * Coreight
+     * Dépannage informatique à domicile
+
+   Administrateur Systèmes dans la vie, j'aime la veille techno et
+   partager mes découvertes. C'est pourquoi j'ai créé ce blog en 2009 en
+   même temps que la création de mon auto entreprise de dépannage
+   informatique en seine et marne. Pour en savoir un peu plus sur moi,
+   vous pouvez en lire un peu plus sur la page "A Propos" du blog
+   Entrez votre adresse Email ____________________
+   S'abonner
+   © Copyright 2019, All Rights Reserved
+     * Accueil
+     * Contact
+     * Annonceurs
+     * Soutenir Tech2Tech.fr
+     * A Propos
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Facebook Twitter WhatsApp Telegram
+   Bouton retour en haut de la page
+
+   Fermer
+     *
+     *
+     *
+     *
+     *
+     *
+
+   Rechercher : ____________________ Rechercher
+
+Popular Posts
+
+     *
+
+Windows OS
+
+Clés de licence génériques pour l’installation de Windows
+       29 novembre 2018
+     *
+
+Utiliser votre Dualshock 3 sur votre PC (avec ou sans bluetooth)
+       18 mars 2013
+     *
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+       20 février 2017
+     *
+
+Quelle est la différence entre le format GPT et MBR pour un disque dur ?
+       7 mai 2015
+     *
+
+Hard Reset / Hard Reboot sur Freebox V6
+       10 mars 2011
+
+Most Commented
+
+     * 23 décembre 2013
+
+Installer Mac OS X 10.9 Mavericks sur Windows avec VMware
+     * 11 juin 2014
+
+Installation et configuration d’une SeedBox Multi Utilisateur
+     * 2 juin 2014
+
+Le kit du Technicien Informatique à l’image de votre Entreprise (Kit de
+Documents)
+     * 4 août 2016
+
+Test du Terra Master D2-310
+     * 20 octobre 2014
+
+Installer Mac OS X 10.10 Yosemite sur Vmware
+     * 20 février 2017
+
+Medicat : L’utilitaire ultime pour le dépannage informatique
+
+Recent Comments
+
+     * OnePlus 6T : Le test // Et pourquoi je risque de repasser sur
+       Android ! - My Tiny Tools
+       […] (Source: Tech2Tech : La communauté des techniciens...
+     * dominique laubies
+       Bonjour,j'ai medicat sur ma clé USB tout est en anglais comm...
+     * marko ifebo
+       A tous les niveaux j'arrive trop tard pour la gratuité. Pas...
+     * marko ifebo
+       Bof ! Impossible de télécharger cette compile d'application....
+     * Fabien Dugué
+       lecture en 1080p sans probleme de mon côté et stable...
+
+   Fermer
+   ____________________ (BUTTON)
+
+   Fermer
+
+Connexion
+
+   ____________________
+   ____________________ Mot de passe oublié?
+   [X] Se souvenir de moi (BUTTON) Connexion
+
+   Ce site utilise des cookies afin de fournir des services, personnaliser
+   les annonces et analyser le trafic. Les informations relatives à votre
+   utilisation du site sont partagées avec des tiers. En continuant votre
+   visite sur ce site, vous acceptez l'utilisation des cookies.OkEn savoir
+   plus

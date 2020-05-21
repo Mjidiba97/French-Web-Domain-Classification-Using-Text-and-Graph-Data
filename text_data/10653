@@ -1,0 +1,5524 @@
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Directive Index
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   Each Apache directive available in the standard Apache distribution is
+   listed here. They are described using a consistent format, and there is
+   a dictionary of the terms used in their descriptions available.
+
+   A Directive Quick-Reference is also available giving details about each
+   directive in a summary form.
+
+    A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |  I  |  K  |  L  |  M  |
+    N  |  O  |  P  |  Q  |  R  |  S  |  T  |  U  |  V  |  W  |  X
+
+     * AcceptFilter
+     * AcceptPathInfo
+     * AccessFileName
+     * Action
+     * AddAlt
+     * AddAltByEncoding
+     * AddAltByType
+     * AddCharset
+     * AddDefaultCharset
+     * AddDescription
+     * AddEncoding
+     * AddHandler
+     * AddIcon
+     * AddIconByEncoding
+     * AddIconByType
+     * AddInputFilter
+     * AddLanguage
+     * AddModuleInfo
+     * AddOutputFilter
+     * AddOutputFilterByType
+     * AddType
+     * Alias
+     * AliasMatch
+     * Allow
+     * AllowCONNECT
+     * AllowEncodedSlashes
+     * AllowMethods
+     * AllowOverride
+     * AllowOverrideList
+     * Anonymous
+     * Anonymous_LogEmail
+     * Anonymous_MustGiveEmail
+     * Anonymous_NoUserID
+     * Anonymous_VerifyEmail
+     * AsyncRequestWorkerFactor
+     * AuthBasicAuthoritative
+     * AuthBasicFake
+     * AuthBasicProvider
+     * AuthBasicUseDigestAlgorithm
+     * AuthDBDUserPWQuery
+     * AuthDBDUserRealmQuery
+     * AuthDBMGroupFile
+     * AuthDBMType
+     * AuthDBMUserFile
+     * AuthDigestAlgorithm
+     * AuthDigestDomain
+     * AuthDigestNonceLifetime
+     * AuthDigestProvider
+     * AuthDigestQop
+     * AuthDigestShmemSize
+     * AuthFormAuthoritative
+     * AuthFormBody
+     * AuthFormDisableNoStore
+     * AuthFormFakeBasicAuth
+     * AuthFormLocation
+     * AuthFormLoginRequiredLocation
+     * AuthFormLoginSuccessLocation
+     * AuthFormLogoutLocation
+     * AuthFormMethod
+     * AuthFormMimetype
+     * AuthFormPassword
+     * AuthFormProvider
+     * AuthFormSitePassphrase
+     * AuthFormSize
+     * AuthFormUsername
+     * AuthGroupFile
+     * AuthLDAPAuthorizePrefix
+     * AuthLDAPBindAuthoritative
+     * AuthLDAPBindDN
+     * AuthLDAPBindPassword
+     * AuthLDAPCharsetConfig
+     * AuthLDAPCompareAsUser
+     * AuthLDAPCompareDNOnServer
+     * AuthLDAPDereferenceAliases
+     * AuthLDAPGroupAttribute
+     * AuthLDAPGroupAttributeIsDN
+     * AuthLDAPInitialBindAsUser
+     * AuthLDAPInitialBindPattern
+     * AuthLDAPMaxSubGroupDepth
+     * AuthLDAPRemoteUserAttribute
+     * AuthLDAPRemoteUserIsDN
+     * AuthLDAPSearchAsUser
+     * AuthLDAPSubGroupAttribute
+     * AuthLDAPSubGroupClass
+     * AuthLDAPURL
+     * AuthMerging
+     * AuthName
+     * AuthnCacheContext
+     * AuthnCacheEnable
+     * AuthnCacheProvideFor
+     * AuthnCacheSOCache
+     * AuthnCacheTimeout
+     * <AuthnProviderAlias>
+     * AuthnzFcgiCheckAuthnProvider
+     * AuthnzFcgiDefineProvider
+     * AuthType
+     * AuthUserFile
+     * AuthzDBDLoginToReferer
+     * AuthzDBDQuery
+     * AuthzDBDRedirectQuery
+     * AuthzDBMType
+     * <AuthzProviderAlias>
+     * AuthzSendForbiddenOnFailure
+     * BalancerGrowth
+     * BalancerInherit
+     * BalancerMember
+     * BalancerPersist
+     * BrotliAlterETag
+     * BrotliCompressionMaxInputBlock
+     * BrotliCompressionQuality
+     * BrotliCompressionWindow
+     * BrotliFilterNote
+     * BrowserMatch
+     * BrowserMatchNoCase
+     * BufferedLogs
+     * BufferSize
+     * CacheDefaultExpire
+     * CacheDetailHeader
+     * CacheDirLength
+     * CacheDirLevels
+     * CacheDisable
+     * CacheEnable
+     * CacheFile
+     * CacheHeader
+     * CacheIgnoreCacheControl
+     * CacheIgnoreHeaders
+     * CacheIgnoreNoLastMod
+     * CacheIgnoreQueryString
+     * CacheIgnoreURLSessionIdentifiers
+     * CacheKeyBaseURL
+     * CacheLastModifiedFactor
+     * CacheLock
+     * CacheLockMaxAge
+     * CacheLockPath
+     * CacheMaxExpire
+     * CacheMaxFileSize
+     * CacheMinExpire
+     * CacheMinFileSize
+     * CacheNegotiatedDocs
+     * CacheQuickHandler
+     * CacheReadSize
+     * CacheReadTime
+     * CacheRoot
+     * CacheSocache
+     * CacheSocacheMaxSize
+     * CacheSocacheMaxTime
+     * CacheSocacheMinTime
+     * CacheSocacheReadSize
+     * CacheSocacheReadTime
+     * CacheStaleOnError
+     * CacheStoreExpired
+     * CacheStoreNoStore
+     * CacheStorePrivate
+     * CGIDScriptTimeout
+     * CGIMapExtension
+     * CGIPassAuth
+     * CGIVar
+     * CharsetDefault
+     * CharsetOptions
+     * CharsetSourceEnc
+     * CheckCaseOnly
+     * CheckSpelling
+     * ChrootDir
+     * ContentDigest
+     * CookieDomain
+     * CookieExpires
+     * CookieName
+     * CookieStyle
+     * CookieTracking
+     * CoreDumpDirectory
+     * CustomLog
+     * Dav
+     * DavDepthInfinity
+     * DavGenericLockDB
+     * DavLockDB
+     * DavMinTimeout
+     * DBDExptime
+     * DBDInitSQL
+     * DBDKeep
+     * DBDMax
+     * DBDMin
+     * DBDParams
+     * DBDPersist
+     * DBDPrepareSQL
+     * DBDriver
+     * DefaultIcon
+     * DefaultLanguage
+     * DefaultRuntimeDir
+     * DefaultType
+     * Define
+     * DeflateBufferSize
+     * DeflateCompressionLevel
+     * DeflateFilterNote
+     * DeflateInflateLimitRequestBody
+     * DeflateInflateRatioBurst
+     * DeflateInflateRatioLimit
+     * DeflateMemLevel
+     * DeflateWindowSize
+     * Deny
+     * <Directory>
+     * DirectoryCheckHandler
+     * DirectoryIndex
+     * DirectoryIndexRedirect
+     * <DirectoryMatch>
+     * DirectorySlash
+     * DocumentRoot
+     * DTracePrivileges
+     * DumpIOInput
+     * DumpIOOutput
+     * <Else>
+     * <ElseIf>
+     * EnableExceptionHook
+     * EnableMMAP
+     * EnableSendfile
+     * Error
+     * ErrorDocument
+     * ErrorLog
+     * ErrorLogFormat
+     * Example
+     * ExpiresActive
+     * ExpiresByType
+     * ExpiresDefault
+     * ExtendedStatus
+     * ExtFilterDefine
+     * ExtFilterOptions
+     * FallbackResource
+     * FileETag
+     * <Files>
+     * <FilesMatch>
+     * FilterChain
+     * FilterDeclare
+     * FilterProtocol
+     * FilterProvider
+     * FilterTrace
+     * ForceLanguagePriority
+     * ForceType
+     * ForensicLog
+     * GlobalLog
+     * GprofDir
+     * GracefulShutdownTimeout
+     * Group
+     * H2CopyFiles
+     * H2Direct
+     * H2EarlyHints
+     * H2MaxSessionStreams
+     * H2MaxWorkerIdleSeconds
+     * H2MaxWorkers
+     * H2MinWorkers
+     * H2ModernTLSOnly
+     * H2Padding
+     * H2Push
+     * H2PushDiarySize
+     * H2PushPriority
+     * H2PushResource
+     * H2SerializeHeaders
+     * H2StreamMaxMemSize
+     * H2TLSCoolDownSecs
+     * H2TLSWarmUpSize
+     * H2Upgrade
+     * H2WindowSize
+     * Header
+     * HeaderName
+     * HeartbeatAddress
+     * HeartbeatListen
+     * HeartbeatMaxServers
+     * HeartbeatStorage
+     * HeartbeatStorage
+     * HostnameLookups
+     * HttpProtocolOptions
+     * IdentityCheck
+     * IdentityCheckTimeout
+     * <If>
+     * <IfDefine>
+     * <IfDirective>
+     * <IfFile>
+     * <IfModule>
+     * <IfSection>
+     * <IfVersion>
+     * ImapBase
+     * ImapDefault
+     * ImapMenu
+     * Include
+     * IncludeOptional
+     * IndexHeadInsert
+     * IndexIgnore
+     * IndexIgnoreReset
+     * IndexOptions
+     * IndexOrderDefault
+     * IndexStyleSheet
+     * InputSed
+     * ISAPIAppendLogToErrors
+     * ISAPIAppendLogToQuery
+     * ISAPICacheFile
+     * ISAPIFakeAsync
+     * ISAPILogNotSupported
+     * ISAPIReadAheadBuffer
+     * KeepAlive
+     * KeepAliveTimeout
+     * KeptBodySize
+     * LanguagePriority
+     * LDAPCacheEntries
+     * LDAPCacheTTL
+     * LDAPConnectionPoolTTL
+     * LDAPConnectionTimeout
+     * LDAPLibraryDebug
+     * LDAPOpCacheEntries
+     * LDAPOpCacheTTL
+     * LDAPReferralHopLimit
+     * LDAPReferrals
+     * LDAPRetries
+     * LDAPRetryDelay
+     * LDAPSharedCacheFile
+     * LDAPSharedCacheSize
+     * LDAPTimeout
+     * LDAPTrustedClientCert
+     * LDAPTrustedGlobalCert
+     * LDAPTrustedMode
+     * LDAPVerifyServerCert
+     * <Limit>
+     * <LimitExcept>
+     * LimitInternalRecursion
+     * LimitRequestBody
+     * LimitRequestFields
+     * LimitRequestFieldSize
+     * LimitRequestLine
+     * LimitXMLRequestBody
+     * Listen
+     * ListenBackLog
+     * ListenCoresBucketsRatio
+     * LoadFile
+     * LoadModule
+     * <Location>
+     * <LocationMatch>
+     * LogFormat
+     * LogIOTrackTTFB
+     * LogLevel
+     * LogMessage
+     * LuaAuthzProvider
+     * LuaCodeCache
+     * LuaHookAccessChecker
+     * LuaHookAuthChecker
+     * LuaHookCheckUserID
+     * LuaHookFixups
+     * LuaHookInsertFilter
+     * LuaHookLog
+     * LuaHookMapToStorage
+     * LuaHookTranslateName
+     * LuaHookTypeChecker
+     * LuaInherit
+     * LuaInputFilter
+     * LuaMapHandler
+     * LuaOutputFilter
+     * LuaPackageCPath
+     * LuaPackagePath
+     * LuaQuickHandler
+     * LuaRoot
+     * LuaScope
+     * <Macro>
+     * MaxConnectionsPerChild
+     * MaxKeepAliveRequests
+     * MaxMemFree
+     * MaxRangeOverlaps
+     * MaxRangeReversals
+     * MaxRanges
+     * MaxRequestWorkers
+     * MaxSpareServers
+     * MaxSpareThreads
+     * MaxThreads
+     * MDBaseServer
+     * MDCAChallenges
+     * MDCertificateAgreement
+     * MDCertificateAuthority
+     * MDCertificateFile
+     * MDCertificateKeyFile
+     * MDCertificateProtocol
+     * MDCertificateStatus
+     * MDChallengeDns01
+     * MDDriveMode
+     * MDHttpProxy
+     * MDMember
+     * MDMembers
+     * MDMessageCmd
+     * MDMustStaple
+     * MDNotifyCmd
+     * MDomain
+     * <MDomainSet>
+     * MDPortMap
+     * MDPrivateKeys
+     * MDRenewMode
+     * MDRenewWindow
+     * MDRequireHttps
+     * MDServerStatus
+     * MDStoreDir
+     * MDWarnWindow
+     * MemcacheConnTTL
+     * MergeSlashes
+     * MergeTrailers
+     * MetaDir
+     * MetaFiles
+     * MetaSuffix
+     * MimeMagicFile
+     * MinSpareServers
+     * MinSpareThreads
+     * MMapFile
+     * ModemStandard
+     * ModMimeUsePathInfo
+     * MultiviewsMatch
+     * Mutex
+     * NameVirtualHost
+     * NoProxy
+     * NWSSLTrustedCerts
+     * NWSSLUpgradeable
+     * Options
+     * Order
+     * OutputSed
+     * PassEnv
+     * PidFile
+     * PrivilegesMode
+     * Protocol
+     * ProtocolEcho
+     * Protocols
+     * ProtocolsHonorOrder
+     * <Proxy>
+     * Proxy100Continue
+     * ProxyAddHeaders
+     * ProxyBadHeader
+     * ProxyBlock
+     * ProxyDomain
+     * ProxyErrorOverride
+     * ProxyExpressDBMFile
+     * ProxyExpressDBMType
+     * ProxyExpressEnable
+     * ProxyFCGIBackendType
+     * ProxyFCGISetEnvIf
+     * ProxyFtpDirCharset
+     * ProxyFtpEscapeWildcards
+     * ProxyFtpListOnWildcard
+     * ProxyHCExpr
+     * ProxyHCTemplate
+     * ProxyHCTPsize
+     * ProxyHTMLBufSize
+     * ProxyHTMLCharsetOut
+     * ProxyHTMLDocType
+     * ProxyHTMLEnable
+     * ProxyHTMLEvents
+     * ProxyHTMLExtended
+     * ProxyHTMLFixups
+     * ProxyHTMLInterp
+     * ProxyHTMLLinks
+     * ProxyHTMLMeta
+     * ProxyHTMLStripComments
+     * ProxyHTMLURLMap
+     * ProxyIOBufferSize
+     * <ProxyMatch>
+     * ProxyMaxForwards
+     * ProxyPass
+     * ProxyPassInherit
+     * ProxyPassInterpolateEnv
+     * ProxyPassMatch
+     * ProxyPassReverse
+     * ProxyPassReverseCookieDomain
+     * ProxyPassReverseCookiePath
+     * ProxyPreserveHost
+     * ProxyReceiveBufferSize
+     * ProxyRemote
+     * ProxyRemoteMatch
+     * ProxyRequests
+     * ProxySCGIInternalRedirect
+     * ProxySCGISendfile
+     * ProxySet
+     * ProxySourceAddress
+     * ProxyStatus
+     * ProxyTimeout
+     * ProxyVia
+     * QualifyRedirectURL
+     * ReadmeName
+     * ReceiveBufferSize
+     * Redirect
+     * RedirectMatch
+     * RedirectPermanent
+     * RedirectTemp
+     * RedisConnPoolTTL
+     * RedisTimeout
+     * ReflectorHeader
+     * RegexDefaultOptions
+     * RegisterHttpMethod
+     * RemoteIPHeader
+     * RemoteIPInternalProxy
+     * RemoteIPInternalProxyList
+     * RemoteIPProxiesHeader
+     * RemoteIPProxyProtocol
+     * RemoteIPProxyProtocolExceptions
+     * RemoteIPTrustedProxy
+     * RemoteIPTrustedProxyList
+     * RemoveCharset
+     * RemoveEncoding
+     * RemoveHandler
+     * RemoveInputFilter
+     * RemoveLanguage
+     * RemoveOutputFilter
+     * RemoveType
+     * RequestHeader
+     * RequestReadTimeout
+     * Require
+     * <RequireAll>
+     * <RequireAny>
+     * <RequireNone>
+     * RewriteBase
+     * RewriteCond
+     * RewriteEngine
+     * RewriteMap
+     * RewriteOptions
+     * RewriteRule
+     * RLimitCPU
+     * RLimitMEM
+     * RLimitNPROC
+     * Satisfy
+     * ScoreBoardFile
+     * Script
+     * ScriptAlias
+     * ScriptAliasMatch
+     * ScriptInterpreterSource
+     * ScriptLog
+     * ScriptLogBuffer
+     * ScriptLogLength
+     * ScriptSock
+     * SecureListen
+     * SeeRequestTail
+     * SendBufferSize
+     * ServerAdmin
+     * ServerAlias
+     * ServerLimit
+     * ServerName
+     * ServerPath
+     * ServerRoot
+     * ServerSignature
+     * ServerTokens
+     * Session
+     * SessionCookieName
+     * SessionCookieName2
+     * SessionCookieRemove
+     * SessionCryptoCipher
+     * SessionCryptoDriver
+     * SessionCryptoPassphrase
+     * SessionCryptoPassphraseFile
+     * SessionDBDCookieName
+     * SessionDBDCookieName2
+     * SessionDBDCookieRemove
+     * SessionDBDDeleteLabel
+     * SessionDBDInsertLabel
+     * SessionDBDPerUser
+     * SessionDBDSelectLabel
+     * SessionDBDUpdateLabel
+     * SessionEnv
+     * SessionExclude
+     * SessionExpiryUpdateInterval
+     * SessionHeader
+     * SessionInclude
+     * SessionMaxAge
+     * SetEnv
+     * SetEnvIf
+     * SetEnvIfExpr
+     * SetEnvIfNoCase
+     * SetHandler
+     * SetInputFilter
+     * SetOutputFilter
+     * SSIEndTag
+     * SSIErrorMsg
+     * SSIETag
+     * SSILastModified
+     * SSILegacyExprParser
+     * SSIStartTag
+     * SSITimeFormat
+     * SSIUndefinedEcho
+     * SSLCACertificateFile
+     * SSLCACertificatePath
+     * SSLCADNRequestFile
+     * SSLCADNRequestPath
+     * SSLCARevocationCheck
+     * SSLCARevocationFile
+     * SSLCARevocationPath
+     * SSLCertificateChainFile
+     * SSLCertificateFile
+     * SSLCertificateKeyFile
+     * SSLCipherSuite
+     * SSLCompression
+     * SSLCryptoDevice
+     * SSLEngine
+     * SSLFIPS
+     * SSLHonorCipherOrder
+     * SSLInsecureRenegotiation
+     * SSLOCSPDefaultResponder
+     * SSLOCSPEnable
+     * SSLOCSPNoverify
+     * SSLOCSPOverrideResponder
+     * SSLOCSPProxyURL
+     * SSLOCSPResponderCertificateFile
+     * SSLOCSPResponderTimeout
+     * SSLOCSPResponseMaxAge
+     * SSLOCSPResponseTimeSkew
+     * SSLOCSPUseRequestNonce
+     * SSLOpenSSLConfCmd
+     * SSLOptions
+     * SSLPassPhraseDialog
+     * SSLProtocol
+     * SSLProxyCACertificateFile
+     * SSLProxyCACertificatePath
+     * SSLProxyCARevocationCheck
+     * SSLProxyCARevocationFile
+     * SSLProxyCARevocationPath
+     * SSLProxyCheckPeerCN
+     * SSLProxyCheckPeerExpire
+     * SSLProxyCheckPeerName
+     * SSLProxyCipherSuite
+     * SSLProxyEngine
+     * SSLProxyMachineCertificateChainFile
+     * SSLProxyMachineCertificateFile
+     * SSLProxyMachineCertificatePath
+     * SSLProxyProtocol
+     * SSLProxyVerify
+     * SSLProxyVerifyDepth
+     * SSLRandomSeed
+     * SSLRenegBufferSize
+     * SSLRequire
+     * SSLRequireSSL
+     * SSLSessionCache
+     * SSLSessionCacheTimeout
+     * SSLSessionTicketKeyFile
+     * SSLSessionTickets
+     * SSLSRPUnknownUserSeed
+     * SSLSRPVerifierFile
+     * SSLStaplingCache
+     * SSLStaplingErrorCacheTimeout
+     * SSLStaplingFakeTryLater
+     * SSLStaplingForceURL
+     * SSLStaplingResponderTimeout
+     * SSLStaplingResponseMaxAge
+     * SSLStaplingResponseTimeSkew
+     * SSLStaplingReturnResponderErrors
+     * SSLStaplingStandardCacheTimeout
+     * SSLStrictSNIVHostCheck
+     * SSLUserName
+     * SSLUseStapling
+     * SSLVerifyClient
+     * SSLVerifyDepth
+     * StartServers
+     * StartThreads
+     * Substitute
+     * SubstituteInheritBefore
+     * SubstituteMaxLineLength
+     * Suexec
+     * SuexecUserGroup
+     * ThreadLimit
+     * ThreadsPerChild
+     * ThreadStackSize
+     * TimeOut
+     * TraceEnable
+     * TransferLog
+     * TypesConfig
+     * UnDefine
+     * UndefMacro
+     * UnsetEnv
+     * Use
+     * UseCanonicalName
+     * UseCanonicalPhysicalPort
+     * User
+     * UserDir
+     * VHostCGIMode
+     * VHostCGIPrivs
+     * VHostGroup
+     * VHostPrivs
+     * VHostSecure
+     * VHostUser
+     * VirtualDocumentRoot
+     * VirtualDocumentRootIP
+     * <VirtualHost>
+     * VirtualScriptAlias
+     * VirtualScriptAliasIP
+     * WatchdogInterval
+     * XBitHack
+     * xml2EncAlias
+     * xml2EncDefault
+     * xml2StartParse
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Glossary
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   This glossary defines some of the common terminology related to Apache
+   in particular, and web serving in general. More information on each
+   concept is provided in the links.
+   top
+
+Definitions
+
+   Access Control
+          The restriction of access to network realms. In an Apache
+          context usually the restriction of access to certain URLs.
+          See: Authentication, Authorization, and Access Control
+
+   Algorithm
+          An unambiguous formula or set of rules for solving a problem in
+          a finite number of steps. Algorithms for encryption are usually
+          called Ciphers.
+
+   APache eXtension Tool (apxs)
+          A perl script that aids in compiling module sources into Dynamic
+          Shared Objects (DSOs) and helps install them in the Apache Web
+          server.
+          See: Manual Page: apxs
+
+   Apache Portable Runtime (APR)
+          A set of libraries providing many of the basic interfaces
+          between the server and the operating system. APR is developed
+          parallel to the Apache HTTP Server as an independent project.
+          See: Apache Portable Runtime Project
+
+   Authentication
+          The positive identification of a network entity such as a
+          server, a client, or a user.
+          See: Authentication, Authorization, and Access Control
+
+   Certificate
+          A data record used for authenticating network entities such as a
+          server or a client. A certificate contains X.509 information
+          pieces about its owner (called the subject) and the signing
+          Certification Authority (called the issuer), plus the owner's
+          public key and the signature made by the CA. Network entities
+          verify these signatures using CA certificates.
+          See: SSL/TLS Encryption
+
+   Certificate Signing Request (CSR)
+          An unsigned certificate for submission to a Certification
+          Authority, which signs it with the Private Key of their CA
+          Certificate. Once the CSR is signed, it becomes a real
+          certificate.
+          See: SSL/TLS Encryption
+
+   Certification Authority (CA)
+          A trusted third party whose purpose is to sign certificates for
+          network entities it has authenticated using secure means. Other
+          network entities can check the signature to verify that a CA has
+          authenticated the bearer of a certificate.
+          See: SSL/TLS Encryption
+
+   Cipher
+          An algorithm or system for data encryption. Examples are DES,
+          IDEA, RC4, etc.
+          See: SSL/TLS Encryption
+
+   Ciphertext
+          The result after Plaintext is passed through a Cipher.
+          See: SSL/TLS Encryption
+
+   Common Gateway Interface (CGI)
+          A standard definition for an interface between a web server and
+          an external program that allows the external program to service
+          requests. There is an Informational RFC which covers the
+          specifics.
+          See: Dynamic Content with CGI
+
+   Configuration Directive
+          See: Directive
+
+   Configuration File
+          A text file containing Directives that control the configuration
+          of Apache.
+          See: Configuration Files
+
+   CONNECT
+          An HTTP method for proxying raw data channels over HTTP. It can
+          be used to encapsulate other protocols, such as the SSL
+          protocol.
+
+   Context
+          An area in the configuration files where certain types of
+          directives are allowed.
+          See: Terms Used to Describe Apache Directives
+
+   Digital Signature
+          An encrypted text block that validates a certificate or other
+          file. A Certification Authority creates a signature by
+          generating a hash of the Public Key embedded in a Certificate,
+          then encrypting the hash with its own Private Key. Only the CA's
+          public key can decrypt the signature, verifying that the CA has
+          authenticated the network entity that owns the Certificate.
+          See: SSL/TLS Encryption
+
+   Directive
+          A configuration command that controls one or more aspects of
+          Apache's behavior. Directives are placed in the Configuration
+          File
+          See: Directive Index
+
+   Dynamic Shared Object (DSO)
+          Modules compiled separately from the Apache httpd binary that
+          can be loaded on-demand.
+          See: Dynamic Shared Object Support
+
+   Environment Variable (env-variable)
+          Named variables managed by the operating system shell and used
+          to store information and communicate between programs. Apache
+          also contains internal variables that are referred to as
+          environment variables, but are stored in internal Apache
+          structures, rather than in the shell environment.
+          See: Environment Variables in Apache
+
+   Export-Crippled
+          Diminished in cryptographic strength (and security) in order to
+          comply with the United States' Export Administration Regulations
+          (EAR). Export-crippled cryptographic software is limited to a
+          small key size, resulting in Ciphertext which usually can be
+          decrypted by brute force.
+          See: SSL/TLS Encryption
+
+   Filter
+          A process that is applied to data that is sent or received by
+          the server. Input filters process data sent by the client to the
+          server, while output filters process documents on the server
+          before they are sent to the client. For example, the INCLUDES
+          output filter processes documents for Server Side Includes.
+          See: Filters
+
+   Fully-Qualified Domain-Name (FQDN)
+          The unique name of a network entity, consisting of a hostname
+          and a domain name that can resolve to an IP address. For
+          example, www is a hostname, example.com is a domain name, and
+          www.example.com is a fully-qualified domain name.
+
+   Handler
+          An internal Apache representation of the action to be performed
+          when a file is called. Generally, files have implicit handlers,
+          based on the file type. Normally, all files are simply served by
+          the server, but certain file types are "handled" separately. For
+          example, the cgi-script handler designates files to be processed
+          as CGIs.
+          See: Apache's Handler Use
+
+   Hash
+          A mathematical one-way, irreversible algorithm generating a
+          string with fixed-length from another string of any length.
+          Different input strings will usually produce different hashes
+          (depending on the hash function).
+
+   Header
+          The part of the HTTP request and response that is sent before
+          the actual content, and that contains meta-information
+          describing the content.
+
+   .htaccess
+          A configuration file that is placed inside the web tree and
+          applies configuration directives to the directory where it is
+          placed and all sub-directories. Despite its name, this file can
+          hold almost any type of directive, not just access-control
+          directives.
+          See: Configuration Files
+
+   httpd.conf
+          The main Apache configuration file. The default location is
+          /usr/local/apache2/conf/httpd.conf, but it may be moved using
+          run-time or compile-time configuration.
+          See: Configuration Files
+
+   HyperText Transfer Protocol (HTTP)
+          The standard transmission protocol used on the World Wide Web.
+          Apache implements version 1.1 of the protocol, referred to as
+          HTTP/1.1 and defined by RFC 2616.
+
+   HTTPS
+          The HyperText Transfer Protocol (Secure), the standard encrypted
+          communication mechanism on the World Wide Web. This is actually
+          just HTTP over SSL.
+          See: SSL/TLS Encryption
+
+   Method
+          In the context of HTTP, an action to perform on a resource,
+          specified on the request line by the client. Some of the methods
+          available in HTTP are GET, POST, and PUT.
+
+   Message Digest
+          A hash of a message, which can be used to verify that the
+          contents of the message have not been altered in transit.
+          See: SSL/TLS Encryption
+
+   MIME-type
+          A way to describe the kind of document being transmitted. Its
+          name comes from that fact that its format is borrowed from the
+          Multipurpose Internet Mail Extensions. It consists of a major
+          type and a minor type, separated by a slash. Some examples are
+          text/html, image/gif, and application/octet-stream. In HTTP, the
+          MIME-type is transmitted in the Content-Type header.
+          See: mod_mime
+
+   Module
+          An independent part of a program. Much of Apache's functionality
+          is contained in modules that you can choose to include or
+          exclude. Modules that are compiled into the Apache httpd binary
+          are called static modules, while modules that are stored
+          separately and can be optionally loaded at run-time are called
+          dynamic modules or DSOs. Modules that are included by default
+          are called base modules. Many modules are available for Apache
+          that are not distributed as part of the Apache HTTP Server
+          tarball. These are referred to as third-party modules.
+          See: Module Index
+
+   Module Magic Number (MMN)
+          Module Magic Number is a constant defined in the Apache source
+          code that is associated with binary compatibility of modules. It
+          is changed when internal Apache structures, function calls and
+          other significant parts of API change in such a way that binary
+          compatibility cannot be guaranteed any more. On MMN change, all
+          third party modules have to be at least recompiled, sometimes
+          even slightly changed in order to work with the new version of
+          Apache.
+
+   OpenSSL
+          The Open Source toolkit for SSL/TLS
+          See http://www.openssl.org/#
+
+   Pass Phrase
+          The word or phrase that protects private key files. It prevents
+          unauthorized users from encrypting them. Usually it's just the
+          secret encryption/decryption key used for Ciphers.
+          See: SSL/TLS Encryption
+
+   Plaintext
+          The unencrypted text.
+
+   Private Key
+          The secret key in a Public Key Cryptography system, used to
+          decrypt incoming messages and sign outgoing ones.
+          See: SSL/TLS Encryption
+
+   Proxy
+          An intermediate server that sits between the client and the
+          origin server. It accepts requests from clients, transmits those
+          requests on to the origin server, and then returns the response
+          from the origin server to the client. If several clients request
+          the same content, the proxy can deliver that content from its
+          cache, rather than requesting it from the origin server each
+          time, thereby reducing response time.
+          See: mod_proxy
+
+   Public Key
+          The publicly available key in a Public Key Cryptography system,
+          used to encrypt messages bound for its owner and to decrypt
+          signatures made by its owner.
+          See: SSL/TLS Encryption
+
+   Public Key Cryptography
+          The study and application of asymmetric encryption systems,
+          which use one key for encryption and another for decryption. A
+          corresponding pair of such keys constitutes a key pair. Also
+          called Asymmetric Cryptography.
+          See: SSL/TLS Encryption
+
+   Regular Expression (Regex)
+          A way of describing a pattern in text - for example, "all the
+          words that begin with the letter A" or "every 10-digit phone
+          number" or even "Every sentence with two commas in it, and no
+          capital letter Q". Regular expressions are useful in Apache
+          because they let you apply certain attributes against
+          collections of files or resources in very flexible ways - for
+          example, all .gif and .jpg files under any "images" directory
+          could be written as "/images/.*(jpg|gif)$". In places where
+          regular expressions are used to replace strings, the special
+          variables $1 ... $9 contain backreferences to the grouped parts
+          (in parentheses) of the matched expression. The special variable
+          $0 contains a backreference to the whole matched expression. To
+          write a literal dollar sign in a replacement string, it can be
+          escaped with a backslash. Historically, the variable & could be
+          used as alias for $0 in some places. This is no longer possible
+          since version 2.3.6. Apache uses Perl Compatible Regular
+          Expressions provided by the PCRE library. You can find more
+          documentation about PCRE's regular expression syntax at that
+          site, or at Wikipedia.
+
+   Reverse Proxy
+          A proxy server that appears to the client as if it is an origin
+          server. This is useful to hide the real origin server from the
+          client for security reasons, or to load balance.
+
+   Secure Sockets Layer (SSL)
+          A protocol created by Netscape Communications Corporation for
+          general communication authentication and encryption over TCP/IP
+          networks. The most popular usage is HTTPS, i.e. the HyperText
+          Transfer Protocol (HTTP) over SSL.
+          See: SSL/TLS Encryption
+
+   Server Name Indication (SNI)
+          An SSL function that allows passing the desired server hostname
+          in the initial SSL handshake message, so that the web server can
+          select the correct virtual host configuration to use in
+          processing the SSL handshake. It was added to SSL starting with
+          the TLS extensions, RFC 3546.
+          See: the SSL FAQ and RFC 3546
+
+   Server Side Includes (SSI)
+          A technique for embedding processing directives inside HTML
+          files.
+          See: Introduction to Server Side Includes
+
+   Session
+          The context information of a communication in general.
+
+   SSLeay
+          The original SSL/TLS implementation library developed by Eric A.
+          Young
+
+   Subrequest
+          Apache provides a subrequest API to modules that allows other
+          filesystem or URL paths to be partially or fully evaluated by
+          the server. Example consumers of this API are DirectoryIndex,
+          mod_autoindex, and mod_include.
+
+   Symmetric Cryptography
+          The study and application of Ciphers that use a single secret
+          key for both encryption and decryption operations.
+          See: SSL/TLS Encryption
+
+   Tarball
+          A package of files gathered together using the tar utility.
+          Apache distributions are stored in compressed tar archives or
+          using pkzip.
+
+   Transport Layer Security (TLS)
+          The successor protocol to SSL, created by the Internet
+          Engineering Task Force (IETF) for general communication
+          authentication and encryption over TCP/IP networks. TLS version
+          1 is nearly identical with SSL version 3.
+          See: SSL/TLS Encryption
+
+   Uniform Resource Locator (URL)
+          The name/address of a resource on the Internet. This is the
+          common informal term for what is formally called a Uniform
+          Resource Identifier. URLs are usually made up of a scheme, like
+          http or https, a hostname, and a path. A URL for this page might
+          be http://httpd.apache.org/docs/2.4/glossary.html.
+
+   Uniform Resource Identifier (URI)
+          A compact string of characters for identifying an abstract or
+          physical resource. It is formally defined by RFC 2396. URIs used
+          on the world-wide web are commonly referred to as URLs.
+
+   Virtual Hosting
+          Serving multiple websites using a single instance of Apache. IP
+          virtual hosting differentiates between websites based on their
+          IP address, while name-based virtual hosting uses only the name
+          of the host and can therefore host many sites on the same IP
+          address.
+          See: Apache Virtual Host documentation
+
+   X.509
+          An authentication certificate scheme recommended by the
+          International Telecommunication Union (ITU-T) which is used for
+          SSL/TLS authentication.
+          See: SSL/TLS Encryption
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Sitemap
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   This page lists the currently available documents of the Apache HTTP
+   Server Version 2.4 Documentation.
+     * Release Notes
+     * Using the Apache HTTP Server
+     * Apache Virtual Host documentation
+     * URL Rewriting Guide
+     * Apache SSL/TLS Encryption
+     * Guides, Tutorials, and HowTos
+     * Platform-specific Notes
+     * Apache HTTP Server and Supporting Programs
+     * Apache Miscellaneous Documentation
+     * Apache modules
+     * Developer Documentation
+     * Glossary and Index
+
+   top
+
+Release Notes
+
+     * Upgrading to 2.4 from 2.2
+     * New features with Apache 2.3/2.4
+     * New features with Apache 2.1/2.2
+     * New features with Apache 2.0
+     * Apache License
+
+   top
+
+Using the Apache HTTP Server
+
+     * Compiling and Installing Apache
+     * Starting Apache
+     * Stopping and Restarting the Server
+     * Configuration Files
+     * How Directory, Location and Files sections work
+     * Content Caching
+     * Server-Wide Configuration
+     * Log Files
+     * Mapping URLs to Filesystem Locations
+     * Dynamic Shared Object (DSO) support
+     * Content Negotiation
+     * Custom error responses
+     * Setting which addresses and ports Apache uses
+     * Multi-Processing Modules (MPMs)
+     * Environment Variables in Apache
+     * Expression Parsing in Apache
+     * Apache's Handler Use
+     * Filters
+     * Shared Object Cache Support
+     * suEXEC Support
+     * Issues Regarding DNS and Apache
+     * Frequently Asked Questions
+
+   top
+
+Apache Virtual Host documentation
+
+     * Overview
+     * Name-based Virtual Hosts
+     * IP-based Virtual Host Support
+     * Dynamically configured mass virtual hosting
+     * VirtualHost Examples
+     * An In-Depth Discussion of Virtual Host Matching
+     * File descriptor limitations
+
+   top
+
+URL Rewriting Guide
+
+     * Overview
+     * mod_rewrite reference documentation
+     * Introduction to regular expressions and mod_rewrite
+     * Using mod_rewrite for redirection and remapping of URLs
+     * Using mod_rewrite to control access
+     * Dynamic virtual hosts with mod_rewrite
+     * Dynamic proxying with mod_rewrite
+     * Using RewriteMap
+     * Advanced techniques
+     * When NOT to use mod_rewrite
+     * RewriteRule Flags
+     * Technical details
+
+   top
+
+Apache SSL/TLS Encryption
+
+     * Overview
+     * SSL/TLS Encryption: An Introduction
+     * SSL/TLS Encryption: Compatibility
+     * SSL/TLS Encryption: How-To
+     * SSL/TLS Encryption: FAQ
+
+   top
+
+Guides, Tutorials, and HowTos
+
+     * Overview
+     * Authentication and Authorization
+     * Access Control
+     * Dynamic Content with CGI
+     * Introduction to Server Side Includes
+     * .htaccess files
+     * Per-user web directories
+     * Reverse proxy setup guide
+     * HTTP/2 guide
+
+   top
+
+Platform-specific Notes
+
+     * Overview
+     * Using Apache with Microsoft Windows
+     * Compiling Apache for Microsoft Windows
+     * Using Apache With RPM Based Systems
+     * Using Apache with Novell NetWare
+     * Running a High-Performance Web Server on HPUX
+     * The Apache EBCDIC Port
+
+   top
+
+Apache HTTP Server and Supporting Programs
+
+     * Overview
+     * Manual Page: httpd
+     * Manual Page: ab
+     * Manual Page: apachectl
+     * Manual Page: apxs
+     * Manual Page: configure
+     * Manual Page: dbmmanage
+     * Manual Page: fcgistarter
+     * Manual Page: htcacheclean
+     * Manual Page: htdbm
+     * Manual Page: htdigest
+     * Manual Page: htpasswd
+     * Manual Page: httxt2dbm
+     * Manual Page: logresolve
+     * Manual Page: log_server_status
+     * Manual Page: rotatelogs
+     * Manual Page: split-logfile
+     * Manual Page: suexec
+     * Other Programs
+
+   top
+
+Apache Miscellaneous Documentation
+
+     * Overview
+     * Performance Notes - Apache Tuning
+     * Security Tips
+     * Relevant Standards
+     * Password Encryption Formats
+
+   top
+
+Apache modules
+
+     * Definitions of terms used to describe Apache modules
+     * Definitions of terms used to describe Apache directives
+
+     * Apache Core Features
+     * Apache MPM Common Directives
+     * Apache MPM event
+     * Apache MPM netware
+     * Apache MPM os2
+     * Apache MPM prefork
+     * Apache MPM winnt
+     * Apache MPM worker
+
+     * Apache Module mod_access_compat
+     * Apache Module mod_actions
+     * Apache Module mod_alias
+     * Apache Module mod_allowmethods
+     * Apache Module mod_asis
+     * Apache Module mod_auth_basic
+     * Apache Module mod_auth_digest
+     * Apache Module mod_auth_form
+     * Apache Module mod_authn_anon
+     * Apache Module mod_authn_core
+     * Apache Module mod_authn_dbd
+     * Apache Module mod_authn_dbm
+     * Apache Module mod_authn_file
+     * Apache Module mod_authn_socache
+     * Apache Module mod_authnz_fcgi
+     * Apache Module mod_authnz_ldap
+     * Apache Module mod_authz_core
+     * Apache Module mod_authz_dbd
+     * Apache Module mod_authz_dbm
+     * Apache Module mod_authz_groupfile
+     * Apache Module mod_authz_host
+     * Apache Module mod_authz_owner
+     * Apache Module mod_authz_user
+     * Apache Module mod_autoindex
+     * Apache Module mod_brotli
+     * Apache Module mod_buffer
+     * Apache Module mod_cache
+     * Apache Module mod_cache_disk
+     * Apache Module mod_cache_socache
+     * Apache Module mod_cern_meta
+     * Apache Module mod_cgi
+     * Apache Module mod_cgid
+     * Apache Module mod_charset_lite
+     * Apache Module mod_data
+     * Apache Module mod_dav
+     * Apache Module mod_dav_fs
+     * Apache Module mod_dav_lock
+     * Apache Module mod_dbd
+     * Apache Module mod_deflate
+     * Apache Module mod_dialup
+     * Apache Module mod_dir
+     * Apache Module mod_dumpio
+     * Apache Module mod_echo
+     * Apache Module mod_env
+     * Apache Module mod_example_hooks
+     * Apache Module mod_expires
+     * Apache Module mod_ext_filter
+     * Apache Module mod_file_cache
+     * Apache Module mod_filter
+     * Apache Module mod_headers
+     * Apache Module mod_heartbeat
+     * Apache Module mod_heartmonitor
+     * Apache Module mod_http2
+     * Apache Module mod_ident
+     * Apache Module mod_imagemap
+     * Apache Module mod_include
+     * Apache Module mod_info
+     * Apache Module mod_isapi
+     * Apache Module mod_lbmethod_bybusyness
+     * Apache Module mod_lbmethod_byrequests
+     * Apache Module mod_lbmethod_bytraffic
+     * Apache Module mod_lbmethod_heartbeat
+     * Apache Module mod_ldap
+     * Apache Module mod_log_config
+     * Apache Module mod_log_debug
+     * Apache Module mod_log_forensic
+     * Apache Module mod_logio
+     * Apache Module mod_lua
+     * Apache Module mod_macro
+     * Apache Module mod_md
+     * Apache Module mod_mime
+     * Apache Module mod_mime_magic
+     * Apache Module mod_negotiation
+     * Apache Module mod_nw_ssl
+     * Apache Module mod_privileges
+     * Apache Module mod_proxy
+     * Apache Module mod_proxy_ajp
+     * Apache Module mod_proxy_balancer
+     * Apache Module mod_proxy_connect
+     * Apache Module mod_proxy_express
+     * Apache Module mod_proxy_fcgi
+     * Apache Module mod_proxy_fdpass
+     * Apache Module mod_proxy_ftp
+     * Apache Module mod_proxy_hcheck
+     * Apache Module mod_proxy_html
+     * Apache Module mod_proxy_http
+     * Apache Module mod_proxy_http2
+     * Apache Module mod_proxy_scgi
+     * Apache Module mod_proxy_uwsgi
+     * Apache Module mod_proxy_wstunnel
+     * Apache Module mod_ratelimit
+     * Apache Module mod_reflector
+     * Apache Module mod_remoteip
+     * Apache Module mod_reqtimeout
+     * Apache Module mod_request
+     * Apache Module mod_rewrite
+     * Apache Module mod_sed
+     * Apache Module mod_session
+     * Apache Module mod_session_cookie
+     * Apache Module mod_session_crypto
+     * Apache Module mod_session_dbd
+     * Apache Module mod_setenvif
+     * Apache Module mod_slotmem_plain
+     * Apache Module mod_slotmem_shm
+     * Apache Module mod_so
+     * Apache Module mod_socache_dbm
+     * Apache Module mod_socache_dc
+     * Apache Module mod_socache_memcache
+     * Apache Module mod_socache_redis
+     * Apache Module mod_socache_shmcb
+     * Apache Module mod_speling
+     * Apache Module mod_ssl
+     * Apache Module mod_status
+     * Apache Module mod_substitute
+     * Apache Module mod_suexec
+     * Apache Module mod_unique_id
+     * Apache Module mod_unixd
+     * Apache Module mod_userdir
+     * Apache Module mod_usertrack
+     * Apache Module mod_version
+     * Apache Module mod_vhost_alias
+     * Apache Module mod_watchdog
+     * Apache Module mod_xml2enc
+
+   top
+
+Developer Documentation
+
+     * Overview
+     * Apache API notes
+     * API updates in Apache HTTPD 2.4
+     * Developing modules for Apache HTTPD 2.4
+     * Documenting Apache HTTPD
+     * Apache 2.x Hook Functions
+     * Converting Modules from 1.3 to 2.x
+     * Request Processing in 2.x
+     * How Filters Work in 2.x
+     * Guidelines for output filters in 2.x
+     * Thread Safety Issues in 2.x
+
+   top
+
+Glossary and Index
+
+     * Glossary
+     * Module index
+     * Directive index
+     * Directive Quick-Reference
+     * Override class index for .htaccess
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Overview of new features in Apache HTTP Server 2.4
+
+   Available Languages:  en  |  fr  |  tr
+
+   This document describes some of the major changes between the 2.2 and
+   2.4 versions of the Apache HTTP Server. For new features since version
+   2.0, see the 2.2 new features document.
+   Support Apache!
+     * Core Enhancements
+     * New Modules
+     * Module Enhancements
+     * Program Enhancements
+     * Documentation
+     * Module Developer Changes
+
+See also
+
+     * Comments
+
+   top
+
+Core Enhancements
+
+   Run-time Loadable MPMs
+          Multiple MPMs can now be built as loadable modules at compile
+          time. The MPM of choice can be configured at run time via
+          LoadModule directive.
+
+   Event MPM
+          The Event MPM is no longer experimental but is now fully
+          supported.
+
+   Asynchronous support
+          Better support for asynchronous read/write for supporting MPMs
+          and platforms.
+
+   Per-module and per-directory LogLevel configuration
+          The LogLevel can now be configured per module and per directory.
+          New levels trace1 to trace8 have been added above the debug log
+          level.
+
+   Per-request configuration sections
+          <If>, <ElseIf>, and <Else> sections can be used to set the
+          configuration based on per-request criteria.
+
+   General-purpose expression parser
+          A new expression parser allows to specify complex conditions
+          using a common syntax in directives like SetEnvIfExpr,
+          RewriteCond, Header, <If>, and others.
+
+   KeepAliveTimeout in milliseconds
+          It is now possible to specify KeepAliveTimeout in milliseconds.
+
+   NameVirtualHost directive
+          No longer needed and is now deprecated.
+
+   Override Configuration
+          The new AllowOverrideList directive allows more fine grained
+          control which directives are allowed in .htaccess files.
+
+   Config file variables
+          It is now possible to Define variables in the configuration,
+          allowing a clearer representation if the same value is used at
+          many places in the configuration.
+
+   Reduced memory usage
+          Despite many new features, 2.4.x tends to use less memory than
+          2.2.x.
+
+   top
+
+New Modules
+
+   mod_proxy_fcgi
+          FastCGI Protocol backend for mod_proxy
+
+   mod_proxy_scgi
+          SCGI Protocol backend for mod_proxy
+
+   mod_proxy_express
+          Provides dynamically configured mass reverse proxies for
+          mod_proxy
+
+   mod_remoteip
+          Replaces the apparent client remote IP address and hostname for
+          the request with the IP address list presented by a proxies or a
+          load balancer via the request headers.
+
+   mod_heartmonitor, mod_lbmethod_heartbeat
+          Allow mod_proxy_balancer to base loadbalancing decisions on the
+          number of active connections on the backend servers.
+
+   mod_proxy_html
+          Formerly a third-party module, this supports fixing of HTML
+          links in a reverse proxy situation, where the backend generates
+          URLs that are not valid for the proxy's clients.
+
+   mod_sed
+          An advanced replacement of mod_substitute, allows to edit the
+          response body with the full power of sed.
+
+   mod_auth_form
+          Enables form-based authentication.
+
+   mod_session
+          Enables the use of session state for clients, using cookie or
+          database storage.
+
+   mod_allowmethods
+          New module to restrict certain HTTP methods without interfering
+          with authentication or authorization.
+
+   mod_lua
+          Embeds the Lua language into httpd, for configuration and small
+          business logic functions. (Experimental)
+
+   mod_log_debug
+          Allows the addition of customizable debug logging at different
+          phases of the request processing.
+
+   mod_buffer
+          Provides for buffering the input and output filter stacks
+
+   mod_data
+          Convert response body into an RFC2397 data URL
+
+   mod_ratelimit
+          Provides Bandwidth Rate Limiting for Clients
+
+   mod_request
+          Provides Filters to handle and make available HTTP request
+          bodies
+
+   mod_reflector
+          Provides Reflection of a request body as a response via the
+          output filter stack.
+
+   mod_slotmem_shm
+          Provides a Slot-based shared memory provider (ala the
+          scoreboard).
+
+   mod_xml2enc
+          Formerly a third-party module, this supports
+          internationalisation in libxml2-based (markup-aware) filter
+          modules.
+
+   mod_macro (available since 2.4.5)
+          Provide macros within configuration files.
+
+   mod_proxy_wstunnel (available since 2.4.5)
+          Support web-socket tunnels.
+
+   mod_authnz_fcgi (available since 2.4.10)
+          Enable FastCGI authorizer applications to authenticate and/or
+          authorize clients.
+
+   mod_http2 (available since 2.4.17)
+          Support for the HTTP/2 transport layer.
+
+   mod_proxy_http2 (available since 2.4.19)
+          HTTP/2 Protocol backend for mod_proxy
+
+   mod_proxy_hcheck (available since 2.4.21)
+          Support independent dynamic health checks for remote proxiy
+          backend servers.
+
+   mod_brotli (available since 2.4.26)
+          Support the Brotli compression algorithm.
+
+   mod_md (available since 2.4.30)
+          Support the ACME protocol to automate certificate provisionning.
+
+   mod_socache_redis (available since 2.4.39)
+          Support Redis based shared object cache provider.
+
+   top
+
+Module Enhancements
+
+   mod_ssl
+          mod_ssl can now be configured to use an OCSP server to check the
+          validation status of a client certificate. The default responder
+          is configurable, along with the decision on whether to prefer
+          the responder designated in the client certificate itself.
+          mod_ssl now also supports OCSP stapling, where the server
+          pro-actively obtains an OCSP verification of its certificate and
+          transmits that to the client during the handshake.
+          mod_ssl can now be configured to share SSL Session data between
+          servers through memcached
+          EC keys are now supported in addition to RSA and DSA.
+          Support for TLS-SRP (available in 2.4.4 and later).
+
+   mod_proxy
+          The ProxyPass directive is now most optimally configured within
+          a Location or LocationMatch block, and offers a significant
+          performance advantage over the traditional two-parameter syntax
+          when present in large numbers.
+          The source address used for proxy requests is now configurable.
+          Support for Unix domain sockets to the backend (available in
+          2.4.7 and later).
+
+   mod_proxy_balancer
+          More runtime configuration changes for BalancerMembers via
+          balancer-manager
+          Additional BalancerMembers can be added at runtime via
+          balancer-manager
+          Runtime configuration of a subset of Balancer parameters
+          BalancerMembers can be set to 'Drain' so that they only respond
+          to existing sticky sessions, allowing them to be taken
+          gracefully offline.
+          Balancer settings can be persistent after restarts.
+
+   mod_cache
+          The mod_cache CACHE filter can be optionally inserted at a given
+          point in the filter chain to provide fine control over caching.
+          mod_cache can now cache HEAD requests.
+          Where possible, mod_cache directives can now be set per
+          directory, instead of per server.
+          The base URL of cached URLs can be customised, so that a cluster
+          of caches can share the same endpoint URL prefix.
+          mod_cache is now capable of serving stale cached data when a
+          backend is unavailable (error 5xx).
+          mod_cache can now insert HIT/MISS/REVALIDATE into an X-Cache
+          header.
+
+   mod_include
+          Support for the 'onerror' attribute within an 'include' element,
+          allowing an error document to be served on error instead of the
+          default error string.
+
+   mod_cgi, mod_include, mod_isapi, ...
+          Translation of headers to environment variables is more strict
+          than before to mitigate some possible cross-site-scripting
+          attacks via header injection. Headers containing invalid
+          characters (including underscores) are now silently dropped.
+          Environment Variables in Apache has some pointers on how to work
+          around broken legacy clients which require such headers. (This
+          affects all modules which use these environment variables.)
+
+   mod_authz_core Authorization Logic Containers
+          Advanced authorization logic may now be specified using the
+          Require directive and the related container directives, such as
+          <RequireAll>.
+
+   mod_rewrite
+          mod_rewrite adds the [QSD] (Query String Discard) and [END]
+          flags for RewriteRule to simplify common rewriting scenarios.
+          Adds the possibility to use complex boolean expressions in
+          RewriteCond.
+          Allows the use of SQL queries as RewriteMap functions.
+
+   mod_ldap, mod_authnz_ldap
+          mod_authnz_ldap adds support for nested groups.
+          mod_ldap adds LDAPConnectionPoolTTL, LDAPTimeout, and other
+          improvements in the handling of timeouts. This is especially
+          useful for setups where a stateful firewall drops idle
+          connections to the LDAP server.
+          mod_ldap adds LDAPLibraryDebug to log debug information provided
+          by the used LDAP toolkit.
+
+   mod_info
+          mod_info can now dump the pre-parsed configuration to stdout
+          during server startup.
+
+   mod_auth_basic
+          New generic mechanism to fake basic authentication (available in
+          2.4.5 and later).
+
+   top
+
+Program Enhancements
+
+   fcgistarter
+          New FastCGI daemon starter utility
+
+   htcacheclean
+          Current cached URLs can now be listed, with optional metadata
+          included.
+          Allow explicit deletion of individual cached URLs from the
+          cache.
+          File sizes can now be rounded up to the given block size, making
+          the size limits map more closely to the real size on disk.
+          Cache size can now be limited by the number of inodes, instead
+          of or in addition to being limited by the size of the files on
+          disk.
+
+   rotatelogs
+          May now create a link to the current log file.
+          May now invoke a custom post-rotate script.
+
+   htpasswd, htdbm
+          Support for the bcrypt algorithm (available in 2.4.4 and later).
+
+   top
+
+Documentation
+
+   mod_rewrite
+          The mod_rewrite documentation has been rearranged and almost
+          completely rewritten, with a focus on examples and common usage,
+          as well as on showing you when other solutions are more
+          appropriate. The Rewrite Guide is now a top-level section with
+          much more detail and better organization.
+
+   mod_ssl
+          The mod_ssl documentation has been greatly enhanced, with more
+          examples at the getting started level, in addition to the
+          previous focus on technical details.
+
+   Caching Guide
+          The Caching Guide has been rewritten to properly distinguish
+          between the RFC2616 HTTP/1.1 caching features provided by
+          mod_cache, and the generic key/value caching provided by the
+          socache interface, as well as to cover specialised caching
+          provided by mechanisms such as mod_file_cache.
+
+   top
+
+Module Developer Changes
+
+   Check Configuration Hook Added
+          A new hook, check_config, has been added which runs between the
+          pre_config and open_logs hooks. It also runs before the
+          test_config hook when the -t option is passed to httpd. The
+          check_config hook allows modules to review interdependent
+          configuration directive values and adjust them while messages
+          can still be logged to the console. The user can thus be alerted
+          to misconfiguration problems before the core open_logs hook
+          function redirects console output to the error log.
+
+   Expression Parser Added
+          We now have a general-purpose expression parser, whose API is
+          exposed in ap_expr.h. This is adapted from the expression parser
+          previously implemented in mod_ssl.
+
+   Authorization Logic Containers
+          Authorization modules now register as a provider, via
+          ap_register_auth_provider(), to support advanced authorization
+          logic, such as <RequireAll>.
+
+   Small-Object Caching Interface
+          The ap_socache.h header exposes a provider-based interface for
+          caching small data objects, based on the previous implementation
+          of the mod_ssl session cache. Providers using a shared-memory
+          cyclic buffer, disk-based dbm files, and a memcache distributed
+          cache are currently supported.
+
+   Cache Status Hook Added
+          The mod_cache module now includes a new cache_status hook, which
+          is called when the caching decision becomes known. A default
+          implementation is provided which adds an optional X-Cache and
+          X-Cache-Detail header to the response.
+
+   The developer documentation contains a detailed list of API changes.
+
+   Available Languages:  en  |  fr  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Overview of new features in Apache HTTP Server 2.2
+
+   Available Languages:  en  |  fr  |  ko  |  pt-br  |  tr
+
+   This document describes some of the major changes between the 2.0 and
+   2.2 versions of the Apache HTTP Server. For new features since version
+   1.3, see the 2.0 new features document.
+   Support Apache!
+     * Core Enhancements
+     * Module Enhancements
+     * Program Enhancements
+     * Module Developer Changes
+
+See also
+
+     * Comments
+
+   top
+
+Core Enhancements
+
+   Authn/Authz
+          The bundled authentication and authorization modules have been
+          refactored. The new mod_authn_alias(already removed from
+          2.3/2.4) module can greatly simplify certain authentication
+          configurations. See module name changes, and the developer
+          changes for more information about how these changes affects
+          users and module writers.
+
+   Caching
+          mod_cache, mod_cache_disk, and mod_mem_cache(already removed
+          from 2.3/2.4) have undergone a lot of changes, and are now
+          considered production-quality. htcacheclean has been introduced
+          to clean up mod_cache_disk setups.
+
+   Configuration
+          The default configuration layout has been simplified and
+          modularised. Configuration snippets which can be used to enable
+          commonly-used features are now bundled with Apache, and can be
+          easily added to the main server config.
+
+   Graceful stop
+          The prefork, worker and event MPMs now allow httpd to be
+          shutdown gracefully via the graceful-stop signal. The
+          GracefulShutdownTimeout directive has been added to specify an
+          optional timeout, after which httpd will terminate regardless of
+          the status of any requests being served.
+
+   Proxying
+          The new mod_proxy_balancer module provides load balancing
+          services for mod_proxy. The new mod_proxy_ajp module adds
+          support for the Apache JServ Protocol version 1.3 used by Apache
+          Tomcat.
+
+   Regular Expression Library Updated
+          Version 5.0 of the Perl Compatible Regular Expression Library
+          (PCRE) is now included. httpd can be configured to use a system
+          installation of PCRE by passing the --with-pcre flag to
+          configure.
+
+   Smart Filtering
+          mod_filter introduces dynamic configuration to the output filter
+          chain. It enables filters to be conditionally inserted, based on
+          any Request or Response header or environment variable, and
+          dispenses with the more problematic dependencies and ordering
+          problems in the 2.0 architecture.
+
+   Large File Support
+          httpd is now built with support for files larger than 2GB on
+          modern 32-bit Unix systems. Support for handling >2GB request
+          bodies has also been added.
+
+   Event MPM
+          The event MPM uses a separate thread to handle Keep Alive
+          requests and accepting connections. Keep Alive requests have
+          traditionally required httpd to dedicate a worker to handle it.
+          This dedicated worker could not be used again until the Keep
+          Alive timeout was reached.
+
+   SQL Database Support
+          mod_dbd, together with the apr_dbd framework, brings direct SQL
+          support to modules that need it. Supports connection pooling in
+          threaded MPMs.
+
+   top
+
+Module Enhancements
+
+   Authn/Authz
+          Modules in the aaa directory have been renamed and offer better
+          support for digest authentication. For example, mod_auth is now
+          split into mod_auth_basic and mod_authn_file; mod_auth_dbm is
+          now called mod_authn_dbm; mod_access has been renamed
+          mod_authz_host. There is also a new mod_authn_alias(already
+          removed from 2.3/2.4) module for simplifying certain
+          authentication configurations.
+
+   mod_authnz_ldap
+          This module is a port of the 2.0 mod_auth_ldap module to the 2.2
+          Authn/Authz framework. New features include using LDAP attribute
+          values and complicated search filters in the Require directive.
+
+   mod_authz_owner
+          A new module that authorizes access to files based on the owner
+          of the file on the file system
+
+   mod_version
+          A new module that allows configuration blocks to be enabled
+          based on the version number of the running server.
+
+   mod_info
+          Added a new ?config argument which will show the configuration
+          directives as parsed by Apache, including their file name and
+          line number. The module also shows the order of all request
+          hooks and additional build information, similar to httpd -V.
+
+   mod_ssl
+          Added a support for RFC 2817, which allows connections to
+          upgrade from clear text to TLS encryption.
+
+   mod_imagemap
+          mod_imap has been renamed to mod_imagemap to avoid user
+          confusion.
+
+   top
+
+Program Enhancements
+
+   httpd
+          A new command line option -M has been added that lists all
+          modules that are loaded based on the current configuration.
+          Unlike the -l option, this list includes DSOs loaded via mod_so.
+
+   httxt2dbm
+          A new program used to generate dbm files from text input, for
+          use in RewriteMap with the dbm map type.
+
+   top
+
+Module Developer Changes
+
+   APR 1.0 API
+          Apache 2.2 uses the APR 1.0 API. All deprecated functions and
+          symbols have been removed from APR and APR-Util. For details,
+          see the APR Website.
+
+   Authn/Authz
+          The bundled authentication and authorization modules have been
+          renamed along the following lines:
+
+          + mod_auth_* -> Modules that implement an HTTP authentication
+            mechanism
+          + mod_authn_* -> Modules that provide a backend authentication
+            provider
+          + mod_authz_* -> Modules that implement authorization (or
+            access)
+          + mod_authnz_* -> Module that implements both authentication &
+            authorization
+
+          There is a new authentication backend provider scheme which
+          greatly eases the construction of new authentication backends.
+
+   Connection Error Logging
+          A new function, ap_log_cerror has been added to log errors that
+          occur with the client's connection. When logged, the message
+          includes the client IP address.
+
+   Test Configuration Hook Added
+          A new hook, test_config has been added to aid modules that want
+          to execute special code only when the user passes -t to httpd.
+
+   Set Threaded MPM's Stacksize
+          A new directive, ThreadStackSize has been added to set the stack
+          size on all threaded MPMs. This is required for some third-party
+          modules on platforms with small default thread stack size.
+
+   Protocol handling for output filters
+          In the past, every filter has been responsible for ensuring that
+          it generates the correct response headers where it affects them.
+          Filters can now delegate common protocol management to
+          mod_filter, using the ap_register_output_filter_protocol or
+          ap_filter_protocol calls.
+
+   Monitor hook added
+          Monitor hook enables modules to run regular/scheduled jobs in
+          the parent (root) process.
+
+   Regular expression API changes
+          The pcreposix.h header is no longer available; it is replaced by
+          the new ap_regex.h header. The POSIX.2 regex.h implementation
+          exposed by the old header is now available under the ap_
+          namespace from ap_regex.h. Calls to regcomp, regexec and so on
+          can be replaced by calls to ap_regcomp, ap_regexec.
+
+   DBD Framework (SQL Database API)
+          With Apache 1.x and 2.0, modules requiring an SQL backend had to
+          take responsibility for managing it themselves. Apart from
+          reinventing the wheel, this can be very inefficient, for example
+          when several modules each maintain their own connections.
+
+          Apache 2.1 and later provides the ap_dbd API for managing
+          database connections (including optimised strategies for
+          threaded and unthreaded MPMs), while APR 1.2 and later provides
+          the apr_dbd API for interacting with the database.
+
+          New modules SHOULD now use these APIs for all SQL database
+          operations. Existing applications SHOULD be upgraded to use it
+          where feasible, either transparently or as a recommended option
+          to their users.
+
+   Available Languages:  en  |  fr  |  ko  |  pt-br  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4 > Modules
+
+Directive Index
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   Each Apache directive available in the standard Apache distribution is
+   listed here. They are described using a consistent format, and there is
+   a dictionary of the terms used in their descriptions available.
+
+   A Directive Quick-Reference is also available giving details about each
+   directive in a summary form.
+
+    A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |  I  |  K  |  L  |  M  |
+    N  |  O  |  P  |  Q  |  R  |  S  |  T  |  U  |  V  |  W  |  X
+
+     * AcceptFilter
+     * AcceptPathInfo
+     * AccessFileName
+     * Action
+     * AddAlt
+     * AddAltByEncoding
+     * AddAltByType
+     * AddCharset
+     * AddDefaultCharset
+     * AddDescription
+     * AddEncoding
+     * AddHandler
+     * AddIcon
+     * AddIconByEncoding
+     * AddIconByType
+     * AddInputFilter
+     * AddLanguage
+     * AddModuleInfo
+     * AddOutputFilter
+     * AddOutputFilterByType
+     * AddType
+     * Alias
+     * AliasMatch
+     * Allow
+     * AllowCONNECT
+     * AllowEncodedSlashes
+     * AllowMethods
+     * AllowOverride
+     * AllowOverrideList
+     * Anonymous
+     * Anonymous_LogEmail
+     * Anonymous_MustGiveEmail
+     * Anonymous_NoUserID
+     * Anonymous_VerifyEmail
+     * AsyncRequestWorkerFactor
+     * AuthBasicAuthoritative
+     * AuthBasicFake
+     * AuthBasicProvider
+     * AuthBasicUseDigestAlgorithm
+     * AuthDBDUserPWQuery
+     * AuthDBDUserRealmQuery
+     * AuthDBMGroupFile
+     * AuthDBMType
+     * AuthDBMUserFile
+     * AuthDigestAlgorithm
+     * AuthDigestDomain
+     * AuthDigestNonceLifetime
+     * AuthDigestProvider
+     * AuthDigestQop
+     * AuthDigestShmemSize
+     * AuthFormAuthoritative
+     * AuthFormBody
+     * AuthFormDisableNoStore
+     * AuthFormFakeBasicAuth
+     * AuthFormLocation
+     * AuthFormLoginRequiredLocation
+     * AuthFormLoginSuccessLocation
+     * AuthFormLogoutLocation
+     * AuthFormMethod
+     * AuthFormMimetype
+     * AuthFormPassword
+     * AuthFormProvider
+     * AuthFormSitePassphrase
+     * AuthFormSize
+     * AuthFormUsername
+     * AuthGroupFile
+     * AuthLDAPAuthorizePrefix
+     * AuthLDAPBindAuthoritative
+     * AuthLDAPBindDN
+     * AuthLDAPBindPassword
+     * AuthLDAPCharsetConfig
+     * AuthLDAPCompareAsUser
+     * AuthLDAPCompareDNOnServer
+     * AuthLDAPDereferenceAliases
+     * AuthLDAPGroupAttribute
+     * AuthLDAPGroupAttributeIsDN
+     * AuthLDAPInitialBindAsUser
+     * AuthLDAPInitialBindPattern
+     * AuthLDAPMaxSubGroupDepth
+     * AuthLDAPRemoteUserAttribute
+     * AuthLDAPRemoteUserIsDN
+     * AuthLDAPSearchAsUser
+     * AuthLDAPSubGroupAttribute
+     * AuthLDAPSubGroupClass
+     * AuthLDAPURL
+     * AuthMerging
+     * AuthName
+     * AuthnCacheContext
+     * AuthnCacheEnable
+     * AuthnCacheProvideFor
+     * AuthnCacheSOCache
+     * AuthnCacheTimeout
+     * <AuthnProviderAlias>
+     * AuthnzFcgiCheckAuthnProvider
+     * AuthnzFcgiDefineProvider
+     * AuthType
+     * AuthUserFile
+     * AuthzDBDLoginToReferer
+     * AuthzDBDQuery
+     * AuthzDBDRedirectQuery
+     * AuthzDBMType
+     * <AuthzProviderAlias>
+     * AuthzSendForbiddenOnFailure
+     * BalancerGrowth
+     * BalancerInherit
+     * BalancerMember
+     * BalancerPersist
+     * BrotliAlterETag
+     * BrotliCompressionMaxInputBlock
+     * BrotliCompressionQuality
+     * BrotliCompressionWindow
+     * BrotliFilterNote
+     * BrowserMatch
+     * BrowserMatchNoCase
+     * BufferedLogs
+     * BufferSize
+     * CacheDefaultExpire
+     * CacheDetailHeader
+     * CacheDirLength
+     * CacheDirLevels
+     * CacheDisable
+     * CacheEnable
+     * CacheFile
+     * CacheHeader
+     * CacheIgnoreCacheControl
+     * CacheIgnoreHeaders
+     * CacheIgnoreNoLastMod
+     * CacheIgnoreQueryString
+     * CacheIgnoreURLSessionIdentifiers
+     * CacheKeyBaseURL
+     * CacheLastModifiedFactor
+     * CacheLock
+     * CacheLockMaxAge
+     * CacheLockPath
+     * CacheMaxExpire
+     * CacheMaxFileSize
+     * CacheMinExpire
+     * CacheMinFileSize
+     * CacheNegotiatedDocs
+     * CacheQuickHandler
+     * CacheReadSize
+     * CacheReadTime
+     * CacheRoot
+     * CacheSocache
+     * CacheSocacheMaxSize
+     * CacheSocacheMaxTime
+     * CacheSocacheMinTime
+     * CacheSocacheReadSize
+     * CacheSocacheReadTime
+     * CacheStaleOnError
+     * CacheStoreExpired
+     * CacheStoreNoStore
+     * CacheStorePrivate
+     * CGIDScriptTimeout
+     * CGIMapExtension
+     * CGIPassAuth
+     * CGIVar
+     * CharsetDefault
+     * CharsetOptions
+     * CharsetSourceEnc
+     * CheckCaseOnly
+     * CheckSpelling
+     * ChrootDir
+     * ContentDigest
+     * CookieDomain
+     * CookieExpires
+     * CookieName
+     * CookieStyle
+     * CookieTracking
+     * CoreDumpDirectory
+     * CustomLog
+     * Dav
+     * DavDepthInfinity
+     * DavGenericLockDB
+     * DavLockDB
+     * DavMinTimeout
+     * DBDExptime
+     * DBDInitSQL
+     * DBDKeep
+     * DBDMax
+     * DBDMin
+     * DBDParams
+     * DBDPersist
+     * DBDPrepareSQL
+     * DBDriver
+     * DefaultIcon
+     * DefaultLanguage
+     * DefaultRuntimeDir
+     * DefaultType
+     * Define
+     * DeflateBufferSize
+     * DeflateCompressionLevel
+     * DeflateFilterNote
+     * DeflateInflateLimitRequestBody
+     * DeflateInflateRatioBurst
+     * DeflateInflateRatioLimit
+     * DeflateMemLevel
+     * DeflateWindowSize
+     * Deny
+     * <Directory>
+     * DirectoryCheckHandler
+     * DirectoryIndex
+     * DirectoryIndexRedirect
+     * <DirectoryMatch>
+     * DirectorySlash
+     * DocumentRoot
+     * DTracePrivileges
+     * DumpIOInput
+     * DumpIOOutput
+     * <Else>
+     * <ElseIf>
+     * EnableExceptionHook
+     * EnableMMAP
+     * EnableSendfile
+     * Error
+     * ErrorDocument
+     * ErrorLog
+     * ErrorLogFormat
+     * Example
+     * ExpiresActive
+     * ExpiresByType
+     * ExpiresDefault
+     * ExtendedStatus
+     * ExtFilterDefine
+     * ExtFilterOptions
+     * FallbackResource
+     * FileETag
+     * <Files>
+     * <FilesMatch>
+     * FilterChain
+     * FilterDeclare
+     * FilterProtocol
+     * FilterProvider
+     * FilterTrace
+     * ForceLanguagePriority
+     * ForceType
+     * ForensicLog
+     * GlobalLog
+     * GprofDir
+     * GracefulShutdownTimeout
+     * Group
+     * H2CopyFiles
+     * H2Direct
+     * H2EarlyHints
+     * H2MaxSessionStreams
+     * H2MaxWorkerIdleSeconds
+     * H2MaxWorkers
+     * H2MinWorkers
+     * H2ModernTLSOnly
+     * H2Padding
+     * H2Push
+     * H2PushDiarySize
+     * H2PushPriority
+     * H2PushResource
+     * H2SerializeHeaders
+     * H2StreamMaxMemSize
+     * H2TLSCoolDownSecs
+     * H2TLSWarmUpSize
+     * H2Upgrade
+     * H2WindowSize
+     * Header
+     * HeaderName
+     * HeartbeatAddress
+     * HeartbeatListen
+     * HeartbeatMaxServers
+     * HeartbeatStorage
+     * HeartbeatStorage
+     * HostnameLookups
+     * HttpProtocolOptions
+     * IdentityCheck
+     * IdentityCheckTimeout
+     * <If>
+     * <IfDefine>
+     * <IfDirective>
+     * <IfFile>
+     * <IfModule>
+     * <IfSection>
+     * <IfVersion>
+     * ImapBase
+     * ImapDefault
+     * ImapMenu
+     * Include
+     * IncludeOptional
+     * IndexHeadInsert
+     * IndexIgnore
+     * IndexIgnoreReset
+     * IndexOptions
+     * IndexOrderDefault
+     * IndexStyleSheet
+     * InputSed
+     * ISAPIAppendLogToErrors
+     * ISAPIAppendLogToQuery
+     * ISAPICacheFile
+     * ISAPIFakeAsync
+     * ISAPILogNotSupported
+     * ISAPIReadAheadBuffer
+     * KeepAlive
+     * KeepAliveTimeout
+     * KeptBodySize
+     * LanguagePriority
+     * LDAPCacheEntries
+     * LDAPCacheTTL
+     * LDAPConnectionPoolTTL
+     * LDAPConnectionTimeout
+     * LDAPLibraryDebug
+     * LDAPOpCacheEntries
+     * LDAPOpCacheTTL
+     * LDAPReferralHopLimit
+     * LDAPReferrals
+     * LDAPRetries
+     * LDAPRetryDelay
+     * LDAPSharedCacheFile
+     * LDAPSharedCacheSize
+     * LDAPTimeout
+     * LDAPTrustedClientCert
+     * LDAPTrustedGlobalCert
+     * LDAPTrustedMode
+     * LDAPVerifyServerCert
+     * <Limit>
+     * <LimitExcept>
+     * LimitInternalRecursion
+     * LimitRequestBody
+     * LimitRequestFields
+     * LimitRequestFieldSize
+     * LimitRequestLine
+     * LimitXMLRequestBody
+     * Listen
+     * ListenBackLog
+     * ListenCoresBucketsRatio
+     * LoadFile
+     * LoadModule
+     * <Location>
+     * <LocationMatch>
+     * LogFormat
+     * LogIOTrackTTFB
+     * LogLevel
+     * LogMessage
+     * LuaAuthzProvider
+     * LuaCodeCache
+     * LuaHookAccessChecker
+     * LuaHookAuthChecker
+     * LuaHookCheckUserID
+     * LuaHookFixups
+     * LuaHookInsertFilter
+     * LuaHookLog
+     * LuaHookMapToStorage
+     * LuaHookTranslateName
+     * LuaHookTypeChecker
+     * LuaInherit
+     * LuaInputFilter
+     * LuaMapHandler
+     * LuaOutputFilter
+     * LuaPackageCPath
+     * LuaPackagePath
+     * LuaQuickHandler
+     * LuaRoot
+     * LuaScope
+     * <Macro>
+     * MaxConnectionsPerChild
+     * MaxKeepAliveRequests
+     * MaxMemFree
+     * MaxRangeOverlaps
+     * MaxRangeReversals
+     * MaxRanges
+     * MaxRequestWorkers
+     * MaxSpareServers
+     * MaxSpareThreads
+     * MaxThreads
+     * MDBaseServer
+     * MDCAChallenges
+     * MDCertificateAgreement
+     * MDCertificateAuthority
+     * MDCertificateFile
+     * MDCertificateKeyFile
+     * MDCertificateProtocol
+     * MDCertificateStatus
+     * MDChallengeDns01
+     * MDDriveMode
+     * MDHttpProxy
+     * MDMember
+     * MDMembers
+     * MDMessageCmd
+     * MDMustStaple
+     * MDNotifyCmd
+     * MDomain
+     * <MDomainSet>
+     * MDPortMap
+     * MDPrivateKeys
+     * MDRenewMode
+     * MDRenewWindow
+     * MDRequireHttps
+     * MDServerStatus
+     * MDStoreDir
+     * MDWarnWindow
+     * MemcacheConnTTL
+     * MergeSlashes
+     * MergeTrailers
+     * MetaDir
+     * MetaFiles
+     * MetaSuffix
+     * MimeMagicFile
+     * MinSpareServers
+     * MinSpareThreads
+     * MMapFile
+     * ModemStandard
+     * ModMimeUsePathInfo
+     * MultiviewsMatch
+     * Mutex
+     * NameVirtualHost
+     * NoProxy
+     * NWSSLTrustedCerts
+     * NWSSLUpgradeable
+     * Options
+     * Order
+     * OutputSed
+     * PassEnv
+     * PidFile
+     * PrivilegesMode
+     * Protocol
+     * ProtocolEcho
+     * Protocols
+     * ProtocolsHonorOrder
+     * <Proxy>
+     * Proxy100Continue
+     * ProxyAddHeaders
+     * ProxyBadHeader
+     * ProxyBlock
+     * ProxyDomain
+     * ProxyErrorOverride
+     * ProxyExpressDBMFile
+     * ProxyExpressDBMType
+     * ProxyExpressEnable
+     * ProxyFCGIBackendType
+     * ProxyFCGISetEnvIf
+     * ProxyFtpDirCharset
+     * ProxyFtpEscapeWildcards
+     * ProxyFtpListOnWildcard
+     * ProxyHCExpr
+     * ProxyHCTemplate
+     * ProxyHCTPsize
+     * ProxyHTMLBufSize
+     * ProxyHTMLCharsetOut
+     * ProxyHTMLDocType
+     * ProxyHTMLEnable
+     * ProxyHTMLEvents
+     * ProxyHTMLExtended
+     * ProxyHTMLFixups
+     * ProxyHTMLInterp
+     * ProxyHTMLLinks
+     * ProxyHTMLMeta
+     * ProxyHTMLStripComments
+     * ProxyHTMLURLMap
+     * ProxyIOBufferSize
+     * <ProxyMatch>
+     * ProxyMaxForwards
+     * ProxyPass
+     * ProxyPassInherit
+     * ProxyPassInterpolateEnv
+     * ProxyPassMatch
+     * ProxyPassReverse
+     * ProxyPassReverseCookieDomain
+     * ProxyPassReverseCookiePath
+     * ProxyPreserveHost
+     * ProxyReceiveBufferSize
+     * ProxyRemote
+     * ProxyRemoteMatch
+     * ProxyRequests
+     * ProxySCGIInternalRedirect
+     * ProxySCGISendfile
+     * ProxySet
+     * ProxySourceAddress
+     * ProxyStatus
+     * ProxyTimeout
+     * ProxyVia
+     * QualifyRedirectURL
+     * ReadmeName
+     * ReceiveBufferSize
+     * Redirect
+     * RedirectMatch
+     * RedirectPermanent
+     * RedirectTemp
+     * RedisConnPoolTTL
+     * RedisTimeout
+     * ReflectorHeader
+     * RegexDefaultOptions
+     * RegisterHttpMethod
+     * RemoteIPHeader
+     * RemoteIPInternalProxy
+     * RemoteIPInternalProxyList
+     * RemoteIPProxiesHeader
+     * RemoteIPProxyProtocol
+     * RemoteIPProxyProtocolExceptions
+     * RemoteIPTrustedProxy
+     * RemoteIPTrustedProxyList
+     * RemoveCharset
+     * RemoveEncoding
+     * RemoveHandler
+     * RemoveInputFilter
+     * RemoveLanguage
+     * RemoveOutputFilter
+     * RemoveType
+     * RequestHeader
+     * RequestReadTimeout
+     * Require
+     * <RequireAll>
+     * <RequireAny>
+     * <RequireNone>
+     * RewriteBase
+     * RewriteCond
+     * RewriteEngine
+     * RewriteMap
+     * RewriteOptions
+     * RewriteRule
+     * RLimitCPU
+     * RLimitMEM
+     * RLimitNPROC
+     * Satisfy
+     * ScoreBoardFile
+     * Script
+     * ScriptAlias
+     * ScriptAliasMatch
+     * ScriptInterpreterSource
+     * ScriptLog
+     * ScriptLogBuffer
+     * ScriptLogLength
+     * ScriptSock
+     * SecureListen
+     * SeeRequestTail
+     * SendBufferSize
+     * ServerAdmin
+     * ServerAlias
+     * ServerLimit
+     * ServerName
+     * ServerPath
+     * ServerRoot
+     * ServerSignature
+     * ServerTokens
+     * Session
+     * SessionCookieName
+     * SessionCookieName2
+     * SessionCookieRemove
+     * SessionCryptoCipher
+     * SessionCryptoDriver
+     * SessionCryptoPassphrase
+     * SessionCryptoPassphraseFile
+     * SessionDBDCookieName
+     * SessionDBDCookieName2
+     * SessionDBDCookieRemove
+     * SessionDBDDeleteLabel
+     * SessionDBDInsertLabel
+     * SessionDBDPerUser
+     * SessionDBDSelectLabel
+     * SessionDBDUpdateLabel
+     * SessionEnv
+     * SessionExclude
+     * SessionExpiryUpdateInterval
+     * SessionHeader
+     * SessionInclude
+     * SessionMaxAge
+     * SetEnv
+     * SetEnvIf
+     * SetEnvIfExpr
+     * SetEnvIfNoCase
+     * SetHandler
+     * SetInputFilter
+     * SetOutputFilter
+     * SSIEndTag
+     * SSIErrorMsg
+     * SSIETag
+     * SSILastModified
+     * SSILegacyExprParser
+     * SSIStartTag
+     * SSITimeFormat
+     * SSIUndefinedEcho
+     * SSLCACertificateFile
+     * SSLCACertificatePath
+     * SSLCADNRequestFile
+     * SSLCADNRequestPath
+     * SSLCARevocationCheck
+     * SSLCARevocationFile
+     * SSLCARevocationPath
+     * SSLCertificateChainFile
+     * SSLCertificateFile
+     * SSLCertificateKeyFile
+     * SSLCipherSuite
+     * SSLCompression
+     * SSLCryptoDevice
+     * SSLEngine
+     * SSLFIPS
+     * SSLHonorCipherOrder
+     * SSLInsecureRenegotiation
+     * SSLOCSPDefaultResponder
+     * SSLOCSPEnable
+     * SSLOCSPNoverify
+     * SSLOCSPOverrideResponder
+     * SSLOCSPProxyURL
+     * SSLOCSPResponderCertificateFile
+     * SSLOCSPResponderTimeout
+     * SSLOCSPResponseMaxAge
+     * SSLOCSPResponseTimeSkew
+     * SSLOCSPUseRequestNonce
+     * SSLOpenSSLConfCmd
+     * SSLOptions
+     * SSLPassPhraseDialog
+     * SSLProtocol
+     * SSLProxyCACertificateFile
+     * SSLProxyCACertificatePath
+     * SSLProxyCARevocationCheck
+     * SSLProxyCARevocationFile
+     * SSLProxyCARevocationPath
+     * SSLProxyCheckPeerCN
+     * SSLProxyCheckPeerExpire
+     * SSLProxyCheckPeerName
+     * SSLProxyCipherSuite
+     * SSLProxyEngine
+     * SSLProxyMachineCertificateChainFile
+     * SSLProxyMachineCertificateFile
+     * SSLProxyMachineCertificatePath
+     * SSLProxyProtocol
+     * SSLProxyVerify
+     * SSLProxyVerifyDepth
+     * SSLRandomSeed
+     * SSLRenegBufferSize
+     * SSLRequire
+     * SSLRequireSSL
+     * SSLSessionCache
+     * SSLSessionCacheTimeout
+     * SSLSessionTicketKeyFile
+     * SSLSessionTickets
+     * SSLSRPUnknownUserSeed
+     * SSLSRPVerifierFile
+     * SSLStaplingCache
+     * SSLStaplingErrorCacheTimeout
+     * SSLStaplingFakeTryLater
+     * SSLStaplingForceURL
+     * SSLStaplingResponderTimeout
+     * SSLStaplingResponseMaxAge
+     * SSLStaplingResponseTimeSkew
+     * SSLStaplingReturnResponderErrors
+     * SSLStaplingStandardCacheTimeout
+     * SSLStrictSNIVHostCheck
+     * SSLUserName
+     * SSLUseStapling
+     * SSLVerifyClient
+     * SSLVerifyDepth
+     * StartServers
+     * StartThreads
+     * Substitute
+     * SubstituteInheritBefore
+     * SubstituteMaxLineLength
+     * Suexec
+     * SuexecUserGroup
+     * ThreadLimit
+     * ThreadsPerChild
+     * ThreadStackSize
+     * TimeOut
+     * TraceEnable
+     * TransferLog
+     * TypesConfig
+     * UnDefine
+     * UndefMacro
+     * UnsetEnv
+     * Use
+     * UseCanonicalName
+     * UseCanonicalPhysicalPort
+     * User
+     * UserDir
+     * VHostCGIMode
+     * VHostCGIPrivs
+     * VHostGroup
+     * VHostPrivs
+     * VHostSecure
+     * VHostUser
+     * VirtualDocumentRoot
+     * VirtualDocumentRootIP
+     * <VirtualHost>
+     * VirtualScriptAlias
+     * VirtualScriptAliasIP
+     * WatchdogInterval
+     * XBitHack
+     * xml2EncAlias
+     * xml2EncDefault
+     * xml2StartParse
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Glossary
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   This glossary defines some of the common terminology related to Apache
+   in particular, and web serving in general. More information on each
+   concept is provided in the links.
+   top
+
+Definitions
+
+   Access Control
+          The restriction of access to network realms. In an Apache
+          context usually the restriction of access to certain URLs.
+          See: Authentication, Authorization, and Access Control
+
+   Algorithm
+          An unambiguous formula or set of rules for solving a problem in
+          a finite number of steps. Algorithms for encryption are usually
+          called Ciphers.
+
+   APache eXtension Tool (apxs)
+          A perl script that aids in compiling module sources into Dynamic
+          Shared Objects (DSOs) and helps install them in the Apache Web
+          server.
+          See: Manual Page: apxs
+
+   Apache Portable Runtime (APR)
+          A set of libraries providing many of the basic interfaces
+          between the server and the operating system. APR is developed
+          parallel to the Apache HTTP Server as an independent project.
+          See: Apache Portable Runtime Project
+
+   Authentication
+          The positive identification of a network entity such as a
+          server, a client, or a user.
+          See: Authentication, Authorization, and Access Control
+
+   Certificate
+          A data record used for authenticating network entities such as a
+          server or a client. A certificate contains X.509 information
+          pieces about its owner (called the subject) and the signing
+          Certification Authority (called the issuer), plus the owner's
+          public key and the signature made by the CA. Network entities
+          verify these signatures using CA certificates.
+          See: SSL/TLS Encryption
+
+   Certificate Signing Request (CSR)
+          An unsigned certificate for submission to a Certification
+          Authority, which signs it with the Private Key of their CA
+          Certificate. Once the CSR is signed, it becomes a real
+          certificate.
+          See: SSL/TLS Encryption
+
+   Certification Authority (CA)
+          A trusted third party whose purpose is to sign certificates for
+          network entities it has authenticated using secure means. Other
+          network entities can check the signature to verify that a CA has
+          authenticated the bearer of a certificate.
+          See: SSL/TLS Encryption
+
+   Cipher
+          An algorithm or system for data encryption. Examples are DES,
+          IDEA, RC4, etc.
+          See: SSL/TLS Encryption
+
+   Ciphertext
+          The result after Plaintext is passed through a Cipher.
+          See: SSL/TLS Encryption
+
+   Common Gateway Interface (CGI)
+          A standard definition for an interface between a web server and
+          an external program that allows the external program to service
+          requests. There is an Informational RFC which covers the
+          specifics.
+          See: Dynamic Content with CGI
+
+   Configuration Directive
+          See: Directive
+
+   Configuration File
+          A text file containing Directives that control the configuration
+          of Apache.
+          See: Configuration Files
+
+   CONNECT
+          An HTTP method for proxying raw data channels over HTTP. It can
+          be used to encapsulate other protocols, such as the SSL
+          protocol.
+
+   Context
+          An area in the configuration files where certain types of
+          directives are allowed.
+          See: Terms Used to Describe Apache Directives
+
+   Digital Signature
+          An encrypted text block that validates a certificate or other
+          file. A Certification Authority creates a signature by
+          generating a hash of the Public Key embedded in a Certificate,
+          then encrypting the hash with its own Private Key. Only the CA's
+          public key can decrypt the signature, verifying that the CA has
+          authenticated the network entity that owns the Certificate.
+          See: SSL/TLS Encryption
+
+   Directive
+          A configuration command that controls one or more aspects of
+          Apache's behavior. Directives are placed in the Configuration
+          File
+          See: Directive Index
+
+   Dynamic Shared Object (DSO)
+          Modules compiled separately from the Apache httpd binary that
+          can be loaded on-demand.
+          See: Dynamic Shared Object Support
+
+   Environment Variable (env-variable)
+          Named variables managed by the operating system shell and used
+          to store information and communicate between programs. Apache
+          also contains internal variables that are referred to as
+          environment variables, but are stored in internal Apache
+          structures, rather than in the shell environment.
+          See: Environment Variables in Apache
+
+   Export-Crippled
+          Diminished in cryptographic strength (and security) in order to
+          comply with the United States' Export Administration Regulations
+          (EAR). Export-crippled cryptographic software is limited to a
+          small key size, resulting in Ciphertext which usually can be
+          decrypted by brute force.
+          See: SSL/TLS Encryption
+
+   Filter
+          A process that is applied to data that is sent or received by
+          the server. Input filters process data sent by the client to the
+          server, while output filters process documents on the server
+          before they are sent to the client. For example, the INCLUDES
+          output filter processes documents for Server Side Includes.
+          See: Filters
+
+   Fully-Qualified Domain-Name (FQDN)
+          The unique name of a network entity, consisting of a hostname
+          and a domain name that can resolve to an IP address. For
+          example, www is a hostname, example.com is a domain name, and
+          www.example.com is a fully-qualified domain name.
+
+   Handler
+          An internal Apache representation of the action to be performed
+          when a file is called. Generally, files have implicit handlers,
+          based on the file type. Normally, all files are simply served by
+          the server, but certain file types are "handled" separately. For
+          example, the cgi-script handler designates files to be processed
+          as CGIs.
+          See: Apache's Handler Use
+
+   Hash
+          A mathematical one-way, irreversible algorithm generating a
+          string with fixed-length from another string of any length.
+          Different input strings will usually produce different hashes
+          (depending on the hash function).
+
+   Header
+          The part of the HTTP request and response that is sent before
+          the actual content, and that contains meta-information
+          describing the content.
+
+   .htaccess
+          A configuration file that is placed inside the web tree and
+          applies configuration directives to the directory where it is
+          placed and all sub-directories. Despite its name, this file can
+          hold almost any type of directive, not just access-control
+          directives.
+          See: Configuration Files
+
+   httpd.conf
+          The main Apache configuration file. The default location is
+          /usr/local/apache2/conf/httpd.conf, but it may be moved using
+          run-time or compile-time configuration.
+          See: Configuration Files
+
+   HyperText Transfer Protocol (HTTP)
+          The standard transmission protocol used on the World Wide Web.
+          Apache implements version 1.1 of the protocol, referred to as
+          HTTP/1.1 and defined by RFC 2616.
+
+   HTTPS
+          The HyperText Transfer Protocol (Secure), the standard encrypted
+          communication mechanism on the World Wide Web. This is actually
+          just HTTP over SSL.
+          See: SSL/TLS Encryption
+
+   Method
+          In the context of HTTP, an action to perform on a resource,
+          specified on the request line by the client. Some of the methods
+          available in HTTP are GET, POST, and PUT.
+
+   Message Digest
+          A hash of a message, which can be used to verify that the
+          contents of the message have not been altered in transit.
+          See: SSL/TLS Encryption
+
+   MIME-type
+          A way to describe the kind of document being transmitted. Its
+          name comes from that fact that its format is borrowed from the
+          Multipurpose Internet Mail Extensions. It consists of a major
+          type and a minor type, separated by a slash. Some examples are
+          text/html, image/gif, and application/octet-stream. In HTTP, the
+          MIME-type is transmitted in the Content-Type header.
+          See: mod_mime
+
+   Module
+          An independent part of a program. Much of Apache's functionality
+          is contained in modules that you can choose to include or
+          exclude. Modules that are compiled into the Apache httpd binary
+          are called static modules, while modules that are stored
+          separately and can be optionally loaded at run-time are called
+          dynamic modules or DSOs. Modules that are included by default
+          are called base modules. Many modules are available for Apache
+          that are not distributed as part of the Apache HTTP Server
+          tarball. These are referred to as third-party modules.
+          See: Module Index
+
+   Module Magic Number (MMN)
+          Module Magic Number is a constant defined in the Apache source
+          code that is associated with binary compatibility of modules. It
+          is changed when internal Apache structures, function calls and
+          other significant parts of API change in such a way that binary
+          compatibility cannot be guaranteed any more. On MMN change, all
+          third party modules have to be at least recompiled, sometimes
+          even slightly changed in order to work with the new version of
+          Apache.
+
+   OpenSSL
+          The Open Source toolkit for SSL/TLS
+          See http://www.openssl.org/#
+
+   Pass Phrase
+          The word or phrase that protects private key files. It prevents
+          unauthorized users from encrypting them. Usually it's just the
+          secret encryption/decryption key used for Ciphers.
+          See: SSL/TLS Encryption
+
+   Plaintext
+          The unencrypted text.
+
+   Private Key
+          The secret key in a Public Key Cryptography system, used to
+          decrypt incoming messages and sign outgoing ones.
+          See: SSL/TLS Encryption
+
+   Proxy
+          An intermediate server that sits between the client and the
+          origin server. It accepts requests from clients, transmits those
+          requests on to the origin server, and then returns the response
+          from the origin server to the client. If several clients request
+          the same content, the proxy can deliver that content from its
+          cache, rather than requesting it from the origin server each
+          time, thereby reducing response time.
+          See: mod_proxy
+
+   Public Key
+          The publicly available key in a Public Key Cryptography system,
+          used to encrypt messages bound for its owner and to decrypt
+          signatures made by its owner.
+          See: SSL/TLS Encryption
+
+   Public Key Cryptography
+          The study and application of asymmetric encryption systems,
+          which use one key for encryption and another for decryption. A
+          corresponding pair of such keys constitutes a key pair. Also
+          called Asymmetric Cryptography.
+          See: SSL/TLS Encryption
+
+   Regular Expression (Regex)
+          A way of describing a pattern in text - for example, "all the
+          words that begin with the letter A" or "every 10-digit phone
+          number" or even "Every sentence with two commas in it, and no
+          capital letter Q". Regular expressions are useful in Apache
+          because they let you apply certain attributes against
+          collections of files or resources in very flexible ways - for
+          example, all .gif and .jpg files under any "images" directory
+          could be written as "/images/.*(jpg|gif)$". In places where
+          regular expressions are used to replace strings, the special
+          variables $1 ... $9 contain backreferences to the grouped parts
+          (in parentheses) of the matched expression. The special variable
+          $0 contains a backreference to the whole matched expression. To
+          write a literal dollar sign in a replacement string, it can be
+          escaped with a backslash. Historically, the variable & could be
+          used as alias for $0 in some places. This is no longer possible
+          since version 2.3.6. Apache uses Perl Compatible Regular
+          Expressions provided by the PCRE library. You can find more
+          documentation about PCRE's regular expression syntax at that
+          site, or at Wikipedia.
+
+   Reverse Proxy
+          A proxy server that appears to the client as if it is an origin
+          server. This is useful to hide the real origin server from the
+          client for security reasons, or to load balance.
+
+   Secure Sockets Layer (SSL)
+          A protocol created by Netscape Communications Corporation for
+          general communication authentication and encryption over TCP/IP
+          networks. The most popular usage is HTTPS, i.e. the HyperText
+          Transfer Protocol (HTTP) over SSL.
+          See: SSL/TLS Encryption
+
+   Server Name Indication (SNI)
+          An SSL function that allows passing the desired server hostname
+          in the initial SSL handshake message, so that the web server can
+          select the correct virtual host configuration to use in
+          processing the SSL handshake. It was added to SSL starting with
+          the TLS extensions, RFC 3546.
+          See: the SSL FAQ and RFC 3546
+
+   Server Side Includes (SSI)
+          A technique for embedding processing directives inside HTML
+          files.
+          See: Introduction to Server Side Includes
+
+   Session
+          The context information of a communication in general.
+
+   SSLeay
+          The original SSL/TLS implementation library developed by Eric A.
+          Young
+
+   Subrequest
+          Apache provides a subrequest API to modules that allows other
+          filesystem or URL paths to be partially or fully evaluated by
+          the server. Example consumers of this API are DirectoryIndex,
+          mod_autoindex, and mod_include.
+
+   Symmetric Cryptography
+          The study and application of Ciphers that use a single secret
+          key for both encryption and decryption operations.
+          See: SSL/TLS Encryption
+
+   Tarball
+          A package of files gathered together using the tar utility.
+          Apache distributions are stored in compressed tar archives or
+          using pkzip.
+
+   Transport Layer Security (TLS)
+          The successor protocol to SSL, created by the Internet
+          Engineering Task Force (IETF) for general communication
+          authentication and encryption over TCP/IP networks. TLS version
+          1 is nearly identical with SSL version 3.
+          See: SSL/TLS Encryption
+
+   Uniform Resource Locator (URL)
+          The name/address of a resource on the Internet. This is the
+          common informal term for what is formally called a Uniform
+          Resource Identifier. URLs are usually made up of a scheme, like
+          http or https, a hostname, and a path. A URL for this page might
+          be http://httpd.apache.org/docs/2.4/glossary.html.
+
+   Uniform Resource Identifier (URI)
+          A compact string of characters for identifying an abstract or
+          physical resource. It is formally defined by RFC 2396. URIs used
+          on the world-wide web are commonly referred to as URLs.
+
+   Virtual Hosting
+          Serving multiple websites using a single instance of Apache. IP
+          virtual hosting differentiates between websites based on their
+          IP address, while name-based virtual hosting uses only the name
+          of the host and can therefore host many sites on the same IP
+          address.
+          See: Apache Virtual Host documentation
+
+   X.509
+          An authentication certificate scheme recommended by the
+          International Telecommunication Union (ITU-T) which is used for
+          SSL/TLS authentication.
+          See: SSL/TLS Encryption
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Sitemap
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   This page lists the currently available documents of the Apache HTTP
+   Server Version 2.4 Documentation.
+     * Release Notes
+     * Using the Apache HTTP Server
+     * Apache Virtual Host documentation
+     * URL Rewriting Guide
+     * Apache SSL/TLS Encryption
+     * Guides, Tutorials, and HowTos
+     * Platform-specific Notes
+     * Apache HTTP Server and Supporting Programs
+     * Apache Miscellaneous Documentation
+     * Apache modules
+     * Developer Documentation
+     * Glossary and Index
+
+   top
+
+Release Notes
+
+     * Upgrading to 2.4 from 2.2
+     * New features with Apache 2.3/2.4
+     * New features with Apache 2.1/2.2
+     * New features with Apache 2.0
+     * Apache License
+
+   top
+
+Using the Apache HTTP Server
+
+     * Compiling and Installing Apache
+     * Starting Apache
+     * Stopping and Restarting the Server
+     * Configuration Files
+     * How Directory, Location and Files sections work
+     * Content Caching
+     * Server-Wide Configuration
+     * Log Files
+     * Mapping URLs to Filesystem Locations
+     * Dynamic Shared Object (DSO) support
+     * Content Negotiation
+     * Custom error responses
+     * Setting which addresses and ports Apache uses
+     * Multi-Processing Modules (MPMs)
+     * Environment Variables in Apache
+     * Expression Parsing in Apache
+     * Apache's Handler Use
+     * Filters
+     * Shared Object Cache Support
+     * suEXEC Support
+     * Issues Regarding DNS and Apache
+     * Frequently Asked Questions
+
+   top
+
+Apache Virtual Host documentation
+
+     * Overview
+     * Name-based Virtual Hosts
+     * IP-based Virtual Host Support
+     * Dynamically configured mass virtual hosting
+     * VirtualHost Examples
+     * An In-Depth Discussion of Virtual Host Matching
+     * File descriptor limitations
+
+   top
+
+URL Rewriting Guide
+
+     * Overview
+     * mod_rewrite reference documentation
+     * Introduction to regular expressions and mod_rewrite
+     * Using mod_rewrite for redirection and remapping of URLs
+     * Using mod_rewrite to control access
+     * Dynamic virtual hosts with mod_rewrite
+     * Dynamic proxying with mod_rewrite
+     * Using RewriteMap
+     * Advanced techniques
+     * When NOT to use mod_rewrite
+     * RewriteRule Flags
+     * Technical details
+
+   top
+
+Apache SSL/TLS Encryption
+
+     * Overview
+     * SSL/TLS Encryption: An Introduction
+     * SSL/TLS Encryption: Compatibility
+     * SSL/TLS Encryption: How-To
+     * SSL/TLS Encryption: FAQ
+
+   top
+
+Guides, Tutorials, and HowTos
+
+     * Overview
+     * Authentication and Authorization
+     * Access Control
+     * Dynamic Content with CGI
+     * Introduction to Server Side Includes
+     * .htaccess files
+     * Per-user web directories
+     * Reverse proxy setup guide
+     * HTTP/2 guide
+
+   top
+
+Platform-specific Notes
+
+     * Overview
+     * Using Apache with Microsoft Windows
+     * Compiling Apache for Microsoft Windows
+     * Using Apache With RPM Based Systems
+     * Using Apache with Novell NetWare
+     * Running a High-Performance Web Server on HPUX
+     * The Apache EBCDIC Port
+
+   top
+
+Apache HTTP Server and Supporting Programs
+
+     * Overview
+     * Manual Page: httpd
+     * Manual Page: ab
+     * Manual Page: apachectl
+     * Manual Page: apxs
+     * Manual Page: configure
+     * Manual Page: dbmmanage
+     * Manual Page: fcgistarter
+     * Manual Page: htcacheclean
+     * Manual Page: htdbm
+     * Manual Page: htdigest
+     * Manual Page: htpasswd
+     * Manual Page: httxt2dbm
+     * Manual Page: logresolve
+     * Manual Page: log_server_status
+     * Manual Page: rotatelogs
+     * Manual Page: split-logfile
+     * Manual Page: suexec
+     * Other Programs
+
+   top
+
+Apache Miscellaneous Documentation
+
+     * Overview
+     * Performance Notes - Apache Tuning
+     * Security Tips
+     * Relevant Standards
+     * Password Encryption Formats
+
+   top
+
+Apache modules
+
+     * Definitions of terms used to describe Apache modules
+     * Definitions of terms used to describe Apache directives
+
+     * Apache Core Features
+     * Apache MPM Common Directives
+     * Apache MPM event
+     * Apache MPM netware
+     * Apache MPM os2
+     * Apache MPM prefork
+     * Apache MPM winnt
+     * Apache MPM worker
+
+     * Apache Module mod_access_compat
+     * Apache Module mod_actions
+     * Apache Module mod_alias
+     * Apache Module mod_allowmethods
+     * Apache Module mod_asis
+     * Apache Module mod_auth_basic
+     * Apache Module mod_auth_digest
+     * Apache Module mod_auth_form
+     * Apache Module mod_authn_anon
+     * Apache Module mod_authn_core
+     * Apache Module mod_authn_dbd
+     * Apache Module mod_authn_dbm
+     * Apache Module mod_authn_file
+     * Apache Module mod_authn_socache
+     * Apache Module mod_authnz_fcgi
+     * Apache Module mod_authnz_ldap
+     * Apache Module mod_authz_core
+     * Apache Module mod_authz_dbd
+     * Apache Module mod_authz_dbm
+     * Apache Module mod_authz_groupfile
+     * Apache Module mod_authz_host
+     * Apache Module mod_authz_owner
+     * Apache Module mod_authz_user
+     * Apache Module mod_autoindex
+     * Apache Module mod_brotli
+     * Apache Module mod_buffer
+     * Apache Module mod_cache
+     * Apache Module mod_cache_disk
+     * Apache Module mod_cache_socache
+     * Apache Module mod_cern_meta
+     * Apache Module mod_cgi
+     * Apache Module mod_cgid
+     * Apache Module mod_charset_lite
+     * Apache Module mod_data
+     * Apache Module mod_dav
+     * Apache Module mod_dav_fs
+     * Apache Module mod_dav_lock
+     * Apache Module mod_dbd
+     * Apache Module mod_deflate
+     * Apache Module mod_dialup
+     * Apache Module mod_dir
+     * Apache Module mod_dumpio
+     * Apache Module mod_echo
+     * Apache Module mod_env
+     * Apache Module mod_example_hooks
+     * Apache Module mod_expires
+     * Apache Module mod_ext_filter
+     * Apache Module mod_file_cache
+     * Apache Module mod_filter
+     * Apache Module mod_headers
+     * Apache Module mod_heartbeat
+     * Apache Module mod_heartmonitor
+     * Apache Module mod_http2
+     * Apache Module mod_ident
+     * Apache Module mod_imagemap
+     * Apache Module mod_include
+     * Apache Module mod_info
+     * Apache Module mod_isapi
+     * Apache Module mod_lbmethod_bybusyness
+     * Apache Module mod_lbmethod_byrequests
+     * Apache Module mod_lbmethod_bytraffic
+     * Apache Module mod_lbmethod_heartbeat
+     * Apache Module mod_ldap
+     * Apache Module mod_log_config
+     * Apache Module mod_log_debug
+     * Apache Module mod_log_forensic
+     * Apache Module mod_logio
+     * Apache Module mod_lua
+     * Apache Module mod_macro
+     * Apache Module mod_md
+     * Apache Module mod_mime
+     * Apache Module mod_mime_magic
+     * Apache Module mod_negotiation
+     * Apache Module mod_nw_ssl
+     * Apache Module mod_privileges
+     * Apache Module mod_proxy
+     * Apache Module mod_proxy_ajp
+     * Apache Module mod_proxy_balancer
+     * Apache Module mod_proxy_connect
+     * Apache Module mod_proxy_express
+     * Apache Module mod_proxy_fcgi
+     * Apache Module mod_proxy_fdpass
+     * Apache Module mod_proxy_ftp
+     * Apache Module mod_proxy_hcheck
+     * Apache Module mod_proxy_html
+     * Apache Module mod_proxy_http
+     * Apache Module mod_proxy_http2
+     * Apache Module mod_proxy_scgi
+     * Apache Module mod_proxy_uwsgi
+     * Apache Module mod_proxy_wstunnel
+     * Apache Module mod_ratelimit
+     * Apache Module mod_reflector
+     * Apache Module mod_remoteip
+     * Apache Module mod_reqtimeout
+     * Apache Module mod_request
+     * Apache Module mod_rewrite
+     * Apache Module mod_sed
+     * Apache Module mod_session
+     * Apache Module mod_session_cookie
+     * Apache Module mod_session_crypto
+     * Apache Module mod_session_dbd
+     * Apache Module mod_setenvif
+     * Apache Module mod_slotmem_plain
+     * Apache Module mod_slotmem_shm
+     * Apache Module mod_so
+     * Apache Module mod_socache_dbm
+     * Apache Module mod_socache_dc
+     * Apache Module mod_socache_memcache
+     * Apache Module mod_socache_redis
+     * Apache Module mod_socache_shmcb
+     * Apache Module mod_speling
+     * Apache Module mod_ssl
+     * Apache Module mod_status
+     * Apache Module mod_substitute
+     * Apache Module mod_suexec
+     * Apache Module mod_unique_id
+     * Apache Module mod_unixd
+     * Apache Module mod_userdir
+     * Apache Module mod_usertrack
+     * Apache Module mod_version
+     * Apache Module mod_vhost_alias
+     * Apache Module mod_watchdog
+     * Apache Module mod_xml2enc
+
+   top
+
+Developer Documentation
+
+     * Overview
+     * Apache API notes
+     * API updates in Apache HTTPD 2.4
+     * Developing modules for Apache HTTPD 2.4
+     * Documenting Apache HTTPD
+     * Apache 2.x Hook Functions
+     * Converting Modules from 1.3 to 2.x
+     * Request Processing in 2.x
+     * How Filters Work in 2.x
+     * Guidelines for output filters in 2.x
+     * Thread Safety Issues in 2.x
+
+   top
+
+Glossary and Index
+
+     * Glossary
+     * Module index
+     * Directive index
+     * Directive Quick-Reference
+     * Override class index for .htaccess
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr  |
+   zh-cn
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Overview of new features in Apache HTTP Server 2.4
+
+   Available Languages:  en  |  fr  |  tr
+
+   This document describes some of the major changes between the 2.2 and
+   2.4 versions of the Apache HTTP Server. For new features since version
+   2.0, see the 2.2 new features document.
+   Support Apache!
+     * Core Enhancements
+     * New Modules
+     * Module Enhancements
+     * Program Enhancements
+     * Documentation
+     * Module Developer Changes
+
+See also
+
+     * Comments
+
+   top
+
+Core Enhancements
+
+   Run-time Loadable MPMs
+          Multiple MPMs can now be built as loadable modules at compile
+          time. The MPM of choice can be configured at run time via
+          LoadModule directive.
+
+   Event MPM
+          The Event MPM is no longer experimental but is now fully
+          supported.
+
+   Asynchronous support
+          Better support for asynchronous read/write for supporting MPMs
+          and platforms.
+
+   Per-module and per-directory LogLevel configuration
+          The LogLevel can now be configured per module and per directory.
+          New levels trace1 to trace8 have been added above the debug log
+          level.
+
+   Per-request configuration sections
+          <If>, <ElseIf>, and <Else> sections can be used to set the
+          configuration based on per-request criteria.
+
+   General-purpose expression parser
+          A new expression parser allows to specify complex conditions
+          using a common syntax in directives like SetEnvIfExpr,
+          RewriteCond, Header, <If>, and others.
+
+   KeepAliveTimeout in milliseconds
+          It is now possible to specify KeepAliveTimeout in milliseconds.
+
+   NameVirtualHost directive
+          No longer needed and is now deprecated.
+
+   Override Configuration
+          The new AllowOverrideList directive allows more fine grained
+          control which directives are allowed in .htaccess files.
+
+   Config file variables
+          It is now possible to Define variables in the configuration,
+          allowing a clearer representation if the same value is used at
+          many places in the configuration.
+
+   Reduced memory usage
+          Despite many new features, 2.4.x tends to use less memory than
+          2.2.x.
+
+   top
+
+New Modules
+
+   mod_proxy_fcgi
+          FastCGI Protocol backend for mod_proxy
+
+   mod_proxy_scgi
+          SCGI Protocol backend for mod_proxy
+
+   mod_proxy_express
+          Provides dynamically configured mass reverse proxies for
+          mod_proxy
+
+   mod_remoteip
+          Replaces the apparent client remote IP address and hostname for
+          the request with the IP address list presented by a proxies or a
+          load balancer via the request headers.
+
+   mod_heartmonitor, mod_lbmethod_heartbeat
+          Allow mod_proxy_balancer to base loadbalancing decisions on the
+          number of active connections on the backend servers.
+
+   mod_proxy_html
+          Formerly a third-party module, this supports fixing of HTML
+          links in a reverse proxy situation, where the backend generates
+          URLs that are not valid for the proxy's clients.
+
+   mod_sed
+          An advanced replacement of mod_substitute, allows to edit the
+          response body with the full power of sed.
+
+   mod_auth_form
+          Enables form-based authentication.
+
+   mod_session
+          Enables the use of session state for clients, using cookie or
+          database storage.
+
+   mod_allowmethods
+          New module to restrict certain HTTP methods without interfering
+          with authentication or authorization.
+
+   mod_lua
+          Embeds the Lua language into httpd, for configuration and small
+          business logic functions. (Experimental)
+
+   mod_log_debug
+          Allows the addition of customizable debug logging at different
+          phases of the request processing.
+
+   mod_buffer
+          Provides for buffering the input and output filter stacks
+
+   mod_data
+          Convert response body into an RFC2397 data URL
+
+   mod_ratelimit
+          Provides Bandwidth Rate Limiting for Clients
+
+   mod_request
+          Provides Filters to handle and make available HTTP request
+          bodies
+
+   mod_reflector
+          Provides Reflection of a request body as a response via the
+          output filter stack.
+
+   mod_slotmem_shm
+          Provides a Slot-based shared memory provider (ala the
+          scoreboard).
+
+   mod_xml2enc
+          Formerly a third-party module, this supports
+          internationalisation in libxml2-based (markup-aware) filter
+          modules.
+
+   mod_macro (available since 2.4.5)
+          Provide macros within configuration files.
+
+   mod_proxy_wstunnel (available since 2.4.5)
+          Support web-socket tunnels.
+
+   mod_authnz_fcgi (available since 2.4.10)
+          Enable FastCGI authorizer applications to authenticate and/or
+          authorize clients.
+
+   mod_http2 (available since 2.4.17)
+          Support for the HTTP/2 transport layer.
+
+   mod_proxy_http2 (available since 2.4.19)
+          HTTP/2 Protocol backend for mod_proxy
+
+   mod_proxy_hcheck (available since 2.4.21)
+          Support independent dynamic health checks for remote proxiy
+          backend servers.
+
+   mod_brotli (available since 2.4.26)
+          Support the Brotli compression algorithm.
+
+   mod_md (available since 2.4.30)
+          Support the ACME protocol to automate certificate provisionning.
+
+   mod_socache_redis (available since 2.4.39)
+          Support Redis based shared object cache provider.
+
+   top
+
+Module Enhancements
+
+   mod_ssl
+          mod_ssl can now be configured to use an OCSP server to check the
+          validation status of a client certificate. The default responder
+          is configurable, along with the decision on whether to prefer
+          the responder designated in the client certificate itself.
+          mod_ssl now also supports OCSP stapling, where the server
+          pro-actively obtains an OCSP verification of its certificate and
+          transmits that to the client during the handshake.
+          mod_ssl can now be configured to share SSL Session data between
+          servers through memcached
+          EC keys are now supported in addition to RSA and DSA.
+          Support for TLS-SRP (available in 2.4.4 and later).
+
+   mod_proxy
+          The ProxyPass directive is now most optimally configured within
+          a Location or LocationMatch block, and offers a significant
+          performance advantage over the traditional two-parameter syntax
+          when present in large numbers.
+          The source address used for proxy requests is now configurable.
+          Support for Unix domain sockets to the backend (available in
+          2.4.7 and later).
+
+   mod_proxy_balancer
+          More runtime configuration changes for BalancerMembers via
+          balancer-manager
+          Additional BalancerMembers can be added at runtime via
+          balancer-manager
+          Runtime configuration of a subset of Balancer parameters
+          BalancerMembers can be set to 'Drain' so that they only respond
+          to existing sticky sessions, allowing them to be taken
+          gracefully offline.
+          Balancer settings can be persistent after restarts.
+
+   mod_cache
+          The mod_cache CACHE filter can be optionally inserted at a given
+          point in the filter chain to provide fine control over caching.
+          mod_cache can now cache HEAD requests.
+          Where possible, mod_cache directives can now be set per
+          directory, instead of per server.
+          The base URL of cached URLs can be customised, so that a cluster
+          of caches can share the same endpoint URL prefix.
+          mod_cache is now capable of serving stale cached data when a
+          backend is unavailable (error 5xx).
+          mod_cache can now insert HIT/MISS/REVALIDATE into an X-Cache
+          header.
+
+   mod_include
+          Support for the 'onerror' attribute within an 'include' element,
+          allowing an error document to be served on error instead of the
+          default error string.
+
+   mod_cgi, mod_include, mod_isapi, ...
+          Translation of headers to environment variables is more strict
+          than before to mitigate some possible cross-site-scripting
+          attacks via header injection. Headers containing invalid
+          characters (including underscores) are now silently dropped.
+          Environment Variables in Apache has some pointers on how to work
+          around broken legacy clients which require such headers. (This
+          affects all modules which use these environment variables.)
+
+   mod_authz_core Authorization Logic Containers
+          Advanced authorization logic may now be specified using the
+          Require directive and the related container directives, such as
+          <RequireAll>.
+
+   mod_rewrite
+          mod_rewrite adds the [QSD] (Query String Discard) and [END]
+          flags for RewriteRule to simplify common rewriting scenarios.
+          Adds the possibility to use complex boolean expressions in
+          RewriteCond.
+          Allows the use of SQL queries as RewriteMap functions.
+
+   mod_ldap, mod_authnz_ldap
+          mod_authnz_ldap adds support for nested groups.
+          mod_ldap adds LDAPConnectionPoolTTL, LDAPTimeout, and other
+          improvements in the handling of timeouts. This is especially
+          useful for setups where a stateful firewall drops idle
+          connections to the LDAP server.
+          mod_ldap adds LDAPLibraryDebug to log debug information provided
+          by the used LDAP toolkit.
+
+   mod_info
+          mod_info can now dump the pre-parsed configuration to stdout
+          during server startup.
+
+   mod_auth_basic
+          New generic mechanism to fake basic authentication (available in
+          2.4.5 and later).
+
+   top
+
+Program Enhancements
+
+   fcgistarter
+          New FastCGI daemon starter utility
+
+   htcacheclean
+          Current cached URLs can now be listed, with optional metadata
+          included.
+          Allow explicit deletion of individual cached URLs from the
+          cache.
+          File sizes can now be rounded up to the given block size, making
+          the size limits map more closely to the real size on disk.
+          Cache size can now be limited by the number of inodes, instead
+          of or in addition to being limited by the size of the files on
+          disk.
+
+   rotatelogs
+          May now create a link to the current log file.
+          May now invoke a custom post-rotate script.
+
+   htpasswd, htdbm
+          Support for the bcrypt algorithm (available in 2.4.4 and later).
+
+   top
+
+Documentation
+
+   mod_rewrite
+          The mod_rewrite documentation has been rearranged and almost
+          completely rewritten, with a focus on examples and common usage,
+          as well as on showing you when other solutions are more
+          appropriate. The Rewrite Guide is now a top-level section with
+          much more detail and better organization.
+
+   mod_ssl
+          The mod_ssl documentation has been greatly enhanced, with more
+          examples at the getting started level, in addition to the
+          previous focus on technical details.
+
+   Caching Guide
+          The Caching Guide has been rewritten to properly distinguish
+          between the RFC2616 HTTP/1.1 caching features provided by
+          mod_cache, and the generic key/value caching provided by the
+          socache interface, as well as to cover specialised caching
+          provided by mechanisms such as mod_file_cache.
+
+   top
+
+Module Developer Changes
+
+   Check Configuration Hook Added
+          A new hook, check_config, has been added which runs between the
+          pre_config and open_logs hooks. It also runs before the
+          test_config hook when the -t option is passed to httpd. The
+          check_config hook allows modules to review interdependent
+          configuration directive values and adjust them while messages
+          can still be logged to the console. The user can thus be alerted
+          to misconfiguration problems before the core open_logs hook
+          function redirects console output to the error log.
+
+   Expression Parser Added
+          We now have a general-purpose expression parser, whose API is
+          exposed in ap_expr.h. This is adapted from the expression parser
+          previously implemented in mod_ssl.
+
+   Authorization Logic Containers
+          Authorization modules now register as a provider, via
+          ap_register_auth_provider(), to support advanced authorization
+          logic, such as <RequireAll>.
+
+   Small-Object Caching Interface
+          The ap_socache.h header exposes a provider-based interface for
+          caching small data objects, based on the previous implementation
+          of the mod_ssl session cache. Providers using a shared-memory
+          cyclic buffer, disk-based dbm files, and a memcache distributed
+          cache are currently supported.
+
+   Cache Status Hook Added
+          The mod_cache module now includes a new cache_status hook, which
+          is called when the caching decision becomes known. A default
+          implementation is provided which adds an optional X-Cache and
+          X-Cache-Detail header to the response.
+
+   The developer documentation contains a detailed list of API changes.
+
+   Available Languages:  en  |  fr  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Overview of new features in Apache HTTP Server 2.2
+
+   Available Languages:  en  |  fr  |  ko  |  pt-br  |  tr
+
+   This document describes some of the major changes between the 2.0 and
+   2.2 versions of the Apache HTTP Server. For new features since version
+   1.3, see the 2.0 new features document.
+   Support Apache!
+     * Core Enhancements
+     * Module Enhancements
+     * Program Enhancements
+     * Module Developer Changes
+
+See also
+
+     * Comments
+
+   top
+
+Core Enhancements
+
+   Authn/Authz
+          The bundled authentication and authorization modules have been
+          refactored. The new mod_authn_alias(already removed from
+          2.3/2.4) module can greatly simplify certain authentication
+          configurations. See module name changes, and the developer
+          changes for more information about how these changes affects
+          users and module writers.
+
+   Caching
+          mod_cache, mod_cache_disk, and mod_mem_cache(already removed
+          from 2.3/2.4) have undergone a lot of changes, and are now
+          considered production-quality. htcacheclean has been introduced
+          to clean up mod_cache_disk setups.
+
+   Configuration
+          The default configuration layout has been simplified and
+          modularised. Configuration snippets which can be used to enable
+          commonly-used features are now bundled with Apache, and can be
+          easily added to the main server config.
+
+   Graceful stop
+          The prefork, worker and event MPMs now allow httpd to be
+          shutdown gracefully via the graceful-stop signal. The
+          GracefulShutdownTimeout directive has been added to specify an
+          optional timeout, after which httpd will terminate regardless of
+          the status of any requests being served.
+
+   Proxying
+          The new mod_proxy_balancer module provides load balancing
+          services for mod_proxy. The new mod_proxy_ajp module adds
+          support for the Apache JServ Protocol version 1.3 used by Apache
+          Tomcat.
+
+   Regular Expression Library Updated
+          Version 5.0 of the Perl Compatible Regular Expression Library
+          (PCRE) is now included. httpd can be configured to use a system
+          installation of PCRE by passing the --with-pcre flag to
+          configure.
+
+   Smart Filtering
+          mod_filter introduces dynamic configuration to the output filter
+          chain. It enables filters to be conditionally inserted, based on
+          any Request or Response header or environment variable, and
+          dispenses with the more problematic dependencies and ordering
+          problems in the 2.0 architecture.
+
+   Large File Support
+          httpd is now built with support for files larger than 2GB on
+          modern 32-bit Unix systems. Support for handling >2GB request
+          bodies has also been added.
+
+   Event MPM
+          The event MPM uses a separate thread to handle Keep Alive
+          requests and accepting connections. Keep Alive requests have
+          traditionally required httpd to dedicate a worker to handle it.
+          This dedicated worker could not be used again until the Keep
+          Alive timeout was reached.
+
+   SQL Database Support
+          mod_dbd, together with the apr_dbd framework, brings direct SQL
+          support to modules that need it. Supports connection pooling in
+          threaded MPMs.
+
+   top
+
+Module Enhancements
+
+   Authn/Authz
+          Modules in the aaa directory have been renamed and offer better
+          support for digest authentication. For example, mod_auth is now
+          split into mod_auth_basic and mod_authn_file; mod_auth_dbm is
+          now called mod_authn_dbm; mod_access has been renamed
+          mod_authz_host. There is also a new mod_authn_alias(already
+          removed from 2.3/2.4) module for simplifying certain
+          authentication configurations.
+
+   mod_authnz_ldap
+          This module is a port of the 2.0 mod_auth_ldap module to the 2.2
+          Authn/Authz framework. New features include using LDAP attribute
+          values and complicated search filters in the Require directive.
+
+   mod_authz_owner
+          A new module that authorizes access to files based on the owner
+          of the file on the file system
+
+   mod_version
+          A new module that allows configuration blocks to be enabled
+          based on the version number of the running server.
+
+   mod_info
+          Added a new ?config argument which will show the configuration
+          directives as parsed by Apache, including their file name and
+          line number. The module also shows the order of all request
+          hooks and additional build information, similar to httpd -V.
+
+   mod_ssl
+          Added a support for RFC 2817, which allows connections to
+          upgrade from clear text to TLS encryption.
+
+   mod_imagemap
+          mod_imap has been renamed to mod_imagemap to avoid user
+          confusion.
+
+   top
+
+Program Enhancements
+
+   httpd
+          A new command line option -M has been added that lists all
+          modules that are loaded based on the current configuration.
+          Unlike the -l option, this list includes DSOs loaded via mod_so.
+
+   httxt2dbm
+          A new program used to generate dbm files from text input, for
+          use in RewriteMap with the dbm map type.
+
+   top
+
+Module Developer Changes
+
+   APR 1.0 API
+          Apache 2.2 uses the APR 1.0 API. All deprecated functions and
+          symbols have been removed from APR and APR-Util. For details,
+          see the APR Website.
+
+   Authn/Authz
+          The bundled authentication and authorization modules have been
+          renamed along the following lines:
+
+          + mod_auth_* -> Modules that implement an HTTP authentication
+            mechanism
+          + mod_authn_* -> Modules that provide a backend authentication
+            provider
+          + mod_authz_* -> Modules that implement authorization (or
+            access)
+          + mod_authnz_* -> Module that implements both authentication &
+            authorization
+
+          There is a new authentication backend provider scheme which
+          greatly eases the construction of new authentication backends.
+
+   Connection Error Logging
+          A new function, ap_log_cerror has been added to log errors that
+          occur with the client's connection. When logged, the message
+          includes the client IP address.
+
+   Test Configuration Hook Added
+          A new hook, test_config has been added to aid modules that want
+          to execute special code only when the user passes -t to httpd.
+
+   Set Threaded MPM's Stacksize
+          A new directive, ThreadStackSize has been added to set the stack
+          size on all threaded MPMs. This is required for some third-party
+          modules on platforms with small default thread stack size.
+
+   Protocol handling for output filters
+          In the past, every filter has been responsible for ensuring that
+          it generates the correct response headers where it affects them.
+          Filters can now delegate common protocol management to
+          mod_filter, using the ap_register_output_filter_protocol or
+          ap_filter_protocol calls.
+
+   Monitor hook added
+          Monitor hook enables modules to run regular/scheduled jobs in
+          the parent (root) process.
+
+   Regular expression API changes
+          The pcreposix.h header is no longer available; it is replaced by
+          the new ap_regex.h header. The POSIX.2 regex.h implementation
+          exposed by the old header is now available under the ap_
+          namespace from ap_regex.h. Calls to regcomp, regexec and so on
+          can be replaced by calls to ap_regcomp, ap_regexec.
+
+   DBD Framework (SQL Database API)
+          With Apache 1.x and 2.0, modules requiring an SQL backend had to
+          take responsibility for managing it themselves. Apart from
+          reinventing the wheel, this can be very inefficient, for example
+          when several modules each maintain their own connections.
+
+          Apache 2.1 and later provides the ap_dbd API for managing
+          database connections (including optimised strategies for
+          threaded and unthreaded MPMs), while APR 1.2 and later provides
+          the apr_dbd API for interacting with the database.
+
+          New modules SHOULD now use these APIs for all SQL database
+          operations. Existing applications SHOULD be upgraded to use it
+          where feasible, either transparently or as a recommended option
+          to their users.
+
+   Available Languages:  en  |  fr  |  ko  |  pt-br  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Overview of new features in Apache HTTP Server 2.0
+
+   Available Languages:  de  |  en  |  fr  |  ja  |  ko  |  pt-br  |  ru
+   |  tr
+
+   This document describes some of the major changes between the 1.3 and
+   2.0 versions of the Apache HTTP Server.
+   Support Apache!
+     * Core Enhancements
+     * Module Enhancements
+
+See also
+
+     * Upgrading to 2.0 from 1.3
+     * Comments
+
+   top
+
+Core Enhancements
+
+   Unix Threading
+          On Unix systems with POSIX threads support, Apache httpd can now
+          run in a hybrid multiprocess, multithreaded mode. This improves
+          scalability for many, but not all configurations.
+
+   New Build System
+          The build system has been rewritten from scratch to be based on
+          autoconf and libtool. This makes Apache httpd's configuration
+          system more similar to that of other packages.
+
+   Multiprotocol Support
+          Apache HTTP Server now has some of the infrastructure in place
+          to support serving multiple protocols. mod_echo has been written
+          as an example.
+
+   Better support for non-Unix platforms
+          Apache HTTP Server 2.0 is faster and more stable on non-Unix
+          platforms such as BeOS, OS/2, and Windows. With the introduction
+          of platform-specific multi-processing modules (MPMs) and the
+          Apache Portable Runtime (APR), these platforms are now
+          implemented in their native API, avoiding the often buggy and
+          poorly performing POSIX-emulation layers.
+
+   New Apache httpd API
+          The API for modules has changed significantly for 2.0. Many of
+          the module-ordering/-priority problems from 1.3 should be gone.
+          2.0 does much of this automatically, and module ordering is now
+          done per-hook to allow more flexibility. Also, new calls have
+          been added that provide additional module capabilities without
+          patching the core Apache HTTP Server.
+
+   IPv6 Support
+          On systems where IPv6 is supported by the underlying Apache
+          Portable Runtime library, Apache httpd gets IPv6 listening
+          sockets by default. Additionally, the Listen, NameVirtualHost,
+          and VirtualHost directives support IPv6 numeric address strings
+          (e.g., "Listen [2001:db8::1]:8080").
+
+   Filtering
+          Apache httpd modules may now be written as filters which act on
+          the stream of content as it is delivered to or from the server.
+          This allows, for example, the output of CGI scripts to be parsed
+          for Server Side Include directives using the INCLUDES filter in
+          mod_include. The module mod_ext_filter allows external programs
+          to act as filters in much the same way that CGI programs can act
+          as handlers.
+
+   Multilanguage Error Responses
+          Error response messages to the browser are now provided in
+          several languages, using SSI documents. They may be customized
+          by the administrator to achieve a consistent look and feel.
+
+   Simplified configuration
+          Many confusing directives have been simplified. The often
+          confusing Port and BindAddress directives are gone; only the
+          Listen directive is used for IP address binding; the ServerName
+          directive specifies the server name and port number only for
+          redirection and vhost recognition.
+
+   Native Windows NT Unicode Support
+          Apache httpd 2.0 on Windows NT now uses utf-8 for all filename
+          encodings. These directly translate to the underlying Unicode
+          file system, providing multilanguage support for all Windows
+          NT-based installations, including Windows 2000 and Windows XP.
+          This support does not extend to Windows 95, 98 or ME, which
+          continue to use the machine's local codepage for filesystem
+          access.
+
+   Regular Expression Library Updated
+          Apache httpd 2.0 includes the Perl Compatible Regular Expression
+          Library (PCRE). All regular expression evaluation now uses the
+          more powerful Perl 5 syntax.
+
+   top
+
+Module Enhancements
+
+   mod_ssl
+          New module in Apache httpd 2.0. This module is an interface to
+          the SSL/TLS encryption protocols provided by OpenSSL.
+
+   mod_dav
+          New module in Apache httpd 2.0. This module implements the HTTP
+          Distributed Authoring and Versioning (DAV) specification for
+          posting and maintaining web content.
+
+   mod_deflate
+          New module in Apache httpd 2.0. This module allows supporting
+          browsers to request that content be compressed before delivery,
+          saving network bandwidth.
+
+   mod_auth_ldap
+          New module in Apache httpd 2.0.41. This module allows an LDAP
+          database to be used to store credentials for HTTP Basic
+          Authentication. A companion module, mod_ldap provides connection
+          pooling and results caching.
+
+   mod_auth_digest
+          Includes additional support for session caching across processes
+          using shared memory.
+
+   mod_charset_lite
+          New module in Apache httpd 2.0. This experimental module allows
+          for character set translation or recoding.
+
+   mod_file_cache
+          New module in Apache httpd 2.0. This module includes the
+          functionality of mod_mmap_static in Apache HTTP Server version
+          1.3, plus adds further caching abilities.
+
+   mod_headers
+          This module is much more flexible in Apache httpd 2.0. It can
+          now modify request headers used by mod_proxy, and it can
+          conditionally set response headers.
+
+   mod_proxy
+          The proxy module has been completely rewritten to take advantage
+          of the new filter infrastructure and to implement a more
+          reliable, HTTP/1.1 compliant proxy. In addition, new <Proxy>
+          configuration sections provide more readable (and internally
+          faster) control of proxied sites; overloaded <Directory
+          "proxy:..."> configuration are not supported. The module is now
+          divided into specific protocol support modules including
+          proxy_connect, proxy_ftp and proxy_http.
+
+   mod_negotiation
+          A new ForceLanguagePriority directive can be used to assure that
+          the client receives a single document in all cases, rather than
+          NOT ACCEPTABLE or MULTIPLE CHOICES responses. In addition, the
+          negotiation and MultiViews algorithms have been cleaned up to
+          provide more consistent results and a new form of type map that
+          can include document content is provided.
+
+   mod_autoindex
+          Autoindex'ed directory listings can now be configured to use
+          HTML tables for cleaner formatting, and allow finer-grained
+          control of sorting, including version-sorting, and wildcard
+          filtering of the directory listing.
+
+   mod_include
+          New directives allow the default start and end tags for SSI
+          elements to be changed and allow for error and time format
+          configuration to take place in the main configuration file
+          rather than in the SSI document. Results from regular expression
+          parsing and grouping (now based on Perl's regular expression
+          syntax) can be retrieved using mod_include's variables $0 .. $9.
+
+   mod_auth_dbm
+          Now supports multiple types of DBM-like databases using the
+          AuthDBMType directive.
+
+   Available Languages:  de  |  en  |  fr  |  ja  |  ko  |  pt-br  |  ru
+   |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Upgrading to 2.4 from 2.2
+
+   Available Languages:  en  |  fr
+
+   In order to assist folks upgrading, we maintain a document describing
+   information critical to existing Apache HTTP Server users. These are
+   intended to be brief notes, and you should be able to find more
+   information in either the New Features document, or in the src/CHANGES
+   file. Application and module developers can find a summary of API
+   changes in the API updates overview.
+
+   This document describes changes in server behavior that might require
+   you to change your configuration or how you use the server in order to
+   continue using 2.4 as you are currently using 2.2. To take advantage of
+   new features in 2.4, see the New Features document.
+
+   This document describes only the changes from 2.2 to 2.4. If you are
+   upgrading from version 2.0, you should also consult the 2.0 to 2.2
+   upgrading document.
+   Support Apache!
+     * Compile-Time Configuration Changes
+     * Run-Time Configuration Changes
+     * Misc Changes
+     * Third Party Modules
+     * Common problems when upgrading
+
+See also
+
+     * Overview of new features in Apache HTTP Server 2.4
+     * Comments
+
+   top
+
+Compile-Time Configuration Changes
+
+   The compilation process is very similar to the one used in version 2.2.
+   Your old configure command line (as found in build/config.nice in the
+   installed server directory) can be used in most cases. There are some
+   changes in the default settings. Some details of changes:
+     * These modules have been removed: mod_authn_default,
+       mod_authz_default, mod_mem_cache. If you were using mod_mem_cache
+       in 2.2, look at mod_cache_disk in 2.4.
+     * All load balancing implementations have been moved to individual,
+       self-contained mod_proxy submodules, e.g. mod_lbmethod_bybusyness.
+       You might need to build and load any of these that your
+       configuration uses.
+     * Platform support has been removed for BeOS, TPF, and even older
+       platforms such as A/UX, Next, and Tandem. These were believed to be
+       broken anyway.
+     * configure: dynamic modules (DSO) are built by default
+     * configure: By default, only a basic set of modules is loaded. The
+       other LoadModule directives are commented out in the configuration
+       file.
+     * configure: the "most" module set gets built by default
+     * configure: the "reallyall" module set adds developer modules to the
+       "all" set
+
+   top
+
+Run-Time Configuration Changes
+
+   There have been significant changes in authorization configuration, and
+   other minor configuration changes, that could require changes to your
+   2.2 configuration files before using them for 2.4.
+
+Authorization
+
+   Any configuration file that uses authorization will likely need
+   changes.
+
+   You should review the Authentication, Authorization and Access Control
+   Howto, especially the section Beyond just authorization which explains
+   the new mechanisms for controlling the order in which the authorization
+   directives are applied.
+
+   Directives that control how authorization modules respond when they
+   don't match the authenticated user have been removed: This includes
+   AuthzLDAPAuthoritative, AuthzDBDAuthoritative, AuthzDBMAuthoritative,
+   AuthzGroupFileAuthoritative, AuthzUserAuthoritative, and
+   AuthzOwnerAuthoritative. These directives have been replaced by the
+   more expressive RequireAny, RequireNone, and RequireAll.
+
+   If you use mod_authz_dbm, you must port your configuration to use
+   Require dbm-group ... in place of Require group ....
+
+Access control
+
+   In 2.2, access control based on client hostname, IP address, and other
+   characteristics of client requests was done using the directives Order,
+   Allow, Deny, and Satisfy.
+
+   In 2.4, such access control is done in the same way as other
+   authorization checks, using the new module mod_authz_host. The old
+   access control idioms should be replaced by the new authentication
+   mechanisms, although for compatibility with old configurations, the new
+   module mod_access_compat is provided.
+
+Mixing old and new directives
+
+   Mixing old directives like Order, Allow or Deny with new ones like
+   Require is technically possible but discouraged. mod_access_compat was
+   created to support configurations containing only old directives to
+   facilitate the 2.4 upgrade. Please check the examples below to get a
+   better idea about issues that might arise.
+
+   Here are some examples of old and new ways to do the same access
+   control.
+
+   In this example, there is no authentication and all requests are
+   denied.
+
+2.2 configuration:
+
+Order deny,allow
+Deny from all
+
+2.4 configuration:
+
+Require all denied
+
+   In this example, there is no authentication and all requests are
+   allowed.
+
+2.2 configuration:
+
+Order allow,deny
+Allow from all
+
+2.4 configuration:
+
+Require all granted
+
+   In the following example, there is no authentication and all hosts in
+   the example.org domain are allowed access; all other hosts are denied
+   access.
+
+2.2 configuration:
+
+Order Deny,Allow
+Deny from all
+Allow from example.org
+
+2.4 configuration:
+
+Require host example.org
+
+   In the following example, mixing old and new directives leads to
+   unexpected results.
+
+Mixing old and new directives: NOT WORKING AS EXPECTED
+
+DocumentRoot "/var/www/html"
+
+<Directory "/">
+    AllowOverride None
+    Order deny,allow
+    Deny from all
+</Directory>
+
+<Location "/server-status">
+    SetHandler server-status
+    Require local
+</Location>
+
+access.log - GET /server-status 403 127.0.0.1
+error.log - AH01797: client denied by server configuration: /var/www/html/server
+-status
+
+   Why httpd denies access to servers-status even if the configuration
+   seems to allow it? Because mod_access_compat directives take precedence
+   over the mod_authz_host one in this configuration merge scenario.
+
+   This example conversely works as expected:
+
+Mixing old and new directives: WORKING AS EXPECTED
+
+DocumentRoot "/var/www/html"
+
+<Directory "/">
+    AllowOverride None
+    Require all denied
+</Directory>
+
+<Location "/server-status">
+    SetHandler server-status
+    Order deny,allow
+    Deny from all
+    Allow From 127.0.0.1
+</Location>
+
+access.log - GET /server-status 200 127.0.0.1
+
+   So even if mixing configuration is still possible, please try to avoid
+   it when upgrading: either keep old directives and then migrate to the
+   new ones on a later stage or just migrate everything in bulk.
+
+   In many configurations with authentication, where the value of the
+   Satisfy was the default of ALL, snippets that simply disabled
+   host-based access control are omitted:
+
+2.2 configuration:
+
+# 2.2 config that disables host-based access control and uses only authenticatio
+n
+Order Deny,Allow
+Allow from all
+AuthType Basic
+AuthBasicProvider file
+AuthUserFile /example.com/conf/users.passwd
+AuthName secure
+Require valid-user
+
+2.4 configuration:
+
+# No replacement of disabling host-based access control needed
+AuthType Basic
+AuthBasicProvider file
+AuthUserFile /example.com/conf/users.passwd
+AuthName secure
+Require valid-user
+
+   In configurations where both authentication and access control were
+   meaningfully combined, the access control directives should be
+   migrated. This example allows requests meeting both criteria:
+
+2.2 configuration:
+
+Order allow,deny
+Deny from all
+# Satisfy ALL is the default
+Satisfy ALL
+Allow from 127.0.0.1
+AuthType Basic
+AuthBasicProvider file
+AuthUserFile /example.com/conf/users.passwd
+AuthName secure
+Require valid-user
+
+2.4 configuration:
+
+AuthType Basic
+AuthBasicProvider file
+AuthUserFile /example.com/conf/users.passwd
+AuthName secure
+<RequireAll>
+  Require valid-user
+  Require ip 127.0.0.1
+</RequireAll>
+
+   In configurations where both authentication and access control were
+   meaningfully combined, the access control directives should be
+   migrated. This example allows requests meeting either criteria:
+
+2.2 configuration:
+
+Order allow,deny
+Deny from all
+Satisfy any
+Allow from 127.0.0.1
+AuthType Basic
+AuthBasicProvider file
+AuthUserFile /example.com/conf/users.passwd
+AuthName secure
+Require valid-user
+
+2.4 configuration:
+
+AuthType Basic
+AuthBasicProvider file
+AuthUserFile /example.com/conf/users.passwd
+AuthName secure
+# Implicitly <RequireAny>
+Require valid-user
+Require ip 127.0.0.1
+
+Other configuration changes
+
+   Some other small adjustments may be necessary for particular
+   configurations as discussed below.
+     * MaxRequestsPerChild has been renamed to MaxConnectionsPerChild,
+       describes more accurately what it does. The old name is still
+       supported.
+     * MaxClients has been renamed to MaxRequestWorkers, which describes
+       more accurately what it does. For async MPMs, like event, the
+       maximum number of clients is not equivalent than the number of
+       worker threads. The old name is still supported.
+     * The DefaultType directive no longer has any effect, other than to
+       emit a warning if it's used with any value other than none. You
+       need to use other configuration settings to replace it in 2.4.
+     * AllowOverride now defaults to None.
+     * EnableSendfile now defaults to Off.
+     * FileETag now defaults to "MTime Size" (without INode).
+     * mod_dav_fs: The format of the DavLockDB file has changed for
+       systems with inodes. The old DavLockDB file must be deleted on
+       upgrade.
+     * KeepAlive only accepts values of On or Off. Previously, any value
+       other than "Off" or "0" was treated as "On".
+     * Directives AcceptMutex, LockFile, RewriteLock, SSLMutex,
+       SSLStaplingMutex, and WatchdogMutexPath have been replaced with a
+       single Mutex directive. You will need to evaluate any use of these
+       removed directives in your 2.2 configuration to determine if they
+       can just be deleted or will need to be replaced using Mutex.
+     * mod_cache: CacheIgnoreURLSessionIdentifiers now does an exact match
+       against the query string instead of a partial match. If your
+       configuration was using partial strings, e.g. using sessionid to
+       match /someapplication/image.gif;jsessionid=123456789, then you
+       will need to change to the full string jsessionid.
+     * mod_cache: The second parameter to CacheEnable only matches forward
+       proxy content if it begins with the correct protocol. In 2.2 and
+       earlier, a parameter of '/' matched all content.
+     * mod_ldap: LDAPTrustedClientCert is now consistently a per-directory
+       setting only. If you use this directive, review your configuration
+       to make sure it is present in all the necessary directory contexts.
+     * mod_filter: FilterProvider syntax has changed and now uses a
+       boolean expression to determine if a filter is applied.
+     * mod_include:
+          + The #if expr element now uses the new expression parser. The
+            old syntax can be restored with the new directive
+            SSILegacyExprParser.
+          + An SSI* config directive in directory scope no longer causes
+            all other per-directory SSI* directives to be reset to their
+            default values.
+     * mod_charset_lite: The DebugLevel option has been removed in favour
+       of per-module LogLevel configuration.
+     * mod_ext_filter: The DebugLevel option has been removed in favour of
+       per-module LogLevel configuration.
+     * mod_proxy_scgi: The default setting for PATH_INFO has changed from
+       httpd 2.2, and some web applications will no longer operate
+       properly with the new PATH_INFO setting. The previous setting can
+       be restored by configuring the proxy-scgi-pathinfo variable.
+     * mod_ssl: CRL based revocation checking now needs to be explicitly
+       configured through SSLCARevocationCheck.
+     * mod_substitute: The maximum line length is now limited to 1MB.
+     * mod_reqtimeout: If the module is loaded, it will now set some
+       default timeouts.
+     * mod_dumpio: DumpIOLogLevel is no longer supported. Data is always
+       logged at LogLevel trace7.
+     * On Unix platforms, piped logging commands configured using either
+       ErrorLog or CustomLog were invoked using /bin/sh -c in 2.2 and
+       earlier. In 2.4 and later, piped logging commands are executed
+       directly. To restore the old behaviour, see the piped logging
+       documentation.
+
+   top
+
+Misc Changes
+
+     * mod_autoindex: will now extract titles and display descriptions for
+       .xhtml files, which were previously ignored.
+     * mod_ssl: The default format of the *_DN variables has changed. The
+       old format can still be used with the new LegacyDNStringFormat
+       argument to SSLOptions. The SSLv2 protocol is no longer supported.
+       SSLProxyCheckPeerCN and SSLProxyCheckPeerExpire now default to On,
+       causing proxy requests to HTTPS hosts with bad or outdated
+       certificates to fail with a 502 status code (Bad gateway)
+     * htpasswd now uses MD5 hash by default on all platforms.
+     * The NameVirtualHost directive no longer has any effect, other than
+       to emit a warning. Any address/port combination appearing in
+       multiple virtual hosts is implicitly treated as a name-based
+       virtual host.
+     * mod_deflate will now skip compression if it knows that the size
+       overhead added by the compression is larger than the data to be
+       compressed.
+     * Multi-language error documents from 2.2.x may not work unless they
+       are adjusted to the new syntax of mod_include's #if expr= element
+       or the directive SSILegacyExprParser is enabled for the directory
+       containing the error documents.
+     * The functionality provided by mod_authn_alias in previous versions
+       (i.e., the AuthnProviderAlias directive) has been moved into
+       mod_authn_core.
+     * The RewriteLog and RewriteLogLevel directives have been removed.
+       This functionality is now provided by configuring the appropriate
+       level of logging for the mod_rewrite module using the LogLevel
+       directive. See also the mod_rewrite logging section.
+
+   top
+
+Third Party Modules
+
+   All modules must be recompiled for 2.4 before being loaded.
+
+   Many third-party modules designed for version 2.2 will otherwise work
+   unchanged with the Apache HTTP Server version 2.4. Some will require
+   changes; see the API update overview.
+   top
+
+Common problems when upgrading
+
+     * Startup errors:
+          + Invalid command 'User', perhaps misspelled or defined by a
+            module not included in the server configuration - load module
+            mod_unixd
+          + Invalid command 'Require', perhaps misspelled or defined by a
+            module not included in the server configuration, or Invalid
+            command 'Order', perhaps misspelled or defined by a module not
+            included in the server configuration - load module
+            mod_access_compat, or update configuration to 2.4
+            authorization directives.
+          + Ignoring deprecated use of DefaultType in line NN of
+            /path/to/httpd.conf - remove DefaultType and replace with
+            other configuration settings.
+          + Invalid command 'AddOutputFilterByType', perhaps misspelled or
+            defined by a module not included in the server configuration -
+            AddOutputFilterByType has moved from the core to mod_filter,
+            which must be loaded.
+     * Errors serving requests:
+          + configuration error: couldn't check user: /path - load module
+            mod_authn_core.
+          + .htaccess files aren't being processed - Check for an
+            appropriate AllowOverride directive; the default changed to
+            None in 2.4.
+
+   Available Languages:  en  |  fr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+The Apache License, Version 2.0
+
+   Available Languages:  en
+
+   Apache License
+   Version 2.0, January 2004
+   http://www.apache.org/licenses/
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+    1. Definitions
+       "License" shall mean the terms and conditions for use,
+       reproduction, and distribution as defined by Sections 1 through 9
+       of this document.
+       "Licensor" shall mean the copyright owner or entity authorized by
+       the copyright owner that is granting the License.
+       "Legal Entity" shall mean the union of the acting entity and all
+       other entities that control, are controlled by, or are under common
+       control with that entity. For the purposes of this definition,
+       "control" means (i) the power, direct or indirect, to cause the
+       direction or management of such entity, whether by contract or
+       otherwise, or (ii) ownership of fifty percent (50%) or more of the
+       outstanding shares, or (iii) beneficial ownership of such entity.
+       "You" (or "Your") shall mean an individual or Legal Entity
+       exercising permissions granted by this License.
+       "Source" form shall mean the preferred form for making
+       modifications, including but not limited to software source code,
+       documentation source, and configuration files.
+       "Object" form shall mean any form resulting from mechanical
+       transformation or translation of a Source form, including but not
+       limited to compiled object code, generated documentation, and
+       conversions to other media types.
+       "Work" shall mean the work of authorship, whether in Source or
+       Object form, made available under the License, as indicated by a
+       copyright notice that is included in or attached to the work (an
+       example is provided in the Appendix below).
+       "Derivative Works" shall mean any work, whether in Source or Object
+       form, that is based on (or derived from) the Work and for which the
+       editorial revisions, annotations, elaborations, or other
+       modifications represent, as a whole, an original work of
+       authorship. For the purposes of this License, Derivative Works
+       shall not include works that remain separable from, or merely link
+       (or bind by name) to the interfaces of, the Work and Derivative
+       Works thereof.
+       "Contribution" shall mean any work of authorship, including the
+       original version of the Work and any modifications or additions to
+       that Work or Derivative Works thereof, that is intentionally
+       submitted to Licensor for inclusion in the Work by the copyright
+       owner or by an individual or Legal Entity authorized to submit on
+       behalf of the copyright owner. For the purposes of this definition,
+       "submitted" means any form of electronic, verbal, or written
+       communication sent to the Licensor or its representatives,
+       including but not limited to communication on electronic mailing
+       lists, source code control systems, and issue tracking systems that
+       are managed by, or on behalf of, the Licensor for the purpose of
+       discussing and improving the Work, but excluding communication that
+       is conspicuously marked or otherwise designated in writing by the
+       copyright owner as "Not a Contribution."
+       "Contributor" shall mean Licensor and any individual or Legal
+       Entity on behalf of whom a Contribution has been received by
+       Licensor and subsequently incorporated within the Work.
+    2. Grant of Copyright License. Subject to the terms and conditions of
+       this License, each Contributor hereby grants to You a perpetual,
+       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+       copyright license to reproduce, prepare Derivative Works of,
+       publicly display, publicly perform, sublicense, and distribute the
+       Work and such Derivative Works in Source or Object form.
+    3. Grant of Patent License. Subject to the terms and conditions of
+       this License, each Contributor hereby grants to You a perpetual,
+       worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+       (except as stated in this section) patent license to make, have
+       made, use, offer to sell, sell, import, and otherwise transfer the
+       Work, where such license applies only to those patent claims
+       licensable by such Contributor that are necessarily infringed by
+       their Contribution(s) alone or by combination of their
+       Contribution(s) with the Work to which such Contribution(s) was
+       submitted. If You institute patent litigation against any entity
+       (including a cross-claim or counterclaim in a lawsuit) alleging
+       that the Work or a Contribution incorporated within the Work
+       constitutes direct or contributory patent infringement, then any
+       patent licenses granted to You under this License for that Work
+       shall terminate as of the date such litigation is filed.
+    4. Redistribution. You may reproduce and distribute copies of the Work
+       or Derivative Works thereof in any medium, with or without
+       modifications, and in Source or Object form, provided that You meet
+       the following conditions:
+         1. You must give any other recipients of the Work or Derivative
+            Works a copy of this License; and
+         2. You must cause any modified files to carry prominent notices
+            stating that You changed the files; and
+         3. You must retain, in the Source form of any Derivative Works
+            that You distribute, all copyright, patent, trademark, and
+            attribution notices from the Source form of the Work,
+            excluding those notices that do not pertain to any part of the
+            Derivative Works; and
+         4. If the Work includes a "NOTICE" text file as part of its
+            distribution, then any Derivative Works that You distribute
+            must include a readable copy of the attribution notices
+            contained within such NOTICE file, excluding those notices
+            that do not pertain to any part of the Derivative Works, in at
+            least one of the following places: within a NOTICE text file
+            distributed as part of the Derivative Works; within the Source
+            form or documentation, if provided along with the Derivative
+            Works; or, within a display generated by the Derivative Works,
+            if and wherever such third-party notices normally appear. The
+            contents of the NOTICE file are for informational purposes
+            only and do not modify the License. You may add Your own
+            attribution notices within Derivative Works that You
+            distribute, alongside or as an addendum to the NOTICE text
+            from the Work, provided that such additional attribution
+            notices cannot be construed as modifying the License.
+       You may add Your own copyright statement to Your modifications and
+       may provide additional or different license terms and conditions
+       for use, reproduction, or distribution of Your modifications, or
+       for any such Derivative Works as a whole, provided Your use,
+       reproduction, and distribution of the Work otherwise complies with
+       the conditions stated in this License.
+    5. Submission of Contributions. Unless You explicitly state otherwise,
+       any Contribution intentionally submitted for inclusion in the Work
+       by You to the Licensor shall be under the terms and conditions of
+       this License, without any additional terms or conditions.
+       Notwithstanding the above, nothing herein shall supersede or modify
+       the terms of any separate license agreement you may have executed
+       with Licensor regarding such Contributions.
+    6. Trademarks. This License does not grant permission to use the trade
+       names, trademarks, service marks, or product names of the Licensor,
+       except as required for reasonable and customary use in describing
+       the origin of the Work and reproducing the content of the NOTICE
+       file.
+    7. Disclaimer of Warranty. Unless required by applicable law or agreed
+       to in writing, Licensor provides the Work (and each Contributor
+       provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES
+       OR CONDITIONS OF ANY KIND, either express or implied, including,
+       without limitation, any warranties or conditions of TITLE,
+       NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR
+       PURPOSE. You are solely responsible for determining the
+       appropriateness of using or redistributing the Work and assume any
+       risks associated with Your exercise of permissions under this
+       License.
+    8. Limitation of Liability. In no event and under no legal theory,
+       whether in tort (including negligence), contract, or otherwise,
+       unless required by applicable law (such as deliberate and grossly
+       negligent acts) or agreed to in writing, shall any Contributor be
+       liable to You for damages, including any direct, indirect, special,
+       incidental, or consequential damages of any character arising as a
+       result of this License or out of the use or inability to use the
+       Work (including but not limited to damages for loss of goodwill,
+       work stoppage, computer failure or malfunction, or any and all
+       other commercial damages or losses), even if such Contributor has
+       been advised of the possibility of such damages.
+    9. Accepting Warranty or Additional Liability. While redistributing
+       the Work or Derivative Works thereof, You may choose to offer, and
+       charge a fee for, acceptance of support, warranty, indemnity, or
+       other liability obligations and/or rights consistent with this
+       License. However, in accepting such obligations, You may act only
+       on Your own behalf and on Your sole responsibility, not on behalf
+       of any other Contributor, and only if You agree to indemnify,
+       defend, and hold each Contributor harmless for any liability
+       incurred by, or claims asserted against, such Contributor by reason
+       of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+   To apply the Apache License to your work, attach the following
+   boilerplate notice, with the fields enclosed by brackets "[]" replaced
+   with your own identifying information. (Don't include the brackets!)
+   The text should be enclosed in the appropriate comment syntax for the
+   file format. We also recommend that a file or class name and
+   description of purpose be included on the same "printed page" as the
+   copyright notice for easier identification within third-party archives.
+Copyright [yyyy] [name of copyright owner]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+   Available Languages:  en
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Compiling and Installing
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   This document covers compilation and installation of the Apache HTTP
+   Server on Unix and Unix-like systems only. For compiling and
+   installation on Windows, see Using Apache HTTP Server with Microsoft
+   Windows and Compiling Apache for Microsoft Windows. For other
+   platforms, see the platform documentation.
+
+   Apache httpd uses libtool and autoconf to create a build environment
+   that looks like many other Open Source projects.
+
+   If you are upgrading from one minor version to the next (for example,
+   2.4.9 to 2.4.10), please skip down to the upgrading section.
+   Support Apache!
+     * Overview for the impatient
+     * Requirements
+     * Download
+     * Extract
+     * Configuring the source tree
+     * Build
+     * Install
+     * Customize
+     * Test
+     * Upgrading
+     * Third-party packages
+
+See also
+
+     * Configure the source tree
+     * Starting Apache httpd
+     * Stopping and Restarting
+     * Comments
+
+   top
+
+Overview for the impatient
+
+   Installing on Fedora/CentOS/Red Hat Enterprise Linux
+
+sudo yum install httpd
+sudo systemctl enable httpd
+sudo systemctl start httpd
+
+          Newer releases of these distros use dnf rather than yum. See the
+          Fedora project's documentation for platform-specific notes.
+
+   Installing on Ubuntu/Debian
+
+sudo apt install apache2
+sudo service apache2 start
+
+          See Ubuntu's documentation for platform-specific notes.
+
+   Installing from source
+
+   Download Download the latest release from
+   http://httpd.apache.org/download.cgi
+   Extract $ gzip -d httpd-NN.tar.gz
+   $ tar xvf httpd-NN.tar
+   $ cd httpd-NN
+   Configure $ ./configure --prefix=PREFIX
+   Compile $ make
+   Install $ make install
+   Customize $ vi PREFIX/conf/httpd.conf
+   Test $ PREFIX/bin/apachectl -k start
+
+          NN must be replaced with the current version number, and PREFIX
+          must be replaced with the filesystem path under which the server
+          should be installed. If PREFIX is not specified, it defaults to
+          /usr/local/apache2.
+
+          Each section of the compilation and installation process is
+          described in more detail below, beginning with the requirements
+          for compiling and installing Apache httpd.
+
+   Don't see your favorite platform mentioned here? Come help us improve
+   this doc.
+   top
+
+Requirements
+
+   The following requirements exist for building Apache httpd:
+
+   APR and APR-Util
+          Make sure you have APR and APR-Util already installed on your
+          system. If you don't, or prefer to not use the system-provided
+          versions, download the latest versions of both APR and APR-Util
+          from Apache APR, unpack them into
+          /httpd_source_tree_root/srclib/apr and
+          /httpd_source_tree_root/srclib/apr-util (be sure the directory
+          names do not have version numbers; for example, the APR
+          distribution must be under /httpd_source_tree_root/srclib/apr/)
+          and use ./configure's --with-included-apr option. On some
+          platforms, you may have to install the corresponding -dev
+          packages to allow httpd to build against your installed copy of
+          APR and APR-Util.
+
+   Perl-Compatible Regular Expressions Library (PCRE)
+          This library is required but not longer bundled with httpd.
+          Download the source code from http://www.pcre.org, or install a
+          Port or Package. If your build system can't find the pcre-config
+          script installed by the PCRE build, point to it using the
+          --with-pcre parameter. On some platforms, you may have to
+          install the corresponding -dev package to allow httpd to build
+          against your installed copy of PCRE.
+
+   Disk Space
+          Make sure you have at least 50 MB of temporary free disk space
+          available. After installation the server occupies approximately
+          10 MB of disk space. The actual disk space requirements will
+          vary considerably based on your chosen configuration options,
+          any third-party modules, and, of course, the size of the web
+          site or sites that you have on the server.
+
+   ANSI-C Compiler and Build System
+          Make sure you have an ANSI-C compiler installed. The GNU C
+          compiler (GCC) from the Free Software Foundation (FSF) is
+          recommended. If you don't have GCC then at least make sure your
+          vendor's compiler is ANSI compliant. In addition, your PATH must
+          contain basic build tools such as make.
+
+   Accurate time keeping
+          Elements of the HTTP protocol are expressed as the time of day.
+          So, it's time to investigate setting some time synchronization
+          facility on your system. Usually the ntpdate or xntpd programs
+          are used for this purpose which are based on the Network Time
+          Protocol (NTP). See the NTP homepage for more details about NTP
+          software and public time servers.
+
+   Perl 5 [OPTIONAL]
+          For some of the support scripts like apxs or dbmmanage (which
+          are written in Perl) the Perl 5 interpreter is required
+          (versions 5.003 or newer are sufficient). If no Perl 5
+          interpreter is found by the configure script, you will not be
+          able to use the affected support scripts. Of course, you will
+          still be able to build and use Apache httpd.
+
+   top
+
+Download
+
+   The Apache HTTP Server can be downloaded from the Apache HTTP Server
+   download site, which lists several mirrors. Most users of Apache on
+   unix-like systems will be better off downloading and compiling a source
+   version. The build process (described below) is easy, and it allows you
+   to customize your server to suit your needs. In addition, binary
+   releases are often not up to date with the latest source releases. If
+   you do download a binary, follow the instructions in the
+   INSTALL.bindist file inside the distribution.
+
+   After downloading, it is important to verify that you have a complete
+   and unmodified version of the Apache HTTP Server. This can be
+   accomplished by testing the downloaded tarball against the PGP
+   signature. Details on how to do this are available on the download page
+   and an extended example is available describing the use of PGP.
+   top
+
+Extract
+
+   Extracting the source from the Apache HTTP Server tarball is a simple
+   matter of uncompressing, and then untarring:
+
+   $ gzip -d httpd-NN.tar.gz
+   $ tar xvf httpd-NN.tar
+
+   This will create a new directory under the current directory containing
+   the source code for the distribution. You should cd into that directory
+   before proceeding with compiling the server.
+   top
+
+Configuring the source tree
+
+   The next step is to configure the Apache source tree for your
+   particular platform and personal requirements. This is done using the
+   script configure included in the root directory of the distribution.
+   (Developers downloading an unreleased version of the Apache source tree
+   will need to have autoconf and libtool installed and will need to run
+   buildconf before proceeding with the next steps. This is not necessary
+   for official releases.)
+
+   To configure the source tree using all the default options, simply type
+   ./configure. To change the default options, configure accepts a variety
+   of variables and command line options.
+
+   The most important option is the location --prefix where Apache is to
+   be installed later, because Apache has to be configured for this
+   location to work correctly. More fine-tuned control of the location of
+   files is possible with additional configure options.
+
+   Also at this point, you can specify which features you want included in
+   Apache by enabling and disabling modules. Apache comes with a wide
+   range of modules included by default. They will be compiled as shared
+   objects (DSOs) which can be loaded or unloaded at runtime. You can also
+   choose to compile modules statically by using the option
+   --enable-module=static.
+
+   Additional modules are enabled using the --enable-module option, where
+   module is the name of the module with the mod_ string removed and with
+   any underscore converted to a dash. Similarly, you can disable modules
+   with the --disable-module option. Be careful when using these options,
+   since configure cannot warn you if the module you specify does not
+   exist; it will simply ignore the option.
+
+   In addition, it is sometimes necessary to provide the configure script
+   with extra information about the location of your compiler, libraries,
+   or header files. This is done by passing either environment variables
+   or command line options to configure. For more information, see the
+   configure manual page. Or invoke configure using the --help option.
+
+   For a short impression of what possibilities you have, here is a
+   typical example which compiles Apache for the installation tree
+   /sw/pkg/apache with a particular compiler and flags plus the two
+   additional modules mod_ldap and mod_lua:
+
+   $ CC="pgcc" CFLAGS="-O2" \
+   ./configure --prefix=/sw/pkg/apache \
+   --enable-ldap=shared \
+   --enable-lua=shared
+
+   When configure is run it will take several minutes to test for the
+   availability of features on your system and build Makefiles which will
+   later be used to compile the server.
+
+   Details on all the different configure options are available on the
+   configure manual page.
+   top
+
+Build
+
+   Now you can build the various parts which form the Apache package by
+   simply running the command:
+
+   $ make
+
+   Please be patient here, since a base configuration takes several
+   minutes to compile and the time will vary widely depending on your
+   hardware and the number of modules that you have enabled.
+   top
+
+Install
+
+   Now it's time to install the package under the configured installation
+   PREFIX (see --prefix option above) by running:
+
+   $ make install
+
+   This step will typically require root privileges, since PREFIX is
+   usually a directory with restricted write permissions.
+
+   If you are upgrading, the installation will not overwrite your
+   configuration files or documents.
+   top
+
+Customize
+
+   Next, you can customize your Apache HTTP server by editing the
+   configuration files under PREFIX/conf/.
+
+   $ vi PREFIX/conf/httpd.conf
+
+   Have a look at the Apache manual under PREFIX/docs/manual/ or consult
+   http://httpd.apache.org/docs/2.4/ for the most recent version of this
+   manual and a complete reference of available configuration directives.
+   top
+
+Test
+
+   Now you can start your Apache HTTP server by immediately running:
+
+   $ PREFIX/bin/apachectl -k start
+
+   You should then be able to request your first document via the URL
+   http://localhost/. The web page you see is located under the
+   DocumentRoot, which will usually be PREFIX/htdocs/. Then stop the
+   server again by running:
+
+   $ PREFIX/bin/apachectl -k stop
+   top
+
+Upgrading
+
+   The first step in upgrading is to read the release announcement and the
+   file CHANGES in the source distribution to find any changes that may
+   affect your site. When changing between major releases (for example,
+   from 2.0 to 2.2 or from 2.2 to 2.4), there will likely be major
+   differences in the compile-time and run-time configuration that will
+   require manual adjustments. All modules will also need to be upgraded
+   to accommodate changes in the module API.
+
+   Upgrading from one minor version to the next (for example, from 2.2.55
+   to 2.2.57) is easier. The make install process will not overwrite any
+   of your existing documents, log files, or configuration files. In
+   addition, the developers make every effort to avoid incompatible
+   changes in the configure options, run-time configuration, or the module
+   API between minor versions. In most cases you should be able to use an
+   identical configure command line, an identical configuration file, and
+   all of your modules should continue to work.
+
+   To upgrade across minor versions, start by finding the file config.nice
+   in the build directory of your installed server or at the root of the
+   source tree for your old install. This will contain the exact configure
+   command line that you used to configure the source tree. Then to
+   upgrade from one version to the next, you need only copy the
+   config.nice file to the source tree of the new version, edit it to make
+   any desired changes, and then run:
+
+   $ ./config.nice
+   $ make
+   $ make install
+   $ PREFIX/bin/apachectl -k graceful-stop
+   $ PREFIX/bin/apachectl -k start
+   You should always test any new version in your environment before
+   putting it into production. For example, you can install and run the
+   new version along side the old one by using a different --prefix and a
+   different port (by adjusting the Listen directive) to test for any
+   incompatibilities before doing the final upgrade.
+
+   You can pass additional arguments to config.nice, which will be
+   appended to your original configure options:
+
+   $ ./config.nice --prefix=/home/test/apache --with-port=90
+   top
+
+Third-party packages
+
+   A large number of third parties provide their own packaged
+   distributions of the Apache HTTP Server for installation on particular
+   platforms. This includes the various Linux distributions, various
+   third-party Windows packages, Mac OS X, Solaris, and many more.
+
+   Our software license not only permits, but encourages, this kind of
+   redistribution. However, it does result in a situation where the
+   configuration layout and defaults on your installation of the server
+   may differ from what is stated in the documentation. While unfortunate,
+   this situation is not likely to change any time soon.
+
+   A description of these third-party distrubutions is maintained in the
+   HTTP Server wiki, and should reflect the current state of these
+   third-party distributions. However, you will need to familiarize
+   yourself with your particular platform's package management and
+   installation procedures.
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap
+   Modules | Directives | FAQ | Glossary | Sitemap
+
+   Apache HTTP Server Version 2.4
+
+   <-
+
+   Apache > HTTP Server > Documentation > Version 2.4
+
+Starting Apache
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   On Windows, Apache is normally run as a service. For details, see
+   Running Apache as a Service.
+
+   On Unix, the httpd program is run as a daemon that executes
+   continuously in the background to handle requests. This document
+   describes how to invoke httpd.
+   Support Apache!
+     * How Apache Starts
+     * Errors During Start-up
+     * Starting at Boot-Time
+     * Additional Information
+
+See also
+
+     * Stopping and Restarting
+     * httpd
+     * apachectl
+     * Comments
+
+   top
+
+How Apache Starts
+
+   If the Listen specified in the configuration file is default of 80 (or
+   any other port below 1024), then it is necessary to have root
+   privileges in order to start apache, so that it can bind to this
+   privileged port. Once the server has started and performed a few
+   preliminary activities such as opening its log files, it will launch
+   several child processes which do the work of listening for and
+   answering requests from clients. The main httpd process continues to
+   run as the root user, but the child processes run as a less privileged
+   user. This is controlled by the selected Multi-Processing Module.
+
+   The recommended method of invoking the httpd executable is to use the
+   apachectl control script. This script sets certain environment
+   variables that are necessary for httpd to function correctly under some
+   operating systems, and then invokes the httpd binary. apachectl will
+   pass through any command line arguments, so any httpd options may also
+   be used with apachectl. You may also directly edit the apachectl script
+   by changing the HTTPD variable near the top to specify the correct
+   location of the httpd binary and any command-line arguments that you
+   wish to be always present.
+
+   The first thing that httpd does when it is invoked is to locate and
+   read the configuration file httpd.conf. The location of this file is
+   set at compile-time, but it is possible to specify its location at run
+   time using the -f command-line option as in
+
+   /usr/local/apache2/bin/apachectl -f /usr/local/apache2/conf/httpd.conf
+
+   If all goes well during startup, the server will detach from the
+   terminal and the command prompt will return almost immediately. This
+   indicates that the server is up and running. You can then use your
+   browser to connect to the server and view the test page in the
+   DocumentRoot directory.
+   top
+
+Errors During Start-up
+
+   If Apache suffers a fatal problem during startup, it will write a
+   message describing the problem either to the console or to the ErrorLog
+   before exiting. One of the most common error messages is "Unable to
+   bind to Port ...". This message is usually caused by either:
+     * Trying to start the server on a privileged port when not logged in
+       as the root user; or
+     * Trying to start the server when there is another instance of Apache
+       or some other web server already bound to the same Port.
+
+   For further trouble-shooting instructions, consult the Apache FAQ.
+   top
+
+Starting at Boot-Time
+
+   If you want your server to continue running after a system reboot, you
+   should add a call to apachectl to your system startup files (typically
+   rc.local or a file in an rc.N directory). This will start Apache as
+   root. Before doing this ensure that your server is properly configured
+   for security and access restrictions.
+
+   The apachectl script is designed to act like a standard SysV init
+   script; it can take the arguments start, restart, and stop and
+   translate them into the appropriate signals to httpd. So you can often
+   simply link apachectl into the appropriate init directory. But be sure
+   to check the exact requirements of your system.
+   top
+
+Additional Information
+
+   Additional information about the command-line options of httpd and
+   apachectl as well as other support programs included with the server is
+   available on the Server and Supporting Programs page. There is also
+   documentation on all the modules included with the Apache distribution
+   and the directives that they provide.
+
+   Available Languages:  de  |  en  |  es  |  fr  |  ja  |  ko  |  tr
+
+   top
+
+Comments
+
+   Notice:
+   This is not a Q&A section. Comments placed here should be pointed
+   towards suggestions on improving the documentation or server, and may
+   be removed again by our moderators if they are either implemented or
+   considered invalid/off-topic. Questions on how to manage the Apache
+   HTTP Server should be directed at either our IRC channel, #httpd, on
+   Freenode, or sent to our mailing lists.
+
+   Copyright 2019 The Apache Software Foundation.
+   Licensed under the Apache License, Version 2.0.
+
+   Modules | Directives | FAQ | Glossary | Sitemap

@@ -1,0 +1,164 @@
+   #Leaflet Dev Blog Atom Feed
+
+                                    Leaflet
+
+  an open-source JavaScript library
+  for mobile-friendly interactive maps
+
+     * Overview
+     * Tutorials
+     * Docs
+     * Download
+     * Plugins
+     * Blog
+
+   May 8, 2019 — Leaflet 1.5.1 has been released!
+
+   Leaflet is the leading open-source JavaScript library for
+   mobile-friendly interactive maps. Weighing just about 38 KB of JS,
+   it has all the mapping features most developers ever need.
+
+   Leaflet is designed with simplicity, performance and usability in mind.
+   It works efficiently across all major desktop and mobile platforms, can
+   be extended with lots of plugins, has a beautiful, easy to use and
+   well-documented API and a simple, readable source code that is a joy to
+   contribute to.
+
+   Here we create a map in the 'map' div, add tiles of our choice, and
+   then add a marker with some text in a popup:
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenS
+treetMap</a> contributors'
+}).addTo(map);
+
+L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
+
+   Learn more with the quick start guide, check out other tutorials, or
+   head straight to the API documentation. If you have any questions, take
+   a look at the FAQ first.
+
+Trusted by the best
+
+   GitHub foursquare Pinterest Facebook Evernote Etsy Flickr 500px
+   Data.gov European Commission The Washington Post Financial Times NPR
+   USA Today National Park Service IGN.com OpenStreetMap
+
+Features
+
+   Leaflet doesn't try to do everything for everyone. Instead it focuses
+   on making the basic things work perfectly.
+
+Layers Out of the Box
+
+     * Tile layers, WMS
+     * Markers, Popups
+     * Vector layers: polylines, polygons, circles, rectangles
+     * Image overlays
+     * GeoJSON
+
+Interaction Features
+
+     * Drag panning with inertia
+     * Scroll wheel zoom
+     * Pinch-zoom on mobile
+     * Double click zoom
+     * Zoom to area (shift-drag)
+     * Keyboard navigation
+     * Events: click, mouseover, etc.
+     * Marker dragging
+
+Visual Features
+
+     * Zoom and pan animation
+     * Tile and popup fade animation
+     * Very nice default design for markers, popups and map controls
+     * Retina resolution support
+
+Customization Features
+
+     * Pure CSS3 popups and controls for easy restyling
+     * Image- and HTML-based markers
+     * A simple interface for custom map layers and controls
+     * Custom map projections (with EPSG:3857/4326/3395 out of the box)
+     * Powerful OOP facilities for extending existing classes
+
+Performance Features
+
+     * Hardware acceleration on mobile makes it feel as smooth as native
+       apps
+     * Utilizing CSS3 features to make panning and zooming really smooth
+     * Smart polyline/polygon rendering with dynamic clipping and
+       simplification makes it very fast
+     * Modular build system for leaving out features you don't need
+     * Tap delay elimination on mobile
+
+Map Controls
+
+     * Zoom buttons
+     * Attribution
+     * Layer switcher
+     * Scale
+
+Browser Support
+
+Desktop
+
+     * Chrome
+     * Firefox
+     * Safari 5+
+     * Opera 12+
+     * IE 7–11
+     * Edge
+
+Mobile
+
+     * Safari for iOS 7+
+     * Android browser 2.2+, 3.1+, 4+
+     * Chrome for mobile
+     * Firefox for mobile
+     * IE10+ for Win8 devices
+
+Misc
+
+     * Extremely lightweight
+     * No external dependencies
+
+   If you find some feature really missing in Leaflet, first check if
+   there's a plugin for it and if it's been discussed before already on
+   GitHub issues. If not, please open a new GitHub issue.
+
+Getting Involved
+
+   Let's create the best mapping library in the world! Leaflet was
+   originally created by Vladimir Agafonkin, but is now developed by a big
+   community of contributors. Pull requests are always welcome. However,
+   there are many more ways to get involved with the development of
+   Leaflet.
+
+   You can help the project tremendously by discovering and reporting
+   bugs, improving documentation, helping others on Stack Overflow, GIS
+   Stack Exchange and GitHub issues, tweeting to @LeafletJS and spreading
+   the word about Leaflet among your colleagues and friends.
+
+   Check out the contribution guide for more information on getting
+   involved with Leaflet development.
+
+   IFRAME:
+   https://ghbtns.com/github-btn.html?user=Leaflet&repo=Leaflet&type=watch
+   &count=true
+
+   Follow @LeafletJS
+
+   IFRAME:
+   https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fleafletjs.c
+   om&layout=button_count&show_faces=false&width=93&action=like&font=arial
+   &colorscheme=light&height=35
+
+   © 2010–2019 Vladimir Agafonkin. Maps © OpenStreetMap contributors.
+
+   Follow LeafletJS on Twitter View Source on GitHub Leaflet questions on
+   Stack Overflow

@@ -1,0 +1,101 @@
+Trimage image compressor – 1.0.6
+
+   A cross-platform tool for losslessly optimizing PNG and JPG files for
+   web.
+
+   Trimage is a cross-platform GUI and command-line interface to optimize
+   image files for websites, using optipng, pngcrush, advpng and
+   jpegoptim, depending on the filetype (currently, PNG and JPG files are
+   supported). It was inspired by imageoptim. All image files are
+   losslessy compressed on the highest available compression levels, and
+   EXIF and other metadata is removed. Trimage gives you various input
+   functions to fit your own workflow: A regular file dialog, dragging and
+   dropping and various command line options.
+
+Trimage in action
+
+   a screenshot of Trimage
+
+Download
+
+Debian (sid)
+
+   Trimage is available in the official Debian Sid repositories:
+    1. sudo apt-get install trimage
+
+Ubuntu
+
+   Trimage is available in the official repositories:
+   Download for Ubuntu
+
+   Alternatively:
+    1. sudo apt-get install trimage
+
+Arch Linux
+
+   Trimage is available from AUR, to install, type:
+    1. yaourt -S trimage
+
+Other *nix
+
+    1. Download the source via git or bzr (see repositories)
+    2. Make sure you have all the requirements installed (see
+       requirements)
+    3. Enter python setup.py install into your console
+    4. Launch by executing trimage
+
+   Help us make .snaps, .appimages etc: contact us or open a pull request
+
+Repositories
+
+   Git: Trimage is primarily developed on GitHub.
+
+   Bzr: Trimage is also available on Launchpad.
+
+   Trimage is MIT licenced. We encourage contributions via GitHub.
+
+Thanks
+
+   The following people helped develop Trimage:
+     * Hugo Posnic
+     * Neil Wallace
+     * Jeroen Goudsmit
+     * Tarnay Kálmán
+     * Thomas Lété
+     * Kyrill Detinov
+
+Requirements
+
+     * python 3
+     * python-qt5 5
+     * optipng 0.6.2.1
+     * pngcrush 1.6.7
+     * advancecomp 1.15
+     * jpegoptim 1.2.2
+
+Command line options
+
+   --version
+          show program's version number and exit
+
+   -h, --help
+          show this help message and exit
+
+   -v, --verbose
+          Verbose mode (default)
+
+   -q, --quiet
+          Quiet mode
+
+   -f FILENAME, --file=FILENAME
+          compresses image and exit
+
+   -d DIRECTORY, --directory=DIRECTORY
+          compresses images in directory and exit
+
+Help
+
+   Please use GitHub for reporting bugs and email help@trimage.org for
+   general questions (though we are not a helpdesk!)
+
+   Trimage is © 2010–2019 Kilian Valkhof, Paul Chaplin

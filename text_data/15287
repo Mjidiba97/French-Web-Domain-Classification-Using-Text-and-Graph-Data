@@ -1,0 +1,2182 @@
+   User-Agent: * Disallow: Disallow: /publishers User-agent: Yandex
+   Crawl-delay: 3 Sitemap: https://www.soft32.com/sitemap.xml
+
+   #next publisher
+
+   Soft32
+     * Home
+     * Windows
+     * Mac
+     * Mobile
+     * Blog
+
+   ____________________ (BUTTON) Search
+     * Soft32
+     * Blog
+
+Microsoft Releases Additional Patches
+
+   By Chris Spera on March 8, 2018
+
+   Meltdown and Spectre patches have been rereleased and they don’t crash
+   AMD machines any more!
+
+
+   During january’s Patch Tuesday, Microsoft released patches for both
+   Meltdown and Spectre. They worked, too.  Well, for Intel processors,
+   anyway.  AMD processors didn’t have as great an experience.  Some AMD
+   based computers ended up getting bricked.  Once the reports of this
+   reached Microsoft, they pulled the patches, cand cancelled Patch
+   Tuesday.
+
+   On 2018-01-17, Microsoft rereleased AMD based patches for Windows 10.
+   What makes this a bit confusing for many is that depending on the
+   version of Windows 10 you’re running, you obviously end up with a
+   different build for that version of Windows 10.  Microsoft released
+   build 14393.2034 for the Anniversary Update and build 15063.877 for the
+   Creators update. Microsoft also released build 16299.194 for the Fall
+   Creators Update.  This last build contained a fix for AMD devices.
+
+   There are a few issues that you need to be aware of in all of these
+   builds. Thankfully, Neowin kindly pulled the following information
+   together for everyone.
+   Symptom Workaround
+   Windows Update History reports that KB4054517 failed to install because
+   of Error 0x80070643. Even though the update was successfully installed,
+   Windows Update incorrectly reports that the update failed to install.
+   To verify the installation, select Check for Updates to confirm that
+   there are no additional updates available.
+
+   You can also type About your PC in the Search box on your taskbar to
+   confirm that your device is using the expected OS build.
+
+   Microsoft is working on a resolution and will provide an update in an
+   upcoming release.
+   When calling CoInitializeSecurity, the call will fail if passing
+   RPC_C_IMP_LEVEL_NONE under certain conditions.
+
+   When calling CoInitializeSecurity, the call may fail when passing
+   RPC_C_AUTHN_LEVEL_NONE as the authentication level. The error returned
+   on failure is STATUS_BAD_IMPERSONATION_LEVEL.
+   Change the authentication level parameter to RPC_C_AUTHN_LEVEL_CALL.
+
+   Microsoft is working on a resolution and will provide an update in an
+   upcoming release.
+   Due to compatibility issues with some versions of antivirus software,
+   this update causes stop errors or abrupt reboots. Contact your
+   antivirus (AV) vendor and follow their guidance.
+
+
+   Microsoft further released additional patches for Windows 10 Version
+   1511, Build 10586.1358.  This update further has AMD based fixes in
+   it.  There are also known issues with it, and again, thanks to Neowin,
+   we have the following details
+   Symptom Workaround
+   When calling CoInitializeSecurity, the call will fail if passing
+   RPC_C_IMP_LEVEL_NONE under certain conditions.
+
+   When calling CoInitializeSecurity, the call may fail when passing
+   RPC_C_AUTHN_LEVEL_NONE as the authentication level. The error returned
+   on failure is STATUS_BAD_IMPERSONATION_LEVEL.
+   Change the authentication level parameter to RPC_C_AUTHN_LEVEL_CALL.
+
+   Microsoft is working on a resolution and will provide an update in an
+   upcoming release.
+   Due to an issue with some versions of antivirus software, this fix only
+   applies to the machines where the antivirus ISV has updated the ALLOW
+   REGKEY. Contact your antivirus AV to confirm that
+
+   their software is compatible and have set
+
+   the following REGKEY on the machine
+
+   Key=”HKEY_LOCAL_MACHINE” Subkey=”SOFTWARE\Microsoft\
+
+   Windows\CurrentVersion\QualityCompat”
+
+   Value Name=”cadca5fe-87d3-4b96-b7fb-a231484277cc”
+
+   Type=”REG_DWORD”
+
+   Data=”0x00000000”
+
+
+Related Posts:
+
+     * Check for Windows 10 Updates
+     * Microsoft Introduces Surface Book 2
+     * Immediately Speed Up Windows 10
+     * How to Fix Windows 10 Memory Leaks
+     * Top Privacy Settings for Windows 10
+
+   Tweet
+    comments
+
+On the Low Down
+
+   By Chris Spera on February 26, 2018
+
+   [social-lg.jpg]
+
+   Sometimes even being one of the hottest social media platforms isn’t
+   enough…
+
+   I’ve been involved in social media platforms since before we called
+   them social media platforms. I had an AOL account. I had a Prodigy
+   account and a CompuServe account; and those services, by today’s
+   standards are largely what Facebook is today. It’s funny how things
+   change over the years.
+
+   One of the newer and more popular social media platforms today,
+   Snapchat, owned by Snap, was recently reported to have gone through a
+   reduction in force of nearly 24 people. The company seems to be having
+   a couple of funding and growth issues. They are currently looking for
+   ways to manage costs and expenses.
+
+   The layoffs are mainly from Snapchat’s content division. They are
+   consolidating teams in their Venice, California headquarters.
+   Previously Content had space and people in both Venice and New York.
+
+   Snapchat’s Content team is responsible for overseeing the production of
+   content from major publishers, as well as content submitted by users
+   for its public stories. According the Snap’s CEO Evan Spiegel the
+   layoffs are the company’s attempt to scale their business.
+
+   Not only is Snap performing reductions in force, but they’re slowing or
+   stopping hiring as well. They laid off 18 recruiters in October knowing
+   that 2018 will be a slower hiring season for them. Instead of hiring
+   more people, they’re going to make better use of the resources they
+   have. They’re also going to spend money developing and promoting the
+   leaders they already have.
+
+   Snapchat is in the process of changing. The company is trying to roll
+   out a major redesign of the application that it first announced in
+   November of 2017. How successful this redesign is for the organization
+   is unclear at this time.
+
+Related Posts:
+
+     * Scheduled for Termination – AOL Instant Messenger
+     * Connectify
+     * Remember things big and small from your everyday life with Evernote
+     * Make and share screenshots with Ashampoo Snap 5
+     * Roku 2 rocks the TV world
+
+   Tweet
+    comments
+
+The Day After the [Patches] Before
+
+   By Chris Spera on February 19, 2018
+
+   My office implemented both Meltdown and Spectre patches over the
+   weekend…
+
+   In the previous weeks, both the Meltdown and Spectre processor
+   vulnerabilities have been making a great deal of news. At my office – a
+   financial firm – a Windows shop running Windows 7 (like most of the
+   business world), implemented Windows based patches this past weekend.
+   The results, especially in some of our older hardware, haven’t been
+   very good. Thankfully, those machines are non-critical, non-business
+   systems: For example, those that are used to display presentations in a
+   conference room during a meeting. Unfortunately, the performance on
+   those machines is atrocious. They are nearly unusable.
+
+   To understand what’s going on with those machines and why they now suck
+   beyond all relief, we have to understand what the vulnerabilities are
+   and what’s needed to patch both of them.
+
+   Meltdown Logo
+
+   Meltdown effects both x86 and ARM based microprocessors and allows
+   rogue processes read all memory, even if unauthorized to do so.
+   Meltdown effects nearly ALL processors used today. Resolution of this
+   vulnerability will require a hardware revision, or effectively a new
+   processor. For most computers – laptops especially – this isn’t likely
+   to happen. Replacing a laptop’s microprocessor is expensive, and is
+   likely not possible, as it would also require new system boards and
+   supporting chipsets.
+
+   The only way to resolve this vulnerability is to come up with some
+   level of operating system patch. Most of the operating systems used
+   today have been, or are in the process of being, patched, including
+   iOS, Linux, macOS and Windows.
+
+   Unfortunately, Meltdown patches are likely to cause performance issues,
+   especially in older machines. The vulnerability makes all memory,
+   including cache memory accessible. The patch works by constantly
+   flushing the cache, making the computer work harder to put information
+   back into it, where it can be read quickly. Unfortunately, since the
+   cache is constantly being flushed, the computer is often forced to read
+   it back into memory from the hard drive, slowing things down. In some
+   cases, this happens far too often, forcing your computer’s hardware to
+   fight against its operating system, putting it into a constant read
+   loop. By the time the drive has read ahead enough information, its
+   likely had the cache flushed, requiring it to start over again.
+
+   Spectre Logo
+   Spectre is a vulnerability that effects modern processors that perform
+   branch prediction, or a way to predetermine possible execution outcomes
+   allowing for speed of computations and actions. When the computer
+   doesn’t predict where “you’re going” correctly, your computer may leave
+   observable side effects that may reveal private data to hackers. For
+   example, if the pattern of memory accesses performed by such
+   speculative execution depends on private data, the resulting state of
+   the data cache constitutes a side channel through which an attacker may
+   be able to extract information about the private data using a timing
+   attack.
+
+   There are two common vulnerabilities and exposure IDs related to
+   Spectre, one for bounds check bypass and one for branch target
+   injection. JIT engines used for JavaScript were found vulnerable. A
+   website can read data stored in the browser for another website, or the
+   browser’s memory itself.
+
+   Unfortunately, Spectre patches are also known to cause performance
+   issues; and they have been reported to significantly slow down a PC’s
+   performance, especially, again, on older computers. On newer, 8th
+   generation Intel processors, performance has been known to take a 2% to
+   14% hit.
+
+   With both of these patches on your machine, your current computing
+   experience is likely totally hosed, no matter what generation processor
+   you have or how much computing power you possess.
+
+   For example, if you do anything with any kind of video, you’re going to
+   have an especially hard time. Patches for both of these vulnerabilities
+   are likely to result in a performance hit of anywhere between 10% to as
+   much as 50%. As a result, graphic and video renders can take up to
+   twice as long to complete, if they don’t just crash your machine.
+
+   However, it isn’t all gloom and doom. There does appear to be some
+   light at the end of the tunnel. Fixes for Spectre aren’t easy to
+   implement. The problem is likely going to be around for quite some
+   time. However, while a great deal of the vulnerabilities are executed
+   through Java Script, and therefore while you’re surfing the web,
+   Browsers such as Chrome, and Firefox are implementing other processes
+   on top of the OS level patches you likely already have. You could also
+   completely eliminate browser based exploits for both Meltdown and
+   Spectre by disabling JavaScript all together.
+
+   It has also been suggested that the cost of mitigation can be
+   alleviated by processors which feature selective translation lookaside
+   buffer (TLB) flushing, a feature which is called process-context
+   identifier (PCID) under Intel 64 architecture; and under Alpha, an
+   address space number (ASN). This is because selective flushing enables
+   the TLB behavior crucial to the exploit to be isolated across
+   processes, without constantly flushing the entire TLB – the primary
+   reason for the cost of mitigation.
+
+   Personally, I haven’t seen much of a slow down on my Late 2013 MacBook
+   Pro. Thankfully, I seem to be falling somewhere in the 2% to 14%
+   performance hit. How things go from here, however will help me decide
+   if I stay with this Mac or wait until Apple releases a new Mac with a
+   new processor that doesn’t fall victim to this nasty issue.
+
+   What happened to you and your computer? Do you have an older machine?
+   Have you installed the patches? Are you experiencing a performance hit
+   that you’d like to reveal or discuss with someone?
+
+   If so, give me a shout and let me know where you stand. You can find me
+   in the Discussion are a below or you can send me an email.
+
+Related Posts:
+
+     * OWC Thunderbolt 3 Dock
+     * Apple’s Mid 2017 15″ MacBook Pro
+     * Unboxing the Mid-2017 15″ MacBook Pro
+     * The Future of the MacBook Pro
+     * OWC Announces Upgrades for 2016 MacBook Pros
+
+   Tweet
+    comments
+
+Why does the Performance on my iPhone Suck?
+
+   By Chris Spera on February 5, 2018
+
+   You’d be surprised by the answer (or at least you should have been)…
+
+   I’ve been an iPhone user on and off since 2008. I started with an
+   iPhone 3G, which I ditched inside of three months because the bloody
+   thing couldn’t take or make a call without dropping it at least –
+   literally – a dozen times or more.
+
+   More recently, I’ve been dealing with a different iPhone problem. I’ve
+   got iPhone 6’s and iPhone 7 Plus’ in my house. Since Apple’s whole
+   “Batterygate” thing hit the news, things have been a bit crazy for
+   nearly every iPhone owner I know of.
+
+   Case in point – I was recently contacted by a buddy of mine about this
+   very issue. Apparently one of his wife’s friends was having an issue.
+
+   IMG-0629
+
+   I tried to explain to him that this was the publicized battery issue;
+   and that there was a reasonably priced resolution, that shouldn’t be
+   too difficult to take care of.
+
+   IMG-0630
+
+   It was clear to me that this was also the same problem that he had
+   described in his previous message.
+
+
+   The additional information was nice, but not completely necessary…
+
+   IMG-0632
+
+   So, this, like other issues that plague iPhone users has been
+   completely misunderstood. So let me break it down very carefully.
+
+   1. Do you have an iPhone 6/6 Plus, iPhone 6s/ 6s Plus, or iPhone 7/7
+   Plus?
+   If the answer is yes, then you need to take a look at the following
+   questions.
+   2. Is the phone older than a year old?
+   If the answer is yes, ask yourself the next question
+   3. Does the phone seem slower now with iOS 11 than it did with iOS 10?
+   If so, you’re not crazy.
+
+   If the phone is a year old or more, AND you use your phone a LOT,
+   you’ve likely cycled through the battery a number of times. The more
+   cycles on your battery, the older it becomes. The older your battery
+   is, the quicker it discharges power. When your phone has a lot of
+   cycles on its battery, it’s very likely that it won’t hold a charge
+   very long. When it doesn’t hold a charge for a long time, you end up
+   charging it more often. This becomes a Catch 22; as the more that
+   device needs to be charged, the shorter the drain time is, and the more
+   cycles you put on your phone’s battery.
+
+   The performance problem isn’t imagined. Apple’s latest version of iOS
+   11.2.2 actually throttles the processor so that the phone uses less
+   power, when the battery’s health (measured by age and the number of
+   cycles it has on it) is below 80%-85%.
+
+   So the solution to all of this, believe it or not, is really easy – get
+   a new battery. Prior to the issue with processor throttling in iOS
+   11.2.2, Apple charged $79 for a battery replacement. Now, Apple is
+   charging $29 to replace the battery in your iPhone 6/6 Plus or later
+   during all of 2018.
+
+   While the problem is now easy to identify, the solution is also easy to
+   apply – slow phone? Get a new battery.
+
+   Do you have an older iPhone (now defined as at least 3 generation’s
+   back (so at least 2 years old)? If you do, the best thing that you can
+   do to put your phone back into “like new” performance, is to get a new
+   battery.
+
+   You can find more information about this particular issue at Apple’s
+   Support site.
+
+Related Posts:
+
+     * It’s Supposed to be Compatible
+     * The Day that Apple Changed the World
+     * iPhone 6 Day is Upon Us! Thoughts from Yesterday
+     * Get a handle of what apps are on your company’s computers with
+       WinAudit
+     * Hands on with early iOS 8 Beta Releases
+
+   Tweet
+    comments
+
+It’s Supposed to be Compatible
+
+   By Chris Spera on January 29, 2018
+
+   There’s always a chance that something that’s supposed to work, won’t…
+
+   So, many – well most of you, actually – don’t know; but I was in a
+   motor vehicle accident just after Christmas 2017. Someone lost control
+   of their vehicle and smashed into the rear driver’s side door of my car
+   on a very, busy US interstate highway during the evening rush hour,
+   commute home. I spun out over three lanes of oncoming traffic and hit
+   the wall, going about fifty (50) MPH (80.5 KPH), It wasn’t pretty; and
+   I’m mending as well as could be expected.
+
+   Unfortunately, my car was totaled; and I was forced to purchase a new
+   vehicle.
+
+   I purchased a 2014 Toyota Highlander XLE. It’s a nice vehicle; and much
+   bigger and much more modern than the 2003 Camry LE that I was driving.
+   The vehicle however, has a couple of foibles that I wasn’t completely
+   aware of when I bought it. Unfortunately, for me, they all evolve
+   around the entertainment system and my new, iPhone 8 Plus.
+
+   So, here’s the problem, in a nut shell – the Entune radio hardware and
+   software won’t consistently mount the device. Because it won’t
+   consistently mount the device, the vehicle’s USB port won’t read data
+   from the device consistently, and won’t charge the phone consistently.
+   When the USB port mounts the phone, everything works like you would
+   expect it to. The problem is, as I stated, the radio won’t do that
+   consistently.
+
+   I purchased my vehicle from the CarMax in Naperville, IL. When I
+   noticed that the vehicle and my iPhone 8 Plus weren’t getting along, I
+   took the vehicle back to CarMax’s Service department.
+
+   After spending a day on the vehicle, CarMax told me that my car simply
+   wasn’t compatible with my phone. According to the vehicle’s owner’s
+   manual, everything should work. However, CarMax – who said they called
+   the local Toyota dealership – said THEY were told by Toyota, that the
+   iPhone 8 and iPhone 8 Plus weren’t compatible with the Entune Radio in
+   ANY Toyota vehicle.
+
+   So, I did what any good QA testing guy would do. I grabbed every iPhone
+   I had in the house, my 8 Plus, my wife’s 7 Plus, my son in law’s iPhone
+   6 and my son’s iPhone 5s. As a matter of fact, NONE of them worked with
+   my new car’s radio correctly. I couldn’t get it to work with any of the
+   four different iPhone versions I had, with any of the Lightning cables
+   I had (both MFI and non-MFI certified cables).
+
+   At that point, I contacted my local Toyota dealership.
+
+   They told me that everything should work. It was all compatible. While
+   the iPhone 8 and iPhone 8 Plus weren’t specifically listed as
+   compatible, I was told without a doubt they should work.
+
+   Toyota asked to see the vehicle.
+
+   My office is closed for Martin Luther King Jr. Day. I have an
+   appointment with a local Toyota Dealer to examine the car. According to
+   them, the car either needs to have its software updated, or will need
+   to have its software reflated to insure that everything is working
+   correctly. If that doesn’t work, then we’re looking at either a USB
+   port replacement or a full radio replacement, or both.
+
+   As I am writing this prior to the actual appointment, I will update
+   everyone on the outcome, but at this point, you have to wonder how
+   motor vehicle entertainment systems that come with your car work or
+   continue to work as needed when you upgrade your phone. I mean, most
+   cars last at least 10 years or more. How do you keep everything working
+   correctly as your car ages? You’re likely to upgrade your phone at
+   least five (5) times during a ten year period. Your car needs to keep
+   working with the devices you have (or probably, more appropriately…);
+   your devices need to keep working with your car as it ages.
+
+   This, among other things, will be asked of my Toyota service technician
+   when I see them early Monday morning.
+
+   I will keep everyone posted…
+
+Related Posts:
+
+     * Why does the Performance on my iPhone Suck?
+     * First Impressions – iPhone 8 Plus
+     * The Day that Apple Changed the World
+     * iPhone 6 Day is Upon Us! Thoughts from Yesterday
+     * Get a handle of what apps are on your company’s computers with
+       WinAudit
+
+   Tweet
+    comments
+
+Check for Windows 10 Updates
+
+   By Chris Spera on January 19, 2018
+
+   Quickly check for Windows 10 system updates with this handy how-to…
+
+   Sometimes, checking for updates on your Windows 10 PC can be a pain.
+   You either have to swipe open the Action Center and then open Settings,
+   or get to Settings through the Start Menu. Then, you have to scroll
+   down to Updates and Security and click it. While this isn’t a huge
+   deal, it can be sort of a pain, as it involves a few steps.
+
+   There’s actually a much easier way of taking care of manually checking
+   for updates. This cool tip, however, is going to require you to make
+   some modifications to your Windows 10 computer’s Registry.
+
+   If you’re not comfortable making Registry modifications, then you might
+   want to skip this one. However, if you’re undaunted by the challenge,
+   and you’d like to put the ability to check for Windows 10 updates on a
+   right click context menu off the Desktop, then you should follow the
+   steps outlined below.
+
+   Step 1
+   1. Open Regedit
+   2. Navigate to Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell
+   3. Select the “Shell” folder in the left pane
+   4. Right Click the “Shell” folder in the left pane
+   5. Click New – Key from the context menu that appears
+   6. Name the new Key (folder) “Check for Updates” without the quotes and
+   press enter
+   7. Select the “Check for Updates” folder in the left pane
+   8. Right Click the “Check for Updates” folder in the left pane
+   9. Click New – Key from the context menu that appears
+   10. Name the new Key (folder), “command” (all lower case) without the
+   quotes and press enter. You’re going to create two (2) string values,
+   one in each of the folders (Keys) that you’ve created.
+   11. Right click the “Check for Updates” Key (folder).
+   12. Select New – String from the context menu that appears.
+   13. Name the String, “SettingsURI” without the quotes.
+   14. Double click the new string you just created and enter the
+   following value into the “Value data” field:
+   ms-settings:windowsupdate-action
+
+   Step 2
+   15. Right click the “command” Key (folder).
+   16. Select New – String from the context menu that appears.
+   17. Name the String, “DelegateExecute” without the quotes.
+   18. Double click the new string you just created and enter the
+   following value into the “Value data” field:
+   {556FF0D6-A1EE-49E5-9FA4-90AE116AD744}
+
+   If you’ve done everything correctly, then once you right click on the
+   Windows 10 Desktop, you should see an entry in the context menu called
+   Check for Updates. Clicking it, will launch Settings – Updates and
+   Security – Windows Update – Check for Updates, and will automatically…
+   check for updates.
+
+   This added shortcut will DRASTICALLY cut down on the amount of time it
+   takes to manually check for updates to your Windows 10 computer.
+   However, you should know that your Windows 10 PC will automatically
+   check for updates on its own. It will also download them in the
+   background and likely install most of them, without you ever knowing
+   that you needed to do… anything. However, if you want to stay on top of
+   things, as I do, then this is the quickest and easiest way I’ve found
+   to check for updates as often as you want or need.
+
+Related Posts:
+
+     * Top Privacy Settings for Windows 10
+     * Immediately Speed Up Windows 10
+     * How to Fix Windows 10 Memory Leaks
+     * Top Creator’s Update Issues and How to Fix Them
+     * Microsoft Replaces Placeholders with Files on Demand
+
+   Tweet
+    comments
+
+The Day the Internet Died
+
+   By Chris Spera on January 15, 2018
+
+   In an expected 3-2 party line vote, the FCC has voted to end Net
+   Neutrality…
+
+   Well, this was disappointing; but not unexpected…
+
+   Today, the United States Federal Communications Commission voted 3-2
+   along party lines to repeal the Obama-era internet regulations aimed at
+   insuring that the internet didn’t have pay to access lanes for consumer
+   oriented content. FCC Chairman Ajit Pai cast the landmark tying
+   breaking vote, providing ISP’s like AT&T, Comcast and Verizon the power
+   to control what content consumers can access.
+
+   Many different groups, including Democrats, many movie studios and
+   companies like Google owner Alphabet and Facebook had urged the FCC to
+   keep the content neutral rules barring service providers from blocking
+   or slowing access to content. Pai is a Republican, appointed by
+   President Donald Trump.
+
+   Consumer advocates and trade groups representing content providers have
+   planned to launch a legal challenge, aimed at preserving those rules.
+   New York Attorney General Eric Schneiderman, a Democrat, said in a
+   statement he will lead a multi-state lawsuit to challenge the reversal.
+   He called the vote “a blow to New York consumers, and to everyone who
+   cares about a free and open internet.” ‘
+
+   FCC Commissioner Mignon Clyburn, also a Democrat, said prior to the
+   vote that Republicans were “handing the keys to the Internet” to a
+   “handful of multi-billion dollar corporations.”
+
+   FCC Chairman Ajit Pai has argued that the 2015 rules were heavy handed,
+   stifled competition and [limited] innovation among service providers,
+   “The internet wasn’t broken in 2015. We weren’t living in a digital
+   dystopia. To the contrary, the internet is perhaps the one thing in
+   American society we can all agree has been a stunning success,” he said
+   on Thursday.
+
+   The problem that he is refusing to lend credibility to, however, is
+   that service providers like AT&T, Comcast (Xfinity) and Verizon have
+   CLEARLY indicated, that they want consumers to use THEIR content
+   networks and will institute pay for performance (speed) premiums
+   against competing services like Netflix and Hulu (as well as others).
+   Those premiums will ultimately be passed down to individual consumers
+   and users.
+
+   Internet access with speeds suitable for streaming and general
+   computing and browsing at the same time for many is already very
+   expensive. With the focus shifting to streaming services like Netflix,
+   Hulu and to streaming boxes like AppleTV and Roku, or an Amazon Fire TV
+   or Fire TV Stick, having affordable, non-taxed, high speed bandwidth
+   available is probably one of the more important services you have
+   coming into your home today.
+
+   That service is going to provide all of your TV service in the near
+   future, if not now (if you’ve cut the cord). Its very clear to me that
+   having an ISP free of neutrality restrictions is going to lead to
+   additional charges and fees being passed on to the consumer.
+   At the end of the day – and this is very frustrating – no one has any
+   idea yet of just what and how the removal of the Obama-era Net
+   Neutrality rules will mean to consumer delivered ISP and consumer
+   content services. However, its at least understood that there are
+   likely fees and surcharges coming in a play to “play” scenario that is
+   expected to be passed on to the end user.
+
+   Its this anticipated pay to “play” tax that most are concerned with,
+   especially end users. Its clear that ISP’s like Comcast, who owns NBC
+   and its related assets may give preferential bandwidth to their own
+   content and make competitors like Netflix and Applet pay a surcharge or
+   tax to insure that their services stream with the same bandwidth
+   priority over Comcast’s backbone. This is where most of the consumer
+   concern comes from.
+
+   What do you think is going to happen with Net Neutrality? Is the
+   removal of the 2015 Obama-era rules a problem? Did they restrict
+   competition or protect consumer interests? Is the internet freer now
+   than it was before, or is the internet just more expensive to use now?
+   Do you believe that the larger regional or national ISP’s will take
+   advantage of this new development and begin charging clients surcharges
+   or fees for accessing competing or different streaming services other
+   than the ones they already partner with or are different from their own
+   offerings?
+
+   Why don’t you meet me in the Discussion area below and give me your
+   thoughts?
+
+Related Posts:
+
+     * Lessons Learned by a Would be Cord Cutter
+     * Streaming vs. Download – What Happens when the Cloud Evaporates?
+     * Apple Releases watchOS 3.1.1
+     * Convert your DVD’s to any video format with TDMore DVD Converter
+     * Get in touch over email, IM, or a call with Google Talk
+
+   Tweet
+    comments
+
+With Apple Watch Series 3, $10 Ain’t $10
+
+   By Chris Spera on January 12, 2018
+
+   If you have an Apple Watch Series 3 with active LTE service, you’re
+   likely in for a nasty surprise.
+
+   apple watch
+
+   Back when the Apple Watch Series 3 first launched earlier in the Fall
+   of 2017, carriers promised that LTE service for your new Series 3 Apple
+   Watch, would cost only $10 USD per month; and it does.
+
+   Sorta.
+
+   In the beginning, carriers offered three months of free service and
+   waived the activation fees. At this point, everyone that got their
+   Series 3 Watch on the day it was first made available at the Store, is
+   likely being charged for service. However, as I mentioned earlier, $10
+   bucks isn’t always JUST $10 bucks. Both AT&T and Verizon are charging
+   additional fees. So, your $10 bucks is likely closer to $12 to $14
+   bucks per month.
+
+   In California, Verizon Wireless users also have an additional $1.55 fee
+   on top of their $10 per month, service charge. In North Carolina, AT&T
+   users are being charged an additional $4.39 per month, bringing their
+   bill near $15 for LET service on their Series 3 Apple Watch. These fees
+   can be higher in other states.
+
+   If you thought you might try to avoid all of the fees by deactivating
+   your service and then reactivating it when you need or want it, you’re
+   also in for a nasty surprise. There are activation fees that come with
+   this activity. You’re going to get hit with the standard $25 activation
+   fee every time you go to bring your watch back on line.
+
+   For example, when you cancel and re-add a line, on Verizon, you’re
+   going to get hit with that $25 activation fee I mentioned. Suspending
+   your service will hit you with a $10 per month fee (what the normal
+   service will cost – so you’re paying for it anyway).
+
+   Because Apple Watch Series 3 uses NumberShare on Verizon, it’s not
+   considered a prepaid device, so you can’t skip a month of service. Per
+   Verizon, you really have only two options:
+   1. Suspend your service for up to 3 months at a time; but this is going
+   to cost you $10 a month. This is the normal service fee, so you’re not
+   saving anything here. You’re actually giving them $10 a month to NOT
+   use the LTE service on the Watch, which doesn’t make sense.
+   2. Deactivate the Watch completely. That’s going to wipe it from the
+   account, but you’re need to restart everything over again if you want
+   to bring it back; and that’s going to cost you at least the (previously
+   waived) $25 activation fee. There’s also a recurring charge. This means
+   that Vs. will basically charge you for two and a half months of service
+   every time you turn the Watch off and on again.
+
+   There’s also a possibility that you’ll run into activation issues when
+   you start and stop service. The Watch has its own number; but shadows
+   your phone’s number when placing and receiving calls. Sometimes this
+   whole process can create issues, as reported by some; but why that
+   happened to those that bumped into that problem, isn’t clear.
+
+   If you have a Series 3 Apple Watch and have bumped into issues like
+   this, reach out to me and help me understand what happened to you.
+
+Related Posts:
+
+     * Apple Watch can Save your Life
+     * Next Generation Apple TV Details Leaked
+     * FEATURE REVIEW – Apple Watch – Part 3
+     * FEATURE REVIEW – Apple Watch: Part 2
+     * FEATURE REVIEW – Apple Watch: Part 1
+
+   Tweet
+    comments
+   Next Page »
+
+   Stay in touch with Soft32
+
+Soft32.com is a software free download website that provides:
+
+   121.218 programs and games that were downloaded 237.780.356 times by
+   402.775 members in our Soft32.com Community!
+
+   Get the latest software updates directly to your inbox
+   (submit) Subscribe
+   Soft32 on
+
+   Platforms
+     * Android
+     * iOS
+     * Mac
+     * Mobile
+     * Web
+     * Windows
+
+   Features
+     * Downloads of the day
+     * News
+     * Newsletter
+     * Picks of the week
+     * Reviews
+     * Special Deals & Promotions
+     * Tutorials & Tips
+
+   Categories
+     * Audio
+     * Design
+     * Games & Consoles
+     * Internet
+     * Operating Systems
+     * Photo
+     * Plugins
+     * Productivity
+     * Security
+     * Software
+     * Tech & Gadgets
+     * Utilities
+     * Video
+
+   Popular Posts
+     * Ammyy Admin – Take Control.
+     * Browse websites with UC Browser from your Android Device
+     * Chat with all of your Facebook friends with this handy Windows app
+     * Valve announces Counter-Strike: Global Offensive
+     * More than 100 million people use an Opera mobile browser
+
+   Tags
+   android Apple Apple Store apple watch audio backup bill gates browser
+   desktop dvd facebook free game games gaming google hdd iDevice internet
+   ios ipad iphone iPhone 5 itunes mac malware microsoft microsoft band
+   mobile music olio pc samsung security smartphone smartwatch surface pro
+   surface pro 3 tablet video windows windows 7 windows 8 Windows 10
+   windows 10 technical preview
+
+   Find us on Facebook
+
+   IFRAME:
+   //www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com
+   %2Fsoft32com&tabs=&width=296&height=255&small_header=false&adapt_contai
+   ner_width=true&hide_cover=false&show_facepile=true&show_border=false&he
+   ader=false
+
+     * Home
+     * Submit Software
+     * Support
+     * Contact Us
+     * Advertise with Us
+     * All Software
+     * Sitemap
+     * Jobs
+     * Blog
+     * Facebook
+     * Twitter
+     * RSS
+
+   Soft32
+
+   © 2003 - 2013 ITNT. All rights reserved.
+     * Privacy Policy
+     * Terms of Service
+     * Copyright
+     * EULA
+     * DMCA
+     * Uninstall
+
+   By operating system:
+
+   [ ] All OSes
+   [ ] Windows [ ] Mac [ ] Mobile
+
+   By licence:
+
+   [ ] All licences
+   [ ] Adware [ ] Commercial Demo [ ] Data Only [ ] Freeware [ ] Open
+   Source [ ] Purchase only [ ] Shareware
+
+   Last updated in:
+
+   (*) Anytime
+   ( ) Last week ( ) Last month ( ) Last 6 months ( ) Last year
+
+   JavaScript is required to properly view this page.
+   #prev next publisher
+
+   Soft32
+     * Home
+     * Windows
+     * Mac
+     * Mobile
+     * Blog
+
+   ____________________ (BUTTON) Search
+     * Soft32
+     * Blog
+     * Page 2
+
+FEATURE REVIEW – Unihertz Jelly Pro
+
+   By Chris Spera on January 9, 2018
+
+   The Jelly Pro takes on the Goliath’s of the Android World with the
+   smallest form factor since 2006 (or so)…
+
+   Introduction
+   I remember back in the day – and I’m really targeting the 2006 – 2009
+   time frame, just before, and right after the face of the smartphone
+   industry changed with the impact of the release of the original iPhone
+   in 2007, small one-handed devices were all the rage. At this point, the
+   world was used to small, one hand operable candy bar styled phones.
+   Phones just like the Jelly Pro.
+
+   I’ve got one for review; and I’ve already done an of this phone and
+   have posted it for everyone to see. I’ve been using it on and off – the
+   intended use of the device – over the past few weeks or so and I think
+   I finally have enough information to pass along to everyone. The Jelly
+   Pro is NOT intended to be used as a daily driver. It’s meant to be a
+   go-to phone when you want or need something small and still want or
+   need to stay connected. Let’s take a look at the device and see if the
+   Jelly Pro is something that might help you.
+
+   Design
+   The Unihertz Jelly Pro is 3.7 inches tall, 1.75 inches wide and 0.6
+   inches thick. It weighs just 2.1 ounces and is so small, it can fit in
+   the coin pocket of your jeans without any issues, problems or forcing.
+   It slides right in. The device is so small that it really reminds me of
+   the Zoolander Phone – The Veer.
+
+   Zoolander Phone - The Veer
+
+   The Jelly Pro supports full 4G LTE speeds and VoLTE; and should work on
+   just about any GSM network. It also has dual SIM slots, allowing the
+   device to support two phone numbers at the same time. This is totally
+   amazing in a device that’s really this small. However, the device has a
+   bit more going for it than its size. Let’s dig in…
+
+   Display
+   When you’ve got a device this small, there has to be a few draw backs.
+   If there’s one spot that’s going to suffer the most, it’s the display.
+   The Unihertz Jelly Pro’s display is 2.45 inches in size and has a
+   resolution of 240×432 pixels. This is NOT a display that you’re going
+   to want to watch any kind of video on, though the device is clearly
+   capable of playing and streaming video, the screen is so small, it’s
+   not something you’d want to use to watch video on unless it was all
+   that you had.
+
+   In fact, if you’re a bit older, or have poor or aging eyesight, this
+   display is going to be a challenge. Its small. It’s very small…
+   Especially by today’s standards where displays for phones like the
+   iPhone 8 or iPhone 8 Plus are 4.7 and 5.5 inches, respectively. The
+   Jelly Pro’s display is approximately 1/2 of the size of the smaller,
+   iPhone 8. It has 201 PPI (pixels per inch) and supports 16M colors.
+   It’s also covered with scratch resistant glass, though I can’t find any
+   information on whether its Gorilla Glass or something else. (So, assume
+   something else, at this point, as Gorilla Glass would be a huge
+   marketing point for a device of this size.)
+
+   The interesting thing here is that the phone’s biggest strength is also
+   its biggest weakness – The phone’s size. It’s too small to do anything
+   except make calls. Trust me, I’ve really tried…
+
+   The on screen keyboard is so small, it’s amazing that you can type any
+   words… in English (or your language of choice). You’re going to rely on
+   autocorrect a lot on this device. You’re also going to use speech to
+   text a lot with this device, too. It’s going to be very difficult to
+   use, especially if you’ve got big hands. I have had a lot of trouble
+   with the on screen keyboard, even with my slender fingers.
+
+   Don’t get me wrong. The Jelly Pro has a decent screen. It’s just too
+   small to do any texting with. It’s also too small to reply to any email
+   with or to do any real typing with. If you’re a heavy texter, even if
+   this is just an occasional device, it’s not going to be one that you’re
+   going to want to send any messages with.
+
+   Hardware
+   The rest of the device actually has some decent specs… with one small
+   exception – the battery. The device has 2GB of RAM and 16GB of storage.
+   As long as you have a decent data plan, this device should be able to
+   handle audio (and honestly, video) streaming without an issue. It
+   should also be able to handle local storage of some media and
+   entertainment content as well. At 1.1GHz, the processor should be able
+   to handle streaming audio without any concerns with lag or other
+   processing issues.
+
+   As I mentioned earlier, the only other issue that the device has is the
+   battery. Its only 950mAh. This means that you’re going to be charging
+   the device at least twice during the day, especially if you try use the
+   device all day.
+
+   The device will NOT last a whole day on a single charge. It simply
+   won’t. The battery is just too small. You’re also going to want to make
+   certain you have a microUSB cable handy. The device charges via
+   microUSB, and since the battery is so small, being without one,
+   especially if this is the only device you carry when you’re using it,
+   is going to be a huge mistake. Charge as often as you can with this
+   one…
+
+   The Full 360
+   The front of the Jelly Pro and the HTC One.  Boy this thing is small!
+   02 Jelly Bottom Edge
+   The bottom edge of both devices
+   03 Jelly Right Edge
+   The right edge of both devices. You can see the Jelly Pro’s microUSB
+   port and power button here.
+   04 Jelly Top Edge
+   The top edge of both devices. The Jelly Pro’s 3.5mm headphone jack is
+   located here.
+   Jelly Left Edge
+   The left edge of both devices. You can see the volume buttons on the
+   Jelly Pro, here.
+
+   Android
+   The device comes with Android 7 Nougat. I haven’t heard any news
+   related to the Jelly Pro running Android 8 Oreo. The one good thing
+   that is going on, however, is that Unihertz is actively updating the
+   device. When I turned the device on last month, I immediately got an
+   update. I got another one recently as well. This kind of active support
+   by the OEM really makes a huge difference. I’m very pleased that
+   Unihertz is providing this much support on this device. It means a lot
+   when the OEM takes an active role in a device’s life cycle.
+
+   Conclusion
+   The Unihertz Jelly Pro started through a successfully funded
+   Kickstarter campaign. The device only retails for $129 USD and is
+   available directly from their their website. For the price, this is a
+   huge deal. The device has enough power to handle most of what you would
+   want to do with a mid to low level device; and does it affordably.
+
+   This device is cheap enough, and it’s got decent performance.
+   Unfortunately, the Jelly Pro has got some serious issues with its
+   battery life and the feature that’s supposed to be its biggest draw –
+   its size. The screen is too small to type on. It’s too small to really
+   watch any video content on. The battery is also too small to last you
+   through a day with a single charge, ESPECIALLY if you use it to play
+   any kind of game or watch any video. You’re going to need to charge it
+   at least 2-3 times during the day.
+
+   The biggest premise of the phone – its cheap enough to use as a
+   situational phone, is seriously hampered by its size, which is one of
+   its biggest selling points.
+
+   Size in a device like this is important. That and price are the reasons
+   why you buy it. However, its display size make it very difficult to use
+   and the size of its battery makes it something that you’re going to
+   have to charge often (at least once every 4-5 hours) under normal use,
+   more frequently if you use it for any kind of streaming content,
+   especially games and video.
+
+   While the cost of the phone isn’t all that high, buying something like
+   this to use in place of say, an iPhone 8 or iPhone X or even a Note 8
+   when you don’t want to take the big device, is high enough that you
+   probably won’t want to lay down an extra $130 bucks when you just spent
+   $1000 or more dollars on the big dog, which is very disappointing…
+
+Related Posts:
+
+     * Unboxing the Unihertz Jelly Pro
+     * Jelly – The World’s Smallest 4G/LTE Smartphone
+     * FEATURE REVIEW – HTC 10
+     * Smartphone 101 – Retrieving Voice Mail
+     * Smartphone 101 – Making a Phone Call
+
+   Tweet
+    comments
+
+Disable Fast Startup in Windows 10
+
+   By Chris Spera on December 22, 2017
+
+   This new feature in the Fall Creators Update is taking many by
+   surprise…
+
+   If you’ve got the Fall Creators Update on your Windows 10 PC, then
+   you’ve probably noticed a new feature that Microsoft is calling “Fast
+   Startup.” The feature claims to improve the speed of your boot times,
+   so you spend less time waiting on your PC to boot and more time
+   working, being productive. Windows has this feature enabled by default,
+   so if you’re using the Windows 10 Fall Creators Update, then, you’re
+   likely booting faster than you were before, and have likely noticed it.
+
+   Most users will like the faster booting times, but there are a few
+   things about it that you should know so you can decide if you want to
+   disable it or not. Understanding how it works, is going to go a long
+   way to getting you to this decision.
+
+   Normally, when you shut your PC down, you do what many call a “cold
+   shutdown.” Here, you save everything to your hard drive or SSD, close
+   all the programs and kill the power. RAM is cleared. When you turn the
+   PC back on, it loads everything back on the drive BACK into RAM in
+   order for it to function as intended. That’s the way everyone is used
+   to having “shut down” work on their PC.
+
+   When users have Fast Startup enabled, the computer doesn’t shut down,
+   per se. It really hibernates instead.
+
+   Fast Startup saves all of your active data to a hibernation file before
+   turning off. When you turn it back on, it reads in the hibernation
+   file, putting you back to where you were before it shut down.
+   Interestingly enough, Fast Startup can only be enabled if your PC has
+   the ability to hibernate, AND then only if hibernation is enabled.
+
+   So, this brings you up and down quicker. That’s good right? Right?
+
+   Well… not always. There are some times when you really might want it
+   disabled.
+
+   Drivers…
+
+   Drivers are a GREAT reason why disabling features like Fast Startup are
+   a good idea. Windows system drivers are historically known for being
+   picky about how they are accessed. Windows has always had issues with
+   power and power management, and some system level drives simply don’t
+   like being accessed after being in a hibernated state. They may not
+   flush out of RAM correctly. They may not initialize into RAM correctly
+   from hibernation. They may really want to be loaded and/ or reloaded
+   upon hardware startup in order to function correctly. When they don’t
+   get initialized right, depending on how they access RAM or what
+   portions of RAM they live in and access, they can either make the PC
+   unstable, OR they can crash the entire PC.
+
+   Boot loaders are another GREAT reason why you may want to disable Fast
+   Startup. Some boot loaders don’t get accessed correctly from a
+   hibernated state, as the Fast Startup and hibernation in general has a
+   tendency to want to lock the hard drive. When you want to boot into a
+   different operating system, you may find that they only way you can
+   reliably do this is to reboot the PC after “resuming” via Fast Startup,
+   as you can’t access the boot loader choice for additional operating
+   systems upon startup.
+
+   That extra restart WILL do a cold restart, by the way; so if you’re
+   ever updating the operating system, or doing some kind of activity that
+   really requires you to go “all the way down,” having Fast Startup
+   enabled doesn’t prevent you from swapping out locked system files (or
+   files that are in use) after Windows Update updates your PC.
+
+   So should you ALWAYS disable Fast Startup? Signs point to, “no.”
+
+   If things work ok for you… if you don’t have driver issues, problems or
+   errors, you should be ok. You can keep it enabled and enjoy the faster
+   booting times. You have to keep in mind, though, that if you want
+   access to your hard drive from outside windows, you likely won’t be
+   able to get that access with the feature enabled.
+
+   If you’re noticing that you get BSoD’s or you start having issues with
+   devices not working or spinning up correctly; or if things don’t work
+   without an extra restart, then yeah. You may want to consider disabling
+   Fast Startup. Doing this is really pretty easy.
+
+   Ok… so how do I enable or disable Fast Startup on Windows 10’s Fall
+   Creators Update?
+   If you wish to disable Fast Startup, follow these simple steps:
+
+   1. On the Desktop, press Win-X.
+
+   2. Choose Power Options from the context menu that appears.
+
+   3. Choose Power & sleep on the left side menu.
+
+   4. Under Related Settings, click the Additional power settings link.
+   Power and Sleep
+
+   5. On the left side of the Power Options window that appears, click
+   the, “Choose what the power button does” link.
+   Power Options
+
+   6. On the Power Options – System Settings window that appears, if you
+   see an Admin Link for Change settings that are currently unavailable,
+   click it.
+   System Settings
+   7. The three check boxes under Shutdown Settings should enable. Uncheck
+   the Turn on fast startup (recommended) check box.
+   Shutdown Settings
+
+   If you don’t see a check box for fast startup, it’s because hibernation
+   has somehow become disable on your PC. Renabling this is actually a lot
+   easier than turning Fast Startup on or off.
+
+   To enable hibernation on your PC, follow these steps:
+
+   1. On the Desktop, press Win-X.
+
+   2. Choose Command Prompt (Administrator) from the context menu that
+   appears.
+
+   3. In the Command Prompt window, type the following:
+
+   powercfg –h /on
+
+   and press enter
+
+   If you need to need to disable Fast Startup, you can follow the steps
+   in the above section, now.
+
+   At this point, you will notice that it takes your PC a bit longer to
+   start up. This may be an issue for you in the long run; but as they
+   say, slow and steady wins the race. Any driver issues you have, should
+   be gone. Any update issues you have, should certainly be gone.
+
+   Was Fast Startup an issue for you? Did you have a need or desire to
+   disable it? If so, I’d love to hear from you. Why don’t you meet me in
+   the Discussion area, below and let me know what you did.
+
+Related Posts:
+
+     * Top 10 Features of Microsoft’s Fall Creators Update
+     * Microsoft Ends Groove Music Pass
+     * Immediately Speed Up Windows 10
+     * How to Fix Windows 10 Memory Leaks
+     * Top Privacy Settings for Windows 10
+
+   Tweet
+    comments
+
+Apple Watch can Save your Life
+
+   By Chris Spera on December 18, 2017
+
+   New studies suggest that owning an Apple Watch can identify potentially
+   lethal health trends
+
+   I saw this, and I thought this was pretty cool.
+
+   I have an Apple Watch and have enjoyed using it for just over two
+   years. I use it mostly for notifications and responding to text
+   messages. I also use it to keep track of my physical activity, as well,
+   such as it is. As a tech and software development geek, having
+   something remind you to move and to move more during your day is
+   important, especially when your job has you sitting on your tush all
+   day long testing software. Some folks, me included, forget to move
+   without being reminded. Having a subtle reminder to stand every hour
+   makes it easy for me to take a break, move, and to refocus my thoughts,
+   if needed. Apple Watch has made me more productive, as a result,
+   believe it or not. It’s not been an interruption.
+
+   In a new development, it’s been found that Wearables can be used to
+   accurately detect conditions like hypertension and sleep apnea in users
+   that wear them. The research, conducted by health startup Cardiogram
+   and UCSF, cited claims that data from heart sensors when combined with
+   machine learning algorithms can identify patterns that predict if a
+   person is at risk of certain health issues. The study followed more
+   than 6000 subjects, some of whom were known to have been diagnosed with
+   both hypertension and sleep apnea.
+
+   Cardiogram cofounder, Brandon Ballinger wants to “transform wearables
+   that people already own – Apple Watches, Android Wears, Garmins, and
+   Fitbits – into inexpensive, everyday screening tools using artificial
+   intelligence” into tools that can not only help keep people well, but
+   drive the growth of the market. The study is headed for peer review,
+   according to Ballinger. This will hopefully lead to wearables being
+   validated as a screening method for this and other major health care
+   conditions, like pre-diabetes and diabetes, which, appears to be next
+   on Cardiogram’s hit list
+
+   Cardiogram’s study lines up very well with the direction that Apple has
+   been taking Apple Watch and the apps that are available for it in the
+   App Store. Patents have been developed that involve both health related
+   wearable technology by Cardiogram. Apple is also involved in a heart
+   rate study partnership with Stanford University.
+
+Related Posts:
+
+     * Next Generation Apple TV Details Leaked
+     * FEATURE REVIEW – Apple Watch – Part 3
+     * FEATURE REVIEW – Apple Watch: Part 2
+     * FEATURE REVIEW – Apple Watch: Part 1
+     * Hell has Frozen Over – Android Wear for iOS Launched 2015-08-31
+
+   Tweet
+    comments
+
+Apple to Buy Shazam
+
+   By Chris Spera on December 15, 2017
+
+   There’s an interesting rumor going around that Apple is going to buy
+   Shazam for about $400M…
+
+   shazam
+
+   Apple announced the acquisition of Shazam in a statement to Buzzfeed
+   News, on 2017-12-11. In their statement, Apple acknowledged that Shazam
+   was one of the most popular apps available for download in the iOS and
+   Mac App Stores; and has hundreds of millions of users, on multiple
+   platforms, worldwide.
+
+   “Apple Music and Shazam are a natural fit, sharing a passion for music
+   discovery and delivering great music experiences to our users,” Apple’s
+   Tom Neumayr said. “We have exciting plans in store, and we look forward
+   to combining with Shazam upon approval of today’s agreement.”
+
+   Apple is reportedly in late stage talks to acquire Shazam, a popular
+   content recognition and identification app that is currently rounding
+   up investments as it moves toward an initial public offering. This
+   would be an interesting development, as the popular music recognition
+   app is currently cross platform.
+
+   Shazam has been integrated into Apple’s iOS since June of 2014 when it
+   released iOS 8. While the deal between the two organizations is NOT
+   finalized, its anticipated that the deal, worth approximately $400M USD
+   could be announced as early as Monday, 2017-12-11.
+
+   Originally called 2580, named after the number users had to dial to
+   reach the service via text, the UK company came into existence in 1999.
+   The app is now in both the iOS and Mac App Stores and has turned into a
+   comprehensive audio discovery and identification service helping users
+   identify songs, movies and TV shows by capturing audio. The app has
+   been downloaded over 1 billion times.
+
+   Apple partnered with Shazam’s marketing team in 2015 to help power
+   their Apple Music app. This is likely where they will permanently put
+   the app, should they in fact come to an agreement to purchase the
+   technology.
+
+   According to Shazam’s CEO, Rich Riley, the company reported revenues of
+   £40.3M pounds for their 2016 fiscal year. Riley indicated that their
+   marketing shift to advertising is what helped make them profitable and
+   helped them become an acquisition target.
+
+   Shazam is integrated into iTunes and Apple Music, and has hooks into
+   the iTunes Store. On the Android side, it also has hooks into Google
+   Play. iTunes users can quickly purchase recognized songs. Apple Music
+   users can quickly add identified songs to a customized playlist.
+
+   If purchased, Shazam would be Apple’s second largest acquisition in
+   recent years. Apple purchased Beats for $3B USD in 2014. The Shazam
+   purchase, however, at $400M, is likely to be a 60% discount over the
+   organization’s most recent funding round, which valued the company and
+   service at approximately $1B USD. Shazam has raised over $143M in
+   funding since 2002, including monies obtained through Sony Music and
+   Universal.
+
+Related Posts:
+
+     * WWDC 2016 Part 1 – macOS Sierra
+     * Uninstall QuickTime for Windows – QUICK!
+     * Do I have the AceDeceiver Malware?
+     * Over, Done with, Gone: Apple Anti-Trust – Not Guilty
+     * iPhone 6 Day is Upon Us! Thoughts from Yesterday
+
+   Tweet
+    comments
+
+Apple Issues Security Update for High Sierra Root User Bug
+
+   By Chris Spera on December 11, 2017
+
+   Apple on Wednesday released a special security update for macOS High
+   Sierra, solving a recently uncovered flaw which would let people gain
+   root access without entering a password.
+
+   You can file this one under the ol’ “face palm – how the h3ll did this
+   make it out to production?” category.
+
+   As a software development professional with over 25 years of
+   experience, it really makes me wonder sometimes… It’s a question, that
+   as a Quality Assurance professional, you never want to ask, or have
+   someone ask YOU; but when the item in question is this blatant, you
+   really can’t help it.
+
+   Recently, a bug in macOS 10.13 High Sierra was discovered that allowed
+   anyone – literally, anyone – with physical access to your Mac to log in
+   with root permissions, whether they had an account on the computer or
+   not.
+
+   Root is a super user level of access. Someone with root or super user
+   access can do anything and EVERYTHING to your Mac, despite any and ALL
+   security settings you’ve made or apps you’ve installed. They can burn
+   down your entire world with root access… and there isn’t anything on
+   the computer that can stop them.
+
+   Now, there are a few things you should know about this.
+
+   1. As of this writing, this should no longer be an issue. Apple has
+   released a security update, Security Update 2017-001, and it will
+   update your High Sierra build number to 17B1002 after it installs.
+   2. As of this writing, the update will come down and install
+   automatically. You won’t see an update notification or red bubble on
+   the App Store indicating an update is available. It’s going to install
+   automatically when you restart your Mac. Period. You don’t get a
+   choice.
+
+   I wanted to get that in front of everyone before I relay the following
+   comment – I’ve seen this defect in action, and it was totally
+   devastating.
+
+   root_authorizing
+
+   In fact, it was a bit more than that. I’ve never seen such an easily
+   exploitable, completely revealing security vulnerability like this…
+   ever.
+
+   I have access to Mac with a standard (non-admin) account. I don’t know
+   the admin password on this box, so I couldn’t cheat on it at all. With
+   the above vulnerability active on that Mac, I was able to bypass the
+   administrator’s credentials and make changes to my standard account as
+   if I were an admin, and I didn’t even need a password.
+
+   As I understand it, there wasn’t a secret account or other access point
+   on your computer. When users tried to log in as root, without a
+   password, High Sierra wouldn’t let you in. The bug, however, occurred
+   when you retried logging in as root without a password. It somehow
+   burned the account in, without a password, after multiple tries. At
+   that point, you had access to absolutely everything on the computer.
+   When macOS again prompted you for any kind of admin permissions, simply
+   entering in, “root” as the user name without a password again, got you
+   authenticated.
+
+   As I mentioned, this was probably the easiest “hack” I’ve ever done.
+   You didn’t need any coding or any kind of technical knowledge. All you
+   needed was physical access to the computer and the ability to spell the
+   word, “root.”
+
+   Thankfully, the hole has been patched; and it was patched, as I
+   mentioned, via a silent, forced update, that, to my understanding,
+   Apple has only used one time before. You didn’t get the opportunity to
+   decline this update, and Apple applied it to your system without asking
+   for permission or requesting a restart of your machine, or your
+   knowledge, really. It simply got installed and then silently applied
+   when you either rebooted or turned your Mac on.
+
+   The only evidence that something had happened was a notification bubble
+   that showed up a day or so later letting you know that the update had
+   been installed.
+
+   root_security_updated
+
+   To be honest, I wasn’t happy with the news that this vulnerability was
+   published, and I wasn’t happy with the way it was resolved, either. I
+   wouldn’t have been upset with a “required” update that would have been
+   installed without me getting a say in its installation IF Apple had
+   told me that it was installing it. I don’t like the fact that Apple can
+   just push an update to my PC and I can’t prevent it from installing, or
+   even know that it was installed until AFTER it was installed.
+
+   That’s just as bad as the vulnerability existing in the first place.
+
+   In the future, I really wish Apple would be a bit more sensitive in
+   situations like this. I *DO* understand why they did what they did.
+   This was a serious bug that had to be resolved for everyone running
+   High Sierra. However, I don’t like it when vendors force me to take an
+   update and don’t tell me that it’s going to install or give me an
+   option to postpone the update. People have been screaming about
+   situations like that on the Windows side of the world since Windows 10
+   was released a few years ago. Just because Microsoft does it, doesn’t
+   make it ok.
+
+   Did you happen to see this bug in action? Did you happen to play with
+   it at all prior to Apple plugging the hole? Did the update reveal
+   itself to you via the App Store, or did you get the silent version of
+   the update shoved at you like most of the world did?
+
+   Why don’t you meet me in the Discussion Area below, and give me your
+   thoughts on the whole thing?
+
+Related Posts:
+
+     * New Apple Operating System Updates Released
+     * RAD Software Development – For when Management Wants it Bad
+     * Apple to Buy Shazam
+     * Should I Upgrade or Not..? – Part 2
+     * Apple’s Mid 2017 15″ MacBook Pro
+
+   Tweet
+    comments
+
+The Difference between Outlook.com and Gmail
+
+   By Chris Spera on December 5, 2017
+
+   I recently had a very good friend of mine ask me the difference between
+   the two. Here’s the skinny…
+
+   eMail services today aren’t like they used to be. It used to be that
+   you got email because of the online service you used (like CompuServe,
+   Prodigy, American Online or MSN, to name a few…). Some of them were
+   IMAP related services. Some of them were POP3 related. In very rare
+   occasions, depending on the level of service you purchased, some of
+   them were corporate based or corporate classed, like Microsoft Exchange
+   services. And, on top of that, you nearly ALWAYS had an email
+   application (like Outlook or Outlook Express) to read your email with.
+   gmail
+
+   Today, it’s a completely different story.
+
+   Today, nearly all email addresses are services that you choose to use.
+   While the players have largely changed – all except for Microsoft, who
+   still offers email via Outlook.com – most users choose to use web based
+   email services provided by one of the larger consumer SaaS providers
+   like Google, Microsoft, (and yes, even) Yahoo! (still…).
+
+   So, as I said, I recently had a very trusted, and good friend ask me
+   what the difference between Outlook.com and Gmail were; and more
+   importantly if one was better than the other. My answer, as always, was
+   qualified. It depends. aL0gJ9_Y
+
+   It depends… on your needs.
+
+   So, for this discussion, I’m going to leave the Office compatible
+   applications OUT of the conversation. Both offer Microsoft Office or
+   Office compatible app suites, including eMail, but they also offer
+
+   • Word Processing – Word Online vs. Google Docs
+   • Spreadsheets – Excel Online vs. Sheets
+   • Presentations – PowerPoint Online vs. Slides
+   • Online Storage – OneDrive vs. Google Backup and Sync
+
+   For the sake of our discussion, we’re going to call these pretty much
+   even; though, Google’s online storage offering does offer full computer
+   backup, where OneDrive does not.
+
+   We’re going to instead concentrate on the email offering, which,
+   believe it or not, is also, pretty much even. However, there are a few
+   differences, and I want to touch on those so that you can pick out the
+   service that is really the best for you.
+
+   Here are the nuts and bolts of the differences between Gmail and
+   Outlook.com
+   Feature Gmail Outlook.com
+   Cost Free Free
+   Accessibility Online or Offline; but offline isn’t easy Online or
+   offline
+   Tags & Folders Uses labels instead of folders Folders and Categories
+   SPAM Filtering Comprehensive Rudimentary
+   Attachment Size 25MB 10MB
+
+
+   There are perhaps one or two more differences of note; and depending on
+   your situation, they may make a difference to you.
+
+   The biggest one is that will likely may any difference to anyone is
+   that Outlook.com supports Exchange and Gmail does not. This won’t make
+   any difference to you unless you intend to use Microsoft Outlook as an
+   email client. Exchange allows you to take full advantage of all of
+   Outlook’s features.
+
+   For example, while Gmail supports calendaring, Exchange’s calendar
+   features are an industry standard. In fact, most of the features in
+   Outlook are an industry standard. The thing about Outlook.com is that
+   if you really want to use it, you’re best email client is going to be
+   Outlook. If you’re not wanting to use Outlook, then you don’t have to.
+
+   Outlook.com will still work with a web browser, and work well; but if
+   you really want that to work well, you’re going to need to use Edge or
+   Internet Explorer. While Outlook.com works with any web browser, its
+   feature set is deprecated with anything else other than a Microsoft web
+   browser. Gmail works with Outlook, but it requires either POP3 or IMAP
+   configurations. Gmail also really wants to live in a browser, and more
+   than that… it really wants to live in Google Chrome.
+
+   So, at the end of the day, where does this really leave us? Honestly,
+   that’s pretty easy.
+
+   If you want to use Outlook, then you should choose Outlook.com or
+   Office 365 for your email needs. Outlook.com will default to Exchange
+   regardless of the email address it creates for you. If you want to use
+   it as either a POP3 or IMAP service, you can, of course, but you won’t
+   get the advantages of Exchange, in Microsoft Outlook if you go that
+   route.
+
+   If Exchange Services aren’t important to you, then , as I mentioned you
+   can still use Outlook.com as a POP3 or IMAP service provider, or you
+   can simply go with Gmail, which has some of the most reliable, easiest
+   to configure services available It just depends on what you want to do
+   and how you want to do it… It’s really up to you.
+
+   So what are the differences between Gmail and Outlook.com? Why do you
+   pick one over the other? To be honest, I’m going to tell you exactly
+   what I told my friend:
+
+   They’re effectively identical.
+
+   The only reason why you choose one over the other is going to depend on
+   what type of mobile devices you have (Google services plays best with
+   Android devices…); or whether or not you need or want Exchange.
+
+   If either of these are a toss up, then by all means, just pick one. To
+   be honest, most folks aren’t going to care and it won’t really matter…
+   It’s not your email needs that are going to drive you to pick one over
+   the other. It’s going to be another service – Exchange, Office Suite
+   compatibility, web browser needs/ choice, or full app client that are
+   going to push you to choose one over the other.
+
+   If none of that makes a difference to you, then by all means… flip a
+   coin.
+
+   However, I’d love to hear what you chose and why. Did you go Google or
+   Microsoft? Chrome or Outlook? Why don’t you meet me in the Discussion
+   area, below and tell me what direction you went and why. I’d love to
+   hear all about it.
+
+Related Posts:
+
+     * Smartphone 101 – Retrieving Voice Mail
+     * Smartphone 101 – Making a Phone Call
+     * Smartphone 101 – Prerequisite 2: Setting up a Sync Relationship
+       with Windows Phone
+     * Smartphone 101 – Prerequisite #1: Setting up Your Address Book
+     * Get your Gmail data in your Outlook installation with Outlook4Gmail
+
+   Tweet
+    comments
+
+Unboxing the Unihertz Jelly Pro
+
+   By Chris Spera on November 24, 2017
+
+   I never thought the Zoolander phone was real… until now.
+
+   IFRAME: https://www.youtube.com/embed/a6iuB5GU05c
+
+   The Unihertz Jelly Pro is here! Just off of successful campaigns on
+   both Kickstarter,and Indegogo, the Jelly Pro is intended to be a
+   supplemental device and not your daily driver. The device is tiny. It
+   fits in the coin pocket on your jeans. It fits into a small party
+   clutch.
+
+   It goes where you do when you can’t take your standard, five plus inch
+   smartphone, yet still provides all the power and functionality of your
+   regular Android phone, without taking up all the space and without the
+   risk of breakage (because you stuck it in a rear pocket or some other
+   place where its likely to get sat on…
+   Jelly
+   Full Specs are below.
+
+   • 4G/ LTE Smartphone (with support for VoLTE (voice over LTE))
+   • Quad Core CPU 1.1gHz
+   • 2GB RAM
+   • 16GB ROM
+   • 950mAh Battery – Reported 4-12 hours real use, depending on apps
+   installed
+   • 2.45 Inch (62.23mm) Display
+   • 8MP Rear Facing Camera
+   • 2MP Front Facing Camera
+   • Android 7.0 Nougat (out of the box)
+   • Connectivity Support:
+   o LTE
+   o WLAN
+   o Bluetooth
+   o GPS
+
+   Unihertz doesn’t have all of the details I’m looking for in their tech
+   specs, so I’m doing a bit more digging and investigating to see if I
+   can get information on connectivity support and when (read: IF) Unhertz
+   will be updating Jelly Pro to Android 8 Oreo.
+
+   The full review is still in the works!
+
+Related Posts:
+
+     * FEATURE REVIEW – Unihertz Jelly Pro
+     * Jelly – The World’s Smallest 4G/LTE Smartphone
+     * FEATURE REVIEW – HTC 10
+     * Smartphone 101 – Retrieving Voice Mail
+     * Smartphone 101 – Making a Phone Call
+
+   Tweet
+    comments
+
+Microsoft Introduces Surface Book 2
+
+   By Chris Spera on November 20, 2017
+
+   If you thought Surface was just a passing fancy, think again…
+
+   Surface-Book-2-696x429
+
+   I’ve always been a HUGE fan of Microsoft Signature PC’s. They are, in
+   my opinion, the best Windows experience that you can buy. They don’t
+   have any extra crap on them that would take away from or distract you
+   from your computing purpose. It’s one of the reasons why I really like
+   Microsoft Surface PC’s as well.
+
+   Over the past five or so years, I’ve had an original Surface Pro, a
+   Surface Pro 3 and a Surface Book. The combination of the devices
+   features – like the touch screens and pens – have made the Surface line
+   one that I find very valuable, especially in a corporate setting. The
+   Surface Pro and the Surface Book are both perfect for Microsoft OneNote
+   and for a number of different business applications, including custom
+   sales and invoicing apps as well as process and business flow.
+
+   Recently, Microsoft released an update to their Surface Book line, and
+   this update, is squarely aimed at not only the creative professional,
+   but the enterprise as well. The Surface Book 2 now comes in both its
+   original 13 inch size, but also a new, 15 inch version. The new size,
+   paired with Intel’s eight generation Core i processor and better
+   graphics hardware also enables Microsoft’s Mixed Reality Headsets.
+
+   Like its earlier iterations, the Surface Book 2 has put the bulk of its
+   processing power in the tablet. The keyboard houses both the extra
+   battery and the new Nvidia graphics cards. The 13″ version has an
+   optional Nvidia GeForce 1050 and the 15″ gets a GeForce 1060 by
+   default. Both are mainstream gaming graphics cards and a big step up
+   from what the Surface Book was previously equipped with.
+
+   The following are basic specs for both versions of the Surface Book 2.
+
+
+
+   Surface Book 2 – 13″ Surface Book 2 15″
+   Processor Intel 8th-gen Core i5 (dual-core) or i7 (quad-core) U-series
+   processors Intel 8th-gen Core i7 U-series processors
+   Display 13.5-inch 3,000×2,000-pixel display 15-inch 3,240×2,160-pixel
+   display
+   Graphics Nvidia GeForce GTX 1050 GPU
+
+   (Core i7 version only)
+   Nvidia GeForce GTX 1060 GPU
+   USB Ports 2x USB-A 3.1 ports
+
+   1x USB-C 3.1 port
+   2x USB-A 3.1 ports
+
+   1x USB-C 3.1 port
+   Card Reader SDXC card reader SDXC card reader
+   RAM 8GB or 16GB RAM 16GB RAM
+   Storage 256GB, 512GB or 1TB SSD storage 256GB, 512GB or 1TB SSD storage
+   Intel 8th-gen Core i5 (dual-core) or i7 (quad-core) U-series processors
+   Intel 8th-gen Core i7 U-series processors
+
+   When it comes to augmented reality, both of these convertibles are in
+   good shape to perform well. Both work well with Microsoft’s Pen and the
+   Fall Creators Update version of Windows 10. You can, for example,
+   create a file in Microsoft’s Paint 3D and then drop it into a real word
+   situation, capturing everything with the device’s 8MP, rear-facing
+   camera. The only problem that you’re going to have here, when trying to
+   hook into AR headsets is the lack of an HDMI port, though you shouldn’t
+   have any real concerns with performance of the box or its graphics
+   adapters. According to recent test results, both versions of the
+   Surface Book 2 can be taken seriously as gaming machines, which is
+   kinda cool.
+
+   Microsoft is also releasing a new mouse, called the Surface Precision
+   Mouse. It’s got a more traditional design than either the original
+   Surface Mouse or the Surface Arc Mouse. It also includes a set of
+   programmable left side buttons; and supports both wired USB and
+   wireless Bluetooth connectivity. As of this writing, pricing for these
+   devices has not been released, though you should expect them to fall
+   somewhere between $50 and $80 USD.
+
+   Microsoft is putting the Surface Book 2 directly against the new Apple
+   MacBook Pro. According to Microsoft, the Surface Book 2 is a much
+   better performer. There may be some truth to this, as the Apple MacBook
+   Pros are still using previous generation Core Intel processor. Pricing
+   for the new Microsoft Surface Book2 starts at $1499 USD for the 13 inch
+   version and $2499 for the 15″ version.
+
+   In my opinion, pricing for the Surface Book line has always been a bit
+   on the high side. As I previously stated, Microsoft is clearly
+   targeting the Surface Book 2 at Apple’s MacBook Pro. The problem that I
+   have with this pricing strategy is that the MacBook Pro is a clearly
+   well established, top performing machine with a long history of top
+   notch components and high price tags.
+
+   Microsoft doesn’t have any of these precedent, with any version of the
+   Surface Book. The device has had what I would consider to be a mediocre
+   performance history, especially with all of the issues that were first
+   encountered with the original Surface Book and its ROM problems.
+
+   This update is also mostly what I would call an evolutionary update
+   rather than any update of note. Surface Book with Performance Base,
+   released earlier this year, put a better graphics card in the keyboard
+   along with the extra battery. It also bumped the price up quite a bit.
+
+   The Surface Book 2 offers a new processor and a new graphics card; but
+   the fact that it also offers a new 15″ screen size takes this device to
+   a completely new level, in my opinion. It clearly brings the Surface
+   Book up into a better class of computing device, and may actually make
+   the larger price tag, a bit more reasonable. To be honest, we’re going
+   to have to wait and see on that one, though. The a5″ version is new.
+   It’s a completely different device than the 13″ version, with different
+   components and different drivers; and Microsoft has always had an issue
+   with drivers and components when it comes to Windows, regardless of
+   version. So this clearly falls in the wait and see category…
+
+   Is Surface Book 2 something that you’re interested in? Will it be a
+   convertible that you pursue or keep your eye on as a potential work
+   tool? I’d love to hear what you plan to do. Why don’t you give me your
+   thoughts in the Discussion area below?
+
+Related Posts:
+
+     * Is Surface Pro 3 Microsoft’s Last Chance
+     * Top Creator’s Update Issues and How to Fix Them
+     * Surface Book Supplies are Constrained – Part 1
+     * Why Don’t they just Upgrade, Already..?!?
+     * Surface Truisms – You Get What you Pay For
+
+   Tweet
+    comments
+   « Previous Page
+   Next Page »
+
+   Stay in touch with Soft32
+
+Soft32.com is a software free download website that provides:
+
+   121.218 programs and games that were downloaded 237.780.356 times by
+   402.775 members in our Soft32.com Community!
+
+   Get the latest software updates directly to your inbox
+   (submit) Subscribe
+   Soft32 on
+
+   Platforms
+     * Android
+     * iOS
+     * Mac
+     * Mobile
+     * Web
+     * Windows
+
+   Features
+     * Downloads of the day
+     * News
+     * Newsletter
+     * Picks of the week
+     * Reviews
+     * Special Deals & Promotions
+     * Tutorials & Tips
+
+   Categories
+     * Audio
+     * Design
+     * Games & Consoles
+     * Internet
+     * Operating Systems
+     * Photo
+     * Plugins
+     * Productivity
+     * Security
+     * Software
+     * Tech & Gadgets
+     * Utilities
+     * Video
+
+   Popular Posts
+     * Ammyy Admin – Take Control.
+     * Browse websites with UC Browser from your Android Device
+     * Chat with all of your Facebook friends with this handy Windows app
+     * Valve announces Counter-Strike: Global Offensive
+     * More than 100 million people use an Opera mobile browser
+
+   Tags
+   android Apple Apple Store apple watch audio backup bill gates browser
+   desktop dvd facebook free game games gaming google hdd iDevice internet
+   ios ipad iphone iPhone 5 itunes mac malware microsoft microsoft band
+   mobile music olio pc samsung security smartphone smartwatch surface pro
+   surface pro 3 tablet video windows windows 7 windows 8 Windows 10
+   windows 10 technical preview
+
+   Find us on Facebook
+
+   IFRAME:
+   //www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com
+   %2Fsoft32com&tabs=&width=296&height=255&small_header=false&adapt_contai
+   ner_width=true&hide_cover=false&show_facepile=true&show_border=false&he
+   ader=false
+
+     * Home
+     * Submit Software
+     * Support
+     * Contact Us
+     * Advertise with Us
+     * All Software
+     * Sitemap
+     * Jobs
+     * Blog
+     * Facebook
+     * Twitter
+     * RSS
+
+   Soft32
+
+   © 2003 - 2013 ITNT. All rights reserved.
+     * Privacy Policy
+     * Terms of Service
+     * Copyright
+     * EULA
+     * DMCA
+     * Uninstall
+
+   By operating system:
+
+   [ ] All OSes
+   [ ] Windows [ ] Mac [ ] Mobile
+
+   By licence:
+
+   [ ] All licences
+   [ ] Adware [ ] Commercial Demo [ ] Data Only [ ] Freeware [ ] Open
+   Source [ ] Purchase only [ ] Shareware
+
+   Last updated in:
+
+   (*) Anytime
+   ( ) Last week ( ) Last month ( ) Last 6 months ( ) Last year
+
+   JavaScript is required to properly view this page.
+   #publisher Soft32 Blog » Search Results for “{search_term_string}” Feed
+
+   Soft32
+     * Home
+     * Windows
+     * Mac
+     * Mobile
+     * Blog
+
+   ____________________ (BUTTON) Search
+     * Soft32
+     * Blog
+     * Search results for '{search_term_string}'
+
+No results found for '{search_term_string}'
+
+   Stay in touch with Soft32
+
+Soft32.com is a software free download website that provides:
+
+   121.218 programs and games that were downloaded 237.780.356 times by
+   402.775 members in our Soft32.com Community!
+
+   Get the latest software updates directly to your inbox
+   (submit) Subscribe
+   Soft32 on
+
+   Platforms
+     * Android
+     * iOS
+     * Mac
+     * Mobile
+     * Web
+     * Windows
+
+   Features
+     * Downloads of the day
+     * News
+     * Newsletter
+     * Picks of the week
+     * Reviews
+     * Special Deals & Promotions
+     * Tutorials & Tips
+
+   Categories
+     * Audio
+     * Design
+     * Games & Consoles
+     * Internet
+     * Operating Systems
+     * Photo
+     * Plugins
+     * Productivity
+     * Security
+     * Software
+     * Tech & Gadgets
+     * Utilities
+     * Video
+
+   Popular Posts
+     * Ammyy Admin – Take Control.
+     * Browse websites with UC Browser from your Android Device
+     * Chat with all of your Facebook friends with this handy Windows app
+     * Valve announces Counter-Strike: Global Offensive
+     * More than 100 million people use an Opera mobile browser
+
+   Tags
+   android Apple Apple Store apple watch audio backup bill gates browser
+   desktop dvd facebook free game games gaming google hdd iDevice internet
+   ios ipad iphone iPhone 5 itunes mac malware microsoft microsoft band
+   mobile music olio pc samsung security smartphone smartwatch surface pro
+   surface pro 3 tablet video windows windows 7 windows 8 Windows 10
+   windows 10 technical preview
+
+   Find us on Facebook
+
+   IFRAME:
+   //www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com
+   %2Fsoft32com&tabs=&width=296&height=255&small_header=false&adapt_contai
+   ner_width=true&hide_cover=false&show_facepile=true&show_border=false&he
+   ader=false
+
+     * Home
+     * Submit Software
+     * Support
+     * Contact Us
+     * Advertise with Us
+     * All Software
+     * Sitemap
+     * Jobs
+     * Blog
+     * Facebook
+     * Twitter
+     * RSS
+
+   Soft32
+
+   © 2003 - 2013 ITNT. All rights reserved.
+     * Privacy Policy
+     * Terms of Service
+     * Copyright
+     * EULA
+     * DMCA
+     * Uninstall
+
+   By operating system:
+
+   [ ] All OSes
+   [ ] Windows [ ] Mac [ ] Mobile
+
+   By licence:
+
+   [ ] All licences
+   [ ] Adware [ ] Commercial Demo [ ] Data Only [ ] Freeware [ ] Open
+   Source [ ] Purchase only [ ] Shareware
+
+   Last updated in:
+
+   (*) Anytime
+   ( ) Last week ( ) Last month ( ) Last 6 months ( ) Last year
+
+   JavaScript is required to properly view this page.
+   #publisher Soft32 Blog » Microsoft Releases Additional Patches Comments
+   Feed alternate alternate
+
+   Soft32
+     * Home
+     * Windows
+     * Mac
+     * Mobile
+     * Blog
+
+   ____________________ (BUTTON) Search
+     * Soft32
+     * Blog
+     * Platforms
+     * Windows
+     * Microsoft Releases Additional Patches
+
+Microsoft Releases Additional Patches
+
+   By Chris Spera on March 8, 2018
+
+   Meltdown and Spectre patches have been rereleased and they don’t crash
+   AMD machines any more!
+
+
+   During january’s Patch Tuesday, Microsoft released patches for both
+   Meltdown and Spectre. They worked, too.  Well, for Intel processors,
+   anyway.  AMD processors didn’t have as great an experience.  Some AMD
+   based computers ended up getting bricked.  Once the reports of this
+   reached Microsoft, they pulled the patches, cand cancelled Patch
+   Tuesday.
+
+   On 2018-01-17, Microsoft rereleased AMD based patches for Windows 10.
+   What makes this a bit confusing for many is that depending on the
+   version of Windows 10 you’re running, you obviously end up with a
+   different build for that version of Windows 10.  Microsoft released
+   build 14393.2034 for the Anniversary Update and build 15063.877 for the
+   Creators update. Microsoft also released build 16299.194 for the Fall
+   Creators Update.  This last build contained a fix for AMD devices.
+
+   There are a few issues that you need to be aware of in all of these
+   builds. Thankfully, Neowin kindly pulled the following information
+   together for everyone.
+   Symptom Workaround
+   Windows Update History reports that KB4054517 failed to install because
+   of Error 0x80070643. Even though the update was successfully installed,
+   Windows Update incorrectly reports that the update failed to install.
+   To verify the installation, select Check for Updates to confirm that
+   there are no additional updates available.
+
+   You can also type About your PC in the Search box on your taskbar to
+   confirm that your device is using the expected OS build.
+
+   Microsoft is working on a resolution and will provide an update in an
+   upcoming release.
+   When calling CoInitializeSecurity, the call will fail if passing
+   RPC_C_IMP_LEVEL_NONE under certain conditions.
+
+   When calling CoInitializeSecurity, the call may fail when passing
+   RPC_C_AUTHN_LEVEL_NONE as the authentication level. The error returned
+   on failure is STATUS_BAD_IMPERSONATION_LEVEL.
+   Change the authentication level parameter to RPC_C_AUTHN_LEVEL_CALL.
+
+   Microsoft is working on a resolution and will provide an update in an
+   upcoming release.
+   Due to compatibility issues with some versions of antivirus software,
+   this update causes stop errors or abrupt reboots. Contact your
+   antivirus (AV) vendor and follow their guidance.
+
+
+   Microsoft further released additional patches for Windows 10 Version
+   1511, Build 10586.1358.  This update further has AMD based fixes in
+   it.  There are also known issues with it, and again, thanks to Neowin,
+   we have the following details
+   Symptom Workaround
+   When calling CoInitializeSecurity, the call will fail if passing
+   RPC_C_IMP_LEVEL_NONE under certain conditions.
+
+   When calling CoInitializeSecurity, the call may fail when passing
+   RPC_C_AUTHN_LEVEL_NONE as the authentication level. The error returned
+   on failure is STATUS_BAD_IMPERSONATION_LEVEL.
+   Change the authentication level parameter to RPC_C_AUTHN_LEVEL_CALL.
+
+   Microsoft is working on a resolution and will provide an update in an
+   upcoming release.
+   Due to an issue with some versions of antivirus software, this fix only
+   applies to the machines where the antivirus ISV has updated the ALLOW
+   REGKEY. Contact your antivirus AV to confirm that
+
+   their software is compatible and have set
+
+   the following REGKEY on the machine
+
+   Key=”HKEY_LOCAL_MACHINE” Subkey=”SOFTWARE\Microsoft\
+
+   Windows\CurrentVersion\QualityCompat”
+
+   Value Name=”cadca5fe-87d3-4b96-b7fb-a231484277cc”
+
+   Type=”REG_DWORD”
+
+   Data=”0x00000000”
+
+
+Related Posts:
+
+     * Check for Windows 10 Updates
+     * Microsoft Introduces Surface Book 2
+     * Immediately Speed Up Windows 10
+     * How to Fix Windows 10 Memory Leaks
+     * Top Privacy Settings for Windows 10
+
+   Tweet
+    comments
+   [INS: :INS]
+
+   Stay in touch with Soft32
+
+Soft32.com is a software free download website that provides:
+
+   121.218 programs and games that were downloaded 237.780.356 times by
+   402.775 members in our Soft32.com Community!
+
+   Get the latest software updates directly to your inbox
+   (submit) Subscribe
+   Soft32 on
+
+   Platforms
+     * Android
+     * iOS
+     * Mac
+     * Mobile
+     * Web
+     * Windows
+
+   Features
+     * Downloads of the day
+     * News
+     * Newsletter
+     * Picks of the week
+     * Reviews
+     * Special Deals & Promotions
+     * Tutorials & Tips
+
+   Categories
+     * Audio
+     * Design
+     * Games & Consoles
+     * Internet
+     * Operating Systems
+     * Photo
+     * Plugins
+     * Productivity
+     * Security
+     * Software
+     * Tech & Gadgets
+     * Utilities
+     * Video
+
+   Popular Posts
+     * Ammyy Admin – Take Control.
+     * Browse websites with UC Browser from your Android Device
+     * Chat with all of your Facebook friends with this handy Windows app
+     * Valve announces Counter-Strike: Global Offensive
+     * More than 100 million people use an Opera mobile browser
+
+   Tags
+   android Apple Apple Store apple watch audio backup bill gates browser
+   desktop dvd facebook free game games gaming google hdd iDevice internet
+   ios ipad iphone iPhone 5 itunes mac malware microsoft microsoft band
+   mobile music olio pc samsung security smartphone smartwatch surface pro
+   surface pro 3 tablet video windows windows 7 windows 8 Windows 10
+   windows 10 technical preview
+     * Home
+     * Submit Software
+     * Support
+     * Contact Us
+     * Advertise with Us
+     * All Software
+     * Sitemap
+     * Jobs
+     * Blog
+     * Facebook
+     * Twitter
+     * RSS
+
+   Soft32
+
+   © 2003 - 2013 ITNT. All rights reserved.
+     * Privacy Policy
+     * Terms of Service
+     * Copyright
+     * EULA
+     * DMCA
+     * Uninstall
+
+   By operating system:
+
+   [ ] All OSes
+   [ ] Windows [ ] Mac [ ] Mobile
+
+   By licence:
+
+   [ ] All licences
+   [ ] Adware [ ] Commercial Demo [ ] Data Only [ ] Freeware [ ] Open
+   Source [ ] Purchase only [ ] Shareware
+
+   Last updated in:
+
+   (*) Anytime
+   ( ) Last week ( ) Last month ( ) Last 6 months ( ) Last year
+
+   JavaScript is required to properly view this page.

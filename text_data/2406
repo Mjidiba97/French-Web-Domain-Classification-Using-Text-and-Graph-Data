@@ -1,0 +1,207 @@
+   Mon magasin :
+     * Voir la fiche du magasin
+     *
+     * Changer de magasin
+
+   Mon magasin
+   ____________________ (BUTTON)
+   (= value =) Voir plus
+     * [javascript]
+       À partir de (= item.price.valueWithoutTax |
+       rbsFormatPrice:item.price.currencyCode =) HT
+       À partir de (= item.price.valueWithTax |
+       rbsFormatPrice:item.price.currencyCode =)
+
+   Français
+     * English
+     * Français
+
+   Mon compte : se connecter Bonjour (= accessorName =)
+     * (= accessorName =)
+     * (= accessorName =)
+     *
+     *
+     *
+     * Se déconnecter
+
+     * Connectez-vous
+     * Créez votre compte client
+
+   Mon panier ...
+     * Panier en cours de chargement...
+
+   Mon panier vide
+     * Votre panier est vide.
+
+   Mon panier (= cartData.lines.length =)
+
+(= cartData.lines.length =) article articles
+
+     *
+
+(=:: line.product.common.title || line.designation =)
+
+        (=:: axeInfo.name =)
+                (=:: axeInfo.value =)
+
+        Quantité
+                (=:: line.quantity =)
+
+       (=:: line.amountWithTaxes |
+       rbsFormatPrice:cartData.common.currencyCode =) (=::
+       line.amountWithoutTaxes |
+       rbsFormatPrice:cartData.common.currencyCode =) HT
+       *Prix magasin
+       (BUTTON) Supprimer
+
+   Et un autre article... (= cartData.lines.length - 3 =) autres
+   articles...
+     * Sous-total : (= cartData.amounts.linesAmountWithTaxes |
+       rbsFormatPrice:cartData.common.currencyCode =) (=
+       cartData.amounts.linesAmountWithoutTaxes |
+       rbsFormatPrice:cartData.common.currencyCode =) HT
+
+   Panier en cours de paiement
+   Voir mon panier
+
+   (BUTTON) Toggle navigation Menu principal
+     * La Marque
+          + Qui sommes-nous ?
+          + Notre engagement
+          + Le lab
+          + Nos matières
+     * NOUVELLE COLLECTION
+          + Automne Hiver 2019
+          + Lookbook Automne Hiver 2019
+          + NOUVEAUTÉS
+          + Robes
+          + Tops & Chemises
+          + Pantalons & Jeans
+          + Jupes
+          + Pulls & gilets
+          + Vestes & Manteaux
+          + Tee-shirts
+          + Accessoires
+          + Vernis NAILMATICS
+     * SELECTIONS
+          + GET DOWN TO WORK
+          + L’ÉTÉ INDIEN
+          + DENIM - It's now !
+          + VELOURS
+          + CERTIFIÉ GOTS
+          + POLYESTER RECYCLÉ
+     * OUTLET
+          + Toute la collection OUTLET
+          + Robes
+          + Pulls & Gilets
+          + Pantalons & Jeans
+          + Tee-shirts
+          + Vestes & Manteaux
+          + Tops & Chemises
+          + Jupes
+          + Accessoires
+     * DEVENEZ REVENDEUR
+     * PRESSE
+
+     * item.visual.alt
+     * item.visual.alt
+     * item.visual.alt
+     * item.visual.alt
+
+EKYOG, MARQUE PIONNIERE DE LA MODE ECORESPONSABLE DEPUIS 2003
+
+Livraison offerte à partir de 80€  -  Retours gratuits
+
+   VESTE ANTONIA GRENATPULL AIMANE OFF WHITEPANTALON ANTONI NOIR
+   [8698f90e9f7fe77502cbbc6eec6b95f525ba90e9_habillage_home_lamarqueah19.j
+   pg]
+
+EKYOG
+
+   EKYOG est née en 2003, de la volonté de créer une marque de mode
+   respectueuse de la Nature et des Hommes. Depuis plus de 10 ans, ce qui
+   nous anime chaque jour, c’est d’offrir à nos clientes des collections à
+   supplément d’âme alliant mode et éthique.
+   La marque
+   [f9fdf73278a7c7df6592e1184d2d6188b797cff3_habillage_home_storelocatorah
+   19.jpg]
+
+NOS BOUTIQUES
+
+   24 boutiques réparties sur la France où nous vous accueillons pour vous
+   faire découvrir et essayer nos collections, toucher nos matières
+   incomparables et vivre une expérience shopping différente. A très
+   bientôt dans nos boutiques !
+   Store Locator
+
+   Chargement en cours...
+   Gérer mes abonnements
+
+Suivez-nous
+
+   ____________________
+   (BUTTON) Je m'inscris
+   [facebook.png] [instagram.png] [twitter.png] [pinterest.png]
+   FRAIS DE PORT OFFERTS
+   Dès 80€ d'achats (France)
+   LIVRAISON EXPRESS
+   via So Colissimo en 48h (France)
+   PAIEMENT 100% SÉCURISÉ
+   CB & Paypal
+   RETOURS ACCEPTÉS
+   Satisfait ou Remboursé
+
+Ekyog
+
+     * La Marque
+     * Livraison et retours
+     * E-réservation
+
+Collection
+
+     * Automne Hiver 2019
+     * Nouveautés
+     * Robes
+     * Tops & Chemises
+     * Tee-shirts
+     * Jupes
+     * Pantalons & Jeans
+     * Pulls & Gilets
+     * Vestes & Manteaux
+     * Accessoires
+
+Commander
+
+     * CGV
+     * CGU
+     * Nos boutiques
+     * Plan du site
+     * Mentions légales des offres commerciales
+
+Contact
+
+     * Inscription à notre Newsletter
+     * Service Client
+     * Contact Presse
+     * EKYOG dans les medias
+     * Demande de droit à l'oubli
+     * Recrutement
+
+   En poursuivant votre navigation sur ce site, vous acceptez
+   l'utilisation de cookies pour vous proposer des services et offres
+   adaptés à vos centres d’intérêts.
+
+   Pour plus d'information, veuillez lire notre politique d'utilisation
+   des cookies.
+   (BUTTON) ×
+
+   (BUTTON) × Fermer
+
+Paramétrage des cookies et traceurs
+
+   Vous vous êtes opposé au dépôt de cookies de mesures d'audience dans
+   votre navigateur.
+
+   Vous avez autorisé le dépôt de cookies de mesures d'audience dans votre
+   navigateur.
+   (BUTTON) Fermer

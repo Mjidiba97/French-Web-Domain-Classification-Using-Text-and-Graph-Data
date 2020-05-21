@@ -1,0 +1,562 @@
+RIDL and Fallout: MDS attacks
+
+   Attacks on the newly-disclosed "MDS" hardware vulnerabilities in Intel
+   CPUs
+   [mds.svg]
+
+   The RIDL and Fallout speculative execution attacks allow attackers to
+   leak private data across arbitrary security boundaries on a victim
+   system, for instance compromising data held in the cloud or leaking
+   your data to malicious websites. Our attacks leak data by exploiting
+   the 4 newly disclosed Microarchitectural Data Sampling (or MDS)
+   side-channel vulnerabilities in Intel CPUs. Unlike existing attacks,
+   our attacks can leak arbitrary in-flight data from CPU-internal buffers
+   (Line Fill Buffers, Load Ports, Store Buffers), including data never
+   stored in CPU caches. We show that existing defenses against
+   speculative execution attacks are inadequate, and in some cases
+   actually make things worse. Attackers can use our attacks to leak
+   sensitive data despite mitigations, due to vulnerabilities deep inside
+   Intel CPUs.
+     __________________________________________________________________
+
+RIDL
+
+   RIDL (Rogue In-Flight Data Load) shows attackers can exploit MDS
+   vulnerabilities to mount practical attacks and leak sensitive data in
+   real-world settings. By analyzing the impact on the CPU pipeline, we
+   developed a variety of practical exploits leaking in-flight data from
+   different internal CPU buffers (such as Line-Fill Buffers and Load
+   Ports), used by the CPU while loading or storing data from memory.
+
+   We show that attackers who can run unprivileged code on machines with
+   recent Intel CPUs - whether using shared cloud computing resources, or
+   using JavaScript on a malicious website or advertisement - can steal
+   data from other programs running on the same machine, across any
+   security boundary: other applications, the operating system kernel,
+   other VMs (e.g., in the cloud), or even secure (SGX) enclaves.
+
+   We presented our paper titled RIDL: Rogue In-Flight Data Load on these
+   attacks at the 40th IEEE Symposium on Security and Privacy, on May 20th
+   2019.
+   VUSec logo             CISPA logo
+
+    Read the RIDL paper  View RIDL slides  Cite
+
+Cite RIDL
+
+   (BUTTON) ×
+@inproceedings{ridl,
+  title = {{RIDL}: Rogue In-flight Data Load},
+  booktitle = {S\&{P}},
+  author = {van Schaik, Stephan and Milburn, Alyssa and Österlund, Sebastian and
+ Frigo, Pietro and Maisuradze, Giorgi and Razavi, Kaveh and Bos, Herbert and Giu
+ffrida, Cristiano},
+  month = may,
+  year = {2019},
+}
+
+
+Fallout
+
+   Fallout demonstrates that attackers can leak data from Store Buffers,
+   which are used every time a CPU pipeline needs to store any data.
+   Making things worse, an unprivileged attacker can then later pick which
+   data they leak from the CPU's Store Buffer.
+
+   We show that Fallout can be used to break Kernel Address Space Layout
+   Randomization (KASLR), as well as to leak sensitive data written to
+   memory by the operating system kernel.
+
+   Ironically, the recent hardware countermeasures introduced by Intel in
+   recent Coffee Lake Refresh i9 CPUs to prevent Meltdown make them more
+   vulnerable to Fallout, compared to older generation hardware.
+
+   We will present our paper titled Fallout: Leaking Data on
+   Meltdown-resistant CPUs at the 26th ACM Conference on Computer and
+   Communications Security, on November 2019.
+
+   University of Michigan logo
+   The University of Adelaide logo
+   Data61 logo WPI logo Gratz logo KU Lueven logo
+
+    Read the Fallout paper  Cite
+
+Cite Fallout
+
+   (BUTTON) ×
+@inproceedings{canella2019fallout,
+  title={Fallout: Leaking Data on Meltdown-resistant CPUs},
+  author={Canella, Claudio and Genkin, Daniel and Giner, Lukas and Gruss, Daniel
+ and Lipp, Moritz and Minkin, Marina and Moghimi, Daniel and Piessens, Frank and
+ Schwarz, Michael and Sunar, Berk and Van Bulck, Jo, and Yarom, Yuval},
+  booktitle={Proceedings of the ACM SIGSAC Conference on Computer and Communicat
+ions Security ({CCS})},
+  year={2019},
+  organization={ACM}
+}
+     __________________________________________________________________
+
+People
+
+   RIDL attacks were independently discovered and reported by:
+     * Stephan van Schaik, Alyssa Milburn, Sebastian Österlund, Pietro
+       Frigo, Kaveh Razavi, Herbert Bos, and Cristiano Giuffrida at VUSec.
+     * Giorgi Maisuradze at CISPA.
+
+   Fallout attacks were independently discovered and reported by:
+     * Claudio Canella at Graz University of Technology, Daniel Genkin at
+       University of Michigan, Lukas Giner at Graz University of
+       Technology, Daniel Gruss at Graz University of Technology, Moritz
+       Lipp at Graz University of Technology, Marina Minkin at University
+       of Michigan, Daniel Moghimi at Worcester Polytechnic Institute,
+       Frank Piessens at KU Leuven, Michael Schwarz at Graz University of
+       Technology, Berk Sunar at Worcester Polytechnic Institute, Jo Van
+       Bulck at KU Leuven, and Yuval Yarom at University of Adelaide and
+       Data61.
+     __________________________________________________________________
+
+   MDS-class vulnerabilities were also reported by (in alphabetical
+   order):
+     * Dan Horea Lutas' team at BitDefender.
+     * Daniel Gruss, Michael Schwarz, Moritz Lipp at TU Graz and Jo Van
+       Bulck (imec-DistriNet, KU Leuven)
+       You can find more details about their research at
+       ZombieLoadattack.com Analysis done in collaboration with Ahmad
+       "Daniel" Moghimi (Worcester Polytechnic Institute), Julian
+       Stecklina, Thomas Prescher (Cyberus Technology)
+     * Lei Shi at QiHoo 360.
+     * Ke Sun, Henrique Kawakami, Kekai Hu, Rodrigo Branco at Intel.
+     * Matt Miller, Brandon Falk at Microsoft.
+     * Volodymyr Pikhur .
+     __________________________________________________________________
+
+Overview
+
+   Our attacks can leak confidential data across arbitrary security
+   boundaries in real-world settings (cloud, browsers, etc.). The reason
+   our attacks are impervious to all the existing defenses against
+   speculative execution attacks is that they can leak in-flight data.
+   Unlike other recent attacks such as Spectre, Meltdown, and Foreshadow
+   which are based on vulnerabilities leaking data from the CPU caches,
+   RIDL and Fallout collect data from internal CPU buffers (Line Fill
+   Buffers, Load Ports, Store Buffers). Intel describes the exploited
+   vulnerabilities as "Microarchitectural Data Sampling" (MDS) - where
+   "sampling" is another way of saying that we can leak in-flight (or
+   "sampled") data from many of these microarchitectural buffers. A total
+   of 4 (MDS) CVEs were assigned by Intel for RIDL ([MFBDS]
+   CVE-2018-12130, [MLPDS] CVE-2018-12127, [MDSUM] CVE-2019-11091) and
+   Fallout ([MSBDS] CVE-2018-12126) exploits.
+
+   Most importantly, our research shows that what last year appeared to be
+   exceptional one-time speculative execution bugs are actually systemic,
+   and the problems in modern CPUs may go much deeper than we initially
+   thought. If CPUs have become so complex that chip vendors cannot keep
+   their security under control, hardware vulnerabilities will be the new
+   hunting ground for sophisticated attackers. And we may have no idea how
+   many zero-day hardware vulnerabilities are still up for grabs. If we
+   can no longer trust our hardware, the foundation on which we build all
+   security solutions is crumbling away.
+     __________________________________________________________________
+
+Exploit demos
+
+   Check out three RIDL exploits in action, leaking the root password hash
+   from an unprivileged user, sensitive data from the Linux OS kernel, and
+   JavaScript.
+
+   IFRAME: https://www.youtube.com/embed/JXPebaGY8RA
+
+   IFRAME: https://www.youtube.com/embed/UV9GDcOWeeI
+
+   In this video, we leak the /etc/shadow file by repeatedly trying to
+   authenticate an user. The animation is sped up for the latter part of
+   the video, the total process takes about 24 hours at the moment.
+   In this video, we show how to leak recent kernel data using RIDL. This
+   demo first reads 0 bytes from /proc/version, whereafter we are able to
+   leak the full contents of /proc/version without the data ever present
+   in userspace.
+
+   IFRAME: https://www.youtube.com/embed/KAgoDQmod1Y
+
+   We leak a string from another process using Javascript and WebAssembly
+   in the SpiderMonkey engine.
+     __________________________________________________________________
+
+Interactive guide to speculative execution attacks
+
+   image/svg+xml >
+
+   Click on the various components to interact with them. The full
+   interactive version can be found here and the raw SVG can be found
+   here. There is also a more vibrant colored version (the one used in our
+   paper), which can be found here. These diagrams have been made by
+   Stephan van Schaik ( @themadstephan).
+     __________________________________________________________________
+
+MDS Tool from RIDL Team
+
+   Verify whether your system is vulnerable today with our MDS tool.
+   Intel patents
+   Windows
+   Linux
+   Mac OS X
+   Github
+     __________________________________________________________________
+
+FAQ
+
+(BUTTON) Am I affected?
+
+   Very likely. Our attacks affect all modern Intel CPUs in servers,
+   desktops and laptops. This includes the latest 9th-generation
+   processors, despite their in-silicon mitigations for Meltdown.
+   Ironically, 9th-generation CPUs are more vulnerable to some of our
+   attacks compared to older generation hardware.
+
+   Processors from other vendors (AMD and ARM) do not appear to be
+   affected. Official statements from these vendors can be found in the
+   RIDL and Fallout papers.
+
+(BUTTON) What's with all the different attack names, teams, and authors?
+
+   Multiple teams and researchers independently discovered, studied, and
+   reported MDS-class vulnerabilities and attacks to Intel. Unfortunately,
+   the different timelines (see below), as well as the fine-grained
+   vulnerability classification and embargo strategy enforced by Intel
+   (which coordinated the disclosure process) made proper coordination
+   across teams difficult. The year-long disclosure process (the longest
+   to date) ultimately resulted in independent finders of even closely
+   related MDS-class vulnerabilities to be completely unaware of one
+   another until very late in the process.
+
+   At the same time, VUSec would like to thank Intel for sharing the full
+   list of finders in advance -- which was crucial to give proper credit
+   to everyone involved in the disclosure of MDS vulnerabilities in
+   academia and industry -- and for allowing it to share information with
+   all the other academic finders as of May 1. We made an effort to
+   coordinate the different academic finders and present a unified message
+   to the community and the public.
+
+   Unfortunately, as some teams felt unable to share their findings before
+   the May 14 disclosure date, this effort was only partially successful,
+   resulting in the present website (mdsattacks.com) presenting only the
+   two independent RIDL and Fallout papers. See the timeline below for
+   more information.
+
+(BUTTON) Can MDS attacks be detected or blocked by anti-virus software?
+
+   MDS attacks exploit hardware security flaws deep inside the processor
+   and this makes malware that exploit MDS vulnerabilities very hard to
+   distinguish from benign software. While anti-virus software could
+   theoretically detect MDS exploits, it is very unlikely to happen in
+   practice.
+
+(BUTTON) How do I mitigate these vulnerabilities?
+
+   Intel has provided CPU microcode updates, and recommendations for
+   mitigation strategies for operating system (and hypervisor) software.
+   See Intel's Security Advisory for more details. We recommend you
+   install the software updates provided by your operating system and/or
+   hypervisor vendor.
+
+   In addition, we recommend disabling Simultaneous Multi-Threading (SMT),
+   also known as Intel® Hyper-Threading Technology, which significantly
+   reduces the impact of MDS-based attacks without the cost of more
+   complex mitigations. Note that you might still be vulnerable despite
+   disabling SMT, as MDS does not strictly rely on the presence of SMT.
+
+(BUTTON) What are virtual machines and SGX enclaves?
+
+   A Virtual Machine (VM for short) is a software emulation of the
+   computer's physical hardware. VMs are often used by clouds to allow
+   customers to rent time on the cloud's physical hardware, rather than
+   maintaining their own infrastructure. As clouds often run multiple VMs
+   from different clients on the same physical hardware, it is important
+   that cloud vendors maintain isolation between VM (security) boundaries.
+
+   To guarantee even stronger isolation (e.g., with protection against a
+   compromised operating system), cloud providers can also run software
+   inside secure (SGX) enclaves.
+
+(BUTTON) So how do MDS attacks affect VMs and SGX enclaves?
+
+   As shown in the RIDL paper, an attacker can exploit hardware security
+   vulnerabilities inside the processor to break VM and SGX boundaries.
+   However, countermeasures deployed by cloud providers resulting from our
+   work should make MDS hard to exploit.
+
+(BUTTON) What is an operating system kernel?
+
+   The kernel is the operating system core, and as such is responsible for
+   most operations performed by the operating system. In particular, the
+   kernel has access to all the data stored in the machine's memory, and
+   to the secrets in it. As such, it is vital to properly isolate the
+   kernel from other applications running on the machine.
+
+(BUTTON) So how do MDS attacks affect the kernel?
+
+   Both the RIDL and Fallout attacks violate the kernel privacy by
+   extracting information from within it. Moreover, both attacks can
+   expose the kernel's location in the system's memory, simplifying other
+   exploits.
+
+(BUTTON) How is this different from previous speculative execution attacks
+such as Spectre and Meltdown?
+
+   RIDL and Fallout are related to, and inspired by, previous speculative
+   execution attacks, including Spectre and Meltdown. In contrast to
+   previous attacks, MDS attacks do not need to make assumptions about the
+   memory layout of the victim data and do not depend on the processor
+   cache.
+
+   This makes our attacks very difficult to mitigate. For instance, RIDL's
+   ability to observe data used by other code running on the same physical
+   core (hyperthread) is not trivial to mitigate without disabling the
+   hyperthreading functionality entirely. However, note that both RIDL and
+   Fallout can read recently accessed data across security boundaries even
+   if hyperthreading is disabled.
+
+   A detailed analysis of the many existing speculative execution
+   vulnerabilities, their relationship to each other and to RIDL and
+   Fallout, can be found in the RIDL and Fallout papers.
+
+(BUTTON) What is the practical impact of these vulnerabilities?
+
+   We don't know whether malicious actors have abused these
+   vulnerabilities in the wild. However, RIDL and Fallout show the
+   potential impact is serious with several proof-of-concept exploits. For
+   example, an attacker could launch an attack using malicious JavaScript
+   in a web page or from a co-located Virtual Machine in the cloud (see
+   our exploits and demos), allowing them to leak confidential data
+   present on your system such as passwords and crypto keys.
+
+(BUTTON) Fine. But don't attackers need local execution first?
+
+   Yes, similar to existing attacks, attackers can only mount our attacks
+   in practical settings once they have the ability to execute
+   (unprivileged) code on the victim machine. We could convince ourselves
+   this is still an obstacle, but we should first be prepared to disable
+   JavaScript (and similar) in the browser, abandon cloud computing, etc.
+
+(BUTTON) What exactly are these in-flight buffers and how do you leak data
+from them?
+
+   Detailed information about these in-flight buffers can be found in the
+   papers above.
+
+   As a quick preview, the first diagram below shows the relevant parts of
+   Intel's CPU pipeline and the relationship to the Line Fill Buffers,
+   Load Ports, and Store Buffers used by our attacks. All data
+   read/written from/to memory goes through some of these buffers.
+
+   The second diagram shows an example of how we leak data from these
+   buffers. We perform a carefully crafted speculative load to an address
+   the CPU is not immediately prepared to handle (e.g., resulting in a
+   page fault). This lures the CPU into incorrectly pulling in-flight data
+   from the target buffers, and then similarly to other speculative
+   execution attacks, we leak this data using a Flush+Reload attack before
+   the CPU realizes the mistake.
+   Intel CPU pipeline Attack overview
+
+(BUTTON) Why did you call it RIDL?
+
+   While performing some experiments on a rainy Amsterdam day, we realized
+   we were able to leak data across security boundaries. We knew we could
+   leak arbitrary in-flight (the "I" in RIDL) data but the cause was
+   initially a big riddle to us. We came to know we were leaking from
+   various CPU buffers only later...
+
+   It is also a reference to Intel's formal name for Meltdown: RCDL
+   (related to RIDL, but instead leaking "C"ached data).
+
+   Internally, we referred to RIDL (and MDS in general) as the `cat
+   pictures' vulnerability. :)
+
+(BUTTON) Why did you call it Fallout?
+
+   We started working on Fallout immediately after Meltdown, and Fallouts
+   are typically a direct consequence of Meltdowns.
+
+(BUTTON) What are the CVE identifiers for these vulnerablities?
+
+   The following is the fine-grained vulnerability classification adopted
+   by Intel, together with their CVSS score (their rating of the severity
+   of the bug):
+
+   CVE-2018-12126: "Microarchitectural Store Buffer Data Sampling (MSBDS)"
+   (CVSS score 6.5: Medium). See the Fallout paper for more information.
+
+   CVE-2018-12127: "Microarchitectural Load Port Data Sampling (MLPDS)"
+   (CVSS score 6.5: Medium). See the RIDL paper for more information.
+
+   CVE-2018-12130: "Microarchitectural Fill Buffer Data Sampling (MFBDS)"
+   (CVSS score 6.5: Medium). See the RIDL paper for more information.
+
+   CVE-2019-11091: "Microarchitectural Data Sampling Uncacheable Memory
+   (MDSUM)" (CVSS score 3.8: Low). See the RIDL paper for more
+   information.
+
+(BUTTON) Did we really need yet another vulnerability logo?
+
+   Not really. And some of the researchers do share your same feelings.
+
+   VUSec in particular doesn't really like vulnerability logos. But we do
+   like beer. So here is a MDS-branded one just in case (and yes, VUSec
+   students like to troll their supervisors, who take a hard stance
+   against vulnerability logos...):
+
+   MDS beer
+
+(BUTTON) Can I use the logo?
+
+   Yes, with rights waived via CC0. Logos are designed by Marina Minkin.
+   Click here for the logo in SVG format and here for the logo in PNG
+   format.
+
+(BUTTON) How did you test it on all this hardware?
+
+   MDS rack
+
+(BUTTON) How did you find out the sources of the leaks initially?
+
+   Intel patents
+
+(BUTTON) Can I see a presentation of the work anywhere?
+
+     * Kaveh Razavi will do the first public presentation of RIDL at the
+       1st AMSEC Workshop: Security in Diversity on May 15th at 14:15.
+       Registration is free!
+     * We presented our paper on RIDL at the 40th IEEE Symposium on
+       Security and Privacy, on May 20th 2019 (Session #1: Hardware
+       Security). Here is a video of the talk:
+
+       IFRAME: https://www.youtube.com/embed/1Y0h4JyK3fs
+
+     * We will present a poster at the Cybersecurity and Privacy (CySeP)
+       Summer School in Stockholm on June 13th.
+     * We also presented an extended talk on RIDL at OFFZONE in Moscow on
+       June 17-18th 2019.
+
+       IFRAME: https://www.youtube.com/embed/baXY8NezHE0
+
+(BUTTON) How can we contact you?
+
+   Questions about RIDL and MDS vulnerabilities in general can be sent to
+   [email protected].
+     __________________________________________________________________
+
+Media attention
+
+   The attacks presented on this page got quite the media attention. RIDL
+   and Fallout were covered amongst others by Ars Technica, WIRED, De
+   Volkskrant, NRC Next, Tweakers, RTL nieuws, AVRO Tros, The Verge, ZDNet
+     __________________________________________________________________
+
+Known Timeline
+
+   Based on the information shared with us by Intel and other finders.
+   2018
+   28
+   MAR
+     * TU Graz reports Meltdown UC to Intel
+     * TU Graz reports Meltdown UC - Meltdown leaks from Uncacheable
+       Memory - (identified as MDSUM) to Intel.
+
+   JUN
+     * Microsoft reports to Intel
+     * Microsoft independently reports a new issue (identified as MFBDS)
+       to Intel on behalf of Giorgi Maisuradze (interning at MSR).
+
+   17
+   AUG
+     * Bitdefender reports to Intel
+     * Dan Horea Lutas' team at Bitdefender independently reports a L1TF
+       mitigation bypass (identified as MFBDS) to Intel.
+
+   25
+   AUG
+     * Volodymyr Pikhur reports to Intel
+     * Volodymyr Pikhur independently reports a L1TF mitigation bypass
+       (identified as MDSUM) to Intel.
+
+   12
+   SEP
+     * VUSec reports RIDL to Intel
+     * The RIDL authors from VU Amsterdam (VUSec) independently report the
+       RIDL class of vulnerabilities (identified as MFBDS, and later also
+       acknowledged as MLPDS and MDSUM) to Intel. Upon request, Intel
+       communicates none of the existing (MFBDS) finders are interested in
+       collaborating on a research paper with VUSec.
+
+   01
+   NOV
+     * RIDL submitted @ IEEE S&P '19
+     * The RIDL paper is submitted for publication to the IEEE Symposium
+       on Security & Privacy, 2019.
+
+   29
+   NOV
+     * Giorgi Maisuradze joins RIDL team
+     * Giorgi Maisuradze and VUSec merge research efforts into the RIDL
+       paper, after discussing common findings for the first time.
+
+   30
+   DEC
+     * RIDL accepted @ IEEE S&P '19
+     * The RIDL paper is accepted for publication at the IEEE Symposium on
+       Security & Privacy, 2019.
+
+   2019
+   31
+   JAN
+     * Minkin, Genkin, and Yarom report to Intel
+     * Minkin, Genkin, and Yarom report Fallout vulnerabilities
+       (identified as MSBDS) to Intel.
+       The finders would also like to acknowledge all the other authors on
+       the Fallout paper.
+
+   19
+   FEB
+     * VUSec and Volodymyr Pikhur share information
+     * VUSec and Volodymyr discuss their findings for the first time.
+
+   21
+   FEB
+     * VUSec and Dan Horea Lutas share information
+     * VUSec and Dan discuss their findings for the first time.
+
+   12
+   APR
+     * TU Graz reports ZombieLoad to Intel
+     * TU Graz reports ZombieLoad (identified as MFBDS) to Intel.
+
+   1
+   MAY
+     * VUSec allowed to share by Intel
+     * VUSec allowed to share findings with all academic finders by Intel.
+       VUSec starts sharing information and making plans with the other
+       teams, in an attempt to converge to a common website with a unified
+       message and acknowledgements for all the finders. Unfortunately, as
+       some teams felt unable to share their findings before the
+       disclosure date, this effort was only partially successful,
+       resulting in the present website (mdsattacks.com) presenting only
+       the two independent RIDL and Fallout papers. See also FAQ#2.
+
+   7
+   MAY
+     * VUSec, Genkin, and Yarom share information
+     * VUSec, Genkin, and Yarom discuss their findings for the first time.
+       VUSec shares the RIDL paper with Genkin and Yarom.
+
+   13
+   MAY
+     * VUSec, Genkin, and Yarom share information
+     * The Fallout paper is shared with VUSec.
+
+   14
+   MAY
+     * Public disclosure of MDS attacks
+     * The embargo is over after nearly a year and RIDL, Fallout,
+       ZombieLoad, and MDS are now publicly disclosed.
+
+   © 2019 Vrije Universiteit Amsterdam.

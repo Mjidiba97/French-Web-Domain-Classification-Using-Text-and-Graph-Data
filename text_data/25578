@@ -1,0 +1,312 @@
+   #alternate
+
+DK'BUS Marine
+
+Navigation rapide
+
+   Retour à la page d'accueil de DK'BUS Marine
+
+Le réseau de transport en commun de la communauté urbaine de Dunkerque
+
+Se déplacer
+
+     *
+          + Mes Horaires
+          + Calculateur d'itinéraire
+          + Lignes départementales arc-en-ciel
+          + Retrouvez toutes les infos pratiques sur les horaires des bus
+            2019/2020
+          + Service de soirée Noctibus
+          + Transport à la demande
+          + Navette gratuite de Malo Plage
+     *
+          + Me déplacer en vélo
+               o Plan des stations vélo
+               o Disponibilité en temps réel
+               o Louer un vélo
+               o Les tarifs
+               o Conditions générales de ventes et d'utilisation
+               o Sécurité à vélo
+               o Emprunter ou restituer un vélo
+               o PARK A VELOS
+
+Cartes et plans
+
+     *
+     * Plans des lignes pdf
+     * Plan Global du réseau
+     *
+
+Bien voyager
+
+     *
+     * Infos trafic
+     * Actualités
+     * Accessibilité
+     * Engagements Qualité - Sécurité - Environnement DK'BUS
+     * FAQ
+     * Politique de cookies
+     *
+
+     * Aide et accessibilité
+     * Nous contacter
+
+Rechercher
+
+   Recherche par mots clés
+
+   ____________________ ok
+
+Mon Espace
+
+   Espace membre : identification
+
+   email ____________________
+   Compte DK'Vélo
+   Mot de passe ____________________ Ok
+   [ ] Se souvenir de moi
+
+   Mot de passe oublié S'inscrire
+
+                                 [line2.png]
+
+A la une
+
+   Retrouvez toutes les infos pratiques sur les horaires des bus pour
+   2019/2020
+
+Comment nous contacter ?
+
+   Précédent
+     * 1
+     * 1
+     * 1
+
+   Lecture
+   Pause
+   Suivant
+   Mon itineraire
+   [it.png]
+   Mes horaires
+   [ho.png]
+
+                     [ios.png] [google.png] [apple.png]
+
+Facebook
+
+   [LogoCUD.png]
+
+   Mentions légales | Contact |Plan du site | Flux RSS | FAQ |
+   TransInfo^TM v6.0.0
+   // roll-over d'une image function swapImg(imgName, imgFile) {
+   document.images[imgName].src = imgFile; } // ouverture d'une fenêtre
+   version "accessible" function OpenWindowByTarget(target, url, width,
+   height, top, left) { var wdw; var options =
+   "menubar=yes,toolbar=yes,resizable=yes,scrollbars=yes"; wdw =
+   window.open(url, target,
+   "top="+top+",left="+left+",width="+width+",height="+height+","+options)
+   ; wdw.focus(); return false; } // impression de la page courante
+   function pagePrint() { window.print(); } function trim(myString) {
+   return myString.replace(/^\s+/g,'').replace(/\s+$/g,'') } function
+   checkDatePrecedence(sEarly, sLate) { var aryEarly = sEarly.split('/');
+   if(3 != aryEarly.length) return false; var aryLate = sLate.split('/');
+   if(3 != aryLate.length) return false; sEarlyDate = new
+   Date(aryEarly[2], aryEarly[1]-1, aryEarly[0]); sLateDate = new
+   Date(aryLate[2], aryLate[1]-1, aryLate[0]); return (sEarlyDate <=
+   sLateDate); } // Ajoute une classe sur un champ function
+   addClassOnElement(element, className){ if(element) { element.className
+   = element.className + " " + className; } } // Enlève une classe sur un
+   champ function removeClassOnElement(element, className){ if(element) {
+   // Suppression de toutes les occurences de l'ancienne classe
+   element.className = element.className.replace(new RegExp(className, "g"
+   ),""); } } function HideBloc(id) { var div =
+   document.getElementById(id); addClassOnElement(div,"hide"); var imgOn =
+   document.getElementById(id + "On");
+   removeClassOnElement(imgOn,"hidden"); var imgOff =
+   document.getElementById(id + "Off");
+   addClassOnElement(imgOff,"hidden"); setLinkJS(id, "ShowBloc"); }
+   function ShowBloc(id) { var div = document.getElementById(id);
+   removeClassOnElement(div,"hide"); var imgOn =
+   document.getElementById(id + "On"); addClassOnElement(imgOn,"hidden");
+   var imgOff = document.getElementById(id + "Off");
+   removeClassOnElement(imgOff,"hidden"); setLinkJS (id, "HideBloc"); }
+   function addButtonOnOff (element, showElement) { if (!showElement)
+   setLinkJS (element, "ShowBloc"); else setLinkJS (element, "HideBloc");
+   // Création de la DIV mainDiv = document.createElement("div"); div =
+   document.createElement("div"); div.setAttribute("class","btOnOff");
+   div.setAttribute("id","div" + element); // Création du lien du bouton
+   OFF" linkOff = document.createElement("a");
+   linkOff.setAttribute("href","javascript:HideBloc('" + element + "');");
+   linkOff.setAttribute("title","Masquer"); linkOff.setAttribute("id",
+   element + "Off"); if (!showElement)
+   linkOff.setAttribute("class","hidden"); // Création de l'image du
+   bouton imgOff = document.createElement("img");
+   imgOff.setAttribute("src","/img/default/moins.png");
+   imgOff.setAttribute("alt","Masquer");
+   imgOff.setAttribute("height","14"); linkOff.appendChild(imgOff);
+   div.appendChild(linkOff); // Création du lien du bouton ON linkOn =
+   document.createElement("a");
+   linkOn.setAttribute("href","javascript:ShowBloc('" + element + "');");
+   linkOn.setAttribute("title","Afficher");
+   linkOn.setAttribute("id",element + "On"); if (showElement)
+   linkOn.setAttribute("class","hidden"); // Création de l'image du bouton
+   imgOn = document.createElement("img");
+   imgOn.setAttribute("src","/img/default/plus.png");
+   imgOn.setAttribute("alt","Afficher");
+   imgOn.setAttribute("height","14"); linkOn.appendChild(imgOn);
+   div.appendChild(linkOn); if (!showElement) var elem =
+   document.getElementById(element); addClassOnElement(elem,"hide");
+   mainDiv.appendChild(div); document.write(mainDiv.innerHTML); var div =
+   document.getElementById(element); addClassOnElement(div,"rool"); } //
+   Change la fonction javascript du lien sur le titre // element : Element
+   qui contient le H2/A à modifier // functionName : nom de la fonction JS
+   à placer dans le lien function setLinkJS(nameElem, functionName) { var
+   div; var link; var linkFound = false; var element =
+   document.getElementById(nameElem); if( element != null) { for(inc1=0;
+   element.getElementsByTagName("DIV").length > inc1; inc1++) { div =
+   element.getElementsByTagName("div")[inc1]; if (div.className ==
+   'titre') { div.setAttribute("onclick","javascript:" + functionName +
+   "('" + nameElem + "');"); } } } } function
+   addButtonAddThis(parentelementid) { var element =
+   document.getElementById(parentelementid); if( element != null) { link =
+   document.createElement("a");
+   link.setAttribute("class","addthis_button_compact"); script =
+   document.createElement("script");
+   script.setAttribute("type","text/javascript");
+   script.setAttribute("src","https://s7.addthis.com/js/250/addthis_widget
+   .js"); element.appendChild(script); element.appendChild(link); } }
+
+
+   var requiredVersion = 7; // Version the user needs to view site (max 9,
+   min 2) // System globals var flash2Installed = false; // boolean. true
+   if flash 2 is installed var flash3Installed = false; // boolean. true
+   if flash 3 is installed var flash4Installed = false; // boolean. true
+   if flash 4 is installed var flash5Installed = false; // boolean. true
+   if flash 5 is installed var flash6Installed = false; // boolean. true
+   if flash 6 is installed var flash7Installed = false; // boolean. true
+   if flash 7 is installed var flash8Installed = false; // boolean. true
+   if flash 8 is installed var flash9Installed = false; // boolean. true
+   if flash 9 is installed var maxVersion = 9; // highest version we can
+   actually detect var actualVersion = 0; // version the user really has
+   var hasRightVersion = false; // boolean. true if it's safe to embed the
+   flash movie in the page // Write vbscript detection on ie win. IE on
+   Windows doesn't support regular // JavaScript plugins array detection.
+   if(navigator.appVersion.indexOf("MSIE") != -1 &&
+   navigator.appVersion.toLowerCase().indexOf("win") != -1){
+   document.write(' \n'); document.write('on error resume next \n');
+   document.write('flash2Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.2"))) \n');
+   document.write('flash3Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.3"))) \n');
+   document.write('flash4Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.4"))) \n');
+   document.write('flash5Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.5"))) \n');
+   document.write('flash6Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.6"))) \n');
+   document.write('flash7Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.7"))) \n');
+   document.write('flash8Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.8"))) \n');
+   document.write('flash9Installed =
+   (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.9"))) \n');
+   document.write('<\/SCR' + 'IPT\> \n'); // break up end tag so it
+   doesn't end our script } function detectFlash() { // If
+   navigator.plugins exists... if (navigator.plugins) { // ...then check
+   for flash 2 or flash 3+. if (navigator.plugins["Shockwave Flash 2.0"]
+   || navigator.plugins["Shockwave Flash"]) { // Some version of Flash was
+   found. Time to figure out which. // Set convenient references to flash
+   2 and the plugin description. var isVersion2 =
+   navigator.plugins["Shockwave Flash 2.0"] ? " 2.0" : ""; var
+   flashDescription = navigator.plugins["Shockwave Flash" +
+   isVersion2].description; // DEBUGGING: uncomment next line to see the
+   actual description. // alert("Flash plugin description: " +
+   flashDescription); // A flash plugin-description looks like this:
+   Shockwave Flash 4.0 r5 // We can get the major version by grabbing the
+   character before the period // note that we don't bother with minor
+   version detection. // Do that in your movie with $version or
+   getVersion(). var flashVersion =
+   parseInt(flashDescription.substring(16)); // We found the version, now
+   set appropriate version flags. Make sure // to use >= on the highest
+   version so we don't prevent future version // users from entering the
+   site. flash2Installed = flashVersion == 2; flash3Installed =
+   flashVersion == 3; flash4Installed = flashVersion == 4; flash5Installed
+   = flashVersion == 5; flash6Installed = flashVersion == 6;
+   flash7Installed = flashVersion == 7; flash8Installed = flashVersion ==
+   8; flash9Installed = flashVersion >= 9; } } // Loop through all
+   versions we're checking, and // set actualVersion to highest detected
+   version. for (var i = 2; i <= maxVersion; i++) { if (eval("flash" + i +
+   "Installed") == true) actualVersion = i; } // If we're on msntv
+   (formerly webtv), the version supported is 4 (as of // January 1,
+   2004). Note that we don't bother sniffing varieties // of msntv. You
+   could if you were sadistic... if(navigator.userAgent.indexOf("WebTV")
+   != -1) actualVersion = 4; // DEBUGGING: uncomment next line to display
+   flash version // alert("version detected: " + actualVersion); // We're
+   finished getting the version on all browsers that support detection. //
+   If the user has a new enough version... hasRightVersion =
+   (actualVersion >= requiredVersion) }
+   /**********************************************************************
+   **************** * Modification JR - 26/11/2010 * Permet d'insérer une
+   animation flash avec une ou plusieurs images alternatives (chacune
+   pouvant avoir un alt et un longdesc) * Paramètres IN : src : source du
+   fichier flash * alternateImgs : liste des url des images alternatives
+   (séparées par des |) * alternativeTexts : liste des alt de chaque image
+   (séparés par des |) * longdescUrls : liste des url de longdesc de
+   chaque image (séparées par des |) * width : largeur du flash et des
+   images alternatives * height : hauteur du flash et des images
+   alternatives * href : lien s'appliquant sur les images alternatives *
+   title : titre du lien s'appliquant sur les images alternatives * target
+   : cible du lien s'appliquant sur les images alternatives
+   ***********************************************************************
+   ***************/ function insertFlash(src, alternateImgs,
+   alternativeTexts, longdescUrls, width, height, href, title, target) {
+   var html = ''; if (hasRightVersion) { html = '' + '' + '' + '' // + ''
+   + '' + ''; } else { if(alternativeTexts != '') { // Création de l'array
+   contenant les textes alternatifs arrAlternativeText =
+   alternativeTexts.split(/\|/); } if(longdescUrls != '') { //
+   Remplacement des \ par des / longdescUrls = longdescUrls.replace(/\\/g,
+   '\/'); // Création de l'array contenant les url de longdesc
+   arrLongdescUrls = longdescUrls.split(/\|/); } if(alternateImgs != '') {
+   // Remplacement des \ par des / alternateImgs =
+   alternateImgs.replace(/\\/g, '\/'); // Création de l'array contenant
+   les images alternatives arrAlternateImg = alternateImgs.split(/\|/);
+   for(i=0; i'; if (href) { if (!target) target = '_self'; html += '' +
+   htmlimg + ''; } else { html += htmlimg; } } } } } // DEBUGGING:
+   uncomment next line to display inserted html // alert(html);
+   document.write(html); } detectFlash(); // call our detector now that
+   it's safely loaded.
+   var UID = "DKBUS"; var LANG_ID = "1"; var LANG_CODE= "FR"; var
+   SITE_PATH = ""; var XGOAT_IMG = "/img/xGoat/"; var CARTO_IMG =
+   "/cartoV3/img/default/"; var LAT_CENTER= 51.037373; var
+   LON_CENTER=2.376566; var ZOOM_LEVEL=15; var ZOOM_LEVEL_MIN=0; var
+   ZOOM_LEVEL_MAX=0; var ZOOM_CLICK_ROAD=15; var ZOOM_SHOW_LOCALITY=11;
+   var ZOOM_SHOW_POI=15; var ZOOM_SHOW_STOP=15; var ZOOM_CENTER_POINT=16;
+   var DISTANCE_AROUND= "300"; var DISPLAY_PLACES_RI ="1"; var
+   DISPLAY_STOPS_RI ="1"; var MOBILE_MODE ="0"; var SITE_URL =
+   "https://www.dkbus.com"; var DISPLAY_LINE_PLAN = "1"; var
+   DISPLAY_VIA_RI = "0"; var TYPE_LP = "1"; var TYPE_PTA = "2"; var
+   TYPE_RUE = "3"; var TYPE_LOGICAL = "4"; var TYPE_IDGEO = "7"; var
+   TYPE_LOCALITY = "6"; var DATE_DEPART = "68"; var DATE_ARRIVEE = "65";
+   var SHOW_DETAILS_FIRST = "False"; var LINK_RI_WITHOUT_DISRUPT = "True";
+   var JOURNEYPLANNER_WS_URL =
+   "/WebServices/TransinfoService/api/journeyplanner/v2/"; var
+   COVOITURAGE_WS_URL =
+   "/WebServices/TransinfoService/api/covoiturage/v1/"; var MAP_WS_URL =
+   "/webservices/TransinfoService/api/MAP/v2/"; var TRANSPORT_WS_URL =
+   "/webservices/TransinfoService/api/Transport/v2/"; var XSL_ROUTE_FILE =
+   "http://www.dkbus.comhttps://www.dkbus.com/_lib/TransinfoService/_xsl/c
+   ustom/DetailedRouteJS.xsl"; var XML_ROUTE_FILES =
+   "http://www.dkbus.comhttps://www.dkbus.com/_lib/TransinfoService/_txt/C
+   oVPSolutions.xml$http://www.dkbus.comhttps://www.dkbus.com/_lib/Transin
+   foService/_txt/DetailedRoute.xml$http://www.dkbus.comhttps://www.dkbus.
+   com/_lib/TransinfoService/_txt/xGoat.xml$http://www.dkbus.comhttps://ww
+   w.dkbus.com/_lib/TransinfoService/_txt/accessibility.xml"; var
+   XSL_COVPSYNTHESE_FILE =
+   "http://www.dkbus.comhttps://www.dkbus.com/_lib/TransinfoService/_xsl/C
+   oVPSolutionsJS.xsl"; var DEFAULT_SIZE_FDR = 650; var
+   SHOW_FIRST_SOLUTION = "False"; var ACTIVE_DRAGGABLE = "True"; var
+   RUB_RI = "4"; var RUB_CARTE_INTERACTIVE = "145"; var RUB_HORAIRE_LIGNE
+   = "6"; var RUB_HORAIRE_ARRET = "28"; var RUB_PLAN = "5"; var
+   RUB_LIAISON = "22"; var RUB_HORAIRES_SCOLAIRES = "147"; var
+   STATUS_CODE_OK = 200; ACTIVE_SCROLL_WHELL=true; var MODE_DEBUG =
+   "True"; var HIDE_PARTNERS = "$$";

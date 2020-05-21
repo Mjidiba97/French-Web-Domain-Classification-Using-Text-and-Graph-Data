@@ -1,0 +1,500 @@
+     * << Back to Adrien's
+     * Requirements
+     * Download
+     * Getting started
+     * Input file format
+     * Output file format
+     * Usage
+     * Reference
+     * Minimalign
+
+Anymalign
+
+   Anymalign is a multilingual sub-sentential aligner. It can extract
+   lexical equivalences from sentence-aligned parallel corpora. Its main
+   advantage over other similar tools is that it can align any number of
+   languages simultaneously.
+
+Characteristics:
+
+     * Truly multilingual: any number of languages can be aligned
+       simultaneously.
+     * Fast? Quality of results is not a matter of time, however coverage
+       is. The longer Anymalign runs, the more results. The program can be
+       stopped at any time.
+     * Easy to use: a single command should suffice for most purposes.
+       Still from a command line!
+     * Easy to parallelize: just run the very same command on several
+       machines! Their results can be merged with a single command.
+     * Easy to integrate: simple one-file input and output formats. There
+       is no intermediary step.
+     * Portable: written in the Python programming language, available for
+       most systems.
+     * Open source: released under the terms of the GPL.
+
+   As an example of actual output, here are the first "few" alignments one
+   can obtain from the JRC-ACQUIS Multilingual Parallel Corpus corpus
+   (22 languages) in a few seconds:
+     * Plain text output format (TSV, tab separated value, can be read in
+       any text editor or spreadsheet);
+     * the same file converted in HTML;
+     * the same file converted in TMX (XML).
+
+   Here, discontinuous sequences and long n-grams were filtered out.
+
+   Examples with the Bible parallel corpus are also available.
+     __________________________________________________________________
+
+Requirements
+
+     * Python version 2.4 or higher (< 3.0);    Python powered
+     * a parallel corpus for input. You can find some in the OPUS open
+       source parallel corpus for example. Languages which do not separate
+       words by blanks have to be segmented in words. The input corpus
+       does not need to fit into memory (anymore);
+     * (optional) for 32 bits architectures. the script will run faster if
+       the Psyco library is installed as well;
+     * (optional) you can run the script simultaneously on several
+       machines to reduce computing time (e.g. 10 times faster with 10
+       machines).
+
+Linux/Unix Mac OS X Windows
+
+   This tool was developed on a GNU/Linux box. It is known to work fine
+   also on Mac OS X and Windows, although it was not as heavily tested on
+   the latter.
+
+   ^ ^
+     __________________________________________________________________
+
+Download
+
+     * Latest version is 2.5 (May 4th 2011)
+     * Older versions
+     * Readme
+
+   Please acknowledge its use by a citation:
+
+     Adrien Lardilleux and Yves Lepage. Sampling-based multilingual
+     alignment. International Conference on Recent Advances in Natural
+     Language Processing (RANLP 2009), Borovets, Bulgaria, September
+     2009.
+     (BibTeX)
+
+   The directory in the zip archive contains three files:
+    1. anymalign.py: a single Python script to take care of everything;
+    2. README.txt: link to this web page + change log;
+    3. license.txt: the license.
+
+   This software is released under the terms of the GNU General Public
+   License.    GPL
+
+   All forms of contribution are highly appreciated. Please send
+   suggestions, questions, remarks, bugs, insults, beers, to the author.
+
+   ^ ^
+     __________________________________________________________________
+
+Getting started
+
+   The file anymalign.py has no dependency, so you can just extract it
+   from the above archive and start using it.
+
+Under Windows
+
+   Make sure the Python executable is in your %PATH% environment variable
+   (instructions for this can be found on this page, up to section
+   "Finding the Python executable"). You should then be able to execute
+   the script with the command:
+$ python anymalign.py -h
+
+   assuming the script is in the current directory (this command just
+   displays help; "$" is the prompt).
+
+Under Unix
+
+   The Python executable should be in your $PATH environment variable
+   already, so the same as above should work just fine:
+$ python anymalign.py -h
+
+   assuming the script is in the current directory (this command just
+   displays help; "$" is the prompt). If you don't want to bother with the
+   python call, you can copy the script to some convenient location in
+   your $PATH, like $HOME/bin/, and make the script executable:
+$ chmod +x anymalign.py
+
+   You should then be able to call the script just by typing its name:
+$ anymalign.py -h
+
+   ^ ^
+     __________________________________________________________________
+
+Input file format
+
+   anymalign.py can read input data in separate files, where each file may
+   contain one or more languages. Typically, multilingual texts are
+   available in separate files, one file per language, one sentence per
+   line, the corresponding lines being translations (all files have the
+   same number of lines). For instance, you may have a tiny trilingual
+   corpus in English, French, and German, where each file is made of 2
+   lines:
+$ head en.txt fr.txt de.txt
+==> en.txt <==
+I need a beer .
+This beer is good .
+
+==> fr.txt <==
+Il me faut une bière .
+C'est une bonne bière .
+
+==> de.txt <==
+Ich muss ein Bier trinken .
+Dieses Bier ist gut .
+
+   You can also provide multilingual input files. In this case, each line
+   is a tab-separated list of aligned sentence, as one would obtain with
+   the paste Unix command:
+$ paste en.txt fr.txt de.txt > en_fr_de.txt
+$ cat en_fr_de.txt
+I need a beer . <tab> Il me faut une bière . <tab> Ich muss ein Bier trinken .
+This beer is good . <tab> C'est une bonne bière . <tab> Dieses Bier ist gut .
+
+   You can basically do whatever you want when specifying input files. The
+   following invocations of anymalign.py are all equivalent:
+$ python anymalign.py en.txt fr.txt de.txt
+$ python anymalign.py en_fr_de.txt
+$ cat en_fr_de.txt | python anymalign.py
+$ cat fr.txt | python anymalign.py en.txt - de.txt
+$ cat en.txt | python anymalign.py - fr_de.txt
+
+   The first command should suffice for most purposes though. All
+   positional arguments given after the call to anymalign.py are assumed
+   to be (possibly multilingual) input files. They must all have the same
+   number of lines. If no file is given, standard input is read. Standard
+   input can be explicitly specified with a dash (-).
+
+   anymalign.py refers to languages according to their column index,
+   starting from 1. In the previous examples, English is language 1,
+   French is language 2, and German is language 3.
+
+   ^ ^
+     __________________________________________________________________
+
+Output file format
+
+   anymalign.py writes all output to standard output. Output files have
+   basically the same format as the all-languages-in-one input file: each
+   line corresponds to a sub-sentential alignment, and tabulations delimit
+   languages. Thus, language n in the input file corresponds to language n
+   in the output file.
+
+   Three additional fields are appended (as if they were pasted along), so
+   if you have 3 input languages, the resulting output file will be made
+   of 6 fields (5 tabulations/line).
+
+   Alignments are automatically sorted according to the last column. Here
+   is a small sample English-French-German output file (numbers in actual
+   files contain 6 decimals):
+   (NOTE: this sample output was not obtained from the above input files
+   example, but from larger ones. 2-sentences long input files are not
+   sufficient to produce decent results; the purpose of the above ones is
+   just to illustrate the input format. Please use larger input files.)
+?    <tab> ?     <tab> ?    <tab> 0.99 0.99 0.98 <tab> 0.98 0.99 0.99 <tab> 1759
+beer <tab> bière <tab> Bier <tab> 0.98 0.91 0.86 <tab> 0.95 0.74 0.69 <tab> 132
+the  <tab> la    <tab> der  <tab> 0.23 0.41 0.25 <tab> 0.31 0.42 0.23 <tab> 18
+the  <tab> le    <tab> das  <tab> 0.35 0.36 0.29 <tab> 0.31 0.23 0.25 <tab> 14
+
+   The meaning of the three additional fields is as follows:
+    1. if requested (see -w option), the first additional field contains a
+       space-separated list of lexical weights. There are as many weights
+       as there are languages. The n^th weight reflects the probability
+       that all words in the n^th part of the alignment (in language n)
+       have a good translation within the rest of the alignment, at the
+       word level.
+       If the -w option was not specified, this field only contains a
+       single dash (-);
+    2. the second additional field contains a space-separated list of
+       translation probabilities. There are as many probabilities as there
+       are languages. The n^th probability is the probability that the
+       n^th part of the alignment (in language n) translates to the rest
+       of the alignment. For bilingual input data, this is just the pair
+       p(target|source) p(source|target) where source is language 1 and
+       target is language 2. For three languages, E, F, and G, it is the
+       triplet p(F,G|E) p(E,G|F) p(E,F|G), and so on;
+    3. the third additional field contains a single integer (an absolute
+       frequency).
+
+   This plain text output format can be reused by anymalign.py. It can be
+   merged with another output file or translated to another output format.
+   Other available output formats are HTML, TMX, and Moses' phrase table
+   (in the latter case, the output file still needs to be sorted).
+
+   ^ ^
+     __________________________________________________________________
+
+Usage
+
+   Basically, all you have to do is to type one of the commands indicated
+   in the input file format section, the simplest being:
+$ python anymalign.py en.txt fr.txt de.txt > output.txt
+
+   for a 3 languages input parallel corpus, the output being redirected to
+   the file output.txt. Once this command is entered, the corpus is
+   loaded. Now just wait for the following message to be displayed:
+$ python anymalign.py en.txt fr.txt de.txt > output.txt
+[...]
+Aligning... (ctrl-c to interrupt)
+
+   At this stage, the program will run indefinitely until you hit Ctrl-C
+   on the keyboard. The longer the program runs, the more results
+   output.txt will contain. After you hit Ctrl-C, you will get an
+   additional message:
+$ python anymalign.py en.txt fr.txt de.txt > output.txt
+[...]
+Aligning... (ctrl-c to interrupt)
+[...] Alignment interrupted! Proceeding...
+
+   Just wait a little more, and you will get the prompt back.
+   That's it.
+
+How long do I have to wait?
+
+   I don't know. The longer, the more results. However, the longer, the
+   less new results. Hence, it is useless to keep the program running
+   beyond a certain amount of time, which depends on your input corpus.
+   Starting from version 2.5, Anymalign is verbose by default:
+$ python anymalign.py en.txt fr.txt de.txt > output.txt
+Input corpus: 3 languages, 351548 lines
+Aligning... (ctrl-c to interrupt)
+30516 alignments, 1795 al/s
+
+   The last line displayed is updated every second. It shows the total
+   number of alignments obtained so far (1 alignment will become 1 line in
+   the output file), as well as the number of new alignments obtained
+   during the last elapsed second. You will also be granted progress
+   information after hitting Ctrl-C.
+
+   If you want the program to stop automatically when the number of new
+   alignments per seconds is below a certain threshold, see the -a option.
+   If you want it to stop after a fixed amount of time, see the -t option.
+
+Caveat: using Ctrl-C
+
+     * If you do not hit Ctrl-C when you are invited to (i.e. when the
+       message is displayed), the program will simply stop without
+       outputting anything (displaying traceback et al.).
+     * For Unix pipeliners: keep in mind that the signal sent to the
+       program after hitting Ctrl-C is transmitted to all processes in the
+       pipeline. For instance, if you intend to compress anymalign.py's
+       output with gzip:
+$ python anymalign.py en.txt fr.txt de.txt | gzip > output.txt.gz
+Aligning... (ctrl-c to interrupt)
+       and hit Ctrl-C, you will not get any output because gzip receives
+       the signal as well. If you don't want this to happen, you can:
+          + simply run two commands instead of one:
+$ python anymalign.py en.txt fr.txt de.txt > output.txt
+Aligning... (ctrl-c to interrupt)
+Alignment interrupted! Proceeding...
+$ gzip output.txt
+
+          + use the -a and/or -t option, so that hitting Ctrl-C is not
+            required (the program stops by itself);
+          + or send the signal to the python interpreter only, through its
+            pid:
+# Assuming the program is already running from another terminal
+$ ps a
+# I cut off all output except this line
+27286 pts/0 R+ 0:19 /usr/bin/python /home/alardill/bin/anymalign.py en.txt fr.tx
+t de.txt
+$ kill -2 27286
+
+   ^ ^
+     __________________________________________________________________
+
+Reference
+
+   The following is a little more detailed explanation of what the program
+   displays when invoked with the traditional
+$ python anymalign.py -h
+
+Usage:
+
+python anymalign.py [INPUT_FILE[.gz|.bz2] [...]] >ALIGNMENT_FILE
+python anymalign.py -m [ALIGNMENT_FILES[.gz|.bz2] [...]] >ALIGNMENT_FILE
+
+   INPUT_FILE is a tab-separated list of aligned sentences (1/line):
+<sentenceNlanguage1> [<TAB> <sentenceNlanguage2> [...]]
+
+   All INPUT_FILE's must have the same number of lines. They can be
+   compressed with gzip or bzip2, as long as the filenames bear the
+   appropriate extension. If no INPUT_FILE is specified, standard input is
+   read. Standard input can be explicitely specified with a dash (-) (only
+   one is allowed).
+
+   A generated ALIGNMENT_FILE has the same format as INPUT_FILE (same
+   fields), plus three extra fields at the end of each line:
+    1. a space-separated list of lexical weights (1/language);
+    2. a space-separated list of translation probabilities (1/language);
+    3. an absolute frequency:
+
+<phraseNlanguage1> [...] <TAB> <lexWeights> <TAB> <probas> <TAB> <frequency>
+
+   When invoked with the -m switch, no alignment is performed. Instead,
+   all positional arguments specified on the command line are expected to
+   be alignment files, as described in the output file format section. The
+   result is a new alignment file containing the union of all alignments.
+   Absolute frequencies are just summed up, and translation probabilities
+   are updated accordingly. Lexical weights are left unchanged. Input does
+   not need to be sorted: ALIGNMENT_FILES is just the concatenation of
+   several ALIGNMENT_FILE's. If no file is given, standard input is read.
+   Standard input can be explicitely specified with a dash (-) (only one
+   is allowed).
+
+General options
+
+   --version
+          Show program's version number and exit.
+
+   -h, --help
+          Show help message and exit.
+
+   -m, --merge
+          Do not align. Input files are pre-generated alignment files
+          (plain text format) to be merged into a single alignment file.
+          This option is cool because it also makes it possible to switch
+          between the various output file formats (see -o option). For
+          instance, if you want to produce an HTML output (named, say,
+          align.html) from a plain text alignment file (say, align.txt) :
+
+$ python anymalign.py -m -o html align.txt > align.html
+
+          or for short :
+
+$ python anymalign.py -moh align.txt > align.html
+
+          In addition, translation probabilities are updated, which means
+          you can filter out some part of an alignment file and still keep
+          up-to-date probabilities. For example :
+
+grep "^the cat" align.txt | python anymalign.py -m > alignTheCat.txt
+
+          This filters your alignment file so that only lines starting
+          with "the cat" be kept, and recompute probabilities. This is a
+          stupid example, you will certainly have better uses.
+          Of course, you can process several alignments files
+          simultaneously. In any case, input files for the -m option have
+          to be in plain text format, so it is generally better to
+          systematically produce alignments in plain text (default), then
+          to produce a new formatted alignment file with the -m switch.
+
+   -T DIR, --temp-dir=DIR
+          (compatible with -m) Where to write temporary files. Default is
+          OS dependant.
+
+   -v, --verbose
+          (compatible with -m) Show progress information on standard
+          error.
+
+Options to alter alignment behaviour
+
+   -a NB_AL, --new-alignments=NB_AL
+          Stop alignment when number of new alignments per second is lower
+          than NB_AL. Specify -1 to run indefinitely. [default: -1]
+
+   -i INDEX_N, --index_ngrams=INDEX_N
+          Consider n-grams up to n=INDEX_N as tokens. Increasing this
+          value increases the number of long n-grams output, but slows the
+          program down and requires more memory. [default: 1]
+
+   -S NB_SENT, --max-sentences=NB_SENT
+          Maximum number of sentences (i.e. input lines) to be loaded in
+          memory at once. Specify 0 for all-in-memory. This is useful if
+          you have large amount of input data to be processed. [default:
+          0]
+
+   -t NB_SEC, --timeout=NB_SEC
+          Stop alignment after NB_SEC seconds elapsed. Specify -1 to run
+          indefinitely. [default: -1]
+
+   -w, --weight
+          Compute lexical weights (requires additional computation time
+          and memory). They will replace the dash in the third field of
+          output file. Lexical weights cannot be computed when the -m
+          switch is given.
+
+Filtering options
+
+   -D FIELDS, --discontiguous-fields=FIELDS
+          Allow discontiguous sequences (like "give up" in "give it up")
+          in languages at positions specified by FIELDS. FIELDS is a
+          comma-separated list of integers (1-based), runs of fields can
+          be specified by a dash (e.g. "1,3-5").
+
+   -l NB_LANG, --min-languages=NB_LANG
+          Keep only those alignments that contain words in at least
+          MIN_LANGUAGES languages (i.e. columns). Default is to cover all
+          languages.
+
+   -n MIN_N, --min-ngram=MIN_N
+          Filter out any alignment that contains an N-gram with N < MIN_N.
+          [default: 1]
+
+   -N MAX_N, --max-ngram=MAX_N
+          Filter out any alignment that contains an N-gram with N > MAX_N
+          (0 for no limit). [default: 0]
+
+Output formatting options
+
+   -d DELIM, --delimiter=DELIM
+          Delimiter for discontiguous sequences. This can be any string.
+          No delimiter is shown by default. Implies -D- (allow
+          discontinuities in all languages) if -D option is not specified.
+
+   -e ENCODING, --input-encoding=ENCODING
+          (compatible with -m) Input encoding. This is useful only for
+          HTML and TMX output formats (see -o option). [default: utf-8]
+
+   -L LANG, --languages=LANG
+          (compatible with -m) Input languages. LANG is a comma separated
+          list of language identifiers (e.g. "en,fr,ar"). This is useful
+          only for HTML (table headers) and TMX (<xml:lang>) output
+          formats (see -o option).
+
+   -o FORMAT, --output-format=FORMAT
+          (compatible with -m) Output format. Possible values are "plain",
+          "moses", "html", and "tmx". You can also specify the first
+          letter of the format, e.g. "python anymalign.py -o h input.txt"
+          for HTML output. [default: plain]
+
+   ^ ^
+     __________________________________________________________________
+
+Minimalign
+
+   Anymalign is quite big, but I want to keep it in a single file to make
+   it simpler to use. As a result, people who want to peek at the source
+   code may find it a bit difficult to read. Yet the first versions (back
+   to malign), which consisted only of the main algorithm, were roughly
+   100 lines of Python code. The additional 1500+ lines in Anymalign is
+   mainly computing stuff.
+
+   I therefore propose minimalign, a complete sub-sentential aligner in
+   100 lines of Python code. It just implements the main alignment
+   algorithm: no option, can only process 2 languages for simplicity,
+   all-in-memory (do not use it with huge corpora), cannot be stopped at
+   any time like Anymalign. But it is much easier to read.
+
+   Download:
+     * minimalign.py
+
+   Usage:
+$ python minimalign.py source.txt target.txt > alignmentFile.txt
+
+   The input corpus has the same format as the one used by Anymalign (see
+   input file format section), but it must be given in two separate files
+   (source.txt and target.txt in the example above).
+
+   Don't try to use it for real applications since the results may be very
+   limited. It is only provided for didactic purposes.
+
+   ^ ^

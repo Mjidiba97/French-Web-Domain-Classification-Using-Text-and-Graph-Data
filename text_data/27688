@@ -1,0 +1,4121 @@
+   #alternate alternate alternate alternate alternate GNUnet.org rss
+
+   GNUnet (BUTTON)
+
+     * About
+     * News
+     * Community
+          + Engage
+          + GSoC Projects
+          + GNUnet e.V.
+          + Copyright for Contributors
+     * Development
+          + System Architecture
+          + Bug Tracker
+          + Source Code
+          + Source Code Documentation
+          + Development Tutorial
+          + libgnurl
+     * Documentation
+          + Install
+          + Use
+          + Videos
+          + Glossary
+          + Handbook
+          + REST API
+          + FAQ
+          + Bibliography
+
+   Notice: GNUnet is still undergoing major development. It is largely not
+   yet ready for usage beyond developers
+
+                                   GNUnet
+
+   GNUnet is a new network protocol stack for building secure,
+   distributed, and privacy-preserving applications. With strong roots in
+   academic research, our goal is to replace the old insecure Internet
+   protocol stack.
+   GNUnet is typically run as an overlay network on top of the existing
+   Internet infrastructure forming the basis of a hybrid peer-to-peer mesh
+   and relay backbone for applications to run on. It could just as well be
+   run independently of the Internet, over dedicated radio and cable.
+   GNUnet is made for a free and open society: It's a self-organizing
+   network and it is free software as in freedom. GNUnet puts you in
+   control of your data. You determine which data to share with whom, and
+   you're not pressured to accept compromises.
+
+   About   Install   Engage
+
+The Internet of tomorrow needs GNUnet today
+
+Imagine...
+
+   The conventional Internet is currently like a system of roads with deep
+   potholes and highwaymen all over the place. Even if you still can use
+   the roads (e.g. send emails, or browse websites) your vehicle might get
+   hijacked, damaged, or long arms might reach into its back and steal
+   your items (data) to use it against you and sell it to others - while
+   you can't even notice the thievery nor accuse and hold the scroungers
+   accountable.
+
+The Internet is broken
+
+   Protocols from Ethernet and IP to BGP and X.509 PKI are insecure by
+   default: protecting against address forgery, routers learning metadata,
+   or choosing trustworthy CAs is nontrivial and sometimes impossible.
+
+   GNUnet provides privacy by design, improving addressing, routing,
+   naming and content distribution in a technically robust manner - as
+   opposed to ad-hoc designs in place today.
+
+Decentralization is hard
+
+   Instead of sharing common components and tools for building P2P
+   systems, every P2P project seems to re-invent the wheel. This heightens
+   the effort and increases the potential number of vulnerabilities.
+
+   GNUnet is a metadata-preserving foundation for your application,
+   covering areas from addressing to reliable bidirectional
+   Axolotl-encrypted channels, with advanced routing. Our work is based on
+   continuous research spanning almost two decades.
+
+Metadata is exposed
+
+   Your metadata is just as revealing as the actual content; and it gets
+   exposed on the Internet.
+   Even though transport encryption is increasingly being deployed on the
+   Internet, it still reveals data that can threaten democracy: the
+   identities of senders and receivers, the times, frequency and the
+   volume of communication are all still revealed.
+   GNUnet addresses these concerns with perfect forward secrecy via
+   ephemeral public key addressing, fixed packet size to hinder traffic
+   analysis, layered encryption, Sybil-resistant routing, and more.
+
+Freedoms are not respected
+
+   Today, monitoring increasingly centralized infrastructure, proprietary
+   implementations, traffic shapers and firewalls restrict all of the
+   essential freedoms to various degrees.
+
+   GNUnet gives users freedoms to securely access information ("run" the
+   network), to study all aspects of the network's operation ("access the
+   code"), to distribute information ("copy"), as well as the freedom to
+   deploy new applications ("modify").
+
+Learn more about GNUnet
+
+   If you want to know more about the GNUnet please continue reading the
+   about page. There are much more resources, such as the main handbook /
+   reference manual, a bibliography and videos.
+
+   You are very welcome to get engaged into the conversation, install
+   GNUnet, use it and contribute.
+   Be aware that this project is still in an early alpha stage when it
+   comes to software – its not an easy task to rewrite the whole Internet!
+
+Featured Applications
+
+GNU Taler (Alpha)
+
+   GNU Taler is a new privacy-preserving electronic payment system.
+   Payments are cryptographically secured and are confirmed within
+   milliseconds with extremely low transaction costs.
+
+The GNU Name System
+
+   The GNU Name System (GNS) is a fully decentralized replacement for the
+   Domain Name System (DNS). Instead of using a hierarchy, GNS uses a
+   directed graph. Naming conventions are similar to DNS, but queries and
+   replies are private even with respect to peers providing the answers.
+   The integrity of records and privacy of look-ups is cryptographically
+   secured.
+
+re:claimID
+
+   re:claimID is a decentralized Identity Provider (IdP) service built in
+   top of the GNU Name System. It allows users to securely share personal
+   information with websites using standardized protocols (OpenID
+   Connect).
+
+Filesharing (Alpha)
+
+   GNUnet filesharing is an application that aims to provide
+   censorship-resistant, anonymous filesharing. The publisher is empowered
+   to make a gradual choice between performance and anonymity.
+
+Conversation (Pre-Alpha)
+
+   GNUnet conversation is an application that provides secure voice
+   communication in a fully decentralized way by employing GNUnet for
+   routing and transport.
+
+Upcoming Applications
+
+secushare
+
+   secushare is creating a decentralized social networking application on
+   top of GNUnet. Using overlay multicast and the extensible PSYC
+   protocol, notifications are distributed end-to-end encrypted to
+   authorized recipients only.
+
+pretty Easy privacy
+
+   pretty Easy privacy (p≡p) is creating a usable end-to-end encrypted
+   e-mail solution using opportunistic key exchange. p≡p will use GNUnet
+   to protect metadata and exploit new cryptographic protocols to verify
+   keys.
+
+News
+
+2019-07-24: GNUnet 0.11.6 released
+
+   We are pleased to announce the release of GNUnet 0.11.6.
+
+   This is a bugfix release for 0.11.5, fixing a lot of minor bugs,
+   improving stability and code quality. Further, our videos are back on
+   the homepage. In this release, we again improved the webpage in general
+   and updated our documentation. As always: In terms of usability, users
+   should be aware that there are still a large number of known open
+   issues in particular with respect to ease of use, but also some
+   critical privacy issues especially for mobile users. Also, the nascent
+   network is tiny (about 200 peers) and thus unlikely to provide good
+   anonymity or extensive amounts of interesting information. As a result,
+   the 0.11.6 release is still only suitable for early adopters with some
+   reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-fuse was not released again, as there were no changes and the
+   0.11.0 versions are expected to continue to work fine with
+   gnunet-0.11.6.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.6 (since 0.11.5)
+
+     * gnunet-identity can now print private keys.
+     * The REST service can be configured to echo the HTTP Origin header
+       value for Cross-Origin-Resource-Sharing (CORS) when it is called by
+       a browser plugin. Optionally, a CORS Origin to echo can be also be
+       directly configured.
+     * re:claimID tickets are now re-used whenever possible.
+     * SUID binary detection mechanisms implemented to improve
+       compatiblity with some distributions.
+     * TRANSPORT, TESTBED and CADET tests now pass again on macOS.
+     * CADET: Replaced enum GNUNET_CADET_ChannelOption with
+       GNUNET_MQ_PriorityPreferences in preparation of API changed in the
+       future.
+     * The GNS proxy Certification Authority is now generated using
+       gnutls-certtool, if available, with opennssl/certtool as fallback.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Martin Schanzenbach,
+   Julius Bünger, ng0, Christian Grothoff, Alexia Pagkopoulou, rexxnor,
+   xrs, lurchi and t3sserakt.
+
+2019-06-28: Peer DSTJ is dead, long live peer Y924
+
+   After some issues with our infrastructure we needed to replace our
+   bootstrapping peer. To avoid problems when connecting to GNUnet the
+   operator of a peer needs to update its node by removing the peer ID
+   DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0 from the system.
+   Here are two strategies to find copies of the respective file:
+
+    1. $ locate DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+    2. $ find / -name DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+
+   Update: DSTJ has now been blacklisted. Please update your GNUnet peer.
+
+2019-06-28: GNUnet Hacker Meeting 2019 at La Décentrale, Switzerland
+
+   The members of the GNUnet community met again in the wonderful
+   souroundings of St. Imier to hack on GNUnet. New people joined our
+   sessions until late at night. From bug squashing to digging our own dog
+   food, from workshops to theoretical discussions of new services and
+   usecases. And of course, pizza was in the game.
+
+2019-06-05: GNUnet 0.11.5 released
+
+   We are pleased to announce the release of GNUnet 0.11.5.
+
+   This is a bugfix release for 0.11.4, mostly fixing a few minor bugs and
+   improving performance, in particular for identity management with a
+   large number of egos. In the wake of this release, we also launched the
+   REST API documentation. In terms of usability, users should be aware
+   that there are still a large number of known open issues in particular
+   with respect to ease of use, but also some critical privacy issues
+   especially for mobile users. Also, the nascent network is tiny (about
+   200 peers) and thus unlikely to provide good anonymity or extensive
+   amounts of interesting information. As a result, the 0.11.5 release is
+   still only suitable for early adopters with some reasonable pain
+   tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-gtk saw some minor changes to adopt it to API changes in the
+   main code related to the identity improvements. gnunet-fuse was not
+   released again, as there were no changes and the 0.11.0 version is
+   expected to continue to work fine with gnunet-0.11.5.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.5 (since 0.11.4)
+
+     * gnunet-identity is much faster when creating or deleting egos given
+       a large number of existing egos.
+     * GNS now supports CAA records.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Florian Dold, Marcello Stanisci, ng0, Martin Schanzenbach and Bernd
+   Fix.
+
+2019-05-12: GNUnet 0.11.4 released
+
+   We are pleased to announce the release of GNUnet 0.11.4.
+
+   This is a bugfix release for 0.11.3, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.4 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.4.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.4 (since 0.11.3)
+
+     * gnunet-arm -s no longer logs into the console by default and
+       instead into a logfile (in $GNUNET_HOME).
+     * The reclaim subsystem is no longer experimental. See also
+       re:claimID. Further, the internal encryption scheme moved from ABE
+       to GNS-style encryption.
+     * GNUnet now depends on a more recent version of libmicrohttpd.
+     * The REST API now includes read-only access to the configuration.
+     * All manpages are now in mdoc format.
+     * gnunet-download-manager.scm removed.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-07: GNUnet 0.11.3 released
+
+   We are pleased to announce the release of GNUnet 0.11.3.
+
+   This is a bugfix release for 0.11.2, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.3 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.3.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.3 (since 0.11.2)
+
+     * gnunet-zoneimport now handles -h correctly
+     * iptables and other similar binaries are no longer hard-coded but
+       detected at configure time (with hard-coded fallback locations).
+     * make uninstall now properly uninstalls all files
+     * Passing the no longer available --with-nssdir configuration option
+       now results in a hard error.
+     * GNUNET_memcmp() and GNUNET_is_zero() macros introduced for improved
+       type safety (but not yet used consistently).
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-04: GNUnet 0.11.2 released
+
+   We are pleased to announce the release of GNUnet 0.11.2.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.2 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.2.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.2
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-04-03: GNUnet 0.11.1 released
+
+   We are pleased to announce the release of GNUnet 0.11.1.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.1 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.1.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.1
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-02: GNUnet 0.11.0 released
+
+   We are pleased to announce the release of GNUnet 0.11.0.
+
+   This is a major release after about five years of development. In terms
+   of usability, users should be aware that there are still a large number
+   of known open issues in particular with respect to ease of use, but
+   also some critical privacy issues especially for mobile users. Also,
+   the nascent network is tiny (about 200 peers) and thus unlikely to
+   provide good anonymity or extensive amounts of interesting information.
+   As a result, the 0.11.0 release is still only suitable for early
+   adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.0
+
+     * The Web site and manuals have undergone significant rework. You can
+       find an archive of the old Web site at archive.org.
+     * The code now builds again on macOS. GNUnet on macOS is
+       experimental. While it builds and seems to run fine, some tests are
+       known to fail.
+     * Build process now works properly with libidn2
+     * Except for gnunet-qr, all Python code was migrated to Python 3.7.
+     * Fixed security issues in secret sharing cryptography logic
+     * Services running out of file descriptors on accept() no longer busy
+       wait
+     * Fixed crash in gnunet-gns2dns proxy
+     * GNS responses are now padded to minimize information disclosure
+       from the size
+     * Fixed API issues and (rare) crash bugs in CADET
+     * The experimental SecuShare code is not included in the release, you
+       can now find it in the gnunet-secushare Git repository.
+     * The Ascension tool (separate download) now allows importing DNS
+       zones into GNS via AXFR.
+     * GNUnet now includes a decentralised identity attribute sharing
+       service: reclaimID. A ready-to-use client can be found in an
+       external repo.
+     * The code now builds again on NetBSD. GNUnet on NetBSD is
+       experimental. While it builds and seems to run fine, full support
+       requires more changes in the core of GNUnet It will soon be
+       available via pkgsrc.
+     * Many things changed on the build system side. If you package GNUnet
+       for an operating system or otherwise package manager, make sure
+       that you read the README.
+
+   The above is just the short list, our bugtracker lists over 100
+   individual issues that were resolved since 0.11.0pre66.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 150 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Matthias Wachs, Bart Polot, Sree Harsha Totakura, Nathan S. Evans,
+   Martin Schanzenbach, Julius Bünger, ng0, Philipp Tölke, Florian Dold,
+   Руслан Ижбулатов, tg(x), David Barksdale, Christian Fuchs, Nils Durner,
+   Omar Tarabai, Maximilian Szengel, Supriti Singh, lurchi, David Brodski,
+   xrs, Fabian Oehlmann, Carlo von lynX, Christophe Genevey Metat, Jeffrey
+   Burdges, Safey A.Halim, Daniel Golle, Phil, Bruno Cabral, Ji Lu, Heikki
+   Lindholm, Markus Teich, t3sserakt, Claudiu Olteanu, Marcello Stanisci,
+   Moon, Hernani Marques, anryko, Arthur Dewarumez, Julien Morvan, Adnan
+   H, rexxnor, Lin Tong, Andreas Fuchs, Christian Rupp, jah, Alejandra
+   Morales, Bernd Fix, Feideus, Matthias Kolja Miehl, Andrew Cann, Antonio
+   Ojea, Pascal Mainini, amirouche and hark. Special thanks to Florian
+   Weimer.
+
+2019-02: Topics for GSoC 2019
+
+   GNUnet is participating in the Google Summer of Code again through GNU.
+   If you are interested in any of these projects, reach out to us!
+
+Android Port
+
+   It is time for GNUnet to run properly on Android. Note that GNUnet is
+   written in C, and this is not about rewriting GNUnet in Java, but about
+   getting the C code to run on Android.
+   Mentor: Hartmut Goebel
+
+Help with Continuous Integration setup
+
+   There is a push for migrating our CI to Gitlab. The CI should
+   eventually not just run "make check" on various platforms, but also
+   perform tests with multiple peers running in different VMs with
+   specific network topologies (i.e. NAT) between them being simulated.
+   The CI should also be integrated with Gauger for performance regression
+   analysis. Running jobs only when dependencies have changed and
+   scripting more granular triggers or ideally automatic dependency
+   discovery (as done by the autotools) is also important.
+   Mentor: TBD
+
+Migrate gnunet-qr from Python 2.7 to C using libzbar
+
+   Python 2.7 is reaching its end-of-life, and we want to get rid of the
+   dependency on Python. The existing gnunet-qr tool is a rather simple
+   wrapper around python-zbar, which itself wraps libzbar. The goal of
+   this project is to directly use libzbar to scan QR codes for GNUnet /
+   the GNU Name System (see also #5562).
+   Mentor: Christian Grothoff
+
+re:claimID OpenID Connect performance improvements
+
+   reclaimID is a decentralized identity system build on top of the GNU
+   Name System. Upon authorization, the user provides a requesting party
+   (RP) such as a website with an authorization ticket (e.g. piggybacked
+   in an OpenID authorization code). The RP uses information contained in
+   this ticket to
+    1. Retrieve the decryption key from GNS
+    2. Retrieve the user attributes from GNS
+
+   The GNS lookups ensure that the RP receives up-to-date attributes and
+   functional decryption keys. However, in particular the RP-specific
+   encryption key resolution can be slow and even fail depending on the
+   network topology. We propose that in an initial exchange, in particular
+   OpenID authorization code flows, we try to incorporate key and maybe
+   even an attribute set in the ticket exchange. In order to mitigate this
+   issue, this project is meant to investigate and implement how...
+    1. ... decryption keys can be added to an initial exchange in OpenID.
+    2. ... initial set(s) of attributes can be piggybacked in OpenID.
+
+   Mentor: Martin Schanzenbach
+
+re:claimID alternative GNS-based encryption
+
+   re:claimID is a decentralized identity system build on top of the GNU
+   Name System. The initial design and implementation of re:claimID
+   includes an attribute-based encryption module in order to prevent
+   unauthorized access to attributes in the name system. Our motivation
+   for re:claimID was for it to be name system agnostic, which means the
+   design theoretically also works for other name systems such as
+   namecoin. Other name systems often do not have built-in mechanisms in
+   order to do this. Hence, we implemented an ABE access control layer.
+   Our ABE implementation requires two third party libraries: libpbc and
+   libgabe. While we could merge libgabe into the gnunet service
+   implementation of re:claimID, libpbc is a rather large, third party
+   library which lacks packaging in distributions and for platforms. On
+   the other hand, GNS supports record data encryption using symmetric
+   keys as labels. If we make the access control layer of re:claimID more
+   generic in order to support both ABE and GNS encryption, we could
+   reduce the required depenencies. This would result in gnunet packages
+   to include re:claimID by default. In short, the goals are to...
+    1. ... improve performance by reducing encryption overhead.
+    2. ... reduce dependencies.
+
+   Mentor: Martin Schanzenbach
+
+Enable all networking applications to run over GNUnet out of the box
+
+   One great problem of the current Internet is the lack of
+   disintermediation. When people want to talk they need a chat service.
+   When they want to share files they need a file transfer service.
+   Although GNUnet already possesses quite advanced integration into Linux
+   networking, a little extra work is needed for existing applications
+   like irc, www, ftp, rsh, nntpd to run over it in a peer-to-peer way,
+   simply by using a GNS hostname like friend.gnu. Once people have added
+   a person to their GNS they can immediately message, exchange files and
+   suchlike directly, with nothing but the GNUnet in the middle, using
+   applications that have been distributed with unix systems ever since
+   the 1980's. We can produce an OS distribution where these things work
+   out of the box with the nicknames of people instead of cloud services.
+   For more information and context, read bug id 4625.
+
+   Mentors: lynX & dvn
+
+More news
+
+     * Contact
+     * GNUnet e.V.
+     * About GNUnet
+
+     * Bug Tracker
+
+     * Copyright Assignment
+     * Bibliography
+
+   Copyright © GNUnet e.V. 2001 — 2019. Source code of this site. Report
+   issues with this website.
+   #alternate alternate alternate alternate alternate GNUnet.org rss
+
+   GNUnet (BUTTON)
+
+     * About
+     * News
+     * Community
+          + Engage
+          + GSoC Projects
+          + GNUnet e.V.
+          + Copyright for Contributors
+     * Development
+          + System Architecture
+          + Bug Tracker
+          + Source Code
+          + Source Code Documentation
+          + Development Tutorial
+          + libgnurl
+     * Documentation
+          + Install
+          + Use
+          + Videos
+          + Glossary
+          + Handbook
+          + REST API
+          + FAQ
+          + Bibliography
+
+   Notice: GNUnet is still undergoing major development. It is largely not
+   yet ready for usage beyond developers
+
+                                   GNUnet
+
+   GNUnet is a new network protocol stack for building secure,
+   distributed, and privacy-preserving applications. With strong roots in
+   academic research, our goal is to replace the old insecure Internet
+   protocol stack.
+   GNUnet is typically run as an overlay network on top of the existing
+   Internet infrastructure forming the basis of a hybrid peer-to-peer mesh
+   and relay backbone for applications to run on. It could just as well be
+   run independently of the Internet, over dedicated radio and cable.
+   GNUnet is made for a free and open society: It's a self-organizing
+   network and it is free software as in freedom. GNUnet puts you in
+   control of your data. You determine which data to share with whom, and
+   you're not pressured to accept compromises.
+
+   About   Install   Engage
+
+The Internet of tomorrow needs GNUnet today
+
+Imagine...
+
+   The conventional Internet is currently like a system of roads with deep
+   potholes and highwaymen all over the place. Even if you still can use
+   the roads (e.g. send emails, or browse websites) your vehicle might get
+   hijacked, damaged, or long arms might reach into its back and steal
+   your items (data) to use it against you and sell it to others - while
+   you can't even notice the thievery nor accuse and hold the scroungers
+   accountable.
+
+The Internet is broken
+
+   Protocols from Ethernet and IP to BGP and X.509 PKI are insecure by
+   default: protecting against address forgery, routers learning metadata,
+   or choosing trustworthy CAs is nontrivial and sometimes impossible.
+
+   GNUnet provides privacy by design, improving addressing, routing,
+   naming and content distribution in a technically robust manner - as
+   opposed to ad-hoc designs in place today.
+
+Decentralization is hard
+
+   Instead of sharing common components and tools for building P2P
+   systems, every P2P project seems to re-invent the wheel. This heightens
+   the effort and increases the potential number of vulnerabilities.
+
+   GNUnet is a metadata-preserving foundation for your application,
+   covering areas from addressing to reliable bidirectional
+   Axolotl-encrypted channels, with advanced routing. Our work is based on
+   continuous research spanning almost two decades.
+
+Metadata is exposed
+
+   Your metadata is just as revealing as the actual content; and it gets
+   exposed on the Internet.
+   Even though transport encryption is increasingly being deployed on the
+   Internet, it still reveals data that can threaten democracy: the
+   identities of senders and receivers, the times, frequency and the
+   volume of communication are all still revealed.
+   GNUnet addresses these concerns with perfect forward secrecy via
+   ephemeral public key addressing, fixed packet size to hinder traffic
+   analysis, layered encryption, Sybil-resistant routing, and more.
+
+Freedoms are not respected
+
+   Today, monitoring increasingly centralized infrastructure, proprietary
+   implementations, traffic shapers and firewalls restrict all of the
+   essential freedoms to various degrees.
+
+   GNUnet gives users freedoms to securely access information ("run" the
+   network), to study all aspects of the network's operation ("access the
+   code"), to distribute information ("copy"), as well as the freedom to
+   deploy new applications ("modify").
+
+Learn more about GNUnet
+
+   If you want to know more about the GNUnet please continue reading the
+   about page. There are much more resources, such as the main handbook /
+   reference manual, a bibliography and videos.
+
+   You are very welcome to get engaged into the conversation, install
+   GNUnet, use it and contribute.
+   Be aware that this project is still in an early alpha stage when it
+   comes to software – its not an easy task to rewrite the whole Internet!
+
+Featured Applications
+
+GNU Taler (Alpha)
+
+   GNU Taler is a new privacy-preserving electronic payment system.
+   Payments are cryptographically secured and are confirmed within
+   milliseconds with extremely low transaction costs.
+
+The GNU Name System
+
+   The GNU Name System (GNS) is a fully decentralized replacement for the
+   Domain Name System (DNS). Instead of using a hierarchy, GNS uses a
+   directed graph. Naming conventions are similar to DNS, but queries and
+   replies are private even with respect to peers providing the answers.
+   The integrity of records and privacy of look-ups is cryptographically
+   secured.
+
+re:claimID
+
+   re:claimID is a decentralized Identity Provider (IdP) service built in
+   top of the GNU Name System. It allows users to securely share personal
+   information with websites using standardized protocols (OpenID
+   Connect).
+
+Filesharing (Alpha)
+
+   GNUnet filesharing is an application that aims to provide
+   censorship-resistant, anonymous filesharing. The publisher is empowered
+   to make a gradual choice between performance and anonymity.
+
+Conversation (Pre-Alpha)
+
+   GNUnet conversation is an application that provides secure voice
+   communication in a fully decentralized way by employing GNUnet for
+   routing and transport.
+
+Upcoming Applications
+
+secushare
+
+   secushare is creating a decentralized social networking application on
+   top of GNUnet. Using overlay multicast and the extensible PSYC
+   protocol, notifications are distributed end-to-end encrypted to
+   authorized recipients only.
+
+pretty Easy privacy
+
+   pretty Easy privacy (p≡p) is creating a usable end-to-end encrypted
+   e-mail solution using opportunistic key exchange. p≡p will use GNUnet
+   to protect metadata and exploit new cryptographic protocols to verify
+   keys.
+
+News
+
+2019-07-24: GNUnet 0.11.6 released
+
+   We are pleased to announce the release of GNUnet 0.11.6.
+
+   This is a bugfix release for 0.11.5, fixing a lot of minor bugs,
+   improving stability and code quality. Further, our videos are back on
+   the homepage. In this release, we again improved the webpage in general
+   and updated our documentation. As always: In terms of usability, users
+   should be aware that there are still a large number of known open
+   issues in particular with respect to ease of use, but also some
+   critical privacy issues especially for mobile users. Also, the nascent
+   network is tiny (about 200 peers) and thus unlikely to provide good
+   anonymity or extensive amounts of interesting information. As a result,
+   the 0.11.6 release is still only suitable for early adopters with some
+   reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-fuse was not released again, as there were no changes and the
+   0.11.0 versions are expected to continue to work fine with
+   gnunet-0.11.6.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.6 (since 0.11.5)
+
+     * gnunet-identity can now print private keys.
+     * The REST service can be configured to echo the HTTP Origin header
+       value for Cross-Origin-Resource-Sharing (CORS) when it is called by
+       a browser plugin. Optionally, a CORS Origin to echo can be also be
+       directly configured.
+     * re:claimID tickets are now re-used whenever possible.
+     * SUID binary detection mechanisms implemented to improve
+       compatiblity with some distributions.
+     * TRANSPORT, TESTBED and CADET tests now pass again on macOS.
+     * CADET: Replaced enum GNUNET_CADET_ChannelOption with
+       GNUNET_MQ_PriorityPreferences in preparation of API changed in the
+       future.
+     * The GNS proxy Certification Authority is now generated using
+       gnutls-certtool, if available, with opennssl/certtool as fallback.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Martin Schanzenbach,
+   Julius Bünger, ng0, Christian Grothoff, Alexia Pagkopoulou, rexxnor,
+   xrs, lurchi and t3sserakt.
+
+2019-06-28: Peer DSTJ is dead, long live peer Y924
+
+   After some issues with our infrastructure we needed to replace our
+   bootstrapping peer. To avoid problems when connecting to GNUnet the
+   operator of a peer needs to update its node by removing the peer ID
+   DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0 from the system.
+   Here are two strategies to find copies of the respective file:
+
+    1. $ locate DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+    2. $ find / -name DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+
+   Update: DSTJ has now been blacklisted. Please update your GNUnet peer.
+
+2019-06-28: GNUnet Hacker Meeting 2019 at La Décentrale, Switzerland
+
+   The members of the GNUnet community met again in the wonderful
+   souroundings of St. Imier to hack on GNUnet. New people joined our
+   sessions until late at night. From bug squashing to digging our own dog
+   food, from workshops to theoretical discussions of new services and
+   usecases. And of course, pizza was in the game.
+
+2019-06-05: GNUnet 0.11.5 released
+
+   We are pleased to announce the release of GNUnet 0.11.5.
+
+   This is a bugfix release for 0.11.4, mostly fixing a few minor bugs and
+   improving performance, in particular for identity management with a
+   large number of egos. In the wake of this release, we also launched the
+   REST API documentation. In terms of usability, users should be aware
+   that there are still a large number of known open issues in particular
+   with respect to ease of use, but also some critical privacy issues
+   especially for mobile users. Also, the nascent network is tiny (about
+   200 peers) and thus unlikely to provide good anonymity or extensive
+   amounts of interesting information. As a result, the 0.11.5 release is
+   still only suitable for early adopters with some reasonable pain
+   tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-gtk saw some minor changes to adopt it to API changes in the
+   main code related to the identity improvements. gnunet-fuse was not
+   released again, as there were no changes and the 0.11.0 version is
+   expected to continue to work fine with gnunet-0.11.5.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.5 (since 0.11.4)
+
+     * gnunet-identity is much faster when creating or deleting egos given
+       a large number of existing egos.
+     * GNS now supports CAA records.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Florian Dold, Marcello Stanisci, ng0, Martin Schanzenbach and Bernd
+   Fix.
+
+2019-05-12: GNUnet 0.11.4 released
+
+   We are pleased to announce the release of GNUnet 0.11.4.
+
+   This is a bugfix release for 0.11.3, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.4 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.4.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.4 (since 0.11.3)
+
+     * gnunet-arm -s no longer logs into the console by default and
+       instead into a logfile (in $GNUNET_HOME).
+     * The reclaim subsystem is no longer experimental. See also
+       re:claimID. Further, the internal encryption scheme moved from ABE
+       to GNS-style encryption.
+     * GNUnet now depends on a more recent version of libmicrohttpd.
+     * The REST API now includes read-only access to the configuration.
+     * All manpages are now in mdoc format.
+     * gnunet-download-manager.scm removed.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-07: GNUnet 0.11.3 released
+
+   We are pleased to announce the release of GNUnet 0.11.3.
+
+   This is a bugfix release for 0.11.2, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.3 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.3.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.3 (since 0.11.2)
+
+     * gnunet-zoneimport now handles -h correctly
+     * iptables and other similar binaries are no longer hard-coded but
+       detected at configure time (with hard-coded fallback locations).
+     * make uninstall now properly uninstalls all files
+     * Passing the no longer available --with-nssdir configuration option
+       now results in a hard error.
+     * GNUNET_memcmp() and GNUNET_is_zero() macros introduced for improved
+       type safety (but not yet used consistently).
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-04: GNUnet 0.11.2 released
+
+   We are pleased to announce the release of GNUnet 0.11.2.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.2 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.2.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.2
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-04-03: GNUnet 0.11.1 released
+
+   We are pleased to announce the release of GNUnet 0.11.1.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.1 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.1.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.1
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-02: GNUnet 0.11.0 released
+
+   We are pleased to announce the release of GNUnet 0.11.0.
+
+   This is a major release after about five years of development. In terms
+   of usability, users should be aware that there are still a large number
+   of known open issues in particular with respect to ease of use, but
+   also some critical privacy issues especially for mobile users. Also,
+   the nascent network is tiny (about 200 peers) and thus unlikely to
+   provide good anonymity or extensive amounts of interesting information.
+   As a result, the 0.11.0 release is still only suitable for early
+   adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.0
+
+     * The Web site and manuals have undergone significant rework. You can
+       find an archive of the old Web site at archive.org.
+     * The code now builds again on macOS. GNUnet on macOS is
+       experimental. While it builds and seems to run fine, some tests are
+       known to fail.
+     * Build process now works properly with libidn2
+     * Except for gnunet-qr, all Python code was migrated to Python 3.7.
+     * Fixed security issues in secret sharing cryptography logic
+     * Services running out of file descriptors on accept() no longer busy
+       wait
+     * Fixed crash in gnunet-gns2dns proxy
+     * GNS responses are now padded to minimize information disclosure
+       from the size
+     * Fixed API issues and (rare) crash bugs in CADET
+     * The experimental SecuShare code is not included in the release, you
+       can now find it in the gnunet-secushare Git repository.
+     * The Ascension tool (separate download) now allows importing DNS
+       zones into GNS via AXFR.
+     * GNUnet now includes a decentralised identity attribute sharing
+       service: reclaimID. A ready-to-use client can be found in an
+       external repo.
+     * The code now builds again on NetBSD. GNUnet on NetBSD is
+       experimental. While it builds and seems to run fine, full support
+       requires more changes in the core of GNUnet It will soon be
+       available via pkgsrc.
+     * Many things changed on the build system side. If you package GNUnet
+       for an operating system or otherwise package manager, make sure
+       that you read the README.
+
+   The above is just the short list, our bugtracker lists over 100
+   individual issues that were resolved since 0.11.0pre66.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 150 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Matthias Wachs, Bart Polot, Sree Harsha Totakura, Nathan S. Evans,
+   Martin Schanzenbach, Julius Bünger, ng0, Philipp Tölke, Florian Dold,
+   Руслан Ижбулатов, tg(x), David Barksdale, Christian Fuchs, Nils Durner,
+   Omar Tarabai, Maximilian Szengel, Supriti Singh, lurchi, David Brodski,
+   xrs, Fabian Oehlmann, Carlo von lynX, Christophe Genevey Metat, Jeffrey
+   Burdges, Safey A.Halim, Daniel Golle, Phil, Bruno Cabral, Ji Lu, Heikki
+   Lindholm, Markus Teich, t3sserakt, Claudiu Olteanu, Marcello Stanisci,
+   Moon, Hernani Marques, anryko, Arthur Dewarumez, Julien Morvan, Adnan
+   H, rexxnor, Lin Tong, Andreas Fuchs, Christian Rupp, jah, Alejandra
+   Morales, Bernd Fix, Feideus, Matthias Kolja Miehl, Andrew Cann, Antonio
+   Ojea, Pascal Mainini, amirouche and hark. Special thanks to Florian
+   Weimer.
+
+2019-02: Topics for GSoC 2019
+
+   GNUnet is participating in the Google Summer of Code again through GNU.
+   If you are interested in any of these projects, reach out to us!
+
+Android Port
+
+   It is time for GNUnet to run properly on Android. Note that GNUnet is
+   written in C, and this is not about rewriting GNUnet in Java, but about
+   getting the C code to run on Android.
+   Mentor: Hartmut Goebel
+
+Help with Continuous Integration setup
+
+   There is a push for migrating our CI to Gitlab. The CI should
+   eventually not just run "make check" on various platforms, but also
+   perform tests with multiple peers running in different VMs with
+   specific network topologies (i.e. NAT) between them being simulated.
+   The CI should also be integrated with Gauger for performance regression
+   analysis. Running jobs only when dependencies have changed and
+   scripting more granular triggers or ideally automatic dependency
+   discovery (as done by the autotools) is also important.
+   Mentor: TBD
+
+Migrate gnunet-qr from Python 2.7 to C using libzbar
+
+   Python 2.7 is reaching its end-of-life, and we want to get rid of the
+   dependency on Python. The existing gnunet-qr tool is a rather simple
+   wrapper around python-zbar, which itself wraps libzbar. The goal of
+   this project is to directly use libzbar to scan QR codes for GNUnet /
+   the GNU Name System (see also #5562).
+   Mentor: Christian Grothoff
+
+re:claimID OpenID Connect performance improvements
+
+   reclaimID is a decentralized identity system build on top of the GNU
+   Name System. Upon authorization, the user provides a requesting party
+   (RP) such as a website with an authorization ticket (e.g. piggybacked
+   in an OpenID authorization code). The RP uses information contained in
+   this ticket to
+    1. Retrieve the decryption key from GNS
+    2. Retrieve the user attributes from GNS
+
+   The GNS lookups ensure that the RP receives up-to-date attributes and
+   functional decryption keys. However, in particular the RP-specific
+   encryption key resolution can be slow and even fail depending on the
+   network topology. We propose that in an initial exchange, in particular
+   OpenID authorization code flows, we try to incorporate key and maybe
+   even an attribute set in the ticket exchange. In order to mitigate this
+   issue, this project is meant to investigate and implement how...
+    1. ... decryption keys can be added to an initial exchange in OpenID.
+    2. ... initial set(s) of attributes can be piggybacked in OpenID.
+
+   Mentor: Martin Schanzenbach
+
+re:claimID alternative GNS-based encryption
+
+   re:claimID is a decentralized identity system build on top of the GNU
+   Name System. The initial design and implementation of re:claimID
+   includes an attribute-based encryption module in order to prevent
+   unauthorized access to attributes in the name system. Our motivation
+   for re:claimID was for it to be name system agnostic, which means the
+   design theoretically also works for other name systems such as
+   namecoin. Other name systems often do not have built-in mechanisms in
+   order to do this. Hence, we implemented an ABE access control layer.
+   Our ABE implementation requires two third party libraries: libpbc and
+   libgabe. While we could merge libgabe into the gnunet service
+   implementation of re:claimID, libpbc is a rather large, third party
+   library which lacks packaging in distributions and for platforms. On
+   the other hand, GNS supports record data encryption using symmetric
+   keys as labels. If we make the access control layer of re:claimID more
+   generic in order to support both ABE and GNS encryption, we could
+   reduce the required depenencies. This would result in gnunet packages
+   to include re:claimID by default. In short, the goals are to...
+    1. ... improve performance by reducing encryption overhead.
+    2. ... reduce dependencies.
+
+   Mentor: Martin Schanzenbach
+
+Enable all networking applications to run over GNUnet out of the box
+
+   One great problem of the current Internet is the lack of
+   disintermediation. When people want to talk they need a chat service.
+   When they want to share files they need a file transfer service.
+   Although GNUnet already possesses quite advanced integration into Linux
+   networking, a little extra work is needed for existing applications
+   like irc, www, ftp, rsh, nntpd to run over it in a peer-to-peer way,
+   simply by using a GNS hostname like friend.gnu. Once people have added
+   a person to their GNS they can immediately message, exchange files and
+   suchlike directly, with nothing but the GNUnet in the middle, using
+   applications that have been distributed with unix systems ever since
+   the 1980's. We can produce an OS distribution where these things work
+   out of the box with the nicknames of people instead of cloud services.
+   For more information and context, read bug id 4625.
+
+   Mentors: lynX & dvn
+
+More news
+
+     * Contact
+     * GNUnet e.V.
+     * About GNUnet
+
+     * Bug Tracker
+
+     * Copyright Assignment
+     * Bibliography
+
+   Copyright © GNUnet e.V. 2001 — 2019. Source code of this site. Report
+   issues with this website.
+   #alternate alternate alternate alternate alternate GNUnet.org rss
+
+   GNUnet (BUTTON)
+
+     * Über GNUnet
+     * Neues
+     * Community
+          + Mach mit!
+          + GSoC Projekte
+          + GNUnet e.V.
+          + Copyright für Mitwirkende
+     * Entwicklung
+          + Systemarchitektur
+          + Fehlerdatenbank
+          + Quellkode
+          + Dokumentation
+          + Entwicklung
+          + libgnurl
+     * Dokumentation
+          + Installieren
+          + Nutzen
+          + Videos
+          + Glossar
+          + Handbuch
+          + REST API
+          + FAQ
+          + Bibliografie
+
+   Notice: GNUnet is still undergoing major development. It is largely not
+   yet ready for usage beyond developers
+
+                                   GNUnet
+
+   GNUnet is a new network protocol stack for building secure,
+   distributed, and privacy-preserving applications. With strong roots in
+   academic research, our goal is to replace the old insecure Internet
+   protocol stack.
+   GNUnet is typically run as an overlay network on top of the existing
+   Internet infrastructure forming the basis of a hybrid peer-to-peer mesh
+   and relay backbone for applications to run on. It could just as well be
+   run independently of the Internet, over dedicated radio and cable.
+   GNUnet is made for a free and open society: It's a self-organizing
+   network and it is free software as in freedom. GNUnet puts you in
+   control of your data. You determine which data to share with whom, and
+   you're not pressured to accept compromises.
+
+   Über GNUnet   Installieren   Mach mit!
+
+The Internet of tomorrow needs GNUnet today
+
+Imagine...
+
+   The conventional Internet is currently like a system of roads with deep
+   potholes and highwaymen all over the place. Even if you still can use
+   the roads (e.g. send emails, or browse websites) your vehicle might get
+   hijacked, damaged, or long arms might reach into its back and steal
+   your items (data) to use it against you and sell it to others - while
+   you can't even notice the thievery nor accuse and hold the scroungers
+   accountable.
+
+The Internet is broken
+
+   Protocols from Ethernet and IP to BGP and X.509 PKI are insecure by
+   default: protecting against address forgery, routers learning metadata,
+   or choosing trustworthy CAs is nontrivial and sometimes impossible.
+
+   GNUnet provides privacy by design, improving addressing, routing,
+   naming and content distribution in a technically robust manner - as
+   opposed to ad-hoc designs in place today.
+
+Decentralization is hard
+
+   Instead of sharing common components and tools for building P2P
+   systems, every P2P project seems to re-invent the wheel. This heightens
+   the effort and increases the potential number of vulnerabilities.
+
+   GNUnet is a metadata-preserving foundation for your application,
+   covering areas from addressing to reliable bidirectional
+   Axolotl-encrypted channels, with advanced routing. Our work is based on
+   continuous research spanning almost two decades.
+
+Metadata is exposed
+
+   Your metadata is just as revealing as the actual content; and it gets
+   exposed on the Internet.
+   Even though transport encryption is increasingly being deployed on the
+   Internet, it still reveals data that can threaten democracy: the
+   identities of senders and receivers, the times, frequency and the
+   volume of communication are all still revealed.
+   GNUnet addresses these concerns with perfect forward secrecy via
+   ephemeral public key addressing, fixed packet size to hinder traffic
+   analysis, layered encryption, Sybil-resistant routing, and more.
+
+Freedoms are not respected
+
+   Today, monitoring increasingly centralized infrastructure, proprietary
+   implementations, traffic shapers and firewalls restrict all of the
+   essential freedoms to various degrees.
+
+   GNUnet gives users freedoms to securely access information ("run" the
+   network), to study all aspects of the network's operation ("access the
+   code"), to distribute information ("copy"), as well as the freedom to
+   deploy new applications ("modify").
+
+Über GNUnet
+
+   If you want to know more about the GNUnet please continue reading the
+   about page. There are much more resources, such as the main handbook /
+   reference manual, a bibliography and videos.
+
+   You are very welcome to get engaged into the conversation, install
+   GNUnet, use it and contribute.
+   Be aware that this project is still in an early alpha stage when it
+   comes to software – its not an easy task to rewrite the whole Internet!
+
+Featured Applications
+
+GNU Taler (Alpha)
+
+   GNU Taler is a new privacy-preserving electronic payment system.
+   Payments are cryptographically secured and are confirmed within
+   milliseconds with extremely low transaction costs.
+
+The GNU Name System
+
+   The GNU Name System (GNS) is a fully decentralized replacement for the
+   Domain Name System (DNS). Instead of using a hierarchy, GNS uses a
+   directed graph. Naming conventions are similar to DNS, but queries and
+   replies are private even with respect to peers providing the answers.
+   The integrity of records and privacy of look-ups is cryptographically
+   secured.
+
+re:claimID
+
+   re:claimID is a decentralized Identity Provider (IdP) service built in
+   top of the GNU Name System. It allows users to securely share personal
+   information with websites using standardized protocols (OpenID
+   Connect).
+
+Filesharing (Alpha)
+
+   GNUnet filesharing is an application that aims to provide
+   censorship-resistant, anonymous filesharing. The publisher is empowered
+   to make a gradual choice between performance and anonymity.
+
+Conversation (Pre-Alpha)
+
+   GNUnet conversation is an application that provides secure voice
+   communication in a fully decentralized way by employing GNUnet for
+   routing and transport.
+
+Upcoming Applications
+
+secushare
+
+   secushare is creating a decentralized social networking application on
+   top of GNUnet. Using overlay multicast and the extensible PSYC
+   protocol, notifications are distributed end-to-end encrypted to
+   authorized recipients only.
+
+pretty Easy privacy
+
+   pretty Easy privacy (p≡p) is creating a usable end-to-end encrypted
+   e-mail solution using opportunistic key exchange. p≡p will use GNUnet
+   to protect metadata and exploit new cryptographic protocols to verify
+   keys.
+
+Neues
+
+2019-07-24: GNUnet 0.11.6 released
+
+   We are pleased to announce the release of GNUnet 0.11.6.
+
+   This is a bugfix release for 0.11.5, fixing a lot of minor bugs,
+   improving stability and code quality. Further, our videos are back on
+   the homepage. In this release, we again improved the webpage in general
+   and updated our documentation. As always: In terms of usability, users
+   should be aware that there are still a large number of known open
+   issues in particular with respect to ease of use, but also some
+   critical privacy issues especially for mobile users. Also, the nascent
+   network is tiny (about 200 peers) and thus unlikely to provide good
+   anonymity or extensive amounts of interesting information. As a result,
+   the 0.11.6 release is still only suitable for early adopters with some
+   reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-fuse was not released again, as there were no changes and the
+   0.11.0 versions are expected to continue to work fine with
+   gnunet-0.11.6.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.6 (since 0.11.5)
+
+     * gnunet-identity can now print private keys.
+     * The REST service can be configured to echo the HTTP Origin header
+       value for Cross-Origin-Resource-Sharing (CORS) when it is called by
+       a browser plugin. Optionally, a CORS Origin to echo can be also be
+       directly configured.
+     * re:claimID tickets are now re-used whenever possible.
+     * SUID binary detection mechanisms implemented to improve
+       compatiblity with some distributions.
+     * TRANSPORT, TESTBED and CADET tests now pass again on macOS.
+     * CADET: Replaced enum GNUNET_CADET_ChannelOption with
+       GNUNET_MQ_PriorityPreferences in preparation of API changed in the
+       future.
+     * The GNS proxy Certification Authority is now generated using
+       gnutls-certtool, if available, with opennssl/certtool as fallback.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Martin Schanzenbach,
+   Julius Bünger, ng0, Christian Grothoff, Alexia Pagkopoulou, rexxnor,
+   xrs, lurchi and t3sserakt.
+
+2019-06-28: Peer DSTJ is dead, long live peer Y924
+
+   After some issues with our infrastructure we needed to replace our
+   bootstrapping peer. To avoid problems when connecting to GNUnet the
+   operator of a peer needs to update its node by removing the peer ID
+   DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0 from the system.
+   Here are two strategies to find copies of the respective file:
+
+    1. $ locate DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+    2. $ find / -name DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+
+   Update: DSTJ has now been blacklisted. Please update your GNUnet peer.
+
+2019-06-28: GNUnet Hacker Meeting 2019 at La Décentrale, Switzerland
+
+   The members of the GNUnet community met again in the wonderful
+   souroundings of St. Imier to hack on GNUnet. New people joined our
+   sessions until late at night. From bug squashing to digging our own dog
+   food, from workshops to theoretical discussions of new services and
+   usecases. And of course, pizza was in the game.
+
+2019-06-05: GNUnet 0.11.5 released
+
+   We are pleased to announce the release of GNUnet 0.11.5.
+
+   This is a bugfix release for 0.11.4, mostly fixing a few minor bugs and
+   improving performance, in particular for identity management with a
+   large number of egos. In the wake of this release, we also launched the
+   REST API documentation. In terms of usability, users should be aware
+   that there are still a large number of known open issues in particular
+   with respect to ease of use, but also some critical privacy issues
+   especially for mobile users. Also, the nascent network is tiny (about
+   200 peers) and thus unlikely to provide good anonymity or extensive
+   amounts of interesting information. As a result, the 0.11.5 release is
+   still only suitable for early adopters with some reasonable pain
+   tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-gtk saw some minor changes to adopt it to API changes in the
+   main code related to the identity improvements. gnunet-fuse was not
+   released again, as there were no changes and the 0.11.0 version is
+   expected to continue to work fine with gnunet-0.11.5.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.5 (since 0.11.4)
+
+     * gnunet-identity is much faster when creating or deleting egos given
+       a large number of existing egos.
+     * GNS now supports CAA records.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Florian Dold, Marcello Stanisci, ng0, Martin Schanzenbach and Bernd
+   Fix.
+
+2019-05-12: GNUnet 0.11.4 released
+
+   We are pleased to announce the release of GNUnet 0.11.4.
+
+   This is a bugfix release for 0.11.3, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.4 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.4.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.4 (since 0.11.3)
+
+     * gnunet-arm -s no longer logs into the console by default and
+       instead into a logfile (in $GNUNET_HOME).
+     * The reclaim subsystem is no longer experimental. See also
+       re:claimID. Further, the internal encryption scheme moved from ABE
+       to GNS-style encryption.
+     * GNUnet now depends on a more recent version of libmicrohttpd.
+     * The REST API now includes read-only access to the configuration.
+     * All manpages are now in mdoc format.
+     * gnunet-download-manager.scm removed.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-07: GNUnet 0.11.3 released
+
+   We are pleased to announce the release of GNUnet 0.11.3.
+
+   This is a bugfix release for 0.11.2, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.3 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.3.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.3 (since 0.11.2)
+
+     * gnunet-zoneimport now handles -h correctly
+     * iptables and other similar binaries are no longer hard-coded but
+       detected at configure time (with hard-coded fallback locations).
+     * make uninstall now properly uninstalls all files
+     * Passing the no longer available --with-nssdir configuration option
+       now results in a hard error.
+     * GNUNET_memcmp() and GNUNET_is_zero() macros introduced for improved
+       type safety (but not yet used consistently).
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-04: GNUnet 0.11.2 released
+
+   We are pleased to announce the release of GNUnet 0.11.2.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.2 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.2.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.2
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-04-03: GNUnet 0.11.1 released
+
+   We are pleased to announce the release of GNUnet 0.11.1.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.1 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.1.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.1
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-02: GNUnet 0.11.0 released
+
+   We are pleased to announce the release of GNUnet 0.11.0.
+
+   This is a major release after about five years of development. In terms
+   of usability, users should be aware that there are still a large number
+   of known open issues in particular with respect to ease of use, but
+   also some critical privacy issues especially for mobile users. Also,
+   the nascent network is tiny (about 200 peers) and thus unlikely to
+   provide good anonymity or extensive amounts of interesting information.
+   As a result, the 0.11.0 release is still only suitable for early
+   adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.0
+
+     * The Web site and manuals have undergone significant rework. You can
+       find an archive of the old Web site at archive.org.
+     * The code now builds again on macOS. GNUnet on macOS is
+       experimental. While it builds and seems to run fine, some tests are
+       known to fail.
+     * Build process now works properly with libidn2
+     * Except for gnunet-qr, all Python code was migrated to Python 3.7.
+     * Fixed security issues in secret sharing cryptography logic
+     * Services running out of file descriptors on accept() no longer busy
+       wait
+     * Fixed crash in gnunet-gns2dns proxy
+     * GNS responses are now padded to minimize information disclosure
+       from the size
+     * Fixed API issues and (rare) crash bugs in CADET
+     * The experimental SecuShare code is not included in the release, you
+       can now find it in the gnunet-secushare Git repository.
+     * The Ascension tool (separate download) now allows importing DNS
+       zones into GNS via AXFR.
+     * GNUnet now includes a decentralised identity attribute sharing
+       service: reclaimID. A ready-to-use client can be found in an
+       external repo.
+     * The code now builds again on NetBSD. GNUnet on NetBSD is
+       experimental. While it builds and seems to run fine, full support
+       requires more changes in the core of GNUnet It will soon be
+       available via pkgsrc.
+     * Many things changed on the build system side. If you package GNUnet
+       for an operating system or otherwise package manager, make sure
+       that you read the README.
+
+   The above is just the short list, our bugtracker lists over 100
+   individual issues that were resolved since 0.11.0pre66.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 150 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Matthias Wachs, Bart Polot, Sree Harsha Totakura, Nathan S. Evans,
+   Martin Schanzenbach, Julius Bünger, ng0, Philipp Tölke, Florian Dold,
+   Руслан Ижбулатов, tg(x), David Barksdale, Christian Fuchs, Nils Durner,
+   Omar Tarabai, Maximilian Szengel, Supriti Singh, lurchi, David Brodski,
+   xrs, Fabian Oehlmann, Carlo von lynX, Christophe Genevey Metat, Jeffrey
+   Burdges, Safey A.Halim, Daniel Golle, Phil, Bruno Cabral, Ji Lu, Heikki
+   Lindholm, Markus Teich, t3sserakt, Claudiu Olteanu, Marcello Stanisci,
+   Moon, Hernani Marques, anryko, Arthur Dewarumez, Julien Morvan, Adnan
+   H, rexxnor, Lin Tong, Andreas Fuchs, Christian Rupp, jah, Alejandra
+   Morales, Bernd Fix, Feideus, Matthias Kolja Miehl, Andrew Cann, Antonio
+   Ojea, Pascal Mainini, amirouche and hark. Special thanks to Florian
+   Weimer.
+
+2019-02: Topics for GSoC 2019
+
+   GNUnet is participating in the Google Summer of Code again through GNU.
+   If you are interested in any of these projects, reach out to us!
+
+Android Port
+
+   It is time for GNUnet to run properly on Android. Note that GNUnet is
+   written in C, and this is not about rewriting GNUnet in Java, but about
+   getting the C code to run on Android.
+   Mentor: Hartmut Goebel
+
+Help with Continuous Integration setup
+
+   There is a push for migrating our CI to Gitlab. The CI should
+   eventually not just run "make check" on various platforms, but also
+   perform tests with multiple peers running in different VMs with
+   specific network topologies (i.e. NAT) between them being simulated.
+   The CI should also be integrated with Gauger for performance regression
+   analysis. Running jobs only when dependencies have changed and
+   scripting more granular triggers or ideally automatic dependency
+   discovery (as done by the autotools) is also important.
+   Mentor: TBD
+
+Migrate gnunet-qr from Python 2.7 to C using libzbar
+
+   Python 2.7 is reaching its end-of-life, and we want to get rid of the
+   dependency on Python. The existing gnunet-qr tool is a rather simple
+   wrapper around python-zbar, which itself wraps libzbar. The goal of
+   this project is to directly use libzbar to scan QR codes for GNUnet /
+   the GNU Name System (see also #5562).
+   Mentor: Christian Grothoff
+
+re:claimID OpenID Connect performance improvements
+
+   reclaimID is a decentralized identity system build on top of the GNU
+   Name System. Upon authorization, the user provides a requesting party
+   (RP) such as a website with an authorization ticket (e.g. piggybacked
+   in an OpenID authorization code). The RP uses information contained in
+   this ticket to
+    1. Retrieve the decryption key from GNS
+    2. Retrieve the user attributes from GNS
+
+   The GNS lookups ensure that the RP receives up-to-date attributes and
+   functional decryption keys. However, in particular the RP-specific
+   encryption key resolution can be slow and even fail depending on the
+   network topology. We propose that in an initial exchange, in particular
+   OpenID authorization code flows, we try to incorporate key and maybe
+   even an attribute set in the ticket exchange. In order to mitigate this
+   issue, this project is meant to investigate and implement how...
+    1. ... decryption keys can be added to an initial exchange in OpenID.
+    2. ... initial set(s) of attributes can be piggybacked in OpenID.
+
+   Mentor: Martin Schanzenbach
+
+re:claimID alternative GNS-based encryption
+
+   re:claimID is a decentralized identity system build on top of the GNU
+   Name System. The initial design and implementation of re:claimID
+   includes an attribute-based encryption module in order to prevent
+   unauthorized access to attributes in the name system. Our motivation
+   for re:claimID was for it to be name system agnostic, which means the
+   design theoretically also works for other name systems such as
+   namecoin. Other name systems often do not have built-in mechanisms in
+   order to do this. Hence, we implemented an ABE access control layer.
+   Our ABE implementation requires two third party libraries: libpbc and
+   libgabe. While we could merge libgabe into the gnunet service
+   implementation of re:claimID, libpbc is a rather large, third party
+   library which lacks packaging in distributions and for platforms. On
+   the other hand, GNS supports record data encryption using symmetric
+   keys as labels. If we make the access control layer of re:claimID more
+   generic in order to support both ABE and GNS encryption, we could
+   reduce the required depenencies. This would result in gnunet packages
+   to include re:claimID by default. In short, the goals are to...
+    1. ... improve performance by reducing encryption overhead.
+    2. ... reduce dependencies.
+
+   Mentor: Martin Schanzenbach
+
+Enable all networking applications to run over GNUnet out of the box
+
+   One great problem of the current Internet is the lack of
+   disintermediation. When people want to talk they need a chat service.
+   When they want to share files they need a file transfer service.
+   Although GNUnet already possesses quite advanced integration into Linux
+   networking, a little extra work is needed for existing applications
+   like irc, www, ftp, rsh, nntpd to run over it in a peer-to-peer way,
+   simply by using a GNS hostname like friend.gnu. Once people have added
+   a person to their GNS they can immediately message, exchange files and
+   suchlike directly, with nothing but the GNUnet in the middle, using
+   applications that have been distributed with unix systems ever since
+   the 1980's. We can produce an OS distribution where these things work
+   out of the box with the nicknames of people instead of cloud services.
+   For more information and context, read bug id 4625.
+
+   Mentors: lynX & dvn
+
+More news
+
+     * Kontakt
+     * GNUnet e.V.
+     * Über GNUnet
+
+     * Fehlerdatenbank
+
+     * Copyright Übertragung
+     * Bibliografie
+
+   Copyright © GNUnet e.V. 2015, 2016, 2017, 2018, 2019
+   Diese Seite wurde nur mit Freier Software erstellt.
+   Probleme bitte hier melden.
+   #alternate alternate alternate alternate alternate GNUnet.org rss
+
+   GNUnet (BUTTON)
+
+     * About
+     * News
+     * Community
+          + Engage
+          + GSoC Projects
+          + GNUnet e.V.
+          + Copyright for Contributors
+     * Development
+          + System Architecture
+          + Bug Tracker
+          + Source Code
+          + Source Code Documentation
+          + Development Tutorial
+          + libgnurl
+     * Documentation
+          + Install
+          + Use
+          + Videos
+          + Glossary
+          + Handbook
+          + REST API
+          + FAQ
+          + Bibliography
+
+   Notice: GNUnet is still undergoing major development. It is largely not
+   yet ready for usage beyond developers
+
+                                   GNUnet
+
+   GNUnet is a new network protocol stack for building secure,
+   distributed, and privacy-preserving applications. With strong roots in
+   academic research, our goal is to replace the old insecure Internet
+   protocol stack.
+   GNUnet is typically run as an overlay network on top of the existing
+   Internet infrastructure forming the basis of a hybrid peer-to-peer mesh
+   and relay backbone for applications to run on. It could just as well be
+   run independently of the Internet, over dedicated radio and cable.
+   GNUnet is made for a free and open society: It's a self-organizing
+   network and it is free software as in freedom. GNUnet puts you in
+   control of your data. You determine which data to share with whom, and
+   you're not pressured to accept compromises.
+
+   About   Install   Engage
+
+The Internet of tomorrow needs GNUnet today
+
+Imagine...
+
+   The conventional Internet is currently like a system of roads with deep
+   potholes and highwaymen all over the place. Even if you still can use
+   the roads (e.g. send emails, or browse websites) your vehicle might get
+   hijacked, damaged, or long arms might reach into its back and steal
+   your items (data) to use it against you and sell it to others - while
+   you can't even notice the thievery nor accuse and hold the scroungers
+   accountable.
+
+The Internet is broken
+
+   Protocols from Ethernet and IP to BGP and X.509 PKI are insecure by
+   default: protecting against address forgery, routers learning metadata,
+   or choosing trustworthy CAs is nontrivial and sometimes impossible.
+
+   GNUnet provides privacy by design, improving addressing, routing,
+   naming and content distribution in a technically robust manner - as
+   opposed to ad-hoc designs in place today.
+
+Decentralization is hard
+
+   Instead of sharing common components and tools for building P2P
+   systems, every P2P project seems to re-invent the wheel. This heightens
+   the effort and increases the potential number of vulnerabilities.
+
+   GNUnet is a metadata-preserving foundation for your application,
+   covering areas from addressing to reliable bidirectional
+   Axolotl-encrypted channels, with advanced routing. Our work is based on
+   continuous research spanning almost two decades.
+
+Metadata is exposed
+
+   Your metadata is just as revealing as the actual content; and it gets
+   exposed on the Internet.
+   Even though transport encryption is increasingly being deployed on the
+   Internet, it still reveals data that can threaten democracy: the
+   identities of senders and receivers, the times, frequency and the
+   volume of communication are all still revealed.
+   GNUnet addresses these concerns with perfect forward secrecy via
+   ephemeral public key addressing, fixed packet size to hinder traffic
+   analysis, layered encryption, Sybil-resistant routing, and more.
+
+Freedoms are not respected
+
+   Today, monitoring increasingly centralized infrastructure, proprietary
+   implementations, traffic shapers and firewalls restrict all of the
+   essential freedoms to various degrees.
+
+   GNUnet gives users freedoms to securely access information ("run" the
+   network), to study all aspects of the network's operation ("access the
+   code"), to distribute information ("copy"), as well as the freedom to
+   deploy new applications ("modify").
+
+Learn more about GNUnet
+
+   If you want to know more about the GNUnet please continue reading the
+   about page. There are much more resources, such as the main handbook /
+   reference manual, a bibliography and videos.
+
+   You are very welcome to get engaged into the conversation, install
+   GNUnet, use it and contribute.
+   Be aware that this project is still in an early alpha stage when it
+   comes to software – its not an easy task to rewrite the whole Internet!
+
+Featured Applications
+
+GNU Taler (Alpha)
+
+   GNU Taler is a new privacy-preserving electronic payment system.
+   Payments are cryptographically secured and are confirmed within
+   milliseconds with extremely low transaction costs.
+
+The GNU Name System
+
+   The GNU Name System (GNS) is a fully decentralized replacement for the
+   Domain Name System (DNS). Instead of using a hierarchy, GNS uses a
+   directed graph. Naming conventions are similar to DNS, but queries and
+   replies are private even with respect to peers providing the answers.
+   The integrity of records and privacy of look-ups is cryptographically
+   secured.
+
+re:claimID
+
+   re:claimID is a decentralized Identity Provider (IdP) service built in
+   top of the GNU Name System. It allows users to securely share personal
+   information with websites using standardized protocols (OpenID
+   Connect).
+
+Filesharing (Alpha)
+
+   GNUnet filesharing is an application that aims to provide
+   censorship-resistant, anonymous filesharing. The publisher is empowered
+   to make a gradual choice between performance and anonymity.
+
+Conversation (Pre-Alpha)
+
+   GNUnet conversation is an application that provides secure voice
+   communication in a fully decentralized way by employing GNUnet for
+   routing and transport.
+
+Upcoming Applications
+
+secushare
+
+   secushare is creating a decentralized social networking application on
+   top of GNUnet. Using overlay multicast and the extensible PSYC
+   protocol, notifications are distributed end-to-end encrypted to
+   authorized recipients only.
+
+pretty Easy privacy
+
+   pretty Easy privacy (p≡p) is creating a usable end-to-end encrypted
+   e-mail solution using opportunistic key exchange. p≡p will use GNUnet
+   to protect metadata and exploit new cryptographic protocols to verify
+   keys.
+
+News
+
+2019-07-24: GNUnet 0.11.6 released
+
+   We are pleased to announce the release of GNUnet 0.11.6.
+
+   This is a bugfix release for 0.11.5, fixing a lot of minor bugs,
+   improving stability and code quality. Further, our videos are back on
+   the homepage. In this release, we again improved the webpage in general
+   and updated our documentation. As always: In terms of usability, users
+   should be aware that there are still a large number of known open
+   issues in particular with respect to ease of use, but also some
+   critical privacy issues especially for mobile users. Also, the nascent
+   network is tiny (about 200 peers) and thus unlikely to provide good
+   anonymity or extensive amounts of interesting information. As a result,
+   the 0.11.6 release is still only suitable for early adopters with some
+   reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-fuse was not released again, as there were no changes and the
+   0.11.0 versions are expected to continue to work fine with
+   gnunet-0.11.6.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.6 (since 0.11.5)
+
+     * gnunet-identity can now print private keys.
+     * The REST service can be configured to echo the HTTP Origin header
+       value for Cross-Origin-Resource-Sharing (CORS) when it is called by
+       a browser plugin. Optionally, a CORS Origin to echo can be also be
+       directly configured.
+     * re:claimID tickets are now re-used whenever possible.
+     * SUID binary detection mechanisms implemented to improve
+       compatiblity with some distributions.
+     * TRANSPORT, TESTBED and CADET tests now pass again on macOS.
+     * CADET: Replaced enum GNUNET_CADET_ChannelOption with
+       GNUNET_MQ_PriorityPreferences in preparation of API changed in the
+       future.
+     * The GNS proxy Certification Authority is now generated using
+       gnutls-certtool, if available, with opennssl/certtool as fallback.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Martin Schanzenbach,
+   Julius Bünger, ng0, Christian Grothoff, Alexia Pagkopoulou, rexxnor,
+   xrs, lurchi and t3sserakt.
+
+2019-06-28: Peer DSTJ is dead, long live peer Y924
+
+   After some issues with our infrastructure we needed to replace our
+   bootstrapping peer. To avoid problems when connecting to GNUnet the
+   operator of a peer needs to update its node by removing the peer ID
+   DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0 from the system.
+   Here are two strategies to find copies of the respective file:
+
+    1. $ locate DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+    2. $ find / -name DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+
+   Update: DSTJ has now been blacklisted. Please update your GNUnet peer.
+
+2019-06-28: GNUnet Hacker Meeting 2019 at La Décentrale, Switzerland
+
+   The members of the GNUnet community met again in the wonderful
+   souroundings of St. Imier to hack on GNUnet. New people joined our
+   sessions until late at night. From bug squashing to digging our own dog
+   food, from workshops to theoretical discussions of new services and
+   usecases. And of course, pizza was in the game.
+
+2019-06-05: GNUnet 0.11.5 released
+
+   We are pleased to announce the release of GNUnet 0.11.5.
+
+   This is a bugfix release for 0.11.4, mostly fixing a few minor bugs and
+   improving performance, in particular for identity management with a
+   large number of egos. In the wake of this release, we also launched the
+   REST API documentation. In terms of usability, users should be aware
+   that there are still a large number of known open issues in particular
+   with respect to ease of use, but also some critical privacy issues
+   especially for mobile users. Also, the nascent network is tiny (about
+   200 peers) and thus unlikely to provide good anonymity or extensive
+   amounts of interesting information. As a result, the 0.11.5 release is
+   still only suitable for early adopters with some reasonable pain
+   tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-gtk saw some minor changes to adopt it to API changes in the
+   main code related to the identity improvements. gnunet-fuse was not
+   released again, as there were no changes and the 0.11.0 version is
+   expected to continue to work fine with gnunet-0.11.5.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.5 (since 0.11.4)
+
+     * gnunet-identity is much faster when creating or deleting egos given
+       a large number of existing egos.
+     * GNS now supports CAA records.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Florian Dold, Marcello Stanisci, ng0, Martin Schanzenbach and Bernd
+   Fix.
+
+2019-05-12: GNUnet 0.11.4 released
+
+   We are pleased to announce the release of GNUnet 0.11.4.
+
+   This is a bugfix release for 0.11.3, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.4 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.4.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.4 (since 0.11.3)
+
+     * gnunet-arm -s no longer logs into the console by default and
+       instead into a logfile (in $GNUNET_HOME).
+     * The reclaim subsystem is no longer experimental. See also
+       re:claimID. Further, the internal encryption scheme moved from ABE
+       to GNS-style encryption.
+     * GNUnet now depends on a more recent version of libmicrohttpd.
+     * The REST API now includes read-only access to the configuration.
+     * All manpages are now in mdoc format.
+     * gnunet-download-manager.scm removed.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-07: GNUnet 0.11.3 released
+
+   We are pleased to announce the release of GNUnet 0.11.3.
+
+   This is a bugfix release for 0.11.2, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.3 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.3.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.3 (since 0.11.2)
+
+     * gnunet-zoneimport now handles -h correctly
+     * iptables and other similar binaries are no longer hard-coded but
+       detected at configure time (with hard-coded fallback locations).
+     * make uninstall now properly uninstalls all files
+     * Passing the no longer available --with-nssdir configuration option
+       now results in a hard error.
+     * GNUNET_memcmp() and GNUNET_is_zero() macros introduced for improved
+       type safety (but not yet used consistently).
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-04: GNUnet 0.11.2 released
+
+   We are pleased to announce the release of GNUnet 0.11.2.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.2 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.2.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.2
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-04-03: GNUnet 0.11.1 released
+
+   We are pleased to announce the release of GNUnet 0.11.1.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.1 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.1.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.1
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-02: GNUnet 0.11.0 released
+
+   We are pleased to announce the release of GNUnet 0.11.0.
+
+   This is a major release after about five years of development. In terms
+   of usability, users should be aware that there are still a large number
+   of known open issues in particular with respect to ease of use, but
+   also some critical privacy issues especially for mobile users. Also,
+   the nascent network is tiny (about 200 peers) and thus unlikely to
+   provide good anonymity or extensive amounts of interesting information.
+   As a result, the 0.11.0 release is still only suitable for early
+   adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.0
+
+     * The Web site and manuals have undergone significant rework. You can
+       find an archive of the old Web site at archive.org.
+     * The code now builds again on macOS. GNUnet on macOS is
+       experimental. While it builds and seems to run fine, some tests are
+       known to fail.
+     * Build process now works properly with libidn2
+     * Except for gnunet-qr, all Python code was migrated to Python 3.7.
+     * Fixed security issues in secret sharing cryptography logic
+     * Services running out of file descriptors on accept() no longer busy
+       wait
+     * Fixed crash in gnunet-gns2dns proxy
+     * GNS responses are now padded to minimize information disclosure
+       from the size
+     * Fixed API issues and (rare) crash bugs in CADET
+     * The experimental SecuShare code is not included in the release, you
+       can now find it in the gnunet-secushare Git repository.
+     * The Ascension tool (separate download) now allows importing DNS
+       zones into GNS via AXFR.
+     * GNUnet now includes a decentralised identity attribute sharing
+       service: reclaimID. A ready-to-use client can be found in an
+       external repo.
+     * The code now builds again on NetBSD. GNUnet on NetBSD is
+       experimental. While it builds and seems to run fine, full support
+       requires more changes in the core of GNUnet It will soon be
+       available via pkgsrc.
+     * Many things changed on the build system side. If you package GNUnet
+       for an operating system or otherwise package manager, make sure
+       that you read the README.
+
+   The above is just the short list, our bugtracker lists over 100
+   individual issues that were resolved since 0.11.0pre66.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 150 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Matthias Wachs, Bart Polot, Sree Harsha Totakura, Nathan S. Evans,
+   Martin Schanzenbach, Julius Bünger, ng0, Philipp Tölke, Florian Dold,
+   Руслан Ижбулатов, tg(x), David Barksdale, Christian Fuchs, Nils Durner,
+   Omar Tarabai, Maximilian Szengel, Supriti Singh, lurchi, David Brodski,
+   xrs, Fabian Oehlmann, Carlo von lynX, Christophe Genevey Metat, Jeffrey
+   Burdges, Safey A.Halim, Daniel Golle, Phil, Bruno Cabral, Ji Lu, Heikki
+   Lindholm, Markus Teich, t3sserakt, Claudiu Olteanu, Marcello Stanisci,
+   Moon, Hernani Marques, anryko, Arthur Dewarumez, Julien Morvan, Adnan
+   H, rexxnor, Lin Tong, Andreas Fuchs, Christian Rupp, jah, Alejandra
+   Morales, Bernd Fix, Feideus, Matthias Kolja Miehl, Andrew Cann, Antonio
+   Ojea, Pascal Mainini, amirouche and hark. Special thanks to Florian
+   Weimer.
+
+2019-02: Topics for GSoC 2019
+
+   GNUnet is participating in the Google Summer of Code again through GNU.
+   If you are interested in any of these projects, reach out to us!
+
+Android Port
+
+   It is time for GNUnet to run properly on Android. Note that GNUnet is
+   written in C, and this is not about rewriting GNUnet in Java, but about
+   getting the C code to run on Android.
+   Mentor: Hartmut Goebel
+
+Help with Continuous Integration setup
+
+   There is a push for migrating our CI to Gitlab. The CI should
+   eventually not just run "make check" on various platforms, but also
+   perform tests with multiple peers running in different VMs with
+   specific network topologies (i.e. NAT) between them being simulated.
+   The CI should also be integrated with Gauger for performance regression
+   analysis. Running jobs only when dependencies have changed and
+   scripting more granular triggers or ideally automatic dependency
+   discovery (as done by the autotools) is also important.
+   Mentor: TBD
+
+Migrate gnunet-qr from Python 2.7 to C using libzbar
+
+   Python 2.7 is reaching its end-of-life, and we want to get rid of the
+   dependency on Python. The existing gnunet-qr tool is a rather simple
+   wrapper around python-zbar, which itself wraps libzbar. The goal of
+   this project is to directly use libzbar to scan QR codes for GNUnet /
+   the GNU Name System (see also #5562).
+   Mentor: Christian Grothoff
+
+re:claimID OpenID Connect performance improvements
+
+   reclaimID is a decentralized identity system build on top of the GNU
+   Name System. Upon authorization, the user provides a requesting party
+   (RP) such as a website with an authorization ticket (e.g. piggybacked
+   in an OpenID authorization code). The RP uses information contained in
+   this ticket to
+    1. Retrieve the decryption key from GNS
+    2. Retrieve the user attributes from GNS
+
+   The GNS lookups ensure that the RP receives up-to-date attributes and
+   functional decryption keys. However, in particular the RP-specific
+   encryption key resolution can be slow and even fail depending on the
+   network topology. We propose that in an initial exchange, in particular
+   OpenID authorization code flows, we try to incorporate key and maybe
+   even an attribute set in the ticket exchange. In order to mitigate this
+   issue, this project is meant to investigate and implement how...
+    1. ... decryption keys can be added to an initial exchange in OpenID.
+    2. ... initial set(s) of attributes can be piggybacked in OpenID.
+
+   Mentor: Martin Schanzenbach
+
+re:claimID alternative GNS-based encryption
+
+   re:claimID is a decentralized identity system build on top of the GNU
+   Name System. The initial design and implementation of re:claimID
+   includes an attribute-based encryption module in order to prevent
+   unauthorized access to attributes in the name system. Our motivation
+   for re:claimID was for it to be name system agnostic, which means the
+   design theoretically also works for other name systems such as
+   namecoin. Other name systems often do not have built-in mechanisms in
+   order to do this. Hence, we implemented an ABE access control layer.
+   Our ABE implementation requires two third party libraries: libpbc and
+   libgabe. While we could merge libgabe into the gnunet service
+   implementation of re:claimID, libpbc is a rather large, third party
+   library which lacks packaging in distributions and for platforms. On
+   the other hand, GNS supports record data encryption using symmetric
+   keys as labels. If we make the access control layer of re:claimID more
+   generic in order to support both ABE and GNS encryption, we could
+   reduce the required depenencies. This would result in gnunet packages
+   to include re:claimID by default. In short, the goals are to...
+    1. ... improve performance by reducing encryption overhead.
+    2. ... reduce dependencies.
+
+   Mentor: Martin Schanzenbach
+
+Enable all networking applications to run over GNUnet out of the box
+
+   One great problem of the current Internet is the lack of
+   disintermediation. When people want to talk they need a chat service.
+   When they want to share files they need a file transfer service.
+   Although GNUnet already possesses quite advanced integration into Linux
+   networking, a little extra work is needed for existing applications
+   like irc, www, ftp, rsh, nntpd to run over it in a peer-to-peer way,
+   simply by using a GNS hostname like friend.gnu. Once people have added
+   a person to their GNS they can immediately message, exchange files and
+   suchlike directly, with nothing but the GNUnet in the middle, using
+   applications that have been distributed with unix systems ever since
+   the 1980's. We can produce an OS distribution where these things work
+   out of the box with the nicknames of people instead of cloud services.
+   For more information and context, read bug id 4625.
+
+   Mentors: lynX & dvn
+
+More news
+
+     * Contact
+     * GNUnet e.V.
+     * About GNUnet
+
+     * Bug Tracker
+
+     * Copyright Assignment
+     * Bibliography
+
+   Copyright © GNUnet e.V. 2001 — 2019. Source code of this site. Report
+   issues with this website.
+   #alternate alternate alternate alternate alternate GNUnet.org rss
+
+   GNUnet (BUTTON)
+
+     * Sobre
+     * Nuevo
+     * Comunidad
+          + Participa
+          + Projectos de GSoC
+          + GNUnet a. r.
+          + Derecho de autor para contributores
+     * Desarrollo
+          + Architectura del sistema
+          + Herramienta de seguimiento de errores
+          + Códico fuente
+          + Documentación
+          + Desarrollo
+          + libgnurl
+     * Documentación
+          + Instala
+          + Usa
+          + Videos
+          + Glosario
+          + Manual
+          + REST API
+          + FAQ
+          + Bibliografía
+
+   Notice: GNUnet is still undergoing major development. It is largely not
+   yet ready for usage beyond developers
+
+                                   GNUnet
+
+   GNUnet is a new network protocol stack for building secure,
+   distributed, and privacy-preserving applications. With strong roots in
+   academic research, our goal is to replace the old insecure Internet
+   protocol stack.
+   GNUnet is typically run as an overlay network on top of the existing
+   Internet infrastructure forming the basis of a hybrid peer-to-peer mesh
+   and relay backbone for applications to run on. It could just as well be
+   run independently of the Internet, over dedicated radio and cable.
+   GNUnet is made for a free and open society: It's a self-organizing
+   network and it is free software as in freedom. GNUnet puts you in
+   control of your data. You determine which data to share with whom, and
+   you're not pressured to accept compromises.
+
+   Sobre   Instala   Participa
+
+The Internet of tomorrow needs GNUnet today
+
+Imagine...
+
+   The conventional Internet is currently like a system of roads with deep
+   potholes and highwaymen all over the place. Even if you still can use
+   the roads (e.g. send emails, or browse websites) your vehicle might get
+   hijacked, damaged, or long arms might reach into its back and steal
+   your items (data) to use it against you and sell it to others - while
+   you can't even notice the thievery nor accuse and hold the scroungers
+   accountable.
+
+The Internet is broken
+
+   Protocols from Ethernet and IP to BGP and X.509 PKI are insecure by
+   default: protecting against address forgery, routers learning metadata,
+   or choosing trustworthy CAs is nontrivial and sometimes impossible.
+
+   GNUnet provides privacy by design, improving addressing, routing,
+   naming and content distribution in a technically robust manner - as
+   opposed to ad-hoc designs in place today.
+
+Decentralization is hard
+
+   Instead of sharing common components and tools for building P2P
+   systems, every P2P project seems to re-invent the wheel. This heightens
+   the effort and increases the potential number of vulnerabilities.
+
+   GNUnet is a metadata-preserving foundation for your application,
+   covering areas from addressing to reliable bidirectional
+   Axolotl-encrypted channels, with advanced routing. Our work is based on
+   continuous research spanning almost two decades.
+
+Metadata is exposed
+
+   Your metadata is just as revealing as the actual content; and it gets
+   exposed on the Internet.
+   Even though transport encryption is increasingly being deployed on the
+   Internet, it still reveals data that can threaten democracy: the
+   identities of senders and receivers, the times, frequency and the
+   volume of communication are all still revealed.
+   GNUnet addresses these concerns with perfect forward secrecy via
+   ephemeral public key addressing, fixed packet size to hinder traffic
+   analysis, layered encryption, Sybil-resistant routing, and more.
+
+Freedoms are not respected
+
+   Today, monitoring increasingly centralized infrastructure, proprietary
+   implementations, traffic shapers and firewalls restrict all of the
+   essential freedoms to various degrees.
+
+   GNUnet gives users freedoms to securely access information ("run" the
+   network), to study all aspects of the network's operation ("access the
+   code"), to distribute information ("copy"), as well as the freedom to
+   deploy new applications ("modify").
+
+Sobre GNUnet
+
+   If you want to know more about the GNUnet please continue reading the
+   about page. There are much more resources, such as the main handbook /
+   reference manual, a bibliography and videos.
+
+   You are very welcome to get engaged into the conversation, install
+   GNUnet, use it and contribute.
+   Be aware that this project is still in an early alpha stage when it
+   comes to software – its not an easy task to rewrite the whole Internet!
+
+Featured Applications
+
+GNU Taler (Alpha)
+
+   GNU Taler is a new privacy-preserving electronic payment system.
+   Payments are cryptographically secured and are confirmed within
+   milliseconds with extremely low transaction costs.
+
+The GNU Name System
+
+   The GNU Name System (GNS) is a fully decentralized replacement for the
+   Domain Name System (DNS). Instead of using a hierarchy, GNS uses a
+   directed graph. Naming conventions are similar to DNS, but queries and
+   replies are private even with respect to peers providing the answers.
+   The integrity of records and privacy of look-ups is cryptographically
+   secured.
+
+re:claimID
+
+   re:claimID is a decentralized Identity Provider (IdP) service built in
+   top of the GNU Name System. It allows users to securely share personal
+   information with websites using standardized protocols (OpenID
+   Connect).
+
+Filesharing (Alpha)
+
+   GNUnet filesharing is an application that aims to provide
+   censorship-resistant, anonymous filesharing. The publisher is empowered
+   to make a gradual choice between performance and anonymity.
+
+Conversation (Pre-Alpha)
+
+   GNUnet conversation is an application that provides secure voice
+   communication in a fully decentralized way by employing GNUnet for
+   routing and transport.
+
+Upcoming Applications
+
+secushare
+
+   secushare is creating a decentralized social networking application on
+   top of GNUnet. Using overlay multicast and the extensible PSYC
+   protocol, notifications are distributed end-to-end encrypted to
+   authorized recipients only.
+
+pretty Easy privacy
+
+   pretty Easy privacy (p≡p) is creating a usable end-to-end encrypted
+   e-mail solution using opportunistic key exchange. p≡p will use GNUnet
+   to protect metadata and exploit new cryptographic protocols to verify
+   keys.
+
+Nuevo
+
+2019-07-24: GNUnet 0.11.6 released
+
+   We are pleased to announce the release of GNUnet 0.11.6.
+
+   This is a bugfix release for 0.11.5, fixing a lot of minor bugs,
+   improving stability and code quality. Further, our videos are back on
+   the homepage. In this release, we again improved the webpage in general
+   and updated our documentation. As always: In terms of usability, users
+   should be aware that there are still a large number of known open
+   issues in particular with respect to ease of use, but also some
+   critical privacy issues especially for mobile users. Also, the nascent
+   network is tiny (about 200 peers) and thus unlikely to provide good
+   anonymity or extensive amounts of interesting information. As a result,
+   the 0.11.6 release is still only suitable for early adopters with some
+   reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.6.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-fuse was not released again, as there were no changes and the
+   0.11.0 versions are expected to continue to work fine with
+   gnunet-0.11.6.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.6 (since 0.11.5)
+
+     * gnunet-identity can now print private keys.
+     * The REST service can be configured to echo the HTTP Origin header
+       value for Cross-Origin-Resource-Sharing (CORS) when it is called by
+       a browser plugin. Optionally, a CORS Origin to echo can be also be
+       directly configured.
+     * re:claimID tickets are now re-used whenever possible.
+     * SUID binary detection mechanisms implemented to improve
+       compatiblity with some distributions.
+     * TRANSPORT, TESTBED and CADET tests now pass again on macOS.
+     * CADET: Replaced enum GNUNET_CADET_ChannelOption with
+       GNUNET_MQ_PriorityPreferences in preparation of API changed in the
+       future.
+     * The GNS proxy Certification Authority is now generated using
+       gnutls-certtool, if available, with opennssl/certtool as fallback.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Martin Schanzenbach,
+   Julius Bünger, ng0, Christian Grothoff, Alexia Pagkopoulou, rexxnor,
+   xrs, lurchi and t3sserakt.
+
+2019-06-28: Peer DSTJ is dead, long live peer Y924
+
+   After some issues with our infrastructure we needed to replace our
+   bootstrapping peer. To avoid problems when connecting to GNUnet the
+   operator of a peer needs to update its node by removing the peer ID
+   DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0 from the system.
+   Here are two strategies to find copies of the respective file:
+
+    1. $ locate DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+    2. $ find / -name DSTJBRRKZ8TBW3FGK6B0M5QXWT9WYNZ45H5MCV4HY7ST64Q8T9F0
+
+   Update: DSTJ has now been blacklisted. Please update your GNUnet peer.
+
+2019-06-28: GNUnet Hacker Meeting 2019 at La Décentrale, Switzerland
+
+   The members of the GNUnet community met again in the wonderful
+   souroundings of St. Imier to hack on GNUnet. New people joined our
+   sessions until late at night. From bug squashing to digging our own dog
+   food, from workshops to theoretical discussions of new services and
+   usecases. And of course, pizza was in the game.
+
+2019-06-05: GNUnet 0.11.5 released
+
+   We are pleased to announce the release of GNUnet 0.11.5.
+
+   This is a bugfix release for 0.11.4, mostly fixing a few minor bugs and
+   improving performance, in particular for identity management with a
+   large number of egos. In the wake of this release, we also launched the
+   REST API documentation. In terms of usability, users should be aware
+   that there are still a large number of known open issues in particular
+   with respect to ease of use, but also some critical privacy issues
+   especially for mobile users. Also, the nascent network is tiny (about
+   200 peers) and thus unlikely to provide good anonymity or extensive
+   amounts of interesting information. As a result, the 0.11.5 release is
+   still only suitable for early adopters with some reasonable pain
+   tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.5.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   gnunet-gtk saw some minor changes to adopt it to API changes in the
+   main code related to the identity improvements. gnunet-fuse was not
+   released again, as there were no changes and the 0.11.0 version is
+   expected to continue to work fine with gnunet-0.11.5.
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.5 (since 0.11.4)
+
+     * gnunet-identity is much faster when creating or deleting egos given
+       a large number of existing egos.
+     * GNS now supports CAA records.
+     * Documentation, comments and code quality was improved.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Florian Dold, Marcello Stanisci, ng0, Martin Schanzenbach and Bernd
+   Fix.
+
+2019-05-12: GNUnet 0.11.4 released
+
+   We are pleased to announce the release of GNUnet 0.11.4.
+
+   This is a bugfix release for 0.11.3, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.4 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.4.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.4.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+Noteworthy changes in 0.11.4 (since 0.11.3)
+
+     * gnunet-arm -s no longer logs into the console by default and
+       instead into a logfile (in $GNUNET_HOME).
+     * The reclaim subsystem is no longer experimental. See also
+       re:claimID. Further, the internal encryption scheme moved from ABE
+       to GNS-style encryption.
+     * GNUnet now depends on a more recent version of libmicrohttpd.
+     * The REST API now includes read-only access to the configuration.
+     * All manpages are now in mdoc format.
+     * gnunet-download-manager.scm removed.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-07: GNUnet 0.11.3 released
+
+   We are pleased to announce the release of GNUnet 0.11.3.
+
+   This is a bugfix release for 0.11.2, mostly fixing a few build issues.
+   In terms of usability, users should be aware that there are still a
+   large number of known open issues in particular with respect to ease of
+   use, but also some critical privacy issues especially for mobile users.
+   Also, the nascent network is tiny (about 200 peers) and thus unlikely
+   to provide good anonymity or extensive amounts of interesting
+   information. As a result, the 0.11.3 release is still only suitable for
+   early adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.3.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.3.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.3 (since 0.11.2)
+
+     * gnunet-zoneimport now handles -h correctly
+     * iptables and other similar binaries are no longer hard-coded but
+       detected at configure time (with hard-coded fallback locations).
+     * make uninstall now properly uninstalls all files
+     * Passing the no longer available --with-nssdir configuration option
+       now results in a hard error.
+     * GNUNET_memcmp() and GNUNET_is_zero() macros introduced for improved
+       type safety (but not yet used consistently).
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Daniel Golle, Martin Schanzenbach and Julius Bünger.
+
+2019-04-04: GNUnet 0.11.2 released
+
+   We are pleased to announce the release of GNUnet 0.11.2.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.2 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.2.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.2.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.2
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-04-03: GNUnet 0.11.1 released
+
+   We are pleased to announce the release of GNUnet 0.11.1.
+
+   This is a bugfix release for 0.11.0, mostly fixing minor bugs,
+   improving documentation and fixing various build issues. In terms of
+   usability, users should be aware that there are still a large number of
+   known open issues in particular with respect to ease of use, but also
+   some critical privacy issues especially for mobile users. Also, the
+   nascent network is tiny (about 200 peers) and thus unlikely to provide
+   good anonymity or extensive amounts of interesting information. As a
+   result, the 0.11.1 release is still only suitable for early adopters
+   with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.1.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   (gnunet-gtk and gnunet-fuse were not released again, as there were no
+   changes and the 0.11.0 versions are expected to continue to work fine
+   with gnunet-0.11.1.)
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.1
+
+     * gnunet-qr was rewritten in C, removing our last dependency on
+       Python 2.x
+     * REST and GNS proxy configuration options for address binding were
+       added
+     * gnunet-publish by default no longer includes creation time
+     * Unreliable message ordering logic in CADET was fixed
+     * Various improvements to build system and documentation
+
+   The above is just the short list, our bugtracker lists 14 individual
+   issues that were resolved since 0.11.0.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 190 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: ng0, Christian
+   Grothoff, Hartmut Goebel, Martin Schanzenbach, Devan Carpenter, Naomi
+   Phillips and Julius Bünger.
+
+2019-02: GNUnet 0.11.0 released
+
+   We are pleased to announce the release of GNUnet 0.11.0.
+
+   This is a major release after about five years of development. In terms
+   of usability, users should be aware that there are still a large number
+   of known open issues in particular with respect to ease of use, but
+   also some critical privacy issues especially for mobile users. Also,
+   the nascent network is tiny (about 200 peers) and thus unlikely to
+   provide good anonymity or extensive amounts of interesting information.
+   As a result, the 0.11.0 release is still only suitable for early
+   adopters with some reasonable pain tolerance.
+
+Download links
+
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-gtk-0.11.0.tar.gz.sig
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz
+     * http://ftpmirror.gnu.org/gnunet/gnunet-fuse-0.11.0.tar.gz.sig
+
+   Note that due to mirror synchronization, not all links might be
+   functional early after the release. For direct access try
+   http://ftp.gnu.org/gnu/gnunet/
+
+   Note that GNUnet is now started using gnunet-arm -s. GNUnet should be
+   stopped using gnunet-arm -e.
+
+Noteworthy changes in 0.11.0
+
+     * The Web site and manuals have undergone significant rework. You can
+       find an archive of the old Web site at archive.org.
+     * The code now builds again on macOS. GNUnet on macOS is
+       experimental. While it builds and seems to run fine, some tests are
+       known to fail.
+     * Build process now works properly with libidn2
+     * Except for gnunet-qr, all Python code was migrated to Python 3.7.
+     * Fixed security issues in secret sharing cryptography logic
+     * Services running out of file descriptors on accept() no longer busy
+       wait
+     * Fixed crash in gnunet-gns2dns proxy
+     * GNS responses are now padded to minimize information disclosure
+       from the size
+     * Fixed API issues and (rare) crash bugs in CADET
+     * The experimental SecuShare code is not included in the release, you
+       can now find it in the gnunet-secushare Git repository.
+     * The Ascension tool (separate download) now allows importing DNS
+       zones into GNS via AXFR.
+     * GNUnet now includes a decentralised identity attribute sharing
+       service: reclaimID. A ready-to-use client can be found in an
+       external repo.
+     * The code now builds again on NetBSD. GNUnet on NetBSD is
+       experimental. While it builds and seems to run fine, full support
+       requires more changes in the core of GNUnet It will soon be
+       available via pkgsrc.
+     * Many things changed on the build system side. If you package GNUnet
+       for an operating system or otherwise package manager, make sure
+       that you read the README.
+
+   The above is just the short list, our bugtracker lists over 100
+   individual issues that were resolved since 0.11.0pre66.
+
+Known Issues
+
+     * There are known major design issues in the TRANSPORT, ATS and CORE
+       subsystems which will need to be addressed in the future to achieve
+       acceptable usability, performance and security.
+     * There are known moderate implementation limitations in CADET that
+       negatively impact performance. Also CADET may unexpectedly deliver
+       messages out-of-order.
+     * There are known moderate design issues in FS that also impact
+       usability and performance.
+     * There are minor implementation limitations in SET that create
+       unnecessary attack surface for availability.
+     * The RPS subsystem remains experimental.
+     * Some high-level tests in the test-suite fail non-deterministically
+       due to the low-level TRANSPORT issues.
+
+   In addition to this list, you may also want to consult our bug tracker
+   at bugs.gnunet.org which lists about 150 more specific issues.
+
+Thanks
+
+   This release was the work of many people. The following people
+   contributed code and were thus easily identified: Christian Grothoff,
+   Matthias Wachs, Bart Polot, Sree Harsha Totakura, Nathan S. Evans,
+   Martin Schanzenbach, Julius Bünger, ng0, Philipp Tölke, Florian Dold,
+   Руслан Ижбулатов, tg(x), David Barksdale, Christian Fuchs, Nils Durner,
+   Omar Tarabai, Maximilian Szengel, Supriti Singh, lurchi, David Brodski,
+   xrs, Fabian Oehlmann, Carlo von lynX, Christophe Genevey Metat, Jeffrey
+   Burdges, Safey A.Halim, Daniel Golle, Phil, Bruno Cabral, Ji Lu, Heikki
+   Lindholm, Markus Teich, t3sserakt, Claudiu Olteanu, Marcello Stanisci,
+   Moon, Hernani Marques, anryko, Arthur Dewarumez, Julien Morvan, Adnan
+   H, rexxnor, Lin Tong, Andreas Fuchs, Christian Rupp, jah, Alejandra
+   Morales, Bernd Fix, Feideus, Matthias Kolja Miehl, Andrew Cann, Antonio
+   Ojea, Pascal Mainini, amirouche and hark. Special thanks to Florian
+   Weimer.
+
+2019-02: Topics for GSoC 2019
+
+   GNUnet is participating in the Google Summer of Code again through GNU.
+   If you are interested in any of these projects, reach out to us!
+
+Android Port
+
+   It is time for GNUnet to run properly on Android. Note that GNUnet is
+   written in C, and this is not about rewriting GNUnet in Java, but about
+   getting the C code to run on Android.
+   Mentor: Hartmut Goebel
+
+Help with Continuous Integration setup
+
+   There is a push for migrating our CI to Gitlab. The CI should
+   eventually not just run "make check" on various platforms, but also
+   perform tests with multiple peers running in different VMs with
+   specific network topologies (i.e. NAT) between them being simulated.
+   The CI should also be integrated with Gauger for performance regression
+   analysis. Running jobs only when dependencies have changed and
+   scripting more granular triggers or ideally automatic dependency
+   discovery (as done by the autotools) is also important.
+   Mentor: TBD
+
+Migrate gnunet-qr from Python 2.7 to C using libzbar
+
+   Python 2.7 is reaching its end-of-life, and we want to get rid of the
+   dependency on Python. The existing gnunet-qr tool is a rather simple
+   wrapper around python-zbar, which itself wraps libzbar. The goal of
+   this project is to directly use libzbar to scan QR codes for GNUnet /
+   the GNU Name System (see also #5562).
+   Mentor: Christian Grothoff
+
+re:claimID OpenID Connect performance improvements
+
+   reclaimID is a decentralized identity system build on top of the GNU
+   Name System. Upon authorization, the user provides a requesting party
+   (RP) such as a website with an authorization ticket (e.g. piggybacked
+   in an OpenID authorization code). The RP uses information contained in
+   this ticket to
+    1. Retrieve the decryption key from GNS
+    2. Retrieve the user attributes from GNS
+
+   The GNS lookups ensure that the RP receives up-to-date attributes and
+   functional decryption keys. However, in particular the RP-specific
+   encryption key resolution can be slow and even fail depending on the
+   network topology. We propose that in an initial exchange, in particular
+   OpenID authorization code flows, we try to incorporate key and maybe
+   even an attribute set in the ticket exchange. In order to mitigate this
+   issue, this project is meant to investigate and implement how...
+    1. ... decryption keys can be added to an initial exchange in OpenID.
+    2. ... initial set(s) of attributes can be piggybacked in OpenID.
+
+   Mentor: Martin Schanzenbach
+
+re:claimID alternative GNS-based encryption
+
+   re:claimID is a decentralized identity system build on top of the GNU
+   Name System. The initial design and implementation of re:claimID
+   includes an attribute-based encryption module in order to prevent
+   unauthorized access to attributes in the name system. Our motivation
+   for re:claimID was for it to be name system agnostic, which means the
+   design theoretically also works for other name systems such as
+   namecoin. Other name systems often do not have built-in mechanisms in
+   order to do this. Hence, we implemented an ABE access control layer.
+   Our ABE implementation requires two third party libraries: libpbc and
+   libgabe. While we could merge libgabe into the gnunet service
+   implementation of re:claimID, libpbc is a rather large, third party
+   library which lacks packaging in distributions and for platforms. On
+   the other hand, GNS supports record data encryption using symmetric
+   keys as labels. If we make the access control layer of re:claimID more
+   generic in order to support both ABE and GNS encryption, we could
+   reduce the required depenencies. This would result in gnunet packages
+   to include re:claimID by default. In short, the goals are to...
+    1. ... improve performance by reducing encryption overhead.
+    2. ... reduce dependencies.
+
+   Mentor: Martin Schanzenbach
+
+Enable all networking applications to run over GNUnet out of the box
+
+   One great problem of the current Internet is the lack of
+   disintermediation. When people want to talk they need a chat service.
+   When they want to share files they need a file transfer service.
+   Although GNUnet already possesses quite advanced integration into Linux
+   networking, a little extra work is needed for existing applications
+   like irc, www, ftp, rsh, nntpd to run over it in a peer-to-peer way,
+   simply by using a GNS hostname like friend.gnu. Once people have added
+   a person to their GNS they can immediately message, exchange files and
+   suchlike directly, with nothing but the GNUnet in the middle, using
+   applications that have been distributed with unix systems ever since
+   the 1980's. We can produce an OS distribution where these things work
+   out of the box with the nicknames of people instead of cloud services.
+   For more information and context, read bug id 4625.
+
+   Mentors: lynX & dvn
+
+More news
+
+     * Contacto
+     * GNUnet a. r.
+     * Sobre GNUnet
+
+     * Herramienta de seguimiento de errores
+
+     * Transmisión de derechos de autor
+     * Bibliografía
+
+   Copyright © GNUnet e.V. 2001 — 2019. Source code of this site. Report
+   issues with this website.

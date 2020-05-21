@@ -1,0 +1,402 @@
+   #PixyCam » Feed PixyCam » Comments Feed alternate alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-MWRFPMM
+
+   Skip to content
+
+   PixyCam
+
+   PixyCam
+
+   Pixy is the easiest way to add vision to your robot!
+
+PixyCam
+
+   close
+     * Products
+     * Projects
+     * Videos
+     * Buy
+     * Support
+          + Downloads
+          + Documentation
+          + Forum
+          + Contact
+          + Source Code
+     * Blog
+     * About
+          + The Story of Pixy
+          + Jobs
+
+   (BUTTON) Primary Menu for Mobile (BUTTON) Primary Menu for Desktop
+
+Introducing Pixy2
+
+   (Click on the video to see the full-length version.)
+
+Robot vision made easier
+
+   Pixy2 is smaller, faster and more capable than the original Pixy.  Like
+   its predecessor, Pixy2 can learn to detect objects that you teach it,
+   just by pressing a button.  Additionally, Pixy2 has new algorithms that
+   detect and track lines for use with line-following robots.  The new
+   algorithms can detect intersections and “road signs” as well. The road
+   signs can tell your robot what to do, such as turn left, turn right,
+   slow down, etc.  And Pixy2 does all of this at 60 frames-per-second, so
+   your robot can be fast, too.
+
+   Use Pixy2 for lots of different applications, find a project, or use
+   Pixy2 for something no one has considered!
+
+Connect directly to Arduino or Raspberry Pi
+
+   No need to futz around with tiny wires — Pixy2 comes with a special
+   cable to plug directly into an Arduino and a USB cable to plug into a
+   Raspberry Pi, so you can get started quickly.  No Arduino or Raspberry
+   Pi?  No problem!  Pixy2 has several interfaces (SPI, I2C, UART, and
+   USB) and simple communications, so you get your chosen controller
+   talking to Pixy2 in short order.
+
+Simplify your programming
+
+   To get you up and running as fast as possible, we offer software
+   libraries for Arduino and Raspberry Pi.  Pixy2 makes your programs
+   simpler by only sending the data you’re looking for.  For example, if
+   you teach Pixy2 a purple object, you will only receive data (X-Y
+   coordinates, size, and unique ID) about the purple objects that Pixy2
+   detects.
+
+Open software and hardware
+
+   Want to dig deeper?  Pixy2 is entirely open-source — software,
+   firmware, and hardware.  We also offer a helpful wiki, support forums,
+   and email support.
+
+And the best part…
+
+   Pixy2 is available now!
+
+   Where Can I Buy?
+
+   Give Me More Info
+
+Pixy
+
+     * Where To Buy
+     * Products
+     * Projects
+     * Videos
+     * Blog
+
+Support
+
+     * Downloads
+     * Documentation
+     * Forum
+     * Contact
+     * Source Code
+
+Follow us
+
+     * Facebook
+     * Twitter
+     * Youtube
+
+Newsletter
+
+   Join our low-volume mailing list for updates and announcements!
+
+   Email address:
+   ____________________
+
+   Sign up
+   Leave this field empty if you're human: ____________________
+   Copyright 2019 PixyCam. All rights reserved. Powered by WordPress.
+   Theme: Suffice by ThemeGrill.
+
+  PixyCam
+
+   close
+
+     * Products
+     * Projects
+     * Videos
+     * Buy
+     * Support
+          + Downloads
+          + Documentation
+          + Forum
+          + Contact
+          + Source Code
+     * Blog
+     * About
+          + The Story of Pixy
+          + Jobs
+   #PixyCam » Feed PixyCam » Comments Feed PixyCam » A slew of tweaks,
+   improvements and fixes Comments Feed Ringing in 2014 First peeks
+   alternate alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-MWRFPMM
+
+   Skip to content
+
+   PixyCam
+
+   PixyCam
+
+   Pixy is the easiest way to add vision to your robot!
+
+PixyCam
+
+   close
+     * Products
+     * Projects
+     * Videos
+     * Buy
+     * Support
+          + Downloads
+          + Documentation
+          + Forum
+          + Contact
+          + Source Code
+     * Blog
+     * About
+          + The Story of Pixy
+          + Jobs
+
+   (BUTTON) Primary Menu for Mobile (BUTTON) Primary Menu for Desktop
+
+   Posted on January 14, 2014June 18, 2018 by Rich LeGrand
+
+   Hey Everybody!
+   Hope your new year is going well! You know when someone asks what
+   you’ve been up to, and you’ve been super busy, and you try to explain,
+   but everything that comes out of your mouth sounds kind of lame? The
+   last couple weeks have been like that. The focus has been on firmware
+   and software. There’s been whole slew of tweaks, improvements and fixes
+   all over the place, but nothing “huge”.  And so in that sense this
+   update is pretty much the opposite of a cool demo, but to summarize,
+   there’s been excellent progress lately, just not anything that can
+   described with a cool pic or video.
+
+   Much of the work has been focused on the color signatures and the code
+   that generates them, such as getting the lookup tables to generate
+   quickly and efficiently, writing a region growing routine to do a
+   simple object segmentation during “teach” mode, and saving and loading
+   the color signatures from flash. We’ve made good progress on the
+   Arduino libraries. We’ve improved the image rendering modes in Pixymon
+   and made them more general purpose. We ran into some memory issues,
+   fixed them, uncovered a USB issue, fixed it. A Heap issue was uncovered
+   and fixed. Many comments added. Lots of coffee consumed….. still
+   reading? (sorry!)
+
+   Manufacturing is ramping up. We have 4000 Pixys double-bagged and
+   double-boxed, waiting patiently for lenses and firmware to make their
+   little Pixy selves complete. We’re interviewing candidates to help with
+   the Big Shipment and the tasks leading up to it. And we have little
+   Pixy boxes. Here— take a look!
+   Your Pixy will arrive all snug in this little box Your Pixy will arrive
+   all snug in this little box
+
+   OK, the schedule– we’re trying to stick to the dates we laid out 4
+   weeks ago, namely feature completion the week of January 27 and
+   start-ship the week February 17. We’re behind, but not hugely so, and
+   trying to make up time wherever possible. We promise not to cut
+   corners. The next couple weeks are the home stretch, or close to it,
+   development-wise. We’ll be focusing more on Pixymon. There’s a cool
+   feature (aspect?) of Pixymon that we’ve worked hard to maintain—
+   Pixymon is a generic front-end and not tied to any particular algorithm
+   (such as color blob analysis.) More on that in the next update as well
+   as the status of the final push!
+
+   As always, thank you so much for your interest, support, and patience!
+   A slew of tweaks, improvements and fixes
+
+   Posted in Pixy
+
+Post navigation
+
+   Ringing in 2014
+   First peeks
+
+You May Also Like
+
+     *
+
+Ringing in 2014
+     *
+
+New Pixy2 releases
+     *
+
+Up and coming vlogger reviews Pixy
+     *
+
+Awesome video overview of Pixy2
+     *
+
+Light at the end of the tunnel
+     *
+
+Shipping! (to Amazon, then shipping to you)
+
+Pixy
+
+     * Where To Buy
+     * Products
+     * Projects
+     * Videos
+     * Blog
+
+Support
+
+     * Downloads
+     * Documentation
+     * Forum
+     * Contact
+     * Source Code
+
+Follow us
+
+     * Facebook
+     * Twitter
+     * Youtube
+
+Newsletter
+
+   Join our low-volume mailing list for updates and announcements!
+
+   Email address:
+   ____________________
+
+   Sign up
+   Leave this field empty if you're human: ____________________
+   Copyright 2019 PixyCam. All rights reserved. Powered by WordPress.
+   Theme: Suffice by ThemeGrill.
+
+  PixyCam
+
+   close
+
+     * Products
+     * Projects
+     * Videos
+     * Buy
+     * Support
+          + Downloads
+          + Documentation
+          + Forum
+          + Contact
+          + Source Code
+     * Blog
+     * About
+          + The Story of Pixy
+          + Jobs
+   #PixyCam » Feed PixyCam » Comments Feed PixyCam » Posts by admin Feed
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-MWRFPMM
+
+   Skip to content
+
+   PixyCam
+
+   PixyCam
+
+   Pixy is the easiest way to add vision to your robot!
+
+PixyCam
+
+   close
+     * Products
+     * Projects
+     * Videos
+     * Buy
+     * Support
+          + Downloads
+          + Documentation
+          + Forum
+          + Contact
+          + Source Code
+     * Blog
+     * About
+          + The Story of Pixy
+          + Jobs
+
+   (BUTTON) Primary Menu for Mobile (BUTTON) Primary Menu for Desktop
+
+New Pixy2 releases
+
+   Posted on September 28, 2018September 28, 2018 by admin
+
+   We recently released Pixymon ver 3.0.24,  Pixy2 firmware ver 3.0.11,
+   Arduino library ver 1.0.3, and new libpixyusb2 code.  Among the changes
+   are:
+     * “getRGB” functionality added to video program, added new Arduino
+       and libpixyusb2 examples to illustrate getRGB
+     * added “get raw frame” example to libpixyusb2, fixed
+       chirp/libpixyusb2 bug,
+     * Added frames-per-second parameter (slider) for improved noise and
+       exposure in low-lighting environments
+     * Framerate display and cursor location added to PixyMon
+     * Improved and recalibrated lens-shading for image sensor/module
+     * Automatic program change from port requests (SPI, I2C, UART, USB)
+     * Several (unreported) bug fixes in firmware and PixyMon
+
+   Note, all the latest releases including this release are in the
+   Downloads section.
+
+
+   Posted in Pixy
+
+Pixy
+
+     * Where To Buy
+     * Products
+     * Projects
+     * Videos
+     * Blog
+
+Support
+
+     * Downloads
+     * Documentation
+     * Forum
+     * Contact
+     * Source Code
+
+Follow us
+
+     * Facebook
+     * Twitter
+     * Youtube
+
+Newsletter
+
+   Join our low-volume mailing list for updates and announcements!
+
+   Email address:
+   ____________________
+
+   Sign up
+   Leave this field empty if you're human: ____________________
+   Copyright 2019 PixyCam. All rights reserved. Powered by WordPress.
+   Theme: Suffice by ThemeGrill.
+
+  PixyCam
+
+   close
+
+     * Products
+     * Projects
+     * Videos
+     * Buy
+     * Support
+          + Downloads
+          + Documentation
+          + Forum
+          + Contact
+          + Source Code
+     * Blog
+     * About
+          + The Story of Pixy
+          + Jobs

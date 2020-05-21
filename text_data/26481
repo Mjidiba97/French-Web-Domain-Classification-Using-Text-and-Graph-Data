@@ -1,0 +1,103 @@
+   [ ]
+     * Download
+     * Documentation
+     * Resources
+     * Community
+     * Jobs
+     * Commercial Support
+     * FAQ
+     * Fork on Github
+
+   An open source and collaborative framework for extracting the data you
+   need from websites.
+
+   In a fast, simple, yet extensible way.
+   PyPI Version Wheel Status Coverage report
+   Install the latest version of Scrapy
+
+   Scrapy 1.7.3
+   pip install scrapy
+   (BUTTON) PyPI (BUTTON) Conda (BUTTON) Release Notes
+
+   Terminal•
+ pip install scrapy
+ cat > myspider.py <<EOF
+
+import scrapy
+
+class BlogSpider(scrapy.Spider):
+    name = 'blogspider'
+    start_urls = ['https://blog.scrapinghub.com']
+
+    def parse(self, response):
+        for title in response.css('.post-header>h2'):
+            yield {'title': title.css('a ::text').get()}
+
+        for next_page in response.css('a.next-posts-link'):
+            yield response.follow(next_page, self.parse)
+
+   EOF scrapy runspider myspider.py
+
+   Build and run your
+   web spiders
+
+   Terminal•
+ pip install shub
+ shub login
+Insert your Scrapinghub API Key: <API_KEY>
+
+# Deploy the spider to Scrapy Cloud
+ shub deploy
+
+# Schedule the spider for execution
+ shub schedule blogspider
+Spider blogspider scheduled, watch it running here:
+https://app.scrapinghub.com/p/26731/job/1/8
+
+# Retrieve the scraped data
+ shub items 26731/1/8
+
+{"title": "Improved Frontera: Web Crawling at Scale with Python 3 Support"}
+{"title": "How to Crawl the Web Politely with Scrapy"}
+...
+
+   Deploy them to
+   Scrapy Cloud
+
+   or use Scrapyd to host the spiders on your own server
+
+Fast and powerful
+
+   write the rules to extract the data and let Scrapy do the rest
+
+Easily extensible
+
+   extensible by design, plug new functionality easily without having to
+   touch the core
+
+Portable, Python
+
+   written in Python and runs on Linux, Windows, Mac and BSD
+
+Healthy community
+
+     * - 31k stars, 7.5k forks and 1.8k watchers on GitHub
+     * - 4.5k followers on Twitter
+     * - 11k questions on StackOverflow
+
+Want to know more?
+
+     * - Discover Scrapy at a glance
+     * - Meet the companies using Scrapy
+
+   IFRAME:
+   https://ghbtns.com/github-btn.html?user=scrapy&repo=scrapy&type=watch&c
+   ount=true
+
+   IFRAME:
+   https://ghbtns.com/github-btn.html?user=scrapy&repo=scrapy&type=fork&co
+   unt=true
+
+   @ScrapyProject
+
+   Maintained by Scrapinghub and many other contributors

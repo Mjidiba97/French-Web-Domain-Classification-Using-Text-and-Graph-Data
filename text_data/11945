@@ -1,0 +1,1504 @@
+   #alternate alternate alternate alternate
+
+   Skip to content
+
+   (BUTTON) Menu
+   MENUMENU
+     * [svg%3E] [matomo-logo-final-1-170x25.png]
+     * Why Matomo?
+          +
+               o
+                    #
+
+Overview
+                    # Why Matomo?
+                    # 100% Data Ownership
+                    # Privacy Protection
+                    # GDPR
+               o
+                    #
+
+Industries
+                    # Web hosting
+                    # Government
+                    # Banking & finance
+                    # Healthcare
+                    # Retail & Ecommerce stores
+                    # Digital marketing agencies
+                    #
+               o
+                    #
+
+
+                    # Education
+                    # Not-for-profits & charities
+                    # Start-ups
+                    # Defence departments
+                    # Cybersecurity
+                    # News agencies & media companies
+                    #
+     * Product
+          +
+               o
+                    #
+
+Solutions
+                    # Complete Analytics
+                    # Increase Acquisition
+                    # Increase Engagement
+                    # Conversion Rate Optimization
+                    # Flexibility
+                    # GDPR
+                    # Log Analytics
+                    # Intranet Analytics
+               o
+                    #
+
+Matomo Features
+                    # Visitors
+                    # Behaviour
+                    # Acquisition
+                    # Goals
+                    # Ecommerce
+                    # Multi Attribution
+                    # Media Analytics
+                    # Form Analytics
+               o
+                    #
+
+
+                    # Custom Reports
+                    # Tag Manager
+                    # A/B Testing
+                    # Funnels
+                    # Session Recordings
+                    # Heatmaps
+                    # API
+                    #
+     * On-Premise
+          + Matomo On-Premise
+          + On-Premise vs Cloud
+          + How do I install On-Premise?
+          + Download for free
+          + Support plans
+          + Marketplace
+          + Developers
+     * Pricing
+     * Community
+          + Get involved
+          + Translations
+          + Marketplace
+          + Developers
+          + Forum
+     * Resources
+          + Reviews
+          + List of all features
+          + Integrations
+          + Blog
+          + User guides
+          + FAQ
+          + Contact the Matomo team
+          + Demo
+     * Search ____________________
+     * Try it for free
+
+   Feedback sent successfully Thank you for your valuable feedback. We
+   will use it to make matomo.org even better.
+
+Analytics Features
+
+Index
+
+    1. A Tour of Matomo
+         1. Matomo Overview
+         2. Select a Date Range
+         3. A Look at a Matomo Report
+         4. Dashboard & Widgets
+         5. Creating and customizing a new Dashboard
+         6. Graphs (Data Visualization)
+         7. Inline help
+         8. Flattening reports
+         9. Detailed historical report about any data point
+        10. Applying Custom Segments to filter Visitors
+        11. Videos Showing the Power of Matomo!
+    2. Track Goals and Measure Conversions
+         1. What is a Goal in Matomo?
+         2. Examples of Useful Goals
+         3. Create a Goal
+         4. Goal Overview Report
+         5. Goal Detailed Report
+         6. Report Analysis: What are the Top Converting Segments?
+         7. Conversion Funnel Analysis
+         8. Attribution Models
+    3. Ecommerce Analytics
+         1. Enable Ecommerce Tracking
+         2. Using a Matomo plugin for your Ecommerce Software
+         3. Ecommerce Analytics reports
+              1. Ecommerce Activity Overview
+              2. Best Products & Best Categories
+              3. Ecommerce Activity log
+              4. Sales by Marketing channel
+              5. Sales by country, city, region
+              6. Purchased products historical performance
+              7. Ecommerce Metrics in Standard Reports
+         4. Ecommerce tracking
+              1. Tracking Ecommerce Orders & Items Purchased (required)
+                   1. 1) addEcommerceItem(productSKU, productName,
+                      productCategory, price, quantity)
+                   2. 2) trackEcommerceOrder(orderId, revenue, subTotal,
+                      tax, shipping, discount)
+                   3. Example tracking an Ecommerce order containing two
+                      products
+                   4. Description of functions parameters
+                   5. Additional functions you may find useful
+              2. Tracking Add to Cart & Items Added to the Cart (optional)
+                   1. Example tracking an Ecommerce cart update containing
+                      two products
+              3. Tracking Product Page Views & Category Page Views
+                 (optional)
+                   1. Example Tracking a Product Page View
+                   2. Example tracking a Category page view
+         5. Advanced Ecommerce Statistics API
+    4. Row Evolution – View and compare historical data
+         1. Accessing the Row Evolution Report
+         2. Navigating the Row Evolution Report
+         3. Comparing multiple row evolutions
+         4. Recording your insights
+    5. Segmentation – Compare segments of visitors
+         1. Creating a segment in Matomo
+         2. Sharing a segment with all users
+         3. Reusing segments across other websites
+         4. Switching between segments
+         5. Removing segments
+         6. Using segments in e-mail reports
+         7. Useful segments you can create
+              1. Custom segment: Customers
+              2. Custom segment: Returning customers
+              3. Custom segment: Bounced visits
+              4. Custom segment: Mobile visitors
+              5. Custom segment: Commenters
+              6. Custom segment: Visits from the region your business is
+                 located in
+              7. Custom segment: Everyone who doesn’t bounce
+         8. Determining what to segment
+              1. Figuring out how to segment based on your objectives
+              2. Figuring out how to segment based on your data
+         9. Segments API Reference
+    6. Event Tracking
+         1. Anatomy of Events
+         2. Viewing Events Reports
+         3. Tracking Events
+              1. Javascript trackEvent()
+              2. Tracking Events with HTTP API
+         4. Requesting Events report data
+         5. Other interactions
+    7. Content Tracking
+         1. Viewing Content Tracking reports
+              1. Content Name report
+              2. Content Piece report
+         2. Tracking Content
+              1. Tracking Content with HTTP API
+         3. Requesting Content Tracking report data
+    8. Site Search Tracking and Reporting
+         1. Enable Site Search Tracking for your Website
+         2. Tracking Site Search Keywords
+              1. Track Site Search using URL Parameters (default)
+              2. Track Site Search using the Javascript trackSiteSearch()
+                 function
+              3. Track Site Search using the Tracking API (advanced users
+                 only)
+         3. Tracking No Result Search Keywords
+         4. Site Search Analytics Reports
+         5. View the Detailed Searches for each Visitor
+         6. Number of searches and keywords over time
+         7. Understand How Site Search is Used to Find other Pages on your
+            Site
+    9. Visitors Maps – World, region, city
+         1. World Map showing Visits on forum.matomo.org by Country
+         2. Visitor Map showing Visits by Region
+         3. Map showing visits by City
+         4. How to change the metric being plotted on the Map?
+         5. World Map Widget
+         6. Troubleshooting
+   10. Real Time Visitor World Map
+         1. Example of the World map showing Visitors
+         2. Discover the power of the Visitors Map!
+         3. Visitor Maps Widget
+         4. About the maps
+   11. Visits log and Real Time Analytics
+         1. The Visits in Real-time report
+         2. Visits Log
+         3. Visitor Profile
+         4. Real time Map
+         5. Real Time Analytics API
+         6. About Visitors’ Privacy
+   12. The Visitor Profile
+         1. Launching the Visitor Profile
+         2. Visitor Profile report
+         3. Feature Overview
+         4. Advanced Uses
+              1. Exporting visitor profile data
+              2. Visitor navigation
+              3. Visitor Profile dashboard widget
+              4. Embedding the Visitor Profile outside of Matomo
+         5. Developer API
+         6. Summary
+   13. Site speed and Page speed
+         1. Overall Website Speed
+         2. Individual Page Generation Speed
+         3. Making sure your website stays fast
+         4. Tracking page speed with each visit
+         5. Generation time for each pageview
+   14. Transitions – Analyze the previous and following actions of your
+       visitors for each page
+         1. How to Open the Transitions Report for a Page?
+         2. Understanding the Page Transitions Report
+         3. Using & Interacting with the Transitions Report
+         4. Conclusion
+         5. Resources
+   15. Page Overlay – Visitors Click Map
+         1. How to Open Page Overlay for a Page?
+         2. Understanding the User Interface
+         3. Conclusion
+         4. Page Overlay Troubleshooting
+              1. 1. It doesn’t work at all
+              2. 2. Some links don’t have the bubbles
+              3. 3. I get the error “The Page Overlay session couldn’t be
+                 launched yet”
+              4. 4. I have multiple domains and it doesn’t show all data
+              5. 5. I have a high traffic website and it takes a long time
+                 until the bubbles appear
+   16. Custom Variables Analytics
+         1. What is  a Custom Variable?
+         2. When not to use Custom Variables?
+         3. Tracking a Custom Variable
+         4. Custom Variable Reporting
+         5. Custom Variables in the Visits Log
+         6. Usage of your Custom Variables slots
+         7. Data Limits for Custom Variables
+         8. References
+   17. Custom Dimensions
+         1. What is a Custom Dimension?
+         2. Custom Dimension Reporting
+         3. Installing Custom Dimensions
+         4. Creating Custom Dimensions
+         5. Tracking a Custom Dimension
+         6. Managing Custom Dimensions
+              1. Using extractions to set a custom dimension value
+              2. Deactivating a Dimension
+         7. Segmenting a Custom Dimension by Action type
+         8. Data Limits for Custom Dimensions
+         9. Learn more
+   18. User ID
+         1. About User ID
+         2. Implementing User ID
+              1. What is a User ID string?
+              2. How do I generate a User ID?
+              3. User ID with the JavaScript client
+              4. User ID with another Tracker API client
+              5. User ID with direct Tracker API access
+              6. User ID for WordPress websites
+         3. User ID report
+         4. Benefits of User ID
+         5. How requests with a User ID are tracked
+         6. Replace User ID with a pseudonym
+         7. Resources
+   19. Annotating your data
+         1. Why would I want to create annotations?
+         2. Creating and editing annotations
+         3. The Annotations API
+   20. Tracking Marketing Campaigns
+         1. Tracking Campaigns using URL Parameters
+         2. Campaign URL Generator
+         3. Campaign attribution for Ecommerce and Goals conversions
+         4. Attribution data is saved in a first party cookie
+         5. Tracking up to six campaign parameters
+         6. Tracking Paid Search Ads
+         7. FAQ: Tracking campaigns
+   21. URL Builder – Marketing Campaign Tracking
+   22. Help resources
+         1. User guides
+         2. Glossary
+         3. Frequently Asked Questions
+         4. Developer guides
+         5. Free support
+         6. Support Plans
+         7. Custom development
+
+   (BUTTON) Send us your feedback about this page!
+   Thanks for contacting us! We will get in touch with you shortly.
+
+Feedback on this page
+
+   Name (required) ______________________
+   Email (required) ______________________
+   Your feedback (required)
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Your information will be used only to improve our pages and to answer
+   you. Your data will be processed by us, our hosting provider, and our
+   support ticket provider. For more information have a look at our
+   privacy policy.
+
+   Submit
+
+Support
+
+     * User guides
+     * FAQ
+     * Changelog
+     * Roadmap
+     * Glossary
+     * Forums
+     * Developers
+     * Issue tracker
+     * Contact support
+     * Campaign URL builder
+
+News
+
+     * Blog
+     * Newsletter
+     * Matomo in the press
+
+Compare
+
+     * Google Analytics
+
+About us
+
+     * About Matomo
+     * Contributors
+     * InnoCraft
+     * History
+     * Careers
+     * Contact us
+     * Download Matomo
+     * GitHub
+     * Piwik is now Matomo
+     * Open source
+
+Privacy
+
+     * Data ownership
+     * GDPR
+     * Security
+     * Privacy policy
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   © 2019 matomo.org
+
+   Scroll back to top
+
+Sign up for our newsletter
+
+   We are constantly adding new features and content to the leading
+   All-In-One Analytics Platform that gives you control over your data. If
+   you want to stay up to date with everything that is happening, feel
+   free to subscribe below. You can unsubscribe at any time from it. The
+   newsletter service uses MadMimi. Learn more about it within our privacy
+   Policy page.
+   Email*
+   ____________________ Subscribe
+   ____________________ [ ]
+
+   no thanks
+
+   {"cookieName":"wBounce","isAggressive":false,"isSitewide":true,"hesitat
+   ion":"500","openAnimation":false,"exitAnimation":false,"timer":"","sens
+   itivity":"","cookieExpire":"60","cookieDomain":"","autoFire":"","isAnal
+   yticsEnabled":true}
+   #alternate alternate alternate alternate
+
+   Skip to content
+
+   (BUTTON) Menu
+   MENUMENU
+     * [svg%3E] [matomo-logo-final-1-170x25.png]
+     * Why Matomo?
+          +
+               o
+                    #
+
+Overview
+                    # Why Matomo?
+                    # 100% Data Ownership
+                    # Privacy Protection
+                    # GDPR
+               o
+                    #
+
+Industries
+                    # Web hosting
+                    # Government
+                    # Banking & finance
+                    # Healthcare
+                    # Retail & Ecommerce stores
+                    # Digital marketing agencies
+                    #
+               o
+                    #
+
+
+                    # Education
+                    # Not-for-profits & charities
+                    # Start-ups
+                    # Defence departments
+                    # Cybersecurity
+                    # News agencies & media companies
+                    #
+     * Product
+          +
+               o
+                    #
+
+Solutions
+                    # Complete Analytics
+                    # Increase Acquisition
+                    # Increase Engagement
+                    # Conversion Rate Optimization
+                    # Flexibility
+                    # GDPR
+                    # Log Analytics
+                    # Intranet Analytics
+               o
+                    #
+
+Matomo Features
+                    # Visitors
+                    # Behaviour
+                    # Acquisition
+                    # Goals
+                    # Ecommerce
+                    # Multi Attribution
+                    # Media Analytics
+                    # Form Analytics
+               o
+                    #
+
+
+                    # Custom Reports
+                    # Tag Manager
+                    # A/B Testing
+                    # Funnels
+                    # Session Recordings
+                    # Heatmaps
+                    # API
+                    #
+     * On-Premise
+          + Matomo On-Premise
+          + On-Premise vs Cloud
+          + How do I install On-Premise?
+          + Download for free
+          + Support plans
+          + Marketplace
+          + Developers
+     * Pricing
+     * Community
+          + Get involved
+          + Translations
+          + Marketplace
+          + Developers
+          + Forum
+     * Resources
+          + Reviews
+          + List of all features
+          + Integrations
+          + Blog
+          + User guides
+          + FAQ
+          + Contact the Matomo team
+          + Demo
+     * Search ____________________
+     * Try it for free
+
+Opened positions
+
+Apply for a Job
+
+   Fill this form to apply for any of the positions available at Matomo /
+   Innocraft.
+     * Name*
+       ____________________
+     * Email*
+       ____________________
+     * Country (and timezone)
+       ____________________
+       We are a 100% remote company, which timezone will you working in?
+     * Select the job you are applying for:*
+       []
+     * Attach files to Job application*
+       Drop files here or [BUTTON Input] (not implemented)____________
+       Accepted file types: pdf, odt, doc, docx.
+       Please attach your Resume. You may also attach your Cover letter or
+       another document. Allowed file types are: pdf, odt, doc, docx.
+     * Message
+
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+       __________________________________________________
+     * Your information will be used only to process your application and
+       to answer you. Your data will be processed by us, our hosting
+       provider, and our support ticket provider. For more information
+       have a look at our privacy policy.
+
+   Submit
+
+   IFRAME: gform_ajax_frame_3
+   This iframe contains the logic required to handle Ajax powered Gravity
+   Forms.
+
+Support
+
+     * User guides
+     * FAQ
+     * Changelog
+     * Roadmap
+     * Glossary
+     * Forums
+     * Developers
+     * Issue tracker
+     * Contact support
+     * Campaign URL builder
+
+News
+
+     * Blog
+     * Newsletter
+     * Matomo in the press
+
+Compare
+
+     * Google Analytics
+
+About us
+
+     * About Matomo
+     * Contributors
+     * InnoCraft
+     * History
+     * Careers
+     * Contact us
+     * Download Matomo
+     * GitHub
+     * Piwik is now Matomo
+     * Open source
+
+Privacy
+
+     * Data ownership
+     * GDPR
+     * Security
+     * Privacy policy
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   © 2019 matomo.org
+
+   Scroll back to top
+
+Sign up for our newsletter
+
+   We are constantly adding new features and content to the leading
+   All-In-One Analytics Platform that gives you control over your data. If
+   you want to stay up to date with everything that is happening, feel
+   free to subscribe below. You can unsubscribe at any time from it. The
+   newsletter service uses MadMimi. Learn more about it within our privacy
+   Policy page.
+   Email*
+   ____________________ Subscribe
+   ____________________ [ ]
+
+   no thanks
+
+   {"cookieName":"wBounce","isAggressive":false,"isSitewide":true,"hesitat
+   ion":"500","openAnimation":false,"exitAnimation":false,"timer":"","sens
+   itivity":"","cookieExpire":"60","cookieDomain":"","autoFire":"","isAnal
+   yticsEnabled":true}
+   #alternate alternate alternate alternate
+
+   Skip to content
+
+   (BUTTON) Menu
+   MENUMENU
+     * [svg%3E] [matomo-logo-final-1-170x25.png]
+     * Why Matomo?
+          +
+               o
+                    #
+
+Overview
+                    # Why Matomo?
+                    # 100% Data Ownership
+                    # Privacy Protection
+                    # GDPR
+               o
+                    #
+
+Industries
+                    # Web hosting
+                    # Government
+                    # Banking & finance
+                    # Healthcare
+                    # Retail & Ecommerce stores
+                    # Digital marketing agencies
+                    #
+               o
+                    #
+
+
+                    # Education
+                    # Not-for-profits & charities
+                    # Start-ups
+                    # Defence departments
+                    # Cybersecurity
+                    # News agencies & media companies
+                    #
+     * Product
+          +
+               o
+                    #
+
+Solutions
+                    # Complete Analytics
+                    # Increase Acquisition
+                    # Increase Engagement
+                    # Conversion Rate Optimization
+                    # Flexibility
+                    # GDPR
+                    # Log Analytics
+                    # Intranet Analytics
+               o
+                    #
+
+Matomo Features
+                    # Visitors
+                    # Behaviour
+                    # Acquisition
+                    # Goals
+                    # Ecommerce
+                    # Multi Attribution
+                    # Media Analytics
+                    # Form Analytics
+               o
+                    #
+
+
+                    # Custom Reports
+                    # Tag Manager
+                    # A/B Testing
+                    # Funnels
+                    # Session Recordings
+                    # Heatmaps
+                    # API
+                    #
+     * On-Premise
+          + Matomo On-Premise
+          + On-Premise vs Cloud
+          + How do I install On-Premise?
+          + Download for free
+          + Support plans
+          + Marketplace
+          + Developers
+     * Pricing
+     * Community
+          + Get involved
+          + Translations
+          + Marketplace
+          + Developers
+          + Forum
+     * Resources
+          + Reviews
+          + List of all features
+          + Integrations
+          + Blog
+          + User guides
+          + FAQ
+          + Contact the Matomo team
+          + Demo
+     * Search ____________________
+     * Try it for free
+
+Matomo Media Pack
+
+   For media, press or anyone interested in helping promote Matomo, here’s
+   a little something to get you started. Below is the Matomo media pack
+   containing resources you might find handy for your articles/blogs. For
+   interviews or quotes, please email marketing@matomo.org.
+
+Description: About Matomo in less than 200 words
+
+   Matomo is the leading open-source web analytics platform, used on over
+   1.4 million websites in over 190 countries and translated into over 50
+   languages. Matomo values privacy protection, 100% data ownership and no
+   data sampling.
+
+   It has two different hosting options – cloud and on-premise. Cloud
+   takes the hassle out of installation, whereas On-Premise is the free,
+   open-source and self-hosted PHP/MySQL software you can install on your
+   own server, which gives you maximum flexibility.
+
+   This premium web analytics and conversion optimisation tool is designed
+   to give you the most conclusive insights with a complete range of
+   features such as heatmaps, sessions recordings, goals, form analytics,
+   visitor profiles, ecommerce and funnels.
+
+   It provides real time updates on the details of your visitors; has goal
+   conversion tracking to track business objectives; event tracking to
+   identify and measure the interaction of the user with your website; and
+   A/B testing which helps you optimise your website through learning
+   which content truly resonates with your audience.
+
+   Visit matomo.org for more information.
+
+Video example - Matomo's Visitor feature
+
+                   [svg%3E] [Matomo-visitors-feature.jpg]
+
+   More Matomo feature overview videos
+
+Media pack
+
+   Thanks for downloading our press pack!
+
+   Your pack includes:
+     * 3x Matomo high resolution logos
+     * Screenshots of the Matomo Analytics app and features
+     * Press release
+
+   Download Matomo press pack .zip
+
+Support
+
+     * User guides
+     * FAQ
+     * Changelog
+     * Roadmap
+     * Glossary
+     * Forums
+     * Developers
+     * Issue tracker
+     * Contact support
+     * Campaign URL builder
+
+News
+
+     * Blog
+     * Newsletter
+     * Matomo in the press
+
+Compare
+
+     * Google Analytics
+
+About us
+
+     * About Matomo
+     * Contributors
+     * InnoCraft
+     * History
+     * Careers
+     * Contact us
+     * Download Matomo
+     * GitHub
+     * Piwik is now Matomo
+     * Open source
+
+Privacy
+
+     * Data ownership
+     * GDPR
+     * Security
+     * Privacy policy
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   © 2019 matomo.org
+
+   Scroll back to top
+
+Sign up for our newsletter
+
+   We are constantly adding new features and content to the leading
+   All-In-One Analytics Platform that gives you control over your data. If
+   you want to stay up to date with everything that is happening, feel
+   free to subscribe below. You can unsubscribe at any time from it. The
+   newsletter service uses MadMimi. Learn more about it within our privacy
+   Policy page.
+   Email*
+   ____________________ Subscribe
+   ____________________ [ ]
+
+   no thanks
+
+   {"cookieName":"wBounce","isAggressive":false,"isSitewide":true,"hesitat
+   ion":"500","openAnimation":false,"exitAnimation":false,"timer":"","sens
+   itivity":"","cookieExpire":"60","cookieDomain":"","autoFire":"","isAnal
+   yticsEnabled":true}
+   #alternate alternate alternate alternate
+
+   Skip to content
+
+   (BUTTON) Menu
+   MENUMENU
+     * [svg%3E] [matomo-logo-final-1-170x25.png]
+     * Why Matomo?
+          +
+               o
+                    #
+
+Overview
+                    # Why Matomo?
+                    # 100% Data Ownership
+                    # Privacy Protection
+                    # GDPR
+               o
+                    #
+
+Industries
+                    # Web hosting
+                    # Government
+                    # Banking & finance
+                    # Healthcare
+                    # Retail & Ecommerce stores
+                    # Digital marketing agencies
+                    #
+               o
+                    #
+
+
+                    # Education
+                    # Not-for-profits & charities
+                    # Start-ups
+                    # Defence departments
+                    # Cybersecurity
+                    # News agencies & media companies
+                    #
+     * Product
+          +
+               o
+                    #
+
+Solutions
+                    # Complete Analytics
+                    # Increase Acquisition
+                    # Increase Engagement
+                    # Conversion Rate Optimization
+                    # Flexibility
+                    # GDPR
+                    # Log Analytics
+                    # Intranet Analytics
+               o
+                    #
+
+Matomo Features
+                    # Visitors
+                    # Behaviour
+                    # Acquisition
+                    # Goals
+                    # Ecommerce
+                    # Multi Attribution
+                    # Media Analytics
+                    # Form Analytics
+               o
+                    #
+
+
+                    # Custom Reports
+                    # Tag Manager
+                    # A/B Testing
+                    # Funnels
+                    # Session Recordings
+                    # Heatmaps
+                    # API
+                    #
+     * On-Premise
+          + Matomo On-Premise
+          + On-Premise vs Cloud
+          + How do I install On-Premise?
+          + Download for free
+          + Support plans
+          + Marketplace
+          + Developers
+     * Pricing
+     * Community
+          + Get involved
+          + Translations
+          + Marketplace
+          + Developers
+          + Forum
+     * Resources
+          + Reviews
+          + List of all features
+          + Integrations
+          + Blog
+          + User guides
+          + FAQ
+          + Contact the Matomo team
+          + Demo
+     * Search ____________________
+     * Try it for free
+
+   Feedback sent successfully Thank you for your valuable feedback. We
+   will use it to make matomo.org even better.
+
+Users Flow
+
+Table of contents
+
+    1. Viewing the Users Flow visualization
+    2. Viewing the most popular paths and visitor engagement
+    3. Applying segments
+
+   With Users Flow, you find out which paths your visitors or users take
+   in your website or app. Find out if your call to actions really work,
+   find bugs, find the parts of your website or app where your users get
+   confused, understand your visitors path to conversion or purchase,
+   discover high drop-offs on pages and more. Based on this information
+   you can improve your website or app to increase your conversions and
+   sales.
+
+   Users Flow is a premium feature which is included in all our
+   Cloud-hosted plans or you can purchase it on the Matomo Marketplace if
+   you self host Matomo On-Premise. Learn more about all the benefits and
+   features of Users Flow.
+
+Viewing the Users Flow visualization
+
+   Go to Matomo (Piwik). In the menu click “Visitors” and then “Users
+   Flow”. You will see a visualization of the most popular pages and the
+   paths your users took over several steps.
+
+   Users Flow Visualization Users Flow Visualization
+
+   In the top left you can adjust the report to show more or less details
+   and to change the number of actions per interaction step.
+
+   Users Flow Controls Users Flow Controls
+
+   The visualization lets you dig into the data in many different ways.
+   You can see tabular list of all interactions by clicking on an
+   “Interaction” title or by clicking on a green node and then selecting
+   “Show details”. This way you can also find out which pages were grouped
+   together under “Others”. If you are interested in how your users came
+   to a particular page at a particular step and where they went to next,
+   click on a green node and then select “Explore traffic”. This will show
+   you for example the flow for all visitors or users that have visited a
+   page “/start” at interaction step 2.
+
+   Users Flow Interaction Menu Users Flow Interaction Menu
+
+   You can add this visualization to your dashboard and export the view to
+   share it with your colleagues or clients. The data is also accessible
+   on the Matomo Mobile app.
+
+Viewing the most popular paths and visitor engagement
+
+   To analyze more Users Flow reports click in the menu on “Actions” and
+   then “Top Paths”. In a glance you will see which paths your users take
+   most often.
+
+   Users Flow Top Paths Users Flow Top Paths
+
+   The “Overview” lets you investigate the visitor engagement, for example
+   after how many interactions your visitors drop off. When you click on a
+   row, you can see which pages they visited most often at a particular
+   interaction step, and where they went to from there. The data in this
+   overview report table is the same as the data displayed in the Users
+   Flow visualization but there are times where it is more helpful to
+   explore it in a tabular way.
+
+   Users Flow Overview Users Flow Overview
+
+Applying segments
+
+   The Users Flow gets even more valuable when you apply segments. Learn
+   for example how your visitors navigate through your website when they
+   enter it for the first time by applying the segment “Visit type is
+   new”. Learn how your visitors browsed through your website that have
+   converted a goal by applying the segment “Visit converted a specific
+   goal”. Or maybe you want to analyze and compare how the paths vary
+   depending on a different country or referrer? You can apply any Matomo
+   segment to the Users Flow reports.
+
+   Learn more in the Users Flow marketplace page.
+   (BUTTON) Send us your feedback about this page!
+   Thanks for contacting us! We will get in touch with you shortly.
+
+Feedback on this page
+
+   Name (required) ______________________
+   Email (required) ______________________
+   Your feedback (required)
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+
+   Your information will be used only to improve our pages and to answer
+   you. Your data will be processed by us, our hosting provider, and our
+   support ticket provider. For more information have a look at our
+   privacy policy.
+
+   Submit
+
+Support
+
+     * User guides
+     * FAQ
+     * Changelog
+     * Roadmap
+     * Glossary
+     * Forums
+     * Developers
+     * Issue tracker
+     * Contact support
+     * Campaign URL builder
+
+News
+
+     * Blog
+     * Newsletter
+     * Matomo in the press
+
+Compare
+
+     * Google Analytics
+
+About us
+
+     * About Matomo
+     * Contributors
+     * InnoCraft
+     * History
+     * Careers
+     * Contact us
+     * Download Matomo
+     * GitHub
+     * Piwik is now Matomo
+     * Open source
+
+Privacy
+
+     * Data ownership
+     * GDPR
+     * Security
+     * Privacy policy
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   © 2019 matomo.org
+
+   Scroll back to top
+
+Sign up for our newsletter
+
+   We are constantly adding new features and content to the leading
+   All-In-One Analytics Platform that gives you control over your data. If
+   you want to stay up to date with everything that is happening, feel
+   free to subscribe below. You can unsubscribe at any time from it. The
+   newsletter service uses MadMimi. Learn more about it within our privacy
+   Policy page.
+   Email*
+   ____________________ Subscribe
+   ____________________ [ ]
+
+   no thanks
+
+   {"cookieName":"wBounce","isAggressive":false,"isSitewide":true,"hesitat
+   ion":"500","openAnimation":false,"exitAnimation":false,"timer":"","sens
+   itivity":"","cookieExpire":"60","cookieDomain":"","autoFire":"","isAnal
+   yticsEnabled":true}
+   #alternate alternate alternate alternate
+
+   Skip to content
+
+   (BUTTON) Menu
+   MENUMENU
+     * [svg%3E] [matomo-logo-final-1-170x25.png]
+     * Why Matomo?
+          +
+               o
+                    #
+
+Overview
+                    # Why Matomo?
+                    # 100% Data Ownership
+                    # Privacy Protection
+                    # GDPR
+               o
+                    #
+
+Industries
+                    # Web hosting
+                    # Government
+                    # Banking & finance
+                    # Healthcare
+                    # Retail & Ecommerce stores
+                    # Digital marketing agencies
+                    #
+               o
+                    #
+
+
+                    # Education
+                    # Not-for-profits & charities
+                    # Start-ups
+                    # Defence departments
+                    # Cybersecurity
+                    # News agencies & media companies
+                    #
+     * Product
+          +
+               o
+                    #
+
+Solutions
+                    # Complete Analytics
+                    # Increase Acquisition
+                    # Increase Engagement
+                    # Conversion Rate Optimization
+                    # Flexibility
+                    # GDPR
+                    # Log Analytics
+                    # Intranet Analytics
+               o
+                    #
+
+Matomo Features
+                    # Visitors
+                    # Behaviour
+                    # Acquisition
+                    # Goals
+                    # Ecommerce
+                    # Multi Attribution
+                    # Media Analytics
+                    # Form Analytics
+               o
+                    #
+
+
+                    # Custom Reports
+                    # Tag Manager
+                    # A/B Testing
+                    # Funnels
+                    # Session Recordings
+                    # Heatmaps
+                    # API
+                    #
+     * On-Premise
+          + Matomo On-Premise
+          + On-Premise vs Cloud
+          + How do I install On-Premise?
+          + Download for free
+          + Support plans
+          + Marketplace
+          + Developers
+     * Pricing
+     * Community
+          + Get involved
+          + Translations
+          + Marketplace
+          + Developers
+          + Forum
+     * Resources
+          + Reviews
+          + List of all features
+          + Integrations
+          + Blog
+          + User guides
+          + FAQ
+          + Contact the Matomo team
+          + Demo
+     * Search ____________________
+     * Try it for free
+
+   InnoCraft InnoCraft
+
+InnoCraft
+
+How to measure the performance of a newsletter (or any email) with Matomo
+
+     * December 19, 2017
+     * , 5:53 am
+     * , Analytics Tips, Community
+
+   To be able to grow your business, it is crucial to track all your
+   marketing efforts. This includes all newsletters and emails that you
+   share with people outside of your business. Otherwise, you won’t be
+   able to know which of your daily efforts are yielding results.
+
+   Are you wondering if it is possible to track the performance of an
+   emailing campaign in Matomo (Piwik) efficiently? Would you like to know
+   if it is technically easy? No worries, here is a “How to” tutorial
+   showing you how easily you can track an emailing in Matomo properly.
+
+Different tracking levels for different needs
+
+   There are many things that you may be interested to track, for example:
+
+   [svg%3E] [newsletter_email_campaign1.jpg]
+    1. How many users opened your email
+    2. How many users interacted with the links in your email
+    3. How many users interacted on your website through your email
+
+   Let’s have a look at each of these levels.
+
+Step 1 – Tracking email and newsletter openings in Matomo
+
+   Tracking email openings requires to add an HTML code to your
+   newsletter. It works through what we call a tracking pixel, a tiny
+   image of 1×1 that is transparent so the user will not be able to see
+   it.
+   In order to install it, here is an example of what this code looks
+   like:
+<img src="https://piwik.example.com/piwik.php?idsite=YOUR_PIWIK_WEBSITE_ID&rec=1
+&bots=1&url=https%3A%2F%2Fexample.com%2Femail-opened%2Fnewsletter_XYZ&action_nam
+e=Email%20opened&_rcn=internal%20email%20name&_rck=newsletter_XYZ" style="border
+:0;” alt="" />
+
+The Matomo tracking pixel explained
+
+   The above URL is composed of the following URL parameters which are
+   part of our Tracking API:
+     * idsite: Corresponds to the ID of the website you would like to
+       track.
+     * rec: You need to have rec=1 in order for the request to be actually
+       recorded.
+     * bots: Set it to 1 to include all the connections made to this
+       request, bots included.
+     * url: corresponds to the URL you would like to display in Matomo
+       every time the email is opened.
+     * action_name: This is the page name you would like to be tracked
+       when the email is opened.
+     * _rcn: The name you would like to give to your campaign.
+     * _rck: The keyword you may like to use in order to summarize the
+       content of your newsletter.
+
+   You may have noticed some special characters here such as “%20”, “%2F”.
+   That’s because the URL is encoded. We strongly recommend you to do so
+   in order for your tracking not to break. Many tools are available on
+   the web in order to encode your URLs such as
+   https://www.urlencoder.org/.
+
+   If you would like to access the previous tracking code easily, keep in
+   mind that you can always find the tracking code generator within the
+   “Matomo admin panel → Tracking code”:
+
+   [svg%3E] [newsletter_email_campaign6.png]
+
+   You can find more information about it on our guide at: How do I track
+   how many users open and read my newsletter emails (using a pixel /
+   beacon)?
+
+   As a result, the information will be pushed as following for any user
+   who opens your email:
+
+   [svg%3E] [newsletter_email_campaign4.png]
+
+   To not bias your regular page views on your website with newsletter
+   openings, we recommend tracking newsletter openings into a new website.
+
+Tracking even more data: the user ID example
+
+   You can go deeper in your URL tracking by inserting other parameters
+   such as the user id if you have this information within your emailing
+   database. One of the main benefit of tracking the User ID is to connect
+   data across multiple devices and browsers for a given user.
+
+   You only need to add the following parameter &uid=XXX where XXX equals
+   the dynamic value of the user ID:
+
+   [svg%3E] [newsletter_email_campaign2.png]
+
+   Make sure that UID from your emailing provider is the same as the one
+   used on your website in order for your data to be consistent.
+
+   Important note: some email providers are loading email messages by
+   default which results in an opening even if the user did not actually
+   open the email.
+
+Step 2 – Measure the clicks within your emailing
+
+   Tracking clicks within an email lets you know with which content
+   readers interacted the most. We recommend tracking all links in all
+   your emails as a campaign, whether it is a newsletter, a custom support
+   email, an email invoice, etc. You might be surprised to see which of
+   your emails lead to conversions and if they don’t, try to tweak those
+   emails, so they might in the future.
+
+   Tracking clicks This works thanks to URL campaign tracking. In order to
+   perform this action, you will need to add Matomo URL parameters to all
+   your existing link URLs:
+     * Website URL: for example “www.your-website.com”.
+     * Campaign name: for example “pk_campaign=emailing”. Represents the
+       name you would like to give to your campaign.
+     * Campaign keyword: for example “pk_keyword=name-of-your-article”.
+       Represents the name you would like to give to your content.
+     * Campaign source: for example “pk_source=newsletter”. Represents the
+       name of the referrer.
+     * Campaign medium: for example “pk_medium=email”. Represents the type
+       of referrer you are using.
+     * Campaign content: for example “pk_content=title”. Represents the
+       type of content.
+
+   You can find more information about campaign url tracking in our
+   “Tracking marketing campaigns with Matomo” guide.
+
+   Here is a sample showing you how you can differentiate some links in a
+   newsletter, all pointing to the same URL:
+
+   [svg%3E] [newsletter_email_campaign5.png]
+
+   Once you have added these URL parameters to each of your link, Matomo
+   will clearly indicate the referrer of this specific campaign when a
+   user clicks on a link in the newsletter and visits your website.
+
+   Important note: if you do not track your campaigns, it will result in a
+   bad interpretation of your data within Matomo as you will get webmail
+   services or direct entries as referrer instead of your newsletter
+   campaign.
+
+Step 3 – Measure emailing performances on your website
+
+   Thanks to Matomo URL campaign parameters, you can now clearly identify
+   the traffic brought through your emailing. You can now specifically
+   isolate users who come from emails by creating a segment:
+
+   [svg%3E] [newsletter_campaign_segment.png]
+
+   Once done, you can either have a look at each user specifically through
+   the visitor log report or analyze it as a whole within the rest of the
+   reports.
+
+   You can even measure your return on investment directly if goals have
+   been defined. In order to know more about how to track goals within
+   Matomo.
+
+Did you like this article?
+
+   If you enjoyed reading this article, do not hesitate to share it around
+   you. Moreover, if there are any topics you would like to write us about
+   in particular, just drop us an email and we will be more than happy to
+   write about it.
+
+Share this post
+
+   Share on facebook
+   Share on twitter
+   Share on linkedin
+   Share on print
+   Share on email
+   ____________________
+   ____________________ [ ]
+
+   Subscribe to our newsletter to receive regular information about
+   Matomo. You can unsubscribe at any time from it. This service uses
+   MadMimi. Learn more about it within our privacy Policy page.
+   (Subscribe) Subscribe
+
+Support
+
+     * User guides
+     * FAQ
+     * Changelog
+     * Roadmap
+     * Glossary
+     * Forums
+     * Developers
+     * Issue tracker
+     * Contact support
+     * Campaign URL builder
+
+News
+
+     * Blog
+     * Newsletter
+     * Matomo in the press
+
+Compare
+
+     * Google Analytics
+
+About us
+
+     * About Matomo
+     * Contributors
+     * InnoCraft
+     * History
+     * Careers
+     * Contact us
+     * Download Matomo
+     * GitHub
+     * Piwik is now Matomo
+     * Open source
+
+Privacy
+
+     * Data ownership
+     * GDPR
+     * Security
+     * Privacy policy
+
+     *
+     *
+     *
+     *
+     *
+     *
+
+   © 2019 matomo.org
+
+   Scroll back to top
+
+Sign up for our newsletter
+
+   We are constantly adding new features and content to the leading
+   All-In-One Analytics Platform that gives you control over your data. If
+   you want to stay up to date with everything that is happening, feel
+   free to subscribe below. You can unsubscribe at any time from it. The
+   newsletter service uses MadMimi. Learn more about it within our privacy
+   Policy page.
+   Email*
+   ____________________ Subscribe
+   ____________________ [ ]
+
+   no thanks
+
+   {"cookieName":"wBounce","isAggressive":false,"isSitewide":true,"hesitat
+   ion":"500","openAnimation":false,"exitAnimation":false,"timer":"","sens
+   itivity":"","cookieExpire":"60","cookieDomain":"","autoFire":"","isAnal
+   yticsEnabled":true}

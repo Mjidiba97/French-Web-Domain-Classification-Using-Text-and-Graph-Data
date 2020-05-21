@@ -1,0 +1,3210 @@
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01425743, version 1
+
+Scalable Task Parallelism for NUMA: A Uniform Abstraction for Coordinated
+Scheduling and Memory Management
+
+   Andi Drebes ^1 Antoniu Pop ^1 Karine Heydemann ^2 Albert Cohen ^3
+   Nathalie Drach ^2 (BUTTON) Détails
+   1 School of Computer Science [Manchester]
+   2 ALSOC - Architecture et Logiciels pour Systèmes Embarqués sur Puce
+   LIP6 - Laboratoire d'Informatique de Paris 6
+   3 Parkas - Parallélisme de Kahn Synchrone
+   DI-ENS - Département d'informatique de l'École normale supérieure,
+   Inria Paris-Rocquencourt, CNRS - Centre National de la Recherche
+   Scientifique : UMR 8548
+
+       Andi Drebes ^1 AuthorId : 1443472
+     Auteur
+
+       Antoniu Pop ^1 AuthorId : 1443473
+     Auteur
+
+       Karine Heydemann ^2 AuthorId : 895914
+     Auteur IdHAL : karine-heydemann
+
+       Albert Cohen ^3 AuthorId : 79621
+     Auteur IdHAL : acohen ORCID : https://orcid.org/0000-0002-8866-5343
+
+       Nathalie Drach ^2 AuthorId : 1443474
+     Auteur
+
+   1 School of Computer Science [Manchester] (University of Manchester
+   Oxford Road Manchester M13 9PL UK - Royaume-Uni) StructId : 90659
+     * University of Manchester [Manchester] (Oxford Rd, Manchester M13
+       9PL - Royaume-Uni) StructId : 121172
+
+   2 ALSOC - Architecture et Logiciels pour Systèmes Embarqués sur Puce
+   (France) StructId : 398846
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   3 Parkas - Parallélisme de Kahn Synchrone (Département d'informatique
+   École normale supérieure 45 rue d'Ulm F-75230 Paris Cedex 05 - France)
+   StructId : 155688
+     * DI-ENS - Département d'informatique de l'École normale supérieure
+       (École normale supérieure 45 rue d'Ulm F-75230 Paris Cedex 05 -
+       France) StructId : 25027
+          + ENS Paris - École normale supérieure - Paris (45, Rue d'Ulm -
+            75230 Paris cedex 05 - France) StructId : 59704
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+          + CNRS - Centre National de la Recherche Scientifique : UMR8548
+            (France) StructId : 441569
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * CNRS - Centre National de la Recherche Scientifique : UMR 8548
+       (France) StructId : 441569
+
+   (BUTTON) Masquer les détails
+   Abstract : Dynamic task-parallel programming models are popular on
+   shared-memory systems, promising enhanced scalability, load balancing
+   and locality. Yet these promises are undermined by non-uniform memory
+   access (NUMA). We show that using NUMA-aware task and data placement,
+   it is possible to preserve the uniform abstraction of both computing
+   and memory resources for task-parallel programming models while
+   achieving high data locality. Our data placement scheme guarantees that
+   all accesses to task output data target the local memory of the
+   accessing core. The complementary task placement heuristic improves the
+   locality of task input data on a best effort basis. Our algorithms take
+   advantage of data-flow style task parallelism, where the privatization
+   of task data enhances scalability by eliminating false dependences and
+   enabling fine-grained dynamic control over data placement. The
+   algorithms are fully automatic, application-independent,
+   performance-portable across NUMA machines, and adapt to dynamic
+   changes. Placement decisions use information about inter-task data
+   dependences readily available in the run-time system and placement
+   information from the operating system. We achieve 94% of local memory
+   accesses on a 192-core system with 24 NUMA nodes, up to 5× higher
+   performance than NUMA-aware hierarchical work-stealing, and even 5.6×
+   compared to static interleaved allocation. Finally, we show that
+   state-of-the-art dynamic page migration by the operating system cannot
+   catch up with frequent affinity changes between cores and data and thus
+   fails to accelerate task-parallel applications.
+   Keywords : Task-parallel programming NUMA Scheduling Memory allocation
+   Data-flow programming
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Langage de programmation [cs.PL]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [29 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01425743
+   Contributeur : Albert Cohen <>
+   Soumis le : dimanche 29 janvier 2017 - 17:31:21
+   Dernière modification le : jeudi 21 mars 2019 - 14:29:48
+   Document(s) archivé(s) le : dimanche 30 avril 2017 - 12:25:16
+
+Fichier
+
+   [small]
+   paper.pdf
+   Fichiers éditeurs autorisés sur une archive ouverte
+
+Identifiants
+
+     * HAL Id : hal-01425743, version 1
+     * DOI : 10.1145/2967938.2967946
+
+Collections
+
+   UPMC | ENS-PARIS | LIP6 | INRIA | PSL | INRIA-ROCQ |
+   SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Andi Drebes, Antoniu Pop, Karine Heydemann, Albert Cohen, Nathalie
+   Drach. Scalable Task Parallelism for NUMA: A Uniform Abstraction for
+   Coordinated Scheduling and Memory Management. PACT'16 - ACM/IEEE
+   Conference on Parallel Architectures and Compilation Techniques, Sep
+   2016, Haifa, Israel. pp.125 - 137, ⟨10.1145/2967938.2967946⟩.
+   ⟨hal-01425743⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+1165
+
+   Téléchargements de fichiers
+
+509
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01248191, version 1
+
+Putting Consistency back into Eventual Consistency
+
+   Valter Balegas ^1, 2 Sérgio Duarte ^2, 1 Carla Ferreira ^2, 1 Rodrigo
+   Rodrigues ^2, 1 Nuno Preguiça ^2, 1 Mahsa Najafzadeh ^3, 4 Marc Shapiro
+   ^4, 3 (BUTTON) Détails
+   1 CITI - CITI Centre of Innovation in Telecommunications and
+   Integration of services
+   2 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   3 LIP6 - Laboratoire d'Informatique de Paris 6
+   4 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria Paris-Rocquencourt
+
+       Valter Balegas ^1, 2 AuthorId : 1265196
+     Auteur
+
+       Sérgio Duarte ^2, 1 AuthorId : 457773
+     Auteur
+
+       Carla Ferreira ^2, 1 AuthorId : 1260736
+     Auteur
+
+       Rodrigo Rodrigues ^2, 1 AuthorId : 1265197
+     Auteur
+
+       Nuno Preguiça ^2, 1 AuthorId : 1260191
+     Auteur
+
+       Mahsa Najafzadeh ^3, 4 AuthorId : 1260737
+     Auteur
+
+       Marc Shapiro ^4, 3 AuthorId : 97722
+     Auteur IdHAL : shapiro
+
+   1 CITI - CITI Centre of Innovation in Telecommunications and
+   Integration of services (CITI Laboratory, INSA Lyon Domaine
+   Scientifique de la Doua Batiment Claude Chappe 6 avenue des Arts 69621
+   Villeurbanne Cedex Phone +33 4 7243 6415 Fax +33 4 7243 6227 E-Mail
+   citi@insa-lyon.fr - France) StructId : 203831
+     * INSA Lyon - Institut National des Sciences Appliquées de Lyon (20
+       Avenue Albert Einstein, 69621 Villeurbanne cedex - France) StructId
+       : 219748
+          + Université de Lyon (92 rue Pasteur - CS 30122, 69361 Lyon
+            Cedex 07 - France) StructId : 301088
+          + INSA - Institut National des Sciences Appliquées (France)
+            StructId : 301232
+     * Inria - Institut National de Recherche en Informatique et en
+       Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153 Le
+       Chesnay Cedex - France) StructId : 300009
+
+   2 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   (Portugal) StructId : 420636
+     * NOVA - Universidade Nova de Lisboa (Campus de Campolide 1099-085
+       Lisboa - Portugal) StructId : 327246
+
+   3 LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+   PARIS CEDEX 05 - France) StructId : 233
+     * UPMC - Université Pierre et Marie Curie - Paris 6 (4 place Jussieu
+       - 75005 Paris - France) StructId : 93591
+     * CNRS - Centre National de la Recherche Scientifique : UMR7606
+       (France) StructId : 441569
+
+   4 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 2436
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   (BUTTON) Masquer les détails
+   Abstract : Geo-replicated storage systems are at the core of current
+   Internet services. The designers of the replication protocols used by
+   these systems must choose between either supporting low-latency,
+   eventually-consistent operations, or ensuring strong consistency to
+   ease application correctness. We propose an alternative consistency
+   model, Explicit Consistency, that strengthens eventual consistency with
+   a guarantee to preserve specific invariants defined by the
+   applications. Given these application-specific invariants, a system
+   that supports Explicit Consistency identifies which operations would be
+   unsafe under concurrent execution, and allows programmers to select
+   either violation-avoidance or invariant-repair techniques. We show how
+   to achieve the former, while allowing operations to complete locally in
+   the common case, by relying on a reservation system that moves
+   coordination off the critical path of operation execution. The latter,
+   in turn, allows operations to execute without restriction, and restore
+   invariants by applying a repair operation to the database state. We
+   present the design and evaluation of Indigo, a middleware that provides
+   Explicit Consistency on top of a causally-consistent data store. Indigo
+   guarantees strong application invariants while providing similar
+   latency to an eventually-consistent system in the common case.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [45 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01248191
+   Contributeur : Alain Monteil <>
+   Soumis le : jeudi 24 décembre 2015 - 09:42:52
+   Dernière modification le : lundi 9 septembre 2019 - 11:24:02
+
+Fichier
+
+   [small]
+   putting-consistency-back-EuroS...
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : hal-01248191, version 1
+     * DOI : 10.1145/2741948.2741972
+
+Collections
+
+   UPMC | LIP6 | INRIA | INSA-LYON | INRIA-ROCQ | CITI | INSA-GROUPE |
+   SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Valter Balegas, Sérgio Duarte, Carla Ferreira, Rodrigo Rodrigues, Nuno
+   Preguiça, et al.. Putting Consistency back into Eventual Consistency.
+   European Conference on Computer Systems (EuroSys), ACM Sigops /
+   EuroSys, Apr 2015, Bordeaux, France. pp.6:1--6:16,
+   ⟨10.1145/2741948.2741972⟩. ⟨hal-01248191⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+365
+
+   Téléchargements de fichiers
+
+454
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01515359, version 1
+
+An interface to implement NUMA policies in the Xen hypervisor
+
+   Gauthier Voron ^1, 2, 3, 4 Gaël Thomas ^5 Vivien Quema ^6 Pierre Sens
+   ^1, 2, 3, 4 (BUTTON) Détails
+   1 LIP6 - Laboratoire d'Informatique de Paris 6
+   2 UPMC - Université Pierre et Marie Curie - Paris 6 - UFR de Médecine
+   Pierre et Marie Curie
+   3 Sorbonne Universités
+   4 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria Paris-Rocquencourt
+   5 SAMOVAR - Services répartis, Architectures, MOdélisation, Validation,
+   Administration des Réseaux
+   6 ERODS - Efficient and Robust Distributed Systems
+   LIG - Laboratoire d'Informatique de Grenoble
+
+       Gauthier Voron ^1, 2, 3, 4 AuthorId : 1372814
+     Auteur
+
+       Gaël Thomas ^5 AuthorId : 11464014
+     Auteur IdHAL : gael-thomas ORCID :
+     https://orcid.org/0000-0002-9444-1071
+
+       Vivien Quema ^6 AuthorId : 984005
+     Auteur
+
+       Pierre Sens ^1, 2, 3, 4 AuthorId : 76920
+     Auteur
+
+   1 LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+   PARIS CEDEX 05 - France) StructId : 233
+     * UPMC - Université Pierre et Marie Curie - Paris 6 (4 place Jussieu
+       - 75005 Paris - France) StructId : 93591
+     * CNRS - Centre National de la Recherche Scientifique : UMR7606
+       (France) StructId : 441569
+
+   2 UPMC - Université Pierre et Marie Curie - Paris 6 - UFR de Médecine
+   Pierre et Marie Curie (4 place Jussieu - 75005 Paris - France) StructId
+   : 208232
+     * UPMC - Université Pierre et Marie Curie - Paris 6 (4 place Jussieu
+       - 75005 Paris - France) StructId : 93591
+
+   3 Sorbonne Universités (France) StructId : 303385
+   4 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 2436
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   5 SAMOVAR - Services répartis, Architectures, MOdélisation, Validation,
+   Administration des Réseaux (Télécom Sudparis, 9 rue Charles Fourier
+   -91011 Evry cedex - France) StructId : 638
+     * Institut Mines-Télécom [Paris] (37-39 Rue Dareau, 75014 Paris -
+       France) StructId : 302102
+     * TSP - Télécom SudParis (9 rue Charles Fourier -91011 Evry Cedex -
+       France) StructId : 352124
+     * CNRS - Centre National de la Recherche Scientifique : UMR5157
+       (France) StructId : 441569
+
+   6 ERODS - Efficient and Robust Distributed Systems (Laboratoire LIG -
+   Bâtiment IMAG - 700 avenue Centrale - Domaine Universitaire de
+   Saint-Martin-d’Hères Adresse postale : CS 40700 - 38058 Grenoble cedex
+   9 - France Tél. : 04 57 42 14 00 - France) StructId : 443809
+     * LIG - Laboratoire d'Informatique de Grenoble (UMR 5217 -
+       Laboratoire LIG - Bâtiment IMAG - 700 avenue Centrale - Domaine
+       Universitaire de Saint-Martin-d’Hères Adresse postale : CS 40700 -
+       38058 Grenoble cedex 9 - France Tél. : 04 57 42 14 00 - France)
+       StructId : 24471
+          + UPMF - Université Pierre Mendès France - Grenoble 2 (BP 47 -
+            38040 Grenoble Cedex 9 - France) StructId : 3886
+          + UJF - Université Joseph Fourier - Grenoble 1 (BP 53 - 38041
+            Grenoble Cedex 9 - France) StructId : 51016
+          + INPG - Institut National Polytechnique de Grenoble (46 avenue
+            Félix Viallet 38031 Grenoble Cedex 1 - France) StructId :
+            300275
+          + CNRS - Centre National de la Recherche Scientifique : UMR5217
+            (France) StructId : 441569
+          + UGA - Université Grenoble Alpes (CS 40700 - 38058 Grenoble
+            cedex - France) StructId : 445543
+
+   (BUTTON) Masquer les détails
+   Abstract : While virtualization only introduces a small overhead on
+   machines with few cores, this is not the case on larger ones. Most of
+   the overhead on the latter machines is caused by the Non-Uniform Memory
+   Access (NUMA) architecture they are using. In order to reduce this
+   overhead, this paper shows how NUMA placement heuristics can be
+   implemented inside Xen. With an evaluation of 29 applications on a
+   48-core machine, we show that the NUMA placement heuristics can
+   multiply the performance of 9 applications by more than 2.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+   Informatique [cs] / Système d'exploitation [cs.OS]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [41 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01515359
+   Contributeur : Pierre Sens <>
+   Soumis le : jeudi 27 avril 2017 - 13:13:50
+   Dernière modification le : mardi 11 juin 2019 - 11:16:52
+
+Fichier
+
+   [small]
+   voron17eurosys-xen-numa.pdf
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : hal-01515359, version 1
+
+Collections
+
+   LIP6 | UPMC | INRIA2017 | INRIA | UGA | INSTITUT-TELECOM |
+   TELECOM-SUDPARIS | UNIV-PARIS-SACLAY | INRIA-ROCQ | SORBONNE-UNIVERSITE
+   | LIG_SRCPR_ERODS | LIG | LIG_SRCPR | SU-SCIENCES |
+   TSP-PARALLEL-DISTRIBUTED-SYSTEMS
+
+Citation
+
+   Gauthier Voron, Gaël Thomas, Vivien Quema, Pierre Sens. An interface to
+   implement NUMA policies in the Xen hypervisor. Twelfth European
+   Conference on Computer Systems, EuroSys 2017 , Apr 2017, Belgrade,
+   Serbia. pp.15. ⟨hal-01515359⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+793
+
+   Téléchargements de fichiers
+
+1059
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01352109, version 1
+
+Failure Detection and Propagation in HPC systems
+
+   George Bosilca ^1 Aurélien Bouteiller ^1 Amina Guermouche ^1 Thomas
+   Hérault ^1 Yves Robert ^2, 1 Pierre Sens ^3 Jack Dongarra ^1 (BUTTON)
+   Détails
+   1 ICL - Innovative Computing Laboratory [Knoxville]
+   2 ROMA - Optimisation des ressources : modèles, algorithmes et
+   ordonnancement
+   Inria Grenoble - Rhône-Alpes, LIP - Laboratoire de l'Informatique du
+   Parallélisme
+   3 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria de Paris
+
+       George Bosilca ^1 AuthorId : 555766
+     Auteur
+
+       Aurélien Bouteiller ^1 AuthorId : 147403
+     Auteur
+
+       Amina Guermouche ^1 AuthorId : 688062
+     Auteur IdHAL : aguermouche
+
+       Thomas Hérault ^1 AuthorId : 1123248
+     Auteur
+
+       Yves Robert ^2, 1 AuthorId : 1123249
+     Auteur
+
+       Pierre Sens ^3 AuthorId : 98482
+     Auteur
+
+       Jack Dongarra ^1 AuthorId : 439027
+     Auteur
+
+   1 ICL - Innovative Computing Laboratory [Knoxville] (Suite 203 Claxton
+   1122 Volunteer Blvd Knoxville, TN 37996 - États-Unis) StructId : 135613
+     * The University of Tennessee [Knoxville] ( Knoxville, Tennessee
+       37996 - États-Unis) StructId : 303308
+
+   2 ROMA - Optimisation des ressources : modèles, algorithmes et
+   ordonnancement (Laboratoire de l'Informatique du Parallélisme 46 Allée
+   d'Italie 69364 Lyon - France) StructId : 179718
+     * Inria Grenoble - Rhône-Alpes (Inovallée 655 avenue de l'Europe
+       38330 Montbonnot - France) StructId : 2497
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * LIP - Laboratoire de l'Informatique du Parallélisme (46 Allée
+       d'Italie 69364 LYON CEDEX 07 - France) StructId : 35418
+          + ENS Lyon - École normale supérieure - Lyon (15 parvis René
+            Descartes - BP 7000 - 69342 Lyon Cedex 07 - France) StructId :
+            6818
+          + UCBL - Université Claude Bernard Lyon 1 (43, boulevard du 11
+            novembre 1918, 69622 Villeurbanne cedex - France) StructId :
+            194495
+               o Université de Lyon (92 rue Pasteur - CS 30122, 69361 Lyon
+                 Cedex 07 - France) StructId : 301088
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+          + Université de Lyon (92 rue Pasteur - CS 30122, 69361 Lyon
+            Cedex 07 - France) StructId : 301088
+          + CNRS - Centre National de la Recherche Scientifique : UMR5668
+            (France) StructId : 441569
+
+   3 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 454683
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria de Paris (2 rue Simone Iff - CS 42112 - 75589 Paris Cedex 12
+       - France) StructId : 454310
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   (BUTTON) Masquer les détails
+   Abstract : Building an infrastructure for Exascale applications
+   requires, in addition to many other key components, a stable and
+   efficient failure detector. This paper describes the design and
+   evaluation of a robust failure detector, able to maintain and
+   distribute the correct list of alive resources within proven and
+   scalable bounds. The detection and distribution of the fault
+   information follow different overlay topologies that together guarantee
+   minimal disturbance to the applications. A virtual observation ring
+   minimizes the overhead by allowing each node to be observed by another
+   single node, providing an unobtrusive behavior. The propagation stage
+   is using a non-uniform variant of a reliable broadcast over a circulant
+   graph overlay network, and guarantees a logarithmic fault propagation.
+   Extensive simulations, together with experiments on the Titan ORNL
+   supercomputer, show that the algorithm performs extremely well, and
+   exhibits all the desired properties of an Exascale-ready algorithm.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [28 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01352109
+   Contributeur : Pierre Sens <>
+   Soumis le : mercredi 26 octobre 2016 - 15:22:56
+   Dernière modification le : mercredi 12 juin 2019 - 01:34:50
+
+Fichier
+
+   [small]
+   sc16-hal.pdf
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : hal-01352109, version 1
+
+Collections
+
+   UPMC | LIP6 | INRIA | LIP | UNIV-LYON1 | INRIA-ROCQ |
+   SORBONNE-UNIVERSITE | ENS-LYON | SU-SCIENCES |
+   TSP-PARALLEL-DISTRIBUTED-SYSTEMS
+
+Citation
+
+   George Bosilca, Aurélien Bouteiller, Amina Guermouche, Thomas Hérault,
+   Yves Robert, et al.. Failure Detection and Propagation in HPC systems.
+   SC 2016 - The International Conference for High Performance Computing,
+   Networking, Storage and Analysis, Nov 2016, Salt Lake City, United
+   States. ⟨hal-01352109⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+847
+
+   Téléchargements de fichiers
+
+476
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01793586, version 1
+
+Conflict-free Replicated Data Types (CRDTs)
+
+   Nuno Preguiça ^1 Carlos Baquero ^2 Marc Shapiro ^3 (BUTTON) Détails
+   1 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   2 Universidade do Minho
+   3 DELYS - DistributEd aLgorithms and sYStems
+   Inria de Paris, LIP6
+
+       Nuno Preguiça ^1 AuthorId : 1385058
+     Auteur
+
+       Carlos Baquero ^2 AuthorId : 769238
+     Auteur Etablissement employeur : Universidade do Minho
+
+       Marc Shapiro ^3 AuthorId : 97976
+     Auteur Etablissement employeur : Institut National de Recherche en
+     Informatique et en Automatique IdHAL : shapiro
+
+   1 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   (Portugal) StructId : 420636
+     * NOVA - Universidade Nova de Lisboa (Campus de Campolide 1099-085
+       Lisboa - Portugal) StructId : 327246
+
+   2 Universidade do Minho (Largo do Paço, 4704-553 Braga - Portugal)
+   StructId : 300854
+   3 DELYS - DistributEd aLgorithms and sYStems (2 rue Simone Iff -CS
+   42112 -75589 Paris Cedex 12 - France) StructId : 541722
+     * Inria de Paris (2 rue Simone Iff - CS 42112 - 75589 Paris Cedex 12
+       - France) StructId : 454310
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * LIP6 (4 Place JUSSIEU 75252 PARIS CEDEX 05 - France) StructId :
+       541703
+          + SU - Sorbonne Université (21 rue de l’École de médecine -
+            75006 Paris - France) StructId : 413221
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   (BUTTON) Masquer les détails
+   Abstract : A conflict-free replicated data type (CRDT) is an abstract
+   data type, with a well defined interface, designed to be replicated at
+   multiple processes and exhibiting the following properties: (1) any
+   replica can be modified without coordinating with another replicas; (2)
+   when any two replicas have received the same set of updates, they reach
+   the same state, deterministically, by adopting mathematically sound
+   rules to guarantee state convergence.
+   Keywords : Eventual consistency Consistency Distributed computing
+   Causal consistency Data replication
+   Type de document :
+   Chapitre d'ouvrage
+   Domaine :
+
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01793586
+   Contributeur : Marc Shapiro <>
+   Soumis le : mercredi 16 mai 2018 - 16:52:48
+   Dernière modification le : lundi 9 septembre 2019 - 11:24:02
+
+Fichier
+
+   [small]
+   CRDTs-encyclopedia.zip
+   Fichiers produits par l'(les) auteur(s)
+
+Licence
+     __________________________________________________________________
+
+   Copyright (Tous droits réservés)
+
+Identifiants
+
+     * HAL Id : hal-01793586, version 1
+     * ARXIV : 1805.06358
+     * DOI : 10.1007/978-3-319-63962-8_185-1
+
+Collections
+
+   INRIA-ROCQ | INRIA-MECSCI | INRIA | SORBONNE-UNIVERSITE | LIP6 |
+   SU-SCIENCES
+
+Citation
+
+   Nuno Preguiça, Carlos Baquero, Marc Shapiro. Conflict-free Replicated
+   Data Types (CRDTs). Sakr, Sherif; Zomaya, Albert. Encyclopedia of Big
+   Data Technologies, Springer International Publishing, 2018,
+   Encyclopedia of Big Data Technologies, 978-3-319-63962-8.
+   ⟨10.1007/978-3-319-63962-8_185-1⟩. ⟨hal-01793586⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+214
+
+   Téléchargements de fichiers
+
+76
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01425743, version 1
+
+Scalable Task Parallelism for NUMA: A Uniform Abstraction for Coordinated
+Scheduling and Memory Management
+
+   Andi Drebes ^1 Antoniu Pop ^1 Karine Heydemann ^2 Albert Cohen ^3
+   Nathalie Drach ^2 (BUTTON) Détails
+   1 School of Computer Science [Manchester]
+   2 ALSOC - Architecture et Logiciels pour Systèmes Embarqués sur Puce
+   LIP6 - Laboratoire d'Informatique de Paris 6
+   3 Parkas - Parallélisme de Kahn Synchrone
+   DI-ENS - Département d'informatique de l'École normale supérieure,
+   Inria Paris-Rocquencourt, CNRS - Centre National de la Recherche
+   Scientifique : UMR 8548
+
+       Andi Drebes ^1 AuthorId : 1443472
+     Auteur
+
+       Antoniu Pop ^1 AuthorId : 1443473
+     Auteur
+
+       Karine Heydemann ^2 AuthorId : 895914
+     Auteur IdHAL : karine-heydemann
+
+       Albert Cohen ^3 AuthorId : 79621
+     Auteur IdHAL : acohen ORCID : https://orcid.org/0000-0002-8866-5343
+
+       Nathalie Drach ^2 AuthorId : 1443474
+     Auteur
+
+   1 School of Computer Science [Manchester] (University of Manchester
+   Oxford Road Manchester M13 9PL UK - Royaume-Uni) StructId : 90659
+     * University of Manchester [Manchester] (Oxford Rd, Manchester M13
+       9PL - Royaume-Uni) StructId : 121172
+
+   2 ALSOC - Architecture et Logiciels pour Systèmes Embarqués sur Puce
+   (France) StructId : 398846
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   3 Parkas - Parallélisme de Kahn Synchrone (Département d'informatique
+   École normale supérieure 45 rue d'Ulm F-75230 Paris Cedex 05 - France)
+   StructId : 155688
+     * DI-ENS - Département d'informatique de l'École normale supérieure
+       (École normale supérieure 45 rue d'Ulm F-75230 Paris Cedex 05 -
+       France) StructId : 25027
+          + ENS Paris - École normale supérieure - Paris (45, Rue d'Ulm -
+            75230 Paris cedex 05 - France) StructId : 59704
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+          + CNRS - Centre National de la Recherche Scientifique : UMR8548
+            (France) StructId : 441569
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * CNRS - Centre National de la Recherche Scientifique : UMR 8548
+       (France) StructId : 441569
+
+   (BUTTON) Masquer les détails
+   Abstract : Dynamic task-parallel programming models are popular on
+   shared-memory systems, promising enhanced scalability, load balancing
+   and locality. Yet these promises are undermined by non-uniform memory
+   access (NUMA). We show that using NUMA-aware task and data placement,
+   it is possible to preserve the uniform abstraction of both computing
+   and memory resources for task-parallel programming models while
+   achieving high data locality. Our data placement scheme guarantees that
+   all accesses to task output data target the local memory of the
+   accessing core. The complementary task placement heuristic improves the
+   locality of task input data on a best effort basis. Our algorithms take
+   advantage of data-flow style task parallelism, where the privatization
+   of task data enhances scalability by eliminating false dependences and
+   enabling fine-grained dynamic control over data placement. The
+   algorithms are fully automatic, application-independent,
+   performance-portable across NUMA machines, and adapt to dynamic
+   changes. Placement decisions use information about inter-task data
+   dependences readily available in the run-time system and placement
+   information from the operating system. We achieve 94% of local memory
+   accesses on a 192-core system with 24 NUMA nodes, up to 5× higher
+   performance than NUMA-aware hierarchical work-stealing, and even 5.6×
+   compared to static interleaved allocation. Finally, we show that
+   state-of-the-art dynamic page migration by the operating system cannot
+   catch up with frequent affinity changes between cores and data and thus
+   fails to accelerate task-parallel applications.
+   Keywords : Task-parallel programming NUMA Scheduling Memory allocation
+   Data-flow programming
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Langage de programmation [cs.PL]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [29 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01425743
+   Contributeur : Albert Cohen <>
+   Soumis le : dimanche 29 janvier 2017 - 17:31:21
+   Dernière modification le : jeudi 21 mars 2019 - 14:29:48
+   Document(s) archivé(s) le : dimanche 30 avril 2017 - 12:25:16
+
+Fichier
+
+   [small]
+   paper.pdf
+   Fichiers éditeurs autorisés sur une archive ouverte
+
+Identifiants
+
+     * HAL Id : hal-01425743, version 1
+     * DOI : 10.1145/2967938.2967946
+
+Collections
+
+   UPMC | ENS-PARIS | LIP6 | INRIA | PSL | INRIA-ROCQ |
+   SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Andi Drebes, Antoniu Pop, Karine Heydemann, Albert Cohen, Nathalie
+   Drach. Scalable Task Parallelism for NUMA: A Uniform Abstraction for
+   Coordinated Scheduling and Memory Management. PACT'16 - ACM/IEEE
+   Conference on Parallel Architectures and Compilation Techniques, Sep
+   2016, Haifa, Israel. pp.125 - 137, ⟨10.1145/2967938.2967946⟩.
+   ⟨hal-01425743⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+1165
+
+   Téléchargements de fichiers
+
+509
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01248191, version 1
+
+Putting Consistency back into Eventual Consistency
+
+   Valter Balegas ^1, 2 Sérgio Duarte ^2, 1 Carla Ferreira ^2, 1 Rodrigo
+   Rodrigues ^2, 1 Nuno Preguiça ^2, 1 Mahsa Najafzadeh ^3, 4 Marc Shapiro
+   ^4, 3 (BUTTON) Détails
+   1 CITI - CITI Centre of Innovation in Telecommunications and
+   Integration of services
+   2 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   3 LIP6 - Laboratoire d'Informatique de Paris 6
+   4 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria Paris-Rocquencourt
+
+       Valter Balegas ^1, 2 AuthorId : 1265196
+     Auteur
+
+       Sérgio Duarte ^2, 1 AuthorId : 457773
+     Auteur
+
+       Carla Ferreira ^2, 1 AuthorId : 1260736
+     Auteur
+
+       Rodrigo Rodrigues ^2, 1 AuthorId : 1265197
+     Auteur
+
+       Nuno Preguiça ^2, 1 AuthorId : 1260191
+     Auteur
+
+       Mahsa Najafzadeh ^3, 4 AuthorId : 1260737
+     Auteur
+
+       Marc Shapiro ^4, 3 AuthorId : 97722
+     Auteur IdHAL : shapiro
+
+   1 CITI - CITI Centre of Innovation in Telecommunications and
+   Integration of services (CITI Laboratory, INSA Lyon Domaine
+   Scientifique de la Doua Batiment Claude Chappe 6 avenue des Arts 69621
+   Villeurbanne Cedex Phone +33 4 7243 6415 Fax +33 4 7243 6227 E-Mail
+   citi@insa-lyon.fr - France) StructId : 203831
+     * INSA Lyon - Institut National des Sciences Appliquées de Lyon (20
+       Avenue Albert Einstein, 69621 Villeurbanne cedex - France) StructId
+       : 219748
+          + Université de Lyon (92 rue Pasteur - CS 30122, 69361 Lyon
+            Cedex 07 - France) StructId : 301088
+          + INSA - Institut National des Sciences Appliquées (France)
+            StructId : 301232
+     * Inria - Institut National de Recherche en Informatique et en
+       Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153 Le
+       Chesnay Cedex - France) StructId : 300009
+
+   2 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   (Portugal) StructId : 420636
+     * NOVA - Universidade Nova de Lisboa (Campus de Campolide 1099-085
+       Lisboa - Portugal) StructId : 327246
+
+   3 LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+   PARIS CEDEX 05 - France) StructId : 233
+     * UPMC - Université Pierre et Marie Curie - Paris 6 (4 place Jussieu
+       - 75005 Paris - France) StructId : 93591
+     * CNRS - Centre National de la Recherche Scientifique : UMR7606
+       (France) StructId : 441569
+
+   4 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 2436
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   (BUTTON) Masquer les détails
+   Abstract : Geo-replicated storage systems are at the core of current
+   Internet services. The designers of the replication protocols used by
+   these systems must choose between either supporting low-latency,
+   eventually-consistent operations, or ensuring strong consistency to
+   ease application correctness. We propose an alternative consistency
+   model, Explicit Consistency, that strengthens eventual consistency with
+   a guarantee to preserve specific invariants defined by the
+   applications. Given these application-specific invariants, a system
+   that supports Explicit Consistency identifies which operations would be
+   unsafe under concurrent execution, and allows programmers to select
+   either violation-avoidance or invariant-repair techniques. We show how
+   to achieve the former, while allowing operations to complete locally in
+   the common case, by relying on a reservation system that moves
+   coordination off the critical path of operation execution. The latter,
+   in turn, allows operations to execute without restriction, and restore
+   invariants by applying a repair operation to the database state. We
+   present the design and evaluation of Indigo, a middleware that provides
+   Explicit Consistency on top of a causally-consistent data store. Indigo
+   guarantees strong application invariants while providing similar
+   latency to an eventually-consistent system in the common case.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [45 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01248191
+   Contributeur : Alain Monteil <>
+   Soumis le : jeudi 24 décembre 2015 - 09:42:52
+   Dernière modification le : lundi 9 septembre 2019 - 11:24:02
+
+Fichier
+
+   [small]
+   putting-consistency-back-EuroS...
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : hal-01248191, version 1
+     * DOI : 10.1145/2741948.2741972
+
+Collections
+
+   UPMC | LIP6 | INRIA | INSA-LYON | INRIA-ROCQ | CITI | INSA-GROUPE |
+   SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Valter Balegas, Sérgio Duarte, Carla Ferreira, Rodrigo Rodrigues, Nuno
+   Preguiça, et al.. Putting Consistency back into Eventual Consistency.
+   European Conference on Computer Systems (EuroSys), ACM Sigops /
+   EuroSys, Apr 2015, Bordeaux, France. pp.6:1--6:16,
+   ⟨10.1145/2741948.2741972⟩. ⟨hal-01248191⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+365
+
+   Téléchargements de fichiers
+
+454
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01515359, version 1
+
+An interface to implement NUMA policies in the Xen hypervisor
+
+   Gauthier Voron ^1, 2, 3, 4 Gaël Thomas ^5 Vivien Quema ^6 Pierre Sens
+   ^1, 2, 3, 4 (BUTTON) Détails
+   1 LIP6 - Laboratoire d'Informatique de Paris 6
+   2 UPMC - Université Pierre et Marie Curie - Paris 6 - UFR de Médecine
+   Pierre et Marie Curie
+   3 Sorbonne Universités
+   4 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria Paris-Rocquencourt
+   5 SAMOVAR - Services répartis, Architectures, MOdélisation, Validation,
+   Administration des Réseaux
+   6 ERODS - Efficient and Robust Distributed Systems
+   LIG - Laboratoire d'Informatique de Grenoble
+
+       Gauthier Voron ^1, 2, 3, 4 AuthorId : 1372814
+     Auteur
+
+       Gaël Thomas ^5 AuthorId : 11464014
+     Auteur IdHAL : gael-thomas ORCID :
+     https://orcid.org/0000-0002-9444-1071
+
+       Vivien Quema ^6 AuthorId : 984005
+     Auteur
+
+       Pierre Sens ^1, 2, 3, 4 AuthorId : 76920
+     Auteur
+
+   1 LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+   PARIS CEDEX 05 - France) StructId : 233
+     * UPMC - Université Pierre et Marie Curie - Paris 6 (4 place Jussieu
+       - 75005 Paris - France) StructId : 93591
+     * CNRS - Centre National de la Recherche Scientifique : UMR7606
+       (France) StructId : 441569
+
+   2 UPMC - Université Pierre et Marie Curie - Paris 6 - UFR de Médecine
+   Pierre et Marie Curie (4 place Jussieu - 75005 Paris - France) StructId
+   : 208232
+     * UPMC - Université Pierre et Marie Curie - Paris 6 (4 place Jussieu
+       - 75005 Paris - France) StructId : 93591
+
+   3 Sorbonne Universités (France) StructId : 303385
+   4 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 2436
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   5 SAMOVAR - Services répartis, Architectures, MOdélisation, Validation,
+   Administration des Réseaux (Télécom Sudparis, 9 rue Charles Fourier
+   -91011 Evry cedex - France) StructId : 638
+     * Institut Mines-Télécom [Paris] (37-39 Rue Dareau, 75014 Paris -
+       France) StructId : 302102
+     * TSP - Télécom SudParis (9 rue Charles Fourier -91011 Evry Cedex -
+       France) StructId : 352124
+     * CNRS - Centre National de la Recherche Scientifique : UMR5157
+       (France) StructId : 441569
+
+   6 ERODS - Efficient and Robust Distributed Systems (Laboratoire LIG -
+   Bâtiment IMAG - 700 avenue Centrale - Domaine Universitaire de
+   Saint-Martin-d’Hères Adresse postale : CS 40700 - 38058 Grenoble cedex
+   9 - France Tél. : 04 57 42 14 00 - France) StructId : 443809
+     * LIG - Laboratoire d'Informatique de Grenoble (UMR 5217 -
+       Laboratoire LIG - Bâtiment IMAG - 700 avenue Centrale - Domaine
+       Universitaire de Saint-Martin-d’Hères Adresse postale : CS 40700 -
+       38058 Grenoble cedex 9 - France Tél. : 04 57 42 14 00 - France)
+       StructId : 24471
+          + UPMF - Université Pierre Mendès France - Grenoble 2 (BP 47 -
+            38040 Grenoble Cedex 9 - France) StructId : 3886
+          + UJF - Université Joseph Fourier - Grenoble 1 (BP 53 - 38041
+            Grenoble Cedex 9 - France) StructId : 51016
+          + INPG - Institut National Polytechnique de Grenoble (46 avenue
+            Félix Viallet 38031 Grenoble Cedex 1 - France) StructId :
+            300275
+          + CNRS - Centre National de la Recherche Scientifique : UMR5217
+            (France) StructId : 441569
+          + UGA - Université Grenoble Alpes (CS 40700 - 38058 Grenoble
+            cedex - France) StructId : 445543
+
+   (BUTTON) Masquer les détails
+   Abstract : While virtualization only introduces a small overhead on
+   machines with few cores, this is not the case on larger ones. Most of
+   the overhead on the latter machines is caused by the Non-Uniform Memory
+   Access (NUMA) architecture they are using. In order to reduce this
+   overhead, this paper shows how NUMA placement heuristics can be
+   implemented inside Xen. With an evaluation of 29 applications on a
+   48-core machine, we show that the NUMA placement heuristics can
+   multiply the performance of 9 applications by more than 2.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+   Informatique [cs] / Système d'exploitation [cs.OS]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [41 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01515359
+   Contributeur : Pierre Sens <>
+   Soumis le : jeudi 27 avril 2017 - 13:13:50
+   Dernière modification le : mardi 11 juin 2019 - 11:16:52
+
+Fichier
+
+   [small]
+   voron17eurosys-xen-numa.pdf
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : hal-01515359, version 1
+
+Collections
+
+   LIP6 | UPMC | INRIA2017 | INRIA | UGA | INSTITUT-TELECOM |
+   TELECOM-SUDPARIS | UNIV-PARIS-SACLAY | INRIA-ROCQ | SORBONNE-UNIVERSITE
+   | LIG_SRCPR_ERODS | LIG | LIG_SRCPR | SU-SCIENCES |
+   TSP-PARALLEL-DISTRIBUTED-SYSTEMS
+
+Citation
+
+   Gauthier Voron, Gaël Thomas, Vivien Quema, Pierre Sens. An interface to
+   implement NUMA policies in the Xen hypervisor. Twelfth European
+   Conference on Computer Systems, EuroSys 2017 , Apr 2017, Belgrade,
+   Serbia. pp.15. ⟨hal-01515359⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+793
+
+   Téléchargements de fichiers
+
+1059
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01352109, version 1
+
+Failure Detection and Propagation in HPC systems
+
+   George Bosilca ^1 Aurélien Bouteiller ^1 Amina Guermouche ^1 Thomas
+   Hérault ^1 Yves Robert ^2, 1 Pierre Sens ^3 Jack Dongarra ^1 (BUTTON)
+   Détails
+   1 ICL - Innovative Computing Laboratory [Knoxville]
+   2 ROMA - Optimisation des ressources : modèles, algorithmes et
+   ordonnancement
+   Inria Grenoble - Rhône-Alpes, LIP - Laboratoire de l'Informatique du
+   Parallélisme
+   3 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria de Paris
+
+       George Bosilca ^1 AuthorId : 555766
+     Auteur
+
+       Aurélien Bouteiller ^1 AuthorId : 147403
+     Auteur
+
+       Amina Guermouche ^1 AuthorId : 688062
+     Auteur IdHAL : aguermouche
+
+       Thomas Hérault ^1 AuthorId : 1123248
+     Auteur
+
+       Yves Robert ^2, 1 AuthorId : 1123249
+     Auteur
+
+       Pierre Sens ^3 AuthorId : 98482
+     Auteur
+
+       Jack Dongarra ^1 AuthorId : 439027
+     Auteur
+
+   1 ICL - Innovative Computing Laboratory [Knoxville] (Suite 203 Claxton
+   1122 Volunteer Blvd Knoxville, TN 37996 - États-Unis) StructId : 135613
+     * The University of Tennessee [Knoxville] ( Knoxville, Tennessee
+       37996 - États-Unis) StructId : 303308
+
+   2 ROMA - Optimisation des ressources : modèles, algorithmes et
+   ordonnancement (Laboratoire de l'Informatique du Parallélisme 46 Allée
+   d'Italie 69364 Lyon - France) StructId : 179718
+     * Inria Grenoble - Rhône-Alpes (Inovallée 655 avenue de l'Europe
+       38330 Montbonnot - France) StructId : 2497
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * LIP - Laboratoire de l'Informatique du Parallélisme (46 Allée
+       d'Italie 69364 LYON CEDEX 07 - France) StructId : 35418
+          + ENS Lyon - École normale supérieure - Lyon (15 parvis René
+            Descartes - BP 7000 - 69342 Lyon Cedex 07 - France) StructId :
+            6818
+          + UCBL - Université Claude Bernard Lyon 1 (43, boulevard du 11
+            novembre 1918, 69622 Villeurbanne cedex - France) StructId :
+            194495
+               o Université de Lyon (92 rue Pasteur - CS 30122, 69361 Lyon
+                 Cedex 07 - France) StructId : 301088
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+          + Université de Lyon (92 rue Pasteur - CS 30122, 69361 Lyon
+            Cedex 07 - France) StructId : 301088
+          + CNRS - Centre National de la Recherche Scientifique : UMR5668
+            (France) StructId : 441569
+
+   3 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 454683
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria de Paris (2 rue Simone Iff - CS 42112 - 75589 Paris Cedex 12
+       - France) StructId : 454310
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   (BUTTON) Masquer les détails
+   Abstract : Building an infrastructure for Exascale applications
+   requires, in addition to many other key components, a stable and
+   efficient failure detector. This paper describes the design and
+   evaluation of a robust failure detector, able to maintain and
+   distribute the correct list of alive resources within proven and
+   scalable bounds. The detection and distribution of the fault
+   information follow different overlay topologies that together guarantee
+   minimal disturbance to the applications. A virtual observation ring
+   minimizes the overhead by allowing each node to be observed by another
+   single node, providing an unobtrusive behavior. The propagation stage
+   is using a non-uniform variant of a reliable broadcast over a circulant
+   graph overlay network, and guarantees a logarithmic fault propagation.
+   Extensive simulations, together with experiments on the Titan ORNL
+   supercomputer, show that the algorithm performs extremely well, and
+   exhibits all the desired properties of an Exascale-ready algorithm.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [28 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01352109
+   Contributeur : Pierre Sens <>
+   Soumis le : mercredi 26 octobre 2016 - 15:22:56
+   Dernière modification le : mercredi 12 juin 2019 - 01:34:50
+
+Fichier
+
+   [small]
+   sc16-hal.pdf
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : hal-01352109, version 1
+
+Collections
+
+   UPMC | LIP6 | INRIA | LIP | UNIV-LYON1 | INRIA-ROCQ |
+   SORBONNE-UNIVERSITE | ENS-LYON | SU-SCIENCES |
+   TSP-PARALLEL-DISTRIBUTED-SYSTEMS
+
+Citation
+
+   George Bosilca, Aurélien Bouteiller, Amina Guermouche, Thomas Hérault,
+   Yves Robert, et al.. Failure Detection and Propagation in HPC systems.
+   SC 2016 - The International Conference for High Performance Computing,
+   Networking, Storage and Analysis, Nov 2016, Salt Lake City, United
+   States. ⟨hal-01352109⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+847
+
+   Téléchargements de fichiers
+
+476
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01793586, version 1
+
+Conflict-free Replicated Data Types (CRDTs)
+
+   Nuno Preguiça ^1 Carlos Baquero ^2 Marc Shapiro ^3 (BUTTON) Détails
+   1 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   2 Universidade do Minho
+   3 DELYS - DistributEd aLgorithms and sYStems
+   Inria de Paris, LIP6
+
+       Nuno Preguiça ^1 AuthorId : 1385058
+     Auteur
+
+       Carlos Baquero ^2 AuthorId : 769238
+     Auteur Etablissement employeur : Universidade do Minho
+
+       Marc Shapiro ^3 AuthorId : 97976
+     Auteur Etablissement employeur : Institut National de Recherche en
+     Informatique et en Automatique IdHAL : shapiro
+
+   1 NOVA-LINCS - NOVA Laboratory for Computer Science and Informatics
+   (Portugal) StructId : 420636
+     * NOVA - Universidade Nova de Lisboa (Campus de Campolide 1099-085
+       Lisboa - Portugal) StructId : 327246
+
+   2 Universidade do Minho (Largo do Paço, 4704-553 Braga - Portugal)
+   StructId : 300854
+   3 DELYS - DistributEd aLgorithms and sYStems (2 rue Simone Iff -CS
+   42112 -75589 Paris Cedex 12 - France) StructId : 541722
+     * Inria de Paris (2 rue Simone Iff - CS 42112 - 75589 Paris Cedex 12
+       - France) StructId : 454310
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * LIP6 (4 Place JUSSIEU 75252 PARIS CEDEX 05 - France) StructId :
+       541703
+          + SU - Sorbonne Université (21 rue de l’École de médecine -
+            75006 Paris - France) StructId : 413221
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   (BUTTON) Masquer les détails
+   Abstract : A conflict-free replicated data type (CRDT) is an abstract
+   data type, with a well defined interface, designed to be replicated at
+   multiple processes and exhibiting the following properties: (1) any
+   replica can be modified without coordinating with another replicas; (2)
+   when any two replicas have received the same set of updates, they reach
+   the same state, deterministically, by adopting mathematically sound
+   rules to guarantee state convergence.
+   Keywords : Eventual consistency Consistency Distributed computing
+   Causal consistency Data replication
+   Type de document :
+   Chapitre d'ouvrage
+   Domaine :
+
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01793586
+   Contributeur : Marc Shapiro <>
+   Soumis le : mercredi 16 mai 2018 - 16:52:48
+   Dernière modification le : lundi 9 septembre 2019 - 11:24:02
+
+Fichier
+
+   [small]
+   CRDTs-encyclopedia.zip
+   Fichiers produits par l'(les) auteur(s)
+
+Licence
+     __________________________________________________________________
+
+   Copyright (Tous droits réservés)
+
+Identifiants
+
+     * HAL Id : hal-01793586, version 1
+     * ARXIV : 1805.06358
+     * DOI : 10.1007/978-3-319-63962-8_185-1
+
+Collections
+
+   INRIA-ROCQ | INRIA-MECSCI | INRIA | SORBONNE-UNIVERSITE | LIP6 |
+   SU-SCIENCES
+
+Citation
+
+   Nuno Preguiça, Carlos Baquero, Marc Shapiro. Conflict-free Replicated
+   Data Types (CRDTs). Sakr, Sherif; Zomaya, Albert. Encyclopedia of Big
+   Data Technologies, Springer International Publishing, 2018,
+   Encyclopedia of Big Data Technologies, 978-3-319-63962-8.
+   ⟨10.1007/978-3-319-63962-8_185-1⟩. ⟨hal-01793586⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+214
+
+   Téléchargements de fichiers
+
+76
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01494235, version 1
+
+Analysis of a Stochastic Model of Replication in Large Distributed Storage
+Systems: A Mean-Field Approach
+
+   Wen Sun ^1 Véronique Simon ^2 Sébastien Monnet ^3, 4 Philippe Robert ^1
+   Pierre Sens ^2 (BUTTON) Détails
+   1 RAP2 - Networks, Algorithms and Probabilities
+   Inria de Paris
+   2 Regal - Large-Scale Distributed Systems and Applications
+   LIP6 - Laboratoire d'Informatique de Paris 6, Inria de Paris
+   3 LISTIC - Laboratoire d'Informatique, Systèmes, Traitement de
+   l'Information et de la Connaissance
+   4 USMB [Université de Savoie] [Université de Chambéry] - Université
+   Savoie Mont Blanc
+
+       Wen Sun ^1 AuthorId : 1218690
+     Auteur
+
+       Véronique Simon ^2 AuthorId : 364141
+     Auteur
+
+       Sébastien Monnet ^3, 4 AuthorId : 1656468
+     Auteur
+
+       Philippe Robert ^1 AuthorId : 1504871
+     Auteur IdHAL : philippe-robert
+
+       Pierre Sens ^2 AuthorId : 98482
+     Auteur
+
+   1 RAP2 - Networks, Algorithms and Probabilities (2 rue Simone Iff -
+   75589 Paris - France) StructId : 480279
+     * Inria de Paris (2 rue Simone Iff - CS 42112 - 75589 Paris Cedex 12
+       - France) StructId : 454310
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   2 Regal - Large-Scale Distributed Systems and Applications (France)
+   StructId : 454683
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+     * Inria de Paris (2 rue Simone Iff - CS 42112 - 75589 Paris Cedex 12
+       - France) StructId : 454310
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   3 LISTIC - Laboratoire d'Informatique, Systèmes, Traitement de
+   l'Information et de la Connaissance (BP 80439 74944 ANNECY LE VIEUX
+   Cedex - France) StructId : 7118
+     * USMB [Université de Savoie] [Université de Chambéry] - Université
+       Savoie Mont Blanc : EA3703 (27, rue Marcoz - 73000 Chambéry -
+       France) StructId : 432896
+
+   4 USMB [Université de Savoie] [Université de Chambéry] - Université
+   Savoie Mont Blanc (27, rue Marcoz - 73000 Chambéry - France) StructId :
+   432896
+   (BUTTON) Masquer les détails
+   Abstract : Distributed storage systems such as Hadoop File System or
+   Google File System (GFS) ensure data availability and durability using
+   replication. Persistence is achieved by replicating the same data block
+   on several nodes, and ensuring that a minimum number of copies are
+   available on the system at any time. Whenever the contents of a node
+   are lost, for instance due to a hard disk crash, the system regenerates
+   the data blocks stored before the failure by transferring them from the
+   remaining replicas. This paper is focused on the analysis of the
+   efficiency of replication mechanism that determines the location of the
+   copies of a given file at some server. The variability of the loads of
+   the nodes of the network is investigated for several policies. Three
+   replication mechanisms are tested against simulations in the context of
+   a real implementation of a such a system: Random, Least Loaded and
+   Power of Choice. The simulations show that some of these policies may
+   lead to quite unbalanced situations: if $\beta$ is the average number
+   of copies per node it turns out that, at equilibrium, the load of the
+   nodes may exhibit a high variability. It is shown in this paper that a
+   simple variant of a power of choice type algorithm has a striking
+   effect on the loads of the nodes: at equilibrium, the distribution of
+   the load of a node has a bounded support, most of nodes have a load
+   less than $2\beta$ which is an interesting property for the design of
+   the storage space of these systems. Mathematical models are introduced
+   and investigated to explain this interesting phenomenon. The analysis
+   of these systems turns out to be quite complicated mainly because of
+   the large dimensionality of the state spaces involved. Our study relies
+   on probabilistic methods, mean-field analysis, to analyze the
+   asymptotic behavior of an arbitrary node of the network when the total
+   number of nodes gets large. An additional ingredient is the use of
+   stochastic calculus with marked Poisson point processes to establish
+   some of our results.
+   Keywords : Large Distributed Systems Mean-Field Limits Stochastic
+   Models DHT Placement Algortihms Performance
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Mathématiques [math] / Probabilités [math.PR]
+   Informatique [cs] / Calcul parallèle, distribué et partagé [cs.DC]
+   Informatique [cs] / Modélisation et simulation
+   Informatique [cs] / Performance et fiabilité [cs.PF]
+   Informatique [cs] / Algorithme et structure de données [cs.DS]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01494235
+   Contributeur : Philippe Robert <>
+   Soumis le : jeudi 23 mars 2017 - 06:49:36
+   Dernière modification le : jeudi 21 mars 2019 - 14:46:08
+
+Lien texte intégral
+
+   arxiv
+
+Identifiants
+
+     * HAL Id : hal-01494235, version 1
+     * DOI : 10.1145/3078505.3078531
+     * ARXIV : 1701.00335
+
+Collections
+
+   INSMI | UPMC | LIP6 | INRIA | UNIV-SAVOIE | INRIA2017 | TDS-MACS | UGA
+   | INRIA-ROCQ | SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Wen Sun, Véronique Simon, Sébastien Monnet, Philippe Robert, Pierre
+   Sens. Analysis of a Stochastic Model of Replication in Large
+   Distributed Storage Systems: A Mean-Field Approach. ACM Sigmetrics
+   2017- International Conference on Measurement and Modeling of Computer
+   Systems, Jun 2017, Urbana-Champaign, Illinois, United States.
+   pp.51--51, ⟨10.1145/3078505.3078531⟩. ⟨hal-01494235⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+894
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01361274, version 1
+
+MCC’2015 – The Fifth Model Checking Contest
+
+   Fabrice Kordon ^1, * Hubert Garavel ^2 Lom Messan Hillah ^3, 1 Emmanuel
+   Paviot-Adet ^1 Loïg Jezequel ^4 César Rodríguez ^5 Francis Hulin-Hubard
+   ^6 (BUTTON) Détails
+   * Auteur correspondant
+   1 MoVe - Modélisation et Vérification
+   LIP6 - Laboratoire d'Informatique de Paris 6
+   2 CONVECS - Construction of verified concurrent systems
+   Inria Grenoble - Rhône-Alpes, LIG - Laboratoire d'Informatique de
+   Grenoble
+   3 Université Paris Nanterre - Département de Mathématiques et
+   Informatique
+   4 IRCCyN - Institut de Recherche en Communications et en Cybernétique
+   de Nantes
+   5 LIPN - Laboratoire d'Informatique de Paris-Nord
+   6 MEXICO - Modeling and Exploitation of Interaction and Concurrency
+   LSV - Laboratoire Spécification et Vérification [Cachan], ENS Cachan -
+   École normale supérieure - Cachan, Inria Saclay - Ile de France, CNRS -
+   Centre National de la Recherche Scientifique : UMR8643
+
+       Fabrice Kordon ^1 AuthorId : 368846
+     Auteur correspondant IdHAL : fabrice-kordon ORCID :
+     https://orcid.org/0000-0002-5626-828X
+
+       Hubert Garavel ^2 AuthorId : 542206
+     Auteur
+
+       Lom Messan Hillah ^3, 1 AuthorId : 1188809
+     Auteur IdHAL : lom-messan-hillah ORCID :
+     https://orcid.org/0000-0002-4558-720X
+
+       Emmanuel Paviot-Adet ^1 AuthorId : 965028
+     Auteur
+
+       Loïg Jezequel ^4 AuthorId : 851952
+     Auteur IdHAL : loig-jezequel
+
+       César Rodríguez ^5 AuthorId : 806063
+     Auteur
+
+       Francis Hulin-Hubard ^6 AuthorId : 964007
+     Auteur
+
+   1 MoVe - Modélisation et Vérification (France) StructId : 405336
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   2 CONVECS - Construction of verified concurrent systems (Centre de
+   recherche Inria 655 avenue de l'Europe 38330 Montbonnot Saint-Martin -
+   France) StructId : 178330
+     * Inria Grenoble - Rhône-Alpes (Inovallée 655 avenue de l'Europe
+       38330 Montbonnot - France) StructId : 2497
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * LIG - Laboratoire d'Informatique de Grenoble (UMR 5217 -
+       Laboratoire LIG - Bâtiment IMAG - 700 avenue Centrale - Domaine
+       Universitaire de Saint-Martin-d’Hères Adresse postale : CS 40700 -
+       38058 Grenoble cedex 9 - France Tél. : 04 57 42 14 00 - France)
+       StructId : 24471
+          + UPMF - Université Pierre Mendès France - Grenoble 2 (BP 47 -
+            38040 Grenoble Cedex 9 - France) StructId : 3886
+          + UJF - Université Joseph Fourier - Grenoble 1 (BP 53 - 38041
+            Grenoble Cedex 9 - France) StructId : 51016
+          + INPG - Institut National Polytechnique de Grenoble (46 avenue
+            Félix Viallet 38031 Grenoble Cedex 1 - France) StructId :
+            300275
+          + CNRS - Centre National de la Recherche Scientifique : UMR5217
+            (France) StructId : 441569
+          + UGA - Université Grenoble Alpes (CS 40700 - 38058 Grenoble
+            cedex - France) StructId : 445543
+
+   3 Université Paris Nanterre - Département de Mathématiques et
+   Informatique (200 avenue de la République 92001 Nanterre cedex -
+   France) StructId : 170438
+     * UPN - Université Paris Nanterre (200 avenue de la République -
+       92001 Nanterre cedex - France) StructId : 116205
+
+   4 IRCCyN - Institut de Recherche en Communications et en Cybernétique
+   de Nantes (1, rue de la Noë BP92101 44321 Nantes Cedex 03 - France)
+   StructId : 21439
+     * Mines Nantes - Mines Nantes (La Chantrerie - 4, rue Alfred Kastler
+       - BP 20722 - 44307 Nantes cedex 3 - France) StructId : 84538
+     * ECN - École Centrale de Nantes (1 rue de la Noë - BP 92101 - 44321
+       Nantes cedex 3 - France) StructId : 111023
+     * Polytech Nantes - Ecole Polytechnique de l'Université de Nantes
+       (Campus Chantrerie : Rue Christian Pauc - CS 50609 - 44306 Nantes
+       Cedex 3 Campus Gavy : Gavy Océanis - CS 70152 - 44603 Saint-Nazaire
+       Cedex Campus Courtaisière : 18 Boulevard Gaston Defferre - 85035 La
+       Roche-sur-Yon Cedex - France) StructId : 300405
+          + UN - Université de Nantes : 93263 (1, quai de Tourville - BP
+            13522 - 44035 Nantes cedex 1 - France) StructId : 93263
+     * UNAM - PRES Université Nantes Angers Le Mans (France) StructId :
+       301358
+     * CNRS - Centre National de la Recherche Scientifique : UMR6597
+       (France) StructId : 441569
+
+   5 LIPN - Laboratoire d'Informatique de Paris-Nord (Institut Galilée,
+   Université Paris 13, 99 avenue Jean-Baptiste Clément, F-93430,
+   Villetaneuse - France) StructId : 994
+     * UP13 - Université Paris 13 (France) StructId : 15786
+     * Institut Galilée (France) StructId : 301340
+     * USPC - Université Sorbonne Paris Cité (Université Sorbonne Paris
+       Cité | 100-104, avenue de France | 75013 Paris - France) StructId :
+       303171
+     * CNRS - Centre National de la Recherche Scientifique : UMR7030
+       (France) StructId : 441569
+
+   6 MEXICO - Modeling and Exploitation of Interaction and Concurrency
+   (LSV, ENS Cachan 61 av président Wilson 94235 Cachan cedex - France)
+   StructId : 157663
+     * LSV - Laboratoire Spécification et Vérification [Cachan] (Bâtiment
+       d'Alembert 61 Avenue du Président Wilson 94235 CACHAN CEDEX -
+       France) StructId : 2571
+          + ENS Cachan - École normale supérieure - Cachan (61, avenue du
+            Président Wilson - 94230 Cachan - France) StructId : 6862
+          + CNRS - Centre National de la Recherche Scientifique : UMR8643
+            (France) StructId : 441569
+     * ENS Cachan - École normale supérieure - Cachan (61, avenue du
+       Président Wilson - 94230 Cachan - France) StructId : 6862
+     * Inria Saclay - Ile de France (1 rue Honoré d'Estienne d'Orves
+       Bâtiment Alan Turing Campus de l'École Polytechnique 91120
+       Palaiseau - France) StructId : 118511
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * CNRS - Centre National de la Recherche Scientifique : UMR8643
+       (France) StructId : 441569
+
+   (BUTTON) Masquer les détails
+   Abstract : The Model Checking Contest (MCC) is an annual competition
+   between software tools that verify concurrent systems using state-space
+   exploration techniques, either explicit-state or symbolic. The present
+   article provides a comprehensive account of the 2015 edition of the
+   MCC. The principles of the contest are described, together with its
+   underlying software infrastructure. The tools that competed in 2015 are
+   listed and the results of the contest are summarized.
+   Type de document :
+   Article dans une revue
+   Domaine :
+
+   Informatique [cs]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [6 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01361274
+   Contributeur : Hubert Garavel <>
+   Soumis le : mercredi 7 septembre 2016 - 10:51:27
+   Dernière modification le : mardi 14 mai 2019 - 11:06:15
+   Document(s) archivé(s) le : jeudi 8 décembre 2016 - 12:57:34
+
+Fichier
+
+   [small]
+   main.pdf
+   Fichiers produits par l'(les) auteur(s)
+
+Licence
+
+   CC BY
+     __________________________________________________________________
+
+   Distributed under a Creative Commons Paternité 4.0 International
+   License
+
+Identifiants
+
+     * HAL Id : hal-01361274, version 1
+     * DOI : 10.1007/978-3-662-53401-4_12
+
+Collections
+
+   ENS-CACHAN | UPMC | LIP6 | INRIA | CONVECS | EC-NANTES | IRCCYN | UNAM
+   | UGA | UNIV-NANTES | LIPN | UNIV-PARIS13 | USPC | UNIV-PARIS-SACLAY |
+   LIG_MFML_CONVECS | SORBONNE-UNIVERSITE | GALILE | LIG | SU-SCIENCES
+
+Citation
+
+   Fabrice Kordon, Hubert Garavel, Lom Messan Hillah, Emmanuel
+   Paviot-Adet, Loïg Jezequel, et al.. MCC’2015 – The Fifth Model Checking
+   Contest. LNCS Transactions on Petri Nets and Other Models of
+   Concurrency, Springer, 2016, Lecture Notes in Computer Science, 9930,
+   pp.262-273. ⟨10.1007/978-3-662-53401-4_12⟩. ⟨hal-01361274⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+1107
+
+   Téléchargements de fichiers
+
+212
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-01083384, version 1
+
+Secure states versus Secure executions: From access control to flow control
+
+   Mathieu Jaume ^1 Radoniaina Andriatsimandefitra ^2 Valérie Viet Triem
+   Tong ^2 Ludovic Mé ^2 (BUTTON) Détails
+   1 MoVe - Modélisation et Vérification
+   LIP6 - Laboratoire d'Informatique de Paris 6
+   2 CIDRE - Confidentialité, Intégrité, Disponibilité et Répartition
+   CentraleSupélec, Inria Rennes – Bretagne Atlantique , IRISA-D1 -
+   SYSTÈMES LARGE ÉCHELLE
+
+       Mathieu Jaume ^1 AuthorId : 609032
+     Auteur
+
+       Radoniaina Andriatsimandefitra ^2 AuthorId : 675756
+     Auteur
+
+       Valérie Viet Triem Tong ^2 AuthorId : 99473
+     Auteur IdHAL : valerie-viet-triem-tong
+
+       Ludovic Mé ^2 AuthorId : 1251673
+     Auteur
+
+   1 MoVe - Modélisation et Vérification (France) StructId : 405336
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   2 CIDRE - Confidentialité, Intégrité, Disponibilité et Répartition
+   (France) StructId : 162175
+     * CentraleSupélec (3, rue Joliot Curie, Plateau de Moulon, 91192
+       GIF-SUR-YVETTE Cedex - France) StructId : 411575
+     * Inria Rennes – Bretagne Atlantique (Campus de beaulieu 35042 Rennes
+       cedex - France) StructId : 419153
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * IRISA-D1 - SYSTÈMES LARGE ÉCHELLE (France) StructId : 419362
+          + IRISA - Institut de Recherche en Informatique et Systèmes
+            Aléatoires (Avenue du général Leclerc Campus de Beaulieu 35042
+            RENNES CEDEX - France) StructId : 105128
+               o UR1 - Université de Rennes 1 (2 rue du Thabor - CS 46510
+                 - 35065 Rennes cedex - France) StructId : 105160
+                    # UNIV-RENNES - Université de Rennes (France) StructId
+                      : 528860
+               o INSA Rennes - Institut National des Sciences Appliquées -
+                 Rennes (20, avenue des Buttes de Coësmes - CS 70839 -
+                 35708 Rennes cedex 7 - France) StructId : 117606
+                    # INSA - Institut National des Sciences Appliquées
+                      (France) StructId : 301232
+                    # UNIV-RENNES - Université de Rennes (France) StructId
+                      : 528860
+               o UBS - Université de Bretagne Sud (BP 92116 - 56321
+                 Lorient cedex - France) StructId : 172265
+               o ENS Rennes - École normale supérieure - Rennes (Campus de
+                 Ker Lann - avenue Robert Schuman - 35170 Bruz - France)
+                 StructId : 247362
+               o Inria - Institut National de Recherche en Informatique et
+                 en Automatique (Domaine de Voluceau Rocquencourt - BP 105
+                 78153 Le Chesnay Cedex - France) StructId : 300009
+               o Télécom Bretagne (Technopôle Brest-Iroise CS 83818 29238
+                 BREST Cedex 3 - France) StructId : 301262
+               o CentraleSupélec (3, rue Joliot Curie, Plateau de Moulon,
+                 91192 GIF-SUR-YVETTE Cedex - France) StructId : 411575
+               o CNRS - Centre National de la Recherche Scientifique :
+                 UMR6074 (France) StructId : 441569
+
+   (BUTTON) Masquer les détails
+   Abstract : Several points of view exist about security policies among
+   which two main approaches can be distinguished: policies can be defined
+   by some properties over states of a system or by some properties over
+   exe- cutions of a system. While enforcing a policy specified by some
+   properties over states is rather easy, designing enforcement mechanisms
+   to ensure security properties over executions is more complex. However,
+   enforcing a property over states is sometimes sufficient to ensure a
+   property over executions. In this paper, we investigate these two
+   approaches in order to provide a formal framework that permits to make
+   the bridge between the definition of secure states and security
+   properties over sequences of secure states corresponding to executions.
+   Along the lines of this paper, we illustrate our definitions by
+   considering access control policies defined as properties over states
+   and flow properties over executions of a system.
+   Keywords : information flows. access control Security policies
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Cryptographie et sécurité [cs.CR]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-01083384
+   Contributeur : Radoniaina Andriatsimandefitra <>
+   Soumis le : lundi 17 novembre 2014 - 11:25:32
+   Dernière modification le : jeudi 21 mars 2019 - 14:41:50
+
+Lien texte intégral
+
+   istex
+
+Identifiants
+
+     * HAL Id : hal-01083384, version 1
+     * DOI : 10.1007/978-3-642-45204-8_11
+
+Collections
+
+   INSTITUT-TELECOM | UPMC | UNIV-RENNES1 | INRIA | LIP6 | SUP_CIDRE |
+   IRISA-D1 | IRISA | UR1-UFR-ISTIC | UNIV-RENNES | SORBONNE-UNIVERSITE |
+   SU-SCIENCES
+
+Citation
+
+   Mathieu Jaume, Radoniaina Andriatsimandefitra, Valérie Viet Triem Tong,
+   Ludovic Mé. Secure states versus Secure executions: From access control
+   to flow control. ICISS 2013 - 9th International Conference on
+   Information Systems Security, Dec 2013, Calcutta, India. pp.148-162,
+   ⟨10.1007/978-3-642-45204-8_11⟩. ⟨hal-01083384⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+1540
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) hal-00776589, version 1
+
+Concurrent Games on VASS with Inhibition
+
+   Béatrice Bérard ^1 Serge Haddad ^2, 3 Mathieu Sassolas ^4 Nathalie
+   Sznajder ^1 (BUTTON) Détails
+   1 MoVe - Modélisation et Vérification
+   LIP6 - Laboratoire d'Informatique de Paris 6
+   2 LSV - Laboratoire Spécification et Vérification [Cachan]
+   3 MEXICO - Modeling and Exploitation of Interaction and Concurrency
+   LSV - Laboratoire Spécification et Vérification [Cachan], ENS Cachan -
+   École normale supérieure - Cachan, Inria Saclay - Ile de France, CNRS -
+   Centre National de la Recherche Scientifique : UMR8643
+   4 ULB - Département d'Informatique [Bruxelles]
+
+       Béatrice Bérard ^1 AuthorId : 1381802
+     Auteur
+
+       Serge Haddad ^2, 3 AuthorId : 78711
+     Auteur
+
+       Mathieu Sassolas ^4 AuthorId : 804006
+     Auteur
+
+       Nathalie Sznajder ^1 AuthorId : 332804
+     Auteur IdHAL : sznajder-nathalie
+
+   1 MoVe - Modélisation et Vérification (France) StructId : 405336
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   2 LSV - Laboratoire Spécification et Vérification [Cachan] (Bâtiment
+   d'Alembert 61 Avenue du Président Wilson 94235 CACHAN CEDEX - France)
+   StructId : 2571
+     * ENS Cachan - École normale supérieure - Cachan (61, avenue du
+       Président Wilson - 94230 Cachan - France) StructId : 6862
+     * CNRS - Centre National de la Recherche Scientifique : UMR8643
+       (France) StructId : 441569
+
+   3 MEXICO - Modeling and Exploitation of Interaction and Concurrency
+   (LSV, ENS Cachan 61 av président Wilson 94235 Cachan cedex - France)
+   StructId : 157663
+     * LSV - Laboratoire Spécification et Vérification [Cachan] (Bâtiment
+       d'Alembert 61 Avenue du Président Wilson 94235 CACHAN CEDEX -
+       France) StructId : 2571
+          + ENS Cachan - École normale supérieure - Cachan (61, avenue du
+            Président Wilson - 94230 Cachan - France) StructId : 6862
+          + CNRS - Centre National de la Recherche Scientifique : UMR8643
+            (France) StructId : 441569
+     * ENS Cachan - École normale supérieure - Cachan (61, avenue du
+       Président Wilson - 94230 Cachan - France) StructId : 6862
+     * Inria Saclay - Ile de France (1 rue Honoré d'Estienne d'Orves
+       Bâtiment Alan Turing Campus de l'École Polytechnique 91120
+       Palaiseau - France) StructId : 118511
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+     * CNRS - Centre National de la Recherche Scientifique : UMR8643
+       (France) StructId : 441569
+
+   4 ULB - Département d'Informatique [Bruxelles] (Campus de la Plaine
+   ULB CP212, boulevard du Triomphe, 1050 Bruxelles - Belgique) StructId :
+   5591
+     * ULB - Université Libre de Bruxelles [Bruxelles] (Avenue Franklin
+       Roosevelt 50 - 1050 Bruxelles - Belgique) StructId : 92969
+
+   (BUTTON) Masquer les détails
+   Abstract : We propose to study concurrent games on a new extension of
+   Vector Addition Systems with States, where inhibition conditions are
+   added for modeling purposes. Games are a well-suited framework to solve
+   control problems, and concurrent semantics reflect realistic situations
+   where the environment can always produce a move before the controller,
+   although it is never required to do so. This is in contrast with
+   previous works, which focused mainly on turn-based semantics. Moreover,
+   we consider asymmetric games, where environment and controller do not
+   have the same capabilities, although they both have restricted power.
+   In this setting, we investigate reachability and safety objectives,
+   which are not dual to each other anymore, and we prove that (i)
+   reachability games are undecidable for finite targets, (ii) they are
+   2-EXPTIME-complete for upward-closed targets and (iii) safety games are
+   co-NP-complete for finite, upward-closed and semi-linear targets.
+   Moreover, for the decidable cases, we build a finite representation of
+   the corresponding controllers.
+   Type de document :
+   Communication dans un congrès
+   Domaine :
+
+   Informatique [cs] / Autre [cs.OH]
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+     __________________________________________________________________
+
+   https://hal.inria.fr/hal-00776589
+   Contributeur : Benedikt Bollig <>
+   Soumis le : mardi 15 janvier 2013 - 17:28:06
+   Dernière modification le : jeudi 21 mars 2019 - 14:20:55
+
+Lien texte intégral
+
+   openaccess
+
+Identifiants
+
+     * HAL Id : hal-00776589, version 1
+     * DOI : 10.1007/978-3-642-32940-1_5
+
+Collections
+
+   INRIA | ENS-CACHAN | LIP6 | UPMC | SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Béatrice Bérard, Serge Haddad, Mathieu Sassolas, Nathalie Sznajder.
+   Concurrent Games on VASS with Inhibition. 23rd International Conference
+   on Concurrency Theory (CONCUR'12), Sep 2012, Newcastle upon Tyne,
+   United Kingdom. pp.39-52, ⟨10.1007/978-3-642-32940-1_5⟩. ⟨hal-00776589⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+291
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr
+   #HAL
+
+   (BUTTON) Toggle navigation
+   CCSD
+     * HAL
+          + HAL
+          + HALSHS
+          + TEL
+          + MédiHAL
+          + Liste des portails
+          +
+          + AURéHAL
+          + API
+          + Data
+          + Documentation
+     * Episciences.org
+          + Episciences.org
+          + Revues
+          +
+          + Documentation
+     * Sciencesconf.org
+     * Support
+
+   (BUTTON)  Connexion (BUTTON)
+     * Connexion
+     * Connexion avec ORCID
+     * se connecter avec Fédération
+     *
+     * Créer un compte
+     *
+     * Mot de passe oublié ?
+     * Login oublié ?
+
+     * fr
+     * en
+
+         HAL-Inria Les publications, logiciels... des scientifiques
+   Inria
+     * Accueil
+     * Déposer
+     * Consulter tout HAL
+          + par date de publication/rédaction
+          + par domaine
+          + par type de publication
+          + par collection
+          + arXiv
+          + les derniers dépôts
+     * Publications Inria
+     * Recherche
+     * Services
+          + HalTools : créer sa page web
+          + Haltools : export RAWEB
+          + X2Hal : import par lot
+          + Consulter les structures de recherche connues de HAL
+     * Documentation
+          + Aide en ligne de HAL V3
+          + Dernières évolutions de HAL V3
+          + Documentation API HAL
+          + Ajouter des vignettes
+          + Aide en ligne Haltools
+          + Aide en ligne de Bib2hal
+     * OpenAccess
+          + Inria soutient la science ouverte
+
+   (BUTTON) inria-00538510, version 1
+
+Solving ill-posed Image Processing problems using Data Assimilation
+
+   Dominique Béréziat ^1 Isabelle Herlin ^2, 3 (BUTTON) Détails
+   1 PEQUAN - Performance et Qualité des Algorithmes Numériques
+   LIP6 - Laboratoire d'Informatique de Paris 6
+   2 Clime - Coupling environmental data and simulation models for
+   software integration
+   Inria Paris-Rocquencourt
+   3 CEREA - Centre d'Enseignement et de Recherche en Environnement
+   Atmosphérique
+
+       Dominique Béréziat ^1 AuthorId : 101480
+     Auteur
+
+       Isabelle Herlin ^2, 3 AuthorId : 100429
+     Auteur
+
+   1 PEQUAN - Performance et Qualité des Algorithmes Numériques (France)
+   StructId : 389984
+     * LIP6 - Laboratoire d'Informatique de Paris 6 (4 Place JUSSIEU 75252
+       PARIS CEDEX 05 - France) StructId : 233
+          + UPMC - Université Pierre et Marie Curie - Paris 6 (4 place
+            Jussieu - 75005 Paris - France) StructId : 93591
+          + CNRS - Centre National de la Recherche Scientifique : UMR7606
+            (France) StructId : 441569
+
+   2 Clime - Coupling environmental data and simulation models for
+   software integration (France) StructId : 2411
+     * Inria Paris-Rocquencourt (INRIA Rocquencourt : Domaine de Voluceau,
+       Rocquencourt B.P. 105 78153 le Chesnay Cedex - France) StructId :
+       86790
+          + Inria - Institut National de Recherche en Informatique et en
+            Automatique (Domaine de Voluceau Rocquencourt - BP 105 78153
+            Le Chesnay Cedex - France) StructId : 300009
+
+   3 CEREA - Centre d'Enseignement et de Recherche en Environnement
+   Atmosphérique (6-8 Avenue Blaise Pascal, Champs sur Marne 77455 Marne
+   la Vallée Cedex 2 - France) StructId : 9217
+     * ENPC - École des Ponts ParisTech (École des Ponts ParisTech 6-8
+       avenue Blaise-Pascal Cité Descartes 77455 Champs-sur-Marne
+       Marne-la-Vallée cedex 2 - France) StructId : 301545
+     * EDF R&D - EDF R&D (France) StructId : 528389
+          + EDF - EDF (France) StructId : 302313
+
+   (BUTTON) Masquer les détails
+   Abstract : Data Assimilation is a mathematical framework used in
+   environmental sciences to improve forecasts performed by
+   meteorological, oceanographic or air quality simulation models. It aims
+   to solve an evolution equation, describing the temporal dynamics, and
+   an observation equation, linking the state vector and observations. In
+   this article we use this framework to study a class of ill-posed Image
+   Processing problems, usually solved by spatial and temporal
+   regularization techniques. An approach is proposed to convert an
+   ill-posed Image Processing problem in terms of a data Assimilation
+   system, solved by a 4D-Var method. This is illustrated by the
+   estimation of optical ow from a noisy image sequence, with the dynamic
+   model ensuring the temporal regularity of the result. The innovation of
+   the paper concerns first, the extensive description of the tasks to be
+   achieved for going from an image processing problem to a data
+   assimilation description; second, the theoretical analysis of the
+   covariance matrices involved in the algorithm; and third a specic
+   discretisation scheme ensuring the stability of computation for the
+   application on optical flow estimation.
+   Keywords : Optical flow Computer vision Inverse problems Data
+   assimilation Non linear advection
+   Type de document :
+   Article dans une revue
+   Domaine :
+
+   Informatique [cs] / Modélisation et simulation
+
+   Liste complète des métadonnées (BUTTON)  Voir (BUTTON)  Masquer
+   Littérature citée [26 références]  Voir  Masquer  Télécharger
+     __________________________________________________________________
+
+   https://hal.inria.fr/inria-00538510
+   Contributeur : Karim Drifi <>
+   Soumis le : lundi 22 novembre 2010 - 16:20:05
+   Dernière modification le : jeudi 21 mars 2019 - 14:38:04
+   Document(s) archivé(s) le : vendredi 26 octobre 2012 - 16:21:55
+
+Fichier
+
+   [small]
+   dBiH-2010.pdf
+   Fichiers produits par l'(les) auteur(s)
+
+Identifiants
+
+     * HAL Id : inria-00538510, version 1
+     * DOI : 10.1007/s11075-010-9383-z
+
+Collections
+
+   INRIA | ENPC | PARISTECH | ENPC-CEREA | UPMC | LIP6 | TDS-MACS | EDF |
+   INRIA-ROCQ | SORBONNE-UNIVERSITE | SU-SCIENCES
+
+Citation
+
+   Dominique Béréziat, Isabelle Herlin. Solving ill-posed Image Processing
+   problems using Data Assimilation. Numerical Algorithms, Springer
+   Verlag, 2011, 56 (2), pp.219-252. ⟨10.1007/s11075-010-9383-z⟩.
+   ⟨inria-00538510⟩
+
+Exporter
+
+   BibTeX TEI DC DCterms EndNote
+
+Partager
+
+Métriques
+
+   Consultations de la notice
+
+777
+
+   Téléchargements de fichiers
+
+871
+     __________________________________________________________________
+
+Contact
+
+   archive-ouverte@inria.fr

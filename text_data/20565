@@ -1,0 +1,506 @@
+   #Centre de Recherche en Informatique de Lens
+
+   cril
+
+Centre de Recherche en Informatique de Lens
+
+   (BUTTON)
+     * (current)
+     * Présentation
+          + Thématiques
+          + Organigramme
+          + Accès
+          + Actualités
+     * Recherche
+          + Représentation des Connaissances et Raisonnements
+          + Algorithmes pour l'Inférence et Contraintes
+          + Thèses & HDR
+          + Projets/Collaborations/Actions
+          + Prix/Récompenses
+          + Séminaires
+     * Productions scientifiques
+          + Publications
+          + Logiciels
+
+     * Annuaire
+     * Contact
+     * Langue
+          + [fr.svg] Français
+          + [en.svg] Anglais
+          + [de.svg] Allemand
+     * Intranet
+
+Le CRIL en bref
+
+   présentation
+
+   Le Centre de Recherche en Informatique de Lens (CRIL UMR 8188) est un
+   laboratoire de l’Université d’Artois et du CNRS dont la thématique de
+   recherche fédératrice concerne l'intelligence artificielle et ses
+   applications. Il regroupe plus de 50 membres : chercheurs,
+   enseignants-chercheurs, doctorants et personnels administratifs et
+   techniques.
+
+   Le CRIL particie à la Confédération Européenne de Laboratoires en
+   Intelligence Artificielle CLAIRE et à l'alliance régionale humAIn. Il
+   bénéficie du soutien du Ministère de l’Enseignement Supérieur et de la
+   Recherche, du CNRS, de l’Université d’Artois, de l’IUT de Lens et de la
+   région Hauts de France.
+
+   En savoir plus
+
+Recherches en intelligence artificielle et applications
+
+   mots clés du CRIL
+
+Actualités (RSS)
+
+     * 2019-10-03  Séminaire de  Cédric Piette
+     * 2019-06-13  Papiers acceptés à IJCAI'19
+     * 2019-05-16  Séminaire de  Ivan Varzinczak - CRIL CNRS & Univ Artois
+     * 2019-05-09  Séminaire de  Richard Booth - Cardiff University, UK
+     * 2019-05-02  Séminaire de  Kuldeep Meel - National University of
+       Singapore
+
+Séminaire General Game Playing : que peut apporter la Programmation Par
+Contraintes ?
+
+   **Cédric Piette **
+   Depuis la présentation du Game Description Language (GDL) en 2005, puis
+   de ses extensions, de nombreux “programmes-joueurs” ont été proposés.
+   Contrairement aux algorithmes dédiés, conçus pour un jeu donné, ceux-ci
+   visent à être capables de jouer à n’importe quel jeu codé en GDL, sans
+   expertise préalable ni technologie dédiée à un jeu particulier. Les
+   meilleurs programmes-joueurs mondiaux utilisent une technique appelée
+   Monte Carlo Tree Search (MCTS), qui est une approche heuristique basée
+   sur un échantillonnage aléatoire des états atteignables dans un jeu. Si
+   MCTS et ses dérivés ont fait leurs preuves lors des différentes
+   compétitions organisées depuis l’arrivée de GDL, les techniques
+   algorithmiques liées à la Programmation Par Contraintes (PPC) ne sont
+   -sauf dans de (très très) rares occasions- pas exploitées par les
+   programmes-joueurs. Or, elles semblent représenter une piste
+   intéressante à bien des égards. Ce travail préliminaire se concentre
+   principalement sur les jeux dits à “1 joueur”, c’est-à-dire les puzzles
+   (au sens général), et pave la voie pour constater ce que la PPC permet
+   de réaliser dans le domaine du General Game Playing, et quelles
+   perspectives elle offre.
+
+   En savoir plus
+
+Papiers acceptés à IJCAI'19
+
+   Cette année, ce seront 3 papiers du CRIL qui seront présentés à IJCAI
+   2019.
+   Rational Inference Relations from Maximal Consistent Subsets Selection
+   Sébastien Konieczny, Pierre Marquis, Srdjan Vesic
+   Lorsque l’on est en présence d’informations contradictoires, une
+   méthode standard pour tirer des conclusions non triviales à partir de
+   ces informations, est de considérer les plus grands sous-ensembles
+   cohérents de formules, et de conclure toutes les informations qui sont
+   conséquences de tous ces sous-ensembles. Dans ce travail nous avons
+   proposé de nouvelles relations d’inférence basées sur une selection
+   (des meilleurs) de ces sous-ensembles. Nous avons montré que ces
+   méthodes avaient toutes les propriétés requises pour des relations
+   d’inférences (elles satisfont toutes les propriétés des relations
+   rationnelles). Et nous avons montré un théorème de représentation, qui
+   établit une correspondance entre ces relations d’inférences basées sur
+   une sélection de ces sous-ensembles et les relations rationnelles.
+   What Has Been Said? Identifying the Change Formula in a Belief Revision
+   Scenario
+   Nicolas Schwind, Katsumi Inoue, Sébastien Konieczny, Jean-Marie
+   Lagniez, Pierre Marquis
+   Dans ce travail nous tentons de répondre au problème suivant: Nous
+   savons qu’une annonce a été faite à un ensemble d’agents, mais nous
+   n’en connaissons pas le contenu (supposons qu’on a vu quelqu’un venir
+   parler à un groupe, mais qu’on était trop loin pour entendre ce qui se
+   disait). Nous connaissions les croyances des agents avant, et nous
+   connaissons les croyances des agents après l’annonce. Et la question
+   est: à partir de ces informations, que pouvons nous connaitre de cette
+   annonce. Nous étudions donc ce que l’on peut en dire, en en proposant
+   une approximation (un encadrement) dans le cas général, et dans
+   certains cas particuliers (lorsque l’on en sait un peu plus sur la
+   méthode de révision des agents ou sur le sujet de l’annonce). Et nous
+   étudions quand on peut exactement déterminer l’annonce qui a été faite.
+   Des résultats expérimentaux nous montrent en particulier qu’en général
+   il suffit d’une trentaine d’agents pour pouvoir déterminer précisément
+   le message.
+   Simple Conditionals with Constrained Right Weakening
+   Giovanni Casini, Thomas Meyer, Ivan Varzinczak
+   Des énoncés de type “si-alors”, appelés conditionnels, jouent un rôle
+   fondamental dans le raisonnement humain et sont étudiés depuis
+   l’antiquité. Ils peuvent avoir des intuitions différentes, en fonction
+   du contexte, tout en gardant la même forme. Les énoncés “si tu bois, tu
+   ne dois pas conduire”, “si tu jettes la pierre contre la fenêtre, elle
+   cassera”, “si j’étais riche, j’aurais fait un don”, “si un animal est
+   un oiseau, alors normalement il vole”, entre autres, sont des exemples
+   de conditionnels utilisés dans les contextes légaux, causaux,
+   contre-factuels, et de raisonnement de sens commun. Un problème
+   important en intelligence artificielle est celui de déterminer les
+   conséquences (implicites) d’un ensemble de conditionnels. Dans ce
+   travail nous explorons une façon de le faire de sorte à ce que les
+   conclusions déduites à partir d’une base de conditionnels soient les
+   plus informatives possible dans le contexte de l’utilisateur. En
+   particulier, nous montrons que notre approche est plus générale que
+   celles proposées dans la literature et qu’elle peut servir comme
+   fondement pour l’analyse de différentes formes de raisonnement basés
+   sur des conditionnels.
+
+   En savoir plus
+
+Séminaire La logique de typicité propositionnelle
+
+   Ivan Varzinczak - CRIL CNRS & Univ Artois
+   Dans cet exposé, je présenterai la logique de typicité propositionnelle
+   PTL. Cette logique enrichît la logique propositionnelle classique avec
+   un opérateur unaire permettant de représenter de façon explicite une
+   notion de typicité d’une formule. L’intuition derrière cet opérateur
+   est de capturer les situations les plus typiques (ou normales, ou
+   conventionnelles, en fonction de l’application en question) où une
+   formule donnée est vraie. La sémantique de PTL est en termes de modèles
+   préférentiels, plus précisément les modèles modulaires, étudiés dans
+   l’approche KLM pour le raisonnement non monotone. Cela nous permet de
+   montrer que les conditionnels à la KLM peuvent être simulés directement
+   dans PTL. Je présenterai certaines propriétés intéressantes de PTL,
+   notamment (1) le fait qu’il y a des formules de PTL qui ne peuvent pas
+   être exprimées comme des conditionnels KLM, et (2) le fait que PTL nous
+   permet de simuler la révision de croyances à la AGM directement dans le
+   langage objet. Cela fait de PTL un formalisme à la fois simple et
+   suffisamment puissant pour servir de framework dans lequel analyser des
+   approches pour le raisonnement non monotone en logique
+   propositionnelle. Je finirai avec une discussion à propos de
+   différentes notions de conséquence logique non monotones dans le cadre
+   de PTL et j’en proposerai trois candidates appropriées.
+   Pour plus de détails : https://arxiv.org/abs/1809.10946
+
+   En savoir plus
+
+Séminaire Trust-sensitive Belief Revision
+
+   Richard Booth - Cardiff University, UK
+   Belief revision is concerned with incorporating new information into a
+   pre-existing set of beliefs. When the new information comes from
+   another agent, we must first determine if that agent should be trusted.
+   In this talk, we define trust as a pre-processing step before revision.
+   We emphasise that trust in an agent is often restricted to a particular
+   domain of expertise. We demonstrate that this form of trust can be
+   captured by associating a state partition with each agent, then
+   relativising all reports to this partition before revising. We position
+   the resulting family of trust-sensitive revision operators within the
+   class of selective revision operators of Ferme and Hansson, and we
+   examine its properties. In particular, we show how trust-sensitive
+   revision is manipulable, in the sense that agents can sometimes have
+   incentive to pass on misleading information. This is joint work with
+   Aaron Hunter.
+
+   En savoir plus
+
+Séminaire Beyond NP Revolution
+
+   **Kuldeep Meel - National University of Singapore **
+   The paradigmatic NP-complete problem of Boolean satisfiability (SAT)
+   solving is a central problem in Computer Science. While the mention of
+   SAT can be traced to early 19th century, efforts to develop practically
+   successful SAT solvers go back to 1950s. The past 20 years have
+   witnessed a “NP revolution” with the development of conflict-driven
+   clause-learning (CDCL) SAT solvers. Such solvers combine a classical
+   backtracking search with a rich set of effective heuristics. While 20
+   years ago SAT solvers were able to solve instances with at most a few
+   hundred variables, modern SAT solvers solve instances with up to
+   millions of variables in a reasonable time.
+   The “NP-revolution” opens up opportunities to design practical
+   algorithms with rigorous guarantees for problems in complexity classes
+   beyond NP by replacing a NP oracle with a SAT Solver. In this talk, we
+   will discuss how we use NP revolution to design practical algorithms
+   for two fundamental problems in artificial intelligence and formal
+   methods: Constrained Counting and Sampling
+   Bio:
+   Kuldeep Meel is an Assistant Professor of Computer Science in School of
+   Computing at the National University of Singapore where he holds the
+   Sung Kah Kay Assistant Professorship. He received his Ph.D. (2017) and
+   M.S. (2014) degree in Computer Science from Rice University. He holds
+   B. Tech. (with Honors) degree (2012) in Computer Science and
+   Engineering from Indian Institute of Technology, Bombay. His research
+   interests lie at the intersection of Artificial Intelligence and Formal
+   Methods. Meel has co-presented tutorials at top-tier AI conferences,
+   IJCAI 2018, AAAI 2017, and UAI 2016. His work received the 2018 Ralph
+   Budd Award for Best PhD Thesis in Engineering, 2014 Outstanding Masters
+   Thesis Award from Vienna Center of Logic and Algorithms and Best
+   Student Paper Award at CP 2015. He received the IBM Ph.D. Fellowship
+   and the 2016-17 Lodieska Stockbridge Vaughn Fellowship for his work on
+   constrained sampling and counting.
+
+   En savoir plus
+
+   [logo-cnrs-2019.svg]
+
+Nous contacter
+
+     +33 (0)3 21 79 17 23
+     [gestion.png]
+
+Nos adresses
+
+   (BUTTON) FAC  UFR des Sciences Jean Perrin
+   Rue Jean Souvraz SP 18
+   F-62307 Lens Cedex
+   France
+   pour correspondance
+   (BUTTON) IUT  IUT de Lens
+   Rue de l’Université SP 16
+   F-62307 Lens Cedex
+   France
+   [logo-artois.svg]
+   | Crédits et mentions légales |
+   #Centre de Recherche en Informatique de Lens
+
+   cril
+
+Centre de Recherche en Informatique de Lens
+
+   (BUTTON)
+     * (current)
+     * Présentation
+          + Thématiques
+          + Organigramme
+          + Accès
+          + Actualités
+     * Recherche
+          + Représentation des Connaissances et Raisonnements
+          + Algorithmes pour l'Inférence et Contraintes
+          + Thèses & HDR
+          + Projets/Collaborations/Actions
+          + Prix/Récompenses
+          + Séminaires
+     * Productions scientifiques
+          + Publications
+          + Logiciels
+
+     * Annuaire
+     * Contact
+     * Langue
+          + [fr.svg] Français
+          + [en.svg] Anglais
+          + [de.svg] Allemand
+     * Intranet
+
+Le CRIL en bref
+
+   présentation
+
+   Le Centre de Recherche en Informatique de Lens (CRIL UMR 8188) est un
+   laboratoire de l’Université d’Artois et du CNRS dont la thématique de
+   recherche fédératrice concerne l'intelligence artificielle et ses
+   applications. Il regroupe plus de 50 membres : chercheurs,
+   enseignants-chercheurs, doctorants et personnels administratifs et
+   techniques.
+
+   Le CRIL particie à la Confédération Européenne de Laboratoires en
+   Intelligence Artificielle CLAIRE et à l'alliance régionale humAIn. Il
+   bénéficie du soutien du Ministère de l’Enseignement Supérieur et de la
+   Recherche, du CNRS, de l’Université d’Artois, de l’IUT de Lens et de la
+   région Hauts de France.
+
+   En savoir plus
+
+Recherches en intelligence artificielle et applications
+
+   mots clés du CRIL
+
+Actualités (RSS)
+
+     * 2019-10-03  Séminaire de  Cédric Piette
+     * 2019-06-13  Papiers acceptés à IJCAI'19
+     * 2019-05-16  Séminaire de  Ivan Varzinczak - CRIL CNRS & Univ Artois
+     * 2019-05-09  Séminaire de  Richard Booth - Cardiff University, UK
+     * 2019-05-02  Séminaire de  Kuldeep Meel - National University of
+       Singapore
+
+Séminaire General Game Playing : que peut apporter la Programmation Par
+Contraintes ?
+
+   **Cédric Piette **
+   Depuis la présentation du Game Description Language (GDL) en 2005, puis
+   de ses extensions, de nombreux “programmes-joueurs” ont été proposés.
+   Contrairement aux algorithmes dédiés, conçus pour un jeu donné, ceux-ci
+   visent à être capables de jouer à n’importe quel jeu codé en GDL, sans
+   expertise préalable ni technologie dédiée à un jeu particulier. Les
+   meilleurs programmes-joueurs mondiaux utilisent une technique appelée
+   Monte Carlo Tree Search (MCTS), qui est une approche heuristique basée
+   sur un échantillonnage aléatoire des états atteignables dans un jeu. Si
+   MCTS et ses dérivés ont fait leurs preuves lors des différentes
+   compétitions organisées depuis l’arrivée de GDL, les techniques
+   algorithmiques liées à la Programmation Par Contraintes (PPC) ne sont
+   -sauf dans de (très très) rares occasions- pas exploitées par les
+   programmes-joueurs. Or, elles semblent représenter une piste
+   intéressante à bien des égards. Ce travail préliminaire se concentre
+   principalement sur les jeux dits à “1 joueur”, c’est-à-dire les puzzles
+   (au sens général), et pave la voie pour constater ce que la PPC permet
+   de réaliser dans le domaine du General Game Playing, et quelles
+   perspectives elle offre.
+
+   En savoir plus
+
+Papiers acceptés à IJCAI'19
+
+   Cette année, ce seront 3 papiers du CRIL qui seront présentés à IJCAI
+   2019.
+   Rational Inference Relations from Maximal Consistent Subsets Selection
+   Sébastien Konieczny, Pierre Marquis, Srdjan Vesic
+   Lorsque l’on est en présence d’informations contradictoires, une
+   méthode standard pour tirer des conclusions non triviales à partir de
+   ces informations, est de considérer les plus grands sous-ensembles
+   cohérents de formules, et de conclure toutes les informations qui sont
+   conséquences de tous ces sous-ensembles. Dans ce travail nous avons
+   proposé de nouvelles relations d’inférence basées sur une selection
+   (des meilleurs) de ces sous-ensembles. Nous avons montré que ces
+   méthodes avaient toutes les propriétés requises pour des relations
+   d’inférences (elles satisfont toutes les propriétés des relations
+   rationnelles). Et nous avons montré un théorème de représentation, qui
+   établit une correspondance entre ces relations d’inférences basées sur
+   une sélection de ces sous-ensembles et les relations rationnelles.
+   What Has Been Said? Identifying the Change Formula in a Belief Revision
+   Scenario
+   Nicolas Schwind, Katsumi Inoue, Sébastien Konieczny, Jean-Marie
+   Lagniez, Pierre Marquis
+   Dans ce travail nous tentons de répondre au problème suivant: Nous
+   savons qu’une annonce a été faite à un ensemble d’agents, mais nous
+   n’en connaissons pas le contenu (supposons qu’on a vu quelqu’un venir
+   parler à un groupe, mais qu’on était trop loin pour entendre ce qui se
+   disait). Nous connaissions les croyances des agents avant, et nous
+   connaissons les croyances des agents après l’annonce. Et la question
+   est: à partir de ces informations, que pouvons nous connaitre de cette
+   annonce. Nous étudions donc ce que l’on peut en dire, en en proposant
+   une approximation (un encadrement) dans le cas général, et dans
+   certains cas particuliers (lorsque l’on en sait un peu plus sur la
+   méthode de révision des agents ou sur le sujet de l’annonce). Et nous
+   étudions quand on peut exactement déterminer l’annonce qui a été faite.
+   Des résultats expérimentaux nous montrent en particulier qu’en général
+   il suffit d’une trentaine d’agents pour pouvoir déterminer précisément
+   le message.
+   Simple Conditionals with Constrained Right Weakening
+   Giovanni Casini, Thomas Meyer, Ivan Varzinczak
+   Des énoncés de type “si-alors”, appelés conditionnels, jouent un rôle
+   fondamental dans le raisonnement humain et sont étudiés depuis
+   l’antiquité. Ils peuvent avoir des intuitions différentes, en fonction
+   du contexte, tout en gardant la même forme. Les énoncés “si tu bois, tu
+   ne dois pas conduire”, “si tu jettes la pierre contre la fenêtre, elle
+   cassera”, “si j’étais riche, j’aurais fait un don”, “si un animal est
+   un oiseau, alors normalement il vole”, entre autres, sont des exemples
+   de conditionnels utilisés dans les contextes légaux, causaux,
+   contre-factuels, et de raisonnement de sens commun. Un problème
+   important en intelligence artificielle est celui de déterminer les
+   conséquences (implicites) d’un ensemble de conditionnels. Dans ce
+   travail nous explorons une façon de le faire de sorte à ce que les
+   conclusions déduites à partir d’une base de conditionnels soient les
+   plus informatives possible dans le contexte de l’utilisateur. En
+   particulier, nous montrons que notre approche est plus générale que
+   celles proposées dans la literature et qu’elle peut servir comme
+   fondement pour l’analyse de différentes formes de raisonnement basés
+   sur des conditionnels.
+
+   En savoir plus
+
+Séminaire La logique de typicité propositionnelle
+
+   Ivan Varzinczak - CRIL CNRS & Univ Artois
+   Dans cet exposé, je présenterai la logique de typicité propositionnelle
+   PTL. Cette logique enrichît la logique propositionnelle classique avec
+   un opérateur unaire permettant de représenter de façon explicite une
+   notion de typicité d’une formule. L’intuition derrière cet opérateur
+   est de capturer les situations les plus typiques (ou normales, ou
+   conventionnelles, en fonction de l’application en question) où une
+   formule donnée est vraie. La sémantique de PTL est en termes de modèles
+   préférentiels, plus précisément les modèles modulaires, étudiés dans
+   l’approche KLM pour le raisonnement non monotone. Cela nous permet de
+   montrer que les conditionnels à la KLM peuvent être simulés directement
+   dans PTL. Je présenterai certaines propriétés intéressantes de PTL,
+   notamment (1) le fait qu’il y a des formules de PTL qui ne peuvent pas
+   être exprimées comme des conditionnels KLM, et (2) le fait que PTL nous
+   permet de simuler la révision de croyances à la AGM directement dans le
+   langage objet. Cela fait de PTL un formalisme à la fois simple et
+   suffisamment puissant pour servir de framework dans lequel analyser des
+   approches pour le raisonnement non monotone en logique
+   propositionnelle. Je finirai avec une discussion à propos de
+   différentes notions de conséquence logique non monotones dans le cadre
+   de PTL et j’en proposerai trois candidates appropriées.
+   Pour plus de détails : https://arxiv.org/abs/1809.10946
+
+   En savoir plus
+
+Séminaire Trust-sensitive Belief Revision
+
+   Richard Booth - Cardiff University, UK
+   Belief revision is concerned with incorporating new information into a
+   pre-existing set of beliefs. When the new information comes from
+   another agent, we must first determine if that agent should be trusted.
+   In this talk, we define trust as a pre-processing step before revision.
+   We emphasise that trust in an agent is often restricted to a particular
+   domain of expertise. We demonstrate that this form of trust can be
+   captured by associating a state partition with each agent, then
+   relativising all reports to this partition before revising. We position
+   the resulting family of trust-sensitive revision operators within the
+   class of selective revision operators of Ferme and Hansson, and we
+   examine its properties. In particular, we show how trust-sensitive
+   revision is manipulable, in the sense that agents can sometimes have
+   incentive to pass on misleading information. This is joint work with
+   Aaron Hunter.
+
+   En savoir plus
+
+Séminaire Beyond NP Revolution
+
+   **Kuldeep Meel - National University of Singapore **
+   The paradigmatic NP-complete problem of Boolean satisfiability (SAT)
+   solving is a central problem in Computer Science. While the mention of
+   SAT can be traced to early 19th century, efforts to develop practically
+   successful SAT solvers go back to 1950s. The past 20 years have
+   witnessed a “NP revolution” with the development of conflict-driven
+   clause-learning (CDCL) SAT solvers. Such solvers combine a classical
+   backtracking search with a rich set of effective heuristics. While 20
+   years ago SAT solvers were able to solve instances with at most a few
+   hundred variables, modern SAT solvers solve instances with up to
+   millions of variables in a reasonable time.
+   The “NP-revolution” opens up opportunities to design practical
+   algorithms with rigorous guarantees for problems in complexity classes
+   beyond NP by replacing a NP oracle with a SAT Solver. In this talk, we
+   will discuss how we use NP revolution to design practical algorithms
+   for two fundamental problems in artificial intelligence and formal
+   methods: Constrained Counting and Sampling
+   Bio:
+   Kuldeep Meel is an Assistant Professor of Computer Science in School of
+   Computing at the National University of Singapore where he holds the
+   Sung Kah Kay Assistant Professorship. He received his Ph.D. (2017) and
+   M.S. (2014) degree in Computer Science from Rice University. He holds
+   B. Tech. (with Honors) degree (2012) in Computer Science and
+   Engineering from Indian Institute of Technology, Bombay. His research
+   interests lie at the intersection of Artificial Intelligence and Formal
+   Methods. Meel has co-presented tutorials at top-tier AI conferences,
+   IJCAI 2018, AAAI 2017, and UAI 2016. His work received the 2018 Ralph
+   Budd Award for Best PhD Thesis in Engineering, 2014 Outstanding Masters
+   Thesis Award from Vienna Center of Logic and Algorithms and Best
+   Student Paper Award at CP 2015. He received the IBM Ph.D. Fellowship
+   and the 2016-17 Lodieska Stockbridge Vaughn Fellowship for his work on
+   constrained sampling and counting.
+
+   En savoir plus
+
+   [logo-cnrs-2019.svg]
+
+Nous contacter
+
+     +33 (0)3 21 79 17 23
+     [gestion.png]
+
+Nos adresses
+
+   (BUTTON) FAC  UFR des Sciences Jean Perrin
+   Rue Jean Souvraz SP 18
+   F-62307 Lens Cedex
+   France
+   pour correspondance
+   (BUTTON) IUT  IUT de Lens
+   Rue de l’Université SP 16
+   F-62307 Lens Cedex
+   France
+   [logo-artois.svg]
+   | Crédits et mentions légales |

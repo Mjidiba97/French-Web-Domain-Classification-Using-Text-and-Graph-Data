@@ -1,0 +1,1610 @@
+   #next MagdiBlog » Flux MagdiBlog » Flux des commentaires
+
+MagdiBlog
+
+Parce que si on ne se compliquait pas un peu la vie, ce serait beaucoup moins
+drôle !
+
+   MagdiBlog
+
+   (BUTTON) Menu Aller au contenu
+     * Accueil
+     * Sommaire
+     * Projets
+          + Pi Home Dash Screen
+          + Pi Car Jukebox
+          + Pi Time Lapse
+          + Pi BOA Drone
+          + BOA Pi Secure Gateway
+     * Domotique
+     * GPIO
+     * Divers
+     * Contact
+     * Liens
+     * A propos
+          + Magdiblog
+          + Mon CV
+     * RSS
+
+De la neige en Python sur votre Pi Mini Screen
+
+   1 réponse
+
+   Avec l’hiver et Noël qui approchent, l’idée m’est venue de mettre un
+   peu d’ambiance sur le Mini Pi Dash Screen en faisant tomber de la neige
+   en Python avec PyGame. En rajoutant simplement quelques lignes de code,
+   il est très facile en Python de simuler des flocons de neiges tombant
+   et s’amassant en bas de l’écran.
+
+   Continuer la lecture →
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans BOA Pi HomeDashScreen, Divers le
+   novembre 2018 par Olivier.
+
+Mini Pi Dash Screen
+
+   6 réponses
+
+   Quelques années après le Raspberry Pi Home Dash Screen j’ai eu envie
+   d’explorer d’autres manières de réaliser un affichage simple sur de
+   petits écrans. Dans cette article, j’explique pas à pas comment
+   réaliser très simplement un écran d’affichage en utilisant un Raspberry
+   Pi et la lib Python PyGame.
+
+   Continuer la lecture →
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans BOA Pi HomeDashScreen, Divers, Pi Mini
+   Dash Screen, et marquée avec dashscreen, écran, pygame, python,
+   raspberry pi, raspbian, système, xplanet, le novembre 2018 par Olivier.
+
+RaspiCamAero : Aéronautique de loisir, caméra sur piste et informations METAR
+(màj déc 2016)
+
+   1 réponse
+
+Produits disponibles sur Amazon.fr
+
+     * Raspberry Pi v2.1 8 MP 1080p Module Caméra
+       Raspberry Pi v2.1 8 MP 1080p Module Caméra
+       Prix: EUR 22,35
+     * Longruner Module Caméra pour Raspberry Pi 3 Modèle B B + A + 2 1
+       5MP 1080p OV5647 Capteur Vidéo HD Webcam Caméra de Vision Nocturne
+       -55%
+       Longruner Module Caméra pour Raspberry Pi 3 Modèle B B + A + 2 1
+       5MP 1080p OV5647 Capteur Vidéo HD Webcam Caméra de Vision Nocturne
+       Prix: EUR 24,99
+       Ancien prix: EUR 55,00
+     * Raspberry Pi Camera Module V2 without IR Filter: useable at day &
+       night (with IR lighting)
+       Raspberry Pi Camera Module V2 without IR Filter: useable at day &
+       night (with IR lighting)
+       Prix: EUR 32,90
+     * AZDelivery Caméra pour Raspberry Pi
+       AZDelivery Caméra pour Raspberry Pi
+       Prix: EUR 11,99
+     * Raspberry Pi Carte Mère 3 Model B Quad Core CPU 1.2 GHz 1 Go RAM
+       Raspberry Pi Carte Mère 3 Model B Quad Core CPU 1.2 GHz 1 Go RAM
+       Prix: EUR 33,00
+     * 1080P IR Caméra avec Support pour Raspberry Pi
+       1080P IR Caméra avec Support pour Raspberry Pi
+       Prix: EUR 24,53
+
+   ‹ ›
+
+   materiel2
+
+   MàJ déc 2016 : changement de nom de domaine pour le projet qui devient
+   www.cam-aero.eu
+
+   Il fait beau et chaud, les vacances d’été ne sont plus très loin. Le
+   temps parfait pour les activités de plein air. Ca tombe bien,
+   aujourd’hui je vais vous présenter un projet réalisé pour le site
+   www.cam-aero.eu, en partenariat avec MagdiBlog.fr, qui ravira les
+   amateurs d’aéronautique de loisir 🙂
+
+   L’objectif de ce projet est de doter tous les aérodromes d’un module
+   caméra qui prend des photos de la piste et de la météo ambiante à
+   intervalles réguliers tout en incrustant la date, l’heure et les
+   informations météorologiques locales (telles que METAR, TAF, SIGMET)
+   dans l’image.
+
+   Voici un aperçu d’une image d’un aérodrome dans la région de Brest :
+
+   IroiseAF-1024x768
+
+   L’ensemble des images de tous les aérodromes équipés sont collectées et
+   stockées sur un serveur central. Toutes les images et informations
+   météorologiques locales sont ensuite consultables par tous les membres
+   ; ce qui leur permet de mieux préparer leurs vols, par exemple, en
+   connaissant l’état de l’aérodrome de destination.
+
+   Un système collaboratif simple, économique, à la porté de tous (Le
+   module s’installe sur une fenêtre avec une ventouse et nécessite une
+   simple connexion Internet. L’installation du logiciel et sa
+   configuration se font en une seule ligne de commande), qui permettra à
+   tous les aérodromes de partager une vue de leur piste et leurs
+   informations METAR facilement 🙂
+
+   Le système complet est réalisé avec des Raspberry Pi, sans composants
+   particuliers :
+     * Raspberry Pi (2, B, B+ ou A+) 4101FaGQunL
+     * RaspiCam 5MP (ou version NoIR)
+     * Boitier avec emplacement pour le module caméra
+     * Carte SD
+     * Alimentation
+     * Dongle WiFi USB
+
+   N’hésitez pas à partager l’info et à promouvoir ce projet autour de
+   vous 🙂
+
+   Je vous laisse découvrir le projet sur le site officiel :
+   www.cam-aero.eu
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, Projets, et marquée avec
+   aérodrome, aéronautique, caméra, loisir, METAR, météo, raspberry pi,
+   raspicam, SIGMET, système autonome, système embarqué, TAF, webcam, le
+   décembre 2016 par Olivier.
+
+MagdiBlog dans le CanardPC Hardware Hors Série n°7 spécial électronique
+
+   4 réponses
+
+   cpchhs7
+
+   CanardPC vient de sortir un numéro spécial dédié au Raspberry Pi et
+   Arduino et à l’électronique en général. Je vous invite à le choper tant
+   qu’il est toujours dispo chez votre libraire 🙂
+
+   Voici l’édito :
+   http://www.canardpc.com/cpc-hardware-hs-n7-special-electronique-disponi
+   ble.html
+
+   Le dernier article de ce numéro est consacré à la téléinfo EDF avec une
+   mention spéciale à l’article de MagdiBlog : Téléinfo EDF – Suivi conso
+   de votre compteur électrique
+
+   Etant moi même un grand fan de CanardPC depuis de nombreuses années,
+   c’est pour moi une véritable consécration 🙂
+
+
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, et marquée avec canardpc,
+   électronique, raspberry pi, teleinfo, le novembre 2016 par Olivier.
+
+Lille Maker Fair
+
+   Laisser un commentaire
+
+   L’ère de la robotique, j’ai hâte !
+
+   Nous y sommes presque 😉
+
+   #LilleMakerFair
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers le novembre 2016 par Olivier.
+
+Migration de serveur
+
+   Laisser un commentaire
+
+   Bonjour à toutes à et à tous,
+
+   Je viens de changer de serveur d’hébergement pour MagdiBlog.fr, aussi,
+   veuillez m’excuser pour les coupures qui ont pu avoir lieux ces
+   dernières 24h. Il se peut également que certains commentaires aient été
+   perdus lors de la migration, mais c’est pour la bonne cause, le site
+   devrait être beaucoup réactif à présent 🙂
+
+   Je profite de ce billet pour vous annoncer que le projet Pi BOAt n’est
+   pas mort, les articles paraitront à partir de la rentrée 🙂
+
+   En outre, je prépare un article sur la partie vidéo, l’utilisation
+   d’objectifs sur la Pi Camera ainsi que sur les différentes manières
+   d’utiliser le module caméra sur le Pi 🙂
+
+   Profitez bien des quelques jours d’août qu’il nous reste,
+
+   A très bientôt,
+
+   Olivier
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, et marquée avec magdiblog,
+   serveur, le août 2016 par Olivier.
+
+Navigation des articles
+
+   ← Articles plus anciens
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+
+   Rejoignez les 1 073 autres abonnés
+
+   Adresse Email ____________________
+
+   Je m'abonne à la newsletter !
+
+Articles populaires
+
+     * Comment alimenter votre Raspberry Pi avec une batterie (MàJ)
+     * Raspberry Pi Camera - 5 façons de faire du streaming
+     * Téléinfo EDF - Suivi conso de votre compteur électrique (màj
+       08/2016)
+     * Créer une passerelle sécurisée avec un Raspberry Pi
+
+   Partenaire
+   [logo_kubii.jpg]
+   Les indispensables
+   RaspberryPi 3                   RaspberryPi A+
+   [rpi3-e1458727074978.jpg]       [raspberry_pi_aplus.jpg]
+   Raspi Camera                    Raspi Camera NoIR
+   [pi_camera.jpg]                 [pi_camera_noir.jpg]
+   Aukru Alim 5v 3A                SanDisk micro-SD 8Go
+   [aukru_3A-1-e1458727083739.jpg] [sandisk.jpg]
+   Pack Raspberry Pi 3
+   [rpi3_bundle-e1458727063459.jpg]
+
+   Fièrement propulsé par WordPress
+   Licence Creative Commons
+   Le contenu de ce site est mis à disposition selon les termes de la
+   Licence Creative Commons Attribution - Pas d'Utilisation Commerciale
+   3.0 non transposé (CC BY-NC 3.0)
+
+   Envoyer à l'adresse e-mail ____________________ Votre nom
+   ____________________ Votre adresse e-mail ____________________
+   _________________________ loading Envoyer un e-mail Annuler
+   L'article n'a pas été envoyé - Vérifiez vos adresses e-mail !
+   La vérification e-mail a échoué, veuillez réessayer
+   Impossible de partager les articles de votre blog par e-mail.
+   #prev next MagdiBlog » Flux MagdiBlog » Flux des commentaires
+
+MagdiBlog
+
+Parce que si on ne se compliquait pas un peu la vie, ce serait beaucoup moins
+drôle !
+
+   MagdiBlog
+
+   (BUTTON) Menu Aller au contenu
+     * Accueil
+     * Sommaire
+     * Projets
+          + Pi Home Dash Screen
+          + Pi Car Jukebox
+          + Pi Time Lapse
+          + Pi BOA Drone
+          + BOA Pi Secure Gateway
+     * Domotique
+     * GPIO
+     * Divers
+     * Contact
+     * Liens
+     * A propos
+          + Magdiblog
+          + Mon CV
+     * RSS
+
+Téléinfo EDF – Suivi conso de votre compteur électrique (màj 08/2016)
+
+   458 réponses
+
+Produits disponibles sur Amazon.fr
+
+     * Raspberry Pi 3 Modèle B+, Carte-mère -7%
+       Raspberry Pi 3 Modèle B+, Carte-mère
+       Prix: EUR 42,00
+       Ancien prix: EUR 45,00
+     * ABOX Raspberry Pi 3B Starter Kit 32 Go Carte Mirco SD SanDisk, Étui
+       Noir Supérieur 5V 2.5A Alimentation on/Off
+       ABOX Raspberry Pi 3B Starter Kit 32 Go Carte Mirco SD SanDisk, Étui
+       Noir Supérieur 5V 2.5A Alimentation on/Off
+       Prix: Rupture de stock
+     * ABOX Raspberry Pi 3 B+ Starter Kit 16 Go Micro SD Carte Classe 10,
+       5V 3A Alimentation Interrupteur Marche/Arrêt et Boîtier Transparent
+       (Version Améliorée) -26%
+       ABOX Raspberry Pi 3 B+ Starter Kit 16 Go Micro SD Carte Classe 10,
+       5V 3A Alimentation Interrupteur Marche/Arrêt et Boîtier Transparent
+       (Version Améliorée)
+       Prix: EUR 72,98
+       Ancien prix: EUR 99,00
+     * UCreate Raspberry Pi 3 Model B+ Desktop Starter Kit (16Gb) (Black)
+       UCreate Raspberry Pi 3 Model B+ Desktop Starter Kit (16Gb) (Black)
+       Prix: EUR 62,92
+     * Melopero Raspberry Pi 3 B+ Essentials Kit Black
+       Melopero Raspberry Pi 3 B+ Essentials Kit Black
+       Prix: Rupture de stock
+     * Raspberry Pi 3 Modèle B + - Plaque de base, vert
+       Raspberry Pi 3 Modèle B + - Plaque de base, vert
+       Prix: Consulter sur Amazon.fr
+
+   ‹ ›
+   teleinfo_edf_conso_electrique
+
+   MAJ août 2016 : Depuis la parution de cet article en septembre 2014
+   (bientôt 2 ans Oo), de nombreuses évolutions ont été faites sur les
+   Raspberry Pi et Raspbian. Grâce aux retours d’expériences de plusieurs
+   lecteurs et à leur participation, cet article est aujourd’hui mis à
+   jour 🙂 Un gros merci à Arnaud (qui se reconnaîtra) qui m’a notamment
+   envoyé de nombreuses informations sur les modifcations relatives à
+   Raspbian Jessie et au RPi3 🙂
+
+   Vous pouvez notamment télécharger les versions revues et corrigées des
+   scripts PHP par Arnaud, ici : teleinfo.zip
+     __________________________________________________________________
+
+   A l’ère de la domotique et des économies d’énergie, le suivi de la
+   consommation d’électricité dans nos maison devient un point
+   incontournable. Détecter les appareils électriques gourmands, optimiser
+   sa consommation en jouant sur les tarifs heures creuses/pleines, opter
+   pour des ampoules à économie d’énergie et couper ses équipements
+   multimédia lorsqu’on ne s’en sert pas : autant de gestes qui prennent
+   sens à partir du moment où l’on peut en mesurer l’effet sur sa facture
+   EDF.
+
+   Dans cet article, nous allons explorer une méthode très simple pour
+   collecter et analyser les informations de notre compteur EDF et les
+   représenter sur un graphique. Comme toujours sur magdiblog.fr, nous
+   utiliserons un Raspberry Pi pour construire ce petit système 🙂
+
+   Continuer la lecture →
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Domotique, GPIO, et marquée avec
+   compteur, consommation, dashboard, domotique, économie, EDF,
+   électricité, électronique, énergie, ERDF, Google Chart, gpio, heures
+   creuses, heures pleines, optocoupleur, php, raspberry pi, raspbian,
+   résistance, SFH620A, sqlite, teleinfo, TTL, ttyAMA0, UART, le août 2016
+   par Olivier.
+
+Jeu concours pour les 3 ans de MagdiBlog – MàJ – Résultats du concours !
+
+   397 réponses
+
+   magdiblog_jeu_concours
+
+Résultats du concours :
+
+   Vous avez été près de 400 participants à ce concours organisé à
+   l’occasion des 3 ans de magdiblog.fr !
+
+   Félicitations à Philippe alias ay15ho11 qui a été tiré au sort grâce au
+   plugin Comment Contest 🙂
+
+   magdiblog_concours_gagnant
+
+   Philippe, je vous invite à me contacter en utilisant la page contact du
+   site pour que je puisse vous faire parvenir vos cadeaux 🙂
+
+   Merci à toutes et à tous pour votre participation 🙂 Je vous souhaite un
+   excellent week end et un très bon été à venir !
+
+   Olivier
+     __________________________________________________________________
+
+MàJ du 18 mai 2016 :
+
+   Plus que 48 heures pour participer 🙂
+
+   On est passé de 190 à plus de 270 participants dans les dernières 24h !
+
+   Bonne chance à toutes et à tous 🙂
+     __________________________________________________________________
+
+MàJ du 10 mai 2016 :
+
+   Le tirage aura lieu le vendredi 20 mai à 12h00 !
+
+   Plus de 160 participants à l’heure actuelle !
+
+   Bonne chance à toutes et à tous 🙂
+     __________________________________________________________________
+
+   Bonjour à toutes et à tous,
+
+   Comme annoncé le mois dernier, à l’occasion des 3 ans du blog et du
+   million de pages vues, j’ai le grand plaisir d’ouvrir le jeu concours
+   organisé pour fêter l’événement !
+   logo_magdiblog_color_150x40 logo_kubii
+
+A gagner ?
+
+   J’apprécie énormément votre soutien, aussi, j’ai le plaisir de vous
+   offrir un Raspberry Pi 3 que vous pouvez découvrir ici : Raspberry Pi 3
+   – Let’s rock !
+
+   Mais ce n’est pas tout, Kubii.fr distributeur Raspberry Pi français, se
+   joint à moi et vous offre un module caméra ainsi que le boitier
+   officiel du Raspberry Pi 3.
+
+   Le gagnant remportera le lot entier 🙂
+
+   magdiblog_concours_3ans_lots
+
+
+Comment participer ?
+
+   Pour participer c’est très simple, il vous suffit de poster un
+   commentaire sur cet article.
+
+   Le gagnant sera tiré au sort parmi les auteurs de commentaire de cet
+   article, résident en France, le vendredi 20 mai à 12h00 (midi).
+
+   N’oubliez pas de bien vérifier votre adresse email afin que je puisse
+   vous contacter si vous êtes tiré au sort.
+
+   Inscrivez vous à la newsletter (en haut à droite du site) pour vous
+   tenir informé des résultats du concours, de la suite du projet Pi BOAt
+   ainsi que des projets à venir 🙂
+
+   Bonne chance à toutes et à tous !
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, et marquée avec 3 ans, jeu
+   concours, magdiblog, raspberry pi, le mai 2016 par Olivier.
+
+Raspberry Pi 3 – Let’s rock !
+
+   14 réponses
+
+   rpi3_resume
+
+   Le 29 février 2016, soit exactement quatre ans après la sortie du tout
+   premier Raspberry Pi A, la fondation annonce le Raspberry Pi 3. Ils
+   aiment bien les années bissextiles à la fondation Raspberry Pi, c’est
+   comme ça !
+
+   logo_kubii Grâce à mon partenaire Kubii.fr, j’ai pu tester ce dernier
+   modèle qui, n’ayons pas peur des mots, commence sérieusement à envoyer
+   du lourd ! J’en profite pour envoyer une bise à Julie de l’équipe
+   Kubii.fr 😉
+
+   Continuer la lecture →
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, et marquée avec 1, 2GHz,
+   BCM43143, bluetooth, fondation Raspberry Pi, kubii, processeur,
+   Raspberry Pi 3, wifi, le mars 2016 par Olivier.
+
+MagdiBlog fête ses 3 ans, 1 000 000 de pages vues et vous offre un Raspberry
+Pi 3
+
+   17 réponses
+
+   magdiblog 3 ans
+
+   Bonjour à tous les amateurs de framboises !
+
+   Aujourd’hui, MagdiBlog.fr fête ses 3 ans d’existence. Lancé en mars de
+   2013 avec les projets PiTimeLapse, PiCarJukeBox et PiHomeDashScreen le
+   blog a atteint en mars 2016  le million de pages vues !
+
+   Je tiens à vous remercier lectrices (si si, il y en a !) et lecteurs de
+   MagdiBlog.fr pour votre soutien, votre bonne humeur et votre
+   enthousiasme ! J’espère vous voir encore nombreux à suivre l’actualité
+   du Raspberry Pi et les nombreux projets à venir tels que le Pi BOAt.
+
+   Pour fêter l’événement et parce que je vous aime bien, il y aura très
+   bientôt un tirage au sort avec un Raspberry Pi 3 à gagner !
+
+   Dans l’attente, profitez du soleil et inscrivez vous à la newsletter
+   pour ne pas rater le tirage au sort.
+
+   Olivier
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, et marquée avec 1 000 000 pages
+   vues, 3 ans, anniversaire, MagdiBlog.fr, raspberry pi, Raspberry Pi 3,
+   tirage au sort, le mars 2016 par Olivier.
+
+Pi BOAt – Radar de surface
+
+   15 réponses
+
+   pi_boat_modules_radar
+
+   Je n’ai pas pu résister, ce module radar de surface me faisait vraiment
+   trop triper 🙂
+
+   Au menu, de l’I2C pour le télémètre ultrason SRF02, du ServoBlaster
+   pour le pilotage du servo moteur, du Python pour orchestrer tout ça, et
+   beaucoup de JavaScript et d’HTML 5 (canvas) pour afficher un bel écran
+   radar 🙂
+
+   Continuer la lecture →
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans BOA Pi Drone, et marquée avec bateau,
+   canvas, javascript, Pi BOAt, python, radar, raspberry pi, servo,
+   servoblaster, SRF02, le février 2016 par Olivier.
+
+Diskio Pi : un nouveau concept de machine hybride
+
+   Laisser un commentaire
+
+   logo_diskiopi
+
+   Guillaume, à l’initiative du Diskio Pi, m’a contacté il y a quelques
+   temps pour me présenter son projet et le moins que je puisse dire,
+   c’est que j’ai été impressionné par son ambition !
+
+   Une « plateforme » sous forme de tablette qui peut accueillir un
+   Raspberry Pi 2 ou un Odroid XU4, et qui dispose de tout ce qu’il faut
+   pour l’exploiter : un écran tactile HD, un ampli audio et des hauts
+   parleurs, une batterie, un hub USB. Du plug’n’play pour nos Raspberry
+   Pi 🙂
+
+   Il s’agit d’un projet open-source hardware qui promet une ouverture sur
+   une infinité de possibilités, et ça, c’est cool 🙂
+
+   Voici une vidéo de présentation du concept :
+
+   IFRAME: https://www.youtube.com/embed/EzXerloNZL8
+
+   A l’origine, le prototype a été réalisé avec une carte Orange Pi. Un
+   écran 17′ a été utilisé pour permettre un rapport épaisseur/surface le
+   plus petit possible, ainsi qu’une surface de travail agréable pour un
+   usage « desktop ». Un indicateur de batterie est présent, avec 5 leds
+   et un bouton pour tester.
+
+   diskiopi_proto
+   Le Raspberry Pi est placé dans un compartiment amovible qui permet
+   l’accès aux différentes entrées/sorties (HDMI, audio, USB, Ethernet…).
+
+   diskiopi_plateforme
+
+   Cerise sur le gâteau, le port GPIO reste accessible, et le hub USB
+   intégré permet de brancher facilement des périphériques externes comme
+   un clavier, une sourie ou un disque dur.
+   L’idée est de viser une compatibilité avec un maximum de cartes et la
+   possibilité d’intégrer des shields annexes tels que des accéléromètres,
+   capteurs de températures, etc…
+
+   Pour les fan de domotique, pour qui le DiskioPi peut être un excellent
+   contrôleur, Guillaume prévoit un support mural et une alimentation en
+   POE+ 😀 J’ai envie de l’ambrasser 😀
+
+   Pour le moment, ce projet n’est pas encore financé, mais de nombreux
+   indicateurs montrent que la demande est là, surtout auprès de la
+   communauté de la domotique libre.
+   Le porteur du projet, Guillaume, attend avec impatience vos retours du
+   songage qui est actuellement disponible à cette adresse :
+   http://goo.gl/forms/nzDF3fRlBN
+
+   Dès qu’un second prototype sera prêt, un crowfunding sera mis en place
+   courant 2016.
+
+   Pour plus de détails : www.diskiopi.com
+
+   Un grand Bravo pour Guillaume et on lui souhaite de pouvoir mener ce
+   projet jusqu’au bout 🙂
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans Divers, Domotique, et marquée avec
+   diskio pi, domotique, hardware, open-source, raspberry pi, le janvier
+   2016 par Olivier.
+
+Navigation des articles
+
+   ← Articles plus anciens
+   Articles plus récents →
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+
+   Rejoignez les 1 073 autres abonnés
+
+   Adresse Email ____________________
+
+   Je m'abonne à la newsletter !
+
+Articles populaires
+
+     * Comment alimenter votre Raspberry Pi avec une batterie (MàJ)
+     * Raspberry Pi Camera - 5 façons de faire du streaming
+     * Téléinfo EDF - Suivi conso de votre compteur électrique (màj
+       08/2016)
+     * Créer une passerelle sécurisée avec un Raspberry Pi
+
+   Partenaire
+   [logo_kubii.jpg]
+   Les indispensables
+   RaspberryPi 3                   RaspberryPi A+
+   [rpi3-e1458727074978.jpg]       [raspberry_pi_aplus.jpg]
+   Raspi Camera                    Raspi Camera NoIR
+   [pi_camera.jpg]                 [pi_camera_noir.jpg]
+   Aukru Alim 5v 3A                SanDisk micro-SD 8Go
+   [aukru_3A-1-e1458727083739.jpg] [sandisk.jpg]
+   Pack Raspberry Pi 3
+   [rpi3_bundle-e1458727063459.jpg]
+
+   Fièrement propulsé par WordPress
+   Licence Creative Commons
+   Le contenu de ce site est mis à disposition selon les termes de la
+   Licence Creative Commons Attribution - Pas d'Utilisation Commerciale
+   3.0 non transposé (CC BY-NC 3.0)
+
+   Envoyer à l'adresse e-mail ____________________ Votre nom
+   ____________________ Votre adresse e-mail ____________________
+   _________________________ loading Envoyer un e-mail Annuler
+   L'article n'a pas été envoyé - Vérifiez vos adresses e-mail !
+   La vérification e-mail a échoué, veuillez réessayer
+   Impossible de partager les articles de votre blog par e-mail.
+   #MagdiBlog » Flux MagdiBlog » Flux des commentaires MagdiBlog » Flux de
+   résultats de la recherche pour "{search_term_string}"
+
+MagdiBlog
+
+Parce que si on ne se compliquait pas un peu la vie, ce serait beaucoup moins
+drôle !
+
+   MagdiBlog
+
+   (BUTTON) Menu Aller au contenu
+     * Accueil
+     * Sommaire
+     * Projets
+          + Pi Home Dash Screen
+          + Pi Car Jukebox
+          + Pi Time Lapse
+          + Pi BOA Drone
+          + BOA Pi Secure Gateway
+     * Domotique
+     * GPIO
+     * Divers
+     * Contact
+     * Liens
+     * A propos
+          + Magdiblog
+          + Mon CV
+     * RSS
+
+Rien de trouvé
+
+   Désolé, mais rien ne correspond à votre critère de recherche. Veuillez
+   réessayer avec d’autres mots-clés.
+   Rechercher : {search_term_string} Rechercher
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+
+   Rejoignez les 1 073 autres abonnés
+
+   Adresse Email ____________________
+
+   Je m'abonne à la newsletter !
+
+Articles populaires
+
+     * Comment alimenter votre Raspberry Pi avec une batterie (MàJ)
+     * Raspberry Pi Camera - 5 façons de faire du streaming
+     * Téléinfo EDF - Suivi conso de votre compteur électrique (màj
+       08/2016)
+     * Créer une passerelle sécurisée avec un Raspberry Pi
+
+   Partenaire
+   [logo_kubii.jpg]
+   Les indispensables
+   RaspberryPi 3                   RaspberryPi A+
+   [rpi3-e1458727074978.jpg]       [raspberry_pi_aplus.jpg]
+   Raspi Camera                    Raspi Camera NoIR
+   [pi_camera.jpg]                 [pi_camera_noir.jpg]
+   Aukru Alim 5v 3A                SanDisk micro-SD 8Go
+   [aukru_3A-1-e1458727083739.jpg] [sandisk.jpg]
+   Pack Raspberry Pi 3
+   [rpi3_bundle-e1458727063459.jpg]
+
+   Fièrement propulsé par WordPress
+   Licence Creative Commons
+   Le contenu de ce site est mis à disposition selon les termes de la
+   Licence Creative Commons Attribution - Pas d'Utilisation Commerciale
+   3.0 non transposé (CC BY-NC 3.0)
+   #MagdiBlog » Flux MagdiBlog » Flux des commentaires MagdiBlog » De la
+   neige en Python sur votre Pi Mini Screen Flux des commentaires
+   alternate alternate
+
+MagdiBlog
+
+Parce que si on ne se compliquait pas un peu la vie, ce serait beaucoup moins
+drôle !
+
+   MagdiBlog
+
+   (BUTTON) Menu Aller au contenu
+     * Accueil
+     * Sommaire
+     * Projets
+          + Pi Home Dash Screen
+          + Pi Car Jukebox
+          + Pi Time Lapse
+          + Pi BOA Drone
+          + BOA Pi Secure Gateway
+     * Domotique
+     * GPIO
+     * Divers
+     * Contact
+     * Liens
+     * A propos
+          + Magdiblog
+          + Mon CV
+     * RSS
+
+De la neige en Python sur votre Pi Mini Screen
+
+   1 réponse
+
+   Avec l’hiver et Noël qui approchent, l’idée m’est venue de mettre un
+   peu d’ambiance sur le Mini Pi Dash Screen en faisant tomber de la neige
+   en Python avec PyGame. En rajoutant simplement quelques lignes de code,
+   il est très facile en Python de simuler des flocons de neiges tombant
+   et s’amassant en bas de l’écran.
+
+   Je me suis inspiré d’un ancien soft que je faisais tourner sur mes
+   machines il y a longtemps, Xsnow.
+
+   Pour implémenter ces flocon qui tombe sur l’écran, le principe est
+   simpliste au possible. Il s’agit tout bêtement de créer une liste de
+   points (représentant chacun un flocon de neige), de leur attribuer à
+   une coordonnée en X et Y sur l’écran, et d’incrémenter de quelques
+   pixels leurs position en Y. Procédons.
+
+   Commençons par définir les variables clés :
+screen_w = 800 # largeur en px de l'écran
+screen_h = 480 # hauteur en px de l'écran
+
+snow_floor_h = 13 # hauteur en px de la couche de neige en bas de l'écran
+snow_flakes = 100 # nombre de flocons affichés en même temps
+
+   On initialise ensuite PyGame :
+pygame.init()
+
+pygame.mouse.set_visible(False)
+pygame.display.set_caption('Liberty')
+size = [screen_w, screen_h]
+screen = pygame.display.set_mode(size)
+clock = pygame.time.Clock()
+screen.fill((0, 0, 0))
+pygame.display.update()
+
+start_time = 0
+frame_count = 1
+frame_rate = 10 # avec 10 images par secondes on obtient une chute de neige rela
+tivement fluide
+
+   On créé ensuite le tableau de flocons « snow_list », en leur attribuant
+   à chacun des coordonnées aléatoires volontairement jusqu’à -10 et +10,
+   par rapport à la largeur de l’écran) pour qu’ils apparaissent à peine
+   en dehors de l’écran. En même temps on initialise un autre tableau
+   « snow_floor » dans lequel on viendra placer les flocons qui tombent au
+   moment où ils touchent le sol.
+snow_list = []
+snow_floor = []
+
+for i in range(snow_flakes):
+  x = random.randint(-10, screen_w+10)
+  y = random.randint(-10, screen_h+10)
+  snow_list.append([x, y])
+  snow_floor.append([-10, -10])
+
+   Enfin, dans la boucle principale,
+while True:
+
+  # on remplit l'écran de noir
+  screen.fill((0, 0, 0))
+
+  # on dessine ensuite ce qui constitue la base de la couche de neige en bas de
+l'écran
+  snow_floor_y=screen_h-snow_floor_h
+  pygame.draw.rect(screen, WHITE, pygame.Rect(0, snow_floor_y, screen_w, snow_fl
+oor_h))
+
+  # Ensuite, dessine les flocons un par un et on incrémente leurs coordonnées
+  for i in range(len(snow_list)):
+
+    # un simple cercle de 2px pour chaque flocons
+    pygame.draw.circle(screen, WHITE, snow_list[i], 2)
+
+    # les coordonnées en X sont aléatoirement modifiées entre -2 et +2 px pour
+éviter d'avoir une chute trop verticale.
+    # si vous voulez ajouter un effet de vent latéral, vous pouvez par exemple m
+odifier la coordonnées en X de -2 à +4 par exemple.
+    snow_list[i][0] += random.randint(-2, 2)
+
+    # les coordonnées en Y sont aléatoirement modifiées de +1 à +4 px pour avoir
+ des vitesses de chute différentes et obtenir un rendu plus réaliste
+    snow_list[i][1] += random.randint(1, 4)
+
+    # si un flocon touche le sol, alors réinitialise s'est coordonnées pour qu'i
+l reparte en haut de l'écran
+    if snow_list[i][1] >= snow_floor_y:
+      # coordonnée en X aléatoire sur toute la largeur de l'écran
+      snow_list[i][0] = random.randint(-10, screen_w+10)
+      # coordonnée en Y à -10 pour redémarrer à peine plus haut que le bord de l
+'écran
+      snow_list[i][1] = -10
+      # on copie les coordonnées du flocon dans la liste des flocons à afficher
+à la surface du sol
+      snow_floor[i][0] = snow_list[i][0]
+      snow_floor[i][1] = snow_list[i][1]
+    # on dessine ensuite tous les flocon qui sont au sol
+    pygame.draw.circle(screen, WHITE, snow_floor[i], 2)
+
+  frame_count += 1
+  clock.tick(frame_rate)
+  pygame.display.flip()
+
+   Et voilà 🙂 Il vous suffit d’implémenter ce morceau de code dans le
+   celui du Mini Pi Dash Screen et le tour est joué !
+
+   Perso, j’aime beaucoup le résultat et je suis curieux de voir comment
+   vous allez le tweaker et l’améliorer.
+
+   A très vite 😉
+
+Produits disponibles sur Amazon.fr
+
+     * Raspberry Pi 3 Modèle B+, Carte-mère -7%
+       Raspberry Pi 3 Modèle B+, Carte-mère
+       Prix: EUR 42,00
+       Ancien prix: EUR 45,00
+     * Bundle Raspberry Pi 7" Touchscreen Display & Case [black]
+       Bundle Raspberry Pi 7" Touchscreen Display & Case [black]
+       Prix: EUR 89,90
+     * Raspberry Pi 3 Official Desktop Starter Kit (16GB, Black)
+       Raspberry Pi 3 Official Desktop Starter Kit (16GB, Black)
+       Prix: EUR 55,10
+     * ABOX Raspberry Pi 3 Modèle B Plus (3 B+) Starter Kit [ Version
+       Dernière ] 32 Go Classe 10 Micro SD Carte, 5V 3A Alimentation
+       Interrupteur Marche/Arrêt Boîtier Noir -27%
+       ABOX Raspberry Pi 3 Modèle B Plus (3 B+) Starter Kit [ Version
+       Dernière ] 32 Go Classe 10 Micro SD Carte, 5V 3A Alimentation
+       Interrupteur Marche/Arrêt Boîtier Noir
+       Prix: EUR 79,98
+       Ancien prix: EUR 109,00
+     * UCreate Raspberry Pi 3 Model B+ Desktop Starter Kit (16Gb) (Black)
+       UCreate Raspberry Pi 3 Model B+ Desktop Starter Kit (16Gb) (Black)
+       Prix: EUR 62,92
+
+
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans BOA Pi HomeDashScreen, Divers le
+   novembre 2018 par Olivier.
+
+Navigation des articles
+
+   ← Mini Pi Dash Screen
+
+Une réflexion au sujet de « De la neige en Python sur votre Pi Mini Screen »
+
+    1.
+   Ducasse mai 2019 à 11:29
+       Bonjour, je suis en terminale spé ISN et une partie de mon code
+       ressemble beaucoup à celui là, je m’en suis donc inspiré. En
+       revanche lorsque j’écris: » for i in range(snow_flakes): » la
+       console me renvoie que « snow_flakes » n’est pas défini. Comment je
+       peux régler cela?
+       Répondre ↓
+
+Laisser un commentaire Annuler la réponse.
+
+   IFRAME: jetpack_remote_comment
+
+   Ce site utilise Akismet pour réduire les indésirables. En savoir plus
+   sur comment les données de vos commentaires sont utilisées.
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+
+   Rejoignez les 1 073 autres abonnés
+
+   Adresse Email ____________________
+
+   Je m'abonne à la newsletter !
+
+Articles populaires
+
+     * Comment alimenter votre Raspberry Pi avec une batterie (MàJ)
+     * Raspberry Pi Camera - 5 façons de faire du streaming
+     * Téléinfo EDF - Suivi conso de votre compteur électrique (màj
+       08/2016)
+     * Créer une passerelle sécurisée avec un Raspberry Pi
+
+   Partenaire
+   [logo_kubii.jpg]
+   Les indispensables
+   RaspberryPi 3                   RaspberryPi A+
+   [rpi3-e1458727074978.jpg]       [raspberry_pi_aplus.jpg]
+   Raspi Camera                    Raspi Camera NoIR
+   [pi_camera.jpg]                 [pi_camera_noir.jpg]
+   Aukru Alim 5v 3A                SanDisk micro-SD 8Go
+   [aukru_3A-1-e1458727083739.jpg] [sandisk.jpg]
+   Pack Raspberry Pi 3
+   [rpi3_bundle-e1458727063459.jpg]
+
+   Fièrement propulsé par WordPress
+   Licence Creative Commons
+   Le contenu de ce site est mis à disposition selon les termes de la
+   Licence Creative Commons Attribution - Pas d'Utilisation Commerciale
+   3.0 non transposé (CC BY-NC 3.0)
+
+   Envoyer à l'adresse e-mail ____________________ Votre nom
+   ____________________ Votre adresse e-mail ____________________
+   _________________________ loading Envoyer un e-mail Annuler
+   L'article n'a pas été envoyé - Vérifiez vos adresses e-mail !
+   La vérification e-mail a échoué, veuillez réessayer
+   Impossible de partager les articles de votre blog par e-mail.
+   #MagdiBlog » Flux MagdiBlog » Flux des commentaires MagdiBlog » Mini Pi
+   Dash Screen Flux des commentaires alternate alternate
+
+MagdiBlog
+
+Parce que si on ne se compliquait pas un peu la vie, ce serait beaucoup moins
+drôle !
+
+   MagdiBlog
+
+   (BUTTON) Menu Aller au contenu
+     * Accueil
+     * Sommaire
+     * Projets
+          + Pi Home Dash Screen
+          + Pi Car Jukebox
+          + Pi Time Lapse
+          + Pi BOA Drone
+          + BOA Pi Secure Gateway
+     * Domotique
+     * GPIO
+     * Divers
+     * Contact
+     * Liens
+     * A propos
+          + Magdiblog
+          + Mon CV
+     * RSS
+
+Mini Pi Dash Screen
+
+   6 réponses
+
+   Quelques années après le Raspberry Pi Home Dash Screen j’ai eu envie
+   d’explorer d’autres manières de réaliser un affichage simple sur de
+   petits écrans. Dans cette article, j’explique pas à pas comment
+   réaliser très simplement un écran d’affichage en utilisant un Raspberry
+   Pi et la lib Python PyGame.
+
+   L’écran que vous voyez en photo est géré par un simple script en Python
+   qui peut être adapté selon vos besoins.
+
+Matériel utilisé
+
+   Cette fois ci, je n’ai utilisé que des éléments officiellement
+   distribué par la fondation Raspberry Pi.
+
+Produits disponibles sur Amazon.fr
+
+     * UCreate Raspberry Pi 3 Model B+ Desktop Starter Kit (16Gb) (White)
+       UCreate Raspberry Pi 3 Model B+ Desktop Starter Kit (16Gb) (White)
+       Prix: EUR 65,00
+     * Raspberry Pi Carte Mère 3 Model B Quad Core CPU 1.2 GHz 1 Go RAM
+       Raspberry Pi Carte Mère 3 Model B Quad Core CPU 1.2 GHz 1 Go RAM
+       Prix: EUR 38,50
+     * Raspberry Pi 2473872 - Display a Schermo Tattile V2, 8MP, 7 Pollici
+       Raspberry Pi 2473872 - Display a Schermo Tattile V2, 8MP, 7 Pollici
+       Prix: EUR 75,97
+     * SanDisk Ultra Carte Mémoire d'Imagerie MicroSDHC 16 Go Carte
+       Mémoire + Adaptateur SD jusqu'à 80 Mo/s, UHS-I Classe 10
+       SanDisk Ultra Carte Mémoire d'Imagerie MicroSDHC 16 Go Carte
+       Mémoire + Adaptateur SD jusqu'à 80 Mo/s, UHS-I Classe 10
+       Prix: EUR 10,10
+
+Pygame
+
+   Proposée à l’origine pour créer des jeux vidéos, la lib PyGame vous
+   permet d’afficher très simplement texte, images et autres contenus,
+   sans toutefois nécessiter un gestionnaire de fenêtre. Contrairement au
+   Pi Home Dash screen qui repose sur un ensemble relativement lourd de
+   middleware, l’utilisation de PyGame se suffit à lui même et peut
+   fonctionner directement sur une Raspbian Lite.
+
+   Il vous faudra toutefois installer quelques paquets pour Python et
+   Xplanet :
+apt-get update
+apt-get install python-pygame python-urllib3 xplanet imagemagick
+
+   Sur la screenshot ci-dessous, vous voyez plusieurs informations :
+     * La date et l’heure
+     * La température
+     * La terre et la lune
+
+   La date et l’heure sont simplement affichée en se basant sur l’heure du
+   système. Inutile ici de chercher quelque chose de compliqué, Python
+   dispose de base de tout ce qu’il faut.
+
+Température
+
+   La température est fournis par le site OpenWeatherMap.
+
+   Pour utiliser ce service, vous devez créer un compte gratuit ici :
+
+   Rendez vous ensuite dans la section API pour récupérer votre clé API.
+
+   OpenWeatherMap fournis un paquet d’informations météorologiques
+   disponibles via une API JSON. Pour récupérer ces informations, rien de
+   plus simple en Python :
+
+   Vous pouvez choisir la localité qui vous convient, bien entendu. Ce
+   lien vous permettra de trouver la ville la plus proche de chez vous :
+   https://openweathermap.org/find?q=
+
+Xplanet
+
+   L’image de la terre et de la lune sont elles générées par Xplanet, vous
+   savez combien j’affectionne ce soft dont je parle en détails ici : Pi
+   Home Dash Screen – Xplanet
+
+   Pour simplifier, j’ai créé deux services, un pour la terre et un pour
+   la lune, qui vont chacun générer une nouvelle image à intervalles
+   réguliers. Le script Python se contera ensuite de rafraîchir les
+   images.
+
+   Si dessous, les scripts idoines ainsi que les script systemd permettant
+   de lancer ces sous programmes au démarrage du Pi.
+
+   xplanet.conf : Le fichier de configuration de Xplanet
+[default]
+
+arc_color=white
+arc_thickness=1
+bump_scale=3
+cloud_gamma=1
+cloud_ssec=false
+cloud_threshold=90
+color={255,255,255}
+draw_orbit=false
+grid=false
+grid1=6
+grid2=15
+magnify=1
+marker_color=red
+max_radius_for_label=3
+min_radius_for_label=.01
+min_radius_for_markers=40
+orbit={-.5,.5,2}
+orbit_color={255,255,255}       # color for the orbit
+random_origin=true
+random_target=true
+shade=30                        # 0 = black, 100 = same as dayside
+text_color={255,0,0}            # color for text (markers & body label)
+twilight=6                      # blend the day and night images for
+                                # pixels within this many degrees of
+                                # the terminator
+
+[sun]
+"Sun"
+color={255,255,166}
+map=/root/img/sunmap.jpg
+max_radius_for_label=0
+shade=100
+
+[earth]
+"Earth"
+color={28, 82, 110}
+map=/root/img/land_ocean_ice_2048.jpg
+night_map=/root/img/night-dark.jpg
+cloud_map=/root/xplanet_clouds.jpg
+min_radius_for_label=0
+
+[moon]
+"Moon"
+color={100, 100, 100}
+map=/root/img/moonmap2k.jpg
+
+xplanet_earth.sh : pour la planète terre
+
+#!/bin/bash
+
+xplanet -conf /root/xplanet.conf -wait 600 -transpng /root/xplanet_earth.png -bo
+dy earth -latitude 20 -longitude 10 -geometry 400x400
+
+   /etc/systemd/system/xplanetEarth.service
+[Unit]
+Description=xPlanet
+After=network.target
+After=syslog.target
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=/root/xplanet_earth.sh
+StandardOutput=journal+console
+User=root
+Group=root
+Restart=always
+
+xplanet_moon.sh : pour la lune
+
+#!/bin/bash
+
+xplanet -conf /root/xplanet.conf -transpng /root/xplanet_moon.png -wait 3600 -bo
+dy moon -geometry 160x160
+
+   /etc/systemd/system/xplanetMoon.service
+[Unit]
+Description=xPlanet
+After=network.target
+After=syslog.target
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=/root/xplanet_moon.sh
+StandardOutput=journal+console
+User=root
+Group=root
+Restart=always
+
+   Il vous suffira ensuite d’exécuter ces deux commandes pour lancer ces
+   scripts au démarrage du système.
+systemctl enable xplanetEarth.service
+systemctl enable xplanetMoon.service
+
+Script Python
+
+   Voyons maintenant le contenu du script principal : pi_mini_screen.py
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import json
+import urllib3
+import sys
+import threading
+import datetime
+import time
+import pygame
+import signal
+import random
+from pygame.locals import *
+
+###########################
+
+screen_w = 800 # largeur en pixel de l'écran
+screen_h = 480 # hauteur en pixel de l'écran
+
+# XXX à remplacer par vos ids
+openweathermap_localid = "XXXXX"
+openweathermap_appid = "XXXXXXXXXXXXX"
+
+###########################
+
+temp = ''
+
+def getWeather():
+  global temp
+  while True:
+    http = urllib3.PoolManager()
+    weather = http.request('GET', 'https://api.openweathermap.org/data/2.5/weath
+er?id='+openweathermap_localid+'&units=metric&appid='+openweathermap_appid)
+    weather_json = json.loads(weather.data.decode('UTF-8'))
+    temp = str("%.1f" % float(weather_json['main']['temp']))
+    time.sleep(60)
+
+thread = threading.Thread(target=getWeather)
+thread.daemon = True
+thread.start()
+
+def dont_quit(signal, frame):
+  print 'Catch signal: {}'.format(signal)
+
+signal.signal(signal.SIGHUP, dont_quit)
+
+pygame.init()
+
+pygame.mouse.set_visible(False)
+pygame.display.set_caption('Liberty')
+size = [screen_w, screen_h]
+screen = pygame.display.set_mode(size)
+clock = pygame.time.Clock()
+screen.fill((0, 0, 0))
+pygame.display.update()
+
+screen_width = screen.get_width()
+screen_height = screen.get_height()
+screen_centerx = screen.get_rect().centerx
+screen_centery = screen.get_rect().centery
+
+start_time = 0
+frame_count = 1000
+frame_rate = 20
+
+bg_color = (0, 0, 0)
+
+hour_font = pygame.font.SysFont(None, 150)
+hour_color = (190, 190, 190)
+date_font = pygame.font.SysFont(None, 80)
+date_color = (190, 190, 190)
+
+temp_font = pygame.font.SysFont(None, 100)
+temp_color = (190, 190, 190)
+degre_font = pygame.font.SysFont(None, 50)
+
+while True:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      sys.exit()
+
+  screen.fill((0, 0, 0))
+
+  # EARTH
+  try:
+    xplanet_earth = pygame.image.load(('/root/xplanet_earth.png'))
+  except pygame.error, message:
+    print 'Cannot load image xplanet_earth.png'
+    time.sleep(1)
+    continue
+
+  xp_earth_rect = xplanet_earth.get_rect()
+  xp_earth_rect.centerx = screen_centerx
+  xp_earth_rect.centery = screen_centery
+  screen.blit(xplanet_earth, xp_earth_rect)
+
+  # MOON
+
+  xplanet_moon = pygame.image.load(('/root/xplanet_moon.png'))
+  xp_moon_rect = xplanet_moon.get_rect()
+  xp_moon_rect.centerx = screen_width-80
+  xp_moon_rect.centery = screen_height-80
+  screen.blit(xplanet_moon, xp_moon_rect)
+
+  # DATE
+
+  now = str(time.strftime("%a %d %b"))
+  dt = date_font.render(now, 1, date_color, None)
+  dt_rect = dt.get_rect()
+  dt_rect.x = 0
+  dt_rect.y = screen_height-dt.get_height()
+  screen.blit(dt, dt_rect)
+
+  # HOUR
+
+  now = str(time.strftime("%H:%M"))
+  hour = hour_font.render(now, 1, hour_color, None)
+  hour_rect = hour.get_rect()
+  hour_rect.x = 0
+  hour_rect.y = 0
+  screen.blit(hour, hour_rect)
+
+  # TEMP
+
+  d = degre_font.render('°C'.decode('utf-8'), 1, temp_color, None)
+  drect = d.get_rect()
+  drect.x = screen_width-d.get_width()
+  drect.y = 0
+  screen.blit(d, drect)
+
+  t = temp_font.render(temp.decode('utf-8'), 1, temp_color, None)
+  trect = t.get_rect()
+  trect.x = screen_width-t.get_width()-d.get_width()
+  trect.y = 0
+  screen.blit(t, trect)
+
+  # END
+
+  frame_count += 1
+  clock.tick(frame_rate)
+  pygame.display.flip()
+
+pygame.quit()
+quit()
+
+Lancer le script au démarrage du système
+
+   La manière la plus propre de lancer ce petit script est de laisser le
+   système d’exploitation le gérer comme un service. Sous Raspbian, nous
+   utilisons donc systemd et la commande systemctl comme vu précédemment
+   pour les scripts Xplanet.
+
+   /etc/systemd/system/piMiniScreen.service
+[Unit]
+Description=Liberty Display
+After=network.target
+After=syslog.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python -u /root/pi_mini_screen.py
+StandardOutput=journal+console
+User=root
+Group=root
+Restart=always
+
+   Sans oublier ensuite d’activer le service au démarrage du système :
+systemctl enable piMiniScreen.service
+
+   Il ne vous reste plus qu’à rebooter votre Pi 🙂
+
+   Dans le prochain article je vous montrerai comment faire tomber de la
+   neige sur cet écran en rajoutant quelques lignes de code, à très vite !
+
+Partager :
+
+     * Cliquez pour partager sur Facebook(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Twitter(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Google+(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Pinterest(ouvre dans une nouvelle
+       fenêtre)
+     * Cliquez pour partager sur LinkedIn(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour partager sur Tumblr(ouvre dans une nouvelle fenêtre)
+     * Cliquez pour envoyer par e-mail à un ami(ouvre dans une nouvelle
+       fenêtre)
+     *
+
+   Cette entrée a été publiée dans BOA Pi HomeDashScreen, Divers, Pi Mini
+   Dash Screen, et marquée avec dashscreen, écran, pygame, python,
+   raspberry pi, raspbian, système, xplanet, le novembre 2018 par Olivier.
+
+Navigation des articles
+
+   ← RaspiCamAero : Aéronautique de loisir, caméra sur piste et
+   informations METAR (màj déc 2016) De la neige en Python sur votre Pi
+   Mini Screen →
+
+6 réflexions au sujet de « Mini Pi Dash Screen »
+
+    1.
+   pat33360 novembre 2018 à 00:16
+       Un nouvel article…
+       merci
+       Répondre ↓
+    2.
+   François B. novembre 2018 à 01:39
+       Heureux que ce soit reparti. F.B
+       Répondre ↓
+         1.
+        Olivier Auteur de l’articlenovembre 2018 à 08:25
+            Merci François 😉
+            Répondre ↓
+    3. Ping : De la neige en Python sur votre Pi Mini Screen - MagdiBlog
+    4.
+   Marc Tardivel janvier 2019 à 19:58
+       Bonsoir 🙂
+       je me demandais comment serait-il possible d’ajouter le plugin iCal
+       de l’ancien dashboard à celui ci ?
+       bon week-end et bonne année 😀
+       Répondre ↓
+    5.
+   therm mai 2019 à 13:13
+       Bonjour, est ce que c’est comme un mode plein écran ? si jamais on
+       veut quitter pour aller dans un fichier ou quoique ce soit, on fait
+       comment ?
+       Répondre ↓
+
+Laisser un commentaire Annuler la réponse.
+
+   IFRAME: jetpack_remote_comment
+
+   Ce site utilise Akismet pour réduire les indésirables. En savoir plus
+   sur comment les données de vos commentaires sont utilisées.
+
+   Fermer et accepter
+   Confidentialité et cookies : ce site utilise des cookies. En continuant
+   à naviguer sur ce site, vous acceptez que nous en utilisions.
+   Pour en savoir plus, y compris sur la façon de contrôler les cookies,
+   reportez-vous à ce qui suit : Politique relative aux cookies
+
+   Rejoignez les 1 073 autres abonnés
+
+   Adresse Email ____________________
+
+   Je m'abonne à la newsletter !
+
+Articles populaires
+
+     * Comment alimenter votre Raspberry Pi avec une batterie (MàJ)
+     * Raspberry Pi Camera - 5 façons de faire du streaming
+     * Téléinfo EDF - Suivi conso de votre compteur électrique (màj
+       08/2016)
+     * Créer une passerelle sécurisée avec un Raspberry Pi
+
+   Partenaire
+   [logo_kubii.jpg]
+   Les indispensables
+   RaspberryPi 3                   RaspberryPi A+
+   [rpi3-e1458727074978.jpg]       [raspberry_pi_aplus.jpg]
+   Raspi Camera                    Raspi Camera NoIR
+   [pi_camera.jpg]                 [pi_camera_noir.jpg]
+   Aukru Alim 5v 3A                SanDisk micro-SD 8Go
+   [aukru_3A-1-e1458727083739.jpg] [sandisk.jpg]
+   Pack Raspberry Pi 3
+   [rpi3_bundle-e1458727063459.jpg]
+
+   Fièrement propulsé par WordPress
+   Licence Creative Commons
+   Le contenu de ce site est mis à disposition selon les termes de la
+   Licence Creative Commons Attribution - Pas d'Utilisation Commerciale
+   3.0 non transposé (CC BY-NC 3.0)
+
+   Envoyer à l'adresse e-mail ____________________ Votre nom
+   ____________________ Votre adresse e-mail ____________________
+   _________________________ loading Envoyer un e-mail Annuler
+   L'article n'a pas été envoyé - Vérifiez vos adresses e-mail !
+   La vérification e-mail a échoué, veuillez réessayer
+   Impossible de partager les articles de votre blog par e-mail.

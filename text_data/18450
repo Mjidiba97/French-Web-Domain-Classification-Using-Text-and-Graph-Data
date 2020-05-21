@@ -1,0 +1,638 @@
+   fermer et revenir sur Livehost.fr
+
+   (BUTTON)
+   LiveHost.fr
+   Hébergeur Web
+     * Offres
+     * Tchat
+     * Forum
+     * Aide
+     * FAQ
+
+   Créer un compte
+   Se connecter
+   <>
+   Supprimer ce message ?   OUINON
+   {{nb}}
+   {{tab_name}}
+   {{#users}}
+   {{{login}}}
+   {{/users}}
+   {{#messages}}
+   ( )
+   {{{login}}}
+   répondre
+   {{{text}}}
+   {{/messages}}
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   novadu71
+   Envoyer un message privé
+   Derniers messages du forum
+   Help Ios App Webview with InApp Purchase Monthly Subscription
+   Probleme Codiac
+   L'url ne fonctionne pas
+   Impossible de se connecter à la base de données via Node.js
+   502 Bad Gateway
+   Problème installation cms (import bdd) habbo
+   Tchat Livehost
+   Conditions Générales d'Utilisation
+   Nous contacter
+   Signaler un abus
+   © 2012 - 2019 livehost.fr
+   Page générée en 0.0121 seconde(s)
+   11 requêtes
+   Now accepting PayPal [logo_mobile.png]
+
+   Nous utilisons des cookies pour vous garantir la meilleure expérience
+   sur notre site. Si vous continuez à utiliser ce dernier, nous
+   considérerons que vous acceptez l'utilisation des cookies. Plus
+   d'infos     OK
+   fermer et revenir sur Livehost.fr
+
+   (BUTTON)
+   LiveHost.fr
+   Hébergeur Web
+     * Offres
+     * Tchat
+     * Forum
+     * Aide
+     * FAQ
+
+   Créer un compte
+   Se connecter
+   <>
+   Supprimer ce message ?   OUINON
+   {{nb}}
+   {{tab_name}}
+   {{#users}}
+   {{{login}}}
+   {{/users}}
+   {{#messages}}
+   ( )
+   {{{login}}}
+   répondre
+   {{{text}}}
+   {{/messages}}
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   benjamingamer01
+   Envoyer un message privé
+   Derniers messages du forum
+   Help Ios App Webview with InApp Purchase Monthly Subscription
+   Probleme Codiac
+   L'url ne fonctionne pas
+   Impossible de se connecter à la base de données via Node.js
+   502 Bad Gateway
+   Problème installation cms (import bdd) habbo
+   Tchat Livehost
+   Conditions Générales d'Utilisation
+   Nous contacter
+   Signaler un abus
+   © 2012 - 2019 livehost.fr
+   Page générée en 0.0108 seconde(s)
+   11 requêtes
+   Now accepting PayPal [logo_mobile.png]
+
+   Nous utilisons des cookies pour vous garantir la meilleure expérience
+   sur notre site. Si vous continuez à utiliser ce dernier, nous
+   considérerons que vous acceptez l'utilisation des cookies. Plus
+   d'infos     OK
+   fermer et revenir sur Livehost.fr
+
+   (BUTTON)
+   LiveHost.fr
+   Hébergeur Web
+     * Offres
+     * Tchat
+     * Forum
+     * Aide
+     * FAQ
+
+   Créer un compte
+   Se connecter
+   <>
+   Supprimer ce message ?   OUINON
+   {{nb}}
+   {{tab_name}}
+   {{#users}}
+   {{{login}}}
+   {{/users}}
+   {{#messages}}
+   ( )
+   {{{login}}}
+   répondre
+   {{{text}}}
+   {{/messages}}
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Index
+   Développement
+   Tutoriels
+   ____________________
+
+Comment relier son site à son serveur minecraft avec JSONAPI
+
+   admin
+   5 an(s)
+   Téléchargement et installation de JSONAPI :
+   - Rendez-vous à cette adresse : http://mcjsonapi.com/
+   - Téléchargez le fichier jsonapi correspondant à la version de votre
+   serveur minecraft.
+   - Renommez le si besoin en jsonapi.jar
+   - Uploadez le dans le dossier "plugins" de votre serveur minecraft.
+   - Redémarrez votre serveur minecraft.
+   Si vous revenez dans votre dossier plugins, un dossier JSONAPI a fait
+   son apparition.
+   JSONAPI est maintenant installé sur votre serveur minecraft.
+   Configuration de JSONAPI :
+   Il y a 4 choses à configurer
+   - Ouvrez le fichier users.yml présent dans le dossier JSONAPI
+   voir le code source en plein écran
+
+    1. users:
+    2. - username: admin
+    3. password: changeme
+    4. logging: true
+    5. groups:
+    6. - full_control
+    7. - username: chatonly
+    8. password: example
+    9. logging: true
+   10. groups:
+   11. - chat_only
+
+   Changez :
+   le username
+   le password
+   Enregistrez et fermez
+   - Ouvrez le fichier config.yml présent dans le dossier JSONAPI
+   voir le code source en plein écran
+
+    1. # API methods on the method-whitelist will be
+    2. # able to called without any sort of authentication
+    3. method-whitelist:
+    4. - getPlayerLimit
+    5. - dynmap.getPort
+    6. options:
+    7. stream_pusher:
+    8. max_queue_age: 30
+    9. max_queue_length: 500
+   10. startup-delay: 2000
+   11. port: 20059
+   12. ip-whitelist: []
+   13. log-to-console: true
+   14. log-to-file: 'false'
+   15. anyone-can-use-calladmin: true
+   16. use-new-api: true
+
+   - changez le port, ne laissez pas 20059, mettez un port compris entre
+   10001 et 65000.
+   - Changez la dernière ligne : use-new-api: true par use-new-api: false
+   Enregistrez fermez
+   - Redémarrez votre serveur minecraft une dernière fois et vous devriez
+   avoir ça à la fin du log de votre serveur :
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] ------[Connection
+   information]-------
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] JSON Server listening on 27548
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] JSON Stream Server listening on
+   27549
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] JSON WebSocket Stream Server
+   listening on 25689
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] Active and listening for
+   requests.
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] External IP: 39.184.24.2
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] Port 27548 is properly forwarded
+   and is externally accessible.
+   [23:26:07] [Thread-9/INFO]: [JSONAPI] Port 27549 is properly forwarded
+   and is externally accessible.
+   [23:26:08] [Thread-9/INFO]: [JSONAPI] Port 27550 is properly forwarded
+   and is externally accessible.
+   Pour réaliser la liaison il vous faut 4 choses :
+   - l'IP de votre serveur
+   - Le port JsonAPI (celui que vous avez réglé dans config.yml)
+   - username
+   - password
+   (salt, s'il est demandé laissez le champs vide)
+   admin
+   5 an(s)
+   maximedch a dit :
+   Les liens pour JSONAPI ne sont plus opérationnel comment faire ?!?
+   Apparemment ils ne sont plus dispo
+   poses leur directement la question
+   leeo97one
+   5 an(s)
+   Nouveau site de JSONAPI : http://mcjsonapi.com/
+   admin
+   5 an(s)
+   leeo97one a dit :
+   Nouveau site de JSONAPI : http://mcjsonapi.com/
+   J'ai mis à jour, merci :)
+   leeo97one
+   5 an(s)
+   A oui et précise qu'il faut ProtocolLib
+   (http://dev.bukkit.org/bukkit-plugins/protocollib/files/) et Vault
+   (http://dev.bukkit.org/bukkit-plugins/vault/files/) maintenant pour que
+   JSONAPI fonctionne ^^
+   leeo97one
+   5 an(s)
+   anariosse a dit :
+   Ca ne marche pas pour moi :'(
+   Créer un topic sur le Forum pour qu'on puisse t'aider ;-)
+   thorodr
+   5 an(s)
+   mais je ne vois pas ou je mets l'IP de mon serveur
+   atlok
+   5 an(s)
+   MEs comment avoir sont port je ne comprend pas
+   leeo97one
+   5 an(s)
+   Si vous avez un problème, ça ne sert STRICTEMENT À RIEN de poster un
+   message ici. Ouvrez plutôt un sujet ICI :
+   http://www.livehost.fr/forum.php?f=7
+   dylou-2025
+   5 an(s)
+   Je comprends pas sa me mais : Impossible de se connecter au serveur.
+   Vérifier que les ports sont ouverts et que le serveur est ouvert.
+   maddog
+   5 an(s)
+   leeo97one a dit :
+   Si vous avez un problème, ça ne sert STRICTEMENT À RIEN de poster un
+   message ici. Ouvrez plutôt un sujet ICI :
+   http://www.livehost.fr/forum.php?f=7
+   leeo97one
+   5 an(s)
+   Mais c'est qu'ils sont tenaces ces cons là xD
+   novadu71
+   4 an(s)
+   POURQUOI LE DOSSIER NE SE CREER PAS POUR MON SERVEUR IL NE RECONNAIT
+   MÊME PAS LE PLUGINS
+   benjamingamer01
+   4 an(s)
+   Bonjour a tous,
+   Si vous rencontrer des problèmes, vous pouvez me contacter par message
+   privé ou par skype: benjamingamer01, je vous aiderai autant que
+   possible.
+   Cordialement BenjaminGamer01
+   leeo97one
+   4 an(s)
+   novadu71 a dit :
+   POURQUOI LE DOSSIER NE SE CREER PAS POUR MON SERVEUR IL NE RECONNAIT
+   MÊME PAS LE PLUGINS
+   PEUT-ÊTRE PARCE QUE T'ES ***
+   Désolé, je me suis emporté...
+   1 2 3 4
+   Répondre
+   Derniers messages du forum
+   Help Ios App Webview with InApp Purchase Monthly Subscription
+   Probleme Codiac
+   L'url ne fonctionne pas
+   Impossible de se connecter à la base de données via Node.js
+   502 Bad Gateway
+   Problème installation cms (import bdd) habbo
+   Tchat Livehost
+
+   Conditions Générales d'Utilisation
+   Nous contacter
+   Signaler un abus
+   © 2012 - 2019 livehost.fr
+   Page générée en 0.0714 seconde(s)
+   13 requêtes
+   Now accepting PayPal [logo_mobile.png]
+
+   Nous utilisons des cookies pour vous garantir la meilleure expérience
+   sur notre site. Si vous continuez à utiliser ce dernier, nous
+   considérerons que vous acceptez l'utilisation des cookies. Plus
+   d'infos     OK
+   fermer et revenir sur Livehost.fr
+
+   (BUTTON)
+   LiveHost.fr
+   Hébergeur Web
+     * Offres
+     * Tchat
+     * Forum
+     * Aide
+     * FAQ
+
+   Créer un compte
+   Se connecter
+   <>
+   Supprimer ce message ?   OUINON
+   {{nb}}
+   {{tab_name}}
+   {{#users}}
+   {{{login}}}
+   {{/users}}
+   {{#messages}}
+   ( )
+   {{{login}}}
+   répondre
+   {{{text}}}
+   {{/messages}}
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Index
+   Développement
+   Tutoriels
+   ____________________
+
+Comment relier son site à son serveur minecraft avec JSONAPI
+
+   xsefing05
+   4 an(s)
+   ben en faite du coup g un autre probléme , g fini le tuto
+   mais moi dans mais log sa marque
+   voir le code source en plein écran
+
+    1. 2014-10-18 09:59:16 [INFO] [JSONAPI] ------[Connection
+       information]-------
+    2. 2014-10-18 09:59:16 [INFO] [JSONAPI] JSON Server listening on 20059
+    3. 2014-10-18 09:59:16 [INFO] [JSONAPI] JSON Stream Server listening
+       on 20060
+    4. 2014-10-18 09:59:16 [INFO] [JSONAPI] JSON WebSocket Stream Server
+       listening on 20061
+    5. 2014-10-18 09:59:16 [INFO] [JSONAPI] Active and listening for
+       requests.
+    6. 2014-10-18 09:59:16 [INFO] [JSONAPI] External IP:
+    7. 2014-10-18 09:59:16 [INFO] [JSONAPI] Port 20059 is not properly
+       forwarded.
+    8. 2014-10-18 09:59:16 [INFO] [JSONAPI] Port 20060 is not properly
+       forwarded.
+    9. 2014-10-18 09:59:17 [INFO] [JSONAPI] Port 20061 is not properly
+       forwarded.
+   10. 2014-10-18 09:59:17 [INFO] [JSONAPI]
+       -------------------------------------
+
+   est quand je veux mis connecter (mon cms) sa me dit "Impossible de se
+   connecter au serveur. Vérifier que les ports sont ouverts."
+   maddog
+   4 an(s)
+   leeo97one a dit :
+   novadu71 a dit :
+   POURQUOI LE DOSSIER NE SE CREER PAS POUR MON SERVEUR IL NE RECONNAIT
+   MÊME PAS LE PLUGINS
+   PEUT-ÊTRE PARCE QUE T'ES CON
+   Je pense que tu devrai te calmer Leeo97one dans tes dires !
+   Cordialement,
+   maddog
+   4 an(s)
+   Bonjour,
+   Il faut changer les ports comme marqué dans le tuto
+   Cordialement,
+   xsefing05 a dit :
+   ben en faite du coup g un autre probléme , g fini le tuto
+   mais moi dans mais log sa marque
+   voir le code source en plein écran
+
+    1. 2014-10-18 09:59:16 [INFO] [JSONAPI] ------[Connection
+       information]-------
+    2. 2014-10-18 09:59:16 [INFO] [JSONAPI] JSON Server listening on 20059
+    3. 2014-10-18 09:59:16 [INFO] [JSONAPI] JSON Stream Server listening
+       on 20060
+    4. 2014-10-18 09:59:16 [INFO] [JSONAPI] JSON WebSocket Stream Server
+       listening on 20061
+    5. 2014-10-18 09:59:16 [INFO] [JSONAPI] Active and listening for
+       requests.
+    6. 2014-10-18 09:59:16 [INFO] [JSONAPI] External IP:
+    7. 2014-10-18 09:59:16 [INFO] [JSONAPI] Port 20059 is not properly
+       forwarded.
+    8. 2014-10-18 09:59:16 [INFO] [JSONAPI] Port 20060 is not properly
+       forwarded.
+    9. 2014-10-18 09:59:17 [INFO] [JSONAPI] Port 20061 is not properly
+       forwarded.
+   10. 2014-10-18 09:59:17 [INFO] [JSONAPI]
+       -------------------------------------
+
+   est quand je veux mis connecter (mon cms) sa me dit "Impossible de se
+   connecter au serveur. Vérifier que les ports sont ouverts."
+   mat27777
+   4 an(s)
+   Salut moi le seul problème c'est que mon serveur est héberger donc je
+   n'est pas de dossier plugins comment faire ? mon hébergeur :
+   (crystal-serv)
+   leeo97one
+   4 an(s)
+   mat27777 a dit :
+   Salut moi le seul problème c'est que mon serveur est héberger donc je
+   n'est pas de dossier plugins comment faire ? mon hébergeur :
+   (crystal-serv)
+   Demande à ton hébergeur.
+   maddog
+   4 an(s)
+   Bonjour,
+   Tu dois pouvoir l'installer sur ton panel directement sans passer par
+   le FTP .
+   Cordialement,
+   mat27777 a dit :
+   Salut moi le seul problème c'est que mon serveur est héberger donc je
+   n'est pas de dossier plugins comment faire ? mon hébergeur :
+   (crystal-serv)
+   altany1
+   4 an(s)
+   J'ai fais tout ce qui est dit mais cela ne marche pas que faire ?
+   Mon hébergeur est Starmine.
+   Merci de votre réponse
+   minekill44
+   4 an(s)
+   Bonjour,
+   Sa ne marche pas sa me dit : Impossible de se connecter au serveur.
+   Vérifier que les ports sont ouverts et que le serveur est ouvert.
+   Comment on voit si s'est port son ouvert ! ?
+   trablex8
+   4 an(s)
+   ca ne marche pas
+   darkentin
+   4 an(s)
+   Comment faire quand on est sous un hébergeur VPS?
+   mistercraf
+   4 an(s)
+   J'ai un problème. Quand je mets mon port de ma box (vu que j'ai pas
+   d'hébergeur) ça marche pas. Pouriez-vous m'aider ? Si vous en voulez
+   plus, c'est ici > http://www.livehost.fr/forum.php?t=4318
+   liliwood
+   4 an(s)
+   Est-ce que tu as ouvert les port de ta box pour commencer ?
+   ~Lili Wood
+   doudou38200
+   4 an(s)
+   COMMENT JE PEUT METTRE JSONAPI SUR MON SITE ?
+   minekill44
+   4 an(s)
+   Le pack de JSONAPI + VAULT + PROTOCOLLIB 1.7.9
+   http://www.mediafire.com/download/5087uyl7uw6kdec/Plugins+JSONAPI+Chain
+   e++KINGPVP+PROD.rar
+   Tuto comment INSTALLER winrar by kingpvp prod :
+   https://www.youtube.com/watch?v=pQ_I7GiJYKU
+   ABONNE TOI :)
+   neverdream-
+   4 an(s)
+   novadu71 a dit :
+   POURQUOI LE DOSSIER NE SE crEER PAS POUR MON SERVEUR IL NE RECONNAIT
+   MÊME PAS LE PLUGINS
+   pas la bonne version
+   1 2 3 4
+   Répondre
+   Derniers messages du forum
+   Help Ios App Webview with InApp Purchase Monthly Subscription
+   Probleme Codiac
+   L'url ne fonctionne pas
+   Impossible de se connecter à la base de données via Node.js
+   502 Bad Gateway
+   Problème installation cms (import bdd) habbo
+   Tchat Livehost
+
+   Conditions Générales d'Utilisation
+   Nous contacter
+   Signaler un abus
+   © 2012 - 2019 livehost.fr
+   Page générée en 0.0937 seconde(s)
+   13 requêtes
+   Now accepting PayPal [logo_mobile.png]
+
+   Nous utilisons des cookies pour vous garantir la meilleure expérience
+   sur notre site. Si vous continuez à utiliser ce dernier, nous
+   considérerons que vous acceptez l'utilisation des cookies. Plus
+   d'infos     OK
+   fermer et revenir sur Livehost.fr
+
+   (BUTTON)
+   LiveHost.fr
+   Hébergeur Web
+     * Offres
+     * Tchat
+     * Forum
+     * Aide
+     * FAQ
+
+   Créer un compte
+   Se connecter
+   <>
+   Supprimer ce message ?   OUINON
+   {{nb}}
+   {{tab_name}}
+   {{#users}}
+   {{{login}}}
+   {{/users}}
+   {{#messages}}
+   ( )
+   {{{login}}}
+   répondre
+   {{{text}}}
+   {{/messages}}
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   Index
+   Développement
+   Tutoriels
+   ____________________
+
+Comment relier son site à son serveur minecraft avec JSONAPI
+
+   neverdream-
+   4 an(s)
+   novadu71 a dit :
+   POURQUOI LE DOSSIER NE SE CREER PAS POUR MON SERVEUR IL NE RECONNAIT
+   MÊME PAS LE PLUGINS
+   ecthasia
+   3 an(s)
+   altany1 a dit :
+   J'ai fais tout ce qui est dit mais cela ne marche pas que faire ?
+   Mon hébergeur est Starmine.
+   Merci de votre réponse
+   Mdrr comme on se retrouve
+   bonjour12345678
+   3 an(s)
+   Peut être qu'il faut metre jsonapi et vault et protocolib en premier
+   apres tes plugins
+   leloubil
+   3 an(s)
+   Bonjour,
+   J'ai un problème avec jsonapi version 5.6.0
+   Cette version (pour minecraft 1.8) à des problèmes de certification
+   Et j aurais besoin d'une version sans ces problèmes mais pour la 1.8
+   diablo452
+   3 an(s)
+   xxlukecr4xx a dit :
+   Bonjour jai un petit probleme voir gros enfaite quand j'installe
+   jsonapi et vault le dossier vault se creer mais pas le dossier jsonapi
+   et donc je ne peux pas creer mon site mon skype : xxblizzxx.funcraft
+   merci de me repondre au plus vite svp mon hebergeur mania
+   Il faut protocolLib.
+   vjolit
+   3 an(s)
+   Salut, je te conseille pas de faire sans hébergeur, tu vas avoir des
+   problèmes de sécu.
+   T'as des hébergeurs pas chers et pas trop mauvais.
+   theminecraftmod
+   3 an(s)
+   users:
+   - username: admin
+   password: changeme
+   logging: true
+   groups:
+   - full_control
+   - username: chatonly
+   password: example
+   logging: true
+   groups:
+   - chat_only
+   on fait sur les 2?
+   tanguyjordan
+   3 an(s)
+   Bonjours à ma connaissance tu dois supprimer le deuxième compte et rien
+   toucher au premier tu as le droit de modifier le Pseudo et le mot de
+   passe du premier. Après si tu ne la pas fait il est recommander d'aller
+   dans conf.ylm avec Notepad++ etde changer le port sans dépasser un
+   certain nombreux que je n'est pas en tête et aussi de faire ceci dans
+   le dossier config :
+   use-new-api: false
+   Tu dois mettre use-new-api en false si tu n'as pas compris :)
+   Après si l'adresse ip de ton serveur il ya des ports par exemple
+   52.35.1.145:25560
+   Tu dois l'enlever quand tu veux le mettre dans {Ip du serveur}
+   Voilà après c'est tout je crois ^^.
+   A la fin sa doit ressembler a sa :
+   users:
+   - username: admin (Editable)
+   password: changeme (Editable)
+   logging: true
+   groups:
+   - full_control
+   1 2 3 4
+   Répondre
+   Derniers messages du forum
+   Help Ios App Webview with InApp Purchase Monthly Subscription
+   Probleme Codiac
+   L'url ne fonctionne pas
+   Impossible de se connecter à la base de données via Node.js
+   502 Bad Gateway
+   Problème installation cms (import bdd) habbo
+   Tchat Livehost
+   Conditions Générales d'Utilisation
+   Nous contacter
+   Signaler un abus
+   © 2012 - 2019 livehost.fr
+   Page générée en 0.0181 seconde(s)
+   13 requêtes
+   Now accepting PayPal [logo_mobile.png]
+
+   Nous utilisons des cookies pour vous garantir la meilleure expérience
+   sur notre site. Si vous continuez à utiliser ce dernier, nous
+   considérerons que vous acceptez l'utilisation des cookies. Plus
+   d'infos     OK

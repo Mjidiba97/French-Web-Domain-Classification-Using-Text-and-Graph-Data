@@ -1,0 +1,310 @@
+   #home alternate
+
+   IFRAME: https://www.googletagmanager.com/ns.html?id=GTM-KXG7RT5
+
+   Javascript must be enabled for the correct page display
+
+   Skip to Content
+
+   OneSignal
+
+   (BUTTON)
+     * Capabilities
+          + Mobile Push
+          + Web Push
+          + In-App
+          + Email
+          +
+          + A/B Testing
+          + Personalization
+          + Segmentation
+          + Rich Media Notifications
+     * Pricing
+     * Documentation
+     * Case Studies
+     * Company
+          + About Us
+          + Careers
+          + Blog
+          + Contact Us
+
+   Log In (BUTTON) Sign Up
+
+   News 🎉 OneSignal, the Market Leader in Push Notifications, Raises $25M
+   Series B →
+   OneSignal Push Notifications
+
+Push Notifications Delivered
+
+   OneSignal is the market leader in customer engagement, powering mobile
+   push, web push, email, and in-app messages.
+
+   Start for FreeContact Sales
+
+   Free plan includes unlimited mobile and up to 30,000 web push
+   subscribers.
+
+   Trusted by 809,489 developers
+     * LendingTree
+     * Volkswagen
+     * Verizon
+     * Zynga
+     * Bose
+     * HQ Trivia
+     * EatStreet
+
+   Case Studies
+
+Mobile Push
+
+   Mobile Push
+
+   Be the first message customers see when they pick up their phones.
+   Notifications are the primary traffic source for most mobile apps.
+
+Web Push
+
+   Web Push
+
+   Stay in front of your customers even after they leave your site. Works
+   on Chrome, Safari, Firefox, Edge, Opera, and Yandex.
+
+In-App
+
+   In-App
+
+   Deliver messages that create delight. Design banners, pop-ups, and
+   interstitials; implement without a single line of code.
+
+Email
+
+   Email
+
+   Design emails that look great on every device with the drag-and-drop
+   composer. Customize our free templates to match your brand.
+
+Web Push helps bring customers back to your product
+
+   (BUTTON) View Examples
+
+   Andrew Watts
+
+   OneSignal is incredibly helpful with a front-facing user interface that
+   non-devs can easily use, impeccable service, and the consistent system
+   uptime that make delivering pushes reliable.
+
+   Andrew Watts, Marketing Manager
+
+   HQ Trivia
+
+Everything You’re Looking For
+
+   It’s never been easier to connect with customers.
+
+15 Minute Setup
+
+   Our users are always shocked at how easy it is to get started.
+
+Real-Time Reporting
+
+   View delivery and conversion performance for every message.
+
+Incredible Scalability
+
+   Millions of users? No problem. We send out billions of notifications
+   daily.
+
+A/B Testing
+
+   Compare message performance and automatically send the best.
+
+Superior Segmentation
+
+   Create personalized messages and send them to the right audiences.
+
+Automated Messaging
+
+   Set it and forget it. You can trigger notifications based on user
+   behavior.
+
+Intelligent Delivery
+
+   Leverage machine learning to send your messages at the optimal time.
+
+Analyze Results Anywhere
+
+   Our SDKs are open source and every component is accessible via API.
+
+Limitless Integrations
+
+   OneSignal integrates with 1,400+ services and is the exclusive push
+   provider for
+   Microsoft's Visual Studio App Center.
+
+     * Google Analytics
+     * Zapier
+     * Amplitude
+     * Mixpanel
+     * Adobe Analytics
+     * Plot Projects
+     * Segment
+
+   More Integrations
+
+Built for Developers
+
+   Our founders were app developers first. We couldn’t find any great push
+   notification tools so we built OneSignal.
+   Code in the language you know with any development environment.
+   All in less than 10 lines of code.
+
+   Apple iOS Android Web Push React Native Unity Flutter
+     * Read The Getting Started Docs
+     * Get Your Free API Key
+
+   Apple iOS
+import OneSignal
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
+nchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+  OneSignal.initWithLaunchOptions(launchOptions,
+    appId: "YOUR_APP_ID",
+    handleNotificationAction: nil,
+    settings: [kOSSettingsKeyAutoPrompt: false])
+
+  OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+
+  OneSignal.promptForPushNotifications(userResponse: { accepted in
+    print("User accepted notifications: \(accepted)")
+  })
+
+  return true
+}
+
+   Android
+import com.onesignal.OneSignal;
+
+public class YourAppClass extends Application {
+   @Override
+   public void onCreate() {
+      super.onCreate();
+
+      OneSignal.startInit(this)
+        .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+        .unsubscribeWhenNotificationsAreDisabled(true)
+        .init();
+   }
+}
+
+   Web Push
+<head>
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "YOUR_APP_ID"
+    }]);
+  </script>
+</head>
+
+   React Native
+import OneSignal from 'react-native-onesignal';
+
+export default class App extends Component {
+  constructor(properties) {
+    super(properties);
+    OneSignal.init("YOUR_APP_ID");
+
+    OneSignal.addEventListener('opened', this.onOpened);
+  }
+
+  componentWillUnmount() {
+    OneSignal.removeEventListener('opened', this.onOpened);
+  }
+
+  onOpened(openResult) {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('openResult: ', openResult);
+  }
+}
+
+   Unity
+using System.Collections.Generic;
+
+void Start() {
+  OneSignal.StartInit("YOUR_APP_ID")
+    .HandleNotificationOpened(HandleNotificationOpened)
+    .EndInit();
+
+  OneSignal.inFocusDisplayType = OneSignal.OSInFocusDisplayOption.Notification;
+}
+
+private static void HandleNotificationOpened(OSNotificationOpenedResult result)
+{
+  // use notification opened result here
+}
+
+   Flutter
+void main() {
+    OneSignal.shared.init("YOUR_APP_ID", {
+        OSiOSSettings.autoPrompt: false
+    });
+    OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.notificatio
+n);
+
+    OneSignal.shared.promptUserForPushNotificationPermission();
+}
+
+   Code in any language. We provide native support for every development
+   environment.
+
+   30+ Platform Integrations
+
+Start sending push today
+
+   We’ll get you going in a matter of minutes.
+
+   Get Your Free AccountSchedule a Demo
+
+   Have questions? Talk to an expert.
+
+   Product
+     * Mobile Push
+     * Web Push
+     * Email
+     * In-App
+     * Pricing
+
+   Resources
+     * Case Studies
+     * Blog
+     * What is Push
+     * Preview Tool
+
+   Company
+     * About Us
+     * Careers
+     * Contact Us
+     * Twitter
+     * Instagram
+
+   Developers
+     * Documentation
+     * API Reference
+     * GitHub
+
+   Other
+     * Terms of Use
+     * Privacy Policy
+     * Acknowledgements
+     * Certificate Wizard
+     * Status Page
+
+     *
+     *
+     *
+     *
+
+   Back to top

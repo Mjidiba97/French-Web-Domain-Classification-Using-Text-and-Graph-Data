@@ -1,0 +1,821 @@
+   #alternate alternate
+
+   Easy2Boot
+
+The new USB multiboot solution (Legacy+UEFI)
+     __________________________________________________________________
+     __________________________________________________________________
+
+   IFRAME: https://www.youtube.com/embed/sO1xdJCywwA
+
+   IFRAME: https://www.youtube.com/embed/LrOD62Iny1Y?ecver=1
+
+   Welcome to the Easy2Boot (E2B) website
+       ^< Intro            << Click 'Site map' (150+ pages)
+
+   E2B is used by 1000's of technicians all over the world (over 1000
+   downloads a day)
+
+   E2B is FREE!
+
+   Just copy your ISO files to the E2B USB drive and Legacy-boot!
+
+   Boots directly from 99% of all ISOs.
+
+   Secure UEFI-Multiboot (new UEFI-multiboot eBook here, video here).
+
+   eBook #1 contains instructions on how to remove the 5-second startup
+   delay blue screen.
+
+   Bespoke design service (for themes and payloads)
+
+
+   Update your E2B USB drive to add the latest improvements and features.
+   Updating your E2B drive does not affect your current E2B settings or
+   payload files.
+
+   DOWNLOAD: Latest released version is E2B v 1.B6 (2019-09-30) - bugfix
+   for XP install (there was a ntkrnlmp.exe error bug in v1.B2!) - to
+   update, just click the 'Update E2B Drive' button.
+
+   E2B 'quick reference' Primer - all the E2B basic information on one
+   page!
+
+   E2B FAQs and Troubleshooting - check this if you are having problems or
+   have a question.
+
+   Official YouTube videos on E2B - plenty of videos here.
+
+     NEW E2B FEATURES!
+
+     UEFI-multiboot - Add a second FAT32 partition containing WinPE for
+     UEFI-only systems (see here for details).
+     E2B now does not require a WinHelper USB flash drive to be added
+     when booting most Windows Install ISOs from an E2B USB Hard Disk and
+     you can boot Windows Install 7/8/10 ISOs from any menu folder.
+
+     Extension override suffix and file sort order prefix supported (e.g.
+     _039_Ubuntu v13.1 x64._iso64.iso) so you can arrange the menu items
+     in any order without needing to create a .txt file for each .ISO
+     file.
+
+     Use the .imgPTNX4 file extension to replace partition 4 with a WinPE
+     partition image file (see here for details).
+
+   Latest Beta versions (with bugfixes, new features, etc.) are on
+   the Alternate Download sites and check my blog for the latest news.
+
+   Free help! - A Live Help pop-up icon is often available on this site to
+   start a live chat session with the developer for any problems that you
+   cannot solve by using the Site Map (you must enable pop-ups in your
+   browser to see the Live Help pop-up if using FireFox).
+
+   Easy2Boot is also available to download from MajorGeeks and FossHub.
+
+     Get the E2B eBooks!
+
+     E2B eB ooks are now available  (complete course on making a
+     multiboot USB drive and installing Windows).
+
+     UEFI-multiboot without needing to MBR-boot first (eBook #3).
+
+     Note: eBook #1 includes instructions on how to remove the ASCII-text
+     blue and white banner startup screen.
+
+Want to boot almost ANYTHING from just one USB drive?
+
+   Then why not use what the 'Techies' use?
+     * The Easy2Boot Menu system uses grub4dos+scripts. Licensed and free
+       s/w is included in the download.
+     * Easy to maintain - just copy over your ISO files/.imgPTN
+       files/other files (or delete them from the USB drive) - a new menu
+       is automatically created each time you boot from the E2B USB drive.
+     * No need to reformat your E2B USB drive ever again, even if you want
+       to update it with the latest version of E2B.
+     * Directly MBR-boot from the USB drive to unmodified files: .ISO,
+       .IMA, .IMG, .VHD, .VHDX, .WIM, WinBuilder WinPE ISOs, Windows
+       Install ISOs, Linux ISOs, FreeDOS, Hirens ISOs, MemTest86,
+       diagnostics, repair software, Anti-Virus cleaners, etc. etc. etc.
+       The file extension determines how E2B will boot from it. E2B
+       recognises many additional 'special' file extensions.
+     * Adding new payloads is fast! Copying one large ISO file to a USB
+       drive is much quicker than extracting hundreds of smaller files
+       from the ISO. Also it is much easier to backup and delete one file
+       when you no longer want it.
+     * The E2B download is a Windows self-extracting .exe executable (a
+       .zip file is provided for linux users) which allows you to make an
+       NTFS multiboot USB drive with just a few mouse clicks. You can
+       also Make an E2B USB drive using linux using a bash shell script
+       (provided in download).
+     * You can add your own files, applications, portable apps, etc.
+     * UEFI-booting (incl. Secure Boot) is made possible by converting
+       UEFI-bootable payloads (ISOs, disk images, flash drives, etc.)
+       into .imgPTN files (partition images). Use the MPI Tool Pack to
+       make .imgPTN files for MBR+UEFI booting (supports Secure Boot).
+       Adding a second FAT32 partition will allow you to Secure UEFI-boot
+       to UEFI images without needing to MBR-boot (see here).
+     * Over 340 different types of ISOs and payload files supported.
+     * USB Flash drives (and USB HDD\SSD drives with some workarounds) are
+       supported (NTFS is recommended).
+     * E2B is designed to work on a wide variety of different PCs and
+       Notebooks, even those with buggy/quirky BIOSes.
+     * Generic - unlike other solutions, there is no need to update E2B
+       when a new linux distro is released
+     * Multiple linux ISOs+Persistence possible (via .mnu menu files) -
+       persistence files larger than 4GB are supported.
+     * Add images of other single- or dual-partition bootable USB drives
+       (e.g. add partition images of Rufus, WinsetupFromUSB, YUMI, XBOOT,
+       DOS USB, etc.).
+     * 15+ languages for the E2B menu system. Press F1 in the E2B Menu for
+       help.
+     * Use E2B for unattended Windows installs (drivers+apps+updates using
+       an unmodified Microsoft Windows Install ISO file) by using
+       the SDI_CHOCO feature - when a new version of Windows is released,
+       simply copy on the new Windows ISO!
+     * Fully configurable - it is easy to change the menu text, menu
+       order, menu defaults, timeouts, background wallpaper, add your own
+       grub4dos menu files, add your own sub-menus, configure the menu
+       with the E2B_Editor GUI Windows app., load different themes\skins
+       and much more...
+     * YouTube videos, free live help and support + eBooks.
+
+
+   Interested in USB or PXE booting? - visit www.rmprepusb.com for over
+   140 Tutorials!
+
+Make an E2B drive
+
+
+
+   Make an E2B drive in 3 steps - pick a USB drive, then a Language and
+   then click the large Make E2B Drive button.
+
+   After it has been made, test that it boots OK by clicking the green
+   Test with QEMU button...
+
+
+       Press F1 in the E2B Menu for help.
+
+     Do you think this site is a MESS?
+
+     Don't like the style, page format, messy layout and all the annoying
+     adverts on this site?
+     E2B is free, but anyone who makes a donation of £5 or more (or if
+     you report a bug or buy an E2B eBook) will be emailed a URL which
+     loads the E2B and RMPrepUSB website pages quicker, has much fewer
+     adverts per page and a much neater format (see this page for an
+     example of the simpler web page format).
+     If you donate £10 or more, you even get a licence for
+     XMLtoE2B.exe too (just ask me for it when you donate).
+
+   Latest News   Russian guide Russian blog   Chinese post
+
+Full E2B feature list
+
+     * Use the large red Make E2B Drive button in  Make_E2B  GUI to
+       quickly make an NTFS E2B drive (recommended).
+     * Make an E2B USB drive using Windows or linux (portable - no
+       installation to Windows required).
+     * Removable-type USB Flash drives supported (and USB Fixed Disks
+       but extra steps are required for some payloads).
+     * E2B supports FAT32, NTFS (recommended & default), ExFAT (and
+       limited ext2/3/4) USB boot drives.
+     * Just copy over your ISO files (or delete them), a new menu is
+       automatically created each time you boot. Add or remove any payload
+       just by copying or deleting the file from the USB drive - no menu
+       to edit, no app. needed - no need to remake it every
+       month/week/day!
+     * Boot from 100's of different ISOs and images (just copy them onto
+       the USB drive!) - over 340 different types supported.
+     * Add 100's of All-In-One Windows Install ISOs (convert to .imgPTN
+       files using the Windows MPI Tool Kit).
+     * Add 100's of UEFI-images (e.g. Windows/Linux/KonBoot/Utilities)
+       using .imgPTN files.
+     * Add 100's of full linux and WindowsToGo installations.
+     * Add 100's of different linux liveCD ISOs each
+       with persistence (>4GB persistence on NTFS is supported using
+       ext2/3/4).
+     * Boot directly from Windows .VHD and .WIM files - just copy them
+       over.
+     * Add images of other single-partition bootable USB drives (e.g.
+       Rufus, WinsetupFromUSB, YUMI, XBOOT, etc.).
+     * 15+ languages for the E2B menu system (you can add your own
+       language too).
+     * Secure UEFI-booting is supported by using .imgPTN files.
+     * Includes MemTest86 from PassMark (MBR and Secure-Boot UEFI
+       payloads).
+     * Easily create fully automated Windows 7/8/10 unattend.XML files for
+       booting from unmodified Windows Install ISO's (XMLtoE2B).
+     * Use for unattended Windows installs (drivers+apps+updates+unchanged
+       Windows Install ISO file) (SDI_CHOCO feature).
+     * Offline unattended Windows installs (drivers+apps+updates+Windows
+       ISO) using Chocolatey offline packages (no need to create your own
+       app install packages).
+     * Update to the latest E2B version in a few seconds - no need to
+       reformat the USB drive ever!  Updating E2B to the latest version
+       does not change your configuration.
+     * Fully configurable - change wallpaper, menu entries, menu style and
+       size, font, behaviour, add password protection, PIN code each
+       month, etc.
+     * Original linux ISO boot menu is shown - it's the same menu you get
+       when booting from the linux CD (live, install, safe mode, memtest,
+       etc. menu options).
+     * User configurable and fully documented - you can change the
+       background wallpaper, headings and text colours, move the menu
+       position, make your own sub-menus, make it beep when the menu
+       loads, add your own GFXBoot menu, change menu font, use UTF-8
+       non-ASCII characters in the menus, define your own hotkeys, add
+       your own language versions, etc. etc.
+     * Variety of example 'skins'/themes included.
+     * Compatible with FlashBoot (uses FAT32 for booting very old systems
+       that have trouble booting from USB due to non-standard USB BIOS
+       boot support).
+     * Can boot some linux liveCD ISOs even if they are not contiguous or
+       write-protected (ISOBOOT feature).
+     * Hide some payloads so only you can boot from them.
+     * Guest Menu - password protect the full menu so other users will
+       only see a 'Guest menu' when they boot from the E2B drive.
+     * Can use a USB Hard disk with one or more partitions and still UEFI
+       boot (even if they are all NTFS partitions) - no complex GPT
+       partitions needed.
+     * UEFI boot to an NTFS partition (via Clover + first FAT32 ptn).
+     * Also supports dual .imgPTN partition images - e.g. FAT32 + NTFS, or
+       FAT32+ext3.
+     * Supports multiple UEFI secure-boot payloads.
+     * Includes Holmes.Sherlock's PassPass for E2B to bypass Windows
+       password entry (XP to Win10) and automated UtilMan Windows hack.
+     * Easily configurable using a \_ISO\MyE2B.cfg file.
+     * Design a custom menu using E2B_Editor.exe.
+     * Customise individual menu entries and each item's help text
+       using TXT_Maker.exe.
+     * Compatible with Zalman ZM-VE200/350/500, IODD 2531/2541, etc.
+       (Virtual CD)
+     * Add a grub2 menu system and then Secure UEFI-boot to 60+ linux ISOs
+       including those that do not normally support UEFI-booting!
+     * WinBuilder ISO boot support (must keep extension as .ISO) (v1.90+)
+     * Set the \menu.lst attribute as Hidden and then run
+       UPDATE_E2B_DRIVE.cmd to hide files in root
+     * NTFS supported under linux as well as FAT32 - use udefrag to make
+       NTFS files contiguous (v1.85+).
+     * Supports animations, stamps and large fonts (v1.79+). Add your
+       company logo to 'STAMP' the menu wallpaper automatically.
+     * Windows utility SWITCH_E2B.exe allows you to switch to any .imgPTN
+       file from Windows - no need to MBR-boot first.
+     * Keep a 'Master Copy' of E2B+payload files on your Windows system
+       and make more fully loaded E2B drives or 'clone' your E2B drive
+     * 30 things I bet you didn't know about E2B!
+     * Easy2Boot YouTube videos h ere.
+     * Help from the author of E2B (SteveSi) is available (look for the
+       Live Chat icon on each page if I am online).
+     * To receive news, 'How To's' and updates, subscribe to my blog.
+
+     __________________________________________________________________
+
+
+Are you new to Easy2Boot?
+
+   A new USB multiboot solution (Legacy+UEFI). Just copy the ISO files to
+   the USB drive and boot.
+   For UEFI-booting you must convert ISOs to .imgPTN files first.
+
+   Each time you boot, the E2B scripts automatically find all the payload
+   files (.ISO, .IMA, .BIN, .IMG, etc.) on the USB drive and dynamically
+   generate the menus. Each file is run depending on its file extension.
+     * Watch the v ideos, then use the Tabs at the side of this website.
+     * E2B eBooks with Exercises to follow here.
+     * Start with the 'Make a USB drive' page, then go to the 'Add Payload
+       Files' page.
+     * Always use the Site Map to find what you want.
+     * 'Create Multi Windows USB Installer' YouTube video by
+       Britec here (old method).
+     * E2B demo preview YouTube video by Alvaro (includes UEFI demo here).
+     * You can find a list of Easy2Boot Tutorials on my blog page
+
+Easy to maintain, delete or update
+
+   How to add all your ISO (and other) files:
+    1. Copy each bootable ISO/payload file into a suitable menu folder on
+       the E2B USB drive (e.g. \_ISO\WINDOWS\WIN10 or \_ISO\LINUX) - no
+       extra applications required.
+    2. Make all files contiguous (if required), e.g. double-click on
+       \Make_This_Drive_Contiguous.cmd on the USB drive (or run the
+       linux defragfs or udefrag command from \_ISO\docs\linux_utils
+       folder). Not all files need to be contiguous so try it anyway - it
+       may still work! See here for more info.
+    3. Boot to the E2B menu and pick your ISO or payload file from the
+       appropriate menu.
+    4. To remove an ISO file, just delete it from the E2B drive.
+
+   To make a copy of your E2B drive onto another USB drive, run
+   \MAKE_E2B_USB_DRIVE (run as admin).cmd from the USB drive that you want
+   to copy from.
+
+   Click here for a list of over 340 types of ISOs and other payload files
+   that work with Easy2Boot (includes UEFI booting using .imgPTN files).
+
+Languages
+
+   Menu Languages: English, Czech, Dutch, French, German, Greek,
+   Hungarian, Chinese, Italian, Polish, Portuguese, Romanian, Russian,
+   Slovenian, Swedish, Spanish, Turkish, Ukrainian, Vietnamese (and Arabic
+   menu text only). New languages can be easily made and added (including
+   Persian, Urdu, Hebrew and other right-to-left languages).
+
+   Read the German Com! Magazine article here or Frettt's German
+   guide here or a series of French articles here or Russian article here.
+
+   Chinese YouTube videos here.
+
+More about Easy2Boot
+
+   Read How Easy2Boot works (recommended if you want to get the best out
+   of E2B).
+
+   Easy2Boot is FREE! - but please consider making a small donation to
+   support this site and my work, it would be much appreciated!
+
+Real comments from real users
+
+     * E2B is incredibly easy to setup and has worked with literally no
+       issues. **Possibly the best free product I have ever used in
+       IT. (reddit)
+     * I haven't looked at YUMI in a few years, but the difference in
+       features/compatibility was like night and day once I started using
+       Easy2Boot (reddit).
+     * Easy2Boot is black magic and I don't think I could use another
+       mul tiple iso boot solution after getting used to how easy it is
+       (reddit)
+     * Have you tried "easy2boot?" One drive is all you need to boot any
+       OS or ISO file directly. It's almost magick (reddit)
+     * Easy2Boot is indeed a master piece. I have tried them all but none
+       is close enough to Easy2boot. (see comments)
+     * Easy2Boot has become my go to multi-boot tool of choice and the
+       first tool I pack in with my geek goodies, hopefully it can suit
+       your needs too (Arrogant Geek article)
+     * 'Easy2Boot is one of those incredibly useful tools that once you
+       use it, you can’t imagine living without it.' - Gary Danton's E2B
+       installation guide.
+     * 'I have tried YUMI, Sardu and others, this one just does it
+       all.' (see comments)
+     * 'In short, Easy2Boot is by-far the best USB drive creation
+       tool/utility out there'
+     * 'This is one tool that every techie should have!'
+     * 'Really, seriously, and truly, just use Easy2Boot.'
+     * 'I wish I had this utility years ago. RMPrepUSB and Easy2Boot have
+       changed the way I do my job. Other solutions gave me problems.
+       Easy2Boot is the first fully-working solution !
+     * 'E2B wins hands down no question. Can't find anything else that can
+       handle that many ISO's'
+     * Went to YouTube and started with Steve's latest tutorials. Wow, I
+       was soon cooking just after the first one, but the latest three
+       tutorials have shown me virtually everything I need for my
+       purposes. Fantastic app., really love the QEMU emulator which lets
+       me test without rebooting. Also like the diagnostics and
+       backup/restore functions. No offense to the apps. I deleted (Sardu,
+       Yumi, XBoot); but for me, RMPrepusb/Easy2Boot is the answer to my
+       needs.
+
+     * You can make a E2B drive using a Windows or linux system (not Mac).
+     * Easy2Boot is a collection of grub4dos scripts which you copy to a
+       grub4dos-bootable USB drive - open-source code (grub4dos, etc.) +
+       plain text scripts.
+     * Easy2Boot uses Open Source grub4dos utilities and plain-text
+       scripts (E2B IS NOT A WINDOWS UTILITY)
+     * Easy2Boot (E2B) supports both USB Flash and USB HDD drives (FAT32,
+       NTFS, exFAT, ext2/3/4)
+     * Because Easy2Boot is not a 'utility', you can prepare an Easy2Boot
+       drive under Windows or linux. Once prepared, just copy over (or
+       delete) any ISOs you like, at any time in the future.
+     * Extensive list of 100's of tested ISOs and payloads here - 99% of
+       all linux ISOs will 'just work' by copying over the ISO file!
+     * To remove a payload, just delete the payload file!
+     * No limit to the number of different Linux, Windows Install, WinPE,
+       etc. ISOs or other payload files
+     * Easy to update to the latest version - just overwrite the E2B files
+       on your USB drive with the latest version.
+     * You will need a Windows system to make .imgPTN files (for
+       UEFI-booting and other purposes).
+     * Just add Windows (NT6) .VHD, .VHDX and .WIM files and boot! No BCD
+       needed.
+     * Multiple UEFI multi-booting of linux, Windows Installers, KonBoot,
+       etc. from partition images (see YouTube video)
+     * Boot  Windows, WinBuilder PE, MSDaRT, linux and many others
+       directly from ISO files (in MBR/BIOS mode)
+     * Add images of all your other bootable USB Flash drives to E2B (e.g.
+       add images of USB drives made with Rufus, XBOOT, SARDU, YUMI, Live
+       USB drives, etc.). The .imgPTN image file is only as large as the
+       files on the drive that you are imaging.
+     * Boot multiple versions of the Hirens Boot CDs with all
+       features working (DOS, linux, MiniWindows)  + multiple HP Utilities
+       and many others.
+     * Boot to 32-bit and 64-bit UEFI mode directly from MBR mode using
+       Clover (YouTube video)
+     * UEFI Secure Boot supported
+     * Boot multiple WindowsToGo and fully-installed linux OSs all from
+       one partition
+     * Compatible with Zalman/IODD USB-HDD CD emulator (boot ISOs from the
+       Zalman or boot to E2B menu)
+     * English, Chinese, Dutch, Swedish, Spanish, French, Italian, Polish,
+       Portuguese, Romanian, Russian and German language options (so
+       far...)
+     * Design your own menu theme using the free E2B_Editor.exe Windows
+       GUI
+     * Automate Windows installs direct from an unaltered Windows ISO file
+       with drivers, Windows updates and applications (SDI_Choco)
+     * No need to re-partition or re-format your existing grub4dos USB
+       drive (though I recommend you do for maximum compatibility with
+       different systems).
+     * For most ISOs just 'Drag-and-Drop' - copy your ISO file directly
+       onto your E2B USB drive (MBR\CSM booting only) and boot!
+     * UEFI+CSM booting of Windows Installers and Linux LiveCD payloads
+       via a partition image (and most other UEFI-enabled payloads too,
+       such as KonBoot).
+     * Can use a USB Hard disk with one or more partitions and still UEFI
+       boot (even if they are all NTFS partitions) - no complex GPT
+       partitions needed.
+     * Boot almost ANY type of linux 'LiveCD' ISO - just copy it over!
+       Unlike XBOOT or YUMI, you don't have to wait for Easy2Boot to be
+       updated to support a new linux ISO distro - Easy2Boot is generic.
+       See 'How it works'.
+     * Boot to any UEFI (Intel CPU) payload directly from the grub4dos
+       menu without needing to reboot the system (via Clover).
+     * UEFI boot to an NTFS partition (via Clover + first FAT32 ptn).
+     * Supports Partition Image booting - make image files of any
+       existing, bootable single-partition FAT32 or NTFS USB stick and add
+       the files to E2B (e.g. add images of USB Flash drives made with
+       YUMI, XBOOT, SARDU, WinSetupFromUSB, LiveUSB Creator, Rufus, USB
+       Universal Installer, MSDaRT, Windows AIO installers, HP Utilities,
+       etc.). Also supports dual partition images - e.g. FAT32 + NTFS.
+     * Install Windows XP to a system from UNMODIFIED 32-bit XP install
+       ISOs (any number of different ISOs) to a IDE\SATA\AHCI\RAID\SCSI
+       system - no need to integrate special mass-storage or F6 drivers!
+       Also works with Server 2003 ISOs (can be automated using answer
+       file).
+     * Install directly from any number of different Windows
+       Vista/7/8/SVR2008R2/SVR2012/Win10 install ISO files (can be fully
+       automated using an XML answer file).
+     * Boot directly from linux LiveCD ISOs with persistence - you can
+       have all  these (and more) on one Easy2Boot drive and boot them
+       all with persistence - YLMF, Ubuntu, Fedora, StartOS, Porteus,
+       pclinuxos, Backtrack5, kali-linux, Mint ISOs and more. e.g. you can
+       even boot from the same linux ISO but have 2 or more persistence
+       files for the same ISO, one for each different user. Persistence
+       files can be larger than 4GB (if you format the E2B drive as NTFS).
+     * User configurable and fully documented - you can change the
+       background wallpaper, headings and text colours, move the menu
+       position, make your own sub-menus, make it beep when the menu
+       loads, add your own GFXBoot menu, change menu font, use UTF-8
+       non-ASCII characters in the menus, define your own hotkeys, add
+       your own language versions, etc. etc.
+     * Variety of example 'skins'/themes included.
+     * Compatible with FlashBoot (for booting old systems that have
+       trouble booting from USB due to non-standard USB BIOS boot
+       support).
+     * Can boot some linux liveCD ISOs even if they are not contiguous or
+       write-protected (ISOBOOT feature)
+     * Password protect the menu or individual payloads. PIN code
+       protection, encrypt config files + other security features
+     * Guest Menu - password protect the full menu
+     * It's FREE! Though donations are much appreciated to support this
+       site and my work.
+
+
+     __________________________________________________________________
+
+Menu
+
+     * Home
+     * Start & Intro
+     * Quick Setup Guide >>>
+     * DOWNLOADS >>>
+     * YouTube videos
+     * Tutorials and How To's
+     * Make a USB drive >>>
+     * E2B Menu system
+     * UEFI booting from E2B
+     * Adding Payload Files and Using E2B >>>
+     * List of tested ISOs\payloads (with instructions)
+     * Configure E2B >>>
+     * UEFI - things you should know!
+     * FAQ, Info, TroubleShooting, QEMU and Virtual Machines >>>
+     * Gallery
+     * Guestbook
+     * Forum
+     * Blog
+     * Grub2 Menu System (UEFI_GRUB2_PTN2)
+     * Site Map
+     * eBooks
+     * Contact Me >>>
+     * Donate
+     * Licensing
+     * Privacy policy (GDPR)
+     * Bespoke design service
+     __________________________________________________________________
+
+Search site
+
+   Search: ____________________ Search
+     __________________________________________________________________
+
+   [q?_encoding=UTF8&amp;ASIN=B01MU8TZRV&amp;Format=_SL110_&amp;ID=AsinIma
+   ge&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=easy
+   2bootcom-20&amp;language=en_US]
+   Recommended for Easy2Boot (fastest flash drive!)
+   SanDisk Extreme SDCZ880-128G-G46
+     __________________________________________________________________
+
+   130+ Tutorials on USB booting.
+     __________________________________________________________________
+
+   [q?_encoding=UTF8&amp;ASIN=B075ZNCVJ5&amp;Format=_SL110_&amp;ID=AsinIma
+   ge&amp;MarketPlace=GB&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=r0ae
+   -21&amp;language=en_GB]
+
+   Fastest USB 3!
+   See Blog post
+
+     __________________________________________________________________
+
+   IFRAME: //www.googletagmanager.com/ns.html?id=GTM-WZQGZW
+
+   We are using cookies to give you the best experience on our site.
+   Cookies are files stored in your browser and are used by most websites
+   to help personalise your web experience. By continuing to use our
+   website without changing the settings, you are agreeing to our use of
+   cookies.". Hide this message Cookies Policy
+
+Tags
+
+    1. configure
+    2. UEFI
+    3. hide
+    4. Reference
+    5. Troubleshooting
+    6. FAQ
+    7. TroubleShooting
+    8. Problems
+    9. Slow
+   10. How it works
+   11. QEMU
+   12. Virtual Box
+   13. Debugging
+   14. debug
+   15. LOADISO
+   16. LOADISO.cmd
+   17. rmprepusb
+   18. ISO files
+   19. Hirens
+   20. MSDart
+   21. WinPE ISO
+   22. Windows Install
+   23. linux
+   24. XP
+   25. 7
+   26. 8
+   27. gandalf
+   28. PassPass
+   29. restore
+   30. UtilMan
+     __________________________________________________________________
+
+     * Homepage
+     * Site map
+     * RSS
+     * Print
+     __________________________________________________________________
+
+   Copyright (c)2019 Easy2Boot
+
+   Please donate to support this site
+   #alternate alternate
+
+   Easy2Boot
+
+The new USB multiboot solution (Legacy+UEFI)
+     __________________________________________________________________
+     __________________________________________________________________
+
+   Home | Privacy policy (GDPR)
+     __________________________________________________________________
+
+Privacy policy (GDPR)
+
+   It seems enforcing annoying 'do you accept cookies' pop-ups was not
+   annoying enough. Now the EU have again burdened 99.9% of legitimate
+   small website owners with yet more red tape, so here goes...
+
+
+   What type of information do you collect?
+
+   We receive, collect and store any information you enter on our website
+   or provide us in any other way. In addition, we may temporarily collect
+   the Internet protocol (IP) address used to connect your computer to the
+   Internet and computer and connection information. We may use software
+   tools to measure and collect session information, including page
+   response times, length of visits to certain pages, page interaction
+   information, and methods used to browse away from the page. We also
+   collect comments and feedback.
+
+   How do you collect information?
+   Any information you choose to give in the Forum or Guest Book will be
+   stored on those pages.
+   If you make a donation via PayPal, your name and email address is
+   recorded for accountancy purposes only.
+   If you use the Contac Me form, your email address will be recorded
+   within our email application.
+
+   Why do you collect such personal information?
+   We collect such Non-personal and Personal Information for the following
+   purposes:
+   To provide and operate the Services;
+   To create aggregated statistical data and other aggregated and/or
+   inferred Non-personal Information, which we or our business partners
+   may use to provide and improve our respective services;
+   To comply with any applicable laws and regulations.
+   To confirm the status of anyone who has made previously made a donation
+   should they wish to claim any benefits.
+
+   How do you store, use, share and disclose your site visitors' personal
+   information?
+   Your data is not given to third parties or used by us for mailing or
+   other contact purposes unless you have given your consent.
+
+   How do you communicate with your site visitors?
+   You will not be contacted unless you have given your consent.
+   Important notices will be posted on the main page of this site.
+
+   How do you use cookies and other tracking tools?
+   This site uses third-party services and may placing cookies or utilize
+   other tracking technologies.
+   Third-party cookies may include those from Ezoic, Amazon, Google,
+   tawkto, PayPal and others, each may have their own policies regarding
+   how they collect and store information.
+   As these are external services, such practices are not covered by the
+   this Privacy Policy.
+
+   How can your site visitors' withdraw their consent?
+   If you don’t want us to process your data anymore, please contact us at
+   [your email] or send us mail to: [your physical mailing address].
+
+   Privacy policy updates
+   We reserve the right to modify this privacy policy at any time, so
+   please review it frequently. Changes and clarifications will take
+   effect immediately upon their posting on the website. If we make
+   material changes to this policy, we will notify you here that it has
+   been updated, so that you are aware of what information we collect, how
+   we use it, and under what circumstances, if any, we use and/or disclose
+   it.
+
+   Questions and your contact information
+   If you would like to: access, correct, amend or delete any personal
+   information we have about you, you are invited to contact us via the
+   Contact Me form.
+
+What type of information do you collect?
+
+   We receive, collect and store any information that you enter on our
+   website or provide us with in other ways. In addition, we may
+   temporarily collect the Internet protocol (IP) address used to connect
+   your computer to the Internet and your computer, browser and connection
+   information. We may use software tools to measure and collect session
+   information, including page response times, length of visits to certain
+   pages, page interaction information and methods used to browse away
+   from the page. We also collect comments and feedback.
+
+How do you collect information?
+
+   Any information you choose to give in the Forum or Guest Book will be
+   stored on those pages.
+   If you make a donation via PayPal, your PayPal name and email address
+   is recorded for accountancy purposes.
+   If you use the Contact Me form, your email address will be recorded
+   within our email systems.
+
+Why do you collect such personal information?
+
+   We collect such Non-personal and Personal Information for the following
+   purposes:
+     * To provide and operate the Services.
+     * To create aggregated statistical data and other aggregated and/or
+       inferred Non-personal Information, which we or our business
+       partners may use to provide and improve our respective services.
+     * To comply with any applicable laws and regulations.
+     * To confirm the status of anyone who has previously made a donation.
+
+How do you store, use, share and disclose your site visitors' personal
+information?
+
+   Your data is not given to third parties or used by us for mailing or
+   other contact purposes unless you have given your consent via a
+   separate communication. If you have purchased an eBook, you may be
+   contacted via email if a later revision becomes available.
+
+How do you communicate with your site visitors?
+
+   You will not be contacted unless you have given your consent, made a
+   donation or purchase or contacted us previously.
+
+   Important notices will be posted on the main page of this site.
+
+How do you use cookies and other tracking tools?
+
+   This site uses third-party services and may place cookies or utilize
+   other tracking technologies.
+
+   Third-party cookies may include those from Ezoic, Amazon, Adsense,
+   Google, tawk.to, PayPal, Payhip and others, each may have their own
+   policies regarding how they collect and store information.  As these
+   are external services, such practices are not covered by this Privacy
+   Policy.
+
+How can your site visitors' withdraw their consent?
+
+   If you don’t want us to process your data (should we have any), please
+   contact us using the Contact Me form.
+
+Privacy policy updates
+
+   We reserve the right to modify this privacy policy at any time, so
+   please review it frequently. Changes and clarifications will take
+   effect immediately upon their posting on the website. If we make
+   material changes to this policy, we will notify you on this site that
+   it has been updated, so that you are aware of what information we
+   collect, how we use it, and under what circumstances, if any, we use
+   and/or disclose it.
+
+Questions and your contact information
+
+   If you would like to: access, correct, amend or delete any personal
+   information we have about you, you are invited to contact us via the
+   Contact Me form.
+     __________________________________________________________________
+
+Menu
+
+     * Home
+     * Start & Intro
+     * Quick Setup Guide >>>
+     * DOWNLOADS >>>
+     * YouTube videos
+     * Tutorials and How To's
+     * Make a USB drive >>>
+     * E2B Menu system
+     * UEFI booting from E2B
+     * Adding Payload Files and Using E2B >>>
+     * List of tested ISOs\payloads (with instructions)
+     * Configure E2B >>>
+     * UEFI - things you should know!
+     * FAQ, Info, TroubleShooting, QEMU and Virtual Machines >>>
+     * Gallery
+     * Guestbook
+     * Forum
+     * Blog
+     * Grub2 Menu System (UEFI_GRUB2_PTN2)
+     * Site Map
+     * eBooks
+     * Contact Me >>>
+     * Donate
+     * Licensing
+     * Privacy policy (GDPR)
+     * Bespoke design service
+     __________________________________________________________________
+
+Search site
+
+   Search: ____________________ Search
+     __________________________________________________________________
+
+   [q?_encoding=UTF8&amp;ASIN=B01MU8TZRV&amp;Format=_SL110_&amp;ID=AsinIma
+   ge&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=easy
+   2bootcom-20&amp;language=en_US]
+   Recommended for Easy2Boot (fastest flash drive!)
+   SanDisk Extreme SDCZ880-128G-G46
+     __________________________________________________________________
+
+   130+ Tutorials on USB booting.
+     __________________________________________________________________
+
+   [q?_encoding=UTF8&amp;ASIN=B075ZNCVJ5&amp;Format=_SL110_&amp;ID=AsinIma
+   ge&amp;MarketPlace=GB&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=r0ae
+   -21&amp;language=en_GB]
+
+   Fastest USB 3!
+   See Blog post
+
+     __________________________________________________________________
+
+   IFRAME: //www.googletagmanager.com/ns.html?id=GTM-WZQGZW
+
+     * Homepage
+     * Site map
+     * RSS
+     * Print
+     __________________________________________________________________
+
+   Copyright (c)2019 Easy2Boot
+
+   Please donate to support this site
+
+   Quantcast
+
+   [p?c1=2&c2=20015427&cv=2.0&cj=1]

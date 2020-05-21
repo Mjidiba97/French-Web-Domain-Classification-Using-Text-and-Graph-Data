@@ -1,0 +1,1812 @@
+   #FreeFileSync Update Notifications
+
+FreeFileSync Open Source File Synchronization
+
+   About Tutorials Screenshots Download FAQ Manual Forum Archive Vision
+   Donate Tweet with Twitter Like on Facebook FreeFileSync update
+   notifications
+
+   About FreeFileSync
+   Tutorials Screenshots
+   Download
+   FAQ Manual
+   Forum
+   report bugs,
+   discuss features
+   Archive Vision
+   Donate
+
+   Tweet with Twitter Like on Facebook FreeFileSync update notifications
+
+   It looks like an ad blocker has blocked all the ads. The FreeFileSync
+   project is 100% dependent from ad revenue and donations to stay alive.
+   Instead of the ads, and after FreeFileSync has proven useful to you,
+   please think about supporting with a donation.
+
+Synchronize Files and Folders
+
+   Key features
+   FreeFileSync is a folder comparison and synchronization software that
+   creates and manages backup copies of all your important files. Instead
+   of copying every file every time, FreeFileSync determines the
+   differences between a source and a target folder and transfers only the
+   minimum amount of data needed. FreeFileSync is Open Source software,
+   available for Windows, macOS, and Linux.
+
+   IFRAME:
+   https://www.youtube-nocookie.com/embed/811ujCTbUAQ?rel=0&modestbranding
+   =1&showinfo=0
+
+   More tutorials
+   FreeFileSync on Windows Synchronization progress dialog Synchronization
+   settings
+   More screenshots
+
+   [INS: :INS]
+   Download
+   FreeFileSync 10.16
+   [Open all news]
+
+Latest News
+
+   Sep 16, 2019
+   FreeFileSync 10.16 has been released!
+   Download the newest FreeFileSync version 10.16 from the official
+   project homepage:
+   https://freefilesync.org
+   Latest changes:
+     * Redesigned progress indicator graphs
+     * Avoid needless HTTP delay prior to Google Drive upload
+     * Skip redundant CWDs during FTP metadata updates
+     * Fixed MLSD 501 syntax error on Serv-U FTP server
+     * Check FTP server status using FEAT/HELP instead of root folder
+     * Avoid redundant TYPE changes during FTP directory listing
+     * Access FTP files by full path and avoid CWDs
+     * Support FTP home paths with non-ASCII chars
+     * Work around libcurl bug failing to buffer FTP TLS authentication
+     * Skip redundant FTP SIZE check before downloading file
+     * Use ISO 8601 week of the year definition for %week% macro
+     * Show login prompt for disconnected NAS share
+     * Force icon resolution to 96 DPI in GTK2 build (Linux)
+     * Detect missing full disk access permission (macOS)
+     * Fixed accessibility issue with progress graph colors
+     * Use short naming convention when deleting abandoned folder lock
+     * Detect endless folder lock recursion on buggy file systems
+     * Fixed Google Drive parsing error for invalid file time
+
+   Jan 26, 2019
+   Synchronize files with Google Drive
+   FreeFileSync version 10.8 adds support for Google Drive as a new option
+   to synchronize cloud storage besides SFTP and FTP.
+   FreeFileSync directly accesses the files online, without the need to
+   install additional synchronization software such as Google Backup &
+   Sync.
+   This saves the hard drive space that is usually needed for a full local
+   copy of all Google Drive files, and enables further performance
+   improvements with FreeFileSync's ability to copy multiple files in
+   parallel.
+   The result of directory listings is buffered by FreeFileSync, which
+   allows for future accesses to complete instantaneously. Changes that
+   happen outside of FreeFileSync are synchronized automatically by only
+   transferring the small delta of differences.
+   Google generously has granted high quotas for FreeFileSync's users, so
+   even the most-demanding sync scenarios are covered.
+   FreeFileSync with Google Drive support can be downloaded from the
+   official website: https://freefilesync.org
+   Jul 16, 2018
+   Parallel file copy and ad-free installer
+   FreeFileSync version 10 has added support for copying multiple files in
+   parallel. It is now possible to specify the number of parallel file
+   operations for each device inside the settings. During synchronization
+   FreeFileSync will then spawn several tasks accordingly instead of
+   processing only one file after another.
+   This new design offers huge performance improvements for all scenarios
+   that are dominated by latency, like synchronization against network
+   shares or cloud devices including SFTP and FTP(S). The idle time after
+   issuing each file I/O request while waiting for the network response is
+   not the limiting factor anymore: The number of parallel operations can
+   be set as high as needed until the bandwidth is saturated and the
+   network card is operating at full speed.
+   The new parallel file operations architecture is not limited to the
+   synchronization step, but used throughout the application. Folder
+   comparison will issue multiple requests at a time even when traversing
+   only a single base folder, by dynamically managing the workload while
+   recursively reading the folder tree. Binary-comparison also processes
+   all files in parallel.
+   The FreeFileSync installer is now ad-free! Before version 10,
+   FreeFileSync had shown a single advertisement during installation to
+   help fund the project. Beginning with version 10, the project is fully
+   relying on donations from users to finance its ongoing expenses in
+   software development and support. A huge thanks to everyone who is
+   contributing to make this possible!
+   – Zenju [project lead] –
+   Official website: https://freefilesync.org
+   Jun 11, 2017
+   FreeFileSync Video Tutorials available
+   FreeFileSync.org has released video tutorials that help you get up to
+   speed quickly with the most important synchronization scenarios:
+   https://freefilesync.org/tutorials.php
+     * Mirror Synchronization
+     * Two Way Synchronization
+     * Folder Comparison
+     * External Applications
+     * Batch Jobs
+     * Task Scheduling
+     * RealTimeSync
+     * Tips and Tricks
+
+   May 24, 2017
+   FreeFileSync adds Support for FTP and FTPS
+   Cross-Platform File and Folder Synchronization Software adds Support
+   for FTP and FTPS
+   FreeFileSync (https://freefilesync.org) has released version 9.1 of its
+   free open source file synchronization utility for Windows, Linux, and
+   macOS.
+   The new version supports synchronization via FTP (File Transfer
+   Protocol) and the encrypted variant FTPS (SSL/TLS). This further
+   enhances FreeFileSync's capabilities to not only work with local drives
+   and network shares but also synchronize mobile and cloud storage.
+   FreeFileSync eliminates the tedious and error-prone task of manually
+   identifying files that have changed on the source folder and copying
+   them to the target folder, no matter what protocol is used to access
+   files. Users can set up mirror, two-way, or custom synchronization
+   rules, and then create batch jobs that run the sync without requiring
+   manual interaction. Batch jobs can be started with a simple mouse
+   double-click or triggered automatically by a task scheduler.
+   FreeFileSync detects moved files and reproduces the move on the target
+   drive. This avoids time consuming file copy and delete operations and
+   instead completes the task with a single hard drive access. This even
+   works in mirror synchronization scenarios where the target file system
+   does not support file IDs (e.g. FTP/SFTP) or has unstable file IDs
+   (e.g. FAT).
+   FreeFileSync includes features that are normally found only in the
+   premium versions of commercial applications. It can copy locked files
+   using the Volume Shadow Copy Service, compare file content in binary
+   mode, handle symbolic links and run real two-way synchronizations
+   including detecting conflicts and propagating deletions. FreeFileSync
+   fully supports long file paths with more than 260 characters, copies
+   NTFS extended attributes, security permissions and alternate data
+   streams. The application takes advantage of 64-bit and multiple CPU
+   cores if available and is fully Unicode compatible.
+   FreeFileSync supports MTP (Media Transfer Protocol), making it easy for
+   users to synchronize files and folders between their PCs and their
+   iPad, iPhone, Android smartphone, tablet, digital camera, digital audio
+   players, or other MTP devices. The tool is fully integrated with
+   Windows Explorer and allows users to jump to their MTP files in
+   Explorer, open them directly with their default application, or to drag
+   and drop MTP folders from Explorer into FreeFileSync. FreeFileSync
+   supports FTP, FTPS, SFTP, enabling web developers to publish changes to
+   their local website copy by running a FreeFileSync batch job - with
+   only a double-click of the mouse.
+   The software has been optimized for usability and performance. It can
+   scan a hard drive with hundreds of thousands of files in a few seconds,
+   while scanning multiple folders in parallel. The synchronization steps
+   are laid out in the optimal order that minimizes peaks in disk space
+   consumption and FreeFileSync's fail-safe file copy algorithm prevents
+   data corruption when the synchronization process is terminated
+   unexpectedly, e.g. due to power loss. Graphs and detailed messages give
+   relevant feedback and provide structure on multiple visual and textual
+   levels: getting an overview of a hard drive's space distribution can be
+   quickly accomplished by navigating a directory tree showing file count
+   and sizes below each node.
+   Pricing and Availability
+   FreeFileSync is available without cost. FreeFileSync runs on Windows
+   XP/Vista/7/8/8.1/10, Mac OS X 10.8 and newer, and all major
+   distributions of Linux.
+   Links
+   Official website: https://freefilesync.org
+   Download: https://freefilesync.org/download.php
+   Contact Information
+   Contact person: Zenju
+   Company: FreeFileSync.org
+   Email: press [AT] freefilesync [DOT] org
+   # # #
+
+   Subscribe for latest FreeFileSync News
+   [Show all reviews]
+
+User Reviews
+
+   Thank you very much for keeping FreeFileSync up and constantly
+   improving it for nearly 10 years! I am using your great piece of
+   software since version 3 and never had any issues with it. Moreover,
+   it's by far the fastest and most easy to use tool for backup &
+   synchronization jobs! I highly appreciate the open source character and
+   the powerful batch capabilities as this allows me to install the
+   software free of charge on all PCs of my acquaintances (mostly elderly
+   people with not much knowledge about computers) where I do the
+   maintenance and support.
+   — Andreas Hüller
+   I haven't even downloaded it yet but so far everything about your
+   website gives me total confidence that I am about to get some really
+   beautifully executed software! Great 'Vision' statement; FAQ is
+   marvelously thorough!; intro demo video (ditch the music!); the feature
+   list (wow!!); manual looks wonderfully comprehensive yet clear; very
+   little not to love, so far!
+   — Carl Spagnoli
+   Awesome program; thanks so much for developing this! I use it to back
+   up all of my important data files that I store on a separate disk on a
+   nightly basis, and have recovered from a hard drive failure with zero
+   loss once already. Excellent program!
+   — Steve Storm
+   Just wanted to say that I'm DEEPLY Grateful to you, for creating a
+   truly AMAZING program, and for keeping FreeFileSync always on top of
+   its game with the frequent and substantial updates you do on it! I
+   don't know much about coding, but what you do my friend — I consider to
+   be OUTSTANDING work of great quality. I'm not religious, but may you be
+   blessed sir!
+   — Daniel Peev
+   This program already helped me a lot, and I am not even using it to its
+   full potential. I like how 'close to the user' the interaction with the
+   files is. At every point in time I know exactly what the program does.
+   When it comes to the safety of my files, this is how I want it to be.
+   Thank you very much!
+   — Adrian Stroschke
+   After trying other shareware-licensed software for data file syncing, I
+   found FreeFileSync is a great tool to use. A simple, yet powerful data
+   sync tool for Windows. And I'm amazed it's free. Highly recommended if
+   you are after a simple tool that syncs your data to any drive,
+   computer, network drive or remote cloud storage.
+   — Juan Caballero
+   I have no idea why I have never found this before, because I've been
+   looking for something that did exactly this forever, and it does it
+   better than I ever hoped for!
+   — Amanda Hopkins
+   Great stuff. Competitor was AllwaySync, lost due to missing FTPS. Yours
+   could be even nicer if it included a scheduler or a mechanism to inject
+   the scheduled task automatically into the platform scheduler. Thanks
+   for the work.
+   — Martin Baur
+   Been using FreeFileSync for years for small things at my home computer
+   and I really appreciate your commitment to improve the code and to make
+   things better for the world of people out there that you don't even
+   know. Thank you so much!
+   — Dor Juravski
+   FreeFileSync is a mature and robust application. After using it for
+   years on a daily basis I never had problems with losing data. An
+   amazing feature of FFS that is difficult to find in similar
+   applications is the ability to synchronize open files on network
+   drives.
+   — Marcio Tibirica
+   FreeFileSync is pretty awesome. It keeps my two laptops and external
+   backup drives in sync. User friendly with self-explanatory buttons.
+   Extremely fast synchronization. Keep up the amazing work in updating
+   this software.
+   — Dr.Janaka Vithanage
+   Great! I've been searching for this kind of program for ages. Bonus
+   would be keeping a backup of mail and browser data (Thunderbird and
+   Firefox to keep it in the open source family) — which is two key items
+   difficult to auto store in customized archives.
+   — Lars-Roger Moe
+   Hello Zenju, this app is the only app that syncs files correctly on a
+   Mac. GoodSync and other apps can't find changes when the files are
+   deleted. And only your app can delete into Mac's Trash folder! 5 Stars!
+   Big thanks for developing FreeFileSync!
+   — Christian Schmachtenberger
+   FreeFileSync is 99% perfect. I love it. I cannot tell you how much
+   benefit I am getting from it and how much labor it is saving me. The
+   user interface is superbly designed and the functionality is terrific.
+   — James Gordon
+   I've used this software for the better part of four years now. I can't
+   even begin to speak of how useful it has been to me during that time.
+   — Adam Novagen
+   This program has been a life-saver. Powerful yet intuitive sync with
+   many options to filter and customize. In this day and age when I never
+   know if an update will break my computer, it's been wonderful to have a
+   reliable way to back up my data!
+   — Jeff Rau
+   Hi there. I just have finally migrated away from Windows permanently
+   and this program has been my life-saving replacement for TreeComp. It
+   is actually better and quicker, and an absolute gem to use. You are a
+   genius, thank you so much.
+   — Tim Clayton
+   This software is so cool that I like it very much, it just feels as
+   convenient as SVN or Git. Thanks to your team of developers.
+   — 徐 鑫
+   I found FreeFileSync to be extremely helpful, dependable, very easy to
+   use — a wonderful experience all around to use this program. All other
+   (and expensive) backup programs were uninstalled — I no longer have any
+   use for them. :-)
+   — Stefan Pawlik
+   I've been using FreeFileSync for some years because it is reliable, it
+   is very easy to use and it has all the features needed to keep files
+   synced between different folders and devices. Thanks for the good work
+   you have been doing.
+   — Paulo Boto
+   Thank you for this amazing software, been searching for it for a while
+   as a solution for syncing games in a LAN Gaming Center without
+   resorting to a Gaming Cache Server. Your solution is much better when
+   implemented properly.
+   — Mahmoud Shatila
+   Keep up the great work. Your solution keeps helping me to organize my
+   data across several computers in an intuitive fashion. It is stable,
+   doesn't crash and does a rock solid job.
+   — Frank Sattler
+   I gave up on MS SyncToy — it wasn't deleting files and folders properly
+   when mirroring and was creating duplicate copies of overwritten files.
+   FreeFileSync works perfectly and is easy to use. Absolutely first-rate
+   software!
+   — Robert Bunnett
+   I'm glad I found this program! Helps me a lot to back up my media files
+   to multiple external hard drives. I was going to make a script but this
+   is much more useful.
+   — Jasper Riku Antero Lehikoinen
+   This is one of the few programs I would actually be happy to pay for,
+   as the updates are often, the author is awesome, the pictures of
+   animals in the installer are super awesome, and it actually works as
+   advertised.
+   — Colin Smith
+   This is top-notch software, so glad it doesn't require the slow bloated
+   .NET Framework! I love to support high quality independent software
+   development. Keep up the great work!
+   — Josh Straub
+   Hello, I chose your software because it was the only one I found that
+   syncs my music from PC to Android phone. It's seriously well-made,
+   including tutorials. Vision is pretty nice and clear too! So, thank
+   you.
+   — Bernard Rene
+   Have used this in the past to great satisfaction. Just came back,
+   because ... well, you just have to have this. Way outperforms anything
+   you can do manually and better than any other tools I've seen so far.
+   — Jan Derk Otter
+   Been only using FFS for a couple of days, but I already think it's
+   pretty amazing. I'm happy to see the archive has frequent release
+   updates. Keep up the good work!
+   — Shai Ben-Naphtali
+   Thank you for this software! It is brilliant to have such an easy to
+   use reliable sync tool. It makes doing data backups quick and painless.
+   Being free was a real surprise!
+   — Robert Coleman
+   Love the FreeFileSync software! It has made backing up everything super
+   easy and convenient for me!
+   — Scott Todd
+   I have been using FreeFileSync for YEARS!! It's an amazingly helpful
+   tool! Thank you for all your work on it.
+   — Nathan lacroix
+   I use FreeFileSync and RealTimeSync to back up my files on my NAS and
+   synchronize it automatically on several computers running on Linux and
+   Windows. This is a great and efficient tool. Many thanks.
+   — Daniel Lathuilière
+   Thanks for a great app. It really gives peace of mind knowing that
+   files are backed up right. Especially when I discovered image programs
+   aren't transferable to another computer. FreeFileSync files are. Yeah!
+   — Dale Dudas
+   Thanks for continuing to develop this fantastic piece of software. I
+   use it multiple times a week and it performs flawlessly.
+   — Nathan Rudyk
+   I have dabbled with this tool for a couple of years. Time to get
+   serious, and FFS has proven itself worthy of a production environment.
+   — Jack Riggen
+   I've been using FreeFileSync on my laptop for years now. It's a very
+   easy and useful tool. Try it once and it's forever. The best in its
+   category. Thank you guys for the job done so far.
+   — Michel Plaza
+   I've been using FreeFileSync for a while, and it is simply the best,
+   most reliable synchronization tool that I've come across. I expect I'll
+   still be using it for years to come!
+   — Willem-Jan Olwagen
+   This is the most useful tool and about the best free software I've come
+   across in a long while.
+   — John Craig
+   Great product, I was able to synchronize all my data from my old HDD to
+   the new one, after the transfer crashed using another software. Thanks
+   for saving me hours of work!
+   — Michel Garcia
+   I am doing frequent data transfers and have recommended this product to
+   others. I have used ycopy in the past and this is in the same vain, but
+   on steroids. Thank you.
+   — Morgan Barlas
+   Thanks you for this great program. I'm using it to back up/sync my
+   laptop/desktop systems via FTP. It's fast to the point and reliable.
+   Once again thanks for all y’all do.
+   — Chris Fox
+   I've been using FreeFileSync for years and I have to say thanks again
+   for the great software, frequent updates and excellent support you give
+   to us. Keep doing that!
+   — Tarcisio Alves de Menezes
+   Best program I have used in a long time. Keeps LOTS of my files in sync
+   (between RAID NAS drives, between work laptop and virtual machines)...
+   Keep up the great work!
+   — Jason Burgess
+   I was waiting for a solution like FreeFileSync for years. It's a dream:
+   existing pro synchronization services, pragmatic updates.
+   Congratulations to the developers!
+   — Christian Saury
+   Finally! A simple yet powerful backup utility that has answered all my
+   prayers. I don't need some fancy pants overpriced slow arsed software —
+   FreeFileSync is #1.
+   — David Innes
+   As a former programmer -- WOW -- what an excellent piece of
+   software!!!! Really top of the line. Could not ask for more. Tutorial
+   top flight. 6 out of 5 stars.
+   — Henry Howard
+   Great piece of software which I use from time to time without any
+   problems. I don't know how good customer support is because I've never
+   needed it!! Thank you :)
+   — Carol Kurian
+   Your program has saved me countless hours of managing various USB
+   sticks and network drives. It's fast, stable, and does exactly what I
+   need. Thank you so much!!
+   — Tancredi Tincani
+   Fastest and easiest and most trustworthy sync program I've ever used!
+   Been using for years. There is nothing quite like it! Also great that
+   it is customizable!
+   — Bert Branson
+   I use FFS more often, and like it better, than Beyond Compare or Exam
+   Diff. Thanks for your excellent program.
+   — Harold Bradtke
+   The very best (and free) software for mirroring and syncing. I
+   appreciate the fact it works on all major platforms, including Windows,
+   Mac, and Linux.
+   — Brian Bunnell
+   When my machine's power supply failed it scrambled my hard disk. The
+   backups with FreeFileSync allowed me to quickly recover my data with no
+   loss.
+   — Timothy P Merriman
+   I knew I should have just looked for an open-source solution to file
+   synchronization rather than wasting my time with commercial trial
+   software!
+   — Brian Tao
+   You make a great job saving my data!!! In a very comfortable way —
+   running better than every sync software I ever had!! Thank you very
+   much!!
+   — Tobias Möller-Hahlbrock
+   I love this program, because it helps me to work in the train, in the
+   kitchen, in the garden ... and I always have all my documents with me!
+   — Monica Schwarz
+   Excellent freeware product, allowing you to keep an up to date backup
+   of your files. A perfect free replacement to BeyondCompare.
+   — Alain Carasso
+   Great Software, I've used it for several years without problems. It is
+   very fast and I can trust the results. Very good job!
+   — Bernd Schäler-Beck
+   What a fabulous program! I use it to update my notebook with changes
+   I've made on my main computer. Fast, easy to use and reliable.
+   — Shane Wilkinson
+   Had WinDir for years, then WMatch4 for years. Finally, — yours is
+   fabulous. It can see the network, flash drives — wonderful. Thanks.
+   — Robert Hoffman
+   This project is clearly fueled by a great passion to provide the best
+   possible end-user experience, and this is greatly appreciated!
+   — Jeffrey Gill
+   Simply a great software, quick installation, easy to set up and use.
+   That's how a software should be. Best regards from Switzerland.
+   — Werner Baumann
+   Simple, usable without a large manual, fast, totally free trial, no BS.
+   Please keep showing the big moguls how it should be done.
+   — Hendrik Kok
+   Been using this regularly for a good while now. Clear and dependable,
+   does exactly what it says on the tin, couldn't be happier.
+   — Alex Hampshire
+   No ads, and free with seemingly all the functionality of programs that
+   cost 60 bucks a year while being better than some of them.
+   — Cory Salmon
+   Great software, does exactly what I want it to do. I replaced a
+   professional software which is not as ergonomic as FreeFileSync.
+   — Harald Roeh
+   Great product! I regret that it took me so long to find it. Somehow you
+   need to get it higher in Google searches. Thanks, guys!
+   — Christopher Dorman
+   Thank you guys so much. You have done a great job and I absolutely love
+   this software. It makes managing my data so much easier.
+   — Martin Kay
+   I've been using this for years and this is a great tool for simplifying
+   backups and various comparisons and synchronizations. Thanks!
+   — Jason Hensley
+   'Think Before You Sync'! FreeFileSync is so versatile I can't believe I
+   ever had to live without it.
+   — Michael Papo
+   This has provided reliable backups for a number of years now. I greatly
+   appreciate the visual feedback of the transfer time.
+   — Douglas Hayman
+   I've been testing this for a while now, and I can finally say I don't
+   feel the need to rely on GoodSync anymore. Great job!
+   — Gabriele Bartoli
+   I've been using this software for a few years now. I really appreciate
+   how well it works and the effort you've put into it.
+   — David Voiles
+   A good software that deserves all possible support. Useful, easy and
+   reliable. It's worth it, completely. My total support.
+   — Alik
+   The best sync tool I have ever tried. Thank you for your devotion to
+   constantly improving the software. Please go on.
+   — Petr Kabele
+   I use FreeFileSync to coordinate my data between desktop, laptop and
+   tablet and it has never let me down. Thanks so much!
+   — Gina Paoli
+   Awesome software, very useful! And one of the few software titles
+   compatible with Linux < Thank you from France for your work!
+   — Florian Mougin-Martelet
+   I've been using this for a couple years now to back up to my USB drive
+   and it works flawlessly. Keep up the good work! :)
+   — Luke Matthews
+   One of the best utilities I've used in over 20 years of using Windows
+   systems. Simple and easy to set up and use. THANKS!!!
+   — Edward Perez
+   One of the most useful software tools I know — as a computer user you
+   can live without it, but it makes absolutely no sense!
+   — Dr. med. Christoph Schmülling
+   FreeFileSync has become essential for me. It has saved me hours, sorted
+   my files, and my security copies. Many thanks!
+   — María López de Quinto
+   Love your app, and all the changes (especially time since last sync!).
+   Love the constant releases and that it's free!
+   — Jason Newman
+   I use this every day for my work (RealTimeSync rocks). Hopefully it
+   remains in development and ad free in the future.
+   — Pablo López Cardona
+   FreeFileSync is my favorite tool to sync my private and working data
+   for more than 7 years now. Keep on going, FFS!
+   — Michael Hentze
+   Great software and I simply love the fact that files are just copied
+   and easily browsed in case you need to restore them.
+   — Ljubo Brodarić
+   Very good software utility at the unbeatable price of free?! Thank you
+   so much for building this piece of software.
+   — Derek Matteson
+   SyncToy ran for HOURS and didn't finish a job that FFS did in 14
+   minutes.
+   — Stephen Bishop
+   Thanx a lot for your excellent work. FreeFileSync helped me a lot in
+   the past and will help me a lot in the future.
+   — Peter Schmidt
+   Thank you for this little tool! It's like SumatraPDF and 7zip, you make
+   every day at the office a useful day!
+   — Moritz Müller
+   Brilliant program, been searching for years for something like this,
+   only sorry it's taken me so long to discover!
+   — Trevor Learoyd
+   Using it for my music projects and samples backup to my backup hard
+   drive. Very easy to use and secure. Thank you.
+   — Marco Korbar
+   Love this app, and love the fact I can run the exact same software on
+   my Linux laptop and my partner's Windows 10.
+   — Jeremy Walker
+   I don't use this very often but it is what I need when I need it :-)
+   Thank you for making this utility available.
+   — Linda Greene
+   Thank you for this great piece of software that is very useful and
+   provides exactly the features that are needed!
+   — Thomas Stephan
+   Congratulations on knowing what OneDrive is which is more than one of
+   your competitors knew and is why I am here.
+   — Bruce Gaugler
+   I want to say thank you. I use this software every day and there is no
+   competitor. Thank you for the work you do.
+   — James Santos
+   Very useful software when using more than 1 computer — also effective
+   for file transfer between Mac and Windows
+   — Callum McDonald
+   Really appreciate this great piece of software. Easy to use, but with a
+   powerful interface. Keep up the great work!
+   — Peter Collins
+   Haven't tried FreeFileSync yet... but watching your tutorials it feels
+   like it's the best backup program ever!
+   — Siarhei Bokach
+   Thank you for continually filling a huge gap and for making things
+   possible that were previously only dreams!
+   — Tiziano Riolfo
+   This is best file transfer software ever. I have three backups and one
+   button helps me keep them all synced.
+   — Khan Shahzada Haleem
+   Maybe one of best synchronizing tools! I know some others too! But this
+   one did exceed my expectations!
+   — Gerhard O.
+   Much better than SyncToy... and without having to find and install
+   other development tools. Thank you!
+   — David Satterlee
+   One of the best pieces of software that I know anyway. Keep up the good
+   work for this a top-notch sync tool!
+   — H Kooistra
+   Been using for syncing a couple of directories across the LAN, pretty
+   solid most the time. Thanks for the app!
+   — Karl Engstrom
+   Fantastic software. Easy to use for sync. I've been searching for
+   months to find a good package. Thanks!
+   — Farhang Jalali
+   Thank you for providing this awesome program! I've been using it for a
+   while, and I really appreciate it!
+   — Lawrence Flathmann
+   Fantastic program, tried a few to do the job I needed doing and this
+   one beats all the others hands down.
+   — Steve Downing
+   I have been using this for years. Fast and reliable, has saved me from
+   losing work a few times. Love it!
+   — Robert Olsen
+   Fantastic product. I've been using it for a few months now and files
+   between two computers are syncing perfectly.
+   — Andrea Hatley
+   Excellent, works like a charm. I was long looking for something like
+   that to keep two large HD identical.
+   — Olivier Lengwiler
+   I've used your program many, many times. It works great. Thanks for the
+   great product!
+   — Kile Reeves
+   I just love this tool! Works great. Thank you for this project and keep
+   up the good work! Best regards.
+   — Pia Gross
+   It has become my preferred sync and backup program meanwhile. Keep on
+   developing and improving!
+   — Frank Nitsche
+   Phenomenal job! As a fellow software developer, I appreciate your hard
+   work and wish you all the best.
+   — Mark Franchi
+   Thank you for this great sync tool. I use it to back up to my external
+   USB hard disks. Great software!
+   — Ralf Peiler
+   Thanks! Keep it up. For years this has been my go-to for keeping my
+   external hard drives up-to-date.
+   — Matthew Ell
+   To me, the best file sync tool! No bugs, everything is clear, constant
+   updates. And very simple to use.
+   — Joao Parrinha
+   Great app! I've been using it for many years — it really helps and
+   saves a lot of time. Thank you!
+   — Александр Лебедев
+   Tried half a dozen packages till I found yours. Wish I'd found it first
+   — does everything I need.
+   — Ian Abbott
+   Keep up the good work! FreeFileSync is essential for my backup
+   strategy! Thank You!
+   — Robert Schurig
+   This is the sync program that I will work with from now on. I am very
+   grateful for its existence.
+   — Jim Brook
+   Before I knew about FreeFileSync I used SyncToy, but FreeFileSync is
+   better and quicker. Thanks
+   — Hartmut Boesch
+   FreeFileSync rocks! I use it for my backups and I'm looking forward to
+   the auto-update feature.
+   — Scott Wang
+   Awesome product! Can't wait to utilize all the great features in the
+   free software. Thanks!!!
+   — Patrick Monette
+   The best file sync tool ever. I use it every day to sync and backup my
+   data. Thank you
+   — Salim Belgroune
+   Thanks for the continued AWESOME software :-) I have this for both
+   personal and professional use!
+   — Robert Smithlin
+   Beyond being a great piece of software, FFS has saved my butt a couple
+   of times! Thanks!
+   — Cary Collett
+   Much better than Microsoft Briefcase to which I held on for much too
+   long. Thanks for your work.
+   — Annette Maier
+   I keep my info backed up with a click. Easy to use and understand.
+   Thank you for your hard work.
+   — Harry Krause
+   Like using your program. I like the way you can fine tune the rules for
+   backing up each folder.
+   — Larry Oliver
+   FreeFileSync is the best replacement I found when support was dropped
+   for Microsoft Briefcase
+   — Michael Kilbridge
+   Hi, Dev! Congratulations for the Software. It's very useful. Keep
+   developing it! Big hug!
+   — Wendell Vaz De Almeida
+   Works great — just what I was looking for. Thanks for allowing me to
+   evaluate free of charge.
+   — Kevin Forth
+   Thank you for FreeFileSync! Works nicely and is slick (after figuring
+   out all the options ;-)
+   — Lex
+   I have found it to be the best file sync software I have used, of the
+   many I've tried to date.
+   — Wilbert Janson
+   Well done! I love this software. This is the best software for
+   synchronization. Thank you.
+   — Cong Thinh Bui
+   Thanks for the program! Exactly what I was looking for and better than
+   I expected! Cheers.
+   — Albert Young
+   Love the great cross-platform support! I use FreeFileSync on Arch Linux
+   and Windows systems.
+   — Nathan Hoffman
+   GREAT work guys! I'm counting on you for my personal syncing among my
+   backup drives. Thanks!
+   — Alejandro Ayerza
+   One of the most useful utility programs that I have come across and
+   which I use repeatedly!
+   — Alex Burjan
+   Great program. Good work. Simple, powerful, easy to use and working
+   fine with every release
+   — Grégoire Lauber
+   It's a very good program! Very useful! Thank you for creating this
+   program. From South Korea
+   — Kim Han
+   Thanks for the terrific program. Needed a Briefcase replacement. Got
+   that and much more!
+   — Damien Josefiak
+   Thanks for keeping it ad free! Love this software and couldn't do my
+   backups without it!
+   — Palka Lukasz Kazimierz
+   Thanks for this wonderful sync tool that simply works where many others
+   fail miserably!
+   — Harrer Christian
+   VERY, VERY great tool, far beyond majority of commercial app! Many
+   thanks! And go on!
+   — Vincent Bourquin
+   Awesome application. Really fast performance, and it works exactly as
+   you would expect.
+   — Alfonso Ruiz Martínez
+   I am using it since ... I don't remember. Easy, reliable, good. I
+   recommend to anyone.
+   — Tomasz Stankiewicz
+   One of the best software programs I've used and I've used a lot in the
+   past 40 years.
+   — James Gord
+   This has been my goto file sync tool for years. It's an A+ piece of
+   software!
+   — Jeff Reed
+   Solid as a rock. Previously only DSynchronise was close in terms of
+   reliability (having tried a whole load of free and paid-for software).
+   Super easy to use and runs flawlessly. The one thing I would wish for
+   is the ability to automate running various configuration profiles or
+   batch files. I,ve done so by creating a .bat file to run all the
+   batches and can't really complain. Thanks to the author for this little
+   gem.
+   — Aiadi
+   FreeFileSync is truly a fantastic program and it is portable too. I
+   have installed it on an USB stick. I had been using Syncback for over 5
+   years. I found that FreeFileSync is the only open source freeware that
+   can match the paid version of Syncback software in terms of speed in
+   handling folders with huge number of files (up to 30Gb). It runs
+   perfectly in Windows XP SP2. Its web site says FreeFileSync can run in
+   Linux as well. Many thanks to the author Mr. Zenju. I am sure this
+   software will in time become an extremely popular download.
+   — Winson Cheung
+   This free sync program is the best! No need for commercial products
+   anymore after discovering this. Been using it for a few months now.
+   Never gonna look back! With each new release speed and features have
+   increased.
+   — sarlacc
+   I have worked with Vice Versa and FreeFileSync. There is no comparison.
+   FreeFileSync is one of finest and most important applications ever
+   written. It works perfectly and handles a critically important computer
+   task that too few people do. Vice Versa had at least one fatal flaw
+   that was insurmountable: If folders had to be created on the
+   destination side, they were created in all lower-case, regardless of
+   the case of the source side. Consequently, the subsequent compare
+   always failed. Their tech support was supposedly unaware of the
+   problem, could not resolve it, and eventually avoided further contact.
+   FreeFileSync is as good as it gets.
+   — George ALEFantes
+   I love this program. It's the best file syncher out there and the fact
+   it is open source makes it better. Now with a x64 version it is
+   superior to anything else out there.
+   — wolssiloa
+   This has become my favorite file synchronization tool. Even Araxis
+   Merge seems to have lost its appeal. FreeFileSync uses some special
+   undocumented APIs to accelerate folder reads, and it shows! Also, with
+   the ability to use 3rd-party tools like WinMerge or RapidCRC to compare
+   at a click, it's pretty simple to view changes before committing.
+   — Ascend4nt
+   Far better than other sync tools for my needs. I was looking for
+   something to backup new and updated games from my Steam library (over
+   200GB) to an external drive so I can uninstall games to free up space
+   and not have to waste bandwidth re-downloading if I want to play them
+   again.
+   With FreeFileSync, the scan/comparison results are presented well with
+   lots of statistics, there are buttons to filter the results view with a
+   single click, and I can exclude folders in the right-click context menu
+   (sub-folders are not expanded automatically). The interface is kept
+   simple by having certain elements context-based - buttons that don't
+   have any use to your current task/step in the sync process are hidden.
+   I accomplished what I was trying to do quickly and didn't need to refer
+   to the help file.
+   The previous sync tools I had negative experiences with were DirSync
+   Pro (too complicated) and Microsoft SyncToy (not complicated enough to
+   be useful).
+   — TakeNapEveryday
+   FreeFileSync has replaced my data backup software (Acronis) with the
+   feature "file-versioning". It allows you to keep a current full backup
+   whilst archiving any changes/deletions. This feature can't be
+   emphasised enough and is more useful than most backup software that
+   starts with a full version and then keeps incremental or differential
+   archive formats. FreeFileSync can run as a batch file and use VSS.
+   — nw0001
+   Does pretty much everything I need to do better than MS Synctoy. I had
+   started off with Synctoy hearing good things until I found out it won't
+   copy files that are in use. Now I'm using FreeFileSync to sync my XBMC
+   database from my media center to my regular PC. It works like a charm.
+   I also use it to keep my music synced across 2 computers (I like having
+   it in both places) as well as my Portable Apps. It reads the changes
+   ridiculously quick, copies files in use, and the interface stays
+   relatively responsive.
+   — webheaded
+   One of the best sync programs I've found for Windows and Ubuntu. This
+   software has a streamlined interface that allows access to the most
+   frequently used features quickly. But also allows many advanced tweaks
+   like what to do with deleted files etc. The program is fully featured
+   yet not bloated. I've used it for about 3 years and really haven't
+   found anything else this well written. Keep up the good work! Love it!
+   — wchang778
+   Amazing program! I love it and use it every day. Thank you for such a
+   useful and powerful utility. I couldn't run my photography business
+   without it. I make sure all my important files are backed up and it
+   allows me complete control over what gets copied over and when. It's
+   saved me a number of times. Thanks again.
+   — Justin Hoch
+   I've been using your tool FreeFileSync for maybe 3 years in a private
+   environment on Windows 7 with some Linux networking and I'm happy with
+   its ease of use and reliability.
+   There weren't a lot of things that the world was missing, but FFS was
+   one of them. I know companies who sell the same tools very expensively
+   with licenses over 20 pages with more headache for using them. Thank
+   you, best wishes from Hamburg.
+   — J. Pohl
+   Thanks so much for Free File Sync (FFS)!!! Following problem has
+   haunted me for years: Now that I have a 64-bit Win7 Pro OS that
+   supports UNC paths up to 32K I thought the problem would be
+   automatically resolved. But no, the dreaded 260 character path limit
+   was STILL HAUNTING ME DAILY.
+   I have tried UNC paths, \?\ trick, SyncToy, Robocopy, Robomirror,
+   Richcopy, and the MS Hotfix for long paths. Nothing worked, all failed
+   for my needs. Then I found FFS. And it just works. I will donate at a
+   later date.
+   — E. L. Faure
+   Thanks for your work to date on this project and your phenomenally fast
+   responses to bug submissions. I think this is a great piece of software
+   and will only get better with your enthusiasm. I was so impressed that
+   I was happy to make a small donation. Keep up the good work :-)
+   — kjen33
+   I have just discovered your wonderful FreeFileSync software. For years
+   I've been using ViceVersa which runs on Windows. Now I have moved
+   everything to Linux, and searched for a ViceVersa replacement in vain.
+   But the discovery of FreeFileSync changed everything. It's BETTER than
+   ViceVersa!! Out goes ViceVersa and I have yet another native Linux app.
+   — John G.
+   Just had to say that FreeFileSync is really great. It's like the best
+   and simplest out of all sync programs and I have tried quite a few,
+   including famous ones. Thank you very much for your time and effort
+   creating this software for the common good. ^_^ I hope you live a long
+   and happy life.
+   — Samuel K.
+   I think your FreeFileSync application is pretty awesome. I've only
+   recently discovered it as I was looking for a good sync program to use
+   on iMac/OSX Yosemite and found some reviews for it.
+   Previously I've been using FolderMatch v3.7.0 for PC but it's quite old
+   now and doesn't seem to get much in the way of support/updates. Anyway,
+   since I started using FreeFileSync on my Windows 10 PC and iMac I've
+   been really pleased by the ease of use, performance and features.
+   Really great job!
+   Given the above I've just donated £10 via PayPal so it should be with
+   you soon. Honestly, I can't remember ever donating to free-ware before
+   but I'm so impressed with FreeFileSync I felt it would be wrong not
+   too!
+   — Anthony
+   An excellent program with several unique features of its own. Can
+   handle some stuff that even some fully commercial products can't.
+   Zenju is very responsive to queries, active in the help forums and
+   always striving to make it better. What more can we ask? I like it so
+   much I've hit up Paypal and sent him some cash. Well worth it.
+   — smeghead77
+   Thank you for your amazing work!
+   — guillaumecombot
+   Awesome program to sync files! It has extended features and allows
+   quite some customization. Batch mode allows custom automation from
+   command line (without missing features), which is very helpful for me.
+   — hawktroy
+   Best file sync tool especially for a mirror data backup. It would be
+   nice to have an online mirror backup.
+   — biscuite
+   Outstanding program. And it's free!! I have used this program for about
+   3-4 years now. And it is simply amazing. I had been looking for a
+   program like this for years. The one I used to have was ViceVersa,
+   until it became too expensive. It basically mirrors my important
+   folders over to my NAS (Sylonogy and D-Link). It does such a great job
+   showing exactly what is going to change (delete/add/modify). It's so
+   simple to use, but also customizable. You can change the behaviour of
+   individual files. Simply the best. Zenju did such a good job creating
+   this. Thank you!
+   — staminino
+   The best of all I tried (Synctoy, Robocopy, etc.) for backing up 50
+   laptops to a server. Simple config, nice features: versioning, omitting
+   select folders (like /AppData), daily logs for checking health. Easily
+   automated using Windows Task Scheduler. Support is excellent, better
+   than I've ever seen from anyone!
+   — David C. Menges
+   FreeFileSync is an impeccable program that we recommend to each and
+   every one of our customers for backing up their data.
+   — asapdata
+   Super software! After 3 years of use I have only good impressions!
+   Thanks and good luck!
+   — rusnetrus
+   This program is outstanding. Very easy to use and setup. Reliable. Does
+   what it says on the tin!
+   — orangereaper
+   Easy to use and works exactly as I need.
+   — kaffeinatedneil
+   I've tried many other free software titles but this one beats them all!
+   Simple, easy and fast!
+   — christopheperus
+   Definitively the best sync program available. I've tried multiple
+   others, even commercial ones. No comparison to this one!
+   — Andy
+   Very reliable application. It has everything you need for local files
+   synchronization. I'm looking forward for Google Drive and FTP support.
+   — Elvedin Hamzagic
+   Fast and easy to use. Allows me to sync selected directories between
+   laptop and desktop quickly and accurately. Options include sync,
+   two-way update, and clone. Works with Win 8.1, 7, and XP.
+   — carlcobb
+   Now that the venerable FileSync has mysteriously stopped working on my
+   PC, I am relieved to find FreeFileSync works well for me in similar
+   ways.
+   — chishold
+   Surely the best sync application currently including paid ones. Simply
+   the best and works flawlessly. Meets the requirements of people who
+   have to work on multiple systems.
+   — Uday Krishna
+   The best sync util I've found. I am using it since version 3. It is the
+   easiest way to keep a complete synced mirror from my laptop to my
+   desktop user's folder. Highly recommended!!! A++++
+   — Danurica
+   This is the best file copy and sync program which I have ever used.
+   Well done!
+   — Raymond Cheung
+   The file filter specification (inclusion and exclusion) brings
+   incredible power to this free software. Thanks for showing us that free
+   can be (much) better than paid software.
+   — gaetan
+   We use this app in our 2-man team to keep Dropbox and several PCs in
+   sync. No issues whatsoever. Highly recommend.
+   — Vlad
+   Very good app. Helps me sync between PCs and portable hard drives. The
+   best backup app I've used. Best of all, it's free!
+   — Gary
+   Works perfectly! I use it to backup files from my Uni-Server... Keeps
+   me up to date every week with one click. =)
+   — Chris
+   Great app and very useful tool. Bug-free. Intuitive. Has everything you
+   can imagine for file synchronization. Copy. Backup. Compare...
+   — Elvedin
+   Saved my life in the most critical times... Recommended to everyone.
+   — Excellent
+   FreeFileSync just makes things easy by improving over successive
+   versions. One of the best applications/tools I have ever used. Strongly
+   recommended!!
+   — Peri
+   I love this application. It is simple to setup and use and extremely
+   useful. Have used it for moving files server to server, backing up my
+   documents, and even keeping my ISO directory in multiple places.
+   — Jethro
+   I used Richcopy to copy terabytes of data from one set of drives to
+   another. Then I found this tool and found that Richcopy didn't copy
+   thousands of files. FreeFileSync found the missing files and copied
+   them over for me fast and pain-free. Thanks!!!
+   — Kevin Parks
+   This has to be the most useful free tool ever released. I'm a network
+   administrator and when moving file servers, this tool outperformed
+   Robocopy, Symantec, and many many others.
+   — ray
+   I'm using this tool for quite some years now. It's better than all the
+   others I've tried before, and in addition it's completely free! Thanks
+   a lot for your splendid work!
+   — drujo
+   Best tool for sync, we can use it on our server for folder backup.
+   — Surya Prakash Joshi
+   A really good program and I will always support you.
+   — Jhshin
+   One of the most useful free applications I have come across and one I
+   use regularly. Keep up the good work. I know how much more difficult my
+   life would be without FreeFileSync.
+   — David (UK)
+   Best tool for folder synchronization. The different settings for the
+   right and left side are very good. I was looking for a long time for
+   this tool. Thank you for your great work.
+   — Ottokar
+   Works great and it's free. I have mine set to automatically run every
+   day at 4:00 PM on my Mac OS X.
+   — chrispublic123
+   Excellent, works perfectly between my MAC and my corporate server based
+   on a Microsoft environment. The only "bad" point that I see, is the
+   usage of Realtimesync, a tool to automatize the synchronization when a
+   folder becomes available. It's not fully explained how to manage more
+   than one directory!
+   — amaygeoz
+   Most useful application. During all these years that I've been using
+   it, it has gotten better and better.
+   — Marios (GR)
+   Just started using FFS: Majestic software for backup. I promise to
+   donate after a few months of use. I was using Microsoft SyncToy which
+   MS never tried to improve. Kudos FFS Team.
+   — Harikumar
+   Great software. Requires a bit of time to set up if you want to use
+   real-time sync, but it's fast and easy. I'm using it to copy files to
+   and from my portable hard disk so I can work at them both at home and
+   at work and it works flawlessly.
+   — Olivia Stevens
+   Awesome!! I have been looking for an application like this for months!!
+   Finally I found something that can efficiently manage all my folders
+   (photos, music, text files, applications, etc.) which I am constantly
+   editing and for which I need to create backups for on my laptop, ipad,
+   2 external hard drives and virtual hard drives such as icloud, dropbox,
+   google drive, one drive etc.
+   This software is simple and easy to use, has important necessary
+   features and best of all is quick for syncing between all these
+   devices. Highly recommended!
+   — anthonysan
+   This is really a wonderful product developed with a specific purpose
+   and does that job brilliantly. I love this for taking a one time
+   backup. This is what I have used so far.
+   — rahulnischal
+   Awesome and reliable sync software you can count on. I've been using it
+   for more than 3 years now. Best I have used so far for syncing.
+   — Peri2
+   Works like a charm to sync my laptop with my external disk and my home
+   NAS. I will not use anything else!
+   — Sundesh
+   Absolute best. I wish I could point to some issues but I can not think
+   of any major flaws. One minor is that there is no ability to choose the
+   installation language and so it forces an auto-detected language but
+   that is all. Great app.
+   — infinum
+   Kudos to the developers. Just works 100% of the time. Long-time fan and
+   appreciative user.
+   — Colin
+   Just perfect for syncing local and/or network drives. Best free tool I
+   have ever found. I run it on Debian (how about packaging it in .deb?)
+   and in windows portable versions. Congrats to the team and thank you.
+   — Stratos
+   Works perfectly on Mac!!! :-)
+   — Pe Klak
+   Just the tool I dreamed of! Thanks for offering it for free!
+   — titi74
+   Operation is intuitive and simple while powerful features like
+   mirroring, backup, synchronization, etc. can be done manually and
+   automatically. I've been searching for such a tool for a long time and
+   tried several others. Up to now nothing is comparable to FFS.
+   — dcamarena
+   Best tool for folder synchronization. Thank you for your work.
+   — GK
+   I've been using FFS for more than one year now and I just love it. It
+   makes my life easier when I need to backup my files. There are several
+   syncing options you can choose, great friendly layout. Simply the best!
+   — Anonymous
+   Love this product. I use it to keep a backup list of all my files.
+   Quick, easy to use, with some fantastic features. If you need to keep
+   folders synced, this is the product to use.
+   — MIKE
+   Excellent program! Very intuitive and streamlined operation. Has all
+   the file synchronization features I need and then some.
+   — Nico Gotin
+   Works like a charm. Easy to use. I can't live without it.
+   — martin
+   One of the greatest little housekeeping gadgets around. Great work,
+   thank you!
+   — Rayborn
+   Really solid utility. Fantastic features, easy to use, fast and
+   reliable. From a former user of SyncToy.
+   — Matthew T
+   Simply the best synchronization program. Already use it for more than 3
+   years and never had any problems. Congratulations to the developers!
+   — Tiago
+   I have found the sorcerer's stone and it is FreeFileSync.
+   — allijeanbean
+   Excellent product! Backing up my digital photo collection is trivial,
+   even as I move folders around, change photo ratings, etc.
+   — patricknbowman
+   Great application. A must-use for any file management solution, super
+   rich and easy to use.
+   — Spaz
+   Moved from SyncToy to FFS - much better, faster, less problems. Thank
+   you.
+   — Mark
+   Best of all!!! No doubt, forget Synctoy. Now 5 years using it on
+   Windows without trouble.
+   — rodob
+   Used to use MS synctoy but it's so out of date you can see there is no
+   future in it. Looks like sync center is the way to go for MS native but
+   I have Windows 7 Home so I don't have that choice.
+   Anyway, came across this, judged it on downloads per week and gave it a
+   go. Really impressed, easy to setup and with just a little reading you
+   can get it to do realtime sync with RealTimeSync that comes with it!
+   Looks like it's maintained well and kept up to date (big plus) and I
+   like the way it can use Windows Shadow Copy for locked files. Great
+   stuff and thanks!
+   — jonafc
+   Great for differential backup using synchronization. :)
+   — Anonymous2
+   I tried many backup software before FreeFileSync. Let me tell you, this
+   is the most user friendly backup software I have seen. I have been
+   using this for the past 2 years and found it very useful.
+   — Paari
+   Excellent and portable. It's my favorite solution to sync my devices
+   and make backups. Useful options and intuitive interface. I just have
+   created this account to say thanks to the author.
+   — jslopezg
+   The best!
+   — Kero
+   One of the best, if not THE best. Very powerful and fully customizable
+   through scripts. Thanks for creating it and making it free and open
+   source.
+   — eahm
+   Excellent synchronization software! It has an intuitive interface, and
+   copies reliably. It quickly gives you an accurate idea of potential
+   conflicts before you start a copy job, and it does a good job
+   visualizing the progress of the job as it progresses.
+   — Erin R.
+   Full stars. I've been working with it for years already. Makes backups
+   very easy and perfectly. Even works over networks. Very good, very
+   reliable.
+   — Roland
+   The most powerful file synchronization tools I have ever seen. Use it
+   every day!!
+   — karnonlm
+   I've been using FreeFileSync for two years and it is great. I donated
+   through PayPal :-)
+   — Umberto
+   I have been using FreeFileSync for the last one year and have been a
+   very happy user. It is easy to install and very easy to configure and
+   use. I would recommend FreeFileSync usage.
+   — Mahinder Nath
+   The best free synchronizer I know. Even a small effort to facilitate
+   the selection of directories and it will be perfect. Thank you very
+   much to all the team for this software that I use every day!
+   — Antoine
+   The most amazing and useful piece of software I have. Particularly the
+   versioning feature, which allows me to perform my backups with file
+   history in a more useful manner than general backup software. It works
+   well and is well designed.
+   — nw0002
+   Better than SyncToy. It's my favorite now!
+   — HiuahiuahiuA
+   I use FreeFileSync for months and I am very happy with this software.
+   Thank you and congratulations to those who developed it, improve it and
+   update it regularly.
+   — Hervé Guillain
+   A wonderful tool! Peerless! Tons of thanks to its maker...
+   — bunnybat
+   Excellent software! I love it!
+   — Link Liu
+   A good sync tool needs reliability, batch capability, a compare-only
+   mode, and configurable rules for dealing with different out-of-sync
+   cases. FreeFileSync has all of those and a straightforward user
+   interface as well. I really can't think what I would add.
+   Congratulations to the development team!
+   — Patrick B
+   Exactly what I was looking for! Nice program, easy to use interface,
+   works like a breeze!
+   — Edo Hulsebos
+   Favourite tool I have used. Thanks so much. Makes keeping my USB stick
+   and google drive in perfect sync.
+   — DG
+   Really replaces rsync for windows.
+   — altex
+   It works very well. I sync a whole folder located on my note, including
+   a local *.pst from outlook to flash drive.
+   — Leonardo Dias
+   Works beautifully in multi-platform (Ubuntu Linux, Windows, Mac)
+   environments.
+   — Auke
+   Great program! Easy to use, transparent, and does a great job syncing
+   files.
+   — Erin R2.
+   This is a great software for free. It works so good and it comes with
+   no junk.
+   — Happy User
+   I have used a bunch of backup software, some paid and some free. But,
+   Free File Sync is the simplest most straightforward way to back up
+   files. All I did was copy the pertinent directories to a 1.5 TB USB
+   connected drive, then set up a batch file in FFS to run every day at
+   noon and sync the two directories. Like magic it works flawlessly. And,
+   rather than go through some clunky interface to restore something it is
+   a simple as going to the external drive and copying the files back.
+   — Bob in New Hampshire
+   I created an account just to post my praise to the author. Class A
+   material. DFS Replication with Windows Server was proving to be a
+   nightmare. Deleting files without reason, failing to replicate in both
+   directions, erroring out, just becoming an overall headache.
+   This solution was not only intuitive to use, easy to integrate, and
+   easy to confirm functionality (The log files are heaven sent - They are
+   concise and to the point yet in depth and serve a purpose), but is
+   extremely powerful with the configurable batch jobs. Kudos to the
+   author, and thank you for providing such an awesome product. :)
+   — seannn
+   Excellent! Fast, easy-to-use, multi-platform and free: the best file
+   sync tool, that I have ever used.
+   — Adrian Toth
+   Kick ass on both Linux and Windows: definitely a top-100 open source
+   project! Much appreciation to the developer for this great app! :)
+   — jmj288
+   Best tool I've used for keeping in sync between home, office and
+   abroad. Thanks!!!
+   — nicolaes
+   I've tried many different programs for file synchronization. I stopped
+   when I started using FreeFileSync. Thank you for developing such a
+   superb and super-useful program. I am recommending it whenever I have a
+   chance. Keep up the already-very-good work. Cheers.
+   — M. Del Gatto
+   I have been searching (for a long time up to about 2 years ago when I
+   found FreeFileSync) for a utility that does this, even contemplated
+   creating my own. FreeFileSync is a one stop solution that does it all,
+   and does it the way I expect it to. And its versatile and user friendly
+   enough to compare files produced by the engineering tools I use. I've
+   even used it to check disk transfer speed in real life scenarios, works
+   like an absolute charm.
+   It really became a tool I use extremely often, it's one of my must
+   have's like 7zip. It beats "Unison" hands down for user friendliness
+   and speed to install and get on systems. It beats the tool "Beyond
+   Compare" hands down because it's open source and freely available, but
+   I have to say, I'd love the "Beyond Compare" capabilities, but I cannot
+   justify its cost. FFS does enough for me that I can do without it.
+   — Chris Bosch
+   I've been using this utility for more than a year now and still
+   recommend it!
+   — Caspar Schutte
+   Lots of really useful small details: The right mouse click on gear
+   icons and grid rows, the quick selection change via overview window and
+   space bar, copy and paste of filters and much more.
+   — blues12
+   Maybe the best synchronisation program you can get: it's fast and
+   intuitive, relatively easy to learn, and, most important, very
+   reliable.
+   — the-nightowl
+   By far the best and most flexible file sync software I have come
+   across. Allows for customization. The only software I know that allows
+   you to only sync files that exist already in both source and
+   destination folders. This feature comes in handy to do versioning.
+   — Kris N
+   After wasting $40+ dollars on a competitor's product, I tried out
+   freefilesync. FreefileSync was able to compare hundreds of thousands of
+   files (NAS->NAS) in 10 minutes, which was taking the competitor's
+   product over 3 hours. I ended up deleting the competitor's product and
+   relying on FreeFileSync. Awesome, awesome backup program.
+   — lechuan
+   For the longest time I was looking for a simple straightforward
+   synchronization program to make weekly backups. Finally I found it.
+   Thank you guys for making this sublime program available for free.
+   — ،ثثس
+   Excellent sync software; replaced SyncToy with this when I realised
+   that SyncToy had gradually wiped rather than backed up my files. Works
+   well; can't believe how much quicker it is!
+   — Simon
+   Since I am a backup paranoiac because I have lost data several times, I
+   want something that is quick and painless. This is super easy to use.
+   It also, since it does not give me an error message, copies all the
+   files that a windows copy and paste would not copy because the file
+   names are too long or they are organized in too many sub-folders (what
+   a hassle that is, but that is another windows problem). Have I
+   confirmed this by testing and verify copying? No. It is easy enough to
+   do, but I am way too busy.
+   Just like people believe in their country and a God, I believe in
+   FreeFileSync. The best part is that you are not spammed with advert pop
+   ups or anything like with other freeware. Thank you so much
+   FreeFileSync!
+   — VendeeClown
+   What an excellent piece of software. Initially deployed as an
+   experiment, has turned into a staple in my toolbox. I have it set up
+   for an hourly mirror sync via Task Scheduler and it has proven itself
+   time and time again. Nearly three million files synced, hourly
+   revisions are kept on another drive and then compressed monthly... this
+   is one beautiful piece of software. Thank you so much.
+   — iamvii
+   Thank you for this awesome sync software. I tried a lot - free as well
+   as pricey alternatives, but when I finally found this I knew my search
+   had come to an end :)! It has an easy and intuitive UI and all the
+   features you would want from a sync tool! Funny how free stuff beats
+   the commercial versions again and again...
+   — mcfex
+   It is the ideal application to synchronize my files between two
+   computers and one file server. I was testing before a few other
+   solutions, but FreeFileSync is the best of the best!! Thank you for
+   this project! Best regards.
+   — mutancik
+   Excellent utility for synchronizing two hard drives and/or important
+   directories! Easy to use and fairly intuitive. Short learning curve.
+   For the reviewer looking for "Help" resources, it is right there on the
+   top left of the screen next to the Tools tab. Program is fairly
+   documented in the "Content" selection.
+   — abeali
+   Great FREE sync software that actually replaced my 'paid' for app. Keep
+   up the great work, thank you! :)
+   — mradeveci
+   SO awesome. There's so much I could say about this indispensable
+   program, but I'll just tell you now that the amount of options and
+   different types of sync methods will ensure you are able to do what you
+   need, as well as the ability to save your sync configurations for
+   certain sync jobs, so that you can easily do them in the future.
+   Great UI, please don't change it, because too many people are ruining
+   their software these days with some new crap that renders their
+   software useless, literally making it impossible to do anything. Keep
+   up the GREAT work, developers, you really know what you're doing <3 You
+   rock mah socks! ^_^
+   — space0ctopus
+   Was using Unison, but there weren't many updates and it doesn't support
+   x64. FreeFileSync is very simple to use! Also it is much faster than
+   Unison! I recommend it!
+   — geek-man
+   Very intuitive, and because of its flexibility it's possible to have
+   portable backups since it can backup to a relative file path. Then you
+   won't need to change destination path when you move the backup folder.
+   — estogram
+   Fast, easy and reliable. A great tool to keep two (or more) folders
+   synchronized (even when changes have been done on both sides since the
+   last synchronization). Excluding certain files or folders from
+   synchronizing is quick and painless.
+   The application will warn you when too much has changed in the folder
+   contents since the last sync. It supports batch jobs. I personally use
+   this software to backup my personal files onto an external hard drive.
+   It works great through my home network too. Without a doubt, I prefer
+   FreeFileSync over Synctoy and SyncBack. Thank goodness for
+   FreeFileSync!
+   — zenphic
+   After the death of my home's NAS I was in big trouble... But now,
+   thanks to FreeFileSync, I have all my data saved in a so easy way that
+   I am not looking for another NAS. A couple of external cheap hard disks
+   are enough!! (and FreeFileSync, of course) :-) I am sharing my
+   experience through my international contacts. Hoping to find more
+   supporters for your GREAT work. Thanks for all.
+   — odj1964
+   This is a brilliant piece of software. It is simple to set up and easy
+   to use. I have been using it for a few months now and it has never
+   crashed. I use it to sync to my Dropbox via BoxCryptor encryption. I
+   don't completely trust auto syncing software, so this is a great
+   alternative. It allows you to keep your original files on your
+   computer, and also save separate back up files on your external drive
+   or Dropbox etc. Well done guys!
+   — rogerturner2
+   This tool is a really nice application. I've tried countless sync
+   tools, both free and paid. This is the one I've chosen to use. It works
+   great in both Windows and Linux. Many many thanks to the developer(s).
+   I know how much time and energy it takes to code and maintain something
+   like this. I appreciate it. Keep up the great work.
+   — dtshudy
+   Excellent Program. A HUGE improvement over Sync Toy that I've been
+   using for years. Anyone who wants to sync or backup should download and
+   use this program. Many thanks to the developers
+   — deibiddo
+   This program is excellent. I have been using it between 2 computers for
+   3 weeks and no issues. I was using SyncToy for a few years with few
+   problems, but recently SyncToy began to delete the newer files, some of
+   which I spent hours writing. Thankfully I found FreeFileSync and it is
+   working perfectly.
+   — oid-3857101
+   It is very easy and works over network, local drives and external ones.
+   A must-have if you use more than a computer and huge files make cloud
+   drives an unfeasible option.
+   — piterdias
+   I wanted to synchronise a Windows 7 64-bit Notebook, an iMac (Lion)
+   with Samba enabled. I have a lot of data to synchronise, about 150 GB
+   and 200,000 files. I've tried SyncToy from Microsoft, Windows 7
+   built-in synchronisation center, AlwaySync, Syncback, SkyDrive, and so
+   on... Each of those tools took VERY long in the good case, or hanged in
+   the bad case :-(
+   And I tried FreeFileSync: It does exactly that I wanted to do, and it
+   is really very fast. It scans my 200,000 files in only 2.5 minutes!!!
+   So I'm VERY happy with FreeFileSync.
+   — oid-3813974
+   I have tried two other free synchronisation software suites: Synkron
+   (also SourceForge software) and RichCopy (from Microsoft). FreeFileSync
+   is better than both of them for a number of reasons:
+   1. Intuitive user interface: I setup a multiple folder synchronisation
+   within minutes! The buttons are clear, and if you aren't exactly sure
+   of their function, hovering the mouse over the buttons will reveal
+   clarifying information.
+   2. Informative: I knew exactly what files were being deleted or
+   updated. The initial "compare" function is MUCH clearer and easier to
+   use than Synkron's "analysis" function. Synkron would give no
+   information about the analysis while it was occurring, so you don't
+   know what progress it is making. FreeFileSync lets you know how the
+   comparison is going, and gives a very handy graph to show progress,
+   including file transfer rates, etc...
+   3. Stable: I have not yet had FreeFileSync crash on me. RichCopy and
+   Synkron have both crashed, and Synkron tends to freeze the system.
+   4. Efficient: Synkron writes the synchronisation files to a backup file
+   for some reason which I could not disable in the settings. This both
+   slows the system down, but also uses up a significant amount of hard
+   drive memory over time, since these files are not deleted. Quite simply
+   the best free synchronisation software I have ever used!
+   — mechtengineer
+   Very cool. Now it helps me to keep folders in sync and backup files
+   from internal and external hard discs, mp3 player and my phone... :-)
+   Many thanks to the developers.
+   — magickz
+   Best out of all 5 sync programs I've tried, both commercial (Goodsync,
+   AllwaySync) and non-commercial (SyncBack, SyncToy). Don't waste your
+   time trying other "commercial" ones. THIS IS THE BEST.
+   — executerror
+   This is one of those tools you cannot live without. I use FreeFileSync
+   at least twice a day, to update the full backup I keep in a USB stick.
+   Every month I also mirror my work files into a removable USB-2 drive.
+   Once I waited for 3 months to update into my second removable drive and
+   I had to wait for only 25 minutes, even though I had changed a lot of
+   songs and videos. Moreover, my USB stick backups take no more than 3
+   minutes for a full day of work.
+   The creator of FreeFileSync was kind enough to respond to some
+   suggestions I made, but it's hard to think on improving this program
+   because it is already great!
+   — adimare
+   Really love this program and have been using it under Windows a lot.
+   Now have an iMac and was really missing this program, so I am very
+   happy to see that there is now also a MAC version. Thank you very much.
+   — oskar101
+   Faster than commercial alternatives. Perfect to make backup and update
+   SVN repositories.
+   — farcodev
+   This is a really well done piece of software. The GUI is intuitive. It
+   is fast. The file transfers are fast. I am really impressed with this
+   tool.
+   — jashale
+   I love the simplicity of this. Other programs compress and bundle which
+   is unnecessary and obfuscating. This program is actually easier and
+   simpler than copying folders by hand, because once you've set up your
+   paths and saved them in profiles, you just choose the profile. If you
+   put a little effort in at the beginning working out what needs to be
+   backed up, then the existence of the profile in the list reminds you
+   that you need to do a backup of it.
+   — andycivil
+   I am a 20yr IT vet (really!) I do minor programming and I have had the
+   need for a feature rich program that will get the files from A to B
+   without issue and save security information. FFS is simply the best in
+   the market hands down. The fact that it is free totally blows me away!
+   Since my initial review we have come to use this product in our daily
+   processing. The fact that the developer truly listens and incorporates
+   good effective additions as well as continuing to improve the product
+   puts him ahead of even larger software houses. Please keep up the good
+   work and look for our donation! James Lee Outsource Technologies Inc.
+   — coogrrr
+   I have used a lot of sync tools. I am sure FreeFileSync is one of the
+   best tools available in the market out there. Above all it is free!!
+   Thanks a lot to the dev team for contributing such a wonderful product.
+   — oid-3474008
+   After successful tests, i permanently installed the program with 6 TB
+   of data exchanged between 2 x 3 hard disks (12 TB total) and it since
+   works reliable and fast. It's even better than the best commercially
+   available software, so there goes a big THANK YOU to the fantastic
+   programmers and the GNU open source community & last but not least to
+   sourceforge!!
+   — weathercontrol
+   The best file backup and sync software I have used for far. It's quick
+   and easy to use. Please keep this software portable as that is one of
+   its greatest assets. I use it to synchronize between multiple
+   computers, drives, and operating systems seamlessly. Having a dual OS
+   has never been easier. Thank you!
+   — wabassoap
+   I've been looking for a tool like this for about 3 years, when my most
+   favorite directory sync tool stopped development, short of Windows XP.
+   GREAT work on this. Clean, efficient, simple dir comparison or sync.
+   Run it and it shows you what's out of sync, without all of the
+   complicated configurations, etc. that other dir sync tools have.
+   Thanks.
+   — rgadawg
+   Simply the best file sync software and also free backup software: No
+   feature bloat, no bugs, does what it's supposed to blazingly FAST!
+   — MajorG
+   A GREAT piece of software that rivals other expensive software. Very
+   versatile and always expanding. The developer is very helpful and
+   responsive. Couldn't live without FreeFileSync!
+   — srjones67
+   I've tried almost every files and folders synchronisation program
+   available on windows. And FreeFileSync is definitely the best. It's the
+   fastest, the most customisable and the most intuitive one, and above
+   all, it's open source.
+   — pellk
+   Pleasantly surprised after trying 4 others, as it supports my Unicode
+   filenames, feels lightweight, and makes the options fairly clear.
+   — oid-2658093
+   Flexible. Does what it's supposed to do well. I switched from SyncBack
+   (free version) to FreeFileSync because it handles a few important
+   things better, e.g. copying locked files, more powerful filters.
+   — oid-2864505
+   Saved my life. Now it takes me 30 sec instead of 45 min to update my
+   8000 files / 4 GB on LAN. I learned it in 30 sec. Simple and reliable.
+   — doru001
+   Awesome scalable tool!!!!! This is the only tool I know which can
+   compare and sync 2 directories with more than 11,000,000 files, and not
+   die while syncing. It took my server a couple of days to sync those
+   monster directories, but hey ... I'm happy! - Theo Ekelmans Ordina
+   Datacentre services.
+   — Theo
+   This is ***THE BEST*** It managed all of my 80,000 files in 489
+   directories: No problem!! I have tried at least 10 different sync tools
+   in the past 10 years. This is wonderful. It is a 'good looking' friend
+   of rsync!
+   — anonymous
+   Wow! FreeFileSync is the best backup tool I've ever used! I've bounced
+   back and forth between many tools over the years, and this one is so
+   much simpler (without sacrificing functionality) in so many ways. The
+   backup process is quick and reliable.
+   — tsreyb
+   Great application for all your file/folder comparison and
+   synchronisation needs. Allows you to add multiple, specific source and
+   target folders and use filters to exclude and include specific files
+   and/or sub-paths.
+   The generation of a batch script allows you to automate the
+   synchronisation, which you set up in the GUI. It can then run regularly
+   and in the background.
+   The synchronisation dialogue is beautiful, showing you the speed at
+   which it happens. Display filters allow you to grasp the changes, and
+   preview stats allow you to see the quantity of changes before-hand (so
+   you don't make a mistake, moving the wrong way around for example).
+   — kissaki
+   Probably the best open source software that I have ever encountered. :)
+   Keep up the good work!
+   — akya
+   This app is great! Easy, intuitive backup and synchronisation between
+   different folders or devices. And it gets better: It is cross platform,
+   so I can use in Win, Linux or Mac! Thanks for the development and
+   maintenance of this app! Keep up the good job!
+   — isastronomer
+   What a simple yet incredibly helpful and powerful program! The user
+   interface is flexible enough to house lots of things or to be very
+   simple and sleek - and it performs binary comparisons! Cheers for a job
+   well done!
+   — jeffplemons
+   Excellent, efficient tool for manual backup and folder mirroring. No
+   persistent services. Does what it promises and is updated frequently.
+   Takes advantage of multicore now. A big thanks to the developers.
+   — godlymusic
+   I've used Microsoft's SyncToy for years and thought it was the best of
+   what was available ... that is, until I started using FreeFileSync.
+   There's no comparison in terms of all the things that are important:
+   ease of use, performance, flexibility.
+   — Sam Gerber
+   I've been using this tool for a while now and it's simply awesome.
+   Former SyncToy user. Best way to keep a Dropbox style of sync with my
+   external drives. I also dig the new look. Very stylish.
+   — OpenID User
+   This is the best file synchronization program that I've found. It is
+   fast, stable, and has the right features without being bloated.
+   The author has done a lot of careful thinking about how the program
+   should work from the user's perspective, and (more importantly) how it
+   works under the covers.
+   — JohnB in Atlanta
+   From my experience until now, it is a great and simple backup software.
+   Great performance, analysis, scan, progress bar and graph, great
+   comparison, flexible so you can configure multiple folders and multiple
+   actions. Nice UI. Does the job as it should.
+   — liran1
+   Incredibly useful, manages long path names better than anything else we
+   tried including Robocopy.
+   — robbo7877
+   Best file sync software I have ever used. I used to run SyncToy 64-bit
+   version, but after running into problems and being unable to fix them
+   (as my file count went up) I decided to try FreeFileSync. To this date,
+   I have not experienced a single problem, not even a hickup. One
+   directory contains over 10 million files, and it runs through with
+   ease.
+   — joqqy
+   Awesome. Much more versatile than SyncToy. I love the fine-grained
+   control and also the option to preserve deletions. I use it on a couple
+   of identical external HDDs for off-site backups. Different drive
+   letters? No problem, just copy the XML config file and change the drive
+   letter. Save. Run. Done.
+   — cadbloke
+   With around 2 million files to compare/mirror, a lot of other tools run
+   into problems with memory, long paths or performance (especially 32-bit
+   tools, when the memory needed to represent the internal file lists
+   exceeds the 2GB process memory limit).
+   FreeFileSync not only uses a lot less memory for large numbers of files
+   but also provides a native 64bit build, eliminating any possible memory
+   problems with large numbers of files (unless you run out of physical
+   memory).
+   It also supports long paths, does the file listing in multiple threads
+   (one thread per drive AFAIK) and has just the right amount of
+   configuration options needed to achieve everything without bloating the
+   UI with too many options.
+   Just started using it today, but I'm really impressed already.
+   — Christian Vogel
+   OMG!! This is the GREATEST file synchronization tool I've used. I'm an
+   Ubuntu user/admin for 3 years now and after testing FreeFileSync, I'll
+   stick to it. I think FreeFileSync deserves to be in Canonical's
+   repositories.
+   — darwin m.
+   I got a similar app from PC Magazine a few years ago. I never really
+   figured out how to use it. I tried to start it up and it would not load
+   for reasons unknown. I googled just in case I might stumble across...
+   THIS! It did precisely what I wanted to do. I figured out how to
+   operate it pretty darned quick, which is a testament as I'm gettin' old
+   and am not as fast on the uptake as I once was.
+   — chinnboy m.
+   FFS is highly capable and very fast. More importantly, it's very
+   reliable: I synchronize about 250K files daily, with typically a few
+   thousand changed and about a 500 MB in size and it has yet to mess up.
+   I used to use MS's SyncToy, but that name actually characterizes it
+   all: a "toy". SyncToy would frequently get confused and want to move
+   things in the wrong direction or show conflicts which weren't the case
+   (esp. with MS network share drives).
+   One of FFS's strengths is how well it handles conflicts, though I have
+   occasionally wished it had a one-click-for-the-newest button, it's
+   really easy to select a group of files and right-click to send them
+   left or right.
+   Also, FFS is orders of magnitude faster than Microsoft's SyncToy for
+   high-latency drives, like WAN drives; synchronizations that would take
+   several hours with SyncToy 2.1 completed in less than 20 minutes using
+   FFS (and that was quite some versions of FSS ago).
+   The UI is adequate, with some very minor shortcomings, like not being
+   able to reorder the list of directories being synchronized. Overall
+   it's pretty easy to use, though I think filters and the two settings
+   dialogs could be merged into a single concept / dialog. The ability to
+   hook in an external compare tool is excellent, and it works very well
+   with WinMerge to check exactly what is different between particular
+   files.
+   — lawrencedol
+   The best of the best...
+   — marvindl
+
+   Privacy Policy FreeTemplateOffice
+
+   Copyright © 2019 Zenju: [Turn on JavaScript to see the email address]
+   #FreeFileSync Update Notifications
+
+FreeFileSync Open Source File Synchronization
+
+   About Tutorials Screenshots Download FAQ Manual Forum Archive Vision
+   Donate Tweet with Twitter Like on Facebook FreeFileSync update
+   notifications
+
+   About FreeFileSync
+   Tutorials Screenshots
+   Download
+   FAQ Manual
+   Forum
+   report bugs,
+   discuss features
+   Archive Vision
+   Donate
+
+   Tweet with Twitter Like on Facebook FreeFileSync update notifications
+
+   It looks like an ad blocker has blocked all the ads. The FreeFileSync
+   project is 100% dependent from ad revenue and donations to stay alive.
+   Instead of the ads, and after FreeFileSync has proven useful to you,
+   please think about supporting with a donation.
+
+Privacy Policy
+
+   The privacy of our visitors to freefilesync.org is important to us.
+   This privacy policy document describes in detail the types of personal
+   information that are collected and recorded by freefilesync.org and how
+   they are used. Please direct all questions regarding this policy to
+   [Turn on JavaScript to see the email address]
+
+Log Files
+
+   Like many other websites, freefilesync.org makes use of log files.
+   These files merely log visitors of the site - usually a standard
+   procedure for hosting companies and a part of hosting services'
+   analytics. The information inside the log files includes internet
+   protocol (IP) addresses, browser type, Internet Service Provider (ISP),
+   date/time stamp, referring/exit pages, and possibly the number of
+   clicks. This information is used to analyze trends, administer the
+   site, track user's movement around the site, and gather demographic
+   information. IP addresses, and other such information is not linked to
+   any information that is personally identifiable.
+
+FreeFileSync Forum
+
+   This section explains in detail how the "FreeFileSync Forum"
+   (hereinafter "we", "us", "FreeFileSync Forum",
+   "https://freefilesync.org/forum") and phpBB (hereinafter "phpBB
+   software") use any information collected during any session of usage by
+   you (hereinafter "your information").
+   Your information is collected via two ways. Firstly, browsing the
+   "FreeFileSync Forum" will cause the phpBB software to create a number
+   of cookies, which are small text files that are downloaded on to your
+   computer’s web browser temporary files. The first two cookies just
+   contain a user identifier (hereinafter "user-id") and an anonymous
+   session identifier (hereinafter "session-id"), automatically assigned
+   to you by the phpBB software. A third cookie will be created once you
+   have browsed topics within the "FreeFileSync Forum" and is used to
+   store which topics have been read, thereby improving your user
+   experience.
+   We may also create cookies external to the phpBB software whilst
+   browsing the "FreeFileSync Forum", though these are outside the scope
+   of this section which is intended to only cover the pages created by
+   the phpBB software. The second way in which we collect your information
+   is by what you submit to us. This can be, and is not limited to:
+   posting as an anonymous user, registering on the "FreeFileSync Forum"
+   (hereinafter "your account") and posts submitted by you after
+   registration and whilst logged in (hereinafter "your posts").
+   Your account will at a bare minimum contain a uniquely identifiable
+   name (hereinafter "your user name"), a personal password used for
+   logging into your account (hereinafter "your password") and a personal,
+   valid email address (hereinafter "your email"). Your information for
+   your account at the "FreeFileSync Forum" is protected by
+   data-protection laws applicable in the country that hosts us. Any
+   information beyond your user name, your password, and your email
+   address required by the "FreeFileSync Forum" during the registration
+   process is either mandatory or optional, at the discretion of the
+   "FreeFileSync Forum". In all cases, you have the option of what
+   information in your account is publicly displayed. Furthermore, within
+   your account, you have the option to opt-in or opt-out of automatically
+   generated emails from the phpBB software.
+   Your password is ciphered (a one-way hash) so that it is secure.
+   However, it is recommended that you do not reuse the same password
+   across a number of different websites. Your password is the means of
+   accessing your account at the "FreeFileSync Forum", so please guard it
+   carefully and under no circumstance will anyone affiliated with the
+   "FreeFileSync Forum", phpBB or another 3rd party, legitimately ask you
+   for your password. Should you forget your password for your account,
+   you can use the "I forgot my password" feature provided by the phpBB
+   software. This process will ask you to submit your user name and your
+   email, then the phpBB software will generate a new password to reclaim
+   your account.
+
+DoubleClick Cookie
+
+   Third party vendors, including Google, use cookies to serve ads on
+   freefilesync.org. Google's use of the DoubleClick cookie enables it and
+   its partners to serve ads to our site's visitors based on their visit
+   to freefilesync.org and/or other sites on the Internet. Users may opt
+   out of the use of the DoubleClick cookie for interest-based advertising
+   by visiting Google Ad Settings.
+
+Our Advertising Partners
+
+   Some of our advertising partners may use cookies and web beacons on our
+   site. Here is a list with their corresponding privacy policies:
+     * Google Privacy Policies – AdSense website advertisements
+
+   These third-party ad servers or ad networks use technology in their
+   respective advertisements and links that appear on freefilesync.org and
+   which are sent directly to your browser. They automatically receive
+   your IP address when this occurs. Other technologies (such as cookies,
+   JavaScript, or Web Beacons) may also be used by our site's third-party
+   ad networks to measure the effectiveness of their advertising campaigns
+   and/or to personalize the advertising content that you see on the site.
+   freefilesync.org has no access to or control over these cookies that
+   are used by third-party advertisers.
+
+Other Third Party Privacy Policies
+
+   You should consult the respective privacy policies of these third-party
+   servers for more detailed information on their practices as well as for
+   instructions about how to opt-out of certain practices.
+   freefilesync.org's privacy policy does not apply to, and we cannot
+   control the activities of, such other advertisers or web sites.
+     * Google Analytics Privacy Policy – you can opt-out from this service
+       via a browser add-on
+     * YouTube Privacy Guidelines – embedded demo videos
+
+   If you wish to disable cookies, you may do so through your individual
+   browser options. More detailed information about cookie management with
+   specific web browsers can be found at the browsers' respective
+   websites.
+
+Data Regarding Donations
+
+   In order to comply with accounting regulations, the following personal
+   data related to donations is stored: transaction id, email, user name,
+   and donation amount. In order to enable certain software features of
+   the FreeFileSync Donation Edition (calculation of update interval, user
+   count determination), a hardware id is recorded during the first start
+   of the FreeFileSync Donation Edition. This personal data will be used
+   exclusively for the purposes described here, and under no circumstances
+   made accessible to third parties.
+
+Children's Information
+
+   We believe it is important to provide added protection for children
+   online. We encourage parents and guardians to spend time online with
+   their children to observe, participate in and/or monitor and guide
+   their online activity.
+   freefilesync.org does not knowingly collect any personally identifiable
+   information from children under the age of 13. If a parent or guardian
+   believes that freefilesync.org has in its database the
+   personally-identifiable information of a child under the age of 13,
+   please contact us immediately and we will use our best efforts to
+   promptly remove such information from our records.
+
+Online Privacy Policy Only
+
+   This privacy policy applies only to our online activities and is valid
+   for visitors to our website and regarding information shared and/or
+   collected there. This policy does not apply to any information
+   collected offline or via channels other than this website.
+
+Consent
+
+   By using our website, you hereby consent to our privacy policy and
+   agree to its terms.
+
+Update
+
+   This Privacy Policy was last updated on: May 24th, 2018.
+
+   Privacy Policy FreeTemplateOffice
+
+   Copyright © 2019 Zenju: [Turn on JavaScript to see the email address]

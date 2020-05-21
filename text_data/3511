@@ -1,0 +1,632 @@
+   (BUTTON) Toggle navigation Startseite
+     * Download
+          + V3 Download
+          + V3 Demo
+          + V2
+     * Informationen für Adblock-Nutzer
+     * Kontakt
+       Notice: Undefined index: HTTP_ACCEPT_LANGUAGE in
+       /usr/www/users/antibc/tpl/header.html on line 54
+       PayPal - The safer, easier way to pay online!
+     *
+
+Anti Adblock Script
+
+Informationen für Webmaster
+
+     nach oben
+
+   Du bist auf Werbeeinnahmen angewiesen und Adblocker mindern Deine
+   Umsätze? Dann solltest Du das kostenlose Anti-Adblock-Script
+   installieren.
+
+History
+
+     * 19.04.2015: Antiblock Version 3.8 veröffentlicht! Der
+       Javascript-URL Check wurde standardmäßig deaktiviert, da er immer
+       noch zu false-positives führt.
+     * 08.03.2015: Für unsere Website und als Basis zur späterer optischen
+       Bearbeitung haben wir die Frameworks Bootstrap und jQuery
+       installiert.
+     * 20.08.2014: Antiblock Version 3.7 veröffentlicht! Ein Timeout-Wert
+       wurde erhöht um falsche Meldungen zu verhindern. Danke an
+       marco.b***@***.de!
+     * 11.12.2013: Todo: Lösung gegen Bluhell Plugin für Firefox
+       entwickeln (Danke an and***@arcor.de).
+     * 12.10.2013: Hat Google sich freigekauft?
+     * 05.09.2013: GetAdblock.com sammelt Geld um Werbung zu schalten.
+       Wenn es auch nach einem Aprilscherz klingt, so ist es in jedem Fall
+       gutes Virales Marketing. Danke an abby***@gmail.com
+     * 02.09.2013: Antiblock Version 3.6 veröffentlicht! Es wurde ein
+       kleiner Übersetzungsfehler bei der Anti-NoScript Meldung behoben.
+       Danke an ***@lox***.de!
+     * 29.08.2013: Für unsere deutschsprachigen Nutzer: Adblock Plus is
+       evil
+     * 07.08.2013: Kleine Verbesserung in der PHP Version wg.
+       Zeilenumbrüchen in der Antiblock-Bild-Meldung. (Danke an
+       spirit***@gmx.de!)
+     * 13.07.2013: Todo: Statt
+       "http://pagead2.googlesyndication.com/pagead/show_ads.js" sollte
+       man "pagead2.googlesyndication.com" schützen. Damit wird der Code
+       kompakter und flexibler. (Danke an matthias***@gmx.de!)
+     * 11.07.2013: Antiblock Version 3.4 und 2.3 veröffentlicht!
+          + Es gab einen Fehler im Script-Check, der in seltenen Fällen
+            bei mobilen Browsern zur Ausgabe der Antiblock-Meldung führte,
+            obwohl kein Adblocker installiert ist. (Danke an
+            matthias***@gmx.de!)
+          + Die alte Version 2 wurde ebenfalls mit dem Bugfix
+            ausgestattet, außerdem wurde nun auch in dieser Version das
+            Workaround für ABPs "auf dieser Seite deaktivieren" Fehler
+            integriert.
+     * 21.06.2013: Antiblock Version 3.3 veröffentlicht!
+          + Opera NotScripts wird nun unterstützt. Dieses Plugin
+            verhindert nicht nur die Ausführung von Skripten (<script>),
+            sondern auch von Nicht-Skripten (<noscript>). Auch wenn das
+            keinen Sinn macht, haben wir Antiblock entsprechend so
+            angepasst, dass es nun ohne <noscript> arbeitet. Dazu wird die
+            Meldung einfach statisch als HTML-Code ausgegeben und
+            anschließend per Javascript entfernt. Wer Javascript
+            deaktiviert hat oder NoScript-Plugins einsetzt (egal ob für
+            Opera, Chrome oder Firefox) verhindert das Entfernen der
+            Meldung und wird entsprechend aufgefordert Javascript zu
+            aktivieren. Wir empfehlen den Anti-NoScript-Code (z.B. per
+            PHP) zufällig auf der Seite auszugeben. Außerdem muss ein
+            z-index gesetzt werden, sofern andere Elemente auf der Seite
+            vor dem Anti-NoScript-Code einen besitzen.
+          + Todo: Aktuell sind mehrere Greasemonkey-Skripte im Umlauf, die
+            versuchen Antiblock auf verschiedenen Wegen auszuhebeln. Um
+            noch weniger Angriffsfläche zu bieten haben wir den HTML-Code,
+            der die Antiblock-Meldung ausgibt, noch zufälliger aufgebaut.
+            Im Härtefall könnte man Greasemonkey komplett verbieten, da es
+            sich erkennen lässt.
+          + Kleinen Bug im Internet Explorer 5-8 behoben. Erst der
+            Internet Explorer 9 unterstützt addEventListener.
+     * 20.06.2013: Antiblock Version 3.2 veröffentlicht! Script-Check
+       repariert!
+     * 19.06.2013: Wir haben unserer Website Facebook, Twitter und Google+
+       Buttons hinzugefügt (CSS only)
+     * 19.06.2013: Antiblock Version 3.1 veröffentlicht! Nicht sonderlich
+       relevanter Bugfix.
+     * 17.06.2013: Antiblock Version 3 veröffentlicht!
+     * 13.06.2013: Die Weiterentwicklung von Version 3 schreitet voran.
+       Sie wird zeitnah veröffentlicht. Neue Features:
+          + Der Layer mit der Meldung lässt sich nicht mehr über die
+            Chrome Developer Tools oder Firebug entfernen
+          + optional lässt sich nun ein xml-valider Code generieren. Um
+            die Validierung zu bestehen, muss aber der <style>-Bereich im
+            <head> platziert werden.
+          + Die CSS-Werte top, left, width und height werden nun per
+            Zufall gesetzt. Damit deckt der Layer zwar nicht immer 100%
+            der Seite ab oder ist nicht immer perfekt positioniert, aber
+            er lässt sich auf diese Art auch nicht mehr herausfiltern
+          + Die Verlinkung auf die antiblock.org-Hilfe wird nun per Zufall
+            über URL Shortener generiert. Ein Textfilter auf "antiblock"
+            wird damit ausgehebelt.
+          + Optional kann die Antiblock-Meldung geändert werden.
+          + Optional kann die Antiblock-Meldung als Bild ausgegeben
+            werden. Auch dadurch werden Textfilter ausgehebelt. Dies wird
+            erst ab dem Internet Explorer 8 unterstützt. Da es nur wenige
+            Adblocker für den Internet Explorer gibt und die alten
+            Versionen dazu noch weniger verbreitet sind, sollte das kein
+            Problem darstellen.
+     * 23.03.2013: Todo: Arabian Translation (Danke an dz...@gmail.com!)
+       Erledigt: Nicht mehr notwendig, da jeder den Text selbst anpassen
+       kann.
+     * 25.02.2013: Todo: FF Disable Anti Adblock Plugin (Danke an Niklas!)
+     * 13.02.2013: Todo: NotScripts 1.1.0 Opera (Danke an xz**@gmx.net!)
+       und Einfach Filter Google Chrome Adblock Plus (Danke an
+       ket***@gmail.com). Erledigt in Version 3.3
+     * 03.02.2013: Todo: adfender.com testen (Danke an silva***@sa***.pt!)
+     * 09.07.2012: Todo: iframes schützen (Danke an god***@***.ru!)
+     * 06.07.2012: Todo:
+          + Verlinkung von JS-Dateien mit ständig wechselnden Namen (Danke
+            an god***@***.ru!)
+          + Antiblock outsourcen auf Random Domainpool (gleichzeitig
+            interessant für zuvor genannte Idee)
+     * 21.05.2012: Todo: Optionale Ausgabe eines XML validen Codes (Danke
+       an lennart***@***.de!)
+     * 26.04.2012: Todo: Einstellbare Transparenz / Hintergrundfarbe und
+       einstellbarer Schriftschatten (Danke an bodo***@gmail.com!)
+     * 16.04.2012: Version 2.2.2 erschienen. Der kritische Fehler mit der
+       weißen Seite in alten Browsern wurde behoben. In Version 3 wird der
+       Fehler natürlich auch behoben sein.
+     * 16.04.2012: sla***@gmail.com hat einen Fehler gefunden, der bei
+       alten Browsern (z.B. Firefox 3) auftritt und zur Ausgabe einer
+       weißen Seite führt. Solange das Problem nicht behoben ist raten wir
+       von der Nutzung ab, außer alte Browser sind Euch egal.
+     * 04.04.2012: Todo: Statt dem Besucher die Antiblock-Meldung
+       anzuzeigen ihn an eine einstellbare URL weiterleiten. (Danke an
+       Anthony***@yahoo.com!)
+     * 02.03.2012: Zwischenstand: Neue Version 3 in Arbeit und Behebung
+       bekannter Probleme
+          + Das Script wird gerade komplett neu geschrieben. Die neue
+            Version wird mit einer Klasse und entsprechenden Methoden
+            arbeiten. Mit etwas Glück schrumpft dadurch auch noch mal die
+            Größe, aber das bleibt noch abzuwarten.
+          + Außerdem setzen wir diesmal auf eine Art "promises" Technik.
+            Damit sollte das Script dann noch effektiver arbeiten.
+          + Die nächste Version wird mit Google Closures komprimiert. Zur
+            Verschleierung des Codes überlegen wir noch Dean Edwards
+            Javascript Packer zu nutzen.
+          + Problem: Der Internet Explorer ignoriert den CSS3 Selektor
+            "~", wenn die Seite, auf der das Antiblock-Script installiert
+            wird, kein <DOCTYPE> besitzt. Mal schauen ob wir ein
+            Workaround dazu finden oder die Installationshinweise
+            entsprechend anpassen. Update 03.03.2012: In Version 3 behoben
+            Da der Javascript-Code nur für diesen Ausnahmefall unnötig
+            aufgebläht werden würde, fügen wir eine optionale Einstellung
+            hinzu.
+          + Problem: Wenn der Schließen-Button betätigt wird, dann ist der
+            HTML-Body auf Grund der Antiblock-Meldung immer noch 100% hoch
+            und breit. In der nächsten Version werden die bestehenden
+            CSS-Einstellungen der Seite wiederhergestellt. Update
+            03.03.2012: In Version 3 behoben
+          + Problem: Google Chrome hat scheinbar einen Bug. Wenn man ein
+            Element mit
+            "document.getElementById(Id).parentNode.removeChild(document.g
+            etElementById(Id));" entfernt, dann wird das Stylesheet nicht
+            aktualisiert, obwohl sich durch die Löschung etwas ändern
+            müsste (FF, IE und Opera verhalten sich dagegen korrekt).
+            Update 04.03.2012: In Version 3 behoben
+     * 29.02.2012: Bekannte Probleme
+          + Adblock Plus für Firefox hat einen Fehler bei der Einstellung
+            "Deaktivieren: auf example.org", was dazu führt, dass die
+            Antiblock-Meldung trotzdem erscheint. Adblock Plus nimmt trotz
+            Deaktivierung Einfluss auf Werbeelemente, auch wenn sie nicht
+            versteckt werden. Wir arbeiten aber bereits an einem
+            Workaround. Update 02.03.2012: In Version 3 behoben
+          + In manchen Fällen überdecken Teile der Website die
+            Antiblock-Meldung. Die neue Version wird der Meldung dynamisch
+            einen passenden z-Index verpassen. Da dieser nur bei Bedarf
+            gesetzt wird und die Meldung immer an einer zufälligen Stelle
+            eingefügt wird, bleibt Antiblock unangreifbar. Update
+            02.03.2012: In Version 3 behoben
+          + Der Schließen-Button hat aktuell einen Fehler. Teile der
+            Website werden nach Schließen der Antiblock-Meldung trotzdem
+            nicht angezeigt. Bis zu nächsten Version sollte man auf diese
+            Einstellung verzichten. Update 02.03.2012: In Version 3
+            behoben
+     * 27.02.2012: Version 2.2.1 erschienen
+          + Durch einen Fehler im Internet Explorer (Microsoft nennt es
+            Sicherheit), ist es nicht möglich <style>-Bereiche per
+            innerHTML einzufügen:
+            http://social.msdn.microsoft.com/forums/en-US/iewebdevelopment
+            /thread/33fd33f7-e857-4f6f-978e-fd486eba7174/. Daher wurde das
+            Script entsprechend geändert und der style für den HTML Body
+            wird nun per "html.body.style.margin = 0" zugewiesen, sobald
+            die Antiblock-Meldung erscheint. Aus diesem Grund war die
+            Antiblock-Meldung im Internet Explorer bisher nicht 100%
+            breit. Von Euch ist das aber sowieso keinem aufgefallen ;)
+          + Die optionale Einstellung "html, body{margin:0, padding:0,
+            height:100%}" hinzufügen zu können, wurde entfernt. Das Script
+            setzt dies nun immer (wie zuvor genannt)
+     * 27.02.2012: Version 2.2 erschienen
+          + PHP-Version wurde optimiert
+     * 27.02.2012: Version 2.1.9 erschienen
+          + Google Project Antiblock.css wird nun auch erkannt
+          + Die Script-Größe auf der Download-Seite ignoriert jetzt bei
+            der PHP-Version den PHP-Teil (der eigentliche HTML-Teil wird
+            ja nicht größer)
+          + Die PHP-Version ist nun auch kompakter (eine Zeile)
+     * 27.02.2012: Version 2.1.8 erschienen
+          + Statt createAttribute() setzen wir nun setAttribute() ein.
+            Fazit: Das Script ist wieder minimal kleiner geworden und es
+            gibt keinen Fehler mehr im Internet Explorer 5.5 (falls den
+            überhaupt noch jemand nutzen sollte), da dieser kein
+            createAttribute() unterstützt.
+          + Falls das Antiblock-Script im <head> der Seite eingebaut
+            wurde, konnte es nicht ausgeführt werden. Dieser Fehler wurde
+            behoben. Wir empfehlen aber das Script im <body> einzubauen,
+            da sonst der <noscript> Bereich nicht funktioniert (außer man
+            verzichtet auf diesen Teil, dann ist es egal)
+          + Das Script wurde noch mal getestet mit: Internet Explorer 5.5,
+            Internet Explorer 6, Internet Explorer 7, Internet Explorer 8
+            (Danke an http://www.my-debugbar.com/wiki/IETester/HomePage!),
+            Internet Explorer 9, Firefox 10, Chrome 17 und Opera 11.61
+     * 27.02.2012: Version 2.1.7 erschienen
+          + Kritischer Fehler wurden behoben: Bitte aktualisieren!
+          + Es gab eine Unendlichschleife bei den Browsern Internet
+            Explorer, Firefox und Opera.
+          + Der Link-Bestandteil-Check für Bilder ist wieder aktiviert.
+     * 27.02.2012: Version 2.1.6 erschienen
+          + Der Check um Link-Bestandteile in Bildern zu prüfen ist
+            fehlerhaft und frisst daher unendlich viel RAM! Die Funktion
+            wurde deaktiviert. Wir arbeiten an einer Lösung. Bitte
+            ausbauen bzw. aktualisieren!
+          + Version 2.1.7 folgt in Kürze.
+     * 26.02.2012: Version 2.1.5 erschienen
+          + Laut https://developer.mozilla.org/de/CSS/opacity ist die
+            Nutzung von -moz-opacity und -khtml-opacity überflüssig
+            geworden, weshalb wir diese nun entfernt haben. Besucher mit
+            sehr alten Browsern sehen nun einfach einen weißen
+            Hintergrund. Reicht völlig und spart bei der Größe des
+            Quelltextes.
+          + Die CSS-ID für die Antiblock-Meldung wurde von 7 auf 4 Stellen
+            gekürzt, um noch ein wenig an der Quelltextgröße einsparen zu
+            können.
+     * 26.02.2012: Version 2.1.4 erschienen
+          + Die Antiblock-Meldung wurde bisher in einem <div>-Element
+            ausgegeben. Nun entscheidet der Zufall welches Element genutzt
+            wird.
+          + Im Falle einer Meldung wurde der dafür notwendige Code am Ende
+            des HTML-Quelltextes hinzugefügt. Ab sofort wird dieser an
+            einer zufälligen Position im Quelltext eingefügt.
+          + Die PHP-Version wurde entsprechend aktualisiert.
+     * 24.02.2012: Version 2.1.3 erschienen
+          + Version 2.1.1 und 2.1.2 führten zu einem Fehler im Internet
+            Explorer. Der Fehler wurde behoben. Bitte aktualisieren!
+     * 24.02.2012: Version 2.1.2 erschienen
+          + Der neue Adsense-Check wurde verallgemeinert und funktioniert
+            jetzt auch bei Mirando und Adscale.
+          + Der Link-Check wurde erstmal wieder entfernt. Es gab
+            vereinzelte Fehlermeldungen, die vermutlich auf diesen Check
+            zurückzuführen sind.
+          + Das gesamte Script wurde noch mal überarbeitet und
+            stellenweise optimiert.
+          + Auf mehrfachen Wunsch wurde ein Spenden-Button eingerichtet,
+            über den man das Projekt unterstützen kann.
+     * 23.02.2012: Version 2.1.1 erschienen
+          + Ein neuer Check für Adsense wurde eingeführt
+          + Antiblock wird nicht mehr nach x Sekunden gestartet, sondern
+            sobald die Seite vollständig geladen wurde.
+          + ID-Check und Adsense-Check sind nun voreingestellt, während
+            die anderen Checks optional wählbar bleiben.
+          + Der Link-Bestandteil-Check wurde optimiert.
+     * 22.02.2012: Version 2.1 erschienen
+       Der spezielle Check für Adsense wurde entfernt. Dieser war zu
+       unzuverlässig. Adsense wird jetzt wieder wie die anderen Scripte
+       gecheckt. Dadurch funktioniert Antinblock jetzt auch bei Ghostery.
+     * 07.05.2011: Version 2.0024 erschienen
+       Version 2.0023 hatte einen maßgeblichen Fehler bei der neuen
+       Prüftechnik. Bitte aktualisieren!
+     * 06.05.2011: Version 2.0023 erschienen
+       Kleine Optimierung der neuen Prüftechnik.
+     * 04.05.2011: Version 2.0022 erschienen
+       Eine neue Prüfungstechnik wurde realisiert. Es werden nun auch
+       bestimmte Bestandteile wie z.B. "werbung=" in einem Link geprüft,
+       die typischerweise von Adblockern geblockt werden.
+     * 01.05.2011: Version 2.0021 erschienen
+       Sorry. 2.0020 hatte einen kleinen Schreibfehler.
+     * 01.05.2011: Version 2.0020 erschienen
+       Es gab einen Fehler mit Firefox 3.0.3, 3.0.15 & 3.0.19 (vermutlich
+       auch mit anderen Unterversionen von 3.0) der dazu führte, dass die
+       Antiblock-Meldung bei der Linkprüfung erschien, obwohl kein
+       Adblocker installiert war. Ältere und neuere Firefox Versionen
+       waren nicht betroffen.
+     * 01.05.2011: Version 2.0019 erschienen
+       Die Scriptprüfung war seit 2.0015 fehlerhaft. Es erschien keine
+       Antiblock-Meldung, obwohl ein Adblocker die Werbung blockiert
+       hatte. Weiterhin werden jetzt auch bei der Linkprüfung mehr
+       Debug-Informationen gesammelt, um evtl. Falschmeldungen besser
+       auswerten zu können. Der Link zu Antiblock.org ist nun wieder
+       kleiner geschrieben.
+     * 30.04.2011: Verbesserte PHP-Version
+       Die PHP-Version generiert nun jedesmal wenn Deine Seite aufgerufen
+       wird 10 zufällige IDs für die Elementprüfung. Bei der HTML-Version
+       sind zwar auch 10 zufällige IDs integriert, allerdings wechseln
+       diese erst wieder, wenn Du das Script überschreibst oder eine neue
+       Version installierst. Theoretisch könnte der Besucher also hingehen
+       und die 10 IDs aus der HTML-Version freigeben und dann solange ohne
+       Antiblock surfen bist Du das Script wieder überschreibst. Bei der
+       PHP-Version kann das nicht passieren, weil bei jedem Seitenaufruf
+       10 andere IDs geprüft werden. Es ist allerdings unwahrscheinlich,
+       dass sich das schon jemand bei der HTML-Version antut. Es ist also
+       nur ein kleines aber trotzdem feines Upgrade ;)
+     * 30.04.2011: Version 2.0018 erschienen
+       Wie schon in der alten Version 1.3 gibt es in seltenen Fällen aus
+       unerklärlichen Gründen falsche Antiblock-Meldungen in Verbindung
+       mit Google Adsense. Um die Analyse zu verbessern werden nun
+       innerhalb des Scriptes mehr Debug-Informationen ermittelt. Grund
+       für die Falschmeldungen könnte sein, dass Google Adsense zu lange
+       braucht um die Ausgabe an den Besucher zu generieren. Daher haben
+       wir die Pause bis das Antiblock-Script startet auf 2 Sekunden
+       verlängert (vorher 500 ms). Wer möchte kann die Pause über die
+       (neue) Einstellung noch länger machen. Übrigens kann dieser Fehler
+       nur bei Google Adsense auftreten, weil diese die einzigen sind die
+       Scripte erstmal nachladen. Der Vorteil ist zwar, dass die Ladezeit
+       der Seite kaum beeinflusst wird, wodurch es aber wiederrum
+       unmöglich wird den genauen Zeitpunkt der Werbeauslieferung zu
+       ermitteln. Wer diesen Fehler gänzlich vermeiden möchte, der sollte
+       auf die Prüfung von Google Adsense verzichten. Die Voreinstellung
+       für Google Adsense wird daher erstmal deaktiviert, bis wir das
+       Problem gänzlich lösen konnten. Aber keine Angst. Die Prüfung auf
+       Elemente nach IDs wurde bisher nicht ausgehebelt und ist demnach
+       eine gute Alternative, auch wenn Google Adsense eingesetzt wird.
+       Hinweis: Es ist wirklich wichtig, dass das Antiblock-Script nach
+       dem letzten Werbescript im Quelltext steht. Ansonsten kann es sein,
+       dass das Antiblock-Script startet bevor das Script eines
+       Werbepartners vollständig geladen wurde, so dass Antiblock in dem
+       Moment davon ausgeht, dass die Werbung blockiert wurde. Daher
+       möglichst direkt vor </body> setzen!
+     * 28.04.2011: Neue Einstellung
+       Es kann neben dem HTML Code nun auch eine PHP Version
+       heruntergeladen werden. Die PHP Version zeichnet sich dadurch aus,
+       dass sie ständig die ID des Antiblock-Scripts wechselt und damit
+       noch schwerer auszuhebeln ist.
+     * 28.04.2011: Version 2.0016 erschienen
+       Das Werbenetzwerk Exchangecash wurde bei der Scripterkennung
+       hinzugefügt.
+     * 28.04.2011: Version 2.0015 erschienen
+          + Alle der drei eingesetzten Adblocker-Erkennungstechniken
+            können nun einzeln ein- / ausgeschaltet werden.
+          + Bei der Scripterkennung kann man nun selbst Links und
+            Variablen vorgeben, die geprüft werden sollen (Eine Anleitung
+            dazu folgt noch). Daraus resultierte sogar unerwartet noch mal
+            eine Verkleinerung der Dateigröße.
+          + Das Script konnte dank der beim CSS Compressor
+            http://www.minifycss.com/css-compressor/ und JS Compressor
+            http://refresh-sf.com/yui/ gefundenen Anregungen noch mal
+            minimal verkleinert werden.
+          + Optional kann dem Besucher ein Schließen-Button angeboten
+            werden, mit dem die Antiblock-Meldung geschlossen werden kann.
+          + Der neue Schließen-Button kann für einen ausgewählten Zeitraum
+            inaktiv bleiben bis ein Counter abgelaufen ist.
+     * 27.04.2011: Version 2.0014 erschienen
+       Es wurde ein weniger relevanter Fehler im Script behoben, der im
+       Ausnahmefall (per Zufall und auch nur bei Adsense) verhinderte,
+       dass die Antiblock-Meldung erscheint. Weiterhin kann man nun bei
+       den Einstellungen auswählen welche Element-IDs man prüfen lassen
+       möchte (Standard sind 10 zufällige IDs, die von Adblockern als
+       Werbung erkannt würden). Wer möchte kann also entweder die
+       zufälligen IDs nutzen oder hinterlegt seine eigenen (wer also z.B.
+       &ltdiv id="leaderboard">Hier erscheint die Werbung</div> in seinem
+       Quelltext stehen hat, kann "leaderboard" als zu prüfende ID
+       hinzufügen). Wer den Besucher nicht zwingen möchte Javascript
+       einzusetzen, dessen Code ist nun außerdem 0,3 kB kleiner.
+     * 27.04.2011: Version 2.0013 erschienen
+       Diverse Performance-Optimierungen basierend auf Nokia JavaScript
+       Performance Best Practices. Erneute Optimierung der Dateigröße.
+     * 27.04.2011: Version 2.0012 erschienen
+       Antiblock erkennt jetzt Simple Adblock (Internet Explorer 7 - 9).
+     * 27.04.2011: kein Update
+       AdBlock (Opera) wird bereits erkannt.
+     * 27.04.2011: Version 2.0011 erschienen
+       Optimierungen bei der Dateigröße. Antiblock erkennt jetzt auch CSS
+       Adblock Stylesheets, darin eingeschlossen AdSweep (Opera).
+     * 26.04.2011: Version 2.0010 erschienen
+       Kleines Update für eine vierte Technik gegen Adblock Plus (Firefox)
+       bezogen auf Google Adsense.
+     * 26.04.2011: Version 2.0009 erschienen
+       Die neue Version erkennt nun auch Adblock (Google Chrome).
+     * 25.04.2011: Version 2.0008 erschienen
+       Der Transparenzeffekt ist nun besser, wie man hier sehen kann:
+       http://browsershots.org/http://www.antiblock.org/?p=script&test=1.
+       Es werden nun weit aus mehr Browser unterstützt und die (alten)
+       Browser, die es nicht unterstützen, zeigen stattdessen einen weißen
+       Hintergrund, so dass die Seite nicht zu sehen ist, solange ein
+       Adblocker aktiv ist. Zusätzlich wurde das Script mit der alten
+       Version 1.3 kombiniert, da sich herausgestellt hat, dass die alte
+       Version besser in der Erkennung von hosts-Datei Adblockern oder
+       Adblockern im Internet Explorer war. Zusätzlich bietet es so noch
+       eine separate Hürde gegen Antiblock Plus im Firefox. Das Script
+       erkennt nun mit drei verschiedenen Techniken, ob ein Adblocker
+       installiert ist oder nicht. In Kürze wird noch ein Test wegen
+       Opera/Firefox CSS Adblockern gestartet. Es ist aber wahrscheinlich,
+       dass das Script bereits jetzt in der Lage ist diese ebenfalls zu
+       erkennen.
+     * 24.04.2011: Version 2.0007 erschienen
+       Die Fehler im Internet Explorer wurden behoben. Tests für
+       IE-spezifische Adblocker stehen aber noch aus. Um weiterhin einem
+       Darstellungsfehler in verschiedenen Browsern gerecht zu werden, wo
+       der Transparenz-Effekt nicht funktionierte, wurde die
+       Hintergrundfarbe standardmäßig auf weiß umgestellt. Allerdings
+       funktioniert dadurch die Transparenz aktuell nicht mehr im Internet
+       Explorer. Das ist kein kritischer Fehler, sondern nur ein
+       Designproblem, das wir sicher mit der nächsten Version beheben
+       werden. Das Script kann also wieder eingebaut werden.
+     * 24.04.2011: Erneute Fehler!
+       Es wurden weitere Fehler im Zusammenhang mit dem Internet Explorer
+       6-9 gefunden (Meldung erscheint nicht, auch wenn Werbeflächen
+       blockiert wurden).
+     * 23.04.2011: Version 2.0006 erschienen
+       Der Fehler in Firefox 2.0 und Firefox 3.0 wurde behoben.
+     * 23.04.2011: Der Crossbrowser-Test zeigte Fehler!
+       Getestet haben wir alle gängigen Browser. Die
+       Anti-Adblocker-Meldung kommt fälschlicherweise bei Nutzern von
+       Firefox 2.0, Firefox 3.0 und Internet Explorer 6. Diesen Umstand
+       werden wir noch mal genauer unter die Lupe nehmen. Wir raten
+       aktuell vom Einbau ab.
+     * 23.04.2011: Version 2.0005 erschienen
+       Bevor nun die 10 Werbenetzwerke geprüft werden, prüft das Script
+       erstmal ob HTML-Elemente mit bestimmten IDs durch einen Adblocker
+       unsichtbar gemacht wurden. Auch hier werden 10 verschiedene
+       geprüft, die ebenfalls per Zufall im Script hinterlegt werden.
+     * 23.04.2011: Version 2.0004 erschienen
+       Statt pauschal die 3 bekanntesten Werbenetzwerke zu prüfen, werden
+       nun 10 Werbenetzwerke geprüft, die dazu noch bei jedem Webmaster
+       anders sein werden (beim erneuten Laden der Download-Seite stehen
+       andere Links in der Liste).
+     * 23.04.2011: Version 2.0003 erschienen
+       Kleine Fehler korrigiert. Minifizierung umgesetzt (überflüssige
+       Zeichen wurden aus dem Script entfernt um es noch kompakter zu
+       machen). Zusätzlich kann nun eingestellt werden ob das Script auch
+       bei NOSCRIPT den Zugriff verweigern soll.
+     * 22.04.2011: Version 2.0002 erschienen
+       Das Script wurde vollständig erneuert. Es prüft nun nicht mehr ob
+       die Scriptinhalte der Werbenetzwerke im Arbeitsspeicher liegen
+       sondern versucht selbst die Scripte zu laden. Das wurde notwendig,
+       weil verschiedene Werbenetzwerke auch Scripte in iframes nachluden
+       und die dortigen Scriptinhalte waren nicht zu prüfen (wg. der
+       Same-Origin-Policy).
+       Damit kann das Script nun auch blockierte Bilder (also einfache
+       Banner in HTML) erkennen. Weiterhin ist unerheblich geworden welche
+       Werbenetzwerke eingesetzt werden. Pauschal wird Google Adsense,
+       Affili.net und Bin-Layer getestet. Falls nötig (wenn das Script
+       erneut ausgehebelt wird), werden wir das aber dynamisch anpassen,
+       so dass das Script die Werbeanbieter sogar per Zufall prüft.
+     * 29.09.2010: Version 1.3007 erschienen.
+        Aktualisiert: (Falls Contaxe eingesetzt wird ist ein Update
+            dringend notwendig!)
+          + Contaxe
+        Entfernt: (Konnte nicht mehr verifiziert werden, daher
+            sicherheitshalber ausgebaut)
+          + Mirago
+     * 13.08.2010: Version 1.3006 erschienen.
+        Hinzugefügte Werbenetzwerke:
+          + SponsorAds
+     * 29.07.2010: Version 1.3005 erschienen.
+        Hinzugefügte Werbenetzwerke:
+          + Contaxe
+        Update:
+          + CSS: z-index entfernt
+            Ein Script versuchte Antiblock auszuhebeln, in dem es Layer
+            mit hohen z-index Angaben ausblendete. Wir überlassen es nun
+            dem Browser den korrekten z-index Wert zu bestimmen.
+            Nutzerhinweis: Damit wurde nicht nur Antiblock, sondern auch
+            Designelemente wie Navigationen ausgeblendet. Daher war die
+            Idee schon schlecht ;)
+          + Warnicon entfernt
+            Dieses blähte das Script unnötig auf. In einer der nächsten
+            Versionen werden wir eine alternative Lösung umsetzen (Das
+            Script ist dadurch von 5 auf 3 kb geschrumpft).
+          + Zeitversetze Ausführung
+            Manche Nutzer berichteten, dass Antiblock manchmal blockt,
+            obwohl kein Adblocker im Einsatz ist. Dies ist vermutlich auf
+            eine Ladeschwierigkeit des Werbeanbieters zurückzuführen. Die
+            Ausführung erfolgt daher nun um 2 Sekunden verzögert.
+     * 24.05.2010: Version 1.3004 erschienen.
+        Aktualisierte Werbenetzwerke:
+          + Bin-Layer
+     * 12.05.2010: Version 1.3003 erschienen.
+        Update:
+          + CSS Styles werden zufällig angeordnet (Schutz vor
+            CSS-Filter-Regeln)
+          + Element ID wird zufällig generiert (Schutz vor
+            ID-Filter-Regeln)
+       Dies wurde nötig, da manche Adblocker angefangen haben unser Script
+       auf bestimmte Bestandteile hin zu filtern und damit auszuhebeln.
+       Nun wird, bei jedem Besucher unserer Seite, das Script mit anderen
+       zufälligen Parametern ausgestattet. Es ist daher nicht mehr möglich
+       das Script pauschal zu unterdrücken. Bitte meldet uns, wenn weitere
+       Filterregeln gegen unser Script bekannt werden.
+     * 11.05.2010: Version 1.3002 erschienen.
+        Hinzugefügte Werbenetzwerke:
+          + AdTiger
+     * 26.04.2010: Version 1.3001 erschienen.
+        Hinzugefügte Werbenetzwerke:
+          + BitVertiser
+     * 30.03.2010: Version 1.2 erschienen. Ab sofort werden keine Bilder
+       mehr benötigt. Das Script lässt sich nun einfacher integrieren.
+       Hinweis: Falls vorhanden, vorher Version 1.1 ausbauen.
+        Unterstütze Werbenetzwerke:
+          + Google Adsense
+          + Adscale
+          + Bin-Layer
+          + Mirando
+          + Mirago
+     * 02.09.2009: Version 1.1 erschienen.
+
+Wie funktioniert das Script?
+
+   Wir machen uns die Funktionsweise der verschiedenen Adblocker zu nutze
+   und prüfen simpel, ob Werbung ausgeliefert werden kann. Im Negativfall
+   erhält der Besucher keinen Zugriff auf die Website und erhält
+   stattdessen die Information, dass er seinen Adblocker deaktivieren
+   muss, um fortfahren zu können.
+
+Was kostet das Script?
+
+   Das Script ist kostenlos. Umso mehr Webmaster das Script einbauen, umso
+   größer ist die Deckungsrate und damit die Wirkung beim Verbraucher in
+   Zukunft auf Adblocker zu verzichten. Daher können alle nur gewinnen.
+
+Vor welchen Adblockern schützt das Script?
+
+   Das Script hat sich bisher erfolgreich geschlagen bei:
+     * Firefox Adblocker Plugin
+     * Internet Explorer ie7pro
+     * Kaspersky Anti-Banner Einstellung
+     * Firefox Adblock Plus Plugin
+     * hosts-Datei als Werbeblocker
+     * Firefox Ghostery
+     * Adblocker.css für Firefox, Safari und Opera
+     * Google Chrome Adblock Plus
+     * Opera AdSweep
+     * Google Chrome Adblock
+     * Internet Explorer Adblock Pro
+     * Internet Explorer Simple Adblock
+
+   Falls Dir weitere Adblocker bekannt sind, die damit ausgehebelt werden
+   konnten, bitten wir um kurze Benachrichtigung. Aber auch im
+   gegenteiligen Fall bitten wir um eine Nachricht. Wir aktualisieren das
+   Script dann entsprechend. Daher solltest Du ab und zu mal wieder hier
+   vorbeischauen, und die evtl. aktuellere Version herunterladen (die
+   Versionsangabe steht im Script).
+
+Demonstration
+
+   Hier klicken, um das Script in Aktion zu sehen.
+
+Download
+
+   Hier klicken, um das Script herunterzuladen.
+
+Bookmarke uns
+
+   Wir würden uns freuen, wenn Du uns bei einem der Dienste bookmarken
+   würdest oder einen Bericht in Deinem Blog / Forum verfassen könntest.
+   Hier ein paar Bookmarklinks:
+
+Informationen für Adblock-Nutzer
+
+     nach oben
+
+   Du hast eine Meldung erhalten, wo Dir der Zugriff auf eine Website
+   verwehrt wurde, weil Du einen Adblocker installiert hast? Dir wird
+   nichts anderes übrig bleiben als diesen Adblocker zu deaktivieren oder
+   zu deinstallieren.
+
+Warum verwehren Webmaster den Zugriff auf Ihre Inhalte?
+
+   Die Frage gibt eigentlich schon selbst die Antwort. Es sind nunmal die
+   Inhalte der Webmaster, die sie in vielen Stunden und in der Regel mit
+   hohen finanziellen Mitteln zusammengetragen haben. Weiterhin müssen
+   auch sie monatliche Kosten für Internetdomains, Server, Wartung und
+   Programmierung aufbringen, die gedeckt werden müssen. Ohne
+   Werbeinnahmen kann also ein Webmaster sein Angebot nicht aufrecht
+   erhalten. In Zukunft müsstest Du also auf gute Internetinhalte
+   verzichten.
+
+Feedback
+
+     nach oben
+
+   Du hast eine Idee wie man das Script verbessern könnte, Du hast einen
+   Adblocker gefunden, der von dem Script nicht erkannt wird oder hast
+   eine Frage, dann nutze das folgende Kontaktformular:
+   _______________________________________________________
+
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   __________________________________________________
+   Bitte wähle zum Schutz vor Spam die Kästchen mit der entsprechenden
+   Anzahl aus:
+     * 1000 ml in Liter
+     * Stativbeine
+     * Todsünden
+     * Pizzastücke bei vier Schnitten
+
+   1 [ ] 2 [ ] 3 [ ] 4 [ ] 5 [ ] 6 [ ] 7 [ ] 8 [ ]
+   Absenden
+
+   Du kannst uns auch neue Werbenetzwerke vorschlagen, die wir dann in der
+   nächsten Version integrieren werden. Stell uns dafür bitte den Code des
+   Werbenetzwerks zur Verfügung und eine Website auf der dieser Code
+   eingebaut ist, damit wir dessen Funktion sichten und einen
+   entsprechenden Filter realisieren können.
+     __________________________________________________________________
+
+   www.antiblock.org
+   © 2009 - 2019
+
+Impressum
+
+   Marc Gutt, Kapellenstr. 55, 53797 Lohmar, Marc(at)Gutt.IT,
+   T+49.2241.9592900, Gutt.IT

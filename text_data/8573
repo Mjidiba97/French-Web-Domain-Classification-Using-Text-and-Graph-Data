@@ -1,0 +1,450 @@
+    #alternate alternate
+
+     * jQuery
+     * jQuery UI
+     * jQuery Mobile
+     * Sizzle
+     * QUnit
+
+     * Plugins
+     * Contribute
+          + CLA
+          + Style Guides
+          + Bug Triage
+          + Code
+          + Documentation
+          + Web Sites
+     * Events
+     * Support
+          + Learning Center
+          + IRC/Chat
+          + Forums
+          + Stack Overflow
+          + Commercial Support
+     * JS Foundation
+          + Join
+          + Members
+          + Leadership
+          + Conduct
+          + Donate
+
+jQuery
+
+   Support the JS Foundation
+
+     * Download
+     * API Documentation
+     * Blog
+     * Plugins
+     * Browser Support
+
+   (BUTTON) search Search jQuery ____________________
+   Download jQuery v3.4.1 The 1.x and 2.x branches no longer receive
+   patches.
+   View Source on GitHub → How jQuery Works →
+
+Lightweight Footprint
+
+   Only 30kB minified and gzipped. Can also be included as an AMD module
+
+CSS3 Compliant
+
+   Supports CSS3 selectors to find elements as well as in style property
+   manipulation
+
+Cross-Browser
+
+   Chrome, Edge, Firefox, IE, Safari, Android, iOS, and more
+
+What is jQuery?
+
+   jQuery is a fast, small, and feature-rich JavaScript library. It makes
+   things like HTML document traversal and manipulation, event handling,
+   animation, and Ajax much simpler with an easy-to-use API that works
+   across a multitude of browsers. With a combination of versatility and
+   extensibility, jQuery has changed the way that millions of people write
+   JavaScript.
+
+Other Related Projects
+
+   jQueryUI
+   jQuery Mobile
+
+   QUnit
+   Sizzle
+
+Resources
+
+     * jQuery Core API Documentation
+     * jQuery Learning Center
+     * jQuery Blog
+     * Contribute to jQuery
+     * About the jQuery Foundation
+     * Browse or Submit jQuery Bugs
+
+A Brief Look
+
+DOM Traversal and Manipulation
+
+   Get the <button> element with the class ʼcontinueʼ and change its HTML
+   to ʼNext Step...ʼ
+   1
+
+   $( "button.continue" ).html( "Next Step..." )
+
+Event Handling
+
+   Show the #banner-message element that is hidden with display:none in
+   its CSS when any button in #button-container is clicked.
+   1
+   2
+   3
+   4
+
+   var hiddenBox = $( "#banner-message" );
+   $( "#button-container button" ).on( "click", function( event ) {
+   hiddenBox.show();
+   });
+
+Ajax
+
+   Call a local script on the server /api/getWeather with the query
+   parameter zipcode=97201 and replace the element #weather-tempʼs html
+   with the returned text.
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+
+   $.ajax({
+   url: "/api/getWeather",
+   data: {
+   zipcode: 97201
+   },
+   success: function( result ) {
+   $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+   }
+   });
+
+Books
+
+     * Learning jQuery 4th Edition by Karl Swedberg and Jonathan Chaffer
+       Learning jQuery Fourth Edition Karl Swedberg and Jonathan Chaffer
+     * jQuery in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa
+       jQuery in Action Bear Bibeault, Yehuda Katz, and Aurelio De Rosa
+     * jQuery Succinctly by Cody Lindley jQuery Succinctly Cody Lindley
+
+     * Learning Center
+     * Forum
+     * API
+     * Twitter
+     * IRC
+     * GitHub
+
+   Copyright 2019 The jQuery Foundation. jQuery License Web hosting by
+   Digital Ocean | CDN by StackPath
+    #alternate alternate
+
+     * jQuery
+     * jQuery UI
+     * jQuery Mobile
+     * Sizzle
+     * QUnit
+
+     * Plugins
+     * Contribute
+          + CLA
+          + Style Guides
+          + Bug Triage
+          + Code
+          + Documentation
+          + Web Sites
+     * Events
+     * Support
+          + Learning Center
+          + IRC/Chat
+          + Forums
+          + Stack Overflow
+          + Commercial Support
+     * JS Foundation
+          + Join
+          + Members
+          + Leadership
+          + Conduct
+          + Donate
+
+jQuery
+
+   Support the JS Foundation
+
+     * Download
+     * API Documentation
+     * Blog
+     * Plugins
+     * Browser Support
+
+   (BUTTON) search Search jQuery ____________________
+   Download jQuery v3.4.1 The 1.x and 2.x branches no longer receive
+   patches.
+   View Source on GitHub → How jQuery Works →
+
+Lightweight Footprint
+
+   Only 30kB minified and gzipped. Can also be included as an AMD module
+
+CSS3 Compliant
+
+   Supports CSS3 selectors to find elements as well as in style property
+   manipulation
+
+Cross-Browser
+
+   Chrome, Edge, Firefox, IE, Safari, Android, iOS, and more
+
+What is jQuery?
+
+   jQuery is a fast, small, and feature-rich JavaScript library. It makes
+   things like HTML document traversal and manipulation, event handling,
+   animation, and Ajax much simpler with an easy-to-use API that works
+   across a multitude of browsers. With a combination of versatility and
+   extensibility, jQuery has changed the way that millions of people write
+   JavaScript.
+
+Other Related Projects
+
+   jQueryUI
+   jQuery Mobile
+
+   QUnit
+   Sizzle
+
+Resources
+
+     * jQuery Core API Documentation
+     * jQuery Learning Center
+     * jQuery Blog
+     * Contribute to jQuery
+     * About the jQuery Foundation
+     * Browse or Submit jQuery Bugs
+
+A Brief Look
+
+DOM Traversal and Manipulation
+
+   Get the <button> element with the class ʼcontinueʼ and change its HTML
+   to ʼNext Step...ʼ
+   1
+
+   $( "button.continue" ).html( "Next Step..." )
+
+Event Handling
+
+   Show the #banner-message element that is hidden with display:none in
+   its CSS when any button in #button-container is clicked.
+   1
+   2
+   3
+   4
+
+   var hiddenBox = $( "#banner-message" );
+   $( "#button-container button" ).on( "click", function( event ) {
+   hiddenBox.show();
+   });
+
+Ajax
+
+   Call a local script on the server /api/getWeather with the query
+   parameter zipcode=97201 and replace the element #weather-tempʼs html
+   with the returned text.
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+
+   $.ajax({
+   url: "/api/getWeather",
+   data: {
+   zipcode: 97201
+   },
+   success: function( result ) {
+   $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+   }
+   });
+
+Books
+
+     * Learning jQuery 4th Edition by Karl Swedberg and Jonathan Chaffer
+       Learning jQuery Fourth Edition Karl Swedberg and Jonathan Chaffer
+     * jQuery in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa
+       jQuery in Action Bear Bibeault, Yehuda Katz, and Aurelio De Rosa
+     * jQuery Succinctly by Cody Lindley jQuery Succinctly Cody Lindley
+
+     * Learning Center
+     * Forum
+     * API
+     * Twitter
+     * IRC
+     * GitHub
+
+   Copyright 2019 The jQuery Foundation. jQuery License Web hosting by
+   Digital Ocean | CDN by StackPath
+    #alternate alternate
+
+     * jQuery
+     * jQuery UI
+     * jQuery Mobile
+     * Sizzle
+     * QUnit
+
+     * Plugins
+     * Contribute
+          + CLA
+          + Style Guides
+          + Bug Triage
+          + Code
+          + Documentation
+          + Web Sites
+     * Events
+     * Support
+          + Learning Center
+          + IRC/Chat
+          + Forums
+          + Stack Overflow
+          + Commercial Support
+     * JS Foundation
+          + Join
+          + Members
+          + Leadership
+          + Conduct
+          + Donate
+
+jQuery
+
+   Support the JS Foundation
+
+     * Download
+     * API Documentation
+     * Blog
+     * Plugins
+     * Browser Support
+
+   (BUTTON) search Search jQuery ____________________
+   Download jQuery v3.4.1 The 1.x and 2.x branches no longer receive
+   patches.
+   View Source on GitHub → How jQuery Works →
+
+Lightweight Footprint
+
+   Only 30kB minified and gzipped. Can also be included as an AMD module
+
+CSS3 Compliant
+
+   Supports CSS3 selectors to find elements as well as in style property
+   manipulation
+
+Cross-Browser
+
+   Chrome, Edge, Firefox, IE, Safari, Android, iOS, and more
+
+What is jQuery?
+
+   jQuery is a fast, small, and feature-rich JavaScript library. It makes
+   things like HTML document traversal and manipulation, event handling,
+   animation, and Ajax much simpler with an easy-to-use API that works
+   across a multitude of browsers. With a combination of versatility and
+   extensibility, jQuery has changed the way that millions of people write
+   JavaScript.
+
+Other Related Projects
+
+   jQueryUI
+   jQuery Mobile
+
+   QUnit
+   Sizzle
+
+Resources
+
+     * jQuery Core API Documentation
+     * jQuery Learning Center
+     * jQuery Blog
+     * Contribute to jQuery
+     * About the jQuery Foundation
+     * Browse or Submit jQuery Bugs
+
+A Brief Look
+
+DOM Traversal and Manipulation
+
+   Get the <button> element with the class ʼcontinueʼ and change its HTML
+   to ʼNext Step...ʼ
+   1
+
+   $( "button.continue" ).html( "Next Step..." )
+
+Event Handling
+
+   Show the #banner-message element that is hidden with display:none in
+   its CSS when any button in #button-container is clicked.
+   1
+   2
+   3
+   4
+
+   var hiddenBox = $( "#banner-message" );
+   $( "#button-container button" ).on( "click", function( event ) {
+   hiddenBox.show();
+   });
+
+Ajax
+
+   Call a local script on the server /api/getWeather with the query
+   parameter zipcode=97201 and replace the element #weather-tempʼs html
+   with the returned text.
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+
+   $.ajax({
+   url: "/api/getWeather",
+   data: {
+   zipcode: 97201
+   },
+   success: function( result ) {
+   $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+   }
+   });
+
+Books
+
+     * Learning jQuery 4th Edition by Karl Swedberg and Jonathan Chaffer
+       Learning jQuery Fourth Edition Karl Swedberg and Jonathan Chaffer
+     * jQuery in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa
+       jQuery in Action Bear Bibeault, Yehuda Katz, and Aurelio De Rosa
+     * jQuery Succinctly by Cody Lindley jQuery Succinctly Cody Lindley
+
+     * Learning Center
+     * Forum
+     * API
+     * Twitter
+     * IRC
+     * GitHub
+
+   Copyright 2019 The jQuery Foundation. jQuery License Web hosting by
+   Digital Ocean | CDN by StackPath

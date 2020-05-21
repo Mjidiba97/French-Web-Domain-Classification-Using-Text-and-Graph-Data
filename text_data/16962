@@ -1,0 +1,147 @@
+   #Le flux RSS de HTeuMeuLeu
+
+HTeuMeuLeu
+
+   vendredi 8 mars 2019
+
+TF1, Internet et le Web
+
+   Hier, j’ai publié sur Twitter un thread qui a plutôt bien tourné. Mais
+   je n’aime pas trop le format de thread à la base, alors je le reposte
+   ici.
+
+   Mardi prochain, le Web fête ses 30 ans. La presse va s’en donner à cœur
+   joie pour confondre le Web et Internet. TF1 décroche déjà le gros lot
+   hier soir avec cette intro qui enchaîne 3 erreurs en 20 secondes.
+
+   https://www.youtube.com/watch?v=OKXCfJMedis
+
+     C’était il y a 30 ans, autant dire la préhistoire. Deux chercheurs
+     du CNRS publient sur un écran d’ordinateur la toute première page
+     web. Cette révolution a un nom : Internet.
+
+    1. Erreur 1 : Les chercheurs sont du CERN (le Conseil Européen pour la
+       Recherche Nucléaire, organisme européen basé en Suisse), pas du
+       CNRS (le Centre National de la Recherche Scientifique, organisme
+       public français). Ils s’appellent Tim Berners-Lee et Robert
+       Cailliau.
+    2. Erreur 2 : Il y a 30 ans, c’est la proposition du projet «
+       Information Management » (qui donnera naissance au Web) qui a vu le
+       jour. La toute première page web a été publiée en 1990. Elle est
+       toujours visible en ligne.
+    3. Erreur 3 : « Cette révolution a un nom : Internet » Bah, non. Son
+       nom, c’est le Web. Internet a débuté dans les années 1960, à partir
+       du réseau militaire américain ARPANET. Internet, c’est
+       l’infrastructure, le réseau. Le Web, c’est une application de ce
+       réseau, comme l’e-mail.
+
+   Bonus : une photo de Tim Berners-Lee bébé et sa maman Mary Lee
+   Berners-Lee (tirée du documentaire ForEveryone.net).
+
+   mercredi 20 février 2019
+
+∞ The Ultimate Game Boy Talk
+
+   https://www.youtube.com/watch?v=HyzD8pNlpwI
+
+   Dans cette conférence donnée lors du 33e Chaos Communication Congress,
+   Michael Steil présente en détails pendant une heure l’architecture
+   matérielle du Game Boy. En bon gros fan, j’ai trouvé ça fascinant et
+   j’ai appris plein de trucs. Notamment (à 19:20) :
+
+     La boot ROM est le truc qui dessine [le logo Nintendo] et fait le
+     son. Cette boot ROM est inclue à l’intérieur du Game Boy. Et ça a
+     pris du temps avant que ce code ne soit extrait, c’était très
+     pénible (ce n’est pas moi qui l’ai fait). Ce que ça fait, c’est que
+     ça initialise la RAM, le son, prépare et décode le logo qui
+     s’affiche à l’écran, fait défiler le logo, et joue le son. Puis,
+     c’est là que ça devient intéressant : ça compare le logo. Le jeu
+     doit inclure une copie du logo Nintendo. Si ça ne correspond pas, le
+     jeu ne démarre pas. Ça a été fait ainsi pour que Nintendo puisse
+     contrôler quels jeux sortent sur la plateforme. Tous les jeux
+     doivent inclure le logo, ce qui serait non seulement une violation
+     de droits d’auteur mais aussi une violation de marque déposée si
+     vous incluez ça sans la permission de Nintendo.
+
+     Séquence de démarrage du Game Boy
+
+   J’ai aussi beaucoup aimé les techniques de déformation de visuels pour
+   faire des jeux de courses (à partir de 43 minutes).
+
+   lundi 18 février 2019
+
+∞ Est-ce que CSS est un langage de programmation ?
+
+   https://twitter.com/ppk/status/1085219213478907906
+
+   C’est la question posée par Peter-Paul Koch sur Twitter le mois
+   dernier. Et à mon grand étonnement, la réponse est majoritairement non.
+   Je ne m’étais jamais posé la question, tant pour moi la réponse est
+   positive.
+
+   Dans mon esprit, à partir du moment où on écrit du code pour dire à un
+   ordinateur de faire quelque chose, c’est un langage de programmation.
+
+   D’après Wikipedia :
+
+     Un langage de programmation est un langage formel, qui comprend un
+     ensemble d’instructions utilisé pour produire différents types de
+     sorties. Les langages de programmation sont utilisés dans la
+     programmation information pour créer des programmes qui implémentent
+     des algorithmes spécifiques.
+
+   En CSS, on utilise des sélecteurs, des propriétés et des valeurs pour
+   produire un rendu graphique. On « programme » le navigateur pour
+   obtenir un affichage.
+
+   dimanche 17 février 2019
+
+∞ CERN 2019 WorldWideWeb Rebuild
+
+   https://worldwideweb.cern.ch/browser/
+
+   Pour les 30 ans du Web (le 12 mars prochain), le CERN a réuni une «
+   dream team » (avec notamment Jeremy Keith et Remy Sharp) pour recréer
+   le tout premier navigateur Web. Ça tourne dans un navigateur web, donc,
+   et c’est franchement chouette (je trouve).
+
+   Capture d'écran de mon blog sur le tout premier navigateur
+
+   L’utilisation n’est pas des plus intuitives. Pour aller sur un site
+   web, il faut aller dans le menu « Document » puis « Open from full
+   document reference ».
+
+   Le site du CERN donne plein de détails sur l’historique du navigateur,
+   où je découvre d’ailleurs la toute première nomenclature de styles (des
+   années avant CSS). Le blog de Jeremy Keith donne quelques autres
+   détails (et plein de liens vers les blogs de ses comparses).
+
+   vendredi 16 mars 2018
+
+∞ Let’s make the grimy architecture of the web visible again
+
+   http://www.wired.co.uk/article/the-weird-psyschogeography-of-urls
+
+   Lu chez Wired UK, un court article militant pour l’importance des URL.
+
+     Si vous êtes le genre de petit malin prétentieux que je suis, vous
+     avez déjà flirté avec des lectures sur la psychogéographie. Et vous
+     aurez médité l’idée que quelque chose dans la forme des bâtiments ou
+     la topographie d’une ville peut affecter votre humeur.
+
+     Je pense que c’est vrai aussi pour des URL.
+
+     Uniform Resource Locators, ou des adresses web pour la plupart
+     d’entre nous, sont ce qu’il y a de plus proche à l’infrastructure
+     physique du web parmi ce que rencontre un internaute au quotidien.
+     Un développeur web expérimenté peut regarder la structure d’une URL
+     et tirer des conclusions sur la solidité de la construction d’un
+     site, de la même manière qu’un ingénieur structures peut regarder un
+     pont. Mais je pense que nous autres sentons aussi quelque chose ici,
+     même sans savoir exactement ce qu’il se passe.
+
+   J’aime beaucoup ce parallèle avec l’architecture. Et le reste de
+   l’article, avec son historique de la « chute » des URL est vraiment
+   bien.
+
+   « Articles plus anciens

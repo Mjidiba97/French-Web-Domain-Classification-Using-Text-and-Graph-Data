@@ -1,0 +1,89 @@
+                                   OCamlgraph
+
+   OCamlgraph est une bibliothèque de graphes pour Objective Caml. Elle
+   présente trois aspects différents:
+     * Elle fournit un module Graph.Pack regroupant une structure de
+       données pour des graphes et de nombreux opérations et algorithmes
+       sur ces graphes.
+       Il est conseillé de jeter un oeil à ce module en premier lieu pour
+       comprendre le genre de choses fournies par OCamlgraph. Voir aussi
+       le fichier demo.ml.
+     * Ensuite, OCamlgraph fournit plusieurs autres structrures de données
+       pour les graphes, pour ceux qui ne se satisferaient pas de la
+       précédente. Certaines sont persistentes et d'autre impératives.
+       Certaines correspondent à des graphes orientés et d'autres à des
+       graphes non-orientés. Certaines étiquettent les noeuds, d'autres
+       les arêtes, d'autres les deux. etc.
+       L'interface Sig décrit les signatures des structures de données
+       pour les graphes et les modules Persistent et Imperative
+       fournissent des implantations.
+       Ces implantations sont écrites sous la forme de foncteurs : on
+       spécifie le type des sommets, des arêtes, de leurs labels, etc. et
+       on récupère alors une structure de données.
+     * Enfin, OCamlgraph fournit plusieurs opérations et algorithmes
+       classiques sur les graphes. Ils sont également écrits comme des
+       foncteurs, c'est-à-dire indépendamment de la structure de données
+       pour les graphes. En conséquence, vous pouvez définir votre propre
+       structure de données et réutiliser tous les algorithmes de cette
+       bibliothèque -- il suffit de fournir quelques opérations telles que
+       l'itération sur tous les sommets, sur tous les successeurs d'un
+       noeud, etc. Voir par exmple le module Path.
+
+    Documentation
+
+   Parcourir l'API. Note : Tous les modules sont regroupés à l'intérieur
+   d'un unique module Graph. .
+
+   FAQ
+
+   Articles présentant OCamlgraph :
+     * Le foncteur sonne toujours deux fois (JFLA 2005)
+     * Designing a Generic Graph Library using ML Functors (TFP 2007)
+
+   Exemples de code :
+     * sudoku.ml : résolution du Sudoku en utilisant le module de
+       coloration Coloring
+     * demo_planar.ml : dessine un graphe planaire aléatoire et illustre
+       les parcours en profondeur et en largeur et l'algorithme de
+       Dijkstra
+     * color.ml : dessine un graphe planaire aléatoire et le colorie avec
+       4 couleurs
+
+    Distribution
+
+   OCamlgraph est distribué librement, sous la licence GNU Library General
+   Public License version 2, avec une exception concernant l'édition de
+   lien décrite dans le fichier LICENSE.
+   Il est disponible sous forme de sources :
+     * ocamlgraph-1.8.8.tar.gz
+
+   Vous pouvez accéder à la zone de téléchargement directement. Voici les
+   derniers changements.
+
+   Vous pouvez également accéder en lecture à la version de développement
+   d'OCamlgraph sur github
+  https://github.com/backtracking/ocamlgraph
+
+    Crédits
+
+   Auteurs
+     * Sylvain Conchon
+     * Jean-Christophe Filliâtre
+     * Julien Signoles
+
+   Contributeurs extérieurs :
+     * Nicolas Ayache
+     * David Brumley
+     * Pierre-Loïc Garoche
+     * Ivan Jager
+     * Ted Kremenek
+     * Marc Lasson
+     * François Pottier
+     * Vincent Simonet
+     * Matthieu Sozeau
+     * Yuto Takei
+     * Markus Weißmann
+     * Boris Yakobowski
+     __________________________________________________________________
+
+   American

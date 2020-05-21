@@ -1,0 +1,464 @@
+   #FirstInvest - Atom FirstInvest - RSS
+
+FirstInvest
+
+   Finance et Investissement Personnel
+
+     * Bourse
+     * Finance
+     * Immobilier
+     * Outils
+     * A Propos
+
+   Rechercher__________ [search.png]-Submit
+
+Advertise
+
+Pages
+
+     * Accueil
+     * Finance
+     * Immobilier
+     * Bourse
+
+31 décembre 2012
+
+Performance FH Décembre 2012: +0,56%
+
+   12/31/2012  Emmanuel  No comments
+
+   Premier bilan de l'EA lancé début décembre sur un compte en cent chez
+   Instaforex: +0,56%
+   [Capture+d%E2%80%99e%CC%81cran+2012-12-31+a%CC%80+17.43.32.png]
+   Ce n'est pas Byzance mais c'est toujours positif :)
+   Coté statistiques:
+   - 43 trades effectués (50% short, 50% long)
+   - 4 trades en cours au 31/12
+   La durée de trade moyen est comprise entre 2 et 4 jours.
+   Le DD max 0,46% a porté une série à 3.2 lots (pour un lot de base à 0.2
+   et coefficient martingale x2) soit 5 positions pour un décalage du
+   cours d'environ 160 pips (de 1.6113 à 1.6274). L'EA est réglé pour
+   prendre des positions tous les 25 pips minimum et clore avec minimum 40
+   pips de profit, contrat rempli ici!
+   Voici la série en détail:
+   [Capture+d%E2%80%99e%CC%81cran+2012-12-31+a%CC%80+18.05.33.png]
+   Illustration:
+   [Capture+d%E2%80%99e%CC%81cran+2012-12-31+a%CC%80+18.11.54.png]
+   Un retracement de 50 pips a permis de déboucler cette série
+   Au global le mois de décembre était fastidieux, gros mouvements (de
+   200-300 points) sur les paires EU et GU avec peu de retracements
+   immédiat donc l'EA n'a pas débouclé beaucoup de série.
+   Espérons que 2013 commence sous de meilleurs auspices!
+   Lire | Performance FH Décembre 2012: +0,56%
+
+25 décembre 2012
+
+Robot de Trading: Analyse II
+
+   12/25/2012  Emmanuel  2 comments
+
+   Dans mon précédent post je vous présentais un robot de type grid
+   trading couplé avec une martingale.
+   Je vais pousser un peu plus loin l'analyse du robot et voir comment
+   améliorer son ratio R/R: Risk/Reward.
+   Pour rappel lors d'un signal d'achat/vente il prend position dans la
+   tendance et moyenne à la baisse lorsque la tendance s'inverse en
+   appliquant une martingale.
+   C'est à dire qu'on va partir avec de petites tailles de position par
+   trade que l'on va augmenter au fur et à mesure qu'on perd...
+   « plus ça rate, plus on a de chances que ça marche » comme disent les
+   shadocks ;-)
+   On parie que tôt ou tard le prix va revenir dans la tendance initiale
+   et le robot pourra déboucler les positions avec un gain.
+   Ce robot entre sur le marché en fonction d'un signal mais ensuite il
+   prend "bêtement" position tous les X pips.
+   Admettons que X = 20 et que je multiplie par 1.5 chaque nouvelle
+   position.
+   Si le marché décale de 200 points contre nous, paf direct dans le
+   dents, on se retrouve avec 10 positions à contre tendance partant de
+   0.01 lot pour finir à...0.38!
+   Analysis of the account balance for a grid martingale
+
+    Balance = 1000.00
+    Leverage = 1:400
+    Stop-out level = 20%
+    Margin required for 1 lot = 307.98
+    Price of 1 point for 1 lot = 0.77
+    Spread = 0.00005
+
+    Grid parameters:
+    --------------------
+    Base Lot = 0.01
+    Lot Multiplier = 1.50
+    Grid step = 20 pt
+
+   ================================================================
+
+    Balance requirements for an N-level basket
+
+    Levels      Balance      Points     Last Lots  Total Lots
+    #1           4.61          20        0.01        0.01
+    #2          10.75          40        0.01        0.02
+    #3          23.04          60        0.02        0.04
+    #4          42.99          80        0.03        0.07
+    #5          76.77         100        0.05        0.12
+    #6         127.41         120        0.07        0.19
+    #7         207.22         140        0.11        0.30
+    #8         331.54         160        0.17        0.47
+    #9         518.77         180        0.25        0.72
+    #10         804.22         200        0.38        1.10
+    #11        1235.46         220        0.57        1.67
+
+    With given settings, the account balance is sufficient for a basket
+    with 10 levels (200 pt) + price movement against the basket of 55 pt
+   Vous trouverez ici le script d'analyse pour MT4
+   Soit un DD de 255 points avant le margin call! nous voilà prévenu.
+   Donc ca peut faire très mal...alors pourquoi ne pas ré-rentrer après X
+   pip MAIS en suivant le signal de tendance? De cette manière si le
+   marché décale de 20 points mais que la tendance initiale n'est pas
+   confirmée, on attend - en général un retracement- pour reprendre
+   position, on va donc limiter les prises de risques dans la durée ce qui
+   à pour effet immédiat de limiter le draw down!
+   Et là vous me dites, oui mais en limitant le risque on va limiter les
+   gains! Certes mais personnellement je préfère ;-)
+   Illustration: backtest sur les 3 derniers mois FH "dumb version" vs FH
+   "skilled version" :
+   Symbole
+   GBPUSD (Great Britain Pound vs US Dollar)
+   Periode
+   1 Heure (H1) 2012.09.03 00:00 - 2012.11.29 23:00 (2012.09.03 -
+   2012.11.30)
+   [FH24.png]
+   FH "dumb version"
+   [FH26.png]
+   FH "skilled version"
+   Bilan comparatif (lot de base 0.02 pour 3000e, SL@250 pips):
+   - la version de base : taille de lot max: 0.48, R/R: 1.65, profit=
+   +910, DD= -18.6%
+   - la version améliorée: taille de lot max: 0.17, R/R: 2.22, profit=
+   +664, DD= -5.2%
+   C'est un axe d'amélioration intéressant et simple à mettre en oeuvre,
+   les concepteurs de ce robot ont surement du y penser mais c'est
+   beaucoup moins vendeur: tout le monde veut faire 300% en 3 mois! ;-)
+   J'ai commencé un compte en live avec cette version début décembre, je
+   ferai un petit bilan d'ici là!
+   En attendant j'étudie une autre piste d'amélioration concernant la
+   fonctionnalité de hedging!
+   A suivre... ;-)
+   Lire | Robot de Trading: Analyse II
+
+8 novembre 2012
+
+Robot de Trading: Analyse I
+
+   11/08/2012  Emmanuel  3 comments
+
+   Hello,
+   lors de mon introduction aux robots de trading j'ai glissé la
+   performance d'un EA qui tourne depuis 2 mois sur un de mes comptes
+   démos.
+   Cet EA est commercial et je ne peux citer le nom ici, néanmoins je vais
+   vous détailler son fonctionnement.
+   Chaque robot comporte un certain nombre de paramètres sur lesquels on
+   peut intéragir. La bonne combinaison est c'est le profit (presque)
+   assuré, la mauvaise est c'est le margin call...
+   Description de la bête:
+   C'est un robot mutlipaire, là je l'ai testé sur la paire GBP/USD (GU)
+   avec un timeframe d'une heure en 5/7j 24/24h.
+   Ce robot à la particularité d'utiliser un système de martingale,
+   au demeurant dangereux et donc à utiliser avec précaution!
+   Ici la martingale va multiplier la taille des positions par un
+   coefficient à chaque nouveau trade en contre tendance, on parie donc
+   sur la probabilité d'un retournement du marché à un moment ou un autre
+   ce qui permettra de déboucler la serie de positions.
+   Ce robot permet de choisir les jours/heures où il est actif et on peut
+   aussi fixer l'écart entre la prise de position.
+   Voyons maintenant un peu comment ce robot fonctionne...
+   Stratégie d'entrée sur le marché
+   Pour placer le 1er trade, il compare un SAR (une parabolique) avec une
+   moyenne mobile pour déterminer le sens du trade
+   Si le SAR est supérieur à la MM = signal de vente
+   Si le SAR est inférieur à la MM = signal d'achat
+   Petite illustration:
+
+                             [GU-FH-sample.png]
+                    SAR en turquoise, MM en jaune, TF 1hr
+
+   Ensuite pour tous les autres trades de la série, le robot analyse tous
+   les X pips pour reprendre position en augmentant la taille des lots
+   selon la martingale si la position précédente est en contre tendance.
+   Stratégie de sortie du marché
+   La position ou serie est close si le profit atteint le nombre de pips
+   fixés en paramètre.
+   Analyse du robot
+   La stratégie est assez simple mais comporte quelque lacune.
+   On note qu'une fois un signal d'achat ou de vente pris les autres
+   positions viennent simplement s'empiler selon un écart de points
+   paramétrable: plus d'analyse du marché, sur une TF de 1H les positions
+   peuvent durer plusieurs jours avant que le marché revienne dans le sens
+   du signal initial.
+   On va facilement se retrouver à contre tendance et déclencher la
+   martingale dès le 2ème ordre.
+   Lors de ce test en partant avec un lot de base à 0.02 et un coefficient
+   de 1.7, j'ai eu une serie de 8 trades consécutifs avec un lot maximum à
+   0.82:
+           10.23.2012 18:37 10.24.2012 09:36 GBPUSD Buy    0.82 1.59847 1.59976
+   1.59176 1.59847          67.1             419.50 14h 58m
+   Cette serie a durée 5 jours avant de fermer en positif.
+   Cela va engendrer un drawdown (équité négative) plus ou moins important
+   selon la paire choisie, ici la serie du 23 octobre m'a amenée 7% dans
+   le négatif soit environ 200€, cela reste acceptable maintenant je vous
+   laisse calculer si mon capital initial avait été de 1000€... (DD à
+   20%!)
+
+                               [FH24oct.png]
+                       Performance octobre 2012 (démo)
+
+                               [FH24sept.png]
+                      Performance Septembre 2012 (démo)
+
+   On peut aussi se retrouver avec des positions à l'achat et la vente si
+   le signal change (et il changera) au cours du temps.
+   Conclusion
+   On se rend compte que les paramètres qui gèrent le coefficient de
+   martingale, l'écart entre les positions et le profit attendu sont
+   étroitement liés et doivent être soigneusement choisis pour rendre ce
+   robot profitable.
+   Si on veut baisser le coefficient de martingale il faut soit:
+   - baisser l'écart entre les positions
+   - diminuer le profit attendu
+   En règle générale, quand une martingale échoue c'est du au faible
+   retracement de la paire. Donc plus la martingale est forte et plus le
+   profit attendu est bas plus on sort vite du marché.
+   Réduction du profit = Réduction du risque !
+   Lire | Robot de Trading: Analyse I
+
+3 novembre 2012
+
+Robot de Trading: Intro
+
+   11/03/2012  Emmanuel  No comments
+
+   [robot-trader.jpeg]
+   Hello,
+   il y a quelque temps je vous faisais part de ma déconvenue avec
+   Zulutrade et ses robots de trading, j'ai voulu en savoir plus et de fil
+   en aiguille j'en suis arrivé à gérer moi-même certains de ses robots!
+   Tout d'abord qu'est qu'un robot ou automate de trading ou encore EA
+   (Expert Advisor) ?
+   C'est un algorithme recevant le signal du marché sur lequel il
+   intervient (Il s'agit là du Forex!) pour prendre des positions à
+   l'achat ou à la vente de manière automatique en fonction d'une
+   stratégie particulière.
+   La plateforme la plus répandue est metatrader (MT4 pour les intimes) et
+   le language associé est MQL4 dont la syntaxe est assez approchante du
+   C/C++:
+   http://www.metatrader4.com/
+   Partant de là il y a multitudes de forums traitant d'algorithmique, de
+   stratégies, de robot de trading en open source pour débuter la longue
+   quête du graal financier...
+   En francais: http://www.trader-forex.fr/forum/systemes-de-trading-auto/
+   En anglais: http://www.forex-tsd.com/
+   Il existe aussi une foule d'EA payants faisant miroiter des gains
+   mirobolants, j'ai moi-même acheté l'un d'entre eux pour une somme assez
+   modique et des performances régulières mais les gains n'ont pas été au
+   rendez vous, et même son auteur en a fait les frais sur sont compte
+   live...
+   Le robot a l'intelligence que son concepteur a bien voulu lui donner,
+   il est vain de croire que l'on peut laisser un robot tourner pendant
+   plusieurs mois et se réveiller un beau matin avec plusieurs milliers
+   d'euros sur son compte...toute stratégie a ses limites!
+   Il faut donc comprendre comment le robot fonctionne, savoir réagir si
+   le robot s'emballe et éventuellement le couper lorsque le marché n'est
+   plus adapter à la stratégie. C'est pour cela que les comptes démo
+   existent ;-)
+   La forex étant un marché ouvert 24/24 5/7j l'EA doit pouvoir être en
+   ligne et connecté à votre broker durant cette période, l'utilisation
+   d'un VPS est toute indiquée.
+   Un VPS ou Virtual Private Server n'est ni plus ni moins qu'un serveur
+   virtuel herbergé par un provider web (ex: ikoula) et preservé de toute
+   coupure électrique.
+   Vous pouvez toujours faire tourner MT4 sur votre PC Windows connecté à
+   Internet H24, espérez juste que votre box ADSL ne tombe pas en panne
+   lorsque votre robot à pris une dizaine d'ordres sur le marché...
+   Cette petite introduction touche à sa fin, et pour vous mettre l'eau à
+   la bouche voici les performances d'un robot que je fais tourner depuis
+   un mois:
+   [Capture+d%E2%80%99e%CC%81cran+2012-11-03+a%CC%80+20.22.03.png]
+   A suivre...
+   Lire | Robot de Trading: Intro
+
+16 septembre 2012
+
+Mon Expérience Zulutrade: suite et fin
+
+   9/16/2012  Emmanuel  No comments
+
+   [ZuluTrade-1.png] Voilà il est temps de faire un bilan après 1 an de
+   Zulutrade!
+   Zulutrade est une plateforme offrant un accès (trop) facile aux
+   systèmes de trading automatique, appelés aussi robot de trading. J'ai
+   pu tester pas mal de providers qui utilisent ces automates et offre la
+   possibilité de les suivre mais au final j'en suis ressorti perdant
+   financièrement, comme 99% des traders... ;-)
+   La faute a un mauvais money management d'une part et une certaine
+   frustration à ne pas contrôler ce qui se passe quand le marché devient
+   trop volatile et que les positions s'accumulent en négatif! Est-ce que
+   le provider surveille son automate? est-ce que la stratégie de
+   l'automate est efficiente? cela reste très opaque et il est difficile
+   de prendre des décisions lors de moment important afin de protéger son
+   capital.
+   Ce que je retiens de cette expérience est que les automates ne restent
+   jamais assez longtemps stables, qu'espérez faire 300% en 6 mois est
+   possible mais très risqué, autant aller au casino, les chances sont les
+   mêmes...
+   Ces automates qui tournent sur des comptes démo offrent des
+   statistiques alléchantes mais au passage en réel sur mon compte les
+   résultats étaient toujours en retrait par rapport au provider.(la faute
+   au spread par exemple)
+   Pour finir j'ai été décu du support Zulutrade lorsque j'ai voulu
+   récupérer l'argent de mon compte, d'interminables échanges avec le
+   support pour leur faire comprendre que ma carte de crédit avait expirée
+   et qu'il devait recréditer ma nouvelle carte (il y a qu'en france
+   qu'elle expire ou bien?!), avec une retenue de 25€ en prime!
+   Pour conclure je ne conseillerai pas d'utiliser ce service en réel,
+   vous passez par un intermédiaire qui prend sa com' sans prendre de
+   risque.
+   Personnellement je compte utiliser mon propre automate dont je
+   maitriserai le paramétrage chez un broker digne de ce nom mais cela
+   c'est un autre projet!
+   Lire | Mon Expérience Zulutrade: suite et fin
+   Articles plus anciens
+   RSS Feed S'abonner au flux RSS
+
+Partager
+
+   Twitter Delicious Facebook Digg Stumbleupon Favorites More
+     * Populaire
+     * Tags
+     * Archives
+
+Messages les plus consultés
+
+     * Fiscalité LMNP régime réel simplifié
+       *** Voici une compilation d'informations tirées du
+       site universimmo.com , de mes propres démarches administratives et
+       de mon retour d&...
+     * Changer de Microsoft Money à iCompta
+       Des plus pauvres d'entre nous aux plus riches d'entre nous, chacun
+       possède une certaine forme de budget, et la plupart d'entre n...
+     * LMNP: Micro-BIC ou BIC réel
+       Voici un résumé que je me suis fait en prenant différentes sources
+       d'information sur le régime d'imposition du loueur en meublé non
+       ...
+
+Abonnez-vous!
+
+   ____________________ Submit
+
+Libellés
+
+   immobilier trading bourse immeuble de rapport investissement locatif
+   finance fiscalité zulutrade PEA conseil financement lmnp risk
+   management Assurance Vie Livre Livret A blog compte a terme finance
+   personnelle icompta money money management notaire prêt prêt bancaire
+
+Ma liste de blogs
+
+     * [icon18_wrench_allbkg.png]
+       Le Blog Patrimoine
+       Assurance vie : L’eurocroissance est la moins mauvaise alternative
+       au fonds euros, mais …
+       Il y a 1 heure
+     * [icon18_wrench_allbkg.png]
+       Riche Idée
+       Quels services propose ma carte bancaire pendant les vacances ?
+       Il y a 2 semaines
+     * [icon18_wrench_allbkg.png]
+       Bourse - Trading : Le conseil boursier
+       5 livres sur l’investissement en bourse à avoir dans votre
+       bibliothèque
+       Il y a 5 semaines
+     * [icon18_wrench_allbkg.png]
+       Objectif Tune
+       Pourquoi investir dans l’immobilier neuf ?
+       Il y a 1 an
+     * [icon18_wrench_allbkg.png]
+       Forex - Trading Devises, Analyses Forex, Brokers Forex - Tribuforex
+     * [icon18_wrench_allbkg.png]
+       Morningbull
+
+   (c) 2011 - FirstInvest -. Fourni par Blogger.
+
+Archives du blog
+
+     * ▼  2012 (13)
+          + ▼  décembre (2)
+               o Performance FH Décembre 2012: +0,56%
+               o Robot de Trading: Analyse II
+          + ►  novembre (2)
+          + ►  septembre (1)
+          + ►  juillet (1)
+          + ►  juin (1)
+          + ►  mars (2)
+          + ►  février (1)
+          + ►  janvier (3)
+
+     * ►  2011 (14)
+          + ►  décembre (3)
+          + ►  novembre (11)
+
+Libellés
+
+     * Assurance Vie (1)
+     * blog (1)
+     * bourse (8)
+     * compte a terme (1)
+     * conseil (2)
+     * finance (4)
+     * finance personnelle (1)
+     * financement (2)
+     * fiscalité (4)
+     * icompta (1)
+     * immeuble de rapport (5)
+     * immobilier (10)
+     * investissement locatif (5)
+     * Livre (1)
+     * Livret A (1)
+     * lmnp (2)
+     * money (1)
+     * money management (1)
+     * notaire (1)
+     * PEA (2)
+     * prêt (1)
+     * prêt bancaire (1)
+     * risk management (2)
+     * trading (9)
+     * zulutrade (4)
+
+Archives du blog
+
+     * ▼  2012 (13)
+          + ▼  décembre (2)
+               o Performance FH Décembre 2012: +0,56%
+               o Robot de Trading: Analyse II
+          + ►  novembre (2)
+          + ►  septembre (1)
+          + ►  juillet (1)
+          + ►  juin (1)
+          + ►  mars (2)
+          + ►  février (1)
+          + ►  janvier (3)
+
+     * ►  2011 (14)
+          + ►  décembre (3)
+          + ►  novembre (11)
+
+
+Membres
+
+Nombre total de pages vues
+
+   Copyright © 2011 FirstInvest | Powered by Blogger
+   Design by Free WordPress Themes | Bloggerized by Lasantha - Premium
+   Blogger Themes | cheap international calls

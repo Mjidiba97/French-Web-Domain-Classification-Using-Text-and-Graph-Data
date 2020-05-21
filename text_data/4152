@@ -1,0 +1,1145 @@
+   #Strange Loop Games » Feed Strange Loop Games » Comments Feed
+
+   “Solving Vessel's puzzles feels like a 1,000 watt light bulb flicking
+   on in your brain.” - GamesRadar
+   “Contains more flair and ingenuity than most blockbuster games can
+   muster.” - GameSpy
+   “One of the best puzzle games since LittleBigPlanet or Portal. Yeah,
+   it’s that good.” - Piki Geek
+   “Just like Portal 2, Vessel is about a universally recommended game as
+   can exist.” - Machinima
+   “The art direction is jaw dropping. My favorite game of PAX.” - G4TV
+   “Some of the most interesting puzzles since Portal” - Nerd Reactor
+   “Vessel's soundtrack is amazing. You feel like you're bringing the
+   world back to life.” - Machinima
+   ‹ ›
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+OUR GAMES
+
+GAMES
+
+     *
+     *
+     *
+
+ECO
+
+   An online world where players must build civilization using resources
+   from an ecosystem that can be damaged and destroyed.
+     *
+     *
+     *
+     *
+     *
+
+Scribbly Wits
+
+   It's like the game 'Telephone', but with pictures. Play your Facebook
+   friends by adding to a hilarious chain of drawings and descriptions.
+   Comment and star your favorite scribbles.
+     *
+     *
+     *
+     *
+
+Vessel
+
+   Living liquid machines have overrun a world of unstoppable progress and
+   their inventor must stop the chaos. Solve in-depth puzzles using
+   mechanical liquid simulations!
+     *
+     *
+     *
+     *
+
+Sim Cell
+
+   Explore a cellular world with the control of a Nanobot. Based on actual
+   scientific information, you must investigate this world in order to
+   complete your mission.
+     *
+     *
+     *
+
+Code Breakers
+
+   Create security systems made out of equations to protect your vault,
+   trapping your friends when they try to break into your room and steal
+   your trophy.
+
+STRANGE NEWS
+
+NEWS
+
+Augmenting the Classroom
+
+   Evolving Education Though Virtual Field-Trips. Perhaps the most
+   impressive thing about the Pokemon Go phenomenon is its speed; in a
+   week, it was used more than Twitter.  It was an idea the world was
+   ready for, packaged in a form that was easily approachable.  It speaks
+   to the acceptance we already have of the digital…
+
+How to Save the Environment by Letting Kids Destroy It
+
+   This year’s Earth Day has given us a chance to reflect how the
+   environment is more threatened than it has ever been. Worst of all,
+   this is all occurring with indisputable evidence of the causes,
+   dangers, and solutions to climate change readily available. The fact
+   that climate deniers can still triumph in light of vast…
+
+Eco Wins the Climate Challenge
+
+   We’re honored to announce that Eco won the grand prize in the Climate
+   Challenge in New York!  In Eco players are tasked with building a
+   civilization together in a simulated ecosystem, where they can have a
+   huge impact on the environment and climate.
+
+Eco at the White House
+
+   ​Because Eco is a Department of Education grant winner, we had the
+   amazing opportunity last week to visit the White House and talk about
+   the role of games in education with leaders from industry and
+   government. Afterwards we ran a demo of Eco at the nearby 1776
+   Incubator, showing to officials and policy-makers what we…
+
+Announcing A New World
+
+   Our next project is called Eco, and it’s a game in a new genre we’re
+   calling a Global Survival Game. What does that mean exactly?  It means
+   you play in a multiplayer world that has the possibility of being
+   permanently destroyed, resulting in server-wide perma death.  What’s
+   more, the reason it’s destroyed would be the…
+
+‘You Have Died of Dysentery’: How Games Will Revolutionize Education
+
+   What do you know about the Oregon Trail?  I’m willing to be that your
+   knowledge on the subject is gained almost entirely from the
+   thusly-named game, where your typical quest across the country saw your
+   resources dwindle, your family members drop one by one from accidents
+   and disease, ending all too often with words ‘You…
+
+Post navigation
+
+     * ← Older posts
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.
+    #Strange Loop Games » Feed Strange Loop Games » Comments Feed Strange
+   Loop Games » A Profiling Primer Comments Feed Any Port in a Storm
+   Looking For a Good Sort alternate alternate
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+A Profiling Primer
+
+   By Tony Albrecht.
+
+   The most interesting thing about this port is the optimisation feat
+   ahead of us. Vessel was already (mostly) running on the PS3 at the
+   start, but needed to run much, much faster. So, where does one begin?
+   The first thing you need to do, is profile it – if you don’t know where
+   the program is slow (or why) then you can’t optimise it. But in order
+   for me to be able to talk about profiling and optimisation, I’ll need
+   to delve (briefly) into the profiling tools on the PS3 (If you’re an
+   experienced PS3 dev, then your probably familiar with this information
+   – skip ahead, I won’t mind). Here’s a screen capture of part of the
+   tool I use for PlayStation3 profiling (SN System’s excellent Tuner –
+   comfortably the best profiler I’ve used)
+
+   a1sx2_Thumbnail1_First-Capture
+
+   Like all the best profilers, it has lots of colourful bars (the PS2
+   Performance Analyser was awesome like that too). Colourful bars are
+   crucial for dazzling and confusing artists who may wander by and happen
+   to glance at your monitor. The top of the screen has a time line in
+   seconds – you can see it ends at 0.073, or 73ms. Yup, that’s right,
+   73ms. (Note that in this blog I will almost always use milliseconds
+   rather than frame per second. Frames per second is a useless metric
+   only used by teenage boys who like to put lights inside their PCs).
+
+   The display is broken up into roughly 3 parts that we can see here.
+   Each group of horizontal bars corresponds to a thread (click on the
+   image to see it in higher resolution in another window). The top thread
+   is the Physics thread, the next the Game thread and then the Render
+   thread.
+
+   a1sx2_Original1_DetailedPhysicsThread
+
+   The top, segmented bar is the overall thread usage. When the thread
+   isn’t running (like at the start during the stall for sync) you’ll see
+   a gap or a bar indicating an OS function (like a mutex or even fileIO).
+   The colourful collection of bars beneath that are the result of marking
+   up important functions in the code base with calls that tell the
+   profiler when the function starts and stops. The longer the bar, the
+   more time it takes. Bars that appear under other bars indicate function
+   calls from that parent. For example, WaterTime calls
+   MoveWaterFromInternalPressure which calls ApplyViscosity and the
+   functions that call DoubleDensityRelaxation and then ProcessSkeletons.
+   It is a very powerful way to view the flow of your code and I often
+   find myself using Tuner just to see how a foreign codebase flows. For
+   those of you out there who don’t have access to the PS3 devkits or
+   Tuner, you can use Chrome Tracing to read the output of your profiling
+   in JSON format and display it in your browser (assuming of course, that
+   your browser is Chrome).
+
+   So, basically, the longer the bar the longer the function it represents
+   takes to run. Now, how do we choose which bar to optimise?
+
+   Generally, when looking for what to optimise first, I try and find
+   something easy, something obvious. Occasionally you’ll get lucky and
+   make a simple fix that will save milliseconds – check your compilation
+   options (you wouldn’t believe how often people miss one
+   library/project), check that your code is inlining properly (check the
+   generated assembly), look for lots of string based functions as well as
+   intra frame allocations – basically make sure that everything you’re
+   seeing makes sense and that there are no piles of stupid lying around.
+   There are two ideal candidates for optimisation: One function that does
+   a lot of processing or one or more small functions that are called a
+   lot.
+
+   There is another feature of Tuner (and most other good profilers) and
+   that is Program Counter sampling. Program Counter (PC) sampling is done
+   by the profiler reading the program counter register to get an
+   indication of which line of code is being executed at that time. The
+   more times a particular line is sampled, the more often it is being
+   executed – on PC the free Very Sleepy does a good job of this. You’ll
+   either get a hierarchical view of the functions being called, or a flat
+   view of what is being called when – like in the following image:
+
+   a1sx2_Original1_PhysicsWithPCSampling
+
+   The red and blue marks correspond to samples that are performed during
+   the frame. On the left you can see the names of the functions that the
+   samples have occurred in. In Tuner you can also drill down into the
+   actual functions and see which lines and even which assembly
+   instructions have samples attributed to them. This allows you to find
+   hotspots – sections of the code that are called a lot and contribute
+   heavily to the cost of each frame.
+
+   Tuner has a lot of additional functionality that I won’t go into here –
+   this should be enough to help you to understand captures that myself
+   and Ben will post over the upcoming weeks.
+
+   In my next post I’ll be looking in detail at the optimisation of one of
+   the sections of the Physics thread. I’ll just say this; my initial hope
+   was that I could gain a lot of performance back by simply rearranging
+   memory and minimising memory allocation in the physics code. That hope
+   was very quickly and resoundingly dashed – this wasn’t going to be an
+   easy task.
+
+
+   Originally posted at OverByte
+
+4 thoughts
+
+     *
+   Reply ↓
+   remember password microsoft edge February 18, 2019
+       Every windows operators are required to login in microsoft account
+       because they will be getting a permission for managing your system
+       many function, so get perfect knowledge about how to access edge
+       account password in this portal.
+     *
+   Reply ↓
+   Hit Liverson February 5, 2019
+       People are looking for true information. You can be the initiator
+       of new ideas. We live in instant news and ideas. The Internet helps
+       to find the necessary information or AU.Edusson resource that will
+       help write a unique article. This method helps to avoid a paper
+       dump.
+     *
+   Reply ↓
+   kanchipuram sarees September 8, 2018
+       nice post
+     *
+   Reply ↓
+   Stian April 20, 2014
+       “Frames per second is a useless metric only used by teenage boys
+       who like to put lights inside their PCs”
+       That’s a great quote right there 🙂
+
+Leave a Reply Cancel reply
+
+   Your email address will not be published. Required fields are marked *
+
+   Comment
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Name * ______________________________
+
+   Email * ______________________________
+
+   Website ______________________________
+
+   [ ] Save my name, email, and website in this browser for the next time
+   I comment.
+
+   [X] Notify me of replies to my comment
+
+   Post Comment
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.
+   #Strange Loop Games » Feed Strange Loop Games » Comments Feed
+
+   “Solving Vessel's puzzles feels like a 1,000 watt light bulb flicking
+   on in your brain.” - GamesRadar
+   “Contains more flair and ingenuity than most blockbuster games can
+   muster.” - GameSpy
+   “One of the best puzzle games since LittleBigPlanet or Portal. Yeah,
+   it’s that good.” - Piki Geek
+   “Just like Portal 2, Vessel is about a universally recommended game as
+   can exist.” - Machinima
+   “The art direction is jaw dropping. My favorite game of PAX.” - G4TV
+   “Some of the most interesting puzzles since Portal” - Nerd Reactor
+   “Vessel's soundtrack is amazing. You feel like you're bringing the
+   world back to life.” - Machinima
+   ‹ ›
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+OUR GAMES
+
+GAMES
+
+     *
+     *
+     *
+
+ECO
+
+   An online world where players must build civilization using resources
+   from an ecosystem that can be damaged and destroyed.
+     *
+     *
+     *
+     *
+     *
+
+Scribbly Wits
+
+   It's like the game 'Telephone', but with pictures. Play your Facebook
+   friends by adding to a hilarious chain of drawings and descriptions.
+   Comment and star your favorite scribbles.
+     *
+     *
+     *
+     *
+
+Vessel
+
+   Living liquid machines have overrun a world of unstoppable progress and
+   their inventor must stop the chaos. Solve in-depth puzzles using
+   mechanical liquid simulations!
+     *
+     *
+     *
+     *
+
+Sim Cell
+
+   Explore a cellular world with the control of a Nanobot. Based on actual
+   scientific information, you must investigate this world in order to
+   complete your mission.
+     *
+     *
+     *
+
+Code Breakers
+
+   Create security systems made out of equations to protect your vault,
+   trapping your friends when they try to break into your room and steal
+   your trophy.
+
+STRANGE NEWS
+
+NEWS
+
+Augmenting the Classroom
+
+   Evolving Education Though Virtual Field-Trips. Perhaps the most
+   impressive thing about the Pokemon Go phenomenon is its speed; in a
+   week, it was used more than Twitter.  It was an idea the world was
+   ready for, packaged in a form that was easily approachable.  It speaks
+   to the acceptance we already have of the digital…
+
+How to Save the Environment by Letting Kids Destroy It
+
+   This year’s Earth Day has given us a chance to reflect how the
+   environment is more threatened than it has ever been. Worst of all,
+   this is all occurring with indisputable evidence of the causes,
+   dangers, and solutions to climate change readily available. The fact
+   that climate deniers can still triumph in light of vast…
+
+Eco Wins the Climate Challenge
+
+   We’re honored to announce that Eco won the grand prize in the Climate
+   Challenge in New York!  In Eco players are tasked with building a
+   civilization together in a simulated ecosystem, where they can have a
+   huge impact on the environment and climate.
+
+Eco at the White House
+
+   ​Because Eco is a Department of Education grant winner, we had the
+   amazing opportunity last week to visit the White House and talk about
+   the role of games in education with leaders from industry and
+   government. Afterwards we ran a demo of Eco at the nearby 1776
+   Incubator, showing to officials and policy-makers what we…
+
+Announcing A New World
+
+   Our next project is called Eco, and it’s a game in a new genre we’re
+   calling a Global Survival Game. What does that mean exactly?  It means
+   you play in a multiplayer world that has the possibility of being
+   permanently destroyed, resulting in server-wide perma death.  What’s
+   more, the reason it’s destroyed would be the…
+
+‘You Have Died of Dysentery’: How Games Will Revolutionize Education
+
+   What do you know about the Oregon Trail?  I’m willing to be that your
+   knowledge on the subject is gained almost entirely from the
+   thusly-named game, where your typical quest across the country saw your
+   resources dwindle, your family members drop one by one from accidents
+   and disease, ending all too often with words ‘You…
+
+Post navigation
+
+     * ← Older posts
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.
+   #Strange Loop Games » Feed Strange Loop Games » Comments Feed
+
+   “Solving Vessel's puzzles feels like a 1,000 watt light bulb flicking
+   on in your brain.” - GamesRadar
+   “Contains more flair and ingenuity than most blockbuster games can
+   muster.” - GameSpy
+   “One of the best puzzle games since LittleBigPlanet or Portal. Yeah,
+   it’s that good.” - Piki Geek
+   “Just like Portal 2, Vessel is about a universally recommended game as
+   can exist.” - Machinima
+   “The art direction is jaw dropping. My favorite game of PAX.” - G4TV
+   “Some of the most interesting puzzles since Portal” - Nerd Reactor
+   “Vessel's soundtrack is amazing. You feel like you're bringing the
+   world back to life.” - Machinima
+   ‹ ›
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+OUR GAMES
+
+GAMES
+
+     *
+     *
+     *
+
+ECO
+
+   An online world where players must build civilization using resources
+   from an ecosystem that can be damaged and destroyed.
+     *
+     *
+     *
+     *
+     *
+
+Scribbly Wits
+
+   It's like the game 'Telephone', but with pictures. Play your Facebook
+   friends by adding to a hilarious chain of drawings and descriptions.
+   Comment and star your favorite scribbles.
+     *
+     *
+     *
+     *
+
+Vessel
+
+   Living liquid machines have overrun a world of unstoppable progress and
+   their inventor must stop the chaos. Solve in-depth puzzles using
+   mechanical liquid simulations!
+     *
+     *
+     *
+     *
+
+Sim Cell
+
+   Explore a cellular world with the control of a Nanobot. Based on actual
+   scientific information, you must investigate this world in order to
+   complete your mission.
+     *
+     *
+     *
+
+Code Breakers
+
+   Create security systems made out of equations to protect your vault,
+   trapping your friends when they try to break into your room and steal
+   your trophy.
+
+STRANGE NEWS
+
+NEWS
+
+Augmenting the Classroom
+
+   Evolving Education Though Virtual Field-Trips. Perhaps the most
+   impressive thing about the Pokemon Go phenomenon is its speed; in a
+   week, it was used more than Twitter.  It was an idea the world was
+   ready for, packaged in a form that was easily approachable.  It speaks
+   to the acceptance we already have of the digital…
+
+How to Save the Environment by Letting Kids Destroy It
+
+   This year’s Earth Day has given us a chance to reflect how the
+   environment is more threatened than it has ever been. Worst of all,
+   this is all occurring with indisputable evidence of the causes,
+   dangers, and solutions to climate change readily available. The fact
+   that climate deniers can still triumph in light of vast…
+
+Eco Wins the Climate Challenge
+
+   We’re honored to announce that Eco won the grand prize in the Climate
+   Challenge in New York!  In Eco players are tasked with building a
+   civilization together in a simulated ecosystem, where they can have a
+   huge impact on the environment and climate.
+
+Eco at the White House
+
+   ​Because Eco is a Department of Education grant winner, we had the
+   amazing opportunity last week to visit the White House and talk about
+   the role of games in education with leaders from industry and
+   government. Afterwards we ran a demo of Eco at the nearby 1776
+   Incubator, showing to officials and policy-makers what we…
+
+Announcing A New World
+
+   Our next project is called Eco, and it’s a game in a new genre we’re
+   calling a Global Survival Game. What does that mean exactly?  It means
+   you play in a multiplayer world that has the possibility of being
+   permanently destroyed, resulting in server-wide perma death.  What’s
+   more, the reason it’s destroyed would be the…
+
+‘You Have Died of Dysentery’: How Games Will Revolutionize Education
+
+   What do you know about the Oregon Trail?  I’m willing to be that your
+   knowledge on the subject is gained almost entirely from the
+   thusly-named game, where your typical quest across the country saw your
+   resources dwindle, your family members drop one by one from accidents
+   and disease, ending all too often with words ‘You…
+
+Post navigation
+
+     * ← Older posts
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.
+    #Strange Loop Games » Feed Strange Loop Games » Comments Feed Strange
+   Loop Games » A Profiling Primer Comments Feed Any Port in a Storm
+   Looking For a Good Sort alternate alternate
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+A Profiling Primer
+
+   By Tony Albrecht.
+
+   The most interesting thing about this port is the optimisation feat
+   ahead of us. Vessel was already (mostly) running on the PS3 at the
+   start, but needed to run much, much faster. So, where does one begin?
+   The first thing you need to do, is profile it – if you don’t know where
+   the program is slow (or why) then you can’t optimise it. But in order
+   for me to be able to talk about profiling and optimisation, I’ll need
+   to delve (briefly) into the profiling tools on the PS3 (If you’re an
+   experienced PS3 dev, then your probably familiar with this information
+   – skip ahead, I won’t mind). Here’s a screen capture of part of the
+   tool I use for PlayStation3 profiling (SN System’s excellent Tuner –
+   comfortably the best profiler I’ve used)
+
+   a1sx2_Thumbnail1_First-Capture
+
+   Like all the best profilers, it has lots of colourful bars (the PS2
+   Performance Analyser was awesome like that too). Colourful bars are
+   crucial for dazzling and confusing artists who may wander by and happen
+   to glance at your monitor. The top of the screen has a time line in
+   seconds – you can see it ends at 0.073, or 73ms. Yup, that’s right,
+   73ms. (Note that in this blog I will almost always use milliseconds
+   rather than frame per second. Frames per second is a useless metric
+   only used by teenage boys who like to put lights inside their PCs).
+
+   The display is broken up into roughly 3 parts that we can see here.
+   Each group of horizontal bars corresponds to a thread (click on the
+   image to see it in higher resolution in another window). The top thread
+   is the Physics thread, the next the Game thread and then the Render
+   thread.
+
+   a1sx2_Original1_DetailedPhysicsThread
+
+   The top, segmented bar is the overall thread usage. When the thread
+   isn’t running (like at the start during the stall for sync) you’ll see
+   a gap or a bar indicating an OS function (like a mutex or even fileIO).
+   The colourful collection of bars beneath that are the result of marking
+   up important functions in the code base with calls that tell the
+   profiler when the function starts and stops. The longer the bar, the
+   more time it takes. Bars that appear under other bars indicate function
+   calls from that parent. For example, WaterTime calls
+   MoveWaterFromInternalPressure which calls ApplyViscosity and the
+   functions that call DoubleDensityRelaxation and then ProcessSkeletons.
+   It is a very powerful way to view the flow of your code and I often
+   find myself using Tuner just to see how a foreign codebase flows. For
+   those of you out there who don’t have access to the PS3 devkits or
+   Tuner, you can use Chrome Tracing to read the output of your profiling
+   in JSON format and display it in your browser (assuming of course, that
+   your browser is Chrome).
+
+   So, basically, the longer the bar the longer the function it represents
+   takes to run. Now, how do we choose which bar to optimise?
+
+   Generally, when looking for what to optimise first, I try and find
+   something easy, something obvious. Occasionally you’ll get lucky and
+   make a simple fix that will save milliseconds – check your compilation
+   options (you wouldn’t believe how often people miss one
+   library/project), check that your code is inlining properly (check the
+   generated assembly), look for lots of string based functions as well as
+   intra frame allocations – basically make sure that everything you’re
+   seeing makes sense and that there are no piles of stupid lying around.
+   There are two ideal candidates for optimisation: One function that does
+   a lot of processing or one or more small functions that are called a
+   lot.
+
+   There is another feature of Tuner (and most other good profilers) and
+   that is Program Counter sampling. Program Counter (PC) sampling is done
+   by the profiler reading the program counter register to get an
+   indication of which line of code is being executed at that time. The
+   more times a particular line is sampled, the more often it is being
+   executed – on PC the free Very Sleepy does a good job of this. You’ll
+   either get a hierarchical view of the functions being called, or a flat
+   view of what is being called when – like in the following image:
+
+   a1sx2_Original1_PhysicsWithPCSampling
+
+   The red and blue marks correspond to samples that are performed during
+   the frame. On the left you can see the names of the functions that the
+   samples have occurred in. In Tuner you can also drill down into the
+   actual functions and see which lines and even which assembly
+   instructions have samples attributed to them. This allows you to find
+   hotspots – sections of the code that are called a lot and contribute
+   heavily to the cost of each frame.
+
+   Tuner has a lot of additional functionality that I won’t go into here –
+   this should be enough to help you to understand captures that myself
+   and Ben will post over the upcoming weeks.
+
+   In my next post I’ll be looking in detail at the optimisation of one of
+   the sections of the Physics thread. I’ll just say this; my initial hope
+   was that I could gain a lot of performance back by simply rearranging
+   memory and minimising memory allocation in the physics code. That hope
+   was very quickly and resoundingly dashed – this wasn’t going to be an
+   easy task.
+
+
+   Originally posted at OverByte
+
+4 thoughts
+
+     *
+   Reply ↓
+   remember password microsoft edge February 18, 2019
+       Every windows operators are required to login in microsoft account
+       because they will be getting a permission for managing your system
+       many function, so get perfect knowledge about how to access edge
+       account password in this portal.
+     *
+   Reply ↓
+   Hit Liverson February 5, 2019
+       People are looking for true information. You can be the initiator
+       of new ideas. We live in instant news and ideas. The Internet helps
+       to find the necessary information or AU.Edusson resource that will
+       help write a unique article. This method helps to avoid a paper
+       dump.
+     *
+   Reply ↓
+   kanchipuram sarees September 8, 2018
+       nice post
+     *
+   Reply ↓
+   Stian April 20, 2014
+       “Frames per second is a useless metric only used by teenage boys
+       who like to put lights inside their PCs”
+       That’s a great quote right there 🙂
+
+Leave a Reply Cancel reply
+
+   Your email address will not be published. Required fields are marked *
+
+   Comment
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   Name * ______________________________
+
+   Email * ______________________________
+
+   Website ______________________________
+
+   [ ] Save my name, email, and website in this browser for the next time
+   I comment.
+
+   [X] Notify me of replies to my comment
+
+   Post Comment
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.
+   #Strange Loop Games » Feed Strange Loop Games » Comments Feed
+
+   “Solving Vessel's puzzles feels like a 1,000 watt light bulb flicking
+   on in your brain.” - GamesRadar
+   “Contains more flair and ingenuity than most blockbuster games can
+   muster.” - GameSpy
+   “One of the best puzzle games since LittleBigPlanet or Portal. Yeah,
+   it’s that good.” - Piki Geek
+   “Just like Portal 2, Vessel is about a universally recommended game as
+   can exist.” - Machinima
+   “The art direction is jaw dropping. My favorite game of PAX.” - G4TV
+   “Some of the most interesting puzzles since Portal” - Nerd Reactor
+   “Vessel's soundtrack is amazing. You feel like you're bringing the
+   world back to life.” - Machinima
+   ‹ ›
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+OUR GAMES
+
+GAMES
+
+     *
+     *
+     *
+
+ECO
+
+   An online world where players must build civilization using resources
+   from an ecosystem that can be damaged and destroyed.
+     *
+     *
+     *
+     *
+     *
+
+Scribbly Wits
+
+   It's like the game 'Telephone', but with pictures. Play your Facebook
+   friends by adding to a hilarious chain of drawings and descriptions.
+   Comment and star your favorite scribbles.
+     *
+     *
+     *
+     *
+
+Vessel
+
+   Living liquid machines have overrun a world of unstoppable progress and
+   their inventor must stop the chaos. Solve in-depth puzzles using
+   mechanical liquid simulations!
+     *
+     *
+     *
+     *
+
+Sim Cell
+
+   Explore a cellular world with the control of a Nanobot. Based on actual
+   scientific information, you must investigate this world in order to
+   complete your mission.
+     *
+     *
+     *
+
+Code Breakers
+
+   Create security systems made out of equations to protect your vault,
+   trapping your friends when they try to break into your room and steal
+   your trophy.
+
+STRANGE NEWS
+
+NEWS
+
+Augmenting the Classroom
+
+   Evolving Education Though Virtual Field-Trips. Perhaps the most
+   impressive thing about the Pokemon Go phenomenon is its speed; in a
+   week, it was used more than Twitter.  It was an idea the world was
+   ready for, packaged in a form that was easily approachable.  It speaks
+   to the acceptance we already have of the digital…
+
+How to Save the Environment by Letting Kids Destroy It
+
+   This year’s Earth Day has given us a chance to reflect how the
+   environment is more threatened than it has ever been. Worst of all,
+   this is all occurring with indisputable evidence of the causes,
+   dangers, and solutions to climate change readily available. The fact
+   that climate deniers can still triumph in light of vast…
+
+Eco Wins the Climate Challenge
+
+   We’re honored to announce that Eco won the grand prize in the Climate
+   Challenge in New York!  In Eco players are tasked with building a
+   civilization together in a simulated ecosystem, where they can have a
+   huge impact on the environment and climate.
+
+Eco at the White House
+
+   ​Because Eco is a Department of Education grant winner, we had the
+   amazing opportunity last week to visit the White House and talk about
+   the role of games in education with leaders from industry and
+   government. Afterwards we ran a demo of Eco at the nearby 1776
+   Incubator, showing to officials and policy-makers what we…
+
+Announcing A New World
+
+   Our next project is called Eco, and it’s a game in a new genre we’re
+   calling a Global Survival Game. What does that mean exactly?  It means
+   you play in a multiplayer world that has the possibility of being
+   permanently destroyed, resulting in server-wide perma death.  What’s
+   more, the reason it’s destroyed would be the…
+
+‘You Have Died of Dysentery’: How Games Will Revolutionize Education
+
+   What do you know about the Oregon Trail?  I’m willing to be that your
+   knowledge on the subject is gained almost entirely from the
+   thusly-named game, where your typical quest across the country saw your
+   resources dwindle, your family members drop one by one from accidents
+   and disease, ending all too often with words ‘You…
+
+Post navigation
+
+     * ← Older posts
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.
+   #Strange Loop Games » Feed Strange Loop Games » Comments Feed
+
+   “Solving Vessel's puzzles feels like a 1,000 watt light bulb flicking
+   on in your brain.” - GamesRadar
+   “Contains more flair and ingenuity than most blockbuster games can
+   muster.” - GameSpy
+   “One of the best puzzle games since LittleBigPlanet or Portal. Yeah,
+   it’s that good.” - Piki Geek
+   “Just like Portal 2, Vessel is about a universally recommended game as
+   can exist.” - Machinima
+   “The art direction is jaw dropping. My favorite game of PAX.” - G4TV
+   “Some of the most interesting puzzles since Portal” - Nerd Reactor
+   “Vessel's soundtrack is amazing. You feel like you're bringing the
+   world back to life.” - Machinima
+   ‹ ›
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+   GAMES
+   ECO SCRIBBLY WITS VESSEL SIM CELL CODEBREAKERS
+   ARTICLES
+   ABOUT
+   CONTACT
+
+OUR GAMES
+
+GAMES
+
+     *
+     *
+     *
+
+ECO
+
+   An online world where players must build civilization using resources
+   from an ecosystem that can be damaged and destroyed.
+     *
+     *
+     *
+     *
+     *
+
+Scribbly Wits
+
+   It's like the game 'Telephone', but with pictures. Play your Facebook
+   friends by adding to a hilarious chain of drawings and descriptions.
+   Comment and star your favorite scribbles.
+     *
+     *
+     *
+     *
+
+Vessel
+
+   Living liquid machines have overrun a world of unstoppable progress and
+   their inventor must stop the chaos. Solve in-depth puzzles using
+   mechanical liquid simulations!
+     *
+     *
+     *
+     *
+
+Sim Cell
+
+   Explore a cellular world with the control of a Nanobot. Based on actual
+   scientific information, you must investigate this world in order to
+   complete your mission.
+     *
+     *
+     *
+
+Code Breakers
+
+   Create security systems made out of equations to protect your vault,
+   trapping your friends when they try to break into your room and steal
+   your trophy.
+
+STRANGE NEWS
+
+NEWS
+
+Augmenting the Classroom
+
+   Evolving Education Though Virtual Field-Trips. Perhaps the most
+   impressive thing about the Pokemon Go phenomenon is its speed; in a
+   week, it was used more than Twitter.  It was an idea the world was
+   ready for, packaged in a form that was easily approachable.  It speaks
+   to the acceptance we already have of the digital…
+
+How to Save the Environment by Letting Kids Destroy It
+
+   This year’s Earth Day has given us a chance to reflect how the
+   environment is more threatened than it has ever been. Worst of all,
+   this is all occurring with indisputable evidence of the causes,
+   dangers, and solutions to climate change readily available. The fact
+   that climate deniers can still triumph in light of vast…
+
+Eco Wins the Climate Challenge
+
+   We’re honored to announce that Eco won the grand prize in the Climate
+   Challenge in New York!  In Eco players are tasked with building a
+   civilization together in a simulated ecosystem, where they can have a
+   huge impact on the environment and climate.
+
+Eco at the White House
+
+   ​Because Eco is a Department of Education grant winner, we had the
+   amazing opportunity last week to visit the White House and talk about
+   the role of games in education with leaders from industry and
+   government. Afterwards we ran a demo of Eco at the nearby 1776
+   Incubator, showing to officials and policy-makers what we…
+
+Announcing A New World
+
+   Our next project is called Eco, and it’s a game in a new genre we’re
+   calling a Global Survival Game. What does that mean exactly?  It means
+   you play in a multiplayer world that has the possibility of being
+   permanently destroyed, resulting in server-wide perma death.  What’s
+   more, the reason it’s destroyed would be the…
+
+‘You Have Died of Dysentery’: How Games Will Revolutionize Education
+
+   What do you know about the Oregon Trail?  I’m willing to be that your
+   knowledge on the subject is gained almost entirely from the
+   thusly-named game, where your typical quest across the country saw your
+   resources dwindle, your family members drop one by one from accidents
+   and disease, ending all too often with words ‘You…
+
+Post navigation
+
+     * ← Older posts
+
+   ____________________ Strange Loop News
+
+Awards & Partners
+
+   [awards1.png] [awards2.png] [awards3.png] [partner2.png] [partner3.png]
+   [awards4-v2.png]
+
+     *
+     *
+     *
+     *
+
+     *
+     *
+     *
+     *
+
+Our goal at Strange Loop Games is to use the massive power of today’s
+hardware for gameplay, not just graphics. We use deep, interactive
+simulations to explore the boundaries of what can be done within a game.

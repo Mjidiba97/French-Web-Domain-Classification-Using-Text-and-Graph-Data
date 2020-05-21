@@ -1,0 +1,168 @@
+   Javascript is Disabled in your browser please enable it
+
+     * What is it?
+     * Documentation
+     * About the Foundation
+     * Search
+     * Facebook
+
+AutoHotkey
+
+   Powerful. Easy to learn.
+
+   The ultimate automation scripting language for Windows.
+   Download Forums
+
+   Is it Safe?
+
+Key Binds
+
+   Define hotkeys for the mouse and keyboard, remap keys or buttons and
+   autocorrect-like replacements. Creating simple hotkeys has never been
+   easier; you can do it in just a few lines or less!
+
+   LEARN MORE
+
+What is AutoHotkey
+
+   AutoHotkey is a free, open-source scripting language for Windows that
+   allows users to easily create small to complex scripts for all kinds of
+   tasks such as: form fillers, auto-clicking, macros, etc.
+
+   LEARN MORE
+
+Is it good for me?
+
+   AutoHotkey has easy to learn built-in commands for beginners.
+   Experienced developers will love this full-fledged scripting language
+   for fast prototyping and small projects.
+
+   LEARN MORE
+
+Why AutoHotkey
+
+   AutoHotkey gives you the freedom to automate any desktop task. It's
+   small, fast and runs out-of-the-box. Best of all, it's free,
+   open-source (GNU GPLv2), and beginner-friendly. Why not give it a try?
+
+   LEARN MORE
+
+   IFRAME: codeexamples.html
+
+A peek at the syntax...
+
+   AutoHotkey provides a simple, flexible syntax allowing you to focus
+   more on the task at hand rather than every single little technicality.
+   It supports not only the popular imperative-procedural paradigm, but
+   also object-oriented and command-based programming.
+
+   Here are a few simple examples:
+    1. Hotstrings & Hotkeys
+    2. Clipboard example
+    3. Short GUI
+    4. Simple Array (or Objects)
+
+   More examples at RosettaCode…
+
+Open Source
+
+   Licensed under the GNU GPLv2
+
+   Feel free to look at the source code, make some contributions.
+   Maybe, try out some of the forks of this project.
+
+   Source code (at Github)
+   AutoHotkey source code
+   AutoHotkey documentation (de)
+   ahk2exe source code
+   AutoHotkey v2 (alpha stage)
+   AHKScript Github organisation
+
+   Forks
+   AutoHotkey_H + AutoHotkey.dll
+   Pocket PCs (WinCE)
+   IronAHK, a .NET rewrite (cross-platform, alpha stage)
+
+AutoHotkey sends several tools into retirement. It unites hotkey and text
+macros, and offers a scripting language which is more powerful than any batch
+file.
+
+   Wolfgang Reszel, c't Magazine
+   (translated to English)
+
+With AutoHotkey, I’m confident that I’ve trimmed the time I spend replying to
+emails down to a third of what it would be without.
+
+   Adam Pash, Lifehacker
+
+[AutoHotkey is the] tool of choice for automating Windows: It's both powerful
+and easy to use ... AutoHotkey can make your computing life easier.
+
+   Dmitri Popov, NewsForge
+
+   AutoHotkey - a scripting language for desktop automation
+
+   Free and Open Source software, licensed under the GNU GPLv2. Created by
+   Chris Mallet and others.
+
+   Communities
+   AutoHotkey forum (de, 中文, es, ru) (phpBB)
+   Archived forum (de) (IPBoards)
+   Stackoverflow
+   Superuser
+   Reddit
+   ZEEF
+   中文论坛 (Chinese, ahkcn.net)
+   Русскоязычный форум (Russian, forum.script-coding.com)
+   한국어 (Korean, autohotkey.co.kr)
+
+   Documentation & Tutorials
+   Documentation (de - 帮助)
+   Community tutorials (Forums)
+   Community tutorials (Archive forum)
+   YouTube AutoHotkey tutorials
+   Book (work in progress)
+   Rosettacode (code examples)
+   日本語 AutoHotkey Wiki (Japanese, ahkwiki.net)
+   Jack Dunning's AHK Page (Scripts, examples)
+     ; hotstrings - expand 'btw' to 'By the way' as you type
+     ::btw::By the way
+
+     ; hotkeys - press winkey-z to go to Google
+     #z::
+     Run http://google.com
+     Return
+     ; copy text to the clipboard, modify it, paste it back
+     ^+k:: ; ctrl-shift-k
+     ClipSave:=ClipboardAll ; store current clipboard
+     Send ^c ; copy selected text
+     clipboard:="<i>" clipboard "</i>" ; wrap it in html-tags
+     Send ^v ; paste
+     Clipboard:=ClipSave ; restore old clipboard content
+     ClipSave:="" ; clear variable
+     Return
+     ; Easy to make GUIs
+     Gui, Add, Text, , Enter your name
+     Gui, Add, Edit, vName w150
+     Gui, Add, Button, , OK
+     Gui, Show
+     Return
+
+     ButtonOK:
+     Gui, Submit, Destroy
+     MsgBox Hello %Name%
+     Return
+
+     Esc::
+     GuiClose:
+     ExitApp
+   ; AutoHotkey (Associative) Arrays
+     Colors:="Red,Green,Blue"           ; string
+     ColorArray:=StrSplit(Colors, ",")  ; create array
+
+     ColorArray.Push("Purple")          ; add data
+
+     for index, element in ColorArray   ; Read from the array
+         MsgBox % "Color " index " = " element (BUTTON) <
+
+   (BUTTON) > 0 (BUTTON) ❙❙

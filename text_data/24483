@@ -1,0 +1,3135 @@
+   (BUTTON) Toggle navigation The Khronos Group
+     * Developers
+          + Active Standards
+               o 3D Commerce
+               o COLLADA
+               o Data Format
+               o EGL
+               o glTF
+               o NNEF
+               o OpenCL
+               o OpenGL
+               o OpenGL ES
+               o OpenGL SC
+               o OpenVG
+               o OpenVX
+               o OpenXR
+               o Safety Critical
+               o SPIR
+               o SYCL
+               o Vulkan
+               o Vulkan SC
+               o WebGL
+          + Exploratory Groups
+               o Overview
+               o Heterogeneous Communication
+          + Inactive Standards
+               o OpenKCAM
+               o OpenKODE
+               o OpenMAX
+               o OpenML
+               o OpenSL ES
+               o OpenWF
+               o StreamInput
+               o WebCL
+          +
+          + Registry
+          + Advisors
+          + Github
+          + Khronos Forums
+          + Khronos Slack
+          +
+          + Khronos Blog
+          + Videos & Presentations
+          + Reference Guides
+          + Books
+          + Training & Courses
+          +
+          + Jobs
+          + Request for Quotes
+          + Merchandise
+     * Conformance
+          + Adopter program
+          + File Format Adopter Program
+          + Conformant Companies
+          + Conformant Products
+          + Trademark Guidelines
+          + IP Framework
+          +
+          + Adopter Login
+     * Membership
+          + Join the Khronos Group
+          + Khronos Members
+          + IP Framework
+          +
+          + Create an account
+          + Member Login
+     * News & Events
+          + Newsroom
+          + Press Releases
+          + Khronos Logos
+          + Subscribe to our newsletter
+          + Share your news
+          +
+          + Upcoming Events
+          + Conference Code of Conduct
+          + Share your events
+          +
+          + Marketing with Khronos
+     * About
+          + Overview
+          + Contact Us
+          + Directors & Officers
+          + Working Group Chairs
+          + Technical Support
+          + Khronie Awards
+     * Member Login
+     * Search
+          +
+
+glTF Overview
+
+   glTF
+
+Runtime 3D Asset Delivery
+
+   glTF™ (GL Transmission Format) is a royalty-free specification for the
+   efficient transmission and loading of 3D scenes and models by
+   applications. glTF minimizes both the size of 3D assets, and the
+   runtime processing needed to unpack and use those assets. glTF defines
+   an extensible, common publishing format for 3D content tools and
+   services that streamlines authoring workflows and enables interoperable
+   use of content across the industry.
+
+glTF 2.0 links and resources
+
+     * glTF 2.0 Specification and resources on GitHub
+     * glTF Repository on GitHub
+     * glTF Validator
+     * glTF Reference Guide
+     * glTF Discussions
+     * glTF Slack
+     * glTF StackOverflow questions
+     * glTF 2.0 Press Release
+     * glTF 2.0 Launch slide deck
+     * glTF 2.0 on Facebook
+     * glTF 2.0 glTF Geometry Compression with Draco
+
+glTF 1.0 Specification and Materials
+
+     * glTF 1.0 Specification on GitHub
+     * glTF 1.0 Launch Press Release
+     * An Overview of glTF 1.0 (PDF)
+     * glTF Training Webinar- Traininger webinar by Marco Hutter
+
+Participate in the glTF Community
+
+   glTF is run as an open project by Khronos. The specification,
+   supporting materials and source code is developed and made
+   freely available on GitHub.
+
+   Everyone is welcome to contribute to the code and provide feedback
+   about the specification; you do not have to be a Khronos member to
+   participate in the glTF community. Visit the "Ways to contribute to
+   glTF" page in main glTF project on GitHub.
+
+glTF Demo
+
+   ‘Project “Polly” was produced to introduce all new features from glTF
+   2.0: Skinning, morphing and Physically Based materials are used in the
+   demo. ‘Poly’ was developed using Blender and is used to test its glTF
+   2.0 exporter. The original Blender file will be provided to the glTF
+   community for free!’
+
+   IFRAME:
+   https://www.youtube-nocookie.com/embed/l7TB1O51X_M?rel=0&controls=0&sho
+   winfo=0
+
+glTF is the "JPEG of 3D"
+
+   glTF is the JPEG of 3D
+
+
+glTF 2.0 Scene Description Structure
+
+   The glTF Structure
+
+
+glTF 2.0 Scalable, Portable PBR
+
+   glTF Extensions
+
+   Metallic-Roughness Material model
+     * baseColor — base color
+     * metallic — metalness
+     * roughness — roughness
+     * Simple to implement - mandated in core
+
+   Specular-Glossiness Material model
+     * diffuse — reflected diffuse color
+     * specular — specular color
+     * glossiness — glossiness
+     * Slightly more resources - optional extension
+
+COLLADA and glTF 3D Asset Formats
+
+   COLLADA and glTF 3D Asset Formats Positioning Statement
+
+Industry Support for glTF
+
+   Publicly stated support for glTF
+
+                                 [gltf.png]
+
+   Join the Slack group Join the forums
+
+   glTF™ (GL Transmission Format) is a royalty-free specification for the
+   efficient transmission and loading of 3D scenes and models by
+   applications. glTF minimizes both the size of 3D assets, and the
+   runtime processing needed to unpack and use those assets. glTF defines
+   an extensible, common publishing format for 3D content tools and
+   services that streamlines authoring workflows and enables interoperable
+   use of content across the industry.
+
+Specification
+
+     * glTF Specification, 2.0 (or all specification versions)
+     * glTF Extension Registry
+
+   Please provide spec feedback by submitting issues. For technical or art
+   workflow questions, or to showcase your work, join the glTF forum. For
+   quick questions, use the #gltf channel in the Khronos Group Slack.
+
+Quickstart
+
+Overview
+
+   [gltfOverview-2.0.0b-small.png] ^From github.com/javagl/gltfOverview/ |
+                  PDF | hardcopy | Khronos reference cards
+                  ^Japanese translation by Takuto Takahashi
+
+For developers
+
+     * Sample models for testing runtime engines and content pipeline
+       tools.
+          + glTF-Asset-Generator provides assets for robust importer
+            validation.
+          + 100,000+ models under Creative Commons license on Sketchfab
+            (check license for individual models).
+     * Drag-and-drop validator for verifying correctness of existing glTF
+       files.
+     * glTF Tutorial Series
+     * Khronos glTF Sample Viewer with WebGL PBR shaders. (source code)
+
+For artists
+
+     * Blender importer/exporter
+     * 3DS Max exporter
+     * Maya exporter
+     * Other converters and exporters
+
+Preview tools
+
+     * Sketchfab
+     * BabylonJS Sandbox
+     * Drag-and-drop viewer
+     * glTF VSCode Extension 3D previews, glTF validation, conversion
+       to/from GLB
+
+Contents
+
+     * glTF Tools
+          + Converters, Importers, and Exporters
+          + Optimizers
+          + Validators
+          + Viewers and Debugging
+          + Applications
+          + Loaders and Engines
+               o WebGL Engines
+               o WebGL Sample Code
+               o Game and Rendering Engines
+               o Embeddable Viewers
+          + Languages
+               o JavaScript / Node.js
+               o C++
+               o Objective-C
+               o C
+               o C
+               o Go
+               o Rust
+               o Haxe
+               o Java
+               o Ada
+               o TypeScript
+               o Swift
+               o Python
+          + Utilities
+          + Resources
+     * Formats Built on glTF
+     * Stack Overflow
+     * Presentations and Articles
+          + Intros
+          + Tutorials
+          + All Presentations and Articles
+
+glTF Tools
+
+Converters, Importers, and Exporters
+
+   Tool Input Output Description
+   Khronos Group Blender Importer/Exporter status status Official
+   importer/exporter, included with Blender 2.80 and higher
+   3DS Max Exporter — status Export glTF files using BabylonJS plugin for
+   3DS Max 2015 or later
+   Maya Exporter — status Export glTF files using BabylonJS plugin for
+   Maya 2018 or later
+   Unity Exporter (Sketchfab fork) — status Unity editor wizard that
+   exports to glTF Format
+   Unity COLLADA & glTF Exporter Unity 5 & Unity 2017 — status Commercial
+   unity asset store editor extension to export COLLADA and glTF via
+   collada2gltf
+   Sketchup export and import — status Separate extensions for export and
+   import
+   PBR extension for SketchUp SKP status PBR Material Editor, glTF
+   Exporter, PBR Viewport
+   obj2gltf OBJ status Command-line converter
+   Kupoman blendergltf — status glTF exporter for Blender aimed at
+   streaming scenes to other applications
+   ksons Blender Importer status — Blender importer for glTF 2.0 (alpha)
+   BlackThread.io converter Multiple status Online drag and drop converter
+   powered by three.js
+   Assimp Multiple status General-purpose online conversion pipeline
+   PiXYZ Studio Multiple status Interactively prepare & optimize any CAD
+   data
+   FBX2glTF (Facebook) FBX status Command-line converter
+   FBX2glTF (ClayGL) FBX, COLLADA, OBJ status Python tool to convert
+   models to glTF2.0 format, model is parsed by FBX SDK.
+   glTF API FBX, COLLADA, OBJ status Web API to convert OBJ, FBX and
+   COLLADA files to glTF or GLB
+   Simplygon Cloud Multiple status Cloud based asset optimization pipeline
+   Verge3D — status glTF 2.0 exporters for Blender and 3ds Max
+   COLLADA2GLTF COLLADA status Official command-line converter, with
+   updates for glTF 2.0 in progress
+   Cesium drag-and-drop converter OBJ, COLLADA status Online drag and drop
+   converter
+   Maya2glTF — status Export glTF from Autodesk Maya
+   batchgltf COLLADA status Batch converter with GUI
+   FBX-glTF (Cyrillef) FBX status Plug-in and command-line converter
+   jgltf-obj OBJ status Java programmatic and command-line converters
+   Docker collada2gltf COLLADA status Docker container for Python web
+   service, built on COLLADA2GLTF
+   collada2gltf-web-service COLLADA status Node.js web service, built on
+   COLLADA2GLTF
+   cqparts STEP status Python CAD for programmers (import / export doc)
+   (GLTFExporter)
+   FME Desktop Multiple status FME lets you move data between 400+ formats
+   and applications using a drag-and-drop interface while preserving data
+   quality throughout the conversion process.
+   UModel (UE Viewer) Unreal engine status UModel allows you to view
+   static and animated mesh assets from Unreal engine games, and then
+   export them into several formats including glTF 2.0
+   OPEN CASCADE CAD Assistant Multiple status Freeware multi-platform 3D
+   Viewer and converter for 3D/CAD models with glTF 2.0 export support
+   Adobe Dimension FBX, STL, SKP, OBJ status Share and Publish feature
+   lets users export to glTF to view on the web.
+   RapidCompact Multiple status Optimizes and converts 3D assets for
+   efficient online presentation.
+   Cinema 4D Exporter — status Export glTF from MAXON Cinema 4D
+   Revit glTF Exporter add-in — status Paid add-in to export glTF from
+   Autodesk Revit 2019 or later
+   Adobe Animate — status Publish 2D animations to glTF/glb using Animate
+   2019 or later. Also create 360 degree VR content and embed 3D glb
+   assets in the scene.
+
+Optimizers
+
+   Tool Status Description
+   gltf-import-export status NPM package to convert between glb and gltf
+   files
+   makeglb status Drag and drop browser tool to convert gltf to self
+   contained binary glb
+   gltf-toolkit status Collection of tools and libraries to modify and
+   optimize glTF assets for Windows Mixed Reality home
+   glTF Pipeline status Official Node.js command-line tool for optimizing
+   glTF assets
+   gltf2glb status Python tool to convert glTF to Binary glTF
+   binary-gltf-utils status Node.js tool to convert glTF to Binary glTF
+
+Validators
+
+   Tool Status Description
+   glTF Validator status Official command-line and drag-and-drop tool to
+   validate glTF assets against the specification
+   glTF VSCode Extension status 3D previews, built-in official glTF
+   Validator, conversion to/from GLB
+
+Viewers and Debugging
+
+   Tool Status Description
+   BabylonJS Sandbox status Drag-and-drop online viewer for model preview
+   and debugging, using BabylonJS
+   three.js glTF Viewer status Drag-and-drop viewer (web and desktop) for
+   model preview and debugging, using three.js
+   three.js Editor status Editor with drag-and-drop support
+   Clay Viewer status Drag-and-drop glTF2.0 viewer with high quality
+   rendering and PBR material editing.
+   glTF Animation Visualizer status Frame-by-frame debugging for glTF
+   animations.
+   VirtualGIS Viewer status Cesium-based glTF viewer.
+   GLTFQuickLook status macOS QuickLook plugin for glTF files
+   glTF Viewer status Android and iOS apps for glTF 2.0 viewing and link
+   sharing: supports embedded glTF 2.0 files and links
+   DirectX glTF Viewer status DirectX11, C++ desktop app for loading and
+   rendering glTF files
+   glTFShowcase status Android and iOS app for viewing glTF 2.0 asset from
+   local files (gltf/glb/zip): supports environment lighting change.
+   Hilo3d glTF Viewer status Drag-and-drop glTF2.0 viewer for model
+   preview, using Hilo3d
+   MeshViewer status OBJ / glTF2 mesh viewer for Windows and macOS
+   Diligent GLTF Viewer status Cross-platform GLTF PBR viewer with
+   multiple rendering back-ends
+
+Applications
+
+   Application Status Description
+   Blender 2.80 status Khronos glTF importer/exporter ships with Blender
+   2.80 and higher
+   Paint 3D by Microsoft status 3D creation tool
+   Remix 3D by Microsoft status Share and print 3D creations
+   Facebook status Use .glb files to create 3D Posts
+   Sketchfab status Platform to publish, share & discover 3D online and in
+   VR
+   Wordpress (plugin) status Inline glTF renderer for WordPress
+   Modo by Foundry status 3D modeling, texturing & rendering tools
+   Substance Painter by Adobe status 3D painting software with glTF 2.0
+   import and export
+   Marmoset Toolbag status 3D real-time rendering, animation, and baking
+   suite
+   Aspose.3D status File Format APIs for creating, editing, and converting
+   over 100 file formats
+   3D Slash status Web-based and app-based 3D modeling imitating a
+   stonecutter
+   Archilogic status Web-based 3D platform for architecture and interiors
+   Plex.Earth status Connects AutoCAD with Google Earth and the Real
+   World.
+   VECTARY status Online 3D content creation tool
+   Visual Studio Code status Preview, validate, inspect, and debug glTF
+   files
+
+Loaders and Engines
+
+WebGL Engines
+
+   To compare WebGL-based glTF loaders, see gltf-test.
+   Engine Status Scope Related
+   three.js (loader) status All <model-viewer/> component, drag-and-drop
+   viewer
+   BabylonJS (loader) status All Viewer component
+   Cesium (loader) status All Drag-and-drop viewer, tutorial
+   OSG.JS (loader) status All
+   Grimoire.js (loader) status Geometry and materials, partial animation
+   Hilo3d (loader) status All Doc
+   A-Frame (loader) status All Doc
+   xeogl (loader) status Geometry and materials Tutorial
+   ClayGL (loader) status All Examples
+   Verge3D (loader) status All
+   ReactVR status All
+   CZPG (loader) status All Examples
+   PEX (loader) status Geometry and materials
+   GLBoost (loader) status ? Examples
+   xml3d.js (loader) status Geometry and materials
+   X3DOM (loader) status Geometry and materials
+   RedGL status All Examples
+   Ashes status All Examples
+
+WebGL Sample Code
+
+   Sample Status Description
+   Khronos glTF Sample Viewer status Engine-agnostic sample viewer with
+   WebGL PBR shader for glTF 2.0 (source code)
+
+Game and Rendering Engines
+
+   Tool Status Description
+   UnityGLTF status Unity3D library for exporting, loading, parsing, and
+   rendering glTF assets
+   GLTFUtility status glTF 2.0 loader plugin for Unity3D
+   Unreal (forum / notes) status Unreal adds glTF import capability
+   Godot Game Engine status Godot 3.0 fully supports glTF import
+   jMonkeyEngine status jME 3.2 supports glTF 2.0
+   Ogre_glTF status glTF 2.0 loader plugin for Ogre v2-1
+   G3D Innovation Engine status glTF 2.0 import
+   LÖVR status A framework for creating VR with Lua
+   LibGDX glTF status LibGDX library for loading and rendering glTF assets
+
+Embeddable Viewers
+
+   Tool Author Type Description
+   Babylon.js Viewer BabylonJS self-hosted HTML web component for viewing
+   self-hosted glTF models.
+   <model-viewer> Google self-hosted HTML web component for viewing
+   self-hosted glTF models.
+   Poly Google service glTF models hosted on Poly may be embedded in an
+   iframe on any site.
+   Sketchfab Sketchfab service glTF models hosted on Sketchfab may be
+   embedded in an iframe on any site, using the embed models feature.
+
+Languages
+
+JavaScript / Node.js
+
+   Tool Status Description
+   gltf-viewer status Web component to display glTF models on a website
+   minimal-gltf-loader status A minimal, engine-agnostic JavaScript glTF
+   Loader, with a raw WebGL 2 renderer example
+   THREE.GLTFLoader status Loads glTF assets into a three.js scene.
+   THREE.GLTFExporter status Exports three.js scenes to a glTF asset
+   gltf-walker status Convenience library for processing glTF
+   RedCube.js status glTF viewer without dependencies
+   gltf-bounding-box status Computes the global bounding box of a gltf
+   model
+
+C++
+
+   Tool Status Description
+   Tiny glTF loader status Header only C++ glTF parsing library, with
+   Alembic→glTF and CyHair->glTF converters
+   yocto-gltf status Single file, header only, C++ glTF loading/writing
+   automatically generated from the spec
+   glTF2-loader status C++14 glTF (2.0 only) parsing library, by
+   Lugdunum3D
+   gltfpp status glTF 2.0 loader for C++14
+   fx-gltf status A C++14/C++17 header-only library for simple, efficient,
+   and robust serialization/deserialization of glTF 2.0
+   TGen status Simple C++ Tangent Generator
+   Microsoft.glTF.CPP status A C++ library for serializing and
+   deserializing gltf/glb files. | status |
+   Qt 3D status Qt 3D provides functionality for near-realtime simulation
+   systems
+   Laugh Engine status Vulkan PBR and IBL renderer
+   Lugdunum3D status A modern cross-platform 3D rendering engine built
+   with Vulkan and modern C++14
+   UX3D Engine status Cross-platform multi-threaded Vulkan 3D Engine with
+   glTF 2.0 import and export
+   Cinder status Work-in-progress glTF importer
+   nvpro-pipeline status Research rendering pipeline by NVIDIA for
+   minimizing CPU cost
+   AssetKit ? 3D asset importer/exporter/util library
+   libgltf status glTF 2.0 parser for C++11
+   libgltf_ue4 status A third-party library for UE4.10+ to load glTF files
+   glTF for UE4 status A plugin for UE4.10+ to import glTF files
+   Diligent Engine status A modern cross-platform low-level graphics
+   libarary and rendering framework
+
+Objective-C
+
+    Tool   Status                       Description
+   GLTFKit status An Objective-C glTF 2.0 loader and Metal-based renderer
+
+C
+
+   Tool Status Description
+   C# glTF loader status C# reference loader for glTF
+   Aspose.3D for .NET status Import, export, and convert glTF
+   MixedRealityToolkit-Unity status A collection of scripts and components
+   intended to accelerate development of applications targeting Microsoft
+   HoloLens and Windows Mixed Reality headsets.
+   SharpGLTF status C# toolkit for reading and writing glTF files.
+   DEM.Net status C# toolkit for Digital Elevation Models, exporting
+   models with textures and normal maps to glTF files.
+
+C
+
+     Tool   Status             Description
+   AssetKit status 3D asset importer, exporter library.
+   cgltf    status Single-header C glTF loader.
+
+Go
+
+     Tool   Status                   Description
+   gltf     status go library for marshaling and unmarshaling glTF
+   gltf 2.0 status A Go glTF 2.0 writer, reader and validator
+
+Rust
+
+    Tool  Status           Description
+   Loader status A crate for loading glTF 2.0
+   Viewer status glTF 2.0 Viewer written in Rust
+
+Haxe
+
+     Tool    Status           Description
+   haxe-gltf status A Haxe library for reading glTF
+
+Java
+
+     * JglTF - Java libraries for glTF
+          + jgltf-impl - Classes representing a glTF model, auto-generated
+            from the glTF JSON schema
+          + jgltf-impl-v1 - glTF 1.0
+          + jgltf-impl-v2 - glTF 2.0
+          + jgltf-impl-v2-technique-webgl - KHR_technique_webgl extension
+          + jgltf-model - Classes for reading, processing, converting and
+            writing glTF
+          + jgltf-obj - Library for converting OBJ to glTF
+          + jgltf-viewer - Viewer for glTF, with different
+            implementations:
+               o jgltf-viewer-jogl - glTF viewer based on JOGL
+               o jgltf-viewer-lwjgl - glTF viewer based on LWJGL version 2
+          + jgltf-browser - Application combining the above libraries
+          + jgltf-validator - Simple glTF validator, only intended for
+            internal use
+
+Ada
+
+   Tool Status              Description
+   Orka status The OpenGL 4.5 Rendering Kernel in Ada
+
+TypeScript
+
+   Tool Status Description
+   gltf-typescript-generator status CLI to generate a TypeScript interface
+   for glTF
+
+Swift
+
+       Tool     Status       Description
+   GLTFSceneKit status glTF loader for SceneKit
+
+Python
+
+   Tool Status Description
+   trimesh status Python library for importing and exporting glTF and
+   numerous other triangular mesh formats.
+
+Utilities
+
+     * gltf-utilities - JavaScript utility library to help load glTF
+     * wetzel - Generate Markdown documentation from JSON Schema
+     * gltf-enum - Simple site to help work with all the different enums
+       in glTF spec
+
+Resources
+
+     * glTF-Generator-Registry - An open registry of tools that create
+       glTF assets, along with structured metadata such as links to
+       documentation and bug trackers.
+
+Formats Built on glTF
+
+     * 3D Tiles - An open standard for streaming and rendering massive
+       heterogenous 3D content.
+
+Stack Overflow
+
+     * glTF tagged questions
+
+Presentations and Articles
+
+Intros
+
+     * glTF 2.0 Launch by Neil Trevett. June 2017
+     * glTF Webinar (video, slides) by Marco Hutter. February 2017
+     * glTF Brief by Tony Parisi, FormVR and Amanda Watson, Oculus.
+       October 2016
+
+Tutorials
+
+     * glTF Tutorials
+     * Physically-Based Rendering: From Theory to glTF
+
+All Presentations and Articles
+
+     * glTF Ecosystem Forum during SIGGRAPH. July 2019
+     * SIGGRAPH 2019 glTF BOF Video and slides
+          + Khronos: Ed Mackey - glTF Overview
+          + Facebook: Renee Rashid - Spark AR, glTF at Facebook
+          + Cesium: Omar Shehata - 3D Tiles, Basis Universal
+          + DGG: Max Limper - Automating the 3D Processing Pipeline
+          + Uber: Georgios Karnas - glTF in Big Data Visualization
+          + UX3D: Fabian Wahlster and Moritz Becher - glTF Editor and
+            Tools
+          + Esri: David Körner - glTF with Esri JS API
+          + Sketchfab: Alban Denoyel - Publish & Find 3D Models Online
+          + Google: Adrian Perez - AR Search at Google
+          + Wayfair: Shrenik Sadalgi - Khronos 3D Commerce Working Group
+            introduction
+     * How to make a PBR 3D model for the web by Arturo Paracuellos. June
+       2019
+     * Uber’s vis.gl brings glTF to geospatial data visualization by
+       Georgios Karnas, Ib Green, Travis Gorkin, and Xintong Xia. June
+       2019
+     * Exporting glTF from Animate by Ram Kulkarni. April 2019
+     * glTF:// Everything You Need to Know! by Ben Houston. April 2019
+     * GDC 2019 Khronos Developer Days - WebGL & glTF video. March 2019
+       (slides)
+          + Khronos: Patrick Cozzi - Overview
+          + Microsoft: Saurabh Bhatia - Ecosystem and SDK Update
+          + Google: Chris Joel - <model-viewer> Fidelity Testing
+          + Adobe: Mike Bond - Adobe Dimension
+          + Mozilla: Robert Long - Publishing Virtual Worlds with glTF
+          + Facebook: Susie Su - An On-Demand, Optimizing glTF Backend
+     * glTF Debugging in Visual Studio Code by Gary Hsu. January 2019
+     * SIGGRAPH Asia glTF Overview and CTTF Update by Khronos. December
+       2018
+     * droidcon SF 2018 - The JPEG of 3D: Bringing 3D scenes and objects
+       into your 2D Android app with glTF by Pierre LaFayette. November
+       2018
+     * Using the Babylon.js viewer with WebVR and Windows Mixed Reality
+       home by Saurabh Bhatia. November 2018
+     * Behind the Scenes with Adobe Dimension Engineers: How We Built the
+       3D Publish Feature by Mike Bond. November 2018
+     * OGC and Khronos Form a Liaison to Improve Interoperability within
+       the Geospatial and 3D Graphics Communities. October 2018
+     * If you build it (together), they will come...Mozilla and the
+       Khronos Group collaborate to bring glTF capabilities to Blender by
+       Rosana Ardila. October 2018
+     * glTF and Construction – Part 1: Secrets of the Cloud by Tim Davies.
+       September 2018
+     * glTF and Construction – Part 2: 3D for Everyone by Tim Davies.
+       September 2018
+     * SIGGRAPH 2018 glTF BOF video and materials. August 2018
+          + Ecosystem update: Patrick Cozzi, Cesium
+          + glTF for artists: Patrick Ryan, Microsoft
+          + TurboSquid: Beau Perschall
+          + Facebook: Pär Winzell
+          + Microsoft: Gary Hsu and Cedric Caillaud
+          + STK: Alex Wood, AGI
+          + VSCode: Ed Mackey, AGI
+          + Industrial AR with glTF: Johannes Beh, Fraunhofer
+          + Google Draco: Jamieson Brettle
+          + Texture transmission: Mark Callow
+          + IKEA: Martin Enthed
+     * glTF 2.0 – Status and Outlook by Norbert Nopper. July 2018
+     * TurboSquid adds glTF to supported formats for its StemCell
+       initiative. July 2018
+     * Why glTF 2.0 is awesome! by Arthur Brainville. July 2018
+     * Get your glTF on with WebGL/WebVR at Microsoft - June 2018
+          + Meetup video
+          + Ecosystem update by Saurabh Bhatia (slides)
+          + 3D product displays on the web using glTF by Matthew Cedeno
+            and Gary Hsu
+          + Publishing Virtual Worlds with glTF by Robert Long (slides)
+          + Compressed Texture Transmission Format by Mark Callow (slides)
+          + What's new with Draco 3D compression by Frank Galligan
+            (slides)
+          + glTF at Adobe by Mike Bond
+     * Building the Metaverse One Standard at a Time by Neil Trevett.
+       Web3D. June 2018
+     * Sketchfab uses glTF to bring a search bar to the world of 3D. May
+       2018
+     * Draco Compressed Meshes with glTF and 3D Tiles by Gabby Getz. April
+       2018
+     * glTF Momentum Accelerates with New Support from Facebook, Epic,
+       Unity, and Adobe by Khronos. April 2018
+     * GDC 2018 Khronos Developer Days - WebGL & glTF video. March 2018
+     * glTF Ecosystem Update, GTC by Neil Trevett. March 2018
+     * glTF Ecosystem Update, GDC by Patrick Cozzi. March 2018
+     * Adobe Dimension & glTF by Mike Bond. March 2018
+     * Draco 3D Compression Extension to glTF 2.0 by Frank Galligan. March
+       2018
+     * Mixed Reality with glTF by Tom Mignone. March 2018
+     * glTF Texture Transmission Extension by David Wilkinson. March 2018
+     * glTF in Unreal Engine by Mike Erwin. March 2018
+     * glTF Asset Generator Deep Dive by Gary Hsu. March 2018
+     * GLB Tutorials (exporting from Modo, Substance Painter, Maya, and
+       others) by Facebook. February 2018
+     * Convert FBX format to glTF format on Blender and animate it with
+       Three.js (Japanese) by Ryosuke Sakaki. February 2018
+     * Art Pipeline for glTF by Patrick Ryan. January 2018
+     * Call for Participation: glTF Creating a Compressed Texture
+       Extension by Khronos. December 2017
+     * Using glTF Models with A-Frame by Josh Marinacci. December 2017
+     * Creating animated glTF Characters with Mixamo and Blender by Don
+       McCurdy. November 2017
+     * glTF - Seattle Khronos Group Meetup by Saurabh Bhatia. September
+       2017
+     * State of glTF 2.0 for WebVR Devs by Don McCurdy, Google. September
+       2017
+     * glTF Exporter in three.js and A-Frame by Fernando Serrano. August
+       2017
+     * SIGGRAPH 2017 glTF BOF video. August 2017
+          + glTF 2.0 and Community Update: Tony Parisi, Unity, and Patrick
+            Cozzi, Cesium
+          + Microsoft update - Paint 3D, View 3D, 3D in Office and one
+            more thing…: Saurabh Bhatia and Gary Hsu, Microsoft
+          + glTF VSCode editor: Ed Mackey, AGI
+          + Autodesk Forge and glTF: Nop Jiarathanakul, Autodesk
+          + Three.js and A-Frame update: Don McCurdy, Google and Ricardo
+            Cabello, Google
+          + Introduction to geometry compression on the web with Draco:
+            Michael Hemmer and Jamieson Brettle, Google
+          + WebGL PBR reference implementation: Scott Nagy, Microsoft, and
+            Mohamad Moneimne, Cesium
+          + Sketchfab update: Aurelien Chatelain, Sketchfab
+          + glTF 2.0 Export in InstantUV: Max Limper, Fraunhofer
+     * Physically-Based Rendering in Cesium by Mohamad Moneimne. August
+       2017
+     * Why we should all support glTF 2.0 as THE standard asset exchange
+       format for game engines by Juan Linietsky. August 2017
+     * Exporting glTF 2.0 from Maya LT by Don McCurdy. June 2017
+     * glTF 2.0: PBR Materials by Saurabh Bhatia. May 2017
+     * glTF Workflow for a Saturday Night by Diego F. Goberna. April 2017
+     * 2017 GDC WebGL/WebVR/glTF Meetup YouTube recording. March 2017
+     * Reach the Largest Gaming Platform of All: The Web. WebGL, WebVR and
+       glTF. March 2017
+     * PBR-ready glTF in instant3Dhub / instantUV by Max Limper. March
+       2017
+     * Call for feedback on glTF 2.0 by Neil Trevett. February 2017
+     * Improve expressiveness of WebGL with the topic 3D file format glTF
+       now! (in Japanese) by Yuki Shimada(@emadurandal), WebGL advent
+       calendar 2016 at Qiita. December 2016
+     * A new 3D horizon: glTF import and export with Archilogic by Martin
+       Splitt. December 2016
+     * Bringing 3D to everyone through open standards by Forest W. Gouin
+       and Jean Paoli. October 2016
+     * Using Quantization with 3D Models by Rob Taglang. August 2016
+     * glTF and Mobile VR: Inclusive standards for a 3D world. Amanda
+       Watson, Oculus, WebGL + glTF BOF. July 2016
+     * glTF Update and Roadmap. Tony Parisi, WebGL + glTF BOF. July 2016
+     * PBR in glTF: Current State. Max Limper, Johannes Behr, and Timo
+       Sturm, WebGL + glTF BOF. July 2016
+     * glTF:// The Runtime Asset Format for GL-based Applications. July
+       2016
+     * glTF working group updates (slides, video). Patrick Cozzi and Tony
+       Parisi, WebGL + glTF BOF. March 2016
+     * FBX to/from glTF (slides, video). Cyrille Fauvel, WebGL + glTF BOF.
+       March 2016
+     * Khronos Group glTF Webinar. Neil Trevett, Virtual AR Community
+       meeting. October 2015
+     * An Introduction to glTF 1.0. October 2015
+     * The state of WebGL and glTF. Patrick Cozzi, The Graphical Web.
+       September 2015
+     * glTF ecosystem and mesh compression update. Khronos 3D Formats
+       Working Group, SIGGRAPH 2015. August 2015
+     * glTF and the WebGL Art Pipeline. Tony Parisi, WebGL Meetup. March
+       2015
+     * Writing an FBX importer / Exporter plug-in. Cyrille Fauvel. January
+       2015
+     * glTF Tips for Artists. Branden Coker. December 2014
+     * 3D for the Modern Web: Declarative 3D and glTF. Brian Coughlin.
+       Summer 2014
+     * glTF:// Designing an Open-Standard Runtime Asset Format. Fabrice
+       Robinet et al, GPU Pro 5. May 2014
+     * Building a WebGL Santa with Cesium and glTF. Patrick Cozzi.
+       December 2013
+     * glTF update. Tony Parisi. August 2013
+     * How I got involved in glTF and Khronos. Patrick Cozzi, WebGL
+       Meetup. March 2013
+     __________________________________________________________________
+
+   We believe the true usefulness of glTF goes beyond the spec itself; it
+   is an ecosystem of tools, documentation, and extensions contributed by
+   the community. You are encouraged to get involved!
+
+Quick Links
+
+     * Github Repository
+     * Reference Guide
+     * glTF Discussion/Support
+     * glTF Slack
+     * Resources
+     * Slide Deck
+
+Related Discussions
+
+     * Visit Community Forums
+     * Visit Slack Group
+
+Related News
+
+     * Diligent Engine now supports GLTF
+     * Liaison between Khronos and Open Geospatial Consortium Leads to 3D
+       Tiles Community Standard Built on glTF for Streaming Massive Models
+     * OGC adopts ‘3D Tiles’ built on glTF as Community Standard
+     * Khronos announces newest Associate Member DGG
+     * COMSOL Multiphysics Supports glTF File Export for 3D Simulation
+       Results
+
+     * More news
+
+Related Press
+
+     * Khronos Announces glTF Geometry Compression Extension Using Google
+       Draco Technology
+     * Khronos Releases Graphics API Updates and Demonstrates Ecosystem
+       Advancement at SIGGRAPH 2017
+     * Khronos Releases glTF 2.0 Specification
+     * Khronos Showcases Significant glTF Momentum for Efficient
+       Transmission of 3D Scenes and Models
+     * Khronos Finalizes glTF 1.0 Specification
+
+     * More Press Releases
+
+   Khronos Logo
+
+   9450 SW Gemini Drive #45043
+   Beaverton, OR 97008-6018 USA
+   Office: +1 (415) 869-8627
+   sign up for our newsletter
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+
+     * Legal Notices
+     * Privacy Policy
+     * Trademark Usage
+
+   Language: EN CN JP KR
+   © The Khronos^® Group Inc. 2019. All rights reserved.
+   Hosting provided by DigitalOcean
+   #alternate alternate
+
+   WebGL
+
+   Khronos
+
+                            WebGL Extension Registry
+
+Overview
+
+   The WebGL extension registry contains specifications for extensions to
+   the core WebGL API. Most of these extensions are incorporated directly
+   from the OpenGL ES or OpenGL extension registries, and refer to those
+   extensions for their behavioral definition. Because WebGL extensions
+   are specified as Web IDL interfaces, each specification also includes
+   the IDL to which each implementation will comply.
+
+   An extension template is available for the submission of new proposed
+   extensions. New extension proposals should be emailed to the public
+   WebGL mailing list. When writing a new extension specification, it is
+   recommended to check out the public WebGL repository. See the WebGL
+   wiki page Using Github to contribute. The extension registry files are
+   located under extensions/.
+
+   Each extension object is fetched from the WebGLRenderingContextBase by
+   passing the name of the extension to the getExtension method, i.e.:
+   context.getExtension("OES_texture_float").
+
+   Extensions which are marked as promoted to core or removed in a certain
+   version of the WebGL API must not be supported in an implementation of
+   that or newer version of the WebGL API.
+
+Naming conventions
+
+   WebGL API extensions may derive from many sources, and the naming of
+   each extension reflects its origin and intent.
+     * ARB, OES and KHR tags should be used for mirroring functionality
+       from OpenGL ES or OpenGL API extensions approved by the respective
+       architecture review boards. EXT_ and GPU vendor tags should be used
+       for mirroring other OpenGL ES or OpenGL API extensions. If only
+       small differences in behavior compared to OpenGL ES or OpenGL are
+       specified for a given extension, the original tag should be
+       maintained.
+     * The WEBGL tag should be used for WebGL-specific extensions which
+       are intended to be compatible with multiple web browsers. It should
+       also be used for extensions which originated with the OpenGL ES or
+       OpenGL APIs, but whose behavior has been significantly altered.
+     * Browser vendor specific tags should be used for WebGL-specific
+       extensions that are intended to run only on a particular browser.
+       It is recommended to avoid such extensions, and instead specify
+       them with the WEBGL tag.
+
+Extension Development Process
+
+   Extensions move through four states during their development: proposed,
+   draft, community approved, and Khronos ratified. Every extension should
+   advance to Khronos ratified. If an extension cannot advance through the
+   extension process it can be rejected.
+     * Proposed extensions are intended for discussion on the public WebGL
+       mailing list, in order to move to draft status; they should not be
+       implemented, even under a vendor prefix. If consensus is reached in
+       the community, the extension can be moved to draft status.
+     * Draft extensions may be implemented under a vendor prefix or behind
+       a run-time option for experimentation purposes, in order to gain
+       experience with the extension before finalizing it. Draft
+       extensions should not be exposed by default by WebGL
+       implementations. Once consensus is reached in the community, the
+       extension can be moved to community approved status.
+     * Community approved extensions should be implemented without a
+       vendor prefix. When a draft extension moves to community approved
+       status, any existing implementation should immediately remove
+       support for any vendor-prefixed extension name. Once implemented by
+       a vendor, support should not be removed unless there is a serious
+       issue with the extension, such as a security flaw.
+     * Khronos ratified extensions are those community approved extensions
+       which have been voted upon by the Khronos Board of Promoters.
+     * Rejected extensions should never be implemented. An extension
+       enters rejected status because consensus on it could not be reached
+       at the proposal stage or technical difficulties arise during
+       implementation at the draft stage. A community approved extension
+       can only be rejected in extraordinary circumstances. A Khronos
+       ratified extension cannot be rejected.
+
+Khronos ratified WebGL Extensions
+
+By Number
+
+By Name
+
+    1. OES_texture_float
+    2. OES_texture_half_float
+    3. WEBGL_lose_context
+    4. OES_standard_derivatives
+    5. OES_vertex_array_object
+    6. WEBGL_debug_renderer_info
+    7. WEBGL_debug_shaders
+    8. WEBGL_compressed_texture_s3tc
+    9. WEBGL_depth_texture
+   10. OES_element_index_uint
+   11. EXT_texture_filter_anisotropic
+   16. EXT_frag_depth
+   18. WEBGL_draw_buffers
+   19. ANGLE_instanced_arrays
+   20. OES_texture_float_linear
+   21. OES_texture_half_float_linear
+   25. EXT_blend_minmax
+   27. EXT_shader_texture_lod
+
+   19. ANGLE_instanced_arrays
+   25. EXT_blend_minmax
+   16. EXT_frag_depth
+   27. EXT_shader_texture_lod
+   11. EXT_texture_filter_anisotropic
+   10. OES_element_index_uint
+    4. OES_standard_derivatives
+    1. OES_texture_float
+   20. OES_texture_float_linear
+    2. OES_texture_half_float
+   21. OES_texture_half_float_linear
+    5. OES_vertex_array_object
+    8. WEBGL_compressed_texture_s3tc
+    6. WEBGL_debug_renderer_info
+    7. WEBGL_debug_shaders
+    9. WEBGL_depth_texture
+   18. WEBGL_draw_buffers
+    3. WEBGL_lose_context
+
+Community approved WebGL Extensions
+
+By Number
+
+By Name
+
+   13. WEBGL_compressed_texture_pvrtc
+   14. EXT_color_buffer_half_float
+   15. WEBGL_color_buffer_float
+   17. EXT_sRGB
+   24. WEBGL_compressed_texture_etc1
+   26. EXT_disjoint_timer_query
+   28. OES_fbo_render_mipmap
+   29. WEBGL_compressed_texture_etc
+   30. WEBGL_compressed_texture_astc
+   31. EXT_color_buffer_float
+   32. WEBGL_compressed_texture_s3tc_srgb
+   33. EXT_disjoint_timer_query_webgl2
+   35. EXT_float_blend
+   36. OVR_multiview2
+   37. KHR_parallel_shader_compile
+   38. EXT_texture_compression_bptc
+   39. EXT_texture_compression_rgtc
+
+   31. EXT_color_buffer_float
+   14. EXT_color_buffer_half_float
+   26. EXT_disjoint_timer_query
+   33. EXT_disjoint_timer_query_webgl2
+   35. EXT_float_blend
+   17. EXT_sRGB
+   38. EXT_texture_compression_bptc
+   39. EXT_texture_compression_rgtc
+   37. KHR_parallel_shader_compile
+   28. OES_fbo_render_mipmap
+   36. OVR_multiview2
+   15. WEBGL_color_buffer_float
+   30. WEBGL_compressed_texture_astc
+   29. WEBGL_compressed_texture_etc
+   24. WEBGL_compressed_texture_etc1
+   13. WEBGL_compressed_texture_pvrtc
+   32. WEBGL_compressed_texture_s3tc_srgb
+
+Draft WebGL Extensions
+
+By Number
+
+By Name
+
+    1. WEBGL_draw_instanced_base_vertex_base_instance
+    2. WEBGL_multi_draw_instanced_base_vertex_base_instance
+   40. WEBGL_multi_draw
+   41. WEBGL_multi_draw_instanced
+   42. WEBGL_blend_equation_advanced_coherent
+   43. EXT_clip_cull_distance
+   44. EXT_texture_norm16
+   45. EXT_draw_buffers_indexed
+
+   43. EXT_clip_cull_distance
+   45. EXT_draw_buffers_indexed
+   44. EXT_texture_norm16
+   42. WEBGL_blend_equation_advanced_coherent
+   43. WEBGL_draw_instanced_base_vertex_base_instance
+   40. WEBGL_multi_draw
+   41. WEBGL_multi_draw_instanced
+   42. WEBGL_multi_draw_instanced_base_vertex_base_instance
+
+Proposed WebGL Extensions (do not implement!)
+
+By Name
+
+     * WEBGL_debug
+     * WEBGL_dynamic_texture
+     * WEBGL_subarray_uploads
+     * WEBGL_texture_multisample
+     * WEBGL_texture_source_iframe
+     * WEBGL_video_texture
+
+Rejected WebGL Extensions
+
+By Name
+
+     * EXT_texture_storage
+     * OES_depth24
+     * WEBGL_compressed_texture_atc
+     * WEBGL_debug_shader_precision
+     * WEBGL_draw_elements_no_range_check
+     * WEBGL_get_buffer_sub_data_async
+     * WEBGL_security_sensitive_resources
+     * WEBGL_shared_resources
+     * WEBGL_subscribe_uniform
+     * WEBGL_texture_from_depth_video
+
+Recent WebGL Extension Revisions
+
+    1. WEBGL_blend_equation_advanced_coherent : revision 5 on September
+       25, 2019
+          + Moved to draft after WebGL F2F of September 2019
+    2. EXT_draw_buffers_indexed : revision 3 on September 25, 2019
+          + Promoted to Draft.
+    3. OES_fbo_render_mipmap : revision 3 on September 25, 2019
+          + Moved to Community Approved.
+    4. EXT_clip_cull_distance : revision 2 on September 25, 2019
+          + Promoted to Draft.
+    5. EXT_texture_norm16 : revision 2 on September 25, 2019
+          + Promoted to Draft.
+    6. WEBGL_draw_instanced_base_vertex_base_instance : revision 2 on
+       September 25, 2019
+          + Move to draft.
+    7. WEBGL_multi_draw_instanced_base_vertex_base_instance : revision 2
+       on September 25, 2019
+          + Change parameters order.
+          + Move to draft.
+    8. WEBGL_draw_instanced_base_vertex_base_instance : revision 1 on
+       August 28, 2019
+          + Initial version.
+    9. WEBGL_multi_draw_instanced_base_vertex_base_instance : revision 1
+       on August 28, 2019
+          + Initial version.
+   10. EXT_float_blend : revision 5 on August 27, 2019
+          + Clarified that this extension applies to both WebGL 1.0 and
+            2.0 contexts.
+
+   Atom feed  Recent Revisions
+   (BUTTON) Toggle navigation The Khronos Group
+     * Developers
+          + Active Standards
+               o 3D Commerce
+               o COLLADA
+               o Data Format
+               o EGL
+               o glTF
+               o NNEF
+               o OpenCL
+               o OpenGL
+               o OpenGL ES
+               o OpenGL SC
+               o OpenVG
+               o OpenVX
+               o OpenXR
+               o Safety Critical
+               o SPIR
+               o SYCL
+               o Vulkan
+               o Vulkan SC
+               o WebGL
+          + Exploratory Groups
+               o Overview
+               o Heterogeneous Communication
+          + Inactive Standards
+               o OpenKCAM
+               o OpenKODE
+               o OpenMAX
+               o OpenML
+               o OpenSL ES
+               o OpenWF
+               o StreamInput
+               o WebCL
+          +
+          + Registry
+          + Advisors
+          + Github
+          + Khronos Forums
+          + Khronos Slack
+          +
+          + Khronos Blog
+          + Videos & Presentations
+          + Reference Guides
+          + Books
+          + Training & Courses
+          +
+          + Jobs
+          + Request for Quotes
+          + Merchandise
+     * Conformance
+          + Adopter program
+          + File Format Adopter Program
+          + Conformant Companies
+          + Conformant Products
+          + Trademark Guidelines
+          + IP Framework
+          +
+          + Adopter Login
+     * Membership
+          + Join the Khronos Group
+          + Khronos Members
+          + IP Framework
+          +
+          + Create an account
+          + Member Login
+     * News & Events
+          + Newsroom
+          + Press Releases
+          + Khronos Logos
+          + Subscribe to our newsletter
+          + Share your news
+          +
+          + Upcoming Events
+          + Conference Code of Conduct
+          + Share your events
+          +
+          + Marketing with Khronos
+     * About
+          + Overview
+          + Contact Us
+          + Directors & Officers
+          + Working Group Chairs
+          + Technical Support
+          + Khronie Awards
+     * Member Login
+     * Search
+          +
+
+Khronos royalty-free open standards for 3D graphics, Virtual and Augmented
+Reality, Parallel Computing, Neural Networks, and Vision Processing.
+
+     * 3D Commerce
+     * EGL
+     * glTF
+     * NNEF
+     * OpenCL
+     * OpenGL
+     * OpenGL ES
+     * OpenGL SC
+     * OpenVG
+     * OpenVX
+     * OpenXR
+     * SPIR
+     * SYCL
+     * Vulkan
+     * WebGL
+     * KSCAF
+     * Exploratory HetComm
+     * All Standards
+
+Khronos News
+
+Simply Augmented Joins Khronos to Help Bring 3D and Augmented Reality (AR) to
+E-commerce
+
+       October 3, 2019 3DCommerce
+
+   Simply Augmented Joins Khronos to Help Bring 3D and Augmented Reality
+   (AR) to E-commerce
+
+   Simply Augmented, a tech company moving into the e-commerce home
+   furnishing space, has joined Khronos as a contributor member to
+   participate in the 3D Commerce Working Group. Learn more about Simply
+   Augmented and why they joined the Khronos Group.
+
+   Read More...
+
+Khronos Welcomes newest Contributor Member Deloitte Consulting
+
+       September 26, 2019 Members
+
+   Khronos Welcomes newest Contributor Member Deloitte Consulting
+
+   In the United States, Deloitte LLP and its subsidiaries have 80,000
+   professionals with a single focus: Serving our clients and helping them
+   solve their toughest problems. Digital reality is the next
+   transformation after PC, web, and mobile. It may dramatically alter the
+   way we interact and use technology and data.
+
+   Read More...
+
+Khronos Welcomes newest Contributor Member Shopify
+
+       September 25, 2019
+
+   Khronos Welcomes newest Contributor Member Shopify
+
+   The Khronos Group would like to welcome Contributor Member Shopify.
+   Shopify powers over 800,000 business worldwide as the leading
+   multi-channel commerce platform that helps merchants design, set up,
+   and manage their stores. Today, Shopify joins the Khronos Group to help
+   lead the charge in 3D Commerce - another step in future-proofing their
+   merchants and making commerce better for everyone.
+
+   Read More...
+
+Intel releases SYCL Compiler + Runtimes 2019-09
+
+       September 25, 2019 OpenCL, SYCL, FPGA
+
+   The SYCL Compiler and Runtimes 2019-09 release allow OpenCL offloading
+   to accelerators (GPU/FPGA). Some OpenCLCL/SYCL FPGA extensions are now
+   supported along with support for dumping the SYCL task graph to JSON.
+   Lots of other improvements and fixes are included on the GitHub release
+   page.
+
+   Read More...
+
+LLVM/Clang release 9.0 with experimental support of C++ for OpenCL
+
+       September 25, 2019 OpenCL, LLVM, Clang
+
+   LLVM/Clang release 9.0 with experimental support of C++ for OpenCL
+
+   ​LLVM Clang 9.0 has been released and is now available for download.
+   This is the first release to contain experimental support of C++ for
+   OpenCL language mode in Clang. More details can be found in the Clang
+   documentation. This new support will be discussed at the LLVM
+   Developers meeting (October 2019) at the From C++ for OpenCL to C++ for
+   accelerator devices talk by Khronos Member Anastasia Stulova.
+
+   Read More...
+
+Unified programming with oneAPI from Intel and SYCL from Khronos
+
+       September 24, 2019 SYCL
+
+   A unified programming model offers enterprises and OEMs a
+   cost-effectively way to take advantage of the growing diversity of
+   processor platforms, letting companies share their source code
+   investment across vendors and architectures. Enter oneAPI from Intel,
+   which aims to revolutionize application development through a unified,
+   open development model to simplify programming across processors. Intel
+   built upon C++, and SYCL from The Khronos Group had some really good
+   constructs that they thought provided a very good starting point. Intel
+   extended and improved it to achieve the goals that they wanted to
+   achieve. Most of the DPC++ extensions will eventually be synced
+   upstream into SYCL.
+
+   Read More...
+   all news
+   tell us your news subscribe
+
+TWITTER
+
+   Tweets by thekhronosgroup FOLLOW US
+
+Members
+
+   Khronos members are individuals, companies and academic institutes from
+   around the world shaping the standards that are driving the world.
+   Membership About Khronos
+
+Conformance
+
+   See which companies and products have implemented Khronos standards and
+   have passed the conformance tests.
+   conformant products conformant companies
+
+Khronos Blog
+
+     * Simply Augmented Joins Khronos to Help Bring 3D and Augmented
+       Reality (AR) to E-commerce
+     * Open Standards for Deep Learning Automotive Solutions
+     * Autodesk joins The Khronos Group; glTF gains momentum
+
+   Visit Khronos Blog
+
+Presentations and Videos
+
+     * 2019 XDC – Montreal
+     * 2019 CEDEC
+     * 2019 SIGGRAPH
+     * 2019 Web3D
+     * W3C Workshop on Web Games 2019
+     * 2019 AWE Nite SF
+     * 2019 OpenAR Cloud Symposium
+     * 2019 Vulkanised is Back!
+     * 2019 AWE
+     * 2019 Embedded Vision Summit
+
+   All presentations
+
+Upcoming Events
+
+     * Learn more about 2019 XDC – Montreal
+     * Learn more about Webinar: Enterprise AR Interoperability and
+       Standards
+     * Learn more about xRS 2019
+     * Learn more about 2019 LLVM – USA
+     * Learn more about Embedded Vision Europe 2019
+     * Learn more about Samsung Developer Conference 2019
+
+   All events Tell us about your event
+     * Khronos on Github
+     * Khronos Blog
+     * Khronos Reference Cards
+     * Khronos Bookstore
+     * Khronos Merchandise Store
+
+   Khronos Logo
+
+   9450 SW Gemini Drive #45043
+   Beaverton, OR 97008-6018 USA
+   Office: +1 (415) 869-8627
+   sign up for our newsletter
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+
+     * Legal Notices
+     * Privacy Policy
+     * Trademark Usage
+
+   Language: EN CN JP KR
+   © The Khronos^® Group Inc. 2019. All rights reserved.
+   Hosting provided by DigitalOcean
+   (BUTTON) Toggle navigation The Khronos Group
+     * Developers
+          + Active Standards
+               o 3D Commerce
+               o COLLADA
+               o Data Format
+               o EGL
+               o glTF
+               o NNEF
+               o OpenCL
+               o OpenGL
+               o OpenGL ES
+               o OpenGL SC
+               o OpenVG
+               o OpenVX
+               o OpenXR
+               o Safety Critical
+               o SPIR
+               o SYCL
+               o Vulkan
+               o Vulkan SC
+               o WebGL
+          + Exploratory Groups
+               o Overview
+               o Heterogeneous Communication
+          + Inactive Standards
+               o OpenKCAM
+               o OpenKODE
+               o OpenMAX
+               o OpenML
+               o OpenSL ES
+               o OpenWF
+               o StreamInput
+               o WebCL
+          +
+          + Registry
+          + Advisors
+          + Github
+          + Khronos Forums
+          + Khronos Slack
+          +
+          + Khronos Blog
+          + Videos & Presentations
+          + Reference Guides
+          + Books
+          + Training & Courses
+          +
+          + Jobs
+          + Request for Quotes
+          + Merchandise
+     * Conformance
+          + Adopter program
+          + File Format Adopter Program
+          + Conformant Companies
+          + Conformant Products
+          + Trademark Guidelines
+          + IP Framework
+          +
+          + Adopter Login
+     * Membership
+          + Join the Khronos Group
+          + Khronos Members
+          + IP Framework
+          +
+          + Create an account
+          + Member Login
+     * News & Events
+          + Newsroom
+          + Press Releases
+          + Khronos Logos
+          + Subscribe to our newsletter
+          + Share your news
+          +
+          + Upcoming Events
+          + Conference Code of Conduct
+          + Share your events
+          +
+          + Marketing with Khronos
+     * About
+          + Overview
+          + Contact Us
+          + Directors & Officers
+          + Working Group Chairs
+          + Technical Support
+          + Khronie Awards
+     * Member Login
+     * Search
+          +
+
+glTF Overview
+
+   glTF
+
+Runtime 3D Asset Delivery
+
+   glTF™ (GL Transmission Format) is a royalty-free specification for the
+   efficient transmission and loading of 3D scenes and models by
+   applications. glTF minimizes both the size of 3D assets, and the
+   runtime processing needed to unpack and use those assets. glTF defines
+   an extensible, common publishing format for 3D content tools and
+   services that streamlines authoring workflows and enables interoperable
+   use of content across the industry.
+
+glTF 2.0 links and resources
+
+     * glTF 2.0 Specification and resources on GitHub
+     * glTF Repository on GitHub
+     * glTF Validator
+     * glTF Reference Guide
+     * glTF Discussions
+     * glTF Slack
+     * glTF StackOverflow questions
+     * glTF 2.0 Press Release
+     * glTF 2.0 Launch slide deck
+     * glTF 2.0 on Facebook
+     * glTF 2.0 glTF Geometry Compression with Draco
+
+glTF 1.0 Specification and Materials
+
+     * glTF 1.0 Specification on GitHub
+     * glTF 1.0 Launch Press Release
+     * An Overview of glTF 1.0 (PDF)
+     * glTF Training Webinar- Traininger webinar by Marco Hutter
+
+Participate in the glTF Community
+
+   glTF is run as an open project by Khronos. The specification,
+   supporting materials and source code is developed and made
+   freely available on GitHub.
+
+   Everyone is welcome to contribute to the code and provide feedback
+   about the specification; you do not have to be a Khronos member to
+   participate in the glTF community. Visit the "Ways to contribute to
+   glTF" page in main glTF project on GitHub.
+
+glTF Demo
+
+   ‘Project “Polly” was produced to introduce all new features from glTF
+   2.0: Skinning, morphing and Physically Based materials are used in the
+   demo. ‘Poly’ was developed using Blender and is used to test its glTF
+   2.0 exporter. The original Blender file will be provided to the glTF
+   community for free!’
+
+   IFRAME:
+   https://www.youtube-nocookie.com/embed/l7TB1O51X_M?rel=0&controls=0&sho
+   winfo=0
+
+glTF is the "JPEG of 3D"
+
+   glTF is the JPEG of 3D
+
+
+glTF 2.0 Scene Description Structure
+
+   The glTF Structure
+
+
+glTF 2.0 Scalable, Portable PBR
+
+   glTF Extensions
+
+   Metallic-Roughness Material model
+     * baseColor — base color
+     * metallic — metalness
+     * roughness — roughness
+     * Simple to implement - mandated in core
+
+   Specular-Glossiness Material model
+     * diffuse — reflected diffuse color
+     * specular — specular color
+     * glossiness — glossiness
+     * Slightly more resources - optional extension
+
+COLLADA and glTF 3D Asset Formats
+
+   COLLADA and glTF 3D Asset Formats Positioning Statement
+
+Industry Support for glTF
+
+   Publicly stated support for glTF
+
+                                 [gltf.png]
+
+   Join the Slack group Join the forums
+
+   glTF™ (GL Transmission Format) is a royalty-free specification for the
+   efficient transmission and loading of 3D scenes and models by
+   applications. glTF minimizes both the size of 3D assets, and the
+   runtime processing needed to unpack and use those assets. glTF defines
+   an extensible, common publishing format for 3D content tools and
+   services that streamlines authoring workflows and enables interoperable
+   use of content across the industry.
+
+Specification
+
+     * glTF Specification, 2.0 (or all specification versions)
+     * glTF Extension Registry
+
+   Please provide spec feedback by submitting issues. For technical or art
+   workflow questions, or to showcase your work, join the glTF forum. For
+   quick questions, use the #gltf channel in the Khronos Group Slack.
+
+Quickstart
+
+Overview
+
+   [gltfOverview-2.0.0b-small.png] ^From github.com/javagl/gltfOverview/ |
+                  PDF | hardcopy | Khronos reference cards
+                  ^Japanese translation by Takuto Takahashi
+
+For developers
+
+     * Sample models for testing runtime engines and content pipeline
+       tools.
+          + glTF-Asset-Generator provides assets for robust importer
+            validation.
+          + 100,000+ models under Creative Commons license on Sketchfab
+            (check license for individual models).
+     * Drag-and-drop validator for verifying correctness of existing glTF
+       files.
+     * glTF Tutorial Series
+     * Khronos glTF Sample Viewer with WebGL PBR shaders. (source code)
+
+For artists
+
+     * Blender importer/exporter
+     * 3DS Max exporter
+     * Maya exporter
+     * Other converters and exporters
+
+Preview tools
+
+     * Sketchfab
+     * BabylonJS Sandbox
+     * Drag-and-drop viewer
+     * glTF VSCode Extension 3D previews, glTF validation, conversion
+       to/from GLB
+
+Contents
+
+     * glTF Tools
+          + Converters, Importers, and Exporters
+          + Optimizers
+          + Validators
+          + Viewers and Debugging
+          + Applications
+          + Loaders and Engines
+               o WebGL Engines
+               o WebGL Sample Code
+               o Game and Rendering Engines
+               o Embeddable Viewers
+          + Languages
+               o JavaScript / Node.js
+               o C++
+               o Objective-C
+               o C
+               o C
+               o Go
+               o Rust
+               o Haxe
+               o Java
+               o Ada
+               o TypeScript
+               o Swift
+               o Python
+          + Utilities
+          + Resources
+     * Formats Built on glTF
+     * Stack Overflow
+     * Presentations and Articles
+          + Intros
+          + Tutorials
+          + All Presentations and Articles
+
+glTF Tools
+
+Converters, Importers, and Exporters
+
+   Tool Input Output Description
+   Khronos Group Blender Importer/Exporter status status Official
+   importer/exporter, included with Blender 2.80 and higher
+   3DS Max Exporter — status Export glTF files using BabylonJS plugin for
+   3DS Max 2015 or later
+   Maya Exporter — status Export glTF files using BabylonJS plugin for
+   Maya 2018 or later
+   Unity Exporter (Sketchfab fork) — status Unity editor wizard that
+   exports to glTF Format
+   Unity COLLADA & glTF Exporter Unity 5 & Unity 2017 — status Commercial
+   unity asset store editor extension to export COLLADA and glTF via
+   collada2gltf
+   Sketchup export and import — status Separate extensions for export and
+   import
+   PBR extension for SketchUp SKP status PBR Material Editor, glTF
+   Exporter, PBR Viewport
+   obj2gltf OBJ status Command-line converter
+   Kupoman blendergltf — status glTF exporter for Blender aimed at
+   streaming scenes to other applications
+   ksons Blender Importer status — Blender importer for glTF 2.0 (alpha)
+   BlackThread.io converter Multiple status Online drag and drop converter
+   powered by three.js
+   Assimp Multiple status General-purpose online conversion pipeline
+   PiXYZ Studio Multiple status Interactively prepare & optimize any CAD
+   data
+   FBX2glTF (Facebook) FBX status Command-line converter
+   FBX2glTF (ClayGL) FBX, COLLADA, OBJ status Python tool to convert
+   models to glTF2.0 format, model is parsed by FBX SDK.
+   glTF API FBX, COLLADA, OBJ status Web API to convert OBJ, FBX and
+   COLLADA files to glTF or GLB
+   Simplygon Cloud Multiple status Cloud based asset optimization pipeline
+   Verge3D — status glTF 2.0 exporters for Blender and 3ds Max
+   COLLADA2GLTF COLLADA status Official command-line converter, with
+   updates for glTF 2.0 in progress
+   Cesium drag-and-drop converter OBJ, COLLADA status Online drag and drop
+   converter
+   Maya2glTF — status Export glTF from Autodesk Maya
+   batchgltf COLLADA status Batch converter with GUI
+   FBX-glTF (Cyrillef) FBX status Plug-in and command-line converter
+   jgltf-obj OBJ status Java programmatic and command-line converters
+   Docker collada2gltf COLLADA status Docker container for Python web
+   service, built on COLLADA2GLTF
+   collada2gltf-web-service COLLADA status Node.js web service, built on
+   COLLADA2GLTF
+   cqparts STEP status Python CAD for programmers (import / export doc)
+   (GLTFExporter)
+   FME Desktop Multiple status FME lets you move data between 400+ formats
+   and applications using a drag-and-drop interface while preserving data
+   quality throughout the conversion process.
+   UModel (UE Viewer) Unreal engine status UModel allows you to view
+   static and animated mesh assets from Unreal engine games, and then
+   export them into several formats including glTF 2.0
+   OPEN CASCADE CAD Assistant Multiple status Freeware multi-platform 3D
+   Viewer and converter for 3D/CAD models with glTF 2.0 export support
+   Adobe Dimension FBX, STL, SKP, OBJ status Share and Publish feature
+   lets users export to glTF to view on the web.
+   RapidCompact Multiple status Optimizes and converts 3D assets for
+   efficient online presentation.
+   Cinema 4D Exporter — status Export glTF from MAXON Cinema 4D
+   Revit glTF Exporter add-in — status Paid add-in to export glTF from
+   Autodesk Revit 2019 or later
+   Adobe Animate — status Publish 2D animations to glTF/glb using Animate
+   2019 or later. Also create 360 degree VR content and embed 3D glb
+   assets in the scene.
+
+Optimizers
+
+   Tool Status Description
+   gltf-import-export status NPM package to convert between glb and gltf
+   files
+   makeglb status Drag and drop browser tool to convert gltf to self
+   contained binary glb
+   gltf-toolkit status Collection of tools and libraries to modify and
+   optimize glTF assets for Windows Mixed Reality home
+   glTF Pipeline status Official Node.js command-line tool for optimizing
+   glTF assets
+   gltf2glb status Python tool to convert glTF to Binary glTF
+   binary-gltf-utils status Node.js tool to convert glTF to Binary glTF
+
+Validators
+
+   Tool Status Description
+   glTF Validator status Official command-line and drag-and-drop tool to
+   validate glTF assets against the specification
+   glTF VSCode Extension status 3D previews, built-in official glTF
+   Validator, conversion to/from GLB
+
+Viewers and Debugging
+
+   Tool Status Description
+   BabylonJS Sandbox status Drag-and-drop online viewer for model preview
+   and debugging, using BabylonJS
+   three.js glTF Viewer status Drag-and-drop viewer (web and desktop) for
+   model preview and debugging, using three.js
+   three.js Editor status Editor with drag-and-drop support
+   Clay Viewer status Drag-and-drop glTF2.0 viewer with high quality
+   rendering and PBR material editing.
+   glTF Animation Visualizer status Frame-by-frame debugging for glTF
+   animations.
+   VirtualGIS Viewer status Cesium-based glTF viewer.
+   GLTFQuickLook status macOS QuickLook plugin for glTF files
+   glTF Viewer status Android and iOS apps for glTF 2.0 viewing and link
+   sharing: supports embedded glTF 2.0 files and links
+   DirectX glTF Viewer status DirectX11, C++ desktop app for loading and
+   rendering glTF files
+   glTFShowcase status Android and iOS app for viewing glTF 2.0 asset from
+   local files (gltf/glb/zip): supports environment lighting change.
+   Hilo3d glTF Viewer status Drag-and-drop glTF2.0 viewer for model
+   preview, using Hilo3d
+   MeshViewer status OBJ / glTF2 mesh viewer for Windows and macOS
+   Diligent GLTF Viewer status Cross-platform GLTF PBR viewer with
+   multiple rendering back-ends
+
+Applications
+
+   Application Status Description
+   Blender 2.80 status Khronos glTF importer/exporter ships with Blender
+   2.80 and higher
+   Paint 3D by Microsoft status 3D creation tool
+   Remix 3D by Microsoft status Share and print 3D creations
+   Facebook status Use .glb files to create 3D Posts
+   Sketchfab status Platform to publish, share & discover 3D online and in
+   VR
+   Wordpress (plugin) status Inline glTF renderer for WordPress
+   Modo by Foundry status 3D modeling, texturing & rendering tools
+   Substance Painter by Adobe status 3D painting software with glTF 2.0
+   import and export
+   Marmoset Toolbag status 3D real-time rendering, animation, and baking
+   suite
+   Aspose.3D status File Format APIs for creating, editing, and converting
+   over 100 file formats
+   3D Slash status Web-based and app-based 3D modeling imitating a
+   stonecutter
+   Archilogic status Web-based 3D platform for architecture and interiors
+   Plex.Earth status Connects AutoCAD with Google Earth and the Real
+   World.
+   VECTARY status Online 3D content creation tool
+   Visual Studio Code status Preview, validate, inspect, and debug glTF
+   files
+
+Loaders and Engines
+
+WebGL Engines
+
+   To compare WebGL-based glTF loaders, see gltf-test.
+   Engine Status Scope Related
+   three.js (loader) status All <model-viewer/> component, drag-and-drop
+   viewer
+   BabylonJS (loader) status All Viewer component
+   Cesium (loader) status All Drag-and-drop viewer, tutorial
+   OSG.JS (loader) status All
+   Grimoire.js (loader) status Geometry and materials, partial animation
+   Hilo3d (loader) status All Doc
+   A-Frame (loader) status All Doc
+   xeogl (loader) status Geometry and materials Tutorial
+   ClayGL (loader) status All Examples
+   Verge3D (loader) status All
+   ReactVR status All
+   CZPG (loader) status All Examples
+   PEX (loader) status Geometry and materials
+   GLBoost (loader) status ? Examples
+   xml3d.js (loader) status Geometry and materials
+   X3DOM (loader) status Geometry and materials
+   RedGL status All Examples
+   Ashes status All Examples
+
+WebGL Sample Code
+
+   Sample Status Description
+   Khronos glTF Sample Viewer status Engine-agnostic sample viewer with
+   WebGL PBR shader for glTF 2.0 (source code)
+
+Game and Rendering Engines
+
+   Tool Status Description
+   UnityGLTF status Unity3D library for exporting, loading, parsing, and
+   rendering glTF assets
+   GLTFUtility status glTF 2.0 loader plugin for Unity3D
+   Unreal (forum / notes) status Unreal adds glTF import capability
+   Godot Game Engine status Godot 3.0 fully supports glTF import
+   jMonkeyEngine status jME 3.2 supports glTF 2.0
+   Ogre_glTF status glTF 2.0 loader plugin for Ogre v2-1
+   G3D Innovation Engine status glTF 2.0 import
+   LÖVR status A framework for creating VR with Lua
+   LibGDX glTF status LibGDX library for loading and rendering glTF assets
+
+Embeddable Viewers
+
+   Tool Author Type Description
+   Babylon.js Viewer BabylonJS self-hosted HTML web component for viewing
+   self-hosted glTF models.
+   <model-viewer> Google self-hosted HTML web component for viewing
+   self-hosted glTF models.
+   Poly Google service glTF models hosted on Poly may be embedded in an
+   iframe on any site.
+   Sketchfab Sketchfab service glTF models hosted on Sketchfab may be
+   embedded in an iframe on any site, using the embed models feature.
+
+Languages
+
+JavaScript / Node.js
+
+   Tool Status Description
+   gltf-viewer status Web component to display glTF models on a website
+   minimal-gltf-loader status A minimal, engine-agnostic JavaScript glTF
+   Loader, with a raw WebGL 2 renderer example
+   THREE.GLTFLoader status Loads glTF assets into a three.js scene.
+   THREE.GLTFExporter status Exports three.js scenes to a glTF asset
+   gltf-walker status Convenience library for processing glTF
+   RedCube.js status glTF viewer without dependencies
+   gltf-bounding-box status Computes the global bounding box of a gltf
+   model
+
+C++
+
+   Tool Status Description
+   Tiny glTF loader status Header only C++ glTF parsing library, with
+   Alembic→glTF and CyHair->glTF converters
+   yocto-gltf status Single file, header only, C++ glTF loading/writing
+   automatically generated from the spec
+   glTF2-loader status C++14 glTF (2.0 only) parsing library, by
+   Lugdunum3D
+   gltfpp status glTF 2.0 loader for C++14
+   fx-gltf status A C++14/C++17 header-only library for simple, efficient,
+   and robust serialization/deserialization of glTF 2.0
+   TGen status Simple C++ Tangent Generator
+   Microsoft.glTF.CPP status A C++ library for serializing and
+   deserializing gltf/glb files. | status |
+   Qt 3D status Qt 3D provides functionality for near-realtime simulation
+   systems
+   Laugh Engine status Vulkan PBR and IBL renderer
+   Lugdunum3D status A modern cross-platform 3D rendering engine built
+   with Vulkan and modern C++14
+   UX3D Engine status Cross-platform multi-threaded Vulkan 3D Engine with
+   glTF 2.0 import and export
+   Cinder status Work-in-progress glTF importer
+   nvpro-pipeline status Research rendering pipeline by NVIDIA for
+   minimizing CPU cost
+   AssetKit ? 3D asset importer/exporter/util library
+   libgltf status glTF 2.0 parser for C++11
+   libgltf_ue4 status A third-party library for UE4.10+ to load glTF files
+   glTF for UE4 status A plugin for UE4.10+ to import glTF files
+   Diligent Engine status A modern cross-platform low-level graphics
+   libarary and rendering framework
+
+Objective-C
+
+    Tool   Status                       Description
+   GLTFKit status An Objective-C glTF 2.0 loader and Metal-based renderer
+
+C
+
+   Tool Status Description
+   C# glTF loader status C# reference loader for glTF
+   Aspose.3D for .NET status Import, export, and convert glTF
+   MixedRealityToolkit-Unity status A collection of scripts and components
+   intended to accelerate development of applications targeting Microsoft
+   HoloLens and Windows Mixed Reality headsets.
+   SharpGLTF status C# toolkit for reading and writing glTF files.
+   DEM.Net status C# toolkit for Digital Elevation Models, exporting
+   models with textures and normal maps to glTF files.
+
+C
+
+     Tool   Status             Description
+   AssetKit status 3D asset importer, exporter library.
+   cgltf    status Single-header C glTF loader.
+
+Go
+
+     Tool   Status                   Description
+   gltf     status go library for marshaling and unmarshaling glTF
+   gltf 2.0 status A Go glTF 2.0 writer, reader and validator
+
+Rust
+
+    Tool  Status           Description
+   Loader status A crate for loading glTF 2.0
+   Viewer status glTF 2.0 Viewer written in Rust
+
+Haxe
+
+     Tool    Status           Description
+   haxe-gltf status A Haxe library for reading glTF
+
+Java
+
+     * JglTF - Java libraries for glTF
+          + jgltf-impl - Classes representing a glTF model, auto-generated
+            from the glTF JSON schema
+          + jgltf-impl-v1 - glTF 1.0
+          + jgltf-impl-v2 - glTF 2.0
+          + jgltf-impl-v2-technique-webgl - KHR_technique_webgl extension
+          + jgltf-model - Classes for reading, processing, converting and
+            writing glTF
+          + jgltf-obj - Library for converting OBJ to glTF
+          + jgltf-viewer - Viewer for glTF, with different
+            implementations:
+               o jgltf-viewer-jogl - glTF viewer based on JOGL
+               o jgltf-viewer-lwjgl - glTF viewer based on LWJGL version 2
+          + jgltf-browser - Application combining the above libraries
+          + jgltf-validator - Simple glTF validator, only intended for
+            internal use
+
+Ada
+
+   Tool Status              Description
+   Orka status The OpenGL 4.5 Rendering Kernel in Ada
+
+TypeScript
+
+   Tool Status Description
+   gltf-typescript-generator status CLI to generate a TypeScript interface
+   for glTF
+
+Swift
+
+       Tool     Status       Description
+   GLTFSceneKit status glTF loader for SceneKit
+
+Python
+
+   Tool Status Description
+   trimesh status Python library for importing and exporting glTF and
+   numerous other triangular mesh formats.
+
+Utilities
+
+     * gltf-utilities - JavaScript utility library to help load glTF
+     * wetzel - Generate Markdown documentation from JSON Schema
+     * gltf-enum - Simple site to help work with all the different enums
+       in glTF spec
+
+Resources
+
+     * glTF-Generator-Registry - An open registry of tools that create
+       glTF assets, along with structured metadata such as links to
+       documentation and bug trackers.
+
+Formats Built on glTF
+
+     * 3D Tiles - An open standard for streaming and rendering massive
+       heterogenous 3D content.
+
+Stack Overflow
+
+     * glTF tagged questions
+
+Presentations and Articles
+
+Intros
+
+     * glTF 2.0 Launch by Neil Trevett. June 2017
+     * glTF Webinar (video, slides) by Marco Hutter. February 2017
+     * glTF Brief by Tony Parisi, FormVR and Amanda Watson, Oculus.
+       October 2016
+
+Tutorials
+
+     * glTF Tutorials
+     * Physically-Based Rendering: From Theory to glTF
+
+All Presentations and Articles
+
+     * glTF Ecosystem Forum during SIGGRAPH. July 2019
+     * SIGGRAPH 2019 glTF BOF Video and slides
+          + Khronos: Ed Mackey - glTF Overview
+          + Facebook: Renee Rashid - Spark AR, glTF at Facebook
+          + Cesium: Omar Shehata - 3D Tiles, Basis Universal
+          + DGG: Max Limper - Automating the 3D Processing Pipeline
+          + Uber: Georgios Karnas - glTF in Big Data Visualization
+          + UX3D: Fabian Wahlster and Moritz Becher - glTF Editor and
+            Tools
+          + Esri: David Körner - glTF with Esri JS API
+          + Sketchfab: Alban Denoyel - Publish & Find 3D Models Online
+          + Google: Adrian Perez - AR Search at Google
+          + Wayfair: Shrenik Sadalgi - Khronos 3D Commerce Working Group
+            introduction
+     * How to make a PBR 3D model for the web by Arturo Paracuellos. June
+       2019
+     * Uber’s vis.gl brings glTF to geospatial data visualization by
+       Georgios Karnas, Ib Green, Travis Gorkin, and Xintong Xia. June
+       2019
+     * Exporting glTF from Animate by Ram Kulkarni. April 2019
+     * glTF:// Everything You Need to Know! by Ben Houston. April 2019
+     * GDC 2019 Khronos Developer Days - WebGL & glTF video. March 2019
+       (slides)
+          + Khronos: Patrick Cozzi - Overview
+          + Microsoft: Saurabh Bhatia - Ecosystem and SDK Update
+          + Google: Chris Joel - <model-viewer> Fidelity Testing
+          + Adobe: Mike Bond - Adobe Dimension
+          + Mozilla: Robert Long - Publishing Virtual Worlds with glTF
+          + Facebook: Susie Su - An On-Demand, Optimizing glTF Backend
+     * glTF Debugging in Visual Studio Code by Gary Hsu. January 2019
+     * SIGGRAPH Asia glTF Overview and CTTF Update by Khronos. December
+       2018
+     * droidcon SF 2018 - The JPEG of 3D: Bringing 3D scenes and objects
+       into your 2D Android app with glTF by Pierre LaFayette. November
+       2018
+     * Using the Babylon.js viewer with WebVR and Windows Mixed Reality
+       home by Saurabh Bhatia. November 2018
+     * Behind the Scenes with Adobe Dimension Engineers: How We Built the
+       3D Publish Feature by Mike Bond. November 2018
+     * OGC and Khronos Form a Liaison to Improve Interoperability within
+       the Geospatial and 3D Graphics Communities. October 2018
+     * If you build it (together), they will come...Mozilla and the
+       Khronos Group collaborate to bring glTF capabilities to Blender by
+       Rosana Ardila. October 2018
+     * glTF and Construction – Part 1: Secrets of the Cloud by Tim Davies.
+       September 2018
+     * glTF and Construction – Part 2: 3D for Everyone by Tim Davies.
+       September 2018
+     * SIGGRAPH 2018 glTF BOF video and materials. August 2018
+          + Ecosystem update: Patrick Cozzi, Cesium
+          + glTF for artists: Patrick Ryan, Microsoft
+          + TurboSquid: Beau Perschall
+          + Facebook: Pär Winzell
+          + Microsoft: Gary Hsu and Cedric Caillaud
+          + STK: Alex Wood, AGI
+          + VSCode: Ed Mackey, AGI
+          + Industrial AR with glTF: Johannes Beh, Fraunhofer
+          + Google Draco: Jamieson Brettle
+          + Texture transmission: Mark Callow
+          + IKEA: Martin Enthed
+     * glTF 2.0 – Status and Outlook by Norbert Nopper. July 2018
+     * TurboSquid adds glTF to supported formats for its StemCell
+       initiative. July 2018
+     * Why glTF 2.0 is awesome! by Arthur Brainville. July 2018
+     * Get your glTF on with WebGL/WebVR at Microsoft - June 2018
+          + Meetup video
+          + Ecosystem update by Saurabh Bhatia (slides)
+          + 3D product displays on the web using glTF by Matthew Cedeno
+            and Gary Hsu
+          + Publishing Virtual Worlds with glTF by Robert Long (slides)
+          + Compressed Texture Transmission Format by Mark Callow (slides)
+          + What's new with Draco 3D compression by Frank Galligan
+            (slides)
+          + glTF at Adobe by Mike Bond
+     * Building the Metaverse One Standard at a Time by Neil Trevett.
+       Web3D. June 2018
+     * Sketchfab uses glTF to bring a search bar to the world of 3D. May
+       2018
+     * Draco Compressed Meshes with glTF and 3D Tiles by Gabby Getz. April
+       2018
+     * glTF Momentum Accelerates with New Support from Facebook, Epic,
+       Unity, and Adobe by Khronos. April 2018
+     * GDC 2018 Khronos Developer Days - WebGL & glTF video. March 2018
+     * glTF Ecosystem Update, GTC by Neil Trevett. March 2018
+     * glTF Ecosystem Update, GDC by Patrick Cozzi. March 2018
+     * Adobe Dimension & glTF by Mike Bond. March 2018
+     * Draco 3D Compression Extension to glTF 2.0 by Frank Galligan. March
+       2018
+     * Mixed Reality with glTF by Tom Mignone. March 2018
+     * glTF Texture Transmission Extension by David Wilkinson. March 2018
+     * glTF in Unreal Engine by Mike Erwin. March 2018
+     * glTF Asset Generator Deep Dive by Gary Hsu. March 2018
+     * GLB Tutorials (exporting from Modo, Substance Painter, Maya, and
+       others) by Facebook. February 2018
+     * Convert FBX format to glTF format on Blender and animate it with
+       Three.js (Japanese) by Ryosuke Sakaki. February 2018
+     * Art Pipeline for glTF by Patrick Ryan. January 2018
+     * Call for Participation: glTF Creating a Compressed Texture
+       Extension by Khronos. December 2017
+     * Using glTF Models with A-Frame by Josh Marinacci. December 2017
+     * Creating animated glTF Characters with Mixamo and Blender by Don
+       McCurdy. November 2017
+     * glTF - Seattle Khronos Group Meetup by Saurabh Bhatia. September
+       2017
+     * State of glTF 2.0 for WebVR Devs by Don McCurdy, Google. September
+       2017
+     * glTF Exporter in three.js and A-Frame by Fernando Serrano. August
+       2017
+     * SIGGRAPH 2017 glTF BOF video. August 2017
+          + glTF 2.0 and Community Update: Tony Parisi, Unity, and Patrick
+            Cozzi, Cesium
+          + Microsoft update - Paint 3D, View 3D, 3D in Office and one
+            more thing…: Saurabh Bhatia and Gary Hsu, Microsoft
+          + glTF VSCode editor: Ed Mackey, AGI
+          + Autodesk Forge and glTF: Nop Jiarathanakul, Autodesk
+          + Three.js and A-Frame update: Don McCurdy, Google and Ricardo
+            Cabello, Google
+          + Introduction to geometry compression on the web with Draco:
+            Michael Hemmer and Jamieson Brettle, Google
+          + WebGL PBR reference implementation: Scott Nagy, Microsoft, and
+            Mohamad Moneimne, Cesium
+          + Sketchfab update: Aurelien Chatelain, Sketchfab
+          + glTF 2.0 Export in InstantUV: Max Limper, Fraunhofer
+     * Physically-Based Rendering in Cesium by Mohamad Moneimne. August
+       2017
+     * Why we should all support glTF 2.0 as THE standard asset exchange
+       format for game engines by Juan Linietsky. August 2017
+     * Exporting glTF 2.0 from Maya LT by Don McCurdy. June 2017
+     * glTF 2.0: PBR Materials by Saurabh Bhatia. May 2017
+     * glTF Workflow for a Saturday Night by Diego F. Goberna. April 2017
+     * 2017 GDC WebGL/WebVR/glTF Meetup YouTube recording. March 2017
+     * Reach the Largest Gaming Platform of All: The Web. WebGL, WebVR and
+       glTF. March 2017
+     * PBR-ready glTF in instant3Dhub / instantUV by Max Limper. March
+       2017
+     * Call for feedback on glTF 2.0 by Neil Trevett. February 2017
+     * Improve expressiveness of WebGL with the topic 3D file format glTF
+       now! (in Japanese) by Yuki Shimada(@emadurandal), WebGL advent
+       calendar 2016 at Qiita. December 2016
+     * A new 3D horizon: glTF import and export with Archilogic by Martin
+       Splitt. December 2016
+     * Bringing 3D to everyone through open standards by Forest W. Gouin
+       and Jean Paoli. October 2016
+     * Using Quantization with 3D Models by Rob Taglang. August 2016
+     * glTF and Mobile VR: Inclusive standards for a 3D world. Amanda
+       Watson, Oculus, WebGL + glTF BOF. July 2016
+     * glTF Update and Roadmap. Tony Parisi, WebGL + glTF BOF. July 2016
+     * PBR in glTF: Current State. Max Limper, Johannes Behr, and Timo
+       Sturm, WebGL + glTF BOF. July 2016
+     * glTF:// The Runtime Asset Format for GL-based Applications. July
+       2016
+     * glTF working group updates (slides, video). Patrick Cozzi and Tony
+       Parisi, WebGL + glTF BOF. March 2016
+     * FBX to/from glTF (slides, video). Cyrille Fauvel, WebGL + glTF BOF.
+       March 2016
+     * Khronos Group glTF Webinar. Neil Trevett, Virtual AR Community
+       meeting. October 2015
+     * An Introduction to glTF 1.0. October 2015
+     * The state of WebGL and glTF. Patrick Cozzi, The Graphical Web.
+       September 2015
+     * glTF ecosystem and mesh compression update. Khronos 3D Formats
+       Working Group, SIGGRAPH 2015. August 2015
+     * glTF and the WebGL Art Pipeline. Tony Parisi, WebGL Meetup. March
+       2015
+     * Writing an FBX importer / Exporter plug-in. Cyrille Fauvel. January
+       2015
+     * glTF Tips for Artists. Branden Coker. December 2014
+     * 3D for the Modern Web: Declarative 3D and glTF. Brian Coughlin.
+       Summer 2014
+     * glTF:// Designing an Open-Standard Runtime Asset Format. Fabrice
+       Robinet et al, GPU Pro 5. May 2014
+     * Building a WebGL Santa with Cesium and glTF. Patrick Cozzi.
+       December 2013
+     * glTF update. Tony Parisi. August 2013
+     * How I got involved in glTF and Khronos. Patrick Cozzi, WebGL
+       Meetup. March 2013
+     __________________________________________________________________
+
+   We believe the true usefulness of glTF goes beyond the spec itself; it
+   is an ecosystem of tools, documentation, and extensions contributed by
+   the community. You are encouraged to get involved!
+
+Quick Links
+
+     * Github Repository
+     * Reference Guide
+     * glTF Discussion/Support
+     * glTF Slack
+     * Resources
+     * Slide Deck
+
+Related Discussions
+
+     * Visit Community Forums
+     * Visit Slack Group
+
+Related News
+
+     * Diligent Engine now supports GLTF
+     * Liaison between Khronos and Open Geospatial Consortium Leads to 3D
+       Tiles Community Standard Built on glTF for Streaming Massive Models
+     * OGC adopts ‘3D Tiles’ built on glTF as Community Standard
+     * Khronos announces newest Associate Member DGG
+     * COMSOL Multiphysics Supports glTF File Export for 3D Simulation
+       Results
+
+     * More news
+
+Related Press
+
+     * Khronos Announces glTF Geometry Compression Extension Using Google
+       Draco Technology
+     * Khronos Releases Graphics API Updates and Demonstrates Ecosystem
+       Advancement at SIGGRAPH 2017
+     * Khronos Releases glTF 2.0 Specification
+     * Khronos Showcases Significant glTF Momentum for Efficient
+       Transmission of 3D Scenes and Models
+     * Khronos Finalizes glTF 1.0 Specification
+
+     * More Press Releases
+
+   Khronos Logo
+
+   9450 SW Gemini Drive #45043
+   Beaverton, OR 97008-6018 USA
+   Office: +1 (415) 869-8627
+   sign up for our newsletter
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+
+     * Legal Notices
+     * Privacy Policy
+     * Trademark Usage
+
+   Language: EN CN JP KR
+   © The Khronos^® Group Inc. 2019. All rights reserved.
+   Hosting provided by DigitalOcean
+   #alternate alternate
+
+   WebGL
+
+   Khronos
+
+                            WebGL Extension Registry
+
+Overview
+
+   The WebGL extension registry contains specifications for extensions to
+   the core WebGL API. Most of these extensions are incorporated directly
+   from the OpenGL ES or OpenGL extension registries, and refer to those
+   extensions for their behavioral definition. Because WebGL extensions
+   are specified as Web IDL interfaces, each specification also includes
+   the IDL to which each implementation will comply.
+
+   An extension template is available for the submission of new proposed
+   extensions. New extension proposals should be emailed to the public
+   WebGL mailing list. When writing a new extension specification, it is
+   recommended to check out the public WebGL repository. See the WebGL
+   wiki page Using Github to contribute. The extension registry files are
+   located under extensions/.
+
+   Each extension object is fetched from the WebGLRenderingContextBase by
+   passing the name of the extension to the getExtension method, i.e.:
+   context.getExtension("OES_texture_float").
+
+   Extensions which are marked as promoted to core or removed in a certain
+   version of the WebGL API must not be supported in an implementation of
+   that or newer version of the WebGL API.
+
+Naming conventions
+
+   WebGL API extensions may derive from many sources, and the naming of
+   each extension reflects its origin and intent.
+     * ARB, OES and KHR tags should be used for mirroring functionality
+       from OpenGL ES or OpenGL API extensions approved by the respective
+       architecture review boards. EXT_ and GPU vendor tags should be used
+       for mirroring other OpenGL ES or OpenGL API extensions. If only
+       small differences in behavior compared to OpenGL ES or OpenGL are
+       specified for a given extension, the original tag should be
+       maintained.
+     * The WEBGL tag should be used for WebGL-specific extensions which
+       are intended to be compatible with multiple web browsers. It should
+       also be used for extensions which originated with the OpenGL ES or
+       OpenGL APIs, but whose behavior has been significantly altered.
+     * Browser vendor specific tags should be used for WebGL-specific
+       extensions that are intended to run only on a particular browser.
+       It is recommended to avoid such extensions, and instead specify
+       them with the WEBGL tag.
+
+Extension Development Process
+
+   Extensions move through four states during their development: proposed,
+   draft, community approved, and Khronos ratified. Every extension should
+   advance to Khronos ratified. If an extension cannot advance through the
+   extension process it can be rejected.
+     * Proposed extensions are intended for discussion on the public WebGL
+       mailing list, in order to move to draft status; they should not be
+       implemented, even under a vendor prefix. If consensus is reached in
+       the community, the extension can be moved to draft status.
+     * Draft extensions may be implemented under a vendor prefix or behind
+       a run-time option for experimentation purposes, in order to gain
+       experience with the extension before finalizing it. Draft
+       extensions should not be exposed by default by WebGL
+       implementations. Once consensus is reached in the community, the
+       extension can be moved to community approved status.
+     * Community approved extensions should be implemented without a
+       vendor prefix. When a draft extension moves to community approved
+       status, any existing implementation should immediately remove
+       support for any vendor-prefixed extension name. Once implemented by
+       a vendor, support should not be removed unless there is a serious
+       issue with the extension, such as a security flaw.
+     * Khronos ratified extensions are those community approved extensions
+       which have been voted upon by the Khronos Board of Promoters.
+     * Rejected extensions should never be implemented. An extension
+       enters rejected status because consensus on it could not be reached
+       at the proposal stage or technical difficulties arise during
+       implementation at the draft stage. A community approved extension
+       can only be rejected in extraordinary circumstances. A Khronos
+       ratified extension cannot be rejected.
+
+Khronos ratified WebGL Extensions
+
+By Number
+
+By Name
+
+    1. OES_texture_float
+    2. OES_texture_half_float
+    3. WEBGL_lose_context
+    4. OES_standard_derivatives
+    5. OES_vertex_array_object
+    6. WEBGL_debug_renderer_info
+    7. WEBGL_debug_shaders
+    8. WEBGL_compressed_texture_s3tc
+    9. WEBGL_depth_texture
+   10. OES_element_index_uint
+   11. EXT_texture_filter_anisotropic
+   16. EXT_frag_depth
+   18. WEBGL_draw_buffers
+   19. ANGLE_instanced_arrays
+   20. OES_texture_float_linear
+   21. OES_texture_half_float_linear
+   25. EXT_blend_minmax
+   27. EXT_shader_texture_lod
+
+   19. ANGLE_instanced_arrays
+   25. EXT_blend_minmax
+   16. EXT_frag_depth
+   27. EXT_shader_texture_lod
+   11. EXT_texture_filter_anisotropic
+   10. OES_element_index_uint
+    4. OES_standard_derivatives
+    1. OES_texture_float
+   20. OES_texture_float_linear
+    2. OES_texture_half_float
+   21. OES_texture_half_float_linear
+    5. OES_vertex_array_object
+    8. WEBGL_compressed_texture_s3tc
+    6. WEBGL_debug_renderer_info
+    7. WEBGL_debug_shaders
+    9. WEBGL_depth_texture
+   18. WEBGL_draw_buffers
+    3. WEBGL_lose_context
+
+Community approved WebGL Extensions
+
+By Number
+
+By Name
+
+   13. WEBGL_compressed_texture_pvrtc
+   14. EXT_color_buffer_half_float
+   15. WEBGL_color_buffer_float
+   17. EXT_sRGB
+   24. WEBGL_compressed_texture_etc1
+   26. EXT_disjoint_timer_query
+   28. OES_fbo_render_mipmap
+   29. WEBGL_compressed_texture_etc
+   30. WEBGL_compressed_texture_astc
+   31. EXT_color_buffer_float
+   32. WEBGL_compressed_texture_s3tc_srgb
+   33. EXT_disjoint_timer_query_webgl2
+   35. EXT_float_blend
+   36. OVR_multiview2
+   37. KHR_parallel_shader_compile
+   38. EXT_texture_compression_bptc
+   39. EXT_texture_compression_rgtc
+
+   31. EXT_color_buffer_float
+   14. EXT_color_buffer_half_float
+   26. EXT_disjoint_timer_query
+   33. EXT_disjoint_timer_query_webgl2
+   35. EXT_float_blend
+   17. EXT_sRGB
+   38. EXT_texture_compression_bptc
+   39. EXT_texture_compression_rgtc
+   37. KHR_parallel_shader_compile
+   28. OES_fbo_render_mipmap
+   36. OVR_multiview2
+   15. WEBGL_color_buffer_float
+   30. WEBGL_compressed_texture_astc
+   29. WEBGL_compressed_texture_etc
+   24. WEBGL_compressed_texture_etc1
+   13. WEBGL_compressed_texture_pvrtc
+   32. WEBGL_compressed_texture_s3tc_srgb
+
+Draft WebGL Extensions
+
+By Number
+
+By Name
+
+    1. WEBGL_draw_instanced_base_vertex_base_instance
+    2. WEBGL_multi_draw_instanced_base_vertex_base_instance
+   40. WEBGL_multi_draw
+   41. WEBGL_multi_draw_instanced
+   42. WEBGL_blend_equation_advanced_coherent
+   43. EXT_clip_cull_distance
+   44. EXT_texture_norm16
+   45. EXT_draw_buffers_indexed
+
+   43. EXT_clip_cull_distance
+   45. EXT_draw_buffers_indexed
+   44. EXT_texture_norm16
+   42. WEBGL_blend_equation_advanced_coherent
+   43. WEBGL_draw_instanced_base_vertex_base_instance
+   40. WEBGL_multi_draw
+   41. WEBGL_multi_draw_instanced
+   42. WEBGL_multi_draw_instanced_base_vertex_base_instance
+
+Proposed WebGL Extensions (do not implement!)
+
+By Name
+
+     * WEBGL_debug
+     * WEBGL_dynamic_texture
+     * WEBGL_subarray_uploads
+     * WEBGL_texture_multisample
+     * WEBGL_texture_source_iframe
+     * WEBGL_video_texture
+
+Rejected WebGL Extensions
+
+By Name
+
+     * EXT_texture_storage
+     * OES_depth24
+     * WEBGL_compressed_texture_atc
+     * WEBGL_debug_shader_precision
+     * WEBGL_draw_elements_no_range_check
+     * WEBGL_get_buffer_sub_data_async
+     * WEBGL_security_sensitive_resources
+     * WEBGL_shared_resources
+     * WEBGL_subscribe_uniform
+     * WEBGL_texture_from_depth_video
+
+Recent WebGL Extension Revisions
+
+    1. WEBGL_blend_equation_advanced_coherent : revision 5 on September
+       25, 2019
+          + Moved to draft after WebGL F2F of September 2019
+    2. EXT_draw_buffers_indexed : revision 3 on September 25, 2019
+          + Promoted to Draft.
+    3. OES_fbo_render_mipmap : revision 3 on September 25, 2019
+          + Moved to Community Approved.
+    4. EXT_clip_cull_distance : revision 2 on September 25, 2019
+          + Promoted to Draft.
+    5. EXT_texture_norm16 : revision 2 on September 25, 2019
+          + Promoted to Draft.
+    6. WEBGL_draw_instanced_base_vertex_base_instance : revision 2 on
+       September 25, 2019
+          + Move to draft.
+    7. WEBGL_multi_draw_instanced_base_vertex_base_instance : revision 2
+       on September 25, 2019
+          + Change parameters order.
+          + Move to draft.
+    8. WEBGL_draw_instanced_base_vertex_base_instance : revision 1 on
+       August 28, 2019
+          + Initial version.
+    9. WEBGL_multi_draw_instanced_base_vertex_base_instance : revision 1
+       on August 28, 2019
+          + Initial version.
+   10. EXT_float_blend : revision 5 on August 27, 2019
+          + Clarified that this extension applies to both WebGL 1.0 and
+            2.0 contexts.
+
+   Atom feed  Recent Revisions
+   (BUTTON) Toggle navigation The Khronos Group
+     * Developers
+          + Active Standards
+               o 3D Commerce
+               o COLLADA
+               o Data Format
+               o EGL
+               o glTF
+               o NNEF
+               o OpenCL
+               o OpenGL
+               o OpenGL ES
+               o OpenGL SC
+               o OpenVG
+               o OpenVX
+               o OpenXR
+               o Safety Critical
+               o SPIR
+               o SYCL
+               o Vulkan
+               o Vulkan SC
+               o WebGL
+          + Exploratory Groups
+               o Overview
+               o Heterogeneous Communication
+          + Inactive Standards
+               o OpenKCAM
+               o OpenKODE
+               o OpenMAX
+               o OpenML
+               o OpenSL ES
+               o OpenWF
+               o StreamInput
+               o WebCL
+          +
+          + Registry
+          + Advisors
+          + Github
+          + Khronos Forums
+          + Khronos Slack
+          +
+          + Khronos Blog
+          + Videos & Presentations
+          + Reference Guides
+          + Books
+          + Training & Courses
+          +
+          + Jobs
+          + Request for Quotes
+          + Merchandise
+     * Conformance
+          + Adopter program
+          + File Format Adopter Program
+          + Conformant Companies
+          + Conformant Products
+          + Trademark Guidelines
+          + IP Framework
+          +
+          + Adopter Login
+     * Membership
+          + Join the Khronos Group
+          + Khronos Members
+          + IP Framework
+          +
+          + Create an account
+          + Member Login
+     * News & Events
+          + Newsroom
+          + Press Releases
+          + Khronos Logos
+          + Subscribe to our newsletter
+          + Share your news
+          +
+          + Upcoming Events
+          + Conference Code of Conduct
+          + Share your events
+          +
+          + Marketing with Khronos
+     * About
+          + Overview
+          + Contact Us
+          + Directors & Officers
+          + Working Group Chairs
+          + Technical Support
+          + Khronie Awards
+     * Member Login
+     * Search
+          +
+
+Khronos royalty-free open standards for 3D graphics, Virtual and Augmented
+Reality, Parallel Computing, Neural Networks, and Vision Processing.
+
+     * 3D Commerce
+     * EGL
+     * glTF
+     * NNEF
+     * OpenCL
+     * OpenGL
+     * OpenGL ES
+     * OpenGL SC
+     * OpenVG
+     * OpenVX
+     * OpenXR
+     * SPIR
+     * SYCL
+     * Vulkan
+     * WebGL
+     * KSCAF
+     * Exploratory HetComm
+     * All Standards
+
+Khronos News
+
+Simply Augmented Joins Khronos to Help Bring 3D and Augmented Reality (AR) to
+E-commerce
+
+       October 3, 2019 3DCommerce
+
+   Simply Augmented Joins Khronos to Help Bring 3D and Augmented Reality
+   (AR) to E-commerce
+
+   Simply Augmented, a tech company moving into the e-commerce home
+   furnishing space, has joined Khronos as a contributor member to
+   participate in the 3D Commerce Working Group. Learn more about Simply
+   Augmented and why they joined the Khronos Group.
+
+   Read More...
+
+Khronos Welcomes newest Contributor Member Deloitte Consulting
+
+       September 26, 2019 Members
+
+   Khronos Welcomes newest Contributor Member Deloitte Consulting
+
+   In the United States, Deloitte LLP and its subsidiaries have 80,000
+   professionals with a single focus: Serving our clients and helping them
+   solve their toughest problems. Digital reality is the next
+   transformation after PC, web, and mobile. It may dramatically alter the
+   way we interact and use technology and data.
+
+   Read More...
+
+Khronos Welcomes newest Contributor Member Shopify
+
+       September 25, 2019
+
+   Khronos Welcomes newest Contributor Member Shopify
+
+   The Khronos Group would like to welcome Contributor Member Shopify.
+   Shopify powers over 800,000 business worldwide as the leading
+   multi-channel commerce platform that helps merchants design, set up,
+   and manage their stores. Today, Shopify joins the Khronos Group to help
+   lead the charge in 3D Commerce - another step in future-proofing their
+   merchants and making commerce better for everyone.
+
+   Read More...
+
+Intel releases SYCL Compiler + Runtimes 2019-09
+
+       September 25, 2019 OpenCL, SYCL, FPGA
+
+   The SYCL Compiler and Runtimes 2019-09 release allow OpenCL offloading
+   to accelerators (GPU/FPGA). Some OpenCLCL/SYCL FPGA extensions are now
+   supported along with support for dumping the SYCL task graph to JSON.
+   Lots of other improvements and fixes are included on the GitHub release
+   page.
+
+   Read More...
+
+LLVM/Clang release 9.0 with experimental support of C++ for OpenCL
+
+       September 25, 2019 OpenCL, LLVM, Clang
+
+   LLVM/Clang release 9.0 with experimental support of C++ for OpenCL
+
+   ​LLVM Clang 9.0 has been released and is now available for download.
+   This is the first release to contain experimental support of C++ for
+   OpenCL language mode in Clang. More details can be found in the Clang
+   documentation. This new support will be discussed at the LLVM
+   Developers meeting (October 2019) at the From C++ for OpenCL to C++ for
+   accelerator devices talk by Khronos Member Anastasia Stulova.
+
+   Read More...
+
+Unified programming with oneAPI from Intel and SYCL from Khronos
+
+       September 24, 2019 SYCL
+
+   A unified programming model offers enterprises and OEMs a
+   cost-effectively way to take advantage of the growing diversity of
+   processor platforms, letting companies share their source code
+   investment across vendors and architectures. Enter oneAPI from Intel,
+   which aims to revolutionize application development through a unified,
+   open development model to simplify programming across processors. Intel
+   built upon C++, and SYCL from The Khronos Group had some really good
+   constructs that they thought provided a very good starting point. Intel
+   extended and improved it to achieve the goals that they wanted to
+   achieve. Most of the DPC++ extensions will eventually be synced
+   upstream into SYCL.
+
+   Read More...
+   all news
+   tell us your news subscribe
+
+TWITTER
+
+   Tweets by thekhronosgroup FOLLOW US
+
+Members
+
+   Khronos members are individuals, companies and academic institutes from
+   around the world shaping the standards that are driving the world.
+   Membership About Khronos
+
+Conformance
+
+   See which companies and products have implemented Khronos standards and
+   have passed the conformance tests.
+   conformant products conformant companies
+
+Khronos Blog
+
+     * Simply Augmented Joins Khronos to Help Bring 3D and Augmented
+       Reality (AR) to E-commerce
+     * Open Standards for Deep Learning Automotive Solutions
+     * Autodesk joins The Khronos Group; glTF gains momentum
+
+   Visit Khronos Blog
+
+Presentations and Videos
+
+     * 2019 XDC – Montreal
+     * 2019 CEDEC
+     * 2019 SIGGRAPH
+     * 2019 Web3D
+     * W3C Workshop on Web Games 2019
+     * 2019 AWE Nite SF
+     * 2019 OpenAR Cloud Symposium
+     * 2019 Vulkanised is Back!
+     * 2019 AWE
+     * 2019 Embedded Vision Summit
+
+   All presentations
+
+Upcoming Events
+
+     * Learn more about 2019 XDC – Montreal
+     * Learn more about Webinar: Enterprise AR Interoperability and
+       Standards
+     * Learn more about xRS 2019
+     * Learn more about 2019 LLVM – USA
+     * Learn more about Embedded Vision Europe 2019
+     * Learn more about Samsung Developer Conference 2019
+
+   All events Tell us about your event
+     * Khronos on Github
+     * Khronos Blog
+     * Khronos Reference Cards
+     * Khronos Bookstore
+     * Khronos Merchandise Store
+
+   Khronos Logo
+
+   9450 SW Gemini Drive #45043
+   Beaverton, OR 97008-6018 USA
+   Office: +1 (415) 869-8627
+   sign up for our newsletter
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+
+     * Legal Notices
+     * Privacy Policy
+     * Trademark Usage
+
+   Language: EN CN JP KR
+   © The Khronos^® Group Inc. 2019. All rights reserved.
+   Hosting provided by DigitalOcean
+   (BUTTON) Toggle navigation The Khronos Group
+     * Developers
+          + Active Standards
+               o 3D Commerce
+               o COLLADA
+               o Data Format
+               o EGL
+               o glTF
+               o NNEF
+               o OpenCL
+               o OpenGL
+               o OpenGL ES
+               o OpenGL SC
+               o OpenVG
+               o OpenVX
+               o OpenXR
+               o Safety Critical
+               o SPIR
+               o SYCL
+               o Vulkan
+               o Vulkan SC
+               o WebGL
+          + Exploratory Groups
+               o Overview
+               o Analytic Rendering
+               o Heterogeneous Communication
+          + Inactive Standards
+               o OpenKCAM
+               o OpenKODE
+               o OpenMAX
+               o OpenML
+               o OpenSL ES
+               o OpenWF
+               o StreamInput
+               o WebCL
+          +
+          + Registry
+          + Advisors
+          + Github
+          + Khronos Forums
+          + Khronos Slack
+          +
+          + Khronos Blog
+          + Videos & Presentations
+          + Reference Guides
+          + Books
+          + Training & Courses
+          +
+          + Jobs
+          + Request for Quotes
+          + Merchandise
+     * Conformance
+          + Adopter program
+          + File Format Adopter Program
+          + Conformant Companies
+          + Conformant Products
+          + Trademark Guidelines
+          + IP Framework
+          +
+          + Adopter Login
+     * Membership
+          + Join the Khronos Group
+          + Khronos Members
+          + IP Framework
+          +
+          + Create an account
+          + Member Login
+     * News & Events
+          + Newsroom
+          + Press Releases
+          + Khronos Logos
+          + Subscribe to our newsletter
+          + Share your news
+          +
+          + Upcoming Events
+          + Conference Code of Conduct
+          + Share your events
+          +
+          + Marketing with Khronos
+     * About
+          + Overview
+          + Contact Us
+          + Directors & Officers
+          + Working Group Chairs
+          + Technical Support
+          + Khronie Awards
+     * Member Login
+     * Search
+          +
+
+Khronos royalty-free open standards for 3D graphics, Virtual and Augmented
+Reality, Parallel Computing, Neural Networks, and Vision Processing.
+
+     * 3D Commerce
+     * EGL
+     * glTF
+     * NNEF
+     * OpenCL
+     * OpenGL
+     * OpenGL ES
+     * OpenGL SC
+     * OpenVG
+     * OpenVX
+     * OpenXR
+     * SPIR
+     * SYCL
+     * Vulkan
+     * Vulkan SC
+     * WebGL
+     * KSCAF
+     * Expl Analytic Rendering
+     * All Standards
+
+Khronos News
+
+ComputeCpp v1.1.6: Changes to Work-item Mapping Optimization
+
+       November 18, 2019 opencl, sycl    Codeplay Software Limited
+
+   ComputeCpp v1.1.6: Changes to Work-item Mapping Optimization
+
+   In ComputeCpp v1.1.6–Codeplay’s implementation of the open standard
+   SYCL–Codeplay introduces an optimization to the way SYCL work-items map
+   to OpenCL processing elements in order to improve performance in the
+   most common use cases. This blog post will start by providing an
+   overview of what has changed and if and how you may need to update your
+   SYCL code.
+
+   Read More...
+
+Codeplay announces Acoran, with SYCL, OpenCL and Vulkan at the core of the
+platform
+
+       November 18, 2019 vulkan, opencl, sycl    Codeplay Software Limited
+
+   Codeplay announces Acoran, with SYCL, OpenCL and Vulkan at the core of
+   the platform
+
+   Codeplay Software announces Acoran, the standards based platform for AI
+   programmers. Acoran is compatible with Khronos compute standards and
+   Intel’s oneAPI platform, enabling AI processor solutions to align with
+   application developers by taking advantage of established standards and
+   libraries. Codeplay has developed the Acoran platform based on the most
+   relevant and preferred standards, with a comprehensive set of libraries
+   that give AI developers an assured feature set for their applications.
+   With strong momentum in Khronos standards in the industry, SYCL, OpenCL
+   and Vulkan are at the core of the platform, with further support that
+   includes these open source projects.
+
+   Read More...
+
+Vulkan Releases Extension to Expose Cross-Vendor Performance Metrics
+
+       November 18, 2019 vulkan, specification
+
+   Vulkan Releases Extension to Expose Cross-Vendor Performance Metrics
+
+   The Vulkan Working Group has just released the VK_KHR_performance_query
+   extension, which provides a cross-vendor common mechanism to expose
+   performance metrics. These may be used to obtain data from a Vulkan
+   device, typically a graphics card or SoC, to measure the workload
+   demand and assess the impact of application modifications and
+   optimizations.
+
+   Read More...
+
+Intel Fact Sheet: oneAPI with SYCL from Khronos
+
+       November 18, 2019 sycl    Intel
+
+   Intel Fact Sheet: oneAPI with SYCL from Khronos
+
+   ​Back in June 2019 Intel launched oneAPI - a single, unified
+   programming model that aims to simplify development across multiple
+   architectures – such as CPUs, GPUs, FPGAs and accelerators. This
+   weekend, Intel posted a fact sheet on oneAPI. Learn more about Intel’s
+   oneAPI, why oneAPI is an open specification, what is included in the
+   specification, what Data Parallel C++ is, and how does SYCL fit in, in
+   the fact sheet.
+
+   Read More...
+
+SYCL Takes Center Stage at SC19
+
+       November 16, 2019 opencl, sycl
+
+   SYCL Takes Center Stage at SC19
+
+   SuperComputing (SC19) is the largest gathering of high performance
+   computing experts in the world and it kicks off this weekend, Sunday,
+   November 17 in Denver, CO. To kick off the conference, the Fifth
+   International Workshop on Heterogeneous High-Performance Reconfigurable
+   Computing (H2RC 2019) will host two presentations on Sunday
+   solely-focused on SYCL, the Khronos open standard language for C++
+   single-source heterogeneous programming for OpenCL. The keynote
+   delivered by Ronan Keryell from Khronos member, Xilinx and will outline
+   the benefits of using SYCL for FPGA programming in a talk entitled
+   “SYCL: A Single-Source C++ Standard for Heterogeneous Computing.” Later
+   in the morning at 11:00am Michael Kinsner and John Freeman from Intel
+   will present “Data Flow Pipes: A SYCL Extension for Spatial
+   Architectures,” describing the pipes extension that enables a more
+   usable and flexible interface.
+
+   Read More...
+
+The Khronos Group forms Analytic Rendering Exploratory Group – Call for
+Participation
+
+       November 13, 2019 exploratory, analyticrendering
+
+   The Khronos Group has issued a call for participation in the newly
+   formed Analytic Rendering Exploratory Group. The group has been formed
+   to discuss the standardization of an Analytic Rendering API for data
+   visualization. All interested parties are invited to participate, with
+   no cost or IP obligations, to share perspectives, requirements and use
+   cases to help determine whether there is an industry need for such an
+   API and to help set the direction for any standardization activities.
+   Learn more about what Analytic Rendering is why a new analytic
+   rendering API is needed and what the goals of such a group might look
+   like. If your company, or a company you know is interested in learning
+   more and joining the Exploratory Group, you are invited to contact us.
+
+   Read More...
+   all news
+   tell us your news subscribe
+
+TWITTER
+
+   Tweets by thekhronosgroup FOLLOW US
+
+Members
+
+   Khronos members are individuals, companies and academic institutes from
+   around the world shaping the standards that are driving the world.
+   Membership About Khronos
+
+Conformance
+
+   See which companies and products have implemented Khronos standards and
+   have passed the conformance tests.
+   conformant products conformant companies
+
+Khronos Blog
+
+     * Vulkan Releases Extension to Expose Cross-Vendor Performance
+       Metrics
+     * Visualizing data — analytic rendering via Khronos
+     * SYCL Takes Center Stage at SC19
+
+   Visit Khronos Blog
+
+Presentations and Videos
+
+     * SC19
+     * 2019 SIGGRAPH Asia
+     * 2019 IFC Summit
+     * 2019 Embedded Vision Europe
+     * 2019 WCVRI
+     * 2019 XDC – Montreal
+     * 2019 AutoSens
+     * 2019 CppCon
+     * 2019 CEDEC
+     * 2019 SIGGRAPH
+
+   All presentations
+
+Upcoming Events
+
+     * Learn more about 2019 SIGGRAPH Asia
+     * Learn more about SC19
+     * Learn more about Webinar: glTF Tools from Khronos
+     * Learn more about Machine Learning Summit 2019
+     * Learn more about Embedded World Conference 2020
+     * Learn more about SXSW 2020
+
+   All events Tell us about your event
+     * Khronos on Github
+     * Khronos Blog
+     * Khronos Reference Cards
+     * Khronos Bookstore
+     * Khronos Merchandise Store
+
+   Khronos Logo
+
+   9450 SW Gemini Drive #45043
+   Beaverton, OR 97008-6018 USA
+   Office: +1 (415) 869-8627
+   sign up for our newsletter
+     *
+     *
+     *
+     *
+     *
+     *
+     *
+
+     * Legal Notices
+     * Privacy Policy
+     * Trademark Usage
+
+   Language: EN CN JP KR
+   © The Khronos^® Group Inc. 2019. All rights reserved.
+   Hosting provided by DigitalOcean

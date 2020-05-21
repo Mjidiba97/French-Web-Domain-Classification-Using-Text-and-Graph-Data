@@ -1,0 +1,293 @@
+Iris Project
+
+   Iris is a Higher-Order Concurrent Separation Logic Framework
+   implemented and verified in the proof assistant Coq.
+
+   Coq Formalization Formal Documentation (v3.2) Mailing List Chat
+
+   28 October – 1 November 2019 there will be the first Iris workshop in
+   Aarhus, Denmark.
+
+   Iris is a framework that can be used for reasoning about safety of
+   concurrent programs, as the logic in logical relations, to reason about
+   type-systems, data-abstraction etc. In case of questions, please
+   contact us on the Iris Club list or in our chat room.
+
+Learning Iris
+
+   Some useful resources to learn Iris and its Coq implementation:
+     * The Iris From The Ground Up paper contains an extensive description
+       of the rules and the model of the Iris logic.
+     * The Iris lecture notes provide a tutorial style introduction to
+       Iris, including a number of exercises.
+     * The Iris Proofmode paper (Section 3) contains a brief tutorial to
+       the Iris tactics in Coq.
+     * The Iris Tutorial at POPL'18 contains a number of exercises to
+       practice with the Iris tactics in Coq.
+     * The Iris Proof Mode (IPM) / MoSeL and the HeapLang documentation
+       provide a reference of the Iris tactics in Coq.
+
+Publications
+
+   Below, we give an overview of the research that uses Iris one way or
+   another.
+
+   Verifying Concurrent, Crash-Safe Systems with Perennial
+          Tej Chajed, Joseph Tassarotti, M. Frans Kaashoek, Nickolai
+          Zeldovich
+          In SOSP 19: ACM Symposium on Operating Systems Principles,
+          Huntsville, Canada
+
+          .pdf Coq development
+
+   Mechanized Relational Verification of Concurrent Programs with
+          Continuations
+          Amin Timany, Lars Birkedal
+          In ICFP 19: ACM SIGPLAN International Conference on Functional
+          Programming, Berlin, Germany
+
+          .pdf Coq development
+
+   Semi-Automated Reasoning About Non-Determinism in C Expressions
+          Dan Frumin, Léon Gondelman, Robbert Krebbers
+          In ESOP 2019: European Symposium on Programming, Prague, Czech
+          Republic
+
+          .pdf Coq development website slides
+
+   Time Credits and Time Receipts in Iris
+          Glen Mével, Jacques-Henri Jourdan, François Pottier
+          In ESOP 2019: European Symposium on Programming, Prague, Czech
+          Republic
+
+          .pdf Coq development
+
+   Iron: Managing Obligations in Higher-Order Concurrent Separation Logic
+          Aleš Bizjak, Daniel Gratzer, Robbert Krebbers, Lars Birkedal
+          In POPL 2019: ACM SIGPLAN Symposium on Principles of Programming
+          Languages, Lisbon, Portugal
+
+          .pdf Coq development website
+
+   A Separation Logic for Concurrent Randomized Programs
+          Joseph Tassarotti, Robert Harper
+          In POPL 2019: ACM SIGPLAN Symposium on Principles of Programming
+          Languages, Lisbon, Portugal
+
+          .pdf Coq development
+
+   Iris from the Ground Up: A Modular Foundation for Higher-Order
+          Concurrent Separation Logic
+          Ralf Jung, Robbert Krebbers, Jacques-Henri Jourdan, Aleš Bizjak,
+          Lars Birkedal, Derek Dreyer
+          Journal of Functional Programming (JFP), Volume 28, e20,
+          November 2018
+          This is a significantly revised and expanded synthesis of the
+          Iris 2.0 and 3.0 papers.
+
+          .pdf
+
+   MoSeL: A General, Extensible Modal Framework for Interactive Proofs in
+          Separation Logic
+          Robbert Krebbers, Jacques-Henri Jourdan, Ralf Jung, Joseph
+          Tassarotti, Jan-Oliver Kaiser, Amin Timany, Arthur Charguéraud,
+          Derek Dreyer
+          In ICFP 2018: ACM SIGPLAN International Conference on Functional
+          Programming, St. Louis, Missouri, United States
+
+          .pdf website
+
+   Mtac2: Typed Tactics for Backward Reasoning in Coq
+          Jan-Oliver Kaiser, Beta Ziliani, Robbert Krebbers, Yann
+          Régis-Gianas, Derek Dreyer
+          In ICFP 2018: ACM SIGPLAN International Conference on Functional
+          Programming, St. Louis, Missouri, United States
+          Section 5 contains a case study using the Iris Proof Mode.
+
+          .pdf website
+
+   ReLoC: A Mechanised Relational Logic for Fine-Grained Concurrency
+          Dan Frumin, Robbert Krebbers, Lars Birkedal
+          In LICS 2018: ACM/IEEE Symposium on Logic in Computer Science,
+          Oxford, United Kingdom
+          .pdf website Coq development slides
+
+   RustBelt: Securing the Foundations of the Rust Programming Language
+          Ralf Jung, Jacques-Henri Jourdan, Robbert Krebbers, Derek Dreyer
+          In POPL 2018: ACM SIGPLAN Symposium on Principles of Programming
+          Languages, Los Angeles, CA
+
+          .pdf website
+
+   A Logical Relation for Monadic Encapsulation of State: Proving
+          contextual equivalences in the presence of runST
+          Amin Timany, Léo Stefanesco, Morten Krogh-Jespersen, Lars
+          Birkedal
+          In POPL 2018: ACM SIGPLAN Symposium on Principles of Programming
+          Languages, Los Angeles, CA
+
+          .pdf Coq development
+
+   On Models of Higher-Order Separation Logic
+          Aleš Bizjak, Lars Birkedal
+          In MFPS 2017: Mathematical Foundations of Programming Semantics,
+          Ljubljana, Slovenia
+
+          .pdf
+
+   Robust and Compositional Verification of Object Capability Patterns
+          David Swasey, Deepak Garg, Derek Dreyer
+          In OOPSLA 2017: ACM SIGPLAN Conference on Object-Oriented
+          Programming, Systems, Languages, and Applications
+          Recipient of OOPSLA 2017 Distinguished Paper Award
+
+          [preprint] .pdf Coq development Coq development (VM)
+
+   Strong Logic for Weak Memory: Reasoning About Release-Acquire
+          Consistency in Iris
+          Jan-Oliver Kaiser, Hoang-Hai Dang, Derek Dreyer, Ori Lahav,
+          Viktor Vafeiadis
+          In ECOOP 2017: European Conference on Object-Oriented
+          Programming, Barcelona, Spain
+          Recipient of ECOOP 2017 Distinguished Paper Award
+
+          .pdf website
+
+   A Higher-Order Logic for Concurrent Termination-Preserving Refinement
+          Joseph Tassarotti, Ralf Jung, Robert Harper
+          In ESOP 2017: European Symposium on Programming, Uppsala, Sweden
+
+          .pdf website arXiv
+
+   The Essence of Higher-Order Concurrent Separation Logic ("Iris 3.0")
+          Robbert Krebbers, Ralf Jung, Aleš Bizjak, Jacques-Henri Jourdan,
+          Derek Dreyer, Lars Birkedal
+          In ESOP 2017: European Symposium on Programming, Uppsala, Sweden
+
+          .pdf technical appendix Coq development
+
+   Interactive Proofs in Higher-Order Concurrent Separation Logic
+          Robbert Krebbers, Amin Timany, Lars Birkedal
+          In POPL 2017: ACM SIGPLAN Symposium on Principles of Programming
+          Languages, Paris, France
+
+          .pdf
+
+   A Relational Model of Types-and-Effects in Higher-Order Concurrent
+          Separation Logic
+          Morten Krogh-Jespersen, Kasper Svendsen, Lars Birkedal
+          In POPL 2017: ACM SIGPLAN Symposium on Principles of Programming
+          Languages, Paris, France
+
+          .pdf technical appendix
+
+   Higher-Order Ghost State ("Iris 2.0")
+          Ralf Jung, Robbert Krebbers, Lars Birkedal, Derek Dreyer
+          In ICFP 2016: ACM SIGPLAN International Conference on Functional
+          Programming, Nara, Japan
+
+          .pdf technical appendix (1/2) technical appendix (2/2) Coq
+          development talk on youtube slides
+
+   Iris: Monoids and Invariants as an Orthogonal Basis for Concurrent
+          Reasoning ("Iris 1.0")
+          Ralf Jung, David Swasey, Filip Sieczkowski, Kasper Svendsen,
+          Aaron Turon, Lars Birkedal, Derek Dreyer
+          In POPL 2015: ACM SIGPLAN-SIGACT Symposium on Principles of
+          Programming Languages, Mumbai, India
+
+          .pdf technical appendix (historic) Coq formalization publisher's
+          site slides
+
+Draft papers
+
+   Aneris: A Logic for Node-Local, Modular Reasoning of Distributed
+          Systems
+          Morten Krogh-Jespersen, Amin Timany, Marit Edna Ohlenbusch, Lars
+          Birkedal
+          Submitted for publication
+
+          [preprint] .pdf
+
+   Actris: Session-Type Based Reasoning in Separation Logic
+          Jonas Kastberg Hinrichsen, Jesper Bengtson, Robbert Krebbers
+          Submitted for publication
+
+          [preprint] .pdf Coq development
+
+   Compositional Non-Interference for Fine-Grained Concurrent Programs
+          Dan Frumin, Robbert Krebbers, Lars Birkedal
+          Submitted for publication
+
+          [preprint] .pdf Coq development
+
+Case studies, MSc theses, Abstracts, Talks
+
+   Verifying a Concurrent Data-Structure from the Dartino Framework
+          Morten Krogh-Jespersen, Thomas Dinsdale-Young, and Lars Birkedal
+          .pdf Coq development
+
+   Formalizing Concurrent Stacks With Helping: A Case Study In Iris
+          Daniel Gratzer, Mathias Høier, Aleš Bizjak, and Lars Birkedal
+          .pdf Coq development
+
+   Verifying Hash Tables in Iris
+          Esben Glavind Clausen
+          Master's thesis at Aarhus University supervised by Lars
+          Birkedal, June 2017
+
+          .pdf
+
+   Logical Relations in Iris
+          Amin Timany, Robbert Krebbers, Lars Birkedal
+          At CoqPL 2017: The Third International Workshop on Coq for
+          Programming Languages, Paris, France
+
+          abstract
+
+   Unifying Worlds and Resources
+          Ralf Jung, Derek Dreyer
+          At HOPE 2015: 4th ACM SIGPLAN Workshop on Higher-Order
+          Programming with Effects, Vancouver, Canada
+
+          talk on youtube slides
+
+Main research groups involved
+
+   Aarhus University
+   Logic and Semantics Group
+   Contact: Lars Birkedal
+   Max Planck Institute for Software Systems
+   Foundations of Programming Group
+   Contact: Derek Dreyer
+   Delft University of Technology
+   Programming Languages Group
+   Contact: Robbert Krebbers
+   KU Leuven
+   DistriNet Group
+   Contact: Amin Timany
+
+Grants
+
+   The Iris project has been supported by the following grants:
+
+ModuRes
+
+Modular Reasoning about Concurrent Higher-Order Imperative Programs
+
+   Card image
+
+   Grants from The Danish Council for Independent Research, Sapere Aude:
+   DFF–Advanced Grant 2013 (more Information)
+
+RustBelt
+
+Logical Foundations for the Future of Safe Systems Programming
+
+   Card image
+
+   2015 ERC Consolidator Grant (more information)
+     __________________________________________________________________
+
+   iris-project.org is maintained by Logic and Semantics group, Computer
+   Science @ Aarhus University

@@ -1,0 +1,69 @@
+   #Frama-C RSS News
+
+   Frama-C Software Analyzer
+   “Simple things should be simple,
+   complex things should be possible.„
+   Alan Kay
+   Home Features Plug-ins Download Support About Us
+
+Latest News
+
+   17 September 2019 Frama-C 19.1 (Potassium) is out. Download it here .
+   13 September 2019 Frama-Clang 0.0.7 is out. Download it here .
+   21 June 2019 Frama-C 19.0 (Potassium) is out. Download it here .
+   18 Apr 2019 Frama-C & SPARK Day 2019 will take place on June 3, 2019 in
+   Paris. Registration and program here .
+   29 Nov 2018 Frama-C 18.0 (Argon) is out. Download it here .
+
+Getting Acquainted
+
+   What is Frama-C
+   Video
+   A short video
+   Screenshots
+   A short example
+   A ready-to-play quick tour
+   The first tutorial
+   An advanced tutorial on IoT code
+   Frama-C is an extensible and collaborative platform dedicated to
+   source-code analysis of C software.
+   Read more…
+   Getting Frama-C Frama-C is Open Source software.
+   It works on Windows and Unix (Linux, Mac OS X,…)
+   Get it now…
+   Community A public mailing list and a bug tracking system are provided
+   to both academic and industrial users.
+   Join us…
+
+Working with Frama-C
+
+   Features The Frama-C analyzers assist you in various
+   source-code-related activities, from the navigation through unfamiliar
+   projects up to the certification of critical software.
+   Take the tour…
+   Architecture Frama-C is an extensible framework. You can easily build
+   upon the existing plug-ins to implement your own analysis. Plug-in
+   factory…
+
+   static int x = 1; static long mc1[8][8], mc2[8][8]; /* if (init) { for
+   (;;) } (long m1[8][8], long m2[8][8]) { long i, j, k, tmp1[8][8],
+   tmp2[8][8]; /* Loops indexes and temporary matrices. */ double ftmp1,
+   ftmp2; static int init = 1; static long mc1[8][8], mc2[8][8]; /*
+   hard-coded cosines matrices. */if (init) { for (i = 0; i < 8; i++) for
+   (j = 0; j < 8; j++) { ftmp1 = ((j == 0) ? 0; static long mc1[8][8],
+   mc2[8][8]; /* hard-coded cosines matrices. */if (init) { for (i = 0; i
+   < 8; i++) for (j = 0; j < 8; j++) { ftmp1 = ((j == 0) ? 0.5 / sqrt
+   (2.0) : 0.5) * cos ((2.0 * i + 1.0) * j * TH); ftmp2 = ftmp1; /* The
+   well known formula. The max absolute value for ftmp1 and ftmp2 is 0.5.
+   */ ftmp1 *= (1 << NBC1); if (ftmp1 < 0) ftmp1 -= 0.5; else ftmp1 +=
+   0.5; mc1[i][j] = ftmp1; ftmp2 *= (1 << NBC2); /* Multiply the cosine
+   coefficient by 2^NBC2. The max absolute value for * ftmp2 is
+   2^(NBC2-1). */ if (ftmp2 < 0) ftmp2 –= 0.5; else ftmp2 += 0.5; /* For
+   symetrical rounding. */ mc2[i][j] = ftmp2; } init = 0; } /* Then the
+   first pass. */ for(i = 0; i < 8; i++) for(j = 0; j < 8; j++) { for(k =
+   0, tmp1[i][j] = 0; k < 8; k++)tmp1[i][j] += mc1[i][k] * m1[k][j]; /*
+   The [i,j] coefficient of the matrix product MC1*M1. */ tmp1[i][j] >>=
+   (NBC1 + 10 – NBI); tmp1[i][j] += 1; /* For rounding purpose. */
+   tmp1[i][j] >>= 1; /* Final rounding. tmp1[i][j] is now represented on
+   NBI bits. */if (tmp1[i][j] < -(1 <<
+   © CEA–LIST 2007–2019     Terms of Use

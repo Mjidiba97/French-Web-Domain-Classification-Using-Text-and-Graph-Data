@@ -1,0 +1,1576 @@
+   #Otto on WordPress » Feed Otto on WordPress » Comments Feed
+
+Otto on WordPress
+
+   You have to use an Ottopress to get fresh squeezed Otto.
+   ____________________
+     * Home
+     * WordPress Plugins
+          + After The Deadline For Comments
+          + Atom Default Feed
+          + Dropbox Photo Sideloader
+          + Gravatar Box
+          + PHP Code Widget
+          + Theme Check
+          + Unicornify
+     * Contact Otto
+     * Nothing to See Here
+     * Otto on Beer
+
+On the topic of that pesky widget…
+
+   December 7, 2017, 10:34 am
+
+   When I go to WordCamps, I get this question a lot: “Why do you have the
+   PHP Code Widget still in the directory?”
+
+   There’s a good answer for that, but first let me explain why I made the
+   thing in the first place.
+
+   If you examine the history of that plugin, you’ll find that it was
+   submitted almost 10 years ago. Back then, widgets were new. Most people
+   using WordPress had hardcoded sidebars in their themes. Changing the
+   sidebar meant changing the theme. Widgets aimed to replace that with
+   draggable objects. The Widget plugin was still a plugin, and not in
+   core, but headed there.
+
+   The PHP Code Widget was created to make it easy and simple and fast to
+   migrate from a hardcoded sidebar to a widget based one. You could take
+   your existing code in the sidebar file, paste it into the widget, and
+   then you had a movable widget that you could easily use.
+
+   Obviously, this was not meant for long term usage. The goal was to get
+   widget support rapidly in your theme, with the expectation that as new
+   widgets came out, you could replace your old code with newer, shinier,
+   well supported, widgets.
+
+   The reason the plugin is still in the directory is because it still
+   fills a need for some people. If I removed it, then they would fulfill
+   that need in worse ways. It does not take much searching to find
+   snippets of code, with bad advice saying to just pop it into your
+   theme’s functions.php file, and voila, now all your Text Widgets run
+   PHP code. That snippet actually exists. It’s a terrible idea, for
+   obvious reasons.
+
+   The PHP Code Widget is less terrible than the alternatives.
+
+   But it’s still terrible.
+
+   And yes, it bothers me that it is one of the top 150 plugins. Storing
+   PHP code in your database and then running it is just dumb. Don’t do
+   that. Code should live in the right place, and that place is not the
+   database.
+
+   So, in an effort to reduce the usage of the PHP Code Widget, here’s one
+   way to stop using it, if you still are.
+
+Getting rid of the PHP Code Widget
+
+Step 1:
+
+   Get the PHP Code that you are using from the Widget, copy it into a
+   text editor, save it somewhere for safe keeping.
+
+Step 2:
+
+   You’re going to make a new plugin. You can call it whatever you like,
+   but I recommend naming it specific to the site you’re making it for. If
+   I was making a plugin for this site to hold widgets, then I’d call it
+   “Ottopress Widgets” or something to that effect.
+
+How to make a new plugin:
+
+   (Note: You can use Pluginception for this instead, if you like. That
+   one I’m not ashamed of, it’s a very handy tool.)
+
+   a. Make a directory in /wp-content/plugins named after your plugin,
+   like /wp-content/plugins/ottopress-widgets
+
+   b. Make a PHP file in there named the same. Like ottopress-widgets.php.
+
+   c. Edit that file, and add this header to the top of it:
+<?php
+/* Plugin Name: Ottopress Widgets*/
+
+   Lovely. We’ve made a new plugin. It doesn’t do anything, yet, but
+   here’s some more code to add to the plugin. This is largely copy-paste,
+   and then you edit it to fit your specific circumstances
+
+Step 3:
+
+add_action( 'widgets_init', 'ottopress_widget_register' );
+function ottopress_widget_register() {
+        register_widget( 'Ottopress_Widget' );
+}
+class Ottopress_Widget extends WP_Widget {
+        function __construct() {
+
+                $class = 'widget_ottopress';
+                $name = 'Ottopress Widget';
+
+                $widget_ops = array('classname' => $class, 'description' => $nam
+e);
+                $control_ops = array('width' => 400, 'height' => 350);
+                parent::__construct('', $name, $widget_ops, $control_ops);
+        }
+
+        function widget( $args, $instance ) {
+                extract($args);
+                echo $before_widget;
+
+                echo '<h2 class="widget-title">Ottopress Widget</h2>';
+                echo "<div>Here's my custom stuff.</div>";
+
+                echo $after_widget;
+        }
+}
+
+   I named this widget “Ottopress Widget” by way of example. In the first
+   few lines of code, you’ll want to change these to your own naming
+   scheme. It’s important that names be unique, which is why I recommend
+   naming things using your site’s name. Unlikely for there to be
+   interference that way.
+
+   The $class and $name variables you should also change. The class is
+   used in the HTML that the widget produces, so you can refer to it via
+   CSS. The name is simply used for display purposes on the widgets
+   editing screens.
+
+Step 4:
+
+   Finally, the meat of the code you want to edit is here. I’ll point it
+   out specifically.
+function widget( $args, $instance ) {
+        extract($args);
+        echo $before_widget;
+
+        echo '<h2 class="widget-title">Ottopress Widget</h2>';
+        echo "<div>Here's my custom stuff.</div>";
+
+        echo $after_widget;
+}
+
+   This is the code that shows the widget on your site itself. Now, this
+   one is just hardcoded to show the normal before and after code (these
+   are set by the theme, so these should always be there), and then it has
+   a little hardcoded bit there where it echo’s out a title and a div that
+   says “Here’s my Custom Stuff”.
+
+   If you’re migrating from the PHP code widget, well, here’s where you
+   migrate it to. You can drop your code from the PHP Code widget here
+   and, you know, do whatever you were doing in the widget before, just
+   now in an actual custom widget, in your own custom plugin. No more
+   storing the code in the database. Just activate the plugin and replace
+   the PHP Code widget with this one.
+
+   If you need more widgets because you were using it in multiple places,
+   then simply repeat the process. Paste that whole class in there, only
+   give it a different class name and other info, then put in your other
+   code. You can have as many widgets as you like, they just have to all
+   be named differently. Simple.
+
+   Note that this widget has no settings screen of any kind. Why would it?
+   You’re controlling the code directly, no need for settings, presumably.
+   If you want to go on and make your widget smarter and more complex and
+   have settings, well, there’s other tutorials for that.
+
+   If this reduces the usage of the PHP Code Widget, well, I’ll be a
+   happier person.
+   Shortlink: http://otto42.com/ga
+   Tags: PHP, widget, WordPress
+   Category: Code, WordPress  |  4 Comments
+
+What’s new with the Customizer
+
+   May 2, 2015, 6:29 pm
+
+   Been a while since I wrote something. Let’s talk about some of the new
+   stuff available in the Customizer.
+
+Forget about some of part two
+
+   First, back in part two, I had a bit about Surfacing the Customizer.
+   That bit is outdated now, WordPress does this for you in later
+   versions. So, yeah, skip that.
+
+Shiny new thing: Panels
+
+   Okay, so Panels aren’t that new. They were added in WordPress 4.0.
+   Basically, they’re sliding containers for sections. Having trouble
+   fitting all your settings on the screen? Group the various sections up
+   into Panels. Panels show up as an item in the main list, and when you
+   click the arrow next to them, the whole list glides off screen to show
+   only those sections.
+
+   So, now we have four things: Panels, Sections, Controls, and Settings.
+     * Panels group Sections together
+     * Sections contain Controls
+     * Controls are what the user changes
+     * Settings define what the Controls change
+
+   Creating a panel is easy:
+$wp_customize->add_panel( 'some_panel', array(
+   'title' => 'Panel 1',
+   'description' => 'This is a description of this panel',
+   'priority' => 10,
+) );
+
+   Adding a section to that panel is just as easy:
+$wp_customize->add_section( 'themedemo_panel_settings', array(
+ 'title' => 'More Stuff',
+ 'priority' => 10,
+ 'panel' => 'some_panel',
+) );
+
+
+   All that’s new is a panel setting to tell the section to go into that
+   panel. Simple.
+
+Active Callbacks
+
+   One of the problems with the Customizer was that it displayed settings
+   and showed them changing on the site to your right, but the site being
+   displayed is the actual site. Meaning that you can navigate on it.
+   Sometimes, the controls being shown don’t necessarily apply to the
+   actual site that you’re seeing.
+
+   Example: If you have a control to change the color of something in the
+   sidebar, but then are looking at a page which has no sidebar, then you
+   have no visual feedback to tell you what the change looks like.
+
+   To fix this, “active callbacks” are used.
+
+   The active_callback is simply a new parameter that you can pass into
+   Panels, Sections, or Controls. It can contain the name of a function,
+   and that function will be called when the page changes. The function
+   should return true or false (or equivalent) to indicate whether or not
+   the element of the customizer should be shown for that page.
+
+   So, if you have a whole Panel that only make sense when the user is
+   looking at Front Page of the site (and not an individual post), then
+   you can do this:
+$wp_customize->add_panel( 'front_page_panel', array(
+   'title' => 'Front Page Stuff',
+   'description' => 'Stuff that you can change about the Front Page',
+   'priority' => 10,
+   'active_callback' => 'is_front_page',
+) );
+
+   And voila, when the user is not looking at the front page, the panel
+   simply disappears.
+
+   You can use any of the normal WordPress Template Tags for this, or
+   write your own function if you want to be more specific about it.
+
+   Edit: As pointed out in the comments, this will not work with ALL of
+   the Template Tags. In particular, is_single won’t work because of the
+   optional parameter it can take. You can define a wrapper for these
+   methods instead, to get the same effect. Example:
+function callback_single() { return is_single(); }
+...
+   'active_callback'=>'callback_single'
+...
+
+
+Fun with Active Callbacks
+
+   If you do need to write your own callback function, note that the
+   function receives the object in question when it’s called. So, if you
+   attach an active_callback to a Panel, your function will get a argument
+   of the WP_Customize_Panel object in question passed to it. Sections get
+   WP_Customize_Section and such. You can use the information in these to
+   decide whether the panel (or whatever) should be shown for that page.
+
+   So, how do we use that object? Well, you can use this to make whether
+   certain controls show or not dependent on the values of other settings.
+   All the various items you can use this on have a link back to the main
+   WP_Customize_Manager. That class has a get_setting function, which you
+   can use to determine what to do.
+
+   So, let’s make a control that causes other controls to appear,
+   dependent on a setting.
+
+   First, let’s make a simple radio selection control:
+$wp_customize->add_setting( 'demo_radio_control', array(
+   'default'        => 'a',
+) );
+
+$wp_customize->add_control( 'demo_radio_control', array(
+   'label'      => 'radio_control',
+   'section'    => 'themedemo_panel_settings',
+   'settings'   => 'demo_radio_control',
+   'type'       => 'radio',
+   'choices'    => array(
+   'a' => 'Choice A',
+   'b' => 'Choice B',
+   ),
+) );
+
+
+   Now, we need to make two other controls, one for each choice. You can
+   actually make as many as you like, we’ll keep it simple.
+
+   First, the control for choice A. Let’s make it a simple text control.
+$wp_customize->add_setting( 'choice_a_text', array(
+   'default' => '',
+) );
+
+$wp_customize->add_control( 'choice_a_text', array(
+   'label'      => 'Choice A: ',
+   'section'    => 'themedemo_panel_settings',
+   'type'       => 'text',
+   'active_callback' => 'choice_a_callback',
+) );
+
+   We’ll need that callback function to detect if choice A is selected in
+   the radio control, and return true if it is, and false otherwise. Like
+   so:
+function choice_a_callback( $control ) {
+   if ( $control->manager->get_setting('demo_radio_control')->value() == 'a' ) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+
+   You can simplify that if you like, I spelled it out with an if
+   statement so as to be clear as to what is happening.
+   panel1
+
+   Now for choice B, let’s make it display a color control instead:
+$wp_customize->add_setting( 'choice_b_color', array(
+   'default' => '#123456',
+) );
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'choi
+ce_b_color', array(
+   'label'   => 'Choice B',
+   'section' => 'themedemo_panel_settings',
+   'settings'   => 'choice_b_color',
+   'active_callback' => 'choice_b_callback',
+) ) );
+
+   And its callback:
+function choice_b_callback( $control ) {
+   if ( $control->manager->get_setting('demo_radio_control')->value() == 'b' ) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+   panel1-b
+
+   Now, note that the callbacks are very similar. Seems like repeated
+   code, doesn’t it? Well, it is, but remember that the $control here is
+   the whole WP_Customize_Control object. We can use the same callback and
+   simply check which control is calling it here instead.
+function choice_callback( $control ) {
+   $radio_setting = $control->manager->get_setting('demo_radio_control')->value(
+);
+   $control_id = $control->id;
+
+   if ( $control_id == 'choice_a_text'  &amp;&amp; $radio_setting == 'a' ) retur
+n true;
+   if ( $control_id == 'choice_b_color' &amp;&amp; $radio_setting == 'b' ) retur
+n true;
+
+   return false;
+}
+
+   So, instead of using two different callbacks, we just point our
+   controls to this callback, which figures out what should show up for
+   which setting. I’m sure you can simplify this further, depending on
+   your particular needs.
+
+One more thing: Customizing the Customizer
+
+   Not everybody likes the style of the Customizer. Maybe it clashes with
+   your theme. Maybe you just want to tweak it a bit. Maybe you dislike
+   that gray background color, and a more soothing blue would go better
+   for your theme.
+add_action( 'customize_controls_enqueue_scripts', 'themedemo_customizer_style');
+function themedemo_customizer_style() {
+   wp_add_inline_style( 'customize-controls', '.wp-full-overlay-sidebar { backgr
+ound: #abcdef }');
+}
+
+   Or maybe you don’t think the Customizer area is wide enough… be careful
+   with this one though, consider mobile users as well.
+add_action( 'customize_controls_enqueue_scripts', 'themedemo_customizer_style');
+function themedemo_customizer_style() {
+   wp_add_inline_style( 'customize-controls', '.wp-full-overlay-sidebar { width:
+ 400px } .wp-full-overlay.expanded { margin-left: 400px } ');
+}
+
+   You can enqueue whole extra CSS files instead, if you like. Or, if you
+   have special needs for javascript in some of your controls, and there’s
+   libraries necessary to implement them, then you can enqueue those
+   libraries here as well.
+   Shortlink: http://otto42.com/ey
+   Tags: customizer, PHP, theme
+   Category: Code, WordPress  |  69 Comments
+
+Better Know a Vulnerability: Cross Site Request Forgery (CSRF)
+
+   February 26, 2014, 8:11 am
+
+   One of the easier to understand vulnerabilities is the CSRF. It’s also
+   one of the most common issues we see in plugins and themes, because
+   people rarely think about it.
+
+   Imagine that I have a form that takes input, like so:
+<form action="http://example.com/example.php" method="GET">
+<input type="text" name="demo" />
+</form>
+
+   Now, that’s a simple form (and missing a submit button to boot), but
+   you get the idea. It takes a text input. Presumably, something on the
+   other end (at /example.php) processes that input, saves it in a
+   database, something like that. Easy.
+
+First question: Is this necessary?
+
+   The main question I see asked when this concept is explained to people
+   is “why is this necessary?”. Some people believe that since you have to
+   be logged in to access admin screens in the first place, then you can’t
+   get to the forms and submit them. Why have all this protection and
+   checking for a form submission when the form is hidden behind a login
+   screen?
+
+   What you need to understand is the difference between “authority” and
+   “intent“.
+
+Authority
+
+   In real world cases where we are processing that input, we generally
+   want to limit who is allowed to submit that form in some way. A plugin
+   will want to only allow admins to change settings. A theme will only
+   want to allow site owners to adjust the display of the site. Things of
+   that nature. For these cases, we use methods of authentication.
+
+   There’s several ways to do this, we can check the current_user
+   information. WordPress has capability checks for users to know what
+   they are and are not allowed to do. When we check these, we’re
+   verifying authority. Making sure that the user is allowed to do these
+   things.
+
+   But something else that we need to check which most people don’t think
+   about is intent. Did the user actually intend to submit that form, or
+   did their browser submit it for them automatically, perhaps without
+   their knowledge?
+
+   Examine that form again, and consider what would happen if you were to
+   visit a webpage, anywhere on the internet, that contains this:
+<img src="http://example.com/example.php?demo=pwned" />
+
+   Now, you might be thinking that this is a rather contrived example, and
+   you’d be right on that score, but it serves to demonstrate the point.
+   Your browser loads this URL and that is the equivalent action to
+   submitting that form, with “pwned” as the text in question.
+
+   Here’s the kicker, all those authority checks do us no good in
+   preventing this. You actually do have the authority to submit that
+   form, and your browser, using your authority, just submitted it for
+   you. Pwned, indeed.
+
+   (For those of you thinking “just use POST forms”, consider that
+   javascript can submit POST forms. So that’s really no help.)
+
+Intent
+
+   What we need is to verify intent. We need to know that the user
+   submitted that form, and not just the browser doing it for them
+   automatically.
+
+   WordPress used to do this (a looong time ago) using the referer. For
+   those who don’t know, referer is a URL passed by your browser to
+   indicate where a user came from. So one could check that the referer
+   says that the form was submitted from the form’s page and not from some
+   other page on the internet. The problem is that referer is not
+   reliable. Some browsers have the ability for script to fake the
+   referer. Firewalls and proxies often strip the referer out, for privacy
+   concerns. And so forth.
+
+Nonces
+
+   WordPress now does this using nonces. A nonce is a “number used once”
+   in its purest form. Basically, it’s a one-time password. When we
+   generate the form, we generate a number. When the form is submitted, we
+   check the number. If the number is wrong or missing, we don’t allow the
+   form to be submitted. A script cannot know the number in advance. Other
+   sites cannot guess the number.
+
+   Now, technically, WordPress doesn’t use real nonces, because they’re
+   not “used once”. Instead, WordPress nonces revolve on a 12 hour
+   rotating system (where 24 hours are accepted). For any given 12 hour
+   period, the nonce number for a given action will be the same. But it’s
+   close enough to a real nonce to eliminate the issue, but notably it’s
+   only for the issue of verifying intent. Don’t try to use WordPress
+   nonces for anything else. :)
+
+   So, when we generate a form, we generate a nonce. This nonce is based
+   on five things: site, user, time, the action being performed, and the
+   object that the action is being performed on. Changing any of these
+   gives us a different nonce.
+
+   Let’s say I want to delete a post. To do that, I need to know the nonce
+   for deleting that specific post, as me, on my site, within the last 24
+   hours. Without that nonce, I cannot perform the action. More
+   importantly, in order for somebody to “trick” my browser into doing it
+   for me, they need to get that specific nonce and get my browser to load
+   it within 24 hours. Tough to do. And even if they pull it off, they
+   only have been able to perform that very specific action, the nonce
+   obtained is useless for any other purpose. They don’t get any form of
+   full control via this manner. They can’t make my browser do anything on
+   mysite that they don’t have the nonce for.
+
+Using nonces
+
+   So, let’s get down to brass tacks. Generating a nonce in WordPress is
+   easy and can be done in many different ways depending on your
+   particular needs. You might want to protect a simple link, or you might
+   want to protect a form, or you might even need to protect a javascript
+   ajax call.
+
+   Protecting a link can be done with wp_nonce_url(). It takes a URL and
+   an action and adds a valid nonce onto that URL. It works like this:
+$nonced_url = wp_nonce_url( $url, 'action_'.$object_id );
+
+   Here, we’re taking some URL, and adding a nonce onto it for a specific
+   action on some specific object. This is important, actions and objects
+   need to both be specified if there is some object being referred to. An
+   example might be a link to delete a specific post. Such code would look
+   like this:
+wp_nonce_url( $url, 'trash-post_'.$post->ID )
+
+   The action is “trash-post” and the post being trashed has its ID number
+   appended to that action. Thus, the nonce will let you trash that post
+   and only that post.
+
+   On the other hand, maybe we have a form that we need to protect
+   instead. Inside that form, we can add something like this:
+wp_nonce_field( 'delete-comment_'.$comment_id );
+
+   This is the nonce for deleting a comment. It outputs a couple of form
+   fields, like so:
+<input type="hidden" id="_wpnonce" name="_wpnonce" value="1234567890" />
+<input type="hidden" name="_wp_http_referer" value="/wp-admin/edit-comments.php"
+ />
+
+   The value for the nonce will be specific to deleting that comment, on
+   that site, by that user.
+
+   Sometimes we just need to generate the nonce directly, in no specific
+   format. One case might be for an AJAX type call, where the data is
+   being submitted by jQuery. In such a case, you can use the
+   wp_create_nonce function to get just that nonce value, like so:
+wp_create_nonce( 'action_'.$object_id );
+
+   For AJAX requests, you’ll want to include that nonce value in the
+   submitted data with a name of “_ajax_nonce”. Why that particular name?
+   Because it’s what WordPress checks when verifying the nonce. Speaking
+   of verification:
+
+Verifying nonces
+
+   Generating these numbers is no good if you don’t check them as well.
+   Fortunately, WordPress makes this easy. There’s two functions to verify
+   incoming nonces.
+check_admin_referer( 'action_'.$object_id );
+
+   The name of the function refers back to the time before nonces, when
+   this function call was checking the referer value from the browser.
+   Nowadays, it checks nonces instead. If the _wpnonce sent back in the
+   form does not match the action and ID here, then this function stops
+   further processing. This is the cause of the “Are you sure you want to
+   do this?” screen that is sometimes reported by users. To avoid getting
+   this screen, the nonce being checked has to match.
+
+   An alternative to checking forms or links is checking ajax requests,
+   which is why we have this function:
+check_ajax_referer( 'action_'.$object_id );
+
+   This performs the same basic check, but if it fails, it returns a
+   simple “-1” response and then halts processing. Your AJAX javascript
+   code can recognise that response and take appropriate action based on
+   it.
+
+   In either case, if the nonce fails, the script exits. No action is
+   taken. The form is not processed, the post not deleted. That’s the sort
+   of check you need to prevent CSRF attacks.
+
+Bottom Line
+
+   If you have a plugin or a theme or any type of code that “does
+   something” in WordPress, then you need to protect that action with a
+   nonce. If you’re not protecting it with a nonce, then it’s possible for
+   somebody else to trick your browser into performing that action on your
+   behalf.
+
+   Also, note that it’s not enough to just name the action. You generally
+   are taking action on some specific “thing”, and the ID of that thing
+   needs to be included in your nonce as well. The more specific the
+   action, the better.
+
+   Any form, any action, no matter how much “authentication” you have on
+   checking it, can be exploited, because you’re not really authenticating
+   the “user”, you’re authenticating that it’s coming from “the user’s
+   browser”. You need to have something else that changes regularly, so
+   that you can verify that the user did indeed load that particular form
+   and submit it relatively recently, and thus probably intended to
+   perform that action.
+
+   Nonces are easy to implement. So do it already. We have enough plugins
+   not doing it that this clearly needs to be said. :)
+   Shortlink: http://otto42.com/eo
+   Tags: csrf, exploit, form, nonce, plugin, theme, vulnerability,
+   WordPress
+   Category: Code, WordPress  |  9 Comments
+
+Better Know a Vulnerability: SQL Injection
+
+   November 21, 2013, 5:20 pm
+
+   We get a lot of submissions to the WordPress.org plugin repository, and
+   so there is often a lot of dangerous code submitted. Usually this isn’t
+   malicious, it’s just by people who honestly don’t know that their code
+   has problems. Understanding those problems is the first step to fixing
+   them.
+
+   So here’s one common vulnerability we see in code submissions a lot:
+   SQL Injection
+
+   To understand SQL Injection, let’s quote Wikipedia for a moment:
+
+     SQL injection is a code injection technique, used to attack data
+     driven applications, in which malicious SQL statements are inserted
+     into an entry field for execution
+
+   Here’s a piece of code made for WordPress, which is querying the
+   database for a post:
+// bad code, do not use
+$results = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE ID = $id" );
+
+   If you don’t see the problem with this code right away, then you should
+   continue reading this post.
+
+   (Yes, this article shows the basics of the prepare() function. If you
+   already know about the prepare() function, you might be shocked at the
+   number of people who do not.)
+
+   Continue reading ‘Better Know a Vulnerability: SQL Injection’ »
+   Shortlink: http://otto42.com/en
+   Tags: code, dangerous, exploit, injection, prepare, sql, vulnerability,
+   wpdb
+   Category: Code, WordPress  |  18 Comments
+
+Language Packs 101 – Prepwork
+
+   October 23, 2013, 2:29 pm
+
+   O languages ne of the new features alongside the auto-update feature in
+   WordPress 3.7 is support for “language packs”. More info about these
+   will be coming out eventually, along with new tools for plugin and
+   theme authors to use to manage this system (or to not have to
+   micro-manage it, rather). A lot of this feature is yet to be
+   implemented on WordPress.org, but the core support for it is in
+   WordPress 3.7.
+
+   In order to use it most effectively, there’s a few ground rules that
+   you, as a plugin or theme author, need to follow. Fortunately, they’re
+   pretty simple.
+
+Text-domains = the plugin/theme slug
+
+   Firstly, for language packs to work, your text-domain must be identical
+   to the plugin or theme’s slug.
+
+   What’s a “slug”? Good question. If you examine the URL of your plugin
+   or theme on WordPress.org, you’ll find that it looks like this:
+http://wordpress.org/plugins/some-text-here
+
+   or
+http://wordpress.org/themes/some-text-here
+
+   That “some-text-here” part is the slug. It cannot be changed by the
+   plugin or theme author once the entry is created for it in the
+   WordPress.org directory. It is a unique item to plugins/themes, and
+   that’s how WordPress.org will be managing and naming the language
+   files.
+
+   Therefore, your “text-domain” must be the same as that slug. In all
+   your translation function calls, the text-domain must be there, it must
+   be a plain string, and it must be identical to the slug of your plugin
+   or theme on WordPress.org.
+
+Headers
+
+   For translation to be most effective for your plugin/theme, you need to
+   include a header in it that you may not be including:
+Text Domain: put-the-slug-here
+
+   This “Text Domain” header is read and used to load your language pack
+   files even when your plugin is not activated. This allows the headers
+   of the plugin (like the description and such) to be translated properly
+   when the plugin is displayed on the Plugins/Themes screen. So your
+   international users will be able to read that text too, before ever
+   using the code.
+
+   If you want to include your own translation files instead of using the
+   language pack system, then this still works. The core code will look
+   for the relevant *.mo translation files in the plugin’s directory. If
+   you use a subdirectory, like “/languages”, then you can use a header
+   like the following:
+Domain Path: /languages
+
+   Note that the Domain Path for plugins defaults to the plugin’s own root
+   directory, but the Domain Path for themes defaults to “/languages” to
+   begin with. If the default works for you, then you do not need to have
+   this header at all.
+
+   Also note that if a language file is not found for a particular
+   configuration, then WordPress 3.7 will fall back to using the language
+   pack system to attempt to find it. So if you only include, say, 3
+   languages, and there are language packs for 4 more, then those 4 more
+   will still work.
+
+   Speaking of configuration,
+
+Function calls: load_plugin_textdomain or load_theme_textdomain
+
+   Here is how to properly call them, with the Headers you’ll need
+   included for good measure:
+
+   If you want to allow for translation MO files in the plugin’s own
+   directory:
+Text Domain: plugin-slug
+load_plugin_textdomain( 'plugin-slug', false, dirname( plugin_basename( __FILE__
+ ) ) );
+
+   If you want to allow for translation MO files in the plugin’s languages
+   subdirectory:
+Text Domain: plugin-slug
+Domain Path: /languages
+load_plugin_textdomain( 'plugin-slug', false, dirname( plugin_basename( __FILE__
+ ) ) . '/languages/' );
+
+   If you want to use language packs exclusively (note: WP will still
+   check the base /wp-content/plugins directory for language files, just
+   in case):
+Text Domain: plugin-slug
+load_plugin_textdomain( 'plugin-slug' );
+
+   If you want to allow for translation MO files in the theme’s languages
+   subdirectory:
+Text Domain: theme-slug
+load_theme_textdomain( 'theme-slug', get_template_directory() . '/languages' );
+
+   If you want to allow for translation MO files in the theme’s “lang”
+   directory:
+Text Domain: theme-slug
+Domain Path: /lang
+load_theme_textdomain( 'theme-slug', get_template_directory() . '/lang' );
+
+   If you want to use language packs exclusively (note: WP will still
+   check the theme’s own directory for language files, just in case):
+Text Domain: theme-slug
+load_theme_textdomain( 'theme-slug' );
+
+   Important:
+     * Any calls to load_plugin_textdomain should be in a function
+       attached to the “plugins_loaded” action hook.
+     * Any calls to load_theme_textdomain should be in a function attached
+       to the “after_setup_theme” action hook.
+
+How it will work
+
+   Eventually, WordPress.org will have a way to allow plugin/theme authors
+   to upload translation files. Or, it will have a way to allow users to
+   submit their translations to them via translate.wordpress.org…
+   Regardless, the relevant MO files will be made on some basis, and the
+   files will be made available to WordPress users through the normal
+   plugin/theme update process. The auto-update system will automatically
+   download these MO files into the /wp-content/languages directory. There
+   will be plugins and themes subdirectories under that to hold these
+   files.
+
+   The files will be named “slug-locale.mo”, where slug is the plugin or
+   theme’s slug, and the locale is the relevant locale information about
+   the language (like “en_US” for example). When
+   load_plugin/theme_textdomain is called, WordPress will look in the
+   specified place for the relevant MO file, and if it does not find it,
+   then it falls back to looking in the /wp-content/languages folder for
+   it, on that named basis. If it finds it, it loads it up and uses it.
+
+   This gives the plugin or theme authors the ability to continue to
+   manage their translations themselves, as they’ve always done, or use
+   the new language pack system and let WordPress.org manage it for you.
+   The language pack system has a number of advantages:
+     * Users only download the languages they actually need, instead of
+       all of them. Your plugin is smaller, the download is faster.
+     * New translations can be approved and pushed as updates
+       independently of the plugin or theme. No more need to bump the
+       version just to get new translations to users.
+     * Translations can be handled much easier, or ignored by the author
+       entirely. Communities can (eventually) do their own translations
+       through translate.wordpress.org.
+
+   Things like that. These all rely on plugins and themes doing
+   translations a certain and specific way, along with properly
+   internationalizing their code for translation.
+
+   Obviously, any code not doing this sort of thing won’t get these
+   benefits. Well, we can’t fix everything at once. But hopefully, the
+   most common and popular ones will do this (or already are), and they
+   can be integrated into the system quickly and easily.
+
+Some tools to help
+
+   If you’re a plugin or theme author, do yourself a favor and use your
+   SVN client to get a copy of this repository:
+
+   http://develop.svn.wordpress.org/trunk/
+
+   This is the core develop repository for WordPress. It comes with the
+   WordPress trunk code (in /src) but it also has some important tools
+   you’ll need in the /tools/i18n directory. Note that to use these tools,
+   you need the *entire* checkout, not just the tools. The tools make
+   calls back into the WordPress core code to do some of the work, so the
+   whole /trunk directory needs to be available there.
+
+   Also, those tools are managed by the core team. So keep them to date by
+   doing an svn update every once in a while too.
+
+   Here’s one of those tools: makepot.php
+
+   And here’s how you run it:
+> php makepot.php wp-plugin /path/to/my/plugin-dir plugin-slug.pot
+
+   This will scan your plugin’s directory and create a POT file for you to
+   give to translators or include with your plugin. Theme authors, same
+   deal, just replace “wp-plugin” with “wp-theme”.
+
+   Here’s another tool: add-textdomain.php
+
+   It will read in a file and add a proper text-domain to all translation
+   function calls it finds. To use it, you can do this:
+> php add-textdomain.php plugin-slug /path/to/a/file.php > newfile.php
+
+   The newfile.php will be identical, but all the translation calls will
+   be fixed up and have the plugin-slug in there as intended.
+
+   The tool outputs the new file on standard output, which I redirected
+   into “newfile.php” as you can see above. This is so that it is
+   non-destructive by default. If you’re confident, and have backups of
+   the files just in case, you can use it in-place like so:
+> php add-textdomain -i plugin-slug /path/to/a/file.php
+
+   The original file will be replaced with the modified version. Use this
+   at your own risk. I’m paranoid, I prefer to make a new file for manual
+   comparison. ;)
+
+   This tool will go through and add the text-domain to any calls where
+   you might have left it off. I have done this many times. Force of
+   habit, or I just forget to do it, etc.
+
+More Info
+
+   And if you’re having a hard time with making your text translatable in
+   the code, I have a couple other posts on that topic as well. See them
+   too.
+
+   So go forth, plugin and theme authors. Start fixing up that code. Many
+   of you may have nothing to fix. Some of you may just need a header
+   change. But it’s worth giving it a once over anyway. It certainly would
+   be very nice if, as the new features begin to be added to
+   WordPress.org, then your code was all ready and set to take immediate
+   advantage of it, wouldn’t it? :)
+   Shortlink: http://otto42.com/el
+   Tags: api, internationalization, localization, update, wordpress.org
+   Category: Code, WordPress  |  40 Comments
+
+Slides: A Presentation Theme
+
+   June 19, 2013, 10:44 am
+
+   You know, when some people are asked to do a presentation on a subject,
+   they start by thinking about what they’re going to say, how they’re
+   going to say it, and what their presentation will contain.
+
+   Me, I just start writing code.
+
+   I was asked to present at WordCamp Seattle, on the specific subject of
+   the GPL. Talking about licenses is pretty dry stuff, so I came up with
+   some ideas and such and put them down and built a presentation. No
+   problem. But naturally, I wanted to use WordPress to present it.
+
+   I’ve tried this sort of presentation-theme idea a couple years back,
+   and didn’t really get anywhere good. HTML wasn’t up to the task at the
+   time, not really. But in my searching for this again, I ran across the
+   Google IO 2012 slides template.
+
+   It’s a neat template. Does some very cool stuff. HTML5, CSS3, clever
+   Javascripty goodness. Bit annoying to adjust though, and very
+   hardcoded. So, I turned it into a WordPress theme instead.
+
+   I call it “Slides”, because I’m bad at naming things.
+
+   If you want to skip straight to the download, you’ll find it at the
+   bottom of the post, but I encourage you to read first, because if you
+   just install it on an existing WordPress install, you’ll find your site
+   to be instantly broken.
+
+   Continue reading ‘Slides: A Presentation Theme’ »
+   Shortlink: http://otto42.com/e6
+   Tags: slides, theme, wordcamp, WordPress
+   Category: Code, WordPress  |  19 Comments
+
+I’m not a fan of orange…
+
+   March 12, 2013, 1:42 pm
+
+   blue
+   I’m not a fan of the color orange. Dunno why. I prefer soothing and
+   relaxing colors, like blues and greens.
+
+   But the new Twenty Thirteen theme for the next version of WordPress is
+   very, very orange.
+
+   Since I like to run the default themes over on my other site, this
+   clearly could not stand.
+
+   So, I did a palette swap. Basically, I took the three header images,
+   and swapped the Red and Blue channels, leaving the Green channel alone.
+   Easy enough to do in Photoshop.
+
+   Then, I made a child theme, and put some minimalist code in the
+   functions.php file to fiddle with the default header images to use the
+   ones from my child theme instead of the normal ones. Finally, I did a
+   search and replace for all the color references in the style.css file,
+   swapped the R and B values in them, then put them in my new style.css
+   file.
+
+   The result you can see over on my other blog. Yes, I know I don’t write
+   often enough. Hell, I’ve been busy.
+
+   Child themes are fun to mess with. Here’s a copy if you want it for
+   anything.
+
+   Twenty Thirteen – Blue
+
+   Enjoy! :)
+   Shortlink: http://otto42.com/e3
+   Tags: blue, child, orange, theme, twentythirteen
+   Category: Code, WordPress  |  27 Comments
+
+Jetpack and the Infinite Scroll
+
+   November 16, 2012, 1:38 pm
+
+   Infinite Scroll
+   Everybody seems to be talking about Photon. Nobody really seemed to
+   notice the Infinite Scroll feature added to the latest Jetpack. While
+   it is slightly buggy, it’s pretty neat nevertheless. It’s also pretty
+   easy to add support for in your own themes. I added it to this blog,
+   just to see how. :)
+
+   So, here’s how you do it.
+
+Step 1: Use Template Parts
+
+   Look at the HTML produced by your main Loop. The main one being the one
+   that displays the main set of posts. This is usually in the index.php
+   file.
+
+   Let’s say that HTML looks like this (overly simplified, of course):
+<div id="content">
+        <div class="post">...</div>
+        <div class="post">...</div>
+        <div class="post">...</div>
+</div>
+
+   Each one of those posts is produced inside the loop, while the content
+   container is outside it. Now let’s look at a simplified version of what
+   The Loop might look like in PHP:
+<?php while (have_posts()) : the_post(); ?>
+        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+... all the post creation stuff here ...
+        </div>
+<?php endwhile; ?>
+
+   What we need to do is to separate that “post” from the Loop itself, in
+   a way that the Infinite Scroll code can then produce the post
+   independently. With Template Parts, this is actually rather easy. We
+   just cut and paste all that post-producing code, and put it in a new
+   “content.php” file. Then we change the Loop into this:
+<?php
+while (have_posts()) : the_post();
+        get_template_part( 'content', get_post_format() );
+endwhile;
+?>
+
+   The get_template_part function will load that content.php file for us
+   and include it there.
+
+   See a template is a file listed in the Template Hierarchy. But a
+   template part is a file that contains only part of a template, and you
+   can name them yourself. In this case, we named it “content”. It will
+   become, therefore, content.php in the theme.
+
+   We also created a mini-hierarchy for ourselves while we were at it,
+   using the Post Formats. What this means is that if I want to display,
+   say, the “quote” format posts differently, I can copy content.php to
+   content-quote.php, and make my changes in there. Then quotes will be
+   displayed however I like in that new template part. And if
+   content-quote.php doesn’t exist, then it falls back to using
+   content.php, just like the normal fallbacks.
+
+   By separating out the Post from the surrounding loop that it’s in, then
+   each post can be generated independently, sent over the wire via
+   Javascript, and inserted into the page. Thus, Infinite Scroll can do
+   the job.
+
+Step 2: Enable Infinite Scroll
+
+   A theme can declare support for infinite scroll using
+   add_theme_support(), like so:
+add_theme_support( 'infinite-scroll', array(
+        'container'    => 'content',
+) );
+
+   The “container” is the ID of the element in the page that was our
+   wrapper class. Let’s go back to that HTML again:
+<div id="content">
+        <div class="post">...</div>
+        <div class="post">...</div>
+        <div class="post">...</div>
+</div>
+
+   See how the “id=content” is the big wrapper for our posts? Well, we
+   tell the Infinite Scroll code that, it then uses it in the Javascript
+   to know where to append the new posts to. Easy.
+
+Step 3: Finishing touches
+
+   Simply speaking, that’s all there really is to it. But, there’s
+   additional ways to customize it for your particular theme, to look
+   better. Each of these is an option you can add to that
+   add_theme_support call. Let’s go over them briefly:
+
+   Footer: You may have noticed when you enabled this and test it that you
+   now have a sort of white footer overlay at the bottom of the page. This
+   provides the page with a footer space that scrolls with the page,
+   giving it a sort of finished look. Some people may like it, some not so
+   much. We can use the footer option to adjust it.
+
+   First, using ‘footer’=>false will simply turn it off.
+
+   Alternatively, giving it the ID of some other element on the page will
+   make it match that element’s width. For example, if you have HTML that
+   looks like this:
+<div id="page">
+        <div id="content">
+                <div class="post">...</div>
+        </div>
+        <div id="sidebar">
+                <div>...</div>
+        </div>
+</div>
+
+   ..then using ‘footer’=>’page’ would make it match the width of the
+   “page” element, so as to be the proper width across the screen to fit
+   better with the page.
+
+   Type: Infinite Scroll supports two methods of loading new posts. One
+   method is called ‘scroll’, where new posts are loaded as the user
+   reaches the bottom of the page. When they scroll, essentially. The
+   other is called ‘click’, which adds in a new button towards the bottom
+   of the posts, and when you click it, it loads more posts. You can force
+   one type or the other using the ‘type’ option.
+
+   Footer Widgets: Some themes support having widget spaces in the footer.
+   This has become fairly commonplace after Twenty Ten did it. Well, if
+   you’re using the scroll type, then the widgets won’t be seen for a
+   while on some blogs, since it will just load in more posts and keep
+   pushing that footer further down. You could set the type to click to
+   allow the footer to actually be seen.
+
+   The ‘footer_widgets’ option lets you specify a widget space that you
+   registered with register_sidebar(). It will check that space to see if
+   there’s any widgets in it. If there are, then it will automatically set
+   type to “click” so that those widgets can be seen. If not, then it will
+   let the type stay as “scroll”. Thus, it can choose the type
+   intelligently, depending on whether widgets exist in the footer or not.
+
+   Wrapper: If you have some complex HTML for your posts, then you can
+   give the ‘wrapper’ option a classname to use. It will wrap the returned
+   posts in a div with that custom classname for you. This also allows you
+   a way to perform styling tricks on those just-loaded posts.
+
+   Render: The ‘render’ option gives you an alternative to making a
+   content template part. You can give this a function name, and that
+   function will be called to render the posts instead. If you’re writing
+   a theme, I suggest using the content template part instead. It’s easier
+   and way more flexible.
+
+   Posts per page: By default, the Infinite Scroll module makes the page
+   show 7 posts only, then more load when you scroll down (for the
+   ‘scroll’ type). This is smaller than most people’s settings (default of
+   which is 10), but it doesn’t matter since the whole point is to make it
+   load new posts when you scroll down to them. If you happen to need a
+   different number, you can use the ‘posts_per_page’ option to change the
+   number.
+
+   There’s also a few things you can do with CSS.
+
+   When infinite scrolling is enabled, then body_class (which you should
+   have been using in the body tag anyway) will get the “infinite-scroll”
+   class added to it. If the type setting is ‘scroll’ instead of ‘click’,
+   then the class “neverending” will be there too. Also, once the user
+   gets to the last post, the javascript code adds an “infinity-end” class
+   to the body, meaning that you can style what happens when the user gets
+   to the end. Jetpack’s documentation page suggests hiding the normal
+   footer until the user actually reaches it, using CSS like this:
+/* Hides navigation links and site footer when infinite scroll is active */
+.infinite-scroll #navigation,
+.infinite-scroll.neverending #footer {
+        display: none;
+}
+/* Shows the footer again in case all posts have been loaded */
+.infinity-end.neverending #footer {
+        display: block;
+}
+
+   But obviously you can use it for more than just this functionality;
+   because it’s on the body, the classes can be used to adjust anything on
+   the page, and make them different with the infinite scroll than without
+   it.
+
+   You can also style the “span.infinite-loader”. This is the spinning
+   handle thing that shows up at the bottom of posts, before the new ones
+   load in. Honestly, the loading is pretty quick and the default style
+   looks pretty good to me. You can adjust the style of it if you like,
+   perhaps to make it more centered on the container.
+
+   The div#infinite-handle will be the box that shows up to load more
+   posts, if the type is set to “click”. You can use this to reposition
+   the box, make it wider, change the color, etc.
+
+   Finally, if you are doing anything extremely tricky with Javascript,
+   loading in new posts may be not handled precisely well by your existing
+   code. The official support page methods a post-load event fired on
+   document.body that occurs when the posts are loaded. You should refer
+   to that documentation for more info on it, if needed.
+
+Summary
+
+   On the whole, it’s a clever module to add to Jetpack. It still has some
+   problems with specific sorts of content (some videos display very wonky
+   sometimes), but I’m sure they’ll have that sorted out before too long.
+   Adding support for it in your theme might also get you thinking about
+   Template Parts and how to use them, and that’s definitely a good thing
+   to be doing.
+   Shortlink: http://otto42.com/e0
+   Tags: infinite scroll, jetpack, template part
+   Category: Code, Other  |  42 Comments
+
+More Internationalization Fun
+
+   September 19, 2012, 5:10 pm
+
+   So in my last post about Internationalization, I covered some
+   non-obvious things that you should consider when adding translation
+   capabilities to your code.
+
+   Today, let’s add to that by covering some non-obvious translation
+   functions. You’re probably not using these, since they don’t get talked
+   about as much. But there’s probably places where you should be using
+   them, so knowing about them is the first step. And knowing is half the
+   battle.
+
+Basic functions, again
+
+   Last time I talked about these functions:
+     * __()
+     * _e()
+     * _x()
+     * _ex()
+     * _n()
+
+   Let’s cover the ones I didn’t talk about.
+
+Escaping output
+
+   In practice, you tend to use these mostly when outputting things onto
+   the main page or in the admin. But, one thing you also use a lot when
+   outputting text is the standard escaping functions. These are things
+   like esc_html(), which outputs text in a way that makes it “safe” to go
+   onto a webpage, without being interpreted as HTML. If the text comes
+   from user input, then this is a good idea.
+
+   Now, if you think about it, then the text you have may be translated in
+   some other file, which you don’t control either. So escaping that text
+   might be a good idea too. If somebody snuck bad code into a translation
+   file, a user might get bad things displayed without being able to
+   easily find it.
+
+   So you could write something like echo
+   esc_html(__('text','text-domain')), but that’s a bit wordy. Let’s talk
+   about some shortcuts.
+
+   The esc_html__() function is the equivalent of esc_html(__(...)). It
+   does the escaped html and the double-underscore translation all in one
+   go. Similarly, the esc_html_e() function does the same thing, but it
+   echoes the result, just like the _e() function would. And there’s also
+   esc_html_x(), which is the equivalent of combining esc_html() and _x().
+
+   Along with those three are the three identical equivalents for
+   attributes: esc_attr__(), esc_attr_e(), and esc_attr_x(). As the name
+   implies, these combine the translation functions with esc_attr(), which
+   is the escape function specifically intended when you’re outputting
+   text into html attributes.
+
+   Also note there’s no shortcut for the equivalent of _ex(). It’s just
+   not used that much, or at least not enough to need something special
+   for it. Use an echo esc_html_x() instead.
+
+   There are no shortcuts for the other escaping functions as yet, but
+   these can save a few keystrokes and make your code that much more
+   readable.
+
+The Numerical No-op
+
+   So we’ve got some shortcuts for escaping with those three functions,
+   but where’s the love for _n()?
+
+   One of the problems with _n() is that it tends to require the strings
+   to be in the same place that the PHP variable is. For all the other
+   functions, you could have a big file of strings in an array, and then
+   reference those strings by name or something elsewhere because they
+   don’t require any PHP variables. Nothing about them is computed at the
+   time of the output.
+
+   But not so with _n(), that $number to decide which string to use means
+   that the strings have to be right there, they can’t be translated
+   separately and referenced.
+
+   This is where _n_noop() comes in. The _n_noop() function basically
+   takes the singular and plural strings for something, along with the
+   text domain, and stores them in an array so that they can be referenced
+   later by a function named translate_nooped_plural().
+
+   Perhaps an example is in order. Let’s go back to the tacos:
+$string = sprintf( _n('You have %d taco.', 'You have %d tacos.', $number, 'plugi
+n-domain'), $number );
+
+   What if we wanted those strings somewhere else? Like in a big file with
+   all of our strings. Here’s a way to separate the strings from the _n()
+   call:
+$taco_plural = _n_noop('You have %d taco.', 'You have %d tacos.', 'plugin-domain
+');
+$string = sprintf( translate_nooped_plural( $taco_plural, $number) , $number );
+
+   Now, that $taco_plural can be defined anywhere. Note that it contains
+   no references to PHP variables. It’s basically static and unchanging.
+   This allows us to separate it, then reference it elsewhere for the
+   actual translation. The translate_nooped_plural() function performs the
+   same job as _n() does, choosing which string to use based on the
+   $number of tacos. The sprintf then pushes the $number into the chosen
+   string, replacing the %d with the number.
+
+   Thus, that lets us extract the translatable strings out and put them
+   anywhere we choose.
+
+   Also of note: The _nx_noop() function is a cross between _n_noop() and
+   _x(). It takes a context for the translators as the third argument, and
+   the domain becomes the fourth argument. Useful if you need to explain
+   to the translators the context surrounding the pluralization choice.
+
+Numbers and Dates
+
+   The number_format_i18n() function is functionally equivalent to the PHP
+   number_format function. It lets you format numbers with commas at the
+   thousands mark and so forth, except that it also takes localization
+   into account. Not everybody uses commas for thousands and periods for
+   decimals. This function will do the translation appropriately for that
+   aspect.
+
+   The date_i18n() function is functionally equivalent to the PHP date
+   function. It will handle all the same string formatting parameters as
+   date() will, but it will cause output to be translated for month names,
+   day-of-week names, and so forth. Of note is that it doesn’t change the
+   format requested. If some places put days before months, for example,
+   it won’t handle that. But it will output the month name in the native
+   language (if the translation pack has the right month name in it). So
+   you may want to run the date formatting string through __() as well, to
+   let translators adjust the date format accordingly.
+
+Wrap up
+
+   And that’s pretty much all the rest of the translation functions that I
+   didn’t cover before. I may have forgotten a few useful ones here or
+   there. Feel free to comment about anything I missed, or what you see
+   most often, especially if you’re doing translations yourself.
+   Shortlink: http://otto42.com/bo
+   Tags: i18n, internationalization, l10n, localization, PHP, translation,
+   WordPress
+   Category: Code, WordPress  |  8 Comments
+
+Making a custom control for the Theme Customizer
+
+   August 3, 2012, 2:34 pm
+
+   Okay, a quick one today. Let’s make a custom control for the
+   customizer.
+
+   Back in the first tutorial, I talked about the various controls
+   available in the customizer. Specifically I mentioned image handling,
+   color wheels, text boxes, radios, dropdowns, and checkboxes.
+
+   Let’s try a new one? How about a textarea? It’s not in the core code,
+   but it’s easy enough to add one.
+
+Create a Class
+
+   So first, we have to create our class. Now, where we create this class
+   is important. Specifically, we have to create it in the function called
+   by the customize_register action. You remember that, right? It started
+   like this:
+add_action( 'customize_register', 'themename_customize_register' );
+function themename_customize_register($wp_customize) {
+        // ... do stuff ...
+
+   The reason we have to create our class in here is because we need to
+   make our new class extend the built in WP_Customize_Control class, and
+   that class only gets loaded and defined when we’re actually using the
+   customizer. An alternate means of doing this would be to wrap the class
+   definition in an “if (class_exists(‘WP_Customize_Control’))” statement,
+   if you prefer to not have your classes defined inside a function.
+   Personal preference, I don’t think it makes a difference either way.
+
+   So, here’s our textarea control. All we’re doing is to override the
+   render_content() function and make it display a textarea.
+class Example_Customize_Textarea_Control extends WP_Customize_Control {
+        public $type = 'textarea';
+
+        public function render_content() {
+                ?>
+                <label>
+                <span class="customize-control-title"><?php echo esc_html( $this
+->label ); ?></span>
+                <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><
+?php echo esc_textarea( $this->value() ); ?></textarea>
+                </label>
+                <?php
+        }
+}
+
+   You can see how simple it is to do, really. We just output a span with
+   the value from $this->label for the name displayed above the textarea,
+   then output the textarea itself.
+
+   Note that the textarea has no “name” parameter. It doesn’t need one.
+   The $this->link() function outputs the information for the customizer
+   script. Specifically, it will create a “data-customizer-setting-link”
+   attribute, to link the textarea to the proper setting it’s controlling.
+
+   Now, we just have to use the new control.
+
+Add a setting and control
+
+   Let’s go back to the theme demo I used in the second customizer
+   tutorial post, and add a new setting and control to demonstrate this:
+$wp_customize->add_setting( 'textarea_setting', array(
+        'default'        => 'Some default text for the textarea',
+) );
+
+$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customiz
+e, 'textarea_setting', array(
+        'label'   => 'Textarea Setting',
+        'section' => 'themedemo_demo_settings',
+        'settings'   => 'textarea_setting',
+) ) );
+
+   Nothing complicated there. We create the setting, then we create our
+   control, using the new class we made for this purpose earlier.
+
+Use the setting in the theme
+
+   Now let’s add to that index.php file I made in the theme demo to show
+   the results of our work.
+echo 'textarea_setting => '.get_theme_mod( 'textarea_setting', 'default_value' )
+."\n";
+
+   And that’s pretty much that. We now have a textarea control, and
+   changing/saving results in the setting changing as well.
+
+   You can extend this further to use postMessage for real-time changing
+   of settings, if you like.
+
+   Custom controls using complex javascript and such can be done as well.
+   Examine the core WP_Customize_Color_Control, which uses the farbtastic
+   Javascript for the color wheel. That one has special JS in the
+   customize-controls.dex.js file to handle receiving the input and
+   passing it along to the customizer JS. Look for “api.ColorControl” and
+   how it gets the setting from the HTML and sets it. I’m not a JS guru,
+   that sort of thing is slightly outside my own scope. :)
+
+   Any ideas for other controls that themes might need? Leave a comment,
+   maybe somebody has a solution.
+   Shortlink: http://otto42.com/bj
+   Tags: control, custom, customizer, setting, theme
+   Category: Code, WordPress  |  125 Comments
+   « Previous Entries
+     * Recent Posts
+          + On the topic of that pesky widget…
+          + What’s new with the Customizer
+          + Better Know a Vulnerability: Cross Site Request Forgery (CSRF)
+          + Better Know a Vulnerability: SQL Injection
+          + Language Packs 101 – Prepwork
+     * Email Me
+          + Memphis, TN 38103 U.S.A. Otto
+            240cf86e-5cad-11dc-8314-0800200c9a66 otto@ottodestruct.com
+       [gplus-16.png]
+     * Categories
+          + Code
+          + Other
+          + Rants
+          + WordPress
+     * WP Core Contributions
+       [46106] - #47046
+       [45546] - #46938
+       [44264] - #45178
+       [43946] - #45178
+       [43937] - #45178
+       [42847] - #42789
+       [42358] - #42789
+       [42131] - #41057
+       [35594] - #21389
+       [34880] - #22212
+       [33877] - #33423
+       [33800] - #33590
+       [33799] - #33590
+       [33798] - #33590
+       [33797] - #33590
+       [33796] - #33590
+       [33795] - #33590
+       [33727] - #33423
+       [28349] - #26869
+       [28348] - #26869
+       [28347] - #26869
+       [28370] - #25243
+       [28072] - #19393
+       [27522] - #19889
+       [27399] - #25665
+       [26978] - #23149
+       [26711] - #21442
+       [26072] - #25858
+       [22152] - #21914
+       [22026] - #22002
+       [21839] - #16996
+       [21802] - #18674
+       [21776] - #13729
+       [21609] - #19324
+       [20916] - #20448
+       [20784] - #20448
+       [20783] - #20448
+       [20267] - #13774
+       [19721] - #19626
+       [19003] - #17406
+       [18741] - #15473
+       [18602] - #18230
+       [18541] - #16687
+       [18205] - #17148
+       [17254] - #16192
+       [16555] - #12891
+       [16284] - #13324
+       [13420] - #12291
+       [12581] - #7225
+       [11738] - #10145
+       [11329] - #3962
+       [10962] - #3962
+       [10757] - #3962
+       [10753] - #3962
+       [10252] - #6791
+       [9276] - #7124
+       [9209] - #7901
+       [9207] - #7635
+       [9139] - #7847
+       [9089] - #7772
+       [8968] - #7761
+       [8285] - #6879
+       [8208] - #4448
+       [8132] - #4954
+       [8131] - #6590
+       [7869] - #6513
+       [7647] - #6608
+       [7461] - #6339
+       [6873] - #4986
+       [6760] - #4617
+       [6616] - #5155
+       [6439] - #2805
+       [6091] - #4182
+       [6086] - #4946
+       [5986] - #4873
+       [5982] - #4800
+       [5958] - #4625
+       [5920] - #4703
+       [5910] - #4654
+       [5881] - #4704
+       [5857] - #4625
+       [5848] - #4499
+       [5845] - #4547
+       [5317] - #4169
+       [5154] - #4057
+       [5151] - #4057
+       [5104] - #3790
+       [4964] - #3898
+     * Archives
+          + December 2017
+          + May 2015
+          + February 2014
+          + November 2013
+          + October 2013
+          + June 2013
+          + March 2013
+          + November 2012
+          + September 2012
+          + August 2012
+          + July 2012
+          + May 2012
+          + February 2012
+          + January 2012
+          + December 2011
+          + November 2011
+          + October 2011
+          + September 2011
+          + August 2011
+          + July 2011
+          + June 2011
+          + May 2011
+          + April 2011
+          + March 2011
+          + February 2011
+          + January 2011
+          + December 2010
+          + November 2010
+          + October 2010
+          + September 2010
+          + August 2010
+          + June 2010
+          + May 2010
+          + April 2010
+          + March 2010
+          + February 2010
+          + November 2009
+          + September 2009
+          + September 2008
+
+   Member of The Internet Defense League
+   Entries (RSS) and Comments (RSS).
+   This page, by Otto, is licensed under a Creative Commons
+   Attribution-ShareAlike License.
+   Powered by WordPress.
+   css.php

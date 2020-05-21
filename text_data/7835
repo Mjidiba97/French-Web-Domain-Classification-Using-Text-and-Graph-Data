@@ -1,0 +1,1357 @@
+    #Python Enhancement Proposals Python Job Opportunities Python Software
+   Foundation News Python Insider
+
+   Notice: While Javascript is not essential for this website, your
+   interaction with the content will be limited. Please turn Javascript on
+   for the full experience.
+
+   Skip to content
+   ▼ Close
+     * Python
+     * PSF
+     * Docs
+     * PyPI
+     * Jobs
+     * Community
+
+   ▲ The Python Network
+
+python™
+
+   Donate
+   ≡ Menu
+
+   Search This Site ____________________ (BUTTON) GO
+
+     * A A
+          + Smaller
+          + Larger
+          + Reset
+
+     * Socialize
+          + Facebook
+          + Twitter
+          + Chat on IRC
+
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+
+     * >_ Launch Interactive Shell
+
+     *
+# Python 3: Fibonacci series up to n
+>>> def fib(n):
+>>>     a, b = 0, 1
+>>>     while a < n:
+>>>         print(a, end=' ')
+>>>         a, b = b, a+b
+>>>     print()
+>>> fib(1000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+
+Functions Defined
+       The core of extensible programming is defining functions. Python
+       allows mandatory and optional arguments, keyword arguments, and
+       even arbitrary argument lists. More about defining functions in
+       Python 3
+     *
+# Python 3: List comprehensions
+>>> fruits = ['Banana', 'Apple', 'Lime']
+>>> loud_fruits = [fruit.upper() for fruit in fruits]
+>>> print(loud_fruits)
+['BANANA', 'APPLE', 'LIME']
+
+# List and the enumerate function
+>>> list(enumerate(fruits))
+[(0, 'Banana'), (1, 'Apple'), (2, 'Lime')]
+
+Compound Data Types
+       Lists (known as arrays in other languages) are one of the compound
+       data types that Python understands. Lists can be indexed, sliced
+       and manipulated with other built-in functions. More about lists in
+       Python 3
+     *
+# Python 3: Simple arithmetic
+>>> 1 / 2
+0.5
+>>> 2 ** 3
+8
+>>> 17 / 3  # classic division returns a float
+5.666666666666667
+>>> 17 // 3  # floor division
+5
+
+Intuitive Interpretation
+       Calculations are simple with Python, and expression syntax is
+       straightforward: the operators +, -, * and / work as expected;
+       parentheses () can be used for grouping. More about simple math
+       functions in Python 3.
+     *
+# Python 3: Simple output (with Unicode)
+>>> print("Hello, I'm Python!")
+Hello, I'm Python!
+
+# Input, assignment
+>>> name = input('What is your name?\n')
+>>> print('Hi, %s.' % name)
+What is your name?
+Python
+Hi, Python.
+
+Quick & Easy to Learn
+       Experienced programmers in any other language can pick up Python
+       very quickly, and beginners find the clean syntax and indentation
+       structure easy to learn. Whet your appetite with our Python 3
+       overview.
+     *
+# For loop on a list
+>>> numbers = [2, 4, 6, 8]
+>>> product = 1
+>>> for number in numbers:
+...    product = product * number
+...
+>>> print('The product is:', product)
+The product is: 384
+
+All the Flow You’d Expect
+       Python knows the usual control flow statements that other languages
+       speak — if, for, while and range — with some of its own twists, of
+       course. More control flow tools in Python 3
+
+   Python is a programming language that lets you work quickly and
+   integrate systems more effectively. Learn More
+
+Get Started
+
+   Whether you're new to programming or an experienced developer, it's
+   easy to learn and use Python.
+
+   Start with our Beginner’s Guide
+
+Download
+
+   Python source code and installers are available for download for all
+   versions!
+
+   Latest: Python 3.7.4
+
+Docs
+
+   Documentation for Python's standard library, along with tutorials and
+   guides, are available online.
+
+   docs.python.org
+
+Jobs
+
+   Looking for work or have a Python related position that you're trying
+   to hire for? Our relaunched community-run job board is the place to go.
+
+   jobs.python.org
+
+Latest News
+
+   More
+     * 2019-09-25 PyPI Security Q4 2019 Request for Proposals period
+       opens.
+     * 2019-09-24 The Python Software Foundation has updated its Code of
+       Conduct
+     * 2019-09-09 Python 3.5.8rc1 is now available
+     * 2019-08-30 Python 3.8.0b4 is now available for testing
+     * 2019-08-28 PyPI Security Q4 2019 Request for Information period
+       opens.
+
+Upcoming Events
+
+   More
+     * 2019-10-03 PyCon Estonia
+     * 2019-10-03 PyCon Balkan 2019
+     * 2019-10-08 SciPy Latam
+     * 2019-10-09 PyConDE & PyData Berlin 2019
+     * 2019-10-09 PyCon ZA 2019
+
+Success Stories
+
+   More
+
+     Thanks to the flexibility of Python and the powerful ecosystem of
+     packages, the Azure CLI supports features such as autocompletion (in
+     shells that support it), persistent credentials, JMESPath result
+     parsing, lazy initialization, network-less unit tests, and more.
+
+   Building an open-source and cross-platform Azure CLI with Python by Dan
+   Taylor
+
+Use Python for…
+
+   More
+     * Web Development: Django, Pyramid, Bottle, Tornado, Flask, web2py
+     * GUI Development: tkInter, PyGObject, PyQt, PySide, Kivy, wxPython
+     * Scientific and Numeric: SciPy, Pandas, IPython
+     * Software Development: Buildbot, Trac, Roundup
+     * System Administration: Ansible, Salt, OpenStack
+
+>>> Python Enhancement Proposals (PEPs): The future of Python is discussed
+here. RSS
+
+>>> Python Software Foundation
+
+   The mission of the Python Software Foundation is to promote, protect,
+   and advance the Python programming language, and to support and
+   facilitate the growth of a diverse and international community of
+   Python programmers. Learn more
+
+   Become a Member Donate to the PSF
+
+   ▲ Back to Top
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+     * Contributing
+          + Developer's Guide
+          + Issue Tracker
+          + python-dev list
+          + Core Mentorship
+          + Report a Security Issue
+
+   ▲ Back to Top
+     * Help & General Contact
+     * Diversity Initiatives
+     * Submit Website Bug
+     * Status
+
+   Copyright ©2001-2019.  Python Software Foundation  Legal Statements
+   Privacy Policy  Powered by Heroku
+    #Python Enhancement Proposals Python Job Opportunities Python Software
+   Foundation News Python Insider
+
+   Notice: While Javascript is not essential for this website, your
+   interaction with the content will be limited. Please turn Javascript on
+   for the full experience.
+
+   Skip to content
+   ▼ Close
+     * Python
+     * PSF
+     * Docs
+     * PyPI
+     * Jobs
+     * Community
+
+   ▲ The Python Network
+
+python™
+
+   Donate
+   ≡ Menu
+
+   Search This Site {search_term_string} (BUTTON) GO
+
+     * A A
+          + Smaller
+          + Larger
+          + Reset
+
+     * Socialize
+          + Facebook
+          + Twitter
+          + Chat on IRC
+
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+
+Search Python.org
+
+   {search_term_string} Search
+
+Results
+
+       No results found.
+
+   ▲ Back to Top
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+     * Contributing
+          + Developer's Guide
+          + Issue Tracker
+          + python-dev list
+          + Core Mentorship
+          + Report a Security Issue
+
+   ▲ Back to Top
+     * Help & General Contact
+     * Diversity Initiatives
+     * Submit Website Bug
+     * Status
+
+   Copyright ©2001-2019.  Python Software Foundation  Legal Statements
+   Privacy Policy  Powered by Heroku
+    #Python Enhancement Proposals Python Job Opportunities Python Software
+   Foundation News Python Insider
+
+   Notice: While Javascript is not essential for this website, your
+   interaction with the content will be limited. Please turn Javascript on
+   for the full experience.
+
+   Skip to content
+   ▼ Close
+     * Python
+     * PSF
+     * Docs
+     * PyPI
+     * Jobs
+     * Community
+
+   ▲ The Python Network
+
+python™
+
+   Donate
+   ≡ Menu
+
+   Search This Site ____________________ (BUTTON) GO
+
+     * A A
+          + Smaller
+          + Larger
+          + Reset
+
+     * Socialize
+          + Facebook
+          + Twitter
+          + Chat on IRC
+
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+
+     * >_ Launch Interactive Shell
+
+     *
+# Python 3: Fibonacci series up to n
+>>> def fib(n):
+>>>     a, b = 0, 1
+>>>     while a < n:
+>>>         print(a, end=' ')
+>>>         a, b = b, a+b
+>>>     print()
+>>> fib(1000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+
+Functions Defined
+       The core of extensible programming is defining functions. Python
+       allows mandatory and optional arguments, keyword arguments, and
+       even arbitrary argument lists. More about defining functions in
+       Python 3
+     *
+# Python 3: List comprehensions
+>>> fruits = ['Banana', 'Apple', 'Lime']
+>>> loud_fruits = [fruit.upper() for fruit in fruits]
+>>> print(loud_fruits)
+['BANANA', 'APPLE', 'LIME']
+
+# List and the enumerate function
+>>> list(enumerate(fruits))
+[(0, 'Banana'), (1, 'Apple'), (2, 'Lime')]
+
+Compound Data Types
+       Lists (known as arrays in other languages) are one of the compound
+       data types that Python understands. Lists can be indexed, sliced
+       and manipulated with other built-in functions. More about lists in
+       Python 3
+     *
+# Python 3: Simple arithmetic
+>>> 1 / 2
+0.5
+>>> 2 ** 3
+8
+>>> 17 / 3  # classic division returns a float
+5.666666666666667
+>>> 17 // 3  # floor division
+5
+
+Intuitive Interpretation
+       Calculations are simple with Python, and expression syntax is
+       straightforward: the operators +, -, * and / work as expected;
+       parentheses () can be used for grouping. More about simple math
+       functions in Python 3.
+     *
+# Python 3: Simple output (with Unicode)
+>>> print("Hello, I'm Python!")
+Hello, I'm Python!
+
+# Input, assignment
+>>> name = input('What is your name?\n')
+>>> print('Hi, %s.' % name)
+What is your name?
+Python
+Hi, Python.
+
+Quick & Easy to Learn
+       Experienced programmers in any other language can pick up Python
+       very quickly, and beginners find the clean syntax and indentation
+       structure easy to learn. Whet your appetite with our Python 3
+       overview.
+     *
+# For loop on a list
+>>> numbers = [2, 4, 6, 8]
+>>> product = 1
+>>> for number in numbers:
+...    product = product * number
+...
+>>> print('The product is:', product)
+The product is: 384
+
+All the Flow You’d Expect
+       Python knows the usual control flow statements that other languages
+       speak — if, for, while and range — with some of its own twists, of
+       course. More control flow tools in Python 3
+
+   Python is a programming language that lets you work quickly and
+   integrate systems more effectively. Learn More
+
+Get Started
+
+   Whether you're new to programming or an experienced developer, it's
+   easy to learn and use Python.
+
+   Start with our Beginner’s Guide
+
+Download
+
+   Python source code and installers are available for download for all
+   versions!
+
+   Latest: Python 3.7.4
+
+Docs
+
+   Documentation for Python's standard library, along with tutorials and
+   guides, are available online.
+
+   docs.python.org
+
+Jobs
+
+   Looking for work or have a Python related position that you're trying
+   to hire for? Our relaunched community-run job board is the place to go.
+
+   jobs.python.org
+
+Latest News
+
+   More
+     * 2019-09-25 PyPI Security Q4 2019 Request for Proposals period
+       opens.
+     * 2019-09-24 The Python Software Foundation has updated its Code of
+       Conduct
+     * 2019-09-09 Python 3.5.8rc1 is now available
+     * 2019-08-30 Python 3.8.0b4 is now available for testing
+     * 2019-08-28 PyPI Security Q4 2019 Request for Information period
+       opens.
+
+Upcoming Events
+
+   More
+     * 2019-10-03 PyCon Estonia
+     * 2019-10-03 PyCon Balkan 2019
+     * 2019-10-08 SciPy Latam
+     * 2019-10-09 PyConDE & PyData Berlin 2019
+     * 2019-10-09 PyCon ZA 2019
+
+Success Stories
+
+   More
+
+     Thanks to the flexibility of Python and the powerful ecosystem of
+     packages, the Azure CLI supports features such as autocompletion (in
+     shells that support it), persistent credentials, JMESPath result
+     parsing, lazy initialization, network-less unit tests, and more.
+
+   Building an open-source and cross-platform Azure CLI with Python by Dan
+   Taylor
+
+Use Python for…
+
+   More
+     * Web Development: Django, Pyramid, Bottle, Tornado, Flask, web2py
+     * GUI Development: tkInter, PyGObject, PyQt, PySide, Kivy, wxPython
+     * Scientific and Numeric: SciPy, Pandas, IPython
+     * Software Development: Buildbot, Trac, Roundup
+     * System Administration: Ansible, Salt, OpenStack
+
+>>> Python Enhancement Proposals (PEPs): The future of Python is discussed
+here. RSS
+
+>>> Python Software Foundation
+
+   The mission of the Python Software Foundation is to promote, protect,
+   and advance the Python programming language, and to support and
+   facilitate the growth of a diverse and international community of
+   Python programmers. Learn more
+
+   Become a Member Donate to the PSF
+
+   ▲ Back to Top
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+     * Contributing
+          + Developer's Guide
+          + Issue Tracker
+          + python-dev list
+          + Core Mentorship
+          + Report a Security Issue
+
+   ▲ Back to Top
+     * Help & General Contact
+     * Diversity Initiatives
+     * Submit Website Bug
+     * Status
+
+   Copyright ©2001-2019.  Python Software Foundation  Legal Statements
+   Privacy Policy  Powered by Heroku
+    #Python Enhancement Proposals Python Job Opportunities Python Software
+   Foundation News Python Insider
+
+   Notice: While Javascript is not essential for this website, your
+   interaction with the content will be limited. Please turn Javascript on
+   for the full experience.
+
+   Skip to content
+   ▼ Close
+     * Python
+     * PSF
+     * Docs
+     * PyPI
+     * Jobs
+     * Community
+
+   ▲ The Python Network
+
+python™
+
+   Donate
+   ≡ Menu
+
+   Search This Site {search_term_string} (BUTTON) GO
+
+     * A A
+          + Smaller
+          + Larger
+          + Reset
+
+     * Socialize
+          + Facebook
+          + Twitter
+          + Chat on IRC
+
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+
+Search Python.org
+
+   {search_term_string} Search
+
+Results
+
+       No results found.
+
+   ▲ Back to Top
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+     * Contributing
+          + Developer's Guide
+          + Issue Tracker
+          + python-dev list
+          + Core Mentorship
+          + Report a Security Issue
+
+   ▲ Back to Top
+     * Help & General Contact
+     * Diversity Initiatives
+     * Submit Website Bug
+     * Status
+
+   Copyright ©2001-2019.  Python Software Foundation  Legal Statements
+   Privacy Policy  Powered by Heroku
+    #Python Enhancement Proposals Python Job Opportunities Python Software
+   Foundation News Python Insider
+
+   Notice: While Javascript is not essential for this website, your
+   interaction with the content will be limited. Please turn Javascript on
+   for the full experience.
+
+   Skip to content
+   ▼ Close
+     * Python
+     * PSF
+     * Docs
+     * PyPI
+     * Jobs
+     * Community
+
+   ▲ The Python Network
+
+python™
+
+   Donate
+   ≡ Menu
+
+   Search This Site ____________________ (BUTTON) GO
+
+     * A A
+          + Smaller
+          + Larger
+          + Reset
+
+     * Socialize
+          + Facebook
+          + Twitter
+          + Chat on IRC
+
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+
+     * >_ Launch Interactive Shell
+
+     *
+# Python 3: Fibonacci series up to n
+>>> def fib(n):
+>>>     a, b = 0, 1
+>>>     while a < n:
+>>>         print(a, end=' ')
+>>>         a, b = b, a+b
+>>>     print()
+>>> fib(1000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+
+Functions Defined
+       The core of extensible programming is defining functions. Python
+       allows mandatory and optional arguments, keyword arguments, and
+       even arbitrary argument lists. More about defining functions in
+       Python 3
+     *
+# Python 3: List comprehensions
+>>> fruits = ['Banana', 'Apple', 'Lime']
+>>> loud_fruits = [fruit.upper() for fruit in fruits]
+>>> print(loud_fruits)
+['BANANA', 'APPLE', 'LIME']
+
+# List and the enumerate function
+>>> list(enumerate(fruits))
+[(0, 'Banana'), (1, 'Apple'), (2, 'Lime')]
+
+Compound Data Types
+       Lists (known as arrays in other languages) are one of the compound
+       data types that Python understands. Lists can be indexed, sliced
+       and manipulated with other built-in functions. More about lists in
+       Python 3
+     *
+# Python 3: Simple arithmetic
+>>> 1 / 2
+0.5
+>>> 2 ** 3
+8
+>>> 17 / 3  # classic division returns a float
+5.666666666666667
+>>> 17 // 3  # floor division
+5
+
+Intuitive Interpretation
+       Calculations are simple with Python, and expression syntax is
+       straightforward: the operators +, -, * and / work as expected;
+       parentheses () can be used for grouping. More about simple math
+       functions in Python 3.
+     *
+# Python 3: Simple output (with Unicode)
+>>> print("Hello, I'm Python!")
+Hello, I'm Python!
+
+# Input, assignment
+>>> name = input('What is your name?\n')
+>>> print('Hi, %s.' % name)
+What is your name?
+Python
+Hi, Python.
+
+Quick & Easy to Learn
+       Experienced programmers in any other language can pick up Python
+       very quickly, and beginners find the clean syntax and indentation
+       structure easy to learn. Whet your appetite with our Python 3
+       overview.
+     *
+# For loop on a list
+>>> numbers = [2, 4, 6, 8]
+>>> product = 1
+>>> for number in numbers:
+...    product = product * number
+...
+>>> print('The product is:', product)
+The product is: 384
+
+All the Flow You’d Expect
+       Python knows the usual control flow statements that other languages
+       speak — if, for, while and range — with some of its own twists, of
+       course. More control flow tools in Python 3
+
+   Python is a programming language that lets you work quickly and
+   integrate systems more effectively. Learn More
+
+   Join the official 2019 Python Developers Survey   Start the survey!
+
+Get Started
+
+   Whether you're new to programming or an experienced developer, it's
+   easy to learn and use Python.
+
+   Start with our Beginner’s Guide
+
+Download
+
+   Python source code and installers are available for download for all
+   versions!
+
+   Latest: Python 3.8.0
+
+Docs
+
+   Documentation for Python's standard library, along with tutorials and
+   guides, are available online.
+
+   docs.python.org
+
+Jobs
+
+   Looking for work or have a Python related position that you're trying
+   to hire for? Our relaunched community-run job board is the place to go.
+
+   jobs.python.org
+
+Latest News
+
+   More
+     * 2019-11-18 Python Software Foundation Fellow Members for Q3 2019
+     * 2019-11-18 Why Sponsor PyCon 2020?
+     * 2019-11-11 Seeking Developers for Paid Contract Improving pip
+     * 2019-11-02 Python 3.5.9 is released
+     * 2019-10-31 The 2019 Python Developer Survey is here, take a few
+       minutes to complete the survey!
+
+Upcoming Events
+
+   More
+     * 2019-11-19 Charla Introducción a Python
+     * 2020-02-08 PyCascades 2020
+     * 2020-07-06 SciPy 2020
+     * 2020-07-20 EuroPython 2020
+     * 2020-07-27 EuroSciPy 2020
+
+Success Stories
+
+   More
+
+     Thanks to the flexibility of Python and the powerful ecosystem of
+     packages, the Azure CLI supports features such as autocompletion (in
+     shells that support it), persistent credentials, JMESPath result
+     parsing, lazy initialization, network-less unit tests, and more.
+
+   Building an open-source and cross-platform Azure CLI with Python by Dan
+   Taylor
+
+Use Python for…
+
+   More
+     * Web Development: Django, Pyramid, Bottle, Tornado, Flask, web2py
+     * GUI Development: tkInter, PyGObject, PyQt, PySide, Kivy, wxPython
+     * Scientific and Numeric: SciPy, Pandas, IPython
+     * Software Development: Buildbot, Trac, Roundup
+     * System Administration: Ansible, Salt, OpenStack
+
+>>> Python Enhancement Proposals (PEPs): The future of Python is discussed
+here. RSS
+
+>>> Python Software Foundation
+
+   The mission of the Python Software Foundation is to promote, protect,
+   and advance the Python programming language, and to support and
+   facilitate the growth of a diverse and international community of
+   Python programmers. Learn more
+
+   Become a Member Donate to the PSF
+
+   ▲ Back to Top
+     * About
+          + Applications
+          + Quotes
+          + Getting Started
+          + Help
+          + Python Brochure
+     * Downloads
+          + All releases
+          + Source code
+          + Windows
+          + Mac OS X
+          + Other Platforms
+          + License
+          + Alternative Implementations
+     * Documentation
+          + Docs
+          + Audio/Visual Talks
+          + Beginner's Guide
+          + Developer's Guide
+          + FAQ
+          + Non-English Docs
+          + PEP Index
+          + Python Books
+          + Python Essays
+     * Community
+          + Community Survey
+          + Diversity
+          + Mailing Lists
+          + IRC
+          + Forums
+          + PSF Annual Impact Report
+          + Python Conferences
+          + Special Interest Groups
+          + Python Logo
+          + Python Wiki
+          + Merchandise
+          + Community Awards
+          + Code of Conduct
+     * Success Stories
+          + Arts
+          + Business
+          + Education
+          + Engineering
+          + Government
+          + Scientific
+          + Software Development
+     * News
+          + Python News
+          + PSF Newsletter
+          + Community News
+          + PSF News
+          + PyCon News
+     * Events
+          + Python Events
+          + User Group Events
+          + Python Events Archive
+          + User Group Events Archive
+          + Submit an Event
+     * Contributing
+          + Developer's Guide
+          + Issue Tracker
+          + python-dev list
+          + Core Mentorship
+          + Report a Security Issue
+
+   ▲ Back to Top
+     * Help & General Contact
+     * Diversity Initiatives
+     * Submit Website Bug
+     * Status
+
+   Copyright ©2001-2019.  Python Software Foundation  Legal Statements
+   Privacy Policy  Powered by Heroku

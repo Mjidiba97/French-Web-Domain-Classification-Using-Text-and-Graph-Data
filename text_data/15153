@@ -1,0 +1,1347 @@
+   #Free AdWords Scripts - Atom Free AdWords Scripts - RSS
+
+Free AdWords Scripts
+
+   A blog dedicated to AdWords Scripts. Always on. Always Free.
+
+Thursday, September 27, 2018
+
+Check Close Variants Your Ads Are Showing For
+
+   Google changed how Close Variants work and now exact match keywords may
+   also show an ad when Google believes the meaning of the search is the
+   same as the keyword. Kind of like a synonym, but potentially even
+   broader.
+   So here's a script you can use to see exactly what Google considers to
+   be a 'close variant'. The script pulls all queries that were triggered
+   by close variants. It also pulls the associated keyword. It joins the
+   query and keyword and then puts the data on a spreadsheet.
+   [close%2Bvariant%2Bkeyword%2Banalysis.png]
+   On the spreadsheet, you can see line by line what the keyword is and
+   what the close variant is. If you want, you can compare metrics to
+   decide if a close variant that seems a little odd may actually be
+   outperforming the keyword.
+   I thought it'd also be interesting to add an automatic way to see how
+   close the query is to the keyword. Whereas going from the keyword
+   [optmyzr] to 'opmyzr' seems like a definite good case of a close
+   variant because it's a simple typo in a brand name, going from
+   [campsites in yosemite] to 'campgrounds yosemite' may be too much of a
+   stretch from the original keyword.
+   To calculate the similarity of the close variant to the keyword, I
+   found an algorithm for the Levenshtein distance which counts the number
+   of characters that must be deleted, edited or added to go from one
+   string to another string. A big number in the Levenshtein column means
+   the query is more different from the keyword.
+   Grab the code below to try it in your Google Ads account. I've also
+   included a table showing how match types work after the change from
+   Google and a video that goes through using the script in case anyone is
+   just getting their feet wet with scripts.
+   [matchtype2018.png]
+
+   IFRAME:
+   https://www.youtube.com/embed/6xD_8ipxlTs?feature=player_embedded
+
+   Posted by Unknown at 5:36 PM 11 comments:
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+Thursday, March 29, 2018
+
+Automatically Refresh Weather Data in a Spreadsheet
+
+   Bidding by weather is a classic example of the power of AdWords Scripts
+   but the code from Google can be daunting to implement for scripting
+   newbies. Recently my company Optmyzr launched the ability to connect
+   external data to a Rule Engine, making it possible to bid by weather
+   without writing any code.
+   A solution like this uses a Google Sheet that is automatically updated
+   with current weather conditions. While adding the API calls to fetch
+   the weather is straightforward, getting it to automatically refresh
+   this data is difficult. This post covers a solution for updating
+   external data on a spreadsheet automatically.
+   First, grab a copy of this Google Spreadsheet that contains a function
+   courtesy of Mogsdad on StackOverflow that handles updating the weather.
+   It does this by removing and then adding back all functions that deal
+   with importing external data.
+   This spreadsheet also contains the API connection strings that fetch
+   the temperature and conditions for a zip code.
+   [Weather%2BAPI%2BURL.jpg]
+   To be able to use the weather API, be sure to put in your own API key
+   on the settings sheet. You can request one
+   from OpenWeatherMap.orghttps://openweathermap.org/appid#get.
+   [Add%2BAPI%2Bkey%2Bto%2Bget%2Bweather%2Bdata.jpg]
+   To automatically update the weather on a schedule, set a time-based
+   trigger for the function RefreshImports by going to the "Tools" menu in
+   the spreadsheet and selecting "Script Editor" and then clicking the
+   fields shown in the screenshot below:
+   [Add%2Ba%2Btime%2Btrigger.jpg]
+   You'll also need to update the code at line 17 to reference the ID of
+   your own copy of the spreadsheet. For example, grab this part of the
+   URL:
+   [what%2Bis%2Bthe%2Bid%2Bof%2Ba%2Bgoogle%2Bspreadsheet.jpg]
+   And put that into line 17 of the script that's associated with the
+   spreadsheet here:
+   [where%2Bto%2Bcopy%2Bthe%2BID.jpg]
+   That's it. Now you have a spreadsheet that automatically refreshes with
+   current weather data and you can use it for other AdWords automations.
+   Posted by Unknown at 10:47 AM 9 comments:
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+Thursday, March 22, 2018
+
+Automatically Put Pivoted AdWords Data in a Spreadsheet
+
+   I've written several free scripts that export AdWords data to a Google
+   spreadsheet but the one I'll share below does something a little more
+   and pivots the reports so that segment data shows up in columns rather
+   than rows.
+
+The Problem With Google's AdWords Reports
+
+   Here's what the typical output from an AdWords report looks like if you
+   use a script like this one to add it in a Google sheet.
+
+                           [AdWords-Report-With-Segments.jpg]
+        AdWords report data that was automatically added to a Google
+    spreadsheet. The report contains keyword conversion data segmented by
+     conversion type name and day of week, resulting in multiple rows of
+                           data for each keyword.
+
+   I highlighted the cells for the same keyword ID in green so that you
+   can easily see that there are 7 rows of data for the same keyword. Each
+   row has different values for the segments 'ConversionType' and
+   'DayOfWeek'.
+   Here's why I don't like getting my reports this way... In a typical
+   AdWords optimization, I might evaluate a keyword to see if it meets
+   certain criteria, and when it does, change the bid. For example, for
+   keywords with more than 5 total "Sign Up" conversions, and at least 2
+   of those conversions on today's day of the week,  I might raise the
+   bid.
+   This is not easy to do with the spreadsheet above because I can't
+   simply build a formula for each row as that would ignore the data from
+   the other 6 rows about the same entity.
+
+A Better Format for AdWords Reports
+
+   To get the report the way I want, I need to do some vlookups and data
+   aggregation so that all the data for a keyword is moved onto a single
+   row. This is what my spreadsheet should look like to make optimizing
+   easy:
+
+                      [AdWords-Data-In-Spreadsheet-With-Pivot.jpg]
+    AdWords report data that is aggregated by entities. Here there is one
+    row for every keyword along with one column for every combination of
+                            metrics and segments.
+
+   Now you can see there is only 1 row for that same keyword ID as before
+   (highlighted in green). Now I can write a spreadsheet formula that has
+   access to all the elements I need on one row.
+
+How Scripts Solved This Problem
+
+   To get the spreadsheet output in the format I wanted, I wrote a script
+   that finds all possible values for the included segments and then
+   combines this with the different metrics. For example, possible values
+   for the DayOfWeek segment are 'Monday', 'Tuesday', 'Wednesday', etc.
+   Combining this with my metrics, I get Monday.Conversions,
+   Monday.AllConversions, etc. Each of these is then treated as a column
+   in the sheet.
+   So now I can more easily do my optimization. I could also feed this
+   sheet into a tool like Optmyzr's Rule Engine so that I could start
+   automating account management based on factors like day of week, type
+   of conversion, or any other segment I include on the sheet. Optmyzr is
+   my company and also runs this blog.
+
+How to run this script:
+
+   After installing the script code that's all the way at the bottom of
+   this post into an AdWords account (a child account, not an MCC
+   account), you can edit the following settings to customize it:
+    1. attributes: these are the AdWords reporting attributes. You will
+       get a single spreadsheet row per unique combination of attributes
+    2. segments: these are the AdWords reporting segments. The values of
+       each segment will be joined with metrics and create 1 column for
+       each combination
+    3. metrics: the AdWords reporting metrics to include.
+    4. sourceReport: the report type from Google. See the link below for
+       more information
+    5. spreadsheetUrl: the Url of the Google spreadsheet that this script
+       will update.
+    6. tabName: the name of the sheet (tab) in the spreadsheet that should
+       be updated.
+    7. reportVersion: the version of the AdWords API reports you’re using.
+       The data available in the Ads API changes periodically so this
+       ensures our script talks to the right version of AdWords.
+
+Where to Find Valid Settings for the Script
+
+   Here is the list of acceptable attributes, segments and metrics for the
+   keywords performance report:
+   https://developers.google.com/adwords/api/docs/appendix/reports/keyword
+   s-performance-report. As you can see, Google makes it really easy to
+   see what are attributes vs. segments vs metrics. Just be sure to
+   populate the right settings in the script based on what type of data
+   you're adding.
+   [attributes-segments-metrics.jpg]
+   So for example, if you wanted to add ApprovalStatus to the report,
+   you'd put add it to the comma separated list of attributes as seen
+   here:
+   [attributes.jpg]
+   Here is the full list of all AdWords reports with the available
+   attributes, segments, and metrics to help you create correct settings.
+
+One thing to watch out for:
+
+   Note that in the resulting spreadsheet, you can't total up the numbers
+   across a row because metrics are included multiple times, once per
+   included segment. For example, in a report with the 2 segments
+   DayOfWeek and ConversionType, if a keyword has 10 conversions, then the
+   sum of all the conversion columns for that row will be 20 (10
+   conversions * 2 segments).
+
+Another Popular Script For Putting AdWords Data in Spreadsheets
+
+   Last June I wrote a script that makes it super easy to do custom data
+   pulls from AdWords and put the data in a spreadsheet so I was happy to
+   hear people still talking about this script at SMX West in March. You
+   can find it on Search Engine Land if you're looking for more options to
+   get AdWords data in spreadsheets without paying someone for it.
+   Posted by Unknown at 7:36 PM 4 comments:
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+Wednesday, January 31, 2018
+
+Working with Experiment Campaigns in AdWords Scripts
+
+   If you've started using Google's Draft and Experiment campaigns, you
+   may have noticed some odd behavior with scripts. We were getting these
+   campaigns back in our selectors, even if they were no longer active
+   experiments. And if we tried to change their status to 'ended', we
+   couldn't do so.
+   I'll explain the similarities and differences so that hopefully you can
+   avoid some of the frustration I faced when we started using experiments
+   in AdWords and some scripts started to break.
+   Experiment campaigns are like other campaigns in the following ways:
+    1. Experiment campaigns are returned in API reports
+       like CAMPAIGN_PERFORMANCE_REPORT
+    2. Experiment campaigns are returned by AW Scripts selectors like
+       campaignSelector = AdWordsApp.campaigns()
+
+   Experiment campaigns are unlike normal campaigns in some important
+   ways:
+    1. Experiment campaigns, once enabled are always enabled. If you end
+       the experiment, the ServingStatus becomes 'ENDED' but the
+       CampaignStatus remains 'ENABLED'
+    2. Experiment campaigns cannot have labels
+    3. Experiment campaigns cannot have their status or budget changed (as
+       these are tied to the corresponding 'base' campaign)
+
+   As you can see, there are situations where some of these oddities can
+   lead to issues. For example, if you have a script that pauses any
+   campaigns that have exceeded a certain budget for the month (like those
+   that Optmyzr provides), the script will recognize that an experiment
+   campaign has spent too much but it will be unable to label it or pause
+   it.
+   So I wanted to exclude experiment campaigns from my selectors and found
+   this was possible and documented. You can exclude campaigns of
+   different types by adding the following to a selector:
+     * withCondition("CampaignExperimentType = BASE")
+     * withCondition("CampaignExperimentType = DRAFT")
+     * withCondition("CampaignExperimentType = EXPERIMENT")
+
+   But there is also an undocumented feature in AdWords Scripts that can
+   help filter these campaigns:
+     * withCondition("ServingStatus = SERVING")
+
+   The other possible condition values are ENDED, PENDING, NONE, SUSPENDED
+   The cool trick I learned here is that you can use conditions that are
+   not documented in the AdWords Scripts reference. You just refer to the
+   fields in the corresponding API report and try adding them to
+   selectors.
+   Thanks to Alex from the Google team for pointing this out.
+   Posted by Unknown at 5:14 PM 5 comments:
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+   Older Posts Home
+   Subscribe to: Posts (Atom)
+
+Pages
+
+     * Home
+     * AdWords Scripts Developer Directory
+     * Software License
+     * Terms of Use
+
+Disclosure
+
+   Some opinions expressed on this site may be those of guest authors and
+   not necessarily Freeadwordsscripts.com. Content by guest authors (like
+   Russell Savage) is sponsored by Optmyzr. Full content disclosure
+
+Search
+
+   ____________________ (BUTTON) Search
+
+Social
+
+   Follow @SiliconVallaeys
+
+Popular Posts
+
+     * Store Account, Campaign, AdGroup, and Keyword Level Quality Score
+       UPDATE: 2014-02-15 - I updated the script to v2.0 which speeds the
+       script up dramatically, includes the ability to store data into a
+       CSV and...
+     * Disable Ads and Keywords For Out of Stock Items
+       UPDATE 2016-01-26: In response to some common issues, this script
+       has been updated to include some enhancements. Please see the
+       change log n...
+     * Report on Broken Urls In Your Account
+       Note: If you are looking for a version of this script to run at the
+       MCC level, check out Monitor Broken Links Using MCC Level Scripts .
+       UP...
+     * Pause All Keywords With No Impressions
+       Let's start with a very simple script. This one will find all of
+       the keywords in your account that has never had an impression, and
+       paus...
+     * Beginner's Guide to Javascript You Should Know For AdWords Scripts
+       I've heard from a few readers that the posts on this blog have
+       inspired them to learn to code. That's awesome! But I've also
+       hea...
+
+Labels
+
+   ads account cleanup keywords labels reporting adgroup api google docs
+   google spreadsheet pause spreadsheet account maintenance adgroups
+   advanced label pause ad pause keywords reader requests update ad param
+   adwords adwords for dummies adwords scripts automating campaign cost
+   per conversion creative testing csv email gdrive urlfetchapp 3rd party
+   404 __c __u ad adjust budgets adwords reporting amazon s3 b2b black
+   friday budget crm delete delete ads disapproved dynamically enable ad
+   enhanced campaigns errors google drive json keyword keyword performance
+   report maintenance manage spent mcc mcc script merge param1 param2
+   pause campaigns quality score remove run rate scripts searchengineland
+   set campaign budget 500 INVALID_PREDICATE_ENUM_VALUE Joe's Airport
+   Motel a/b testing ab testing account audit account level qs account
+   level quality score account performance report ad testing adgroup level
+   quality score adgroups with no keywords adparam adwords customer id
+   adwords deep link adwords effective user id airport api issues
+   attachments authorize average position aws aws s3 baseball basic beacon
+   beginner bidding bids broken broken urls call campaign level quality
+   score campaign performance report capitalization certifiedknowledge
+   check urls checklist comment conversions convert copy countdown create
+   create ad create file create folder create keywords create label create
+   schedule create script creatives crime customerId cyber monday dates
+   declutter deep link delays delete keywords destination urls driveapp
+   effectiveUserId enable ads enable keywords enhanced campaign entity
+   excel exception executeInParallel experimental external data sources
+   framework generic script runner get data out getting started google
+   alerts google analytics google doc google feed api guide historical qs
+   holiday html table in stock increase bids integration intro javascript
+   keyword qs keyword quality score low ctr manage manage scripts max cpc
+   mean message mlb modcloth monitor monthly routine new elements new year
+   no code no impressions notifications notify oauth opendata optimize out
+   of stock part 2 pause adgroup pause ads phone prices pricing qs
+   question quick start reduce bids reg ex regular expression reporting
+   api rest rss s3 salesforce salesforce crm schedule script search query
+   performance report season simple sms socrata soql standard deviation
+   statistics stats stock market store data testing track history travel
+   twilio twitter updating ads urls uuid wordstream yahoo yahoo finance
+   zoho zoho crm
+
+Other Resources
+
+     * AdWords Scripting API Reference
+     * Official AdWords Scripting Blog
+     * Google AdWords Scripting Forum
+     * SearchEngineLand How To: SEM
+
+   © 2018 Optmyzr Inc - FreeAdWordsScripts.com. All scripts licensed under
+   the Apache License, V2.0. Simple theme. Powered by Blogger.
+   #Free AdWords Scripts - Atom Free AdWords Scripts - RSS Free AdWords
+   Scripts - Atom
+
+Free AdWords Scripts
+
+   A blog dedicated to AdWords Scripts. Always on. Always Free.
+
+Thursday, September 27, 2018
+
+Check Close Variants Your Ads Are Showing For
+
+   Google changed how Close Variants work and now exact match keywords may
+   also show an ad when Google believes the meaning of the search is the
+   same as the keyword. Kind of like a synonym, but potentially even
+   broader.
+   So here's a script you can use to see exactly what Google considers to
+   be a 'close variant'. The script pulls all queries that were triggered
+   by close variants. It also pulls the associated keyword. It joins the
+   query and keyword and then puts the data on a spreadsheet.
+   [close%2Bvariant%2Bkeyword%2Banalysis.png]
+   On the spreadsheet, you can see line by line what the keyword is and
+   what the close variant is. If you want, you can compare metrics to
+   decide if a close variant that seems a little odd may actually be
+   outperforming the keyword.
+   I thought it'd also be interesting to add an automatic way to see how
+   close the query is to the keyword. Whereas going from the keyword
+   [optmyzr] to 'opmyzr' seems like a definite good case of a close
+   variant because it's a simple typo in a brand name, going from
+   [campsites in yosemite] to 'campgrounds yosemite' may be too much of a
+   stretch from the original keyword.
+   To calculate the similarity of the close variant to the keyword, I
+   found an algorithm for the Levenshtein distance which counts the number
+   of characters that must be deleted, edited or added to go from one
+   string to another string. A big number in the Levenshtein column means
+   the query is more different from the keyword.
+   Grab the code below to try it in your Google Ads account. I've also
+   included a table showing how match types work after the change from
+   Google and a video that goes through using the script in case anyone is
+   just getting their feet wet with scripts.
+   [matchtype2018.png]
+
+   IFRAME:
+   https://www.youtube.com/embed/6xD_8ipxlTs?feature=player_embedded
+
+   Posted by Unknown at 5:36 PM
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+11 comments:
+
+    1. Kyle WalkerFebruary 20, 2019 at 10:27 AM
+       WINNING303 - JUDI BOLA ONLINE | CASINO ONLINE | SLOT ONLINE | POKER
+       ONLINE TERPERCAYA
+       BOLA 303
+       CASINO 303
+       TOGEL 303
+       TOGEL POKER
+       BO POKER
+       * KUNJUNGI SITUS KAMI DI *
+       www.winning303.net
+       *NB : MENANG BERAPAPUN, PASTI KAMI BAYAR !!! *
+       * Melayani LiveChat 7 x 24 Jam Nonstop :
+       - WA : +6281717177303
+       - BBM : WINNING303
+       - LINE : WINNING303*
+       DAFTAR SEKARANG
+       ReplyDelete
+       Replies
+            Reply
+    2. UnknownFebruary 22, 2019 at 4:58 PM
+       www.gillmarklester.com
+       ReplyDelete
+       Replies
+            Reply
+    3. Kyle WalkerFebruary 26, 2019 at 11:16 AM
+       *MENANG BERAPAPUN, PASTI KAMI BAYAR !!! *
+       DAFTAR SEKARANG
+       * Melayani LiveChat 7 x 24 Jam Nonstop :
+       - WA : +6281717177303
+       - BBM : WINNING303
+       - LINE : WINNING303*
+       ReplyDelete
+       Replies
+            Reply
+    4. Ayam JackpotMarch 3, 2019 at 1:15 AM
+       DAFTAR ID GRATIS SABUNG AYAM ONLINE
+       * KUNJUNGI SITUS KAMI DI *
+       WWW.ID303.INFO
+       MENANG BERAPAPUN, PASTI KAMI BAYAR !!! *
+       * Melayani LiveChat 7 x 24 Jam Nonstop :
+       - WA : 08125522303
+       - BBM : CSID303*
+       BONUS JACKPOT SABUNG AYAM ONLINE
+       ReplyDelete
+       Replies
+            Reply
+    5. Gill mark lesterMarch 6, 2019 at 8:46 AM
+       Come and join
+       ReplyDelete
+       Replies
+            Reply
+    6. Gill mark lesterMarch 6, 2019 at 8:47 AM
+       Come on
+       ReplyDelete
+       Replies
+            Reply
+    7. Gill mark lesterMarch 6, 2019 at 8:47 AM
+       Let'ts go
+       ReplyDelete
+       Replies
+            Reply
+    8. UnknownMarch 18, 2019 at 11:16 PM
+       hi there, when I run this report I get the following error:
+       3/19/2019 5:14:52 PM Report version V201802 is not supported. Only
+       versions V201806,V201809 are supported. (file Code.gs, line 73)
+       would you mind directing how to fix this?
+       ReplyDelete
+       Replies
+            Reply
+    9. Catherine DaisyApril 17, 2019 at 5:44 AM
+       The reading and work I have done since then are directly related to
+       everything I took away from those courses… which led me to this
+       position.
+       Ramadan Wishes for family
+       Ramadan Wishes for girlfriend
+       Ramadan Wishes for lover
+       Ramadan Wishes from company
+       Ramadan Wishes for boss
+       Ramadan Wishes for my love
+       Ramadan Wishes gif images
+       Ramadan Wishes gift
+       Ramadan Wishes gallery
+       Ramadan Wishes graphics
+       Ramadan good Wishes
+       Ramadan greetings gif
+       Ramadan greeting green
+       Ramadan Wishes hd images
+       Ramadan Wishes hindi
+       Ramadan Wishes hd
+       Ramadan Wishes hd picture
+       Ramadan Wishes hd pics
+       Ramadan happy Wishes
+       Ramadan holiday Wishes
+       ReplyDelete
+       Replies
+            Reply
+   10. AnonymousJune 12, 2019 at 8:44 AM
+       6/12/2019 11:43:30 AM Report version V201802 is not supported. Only
+       versions V201806,V201809 are supported. (file Code.gs, line 73)
+       ReplyDelete
+       Replies
+         1. UnknownAugust 16, 2019 at 4:44 AM
+            The same thing
+            Delete
+            Replies
+                 Reply
+            Reply
+
+   Add comment
+   Load more...
+
+   Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Pages
+
+     * Home
+     * AdWords Scripts Developer Directory
+     * Software License
+     * Terms of Use
+
+Disclosure
+
+   Some opinions expressed on this site may be those of guest authors and
+   not necessarily Freeadwordsscripts.com. Content by guest authors (like
+   Russell Savage) is sponsored by Optmyzr. Full content disclosure
+
+Search
+
+   ____________________ (BUTTON) Search
+
+Social
+
+   Follow @SiliconVallaeys
+
+Popular Posts
+
+     * Store Account, Campaign, AdGroup, and Keyword Level Quality Score
+       UPDATE: 2014-02-15 - I updated the script to v2.0 which speeds the
+       script up dramatically, includes the ability to store data into a
+       CSV and...
+     * Disable Ads and Keywords For Out of Stock Items
+       UPDATE 2016-01-26: In response to some common issues, this script
+       has been updated to include some enhancements. Please see the
+       change log n...
+     * Report on Broken Urls In Your Account
+       Note: If you are looking for a version of this script to run at the
+       MCC level, check out Monitor Broken Links Using MCC Level Scripts .
+       UP...
+     * Pause All Keywords With No Impressions
+       Let's start with a very simple script. This one will find all of
+       the keywords in your account that has never had an impression, and
+       paus...
+     * Beginner's Guide to Javascript You Should Know For AdWords Scripts
+       I've heard from a few readers that the posts on this blog have
+       inspired them to learn to code. That's awesome! But I've also
+       hea...
+
+Labels
+
+   ads account cleanup keywords labels reporting adgroup api google docs
+   google spreadsheet pause spreadsheet account maintenance adgroups
+   advanced label pause ad pause keywords reader requests update ad param
+   adwords adwords for dummies adwords scripts automating campaign cost
+   per conversion creative testing csv email gdrive urlfetchapp 3rd party
+   404 __c __u ad adjust budgets adwords reporting amazon s3 b2b black
+   friday budget crm delete delete ads disapproved dynamically enable ad
+   enhanced campaigns errors google drive json keyword keyword performance
+   report maintenance manage spent mcc mcc script merge param1 param2
+   pause campaigns quality score remove run rate scripts searchengineland
+   set campaign budget 500 INVALID_PREDICATE_ENUM_VALUE Joe's Airport
+   Motel a/b testing ab testing account audit account level qs account
+   level quality score account performance report ad testing adgroup level
+   quality score adgroups with no keywords adparam adwords customer id
+   adwords deep link adwords effective user id airport api issues
+   attachments authorize average position aws aws s3 baseball basic beacon
+   beginner bidding bids broken broken urls call campaign level quality
+   score campaign performance report capitalization certifiedknowledge
+   check urls checklist comment conversions convert copy countdown create
+   create ad create file create folder create keywords create label create
+   schedule create script creatives crime customerId cyber monday dates
+   declutter deep link delays delete keywords destination urls driveapp
+   effectiveUserId enable ads enable keywords enhanced campaign entity
+   excel exception executeInParallel experimental external data sources
+   framework generic script runner get data out getting started google
+   alerts google analytics google doc google feed api guide historical qs
+   holiday html table in stock increase bids integration intro javascript
+   keyword qs keyword quality score low ctr manage manage scripts max cpc
+   mean message mlb modcloth monitor monthly routine new elements new year
+   no code no impressions notifications notify oauth opendata optimize out
+   of stock part 2 pause adgroup pause ads phone prices pricing qs
+   question quick start reduce bids reg ex regular expression reporting
+   api rest rss s3 salesforce salesforce crm schedule script search query
+   performance report season simple sms socrata soql standard deviation
+   statistics stats stock market store data testing track history travel
+   twilio twitter updating ads urls uuid wordstream yahoo yahoo finance
+   zoho zoho crm
+
+Other Resources
+
+     * AdWords Scripting API Reference
+     * Official AdWords Scripting Blog
+     * Google AdWords Scripting Forum
+     * SearchEngineLand How To: SEM
+
+   © 2018 Optmyzr Inc - FreeAdWordsScripts.com. All scripts licensed under
+   the Apache License, V2.0. Simple theme. Powered by Blogger.
+   #Free AdWords Scripts - Atom Free AdWords Scripts - RSS Free AdWords
+   Scripts - Atom
+
+Free AdWords Scripts
+
+   A blog dedicated to AdWords Scripts. Always on. Always Free.
+
+Thursday, March 29, 2018
+
+Automatically Refresh Weather Data in a Spreadsheet
+
+   Bidding by weather is a classic example of the power of AdWords Scripts
+   but the code from Google can be daunting to implement for scripting
+   newbies. Recently my company Optmyzr launched the ability to connect
+   external data to a Rule Engine, making it possible to bid by weather
+   without writing any code.
+   A solution like this uses a Google Sheet that is automatically updated
+   with current weather conditions. While adding the API calls to fetch
+   the weather is straightforward, getting it to automatically refresh
+   this data is difficult. This post covers a solution for updating
+   external data on a spreadsheet automatically.
+   First, grab a copy of this Google Spreadsheet that contains a function
+   courtesy of Mogsdad on StackOverflow that handles updating the weather.
+   It does this by removing and then adding back all functions that deal
+   with importing external data.
+   This spreadsheet also contains the API connection strings that fetch
+   the temperature and conditions for a zip code.
+   [Weather%2BAPI%2BURL.jpg]
+   To be able to use the weather API, be sure to put in your own API key
+   on the settings sheet. You can request one
+   from OpenWeatherMap.orghttps://openweathermap.org/appid#get.
+   [Add%2BAPI%2Bkey%2Bto%2Bget%2Bweather%2Bdata.jpg]
+   To automatically update the weather on a schedule, set a time-based
+   trigger for the function RefreshImports by going to the "Tools" menu in
+   the spreadsheet and selecting "Script Editor" and then clicking the
+   fields shown in the screenshot below:
+   [Add%2Ba%2Btime%2Btrigger.jpg]
+   You'll also need to update the code at line 17 to reference the ID of
+   your own copy of the spreadsheet. For example, grab this part of the
+   URL:
+   [what%2Bis%2Bthe%2Bid%2Bof%2Ba%2Bgoogle%2Bspreadsheet.jpg]
+   And put that into line 17 of the script that's associated with the
+   spreadsheet here:
+   [where%2Bto%2Bcopy%2Bthe%2BID.jpg]
+   That's it. Now you have a spreadsheet that automatically refreshes with
+   current weather data and you can use it for other AdWords automations.
+   Posted by Unknown at 10:47 AM
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+9 comments:
+
+    1. Silke FisherMarch 21, 2019 at 2:14 AM
+       I like this post,And I guess that they having fun to read this
+       post,they shall take a good site to make a information,thanks for
+       sharing it to me. Current Weather
+       ReplyDelete
+       Replies
+            Reply
+    2. EvaniaFloJuly 22, 2019 at 12:15 PM
+       Nikmati Kemudahan DEPOSIT PULSA di Donaco Poker...
+       Proses Cepat dan Mudah..
+       Mainkan Permainan Dengan Kemenangan Tinggi menggunakan 1 user ID di
+       Donaco Poker...
+       * POKER
+       * DOMINO
+       * BANDAR CEME
+       * CAPSA SUSUN
+       * CEME KELILING
+       * SUPER TEN
+       * OMAHA
+       Dapatkan Juga Tips Cerdik Bermain Poker DIsini Tips Cerdik Poker
+       Hubungi Kami Secepatnya Di :
+       LINE : Donaco.poker
+       WHATSAPP : +6281333555662
+       ReplyDelete
+       Replies
+            Reply
+    3. AnnaAugust 15, 2019 at 3:55 AM
+       This is really a amazing post,keep posting more.
+       Twin Cities Web Design
+       ReplyDelete
+       Replies
+            Reply
+    4. Situs Judi Online SukabetSeptember 10, 2019 at 9:16 PM
+       anda pemain judi domino online dan senantiasa punya taktik sendiri
+       untuk memenangkan permainan judi domino dengan cepat ? Tapi kini
+       bukan masanya lagi anda memainkan permainan judi domino dengan
+       konvesional. mainkan permainan judi domino online di situs
+       jakartapoker sekarang juga. situs judi domino online ini senantiasa
+       akan memberikan anda keuntungan 100% dan mendapatkan uang asli
+       dengan mudah dan cepat. semuanya 100% dibayarkan kepada anda tanpa
+       ada potongan sama sekali.
+       ReplyDelete
+       Replies
+            Reply
+    5. Situs Judi Online SukabetSeptember 16, 2019 at 1:11 AM
+       anda ingin bermain judi kartu online di satu situs, dan dapat
+       memainkan berbagai variasi permainan judi kartu online ? tenang,
+       situs jakartapoker mempunyai solusinya kepada anda. situs
+       jakartapoker adalah situs judi online yang menggunakan sistem
+       generasi terbaru dalam perjudiannya. disini anda dapat memainkan
+       berbagai variasi permainan judi kartu online dengan modal yang amat
+       sangat minim sekali.ajak juga teman anda untuk bergabung ke situs
+       jakartapoker, dan dapatkan bonus refferal sebesar 10% untuk anda
+       nikmati.
+       ReplyDelete
+       Replies
+            Reply
+    6. Taylor BaraSeptember 23, 2019 at 6:10 AM
+       Do you want to try IPVanish VPN? Read this review
+       https://vpn-lab.com/ipvanish-vpn-review/ fro the start!
+       ReplyDelete
+       Replies
+            Reply
+    7. sOctober 3, 2019 at 4:05 AM
+       Data implies data which is handled by PC or other programmed
+       hardware, including word processors, databases and spreadsheet
+       documents, or data which is recorded on paper with the expectation
+       of being prepared later by PC data hk
+       ReplyDelete
+       Replies
+            Reply
+    8. omtampanOctober 3, 2019 at 12:33 PM
+       Dengan senang hati bisa memperkenalkan kepada anda situs dewaqq
+       bermain judi poker dengan mudah setiap hari di Dewaqq, juga
+       bersedia memberikan profile terkait di dalamnya :
+       http://uid.me/dewaqq_terbaik
+       https://community.mtasa.com/index.php?p=profile&id=478819
+       http://www.webestools.com/profile-133975.html
+       http://bbs.vernee.cc/home.php?mod=space&uid=1034008
+       https://setiweb.ssl.berkeley.edu/beta/team_display.php?teamid=26429
+       8
+       http://esri.handong.edu/english/profile.php?mode=viewprofile&u=1364
+       74
+       Dan review terkait
+       ReplyDelete
+       Replies
+            Reply
+    9. UnknownOctober 3, 2019 at 12:33 PM
+       Pasarqq tempat Bermain judi bandarq online tentunya menjadi di
+       antara pilihan yang tidak sedikit dipilih oleh pemain website
+       bandarq .Bisa anda lihat profile terkait pasarqq ternama melalui
+       metode klik link https://findery.com/pasarqq , lalu
+       https://www.thebaynet.com/profile/noverakasanti888 kemudian
+       https://fontlibrary.org/en/member/pasarqq/ dan juga
+       http://www.myfolio.com/pasarqq.
+       Selain itu juga pasarqq ini memiliki homepage personal seperti
+       https://pasarqq.cabanova.com/
+       http://rebuildingtogethernb.org/selamat-datang-di-situs-poker-onlin
+       e-pasarqq/
+       http://sonidoslibertarios.org/selamat-datang-di-situs-poker-online-
+       pasarqq/
+       http://jonnymugwump.com/selamat-datang-di-situs-poker-online-pasarq
+       q/
+       ReplyDelete
+       Replies
+            Reply
+
+   Add comment
+   Load more...
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Pages
+
+     * Home
+     * AdWords Scripts Developer Directory
+     * Software License
+     * Terms of Use
+
+Disclosure
+
+   Some opinions expressed on this site may be those of guest authors and
+   not necessarily Freeadwordsscripts.com. Content by guest authors (like
+   Russell Savage) is sponsored by Optmyzr. Full content disclosure
+
+Search
+
+   ____________________ (BUTTON) Search
+
+Social
+
+   Follow @SiliconVallaeys
+
+Popular Posts
+
+     * Store Account, Campaign, AdGroup, and Keyword Level Quality Score
+       UPDATE: 2014-02-15 - I updated the script to v2.0 which speeds the
+       script up dramatically, includes the ability to store data into a
+       CSV and...
+     * Disable Ads and Keywords For Out of Stock Items
+       UPDATE 2016-01-26: In response to some common issues, this script
+       has been updated to include some enhancements. Please see the
+       change log n...
+     * Report on Broken Urls In Your Account
+       Note: If you are looking for a version of this script to run at the
+       MCC level, check out Monitor Broken Links Using MCC Level Scripts .
+       UP...
+     * Pause All Keywords With No Impressions
+       Let's start with a very simple script. This one will find all of
+       the keywords in your account that has never had an impression, and
+       paus...
+     * Beginner's Guide to Javascript You Should Know For AdWords Scripts
+       I've heard from a few readers that the posts on this blog have
+       inspired them to learn to code. That's awesome! But I've also
+       hea...
+
+Labels
+
+   ads account cleanup keywords labels reporting adgroup api google docs
+   google spreadsheet pause spreadsheet account maintenance adgroups
+   advanced label pause ad pause keywords reader requests update ad param
+   adwords adwords for dummies adwords scripts automating campaign cost
+   per conversion creative testing csv email gdrive urlfetchapp 3rd party
+   404 __c __u ad adjust budgets adwords reporting amazon s3 b2b black
+   friday budget crm delete delete ads disapproved dynamically enable ad
+   enhanced campaigns errors google drive json keyword keyword performance
+   report maintenance manage spent mcc mcc script merge param1 param2
+   pause campaigns quality score remove run rate scripts searchengineland
+   set campaign budget 500 INVALID_PREDICATE_ENUM_VALUE Joe's Airport
+   Motel a/b testing ab testing account audit account level qs account
+   level quality score account performance report ad testing adgroup level
+   quality score adgroups with no keywords adparam adwords customer id
+   adwords deep link adwords effective user id airport api issues
+   attachments authorize average position aws aws s3 baseball basic beacon
+   beginner bidding bids broken broken urls call campaign level quality
+   score campaign performance report capitalization certifiedknowledge
+   check urls checklist comment conversions convert copy countdown create
+   create ad create file create folder create keywords create label create
+   schedule create script creatives crime customerId cyber monday dates
+   declutter deep link delays delete keywords destination urls driveapp
+   effectiveUserId enable ads enable keywords enhanced campaign entity
+   excel exception executeInParallel experimental external data sources
+   framework generic script runner get data out getting started google
+   alerts google analytics google doc google feed api guide historical qs
+   holiday html table in stock increase bids integration intro javascript
+   keyword qs keyword quality score low ctr manage manage scripts max cpc
+   mean message mlb modcloth monitor monthly routine new elements new year
+   no code no impressions notifications notify oauth opendata optimize out
+   of stock part 2 pause adgroup pause ads phone prices pricing qs
+   question quick start reduce bids reg ex regular expression reporting
+   api rest rss s3 salesforce salesforce crm schedule script search query
+   performance report season simple sms socrata soql standard deviation
+   statistics stats stock market store data testing track history travel
+   twilio twitter updating ads urls uuid wordstream yahoo yahoo finance
+   zoho zoho crm
+
+Other Resources
+
+     * AdWords Scripting API Reference
+     * Official AdWords Scripting Blog
+     * Google AdWords Scripting Forum
+     * SearchEngineLand How To: SEM
+
+   © 2018 Optmyzr Inc - FreeAdWordsScripts.com. All scripts licensed under
+   the Apache License, V2.0. Simple theme. Powered by Blogger.
+   #Free AdWords Scripts - Atom Free AdWords Scripts - RSS Free AdWords
+   Scripts - Atom
+
+Free AdWords Scripts
+
+   A blog dedicated to AdWords Scripts. Always on. Always Free.
+
+Thursday, March 22, 2018
+
+Automatically Put Pivoted AdWords Data in a Spreadsheet
+
+   I've written several free scripts that export AdWords data to a Google
+   spreadsheet but the one I'll share below does something a little more
+   and pivots the reports so that segment data shows up in columns rather
+   than rows.
+
+The Problem With Google's AdWords Reports
+
+   Here's what the typical output from an AdWords report looks like if you
+   use a script like this one to add it in a Google sheet.
+
+                           [AdWords-Report-With-Segments.jpg]
+        AdWords report data that was automatically added to a Google
+    spreadsheet. The report contains keyword conversion data segmented by
+     conversion type name and day of week, resulting in multiple rows of
+                           data for each keyword.
+
+   I highlighted the cells for the same keyword ID in green so that you
+   can easily see that there are 7 rows of data for the same keyword. Each
+   row has different values for the segments 'ConversionType' and
+   'DayOfWeek'.
+   Here's why I don't like getting my reports this way... In a typical
+   AdWords optimization, I might evaluate a keyword to see if it meets
+   certain criteria, and when it does, change the bid. For example, for
+   keywords with more than 5 total "Sign Up" conversions, and at least 2
+   of those conversions on today's day of the week,  I might raise the
+   bid.
+   This is not easy to do with the spreadsheet above because I can't
+   simply build a formula for each row as that would ignore the data from
+   the other 6 rows about the same entity.
+
+A Better Format for AdWords Reports
+
+   To get the report the way I want, I need to do some vlookups and data
+   aggregation so that all the data for a keyword is moved onto a single
+   row. This is what my spreadsheet should look like to make optimizing
+   easy:
+
+                      [AdWords-Data-In-Spreadsheet-With-Pivot.jpg]
+    AdWords report data that is aggregated by entities. Here there is one
+    row for every keyword along with one column for every combination of
+                            metrics and segments.
+
+   Now you can see there is only 1 row for that same keyword ID as before
+   (highlighted in green). Now I can write a spreadsheet formula that has
+   access to all the elements I need on one row.
+
+How Scripts Solved This Problem
+
+   To get the spreadsheet output in the format I wanted, I wrote a script
+   that finds all possible values for the included segments and then
+   combines this with the different metrics. For example, possible values
+   for the DayOfWeek segment are 'Monday', 'Tuesday', 'Wednesday', etc.
+   Combining this with my metrics, I get Monday.Conversions,
+   Monday.AllConversions, etc. Each of these is then treated as a column
+   in the sheet.
+   So now I can more easily do my optimization. I could also feed this
+   sheet into a tool like Optmyzr's Rule Engine so that I could start
+   automating account management based on factors like day of week, type
+   of conversion, or any other segment I include on the sheet. Optmyzr is
+   my company and also runs this blog.
+
+How to run this script:
+
+   After installing the script code that's all the way at the bottom of
+   this post into an AdWords account (a child account, not an MCC
+   account), you can edit the following settings to customize it:
+    1. attributes: these are the AdWords reporting attributes. You will
+       get a single spreadsheet row per unique combination of attributes
+    2. segments: these are the AdWords reporting segments. The values of
+       each segment will be joined with metrics and create 1 column for
+       each combination
+    3. metrics: the AdWords reporting metrics to include.
+    4. sourceReport: the report type from Google. See the link below for
+       more information
+    5. spreadsheetUrl: the Url of the Google spreadsheet that this script
+       will update.
+    6. tabName: the name of the sheet (tab) in the spreadsheet that should
+       be updated.
+    7. reportVersion: the version of the AdWords API reports you’re using.
+       The data available in the Ads API changes periodically so this
+       ensures our script talks to the right version of AdWords.
+
+Where to Find Valid Settings for the Script
+
+   Here is the list of acceptable attributes, segments and metrics for the
+   keywords performance report:
+   https://developers.google.com/adwords/api/docs/appendix/reports/keyword
+   s-performance-report. As you can see, Google makes it really easy to
+   see what are attributes vs. segments vs metrics. Just be sure to
+   populate the right settings in the script based on what type of data
+   you're adding.
+   [attributes-segments-metrics.jpg]
+   So for example, if you wanted to add ApprovalStatus to the report,
+   you'd put add it to the comma separated list of attributes as seen
+   here:
+   [attributes.jpg]
+   Here is the full list of all AdWords reports with the available
+   attributes, segments, and metrics to help you create correct settings.
+
+One thing to watch out for:
+
+   Note that in the resulting spreadsheet, you can't total up the numbers
+   across a row because metrics are included multiple times, once per
+   included segment. For example, in a report with the 2 segments
+   DayOfWeek and ConversionType, if a keyword has 10 conversions, then the
+   sum of all the conversion columns for that row will be 20 (10
+   conversions * 2 segments).
+
+Another Popular Script For Putting AdWords Data in Spreadsheets
+
+   Last June I wrote a script that makes it super easy to do custom data
+   pulls from AdWords and put the data in a spreadsheet so I was happy to
+   hear people still talking about this script at SMX West in March. You
+   can find it on Search Engine Land if you're looking for more options to
+   get AdWords data in spreadsheets without paying someone for it.
+   Posted by Unknown at 7:36 PM
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+4 comments:
+
+    1. Taylor BaraJune 22, 2019 at 7:42 AM
+       I'm gonna use this script for my site
+       https://pro-academic-writers.com/blog/movie-review. Thanks!
+       ReplyDelete
+       Replies
+            Reply
+    2. marksonAugust 28, 2019 at 6:00 AM
+       The thought behind this is Google's AI can comprehend an assortment
+       of inquiries on different subjects and give legitimate reactions.
+       artificial intelligence training in pune
+       ReplyDelete
+       Replies
+            Reply
+    3. SivaSeptember 14, 2019 at 5:52 AM
+       I appreciate the effort of the author. I found it is an informative
+       post on bootstrap technology. I hope you shared this kind of blog
+       in future to help both the developer and business people.
+       Hire Dedicated Opencart Developers
+       Smarty Developers
+       Hire Dedicated Developers
+       Dedicated Magento Developer
+       Hire Cake Php Programmer
+       ReplyDelete
+       Replies
+            Reply
+    4. madinOctober 8, 2019 at 2:12 AM
+       International Watch Company, or IWC, was first introduced to the
+       world in 1868 when an American Engineer,replica watches sale
+       Florentine Ariosto Jones, decided to open his own factory in
+       Switzerland. replica IWC watches has earned its reputation as one
+       of the world's finest manufacturers of Swiss luxury watches. IWC
+       only manufactures automatic and manual timepieces which include
+       features such as the chronograph and GMT dual time zone. IWC has
+       definitely made its mark in the world of watches with its
+       dedication to excellence in form and function. Using a range of
+       supplies a large selection of IWC watches at the best sale prices
+       online so buy yours today!
+       ReplyDelete
+       Replies
+            Reply
+
+   Add comment
+   Load more...
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Pages
+
+     * Home
+     * AdWords Scripts Developer Directory
+     * Software License
+     * Terms of Use
+
+Disclosure
+
+   Some opinions expressed on this site may be those of guest authors and
+   not necessarily Freeadwordsscripts.com. Content by guest authors (like
+   Russell Savage) is sponsored by Optmyzr. Full content disclosure
+
+Search
+
+   ____________________ (BUTTON) Search
+
+Social
+
+   Follow @SiliconVallaeys
+
+Popular Posts
+
+     * Store Account, Campaign, AdGroup, and Keyword Level Quality Score
+       UPDATE: 2014-02-15 - I updated the script to v2.0 which speeds the
+       script up dramatically, includes the ability to store data into a
+       CSV and...
+     * Disable Ads and Keywords For Out of Stock Items
+       UPDATE 2016-01-26: In response to some common issues, this script
+       has been updated to include some enhancements. Please see the
+       change log n...
+     * Report on Broken Urls In Your Account
+       Note: If you are looking for a version of this script to run at the
+       MCC level, check out Monitor Broken Links Using MCC Level Scripts .
+       UP...
+     * Pause All Keywords With No Impressions
+       Let's start with a very simple script. This one will find all of
+       the keywords in your account that has never had an impression, and
+       paus...
+     * Beginner's Guide to Javascript You Should Know For AdWords Scripts
+       I've heard from a few readers that the posts on this blog have
+       inspired them to learn to code. That's awesome! But I've also
+       hea...
+
+Labels
+
+   ads account cleanup keywords labels reporting adgroup api google docs
+   google spreadsheet pause spreadsheet account maintenance adgroups
+   advanced label pause ad pause keywords reader requests update ad param
+   adwords adwords for dummies adwords scripts automating campaign cost
+   per conversion creative testing csv email gdrive urlfetchapp 3rd party
+   404 __c __u ad adjust budgets adwords reporting amazon s3 b2b black
+   friday budget crm delete delete ads disapproved dynamically enable ad
+   enhanced campaigns errors google drive json keyword keyword performance
+   report maintenance manage spent mcc mcc script merge param1 param2
+   pause campaigns quality score remove run rate scripts searchengineland
+   set campaign budget 500 INVALID_PREDICATE_ENUM_VALUE Joe's Airport
+   Motel a/b testing ab testing account audit account level qs account
+   level quality score account performance report ad testing adgroup level
+   quality score adgroups with no keywords adparam adwords customer id
+   adwords deep link adwords effective user id airport api issues
+   attachments authorize average position aws aws s3 baseball basic beacon
+   beginner bidding bids broken broken urls call campaign level quality
+   score campaign performance report capitalization certifiedknowledge
+   check urls checklist comment conversions convert copy countdown create
+   create ad create file create folder create keywords create label create
+   schedule create script creatives crime customerId cyber monday dates
+   declutter deep link delays delete keywords destination urls driveapp
+   effectiveUserId enable ads enable keywords enhanced campaign entity
+   excel exception executeInParallel experimental external data sources
+   framework generic script runner get data out getting started google
+   alerts google analytics google doc google feed api guide historical qs
+   holiday html table in stock increase bids integration intro javascript
+   keyword qs keyword quality score low ctr manage manage scripts max cpc
+   mean message mlb modcloth monitor monthly routine new elements new year
+   no code no impressions notifications notify oauth opendata optimize out
+   of stock part 2 pause adgroup pause ads phone prices pricing qs
+   question quick start reduce bids reg ex regular expression reporting
+   api rest rss s3 salesforce salesforce crm schedule script search query
+   performance report season simple sms socrata soql standard deviation
+   statistics stats stock market store data testing track history travel
+   twilio twitter updating ads urls uuid wordstream yahoo yahoo finance
+   zoho zoho crm
+
+Other Resources
+
+     * AdWords Scripting API Reference
+     * Official AdWords Scripting Blog
+     * Google AdWords Scripting Forum
+     * SearchEngineLand How To: SEM
+
+   © 2018 Optmyzr Inc - FreeAdWordsScripts.com. All scripts licensed under
+   the Apache License, V2.0. Simple theme. Powered by Blogger.
+   #Free AdWords Scripts - Atom Free AdWords Scripts - RSS Free AdWords
+   Scripts - Atom
+
+Free AdWords Scripts
+
+   A blog dedicated to AdWords Scripts. Always on. Always Free.
+
+Wednesday, January 31, 2018
+
+Working with Experiment Campaigns in AdWords Scripts
+
+   If you've started using Google's Draft and Experiment campaigns, you
+   may have noticed some odd behavior with scripts. We were getting these
+   campaigns back in our selectors, even if they were no longer active
+   experiments. And if we tried to change their status to 'ended', we
+   couldn't do so.
+   I'll explain the similarities and differences so that hopefully you can
+   avoid some of the frustration I faced when we started using experiments
+   in AdWords and some scripts started to break.
+   Experiment campaigns are like other campaigns in the following ways:
+    1. Experiment campaigns are returned in API reports
+       like CAMPAIGN_PERFORMANCE_REPORT
+    2. Experiment campaigns are returned by AW Scripts selectors like
+       campaignSelector = AdWordsApp.campaigns()
+
+   Experiment campaigns are unlike normal campaigns in some important
+   ways:
+    1. Experiment campaigns, once enabled are always enabled. If you end
+       the experiment, the ServingStatus becomes 'ENDED' but the
+       CampaignStatus remains 'ENABLED'
+    2. Experiment campaigns cannot have labels
+    3. Experiment campaigns cannot have their status or budget changed (as
+       these are tied to the corresponding 'base' campaign)
+
+   As you can see, there are situations where some of these oddities can
+   lead to issues. For example, if you have a script that pauses any
+   campaigns that have exceeded a certain budget for the month (like those
+   that Optmyzr provides), the script will recognize that an experiment
+   campaign has spent too much but it will be unable to label it or pause
+   it.
+   So I wanted to exclude experiment campaigns from my selectors and found
+   this was possible and documented. You can exclude campaigns of
+   different types by adding the following to a selector:
+     * withCondition("CampaignExperimentType = BASE")
+     * withCondition("CampaignExperimentType = DRAFT")
+     * withCondition("CampaignExperimentType = EXPERIMENT")
+
+   But there is also an undocumented feature in AdWords Scripts that can
+   help filter these campaigns:
+     * withCondition("ServingStatus = SERVING")
+
+   The other possible condition values are ENDED, PENDING, NONE, SUSPENDED
+   The cool trick I learned here is that you can use conditions that are
+   not documented in the AdWords Scripts reference. You just refer to the
+   fields in the corresponding API report and try adding them to
+   selectors.
+   Thanks to Alex from the Google team for pointing this out.
+   Posted by Unknown at 5:14 PM
+   Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+5 comments:
+
+    1. Web Creative SolutionFebruary 28, 2019 at 3:31 AM
+       It's really a nice and helpful piece of info. I am glad that you
+       just shared this helpful
+       information with us. Please keep us up to date like this.
+       Best website designing company in Laxmi Nagar
+       ReplyDelete
+       Replies
+            Reply
+    2. HelenApril 22, 2019 at 8:15 PM
+       I am very grateful you did share your knowledge here. It is an
+       exuberant post.
+       Helen,
+       P/S: Pls feel free to visit my place, if you care about sunglass
+       spot free shipping
+       ReplyDelete
+       Replies
+            Reply
+    3. YogeshJune 28, 2019 at 3:29 AM
+       I admire this article for the well-researched content and excellent
+       wording
+       seo company in chennai
+       ReplyDelete
+       Replies
+            Reply
+    4. Taylor BaraJuly 29, 2019 at 8:25 AM
+       Do you know how to write a simple medical assistant resume? Here is
+       a quality step by step guide
+       https://resumecvwriter.com/blog/medical-assistant-resume
+       ReplyDelete
+       Replies
+            Reply
+    5. madinOctober 8, 2019 at 2:12 AM
+       Buy a discounted IWC watch from this Time and get free shipping.
+       Large selection in stock. replica watches UKIWC watches, is an
+       iconic brand. The IWC Portuguese, replica IWC watches sale a
+       collection that includes the IWC Portuguese automatic and IWC Yacht
+       Club chronograph is legendary. IWC Schaffhausen is also known for
+       the IWC Aquatimer, Top Gun, Big Pilot watch, Mark XVII, Pilot's
+       Watch, Spitfire chronograph and their Big Pilot Watch, the
+       St-Exupery.
+       ReplyDelete
+       Replies
+            Reply
+
+   Add comment
+   Load more...
+
+   Newer Post Older Post Home
+   Subscribe to: Post Comments (Atom)
+
+Pages
+
+     * Home
+     * AdWords Scripts Developer Directory
+     * Software License
+     * Terms of Use
+
+Disclosure
+
+   Some opinions expressed on this site may be those of guest authors and
+   not necessarily Freeadwordsscripts.com. Content by guest authors (like
+   Russell Savage) is sponsored by Optmyzr. Full content disclosure
+
+Search
+
+   ____________________ (BUTTON) Search
+
+Social
+
+   Follow @SiliconVallaeys
+
+Popular Posts
+
+     * Store Account, Campaign, AdGroup, and Keyword Level Quality Score
+       UPDATE: 2014-02-15 - I updated the script to v2.0 which speeds the
+       script up dramatically, includes the ability to store data into a
+       CSV and...
+     * Disable Ads and Keywords For Out of Stock Items
+       UPDATE 2016-01-26: In response to some common issues, this script
+       has been updated to include some enhancements. Please see the
+       change log n...
+     * Report on Broken Urls In Your Account
+       Note: If you are looking for a version of this script to run at the
+       MCC level, check out Monitor Broken Links Using MCC Level Scripts .
+       UP...
+     * Pause All Keywords With No Impressions
+       Let's start with a very simple script. This one will find all of
+       the keywords in your account that has never had an impression, and
+       paus...
+     * Beginner's Guide to Javascript You Should Know For AdWords Scripts
+       I've heard from a few readers that the posts on this blog have
+       inspired them to learn to code. That's awesome! But I've also
+       hea...
+
+Labels
+
+   ads account cleanup keywords labels reporting adgroup api google docs
+   google spreadsheet pause spreadsheet account maintenance adgroups
+   advanced label pause ad pause keywords reader requests update ad param
+   adwords adwords for dummies adwords scripts automating campaign cost
+   per conversion creative testing csv email gdrive urlfetchapp 3rd party
+   404 __c __u ad adjust budgets adwords reporting amazon s3 b2b black
+   friday budget crm delete delete ads disapproved dynamically enable ad
+   enhanced campaigns errors google drive json keyword keyword performance
+   report maintenance manage spent mcc mcc script merge param1 param2
+   pause campaigns quality score remove run rate scripts searchengineland
+   set campaign budget 500 INVALID_PREDICATE_ENUM_VALUE Joe's Airport
+   Motel a/b testing ab testing account audit account level qs account
+   level quality score account performance report ad testing adgroup level
+   quality score adgroups with no keywords adparam adwords customer id
+   adwords deep link adwords effective user id airport api issues
+   attachments authorize average position aws aws s3 baseball basic beacon
+   beginner bidding bids broken broken urls call campaign level quality
+   score campaign performance report capitalization certifiedknowledge
+   check urls checklist comment conversions convert copy countdown create
+   create ad create file create folder create keywords create label create
+   schedule create script creatives crime customerId cyber monday dates
+   declutter deep link delays delete keywords destination urls driveapp
+   effectiveUserId enable ads enable keywords enhanced campaign entity
+   excel exception executeInParallel experimental external data sources
+   framework generic script runner get data out getting started google
+   alerts google analytics google doc google feed api guide historical qs
+   holiday html table in stock increase bids integration intro javascript
+   keyword qs keyword quality score low ctr manage manage scripts max cpc
+   mean message mlb modcloth monitor monthly routine new elements new year
+   no code no impressions notifications notify oauth opendata optimize out
+   of stock part 2 pause adgroup pause ads phone prices pricing qs
+   question quick start reduce bids reg ex regular expression reporting
+   api rest rss s3 salesforce salesforce crm schedule script search query
+   performance report season simple sms socrata soql standard deviation
+   statistics stats stock market store data testing track history travel
+   twilio twitter updating ads urls uuid wordstream yahoo yahoo finance
+   zoho zoho crm
+
+Other Resources
+
+     * AdWords Scripting API Reference
+     * Official AdWords Scripting Blog
+     * Google AdWords Scripting Forum
+     * SearchEngineLand How To: SEM
+
+   © 2018 Optmyzr Inc - FreeAdWordsScripts.com. All scripts licensed under
+   the Apache License, V2.0. Simple theme. Powered by Blogger.

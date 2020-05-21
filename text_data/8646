@@ -1,0 +1,869 @@
+   #alternate alternate Raspberry Pi Tutorials » Feed Raspberry Pi
+   Tutorials » Comments Feed Raspberry Pi Tutorials » Raspberry Pi:
+   Measure Humidity and Temperature with DHT11/DHT22 Comments Feed
+   alternate alternate
+
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+     * de
+     * Hardware & GPIO
+     * Sensors & Components
+     * Scale
+     * Cases
+     * Fingerprint
+     * Gas Sensor
+     * Heartbeat
+     *
+     *
+     *
+     *
+
+     * First Steps
+     * General
+     * Projects
+     * de Deutsch
+
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+   ____________________
+   [INS: :INS]
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+     * de
+     * Hardware & GPIO
+     * Sensors & Components
+     * Scale
+     * Cases
+     * Fingerprint
+     * Gas Sensor
+     * Heartbeat
+     *
+     *
+     *
+     *
+
+   ____________________
+
+     * Hardware & GPIO
+
+   How to let an Arduino and Raspberry Pi communicate with each other
+
+How to let an Arduino and Raspberry Pi communicate with each other
+
+   Build a Raspberry Pi door / window sensor with Reed Relais
+
+Build a Raspberry Pi door / window sensor with Reed Relais
+
+   Raspberry Pi LCD Display: 16×2 Characters Display (HD44780)
+
+Raspberry Pi LCD Display: 16×2 Characters Display (HD44780)
+
+   Raspberry Pi Tablet “Sunfounder RasPad” Review & Setup
+
+Raspberry Pi Tablet “Sunfounder RasPad” Review & Setup
+
+   Connect a Raspberry Pi Keypad – Code Lock
+
+Connect a Raspberry Pi Keypad – Code Lock
+
+   Read Capacitive Soil Moisture Sensor DFROBOT Gravity on the Raspberry
+   Pi
+
+Read Capacitive Soil Moisture Sensor DFROBOT Gravity on the Raspberry Pi
+
+   Expand Raspberry Pi GPIOs with I2C Port Expander
+
+Expand Raspberry Pi GPIOs with I2C Port Expander
+
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+   With the Raspberry Pi and some sensors, it is easy to measure the
+   temperature without much effort. In addition, however, the humidity in
+   certain situations or projects (such as a weather station) can be
+   enlightening. Sensors such as the DHT11 and DHT22 are not only
+   available for a few euros, but they can also measure the temperature as
+   well as the humidity.
+
+Accessories
+
+   As the sensors already carry (almost) everything, apart from a
+   resistor, not many additional accessories are required. I have used
+   this:
+     * DHT11 or DHT22 humidity sensor
+     * 10kΩ resistor
+     * Breadboard and jumper wires
+
+   You can see the difference between DHT11 and DHT22 here. As a result,
+   the DHT11 (blue) is cheaper, but the DHT22 (white) is more precise and
+   lasts longer. For applications in “extreme” areas (0-20% or 80-100%
+   humidity), the DHT22 should be used, as it also supports these areas in
+   contrast to the DHT11. For example, I have a DHT22 sensor in my fridge
+   to measure and log temperature and humidity. In general, the 11er model
+   should also be enough.
+
+
+   [INS: :INS]
+
+Setup of Raspberry Pi Humidity Sensor
+
+   Raspberry Pi Humidity/Temperature Sensor Construction The left pin of
+   the sensor is connected to 3V3 of Pi (pin1), the second sensor pin via
+   a pull-up resistor (4.7k – 10kΩ) with a free GPIO of the raspberry
+   (GPIO4, pin7) and the right senior pin comes at GND (Pin6) from the Pi.
+   The second pin from the right of the sensor remains free.
+
+   The structure is identical for DHT11 or DHT22 since the pins are
+   assigned the same way.
+
+
+Raspberry Pi Humidity Software Installation and Testing
+
+   First of all, some packages have to be installed:
+sudo apt-get update
+sudo apt-get install build-essential python-dev python-openssl git
+
+   Now the library for the sensors can be loaded. I use a pre-built
+   Adafruit library that supports a variety of sensors:
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git && cd Adafruit_Pyt
+hon_DHT
+sudo python setup.py install
+
+   This creates a Python library that we can easily integrate into our
+   projects.
+
+   If everything went well, we can already read the temperature and
+   humidity. The easiest way is to first use the demo files:
+cd examples
+sudo ./AdafruitDHT.py 11 4
+
+   The first parameter (11) indicates which sensor was used (22 for the
+   DHT22) and the second, to which GPIO it is connected (not the pin
+   number, but the GPIO number). This produces an output like the
+   following:
+$ sudo ./AdafruitDHT.py 11 4
+Temp=24.0*  Humidity=41.0%
+
+   Attention: The sensors are only ready every two seconds. Be careful not
+   to start a query every second.
+
+
+   To integrate the Raspberry Pi humidity library into other (Python)
+   projects, you only need the following:
+
+   Python
+   1
+   2
+   3
+   4
+   5
+   6
+   import Adafruit_DHT
+   ...
+   sensor = Adafruit_DHT.DHT11
+   pin = 4
+   humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+   ...
+
+
+   [INS: :INS]
+
+Log data permanently
+
+   For weather stations and similar projects for monitoring the
+   temperature and humidity, it is useful to store these values at regular
+   time intervals so that they can be analyzed later. One possibility
+   would be to save in local database, but this has the disadvantage that
+   under certain circumstances, the SD card could be charged too much.
+
+   Therefore, I have chosen a different method that stores the data on an
+   external server. This service is free for normal use and it is very
+   easy to save data, as shown here:
+
+Share this:
+
+     * Click to share on Facebook (Opens in new window)
+     * Click to share on Twitter (Opens in new window)
+     * Click to share on Google+ (Opens in new window)
+     * Click to share on Pocket (Opens in new window)
+     * Click to share on Telegram (Opens in new window)
+     * Click to share on WhatsApp (Opens in new window)
+     *
+
+   air
+   moistureDHT11DHT22FeaturedHumidityLuftfeuchtetemperaturWetterstation
+   [INS: :INS]
+     * Previous article
+       Raspberry Pi: YouTube Live Streaming Setup
+     * Next article
+       Raspberry Pi and I2C Air Pressure Sensor BMP180
+     *
+
+21 Responses
+
+    1.
+   cyril 2-6-2018 at 3:27
+       I get to the line git clone
+       https://github.com/adafruit/Adafruit_Python_DHT.git & sudo python
+       setup.py install and I get the following python: can’t open file
+       ‘setup.py’: [Error 2] No such file or directory
+       [1]+ Exit 128
+       What should I check next or should I erase and start over and if
+       start over do I have to delete?
+       Reply
+    2.
+   cyril 2-6-2018 at 4:58
+       Found the answer. The line in the tutorial
+       “https://github.com/adafruit/Adafruit_Python_DHT.git & sudo python
+       setup.py install” . After it ran and I got the errors. I changed
+       Directory cd Adafruit_Python_DHT the sudo python setup.py install.
+       Then sudo ./Adafruit.py 11 4 and it worked!
+       Reply
+    3.
+   ololo 9-27-2018 at 13:26
+       Cyril, ‘git clone
+       https://github.com/adafruit/Adafruit_Python_DHT.git‘ creates
+       Adafruit_Python_DHT dir and clones there. So, you have to change
+       dir to that one with the ‘cd’ command.
+       Reply
+    4.
+   Andrea 11-5-2018 at 15:36
+       “on an external server.” which server/service ? thank you
+       Reply
+          +
+        Kobus Theron 11-7-2018 at 5:42
+            The example shown is using API calls to Thingspeak to publish
+            the values. It could be a whole tutorial on its own.
+            Reply
+    5.
+   Jakov 1-23-2019 at 19:46
+       I set DHT11 with my Raspberry.
+       Normally seems it shows correct results eg. 22*/46%, but after 10
+       lines goes mad eg. 7*/105%. Than again turns to normal. Is it about
+       a bad sensor?
+       Reply
+          +
+        Lionel 2-4-2019 at 19:56
+            The manufacturers do not recommended that you read data from
+            the sensor more than once per 2 seconds. If you do you may get
+            incorrect readings.
+            Reply
+    6.
+   Buraq 2-9-2019 at 18:33
+       python3?
+       Reply
+    7.
+   Botan 2-26-2019 at 10:47
+       Thanks
+       I have done what you have done, (Raspberry Pi 3 B), but after
+       running
+       pi@raspberrypi:~/projects/Adafruit_Python_DHT/examples $ sudo
+       ./AdafruitDHT.py 22 4
+       it prompts the following error
+       Failed to get reading. Try again!
+       please help.
+       Reply
+          +
+        Rems 4-30-2019 at 15:42
+            Same problem…
+            Reply
+    8.
+   hozan 2-27-2019 at 15:48
+       hi, i would like to work on raspberry pi ans some sensors like
+       temp, humidity, Nitrogin and PM 10 so when ordering the pi what
+       else i should order, do i need A/D converter and which one , also
+       in order to send data do i need other components to carry out with
+       my work, like what are the components required with the pi
+       Reply
+    9.
+   Kathleen Fox 3-15-2019 at 19:40
+       pi@raspberrypi:~/foxfiles/Adafruit_Python_DHT $ git clone
+       https://github.com/adafruit/Adafruit_Python_DHT.git &&
+       Adafruit_Python_DHT on setup.py install
+       Cloning into ‘Adafruit_Python_DHT’…
+       remote: Enumerating objects: 308, done.
+       remote: Total 308 (delta 0), reused 0 (delta 0), pack-reused 308
+       Receiving objects: 100% (308/308), 91.74 KiB | 0 bytes/s, done.
+       Resolving deltas: 100% (168/168), done.
+       bash: Adafruit_Python_DHT: command not found
+       pi@raspberrypi:~/foxfiles/Adafruit_Python_DHT $
+       When I run the example, I get the error ImportError: No module
+       named ‘Adafruit_DHT’. That is probably related to the bash error
+       above. Any help would be appreciated. Thanks.
+       Reply
+          +
+        Mike 7-29-2019 at 17:43
+            I am certainly no expert but have had similar problems in the
+            past. It looks like it might be a problem with the DHT
+            library, try removing and installing it again. There also
+            might be a problem with where the files were installed. If
+            they are too deep in the structure it won’t work.
+            Reply
+   10.
+   Giacomo 4-12-2019 at 15:13
+       Hi All,
+       what’s the maximum distance between the sensor and Raspberry?
+       How many sensors I can connect to one Raspberry?
+       Thank you!
+       Reply
+   11.
+   Greg Foster 4-19-2019 at 13:30
+       Also curious how many sensors you can connect in this
+       configuration, and whether they are serialized or must have a
+       unique pin for each assigned?
+       Reply
+   12.
+   Jean 4-27-2019 at 10:51
+       Hey guys,
+       I got everything right. I did all the commands that was on this
+       page twice, copied the program on this page, and it said both
+       times:
+       Traceback (most recent call last):
+       File “/home/pi/Desktop/programs/Temp-humidity sensor.py”, line 1,
+       in
+       from Adafruit_DHT import example
+       ImportError: No module named ‘Adafruit_DHT’
+       Reply
+          +
+        Rick 5-1-2019 at 19:04
+            I was getting the No Module error until I typed (retyped?) the
+            command
+            sudo python setup.py install
+            Reply
+   13.
+   Rems 4-30-2019 at 15:38
+       Hey, I have a big problem.
+       When I write sudo ./AdafruitDHT.py 2302 4, I have “failed to get
+       reading. Try again !”
+       Why pleaaaase ?
+       Reply
+          +
+        Rick 5-1-2019 at 19:07
+            Have you tried multiple sensors? Also, for the 2302, I just
+            use 22. I had one bad sensor. Drove me nuts till I just
+            plugged in the other sensor. Of note, if you buy the sensors
+            already mounted on a small PC board with only 3 lines coming
+            out, skip the breadboard with the resistor. It’s already on
+            the PC board. Just hook up 3.3, Gnd, and GPIO4.
+            Reply
+          +
+        Nate 5-3-2019 at 21:39
+            Try a decoupling capacitor
+            Reply
+   14.
+   Vla 9-22-2019 at 18:05
+       Hi
+       Someone asked already but I hope for a reply too:
+       1. how do I connect multiple DHT11 or DHT22 sensors?
+       2. What’s the limit how many can I add to the series?
+       3. What’s the Max distance between Raspberry and the sensor for a
+       simple wire without any extra electronic components ?
+       4. How to deal with distances longer than a max for simple wires,
+       like what kind of circuits would extend the range or digitize it?
+       Thank you!
+       Reply
+
+Leave a Comment Cancel reply
+
+   Your email address will not be published.
+
+
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ______________________________
+   ______________________________
+   ______________________________
+
+   [ ] Notify me of follow-up comments by email.
+
+   [ ] Notify me of new posts by email.
+
+   Submit Comment
+   [INS: :INS]
+   50 of the most important Raspberry Pi Sensors and Components
+
+50 of the most important Raspberry Pi Sensors and Components
+
+   22. January 2016
+   Using a Raspberry Pi distance sensor (ultrasonic sensor HC-SR04)
+
+Using a Raspberry Pi distance sensor (ultrasonic sensor HC-SR04)
+
+   11. November 2015
+   How to setup a Raspberry Pi Security Camera Livestream
+
+How to setup a Raspberry Pi Security Camera Livestream
+
+   22. October 2017
+   How to get Google Chromium for the Raspberry Pi
+
+How to get Google Chromium for the Raspberry Pi
+
+   25. February 2016
+   Top 10 Raspberry Pi 3 Cases (with fan, screen, …)
+
+Top 10 Raspberry Pi 3 Cases (with fan, screen, …)
+
+   22. February 2016
+   How to use a Raspberry Pi Fingerprint Sensor for Authentication
+
+How to use a Raspberry Pi Fingerprint Sensor for Authentication
+
+   25. March 2017
+   Connect and Control WS2812 RGB LED Strips via Raspberry Pi
+
+Connect and Control WS2812 RGB LED Strips via Raspberry Pi
+
+   15. November 2017
+   [INS: :INS]
+   [INS: :INS]
+
+Subscribe to Blog
+
+   Subscribe to Raspberry Pi Tutorials and don't miss any new Tutorial!
+
+   ____________________
+
+   [ ] I have read and agree to the terms & conditions
+
+   Subscribe
+   Leave this field empty if you're human: ____________________
+   Test:
+   [INS: :INS]
+
+   [INS: :INS]
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+   Subscribe to Raspberry Pi Tutorials and don't miss any new Tutorial!
+
+   ____________________
+
+   [ ] I have read and agree to the terms & conditions
+
+   Subscribe
+   Leave this field empty if you're human: ____________________
+
+   [INS: :INS]
+
+   We use cookies to ensure that we give you the best experience on our
+   website. If you continue to use this site we will assume that you are
+   happy with it.OK
+   #alternate alternate Raspberry Pi Tutorials » Feed Raspberry Pi
+   Tutorials » Comments Feed alternate alternate
+
+   Frontpage
+
+     * de
+     * Hardware & GPIO
+     * Sensors & Components
+     * Scale
+     * Cases
+     * Fingerprint
+     * Gas Sensor
+     * Heartbeat
+     *
+     *
+     *
+     *
+
+     * First Steps
+     * General
+     * Projects
+     * de Deutsch
+
+   Frontpage
+   ____________________
+   [INS: :INS]
+   Frontpage
+
+     * de
+     * Hardware & GPIO
+     * Sensors & Components
+     * Scale
+     * Cases
+     * Fingerprint
+     * Gas Sensor
+     * Heartbeat
+     *
+     *
+     *
+     *
+
+   ____________________
+
+Frontpage
+
+   Hardware & GPIO, Home Automation
+
+Control Raspberry Pi Wireless Sockets (433MHz) – Tutorial
+
+   Read More
+   Control Raspberry Pi Wireless Sockets (433MHz) – Tutorial
+   Hardware & GPIO
+
+Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+   Read More
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+   Hardware & GPIO, Projects
+
+Connect and Control WS2812 RGB LED Strips via Raspberry Pi
+
+   Read More
+   Connect and Control WS2812 RGB LED Strips via Raspberry Pi
+   Hardware & GPIO, Projects
+
+Build a digital Raspberry Pi Scale (with Weight Sensor HX711)
+
+   Read More
+   Build a digital Raspberry Pi Scale (with Weight Sensor HX711)
+   Projects
+
+Build your own automatic Raspberry Pi Greenhouse
+
+   Read More
+   Build your own automatic Raspberry Pi Greenhouse
+   Hardware & GPIO, Projects
+
+Raspberry Pi Heartbeat / Pulse measuring
+
+   Read More
+   Raspberry Pi Heartbeat / Pulse measuring
+   Hardware & GPIO
+
+Configure and read out the Raspberry Pi gas sensor (MQ-X)
+
+   Read More
+   Configure and read out the Raspberry Pi gas sensor (MQ-X)
+   50 of the most important Raspberry Pi Sensors and Components
+   Hardware & GPIO, Projects
+   Hardware & GPIO, Projects
+
+50 of the most important Raspberry Pi Sensors and Components
+
+   Felix - 22. January 2016
+
+   One of the many advantages of the Raspberry Pi is that it is possible
+   to connect almost all standard Arduino and Raspberry Pi sensors and
+   components to the dhtvarious GPIOs. Moreover you can evaluate and / or
+   process the values with programs and other software. This accessory can
+   be used in projects such as Smart […]
+   View Post
+   Raspberry Pi and Arduino – Introduction
+   Arduino & ESP8266, News
+   Arduino & ESP8266, News
+
+Raspberry Pi and Arduino – Introduction
+
+   Felix - 7. July 2019
+
+   As already announced at some point, there will be additional tutorials
+   on how to use an Arduino on the side of the Raspberry Pi. The Arduino
+   is a small microcontroller, which is very cheap to have but allows many
+   additional features to the Pi. In combination, the two offer even more
+   options than the Raspberry […]
+   View Post
+   Log Raspberry Pi sensor data with ThingSpeak and analyze it
+   Software
+   Software
+
+Log Raspberry Pi sensor data with ThingSpeak and analyze it
+
+   Felix - 22. June 2019
+
+   Frequently, a lot of data is generated in projects that run around the
+   clock. One way to store them permanently is to store the data in a
+   local database. However, there are also some reasons that speak against
+   it. In order to keep the measured data (for example, from a weather
+   station) available in the […]
+   View Post
+   How to let an Arduino and Raspberry Pi communicate with each other
+   Arduino & ESP8266, Hardware & GPIO
+   Arduino & ESP8266, Hardware & GPIO
+
+How to let an Arduino and Raspberry Pi communicate with each other
+
+   Felix - 8. June 2019
+
+   I have already described in a previous article how the Arduino works
+   and which models exist. There are plenty of articles on the Arduino
+   itself, but few in connection with the Raspberry Pi, but this
+   combination offers many possibilities. Since I want to show more about
+   the Arduino in conjunction with the Raspberry Pi, I […]
+   View Post
+   [INS: :INS]
+   Raspberry Pi GSM Module – Mobile Internet (LTE, 3G, UMTS)
+   Projects, Software
+   Projects, Software
+
+Raspberry Pi GSM Module – Mobile Internet (LTE, 3G, UMTS)
+
+   Felix - 25. May 2019
+
+   The Raspberry Pi can be connected to the Internet very quickly and
+   easily via the local network. But what if you also need a mobile
+   Internet connection outside your own WLAN? There are GSM modules /
+   Surfsticks (mostly from Huawei), which can be connected via USB.
+   Sometimes are such GSM modules, which support 3G, UMTS […]
+   View Post
+   Build a Raspberry Pi door / window sensor with Reed Relais
+   Hardware & GPIO, Projects
+   Hardware & GPIO, Projects
+
+Build a Raspberry Pi door / window sensor with Reed Relais
+
+   Felix - 19. May 2019
+
+   In addition to a surveillance camera and motion sensors, information
+   about open windows and doors is also of interest to a self-built
+   surveillance system. A check with infrared light barriers or other
+   methods would certainly be possible, but in this case, that is much
+   more complicated. In this tutorial, it will be shown how to easily […]
+   View Post
+   Raspberry Pi LCD Display: 16×2 Characters Display (HD44780)
+   Hardware & GPIO
+   Hardware & GPIO
+
+Raspberry Pi LCD Display: 16×2 Characters Display (HD44780)
+
+   Felix - 21. April 2019
+
+   The most common controller of multi-line character displays is the
+   HD44780. There are several Raspberry Pi LCD display sizes (8×2, 16×2,
+   20×4, etc.) that run with it. In this tutorial, I will show how to use
+   a 16×2 character display and also run a test script.
+   View Post
+   Raspberry Pi Tablet “Sunfounder RasPad” Review & Setup
+   Hardware & GPIO, News
+   Hardware & GPIO, News
+
+Raspberry Pi Tablet “Sunfounder RasPad” Review & Setup
+
+   Felix - 5. April 2019
+
+   Almost every project is possible with the Raspberry Pi. This includes
+   also a complete Raspberry Pi Tablet that we can use for different
+   applications. Either as a multimedia tablet or as a panel for the smart
+   home. In this article, I’d like to introduce the Sunfounder RasPad – a
+   beginner-friendly 10.1-inch Raspberry Pi tablet that […]
+   View Post
+   Review of the 7″ Raspberry Pi Touchscreen Display
+   News
+   News
+
+Review of the 7″ Raspberry Pi Touchscreen Display
+
+   Felix - 5. April 2019
+
+   There is an official 7-inch touchscreen module for the Raspberry Pi:
+   After testing it under different applications for some time and also
+   putting together a FAQ thread, in this article I summarized my
+   impressions and the advantages and disadvantages of the display.
+   View Post
+   [INS: :INS]
+   Setting up Raspberry Pi 3 Wi-Fi and Bluetooth
+   First Steps
+   First Steps
+
+Setting up Raspberry Pi 3 Wi-Fi and Bluetooth
+
+   Felix - 3. March 2019
+
+   The Raspberry Pi 3 Model B has an integrated Wi-Fi and Bluetooth
+   adapter. You can set up the Raspberry Pi 3 Wi-Fi on the desktop, as
+   well as on the console. With the same price as the predecessor models,
+   you can save the money for a USB adapter with a Raspberry Pi 3 and
+   ideally […]
+   View Post
+   Connect a Raspberry Pi Keypad – Code Lock
+   Hardware & GPIO
+   Hardware & GPIO
+
+Connect a Raspberry Pi Keypad – Code Lock
+
+   Felix - 17. February 2019
+
+   For the Arduino and Raspberry Pi there are some keypad matrixes that
+   can be connected and read relatively easily. Similar to the numpad on a
+   keyboard, these keypads have 3×4 or 4×4 keys. These modules can be
+   used, for example, as code locks or for the construction of a small
+   pocket calculator. With help of […]
+   View Post
+   Raspberry Pi Web Server Installation Part 6 – DNS Server via No-IP
+   Webserver
+   Webserver
+
+Raspberry Pi Web Server Installation Part 6 – DNS Server via No-IP
+
+   Felix - 1. February 2019
+
+   Part 6 of the web server installation is about making the server
+   available outside of the local network using a DNS server (such as
+   No-IP, DynDNS).
+   View Post
+   1 2 3 … 7
+   [INS: :INS]
+   50 of the most important Raspberry Pi Sensors and Components
+
+50 of the most important Raspberry Pi Sensors and Components
+
+   22. January 2016
+   Using a Raspberry Pi distance sensor (ultrasonic sensor HC-SR04)
+
+Using a Raspberry Pi distance sensor (ultrasonic sensor HC-SR04)
+
+   11. November 2015
+   How to setup a Raspberry Pi Security Camera Livestream
+
+How to setup a Raspberry Pi Security Camera Livestream
+
+   22. October 2017
+   How to get Google Chromium for the Raspberry Pi
+
+How to get Google Chromium for the Raspberry Pi
+
+   25. February 2016
+   Top 10 Raspberry Pi 3 Cases (with fan, screen, …)
+
+Top 10 Raspberry Pi 3 Cases (with fan, screen, …)
+
+   22. February 2016
+   How to use a Raspberry Pi Fingerprint Sensor for Authentication
+
+How to use a Raspberry Pi Fingerprint Sensor for Authentication
+
+   25. March 2017
+   Connect and Control WS2812 RGB LED Strips via Raspberry Pi
+
+Connect and Control WS2812 RGB LED Strips via Raspberry Pi
+
+   15. November 2017
+
+Subscribe to Blog
+
+   Subscribe to Raspberry Pi Tutorials and don't miss any new Tutorial!
+
+   ____________________
+
+   [ ] I have read and agree to the terms & conditions
+
+   Subscribe
+   Leave this field empty if you're human: ____________________
+   [INS: :INS]
+   [INS: :INS]
+   Frontpage
+
+   Subscribe to Raspberry Pi Tutorials and don't miss any new Tutorial!
+
+   ____________________
+
+   [ ] I have read and agree to the terms & conditions
+
+   Subscribe
+   Leave this field empty if you're human: ____________________
+
+   [INS: :INS]
+
+   We use cookies to ensure that we give you the best experience on our
+   website. If you continue to use this site we will assume that you are
+   happy with it.OK
+   Frontpage
+
+   Hardware & GPIO, Home AutomationControl Raspberry Pi Wireless Sockets
+   (433MHz) – TutorialRead MoreHardware & GPIORaspberry Pi: Measure
+   Humidity and Temperature with DHT11/DHT22Read MoreHardware & GPIO,
+   ProjectsConnect and Control WS2812 RGB LED Strips via Raspberry PiRead
+   MoreHardware & GPIO, ProjectsBuild a digital Raspberry Pi Scale (with
+   Weight Sensor HX711)Read MoreProjectsBuild your own automatic Raspberry
+   Pi GreenhouseRead … Continue reading Frontpage
+   Raspberry Pi Tutorials
+   (BUTTON)
+
+     * (BUTTON) WordPress Embed
+     * (BUTTON) HTML Embed
+
+   https://tutorials-ra
+
+   Copy and paste this URL into your WordPress site to embed
+
+   <blockquote class="wp-embedded-content"><a href="https://tut
+   <script type='text/javascript'>_____________________________
+   <!--//--><![CDATA[//><!--___________________________________
+   		!function(a,b){"use strict";function c(){if(!e){e=!0;var a
+   //--><!]]>__________________________________________________
+   </script><iframe sandbox="allow-scripts" security="restricte
+
+   Copy and paste this code into your site to embed
+   (BUTTON)
+   Funkkommunikation zwischen Raspberry Pi's mittels MQTT Broker/Client
+
+   Wireless communication between Raspberry Pi’s via MQTT broker/client
+
+   MQTT is a protocol that specifically sends data from devices of the
+   Internet of Things and is supported by most microcontrollers and
+   systems. To use Raspberry Pi MQTT communication, not much is needed,
+   which is why this type of transmission is very interesting. In
+   addition, it is really easy to use. In this tutorial, we … Continue
+   reading Wireless communication between Raspberry Pi’s via MQTT
+   broker/client
+   Raspberry Pi Tutorials
+   20 Comments
+   (BUTTON)
+
+     * (BUTTON) WordPress Embed
+     * (BUTTON) HTML Embed
+
+   https://tutorials-ra
+
+   Copy and paste this URL into your WordPress site to embed
+
+   <blockquote class="wp-embedded-content"><a href="https://tut
+   <script type='text/javascript'>_____________________________
+   <!--//--><![CDATA[//><!--___________________________________
+   		!function(a,b){"use strict";function c(){if(!e){e=!0;var a
+   //--><!]]>__________________________________________________
+   </script><iframe sandbox="allow-scripts" security="restricte
+
+   Copy and paste this code into your site to embed
+   (BUTTON)
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+
+   With the Raspberry Pi and some sensors, it is easy to measure the
+   temperature without much effort. In addition, however, the humidity in
+   certain situations or projects (such as a weather station) can be
+   enlightening. Sensors such as the DHT11 and DHT22 are not only
+   available for a few euros, but they can also measure … Continue reading
+   Raspberry Pi: Measure Humidity and Temperature with DHT11/DHT22
+   Raspberry Pi Tutorials
+   21 Comments
+   (BUTTON)
+
+     * (BUTTON) WordPress Embed
+     * (BUTTON) HTML Embed
+
+   https://tutorials-ra
+
+   Copy and paste this URL into your WordPress site to embed
+
+   <blockquote class="wp-embedded-content"><a href="https://tut
+   <script type='text/javascript'>_____________________________
+   <!--//--><![CDATA[//><!--___________________________________
+   		!function(a,b){"use strict";function c(){if(!e){e=!0;var a
+   //--><!]]>__________________________________________________
+   </script><iframe sandbox="allow-scripts" security="restricte
+
+   Copy and paste this code into your site to embed
+   (BUTTON)

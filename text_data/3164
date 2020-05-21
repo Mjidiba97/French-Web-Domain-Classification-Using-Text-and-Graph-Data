@@ -1,0 +1,922 @@
+   Table des matières PDFPython
+
+Équation de Poisson à deux dimensions
+
+1. Introduction
+
+   Un exemple d'équation de Poisson est celle vérifiée par le potentiel
+   électrostatique :
+   [eq1.png]
+
+   où [eq18.png] est la densité volumique de charge électrique.
+
+   Un autre exemple est l'équation de la chaleur en régime stationnaire
+   vérifiée par la température :
+   [eq2.png]
+
+   où [eq19.png] est la densité volumique de puissance générée localement.
+
+   La forme générale de l'équation de Poisson est :
+   [eq3.png]
+
+   où s(x,y) est une fonction connue, appelée la source.
+
+   Pour la discrétisation, on utilise aussi la forme intégrale de cette
+   équation, pour un volume V délimitée par une surface S :
+   [eq4.png]
+
+   La première intégrale est le flux sortant. Cette équation correspond au
+   théorème de Gauss de l'électrostatique, à un bilan d'énergie pour un
+   problème thermique.
+
+   On se limite ici à l'équation de Poisson bidimensionnelle en
+   coordonnées cartésiennes. Dans ce cas, le gradient est dans le plan
+   (x,y) et l'intégrale de surface se ramène à une intégrale sur une
+   courbe fermée C; l'intégrale de volume se ramène à une intégrale sur la
+   surface Σ délimitée par la courbe :
+   [eq5.png]
+
+   Voir aussi Discrétisation de l'équation de Poisson en coordonnées
+   polaires et Discrétisation de l'équation de Poisson en géométrie
+   axiale.
+
+2. Maillage
+
+   Les nœuds du maillage sont définis par :
+   [eq6.png]
+
+   L'indice i varie de 0 à N[x]-1, l'indice j de 0 à N[y]-1. On pose :
+   [eq7.png] figureA.svgFigure pleine page
+
+3. Discrétisation de l'équation
+
+   La méthode des différences finies consiste à remplacer la dérivée
+   seconde par une expression approchée à l'aide des valeurs au nœud et
+   aux nœuds voisins. Pour la dérivée seconde par rapport à x, la
+   différence finie la plus utilisée est :
+   [eq8.png]
+
+   En procédant de même pour l'autre dérivée, on obtient l'équation
+   suivante pour chaque nœud du maillage :
+   [eq9.png]
+
+   Si U désigne la matrice colonne formée des N points du maillage, la
+   relation précédente s'écrit sous forme matricielle :
+   [eq10.png]
+
+   Il s'agit donc de résoudre un système linéaire à N inconnues.
+
+   On utilisera également la notation suivante :
+   [eq11.png]
+
+   Les matrices D (droite), G (gauche), H (haut), B (bas), C (centre) et S
+   (source) ont les mêmes dimensions que le maillage.
+
+   Pour un point non situé sur une frontière, on a donc :
+   [eq12.png]
+
+   La discrétisation peut aussi être obtenue avec la méthode des volumes
+   finis ([1]), qui consiste à discrétiser la forme intégrale exprimée
+   pour un volume de contrôle. Pour un point situé dans le domaine (point
+   A), le volume de contrôle est représenté sur la figure par le contour
+   (a,b,c,d). Il s'agit d'un parallélépipède de côtés Δx,Δy,Δz. Le flux
+   sortant du gradient sur la surface (ab) est discrétisé de la manière
+   suivante :
+   [eq13.png]
+
+   On procède de même pour les surfaces (bc), (cd) et (da). L'intégrale de
+   volume de la source est remplacé par :
+   [eq14.png]
+
+4. Conditions limites
+
+4.a. Condition de Dirichlet
+
+   Dans ce cas, le potentiel électrique, ou la température, est imposée
+   sur une frontière. On écrira simplement pour tout point de la frontière
+   :
+   [eq20.png]
+
+4.b. Condition de Neumann
+
+   Dans certains cas, le champ électrique peut être imposé sur une
+   frontière. Par exemple sur une frontière perpendiculaire à l'axe Oy :
+   [eq21.png]
+
+   Dans un problème de thermique, le flux thermique peut être imposé sur
+   une frontière :
+   [eq22.png]
+
+   On écrira donc la condition limite sous la forme générale :
+   [eq23.png]
+
+   Pour le point B situé sur le bord j=0, on écrit un développement de
+   Taylor à l'ordre 2:
+   [eq24.png]
+
+   La dérivée seconde par rapport à y est remplacée par une dérivée
+   seconde par rapport à x à l'aide de l'équation de Poisson :
+   [eq25.png]
+
+   Après avoir discrétisé la dérivée seconde comme plus haut, on obtient
+   finalement pour le point de la frontière :
+   [eq26.png]
+
+   La même équation est obtenue plus simplement par la méthode des volumes
+   finis, en appliquant la forme intégrale sur la surface (e,f,g,h) :
+   [eq27.png]
+
+   La condition limite de Neumann sur les points C et D s'obtient de
+   manière analogue.
+
+   Pour le point F situé sur un coin, il y a une dérivée w[y] imposée sur
+   le côté parallèle à x, une dérivée w[y] imposée sur le côté parallèle à
+   y. La forme intégrale sur le volume de contrôle (x,y,z,w) conduit à :
+   [eq28.png]
+
+   On obtient donc pour le point F :
+   [eq29.png]
+
+   La condition limite de Neumann sur le coin E s'obtient de la même
+   manière. Les coins E et F sont similaires car le domaine de calcul se
+   trouve à l'intérieur du coin. Il n'en est plus de même pour le coin G,
+   sommet d'un objet situé dans le domaine. Le volume de contrôle pour ce
+   point est (a,b,c,d,e,f). On obtient :
+   [eq30.png]
+
+4.c. Relation de passage entre deux milieux différents
+
+   Sur une frontière entre deux milieux différents, il faut tenir compte
+   des différences de conductivité dans un problème de thermique, ou des
+   différences de constantes diélectriques ou magnétiques dans un problème
+   d'électromagnétisme. Cela revient à écrire la forme intégrale de la
+   manière suivante :
+   [eq31.png]
+
+   où le coefficient a représente la propriété relative du milieu
+   (conductivité, permittivité, etc), égale à a[1] ou a[2]. On introduit
+   ici deux constantes pour obtenir un traitement symétrique des deux
+   milieux, mais une des deux constantes sera égale à 1.
+
+   En un point sur une frontière parallèle à y, la discrétisation de la
+   forme intégrale s'écrit alors :
+   [eq32.png]
+
+   On obtient finalement :
+   [eq33.png]
+
+   Dans le cas [eq36.png] , on retrouve la discrétisation de l'équation de
+   Poisson.
+
+5. Méthode itérative de Gauss-Seidel
+
+   Dans une méthode itérative (ou méthode de relaxation), le système AU=F
+   est résolu par itérations successives, jusqu'à convergence vers la
+   solution. Au départ, les valeurs données aux [eq34.png] sont
+   quelconques (généralement nulles). À chaque itération, les N points du
+   maillage sont parcourus dans un ordre déterminé, par exemple par
+   rangées successives. Dans la méthode de Gauss-Seidel, les valeurs
+   [eq35.png] sont stockées dans un seul tableau. Le noeud courant est
+   modifié par la relation :
+   [eq15.png]
+
+   Les noeuds du membre de droite sont soit des noeuds modifiés dans la
+   précédente itération, soit des noeuds modifiés dans la même itération.
+   Par exemple, dans le cas d'un balayage par lignes successives de gauche
+   à droite et de bas en haut, les termes G et B ont été actualisés dans
+   la même itération.
+
+   L'inconvénient de cette méthode est sa lenteur de convergence. Elle
+   peut être accélérée par la méthode de sur-relaxation, qui consiste à
+   adopter une moyenne pondérée de la valeur calculée par le schéma des
+   différences finies et de l'ancienne :
+   [eq16.png]
+
+   Le paramètre de sur-relaxation doit vérifier :
+   [eq17.png]
+
+   Pour un problème donné, il faut chercher le paramètre optimal.
+
+   Pour plus de détails voir Méthode de Gauss Seidel .
+
+   Pour les très grands maillages, la convergence de la méthode de
+   Gauss-Seidel peut être accélérée de manière spectaculaire par les
+   méthodes multigrilles, qui consistent à utiliser successivement des
+   maillages de différentes tailles lors du processus d'itération. Pour
+   plus de détails, voir Méthode multigrilles.
+
+Références
+
+   [1]  R.H. Pletcher, J.C. Tannehill, D.A. Anderson,  Computational Fluid
+   Mechanics and Heat Transfer,  (CRC Press, 2013)
+
+   Creative Commons License Textes et figures sont mis à disposition sous
+   contrat Creative Commons.
+   Table des matières Python
+
+Discrétisation de l'équation de Poisson en coordonnées polaires
+
+1. Introduction
+
+   On considère l'équation de Poisson :
+   [eq1.png]
+
+   où s est un champ scalaire appelé la source et u le champ scalaire à
+   déterminer, qui peut être un potentiel électrostatique, la température
+   pour un problème de transfert thermique, le potentiel des vitesses pour
+   un écoulement, etc.
+
+   On se place dans le cas d'un problème bidimensionnel en coordonnées
+   polaires. L'équation de Poisson s'écrit alors :
+   [eq2.png]
+
+   La méthode de discrétisation des volumes finis ([1][2]) consiste à
+   utiliser l'équation (1) intégrée sur un volume. Avec le théorème
+   d'Ostrogradsky, on obtient pour un volume V délimitée par une surface S
+   :
+   [eq3.png]
+
+   Physiquement, il s'agit d'une équation de conservation exprimée pour le
+   volume de contrôle V. Par exemple pour un problème de transfert
+   thermique, cette équation exprime la conservation de l'énergie.
+
+   Il est important que l'équation de conservation soit vérifiée par le
+   schéma numérique. La méthode des volumes finis consiste à discrétiser
+   ces deux intégrales pour des volumes de contrôle choisis en fonction du
+   système de coordonnées utilisé.
+
+2. Définition du maillage
+
+   Le maillage est défini par N[r] cercles espacés de Δr et N[θ] droites
+   espacés de Δθ. Les rayons et angles des nœuds du maillage sont :
+   [eq4.png]
+
+   Le premier cercle (j=0) est réduit au point O. On a par ailleurs :
+   [eq5.png]
+
+   On définit:
+   [eq6.png]
+
+   La périodicité de l'angle s'écrit :
+   [eq7.png] figureA.svgFigure pleine page
+
+3. Discrétisation de l'équation
+
+   Soit (i,j) un point à l'intérieur du domaine. Le volume de contrôle est
+   représenté en pointillé sur la figure sous forme d'un contour
+   (a,b,c,d). Dans la direction perpendiculaire au plan, la longueur du
+   volume est constante, égale à 1. Le volume est donc :
+   [eq8.png]
+
+   La méthode des volumes finis consiste à remplacer les deux intégrales
+   de l'équation (3) par des approximations en fonction des valeurs de U
+   aux nœuds du maillage. Pour le terme de source, l'approximation la plus
+   simple est :
+   [eq9.png]
+
+   Le flux du gradient se ramène ici à une intégrale sur le contour
+   (a,b,c,d). Si on considère par exemple l'arc (a,b), on peut utiliser
+   l'approximation suivante :
+   [eq10.png]
+
+   L'approximation pour l'arc (c,d) est similaire. Pour le segment (b,c),
+   on utilise l'approximation suivante :
+   [eq11.png]
+
+   L'équation discrétisée se met sous la forme générale suivante :
+   [eq12.png]
+
+   On obtient finalement pour un point à l'intérieur du domaine :
+   [eq13.png]
+
+   Lorsque le centre O se trouve dans le domaine d'intégration, il
+   nécessite un traitement particulier. On note U[0] la valeur de u au
+   point O. Le volume de contrôle est le cercle tracé sur la figure. La
+   discrétisation de la loi de conservation s'obtient en écrivant le
+   gradient sur chaque arc de cercle :
+   [eq14.png]
+
+   Cette équation ne correspond pas au schéma (14) car elle implique tous
+   les points du premier cercle.
+
+4. Discrétisation des conditions limites
+
+4.a. Conditions de Dirichlet
+
+   Une condition limite de Dirichlet consiste à imposer une valeur de u
+   sur un bord du domaine ou d'un objet. Par exemple, si une condition de
+   Dirichlet est définie sur le bord du domaine par une fonction g(θ), on
+   écrira pour chaque point du bord :
+   [eq15.png]
+
+   Exprimé avec le schéma général, la condition s'écrit :
+   [eq16.png]
+
+4.b. Condition de Neumann
+
+   La condition limite de Neumann consiste à fixer le gradient de u sur
+   une frontière, plus précisément la composante du gradient
+   perpendiculaire à la frontière. Physiquement, cela correspond à un flux
+   imposé (champ électrique imposé, flux thermique imposé, etc).
+
+   On considère tout d'abord le bord du domaine, constitué du cercle
+   j=N[r]-1. Pour un point du bord, le volume de contrôle (e,f,g,h) est
+   représenté en pointillé sur la figure. le volume est :
+   [eq17.png]
+
+   La dérivée imposée est par convention la dérivée par rapport à r (flux
+   sortant du domaine) :
+   [eq18.png]
+
+   On définit donc :
+   [eq19.png]
+
+   Le flux sortant du volume de contrôle par le côté (g,h) est discrétisé
+   de la manière suivante :
+   [eq20.png]
+
+   Pour le côté (e,f) on écrit :
+   [eq21.png]
+
+   Le côté (fg) peut être traité comme le côté (bc) :
+   [eq22.png]
+
+   On obtient finalement pour la condition limite de Neumann sur le bord
+   du domaine (j=N[r]-1) :
+   [eq23.png]
+
+   Il peut arriver que le domaine soit limité par un cercle interne. Dans
+   ce cas, le premier indice est j=J[0] et il faut écrire une condition
+   limite sur ce cercle. On obtient alors :
+   [eq24.png]
+
+   Voyons le cas d'un objet dans le domaine (contour PQRS) avec des
+   conditions limites de Neumann. Pour les points des arcs PS et QR, la
+   discrétisation est similaire à celle faite ci-dessus pour les bords du
+   domaine. Sur le bord PQ, il faut faire intervenir la dérivée suivante :
+   [eq25.png]
+
+   On pose donc pour ce côté :
+   [eq26.png]
+
+   Le volume de contrôle est représenté sur la figure par le contour
+   (lmno). Le volume est
+   [eq27.png]
+
+   L'approximation du flux sortant du volume de contrôle par le côté (no)
+   est :
+   [eq28.png]
+
+   Le côté (lm) est identique au côté (ad) traité plus haut. Le côté (nm)
+   se traite comme le côté (cd) avec une longueur d'arc réduite de moitié.
+   On obtient finalement :
+   [eq29.png]
+
+   Les coins doivent recevoir un traitement particulier. Par exemple pour
+   le coin R, le volume de contrôle est délimité par le contour (uvwxyz).
+   Le côté (yz) est soumis à la condition de Neumann orthoradiale alors
+   que le côté (xy) est soumis à une condition radiale. Cela signifie
+   qu'il y a deux flux à spécifier pour les coins. On obtient pour ce
+   point le volume :
+   [eq30.png]
+
+   et les coefficients suivants :
+   [eq31.png]
+
+   le coin V du contour TUWXY est différent du précédent car le domaine de
+   calcul se trouve à l'intérieur du coin. Le volume de contrôle est
+   (a,b,c,d). Le volume est :
+   [eq32.png]
+
+   On obtient pour ce point :
+   [eq33.png]
+
+Références
+
+   [1]  J.W. Thomas,  Numerical partial differential equations,
+   (Springer-Verlag, 2010)
+   [2]  R.H. Pletcher, J.C. Tannehill, D.A. Anderson,  Computational Fluid
+   Mechanics and Heat Transfer,  (CRC Press, 2013)
+
+   Creative Commons License Textes et figures sont mis à disposition sous
+   contrat Creative Commons.
+   Table des matières PDFPython
+
+Discrétisation de l'équation de Poisson en géométrie axiale
+
+1. Introduction
+
+   On considère l'équation de Poisson :
+   [eq1.png]
+
+   où s est un champ scalaire appelé la source et u le champ scalaire à
+   déterminer, qui peut être un potentiel électrostatique, la température
+   pour un problème de transfert thermique.
+
+   On considère le cas d'un problème à symétrie axiale, pour lequel on
+   utilise les coordoonées cylindriques (r,θ,z). Les champs s(z,r) et
+   u(z,r) sont alors indépendant de θ et l'équation de Poisson s'écrit :
+   [eq2.png]
+
+   La méthode de discrétisation des volumes finis ([1][2]) consiste à
+   utiliser l'équation (1) intégrée sur un volume. Avec le théorème
+   d'Ostrogradsky, on obtient pour un volume V délimitée par une surface S
+   :
+   [eq3.png]
+
+   Physiquement, il s'agit d'une équation de conservation exprimée pour le
+   volume de contrôle V. Par exemple pour un problème de transfert
+   thermique, cette équation exprime la conservation de l'énergie.
+
+   Il est important que l'équation de conservation soit vérifiée par le
+   schéma numérique. La méthode des volumes finis consiste à discrétiser
+   ces deux intégrales pour des volumes de contrôle choisis en fonction du
+   système de coordonnées utilisé.
+
+2. Définition du maillage
+
+   Le maillage est défini par les nœuds suivants
+   [eq4.png]
+
+   où l'indice i varie de 0 à N[z]-1 et l'indice j de 0 à N[r]-1. L'indice
+   j=0 correspond à l'axe de symétrie (axe Oz).
+
+   On définit:
+   [eq5.png] figureA.svgFigure pleine page
+
+3. Discrétisation de l'équation
+
+   Soit (i,j) un point à l'intérieur du domaine (point A), non situé sur
+   l'axe (j>0). Le volume de contrôle est représenté en pointillé sur la
+   figure sous forme d'un contour (a,b,c,d). Dans la direction
+   perpendiculaire au plan du maillage, le volume est délimité par des
+   arcs de cercles centrés sur l'axe Oz, d'angle Δθ. Les sommets du
+   contour correspondent à des arcs de cercle de longueurs :
+   [eq6.png]
+
+   Les segments (da) et (bc) correspondent à des surfaces dont les aires
+   sont :
+   [eq7.png]
+
+   Les segments (ab) et (cd) correspondent à des surfaces cylindriques
+   dont les aires sont :
+   [eq8.png]
+
+   Enfin le volume est :
+   [eq9.png]
+
+   La méthode des volumes finis consiste à remplacer les deux intégrales
+   de l'équation (3) par des approximations en fonction des valeurs de U
+   aux nœuds du maillage. Pour le terme de source, l'approximation la plus
+   simple est :
+   [eq10.png]
+
+   Le flux sortant du gradient sur la surface (da) est évalué de la
+   manière suivante :
+   [eq11.png]
+
+   Le flux sur la surface (bc) s'écrit de manière analogue. Pour la
+   surface (ab) :
+   [eq12.png]
+
+   En raison de la symétrie axiale, les flux sur les deux surfaces θ
+   constante sont nuls.
+
+   L'équation (3) discrétisée se met sous la forme générale suivante :
+   [eq13.png]
+
+   On obtient finalement pour un point à l'intérieur du domaine (point A)
+   :
+   [eq14.png]
+
+   On remarque que ces coefficients sont proportionnels à l'indice j (ou j
+   plus ou moins 1/2). Comme l'indice d'un point dépend de la taille du
+   maillage, on divisera ce facteur par N[r], pour qu'il soit indépendant
+   de la taille du maillage. Cette correction est indispensable pour
+   l'utilisation des méthodes multigrilles.
+
+   On considère à présent le point B situé sur l'axe Oz d'indices (i,0),
+   avec 0<i<N[z]-1. Le volume de contrôle est représenté sur la figure par
+   le contour (e,f,h,h). La surface (gh) est réduite à un segment, donc le
+   flux est nul. Les aires des trois autres surfaces utiles sont :
+   [eq15.png]
+
+   Le volume est :
+   [eq16.png]
+
+   On obtient pour ce point de l'axe (point B) :
+   [eq17.png]
+
+4. Discrétisation des conditions limites
+
+4.a. Condition de Dirichlet
+
+   Une condition limite de Dirichlet consiste à imposer une valeur de u
+   sur un bord du domaine (autre que l'axe Oz) ou d'un objet. Par exemple,
+   si une condition de Dirichlet est définie sur le bord du domaine par
+   une fonction g(z), on écrira pour chaque point du bord :
+   [eq18.png]
+
+   Exprimé avec le schéma général, la condition s'écrit :
+   [eq19.png]
+
+4.b. Condition de Neumann
+
+   La condition limite de Neumann consiste à fixer le gradient de u sur
+   une frontière, plus précisément la composante du gradient
+   perpendiculaire à la frontière. Physiquement, cela correspond à un flux
+   imposé (champ électrique imposé, flux thermique imposé, etc).
+
+   Considérons tout d'abord le cas d'un point C situé sur le bord j=N[r]-1
+   (pas sur un coin). La dérivée imposée sur ce bord est :
+   [eq20.png]
+
+   On pose donc :
+   [eq21.png]
+
+   Le volume de contrôle pour ce point est représenté sur la figure par le
+   contour (k,l,m,n). On écrit les aires des différentes faces et le
+   volume :
+   [eq22.png]
+
+   Le flux sortant à travers la surface (kl) est discrétisé de la manière
+   suivante :
+   [eq23.png]
+
+   Les flux sur les surfaces (lm), (mn) et (nk) sont discrétisés comme
+   précédemment et on obtient :
+   [eq24.png]
+
+   Pour un point D situé sur le bord i=0, on impose la dérivée suivante :
+   [eq25.png]
+
+   et on pose
+   [eq26.png]
+
+   Le volume de contrôle représenté par le contour (o,p,q,r) conduit aux
+   coefficients suivants :
+   [eq27.png]
+
+   Pour le point E situé sur un coin du domaine (i=0,j=N[r]-1), le volume
+   de contrôle est (s,t,u,v). Le flux sur (ts) fait intervenir la dérivée
+   par rapport à r alors que le flux sur (tu) fait intervenir la dérivée
+   par rapport à z. On obtient pour ce point :
+   [eq28.png]
+
+   Le coin situé sur l'axe (i=0,j=0) nécessite un traitement spécial en
+   raison de l'absence de flux sur l'arête (yz). On obtient pour ce point
+   :
+   [eq29.png]
+
+   Pour un objet cylindrique défini par le contour ABCDEF, la condition de
+   Neumann s'écrit de manière différente suivant le côté. Les coins
+   doivent recevoir un traitement particulier. Sur chaque coin, il y a
+   deux flux imposés perpendiculaires.
+
+   Le traitement des côtés est similaire à celui des bords du domaine vu
+   ci-dessus. Par exemple, le bord GH conduit à
+   [eq30.png]
+
+   Le coin I est similaire au coin E traité ci-dessus car le domaine de
+   calcule se trouve à l'intérieur du coin. Pour les sommets G,H,J,K,L, le
+   domaine se trouve à l'extérieur du coin. Par exemple, pour le sommet G,
+   dont le volume de contrôle est (a,b,c,d,e,f), on obtient :
+   [eq31.png]
+
+Références
+
+   [1]  J.W. Thomas,  Numerical partial differential equations,
+   (Springer-Verlag, 2010)
+   [2]  R.H. Pletcher, J.C. Tannehill, D.A. Anderson,  Computational Fluid
+   Mechanics and Heat Transfer,  (CRC Press, 2013)
+
+   Creative Commons License Textes et figures sont mis à disposition sous
+   contrat Creative Commons.
+
+   Table des matières Python
+
+Discrétisation de l'équation de Poisson vectorielle
+
+1. Introduction
+
+   L'équation de Poisson vectorielle est :
+   [eq1.png]
+
+   s est un champ vectoriel donné appelé la source, et A le champ
+   vectoriel inconnu. Cette équation est vérifiée par le potentiel vecteur
+   en magnétostatique.
+
+   On se place dans le cas d'un champ A de divergence nul (comme en
+   magnétostatique). L'équation s'écrit alors :
+   [eq2.png]
+
+   Le théorème de Stokes permet d'obtenir une forme intégrale de cette
+   équation, sur une courbe fermée C délimitant une surface Σ :
+   [eq3.png]
+
+   On reconnait là le théorème d'Ampère de la magnétostatique.
+
+   Pour un problème bidimensionnel en coordonnées cartésiennes, les deux
+   vecteurs ont seulement une composante sur un axe z et l'équation
+   devient :
+   [eq4.png]
+
+   Il s'agit de l'équation de Poisson pour un champ scalaire, dont la
+   discrétisation est décrite dans Équation de Poisson à deux dimensions.
+   Néanmoins, la loi de conservation ne s'exprime pas sous forme d'un flux
+   à travers une surface fermée mais sous forme d'une circulation du
+   rotationnel sur une courbe fermée. Nous verrons comment discrétiser
+   directement le théorème d'Ampère.
+
+   Pour un problème à symétrie axiale en coordonnées cylindriques, les
+   vecteurs sont orthoradiaux et l'équation s'écrit :
+   [eq5.png]
+
+   Cette équation est tout à fait différente de l'équation de Poisson pour
+   un champ scalaire, dont la discrétisation est expliquée dans
+   Discrétisation de l'équation de Poisson en géométrie axiale :
+   [eq6.png]
+
+   Pour l'équation vectorielle, les solutions à symétrie axiale
+   invariantes par translation (indépendantes de z) sont :
+   [eq7.png]
+
+   Pour l'équation scalaire, elles sont :
+   [eq8.png]
+
+   L'objectif de ce document est la discrétisation de l'équation de
+   Poisson vectorielle en géométrie axiale, en utilisant la forme
+   intégrale, c'est-à-dire le théorème d'Ampère. On commence par expliquer
+   le principe de la méthode des volumes finis dans le cas de l'équation
+   en coordonnées cartésiennes.
+
+2. Géométrie plane
+
+   Dans un problème bidimensionnel en coordonnées cartésiennes, la forme
+   intégrale (3) s'écrit :
+   [eq9.png]
+
+   La figure suivante montre un point A du maillage, non situé sur un bord
+   :
+   figureA.svgFigure pleine page
+
+   Pour discrétiser la forme intégrale, on considère le contour
+   rectangulaire (a,b,c,d). La méthode des volumes finis consiste ici à
+   utiliser non pas un volume de contrôle mais un contour de contrôle. Sur
+   le côté (ab) on a :
+   [eq10.png]
+
+   Cette intégrale est identique au flux sortant du gradient de A[z] sur
+   une surface (ab) (d'extension 1 selon z), qui est utilisé pour
+   discrétiser le laplacien dans la méthode des volumes finis (Équation de
+   Poisson à deux dimensions).
+
+   Sur le côté opposé (cd), on a :
+   [eq11.png]
+
+   qui est aussi le flux sortant du gradient sur la surface (cd)
+   d'extension 1 selon z.
+
+   On vérifie la même analogie pour les deux autres côtés. L'intégrale de
+   surface de la source peut aussi se voir comme l'intégrale de volume sur
+   le volume (a,b,c,d) d'extension 1 selon z.
+
+   Finalement, la forme intégrale sur ce contour est identique à la forme
+   intégrale sur le volume de contrôle utilisé pour discrétiser l'équation
+   de Poisson bidimensionnelle en coordonnées cartésiennes (Équation de
+   Poisson à deux dimensions). Le schéma de discrétisation obtenu est donc
+   identique :
+   [eq12.png]
+
+   On retrouve cette identité en remarquant que l'équation de Poisson (4)
+   est identique à l'équation de Poisson pour un champ scalaire. Nous
+   allons voir qu'il n'est plus de même en coordonnées cylindriques.
+
+3. Géométrie axiale
+
+3.a. Discrétisation de l'équation
+
+   Pour un problème à symétrie axiale en coordonnées cylindriques, la
+   forme intégrale s'écrit :
+   [eq13.png]
+
+   Le maillage est dans le plan méridien (z,r). La figure suivante
+   représente le maillage avec z en abscisse :
+   figureA.svgFigure pleine page
+
+   Le contour de contrôle est (a,b,c,d). Sur le côté (ab), on a :
+   [eq14.png]
+
+   qui n'est évidemment pas le flux du gradient (dans le plan méridien le
+   gradient est identique au gradient en coordonnées cartésiennes).
+
+   La manière la plus simple de discrétiser cette intégrale est :
+   [eq15.png]
+
+   Sur le côté opposé (cd) on a :
+   [eq16.png]
+
+   qui se discrétise de la manière suivante :
+   [eq17.png]
+
+   Pour le côté (bc) on a
+   [eq18.png]
+
+   Le côté (da) est similaire et pour le terme de source on peut écrire :
+   [eq19.png]
+
+   On obtient finalement le schéma suivant :
+   [eq20.png]
+
+   Lorsque j est grand (loin de l'axe), ce schéma est très proche du
+   schéma donné plus haut pour le problème cartésien. Au voisinage de
+   l'axe Oz, les deux schémas sont très différents.
+
+   Un point situé sur l'axe j=0 nécessite un traitement particulier
+   puisque l'indice j-1 n'est pas défini pour ce point. On remarque que le
+   vecteur source présente une antisymétrie par rapport à l'axe Oz :
+   [eq21.png]
+
+   Il en est de même de A[θ](r,z). On en déduit que le vecteur A est nul
+   sur l'axe :
+   [eq22.png]
+
+   Un point de l'axe obéit donc à une condition limite de Dirichlet. Cela
+   est tout à fait différent du cas de l'équation de Poisson scalaire,
+   pour laquelle l'axe Oz est un axe de symétrie.
+
+   On remarque néanmoins que les points de l'axe n'interviennent pas dans
+   le calcul des autres points puisque B[i,1]=0.
+
+3.b. Condition limite de Neumann
+
+   Considérons par exemple un point C situé sur le bord j=N[r]-1
+   correspondant au rayon maximal.
+   figureB.svgFigure pleine page
+
+   Le contour de contrôle est (k,l,m,n). La condition limite de Neumann
+   consiste à imposer sur le côté (kl) la composante sur z du rotationnel,
+   c'est-à-dire la dérivée suivante :
+   [eq23.png]
+
+   La discrétisation de la circulation sur le côté (kl) s'écrit donc :
+   [eq24.png]
+
+   Pour attribuer le bon signe, il suffit de se rappeler que la
+   circulation est analogue à un flux sortant de gradient. Sur les côtés
+   (lm) et (nk), la discrétisation est identique à celle vue plus haut,
+   avec une longueur de segment réduite de moitié. Par exemple :
+   [eq25.png]
+
+   Pour le terme de source, il faut tenir compte de la réduction de l'aire
+   de la surface :
+   [eq26.png]
+
+   Le schéma obtenu pour ce point est finalement :
+   [eq27.png]
+
+   Une condition limite sur un côté où i est constant (z constant) fait
+   intervenir la composante r du rotationnel, c'est-à-dire que l'on impose
+   la dérivée suivante :
+   [eq28.png]
+
+   Voyons comment traiter le point E situé sur un coin du domaine :
+   figureC.svgFigure pleine page
+
+   Le contour est (s,t,u,v). La dérivée w[r] est imposée sur le côté (st),
+   la dérivée w[z] est imposée sur le côté (tu). Le schéma est :
+   [eq29.png]
+
+   Creative Commons License Textes et figures sont mis à disposition sous
+   contrat Creative Commons.
+   Table des matières Python
+
+Interpolation polynomiale : algorithme de Neville
+
+1. Introduction
+
+   On considère une fonction f(x) dont on connaît les valeurs aux N points
+   [eq1.png]
+
+   On pose
+   [eq2.png]
+
+   Pour calculer f(x) pour x quelconque, on peut effectuer une
+   interpolation polynomiale, qui consiste à calculer f(x) en utilisant
+   l'unique polynôme de degré N-1 qui passe par les points
+   [eq3.png]
+
+   On présente ici l'algorithme de Neville, qui permet de faire
+   efficacement une interpolation polynomiale lorsque le nombre de valeurs
+   de x est faible.
+
+2. Algorithme de Neville
+
+   L'algorithme de Neville ([1]) construit les polynômes par récurrence.
+   On commence par les polynômes de degré 0. Le polynôme de degré 0 qui
+   passe par le point (x[i],y[i]) est :
+   [eq4.png]
+
+   Partant de ces N polynômes de degré 0, on construit les polynômes de
+   degré 1. Le polynôme de degré 1 passant par les points
+   (x[i],y[i]),(x[i+1],y[i+1]) est :
+   [eq5.png]
+
+   On a en effet :
+   [eq6.png]
+
+   La relation de récurrence permettant de passer de deux polynômes de
+   degré m-1 à un polynôme de degré m est :
+   [eq7.png]
+
+   Pour le démontrer, on raisonne par récurrence, en supposant que les
+   deux polynômes de degré m-1 apparaissant dans la relation ci-dessus
+   passent par les m points figurant en indice. On vérifie alors que le
+   polynôme de degré m passe par les m+1 points d'indices i,i+1,...i+m.
+   Pour le premier point, on a en effet :
+   [eq8.png]
+
+   La vérification est similaire pour le point x[i+m]. Pour un point
+   x[i+k](commun aux deux polynômes de degré m-1), on a :
+   [eq9.png]
+
+   Le tableau suivant montre l'enchaînement des calculs jusqu'au polynôme
+   de degré N-1, dans le cas N=4 :
+   [eq10.png]
+
+3. Implémentation récursive
+
+   L'algorithme de Neville est aisément programmé de manière récursive.
+   Pour cela, on définit une fonction r(i,m,x) qui calcule la valeur du
+   polynôme de degré m en fonction des valeurs des deux polynômes de degré
+   m-1
+
+   Si m=0, la fonction renvoie y[i]. Sinon, elle renvoie :
+   [eq11.png]
+
+   On définit une classe dont le constructeur prend en argument les
+   valeurs de x et y sous forme de listes.
+   neville.py
+class Neville:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        self.N = len(x)
+
+   La fonction suivante définit la récurrence, en s'appelant récursivement
+   deux fois :
+    def recurrence(self,i,m,x):
+        if m==0:
+            return self.y[i]
+        else:
+            return ((x-self.x[i+m])*self.recurrence(i,m-1,x)+(self.x[i]-x)*self.
+recurrence(i+1,m-1,x))/(self.x[i]-self.x[i+m])
+
+   Voici la fonction qui effectue l'interpolation :
+    def interpoler(self,x):
+        return self.recurrence(0,self.N-1,x)
+
+   Pour tester l'algorithme, la fonction suivante effectue l'évaluation
+   d'un polynôme dont les coefficients sont donnés dans une liste c
+   (rangés par degré croissant) :
+    def eval_polynome(self,c,x):
+        p = len(c)
+        i = p-1
+        y = c[i]
+        while i>0:
+            i -= 1
+            y = y*x+c[i]
+        return y
+
+   La fonction suivante calcule les valeurs des listes x et y à partir
+   d'un polynôme donné, sur un intervalle donné :
+    def polynome(self,c,xmin,xmax):
+        p = len(c)
+        dx = (xmax-xmin)/p
+        for k in range(p):
+            self.x[k] = xmin+k*dx
+            self.y[k] = self.eval_polynome(c,self.x[k])
+
+   Faisons un test avec un polynôme de degré 4 :
+import neville
+x=[0,0,0,0]
+y=[0,0,0,0]
+nev = neville.Neville(x,y)
+c = [1,2,-3,2]
+nev.polynome(c,0.0,10.0)
+x0 = 3.564
+y0 = nev.interpoler(x0)
+
+print(y0)
+--> 60.562252287999996
+print(y0-nev.eval_polynome(c,x0))
+--> -1.4210854715202004e-14
+
+Références
+
+   [1]  W.H. Press, S.A. Teukolsky, W.T. Vetterling, B.P. Flannery,
+   Numerical recipes, the art of scientific computing,  (Cambridge
+   University Press, 2007)
+
+   Creative Commons License Textes et figures sont mis à disposition sous
+   contrat Creative Commons.

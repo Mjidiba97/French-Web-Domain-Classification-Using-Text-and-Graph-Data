@@ -1,0 +1,1262 @@
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+
+Search
+
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   Get my route
+   Contact sales office
+   Useful links
+   TanGO (Transports de l'Agglomération Nimoise)
+   NTecC (Nouveau transport en commun Cévenol)
+   TCRA (Transport en Commun de la Région d'Avignon)
+   Envia
+   SNCF (Société Nationale des chemins de fer)
+   TER (Transport express régional)
+   Go to the liO Facebook page (new window)
+   Download the liO iPhone app (new window)
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   var bBoucle = true; var nim = new Number(-1); //var plv = new
+   Number(6000); var timer = null; var nbEvn = 0; // ZL : création du
+   tableau des délais en JS var tabDelai = new Array(); // lecture
+   function play(reload) { bBoucle = true; // activation des boutons play
+   / pause document.getElementById("btnPlay").src =
+   "/img/default/diaporama/LIO-playOff.png";
+   document.getElementById("btnPause").src =
+   "/img/default/diaporama/LIO-pause.png"; if (reload == 1 && !timer) //
+   ZL : création du timer en remplaçant plv par le délai correspondant
+   dans le tableau tabDelai timer = setTimeout('initiate()',
+   tabDelai[nim]); return; } // pause function pause() { if (timer) {
+   clearTimeout(timer); timer = null; } bBoucle = false;
+   document.getElementById("btnPlay").src =
+   "/img/default/diaporama/LIO-play.png";
+   document.getElementById("btnPause").src =
+   "/img/default/diaporama/LIO-pauseOff.png"; return; } // affichage de
+   l'événement en cours function changeDiapo(nim) { // affichage du bon
+   DIV et intéraction avec les boutons for (i = 0; i < nbEvn; i++) { if (i
+   == nim) { document.getElementById("une"+i).style.display = "block";
+   document.getElementById("btn"+i).setAttribute("class", "btnOn");
+   document.getElementById("btn"+i).setAttribute("className", "btnOn"); }
+   else { document.getElementById("une"+i).style.display = "none";
+   document.getElementById("btn"+i).setAttribute("class", "btn");
+   document.getElementById("btn"+i).setAttribute("className", "btn"); } }
+   } // Initiate, en fait la fonction de rotation des images. function
+   initiate() { if (bBoucle) { // incrémentation du numéro d'image nim++;
+   if (nim > nbEvn - 1) { nim=0; } // commande de changement d'image
+   changeDiapo(nim); // relance après un certain temps // ZL : création du
+   timer en remplaçant plv par le délai correspondant dans le tableau
+   tabDelai timer = setTimeout("initiate()", tabDelai[nim]);
+   //alert('tabDelai[' + nim +'] = ' + tabDelai[nim]); } } // Affichage
+   forcé d'un événement function setDiapo(i) { pause(); // sélection
+   forcée de l'image nim = i; changeDiapo(i); } // Affichage de la diapo
+   suivante function nextDiapo() { // incrémentation du numéro d'image
+   nim++; if (nim > nbEvn - 1) { nim=0; } // commande de changement
+   d'image changeDiapo(nim); if (bBoucle) { if (timer) {
+   clearTimeout(timer); timer = null; } timer = setTimeout('initiate()',
+   tabDelai[nim]); } } // Affichage de la diapo précédente function
+   prevDiapo() { // incrémentation du numéro d'image nim--; if (nim < 0) {
+   nim=nbEvn - 1; } // commande de changement d'image changeDiapo(nim); if
+   (bBoucle) { if (timer) { clearTimeout(timer); timer = null; } timer =
+   setTimeout('initiate()', tabDelai[nim]); } } // Définit l'image
+   lorsqu'on survole un bouton function changeImageOnMouseOver(event){ var
+   src = this.src; var dot_pos = src.lastIndexOf("."); var extension =
+   src.slice(dot_pos); var truncated_src = src.substr(0,dot_pos);
+   if(truncated_src.slice(-3) != "_on") { this.src = truncated_src + "_on"
+   + extension; } } // Rétablit la classe du focus sur un champ function
+   changeImageOnMouseOut(event){ var src = this.src; var dot_pos =
+   src.lastIndexOf("."); var extension = src.slice(dot_pos); var
+   truncated_src = src.substr(0,dot_pos); if(truncated_src.slice(-3) ==
+   "_on") { this.src = truncated_src.substr(0,truncated_src.length - 3) +
+   extension; } }
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > My departure town
+
+My departure town
+
+   Your selection
+   Date : 05/09/2019
+   1 Departure town
+
+   Departure town :
+   ____________________ Confirm
+
+   2 Arrival town
+
+   Choice of the destination town
+
+   3 Departure stop
+
+   Choice of the departure stop
+
+   4 Arrival stop
+
+   Choice of the destination stop
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > In agglomeration
+
+In agglomeration
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > List of platforms at Nimes bus station
+
+List of platforms at Nimes bus station
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+
+Search
+
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   Get my route
+   Contact sales office
+   Useful links
+   TanGO (Transports de l'Agglomération Nimoise)
+   NTecC (Nouveau transport en commun Cévenol)
+   TCRA (Transport en Commun de la Région d'Avignon)
+   Envia
+   SNCF (Société Nationale des chemins de fer)
+   TER (Transport express régional)
+   Go to the liO Facebook page (new window)
+   Download the liO iPhone app (new window)
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   var bBoucle = true; var nim = new Number(-1); //var plv = new
+   Number(6000); var timer = null; var nbEvn = 0; // ZL : création du
+   tableau des délais en JS var tabDelai = new Array(); // lecture
+   function play(reload) { bBoucle = true; // activation des boutons play
+   / pause document.getElementById("btnPlay").src =
+   "/img/default/diaporama/LIO-playOff.png";
+   document.getElementById("btnPause").src =
+   "/img/default/diaporama/LIO-pause.png"; if (reload == 1 && !timer) //
+   ZL : création du timer en remplaçant plv par le délai correspondant
+   dans le tableau tabDelai timer = setTimeout('initiate()',
+   tabDelai[nim]); return; } // pause function pause() { if (timer) {
+   clearTimeout(timer); timer = null; } bBoucle = false;
+   document.getElementById("btnPlay").src =
+   "/img/default/diaporama/LIO-play.png";
+   document.getElementById("btnPause").src =
+   "/img/default/diaporama/LIO-pauseOff.png"; return; } // affichage de
+   l'événement en cours function changeDiapo(nim) { // affichage du bon
+   DIV et intéraction avec les boutons for (i = 0; i < nbEvn; i++) { if (i
+   == nim) { document.getElementById("une"+i).style.display = "block";
+   document.getElementById("btn"+i).setAttribute("class", "btnOn");
+   document.getElementById("btn"+i).setAttribute("className", "btnOn"); }
+   else { document.getElementById("une"+i).style.display = "none";
+   document.getElementById("btn"+i).setAttribute("class", "btn");
+   document.getElementById("btn"+i).setAttribute("className", "btn"); } }
+   } // Initiate, en fait la fonction de rotation des images. function
+   initiate() { if (bBoucle) { // incrémentation du numéro d'image nim++;
+   if (nim > nbEvn - 1) { nim=0; } // commande de changement d'image
+   changeDiapo(nim); // relance après un certain temps // ZL : création du
+   timer en remplaçant plv par le délai correspondant dans le tableau
+   tabDelai timer = setTimeout("initiate()", tabDelai[nim]);
+   //alert('tabDelai[' + nim +'] = ' + tabDelai[nim]); } } // Affichage
+   forcé d'un événement function setDiapo(i) { pause(); // sélection
+   forcée de l'image nim = i; changeDiapo(i); } // Affichage de la diapo
+   suivante function nextDiapo() { // incrémentation du numéro d'image
+   nim++; if (nim > nbEvn - 1) { nim=0; } // commande de changement
+   d'image changeDiapo(nim); if (bBoucle) { if (timer) {
+   clearTimeout(timer); timer = null; } timer = setTimeout('initiate()',
+   tabDelai[nim]); } } // Affichage de la diapo précédente function
+   prevDiapo() { // incrémentation du numéro d'image nim--; if (nim < 0) {
+   nim=nbEvn - 1; } // commande de changement d'image changeDiapo(nim); if
+   (bBoucle) { if (timer) { clearTimeout(timer); timer = null; } timer =
+   setTimeout('initiate()', tabDelai[nim]); } } // Définit l'image
+   lorsqu'on survole un bouton function changeImageOnMouseOver(event){ var
+   src = this.src; var dot_pos = src.lastIndexOf("."); var extension =
+   src.slice(dot_pos); var truncated_src = src.substr(0,dot_pos);
+   if(truncated_src.slice(-3) != "_on") { this.src = truncated_src + "_on"
+   + extension; } } // Rétablit la classe du focus sur un champ function
+   changeImageOnMouseOut(event){ var src = this.src; var dot_pos =
+   src.lastIndexOf("."); var extension = src.slice(dot_pos); var
+   truncated_src = src.substr(0,dot_pos); if(truncated_src.slice(-3) ==
+   "_on") { this.src = truncated_src.substr(0,truncated_src.length - 3) +
+   extension; } }
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > My departure town
+
+My departure town
+
+   Your selection
+   Date : 05/09/2019
+   1 Departure town
+
+   Departure town :
+   ____________________ Confirm
+
+   2 Arrival town
+
+   Choice of the destination town
+
+   3 Departure stop
+
+   Choice of the departure stop
+
+   4 Arrival stop
+
+   Choice of the destination stop
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > In agglomeration
+
+In agglomeration
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > List of platforms at Nimes bus station
+
+List of platforms at Nimes bus station
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > Timetables by school
+
+Timetables by school
+
+1 Home town of the School
+
+   1 Home town of the School
+
+   Choice from the list or use the map
+   Municipality :
+   [AIGALIERS___________________]
+   OK
+
+Key
+
+     * Place Place
+     * Change View Change View
+     * Zomm + Zomm +
+
+     *
+     * Recentre the view Recentre the view
+     * Zomm - Zomm -
+
+     * Municipality Municipality
+     * Municipality served by a school transport service Municipality
+       served by a school transport service
+
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice
+   var UID = "SV30GD"; var LANG_ID = "2"; var LANG_CODE= "US"; var KML_URL
+   = ""; var SITE_PATH = ""; var LAT_CENTER= 43.848889; var
+   LON_CENTER=4.358025; var ZOOM_LEVEL=8; var ZOOM_LEVEL_MIN=0; var
+   ZOOM_LEVEL_MAX=0; var MAPSERVICE_URL =
+   "http://edgardv6.tsi.cityway.fr/WebServices/OpenServiceWCF/api/map/v1/"
+   ; var EVENTSERVICE_URL =
+   "http://edgardv6.tsi.cityway.fr/WebServices/OpenServiceWCF/api/Info/v1/
+   event/"; var DISTANCE_AROUND= "300"; var DISPLAY_PLACES_RI ="1"; var
+   DISPLAY_STOPS_RI ="1"; var MOBILE_MODE ="0"; var SITE_URL =
+   "http://www.edgard-transport.fr"; var BIKE_CITY_NAME = ""; var
+   WALK_DISTANCE = ""; var CAR_DISTANCE = ""; var TYPE_LP = "1"; var
+   TYPE_PTA = "2"; var TYPE_RUE = "3"; var TYPE_LP_PAE = "5"; var
+   TYPE_COM_PAE = "6"; var DATE_DEPART = "68"; var DATE_ARRIVEE ="65"; var
+   PLUS_RAPIDE = "1"; var MOINS_CHANGEMENT = "2"; var RI_SEPARATEUR = "$";
+   var EVN_HIDE_CITY = "1"; var URL_READ_MORE = "";
+   function DisplayInfosByPlace(Point,isCenter) { var categorie;
+   switch(Point.Categorie) { case 1: categorie="Place" break; case 2:
+   categorie="City" break; case 3: categorie="City" break; case 4:
+   categorie="Docking station" break; case 5: categorie="Bicycle depot"
+   break; case 6: categorie="Car-park" break; case 7:
+   categorie="Transports centres" break; case 8: categorie="Quarter"
+   break; case 9: categorie="Zones" break; case 10: categorie="Services"
+   break; case 11: categorie="CARTO/PLACE_11 indfini" break;
+   default:categorie="Place" break; } var
+   divContent=document.createElement("div"); var description=
+   document.createElement("div")
+   addClassOnElement(description,"infowindow"); var pTitle =
+   document.createElement("p"); addClassOnElement(pTitle,'center'); var
+   title = document.createTextNode(categorie); pTitle.appendChild(title);
+   var br1 = document.createElement("br"); var stopName =
+   document.createTextNode(Point.Title); var pName =
+   document.createElement("p"); pName.appendChild(stopName);
+   addClassOnElement(pName,"title"); description.appendChild(pTitle);
+   description.appendChild(br1); description.appendChild(pName); if
+   (MOBILE_MODE == "0") { if (RUB_CODE == RUB_CARTE_INTERACTIVE &&
+   !isCenter) { var divLinkCarto = BuildLinkCarto(Point);
+   addClassOnElement(divLinkCarto,"link");
+   description.appendChild(divLinkCarto); } if(RUB_CODE ==
+   RUB_CARTE_INTERACTIVE || RUB_CODE == RUB_PLAN || RUB_CODE ==
+   RUB_HORAIRE_LIGNE || RUB_CODE == RUB_HORAIRE_ARRET) {
+   description.appendChild(DisplayLinkStartArrival(Point));
+   if(Point.ListLines != null && MOBILE_MODE == "0" )
+   description.appendChild(getLineInfo(Point)); } if (RUB_RI == RUB_CODE)
+   { description.appendChild(DisplayLinkStartArrivalRi(Point)); }
+   if(RUB_CODE == RUB_LIAISON)
+   description.appendChild(getLinkLiaisonDirecte(Point)); if(RUB_CODE ==
+   RUB_HORAIRES_SCOLAIRES)
+   description.appendChild(getLinkHorairesScolaires(Point)); }
+   divContent.appendChild(description); return divContent.innerHTML; }
+   function DisplayInfosByStopPoint(Point) { var isMB = "0"; if
+   (document.getElementById("isMB") != null) { isMB =
+   document.getElementById("isMB").value; } var
+   divContent=document.createElement("div"); var description=
+   document.createElement("div")
+   addClassOnElement(description,"infowindow"); var pTitle =
+   document.createElement("p"); addClassOnElement(pTitle,'center'); var
+   title = document.createTextNode("Stop"); pTitle.appendChild(title); var
+   stopName = document.createTextNode(Point.Title); var pName =
+   document.createElement("p"); pName.appendChild(stopName);
+   addClassOnElement(pName,"title"); description.appendChild(pTitle);
+   description.appendChild(pName); if (MOBILE_MODE == "0") { if (isMB !=
+   "1") { if(RUB_CODE == RUB_CARTE_INTERACTIVE || RUB_CODE == RUB_PLAN ||
+   RUB_CODE == RUB_HORAIRE_LIGNE || RUB_CODE == RUB_HORAIRE_ARRET ) {
+   if(Point.ListLines != null)
+   description.appendChild(getLineInfo(Point));
+   description.appendChild(DisplayLinkStartArrival(Point)); } if
+   ((RUB_CODE== RUB_RI || RUB_CODE == RUB_PLAN || RUB_CODE ==
+   RUB_HORAIRE_LIGNE || RUB_CODE == RUB_HORAIRE_ARRET) ) { var
+   divLinkCarto = BuildLinkCarto(Point);
+   addClassOnElement(divLinkCarto,"link");
+   description.appendChild(divLinkCarto); } if (RUB_RI == RUB_CODE)
+   description.appendChild(DisplayLinkStartArrivalRi(Point)); if(RUB_CODE
+   == RUB_LIAISON) description.appendChild(getLinkLiaisonDirecte(Point));
+   } if( (RUB_CODE == RUB_CARTE_INTERACTIVE || RUB_CODE== RUB_PLAN ||
+   RUB_CODE == RUB_HORAIRE_LIGNE || (RUB_CODE == RUB_HORAIRE_ARRET &&
+   Point.sens != null)))
+   description.appendChild(BuildHourStopLink(Point)); }
+   divContent.appendChild(description); return divContent.innerHTML; }
+   function DisplayInfosByAddress(Point) { //Creation du Div qui va
+   contenir les informations dans l'infoWindow var div =
+   document.createElement('DIV'); addClassOnElement(div,"infowindow"); var
+   pTitle = document.createElement("p");
+   addClassOnElement(pTitle,'center'); var title =
+   document.createTextNode("Address:"); pTitle.appendChild(title); var
+   stopName = document.createTextNode(Point.Title); var pName =
+   document.createElement("p"); pName.appendChild(stopName);
+   addClassOnElement(pName,"title"); div.appendChild(pTitle);
+   div.appendChild(pName); if (MOBILE_MODE == "0") { if(RUB_CODE ==
+   RUB_VELO) div.appendChild(DisplayLinkStartArrivalRi(Point));
+   if(RUB_CODE == RUB_CARTE_INTERACTIVE)
+   div.appendChild(DisplayLinkStartArrival(Point)); if (RUB_CODE ==
+   RUB_RI) div.appendChild(DisplayLinkStartArrivalRi(Point)); } return
+   div; } function DisplayInfosForStart(Point) { var isMB = "0"; if
+   (document.getElementById("isMB") != null) { isMB =
+   document.getElementById("isMB").value; } var description=
+   document.createElement("div")
+   addClassOnElement(description,"infowindow"); var pTitle =
+   document.createElement("p"); addClassOnElement(pTitle,'center'); var
+   title = document.createTextNode("Start"); pTitle.appendChild(title);
+   var stopName = document.createTextNode(Point.Title); var pName =
+   document.createElement("p"); pName.appendChild(stopName);
+   addClassOnElement(pName,"title"); description.appendChild(pTitle);
+   description.appendChild(pName); if (MOBILE_MODE == "0" && isMB != "1")
+   { if( RUB_CODE == RUB_RI && MOBILE_MODE == "0") { var divLinkCarto =
+   BuildLinkCarto(Point); addClassOnElement(divLinkCarto,"link");
+   description.appendChild(divLinkCarto); } } return description; }
+   function DisplayInfosForArrival(Point) { var isMB = "0"; if
+   (document.getElementById("isMB") != null) { isMB =
+   document.getElementById("isMB").value; } var
+   divContent=document.createElement("div"); var description=
+   document.createElement("div")
+   addClassOnElement(description,"infowindow"); var pTitle =
+   document.createElement("p"); addClassOnElement(pTitle,'center'); var
+   title = document.createTextNode("Arrival"); pTitle.appendChild(title);
+   var stopName = document.createTextNode(Point.Title); var pName =
+   document.createElement("p"); pName.appendChild(stopName);
+   addClassOnElement(pName,"title"); description.appendChild(pTitle);
+   description.appendChild(pName); if( RUB_CODE == RUB_RI && MOBILE_MODE
+   == "0" && isMB != "1") { var divLinkCarto = BuildLinkCarto(Point);
+   addClassOnElement(divLinkCarto,"link");
+   description.appendChild(divLinkCarto); } return description; } function
+   DisplayInfosForVia(Point) { var description=""; description="
+
+   "+"Step"+ ":
+   " + Point.Title+"
+
+   "; return description; } function DisplayLinkStartArrivalRi(Point) {
+   //on lui passe l'arret logique if(Point.Type == 2) var Id =
+   Point.LogicalId; else var Id = Point.Id; var SEARCH_ADVANCED =
+   getParamValue("searchAdvanced") //on supprime les ancres sil y en a if
+   (SEARCH_ADVANCED.indexOf("#") != -1) { SEARCH_ADVANCED =
+   SEARCH_ADVANCED.split("#")[0]; } var SEARCH = getParamValue("search")
+   //on supprime les ancres sil y en a if (SEARCH.indexOf("#") != -1) {
+   SEARCH = SEARCH.split("#")[0]; } var mode =""; mode = "ri/";
+   if(RUB_CODE == RUB_VELO) mode = "ri_velo/";
+   Point.Title=Point.Title.replace("'",""); var link=
+   document.createElement("p"); addClassOnElement(link,"link"); var url =
+   window.location.href; var linkUrl=""; var linkUrlDep=""; var
+   linkUrlArr=""; var latDep =""; var latArr = ""; var lonDep=""; var
+   lonArr=""; if( url !='') { url=url.replace("#advancedOptions","");
+   url=url.replace("#routeForm",""); url=url.replace("#BikeForm","");
+   url=url.replace("#gmap",""); url=url.replace("#Carto","");
+   parametersList=url.split('?'); ArrayParams =
+   parametersList[1].split('&'); var sep=""; for (var i=0;i <
+   ArrayParams.length ;i++ ) { var value = ArrayParams[i].split('=');
+   if((value[0]!="") && (value[0]!="laction") && (value[0]!="comDep") &&
+   (value[0]!="pointDep") && (value[0]!="comArr") &&
+   (value[0]!="pointArr")&& (value[0]!="latDep") && (value[0]!="latArr")
+   && (value[0]!="lonArr") && (value[0]!="lonDep")) { linkUrl
+   +=sep+ArrayParams[i]; sep='&'; } else { if((value[0]=="comDep" &&
+   value[1]!="0") || (value[0]=="pointDep" && value[1]!="")) { linkUrlDep
+   +="&"+ ArrayParams[i] } if((value[0]=="comArr" && value[1]!="0") ||
+   (value[0]=="pointArr" && value[1]!="")) { linkUrlArr +="&"+
+   ArrayParams[i] } if(value[0]=="latDep") latDep=value[1];
+   if(value[0]=="latArr") latArr=value[1]; if(value[0]=="lonDep")
+   lonDep=value[1]; if(value[0]=="lonArr") lonArr=value[1]; } } }
+   linkUrl=linkUrl.replace("'",""); //Partie qui permet de garder en
+   memoire les X Y du point cliqu par l'utilisateur et de passer en
+   parametre l'id Geo var linkForAddress=""; var coordDep=""; var
+   coordArr=""; if (Point.IdLink !=0) { linkForAddress="$$$"+Point.IdLink;
+   coordDep="&latDep="+Point.Latitude+"&lonDep="+Point.Longitude;
+   coordArr="&latArr="+Point.Latitude+"&lonArr="+Point.Longitude; //Permet
+   de garder en memoire les coordonnes if(latArr != "")
+   coordDep+="&latArr="+latArr+"&lonArr="+lonArr; if(latDep != "")
+   coordArr+="&latDep="+latDep+"&lonDep="+lonDep; } var aDep =
+   document.createElement("a"); var aArr = document.createElement("a");
+   var textDep= document.createTextNode("From this point"); var textArr=
+   document.createTextNode("You will reach this point at");
+   aDep.setAttribute("href","/"+mode+"?"+ linkUrl + linkUrlArr
+   +"&laction=backForm&comDep="+Point.LocalityCode+"&pointDep="+Id+"$"+esc
+   ape(Point.Title)+"$"+Point.Type+"$"+Point.LocalityCode+linkForAddress+"
+   &searchAdvanced=1#gmap"); aArr.setAttribute("href","/"+mode+"?"+
+   linkUrl+ linkUrlDep
+   +"&laction=backForm&comArr="+Point.LocalityCode+"&pointArr="+Id+"$"+esc
+   ape(Point.Title)+"$"+Point.Type+"$"+Point.LocalityCode+linkForAddress+"
+   &searchAdvanced=1#gmap"); var textBetween = document.createTextNode(" -
+   "); aDep.appendChild(textDep); aArr.appendChild(textArr);
+   link.appendChild(aDep); link.appendChild(textBetween);
+   link.appendChild(aArr); return link; } function
+   DisplayLinkStartArrivalByLATLON(Point) {
+   Point.Title=Point.Title.replace("'",""); var divLink =
+   document.createElement("div"); var aDep=document.createElement("a");
+   aDep.setAttribute("href","/ri/?rub_code=4&latDep="+Point.Latitude+"&lon
+   Dep="+Point.Longitude); var textDep = document.createTextNode("From
+   this point"); aDep.appendChild(textDep); var intertext =
+   document.createTextNode(" - "); var aArr=document.createElement("a");
+   aArr.setAttribute("href","/ri/?rub_code=4&latArr="+Point.Latitude+"&lon
+   Arr="+Point.Longitude); var textArr = document.createTextNode("You will
+   reach this point at"); aArr.appendChild(textArr);
+   divLink.appendChild(aDep); divLink.appendChild(intertext);
+   divLink.appendChild(aArr); return divLink; } function
+   DisplayLinkStartArrival(Point) {
+   Point.Title=Point.Title.replace("'",""); if(Point.NumStreet== null )
+   Point.NumStreet=""; //on lui passe l'arret logique if(Point.Type == 2)
+   var Id = Point.LogicalId; else var Id = Point.Id; //on recupere le
+   contexte var searchAdvanced=getParamValue("searchAdvanced") var divLink
+   = document.createElement("p"); addClassOnElement(divLink,"link"); var
+   aDep=document.createElement("a");
+   aDep.setAttribute("href","/ri/?rub_code=4&PointDep="+Id
+   +"$"+escape(Point.Title)+"$"+Point.Type+"$"+Point.LocalityCode+"$"+Poin
+   t.NumStreet+"$"+Point.IdLink); var textDep =
+   document.createTextNode("From this point"); aDep.appendChild(textDep);
+   var intertext = document.createTextNode(" - "); var
+   aArr=document.createElement("a");
+   aArr.setAttribute("href","/ri/?rub_code=4&PointArr="+Id
+   +"$"+escape(Point.Title)+"$"+Point.Type+"$"+Point.LocalityCode+"$"+Poin
+   t.NumStreet+"$"+Point.IdLink); var textArr =
+   document.createTextNode("You will reach this point at");
+   aArr.appendChild(textArr); divLink.appendChild(aDep);
+   divLink.appendChild(intertext); divLink.appendChild(aArr); return
+   divLink; } function BuildHourStopLink(Point) { var linkStop=""; var
+   lineId =""; var sens = "" if( typeof(Point.lineId) != "undefined") {
+   lineId = Point.lineId linkStop = "&pa_id="+Point.Id; } else { linkStop
+   = "&pointDep="+Point.LogicalId+"$"+escape(Point.Title)+ "$2$"+
+   Point.LocalityCode; } if( typeof(Point.sens) != "undefined") { sens =
+   Point.sens } if (document.getElementById("date") == null) { var dateObj
+   = document.getElementById("laDate"); if (dateObj == null) { var laDate
+   =new Date(); date =
+   laDate.getDate()+"/"+laDate.getMonth()+1+"/"+laDate.getFullYear(); }
+   else { date= dateObj.value; } } else { var date
+   =document.getElementById("date").value; } var divLink=
+   document.createElement("div"); addClassOnElement(divLink,"link"); var
+   aLink= document.createElement("a");
+   aLink.setAttribute("href","../horaires_arret/?rub_code=28&lign_id="+lin
+   eId+"&laDate="+date+"&sens="+sens + linkStop); var text =
+   document.createTextNode("Bus-stop/Bike-park times");
+   aLink.appendChild(text); divLink.appendChild(aLink); return divLink; }
+   function BuildLinkCarto(Point) { var divMain =
+   document.createElement("div"); addClassOnElement(divMain,"link"); var
+   aDep=document.createElement("a"); var aArr=document.createElement("a");
+   if( Point.Type == 1)
+   aDep.setAttribute("href","/carte_interactive/?rub_code=145&pointDep="+P
+   oint.Id+"$"+escape(Point.Title)+ "$1$"+ Point.LocalityCode); else
+   aDep.setAttribute("href","/carte_interactive/?rub_code=145&latDep="+Poi
+   nt.Latitude+"&lonDep="+Point.Longitude); // DK 06/04/2012 Pas de lien
+   transport proximite //var textDep = document.createTextNode("Nearest
+   means of transport"); //aDep.appendChild(textDep);
+   divMain.appendChild(aDep); return divMain; } function getLineInfo(obj)
+   { var descriptionLine= document.createElement("div"); var listLines=
+   document.createElement("div");
+   addClassOnElement(listLines,"listLines");
+   descriptionLine.appendChild(listLines); if( obj.ListLines.length != 0)
+   { var divClear = document.createElement("div")
+   divClear.setAttribute("class","clear");
+   divClear.setAttribute("className","clear"); var divLineMess=
+   document.createElement("div"); var label4 =
+   document.createTextNode("Lines that serve this stop");
+   divLineMess.appendChild(label4); var br4 =
+   document.createElement("br"); var br5 = document.createElement("br");
+   listLines.appendChild(divLineMess); listLines.appendChild(divClear); }
+   else { var divClear = document.createElement("div");
+   divClear.setAttribute("class","clear");
+   divClear.setAttribute("className","clear"); var divLineMess=
+   document.createElement("div"); var label5 = document.createTextNode("No
+   lines serve this stop / station"); divLineMess.appendChild(label5); var
+   br5 = document.createElement("br"); var br6 =
+   document.createElement("br"); listLines.appendChild(br5);
+   listLines.appendChild(br6); listLines.appendChild(divClear);
+   listLines.appendChild(divLineMess); } var tabLines = new Array(); for
+   (var i = 0; i < obj.ListLines.length; ++i) { //On verifie que la ligne
+   n'a pas deja t ajoute // if(!contains(tabLines,obj.ListLines[i].Id)) //
+   { tabLines.push(obj.ListLines[i].Id); var divLine =
+   document.createElement("div"); addClassOnElement(divLine,"line"); var
+   span = document.createElement("div"); var labelNumber =
+   document.createTextNode(obj.ListLines[i].Number+" ");
+   span.appendChild(labelNumber); addClassOnElement(span,"pictoLine
+   pictoOp"+obj.IdOperator); divLine.appendChild(span); var aLinkLine=
+   document.createElement("a");
+   aLinkLine.setAttribute("href","/plan/?rub_code=5&lign_id=" +
+   obj.ListLines[i].Id + "&sens=" + obj.ListLines[i].Direction);
+   aLinkLine.setAttribute("title","CARTO/SEE_LINE_MAP indfini " +
+   obj.ListLines[i].Number); var imgLine = document.createElement("img");
+   imgLine.setAttribute("alt","CARTO/SEE_LINE_MAP indfini");
+   imgLine.setAttribute("src","/cartoV2/img/gmapIcon.png");
+   aLinkLine.appendChild(imgLine); var br7 = document.createElement("br");
+   divLine.appendChild(aLinkLine); if(obj.ListLines[i].Disrupted == 1) {
+   var aLinkDisrupt= document.createElement("a");
+   aLinkDisrupt.setAttribute("href","/perturbation/?rub_code=17&lign_id="
+   + obj.ListLines[i].Id); var imgDisrupt = document.createElement("img");
+   imgDisrupt.setAttribute("alt","perturbations");
+   imgDisrupt.setAttribute("src","/cartoV2/img/disrupt.png");
+   aLinkDisrupt.appendChild(imgDisrupt); var br7 =
+   document.createElement("br"); divLine.appendChild(aLinkDisrupt); }
+   listLines.appendChild(divLine); //} } return descriptionLine; }
+   function getLinkLiaisonDirecte(Point) { var divMain =
+   document.createElement("div"); addClassOnElement(divMain,"link"); var
+   aDep=document.createElement("a"); var aArr=document.createElement("a");
+   var textDep=document.createTextNode(""); if(LACTION == "" ) {
+   aDep.setAttribute("href","/liaisondirecte/?rub_code=22&comDep="+Point.L
+   ocalityCode+"$"+escape(Point.Title)+"$0&laction=arrCity" ); textDep =
+   document.createTextNode("From this town"); } else if(LACTION ==
+   "arrCity" ) { var comDep=getParamValue("comDep");
+   aDep.setAttribute("href","/liaisondirecte/?rub_code=22&comDep="+comDep+
+   "&comArr="+Point.LocalityCode+"$"+escape(Point.Title)+"$0&laction=depSt
+   op"); textDep = document.createTextNode("You will arrive at this town
+   at"); } else if(LACTION == "depStop" ) { var
+   comDep=getParamValue("comDep"); var comArr=getParamValue("comArr");
+   aDep.setAttribute("href","/liaisondirecte/?rub_code=22&comDep="+comDep+
+   "&comArr="+comArr+"&ptaDep="+Point.Id+"$"+escape(Point.Title)+"$0&lacti
+   on=arrStop"); textDep = document.createTextNode("From this stop /
+   station"); } else if(LACTION == "arrStop" ) { var
+   comDep=getParamValue("comDep"); var comArr=getParamValue("comArr"); var
+   ptaDep=getParamValue("ptaDep");
+   aDep.setAttribute("href","/liaisondirecte/?rub_code=22&comDep="+ comDep
+   + "&comArr=" + comArr + "&ptaDep=" + ptaDep
+   +"&ptaArr="+Point.Id+"$"+escape(Point.Title)+"$0&laction=result");
+   textDep = document.createTextNode("You will arrive at this
+   stop/train-station"); } aDep.appendChild(textDep);
+   divMain.appendChild(aDep); return divMain; } function
+   getLinkHorairesScolaires(Point) { var divMain =
+   document.createElement("div"); addClassOnElement(divMain,"link"); var
+   aDep=document.createElement("a"); var aArr=document.createElement("a");
+   var textDep=document.createTextNode(""); if(LACTION == "" ) {
+   aDep.setAttribute("href","/horaires_scolaire/?rub_code=147&comPOI="+Poi
+   nt.LocalityCode+"$"+escape(Point.Title)+"$0&laction=selectPOI" );
+   textDep = document.createTextNode("Select this town"); } else
+   if(LACTION == "comDep" ) { var comPOI=getParamValue("comPOI"); var
+   point = getParamValue("point");
+   aDep.setAttribute("href","/horaires_scolaire/?rub_code=147&point="+poin
+   t
+   +"&comPOI="+comPOI+"&comdep="+Point.Id+"$"+escape(Point.Title)+"$0&lact
+   ion=result"); textDep = document.createTextNode("Select this town"); }
+   else if(LACTION == "selectPOI" ) { var comPOI=getParamValue("comPOI");
+   aDep.setAttribute("href","/horaires_scolaire/?rub_code=147&comPOI="+com
+   POI+"&point="+Point.Id+"$"+escape(Point.Title)+"$0&laction=comDep");
+   textDep = document.createTextNode("CARTO/LINK_DEP_PLACE_SCHOOL
+   indfini"); } else if(LACTION == "arrStop" ) { var
+   comDep=getParamValue("comDep"); var comArr=getParamValue("comArr"); var
+   ptaDep=getParamValue("ptaDep");
+   aDep.setAttribute("href","/horaires_scolaire/?rub_code=147&comPOI="+
+   comDep + "&comArr=" + comArr + "&ptaDep=" + ptaDep
+   +"&ptaArr="+Point.Id+"$"+escape(Point.Title)+"$0"); textDep =
+   document.createTextNode("You will arrive at this stop/train-station");
+   } aDep.appendChild(textDep); divMain.appendChild(aDep); return divMain;
+   } function FullScreenControl(map) { var controlDiv =
+   document.createElement('DIV'); // Set CSS styles for the DIV containing
+   the control // Setting padding to 5 px will offset the control // from
+   the edge of the map controlDiv.style.padding = '5px'; // Set CSS for
+   the control border var controlUI = document.createElement('DIV');
+   controlUI.id = "fullScreenControl"; controlUI.style.backgroundColor =
+   'white'; controlUI.style.borderStyle = 'solid';
+   controlUI.style.borderWidth = '1px'; controlUI.style.cursor =
+   'pointer'; controlUI.style.textAlign = 'center'; controlUI.title =
+   'Cliquer pour passer en mode plein cran';
+   controlDiv.appendChild(controlUI); // Set CSS for the control interior
+   var controlText = document.createElement('DIV'); controlText.id =
+   "fullScreenText"; controlText.style.fontFamily = 'Arial,sans-serif';
+   controlText.style.fontSize = '12px'; controlText.style.paddingLeft =
+   '4px'; controlText.style.paddingRight = '4px'; controlText.innerHTML =
+   'Plein cran'; controlUI.appendChild(controlText); // Setup the click
+   event listener google.maps.event.addDomListener(controlUI, 'click',
+   function () { var div = $("#mapContainer"); if
+   (!div.hasClass("fullscreen")) { controlUI.gMapsParent = div.parent();
+   $("fullScreenText").html("Revenir"); div.appendTo('body');
+   controlUI.title = "Click to return to standard screen size "; } else {
+   mapLegend = document.getElementById("mapLegend"); controlUI.title =
+   "Click here for full screen";
+   $("fullScreenText").html("CARTO/FULLSCREEN indfini ");
+   $('#mapLegend').before(div); } $("#global").toggleClass("hidden");
+   div.toggleClass("fullscreen"); google.maps.event.trigger(map,
+   'resize'); if (markersArray.length == 0) { var center = new
+   google.maps.LatLng(LAT_CENTER, LON_CENTER); map.setCenter(center);
+   map.setZoom(9); } else { if(RUB_CODE != RUB_CARTE_INTERACTIVE )
+   SetBounds(markersArray); } if(RUB_CODE == RUB_AGENDA_CARTO){ var center
+   = new google.maps.LatLng(LAT_CENTER, LON_CENTER);
+   map.setCenter(center); map.setZoom(9); } window.location.hash="Carto";
+   }); // touche echap google.maps.event.addDomListener(document, 'keyup',
+   function (e) { var div = $("#mapContainer"); if
+   (div.hasClass("fullscreen") && e.keyCode == 27) { controlUI.title =
+   "Click here for full screen"; controlUI.gMapsParent.prepend(div);
+   $("#global").toggleClass("hidden"); div.toggleClass("fullscreen");
+   google.maps.event.trigger(map, 'resize'); } }); controlDiv.index = 1;
+   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
+   execCmd(); }
+   REFRESH(1 sec): http://pub.mecatran.com/customers/edgard/
+   Chargement...
+
+   #Edgard - Actualités
+
+                                 liO - Homepage
+
+   Quick browsing :
+     * Contents |
+     * Browsing menu |
+     * Search |
+     * Site map |
+     * Help and accessibility |
+     * News feed News feed |
+     * Version française
+
+   Access the main browsing menu :
+   liO - Back to the homepage
+     * Lines
+       timetables
+          + All lines
+          + My departure town
+          + In agglomeration
+          + Timetables by school
+          + List of platforms at Nimes bus station
+     * Map of
+       Lines
+          + E-plan
+          + General simplified map
+          + Detailed map by sector
+          + Tourist map
+     * Tickets
+       & Prices
+          + Tickets
+     * Points
+       of sales
+     * Accessibility
+     * Route
+       Ideas
+          + In the Vigan country
+          + In the Cévennes
+          + At the Pont du Gard bridge
+          + Must-see towns
+          + The coast
+          + Markets
+
+   Contact liO and you
+   My space
+
+News
+
+   News
+   > See all the latest news
+
+Traffic info
+
+   Traffic info
+   > See all the latest disruptions
+   Search the site
+
+   Search by keywords
+
+   Keywords____________ OK
+
+   You are here Homepage > E-plan
+
+E-plan
+
+   You can check out who's participating and where, on our interactive
+   map
+   Top of page
+   > Contact sales office
+   Allo liO ! 0810334273
+     * © la Région 2018
+     * | Legal notice

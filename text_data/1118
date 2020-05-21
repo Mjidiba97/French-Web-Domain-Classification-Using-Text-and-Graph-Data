@@ -1,0 +1,462 @@
+
+
+         Suppressing Traffic Flow Instabilities using Bilateral Control
+
+   First, the video “Traffic Jams — and how to get rid of them:”
+
+                         [bilateral_cover_page.jpg]
+     __________________________________________________________________
+
+                                  Some details
+
+   In the “car following” model, acceleration of each vehicle depends on
+   distance and relative velocity of the leading vehicle.
+
+   In the “bilateral control” model, acceleration of each vehicle depends
+   on distance and relative velocity of the leading and
+   (counterintuitively) the following vehicle.
+
+   For additional online information click the following link: Suppressing
+   traffic flow instabilities using bilateral control
+
+   See also the “Bilateral Control” section of Liang Wang's web page
+   (scroll down) and Car-following and Bilateral Control experiments.
+
+   Below are some more illustrations of the “phantom traffic jam” as an
+   “emergent property” of a string of dynamical systems under the “car
+   following” model — and the suppression of these flow instabilities
+   using “bilateral control.”
+     __________________________________________________________________
+
+(1) Car following:
+
+   The red car in the middle applies the brakes briefly:
+
+                             [carfollowing1.gif]
+
+   Closeup of track near point of initial disturbance (red car):
+
+                             [carfollowing3.gif]
+
+   With “car following” control, disturbances move upstream (to the left)
+   only, and increase in amplitude as they go.
+   The disturbance near the initial cause dies down, but the wave
+   travelling upstream does not —
+   eventually forming a phantom traffic jam.
+     __________________________________________________________________
+
+(2) Bilateral control:
+
+   The red car in the middle applies the brakes briefly:
+
+                              [bilateral1.gif]
+
+   Closeup of track near point of intial disturbance (red car):
+
+                              [bilateral3.gif]
+
+   With “bilateral” control, disturbances travel in both directions and
+   decrease in amplitude.
+   The system soon returns to smooth flow!
+     __________________________________________________________________
+
+   Shown in (1) and (2) above are sequences of initially equally spaced
+   vehicles travelling at a common velocity
+   (traffic flow is shown in a coordinate system moving along the track at
+   the common initial velocity —
+   so cars moving at that velocity appear stationary in the animations)
+
+   The vehicle in the middle (marked in red) briefly applies the brakes
+   hard.
+
+   Two different control schemes are illustrated: (1) “car following” and
+   (2) “bilateral control.”
+
+   Positional feedback constant k[d]=0.2 (units: sec^-2) and velocity
+   feedback constant k[v]=0.05 (units: sec^-1) in both (1) amd (2).
+   Detailed behavior depends on these gains and other parameters, but the
+   overall difference between the two control schemes is clear.
+   (The animations are speeded up by a factor of 10).
+     __________________________________________________________________
+
+(3) A more complex situation:
+
+   One minute of car following control — followed by bilateral control:
+
+                              [combined_6.gif]
+
+   Shown is a recording of a sample run of a simple simulator (download by
+   clicking on the link) (*).
+   The system starts out in a reasonable state, but “phantom traffic jams”
+   start to form about 30 seconds in —
+   even though all the cars are following standard “car following”
+   protocol.
+   The “bilateral control” algorithm is switched on at the one-minute
+   mark.
+   The phantom traffic jams soon clear up!
+     __________________________________________________________________
+
+                                   Simulator
+
+   For a more elaborate simulator, download: Liang Wang's Damping Traffic
+   Flow Instabilities Java Application
+   (You will need to install Java if you don't already have it).
+     __________________________________________________________________
+
+Some Papers:
+
+     * Berthold K.P. Horn, “Suppressing Traffic Flow Instabilities”
+       IEEE Intelligent Transportation Systems Conference (ITSC 2013)
+       Den Haag, Netherlands, 2013 October 6-9.
+     * Thomas Baran, Berthold K.P. Horn, “A Robust Signal-Flow
+       Architecture For Cooperative Vehicle Density Control,”
+       Proceedings of the 38th International Conference on Acoustics,
+       Speech, and Signal Processing} (ICASSP 2013),
+       Vancouver, Canada, 2013 May 26-31.
+     * Liang Wang, Berthold K.P. Horn, Gilbert Strang, “Eigenvalue and
+       Eigenvector Analysis of Stability for a Line of Traffic,”
+       Studies in Applied Mathematics, 2016 September.
+     * Berthold K. P. Horn and Liang Wang, “Wave Equation of Suppressed
+       Traffic Flow Instabilities”,
+       IEEE Transactions on Intelligent Transportation Systems (ITS), 2017
+       December.
+     __________________________________________________________________
+
+Some Press Coverage:
+
+     * MIT CSAIL (Adam Conner-Simons) “Improving traffic - by tailgating
+       less”
+     * CBS News (Brendan Conway) “Getting rid of phantom traffic jams”
+     * LiveScience (Tom Metcalfe) “‘Phantom’ Traffic Jams Are Real - And
+       Scientists Know How to Stop Them”
+     * Canadian Broadcasting Corporation (Nora Young) “Sick of traffic
+       jams? Stop tailgating”
+     * Bangor Daily News (Zachary Wood): “MIT scientists and Maine
+       students team up to tackle traffic problems”
+     * WeChat (Zhuanlan Zhihu): 极简科普：什么是“幽灵堵车”？
+     * WIRED (Matt Simon) “Math Says You're Driving Wrong and It's Slowing
+       Us All Down”
+     * Road and Track (Avery Thompson) “Stop Tailgating, It Only Makes
+       Traffic Jams Worse”
+     * Science Daily “Tailgating doesn't get you there faster: Study:
+       CSAIL system shows that traffic would flow faster...”
+     * WIRED UK (Matt Burgess) “A change of algorithm could eradicate
+       phantom traffic jams”
+     * Huffington Post (Thomas Tamblyn) “This Tiny Change In The Way We
+       Drive Could Eradicate Most Traffic Jams”
+     * Forbes (Laurie Winkless) “If We All Stopped Tailgating, We Could
+       Dramatically Cut Traffic Jams”
+     * Lifehacker (Patrick Allan) “Tailgating Officially Makes Traffic
+       Worse, Jerks”
+     * Inc (Jessica Stillman) “MIT Researchers to Drivers: Tailgate Less
+       and You'll Get Where You're Going Much Faster”
+     * VICE (Tracey Lindeman) “Car Sensors Will Help Solve Traffic Jams”
+     * Quartz (Karen Hao) “No, tailgating doesn't get you where you need
+       to go faster”
+     * SlashGear (Shane McGlaun) “Stop those annoying phantom traffic jams
+       by not tailgating say researchers”
+     * ABC Boston (Channel 7, WHDH) “MIT researchers: Cruise control on
+       highways could prevent traffic jams”
+     * Metro (Kristin Toussaint) “Tailgating makes traffic worse, but MIT
+       researchers have a solution”
+     * Science News “Tailgating doesn't get you there faster”
+     * New Atlas (Aaron Turpen) “Study shows tailgating can slow everyone
+       down ”
+     * The Drive “Another Reason to Loathe Tailgaters”
+     * Autoblog (Sven Gustafson) “What's causing this traffic jam? If you
+       tailgate, it's caused by someone like you”
+     * PsychCentral (Traci Pedersen) “Tailgating May Slow Everyone Down”
+     * Traffic Technology Today “MIT researchers aiming to eliminate
+       phantom traffic jams”
+     * ...
+     __________________________________________________________________
+
+     * MIT News Office (Larry Hardesty): “Eliminating unexplained traffic
+       jams”
+     * NPR “Here and Now” (Meghna Chakrabarti): “Could Sensor Technology
+       End Traffic Jams?”
+     * NPR “All Things Considered” (Joe Palca) “Phantom Traffic Jams: What
+       Causes Mysterious Highway Backups?”
+     * ITS International “Adaptive cruise control would suppress traffic
+       instability”
+     * Science Daily “Eliminating Unexplained Traffic Jams: New Algorithm
+       to Alleviate Traffic Flow Instabilities”
+     * Inside Science (Joel Shurkin) “Fluid Dynamics Explains Some Traffic
+       Jams”
+     * Popular Science (Don Bayley) “How To Avoid Traffic Jams”
+     * CNN Tech (Heather Kelly): “How tech can prevent 'phantom' traffic
+       jams”
+     * EE Times (Christoph Hammerschmidt): “Damped-wave algorithm
+       eliminates sudden traffic jams”
+     * Occupational Health & Safety: “MIT Prof Writes Algorithm to Solve
+       Traffic Headaches”
+     * Fast Co Exist (Sydney Brownstone): “A Simple Math Equation Could
+       Solve Highway Traffic Jams Forever”
+     * New York Daily News: “Congestion cured by cruise control? MIT
+       researcher claims traffic woes could be cut without self-driving
+       cars”
+     * CTV News: “MIT engineer's algorithm could cut down on unexplained
+       traffic jams”
+     * BostInno (Lauren Landry): “MIT Professor Has the Answer to
+       Eliminating Mysterious Traffic Jams”
+     * GizMag (Dareen Quick): "Bilateral" adaptive cruise control could
+       help reduce traffic jams
+     * Jalopnik (Zac Estrada): “MIT Professor's Plan To Fix Cruise Control
+       Could Stop Traffic Jams”
+     * RtoZ (Rajamanickam): “MIT Professor developed bilateral-control
+       algorithm for Eliminating unexplained Traffic Jams”
+     * big think (Natalie Shoemaker) “Why Does Traffic Jam for No Reason
+       at All?”
+     * GIGAOM (Derrick Harris): “A traffic-jam-reducing algorithm that
+       should have SoCal drooling”
+     * Lincoln County News (Maia Zewert) “MIT Chooses Gizmo Garden for
+       Robot Assembly”
+     * YouTube (GeoBeats News): “MIT Professor Says He Can Prevent Phantom
+       Traffic Jams”
+     * YouTube (Rajamanickam Antonimuthu): “Traffic simulation showing
+       advantage of bilateral-control algorithm”
+     * ...
+     __________________________________________________________________
+
+   (*) To run the simulator you may have to add this web site to the
+   Exception Site List.
+   In Windows, for example, go to the Control Panel, click on "Java",
+   select "Security",
+   then click "Edit Site List" and add "http://people.csail.mit.edu/bkph/"
+   to the list
+   (See video instructions, thanks to Liang Wang).
+     __________________________________________________________________
+
+
+    Berthold K.P. Horn, bkph@ai.mit.edu
+
+
+         Suppressing Traffic Flow Instabilities using Bilateral Control
+
+   First, the video “Traffic Jams — and how to get rid of them:”
+
+                         [bilateral_cover_page.jpg]
+     __________________________________________________________________
+
+                                  Some details
+
+   In the “car following” model, acceleration of each vehicle depends on
+   distance and relative velocity of the leading vehicle.
+
+   In the “bilateral control” model, acceleration of each vehicle depends
+   on distance and relative velocity of the leading and
+   (counterintuitively) the following vehicle.
+
+   For additional online information click the following link: Suppressing
+   traffic flow instabilities using bilateral control
+
+   See also the “Bilateral Control” section of Liang Wang's web page
+   (scroll down) and Car-following and Bilateral Control experiments.
+
+   Below are some more illustrations of the “phantom traffic jam” as an
+   “emergent property” of a string of dynamical systems under the “car
+   following” model — and the suppression of these flow instabilities
+   using “bilateral control.”
+     __________________________________________________________________
+
+(1) Car following:
+
+   The red car in the middle applies the brakes briefly:
+
+                             [carfollowing1.gif]
+
+   Closeup of track near point of initial disturbance (red car):
+
+                             [carfollowing3.gif]
+
+   With “car following” control, disturbances move upstream (to the left)
+   only, and increase in amplitude as they go.
+   The disturbance near the initial cause dies down, but the wave
+   travelling upstream does not —
+   eventually forming a phantom traffic jam.
+     __________________________________________________________________
+
+(2) Bilateral control:
+
+   The red car in the middle applies the brakes briefly:
+
+                              [bilateral1.gif]
+
+   Closeup of track near point of intial disturbance (red car):
+
+                              [bilateral3.gif]
+
+   With “bilateral” control, disturbances travel in both directions and
+   decrease in amplitude.
+   The system soon returns to smooth flow!
+     __________________________________________________________________
+
+   Shown in (1) and (2) above are sequences of initially equally spaced
+   vehicles travelling at a common velocity
+   (traffic flow is shown in a coordinate system moving along the track at
+   the common initial velocity —
+   so cars moving at that velocity appear stationary in the animations)
+
+   The vehicle in the middle (marked in red) briefly applies the brakes
+   hard.
+
+   Two different control schemes are illustrated: (1) “car following” and
+   (2) “bilateral control.”
+
+   Positional feedback constant k[d]=0.2 (units: sec^-2) and velocity
+   feedback constant k[v]=0.05 (units: sec^-1) in both (1) amd (2).
+   Detailed behavior depends on these gains and other parameters, but the
+   overall difference between the two control schemes is clear.
+   (The animations are speeded up by a factor of 10).
+     __________________________________________________________________
+
+(3) A more complex situation:
+
+   One minute of car following control — followed by bilateral control:
+
+                              [combined_6.gif]
+
+   Shown is a recording of a sample run of a simple simulator (download by
+   clicking on the link) (*).
+   The system starts out in a reasonable state, but “phantom traffic jams”
+   start to form about 30 seconds in —
+   even though all the cars are following standard “car following”
+   protocol.
+   The “bilateral control” algorithm is switched on at the one-minute
+   mark.
+   The phantom traffic jams soon clear up!
+     __________________________________________________________________
+
+                                   Simulator
+
+   For a more elaborate simulator, download: Liang Wang's Damping Traffic
+   Flow Instabilities Java Application
+   (You will need to install Java if you don't already have it).
+     __________________________________________________________________
+
+Some Papers:
+
+     * Berthold K.P. Horn, “Suppressing Traffic Flow Instabilities”
+       IEEE Intelligent Transportation Systems Conference (ITSC 2013)
+       Den Haag, Netherlands, 2013 October 6-9.
+     * Thomas Baran, Berthold K.P. Horn, “A Robust Signal-Flow
+       Architecture For Cooperative Vehicle Density Control,”
+       Proceedings of the 38th International Conference on Acoustics,
+       Speech, and Signal Processing} (ICASSP 2013),
+       Vancouver, Canada, 2013 May 26-31.
+     * Liang Wang, Berthold K.P. Horn, Gilbert Strang, “Eigenvalue and
+       Eigenvector Analysis of Stability for a Line of Traffic,”
+       Studies in Applied Mathematics, 2016 September.
+     * Berthold K. P. Horn and Liang Wang, “Wave Equation of Suppressed
+       Traffic Flow Instabilities”,
+       IEEE Transactions on Intelligent Transportation Systems (ITS), 2017
+       December.
+     __________________________________________________________________
+
+Some Press Coverage:
+
+     * MIT CSAIL (Adam Conner-Simons) “Improving traffic - by tailgating
+       less”
+     * CBS News (Brendan Conway) “Getting rid of phantom traffic jams”
+     * LiveScience (Tom Metcalfe) “‘Phantom’ Traffic Jams Are Real - And
+       Scientists Know How to Stop Them”
+     * Canadian Broadcasting Corporation (Nora Young) “Sick of traffic
+       jams? Stop tailgating”
+     * Bangor Daily News (Zachary Wood): “MIT scientists and Maine
+       students team up to tackle traffic problems”
+     * WeChat (Zhuanlan Zhihu): 极简科普：什么是“幽灵堵车”？
+     * WIRED (Matt Simon) “Math Says You're Driving Wrong and It's Slowing
+       Us All Down”
+     * Road and Track (Avery Thompson) “Stop Tailgating, It Only Makes
+       Traffic Jams Worse”
+     * Science Daily “Tailgating doesn't get you there faster: Study:
+       CSAIL system shows that traffic would flow faster...”
+     * WIRED UK (Matt Burgess) “A change of algorithm could eradicate
+       phantom traffic jams”
+     * Huffington Post (Thomas Tamblyn) “This Tiny Change In The Way We
+       Drive Could Eradicate Most Traffic Jams”
+     * Forbes (Laurie Winkless) “If We All Stopped Tailgating, We Could
+       Dramatically Cut Traffic Jams”
+     * Lifehacker (Patrick Allan) “Tailgating Officially Makes Traffic
+       Worse, Jerks”
+     * Inc (Jessica Stillman) “MIT Researchers to Drivers: Tailgate Less
+       and You'll Get Where You're Going Much Faster”
+     * VICE (Tracey Lindeman) “Car Sensors Will Help Solve Traffic Jams”
+     * Quartz (Karen Hao) “No, tailgating doesn't get you where you need
+       to go faster”
+     * SlashGear (Shane McGlaun) “Stop those annoying phantom traffic jams
+       by not tailgating say researchers”
+     * ABC Boston (Channel 7, WHDH) “MIT researchers: Cruise control on
+       highways could prevent traffic jams”
+     * Metro (Kristin Toussaint) “Tailgating makes traffic worse, but MIT
+       researchers have a solution”
+     * Science News “Tailgating doesn't get you there faster”
+     * New Atlas (Aaron Turpen) “Study shows tailgating can slow everyone
+       down ”
+     * The Drive “Another Reason to Loathe Tailgaters”
+     * Autoblog (Sven Gustafson) “What's causing this traffic jam? If you
+       tailgate, it's caused by someone like you”
+     * PsychCentral (Traci Pedersen) “Tailgating May Slow Everyone Down”
+     * Traffic Technology Today “MIT researchers aiming to eliminate
+       phantom traffic jams”
+     * ...
+     __________________________________________________________________
+
+     * MIT News Office (Larry Hardesty): “Eliminating unexplained traffic
+       jams”
+     * NPR “Here and Now” (Meghna Chakrabarti): “Could Sensor Technology
+       End Traffic Jams?”
+     * NPR “All Things Considered” (Joe Palca) “Phantom Traffic Jams: What
+       Causes Mysterious Highway Backups?”
+     * ITS International “Adaptive cruise control would suppress traffic
+       instability”
+     * Science Daily “Eliminating Unexplained Traffic Jams: New Algorithm
+       to Alleviate Traffic Flow Instabilities”
+     * Inside Science (Joel Shurkin) “Fluid Dynamics Explains Some Traffic
+       Jams”
+     * Popular Science (Don Bayley) “How To Avoid Traffic Jams”
+     * CNN Tech (Heather Kelly): “How tech can prevent 'phantom' traffic
+       jams”
+     * EE Times (Christoph Hammerschmidt): “Damped-wave algorithm
+       eliminates sudden traffic jams”
+     * Occupational Health & Safety: “MIT Prof Writes Algorithm to Solve
+       Traffic Headaches”
+     * Fast Co Exist (Sydney Brownstone): “A Simple Math Equation Could
+       Solve Highway Traffic Jams Forever”
+     * New York Daily News: “Congestion cured by cruise control? MIT
+       researcher claims traffic woes could be cut without self-driving
+       cars”
+     * CTV News: “MIT engineer's algorithm could cut down on unexplained
+       traffic jams”
+     * BostInno (Lauren Landry): “MIT Professor Has the Answer to
+       Eliminating Mysterious Traffic Jams”
+     * GizMag (Dareen Quick): "Bilateral" adaptive cruise control could
+       help reduce traffic jams
+     * Jalopnik (Zac Estrada): “MIT Professor's Plan To Fix Cruise Control
+       Could Stop Traffic Jams”
+     * RtoZ (Rajamanickam): “MIT Professor developed bilateral-control
+       algorithm for Eliminating unexplained Traffic Jams”
+     * big think (Natalie Shoemaker) “Why Does Traffic Jam for No Reason
+       at All?”
+     * GIGAOM (Derrick Harris): “A traffic-jam-reducing algorithm that
+       should have SoCal drooling”
+     * Lincoln County News (Maia Zewert) “MIT Chooses Gizmo Garden for
+       Robot Assembly”
+     * YouTube (GeoBeats News): “MIT Professor Says He Can Prevent Phantom
+       Traffic Jams”
+     * YouTube (Rajamanickam Antonimuthu): “Traffic simulation showing
+       advantage of bilateral-control algorithm”
+     * ...
+     __________________________________________________________________
+
+   (*) To run the simulator you may have to add this web site to the
+   Exception Site List.
+   In Windows, for example, go to the Control Panel, click on "Java",
+   select "Security",
+   then click "Edit Site List" and add "http://people.csail.mit.edu/bkph/"
+   to the list
+   (See video instructions, thanks to Liang Wang).
+     __________________________________________________________________
+
+
+    Berthold K.P. Horn, bkph@ai.mit.edu

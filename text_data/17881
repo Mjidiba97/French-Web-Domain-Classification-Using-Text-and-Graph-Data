@@ -1,0 +1,241 @@
+   #CosyVerif » Feed CosyVerif » Comments Feed
+
+   Skip to content
+
+   (BUTTON) Toggle navigation CosyVerif
+
+CosyVerif
+
+   Software environment for the formal specification and verification of
+   dynamic systems
+
+     * Download
+          + CosyVerif
+          + BenchKit
+          + Benchmarks
+               o Parametric Timed Automata
+               o Petri Nets
+     * Documentation
+          + Formalisms
+          + Automata
+          + Petri Nets
+               o Grammars
+                    # P/T Nets
+                    # Symmetric Nets
+                    # Symmetric Nets with Bags
+               o Examples
+                    # P/T Nets
+                    # Symmetric Nets
+                    # Symmetric Nets with Bags
+               o Services
+                    # P/T invariant (GreatSPN)
+                    # P/T Bounds (Bounds)
+                    # Symmetric Nets Model Checking (Prod)
+                    # Probabilistic Model Checking (Cosmos)
+          + How-to
+          + Platform
+     * People
+     * Publications
+     * History
+
+CosyVerif
+
+Software Environment for the Formal Specification and Verification of Dynamic
+Systems
+
+   (BUTTON) Header button label:DOWNLOAD DOWNLOAD
+     * Logo
+     * Logo
+     * Logo
+     * Logo
+     * Logo
+     * Logo
+
+What is CosyVerif ?
+
+   CosyVerif is a software environment whose goal is the formal
+   specification and verification of dynamic systems.
+
+   This environment consists of two software tools: Coloane, the graphical
+   interface; and Alligator, an integration framework web service.
+   CosyVerif is enlarged with the existing verification tools developed in
+   our laboratories (founding members or partners).
+
+Extensible
+
+   Support different formalisms and offer the possibility to create and
+   integrate new tools
+
+User Friendly
+
+   Provide a graphical interface for every formalism
+
+Web Services
+
+   Include verification tools called via the interface as a web service
+   Follow @CosyVerif
+
+   CosyVerif
+   @CosyVerif
+     * CosyVerif is launching its new website! come to cosyverif.org and
+       check it out for yourself !
+       about 1 year ago
+       Reply Retweet Favorite
+     * End of summer internship on formalisms for Hdadech Nizar and Paul
+       Panganiban. Cosy now has modular expressions. Great job!
+       about 3 years ago
+       Reply Retweet Favorite
+     * Luca Saiu is at #unige for 3 days to work on #CosyVerif!
+       about 3 years ago
+       Reply Retweet Favorite
+
+Why CosyVerif ?
+
+   The development of CosyVerif has been decided and it is supported by
+   three partners of the Parisian verification group, MeFoSyLoMa, which is
+   composed of seven teams. The founding members of CosyVerif are LIP6,
+   LIPN and LSV.
+   First, these members aim at sharing their tools, comparing and
+   supporting industrial case studies and finally making them
+   long-lasting. Second, they also want to promote the practice of formal
+   verification in industry and thus they intend to ease the task of
+   integration of new formalisms and tools.
+
+Managing CosyVerif
+
+   CosyVerif is managed by a steering committee consisting of researchers
+   and engineers. It decides strategic orientations as well as technical
+   choices.
+
+Current Tools
+
+   Two formalisms are supported: automata and Petri nets, both with
+   extensions.
+   Most of the tools are related to Petri nets. Some of them perform
+   structural analyses like invariant computations while other tools
+   perform behavioural analyses: symbolic reachability graph building,
+   unfolding, stochastic simulations, etc. Finally some of them transform
+   high-level nets into low-level ones.
+
+Software Status
+
+   All the developed software are open source and free software tools.
+   Alligator is published under the GNU Affero General Public License
+   (AGPL) version 3.
+   Coloane is published under the Eclipse Public License (EPL) version 1.
+
+Project Heads
+
+   Serge Haddad
+
+Serge Haddad
+
+   Fabrice Kordon
+
+Fabrice Kordon
+
+   Laure Petrucci
+
+Laure Petrucci
+
+   *protected email*
+   *protected email*
+
+   Copyright 2019 © All rights reserved.
+
+Secondary Menu
+
+     *
+
+   Parallax One powered by WordPress
+   #CosyVerif » Feed CosyVerif » Comments Feed alternate alternate
+
+   Skip to content
+
+   (BUTTON) Toggle navigation CosyVerif
+
+CosyVerif
+
+   Software environment for the formal specification and verification of
+   dynamic systems
+
+     * Download
+          + CosyVerif
+          + BenchKit
+          + Benchmarks
+               o Parametric Timed Automata
+               o Petri Nets
+     * Documentation
+          + Formalisms
+          + Automata
+          + Petri Nets
+               o Grammars
+                    # P/T Nets
+                    # Symmetric Nets
+                    # Symmetric Nets with Bags
+               o Examples
+                    # P/T Nets
+                    # Symmetric Nets
+                    # Symmetric Nets with Bags
+               o Services
+                    # P/T invariant (GreatSPN)
+                    # P/T Bounds (Bounds)
+                    # Symmetric Nets Model Checking (Prod)
+                    # Probabilistic Model Checking (Cosmos)
+          + How-to
+          + Platform
+     * People
+     * Publications
+     * History
+
+Automata
+
+Finite State Automata
+
+   A finite-state automaton is a mathematical model used to design
+   computer programs and digital logic circuits. It is conceived as an
+   abstract machine that can be in one of a finite number of states. The
+   machine is in only one state at a time; the state it is in at any given
+   time is called the current state. It can change from one state to
+   another when initiated by a triggering event or condition, this is
+   called a transition. A particular FSM is defined by a list of the
+   possible transition states from each current state, and the triggering
+   condition for each transition.
+
+Timed Automata
+
+   A Timed Automaton (TA) is a standard finite state automaton extended
+   with clocks, i.e., real-valued variables evolving uniformly. Such
+   clocks can be compared with integers in guards (constraint that has to
+   be verified to fire a transition) and invariants (constraint that has
+   to be verified to remain in a discrete state). Some of the clocks can
+   be reset when firing transitions. Extensions of the formalism allow
+   clocks to be compared with other clocks, to be set to arbitrary values
+   (updates), or to be stopped (stopwatches).
+
+   Timed Automata were first defined by Rajev Alur and David Dill in the
+   early 1990s. Since then, much research has been performed to study
+   Timed Automata and their subclasses or variants. Many (but not all)
+   problems related to TAs are decidable, which makes TA a powerful and
+   widely used formalism for specifying and verifying real time systems.
+
+   There are numerous classes of Finite-State / Timed Automata and
+   CosyVerif handles several of them:
+     * Finite State Automata,
+     * Timed Automata,
+     * Parametric Timed Automata,
+     * Timed Automata with Stopwatches,
+     * Parametric Timed Automata with Stopwatches,
+     * Linear Hybrid Automata.
+
+Some references
+
+     * “Finite State Automata”, Wikipedia (last accessed in 2013)
+
+   Copyright 2019 © All rights reserved.
+
+Secondary Menu
+
+     *
+
+   Parallax One powered by WordPress

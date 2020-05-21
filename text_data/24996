@@ -1,0 +1,1716 @@
+   #Ecocert France - Organisme de contrôle et de certification RSS
+
+   Skip to Content Skip to Navigation
+
+   Accueil
+   Organisme de contrôle & de certification
+   au service de l'homme et de l'environnement
+   en France
+   Espace Client
+   Site web du Groupe Ecocert
+     * A propos d'Ecocert en France
+          + Qui sommes-nous ?
+          + Nos activités
+          + Le Groupe Ecocert
+          + FAQ
+          + Recrutement
+          + Contactez-nous
+     * Nos prestations
+          + Agriculture biologique
+               o Europe (CE)
+                    # Guides pratiques
+                    # Règlementation de l'agriculture biologique
+                    # Analyse
+               o Amérique du Nord (NOP)
+          + BIO+ : Cahiers des charges privés & export
+               o Les marques pour le marché Français
+               o Les marques européennes et internationales
+               o Les réglementations nationales hors UE
+          + Intrants : produits UAB
+          + Restauration collective
+          + Cosmétique bio et Spa
+          + Ecoproduits
+          + Textile biologique
+          + Environnement
+               o Changement climatique
+               o Gestion écologique des territoires
+                    # Eve® - Espace végétal écologique
+                    # Golf écodurable
+                    # PEFC
+                    # Eaux de baignade
+               o ISO 26000
+               o Systèmes de Management Environnemental
+               o Autres prestations
+                    # VHU - Véhicules Hors d'Usage
+          + Qualité et Sécurité
+          + Expertise & Conseil
+               o Blog Ecocert Expert Consulting
+          + Formations professionnelles
+               o Domaines de formation
+               o Calendrier des formations
+               o E-learning
+     * News
+          + Infos
+          + Evènements
+          + Newsletter "Ecocert Vous Informe"
+          + Références abusives
+
+   Rechercher_____
+   ok
+   Flux RSS
+     * évènements
+     * infos
+
+   30.04.18
+   Les équipes Ecocert France seront présentes sur le stand E 41, allez à
+   leur rencontre !
+   27.03.18
+   Rendez-vous les 23 et 24 septembre 2018 à Eurexpo Lyon pour la première
+   édition en province.
+   Tous les événements
+   15.06.18
+   Nouvelles conditions générales de vente et nouveau processus de
+   certification à compter du 2 juillet 2018
+   18.12.17
+   Modifications règlementaires 2018 : Production animale
+   Toutes les infos
+   [index.gif] Accédez directement à nos prestations en Agriculture Bio
+   Plus d'informations [index.png] [index.png]
+
+   Pourquoi choisir Ecocert France ?Déjà 25 000 opérateurs engagés chez
+   Ecocert, vous aussi rejoignez-nous !
+
+Suivez-nous
+
+      facebook
+      Twitter
+      youtube
+      scoopit
+      wordpress
+     * Newsletter
+     * Contact
+     * Ecocert.com
+     * Mentions légales
+     * Crédits
+     * Plan du site
+
+   Crédits
+   Ecocert
+     * Contenu
+     * Hébergement
+
+   X-PRIME
+     * Conception
+     * Réalisation
+
+   En construction
+   $(function(){ // detecte Windows XP
+   if(navigator.userAgent.indexOf("Windows NT 5.1") != -1){
+   $('html').addClass('xp'); } // HP onglets actualites/evenements
+   $('#tabs').tabs(); // HP Flash $('#flash_home_inner').flash({ src:
+   '/sites/www.ecocert.fr/themes/basic/flash/home.swf', width: 1280,
+   height: 430, wmode: 'transparent', allowFullScreen: true }); // popup
+   credits $('.menu-name-menu-footer
+   a[href="/credits"]').click(function(e) { e.preventDefault();
+   $.nyroModalManual({ content: $('#contenu_popup').clone() }); return
+   false; }); // popup espace client //Desactivation du code le 21052014
+   /*$('#ln_espace_client').click(function(e) { e.preventDefault();
+   $.nyroModalManual({ content: $('#contenu_espace_client_temp').clone()
+   }); return false; });*/ // nav $('#nice-menu-1
+   ul').css({'display':'none', 'visibility':'hidden'}); $('#nice-menu-1
+   li').hover( function(){ $(this).children('ul').css({'display':'block',
+   'visibility':'visible'}); $(this).addClass('on'); }, function(){
+   $(this).children('ul').css({'display':'none', 'visibility':'hidden'});
+   $(this).removeClass('on'); } ); // hub actus : insertion du lien 'en
+   savoir plus' $('.view-hub-actus .views-row').append('En savoir plus');
+   // récupération de la bonne url $('.view-hub-actus .views-row
+   .lien').each(function(){ $(this).attr('href',
+   $(this).parent().find('.imagefield-nodelink').attr('href')); }); //
+   lien "ecocert.com" du footer //$('#footer .ecocert-com
+   a').attr('target', '_blank'); $('#footer .ecocert-com
+   a').attr('target', '_blank'); }); /* * jQuery UI 1.6 * * Copyright (c)
+   2008 AUTHORS.txt (http://ui.jquery.com/about) * Dual licensed under the
+   MIT (MIT-LICENSE.txt) * and GPL (GPL-LICENSE.txt) licenses. * *
+   http://docs.jquery.com/UI */ ;(function($) { var _remove = $.fn.remove,
+   isFF2 = $.browser.mozilla && (parseFloat($.browser.version) < 1.9);
+   //Helper functions and ui object $.ui = { version: "1.6", //
+   $.ui.plugin is deprecated. Use the proxy pattern instead. plugin: {
+   add: function(module, option, set) { var proto =
+   $.ui[module].prototype; for(var i in set) { proto.plugins[i] =
+   proto.plugins[i] || []; proto.plugins[i].push([option, set[i]]); } },
+   call: function(instance, name, args) { var set =
+   instance.plugins[name]; if(!set) { return; } for (var i = 0; i <
+   set.length; i++) { if (instance.options[set[i][0]]) {
+   set[i][1].apply(instance.element, args); } } } }, contains: function(a,
+   b) { var safari2 = $.browser.safari && $.browser.version < 522; if
+   (a.contains && !safari2) { return a.contains(b); } if
+   (a.compareDocumentPosition) return !!(a.compareDocumentPosition(b) &
+   16); while (b = b.parentNode) if (b == a) return true; return false; },
+   cssCache: {}, css: function(name) { if ($.ui.cssCache[name]) { return
+   $.ui.cssCache[name]; } var tmp = $('
+
+   ').addClass(name).css({position:'absolute', top:'-5000px',
+   left:'-5000px', display:'block'}).appendTo('body'); //if
+   (!$.browser.safari) //tmp.appendTo('body'); //Opera and Safari set
+   width and height to 0px instead of auto //Safari returns rgba(0,0,0,0)
+   when bgcolor is not set $.ui.cssCache[name] = !!(
+   (!(/auto|default/).test(tmp.css('cursor')) ||
+   (/^[1-9]/).test(tmp.css('height')) || (/^[1-9]/).test(tmp.css('width'))
+   || !(/none/).test(tmp.css('backgroundImage')) ||
+   !(/transparent|rgba\(0, 0, 0, 0\)/).test(tmp.css('backgroundColor')))
+   ); try { $('body').get(0).removeChild(tmp.get(0)); } catch(e){} return
+   $.ui.cssCache[name]; }, hasScroll: function(el, a) { //If overflow is
+   hidden, the element might have extra content, but the user wants to
+   hide it if ($(el).css('overflow') == 'hidden') { return false; } var
+   scroll = (a && a == 'left') ? 'scrollLeft' : 'scrollTop', has = false;
+   if (el[scroll] > 0) { return true; } // TODO: determine which cases
+   actually cause this to happen // if the element doesn't have the scroll
+   set, see if it's possible to // set the scroll el[scroll] = 1; has =
+   (el[scroll] > 0); el[scroll] = 0; return has; }, isOverAxis:
+   function(x, reference, size) { //Determines when x coordinate is over
+   "b" element axis return (x > reference) && (x < (reference + size)); },
+   isOver: function(y, x, top, left, height, width) { //Determines when x,
+   y coordinates is over "b" element return $.ui.isOverAxis(y, top,
+   height) && $.ui.isOverAxis(x, left, width); }, keyCode: { BACKSPACE: 8,
+   CAPS_LOCK: 20, COMMA: 188, CONTROL: 17, DELETE: 46, DOWN: 40, END: 35,
+   ENTER: 13, ESCAPE: 27, HOME: 36, INSERT: 45, LEFT: 37, NUMPAD_ADD: 107,
+   NUMPAD_DECIMAL: 110, NUMPAD_DIVIDE: 111, NUMPAD_ENTER: 108,
+   NUMPAD_MULTIPLY: 106, NUMPAD_SUBTRACT: 109, PAGE_DOWN: 34, PAGE_UP: 33,
+   PERIOD: 190, RIGHT: 39, SHIFT: 16, SPACE: 32, TAB: 9, UP: 38 } }; //
+   WAI-ARIA normalization if (isFF2) { var attr = $.attr, removeAttr =
+   $.fn.removeAttr, ariaNS = "http://www.w3.org/2005/07/aaa", ariaState =
+   /^aria-/, ariaRole = /^wairole:/; $.attr = function(elem, name, value)
+   { var set = value !== undefined; return (name == 'role' ? (set ?
+   attr.call(this, elem, name, "wairole:" + value) : (attr.apply(this,
+   arguments) || "").replace(ariaRole, "")) : (ariaState.test(name) ? (set
+   ? elem.setAttributeNS(ariaNS, name.replace(ariaState, "aaa:"), value) :
+   attr.call(this, elem, name.replace(ariaState, "aaa:"))) :
+   attr.apply(this, arguments))); }; $.fn.removeAttr = function(name) {
+   return (ariaState.test(name) ? this.each(function() {
+   this.removeAttributeNS(ariaNS, name.replace(ariaState, "")); }) :
+   removeAttr.call(this, name)); }; } //jQuery plugins $.fn.extend({
+   remove: function() { // Safari has a native remove event which actually
+   removes DOM elements, // so we have to use triggerHandler instead of
+   trigger (#3037). $("*", this).add(this).each(function() {
+   $(this).triggerHandler("remove"); }); return _remove.apply(this,
+   arguments ); }, enableSelection: function() { return this
+   .attr('unselectable', 'off') .css('MozUserSelect', '')
+   .unbind('selectstart.ui'); }, disableSelection: function() { return
+   this .attr('unselectable', 'on') .css('MozUserSelect', 'none')
+   .bind('selectstart.ui', function() { return false; }); }, scrollParent:
+   function() { var scrollParent; if(($.browser.msie &&
+   (/(static|relative)/).test(this.css('position'))) ||
+   (/absolute/).test(this.css('position'))) { scrollParent =
+   this.parents().filter(function() { return
+   (/(relative|absolute|fixed)/).test($.curCSS(this,'position',1)) &&
+   (/(auto|scroll)/).test($.curCSS(this,'overflow',1)+$.curCSS(this,'overf
+   low-y',1)+$.curCSS(this,'overflow-x',1)); }).eq(0); } else {
+   scrollParent = this.parents().filter(function() { return
+   (/(auto|scroll)/).test($.curCSS(this,'overflow',1)+$.curCSS(this,'overf
+   low-y',1)+$.curCSS(this,'overflow-x',1)); }).eq(0); } return
+   (/fixed/).test(this.css('position')) || !scrollParent.length ?
+   $(document) : scrollParent; } }); //Additional selectors
+   $.extend($.expr[':'], { data: function(a, i, m) { return $.data(a,
+   m[3]); }, // TODO: add support for object, area tabbable: function(a,
+   i, m) { var nodeName = a.nodeName.toLowerCase(); function
+   isVisible(element) { return !($(element).is(':hidden') ||
+   $(element).parents(':hidden').length); } return ( // in tab order
+   a.tabIndex >= 0 && ( // filter node types that participate in the tab
+   order // anchor tag ('a' == nodeName && a.href) || // enabled form
+   element (/input|select|textarea|button/.test(nodeName) && 'hidden' !=
+   a.type && !a.disabled) ) && // visible on page isVisible(a) ); } }); //
+   $.widget is a factory to create jQuery plugins // taking some
+   boilerplate code out of the plugin code function getter(namespace,
+   plugin, method, args) { function getMethods(type) { var methods =
+   $[namespace][plugin][type] || []; return (typeof methods == 'string' ?
+   methods.split(/,?\s+/) : methods); } var methods =
+   getMethods('getter'); if (args.length == 1 && typeof args[0] ==
+   'string') { methods = methods.concat(getMethods('getterSetter')); }
+   return ($.inArray(method, methods) != -1); } $.widget = function(name,
+   prototype) { var namespace = name.split(".")[0]; name =
+   name.split(".")[1]; // create plugin method $.fn[name] =
+   function(options) { var isMethodCall = (typeof options == 'string'),
+   args = Array.prototype.slice.call(arguments, 1); // prevent calls to
+   internal methods if (isMethodCall && options.substring(0, 1) == '_') {
+   return this; } // handle getter methods if (isMethodCall &&
+   getter(namespace, name, options, args)) { var instance =
+   $.data(this[0], name); return (instance ?
+   instance[options].apply(instance, args) : undefined); } // handle
+   initialization and non-getter methods return this.each(function() { var
+   instance = $.data(this, name); // constructor (!instance &&
+   !isMethodCall && $.data(this, name, new $[namespace][name](this,
+   options))); // method call (instance && isMethodCall &&
+   $.isFunction(instance[options]) && instance[options].apply(instance,
+   args)); }); }; // create widget constructor $[namespace] = $[namespace]
+   || {}; $[namespace][name] = function(element, options) { var self =
+   this; this.widgetName = name; this.widgetEventPrefix =
+   $[namespace][name].eventPrefix || name; this.widgetBaseClass =
+   namespace + '-' + name; this.options = $.extend({}, $.widget.defaults,
+   $[namespace][name].defaults, $.metadata &&
+   $.metadata.get(element)[name], options); this.element = $(element)
+   .bind('setData.' + name, function(event, key, value) { return
+   self._setData(key, value); }) .bind('getData.' + name, function(event,
+   key) { return self._getData(key); }) .bind('remove', function() {
+   return self.destroy(); }); this._init(); }; // add widget prototype
+   $[namespace][name].prototype = $.extend({}, $.widget.prototype,
+   prototype); // TODO: merge getter and getterSetter properties from
+   widget prototype // and plugin prototype
+   $[namespace][name].getterSetter = 'option'; }; $.widget.prototype = {
+   _init: function() {}, destroy: function() {
+   this.element.removeData(this.widgetName); }, option: function(key,
+   value) { var options = key, self = this; if (typeof key == "string") {
+   if (value === undefined) { return this._getData(key); } options = {};
+   options[key] = value; } $.each(options, function(key, value) {
+   self._setData(key, value); }); }, _getData: function(key) { return
+   this.options[key]; }, _setData: function(key, value) {
+   this.options[key] = value; if (key == 'disabled') { this.element[value
+   ? 'addClass' : 'removeClass']( this.widgetBaseClass + '-disabled'); }
+   }, enable: function() { this._setData('disabled', false); }, disable:
+   function() { this._setData('disabled', true); }, _trigger:
+   function(type, event, data) { var eventName = (type ==
+   this.widgetEventPrefix ? type : this.widgetEventPrefix + type); event =
+   event || $.event.fix({ type: eventName, target: this.element[0] });
+   return this.element.triggerHandler(eventName, [event, data],
+   this.options[type]); } }; $.widget.defaults = { disabled: false }; /**
+   Mouse Interaction Plugin **/ $.ui.mouse = { _mouseInit: function() {
+   var self = this; this.element .bind('mousedown.'+this.widgetName,
+   function(event) { return self._mouseDown(event); })
+   .bind('click.'+this.widgetName, function(event) {
+   if(self._preventClickEvent) { self._preventClickEvent = false; return
+   false; } }); // Prevent text selection in IE if ($.browser.msie) {
+   this._mouseUnselectable = this.element.attr('unselectable');
+   this.element.attr('unselectable', 'on'); } this.started = false; }, //
+   TODO: make sure destroying one instance of mouse doesn't mess with //
+   other instances of mouse _mouseDestroy: function() {
+   this.element.unbind('.'+this.widgetName); // Restore text selection in
+   IE ($.browser.msie && this.element.attr('unselectable',
+   this._mouseUnselectable)); }, _mouseDown: function(event) { // we may
+   have missed mouseup (out of window) (this._mouseStarted &&
+   this._mouseUp(event)); this._mouseDownEvent = event; var self = this,
+   btnIsLeft = (event.which == 1), elIsCancel = (typeof
+   this.options.cancel == "string" ?
+   $(event.target).parents().add(event.target).filter(this.options.cancel)
+   .length : false); if (!btnIsLeft || elIsCancel ||
+   !this._mouseCapture(event)) { return true; } this.mouseDelayMet =
+   !this.options.delay; if (!this.mouseDelayMet) { this._mouseDelayTimer =
+   setTimeout(function() { self.mouseDelayMet = true; },
+   this.options.delay); } if (this._mouseDistanceMet(event) &&
+   this._mouseDelayMet(event)) { this._mouseStarted =
+   (this._mouseStart(event) !== false); if (!this._mouseStarted) {
+   event.preventDefault(); return true; } } // these delegates are
+   required to keep context this._mouseMoveDelegate = function(event) {
+   return self._mouseMove(event); }; this._mouseUpDelegate =
+   function(event) { return self._mouseUp(event); }; $(document)
+   .bind('mousemove.'+this.widgetName, this._mouseMoveDelegate)
+   .bind('mouseup.'+this.widgetName, this._mouseUpDelegate); //
+   preventDefault() is used to prevent the selection of text here - //
+   however, in Safari, this causes select boxes not to be selectable //
+   anymore, so this fix is needed if(!$.browser.safari)
+   event.preventDefault(); return true; }, _mouseMove: function(event) {
+   // IE mouseup check - mouseup happened when mouse was out of window if
+   ($.browser.msie && !event.button) { return this._mouseUp(event); } if
+   (this._mouseStarted) { this._mouseDrag(event); return
+   event.preventDefault(); } if (this._mouseDistanceMet(event) &&
+   this._mouseDelayMet(event)) { this._mouseStarted =
+   (this._mouseStart(this._mouseDownEvent, event) !== false);
+   (this._mouseStarted ? this._mouseDrag(event) : this._mouseUp(event)); }
+   return !this._mouseStarted; }, _mouseUp: function(event) { $(document)
+   .unbind('mousemove.'+this.widgetName, this._mouseMoveDelegate)
+   .unbind('mouseup.'+this.widgetName, this._mouseUpDelegate); if
+   (this._mouseStarted) { this._mouseStarted = false;
+   this._preventClickEvent = true; this._mouseStop(event); } return false;
+   }, _mouseDistanceMet: function(event) { return (Math.max(
+   Math.abs(this._mouseDownEvent.pageX - event.pageX),
+   Math.abs(this._mouseDownEvent.pageY - event.pageY) ) >=
+   this.options.distance ); }, _mouseDelayMet: function(event) { return
+   this.mouseDelayMet; }, // These are placeholder methods, to be
+   overriden by extending plugin _mouseStart: function(event) {},
+   _mouseDrag: function(event) {}, _mouseStop: function(event) {},
+   _mouseCapture: function(event) { return true; } }; $.ui.mouse.defaults
+   = { cancel: null, distance: 1, delay: 0 }; })(jQuery); /* * jQuery UI
+   Accordion 1.6 * * Copyright (c) 2008 AUTHORS.txt
+   (http://ui.jquery.com/about) * Dual licensed under the MIT
+   (MIT-LICENSE.txt) * and GPL (GPL-LICENSE.txt) licenses. * *
+   http://docs.jquery.com/UI/Accordion * * Depends: * ui.core.js */
+   (function($) { $.widget("ui.accordion", { _init: function() { var
+   options = this.options; if ( options.navigation ) { var current =
+   this.element.find("a").filter(options.navigationFilter); if (
+   current.length ) { if ( current.filter(options.header).length ) {
+   options.active = current; } else { options.active =
+   current.parent().parent().prev(); current.addClass("current"); } } } //
+   calculate active if not specified, using the first header
+   options.headers = this.element.find(options.header); options.active =
+   findActive(options.headers, options.active); // IE7-/Win - Extra
+   vertical space in Lists fixed if ($.browser.msie) {
+   this.element.find('a').css('zoom', '1'); } if
+   (!this.element.hasClass("ui-accordion")) {
+   this.element.addClass("ui-accordion");
+   $('').insertBefore(options.headers); $('').appendTo(options.headers);
+   options.headers.addClass("ui-accordion-header"); } var maxHeight; if (
+   options.fillSpace ) { maxHeight = this.element.parent().height();
+   options.headers.each(function() { maxHeight -= $(this).outerHeight();
+   }); var maxPadding = 0; options.headers.next().each(function() {
+   maxPadding = Math.max(maxPadding, $(this).innerHeight() -
+   $(this).height()); }).height(maxHeight - maxPadding); } else if (
+   options.autoHeight ) { maxHeight = 0;
+   options.headers.next().each(function() { maxHeight =
+   Math.max(maxHeight, $(this).outerHeight()); }).height(maxHeight); }
+   this.element.attr('role','tablist'); var self=this; options.headers
+   .attr('role','tab') .bind('keydown', function(event) { return
+   self._keydown(event); }) .next() .attr('role','tabpanel');
+   options.headers .not(options.active || "")
+   .attr('aria-expanded','false') .attr("tabIndex", "-1") .next() .hide();
+   // make sure at least one header is in the tab order if
+   (!options.active.length) { options.headers.eq(0).attr('tabIndex','0');
+   } else { options.active .attr('aria-expanded','true') .attr("tabIndex",
+   "0") .parent().andSelf().addClass(options.selectedClass); } // only
+   need links in taborder for Safari if (!$.browser.safari)
+   options.headers.find('a').attr('tabIndex','-1'); if (options.event) {
+   this.element.bind((options.event) + ".accordion", clickHandler); } },
+   destroy: function() {
+   this.options.headers.parent().andSelf().removeClass(this.options.select
+   edClass); this.options.headers.prev(".ui-accordion-left").remove();
+   this.options.headers.children(".ui-accordion-right").remove();
+   this.options.headers.next().css("display", ""); if (
+   this.options.fillSpace || this.options.autoHeight ) {
+   this.options.headers.next().css("height", ""); }
+   $.removeData(this.element[0], "accordion");
+   this.element.removeClass("ui-accordion").unbind(".accordion"); },
+   _keydown: function(event) { if (this.options.disabled || event.altKey
+   || event.ctrlKey) return; var keyCode = $.ui.keyCode; var length =
+   this.options.headers.length; var currentIndex =
+   this.options.headers.index(event.target); var toFocus = false;
+   switch(event.keyCode) { case keyCode.RIGHT: case keyCode.DOWN: toFocus
+   = this.options.headers[(currentIndex + 1) % length]; break; case
+   keyCode.LEFT: case keyCode.UP: toFocus =
+   this.options.headers[(currentIndex - 1 + length) % length]; break; case
+   keyCode.SPACE: case keyCode.ENTER: return
+   clickHandler.call(this.element[0], { target: event.target }); } if
+   (toFocus) { $(event.target).attr('tabIndex','-1');
+   $(toFocus).attr('tabIndex','0'); toFocus.focus(); return false; }
+   return true; }, activate: function(index) { // call clickHandler with
+   custom event clickHandler.call(this.element[0], { target: findActive(
+   this.options.headers, index )[0] }); } }); function
+   scopeCallback(callback, scope) { return function() { return
+   callback.apply(scope, arguments); }; }; function completed(cancel) { //
+   if removed while animated data can be empty if (!$.data(this,
+   "accordion")) { return; } var instance = $.data(this, "accordion"); var
+   options = instance.options; options.running = cancel ? 0 :
+   --options.running; if ( options.running ) { return; } if (
+   options.clearStyle ) { options.toShow.add(options.toHide).css({ height:
+   "", overflow: "" }); } instance._trigger('change', null, options.data);
+   } function toggle(toShow, toHide, data, clickedActive, down) { var
+   options = $.data(this, "accordion").options; options.toShow = toShow;
+   options.toHide = toHide; options.data = data; var complete =
+   scopeCallback(completed, this); $.data(this,
+   "accordion")._trigger("changestart", null, options.data); // count
+   elements to animate options.running = toHide.size() === 0 ?
+   toShow.size() : toHide.size(); if ( options.animated ) { var
+   animOptions = {}; if ( !options.alwaysOpen && clickedActive ) {
+   animOptions = { toShow: $([]), toHide: toHide, complete: complete,
+   down: down, autoHeight: options.autoHeight }; } else { animOptions = {
+   toShow: toShow, toHide: toHide, complete: complete, down: down,
+   autoHeight: options.autoHeight }; } if (!options.proxied) {
+   options.proxied = options.animated; } if (!options.proxiedDuration) {
+   options.proxiedDuration = options.duration; } options.animated =
+   $.isFunction(options.proxied) ? options.proxied(animOptions) :
+   options.proxied; options.duration =
+   $.isFunction(options.proxiedDuration) ?
+   options.proxiedDuration(animOptions) : options.proxiedDuration; var
+   animations = $.ui.accordion.animations, duration = options.duration,
+   easing = options.animated; if (!animations[easing]) {
+   animations[easing] = function(options) { this.slide(options, { easing:
+   easing, duration: duration || 700 }); }; }
+   animations[easing](animOptions); } else { if ( !options.alwaysOpen &&
+   clickedActive ) { toShow.toggle(); } else { toHide.hide();
+   toShow.show(); } complete(true); }
+   toHide.prev().attr('aria-expanded','false').attr("tabIndex", "-1");
+   toShow.prev().attr('aria-expanded','true').attr("tabIndex",
+   "0").focus();; } function clickHandler(event) { var options =
+   $.data(this, "accordion").options; if (options.disabled) { return
+   false; } // called only when using activate(false) to close all parts
+   programmatically if ( !event.target && !options.alwaysOpen ) {
+   options.active.parent().andSelf().toggleClass(options.selectedClass);
+   var toHide = options.active.next(), data = { options: options,
+   newHeader: $([]), oldHeader: options.active, newContent: $([]),
+   oldContent: toHide }, toShow = (options.active = $([]));
+   toggle.call(this, toShow, toHide, data ); return false; } // get the
+   click target var clicked = $(event.target); // due to the event
+   delegation model, we have to check if one // of the parent elements is
+   our actual header, and find that // otherwise stick with the initial
+   target clicked = $( clicked.parents(options.header)[0] || clicked );
+   var clickedActive = clicked[0] == options.active[0]; // if animations
+   are still active, or the active header is the target, ignore click if
+   (options.running || (options.alwaysOpen && clickedActive)) { return
+   false; } if (!clicked.is(options.header)) { return; } // switch classes
+   options.active.parent().andSelf().toggleClass(options.selectedClass);
+   if ( !clickedActive ) {
+   clicked.parent().andSelf().addClass(options.selectedClass); } // find
+   elements to show and hide var toShow = clicked.next(), toHide =
+   options.active.next(), data = { options: options, newHeader:
+   clickedActive && !options.alwaysOpen ? $([]) : clicked, oldHeader:
+   options.active, newContent: clickedActive && !options.alwaysOpen ?
+   $([]) : toShow, oldContent: toHide }, down = options.headers.index(
+   options.active[0] ) > options.headers.index( clicked[0] );
+   options.active = clickedActive ? $([]) : clicked; toggle.call(this,
+   toShow, toHide, data, clickedActive, down ); return false; }; function
+   findActive(headers, selector) { return selector ? typeof selector ==
+   "number" ? headers.filter(":eq(" + selector + ")") :
+   headers.not(headers.not(selector)) : selector === false ? $([]) :
+   headers.filter(":eq(0)"); } $.extend($.ui.accordion, { version: "1.6",
+   defaults: { autoHeight: true, alwaysOpen: true, animated: 'slide',
+   event: "click", header: "a", navigationFilter: function() { return
+   this.href.toLowerCase() == location.href.toLowerCase(); }, running: 0,
+   selectedClass: "selected" }, animations: { slide: function(options,
+   additions) { options = $.extend({ easing: "swing", duration: 300 },
+   options, additions); if ( !options.toHide.size() ) {
+   options.toShow.animate({height: "show"}, options); return; } var
+   hideHeight = options.toHide.height(), showHeight =
+   options.toShow.height(), difference = showHeight / hideHeight, padding
+   = options.toShow.outerHeight() - options.toShow.height(), margin =
+   options.toShow.css('marginBottom'), overflow =
+   options.toShow.css('overflow') tmargin =
+   options.toShow.css('marginTop'); options.toShow.css({ height: 0,
+   overflow: 'hidden', marginTop: 0, marginBottom: -padding }).show();
+   options.toHide.filter(":hidden").each(options.complete).end().filter(":
+   visible").animate({height:"hide"},{ step: function(now) { var current =
+   (hideHeight - now) * difference; if ($.browser.msie || $.browser.opera)
+   { current = Math.ceil(current); } options.toShow.height( current ); },
+   duration: options.duration, easing: options.easing, complete:
+   function() { if ( !options.autoHeight ) { options.toShow.css("height",
+   "auto"); } options.toShow.css({marginTop: tmargin, marginBottom:
+   margin, overflow: overflow}); options.complete(); } }); }, bounceslide:
+   function(options) { this.slide(options, { easing: options.down ?
+   "easeOutBounce" : "swing", duration: options.down ? 1000 : 200 }); },
+   easeslide: function(options) { this.slide(options, { easing:
+   "easeinout", duration: 700 }); } } }); })(jQuery); /* * jQuery UI Tabs
+   1.6 * * Copyright (c) 2008 AUTHORS.txt (http://ui.jquery.com/about) *
+   Dual licensed under the MIT (MIT-LICENSE.txt) * and GPL
+   (GPL-LICENSE.txt) licenses. * * http://docs.jquery.com/UI/Tabs * *
+   Depends: * ui.core.js */ (function($) { $.widget("ui.tabs", { _init:
+   function() { // create tabs this._tabify(true); }, destroy: function()
+   { var o = this.options; this.element.unbind('.tabs')
+   .removeClass(o.navClass).removeData('tabs'); this.$tabs.each(function()
+   { var href = $.data(this, 'href.tabs'); if (href) this.href = href; var
+   $this = $(this).unbind('.tabs'); $.each(['href', 'load', 'cache'],
+   function(i, prefix) { $this.removeData(prefix + '.tabs'); }); });
+   this.$lis.add(this.$panels).each(function() { if ($.data(this,
+   'destroy.tabs')) $(this).remove(); else
+   $(this).removeClass([o.selectedClass, o.deselectableClass,
+   o.disabledClass, o.panelClass, o.hideClass].join(' ')); }); if
+   (o.cookie) this._cookie(null, o.cookie); }, _setData: function(key,
+   value) { if ((/^selected/).test(key)) this.select(value); else {
+   this.options[key] = value; this._tabify(); } }, length: function() {
+   return this.$tabs.length; }, _tabId: function(a) { return a.title &&
+   a.title.replace(/\s/g, '_').replace(/[^A-Za-z0-9\-_:\.]/g, '') ||
+   this.options.idPrefix + $.data(a); }, _sanitizeSelector: function(hash)
+   { return hash.replace(/:/g, '\\:'); // we need this because an id may
+   contain a ":" }, _cookie: function() { var cookie = this.cookie ||
+   (this.cookie = 'ui-tabs-' + $.data(this.element[0])); return
+   $.cookie.apply(null, [cookie].concat($.makeArray(arguments))); },
+   _tabify: function(init) { this.$lis = $('li:has(a[href])',
+   this.element); this.$tabs = this.$lis.map(function() { return $('a',
+   this)[0]; }); this.$panels = $([]); var self = this, o = this.options;
+   this.$tabs.each(function(i, a) { // inline tab if (a.hash &&
+   a.hash.replace('#', '')) // Safari 2 reports '#' for an empty hash
+   self.$panels = self.$panels.add(self._sanitizeSelector(a.hash)); //
+   remote tab else if ($(a).attr('href') != '#') { // prevent loading the
+   page itself if href is just "#" $.data(a, 'href.tabs', a.href); //
+   required for restore on destroy $.data(a, 'load.tabs', a.href); //
+   mutable var id = self._tabId(a); a.href = '#' + id; var $panel = $('#'
+   + id); if (!$panel.length) { $panel = $(o.panelTemplate).attr('id',
+   id).addClass(o.panelClass) .insertAfter(self.$panels[i - 1] ||
+   self.element); $panel.data('destroy.tabs', true); } self.$panels =
+   self.$panels.add($panel); } // invalid tab href else o.disabled.push(i
+   + 1); }); // initialization from scratch if (init) { // attach
+   necessary classes for styling if not present
+   this.element.addClass(o.navClass); this.$panels.addClass(o.panelClass);
+   // Selected tab // use "selected" option or try to retrieve: // 1. from
+   fragment identifier in url // 2. from cookie // 3. from selected class
+   attribute on
+
+     if (o.selected === undefined) { if (location.hash) {
+   this.$tabs.each(function(i, a) { if (a.hash == location.hash) {
+   o.selected = i; return false; // break } }); } else if (o.cookie) { var
+   index = parseInt(self._cookie(), 10); if (index && self.$tabs[index])
+   o.selected = index; } else if (self.$lis.filter('.' +
+   o.selectedClass).length) o.selected = self.$lis.index(
+   self.$lis.filter('.' + o.selectedClass)[0] ); } o.selected = o.selected
+   === null || o.selected !== undefined ? o.selected : 0; // first tab
+   selected by default // Take disabling tabs via class attribute from
+   HTML // into account and update option properly. // A selected tab
+   cannot become disabled. o.disabled = $.unique(o.disabled.concat(
+   $.map(this.$lis.filter('.' + o.disabledClass), function(n, i) { return
+   self.$lis.index(n); } ) )).sort(); if ($.inArray(o.selected,
+   o.disabled) != -1) o.disabled.splice($.inArray(o.selected, o.disabled),
+   1); // highlight selected tab this.$panels.addClass(o.hideClass);
+   this.$lis.removeClass(o.selectedClass); if (o.selected !== null) {
+   this.$panels.eq(o.selected).removeClass(o.hideClass); var classes =
+   [o.selectedClass]; if (o.deselectable)
+   classes.push(o.deselectableClass);
+   this.$lis.eq(o.selected).addClass(classes.join(' ')); // seems to be
+   expected behavior that the show callback is fired var onShow =
+   function() { self._trigger('show', null,
+   self.ui(self.$tabs[o.selected], self.$panels[o.selected])); }; // load
+   if remote tab if ($.data(this.$tabs[o.selected], 'load.tabs'))
+   this.load(o.selected, onShow); // just trigger show event else
+   onShow(); } // clean up to avoid memory leaks in certain versions of IE
+   6 $(window).bind('unload', function() { self.$tabs.unbind('.tabs');
+   self.$lis = self.$tabs = self.$panels = null; }); } // update selected
+   after add/remove else o.selected = this.$lis.index(
+   this.$lis.filter('.' + o.selectedClass)[0] ); // set or update cookie
+   after init and add/remove respectively if (o.cookie)
+   this._cookie(o.selected, o.cookie); // disable tabs for (var i = 0, li;
+   li = this.$lis[i]; i++) $(li)[$.inArray(i, o.disabled) != -1 &&
+   !$(li).hasClass(o.selectedClass) ? 'addClass' :
+   'removeClass'](o.disabledClass); // reset cache if switching from
+   cached to not cached if (o.cache === false)
+   this.$tabs.removeData('cache.tabs'); // set up animations var hideFx,
+   showFx; if (o.fx) { if (o.fx.constructor == Array) { hideFx = o.fx[0];
+   showFx = o.fx[1]; } else hideFx = showFx = o.fx; } // Reset certain
+   styles left over from animation // and prevent IE's ClearType bug...
+   function resetStyle($el, fx) { $el.css({ display: '' }); if
+   ($.browser.msie && fx.opacity) $el[0].style.removeAttribute('filter');
+   } // Show a tab... var showTab = showFx ? function(clicked, $show) {
+   $show.animate(showFx, showFx.duration || 'normal', function() {
+   $show.removeClass(o.hideClass); resetStyle($show, showFx);
+   self._trigger('show', null, self.ui(clicked, $show[0])); }); } :
+   function(clicked, $show) { $show.removeClass(o.hideClass);
+   self._trigger('show', null, self.ui(clicked, $show[0])); }; // Hide a
+   tab, $show is optional... var hideTab = hideFx ? function(clicked,
+   $hide, $show) { $hide.animate(hideFx, hideFx.duration || 'normal',
+   function() { $hide.addClass(o.hideClass); resetStyle($hide, hideFx); if
+   ($show) showTab(clicked, $show, $hide); }); } : function(clicked,
+   $hide, $show) { $hide.addClass(o.hideClass); if ($show)
+   showTab(clicked, $show); }; // Switch a tab... function
+   switchTab(clicked, $li, $hide, $show) { var classes =
+   [o.selectedClass]; if (o.deselectable)
+   classes.push(o.deselectableClass); $li.addClass(classes.join('
+   ')).siblings().removeClass(classes.join(' ')); hideTab(clicked, $hide,
+   $show); } // attach tab event handler, unbind to avoid duplicates from
+   former tabifying... this.$tabs.unbind('.tabs').bind(o.event + '.tabs',
+   function() { //var trueClick = event.clientX; // add to history only if
+   true click occured, not a triggered click var $li =
+   $(this).parents('li:eq(0)'), $hide = self.$panels.filter(':visible'),
+   $show = $(self._sanitizeSelector(this.hash)); // If tab is already
+   selected and not deselectable or tab disabled or // or is already
+   loading or click callback returns false stop here. // Check if click
+   handler returns false last so that it is not executed // for a disabled
+   or loading tab! if (($li.hasClass(o.selectedClass) && !o.deselectable)
+   || $li.hasClass(o.disabledClass) || $(this).hasClass(o.loadingClass) ||
+   self._trigger('select', null, self.ui(this, $show[0])) === false ) {
+   this.blur(); return false; } o.selected = self.$tabs.index(this); // if
+   tab may be closed if (o.deselectable) { if
+   ($li.hasClass(o.selectedClass)) { self.options.selected = null;
+   $li.removeClass([o.selectedClass, o.deselectableClass].join(' '));
+   self.$panels.stop(); hideTab(this, $hide); this.blur(); return false; }
+   else if (!$hide.length) { self.$panels.stop(); var a = this;
+   self.load(self.$tabs.index(this), function() {
+   $li.addClass([o.selectedClass, o.deselectableClass].join(' '));
+   showTab(a, $show); }); this.blur(); return false; } } if (o.cookie)
+   self._cookie(o.selected, o.cookie); // stop possibly running animations
+   self.$panels.stop(); // show new tab if ($show.length) { var a = this;
+   self.load(self.$tabs.index(this), $hide.length ? function() {
+   switchTab(a, $li, $hide, $show); } : function() {
+   $li.addClass(o.selectedClass); showTab(a, $show); } ); } else throw
+   'jQuery UI Tabs: Mismatching fragment identifier.'; // Prevent IE from
+   keeping other link focussed when using the back button // and remove
+   dotted border from clicked link. This is controlled via CSS // in
+   modern browsers; blur() removes focus from address bar in Firefox //
+   which can become a usability and annoying problem with tabs('rotate').
+   if ($.browser.msie) this.blur(); return false; }); // disable click if
+   event is configured to something else if (o.event != 'click')
+   this.$tabs.bind('click.tabs', function(){return false;}); }, add:
+   function(url, label, index) { if (index == undefined) index =
+   this.$tabs.length; // append by default var o = this.options; var $li =
+   $(o.tabTemplate.replace(/#\{href\}/g, url).replace(/#\{label\}/g,
+   label)); $li.data('destroy.tabs', true); var id = url.indexOf('#') == 0
+   ? url.replace('#', '') : this._tabId( $('a:first-child', $li)[0] ); //
+   try to find an existing element before creating a new one var $panel =
+   $('#' + id); if (!$panel.length) { $panel =
+   $(o.panelTemplate).attr('id', id) .addClass(o.hideClass)
+   .data('destroy.tabs', true); } $panel.addClass(o.panelClass); if (index
+   >= this.$lis.length) { $li.appendTo(this.element);
+   $panel.appendTo(this.element[0].parentNode); } else {
+   $li.insertBefore(this.$lis[index]);
+   $panel.insertBefore(this.$panels[index]); } o.disabled =
+   $.map(o.disabled, function(n, i) { return n >= index ? ++n : n });
+   this._tabify(); if (this.$tabs.length == 1) {
+   $li.addClass(o.selectedClass); $panel.removeClass(o.hideClass); var
+   href = $.data(this.$tabs[0], 'load.tabs'); if (href) this.load(index,
+   href); } // callback this._trigger('add', null,
+   this.ui(this.$tabs[index], this.$panels[index])); }, remove:
+   function(index) { var o = this.options, $li =
+   this.$lis.eq(index).remove(), $panel = this.$panels.eq(index).remove();
+   // If selected tab was removed focus tab to the right or // in case the
+   last tab was removed the tab to the left. if
+   ($li.hasClass(o.selectedClass) && this.$tabs.length > 1)
+   this.select(index + (index + 1 < this.$tabs.length ? 1 : -1));
+   o.disabled = $.map($.grep(o.disabled, function(n, i) { return n !=
+   index; }), function(n, i) { return n >= index ? --n : n });
+   this._tabify(); // callback this._trigger('remove', null,
+   this.ui($li.find('a')[0], $panel[0])); }, enable: function(index) { var
+   o = this.options; if ($.inArray(index, o.disabled) == -1) return; var
+   $li = this.$lis.eq(index).removeClass(o.disabledClass); if
+   ($.browser.safari) { // fix disappearing tab (that used opacity
+   indicating disabling) after enabling in Safari 2... $li.css('display',
+   'inline-block'); setTimeout(function() { $li.css('display', 'block');
+   }, 0); } o.disabled = $.grep(o.disabled, function(n, i) { return n !=
+   index; }); // callback this._trigger('enable', null,
+   this.ui(this.$tabs[index], this.$panels[index])); }, disable:
+   function(index) { var self = this, o = this.options; if (index !=
+   o.selected) { // cannot disable already selected tab
+   this.$lis.eq(index).addClass(o.disabledClass); o.disabled.push(index);
+   o.disabled.sort(); // callback this._trigger('disable', null,
+   this.ui(this.$tabs[index], this.$panels[index])); } }, select:
+   function(index) { // TODO make null as argument work if (typeof index
+   == 'string') index = this.$tabs.index( this.$tabs.filter('[href$=' +
+   index + ']')[0] ); this.$tabs.eq(index).trigger(this.options.event +
+   '.tabs'); }, load: function(index, callback) { // callback is for
+   internal usage only var self = this, o = this.options, $a =
+   this.$tabs.eq(index), a = $a[0], bypassCache = callback == undefined ||
+   callback === false, url = $a.data('load.tabs'); callback = callback ||
+   function() {}; // no remote or from cache - just finish with callback
+   if (!url || !bypassCache && $.data(a, 'cache.tabs')) { callback();
+   return; } // load remote from here on var inner = function(parent) {
+   var $parent = $(parent), $inner = $parent.find('*:last'); return
+   $inner.length && $inner.is(':not(img)') && $inner || $parent; }; var
+   cleanup = function() { self.$tabs.filter('.' +
+   o.loadingClass).removeClass(o.loadingClass) .each(function() { if
+   (o.spinner) inner(this).parent().html(inner(this).data('label.tabs'));
+   }); self.xhr = null; }; if (o.spinner) { var label = inner(a).html();
+   inner(a).wrapInner('') .find('em').data('label.tabs',
+   label).html(o.spinner); } var ajaxOptions = $.extend({}, o.ajaxOptions,
+   { url: url, success: function(r, s) {
+   $(self._sanitizeSelector(a.hash)).html(r); cleanup(); if (o.cache)
+   $.data(a, 'cache.tabs', true); // if loaded once do not load them again
+   // callbacks self._trigger('load', null, self.ui(self.$tabs[index],
+   self.$panels[index])); try { o.ajaxOptions.success(r, s); } catch
+   (event) {} // This callback is required because the switch has to take
+   // place after loading has completed. Call last in order to // fire
+   load before show callback... callback(); } }); if (this.xhr) { //
+   terminate pending requests from other tabs and restore tab label
+   this.xhr.abort(); cleanup(); } $a.addClass(o.loadingClass); self.xhr =
+   $.ajax(ajaxOptions); }, url: function(index, url) {
+   this.$tabs.eq(index).removeData('cache.tabs').data('load.tabs', url);
+   }, ui: function(tab, panel) { return { options: this.options, tab: tab,
+   panel: panel, index: this.$tabs.index(tab) }; } }); $.extend($.ui.tabs,
+   { version: '1.6', getter: 'length', defaults: { ajaxOptions: null,
+   cache: false, cookie: null, // e.g. { expires: 7, path: '/', domain:
+   'jquery.com', secure: true } deselectable: false, deselectableClass:
+   'ui-tabs-deselectable', disabled: [], disabledClass:
+   'ui-tabs-disabled', event: 'click', fx: null, // e.g. { height:
+   'toggle', opacity: 'toggle', duration: 200 } hideClass: 'ui-tabs-hide',
+   idPrefix: 'ui-tabs-', loadingClass: 'ui-tabs-loading', navClass:
+   'ui-tabs-nav', panelClass: 'ui-tabs-panel', panelTemplate: '
+
+   ', selectedClass: 'ui-tabs-selected', spinner: 'Loading…', tabTemplate:
+   '
+
+     #{label}' } }); /* * Tabs Extensions */ /* * Rotate */
+   $.extend($.ui.tabs.prototype, { rotation: null, rotate: function(ms,
+   continuing) { continuing = continuing || false; var self = this, t =
+   this.options.selected; function start() { self.rotation =
+   setInterval(function() { t = ++t < self.$tabs.length ? t : 0;
+   self.select(t); }, ms); } function stop(event) { if (!event ||
+   event.clientX) { // only in case of a true click
+   clearInterval(self.rotation); } } // start interval if (ms) { start();
+   if (!continuing) this.$tabs.bind(this.options.event + '.tabs', stop);
+   else this.$tabs.bind(this.options.event + '.tabs', function() { stop();
+   t = self.options.selected; start(); }); } // stop interval else {
+   stop(); this.$tabs.unbind(this.options.event + '.tabs', stop); } } });
+   })(jQuery); /* CSS Browser Selector v0.3.5 (Feb 05, 2010) Rafael Lima
+   (http://rafael.adm.br) http://rafael.adm.br/css_browser_selector
+   License: http://creativecommons.org/licenses/by/2.5/ Contributors:
+   http://rafael.adm.br/css_browser_selector#contributors */ function
+   css_browser_selector(u){var ua = u.toLowerCase(),is=function(t){return
+   ua.indexOf(t)>-1;},g='gecko',w='webkit',s='safari',o='opera',h=document
+   .documentElement,b=[(!(/opera|webtv/i.test(ua))&&/msie\s(\d)/.test(ua))
+   ?('ie ie'+RegExp.$1):is('firefox/2')?g+' ff2':is('firefox/3.5')?g+' ff3
+   ff3_5':is('firefox/3')?g+'
+   ff3':is('gecko/')?g:is('opera')?o+(/version\/(\d+)/.test(ua)?'
+   '+o+RegExp.$1:(/opera(\s|\/)(\d+)/.test(ua)?'
+   '+o+RegExp.$2:'')):is('konqueror')?'konqueror':is('chrome')?w+'
+   chrome':is('iron')?w+' iron':is('applewebkit/')?w+'
+   '+s+(/version\/(\d+)/.test(ua)?'
+   '+s+RegExp.$1:''):is('mozilla/')?g:'',is('j2me')?'mobile':is('iphone')?
+   'iphone':is('ipod')?'ipod':is('mac')?'mac':is('darwin')?'mac':is('webtv
+   ')?'webtv':is('win')?'win':is('freebsd')?'freebsd':(is('x11')||is('linu
+   x'))?'linux':'','js']; c = b.join(' '); h.className += ' '+c; return
+   c;}; css_browser_selector(navigator.userAgent); /** * Flash
+   (http://jquery.lukelutman.com/plugins/flash) * A jQuery plugin for
+   embedding Flash movies. * * Version 1.0 * November 9th, 2006 * *
+   Copyright (c) 2006 Luke Lutman (http://www.lukelutman.com) * Dual
+   licensed under the MIT and GPL licenses. *
+   http://www.opensource.org/licenses/mit-license.php *
+   http://www.opensource.org/licenses/gpl-license.php * * Inspired by: *
+   SWFObject (http://blog.deconcept.com/swfobject/) * UFO
+   (http://www.bobbyvandersluis.com/ufo/) * sIFR
+   (http://www.mikeindustries.com/sifr/) * * IMPORTANT: * The packed
+   version of jQuery breaks ActiveX control * activation in Internet
+   Explorer. Use JSMin to minifiy * jQuery (see:
+   http://jquery.lukelutman.com/plugins/flash#activex). * **/
+   ;(function(){ var $$; /** * * @desc Replace matching elements with a
+   flash movie. * @author Luke Lutman * @version 1.0.1 * * @name flash *
+   @param Hash htmlOptions Options for the embed/object tag. * @param Hash
+   pluginOptions Options for detecting/updating the Flash plugin
+   (optional). * @param Function replace Custom block called for each
+   matched element if flash is installed (optional). * @param Function
+   update Custom block called for each matched if flash isn't installed
+   (optional). * @type jQuery * * @cat plugins/flash * * @example
+   $('#hello').flash({ src: 'hello.swf' }); * @desc Embed a Flash movie. *
+   * @example $('#hello').flash({ src: 'hello.swf' }, { version: 8 }); *
+   @desc Embed a Flash 8 movie. * * @example $('#hello').flash({ src:
+   'hello.swf' }, { expressInstall: true }); * @desc Embed a Flash movie
+   using Express Install if flash isn't installed. * * @example
+   $('#hello').flash({ src: 'hello.swf' }, { update: false }); * @desc
+   Embed a Flash movie, don't show an update message if Flash isn't
+   installed. * **/ $$ = jQuery.fn.flash = function(htmlOptions,
+   pluginOptions, replace, update) { // Set the default block. var block =
+   replace || $$.replace; // Merge the default and passed plugin options.
+   pluginOptions = $$.copy($$.pluginOptions, pluginOptions); // Detect
+   Flash. if(!$$.hasFlash(pluginOptions.version)) { // Use Express Install
+   (if specified and Flash plugin 6,0,65 or higher is installed).
+   if(pluginOptions.expressInstall && $$.hasFlash(6,0,65)) { // Add the
+   necessary flashvars (merged later). var expressInstallOptions = {
+   flashvars: { MMredirectURL: location, MMplayerType: 'PlugIn',
+   MMdoctitle: jQuery('title').text() } }; // Ask the user to update (if
+   specified). } else if (pluginOptions.update) { // Change the block to
+   insert the update message instead of the flash movie. block = update ||
+   $$.update; // Fail } else { // The required version of flash isn't
+   installed. // Express Install is turned off, or flash 6,0,65 isn't
+   installed. // Update is turned off. // Return without doing anything.
+   return this; } } // Merge the default, express install and passed html
+   options. htmlOptions = $$.copy($$.htmlOptions, expressInstallOptions,
+   htmlOptions); // Invoke $block (with a copy of the merged html options)
+   for each element. return this.each(function(){ block.call(this,
+   $$.copy(htmlOptions)); }); }; /** * * @name flash.copy * @desc Copy an
+   arbitrary number of objects into a new object. * @type Object * *
+   @example $$.copy({ foo: 1 }, { bar: 2 }); * @result { foo: 1, bar: 2 };
+   * **/ $$.copy = function() { var options = {}, flashvars = {}; for(var
+   i = 0; i < arguments.length; i++) { var arg = arguments[i]; if(arg ==
+   undefined) continue; jQuery.extend(options, arg); // don't clobber one
+   flash vars object with another // merge them instead if(arg.flashvars
+   == undefined) continue; jQuery.extend(flashvars, arg.flashvars); }
+   options.flashvars = flashvars; return options; }; /* * @name
+   flash.hasFlash * @desc Check if a specific version of the Flash plugin
+   is installed * @type Boolean * **/ $$.hasFlash = function() { // look
+   for a flag in the query string to bypass flash detection
+   if(/hasFlash\=true/.test(location)) return true;
+   if(/hasFlash\=false/.test(location)) return false; var pv =
+   $$.hasFlash.playerVersion().match(/\d+/g); var rv =
+   String([arguments[0], arguments[1], arguments[2]]).match(/\d+/g) ||
+   String($$.pluginOptions.version).match(/\d+/g); for(var i = 0; i < 3;
+   i++) { pv[i] = parseInt(pv[i] || 0); rv[i] = parseInt(rv[i] || 0); //
+   player is less than required if(pv[i] < rv[i]) return false; // player
+   is greater than required if(pv[i] > rv[i]) return true; } // major
+   version, minor version and revision match exactly return true; }; /** *
+   * @name flash.hasFlash.playerVersion * @desc Get the version of the
+   installed Flash plugin. * @type String * **/ $$.hasFlash.playerVersion
+   = function() { // ie try { try { // avoid fp6 minor version lookup
+   issues // see:
+   http://blog.deconcept.com/2006/01/11/getvariable-setvariable-crash-inte
+   rnet-explorer-flash-6/ var axo = new
+   ActiveXObject('ShockwaveFlash.ShockwaveFlash.6'); try {
+   axo.AllowScriptAccess = 'always'; } catch(e) { return '6,0,0'; } }
+   catch(e) {} return new
+   ActiveXObject('ShockwaveFlash.ShockwaveFlash').GetVariable('$version').
+   replace(/\D+/g, ',').match(/^,?(.+),?$/)[1]; // other browsers }
+   catch(e) { try {
+   if(navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin){
+   return (navigator.plugins["Shockwave Flash 2.0"] ||
+   navigator.plugins["Shockwave Flash"]).description.replace(/\D+/g,
+   ",").match(/^,?(.+),?$/)[1]; } } catch(e) {} } return '0,0,0'; }; /** *
+   * @name flash.htmlOptions * @desc The default set of options for the
+   object or embed tag. * **/ $$.htmlOptions = { height: 240, flashvars:
+   {}, pluginspage: 'http://www.adobe.com/go/getflashplayer', src: '#',
+   type: 'application/x-shockwave-flash', width: 320 }; /** * * @name
+   flash.pluginOptions * @desc The default set of options for
+   checking/updating the flash Plugin. * **/ $$.pluginOptions = {
+   expressInstall: false, update: true, version: '6.0.65' }; /** * * @name
+   flash.replace * @desc The default method for replacing an element with
+   a Flash movie. * **/ $$.replace = function(htmlOptions) {
+   this.innerHTML = '
+
+   '+this.innerHTML+'
+
+   '; jQuery(this) .addClass('flash-replaced')
+   .prepend($$.transform(htmlOptions)); }; /** * * @name flash.update *
+   @desc The default method for replacing an element with an update
+   message. * **/ $$.update = function(htmlOptions) { var url =
+   String(location).split('?'); url.splice(1,0,'?hasFlash=true&'); url =
+   url.join(''); var msg = '
+
+   This content requires the Flash Player. Download Flash Player. Already
+   have Flash Player? Click here.
+   '; this.innerHTML = ''+this.innerHTML+''; jQuery(this)
+   .addClass('flash-update') .prepend(msg); }; /** * * @desc Convert a
+   hash of html options to a string of attributes, using Function.apply().
+   * @example toAttributeString.apply(htmlOptions) * @result foo="bar"
+   foo="bar" * **/ function toAttributeString() { var s = ''; for(var key
+   in this) if(typeof this[key] != 'function') s += key+'="'+this[key]+'"
+   '; return s; }; /** * * @desc Convert a hash of flashvars to a
+   url-encoded string, using Function.apply(). * @example
+   toFlashvarsString.apply(flashvarsObject) * @result foo=bar&foo=bar *
+   **/ function toFlashvarsString() { var s = ''; for(var key in this)
+   if(typeof this[key] != 'function') s +=
+   key+'='+encodeURIComponent(this[key])+'&'; return s.replace(/&$/, '');
+   }; /** * * @name flash.transform * @desc Transform a set of html
+   options into an embed tag. * @type String * * @example
+   $$.transform(htmlOptions) * @result [EMBED] * * Note: The embed tag is
+   NOT standards-compliant, but it * works in all current browsers.
+   flash.transform can be * overwritten with a custom function to generate
+   more * standards-compliant markup. * **/ $$.transform =
+   function(htmlOptions) { htmlOptions.toString = toAttributeString;
+   if(htmlOptions.flashvars) htmlOptions.flashvars.toString =
+   toFlashvarsString; return ' [EMBED] '; }; /** * * Flash Player 9 Fix
+   (http://blog.deconcept.com/2006/07/28/swfobject-143-released/) * **/ if
+   (window.attachEvent) { window.attachEvent("onbeforeunload", function(){
+   __flash_unloadHandler = function() {}; __flash_savedUnloadHandler =
+   function() {}; }); } })();/* * nyroModal - jQuery Plugin *
+   http://nyromodal.nyrodev.com * * Copyright (c) 2010 Cedric Nirousset
+   (nyrodev.com) * Licensed under the MIT license * * $Date: 2010-02-23
+   (Tue, 23 Feb 2010) $ * $version: 1.6.2 */
+   eval(function(p,a,c,k,e,r){e=function(c){return(c35?String.fromCharCode
+   (c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k
+   [c]||e(c);k=[function(e){return
+   r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(ne
+   w RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6o(k($){c
+   1F=6F.1F.2F();c 58=(1F.6i(/.+(?:7N|6h|7w|6g|44)[\\/:
+   ]([\\d.]+)/)||[0,\'0\'])[1];c
+   26=(/44/.22(1F)&&!/6g/.22(1F)&&6b(58)<7&&(!14.67||3Z(67)===\'k\'));c
+   U=$(\'U\');c 4;c 4X;c 32=m;c W={};c 2r=m;c 2g;c 30;c
+   5={3W:m,1N:m,1q:m,16:m,2p:m,1G:m,1r:m,1K:m,3V:m,1B:m,1g:D,2a:D,1n:D,15:
+   D,P:D,j:D,l:D,N:D,C:D,3S:1S 2X(),3R:1S 2X()};c 1o={8:m,b:m,2K:m};c
+   1j={8:D,b:D,2K:p};c 4M;$.1C.K=k(f){6(!R)u m;u R.3Q(k(){c
+   3P=$(R);6(R.3k.2F()==\'23\'){3P.1D(\'4J.K\').1Y(\'4J.K\',k(e){6(e.5E())
+   u m;6(3P.L(\'4H\'))u p;6(R.5A==\'5y/23-L\'){1O($.Q(f,{E:R}));u
+   p}e.1U();1O($.Q(f,{E:R}));u
+   m})}q{3P.1D(\'1u.K\').1Y(\'1u.K\',k(e){6(e.5E())u
+   m;e.1U();1O($.Q(f,{E:R}));u m})}})};$.1C.3O=k(f){6(!R.1i)1O(f);u
+   R.3Q(k(){1O($.Q(f,{E:R}))})};$.3O=k(f){1O(f)};$.3N=k(f,1m,28){Z(f,1m,28
+   );6(!1m&&5.3W){6(5.15&&f.2Y)4.3L(5,4,k(){});6(5.C&&f.O)4v();6(!5.1B&&(f
+   .2K||(!5.1K&&((\'8\'3I f&&f.8==4.8)||(\'b\'3I
+   f&&f.b==4.b))))){5.1K=p;6(5.C)3H(p);6(5.C&&5.C.6C(\':4q\')&&!5.2p){6(2r
+   )5.l.o({12:\'\'});4.2A(5,4,k(){4.2K=m;5.1K=m;6(2r)5.l.o({12:\'4n\'});6(
+   $.1J(4.4k))4.4k(5,4)})}}}};$.7J=k(){1V()};$.2B=k(){c 2D=2W(1);6(2D)u
+   2D.3O(2L());u m};$.2I=k(){c 2D=2W(-1);6(2D)u 2D.3O(2L());u
+   m};$.1C.K.f={H:m,1g:m,6j:p,5:m,F:\'\',3G:D,E:\'\',34:\'\',4h:D,3c:\'7M\
+   ',3F:\'K\',l:D,2Y:\'#6y\',21:{},1e:{6U:\'7p\'},8:D,b:D,4b:2n,4a:5I,5H:p
+   ,5D:p,1l:25,5s:\'[^\\.]\\.(74|7b|7c|7d|7e|7l)\\s*$\',5h:m,54:\'51\',5d:
+   p,5c:p,W:D,59:\'6W72\',2t:2t,6d:m,33:1p,1b:{15:{12:\'36\',1E:\'2b\',1f:
+   0,1h:0,b:\'1p%\',8:\'1p%\'},N:{12:\'36\',1f:\'50%\',1h:\'50%\'},3i:{},l
+   :{},P:{12:\'36\',1f:\'50%\',1h:\'50%\',V:\'-3A\',S:\'-3A\'}},3m:{v:\'\'
+   ,21:\'\',23:\'\',4Q:\'\',1v:\'\',1e:\'\',B:\'\',3x:\'\',6f:\'\'},5a:\'5
+   X\',O:D,5Q:p,4r:\'.K\',3v:\'.3w\',5r:\'6A\',5q:\'1B\',60:\'6I 6K l 6N
+   6Q 6T.<3u />6V 5C 6X 6Y.<3u
+   />5X\',4T:D,3t:3t,2v:2v,4N:D,3s:3s,2f:D,4u:D,3b:3b,3r:3r,3q:3q,3p:3p,3f
+   :3f,2A:2A,4k:D,3L:3L,1Z:D};k
+   1O(f){6(5.1G||5.1r||5.16)u;H(\'1O\');5.3W=p;4X=$.Q(p,f);4Z(f);6(!5.1n)5
+   .2a=5.1g=D;5.1B=m;5.3V=m;5.1q=m;5.3S=1S 2X();5.3R=1S
+   2X();4.F=5w();6(4.3G){6(!4.l)4.E=p;4.F=4.3G;4.3G=D}6($.1J(4.4h))4.4h(4)
+   ;c E=4.E;c
+   t=4.t;1j.8=4.8;1j.b=4.b;6(4.F==\'1e\'){Z({1E:\'4q\'},\'1b\',\'l\');4.l=
+   \'<4S 7O="7T:7K-6p-6s-6t-6w" 8="\'+4.8+\'" b="\'+4.b+\'"><3o 1c="6B"
+   2H="\'+t+\'">\';c j=\'\';$.3Q(4.1e,k(1c,4l){4.l+=\'<3o 1c="\'+1c+\'"
+   2H="\'+4l+\'">\';j+=\' \'+1c+\'="\'+4l+\'"\'});4.l+=\'<4C 1k="\'+t+\'"
+   F="6M/x-6O-6P" 8="\'+4.8+\'" b="\'+4.b+\'"\'+j+\'>\'}6(E){c
+   X=$(E).6R();6(4.F==\'23\'){c
+   L=$(E).6S();L.3h({1c:4.3F,2H:1});6(4.19)L.3h({1c:4.3c,2H:4.19.1Q(1)});1
+   x();$.21($.Q({},4.21,{t:t,L:L,F:X.I(\'5j\')?X.I(\'5j\'):\'3a\',5Z:4m,1B
+   :1t}));H(\'4D 5P 2w: \'+X.I(\'2u\'))}q
+   6(4.F==\'4Q\'){1L();X.I(\'2s\',\'2c\');X.I(\'2u\',t);X.2Z(\'<48 F="2b"
+   1c="\'+4.3F+\'" 2H="1" />\');6(4.19)X.2Z(\'<48 F="2b" 1c="\'+4.3c+\'"
+   2H="\'+4.19.1Q(1)+\'"
+   />\');5.j.M(\'\');$(\'B\',5.j).o({8:4.8,b:4.b}).1B(1t).2o(4j);H(\'4D 6m
+   2w: \'+X.I(\'2u\'));1x();1z()}q 6(4.F==\'1v\'){H(\'51 2w: \'+t);c
+   O=X.I(\'O\')||4.54;1L();5.j.M(\'<2U 1d="6r"
+   />\').29(\'2U\').I(\'5R\',O);5.j.o({5S:0});$(\'2U\',5.j).1B(1t).2o(k(){
+   H(\'51 6x: \'+R.1k);$(R).1D(\'2o\');c w=5.j.8();c
+   h=5.j.b();5.j.o({5S:\'\'});1o.8=w;1o.b=h;Z({8:w,b:h,4x:w,4y:h});1j.8=w;
+   1j.b=h;Z({1E:\'4q\'},\'1b\',\'l\');5.1q=p;6(5.1G||5.1r)1z()}).I(\'1k\',
+   t);1x()}q 6(4.F==\'3x\'){1L();5.j.M(\'\');H(\'6l 4D 2w:
+   \'+t);$(\'B\',5.j).2P(0).o({8:\'1p%\',b:$.5b.5f?\'5g%\':\'1p%\'}).2o(4B
+   );5.1q=p;1x()}q 6(4.F==\'B\'){1L();5.j.M(\'\');H(\'6l 2w:
+   \'+t);$(\'B\',5.j).2P(0).o({8:\'1p%\',b:$.5b.5f?\'5g%\':\'1p%\'}).2o(4B
+   );5.1q=p;1x()}q 6(4.F){H(\'5n: \'+4.F);1L();5.j.M(4.l);c w=5.j.8();c
+   h=5.j.b();c
+   v=$(4.F);6(v.1i){Z({F:\'v\'});w=v.8();h=v.b();6(2g)30=2g;2g=v;5.j.1A(v.
+   24())}1j.8=w;1j.b=h;Z({8:w,b:h});6(5.j.M())5.1q=p;q 1t();6(!5.1N)1x();q
+   2x()}q{H(\'5P 2w: \'+t);Z({F:\'21\'});c L=4.21.L||{};6(4.19){6(3Z
+   L=="4E"){L+=\'&\'+4.3c+\'=\'+4.19.1Q(1)}q{L[4.3c]=4.19.1Q(1)}}1x();$.21
+   ($.Q(p,4.21,{t:t,5Z:4m,1B:1t,L:L}))}}q 6(4.l){H(\'5n:
+   \'+4.F);Z({F:\'6f\'});1L();5.j.M($(\'>\').M(4.l).24());6(5.j.M())5.1q=p
+   ;q 1t();1x()}q{}}k 4Z(f){H(\'4Z\');4=$.Q(p,{},$.1C.K.f,f);3y()}k
+   Z(f,1m,28){6(5.3W){6(1m&&28){$.Q(p,4[1m][28],f)}q
+   6(1m){$.Q(p,4[1m],f)}q{6(5.2p){6(\'8\'3I f){6(!5.1K){f.4L=f.8;32=p}3z
+   f[\'8\']}6(\'b\'3I f){6(!5.1K){f.4O=f.b;32=p}3z
+   f[\'b\']}}$.Q(p,4,f)}}q{6(1m&&28){$.Q(p,$.1C.K.f[1m][28],f)}q
+   6(1m){$.Q(p,$.1C.K.f[1m],f)}q{$.Q(p,$.1C.K.f,f)}}}k
+   4P(){6(26&&!5.1g){6(1X.4R){4.2m=1X.4R.61;4.2i=1X.4R.3B}q{4.2m=1X.U.61;4
+   .2i=1X.U.3B}}q{4.2m=0;4.2i=0}}k
+   3y(){4P();4.S=-(4.8+4.4U)/2;4.V=-(4.b+4.4Y)/2;6(!5.1g){4.S+=4.2m;4.V+=4
+   .2i}}k 3C(){4P();c
+   1M=2C(5.P);4.2S=-(5.P.b()+1M.h.18+1M.h.1l)/2;4.2Q=-(5.P.8()+1M.w.18+1M.
+   w.1l)/2;6(!5.1g){4.2Q+=4.2m;4.2S+=4.2i}}k 4v(){c
+   O=$(\'55#5l\',5.C);6(O.1i)O.5m(4.O);q 5.C.2Z(\'<55
+   1d="5l">\'+4.O+\'\')}k
+   1L(){H(\'1L\');6(!5.1n){6(4.H)Z({7P:\'7Q\'},\'1b\',\'15\');c
+   1n={2O:4.33,12:\'4n\',1f:0,1h:0,8:\'1p%\',b:\'1p%\'};c 46=U;c
+   47=\'\';6(4.1g){5.1g=46=$(4.1g);c 2N=5.1g.6q();c w=5.1g.5t();c
+   h=5.1g.3D();6(26){Z({b:\'1p%\',8:\'1p%\',1f:0,1h:0},\'1b\',\'15\')}5.2a
+   ={1f:2N.1f,1h:2N.1h,8:w,b:h};c 5v=(/44/.22(1F)?0:17(U.3a(0),\'5x\'));c
+   5z=(/44/.22(1F)?0:17(U.3a(0),\'5B\'));1n={12:\'36\',1f:2N.1f+5v,1h:2N.1
+   h+5z,8:w,b:h}}q 6(26){U.o({S:0,49:0});c w=U.8();c
+   h=$(14).b()+\'G\';6($(14).b()>=U.3D()){h=U.3D()+\'G\'}q
+   w+=20;w+=\'G\';U.o({8:w,b:h,12:\'6E\',1E:\'2b\'});$(\'M\').o({1E:\'2b\'
+   });Z({1b:{15:{12:\'36\',2O:4.33+1,b:\'5G%\',8:\'5G%\',1f:4.2i+\'G\',1h:
+   4.2m+\'G\'},N:{2O:4.33+2},P:{2O:4.33+3}}});47=$(\'\').o($.Q({},4.1b.15,
+   {1s:0,2O:50,18:\'3l\'}))}46.1A($(\'\').13());5.1n=$(\'#5J\').o(1n).2j()
+   ;5.15=$(\'#5K\').o($.Q({3E:4.2Y},4.1b.15)).4d(47);5.15.1Y(\'1u.K\',5T);
+   5.P=$(\'#5O\').o(4.1b.P).13();5.C=$(\'#5L\').o(4.1b.N).13();5.l=$(\'#5M
+   \');5.j=$(\'#5N\').13();6($.1J($.1C.5V)){5.l.5V(k(e,d){c
+   35=5.l.3a(0);6((d>0&&35.3B==0)||(d<0&&35.6Z-35.3B==35.70)){e.1U();e.71(
+   )}})}$(1X).1Y(\'4f.K\',4g);5.l.o({8:\'1I\',b:\'1I\'});5.C.o({8:\'1I\',b
+   :\'1I\'});6(!4.1g&&4.6j){$(14).1Y(\'2A.K\',k(){14.78(4M);4M=14.79(68,69
+   )})}}}k 68(){$.3N(1j)}k
+   1x(){H(\'1x\');6(!5.1N){1L();5.16=p;4.3t(5,4,4i)}q{5.16=p;5.1r=p;4.3r(5
+   ,4,k(){2x();5.16=m;1z()})}}k 5T(e){6(!4.5)1V()}k
+   4g(e){6(e.31==27){6(!4.5)1V()}q
+   6(4.W&&5.1N&&5.1q&&!5.16&&!5.1r){6(e.31==39||e.31==40){e.1U();$.2B();u
+   m}q 6(e.31==37||e.31==38){e.1U();$.2I();u m}}}k 5w(){c E=4.E;c
+   t;6(E&&E.3k){c
+   X=$(E);t=X.I(E.3k.2F()==\'23\'?\'2u\':\'1a\');6(!t)t=1P.1a.1Q(14.1P.7k.
+   1i+7);4.t=t;6(X.I(\'6k\')==\'5\')4.5=p;4.O=X.I(\'O\');6(E&&E.1w&&E.1w.2
+   F()!=\'7v\'){c 4K=E.1w.3n(\' \');4.W=4K>0?E.1w.7H(0,4K):E.1w}c
+   2G=4o(t,E);6(2G)u 2G;6(4p(t))u\'1e\';c
+   B=m;6(E.2s&&E.2s.2F()==\'5e\'||(E.3e&&E.3e.2e(/:\\d*$/,\'\')!=14.1P.3e.
+   2e(/:\\d*$/,\'\'))){B=p}6(E.3k.2F()==\'23\'){6(B)u\'3x\';Z(4s(t));6(X.I
+   (\'5A\')==\'5y/23-L\')u\'4Q\';u\'23\'}6(B)u\'B\'}q{t=4.t;6(!4.l)4.E=p;6
+   (!t)u D;6(4p(t))u\'1e\';c 5i=1S
+   4t("^5k://|6n://","g");6(t.6i(5i))u\'B\'}c 2G=4o(t,E);6(2G)u 2G;c
+   j=4s(t);Z(j);6(!j.t)u j.19}k 4o(t,E){c 1v=1S
+   4t(4.5s,\'i\');6(1v.22(t)){u\'1v\'}}k 4p(t){c 1e=1S
+   4t(\'[^\\.]\\.(1e)\\s*$\',\'i\');u 1e.22(t)}k 4s(t){c
+   J={t:D,19:D};6(t){c 34=4w(t);c 5o=4w(14.1P.1a);c
+   5p=14.1P.1a.1Q(0,14.1P.1a.1i-5o.1i);c
+   3J=t.1Q(0,t.1i-34.1i);6(3J==5p||3J==$(\'6u\').I(\'1a\')){J.19=34}q{J.t=
+   3J;J.19=34}}u J}k
+   1t(){H(\'1t\');5.1B=p;6(!5.1N)u;6($.1J(4.4T))4.4T(5,4);5.P.6v(4.5q).M(4
+   .60);$(4.3v,5.P).1D(\'1u.K\').1Y(\'1u.K\',1V);3C();5.P.o({V:4.2S+\'G\',
+   S:4.2Q+\'G\'})}k
+   3K(){H(\'3K\');6(!5.j.M())u;5.l.M(5.j.24());5.j.4z();4A();6(4.F==\'3x\'
+   ){$(4.E).I(\'2s\',\'2c\').L(\'4H\',1).4J().I(\'2s\',\'5e\').6z(\'4H\')}
+   6(!4.5)5.N.2Z(4.5a);6($.1J(4.4N))4.4N(5,4);5.l.1A(5.3S);$(4.3v,5.C).1D(
+   \'1u.K\').1Y(\'1u.K\',1V);$(4.4r,5.C).K(2L())}k 2L(){u 4X;c
+   1T=$.Q(p,{},4);6(1o.8)1T.8=D;q 1T.8=1j.8;6(1o.b)1T.b=D;q
+   1T.b=1j.b;1T.1b.l.1E=\'1I\';u 1T}k 4A(){H(\'4A\');c
+   3m=$(4.3m[4.F]);5.l.1A(3m.3M().2h());5.C.6D(3m);6(4.W){5.l.1A(4.59);W.1
+   R=$(\'[1w="\'+4.W+\'"], [1w^="\'+4.W+\'
+   "]\');W.1H=W.1R.1H(4.E);6(4.2t&&$.1J(4.2t))4.2t(W.1H+1,W.1R.1i,5,4);c
+   1T=2L();c 4F=2W(-1);6(4F){c
+   2l=$(\'.2I\',5.C).I(\'1a\',4F.I(\'1a\')).1u(k(e){e.1U();$.2I();u
+   m});6(26&&4.F==\'1e\'){2l.4d($(\'\').o({12:2l.o(\'12\'),1f:2l.o(\'1f\')
+   ,1h:2l.o(\'1h\'),8:2l.8(),b:2l.b(),1s:0,18:\'3l\'}))}}q{$(\'.2I\',5.C).
+   2h()}c 4G=2W(1);6(4G){c
+   2d=$(\'.2B\',5.C).I(\'1a\',4G.I(\'1a\')).1u(k(e){e.1U();$.2B();u
+   m});6(26&&4.F==\'1e\'){2d.4d($(\'\').o($.Q({},{12:2d.o(\'12\'),1f:2d.o(
+   \'1f\'),1h:2d.o(\'1h\'),8:2d.8(),b:2d.b(),1s:0,18:\'3l\'})))}}q{$(\'.2B
+   \',5.C).2h()}}3H()}k 2W(4I){6(4.W){6(!4.5c)4I*=-1;c
+   1H=W.1H+4I;6(1H>=0&&1H2T||j.l.8>2J){6(4.F==\'1v\'||4.F==\'1e\'){c
+   3T=4.4x?4.4x:4.8;c 3U=4.4y?4.4y:4.b;c 3d=j.l.8-3T;c
+   2V=j.l.b-3U;6(2V<0)2V=0;6(3d<0)3d=0;c 3X=2T-2V;c 3Y=2J-3d;c
+   4V=2k.4W(3X/3U,3Y/3T);3Y=2k.5U(3T*4V);3X=2k.5U(3U*4V);j.l.b=3X+2V;j.l.8
+   =3Y+3d}q{j.l.b=2k.4W(j.l.b,2T);j.l.8=2k.4W(j.l.8,2J)}j.3i={8:j.l.8+1y.w
+   .Y,b:j.l.b+1y.h.Y};j.N={8:j.l.8+1y.w.Y+3g.w.Y,b:j.l.b+1y.h.Y+3g.h.Y}}}6
+   (4.F==\'1e\'){$(\'4S, 4C\',5.l).I(\'8\',j.l.8).I(\'b\',j.l.b)}q
+   6(4.F==\'1v\'){$(\'2U\',5.l).o({8:j.l.8,b:j.l.b})}5.l.o($.Q({},j.l,4.1b
+   .l));5.N.o($.Q({},j.3i,4.1b.3i));6(!1K)5.C.o($.Q({},j.N,4.1b.N));6(4.F=
+   =\'1v\'&&4.5h){$(\'2U\',5.l).73(\'5R\');c
+   1W=$(\'v\',5.l);6(4.O!=4.54&&4.O){6(1W.1i==0){1W=$(\'\'+4.O+\'\');5.l.1
+   A(1W)}6(4.5d){c 5W=2C(1W);1W.o({8:(j.l.8+1y.w.1l-5W.w.Y)+\'G\'})}}q
+   6(1W.1i=0){1W.2h()}}6(4.O)4v();j.N.4U=3j.w.18;j.N.4Y=3j.h.18;Z(j.N);3y(
+   )}k
+   1V(e){H(\'1V\');6(e)e.1U();6(5.1n&&5.1N){$(1X).1D(\'4f.K\');6(!4.1g)$(1
+   4).1D(\'2A.K\');5.1N=m;5.16=p;5.3V=p;6(5.1G||5.1r){4.3f(5,4,k(){5.P.13(
+   );5.1G=m;5.1r=m;4.2v(5,4,1Z)})}q{6(2r)5.l.o({12:\'\'});5.N.o({1E:\'2b\'
+   });5.l.o({1E:\'2b\'});$(\'B\',5.l).13();6($.1J(4.4u)){4.4u(5,4,k(){4.3b
+   (5,4,k(){2x();4.2v(5,4,1Z)})})}q{4.3b(5,4,k(){2x();4.2v(5,4,1Z)})}}}6(e
+   )u m}k
+   1z(){H(\'1z\');6(5.1N&&!5.16){6(5.1q){6(5.j.M()){5.16=p;6(5.1r){3K();5.
+   2p=p;4.3q(5,4,k(){5.P.13();5.1r=m;5.1G=m;2f()})}q{4.3f(5,4,k(){5.P.13()
+   ;5.1G=m;3K();3C();3y();5.2p=p;4.3s(5,4,2f)})}}}q
+   6(!5.1G&&!5.1r){5.16=p;5.1G=p;6(5.1B)1t();q
+   5.P.M(4.5r);$(4.3v,5.P).1D(\'1u.K\').1Y(\'1u.K\',1V);3C();4.3p(5,4,k(){
+   5.16=m;1z()})}}}k 4m(L){H(\'77: \'+R.t);6(4.19){c j={};c
+   i=0;L=L.2e(/\\r\\n/2R,\'5Y\').2e(/<41(.|\\s)*?\\/41>/2R,k(x){j[i]=x;u\'
+   <42 52="62: 3l" 11=63
+   1w="\'+(i++)+\'">\'});L=$(\'\'+L+\'\').29(4.19).M().2e(/<42 52="62:
+   3l;?" 11="?63"? 1w="(.?)"><\\/42>/2R,k(x,y,z){u
+   j[y]}).2e(/5Y/2R,"\\r\\n")}5.j.M(64(L));6(5.j.M()){5.1q=p;1z()}q 1t()}k
+   4j(){H(\'4j\');c
+   X=$(4.E);X.I(\'2u\',X.I(\'2u\')+4.19);X.I(\'2s\',\'\');$(\'48[1c=\'+4.3
+   F+\']\',4.E).2h();c B=5.j.3M(\'B\');c
+   65=B.1D(\'2o\').24().29(4.19||\'U\').7f(\'41[1k]\');B.I(\'1k\',\'7g:7h\
+   ');5.j.M(65.M());6(5.j.M()){5.1q=p;1z()}q 1t()}k
+   4B(){6((14.1P.3e&&4.t.3n(14.1P.3e)>-1)||4.t.3n(\'5k://\')){c
+   B=$(\'B\',5.1n).24();c
+   j={};6(4.5Q){j.O=B.29(\'O\').5m();6(!j.O){5C{j.O=B.29(\'O\').M()}7i(7j)
+   {}}}c
+   U=B.29(\'U\');6(!4.b&&U.b())j.b=U.b();6(!4.8&&U.8())j.8=U.8();$.Q(1j,j)
+   ;$.3N(j)}}k 2t(66,Y,A,f){6(Y>1)f.O+=(f.O?\' - \':\'\')+66+\'/\'+Y}k
+   2x(){H(\'2x\');5.16=m;6(30){30.1A(5.l.24());30=D}q
+   6(2g){2g.1A(5.l.24());2g=D}5.l.4z();W={};5.C.13().3M().2h().4z().I(\'52
+   \',\'\').13();6(5.3V||5.1r)5.C.13();5.C.o(4.1b.N).1A(5.l);1z()}k
+   1Z(){H(\'1Z\');$(1X).1D(\'4f\',4g);5.16=m;5.1n.2h();5.1n=D;6(26){U.o({b
+   :\'\',8:\'\',12:\'\',1E:\'\',S:\'\',49:\'\'});$(\'M\').o({1E:\'\'})}6($
+   .1J(4.1Z))4.1Z(5,4)}k 4i(){H(\'4i\');5.1N=p;5.16=m;1z()}k
+   2f(){H(\'2f\');5.16=m;5.2p=m;5.C.o({1s:\'\'});2r=/7m/.22(1F)&&!/(7n|6h)
+   /.22(1F)&&7o(58)<1.9&&4.F!=\'1v\';6(2r)5.l.o({12:\'4n\'});5.l.1A(5.3R);
+   6(4.F==\'B\')5.l.29(\'B\').I(\'1k\',4.t);6($.1J(4.2f))4.2f(5,4);6(32){3
+   2=m;$.3N({8:4.4L,b:4.4O});3z 4[\'4L\'];3z
+   4[\'4O\']}6(1o.8)Z({8:D});6(1o.b)Z({b:D})}k 4w(t){6(3Z t==\'4E\'){c
+   53=t.3n(\'#\');6(53>-1)u t.1Q(53)}u\'\'}k 64(L){6(3Z
+   L==\'4E\')L=L.2e(/<\\/?(M|7q|U)([^>]*)>/2R,\'\');c j=1S
+   2X();$.3Q($.7r({0:L},R.7s),k(){6($.3k(R,"41")){6(!R.1k||$(R).I(\'1w\')=
+   =\'7t\'){6($(R).I(\'6k\')==\'7u\')5.3R.3h(R);q 5.3S.3h(R)}}q
+   j.3h(R)});u j}k 2C(10){10=10.3a(0);c
+   J={h:{43:17(10,\'V\')+17(10,\'7x\'),18:17(10,\'5x\')+17(10,\'7y\'),1l:1
+   7(10,\'7z\')+17(10,\'7A\')},w:{43:17(10,\'S\')+17(10,\'49\'),18:17(10,\
+   '5B\')+17(10,\'7B\'),1l:17(10,\'7C\')+17(10,\'7D\')}};J.h.1M=J.h.43+J.h
+   .18;J.w.1M=J.w.43+J.w.18;J.h.6a=J.h.1l+J.h.18;J.w.6a=J.w.1l+J.w.18;J.h.
+   Y=J.h.1M+J.h.1l;J.w.Y=J.w.1M+J.w.1l;u J}k 17(10,1c){c
+   J=6b($.7F(10,1c,p));6(7G(J))J=0;u J}k
+   H(2M){6($.1C.K.f.H||4&&4.H)6c(2M,5,4||{})}k
+   3t(A,f,T){A.15.o({1s:0}).6e(7L,0.75,T)}k 2v(A,f,T){A.15.56(5I,T)}k
+   3p(A,f,T){A.P.o({V:f.2S+\'G\',S:f.2Q+\'G\',1s:0}).2j().2q({1s:1},{2z:T,
+   2E:2n})}k 3f(A,f,T){T()}k
+   3s(A,f,T){A.P.o({V:f.2S+\'G\',S:f.2Q+\'G\'}).2j().2q({8:f.8+\'G\',b:f.b
+   +\'G\',V:f.V+\'G\',S:f.S+\'G\'},{2E:57,2z:k(){A.C.o({8:f.8+\'G\',b:f.b+
+   \'G\',V:f.V+\'G\',S:f.S+\'G\'}).2j();A.P.56(69,T)}})}k
+   3b(A,f,T){A.C.2q({b:\'3A\',8:\'3A\',V:(-(25+f.4Y)/2+f.2i)+\'G\',S:(-(25
+   +f.4U)/2+f.2m)+\'G\'},{2E:57,2z:k(){A.C.13();T()}})}k
+   3r(A,f,T){A.P.o({V:A.C.o(\'V\'),S:A.C.o(\'S\'),b:A.C.o(\'b\'),8:A.C.o(\
+   '8\'),1s:0}).2j().6e(2n,1,k(){A.C.13();T()})}k
+   3q(A,f,T){A.C.13().o({8:f.8+\'G\',b:f.b+\'G\',S:f.S+\'G\',V:f.V+\'G\',1
+   s:1});A.P.2q({8:f.8+\'G\',b:f.b+\'G\',S:f.S+\'G\',V:f.V+\'G\'},{2z:k(){
+   A.C.2j();A.P.56(2n,k(){A.P.13();T()})},2E:57})}k
+   2A(A,f,T){A.C.2q({8:f.8+\'G\',b:f.b+\'G\',S:f.S+\'G\',V:f.V+\'G\'},{2z:
+   T,2E:2n})}k 3L(A,f,T){6(!$.7R.7S.3E){A.15.o({3E:f.2Y});T()}q
+   A.15.2q({3E:f.2Y},{2z:T,2E:2n})}$($.1C.K.f.4r).K()});c 45=\'\';k
+   6c(2M,A,f){6(A.1n&&A.15){A.15.2Z(2M+\'<3u />\'+45);45=\'\'}q
+   45+=2M+\'<3u
+   />\'}',62,490,'||||currentSettings|modal|if||width|||height|var|||setti
+   ngs||||tmp|function|content|false||css|true|else|||url|return|div|||||e
+   lts|iframe|contentWrapper|null|from|type|px|debug|attr|ret|nyroModal|da
+   ta|html|wrapper|title|loading|extend|this|marginLeft|callback|body|marg
+   inTop|gallery|jFrom|total|setCurrentSettings|elm|class|position|hide|wi
+   ndow|bg|anim|getCurCSS|border|selector|href|cssOpt|name|id|swf|top|bloc
+   ker|left|length|initSettingsSize|src|padding|deep1|full|resized|100|dat
+   aReady|transition|opacity|loadingError|click|image|rel|showModal|outerC
+   ontent|showContentOrLoading|append|error|fn|unbind|overflow|userAgent|l
+   oadingShown|index|auto|isFunction|resizing|initModal|outer|ready|proces
+   sModal|location|substring|links|new|currentSettingsNew|preventDefault|r
+   emoveModal|divTitle|document|bind|endRemove||ajax|test|form|contents||i
+   sIE6||deep2|find|blockerVars|hidden|nyroModalIframe|next|replace|endSho
+   wContent|contentElt|remove|marginScrollTop|show|Math|prev|marginScrollL
+   eft|400|load|animContent|animate|fixFF|target|galleryCounts|action|hide
+   Background|Load|endHideContent|javascript|complete|resize|nyroModalNext
+   |getOuter|link|duration|toLowerCase|imgType|value|nyroModalPrev|maxWidt
+   h|windowResizing|getCurrentSettingsNew|msg|pos|zIndex|eq|marginLeftLoad
+   ing|gi|marginTopLoading|maxHeight|img|diffH|getGalleryLink|Array|bgColo
+   r|prepend|contentEltLast|keyCode|shouldResize|zIndexStart|hash|elt|abso
+   lute||||get|hideContent|selIndicator|diffW|hostname|hideLoading|outerWr
+   apper2|push|wrapper2|outerWrapper|nodeName|none|wrap|indexOf|param|show
+   Loading|hideTransition|showTransition|showContent|showBackground|br|clo
+   seSelector|nyroModalClose|iframeForm|setMargin|delete|50px|scrollTop|se
+   tMarginLoading|outerHeight|backgroundColor|formIndicator|forceType|calc
+   ulateSize|in|req|fillContent|updateBgColor|children|nyroModalSettings|n
+   yroModalManual|me|each|scriptsShown|scripts|useW|useH|closing|started|c
+   alcH|calcW|typeof||script|pre|margin|msie|tmpDebug|contain|iframeHideIE
+   |input|marginRight|minHeight|minWidth|frameborder|before|hspace|keydown
+   |keyHandler|processHandler|endBackground|formDataLoaded|endResize|val|a
+   jaxLoaded|fixed|imageType|isSwf|visible|openSelector|extractUrlSel|RegE
+   xp|beforeHideContent|setTitle|getHash|imgWidth|imgHeight|empty|wrapCont
+   ent|iframeLoaded|embed|Form|string|linkPrev|linkNext|nyroModalprocessin
+   g|dir|submit|indexSpace|setWidth|windowResizeTimeout|endFillContent|set
+   Height|setMarginScroll|formData|documentElement|object|handleError|bord
+   erW|ratio|min|callingSettings|borderH|setDefaultCurrentSettings||Image|
+   style|hashPos|defaultImgAlt|h1|fadeOut|350|browserVersion|galleryLinks|
+   closeButton|support|ltr|setWidthImgTitle|_blank|boxModel|99|addImageDiv
+   Title|reg1|method|http|nyroModalTitle|text|Content|hashLoc|curLoc|error
+   Class|contentLoading|regexImg|outerWidth|wrapperIframe|plusTop|fileType
+   |borderTopWidth|multipart|plusLeft|enctype|borderLeftWidth|try|autoSiza
+   ble|isDefaultPrevented|max|110|resizable|300|nyroModalFull|nyroModalBg|
+   nyroModalWrapper|nyroModalContent|nyrModalTmp|nyroModalLoading|Ajax|tit
+   leFromIframe|alt|lineHeight|clickBg|floor|mousewheel|outerDivTitle|Clos
+   e|nyroModalLN|success|contentError|scrollLeft|display|nyroModalScript|f
+   ilterScripts|iframeContent|nb|XMLHttpRequest|windowResizeHandler|200|in
+   ner|parseInt|nyroModalDebug|galleryLoop|fadeTo|manual|opera|webkit|matc
+   h|windowResize|rev|Iframe|Data|https|jQuery|AE6D|offset|nyroModalImg|11
+   cf|96B8|base|addClass|444553540000|Loaded|000000|removeData|Cancel|movi
+   e|is|wrapInner|static|navigator|nyroModalIframeHideIeGalleryPrev|nyroMo
+   dalIframeHideIe|The|nyroModalIframeHideIeGalleryNext|requested|first|ap
+   plication|cannot|shockwave|flash|be|blur|serializeArray|loaded|wmode|Pl
+   ease|Prev|again|later|scrollHeight|clientHeight|stopPropagation|Next|re
+   moveAttr|jpg||wrapperImg|AjaxLoaded|clearTimeout|setTimeout|wrapperSwf|
+   jpeg|png|tiff|gif|not|about|blank|catch|err|host|bmp|mozilla|compatible
+   |parseFloat|transparent|head|clean|ownerDocument|forceLoad|shown|nofoll
+   ow|khtml|marginBottom|borderBottomWidth|paddingTop|paddingBottom|border
+   RightWidth|paddingLeft|paddingRight|closeBut|curCSS|isNaN|substr|close|
+   nyroModalRemove|D27CDB6E|500|nyroModalSel|rv|classid|color|white|fx|ste
+   p|clsid'.split('|'),0,{}))
+   Skip to Content Skip to Navigation
+
+   Accueil
+   Organisme de contrôle & de certification
+   au service de l'homme et de l'environnement
+   en France
+   Espace Client
+   Site web du Groupe Ecocert
+     * A propos d'Ecocert en France
+          + Qui sommes-nous ?
+          + Nos activités
+          + Le Groupe Ecocert
+          + FAQ
+          + Recrutement
+          + Contactez-nous
+     * Nos prestations
+          + Agriculture biologique
+               o Europe (CE)
+                    # Guides pratiques
+                    # Règlementation de l'agriculture biologique
+                    # Analyse
+               o Amérique du Nord (NOP)
+          + BIO+ : Cahiers des charges privés & export
+               o Les marques pour le marché Français
+               o Les marques européennes et internationales
+               o Les réglementations nationales hors UE
+          + Intrants : produits UAB
+          + Restauration collective
+          + Cosmétique bio et Spa
+          + Ecoproduits
+          + Textile biologique
+          + Environnement
+               o Changement climatique
+               o Gestion écologique des territoires
+                    # Eve® - Espace végétal écologique
+                    # Golf écodurable
+                    # PEFC
+                    # Eaux de baignade
+               o ISO 26000
+               o Systèmes de Management Environnemental
+               o Autres prestations
+                    # VHU - Véhicules Hors d'Usage
+          + Qualité et Sécurité
+          + Expertise & Conseil
+               o Blog Ecocert Expert Consulting
+          + Formations professionnelles
+               o Domaines de formation
+               o Calendrier des formations
+               o E-learning
+     * News
+          + Infos
+          + Evènements
+          + Newsletter "Ecocert Vous Informe"
+          + Références abusives
+
+   Rechercher_____
+   ok
+   Vous êtes ici : Accueil Nos prestations Environnement Gestion
+   écologique des territoires Eve® - Espace végétal écologique
+
+Eve® - Espace végétal écologique
+
+   eve-ecocert
+
+   Le référentiel Eve® est destiné à valoriser les pratiques écologiques
+   dans la gestion et/ou la création/réhabilitation des espaces végétaux.
+
+   Le référentiel Eve® a été développé par Ecocert en 2006, à la demande
+   des collectivités et en collaboration avec un comité d’experts et de
+   professionnels des espaces végétaux et de l’environnement. Ce comité
+   indépendant statue sur le contenu du référentiel et sur l'attribution
+   du label à chaque espace végétal candidat. Il intègre les principes
+   d’une gestion différenciée et permet d’inscrire la gestion ou la
+   création/réhabilitation des espaces végétaux dans une logique de
+   développement durable.
+
+Notre offre de service pour la gestion des espaces végétaux
+
+   Pour les gestionnaires d’espaces végétaux, c’est à la fois :
+     * Un outil de pilotage de la gestion écologique.
+     * Un guide pour aller plus loin dans l’évolution des pratiques.
+     * Un facteur de motivation pour les équipes.
+     * Un signe de qualité pour les usagers.
+
+   Pour prétendre à l’obtention du label Eve®, la gestion des espaces
+   végétaux doit respecter les critères suivants dès la première année
+   d’engagement :
+     * L’absence de produits chimiques : herbicides, phytosanitaires,
+       engrais de synthèse.
+     * Une politique d’économie de l’eau avec la connaissance de la
+       consommation et la mise en place d’un plan de réduction.
+     * Une attention pour le sol qui doit être considéré comme un milieu
+       vivant et non un simple support : paillage, apport de matière
+       organique, suivi régulier.
+     * Actions en faveur de la biodiversité et maintien de végétaux
+       spontanés.
+
+Nos formations
+
+   ECOCERT Environnement propose aux professionnels des formations dans le
+   domaine des espaces végétaux.
+
+Vos documents
+
+     * Pour consulter les Guides pratiques, accédez au site web du Groupe
+       ECOCERT
+     * Référentiel Eve®
+
+
+   CONTACT
+   ECOCERT Environnement SAS
+   Service Gestion écologique des territoires
+   Tel : +33 (0)1 53 44 74 44 / Mail : eve@ecocert.com
+
+Ecocert France
+
+     * A propos d'Ecocert en France
+     * Nos prestations
+          + Agriculture biologique
+          + BIO+ : Cahiers des charges privés & export
+          + Intrants : produits UAB
+          + Restauration collective
+          + Cosmétique bio et Spa
+          + Ecoproduits
+          + Textile biologique
+          + Environnement
+               o Changement climatique
+               o Gestion écologique des territoires
+                    # Eve® - Espace végétal écologique
+                    # Golf écodurable
+                    # PEFC
+                    # Eaux de baignade
+               o ISO 26000
+               o Systèmes de Management Environnemental
+               o Autres prestations
+          + Qualité et Sécurité
+          + Expertise & Conseil
+          + Formations professionnelles
+     * News
+
+   Ecocert Siège social | Contactez-nous
+
+LIENS utiles
+
+     * VOS CERTIFICATS
+     * AGENCE BIO
+     * INAO
+     * MINISTERE DE L'AGRICULTURE
+     * FACEBOOK ECOCERT
+     * YOU TUBE ECOCERT
+
+Suivez-nous
+
+      facebook
+      Twitter
+      youtube
+      scoopit
+      wordpress
+     * Newsletter
+     * Contact
+     * Ecocert.com
+     * Mentions légales
+     * Crédits
+     * Plan du site
+
+   Credits
+   Ecocert
+     * Contenu
+     * Hébergement
+
+   X-PRIME
+     * Conception
+     * Réalisation
+
+   En construction
+   Skip to Content Skip to Navigation
+
+   Accueil
+   Organisme de contrôle & de certification
+   au service de l'homme et de l'environnement
+   en France
+   Espace Client
+   Site web du Groupe Ecocert
+     * A propos d'Ecocert en France
+          + Qui sommes-nous ?
+          + Nos activités
+          + Le Groupe Ecocert
+          + FAQ
+          + Recrutement
+          + Contactez-nous
+     * Nos prestations
+          + Agriculture biologique
+               o Europe (CE)
+                    # Guides pratiques
+                    # Règlementation de l'agriculture biologique
+                    # Analyse
+               o Amérique du Nord (NOP)
+          + BIO+ : Cahiers des charges privés & export
+               o Les marques pour le marché Français
+               o Les marques européennes et internationales
+               o Les réglementations nationales hors UE
+          + Intrants : produits UAB
+          + Restauration collective
+          + Cosmétique bio et Spa
+          + Ecoproduits
+          + Textile biologique
+          + Environnement
+               o Changement climatique
+               o Gestion écologique des territoires
+                    # Eve® - Espace végétal écologique
+                    # Golf écodurable
+                    # PEFC
+                    # Eaux de baignade
+               o ISO 26000
+               o Systèmes de Management Environnemental
+               o Autres prestations
+                    # VHU - Véhicules Hors d'Usage
+          + Qualité et Sécurité
+          + Expertise & Conseil
+               o Blog Ecocert Expert Consulting
+          + Formations professionnelles
+               o Domaines de formation
+               o Calendrier des formations
+               o E-learning
+     * News
+          + Infos
+          + Evènements
+          + Newsletter "Ecocert Vous Informe"
+          + Références abusives
+
+   Rechercher_____
+   ok
+   Vous êtes ici : Accueil Nos prestations Restauration collective
+
+Restauration collective
+
+Le label ECOCERT "EN CUISINE"
+
+Qui veut du bio à la cantine ?
+
+logo-ecocert-en-cuisine
+
+   En 2013, Ecocert s’engage aux côtés des professionnels qui oeuvrent à
+   l’introduction des produits biologiques et locaux en restauration
+   collective, en leur proposant un nouvel outil de valorisation : le
+   label Ecocert "En cuisine"
+
+   Il s'agit du premier cahier des charges français pour une restauration
+   collective plus bio, plus locale, plus saine, plus durable. Il prend en
+   compte les enjeux sociétaux, environnementaux et de santé publique,
+   dans une démarche progressive et positive. Il valorise les efforts déjà
+   entrepris, encourage de nouvelles initiatives et apporte des garanties
+   sur le fonctionnement global du restaurant.
+
+   L’objectif du cahier des charges est de garantir dans les restaurants
+   collectifs contrôlés :
+     * l’utilisation de produits biologiques et locaux
+     * la qualité et l’équilibre nutritionnel des menus
+     * la gestion environnementale du site (lutte contre le gaspillage,
+       gestion des déchets)
+     * une information claire sur les prestations, les démarches engagées
+       et le niveau de labellisation
+
+
+   Les établissements concernés par le label Ecocert "En cuisine" sont les
+   restaurants :
+     * des établissements d’enseignement : école, collège, lycée,
+       université...
+     * des administrations ou entreprises à caractère sanitaire et social
+       : hôpitaux, cliniques, établissements spécialisés
+     * de toute structure d’accueil : personnes âgées, crèches, foyers
+       d’accueil et de bienfaisance, centres et établissements de vacances
+       et établissements pénitentiaires
+
+Les fondements du référentiel "En cuisine" pour la restauration collective
+
+   Le développement de l’approvisionnement bio est un impératif : le
+   restaurant doit proposer toute l’année un choix varié de produits issus
+   de l’agriculture biologique, pour un impact réduit des pesticides dans
+   l’assiette.
+
+   Des garanties sont exigées sur la provenance des aliments :
+   les filières courtes doivent être privilégiées, afin de réduire
+   l’empreinte carbone et pour créer un lien social avec les producteurs
+   bio les plus proches.
+
+   Le respect de l’équilibre nutritionnel, la diversité alimentaire et la
+   valorisation du « fait maison » font partie des exigences du
+   référentiel, tout comme la limitation des additifs, la traçabilité des
+   produits, et la clarté de l’information pour une éducation alimentaire
+   des équipes, des convives, et particulièrement des enfants.
+
+   Des mesures concrètes doivent être mises en place pour réduire
+   le gaspillage alimentaire et améliorer la gestion des
+   déchets. L’objectif à terme est d’appliquer une politique
+   environnementale à l’ensemble du restaurant (eau, énergie, détergents,
+   emballages, vaisselle…).
+
+4 domaines d'intervention et 3 niveaux de labellisation
+
+Le processus de labellisation
+
+     * Les restaurants remplissent un dossier d’engagement, contrôlé par
+       les auditeurs d’Ecocert.
+     * Les auditeurs d’Ecocert mènent les inspections sur les sites de
+       restauration collective, émettent ensuite des rapports d’audits.
+     * Les chargés de contrôle étudient ces rapports pour évaluer la
+       conformité aux exigences du référentiel. Si le rapport s’avère
+       conforme, Ecocert délivre le label « En cuisine ».
+     * Des contrôles annuels de surveillance sont ensuite réalisés, dont
+       certains inopinés. Toute non-conformité entraîne des demandes
+       d’actions correctives et/ou des sanctions.
+
+     NOUVEAU ! Le label En Cuisine est sur Facebook !
+
+Ecocert France
+
+     * A propos d'Ecocert en France
+     * Nos prestations
+          + Agriculture biologique
+          + BIO+ : Cahiers des charges privés & export
+          + Intrants : produits UAB
+          + Restauration collective
+          + Cosmétique bio et Spa
+          + Ecoproduits
+          + Textile biologique
+          + Environnement
+          + Qualité et Sécurité
+          + Expertise & Conseil
+          + Formations professionnelles
+     * News
+
+   Ecocert Siège social | Contactez-nous
+
+LIENS utiles
+
+     * VOS CERTIFICATS
+     * AGENCE BIO
+     * INAO
+     * MINISTERE DE L'AGRICULTURE
+     * FACEBOOK ECOCERT
+     * YOU TUBE ECOCERT
+
+Suivez-nous
+
+      facebook
+      Twitter
+      youtube
+      scoopit
+      wordpress
+     * Newsletter
+     * Contact
+     * Ecocert.com
+     * Mentions légales
+     * Crédits
+     * Plan du site
+
+   Credits
+   Ecocert
+     * Contenu
+     * Hébergement
+
+   X-PRIME
+     * Conception
+     * Réalisation
+
+   En construction
+   Skip to Content Skip to Navigation
+
+   Accueil
+   Organisme de contrôle & de certification
+   au service de l'homme et de l'environnement
+   en France
+   Espace Client
+   Site web du Groupe Ecocert
+     * A propos d'Ecocert en France
+          + Qui sommes-nous ?
+          + Nos activités
+          + Le Groupe Ecocert
+          + FAQ
+          + Recrutement
+          + Contactez-nous
+     * Nos prestations
+          + Agriculture biologique
+               o Europe (CE)
+                    # Guides pratiques
+                    # Règlementation de l'agriculture biologique
+                    # Analyse
+               o Amérique du Nord (NOP)
+          + BIO+ : Cahiers des charges privés & export
+               o Les marques pour le marché Français
+               o Les marques européennes et internationales
+               o Les réglementations nationales hors UE
+          + Intrants : produits UAB
+          + Restauration collective
+          + Cosmétique bio et Spa
+          + Ecoproduits
+          + Textile biologique
+          + Environnement
+               o Changement climatique
+               o Gestion écologique des territoires
+                    # Eve® - Espace végétal écologique
+                    # Golf écodurable
+                    # PEFC
+                    # Eaux de baignade
+               o ISO 26000
+               o Systèmes de Management Environnemental
+               o Autres prestations
+                    # VHU - Véhicules Hors d'Usage
+          + Qualité et Sécurité
+          + Expertise & Conseil
+               o Blog Ecocert Expert Consulting
+          + Formations professionnelles
+               o Domaines de formation
+               o Calendrier des formations
+               o E-learning
+     * News
+          + Infos
+          + Evènements
+          + Newsletter "Ecocert Vous Informe"
+          + Références abusives
+
+   Rechercher_____
+   ok
+   Vous êtes ici : Accueil A propos d'Ecocert en France FAQ
+
+FAQ
+
+Qu'est-ce qu'un produit issu de l'agriculture biologique ?
+
+L'agriculture biologique est encadrée par des règlementations officielles.
+
+   Les produits biologiques doivent obligatoirement répondre aux exigences
+   de l’un de ces règlements :
+     * En Europe : Règlement européen (CE) N°834/2007 et ses règlements
+       d’application (CE) N°889/2008 et (CE) N°1235/2008.
+     * En Amérique du Nord : Règlement NOP (National Organic Program).
+     * Au Japon : Règlement JAS (Japanese Agricultural Standard).
+
+   Le produit est contrôlé et certifié par un organisme indépendant et
+   accrédité, comme Ecocert. L'organisme certificateur garantit la
+   traçabilité du produit tout au long de la filière : production,
+   transformation, conditionnement, stockage et distribution. La
+   vérification des produits sur le terrain peut être complétée par
+   l'analyse en laboratoire.
+
+Un produit portant la mention "issu de l'agriculture biologique" doit
+respecter les critères suivants :
+
+     * Produits agricoles biologiques : culture évitant l'usage d'engrais
+       chimique et produit de synthèse ; terres fertilisées par des
+       engrais organiques et des minéraux naturels qui favorisent la vie
+       du sol ; application du principe de précaution.
+     * Animaux : nourris principalement avec des aliments biologiques ;
+       soignés par méthodes douces ; élevés avec accès au plein air ;
+       espace vital maximum.
+     * Produits transformés : constitués d’ingrédients agricoles
+       biologiques contrôlés et éventuellement d’ingrédients agricoles non
+       biologiques et d'ingrédients non agricoles autorisés par le
+       Règlement européen ou NOP.
+
+
+Que contrôlent les auditeurs d'Ecocert en agriculture biologique?
+
+   Le cœur de métier d’Ecocert consiste à vérifier sur le terrain que le
+   Règlement européen (CE) N° 834/2007 est bien respecté par les
+   producteurs et fabricants, engagés volontairement dans cette démarche.
+
+   Les contrôles portent sur l’ensemble du système de production
+   (parcelles de terre, semences, engrais, troupeaux, pratiques de culture
+   et d’élevage, lieux de stockage, transformation, étiquetage, recettes,
+   fournisseurs, distributeurs…).
+
+   Ils ne se substituent pas mais s’ajoutent aux contrôles habituellement
+   effectués par les autorités sur l’ensemble des produits agricoles et
+   alimentaires, conventionnels ou biologiques.
+
+
+Quelle est la différence entre un produit bio français et un produit
+bio importé ?
+
+   L’agriculture biologique en Europe est régie par le Conseil de l’Union
+   Européenne depuis 1991. Depuis le 1er janvier 2009, le Règlement
+   européen (CE) N° 834/2007 et ses règlements d’application concernant
+   les règles de production et d’étiquetage des produits biologiques sont
+   en vigueur dans tous les Etats membres de l’UE.
+
+   Pour obtenir la certification et afficher la mention «produit issu de
+   l’agriculture biologique», les produits commercialisés en Europe
+   doivent être contrôlés conformes au Règlement européen, par un
+   organisme de certification agréé par les pouvoirs publics, quelque soit
+   le pays de production (Union européenne et hors Union européenne).
+
+   Les produits doivent obtenir un certificat et être contrôlés tous les
+   ans.
+
+
+Quelle est la différence entre le Règlement européen de l’agriculture
+biologique et l’ancien Règlement français de l’agriculture biologique ?
+
+   Le Règlement européen de l’agriculture biologique, entré en vigueur en
+   janvier 2009, a permis une harmonisation indispensable au sein de
+   l’Union européenne. Il représente un dénominateur commun pour avancer
+   vers une règlementation toujours plus exigeante. Le Règlement français
+   n'est plus applicable.
+
+
+Ecocert France
+
+     * A propos d'Ecocert en France
+          + Qui sommes-nous ?
+          + Nos activités
+          + Le Groupe Ecocert
+          + FAQ
+          + Recrutement
+          + Contactez-nous
+     * Nos prestations
+     * News
+
+   Ecocert Siège social | Contactez-nous
+
+LIENS utiles
+
+     * VOS CERTIFICATS
+     * AGENCE BIO
+     * INAO
+     * MINISTERE DE L'AGRICULTURE
+     * FACEBOOK ECOCERT
+     * YOU TUBE ECOCERT
+
+Suivez-nous
+
+      facebook
+      Twitter
+      youtube
+      scoopit
+      wordpress
+     * Newsletter
+     * Contact
+     * Ecocert.com
+     * Mentions légales
+     * Crédits
+     * Plan du site
+
+   Credits
+   Ecocert
+     * Contenu
+     * Hébergement
+
+   X-PRIME
+     * Conception
+     * Réalisation
+
+   En construction

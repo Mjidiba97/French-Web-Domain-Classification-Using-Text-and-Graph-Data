@@ -1,0 +1,1109 @@
+   #Kali Linux » Feed Kali Linux » Comments Feed Kali Linux 2019.2 Release
+   Kali Linux Roadmap (2019/2020) alternate alternate
+
+   Kali Linux
+
+     * Blog
+     * Downloads
+          + Download Kali Linux
+          + Kali Linux NetHunter
+          + Kali Linux Revealed Book
+          + Release Information
+     * Training
+          + Advanced Web Attacks and Exploitation
+          + Penetration Testing with Kali Linux
+          + The Open Kali Linux Dojo
+          + Kali Linux Revealed
+     * Documentation
+          + Kali Linux Documentation
+          + Special Kali Linux Features
+          + Kali Linux Tools Website
+     * Community
+          + Community Support
+          + Kali Linux Forums
+          + Kali Git Repository
+          + Report Kali Linux Bugs
+     * About Us
+          + All About Kali Linux
+          + Kali Press Release
+          + Cookie Policy
+     *
+
+   ____________________
+
+WSL2 and Kali
+
+   June 13, 2019
+   elwood
+   Kali Linux News
+
+   Kali Linux has had support for WSL for some time, but its usefulness
+   has been somewhat limited. This was mostly due to restrictions placed
+   on some system calls , most importantly those revolving around
+   networking. Furthermore, additional issues with speed, specifically
+   I/O, were also problematic. Because of this, Kali WSL has mostly been
+   relegated to reporting functions after an assessment is completed. A
+   cool technology, and certainly an amazing engineering feat, but as is,
+   it just was not that useful in the field.
+
+   When WSL 2 was announced however, we were excited about what this could
+   mean for actually making Kali WSL more useful in. As such, when we saw
+   that WSL 2 was available in the Windows Insiders program we wanted to
+   jump right on it and see what improvements were made.
+
+WSL2 Conversion
+
+   After you have the new Windows Insider build installed, converting Kali
+   WSL 1 to 2 is very easy.
+
+   This was a great surprise for us, as it also means we don’t have to do
+   anything on our end to support WSL2. Kali’s current WSL distribution
+   will work just fine, and you can convert your existing installation
+   easily. According to the docs you can also set WSL2 as your default if
+   you don’t have a Kali installed yet.
+
+   Overall, this was a great surprise, and means Kali is ready for WSL 2
+   today.
+
+Kali WSL 2 Usage
+
+   Ok, so WSL 2 works with Kali, but is it useful? We are just starting to
+   play with WSL 2, so it’s really too early to say. However there are a
+   few quick observations we have.
+
+   Basic usage, such as updating Kali and installing packages, appears to
+   work just fine.
+
+   However, simply installing something is not that interesting, The
+   question is: does it work? One specific tool we wanted to immediately
+   check was Nmap, which has always been a WSL pain point. As you can see
+   from the screenshot, a basic Nmap scan works right out of the box!
+   Thats great news and is very promising for WSL 2 as it continues
+   development.
+
+   That should not be a great surprise however, as WSL 2 at its core is
+   really a low overhead and optimized VM. This has brought about some
+   changes for those of us who have been using WSL for a while. These
+   changes fall mostly along the lines of process spaces, networking, and
+   filesystem interaction. This brings up some items we will have to watch
+   as WSL continues to mature.
+
+All networking appears to be NATed in the current release.
+
+   Microsoft states:
+
+     In the initial builds of the WSL 2 preview, you will need to access
+     any Linux server from Windows using the IP address of your Linux
+     distro, and any Windows server from Linux using the IP address of
+     your host machine. This is something that is temporary, and very
+     high on our priority list to fix.
+
+   So, no bridged mode. Anyone who uses Kali in a VM knows that for an
+   actual assessment work it’s always better to run Kali in bridged mode,
+   not NAT. With the current release, reverse shells are really not going
+   to be an easy option without playing around with port forwarding on the
+   Windows side. Additionally, we don’t yet know the strength of the NAT
+   engine. While scans ran through WSL2 are now possible, their results
+   will remain questionable until we find how much the NAT engine impacts
+   them.
+
+As it is in a VM, the process space is separate.
+
+   This is interesting, as it might actually open up Kali WSL 2 to be a
+   useful endpoint protection bypass. If you get code execution on a
+   Windows 10 system that supports WSL 2, could you install a Kali
+   instance and pivot from there instead of the base operating system?
+   This remains to be seen as this is still in development and Microsoft
+   seems to want to unify the Linux and Windows experience as much as
+   possible. The end point protection programs might become “WSL Aware”,
+   which makes this is an interesting item to watch.
+
+WSL 2’s filesystem is now in a virtual disk.
+
+   Similar to traditional VMs, there is now a virtual disk that holds the
+   WSL 2 instance. In the past, one of the WSL issues that would come up
+   is that many Kali tools would trigger anti-virus protections. To keep
+   Kali WSL useful you would have to make exclusions for the location in
+   which the Kali files were saved on the Windows filesystem.
+
+   Now that it’s in a virtual disk, much like the process space isolation,
+   it will remain to be seen how AV might deal with it. Currently, it
+   appears that AV ignores this virtual disk and its contents but as WSL
+   reaches general availability it is possible AV products will become WSL
+   2 aware. Again, something we will need to watch.
+
+Overall
+
+   As it stands, WSL 2 is an exciting technology and most definitely worth
+   paying attention to. This is the first public beta and a lot will
+   change over time. As such, we will track its development and see what
+   we can do to make WSL 2 more useful for our purposes. As it stands
+   however, it already seems more useful than what we have experienced
+   with WSL 1 for actual production use. However, WSL 1 is still supported
+   on a WSL 2 system so if you are a WSL user you can pick what’s best for
+   you.
+
+Related Posts
+
+   Kali Linux in the Windows App Store
+   5 Mar 2018
+
+   AWAE now Online!
+
+   NOW AVAILABLE ONLINEAdvanced Web Attacks and Exploitation (AWAE)
+
+   You can now take OffSec’s most popular in-person training as an online
+   course.
+   Learn More
+
+Become a Certified Penetration Tester
+
+   Enroll in Penetration Testing with Kali Linux, the course required to
+   become an Offensive Security Certified Professional (OSCP) Learn More
+   Get Certified
+
+Follow us on Twitter
+
+   Follow Offensive Security Follow Kali Linux Follow Exploit Database
+   Facebook
+   LinkedIn
+   Vimeo
+   GitHub
+   RSS
+
+Kali Linux Twitter Feed
+
+   Tweets by @kalilinux
+
+Blog Categories
+
+     * Kali Linux Dojo (7)
+     * Kali Linux News (47)
+     * Kali Linux Releases (21)
+     * Kali Linux Tutorials (17)
+     * Penetration Testing (7)
+
+Kali Documentation
+
+     * 01. Introduction to Kali Linux
+     * 02. Kali Linux Live
+     * 03. Installing Kali Linux
+     * 04. Kali Linux on ARM
+     * 05. Kali Linux General Use
+     * 06. Customizing Kali Linux
+     * 07. Kali Community Support
+     * 08. Kali Linux Policies
+     * 09. Open Kali Linux Dojo
+
+Kali Linux Revealed now available on Amazon!
+
+   kali Linux Revealed
+
+   OFFENSIVE SECURITY RESOURCES
+   Downloads
+
+   Kali Linux
+
+   Kali NetHunter
+
+   Kali Linux Revealed Book
+   CERTIFICATIONS
+
+   OSCP
+
+   OSWP
+
+   OSCE
+
+   OSEE
+
+   OSWE
+
+   KLCP
+   COURSES
+
+   Penetration Testing with Kali Linux (PwK)
+
+   Advanced Web Attacks and Exploitation (AWAE)
+
+   Cracking the Perimeter (CTP)
+
+   Offensive Security Wireless Attacks (WiFu)
+
+   Metasploit Unleashed (MSFU)
+
+   Free Kali Linux training
+   PROFESSIONAL SERVICES
+
+   Penetration Testing
+
+   Advanced Attack Simulation
+
+   Application Security Assessment
+
+   Copyright © Offensive Security
+
+   Menu
+   #Kali Linux » Feed Kali Linux » Comments Feed Kali Linux Roadmap
+   (2019/2020) Raspberry Pi 4 and Kali alternate alternate
+
+   Kali Linux
+
+     * Blog
+     * Downloads
+          + Download Kali Linux
+          + Kali Linux NetHunter
+          + Kali Linux Revealed Book
+          + Release Information
+     * Training
+          + Advanced Web Attacks and Exploitation
+          + Penetration Testing with Kali Linux
+          + The Open Kali Linux Dojo
+          + Kali Linux Revealed
+     * Documentation
+          + Kali Linux Documentation
+          + Special Kali Linux Features
+          + Kali Linux Tools Website
+     * Community
+          + Community Support
+          + Kali Linux Forums
+          + Kali Git Repository
+          + Report Kali Linux Bugs
+     * About Us
+          + All About Kali Linux
+          + Kali Press Release
+          + Cookie Policy
+     *
+
+   ____________________
+
+   Kali in DigitalOcean Cloud
+
+Kali Linux in the DigitalOcean Cloud
+
+   July 2, 2019
+   Thomas d'Otreppe
+   Kali Linux News, Kali Linux Tutorials
+
+   DigitalOcean is a cloud provider similar to AWS, Microsoft Azure,
+   Google Cloud Platform, and many others. They offer instances, called
+   “droplets”, with different Linux distributions such as Debian, Ubuntu,
+   FreeBSD, etc. Similar to AWS, DigitalOcean has datacenters around the
+   world and sometimes multiple datacenters in each country.
+
+   However, one feature in particular sets them apart them from their
+   competitors. A little while ago, they added support for custom images,
+   which allows users to import virtual machine disks and use them as
+   droplets. This is perfect for us as we can use our own version of Kali
+   Linux in their cloud.
+
+   While it might be possible to load the official Kali Linux virtual
+   images, it wouldn’t be very efficient. Instead, we’ll build a
+   lightweight Kali installation with the bare minimum to get it working.
+
+Generate an ISO
+
+   By default, the Kali Linux ISOs have a GUI installed, and while we
+   could use it, we want to minimize the amount of data we have to upload
+   to DigitalOcean for reasons we will talk about later. Having a GUI
+   running on a headless system is also a waste of resources so while we
+   could uninstall it or disable it, we’ll just generate a custom Kali ISO
+   without a GUI or any other tools installed. Building the ISO will
+   require around 5 GB of hard drive space so make sure you have enough if
+   you’re following along.
+
+   First, we’ll make sure the system is up to date:
+   apt update
+   apt -y full-upgrade
+
+   In case a new kernel was installed, let’s reboot the system before
+   continuing and then proceed to start the build.
+   apt -y install git live-build cdebootstrap devscripts
+   git clone
+   https://gitlab.com/kalilinux/build-scripts/live-build-config.git
+   cd live-build-config
+   ./build.sh --variant minimal --verbose
+
+   It will take a while to build the ISO as it needs to download a lot of
+   packages and assemble them. In the meantime, enjoy a nice cup of joe.
+   Or tea.
+
+   The ‘- -verbose’ option will display the build log on the screen. It
+   can however be removed, and instead progress can be followed in the
+   build.log file:
+   tail -f build.log
+
+   Once our prompt returns on the terminal where ‘build.sh’ was launched,
+   the ISO is ready and can be found in the images/ directory.
+
+Create the Virtual Machine
+
+   With our ISO built, we can now begin to build our virtual machine.
+   Create a new virtual machine setting the OS to the latest Debian 64 bit
+   and allocating a 20 GB hard disk. If needed, detailed set-up is
+   explained on the Kali Training website. It is important to store the
+   virtual disk as a single file that is dynamically allocated. The rest
+   like the amount of CPU and RAM won’t matter because only the disk file
+   will be uploaded to DigitalOcean.
+
+   Disk size matters as billing is based on disk size for custom images.
+   It will also impact the choice of instance we can create. Let’s say a
+   40 GB hard disk is created, it will fail creating an instance at the
+   $5/month level because its maximum hard disk size is 25 GB. In that
+   case we would be forced to use the $10/month option for instances with
+   50 GB disks. Don’t worry, even though the disk is 20 GB, it will get
+   expanded depending on the droplet plan chosen.
+
+   During the installation, select manual partitioning and set it up as
+   shown below, with all files in one partition and no swap file.
+   Install Process
+
+Update the System
+
+   When installation is complete and after rebooting, we login at the
+   console and update the system:
+   apt update
+   apt -y full-upgrade
+
+   If you don’t see it going over a mirror during ‘apt update’, you may
+   have accidentally forgotten to add a network mirror during the
+   installation. Follow the instructions on the Kali Docs site to fix it
+   and run both of the commands again.
+
+Install Required Packages
+
+   In order for DigitalOcean to configure the system for us, we need to
+   install the cloud-init package:
+   apt -y install cloud-init
+   echo 'datasource_list: [ ConfigDrive, DigitalOcean, NoCloud, None ]' >
+   /etc/cloud/cloud.cfg.d/99_digitalocean.cfg
+   systemctl enable cloud-init
+
+Update GRUB
+
+   When booting, the disk is attached and mapped as sda1. However, with
+   the droplets, it is seen as vda1. To remedy this, we need to change all
+   instances of sda1 to vda1 in /boot/grub/grub.cfg:
+   sed -i 's/sda1/vda1/g' /boot/grub/grub.cfg
+
+   With the configuration file updated, we can run ‘update-grub’ to update
+   the system:
+   update-grub
+
+Prepare for SSH
+
+   Since we will need to use SSH to connect to the system on DigitalOcean,
+   the openssh-server package needs to be installed (and enabled) as well:
+   apt -y install openssh-server
+   systemctl enable ssh.service
+
+   When creating a standard droplet, you can choose to use SSH keys or
+   not. However, when using custom images, this isn’t an option and using
+   SSH keys is mandatory. For this reason, DigitalOcean requires us to
+   remove the root password:
+   passwd -d root
+
+   We also need to create a /root/.ssh folder:
+   mkdir /root/.ssh
+
+Cleanup
+
+   Before we finish with our virtual machine, we run a few commands to
+   clean things up:
+   apt autoremove
+   apt autoclean
+   rm -rf /var/log/*
+   history -c
+
+   At this point, our virtual machine is ready so we run ‘poweroff’ to
+   shutdown the system.
+   poweroff
+
+Uploading
+
+   In the virtual machine folder, locate the .vmdk file, then compress it
+   using bzip2, gzip, or zip in preparation for uploading to DigitalOcean.
+   bzip2 kali.vmdk
+
+   Login to your DigitalOcean account. In the “Manage” section on the
+   left, click on “Images”, then select the “Custom Images” tab.
+   Custom Images
+
+   From there, we upload the compressed disk image. We’ll name it Kali,
+   mark it as Debian, and select the region and datacenter to upload it
+   to. Note that once uploaded to a location, droplets can only be started
+   at that location, which is a current limitation for custom images.
+   Another thing to remember at this stage is that uploaded images consume
+   disk space and DigitalOcean will bill based on disk usage.
+
+Starting a Droplet
+
+   Once done, the “Uploaded” column will indicate how long ago it was
+   uploaded. Now we will click on the “More” option of the image and
+   select “Start a droplet”.
+   Start a droplet
+
+   You will be taken to the droplet settings where you can select the
+   droplet plan, the SSH key, and the project to start it in. Since this
+   is a custom image, it is required you use a SSH key. You can either
+   select an existing one or upload a new one by clicking on “New SSH
+   key”, which will open the following screen where you can paste the
+   public key and name it:
+
+   Once done, click “Create” as shown below. It will then take you back to
+   the dashboard (Manage > Droplets) where all your droplets are listed.
+   Because we are using a SSH key, DigitalOcean will not send an email
+   with credentials for the droplet.
+   Finalize project
+
+   Within a few seconds, and after the IP is displayed, our droplet will
+   be ready. In order to connect, we will need to use the private SSH key
+   we created (called MY_KEY in this example):
+   user@computer:~$ ssh -i MY_KEY root@192.168.1.1
+   The authenticity of host '192.168.1.1 (192.168.1.1)' can't be
+   established.
+   ECDSA key fingerprint is
+   SHA256:d83fcd43d25e2a7edd291666160b47360cc85870ded.
+   Are you sure you want to continue connecting (yes/no)? yes
+   Warning: Permanently added 'IP' (ECDSA) to the list of known hosts.
+   Linux kali-s-1vcpu-1gb-nyc3-01 4.19.0-kali5-amd64 #1 SMP Debian
+   4.19.37-2kali1 (2019-05-15) x86_64
+   The programs included with the Kali GNU/Linux system are free software;
+   the exact distribution terms for each program are described in the
+   individual files in /usr/share/doc/*/copyright.
+   Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+   permitted by applicable law.
+
+   Now we have a nice, minimal Kali Linux installation that we can deploy
+   and customize as needed.
+   root@kali-s-1vcpu-1gb-nyc3-01:~# lsb_release -a
+   No LSB modules are available.
+   Distributor ID: Kali
+   Description: Kali GNU/Linux Rolling
+   Release: 2019.2
+   Codename: n/a
+   root@kali-s-1vcpu-1gb-nyc3-01:~# uname -a
+   Linux kali-s-1vcpu-1gb-nyc3-01 4.19.0-kali5-amd64 #1 SMP Debian
+   4.19.37-2kali1 (2019-05-15) x86_64 GNU/Linux
+   root@kali-s-1vcpu-1gb-lon1-01:~# free -h
+   total used free shared buff/cache available
+   Mem: 987Mi 51Mi 527Mi 1.0Mi 407Mi 790Mi
+   Swap: 0B 0B 0B
+
+Related Posts
+
+   My Custom Kali Linux Distribution
+   5 Sep 2018
+
+   Wireguard on Kali
+   11 Sep 2018
+
+   Making your own Kali Linux Metapackages
+   18 Sep 2018
+
+   AWAE now Online!
+
+   NOW AVAILABLE ONLINEAdvanced Web Attacks and Exploitation (AWAE)
+
+   You can now take OffSec’s most popular in-person training as an online
+   course.
+   Learn More
+
+Become a Certified Penetration Tester
+
+   Enroll in Penetration Testing with Kali Linux, the course required to
+   become an Offensive Security Certified Professional (OSCP) Learn More
+   Get Certified
+
+Follow us on Twitter
+
+   Follow Offensive Security Follow Kali Linux Follow Exploit Database
+   Facebook
+   LinkedIn
+   Vimeo
+   GitHub
+   RSS
+
+Kali Linux Twitter Feed
+
+   Tweets by @kalilinux
+
+Blog Categories
+
+     * Kali Linux Dojo (7)
+     * Kali Linux News (47)
+     * Kali Linux Releases (21)
+     * Kali Linux Tutorials (17)
+     * Penetration Testing (7)
+
+Kali Documentation
+
+     * 01. Introduction to Kali Linux
+     * 02. Kali Linux Live
+     * 03. Installing Kali Linux
+     * 04. Kali Linux on ARM
+     * 05. Kali Linux General Use
+     * 06. Customizing Kali Linux
+     * 07. Kali Community Support
+     * 08. Kali Linux Policies
+     * 09. Open Kali Linux Dojo
+
+Kali Linux Revealed now available on Amazon!
+
+   kali Linux Revealed
+
+   OFFENSIVE SECURITY RESOURCES
+   Downloads
+
+   Kali Linux
+
+   Kali NetHunter
+
+   Kali Linux Revealed Book
+   CERTIFICATIONS
+
+   OSCP
+
+   OSWP
+
+   OSCE
+
+   OSEE
+
+   OSWE
+
+   KLCP
+   COURSES
+
+   Penetration Testing with Kali Linux (PwK)
+
+   Advanced Web Attacks and Exploitation (AWAE)
+
+   Cracking the Perimeter (CTP)
+
+   Offensive Security Wireless Attacks (WiFu)
+
+   Metasploit Unleashed (MSFU)
+
+   Free Kali Linux training
+   PROFESSIONAL SERVICES
+
+   Penetration Testing
+
+   Advanced Attack Simulation
+
+   Application Security Assessment
+
+   Copyright © Offensive Security
+
+   Menu
+   #Kali Linux » Feed Kali Linux » Comments Feed alternate alternate
+
+   Kali Linux
+
+     * Blog
+     * Downloads
+          + Download Kali Linux
+          + Kali Linux NetHunter
+          + Kali Linux Revealed Book
+          + Release Information
+     * Training
+          + Advanced Web Attacks and Exploitation
+          + Penetration Testing with Kali Linux
+          + The Open Kali Linux Dojo
+          + Kali Linux Revealed
+     * Documentation
+          + Kali Linux Documentation
+          + Special Kali Linux Features
+          + Kali Linux Tools Website
+     * Community
+          + Community Support
+          + Kali Linux Forums
+          + Kali Git Repository
+          + Report Kali Linux Bugs
+     * About Us
+          + All About Kali Linux
+          + Kali Press Release
+          + Cookie Policy
+     *
+
+   ____________________
+
+Our Most Advanced Penetration Testing Distribution, Ever.
+
+Latest Kali Linux News and Tutorials
+
+Kali Linux 2019.3 Release
+
+   September 2, 2019
+   g0tmi1k
+   Kali Linux Releases
+
+   We are pleased to announce that our third release of 2019, Kali Linux
+   2019.3, is available immediately for download. This release brings our
+   kernel up to version 5.2.9, and includes various new features across
+   the board with NetHunter, ARM and packages (plus the normal bugs fixes
+   and updates).​
+
+   As promised in our roadmap blog post, there are both user facing and
+   backend updates.
+   Read More
+
+   Major Metapackage Makeover
+
+Major Metapackage Makeover
+
+   August 22, 2019
+   g0tmi1k
+   Kali Linux News
+
+   With our 2019.3 Kali release imminent, we wanted to take a quick moment
+   to discuss one of our more significant upcoming changes: our selection
+   of metapackages. These alterations are designed to optimize Kali,
+   reduce ISO size, and better organize metapackages as we continue to
+   grow.
+
+   Before we get into what’s new, let’s briefly recap what a metapacakage
+   is…
+   Read More
+
+   kali-nethunter-store
+
+Kali NetHunter App Store – Public Beta
+
+   July 15, 2019
+   re4son
+   Kali Linux News
+
+   Kali NetHunter has been undergoing a ton of changes as of late. Now
+   supporting over 50 devices and running on Android devices from KitKat
+   (v4.4) to Pie (v9.0), its amazing the extra capabilities that have been
+   introduced.
+
+   But, we don’t want to stop there. After a ton of work, we are really
+   excited to introduce the Kali NetHunter App Store!
+   Read More
+
+   Raspberry Pi 4 and Kali
+
+Raspberry Pi 4 and Kali
+
+   July 5, 2019
+   elwood
+   Kali Linux News
+
+   We love the Raspberry Pi, and judging by the response we got to a late
+   night tweet we sent out last weekend a lot of you love the Pi too!
+
+   Because of that, when the Pi 4 dropped we wanted to get Kali supported
+   on it right away.
+   Read More
+
+   Kali in DigitalOcean Cloud
+
+Kali Linux in the DigitalOcean Cloud
+
+   July 2, 2019
+   Thomas d'Otreppe
+   Kali Linux News, Kali Linux Tutorials
+
+   One feature in particular distinguishes DigitalOcean from other cloud
+   offerings. A little while ago, they added support for custom images,
+   which allows us to import virtual machines disks and use them as
+   droplets. This is perfect for us, so we can use own versions of Kali
+   Linux in their cloud.
+   Read More
+
+   Kali Linux Roadmap 2019-2020
+
+Kali Linux Roadmap (2019/2020)
+
+   June 19, 2019
+   elwood
+   Kali Linux News
+
+   Now that our 2019.2 release is out, we thought we would take this
+   opportunity to cover some of the changes and new features we have
+   coming to Kali Linux in the following year. Normally, we only really
+   announce things when they are ready to go public, but a number of these
+   changes are going to impact users pretty extensively so we wanted to
+   share them early.
+   Read More
+
+Want to learn about the Kali Linux Operating System?
+
+   IFRAME: https://player.vimeo.com/video/226942296
+
+Download Kali Linux
+
+   Download Kali Linux – our most advanced penetration testing platform we
+   have ever made. Available in 32 bit, 64 bit, and ARM flavors, as well
+   as a number of specialized builds for many popular hardware platforms.
+   Kali can always be updated to the newest version without the need for a
+   new download.
+
+Kali Documentation
+
+   Whether you are a seasoned veteran or a novice – our multi-language
+   Kali Linux documentation site will have something you need to know
+   about Kali Linux. Multiple scenarios and “recipes” are available,
+   allowing you to easily create custom complex images with ease, such as
+   the Kali Linux ISO of Doom.
+
+Kali Training
+
+   Interested in jump-starting your infosec career? Looking to improve
+   your command of Linux? Your journey starts here! Dive into Kali Linux
+   Revealed, a free online training course that prepares you to become a
+   Kali Linux Certified Professional. Get Started Today.
+
+Kali Community
+
+   Kali Linux, with its BackTrack lineage, has a vibrant and active
+   community. With active Kali forums, IRC Channel, Kali Tools listings,
+   an open bug tracker system and community provided tool suggestions –
+   there are many ways for you to get involved in Kali Linux today.
+   Joining the community is easy – don’t hesitate; jump right in!
+
+Offensive Security
+
+   Offensive Security was born out of the belief that the only real way to
+   achieve sound defensive security is through an offensive mindset and
+   approach. Kali Linux is one of several Offensive Security projects –
+   funded, developed and maintained as a free and open-source penetration
+   testing platform.
+
+Penetration Testing Redefined with the Kali Linux Distribution
+
+   Kali Training
+
+   OFFENSIVE SECURITY RESOURCES
+   Downloads
+
+   Kali Linux
+
+   Kali NetHunter
+
+   Kali Linux Revealed Book
+   CERTIFICATIONS
+
+   OSCP
+
+   OSWP
+
+   OSCE
+
+   OSEE
+
+   OSWE
+
+   KLCP
+   COURSES
+
+   Penetration Testing with Kali Linux (PwK)
+
+   Advanced Web Attacks and Exploitation (AWAE)
+
+   Cracking the Perimeter (CTP)
+
+   Offensive Security Wireless Attacks (WiFu)
+
+   Metasploit Unleashed (MSFU)
+
+   Free Kali Linux training
+   PROFESSIONAL SERVICES
+
+   Penetration Testing
+
+   Advanced Attack Simulation
+
+   Application Security Assessment
+
+   Copyright © Offensive Security
+
+   Menu
+   #Kali Linux » Feed Kali Linux » Comments Feed WSL2 and Kali Kali Linux
+   in the DigitalOcean Cloud alternate alternate
+
+   Kali Linux
+
+     * Blog
+     * Downloads
+          + Download Kali Linux
+          + Kali Linux NetHunter
+          + Kali Linux Revealed Book
+          + Release Information
+     * Training
+          + Advanced Web Attacks and Exploitation
+          + Penetration Testing with Kali Linux
+          + The Open Kali Linux Dojo
+          + Kali Linux Revealed
+     * Documentation
+          + Kali Linux Documentation
+          + Special Kali Linux Features
+          + Kali Linux Tools Website
+     * Community
+          + Community Support
+          + Kali Linux Forums
+          + Kali Git Repository
+          + Report Kali Linux Bugs
+     * About Us
+          + All About Kali Linux
+          + Kali Press Release
+          + Cookie Policy
+     *
+
+   ____________________
+
+   Kali Linux Roadmap 2019-2020
+
+Kali Linux Roadmap (2019/2020)
+
+   June 19, 2019
+   elwood
+   Kali Linux News
+
+   Now that our 2019.2 release is out, we thought we would take this
+   opportunity to cover some of the changes and new features we have
+   coming to Kali Linux in the following year. Normally, we only really
+   announce things when they are ready to go public, but a number of these
+   changes are going to impact users pretty extensively so we wanted to
+   share them early.
+
+   As you read through this post, what you will see is that we are really
+   trying to balance our efforts between changes that are user facing and
+   those that are applicable to the backend. The backend changes don’t
+   seem as exciting at first, but the fact is that the easier it is for us
+   to work on Kali, the easier it is for us to get to user facing
+   features. Plus, some of these changes are focused on tweaking the
+   development process to make it easier for others to get involved in the
+   project.
+
+   We are not ready to announce dates on any of these changes just yet.
+   When they are ready, they will drop.
+
+GitLab – The New Home for Kali Packages
+
+   One of the biggest changes, which you may have already noticed, is our
+   move of the Official Kali git repository to GitLab. With this change,
+   it’s easier than ever for the community to submit improvements to Kali
+   packages and for us to apply them! We expect to make an heavy use of
+   the GitLab Continous Integration features to streamline our work on
+   packages and to provide automated feedback to all the contributors
+   submitting merge requests.
+
+   Documentation is coming soon on how to contribute packages. Expect a
+   full guide to be published in our docs later.
+
+Runtime Tests – Finding Bugs Before Users
+
+   Speaking of packages, the detection of bugs and problems with the
+   packages is always something to improve. Until now, we have relied on
+   manual testing on our part and user-provided bug reports. This works
+   ok, as popular packages would never stay broken for long but some edge
+   packages could break for months at a time before anyone would notice
+   and actually report it to us. (Let’s be honest, most of the time when
+   you find something broken in Kali, you don’t create a bug report do
+   you?)
+
+   To improve this situation, we have recently deployed debci on
+   autopkgtest.kali.org. This allows us to have our own continuous
+   integration system, allowing for automated testing of Kali packages on
+   a regular basis. We have integrated the result of those tests in the
+   Kali Package Tracker.
+
+   For this infrastructure to be as useful as it can be, we will need to
+   have runtime tests on all our packages, which is still a long way off.
+   Hopefully, this will be a place where we get community help to speed up
+   the process, so feel free to submit merge requests adding tests!
+
+Metapackages – What is Installed by Default
+
+   One of the biggest challenges with running a project like Kali Linux is
+   balance. We now have so many users that there’s no longer “one right
+   size”. Traditionally, what people have asked for is “all the tools, all
+   the time”. But as time has gone by, this has led to one of the largest
+   (pun fully intended) issues with Kali: Bloat. Too many packages making
+   too big of a distribution, large ISO sizes, etc. etc.
+
+   To address this, we are giving our metapackages a refresh. This change
+   includes the default Kali metapackage, “kali-linux-full”, the
+   metapackage that controls what packages are installed on Kali by
+   default. Needless to say, this is a big user-facing change that will
+   impact everyone. Tools that we decide to drop are most often older
+   tools that don’t have a lot of modern utility, have not been updated in
+   years, or have been supplanted by newer better tools.
+
+   What this means is that by default, some of the tools you may have
+   relied upon may no longer be included by default. These tools will
+   still exist in the repo, so you can install them manually or use a
+   metapackage that contains them. You can see full documentation of the
+   metapackages and what they contain at tools.kali.org.
+
+   Before these changes go live, we will do another blog post detailing
+   them. Expect that these metapackages will be in flux for a bit as we
+   continue to optimize.
+
+Default Shell – Your Primary Kali Interface
+
+   The shell in Kali is likely the most used utility in the entire
+   distribution for the majority of users. This creates a bit of a
+   schizophrenic challenge in that it’s used so much we want to improve
+   it, but at the same time we have to make sure it does not break.
+
+   To address this, we will be adding default installations of ZSH and
+   FISH to Kali. Each of these shells are optimized for penetration
+   testers, which is sort of fun. Most of the time when you look at shell
+   optimization, all the text is focused on developers, which is not where
+   Kali sits. Our goal here is to have the best, most optimized, shell
+   environment for penetration testers.
+
+   At the same time, good old Bash won’t go away and we are going to leave
+   it as the default for now. Those of you that want to be adventurous and
+   try the new shells will find easy ways to switch. Those of you that
+   just want to stick with Bash will still be able to. Expect in-shell
+   instructions (and a blog post) when this change is rolled out.
+
+Documentation – Read The Fine Manual
+
+   Expect some changes to docs.kali.org and tools.kali.org, along with an
+   integration of the Kali manual into git via markdown. This will allow
+   for user submitted documentation to help us keep instructions up to
+   date and accurate. This is another great way for you to contribute to
+   the Kali Linux project.
+
+NetHunter – New Blood
+
+   As you may have noticed on Twitter and git commits, we have got another
+   developer on board, “Re4son“, and he has put the NetHunter project into
+   overdrive. He is working on supporting new hardware, working with the
+   latest version of Android, and various bug fixes.
+
+   There is also “Project Redback“, but that is all we are going to say
+   about that for the time being…more about this in a blog post very soon.
+
+What Else can we Expect?
+
+   This is just the portion of the roadmap that makes sense to talk about
+   now. There is a lot more in development that we are just not ready to
+   talk about yet.
+
+   We also would like to welcome g0tmi1k who has switched over from
+   Offensive Security as a full time core Kali developer.
+
+   We are at a really exciting stage of the Kali development process,
+   where a lot of the behind the scenes items we have been working on are
+   getting ready to go public. Expect a fair amount of improvements in
+   Kali Linux over the next half of the year. If you want to discuss this
+   post with us or have ideas on things that we might consider, please get
+   in touch via the forum.
+
+Related Posts
+
+   Kali Linux 2019.2 Release
+   21 May at 5:38 pm
+
+   Major Metapackage Makeover
+   22 Aug at 3:01 pm
+
+   Kali & NetHunter Security Release Fixes
+   6 Oct 2014
+
+   AWAE now Online!
+
+   NOW AVAILABLE ONLINEAdvanced Web Attacks and Exploitation (AWAE)
+
+   You can now take OffSec’s most popular in-person training as an online
+   course.
+   Learn More
+
+Become a Certified Penetration Tester
+
+   Enroll in Penetration Testing with Kali Linux, the course required to
+   become an Offensive Security Certified Professional (OSCP) Learn More
+   Get Certified
+
+Follow us on Twitter
+
+   Follow Offensive Security Follow Kali Linux Follow Exploit Database
+   Facebook
+   LinkedIn
+   Vimeo
+   GitHub
+   RSS
+
+Kali Linux Twitter Feed
+
+   Tweets by @kalilinux
+
+Blog Categories
+
+     * Kali Linux Dojo (7)
+     * Kali Linux News (47)
+     * Kali Linux Releases (21)
+     * Kali Linux Tutorials (17)
+     * Penetration Testing (7)
+
+Kali Documentation
+
+     * 01. Introduction to Kali Linux
+     * 02. Kali Linux Live
+     * 03. Installing Kali Linux
+     * 04. Kali Linux on ARM
+     * 05. Kali Linux General Use
+     * 06. Customizing Kali Linux
+     * 07. Kali Community Support
+     * 08. Kali Linux Policies
+     * 09. Open Kali Linux Dojo
+
+Kali Linux Revealed now available on Amazon!
+
+   kali Linux Revealed
+
+   OFFENSIVE SECURITY RESOURCES
+   Downloads
+
+   Kali Linux
+
+   Kali NetHunter
+
+   Kali Linux Revealed Book
+   CERTIFICATIONS
+
+   OSCP
+
+   OSWP
+
+   OSCE
+
+   OSEE
+
+   OSWE
+
+   KLCP
+   COURSES
+
+   Penetration Testing with Kali Linux (PwK)
+
+   Advanced Web Attacks and Exploitation (AWAE)
+
+   Cracking the Perimeter (CTP)
+
+   Offensive Security Wireless Attacks (WiFu)
+
+   Metasploit Unleashed (MSFU)
+
+   Free Kali Linux training
+   PROFESSIONAL SERVICES
+
+   Penetration Testing
+
+   Advanced Attack Simulation
+
+   Application Security Assessment
+
+   Copyright © Offensive Security
+
+   Menu
+   This script cannot be accessed directly.
+
